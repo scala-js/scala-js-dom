@@ -1,6 +1,5 @@
 package scala.js
 
-
 class MSCSSMatrix extends js.Object {
   def this(text: js.String) = this()
   var m24: js.Number = _

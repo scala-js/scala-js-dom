@@ -160,27 +160,7 @@ trait Element extends Node with NodeSelector with ElementTraversal {
   def setAttribute(name: js.String): Unit = ???
   def setAttribute(): Unit = ???
   def removeAttributeNS(namespaceURI: js.String, localName: js.String): Unit = ???
-  var msRegionOverflow: js.String = _
-  var onmspointerdown: js.Function1[js.Any, js.Any] = _
-  var onmsgotpointercapture: js.Function1[js.Any, js.Any] = _
-  var onmsgesturedoubletap: js.Function1[js.Any, js.Any] = _
-  var onmspointerhover: js.Function1[js.Any, js.Any] = _
-  var onmsgesturehold: js.Function1[js.Any, js.Any] = _
-  var onmspointermove: js.Function1[js.Any, js.Any] = _
-  var onmsgesturechange: js.Function1[js.Any, js.Any] = _
-  var onmsgesturestart: js.Function1[js.Any, js.Any] = _
-  var onmspointercancel: js.Function1[js.Any, js.Any] = _
-  var onmsgestureend: js.Function1[js.Any, js.Any] = _
-  var onmsgesturetap: js.Function1[js.Any, js.Any] = _
-  var onmspointerout: js.Function1[js.Any, js.Any] = _
-  var onmsinertiastart: js.Function1[js.Any, js.Any] = _
-  var onmslostpointercapture: js.Function1[js.Any, js.Any] = _
-  var onmspointerover: js.Function1[js.Any, js.Any] = _
-  var msContentZoomFactor: js.Number = _
-  var onmspointerup: js.Function1[js.Any, js.Any] = _
-  def msGetRegionContent(): MSRangeCollection = ???
-  def msReleasePointerCapture(pointerId: js.Number): Unit = ???
-  def msSetPointerCapture(pointerId: js.Number): Unit = ???
+
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
@@ -997,7 +977,7 @@ trait WindowModal extends js.Object {
   var returnValue: js.Any = _
 }
 
-trait XMLHttpRequest extends EventTarget {
+class XMLHttpRequest extends EventTarget {
   var responseBody: js.Any = _
   var status: js.Number = _
   var readyState: js.Number = _
@@ -1634,12 +1614,9 @@ object BookmarkCollection extends js.Object {
 /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(BookmarkCollection),List())))) */
 }
 
-trait PerformanceMark extends PerformanceEntry {
+class PerformanceMark extends PerformanceEntry {
 }
 
-object PerformanceMark extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(PerformanceMark),List())))) */
-}
 
 trait ElementCSSInlineStyle extends js.Object {
   var runtimeStyle: MSStyleCSSProperties = _
@@ -1649,15 +1626,13 @@ trait ElementCSSInlineStyle extends js.Object {
   def componentFromPoint(x: js.Number, y: js.Number): js.String = ???
 }
 
-trait DOMParser extends js.Object {
+class DOMParser extends js.Object {
   def parseFromString(source: js.String, mimeType: js.String): Document = ???
 }
 
-object DOMParser extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DOMParser),List())))) */
-}
 
-trait StyleSheet extends js.Object {
+
+class StyleSheet extends js.Object {
   var disabled: js.Boolean = _
   var ownerNode: Node = _
   var parentStyleSheet: StyleSheet = _
@@ -1666,9 +1641,6 @@ trait StyleSheet extends js.Object {
   var title: js.String = _
 }
 
-object StyleSheet extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(StyleSheet),List())))) */
-}
 
 trait NodeList extends js.Object {
   var length: js.Number = _
