@@ -1,4 +1,5 @@
-package scala.js
+package scala.scalajs
+package js
 
 trait HTMLTableElement extends HTMLElement with MSDataBindingTableExtensions with MSDataBindingExtensions {
   var width: js.String = _
@@ -135,9 +136,9 @@ trait HTMLSelectElement extends HTMLElement with MSHTMLCollectionExtensions with
   def item(name: js.Any): js.Dynamic = ???
   def item(): js.Dynamic = ???
   def namedItem(name: js.String): js.Dynamic = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(name: js.String): js.Any = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(name: js.String, v: js.Any): Unit = ???
   var validationMessage: js.String = _
   var autofocus: js.Boolean = _
@@ -252,9 +253,9 @@ trait HTMLCollection extends MSHTMLCollectionExtensions {
   def item(nameOrIndex: js.Any): Element = ???
   def item(): Element = ???
   def namedItem(name: js.String): Element = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(name: js.Number): Element = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(name: js.Number, v: Element): Unit = ???
 }
 
@@ -1320,9 +1321,9 @@ trait HTMLFormElement extends HTMLElement with MSHTMLCollectionExtensions {
   def item(): js.Dynamic = ???
   def submit(): Unit = ???
   def namedItem(name: js.String): js.Dynamic = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(name: js.String): js.Any = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(name: js.String, v: js.Any): Unit = ???
   var autocomplete: js.String = _
   var noValidate: js.Boolean = _

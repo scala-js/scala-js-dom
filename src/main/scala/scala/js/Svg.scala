@@ -1,4 +1,5 @@
-package scala.js
+package scala.scalajs
+package js
 
 trait GetSVGDocument extends js.Object {
   def getSVGDocument(): Document = ???

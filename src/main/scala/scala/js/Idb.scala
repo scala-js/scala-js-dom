@@ -1,4 +1,5 @@
-package scala.js
+package scala.scalajs
+package js
 
 trait IDBObjectStore extends js.Object {
   var indexNames: DOMStringList = _

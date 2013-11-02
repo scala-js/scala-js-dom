@@ -1,4 +1,5 @@
-package scala.js
+package scala.scalajs
+package js
 
 trait CSSStyleDeclaration extends js.Object {
   var backgroundAttachment: js.String = _
@@ -157,9 +158,9 @@ trait CSSStyleDeclaration extends js.Object {
   def getPropertyValue(propertyName: js.String): js.String = ???
   def removeProperty(propertyName: js.String): js.String = ???
   def item(index: js.Number): js.String = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): js.String = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.String): Unit = ???
   def setProperty(propertyName: js.String, value: js.String, priority: js.String): Unit = ???
   def setProperty(propertyName: js.String, value: js.String): Unit = ???
@@ -409,9 +410,9 @@ object CSSPageRule extends js.Object {
 trait CSSRuleList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): CSSRule = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): CSSRule = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: CSSRule): Unit = ???
 }
 

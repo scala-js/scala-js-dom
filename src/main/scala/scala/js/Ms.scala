@@ -1,4 +1,5 @@
-package scala.js
+package scala.scalajs
+package js
 
 class MSCSSMatrix extends js.Object {
   def this(text: js.String) = this()
@@ -144,9 +145,9 @@ trait MSUnsafeFunctionCallback extends js.Object {
 trait MSRangeCollection extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): Range = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): Range = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: Range): Unit = ???
 }
 
@@ -350,9 +351,9 @@ trait MSCSSRuleList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): CSSStyleRule = ???
   def item(): CSSStyleRule = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): CSSStyleRule = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: CSSStyleRule): Unit = ???
 }
 
@@ -441,9 +442,9 @@ trait MSNamespaceInfoCollection extends js.Object {
   def add(namespace: js.String): Object = ???
   def add(): Object = ???
   def item(index: js.Any): Object = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.String): Object = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.String, v: Object): Unit = ???
 }
 

@@ -1,4 +1,5 @@
-package scala
+package scala.scalajs
+
 package js {
 
 trait PositionOptions extends js.Object {
@@ -420,9 +421,9 @@ trait ControlRangeCollection extends js.Object {
   def scrollIntoView(varargStart: js.Any): Unit = ???
   def scrollIntoView(): Unit = ???
   def item(index: js.Number): Element = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): Element = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: Element): Unit = ???
   def execCommand(cmdID: js.String, showUI: js.Boolean, value: js.Any): js.Boolean = ???
   def execCommand(cmdID: js.String, showUI: js.Boolean): js.Boolean = ???
@@ -609,9 +610,9 @@ object Window extends js.Object {
 trait StyleSheetPageList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): CSSPageRule = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): CSSPageRule = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: CSSPageRule): Unit = ???
 }
 
@@ -1140,17 +1141,17 @@ object Range extends js.Object {
 trait Storage extends MSStorageExtensions {
   var length: js.Number = _
   def getItem(key: js.String): js.Dynamic = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(key: js.String): js.Any = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(key: js.String, v: js.Any): Unit = ???
   def setItem(key: js.String, data: js.String): Unit = ???
   def clear(): Unit = ???
   def removeItem(key: js.String): Unit = ???
   def key(index: js.Number): js.String = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): js.Any = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.Any): Unit = ???
 }
 
@@ -1161,9 +1162,9 @@ object Storage extends js.Object {
 trait TextRangeCollection extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): TextRange = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): TextRange = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: TextRange): Unit = ???
 }
 
@@ -1394,9 +1395,9 @@ trait StyleSheetList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): StyleSheet = ???
   def item(): StyleSheet = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): StyleSheet = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: StyleSheet): Unit = ???
 }
 
@@ -1513,9 +1514,9 @@ trait NamedNodeMap extends js.Object {
   var length: js.Number = _
   def removeNamedItemNS(namespaceURI: js.String, localName: js.String): Attr = ???
   def item(index: js.Number): Attr = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): Attr = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: Attr): Unit = ???
   def removeNamedItem(name: js.String): Attr = ???
   def getNamedItem(name: js.String): Attr = ???
@@ -1534,9 +1535,9 @@ trait MediaList extends js.Object {
   def deleteMedium(oldMedium: js.String): Unit = ???
   def appendMedium(newMedium: js.String): Unit = ???
   def item(index: js.Number): js.String = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): js.String = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.String): Unit = ???
   
 }
@@ -1604,9 +1605,9 @@ object Position extends js.Object {
 trait BookmarkCollection extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): js.Dynamic = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): js.Any = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.Any): Unit = ???
 }
 
@@ -1645,9 +1646,9 @@ class StyleSheet extends js.Object {
 trait NodeList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): Node = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): Node = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: Node): Unit = ???
 }
 
@@ -1657,7 +1658,7 @@ object NodeList extends js.Object {
 
 trait NodeListOf[TNode <: Node] extends NodeList {
   override def item(index: js.Number): TNode = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   override def apply(index: js.Number): TNode = ???
   
 }
@@ -1898,9 +1899,9 @@ trait LinkStyle extends js.Object {
 trait ClientRectList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): ClientRect = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): ClientRect = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: ClientRect): Unit = ???
 }
 
@@ -1977,9 +1978,9 @@ trait DOMTokenList extends js.Object {
   def toggle(token: js.String): js.Boolean = ???
   def add(token: js.String): Unit = ???
   def item(index: js.Number): js.String = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): js.String = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.String): Unit = ???
   
 }
@@ -2090,9 +2091,9 @@ object ProgressEvent extends js.Object {
 trait FileList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): File = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): File = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: File): Unit = ???
 }
 
@@ -2141,9 +2142,9 @@ trait AudioTrackList extends EventTarget {
   var onaddtrack: js.Function1[TrackEvent, js.Any] = _
   def getTrackById(id: js.String): AudioTrack = ???
   def item(index: js.Number): AudioTrack = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): AudioTrack = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: AudioTrack): Unit = ???
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
@@ -2194,9 +2195,9 @@ object AudioTrack extends js.Object {
 trait TextTrackCueList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): TextTrackCue = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): TextTrackCue = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: TextTrackCue): Unit = ???
   def getCueById(id: js.String): TextTrackCue = ???
 }
@@ -2208,9 +2209,9 @@ object TextTrackCueList extends js.Object {
 trait TextTrackList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): TextTrack = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): TextTrack = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: TextTrack): Unit = ???
 }
 
@@ -2246,9 +2247,9 @@ trait DOMStringList extends js.Object {
   var length: js.Number = _
   def contains(str: js.String): js.Boolean = ???
   def item(index: js.Number): js.String = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): js.String = ???
-  @scala.js.annotation.JSBracketAccess
+  @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.String): Unit = ???
 }
 
