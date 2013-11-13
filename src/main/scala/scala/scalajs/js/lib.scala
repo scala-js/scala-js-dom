@@ -636,6 +636,27 @@ object CanvasGradient extends js.Object {
 /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CanvasGradient),List())))) */
 }
 
+trait TouchEvent{
+  val altKey: Boolean = ???
+  val changedTouches: TouchList = ???
+  val ctrlKey: Boolean = ???
+  val metaKey: Boolean = ???
+  val shiftKey: Boolean = ???
+  val targetTouches: TouchList = ???
+  val touches: TouchList = ???
+  val `type`: String = ???
+  val target: js.Any = ???
+}
+
+trait TouchList extends js.Object {
+  var length: js.Number = _
+  def item(index: js.Number): TouchEvent = ???
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def apply(index: js.Number): TouchEvent = ???
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: js.Number, v: Node): Unit = ???
+}
+
 trait KeyboardEvent extends UIEvent {
   var location: js.Number = _
   var keyCode: js.Number = _
@@ -2451,6 +2472,8 @@ object Worker extends js.Object {
 }
 package js{
   object JsGlobals extends js.GlobalScope {
+    def parseInt(string: js.String, radix: js.Number): js.Number = ???
+    def parseFloat(string: js.String, radix: js.Number): js.Number = ???
     var ondragend: js.Function1[DragEvent, js.Any] = _
     var onkeydown: js.Function1[KeyboardEvent, js.Any] = _
     var ondragover: js.Function1[DragEvent, js.Any] = _

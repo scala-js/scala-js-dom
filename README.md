@@ -3,6 +3,8 @@ scala-js-dom
 
 Provides a nice statically typed interface to the DOM such that it can be called from Scala code without resorting to `js.Dynamic`. Initially translated using the [scala-js-ts-importer](https://github.com/sjrd/scala-js-ts-importer) from Typescript definition files, but it has since been heavily edited to clean up various rough edges and to make it a more pleasant experience to use from Scala.
 
+Also contains useful extension methods in `scala/scalajs/extensions`, which allow the DOM api to be used in a more idiomatic and fluent way.
+
 See [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. There remain lots more cleanup to do, but this should be a reasonable place to start from. Pull requests/forks are welcome!
 
 License
