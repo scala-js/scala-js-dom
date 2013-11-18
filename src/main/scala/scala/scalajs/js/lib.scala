@@ -245,7 +245,7 @@ object Node extends js.Object {
   var DOCUMENT_POSITION_PRECEDING: js.Number = _
 }
 
-trait MouseEvent extends UIEvent {
+class MouseEvent extends UIEvent {
   var toElement: Element = _
   var layerY: js.Number = _
   var fromElement: Element = _
@@ -657,7 +657,7 @@ trait TouchList extends js.Object {
   def update(index: js.Number, v: Node): Unit = ???
 }
 
-trait KeyboardEvent extends UIEvent {
+class KeyboardEvent extends UIEvent {
   var location: js.Number = _
   var keyCode: js.Number = _
   var shiftKey: js.Boolean = _
@@ -1367,7 +1367,7 @@ object UIEvent extends js.Object {
 }
 
 
-trait WheelEvent extends MouseEvent {
+class WheelEvent extends MouseEvent {
   var deltaZ: js.Number = _
   var deltaX: js.Number = _
   var deltaMode: js.Number = _
@@ -2071,11 +2071,11 @@ class WebSocket protected () extends EventTarget {
   var protocol: js.String = _
   var readyState: js.Number = _
   var bufferedAmount: js.Number = _
-  var onopen: js.Function1[Event, _] = _
+  var onopen: js.Function1[Event, Unit] = _
   var extensions: js.String = _
-  var onmessage: js.Function1[js.Any, js.Any] = _
-  var onclose: js.Function1[CloseEvent, js.Any] = _
-  var onerror: js.Function1[ErrorEvent, js.Any] = _
+  var onmessage: js.Function1[MessageEvent, Unit] = _
+  var onclose: js.Function1[CloseEvent, Unit] = _
+  var onerror: js.Function1[ErrorEvent, Unit] = _
   var binaryType: js.String = _
   var url: js.String = _
   def close(code: js.Number, reason: js.String): Unit = ???
