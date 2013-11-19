@@ -1,4 +1,4 @@
-package scala.scalajs.extensions
+package org.scalajs.dom.extensions
 
 import scala.scalajs.js
 

@@ -1,5 +1,6 @@
-package scala.scalajs
-package js
+package org.scalajs.dom
+
+import scala.scalajs.js
 
 class MSCSSMatrix extends js.Object {
   def this(text: js.String) = this()

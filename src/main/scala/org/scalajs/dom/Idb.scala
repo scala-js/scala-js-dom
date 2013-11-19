@@ -1,5 +1,6 @@
-package scala.scalajs
-package js
+package org.scalajs.dom
+
+import scala.scalajs.js
 
 trait IDBObjectStore extends js.Object {
   var indexNames: DOMStringList = _
