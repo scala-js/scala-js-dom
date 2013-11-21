@@ -6,6 +6,7 @@ package object extensions {
   implicit class PimpedNodeList(nodes: js.NodeList) extends EasySeq[js.Node](nodes.length, nodes.apply)
   implicit class PimpedTouchList(nodes: js.TouchList) extends EasySeq[js.TouchEvent](nodes.length, nodes.apply)
   implicit class PimpedHtmlCollection(coll: js.HTMLCollection) extends EasySeq[js.Element](coll.length, coll.apply)
+  implicit class PimpedSVGTransformList(coll: js.SVGTransformList) extends EasySeq[js.SVGTransform](coll.numberOfItems, coll.getItem)
   implicit class Castable(x: js.Dynamic){
     def to[T] = x.asInstanceOf[T]
   }
@@ -20,7 +21,7 @@ package object extensions {
     }
     def strokeCircle(x: Double, y: Double, r: Double) = {
       prepCircle(x, y, r)
-      ctx.fill()
+      ctx.stroke()
     }
     def prepPath(points: (js.Number, js.Number)*) = {
       ctx.beginPath()

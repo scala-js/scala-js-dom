@@ -15,7 +15,7 @@ trait SVGPathSegCurvetoQuadraticRel extends SVGPathSeg {
 object SVGPathSegCurvetoQuadraticRel extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegCurvetoQuadraticRel),List())))) */
 }
-trait SVGMarkerElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
+class SVGMarkerElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
   var orientType: SVGAnimatedEnumeration = _
   var markerUnits: SVGAnimatedEnumeration = _
   var markerWidth: SVGAnimatedLength = _
@@ -43,7 +43,7 @@ object SVGMarkerElement extends js.Object {
   var SVG_MARKERUNITS_USERSPACEONUSE: js.Number = _
 }
 
-trait SVGGElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGGElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
 }
 
 object SVGGElement extends js.Object {
@@ -95,7 +95,7 @@ object SVGPathSegMovetoRel extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegMovetoRel),List())))) */
 }
 
-trait SVGLineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGLineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   var y1: SVGAnimatedLength = _
   var x2: SVGAnimatedLength = _
   var x1: SVGAnimatedLength = _
@@ -106,7 +106,7 @@ object SVGLineElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGLineElement),List())))) */
 }
 
-trait SVGDescElement extends SVGElement with SVGStylable with SVGLangSpace {
+class SVGDescElement extends SVGElement with SVGStylable with SVGLangSpace {
 }
 
 object SVGDescElement extends js.Object {
@@ -122,7 +122,7 @@ object SVGPathSegCurvetoQuadraticSmoothRel extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegCurvetoQuadraticSmoothRel),List())))) */
 }
 
-trait SVGClipPathElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGClipPathElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   var clipPathUnits: SVGAnimatedEnumeration = _
 }
 
@@ -130,7 +130,7 @@ object SVGClipPathElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGClipPathElement),List())))) */
 }
 
-trait SVGTextPositioningElement extends SVGTextContentElement {
+class SVGTextPositioningElement extends SVGTextContentElement {
   var y: SVGAnimatedLengthList = _
   var rotate: SVGAnimatedNumberList = _
   var dy: SVGAnimatedLengthList = _
@@ -166,7 +166,7 @@ trait SVGTests extends js.Object {
   def hasExtension(extension: js.String): js.Boolean = ???
 }
 
-trait SVGPatternElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired with SVGURIReference {
+class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired with SVGURIReference {
   var patternUnits: SVGAnimatedEnumeration = _
   var y: SVGAnimatedLength = _
   var width: SVGAnimatedLength = _
@@ -189,7 +189,7 @@ object SVGAnimatedAngle extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGAnimatedAngle),List())))) */
 }
 
-trait SVGScriptElement extends SVGElement with SVGExternalResourcesRequired with SVGURIReference {
+class SVGScriptElement extends SVGElement with SVGExternalResourcesRequired with SVGURIReference {
   var `type`: js.String = _
 }
 
@@ -197,7 +197,7 @@ object SVGScriptElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGScriptElement),List())))) */
 }
 
-trait SVGViewElement extends SVGElement with SVGZoomAndPan with SVGFitToViewBox with SVGExternalResourcesRequired {
+class SVGViewElement extends SVGElement with SVGZoomAndPan with SVGFitToViewBox with SVGExternalResourcesRequired {
   var viewTarget: SVGStringList = _
 }
 
@@ -214,7 +214,7 @@ trait SVGLocatable extends js.Object {
   def getScreenCTM(): SVGMatrix = ???
 }
 
-trait SVGTitleElement extends SVGElement with SVGStylable with SVGLangSpace {
+class SVGTitleElement extends SVGElement with SVGStylable with SVGLangSpace {
 }
 
 object SVGTitleElement extends js.Object {
@@ -295,7 +295,7 @@ object SVGAngle extends js.Object {
   var SVG_ANGLETYPE_GRAD: js.Number = _
 }
 
-trait SVGElement extends Element {
+class SVGElement extends Element {
   var onmouseover: js.Function1[MouseEvent, js.Any] = _
   var viewportElement: SVGElement = _
   var onmousemove: js.Function1[MouseEvent, js.Any] = _
@@ -378,7 +378,7 @@ trait SVGAnimatedPoints extends js.Object {
   var animatedPoints: SVGPointList = _
 }
 
-trait SVGDefsElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGDefsElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
 }
 
 object SVGDefsElement extends js.Object {
@@ -393,7 +393,7 @@ object SVGPathSegLinetoHorizontalRel extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegLinetoHorizontalRel),List())))) */
 }
 
-trait SVGEllipseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGEllipseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   var ry: SVGAnimatedLength = _
   var cx: SVGAnimatedLength = _
   var rx: SVGAnimatedLength = _
@@ -404,7 +404,7 @@ object SVGEllipseElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGEllipseElement),List())))) */
 }
 
-trait SVGAElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
+class SVGAElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   var target: SVGAnimatedString = _
 }
 
@@ -445,7 +445,7 @@ object SVGAnimatedNumberList extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGAnimatedNumberList),List())))) */
 }
 
-trait SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with DocumentEvent with SVGLangSpace with SVGLocatable with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired {
+class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with DocumentEvent with SVGLangSpace with SVGLocatable with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired {
   var width: SVGAnimatedLength = _
   var x: SVGAnimatedLength = _
   var contentStyleType: js.String = _
@@ -506,14 +506,14 @@ object SVGAnimatedInteger extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGAnimatedInteger),List())))) */
 }
 
-trait SVGTextElement extends SVGTextPositioningElement with SVGTransformable {
+class SVGTextElement extends SVGTextPositioningElement with SVGTransformable {
 }
 
 object SVGTextElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGTextElement),List())))) */
 }
 
-trait SVGTSpanElement extends SVGTextPositioningElement {
+class SVGTSpanElement extends SVGTextPositioningElement {
 }
 
 object SVGTSpanElement extends js.Object {
@@ -528,7 +528,7 @@ object SVGPathSegLinetoVerticalAbs extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegLinetoVerticalAbs),List())))) */
 }
 
-trait SVGStyleElement extends SVGElement with SVGLangSpace {
+class SVGStyleElement extends SVGElement with SVGLangSpace {
   var media: js.String = _
   var `type`: js.String = _
   var title: js.String = _
@@ -539,7 +539,7 @@ object SVGStyleElement extends js.Object {
 }
 
 
-trait SVGRadialGradientElement extends SVGGradientElement {
+class SVGRadialGradientElement extends SVGGradientElement {
   var cx: SVGAnimatedLength = _
   var r: SVGAnimatedLength = _
   var cy: SVGAnimatedLength = _
@@ -551,7 +551,7 @@ object SVGRadialGradientElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGRadialGradientElement),List())))) */
 }
 
-trait SVGImageElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
+class SVGImageElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   var y: SVGAnimatedLength = _
   var width: SVGAnimatedLength = _
   var preserveAspectRatio: SVGAnimatedPreserveAspectRatio = _
@@ -572,7 +572,7 @@ object SVGAnimatedNumber extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGAnimatedNumber),List())))) */
 }
 
-trait SVGMetadataElement extends SVGElement {
+class SVGMetadataElement extends SVGElement {
 }
 
 object SVGMetadataElement extends js.Object {
@@ -652,7 +652,7 @@ object SVGLength extends js.Object {
   var SVG_LENGTHTYPE_EXS: js.Number = _
 }
 
-trait SVGPolygonElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
+class SVGPolygonElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
 }
 
 object SVGPolygonElement extends js.Object {
@@ -672,7 +672,7 @@ object SVGPathSegCurvetoCubicRel extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegCurvetoCubicRel),List())))) */
 }
 
-trait SVGTextContentElement extends SVGElement with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGTextContentElement extends SVGElement with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   var textLength: SVGAnimatedLength = _
   var lengthAdjust: SVGAnimatedEnumeration = _
   def getCharNumAtPosition(point: SVGPoint): js.Number = ???
@@ -786,7 +786,7 @@ object SVGNumber extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGNumber),List())))) */
 }
 
-trait SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathData with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathData with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   def getPathSegAtLength(distance: js.Number): js.Number = ???
   def getPointAtLength(distance: js.Number): SVGPoint = ???
   def createSVGPathSegCurvetoQuadraticAbs(x: js.Number, y: js.Number, x1: js.Number, y1: js.Number): SVGPathSegCurvetoQuadraticAbs = ???
@@ -838,7 +838,7 @@ object SVGPathSegList extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegList),List())))) */
 }
 
-trait SVGElementInstance extends EventTarget {
+class SVGElementInstance extends EventTarget {
   var previousSibling: SVGElementInstance = _
   var parentNode: SVGElementInstance = _
   var lastChild: SVGElementInstance = _
@@ -853,7 +853,7 @@ object SVGElementInstance extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGElementInstance),List())))) */
 }
 
-trait SVGCircleElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGCircleElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   var cx: SVGAnimatedLength = _
   var r: SVGAnimatedLength = _
   var cy: SVGAnimatedLength = _
@@ -863,7 +863,7 @@ object SVGCircleElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGCircleElement),List())))) */
 }
 
-trait SVGRect extends js.Object {
+class SVGRect extends js.Object {
   var y: js.Number = _
   var width: js.Number = _
   var x: js.Number = _
@@ -907,7 +907,7 @@ object SVGPathSegLinetoAbs extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegLinetoAbs),List())))) */
 }
 
-trait SVGMatrix extends js.Object {
+class SVGMatrix extends js.Object {
   var e: js.Number = _
   var c: js.Number = _
   var a: js.Number = _
@@ -931,7 +931,7 @@ object SVGMatrix extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGMatrix),List())))) */
 }
 
-trait SVGUseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
+class SVGUseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   var y: SVGAnimatedLength = _
   var width: SVGAnimatedLength = _
   var animatedInstanceRoot: SVGElementInstance = _
@@ -961,7 +961,7 @@ object SVGException extends js.Object {
   var SVG_INVALID_VALUE_ERR: js.Number = _
 }
 
-trait SVGLinearGradientElement extends SVGGradientElement {
+class SVGLinearGradientElement extends SVGGradientElement {
   var y1: SVGAnimatedLength = _
   var x2: SVGAnimatedLength = _
   var x1: SVGAnimatedLength = _
@@ -981,7 +981,7 @@ object SVGAnimatedEnumeration extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGAnimatedEnumeration),List())))) */
 }
 
-trait SVGRectElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGRectElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   var y: SVGAnimatedLength = _
   var width: SVGAnimatedLength = _
   var ry: SVGAnimatedLength = _
@@ -994,7 +994,7 @@ object SVGRectElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGRectElement),List())))) */
 }
 
-trait SVGPathSegCurvetoQuadraticSmoothAbs extends SVGPathSeg {
+class SVGPathSegCurvetoQuadraticSmoothAbs extends SVGPathSeg {
   var y: js.Number = _
   var x: js.Number = _
 }
@@ -1003,7 +1003,7 @@ object SVGPathSegCurvetoQuadraticSmoothAbs extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegCurvetoQuadraticSmoothAbs),List())))) */
 }
 
-trait SVGPathSegCurvetoCubicSmoothRel extends SVGPathSeg {
+class SVGPathSegCurvetoCubicSmoothRel extends SVGPathSeg {
   var y: js.Number = _
   var x2: js.Number = _
   var x: js.Number = _
@@ -1014,7 +1014,7 @@ object SVGPathSegCurvetoCubicSmoothRel extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGPathSegCurvetoCubicSmoothRel),List())))) */
 }
 
-trait SVGLengthList extends js.Object {
+class SVGLengthList extends js.Object {
   var numberOfItems: js.Number = _
   def replaceItem(newItem: SVGLength, index: js.Number): SVGLength = ???
   def getItem(index: js.Number): SVGLength = ???
@@ -1029,7 +1029,7 @@ object SVGLengthList extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGLengthList),List())))) */
 }
 
-trait SVGPolylineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
+class SVGPolylineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
 }
 
 object SVGPolylineElement extends js.Object {
@@ -1055,7 +1055,7 @@ object SVGZoomAndPan extends js.Object {
 }
 
 
-trait SVGTextPathElement extends SVGTextContentElement with SVGURIReference {
+class SVGTextPathElement extends SVGTextContentElement with SVGURIReference {
   var startOffset: SVGAnimatedLength = _
   var method: SVGAnimatedEnumeration = _
   var spacing: SVGAnimatedEnumeration = _
@@ -1076,7 +1076,7 @@ object SVGTextPathElement extends js.Object {
   var TEXTPATH_METHODTYPE_UNKNOWN: js.Number = _
   var TEXTPATH_METHODTYPE_ALIGN: js.Number = _
 }
-trait SVGGradientElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGExternalResourcesRequired with SVGURIReference {
+class SVGGradientElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGExternalResourcesRequired with SVGURIReference {
   var spreadMethod: SVGAnimatedEnumeration = _
   var gradientTransform: SVGAnimatedTransformList = _
   var gradientUnits: SVGAnimatedEnumeration = _
@@ -1094,7 +1094,7 @@ object SVGGradientElement extends js.Object {
   var SVG_SPREADMETHOD_REPEAT: js.Number = _
 }
 
-trait SVGNumberList extends js.Object {
+class SVGNumberList extends js.Object {
   var numberOfItems: js.Number = _
   def replaceItem(newItem: SVGNumber, index: js.Number): SVGNumber = ???
   def getItem(index: js.Number): SVGNumber = ???
@@ -1109,7 +1109,7 @@ object SVGNumberList extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGNumberList),List())))) */
 }
 
-trait SVGPathSegLinetoRel extends SVGPathSeg {
+class SVGPathSegLinetoRel extends SVGPathSeg {
   var y: js.Number = _
   var x: js.Number = _
 }
@@ -1127,7 +1127,7 @@ object SVGAnimatedBoolean extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGAnimatedBoolean),List())))) */
 }
 
-trait SVGSwitchElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGSwitchElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
 }
 
 object SVGSwitchElement extends js.Object {
@@ -1172,7 +1172,7 @@ object SVGPreserveAspectRatio extends js.Object {
 }
 
 
-trait SVGStopElement extends SVGElement with SVGStylable {
+class SVGStopElement extends SVGElement with SVGStylable {
   var offset: SVGAnimatedNumber = _
 }
 
@@ -1180,14 +1180,14 @@ object SVGStopElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGStopElement),List())))) */
 }
 
-trait SVGSymbolElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
+class SVGSymbolElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
 }
 
 object SVGSymbolElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGSymbolElement),List())))) */
 }
 
-trait SVGElementInstanceList extends js.Object {
+class SVGElementInstanceList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): SVGElementInstance = ???
 }
@@ -1196,7 +1196,7 @@ object SVGElementInstanceList extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGElementInstanceList),List())))) */
 }
 
-trait SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   var y: SVGAnimatedLength = _
   var width: SVGAnimatedLength = _
   var maskUnits: SVGAnimatedEnumeration = _
@@ -1209,7 +1209,7 @@ object SVGMaskElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGMaskElement),List())))) */
 }
 
-trait SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGURIReference with SVGExternalResourcesRequired {
+class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGURIReference with SVGExternalResourcesRequired {
   var y: SVGAnimatedLength = _
   var width: SVGAnimatedLength = _
   var filterResX: SVGAnimatedInteger = _
@@ -1225,7 +1225,7 @@ object SVGFilterElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFilterElement),List())))) */
 }
 
-trait SVGFEMergeNodeElement extends SVGElement {
+class SVGFEMergeNodeElement extends SVGElement {
   var in1: SVGAnimatedString = _
 }
 
@@ -1233,21 +1233,21 @@ object SVGFEMergeNodeElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEMergeNodeElement),List())))) */
 }
 
-trait SVGFEFloodElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEFloodElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
 }
 
 object SVGFEFloodElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEFloodElement),List())))) */
 }
 
-trait SVGFEFuncAElement extends SVGComponentTransferFunctionElement {
+class SVGFEFuncAElement extends SVGComponentTransferFunctionElement {
 }
 
 object SVGFEFuncAElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEFuncAElement),List())))) */
 }
 
-trait SVGFETileElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFETileElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var in1: SVGAnimatedString = _
 }
 
@@ -1255,7 +1255,7 @@ object SVGFETileElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFETileElement),List())))) */
 }
 
-trait SVGFEBlendElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEBlendElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var in2: SVGAnimatedString = _
   var mode: SVGAnimatedEnumeration = _
   var in1: SVGAnimatedString = _
@@ -1277,14 +1277,14 @@ object SVGFEBlendElement extends js.Object {
   var SVG_FEBLEND_MODE_LIGHTEN: js.Number = _
 }
 
-trait SVGFEMergeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEMergeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
 }
 
 object SVGFEMergeElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEMergeElement),List())))) */
 }
 
-trait SVGFEPointLightElement extends SVGElement {
+class SVGFEPointLightElement extends SVGElement {
   var y: SVGAnimatedNumber = _
   var x: SVGAnimatedNumber = _
   var z: SVGAnimatedNumber = _
@@ -1294,7 +1294,7 @@ object SVGFEPointLightElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEPointLightElement),List())))) */
 }
 
-trait SVGFEGaussianBlurElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEGaussianBlurElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var stdDeviationX: SVGAnimatedNumber = _
   var in1: SVGAnimatedString = _
   var stdDeviationY: SVGAnimatedNumber = _
@@ -1313,7 +1313,7 @@ trait SVGFilterPrimitiveStandardAttributes extends SVGStylable {
   var result: SVGAnimatedString = _
 }
 
-trait SVGFESpecularLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFESpecularLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var kernelUnitLengthY: SVGAnimatedNumber = _
   var surfaceScale: SVGAnimatedNumber = _
   var specularExponent: SVGAnimatedNumber = _
@@ -1325,7 +1325,7 @@ trait SVGFESpecularLightingElement extends SVGElement with SVGFilterPrimitiveSta
 object SVGFESpecularLightingElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFESpecularLightingElement),List())))) */
 }
-trait SVGFEMorphologyElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEMorphologyElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var operator: SVGAnimatedEnumeration = _
   var radiusX: SVGAnimatedNumber = _
   var radiusY: SVGAnimatedNumber = _
@@ -1342,14 +1342,14 @@ object SVGFEMorphologyElement extends js.Object {
   var SVG_MORPHOLOGY_OPERATOR_DILATE: js.Number = _
 }
 
-trait SVGFEFuncRElement extends SVGComponentTransferFunctionElement {
+class SVGFEFuncRElement extends SVGComponentTransferFunctionElement {
 }
 
 object SVGFEFuncRElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEFuncRElement),List())))) */
 }
 
-trait SVGFEDisplacementMapElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEDisplacementMapElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var in2: SVGAnimatedString = _
   var xChannelSelector: SVGAnimatedEnumeration = _
   var yChannelSelector: SVGAnimatedEnumeration = _
@@ -1371,7 +1371,7 @@ object SVGFEDisplacementMapElement extends js.Object {
   var SVG_CHANNEL_A: js.Number = _
 }
 
-trait SVGComponentTransferFunctionElement extends SVGElement {
+class SVGComponentTransferFunctionElement extends SVGElement {
   var tableValues: SVGAnimatedNumberList = _
   var slope: SVGAnimatedNumber = _
   var `type`: SVGAnimatedEnumeration = _
@@ -1397,7 +1397,7 @@ object SVGComponentTransferFunctionElement extends js.Object {
   var SVG_FECOMPONENTTRANSFER_TYPE_LINEAR: js.Number = _
 }
 
-trait SVGFEDistantLightElement extends SVGElement {
+class SVGFEDistantLightElement extends SVGElement {
   var azimuth: SVGAnimatedNumber = _
   var elevation: SVGAnimatedNumber = _
 }
@@ -1406,14 +1406,14 @@ object SVGFEDistantLightElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEDistantLightElement),List())))) */
 }
 
-trait SVGFEFuncBElement extends SVGComponentTransferFunctionElement {
+class SVGFEFuncBElement extends SVGComponentTransferFunctionElement {
 }
 
 object SVGFEFuncBElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEFuncBElement),List())))) */
 }
 
-trait SVGFETurbulenceElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFETurbulenceElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var baseFrequencyX: SVGAnimatedNumber = _
   var numOctaves: SVGAnimatedInteger = _
   var `type`: SVGAnimatedEnumeration = _
@@ -1438,14 +1438,14 @@ object SVGFETurbulenceElement extends js.Object {
   var SVG_STITCHTYPE_STITCH: js.Number = _
 }
 
-trait SVGFEFuncGElement extends SVGComponentTransferFunctionElement {
+class SVGFEFuncGElement extends SVGComponentTransferFunctionElement {
 }
 
 object SVGFEFuncGElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEFuncGElement),List())))) */
 }
 
-trait SVGFEColorMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEColorMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var in1: SVGAnimatedString = _
   var `type`: SVGAnimatedEnumeration = _
   var values: SVGAnimatedNumberList = _
@@ -1465,7 +1465,7 @@ object SVGFEColorMatrixElement extends js.Object {
   var SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: js.Number = _
 }
 
-trait SVGFESpotLightElement extends SVGElement {
+class SVGFESpotLightElement extends SVGElement {
   var pointsAtY: SVGAnimatedNumber = _
   var y: SVGAnimatedNumber = _
   var limitingConeAngle: SVGAnimatedNumber = _
@@ -1480,7 +1480,7 @@ object SVGFESpotLightElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFESpotLightElement),List())))) */
 }
 
-trait SVGFEOffsetElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEOffsetElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var dy: SVGAnimatedNumber = _
   var in1: SVGAnimatedString = _
   var dx: SVGAnimatedNumber = _
@@ -1489,14 +1489,14 @@ trait SVGFEOffsetElement extends SVGElement with SVGFilterPrimitiveStandardAttri
 object SVGFEOffsetElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEOffsetElement),List())))) */
 }
-trait SVGFEImageElement extends SVGElement with SVGLangSpace with SVGFilterPrimitiveStandardAttributes with SVGURIReference with SVGExternalResourcesRequired {
+class SVGFEImageElement extends SVGElement with SVGLangSpace with SVGFilterPrimitiveStandardAttributes with SVGURIReference with SVGExternalResourcesRequired {
   var preserveAspectRatio: SVGAnimatedPreserveAspectRatio = _
 }
 
 object SVGFEImageElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEImageElement),List())))) */
 }
-trait SVGFECompositeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFECompositeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var operator: SVGAnimatedEnumeration = _
   var in2: SVGAnimatedString = _
   var k2: SVGAnimatedNumber = _
@@ -1523,7 +1523,7 @@ object SVGFECompositeElement extends js.Object {
   var SVG_FECOMPOSITE_OPERATOR_IN: js.Number = _
   var SVG_FECOMPOSITE_OPERATOR_ATOP: js.Number = _
 }
-trait SVGFEComponentTransferElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEComponentTransferElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var in1: SVGAnimatedString = _
 }
 
@@ -1531,7 +1531,7 @@ object SVGFEComponentTransferElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEComponentTransferElement),List())))) */
 }
 
-trait SVGFEDiffuseLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEDiffuseLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var kernelUnitLengthY: SVGAnimatedNumber = _
   var surfaceScale: SVGAnimatedNumber = _
   var in1: SVGAnimatedString = _
@@ -1549,7 +1549,7 @@ object SVGFEConvolveMatrixElement extends js.Object {
   var SVG_EDGEMODE_UNKNOWN: js.Number = _
   var SVG_EDGEMODE_NONE: js.Number = _
 }
-trait SVGFEConvolveMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+class SVGFEConvolveMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   var orderY: SVGAnimatedInteger = _
   var kernelUnitLengthY: SVGAnimatedNumber = _
   var orderX: SVGAnimatedInteger = _
