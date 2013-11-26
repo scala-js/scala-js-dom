@@ -18,17 +18,33 @@ class EasySeq[T](jsLength: js.Number, jsApply: js.Number => T) extends Seq[T]{
   }
 }
 
-
+case class Color(r: Int, g: Int, b: Int){
+  override def toString() = s"rgb($r, $g, $b)"
+  def *(c: Color) = Color(r * c.r, g * c.g, b * c.b)
+  def +(c: Color) = Color(r + c.r, g + c.g, b + c.b)
+}
 object Color{
-  def rgb(r: Int, g: Int, b: Int) = s"rgb($r, $g, $b)"
-  val White = rgb(255, 255, 255)
-  val Red = rgb(255, 0, 0)
-  val Green = rgb(0, 255, 0)
-  val Blue = rgb(0, 0, 255)
-  val Cyan = rgb(0, 255, 255)
-  val Magenta = rgb(255, 0, 255)
-  val Yellow = rgb(255, 255, 0)
-  val Black = rgb(0, 0, 0)
+
+  val d = "[0-9a-zA-Z]"
+  val RGB = "rgb\\((\\d+), (\\d+), (\\d+)\\)".r
+  val ShortHex = s"#($d)($d)($d)".r
+  val LongHex = s"#($d$d)($d$d)($d$d)".r
+  def hex(x: String) = Integer.parseInt(x, 16)
+  def apply(s: String): Color = {
+    s match{
+      case RGB(r, g, b) => Color(r.toInt, g.toInt, b.toInt)
+      case ShortHex(r, g, b) => Color(hex(r) * 16, hex(g) * 16, hex(b) * 16)
+      case LongHex(r, g, b) => Color(hex(r), hex(g), hex(b))
+    }
+  }
+  val White = Color(255, 255, 255)
+  val Red = Color(255, 0, 0)
+  val Green = Color(0, 255, 0)
+  val Blue = Color(0, 0, 255)
+  val Cyan = Color(0, 255, 255)
+  val Magenta = Color(255, 0, 255)
+  val Yellow = Color(255, 255, 0)
+  val Black = Color(0, 0, 0)
   val all = Seq(
     White,
     Red,

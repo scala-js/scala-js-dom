@@ -23,19 +23,23 @@ package object extensions {
       prepCircle(x, y, r)
       ctx.stroke()
     }
-    def prepPath(points: (js.Number, js.Number)*) = {
+    def prepPath(points: Seq[(js.Number, js.Number)], closed: Boolean = true) = {
       ctx.beginPath()
-      ctx.moveTo(points.last._1, points.last._2)
+      if (closed) ctx.moveTo(points.last._1, points.last._2)
       for(p <- points){
         ctx.lineTo(p._1, p._2)
       }
     }
     def fillPath(points: (js.Number, js.Number)*) = {
-      prepPath(points:_*)
+      prepPath(points)
       ctx.fill()
     }
     def strokePath(points: (js.Number, js.Number)*) = {
-      prepPath(points:_*)
+      prepPath(points)
+      ctx.stroke()
+    }
+    def strokePathOpen(points: (js.Number, js.Number)*) = {
+      prepPath(points, closed = false)
       ctx.stroke()
     }
   }

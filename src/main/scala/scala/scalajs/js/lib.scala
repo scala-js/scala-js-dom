@@ -1684,7 +1684,7 @@ trait NodeListOf[TNode <: Node] extends NodeList {
   
 }
 
-trait XMLSerializer extends js.Object {
+class XMLSerializer extends js.Object {
   def serializeToString(target: Node): js.String = ???
 }
 
@@ -1944,6 +1944,7 @@ object Audio extends js.Object {
 object Option extends js.Object {
 /* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(text),true,Some(TypeRef(CoreType(string),List()))), FunParam(Ident(value),true,Some(TypeRef(CoreType(string),List()))), FunParam(Ident(defaultSelected),true,Some(TypeRef(CoreType(boolean),List()))), FunParam(Ident(selected),true,Some(TypeRef(CoreType(boolean),List())))),Some(TypeRef(TypeName(HTMLOptionElement),List())))) */
 }
+
 
 object Image extends js.Object {
 /* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(width),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(height),true,Some(TypeRef(CoreType(number),List())))),Some(TypeRef(TypeName(HTMLImageElement),List())))) */
@@ -2471,7 +2472,7 @@ object Worker extends js.Object {
 
 }
 package js{
-  object JsGlobals extends js.GlobalScope {
+  object globals extends js.GlobalScope {
     def parseInt(string: js.String, radix: js.Number): js.Number = ???
     def parseFloat(string: js.String, radix: js.Number): js.Number = ???
     var ondragend: js.Function1[DragEvent, js.Any] = _
