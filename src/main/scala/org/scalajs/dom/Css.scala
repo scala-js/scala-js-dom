@@ -1,5 +1,6 @@
-package scala.scalajs
-package js
+package org.scalajs.dom
+
+import scala.scalajs.js
 
 trait CSSStyleDeclaration extends js.Object {
   var backgroundAttachment: js.String = _

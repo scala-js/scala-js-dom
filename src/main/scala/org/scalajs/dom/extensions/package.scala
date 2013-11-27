@@ -1,12 +1,13 @@
-package scala.scalajs
+package org.scalajs.dom
 
-import scala.scalajs.js.CanvasRenderingContext2D
+import scala.scalajs.js
+import org.scalajs.dom
 
 package object extensions {
-  implicit class PimpedNodeList(nodes: js.NodeList) extends EasySeq[js.Node](nodes.length, nodes.apply)
-  implicit class PimpedTouchList(nodes: js.TouchList) extends EasySeq[js.TouchEvent](nodes.length, nodes.apply)
-  implicit class PimpedHtmlCollection(coll: js.HTMLCollection) extends EasySeq[js.Element](coll.length, coll.apply)
-  implicit class PimpedSVGTransformList(coll: js.SVGTransformList) extends EasySeq[js.SVGTransform](coll.numberOfItems, coll.getItem)
+  implicit class PimpedNodeList(nodes: dom.NodeList) extends EasySeq[dom.Node](nodes.length, nodes.apply)
+  implicit class PimpedTouchList(nodes: dom.TouchList) extends EasySeq[dom.TouchEvent](nodes.length, nodes.apply)
+  implicit class PimpedHtmlCollection(coll: dom.HTMLCollection) extends EasySeq[dom.Element](coll.length, coll.apply)
+  implicit class PimpedSVGTransformList(coll: dom.SVGTransformList) extends EasySeq[dom.SVGTransform](coll.numberOfItems, coll.getItem)
   implicit class Castable(x: js.Dynamic){
     def to[T] = x.asInstanceOf[T]
   }

@@ -1,6 +1,8 @@
-package scala.scalajs
+package org.scalajs
 
-package js {
+import scala.scalajs.js
+
+package dom {
 
 trait PositionOptions extends js.Object {
   var enableHighAccuracy: js.Boolean = _
@@ -279,7 +281,7 @@ object MouseEvent extends js.Object {
 trait RangeException extends js.Object {
   var code: js.Number = _
   var message: js.String = _
-  
+
   var INVALID_NODE_TYPE_ERR: js.Number = _
   var BAD_BOUNDARYPOINTS_ERR: js.Number = _
   var name: js.String = _
@@ -384,7 +386,7 @@ trait Selection extends js.Object {
   var rangeCount: js.Number = _
   def addRange(range: Range): Unit = ???
   def collapseToEnd(): Unit = ???
-  
+
   def selectAllChildren(parentNode: Node): Unit = ???
   def getRangeAt(index: js.Number): Range = ???
   def collapse(parentNode: Node, offset: js.Number): Unit = ???
@@ -552,7 +554,7 @@ trait Window extends EventTarget with MSEventAttachmentTarget with WindowLocalSt
   def prompt(message: js.String, defaul: js.String): js.String = ???
   def prompt(message: js.String): js.String = ???
   def prompt(): js.String = ???
-  
+
   def open(url: js.String, target: js.String, features: js.String, replace: js.Boolean): Window = ???
   def open(url: js.String, target: js.String, features: js.String): Window = ???
   def open(url: js.String, target: js.String): Window = ???
@@ -1130,7 +1132,7 @@ trait Range extends js.Object {
   def selectNode(refNode: Node): Unit = ???
   def detach(): Unit = ???
   def getBoundingClientRect(): ClientRect = ???
-  
+
   def compareBoundaryPoints(how: js.Number, sourceRange: Range): js.Number = ???
   def insertNode(newNode: Node): Unit = ???
   def collapse(toStart: js.Boolean): Unit = ???
@@ -1268,7 +1270,7 @@ object PerformanceTiming extends js.Object {
 trait EventException extends js.Object {
   var code: js.Number = _
   var message: js.String = _
-  
+
   var DISPATCH_REQUEST_ERR: js.Number = _
   var UNSPECIFIED_EVENT_TYPE_ERR: js.Number = _
   var name: js.String = _
@@ -1338,7 +1340,7 @@ trait Location extends js.Object {
   def reload(): Unit = ???
   def replace(url: js.String): Unit = ???
   def assign(url: js.String): Unit = ???
-  
+
 }
 
 object Location extends js.Object {
@@ -1399,7 +1401,7 @@ object Text extends js.Object {
 trait PositionError extends js.Object {
   var code: js.Number = _
   var message: js.String = _
-  
+
   var POSITION_UNAVAILABLE: js.Number = _
   var PERMISSION_DENIED: js.Number = _
   var TIMEOUT: js.Number = _
@@ -1560,7 +1562,7 @@ trait MediaList extends js.Object {
   def apply(index: js.Number): js.String = ???
   @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.String): Unit = ???
-  
+
 }
 
 object MediaList extends js.Object {
@@ -1681,7 +1683,7 @@ trait NodeListOf[TNode <: Node] extends NodeList {
   override def item(index: js.Number): TNode = ???
   @scala.scalajs.js.annotation.JSBracketAccess
   override def apply(index: js.Number): TNode = ???
-  
+
 }
 
 class XMLSerializer extends js.Object {
@@ -1819,7 +1821,7 @@ object CharacterData extends js.Object {
 trait DOMException extends js.Object {
   var code: js.Number = _
   var message: js.String = _
-  
+
   var HIERARCHY_REQUEST_ERR: js.Number = _
   var NO_MODIFICATION_ALLOWED_ERR: js.Number = _
   var INVALID_MODIFICATION_ERR: js.Number = _
@@ -2004,7 +2006,7 @@ trait DOMTokenList extends js.Object {
   def apply(index: js.Number): js.String = ???
   @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.String): Unit = ???
-  
+
 }
 
 object DOMTokenList extends js.Object {
@@ -2047,7 +2049,7 @@ object MediaQueryList extends js.Object {
 
 trait DOMError extends js.Object {
   var name: js.String = _
-  
+
 }
 
 object DOMError extends js.Object {
@@ -2471,7 +2473,8 @@ object Worker extends js.Object {
 }
 
 }
-package js{
+
+package dom {
   object globals extends js.GlobalScope {
     def parseInt(string: js.String, radix: js.Number): js.Number = ???
     def parseFloat(string: js.String, radix: js.Number): js.Number = ???

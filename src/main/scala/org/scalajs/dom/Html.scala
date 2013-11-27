@@ -1,5 +1,6 @@
-package scala.scalajs
-package js
+package org.scalajs.dom
+
+import scala.scalajs.js
 
 trait HTMLTableElement extends HTMLElement with MSDataBindingTableExtensions with MSDataBindingExtensions {
   var width: js.String = _
