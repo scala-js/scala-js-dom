@@ -418,7 +418,14 @@ class DOMImplementation extends js.Object {
   def createHTMLDocument(title: js.String): Document = ???
 }
 
-
+/**
+ * The Element interface represents part of the document. This interface describes
+ * methods and properties common to each kind of elements. Specific behaviors are
+ * described in the specific interfaces, inheriting from Element: the HTMLElement
+ * interface for HTML elements, or the SVGElement interface for SVG elements.
+ *
+ * MDN
+ */
 class Element extends Node with NodeSelector {
   /**
    * scrollTop gets or sets the number of pixels that the content of an element is
