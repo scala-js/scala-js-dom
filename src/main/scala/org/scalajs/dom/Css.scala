@@ -1,5 +1,15 @@
+/**
+ * Documentation thanks to Mozilla Contributors
+ * https://developer.mozilla.org/en-US/docs/Web/API
+ */
+
 package org.scalajs.dom
+
 import scala.scalajs.js
+/**
+  * A CSSStyleDeclaration is an interface to the declaration block returned by the
+  * style property of a cssRule in a stylesheet, when the rule is a CSSStyleRule.
+*/
 class CSSStyleDeclaration extends js.Object {
   var backgroundAttachment: js.String = _
   var visibility: js.String = _
@@ -279,6 +289,10 @@ class CSSStyleDeclaration extends js.Object {
   var msFlexPreferredSize: js.String = _
 }
 
+/**
+  * An object implementing the CSSStyleSheet interface represents a single CSS style
+  * sheet.
+*/
 class CSSStyleSheet extends StyleSheet {
   var owningElement: Element = _
   var imports: StyleSheetList = _
@@ -286,19 +300,32 @@ class CSSStyleSheet extends StyleSheet {
   var isPrefAlternate: js.Boolean = _
   var readOnly: js.Boolean = _
   var cssText: js.String = _
+/**
+  * If this style sheet is imported into the document using an @import rule, the
+  * ownerRule property will return that CSSImportRule, otherwise it returns null.
+*/
   var ownerRule: CSSRule = _
   var href: js.String = _
+/**
+  * Returns a CSSRuleList of the CSS rules in the style sheet.
+*/
   var cssRules: CSSRuleList = _
   var id: js.String = _
-  var pages: StyleSheetPageList = _
   def addImport(bstrURL: js.String, lIndex: js.Number): js.Number = ???
   def addImport(bstrURL: js.String): js.Number = ???
   def addPageRule(bstrSelector: js.String, bstrStyle: js.String, lIndex: js.Number): js.Number = ???
   def addPageRule(bstrSelector: js.String, bstrStyle: js.String): js.Number = ???
   def insertRule(rule: js.String, index: js.Number): js.Number = ???
+/**
+  * The CSSStyleSheet.insertRule() method inserts a new style rule into the current
+  * style sheet.
+*/
   def insertRule(rule: js.String): js.Number = ???
   def removeRule(lIndex: js.Number): Unit = ???
   def deleteRule(index: js.Number): Unit = ???
+/**
+  * Deletes a rule from the style sheet.
+*/
   def deleteRule(): Unit = ???
   def addRule(bstrSelector: js.String, bstrStyle: js.String, lIndex: js.Number): js.Number = ???
   def addRule(bstrSelector: js.String, bstrStyle: js.String): js.Number = ???
@@ -306,12 +333,28 @@ class CSSStyleSheet extends StyleSheet {
   def removeImport(lIndex: js.Number): Unit = ???
 }
 
+/**
+  * CSSStyleRule represents a single CSS style rule. It implements the CSSRule
+  * interface with a type value of 1 (CSSRule.STYLE_RULE).
+*/
 class CSSStyleRule extends CSSRule {
+/**
+  * Gets/sets the textual representation of the selector for this rule, e.g. "h1,h2".
+*/
   var selectorText: js.String = _
   var readOnly: js.Boolean = _
 }
 
+/**
+  * CSSMediaRule is an object representing a single CSS @media rule. It implements the
+  * CSSConditionRule interface, and therefore the CSSGroupingRule and the CSSRule
+  * interface with a type value of 4 (CSSRule.MEDIA_RULE).
+*/
 class CSSMediaRule extends CSSRule {
+/**
+  * Specifies a MediaList representing the intended destination medium for style
+  * information.
+*/
   var media: MediaList = _
   var cssRules: CSSRuleList = _
   def insertRule(rule: js.String, index: js.Number): js.Number = ???
@@ -320,8 +363,20 @@ class CSSMediaRule extends CSSRule {
   def deleteRule(): Unit = ???
 }
 
+/**
+  * The CSSNamespaceRule interface describes an object representing a single CSS
+  * @@namespace at-rule. It implements the CSSRule interface, with a type value of 10
+  * (CSSRule.NAMESPACE_RULE).
+*/
 class CSSNamespaceRule extends CSSRule {
+/**
+  * Returns a DOMString containing the text of the URI of the given namespace.
+*/
   var namespaceURI: js.String = _
+/**
+  * Returns a DOMString with the name of the prefix associated to this namespace. If
+  * there is no such prefix, returns  null.
+*/
   var prefix: js.String = _
 }
 
@@ -331,9 +386,26 @@ class CSSImportRule extends CSSRule {
   var media: MediaList = _
 }
 
+/**
+  * An object implementing the CSSRule DOM interface represents a single CSS at-rule.
+  * References to a CSSRule-implementing object may be obtained by looking at a CSS
+  * style sheet's cssRules list.
+*/
 class CSSRule extends js.Object {
+/**
+  * cssText returns the actual text of the style rule. To be able to set a stylesheet rule
+  * dynamically, see Using dynamic styling information.
+*/
   var cssText: js.String = _
+/**
+  * parentStyleSheet returns the stylesheet object in which the current rule is
+  * defined.
+*/
   var parentStyleSheet: CSSStyleSheet = _
+/**
+  * Returns the containing rule, otherwise null. E.g. if this rule is a style rule
+  * inside an @media block, the parent rule would be that CSSMediaRule.
+*/
   var parentRule: CSSRule = _
   var `type`: js.Number = _
   var IMPORT_RULE: js.Number = _
@@ -349,6 +421,11 @@ class CSSRule extends js.Object {
   var VIEWPORT_RULE: js.Number = _
 }
 
+/**
+  * An object implementing the CSSRule DOM interface represents a single CSS at-rule.
+  * References to a CSSRule-implementing object may be obtained by looking at a CSS
+  * style sheet's cssRules list.
+*/
 object CSSRule extends js.Object {
   var IMPORT_RULE: js.Number = _
   var MEDIA_RULE: js.Number = _
@@ -364,15 +441,29 @@ class CSSFontFaceRule extends CSSRule {
 }
 
 
+/**
+  * CSSPageRule is an object representing a single CSS @page rule. It implements the
+  * CSSRule interface with a type value of 6 (CSSRule.PAGE_RULE).
+*/
 class CSSPageRule extends CSSRule {
   var pseudoClass: js.String = _
+/**
+  * Represents the text of the page selector associated with the at-rule.
+*/
   var selectorText: js.String = _
   var selector: js.String = _
+/**
+  * Returns the declaration block associated with the at-rule.
+*/
   var style: CSSStyleDeclaration = _
 }
 
 
 
+/**
+  * A CSSRuleList is an array-like object containing an ordered collection of CSSRule
+  * objects.
+*/
 class CSSRuleList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): CSSRule = ???
@@ -382,17 +473,58 @@ class CSSRuleList extends js.Object {
   def update(index: js.Number, v: CSSRule): Unit = ???
 }
 
+/**
+  * The CSSKeyframesRule interface describes an object representing a complete set
+  * of keyframes for a CSS animation. It corresponds to the contains of a whole
+  * @@keyframes at-rule. It implements the CSSRule interface with a type value of 7
+  * (CSSRule.KEYFRAMES_RULE).
+*/
 class CSSKeyframesRule extends CSSRule {
+/**
+  * Represents the name of the animation, used by the animation-name property.
+*/
   var name: js.String = _
+/**
+  * Returns a CSSRuleList of the CSS rules in the media rule.
+*/
   var cssRules: CSSRuleList = _
+/**
+  * Returns a keyframe rule corresponding to the given key. The key is a DOMString
+  * containing an index of the keyframe o be returned, resolving to a number between 0
+  * and 1. If no such keyframe exists, findRule returns null.
+*/
   def findRule(rule: js.String): CSSKeyframeRule = ???
+/**
+  * Deletes a keyframe rule from the current CSSKeyframesRule. The parameter is the
+  * index of the keyframe to be deleted, expressed as a DOMString resolving as a number
+  * between 0 and 1.
+*/
   def deleteRule(rule: js.String): Unit = ???
+/**
+  * Inserts a new keyframe rule into the current CSSKeyframesRule. The parameter is a
+  * DOMString containing a keyframe in the same format as an entry of a @keyframes
+  * at-rule. If it contains more than one keyframe rule, a DOMException with a
+  * SYNTAX_ERR is thrown.
+*/
   def appendRule(rule: js.String): Unit = ???
 }
 
 
 
+/**
+  * The CSSKeyframeRule interface describes an object representing a set of style for
+  * a given keyframe. It corresponds to the contains of a single keyframe of a
+  * @@keyframes at-rule. It implements the CSSRule interface with a type value of 8
+  * (CSSRule.KEYFRAME_RULE).
+*/
 class CSSKeyframeRule extends CSSRule {
+/**
+  * Represents the key of the keyframe, like '10%', '75%'. The from keyword maps to '0%'
+  * and the to keyword maps to '100%'.
+*/
   var keyText: js.String = _
+/**
+  * Returns a CSSStyleDeclaration of the CSS style associated with the keyfrom.
+*/
   var style: CSSStyleDeclaration = _
 }
