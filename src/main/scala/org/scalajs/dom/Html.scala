@@ -28,7 +28,7 @@ class HTMLTableElement extends HTMLElement {
    * MDN
    */
   var width: js.String = _
-  var borderColorLight: js.Any = _
+
   /**
    * Is a DOMString containing the width in pixels of the horizontal and vertical
    * separation between cells. It reflects the obsolete cellspacing attribute.
@@ -56,7 +56,7 @@ class HTMLTableElement extends HTMLElement {
    * MDN
    */
   var frame: js.String = _
-  var borderColor: js.Any = _
+
   /**
    * Returns a live HTMLCollection containing all the rows of the element, that is all
    * <tr> that are a child of the element, or a child or one of its <thead>, <tbody> and
@@ -122,8 +122,7 @@ class HTMLTableElement extends HTMLElement {
    * MDN
    */
   var align: js.String = _
-  var cells: HTMLCollection = _
-  var height: js.Any = _
+
   /**
    * Is a DOMString containing the width in pixels of the horizontal and vertical sapce
    * between cell content and cell borders. It reflects the obsolete cellpadding
@@ -139,7 +138,6 @@ class HTMLTableElement extends HTMLElement {
    * MDN
    */
   var border: js.String = _
-  var borderColorDark: js.Any = _
 
   def deleteRow(index: js.Number): Unit = ???
 

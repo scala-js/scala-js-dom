@@ -32,7 +32,7 @@ class PositionOptions extends js.Object {
    *
    * MDN
    */
-  var enableHighAccuracy: js.Boolean = _
+  var enableHighAccuracy: js.Boolean = ???
   /**
    * The PositionOptions.timeout property is a positive long value representing the
    * maximum length of time (in milliseconds) the device is allowed to take in order to
@@ -41,7 +41,7 @@ class PositionOptions extends js.Object {
    *
    * MDN
    */
-  var timeout: js.Number = _
+  var timeout: js.Number = ???
   /**
    * The PositionOptions.maximumAge property is a positive long value indicating the
    * maximum age in milliseconds of a possible cached position that is acceptable to
@@ -51,7 +51,7 @@ class PositionOptions extends js.Object {
    *
    * MDN
    */
-  var maximumAge: js.Number = _
+  var maximumAge: js.Number = ???
 }
 
 /**
@@ -69,26 +69,26 @@ trait NavigatorID extends js.Object {
    *
    * MDN
    */
-  var appVersion: js.String = _
+  def appVersion: js.String = ???
   /**
    * Returns the name of the browser. The HTML5 specification also allows any browser to
    * return "Netscape" here, for compatibility reasons.
    *
    * MDN
    */
-  var appName: js.String = _
+  def appName: js.String = ???
   /**
    * Returns the user agent string for the current browser.
    *
    * MDN
    */
-  var userAgent: js.String = _
+  def userAgent: js.String = ???
   /**
    * Returns a string representing the platform of the browser.
    *
    * MDN
    */
-  var platform: js.String = _
+  def platform: js.String = ???
 }
 
 /**
@@ -127,28 +127,28 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  var whatToShow: js.Number = _
+  var whatToShow: js.Number = ???
   /**
    * The TreeWalker.filter read-only property returns a NodeFilter that is the
    * filtering object associated with the TreeWalker.
    *
    * MDN
    */
-  var filter: NodeFilter = _
+  def filter: NodeFilter = ???
   /**
    * The TreeWalker.root read-only property returns the node that is the root of what
    * the TreeWalker traverses.
    *
    * MDN
    */
-  var root: Node = _
+  def root: Node = ???
   /**
    * The TreeWalker.currentNode property represents the Node on which the TreeWalker
    * is currently pointing at.
    *
    * MDN
    */
-  var currentNode: Node = _
+  def currentNode: Node = ???
   /**
    * The TreeWalker.expandEntityReferences read-only property returns a Boolean
    * flag indicating whether or not the children of entity reference nodes are visible
@@ -156,7 +156,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  var expandEntityReferences: js.Boolean = _
+  def expandEntityReferences: js.Boolean = ???
 
   /**
    * The TreeWalker.previousSibling() method moves the current Node to its previous
@@ -244,14 +244,14 @@ class Performance extends js.Object {
    *
    * MDN
    */
-  var navigation: PerformanceNavigation = _
+  def navigation: PerformanceNavigation = ???
   /**
    * The Performance.timing read-only property returns a PerformanceTiming object
    * containing latency-related performance information.
    *
    * MDN
    */
-  var timing: PerformanceTiming = _
+  def timing: PerformanceTiming = ???
 
   def getEntriesByType(entryType: js.String): js.Dynamic = ???
 
@@ -324,14 +324,14 @@ class CompositionEvent extends UIEvent {
    *
    * MDN
    */
-  val data: js.String = ???
+  def data: js.String = ???
   /**
    * The locale of current input method (for example, the keyboard layout locale if the
    * composition is associated with IME). Read only.
    *
    * MDN
    */
-  val locale: js.String = ???
+  def locale: js.String = ???
 
   /**
    * Initializes the attributes of a composition event.
@@ -367,12 +367,12 @@ trait NodeSelector extends js.Object {
 }
 
 class ClientRect extends js.Object {
-  var left: js.Number = _
-  var width: js.Number = _
-  var right: js.Number = _
-  var top: js.Number = _
-  var bottom: js.Number = _
-  var height: js.Number = _
+  var left: js.Number = ???
+  var width: js.Number = ???
+  var right: js.Number = ???
+  var top: js.Number = ???
+  var bottom: js.Number = ???
+  var height: js.Number = ???
 }
 
 
@@ -433,7 +433,7 @@ class Element extends Node with NodeSelector {
    *
    * MDN
    */
-  var scrollTop: js.Number = _
+  var scrollTop: js.Number = ???
   /**
    * The width of the left border of an element in pixels. It includes the width of the
    * vertical scrollbar if the text direction of the element is right–to–left and if
@@ -442,14 +442,14 @@ class Element extends Node with NodeSelector {
    *
    * MDN
    */
-  var clientLeft: js.Number = _
+  def clientLeft: js.Number = ???
   /**
    * scrollLeft gets or sets the number of pixels that an element's content is scrolled
    * to the left.
    *
    * MDN
    */
-  var scrollLeft: js.Number = _
+  var scrollLeft: js.Number = ???
   /**
    * In XML (and XML-based languages such as XHTML), tagName preserves case. On
    * HTML elements in DOM trees flagged as HTML documents, tagName returns the
@@ -458,14 +458,14 @@ class Element extends Node with NodeSelector {
    *
    * MDN
    */
-  var tagName: js.String = _
+  def tagName: js.String = ???
   /**
    * clientWidth is the inner width of an element in pixels. It includes padding but not
    * the vertical scrollbar (if present, if rendered), border or margin.
    *
    * MDN
    */
-  var clientWidth: js.Number = _
+  def clientWidth: js.Number = ???
   /**
    * scrollWidth is a read–only property that returns either the width in pixels of the
    * content of an element or the width of the element itself, whichever is greater. If
@@ -474,22 +474,22 @@ class Element extends Node with NodeSelector {
    *
    * MDN
    */
-  var scrollWidth: js.Number = _
-  var clientHeight: js.Number = _
+  def scrollWidth: js.Number = ???
+  def clientHeight: js.Number = ???
   /**
    * The width of the top border of an element in pixels. It does not include the top margin
    * or padding. clientTop is read-only.
    *
    * MDN
    */
-  var clientTop: js.Number = _
+  def clientTop: js.Number = ???
   /**
    * Height of the scroll view of an element; it includes the element padding but not its
    * margin.
    *
    * MDN
    */
-  var scrollHeight: js.Number = _
+  def scrollHeight: js.Number = ???
 
   def getAttribute(name: js.String): js.String = ???
 
@@ -656,14 +656,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var nodeType: js.Number = _
+  def nodeType: js.Number = ???
   /**
    * Returns the node immediately preceding the specified one in its parent's
    * childNodes list, null if the specified node is the first in that list.
    *
    * MDN
    */
-  var previousSibling: Node = _
+  def previousSibling: Node = ???
   /**
    * Returns a DOMString representing the local part of the qualified name of an
    * element. In Firefox 3.5 and earlier, the property upper-cases the local name for
@@ -674,7 +674,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var localName: js.String = _
+  def localName: js.String = ???
   /**
    * The namespace URI of this node, or null if it is no namespace. In Firefox 3.5 and
    * earlier, HTML elements are in no namespace. In later versions, HTML elements are
@@ -684,14 +684,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var namespaceURI: js.String = _
+  def namespaceURI: js.String = ???
   /**
    * Is a DOMString representing the textual content of an element and all its
    * descendants.
    *
    * MDN
    */
-  var textContent: js.String = _
+  var textContent: js.String = ???
   /**
    * Returns a Node that is the parent of this node. If there is no such node, like if this
    * node is the top of the tree or if doesn't participate in a tree, this property returns
@@ -699,14 +699,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var parentNode: Node = _
+  def parentNode: Node = ???
   /**
    * Returns the node immediately following the specified one in its parent's
    * childNodes list, or null if the specified node is the last node in that list.
    *
    * MDN
    */
-  var nextSibling: Node = _
+  def nextSibling: Node = ???
   /**
    * Is a DOMString representing the value of an object. For most Node type, this returns
    * null and any set operation is ignored. For nodes of type TEXT_NODE (Text objects),
@@ -716,14 +716,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var nodeValue: js.String = _
+  def nodeValue: js.String = ???
   /**
    * Returns a Node representing the last direct child node of the node, or null if the
    * node has no child.
    *
    * MDN
    */
-  var lastChild: Node = _
+  def lastChild: Node = ???
   /**
    * Returns a live NodeList containing all the children of this node. NodeList being
    * live means that if the children of the Node change, the NodeList object is
@@ -731,7 +731,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var childNodes: NodeList = _
+  def childNodes: NodeList = ???
   /**
    * Returns a DOMString containing the name of the Node. The structure of the name will
    * differ with the name type. E.g. An HTMLElement will contain the name of the
@@ -740,14 +740,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var nodeName: js.String = _
+  def nodeName: js.String = ???
   /**
    * Returns the Document that this node belongs to. If no document is associated with
    * it, returns null.
    *
    * MDN
    */
-  var ownerDocument: Document = _
+  def ownerDocument: Document = ???
   /**
    * .attributes is a collection of all attribute nodes registered to the specified
    * node. It is a NamedNodeMap,not an Array, so it has no Array methods and the Attr
@@ -761,14 +761,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var attributes: NamedNodeMap = _
+  def attributes: NamedNodeMap = ???
   /**
    * Returns the node's first child in the tree, or null if the node is childless. If the
    * node is a Document, it returns the first node in the list of its direct children.
    *
    * MDN
    */
-  var firstChild: Node = _
+  def firstChild: Node = ???
   /**
    * Is a DOMString representing the namespace prefix of the node, or null if no prefix is
    * specified. Though the specification requires localName to be defined on the Node
@@ -776,7 +776,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var prefix: js.String = _
+  var prefix: js.String = ???
 
   /**
    * Removes a child node from the current element, which must be a child of the current
@@ -903,24 +903,24 @@ class Node extends EventTarget {
    */
   def insertBefore(newChild: Node): Node = ???
 
-  var ENTITY_REFERENCE_NODE: js.Number = _
-  var ATTRIBUTE_NODE: js.Number = _
-  var DOCUMENT_FRAGMENT_NODE: js.Number = _
-  var TEXT_NODE: js.Number = _
-  var ELEMENT_NODE: js.Number = _
-  var COMMENT_NODE: js.Number = _
-  var DOCUMENT_POSITION_DISCONNECTED: js.Number = _
-  var DOCUMENT_POSITION_CONTAINED_BY: js.Number = _
-  var DOCUMENT_POSITION_CONTAINS: js.Number = _
-  var DOCUMENT_TYPE_NODE: js.Number = _
-  var DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: js.Number = _
-  var DOCUMENT_NODE: js.Number = _
-  var ENTITY_NODE: js.Number = _
-  var PROCESSING_INSTRUCTION_NODE: js.Number = _
-  var CDATA_SECTION_NODE: js.Number = _
-  var NOTATION_NODE: js.Number = _
-  var DOCUMENT_POSITION_FOLLOWING: js.Number = _
-  var DOCUMENT_POSITION_PRECEDING: js.Number = _
+  def ENTITY_REFERENCE_NODE: js.Number = ???
+  def ATTRIBUTE_NODE: js.Number = ???
+  def DOCUMENT_FRAGMENT_NODE: js.Number = ???
+  def TEXT_NODE: js.Number = ???
+  def ELEMENT_NODE: js.Number = ???
+  def COMMENT_NODE: js.Number = ???
+  def DOCUMENT_POSITION_DISCONNECTED: js.Number = ???
+  def DOCUMENT_POSITION_CONTAINED_BY: js.Number = ???
+  def DOCUMENT_POSITION_CONTAINS: js.Number = ???
+  def DOCUMENT_TYPE_NODE: js.Number = ???
+  def DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: js.Number = ???
+  def DOCUMENT_NODE: js.Number = ???
+  def ENTITY_NODE: js.Number = ???
+  def PROCESSING_INSTRUCTION_NODE: js.Number = ???
+  def CDATA_SECTION_NODE: js.Number = ???
+  def NOTATION_NODE: js.Number = ???
+  def DOCUMENT_POSITION_FOLLOWING: js.Number = ???
+  def DOCUMENT_POSITION_PRECEDING: js.Number = ???
 }
 
 /**
@@ -930,119 +930,114 @@ class Node extends EventTarget {
  * MDN
  */
 object Node extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Node),List())))) */
-  var ENTITY_REFERENCE_NODE: js.Number = _
-  var ATTRIBUTE_NODE: js.Number = _
-  var DOCUMENT_FRAGMENT_NODE: js.Number = _
-  var TEXT_NODE: js.Number = _
-  var ELEMENT_NODE: js.Number = _
-  var COMMENT_NODE: js.Number = _
-  var DOCUMENT_POSITION_DISCONNECTED: js.Number = _
-  var DOCUMENT_POSITION_CONTAINED_BY: js.Number = _
-  var DOCUMENT_POSITION_CONTAINS: js.Number = _
-  var DOCUMENT_TYPE_NODE: js.Number = _
-  var DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: js.Number = _
-  var DOCUMENT_NODE: js.Number = _
-  var ENTITY_NODE: js.Number = _
-  var PROCESSING_INSTRUCTION_NODE: js.Number = _
-  var CDATA_SECTION_NODE: js.Number = _
-  var NOTATION_NODE: js.Number = _
-  var DOCUMENT_POSITION_FOLLOWING: js.Number = _
-  var DOCUMENT_POSITION_PRECEDING: js.Number = _
+  def ENTITY_REFERENCE_NODE: js.Number = ???
+  def ATTRIBUTE_NODE: js.Number = ???
+  def DOCUMENT_FRAGMENT_NODE: js.Number = ???
+  def TEXT_NODE: js.Number = ???
+  def ELEMENT_NODE: js.Number = ???
+  def COMMENT_NODE: js.Number = ???
+  def DOCUMENT_POSITION_DISCONNECTED: js.Number = ???
+  def DOCUMENT_POSITION_CONTAINED_BY: js.Number = ???
+  def DOCUMENT_POSITION_CONTAINS: js.Number = ???
+  def DOCUMENT_TYPE_NODE: js.Number = ???
+  def DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: js.Number = ???
+  def DOCUMENT_NODE: js.Number = ???
+  def ENTITY_NODE: js.Number = ???
+  def PROCESSING_INSTRUCTION_NODE: js.Number = ???
+  def CDATA_SECTION_NODE: js.Number = ???
+  def NOTATION_NODE: js.Number = ???
+  def DOCUMENT_POSITION_FOLLOWING: js.Number = ???
+  def DOCUMENT_POSITION_PRECEDING: js.Number = ???
 }
 
-/**
- * The DOM MouseEvent interface represents events that occur due to the user
- * interacting with a pointing device (such as a mouse).
- *
- * MDN
- */
-class MouseEvent extends UIEvent {
-  var toElement: Element = _
-  var layerY: js.Number = _
-  var fromElement: Element = _
-  var which: js.Number = _
-  var pageX: js.Number = _
-  var offsetY: js.Number = _
+trait ModifierKeyEvent extends js.Object{
   /**
    * The metaKey property indicates if the meta key was pressed (true) or not (false)
    * when the event occured.
    *
    * MDN
    */
-  var metaKey: js.Boolean = _
+  def metaKey: js.Boolean = ???
   /**
    * The altKey property indicates if the alt key was pressed (true) or not (false) when
    * the event occured.
    *
    * MDN
    */
-  var altKey: js.Boolean = _
+  def altKey: js.Boolean = ???
   /**
-   * The ctrlKey property indicates if the control key was pressed (true) or not (false)
-   * when the event occured.
+   * A Boolean value indicating whether or not the control key was down when the touch
+   * event was fired. Read only.
    *
    * MDN
    */
-  var ctrlKey: js.Boolean = _
-  var offsetX: js.Number = _
+  def ctrlKey: Boolean = ???
+  /**
+   * A Boolean value indicating whether or not the shift key was down when the touch event
+   * was fired. Read only.
+   *
+   * MDN
+   */
+  def shiftKey: Boolean = ???
+}
+/**
+ * The DOM MouseEvent interface represents events that occur due to the user
+ * interacting with a pointing device (such as a mouse).
+ *
+ * MDN
+ */
+class MouseEvent extends UIEvent with ModifierKeyEvent{
+
   /**
    * The screenX property provides the X coordinate of the mouse pointer in global
    * (screen) coordinates.
    *
    * MDN
    */
-  var screenX: js.Number = _
+  def screenX: js.Number = ???
   /**
    * The clientY property provides the Y coordinate of the mouse pointer in local (DOM
    * content) coordinates.
    *
    * MDN
    */
-  var clientY: js.Number = _
-  /**
-   * The shiftKey property indicates if the shift key was pressed (true) or not (false)
-   * when the event occurred.
-   *
-   * MDN
-   */
-  var shiftKey: js.Boolean = _
-  var layerX: js.Number = _
+  def clientY: js.Number = ???
+
   /**
    * The screenY property provides the Y coordinate of the mouse pointer in global
    * (screen) coordinates.
    *
    * MDN
    */
-  var screenY: js.Number = _
+  def screenY: js.Number = ???
   /**
    * The relatedTarget property is the secondary target for the event, if there is one.
    *
    * MDN
    */
-  var relatedTarget: EventTarget = _
+  def relatedTarget: EventTarget = ???
   /**
    * The button property indicates which button was pressed on the mouse to trigger the
    * event.
    *
    * MDN
    */
-  var button: js.Number = _
-  var pageY: js.Number = _
+  def button: js.Number = ???
+
   /**
    * The buttons property indicates which buttons were pressed on the mouse to trigger
    * the event.
    *
    * MDN
    */
-  var buttons: js.Number = _
+  def buttons: js.Number = ???
   /**
    * The clientX property provides the X coordinate of the mouse pointer in local (DOM
    * content) coordinates.
    *
    * MDN
    */
-  var clientX: js.Number = _
+  def clientX: js.Number = ???
 
   def initMouseEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, screenXArg: js.Number, screenYArg: js.Number, clientXArg: js.Number, clientYArg: js.Number, ctrlKeyArg: js.Boolean, altKeyArg: js.Boolean, shiftKeyArg: js.Boolean, metaKeyArg: js.Boolean, buttonArg: js.Number, relatedTargetArg: EventTarget): Unit = ???
 
@@ -1069,7 +1064,7 @@ class TextMetrics extends js.Object {
    *
    * MDN
    */
-  var width: js.Number = _
+  var width: js.Number = ???
 }
 
 
@@ -1089,7 +1084,7 @@ class CDATASection extends Text {
 
 
 trait StyleMedia extends js.Object {
-  var `type`: js.String = _
+  def `type`: js.String = ???
 
   def matchMedium(mediaquery: js.String): js.Boolean = ???
 }
@@ -1112,19 +1107,19 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  var isCollapsed: js.Boolean = _
+  def isCollapsed: js.Boolean = ???
   /**
    * Returns the node in which the selection begins.
    *
    * MDN
    */
-  var anchorNode: Node = _
+  def anchorNode: Node = ???
   /**
    * Returns the node in which the selection ends.
    *
    * MDN
    */
-  var focusNode: Node = _
+  def focusNode: Node = ???
   /**
    * Returns a number representing the offset of the selection's anchor within the
    * anchorNode. If anchorNode is a text node, this is the number of characters within
@@ -1133,7 +1128,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  var anchorOffset: js.Number = _
+  def anchorOffset: js.Number = ???
   /**
    * Returns a number representing the offset of the selection's anchor within the
    * focusNode. If focusNode is a text node, this is the number of characters within
@@ -1142,13 +1137,13 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  var focusOffset: js.Number = _
+  def focusOffset: js.Number = ???
   /**
    * Returns the number of ranges in the selection.
    *
    * MDN
    */
-  var rangeCount: js.Number = _
+  def rangeCount: js.Number = ???
 
   /**
    * A range object that will be added to the selection.
@@ -1258,21 +1253,21 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  var whatToShow: js.Number = _
+  var whatToShow: js.Number = ???
   /**
    * The NodeIterator.filter read-only method returns a NodeFilter object, that is an
    * object implement an acceptNode(node) method, used to screen nodes.
    *
    * MDN
    */
-  var filter: NodeFilter = _
+  def filter: NodeFilter = ???
   /**
    * The NodeIterator.root read-only property represents the Node that is the root of
    * what the NodeIterator traverses.
    *
    * MDN
    */
-  var root: Node = _
+  def root: Node = ???
   /**
    * The NodeIterator.expandEntityReferences read-only property returns a Boolean
    * flag indicating whether or not the children of entity reference nodes are visible
@@ -1280,7 +1275,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  var expandEntityReferences: js.Boolean = _
+  def expandEntityReferences: js.Boolean = ???
 
   /**
    * The NodeIterator.nextNode() method returns the next node in the set represented
@@ -1311,7 +1306,15 @@ class NodeIterator extends js.Object {
 
 
 trait WindowSessionStorage extends js.Object {
-  var sessionStorage: Storage = _
+  /**
+   * This is a global object (sessionStorage) that maintains a storage area that's
+   * available for the duration of the page session. A page session lasts for as
+   * long as the browser is open and survives over page reloads and restores.
+   * Opening a page in a new tab or window will cause a new session to be initiated.
+   *
+   * MDN
+   */
+  def sessionStorage: Storage = ???
 }
 
 /**
@@ -1325,48 +1328,48 @@ trait WindowSessionStorage extends js.Object {
  * MDN
  */
 class Window extends EventTarget with WindowLocalStorage with WindowSessionStorage with WindowTimers with WindowBase64 with IDBEnvironment with WindowConsole {
-  var ondragend: js.Function1[DragEvent, js.Any] = _
+  var ondragend: js.Function1[DragEvent, js.Any] = ???
   /**
    * An event handler property for keydown events on the window.
    *
    * MDN
    */
-  var onkeydown: js.Function1[KeyboardEvent, js.Any] = _
-  var ondragover: js.Function1[DragEvent, js.Any] = _
+  var onkeydown: js.Function1[KeyboardEvent, js.Any] = ???
+  var ondragover: js.Function1[DragEvent, js.Any] = ???
   /**
    * An event handler property for keyup events on the window.
    *
    * MDN
    */
-  var onkeyup: js.Function1[KeyboardEvent, js.Any] = _
+  var onkeyup: js.Function1[KeyboardEvent, js.Any] = ???
   /**
    * An event handler property for reset events on the window.
    *
    * MDN
    */
-  var onreset: js.Function1[Event, _] = _
+  var onreset: js.Function1[Event, _] = ???
   /**
    * An event handler property for mouseup events on the window.
    *
    * MDN
    */
-  var onmouseup: js.Function1[MouseEvent, js.Any] = _
-  var ondragstart: js.Function1[DragEvent, js.Any] = _
-  var ondrag: js.Function1[DragEvent, js.Any] = _
+  var onmouseup: js.Function1[MouseEvent, js.Any] = ???
+  var ondragstart: js.Function1[DragEvent, js.Any] = ???
+  var ondrag: js.Function1[DragEvent, js.Any] = ???
   /**
    * Returns the horizontal distance of the left border of the user's browser from the
    * left side of the screen.
    *
    * MDN
    */
-  var screenX: js.Number = _
+  var screenX: js.Number = ???
   /**
    * An event handler property for mouseover events on the window.
    *
    * MDN
    */
-  var onmouseover: js.Function1[MouseEvent, js.Any] = _
-  var ondragleave: js.Function1[DragEvent, js.Any] = _
+  var onmouseover: js.Function1[MouseEvent, js.Any] = ???
+  var ondragleave: js.Function1[DragEvent, js.Any] = ???
   /**
    * The Window.history read-only property returns a reference to the History object,
    * which provides an interface for manipulating the browser session history (pages
@@ -1374,50 +1377,57 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var history: History = _
-  var pageXOffset: js.Number = _
+  def history: History = ???
+
+  /**
+   * Returns the number of pixels that the document has already been scrolled
+   * horizontally.
+   *
+   * MDN
+   */
+  def pageXOffset: js.Number = ???
   /**
    * The name of the window is used primarily for setting targets for hyperlinks and
    * forms. Windows do not need to have names.
    *
    * MDN
    */
-  var name: js.String = _
+  var name: js.String = ???
   /**
    * The onafterprint property sets and returns the onafterprint event handler code
    * for the current window.
    *
    * MDN
    */
-  var onafterprint: js.Function1[Event, _] = _
-  var onpause: js.Function1[Event, _] = _
+  var onafterprint: js.Function1[Event, _] = ???
+  var onpause: js.Function1[Event, _] = ???
   /**
    * The onbeforeprint property sets and returns the onbeforeprint event handler code
    * for the current window.
    *
    * MDN
    */
-  var onbeforeprint: js.Function1[Event, _] = _
+  var onbeforeprint: js.Function1[Event, _] = ???
   /**
    * Returns a reference to the topmost window in the window hierarchy. This property is
    * read only.
    *
    * MDN
    */
-  val top: Window = ???
+  def top: Window = ???
   /**
    * An event handler property for mousedown events on the window.
    *
    * MDN
    */
-  var onmousedown: js.Function1[MouseEvent, js.Any] = _
-  var onseeked: js.Function1[Event, _] = _
+  var onmousedown: js.Function1[MouseEvent, js.Any] = ???
+  var onseeked: js.Function1[Event, _] = ???
   /**
    * Returns a reference to the window that opened this current window.
    *
    * MDN
    */
-  var opener: Window = _
+  var opener: Window = ???
   /**
    * Called when the user clicks the mouse button while the cursor is in the window. This
    * event is fired for any mouse button pressed; you can look at the event properties to
@@ -1425,34 +1435,34 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onclick: js.Function1[MouseEvent, js.Any] = _
+  var onclick: js.Function1[MouseEvent, js.Any] = ???
   /**
    * Gets the height of the content area of the browser window including, if rendered,
    * the horizontal scrollbar.
    *
    * MDN
    */
-  var innerHeight: js.Number = _
-  var onwaiting: js.Function1[Event, _] = _
-  var ononline: js.Function1[Event, _] = _
-  var ondurationchange: js.Function1[Event, _] = _
+  def innerHeight: js.Number = ???
+  var onwaiting: js.Function1[Event, _] = ???
+  var ononline: js.Function1[Event, _] = ???
+  var ondurationchange: js.Function1[Event, _] = ???
   /**
    * Returns the window itself, which is an array-like object, listing the direct
    * sub-frames of the current window.
    *
    * MDN
    */
-  var frames: Window = _
+  def frames: Window = ???
   /**
    * The onblur property can be used to set the blur handler on the window, which is
    * triggered when the window loses focus.
    *
    * MDN
    */
-  var onblur: js.Function1[FocusEvent, js.Any] = _
-  var onemptied: js.Function1[Event, _] = _
-  var onseeking: js.Function1[Event, _] = _
-  var oncanplay: js.Function1[Event, _] = _
+  var onblur: js.Function1[FocusEvent, js.Any] = ???
+  var onemptied: js.Function1[Event, _] = ???
+  var onseeking: js.Function1[Event, _] = ???
+  var oncanplay: js.Function1[Event, _] = ???
   /**
    * window.outerWidth gets the width of the outside of the browser window. It
    * represents the width of the whole browser window including sidebar (if expanded),
@@ -1460,28 +1470,28 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var outerWidth: js.Number = _
-  var onstalled: js.Function1[Event, _] = _
+  def outerWidth: js.Number = ???
+  var onstalled: js.Function1[Event, _] = ???
   /**
    * An event handler property for mousemove events on the window.
    *
    * MDN
    */
-  var onmousemove: js.Function1[MouseEvent, js.Any] = _
+  var onmousemove: js.Function1[MouseEvent, js.Any] = ???
   /**
    * Gets the width of the content area of the browser window including, if rendered, the
    * vertical scrollbar.
    *
    * MDN
    */
-  var innerWidth: js.Number = _
-  var onoffline: js.Function1[Event, _] = _
+  var innerWidth: js.Number = ???
+  var onoffline: js.Function1[Event, _] = ???
   /**
    * Returns the number of frames (either frame or iframe elements) in the window.
    *
    * MDN
    */
-  var length: js.Number = _
+  def length: js.Number = ???
   /**
    * Specifies the height of the screen, in pixels, minus permanent or semipermanent
    * user interface features displayed by the operating system, such as the Taskbar on
@@ -1489,81 +1499,87 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var screen: Screen = _
+  def screen: Screen = ???
   /**
    * An event that fires when a window is about to unload its resources. The document is
    * still visible and the event is still cancelable.
    *
    * MDN
    */
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = _
-  var onratechange: js.Function1[Event, _] = _
-  var onstorage: js.Function1[StorageEvent, js.Any] = _
-  var onloadstart: js.Function1[Event, _] = _
-  var ondragenter: js.Function1[DragEvent, js.Any] = _
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = ???
+  var onratechange: js.Function1[Event, _] = ???
+  var onstorage: js.Function1[StorageEvent, js.Any] = ???
+  var onloadstart: js.Function1[Event, _] = ???
+  var ondragenter: js.Function1[DragEvent, js.Any] = ???
   /**
    * An event handler property for submits on window forms.
    *
    * MDN
    */
-  var onsubmit: js.Function1[Event, _] = _
+  var onsubmit: js.Function1[Event, _] = ???
   /**
    * Returns an object reference to the window object itself.
    *
    * MDN
    */
-  var self: Window = _
+  def self: Window = ???
   /**
    * Returns a reference to the document that the window contains.
    *
    * MDN
    */
-  var document: Document = _
-  var onprogress: js.Function1[js.Any, js.Any] = _
-  var ondblclick: js.Function1[MouseEvent, js.Any] = _
-  var pageYOffset: js.Number = _
+  def document: Document = ???
+  var onprogress: js.Function1[js.Any, js.Any] = ???
+  var ondblclick: js.Function1[MouseEvent, js.Any] = ???
+  /**
+   * Returns the number of pixels that the document has already been scrolled
+   * vertically.
+   *
+   * MDN
+   */
+  def pageYOffset: js.Number = ???
   /**
    * An event handler property for right-click events on the window.
    *
    * MDN
    */
-  var oncontextmenu: js.Function1[MouseEvent, js.Any] = _
+  var oncontextmenu: js.Function1[MouseEvent, js.Any] = ???
   /**
    * An event handler property for change events on the window.
    *
    * MDN
    */
-  var onchange: js.Function1[Event, _] = _
-  var onloadedmetadata: js.Function1[Event, _] = _
-  var onplay: js.Function1[Event, _] = _
+  var onchange: js.Function1[Event, _] = ???
+  var onloadedmetadata: js.Function1[Event, _] = ???
+  var onplay: js.Function1[Event, _] = ???
   /**
    * An event handler property for errors raised on the window.
    *
    * MDN
    */
-  var onerror: ErrorEventHandler = _
-  var onplaying: js.Function1[Event, _] = _
+  var onerror: ErrorEventHandler = ???
+  var onplaying: js.Function1[Event, _] = ???
   /**
    * Returns a reference to the parent of the current window or subframe.
    *
    * MDN
    */
-  var parent: Window = _
+  def parent: Window = ???
   /**
-   * The Window.location read-only property returns a Location object with
+   * The Window.location property returns a Location object with
    * information about the current location of the document.
    *
    * MDN
    */
-  var location: Location = _
-  var oncanplaythrough: js.Function1[Event, _] = _
+  var location: Location = ???
+  var oncanplaythrough: js.Function1[Event, _] = ???
   /**
    * An event handler property for abort events on the window.
    *
    * MDN
    */
-  var onabort: js.Function1[UIEvent, js.Any] = _
-  var onreadystatechange: js.Function1[Event, _] = _
+  var onabort: js.Function1[UIEvent, js.Any] = ???
+  var onreadystatechange: js.Function1[Event, _] = ???
   /**
    * window.outerHeight gets the height in pixels of the whole browser window. It
    * represents the height of the whole browser window including sidebar (if
@@ -1571,49 +1587,48 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var outerHeight: js.Number = _
+  def outerHeight: js.Number = ???
   /**
    * An event handler property for keypress events on the window.
    *
    * MDN
    */
-  var onkeypress: js.Function1[KeyboardEvent, js.Any] = _
+  var onkeypress: js.Function1[KeyboardEvent, js.Any] = ???
   /**
    * Returns the element (such as <iframe> or <object>) in which the window is embedded,
    * or null if the window is top-level.
    *
    * MDN
    */
-  var frameElement: Element = _
-  var onloadeddata: js.Function1[Event, _] = _
-  var onsuspend: js.Function1[Event, _] = _
+  def frameElement: Element = ???
+  var onloadeddata: js.Function1[Event, _] = ???
+  var onsuspend: js.Function1[Event, _] = ???
   /**
-   * The window property of a window object points to the window object itself. Thus the
-   * following expressions all return the same window object:
+   * The window property of a window object points to the window object itself.
    *
    * MDN
    */
-  var window: Window = _
+  def window: Window = ???
   /**
    * An event handler property for focus events on the window.
    *
    * MDN
    */
-  var onfocus: js.Function1[FocusEvent, js.Any] = _
-  var onmessage: js.Function1[MessageEvent, js.Any] = _
-  var ontimeupdate: js.Function1[Event, _] = _
+  var onfocus: js.Function1[FocusEvent, js.Any] = ???
+  var onmessage: js.Function1[MessageEvent, js.Any] = ???
+  var ontimeupdate: js.Function1[Event, _] = ???
   /**
    * An event handler for the resize event on the window.
    *
    * MDN
    */
-  var onresize: js.Function1[UIEvent, js.Any] = _
+  var onresize: js.Function1[UIEvent, js.Any] = ???
   /**
    * An event handler property for window selection.
    *
    * MDN
    */
-  var onselect: js.Function1[UIEvent, js.Any] = _
+  var onselect: js.Function1[UIEvent, js.Any] = ???
   /**
    * The Window.navigator read-only property returns a reference to the Navigator
    * object, which can be queried for information about the application running the
@@ -1621,52 +1636,52 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var navigator: Navigator = _
-  var styleMedia: StyleMedia = _
-  var ondrop: js.Function1[DragEvent, js.Any] = _
+  def navigator: Navigator = ???
+  def styleMedia: StyleMedia = ???
+  var ondrop: js.Function1[DragEvent, js.Any] = ???
   /**
    * An event handler property for mouseout events on the window.
    *
    * MDN
    */
-  var onmouseout: js.Function1[MouseEvent, js.Any] = _
-  var onended: js.Function1[Event, _] = _
+  var onmouseout: js.Function1[MouseEvent, js.Any] = ???
+  var onended: js.Function1[Event, _] = ???
   /**
    * An event handler property for hash change events on the window; called when the part
    * of the URL after the hash mark ("#") changes.
    *
    * MDN
    */
-  var onhashchange: js.Function1[Event, _] = _
+  var onhashchange: js.Function1[Event, _] = ???
   /**
    * The unload event is raised when the window is unloading its content and resources.
    * The resources removal is processed  after the unload event occurs.
    *
    * MDN
    */
-  var onunload: js.Function1[Event, _] = _
+  var onunload: js.Function1[Event, _] = ???
   /**
    * Specifies the function to be called when the window is scrolled.
    *
    * MDN
    */
-  var onscroll: js.Function1[UIEvent, js.Any] = _
+  var onscroll: js.Function1[UIEvent, js.Any] = ???
   /**
    * Returns the vertical distance of the top border of the user's browser from the top
    * edge of the screen.
    *
    * MDN
    */
-  var screenY: js.Number = _
-  var onmousewheel: js.Function1[WheelEvent, js.Any] = _
+  def screenY: js.Number = ???
+  var onmousewheel: js.Function1[WheelEvent, js.Any] = ???
   /**
    * An event handler property for window loading.
    *
    * MDN
    */
-  var onload: js.Function1[Event, _] = _
-  var onvolumechange: js.Function1[Event, _] = _
-  var oninput: js.Function1[Event, _] = _
+  var onload: js.Function1[Event, _] = ???
+  var onvolumechange: js.Function1[Event, _] = ???
+  var oninput: js.Function1[Event, _] = ???
   /**
    * The Web Performance API allows web pages access to certain functions for measuring
    * the performance of web pages and web applications, including the Navigation
@@ -1674,7 +1689,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var performance: Performance = _
+  def performance: Performance = ???
 
   def alert(message: js.String): Unit = ???
 
@@ -1836,36 +1851,21 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
-  var onmspointerdown: js.Function1[js.Any, js.Any] = _
-  var animationStartTime: js.Number = _
-  var onmsgesturedoubletap: js.Function1[js.Any, js.Any] = _
-  var onmspointerhover: js.Function1[js.Any, js.Any] = _
-  var onmsgesturehold: js.Function1[js.Any, js.Any] = _
-  var onmspointermove: js.Function1[js.Any, js.Any] = _
-  var onmsgesturechange: js.Function1[js.Any, js.Any] = _
-  var onmsgesturestart: js.Function1[js.Any, js.Any] = _
-  var onmspointercancel: js.Function1[js.Any, js.Any] = _
-  var onmsgestureend: js.Function1[js.Any, js.Any] = _
-  var onmsgesturetap: js.Function1[js.Any, js.Any] = _
-  var onmspointerout: js.Function1[js.Any, js.Any] = _
-  var msAnimationStartTime: js.Number = _
   /**
    * An OfflineResourceList object providing access to the offline resources for the
    * window.
    *
    * MDN
    */
-  var applicationCache: ApplicationCache = _
-  var onmsinertiastart: js.Function1[js.Any, js.Any] = _
-  var onmspointerover: js.Function1[js.Any, js.Any] = _
+  def applicationCache: ApplicationCache = ???
   /**
    * An event handler property for popstate events, which are fired when navigating to a
    * session history entry representing a state object.
    *
    * MDN
    */
-  var onpopstate: js.Function1[PopStateEvent, js.Any] = _
-  var onmspointerup: js.Function1[js.Any, js.Any] = _
+  var onpopstate: js.Function1[PopStateEvent, js.Any] = ???
+  var onmspointerup: js.Function1[js.Any, js.Any] = ???
 
   def msCancelRequestAnimationFrame(handle: js.Number): Unit = ???
 
@@ -1971,42 +1971,18 @@ class CanvasGradient extends js.Object {
  *
  * MDN
  */
-class TouchEvent {
-  /**
-   * A Boolean value indicating whether or not the alt key was down when the touch event
-   * was fired. Read only.
-   *
-   * MDN
-   */
-  val altKey: Boolean = ???
+class TouchEvent extends UIEvent with ModifierKeyEvent{
+
   /**
    * A TouchList of all the Touch objects representing individual points of contact
    * whose states changed between the previous touch event and this one. Read only.
    *
    * MDN
    */
-  val changedTouches: TouchList = ???
-  /**
-   * A Boolean value indicating whether or not the control key was down when the touch
-   * event was fired. Read only.
-   *
-   * MDN
-   */
-  val ctrlKey: Boolean = ???
-  /**
-   * A Boolean value indicating whether or not the meta key was down when the touch event
-   * was fired. Read only.
-   *
-   * MDN
-   */
-  val metaKey: Boolean = ???
-  /**
-   * A Boolean value indicating whether or not the shift key was down when the touch event
-   * was fired. Read only.
-   *
-   * MDN
-   */
-  val shiftKey: Boolean = ???
+  def changedTouches: TouchList = ???
+
+
+
   /**
    * A TouchList listing all the Touch objects for touch points that are still in contact
    * with the touch surface and whose touchstart event occurred inside the same target
@@ -2014,7 +1990,7 @@ class TouchEvent {
    *
    * MDN
    */
-  val targetTouches: TouchList = ???
+  def targetTouches: TouchList = ???
   /**
    * A TouchList listing all the Touch objects for touch points that are still in contact
    * with the touch surface, regardless of whether or not they've changed or what their
@@ -2022,8 +1998,8 @@ class TouchEvent {
    *
    * MDN
    */
-  val touches: TouchList = ???
-  val `type`: String = ???
+  def touches: TouchList = ???
+
   /**
    * The target of the touches associated with this event. This target corresponds to
    * the target of all the touches in the targetTouches attribute, but note that other
@@ -2032,7 +2008,7 @@ class TouchEvent {
    *
    * MDN
    */
-  val target: js.Any = ???
+  override def target: EventTarget = ???
 }
 
 /**
@@ -2049,7 +2025,7 @@ class TouchList extends js.Object {
    *
    * MDN
    */
-  var length: js.Number = _
+  def length: js.Number = ???
 
   /**
    * Returns the Touch object at the specified index in the list. You can also simply
@@ -2066,40 +2042,69 @@ class TouchList extends js.Object {
   def update(index: js.Number, v: Node): Unit = ???
 }
 
-class KeyboardEvent extends UIEvent {
-  var location: js.Number = _
-  var keyCode: js.Number = _
-  var shiftKey: js.Boolean = _
-  var which: js.Number = _
-  var locale: js.String = _
-  var key: js.String = _
-  var altKey: js.Boolean = _
-  var metaKey: js.Boolean = _
-  var char: js.String = _
-  var ctrlKey: js.Boolean = _
-  var repeat: js.Boolean = _
-  var charCode: js.Number = _
+/**
+ * KeyboardEvent objects describe a user interaction with the keyboard. Each event
+ * describes a key; the event type (keydown, keypress, or keyup) identifies what
+ * kind of activity was performed.
+ *
+ * Note: The KeyboardEvent indicates just what's happening on a key. When you need
+ * to handle text input, use HTML5 input event instead. For example, if user inputs
+ * text from hand-writing system like tablet PC, key events may not be fired.
+ *
+ * MDN
+ */
+class KeyboardEvent extends UIEvent with ModifierKeyEvent{
+  /**
+   * The location of the key on the keyboard or other input device.
+   * See the constants in the KeyboardEvent object.
+   *
+   * MDN
+   */
+  def location: js.Number = ???
 
+  /**
+   * A locale string indicating the locale the keyboard is configured for. This may
+   * be the empty string if the browser or device doesn't know the keyboard's locale.
+   *
+   * Note: This does not describe the locale of the data being entered. A user may
+   * be using one keyboard layout while typing text in a different language.
+   *
+   * MDN
+   */
+  def locale: js.String = ???
+  /**
+   * The key value of the key represented by the event. If the value has a printed
+   * representation, this attribute's value is the same as the char attribute.
+   * Otherwise, it's one of the key value strings specified in Key values. If the
+   * key can't be identified, this is the string "Unidentified". See key names for
+   * the detail.
+   *
+   * MDN
+   */
+  def key: js.String = ???
+
+  /**
+   * true if the key is being held down such that it is automatically repeating
+   *
+   * MDN
+   */
+  def repeat: js.Boolean = ???
+
+  /**
+   * Returns the current state of the specified modifier key.
+   */
   def getModifierState(keyArg: js.String): js.Boolean = ???
 
   def initKeyboardEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, keyArg: js.String, locationArg: js.Number, modifiersListArg: js.String, repeat: js.Boolean, locale: js.String): Unit = ???
-
-  var DOM_KEY_LOCATION_RIGHT: js.Number = _
-  var DOM_KEY_LOCATION_STANDARD: js.Number = _
-  var DOM_KEY_LOCATION_LEFT: js.Number = _
-  var DOM_KEY_LOCATION_NUMPAD: js.Number = _
-  var DOM_KEY_LOCATION_JOYSTICK: js.Number = _
-  var DOM_KEY_LOCATION_MOBILE: js.Number = _
 }
 
 object KeyboardEvent extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(KeyboardEvent),List())))) */
-  var DOM_KEY_LOCATION_RIGHT: js.Number = _
-  var DOM_KEY_LOCATION_STANDARD: js.Number = _
-  var DOM_KEY_LOCATION_LEFT: js.Number = _
-  var DOM_KEY_LOCATION_NUMPAD: js.Number = _
-  var DOM_KEY_LOCATION_JOYSTICK: js.Number = _
-  var DOM_KEY_LOCATION_MOBILE: js.Number = _
+  def DOM_KEY_LOCATION_RIGHT: js.Number = ???
+  def DOM_KEY_LOCATION_STANDARD: js.Number = ???
+  def DOM_KEY_LOCATION_LEFT: js.Number = ???
+  def DOM_KEY_LOCATION_NUMPAD: js.Number = ???
+  def DOM_KEY_LOCATION_JOYSTICK: js.Number = ???
+  def DOM_KEY_LOCATION_MOBILE: js.Number = ???
 }
 
 /**
@@ -2112,72 +2117,65 @@ object KeyboardEvent extends js.Object {
  * MDN
  */
 class Document extends Node with NodeSelector with DocumentEvent {
-  var onkeydown: js.Function1[KeyboardEvent, _] = _
-  var onkeyup: js.Function1[KeyboardEvent, _] = _
+  var onkeydown: js.Function1[KeyboardEvent, _] = ???
+  var onkeyup: js.Function1[KeyboardEvent, _] = ???
   /**
    * Returns a DOMImplementation object associated with the current document.
    *
    * MDN
    */
-  var implementation: DOMImplementation = _
-  var onreset: js.Function1[Event, _] = _
+  def implementation: DOMImplementation = ???
+  var onreset: js.Function1[Event, _] = ???
   /**
    * Returns a list of the <script> elements in the document. The returned object is an
    * HTMLCollection.
    *
    * MDN
    */
-  var scripts: HTMLCollection = _
-  var onhelp: js.Function1[Event, _] = _
-  var ondragleave: js.Function1[DragEvent, js.Any] = _
-  var charset: js.String = _
-  var onfocusin: js.Function1[FocusEvent, js.Any] = _
+  def scripts: HTMLCollection = ???
+  var onhelp: js.Function1[Event, _] = ???
+  var ondragleave: js.Function1[DragEvent, js.Any] = ???
+
+  var onfocusin: js.Function1[FocusEvent, js.Any] = ???
   /**
    * The default value for this property in Mozilla Firefox is purple (#551a8b in
    * hexadecimal).
    *
    * MDN
    */
-  var vlinkColor: js.String = _
-  var onseeked: js.Function1[Event, _] = _
-  var security: js.String = _
+  var vlinkColor: js.String = ???
+  var onseeked: js.Function1[Event, _] = ???
   /**
    * Returns the title of the current document.
    *
    * MDN
    */
-  var title: js.String = _
-  var defaultCharset: js.String = _
+  var title: js.String = ???
+
   /**
    * Returns a list of the embedded <embed> elements within the current document.
    *
    * MDN
    */
-  var embeds: HTMLCollection = _
+  def embeds: HTMLCollection = ???
   /**
    * Returns a list of StyleSheet objects for stylesheets explicitly linked into or
    * embedded in a document.
    *
    * MDN
    */
-  var styleSheets: StyleSheetList = _
-  var frames: Window = _
-  var ondurationchange: js.Function1[Event, _] = _
-  /**
-   * Provides access to all elements with an id. This a legacy non-standard interface,
-   * you should use the Document.getElementById() method instead.
-   *
-   * MDN
-   */
-  var all: HTMLCollection = _
+  def styleSheets: StyleSheetList = ???
+
+  var ondurationchange: js.Function1[Event, _] = ???
+
   /**
    * forms returns a collection (an HTMLCollection) of the form elements within the
    * current document.
    *
    * MDN
    */
-  var forms: HTMLCollection = _
-  var onblur: js.Function1[FocusEvent, js.Any] = _
+  def forms: HTMLCollection = ???
+  var onblur: js.Function1[FocusEvent, js.Any] = ???
   /**
    * The Document.dir property is a DOMString representing the directionality of the
    * text of the document, whether left to right (default) or right to left. Possible
@@ -2185,102 +2183,103 @@ class Document extends Node with NodeSelector with DocumentEvent {
    *
    * MDN
    */
-  var dir: js.String = _
-  var onemptied: js.Function1[Event, _] = _
+  var dir: js.String = ???
+  var onemptied: js.Function1[Event, _] = ???
   /**
    * Can be used to make any document editable, for example in a <iframe />:
    *
    * MDN
    */
-  var designMode: js.String = _
-  var onseeking: js.Function1[Event, _] = _
-  var ondeactivate: js.Function1[UIEvent, js.Any] = _
-  var oncanplay: js.Function1[Event, _] = _
-  var onloadstart: js.Function1[Event, _] = _
-  var URLUnencoded: js.String = _
+  var designMode: js.String = ???
+
+  var onseeking: js.Function1[Event, _] = ???
+  var ondeactivate: js.Function1[UIEvent, js.Any] = ???
+  var oncanplay: js.Function1[Event, _] = ???
+  var onloadstart: js.Function1[Event, _] = ???
+
   /**
    * In browsers returns the window object associated with the document or null if none
    * available.
    *
    * MDN
    */
-  var defaultView: Window = _
-  var ondragenter: js.Function1[DragEvent, js.Any] = _
-  var onsubmit: js.Function1[Event, _] = _
+  def defaultView: Window = ???
+  var ondragenter: js.Function1[DragEvent, js.Any] = ???
+  var onsubmit: js.Function1[Event, _] = ???
   /**
    * Returns a string representing the encoding under which the document was parsed
    * (e.g. ISO-8859-1).
    *
    * MDN
    */
-  var inputEncoding: js.String = _
+  def inputEncoding: js.String = ???
   /**
    * Returns the currently focused element, that is, the element that will get
    * keystroke events if the user types any. This attribute is read only.
    *
    * MDN
    */
-  val activeElement: Element = ???
-  var onchange: js.Function1[Event, _] = _
+  def activeElement: Element = ???
+  var onchange: js.Function1[Event, _] = ???
   /**
    * The links property returns a collection of all AREA elements and anchor elements in
    * a document with a value for the href attribute.
    *
    * MDN
    */
-  var links: HTMLCollection = _
-  var uniqueID: js.String = _
+  def links: HTMLCollection = ???
+  var uniqueID: js.String = ???
   /**
    * Returns a string containing the URL of the current document.
    *
    * MDN
    */
-  var URL: js.String = _
-  var onbeforeactivate: js.Function1[UIEvent, js.Any] = _
+  def URL: js.String = ???
+  var onbeforeactivate: js.Function1[UIEvent, js.Any] = ???
   /**
    * Returns the <head> element of the current document. If there are more than one
    * <head> elements, the first one is returned.
    *
    * MDN
    */
-  var head: HTMLHeadElement = _
+  def head: HTMLHeadElement = ???
   /**
    * Returns a semicolon-separated list of the cookies for that document or sets a
    * single cookie.
    *
    * MDN
    */
-  var cookie: js.String = _
+  def cookie: js.String = ???
   /**
    * Returns the encoding as determined by the XML declaration. Should be null if
    * unspecified or unknown.
    *
    * MDN
    */
-  var xmlEncoding: js.String = _
-  var oncanplaythrough: js.Function1[Event, _] = _
-  var documentMode: js.Number = _
+  def xmlEncoding: js.String = ???
+  var oncanplaythrough: js.Function1[Event, _] = ???
+
   /**
    * Returns the character encoding of the current document.
    *
    * MDN
    */
-  var characterSet: js.String = _
+  def characterSet: js.String = ???
   /**
    * anchors returns a list of all of the anchors in the document.
    *
    * MDN
    */
-  var anchors: HTMLCollection = _
+  def anchors: HTMLCollection = ???
   /**
    * Returns an HTMLCollection object containing one or more HTMLEmbedElements or
    * null which represent the <embed> elements in the current document.
    *
    * MDN
    */
-  var plugins: HTMLCollection = _
-  var onsuspend: js.Function1[Event, _] = _
-  var rootElement: SVGSVGElement = _
+  def plugins: HTMLCollection = ???
+  var onsuspend: js.Function1[Event, _] = ???
+
   /**
    * Returns "loading" while the document is loading, "interactive" once it is
    * finished parsing but still loading sub-resources, and "complete" once it has
@@ -2288,33 +2287,33 @@ class Document extends Node with NodeSelector with DocumentEvent {
    *
    * MDN
    */
-  var readyState: js.String = _
+  var readyState: js.String = ???
   /**
    * Returns the URI of the page that linked to this page.
    *
    * MDN
    */
-  var referrer: js.String = _
+  def referrer: js.String = ???
   /**
    * color is a string containing the name of the color (e.g., "blue", "darkblue", etc.)
    * or the hexadecimal value of the color (e.g., #0000FF)
    *
    * MDN
    */
-  var alinkColor: js.String = _
-  var parentWindow: Window = _
-  var onmouseout: js.Function1[MouseEvent, js.Any] = _
-  var onmousewheel: js.Function1[WheelEvent, js.Any] = _
-  var onvolumechange: js.Function1[Event, _] = _
+  var alinkColor: js.String = ???
+
+  var onmouseout: js.Function1[MouseEvent, js.Any] = ???
+  var onmousewheel: js.Function1[WheelEvent, js.Any] = ???
+  var onvolumechange: js.Function1[Event, _] = ???
   /**
    * Returns the version number as specified in the XML declaration (e.g., <?xml
    * version="1.0"?>) or "1.0" if the declaration is absent.
    *
    * MDN
    */
-  var xmlVersion: js.String = _
-  var msCapsLockWarningOff: js.Boolean = _
-  var ondragend: js.Function1[DragEvent, js.Any] = _
+  def xmlVersion: js.String = ???
+
+  var ondragend: js.Function1[DragEvent, js.Any] = ???
   /**
    * Returns the Document Type Declaration (DTD) associated with current document.
    * The returned object implements the DocumentType interface. Use
@@ -2322,131 +2321,131 @@ class Document extends Node with NodeSelector with DocumentEvent {
    *
    * MDN
    */
-  var doctype: DocumentType = _
-  var ondragover: js.Function1[DragEvent, js.Any] = _
+  def doctype: DocumentType = ???
+  var ondragover: js.Function1[DragEvent, js.Any] = ???
   /**
    * The default value for this property in Mozilla Firefox is white (#ffffff in
    * hexadecimal).
    *
    * MDN
    */
-  var bgColor: js.String = _
-  var ondragstart: js.Function1[DragEvent, js.Any] = _
-  var onmouseup: js.Function1[MouseEvent, js.Any] = _
-  var ondrag: js.Function1[DragEvent, js.Any] = _
-  var onmouseover: js.Function1[MouseEvent, js.Any] = _
+  var bgColor: js.String = ???
+  var ondragstart: js.Function1[DragEvent, js.Any] = ???
+  var onmouseup: js.Function1[MouseEvent, js.Any] = ???
+  var ondrag: js.Function1[DragEvent, js.Any] = ???
+  var onmouseover: js.Function1[MouseEvent, js.Any] = ???
   /**
    * linkColor gets/sets the color of links within the document.
    *
    * MDN
    */
-  var linkColor: js.String = _
-  var onpause: js.Function1[Event, _] = _
-  var onmousedown: js.Function1[MouseEvent, js.Any] = _
-  var onclick: js.Function1[MouseEvent, js.Any] = _
-  var onwaiting: js.Function1[Event, _] = _
-  var onstop: js.Function1[Event, _] = _
+  var linkColor: js.String = ???
+  var onpause: js.Function1[Event, _] = ???
+  var onmousedown: js.Function1[MouseEvent, js.Any] = ???
+  var onclick: js.Function1[MouseEvent, js.Any] = ???
+  var onwaiting: js.Function1[Event, _] = ???
+  var onstop: js.Function1[Event, _] = ???
   /**
    * applets returns an ordered list of the applets within a document.
    *
    * MDN
    */
-  var applets: HTMLCollection = _
+  def applets: HTMLCollection = ???
   /**
    * Returns the <body> or <frameset> node of the current document, or null if no such
    * element exists.
    *
    * MDN
    */
-  var body: HTMLElement = _
+  def body: HTMLElement = ???
   /**
    * Gets/sets the domain portion of the origin of the current document, as used by the
    * same origin policy.
    *
    * MDN
    */
-  var domain: js.String = _
+  var domain: js.String = ???
   /**
    * Returns true if the XML declaration specifies the document is standalone (e.g., An
    * external part of the DTD affects the document's content), else false.
    *
    * MDN
    */
-  var xmlStandalone: js.Boolean = _
-  var onstalled: js.Function1[Event, _] = _
-  var onmousemove: js.Function1[MouseEvent, js.Any] = _
+  def xmlStandalone: js.Boolean = ???
+  var onstalled: js.Function1[Event, _] = ???
+  var onmousemove: js.Function1[MouseEvent, js.Any] = ???
   /**
    * Returns the Element that is the root element of the document (for example, the
    * <html> element for HTML documents).
    *
    * MDN
    */
-  var documentElement: Element = _
-  var onratechange: js.Function1[Event, _] = _
-  var onprogress: js.Function1[js.Any, js.Any] = _
-  var ondblclick: js.Function1[MouseEvent, js.Any] = _
-  var oncontextmenu: js.Function1[MouseEvent, js.Any] = _
-  var onloadedmetadata: js.Function1[Event, _] = _
-  var media: js.String = _
-  var onerror: js.Function1[Event, _] = _
-  var onplay: js.Function1[Event, _] = _
-  var onplaying: js.Function1[Event, _] = _
+  def documentElement: Element = ???
+  var onratechange: js.Function1[Event, _] = ???
+  var onprogress: js.Function1[js.Any, js.Any] = ???
+  var ondblclick: js.Function1[MouseEvent, js.Any] = ???
+  var oncontextmenu: js.Function1[MouseEvent, js.Any] = ???
+  var onloadedmetadata: js.Function1[Event, _] = ???
+
+  var onerror: js.Function1[Event, _] = ???
+  var onplay: js.Function1[Event, _] = ???
+  var onplaying: js.Function1[Event, _] = ???
   /**
    * document.images returns a collection of the images in the current HTML document.
    *
    * MDN
    */
-  var images: HTMLCollection = _
+  def images: HTMLCollection = ???
   /**
-   * The Document.location read-only property returns a Location object, which
+   * The Document.location property returns a Location object, which
    * contains information about the URL of the document and provides methods for
    * changing that URL and load another URL.
    *
    * MDN
    */
-  var location: Location = _
-  var onabort: js.Function1[UIEvent, js.Any] = _
-  var onfocusout: js.Function1[FocusEvent, js.Any] = _
-  var onselectionchange: js.Function1[Event, _] = _
-  var onstoragecommit: js.Function1[StorageEvent, js.Any] = _
+  var location: Location = ???
+  var onabort: js.Function1[UIEvent, js.Any] = ???
+  var onfocusout: js.Function1[FocusEvent, js.Any] = ???
+  var onselectionchange: js.Function1[Event, _] = ???
+  var onstoragecommit: js.Function1[StorageEvent, js.Any] = ???
   /**
    * Returns the event handling code for the readystatechange event.
    *
    * MDN
    */
-  var onreadystatechange: js.Function1[Event, _] = _
+  var onreadystatechange: js.Function1[Event, _] = ???
   /**
    * Returns a string containing the date and time on which the current document was last
    * modified.
    *
    * MDN
    */
-  var lastModified: js.String = _
-  var onkeypress: js.Function1[KeyboardEvent, js.Any] = _
-  var onloadeddata: js.Function1[Event, _] = _
-  var onbeforedeactivate: js.Function1[UIEvent, js.Any] = _
-  var onactivate: js.Function1[UIEvent, js.Any] = _
-  var onselectstart: js.Function1[Event, _] = _
-  var onfocus: js.Function1[FocusEvent, js.Any] = _
+  def lastModified: js.String = ???
+  var onkeypress: js.Function1[KeyboardEvent, js.Any] = ???
+  var onloadeddata: js.Function1[Event, _] = ???
+  var onbeforedeactivate: js.Function1[UIEvent, js.Any] = ???
+  var onactivate: js.Function1[UIEvent, js.Any] = ???
+  var onselectstart: js.Function1[Event, _] = ???
+  var onfocus: js.Function1[FocusEvent, js.Any] = ???
   /**
    * fgColor gets/sets the foreground color, or text color, of the current document.
    *
    * MDN
    */
-  var fgColor: js.String = _
-  var ontimeupdate: js.Function1[Event, _] = _
-  var onselect: js.Function1[UIEvent, js.Any] = _
-  var ondrop: js.Function1[DragEvent, js.Any] = _
-  var onended: js.Function1[Event, _] = _
+  var fgColor: js.String = ???
+  var ontimeupdate: js.Function1[Event, _] = ???
+  var onselect: js.Function1[UIEvent, js.Any] = ???
+  var ondrop: js.Function1[DragEvent, js.Any] = ???
+  var onended: js.Function1[Event, _] = ???
   /**
    * Indicates whether the document is rendered in Quirks mode or Strict mode.
    *
    * MDN
    */
-  var compatMode: js.String = _
-  var onscroll: js.Function1[UIEvent, js.Any] = _
-  var onload: js.Function1[Event, _] = _
-  var oninput: js.Function1[Event, _] = _
+  def compatMode: js.String = ???
+  var onscroll: js.Function1[UIEvent, js.Any] = ???
+  var onload: js.Function1[Event, _] = ???
+  var oninput: js.Function1[Event, _] = ???
 
   /**
    * Returns the current value of the current range for a formating command.
@@ -2751,28 +2750,6 @@ class Document extends Node with NodeSelector with DocumentEvent {
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
-  var onmspointerdown: js.Function1[js.Any, js.Any] = _
-  var msHidden: js.Boolean = _
-  var msVisibilityState: js.String = _
-  var onmsgesturedoubletap: js.Function1[js.Any, js.Any] = _
-  var visibilityState: js.String = _
-  var onmsmanipulationstatechanged: js.Function1[js.Any, js.Any] = _
-  var onmspointerhover: js.Function1[js.Any, js.Any] = _
-  var onmscontentzoom: js.Function1[js.Any, js.Any] = _
-  var onmspointermove: js.Function1[js.Any, js.Any] = _
-  var onmsgesturehold: js.Function1[js.Any, js.Any] = _
-  var onmsgesturechange: js.Function1[js.Any, js.Any] = _
-  var onmsgesturestart: js.Function1[js.Any, js.Any] = _
-  var onmspointercancel: js.Function1[js.Any, js.Any] = _
-  var onmsgestureend: js.Function1[js.Any, js.Any] = _
-  var onmsgesturetap: js.Function1[js.Any, js.Any] = _
-  var onmspointerout: js.Function1[js.Any, js.Any] = _
-  var onmsinertiastart: js.Function1[js.Any, js.Any] = _
-  var msCSSOMElementFloatMetrics: js.Boolean = _
-  var onmspointerover: js.Function1[js.Any, js.Any] = _
-  var hidden: js.Boolean = _
-  var onmspointerup: js.Function1[js.Any, js.Any] = _
-
   def msElementsFromPoint(x: js.Number, y: js.Number): NodeList = ???
 
   def msElementsFromRect(left: js.Number, top: js.Number, width: js.Number, height: js.Number): NodeList = ???
@@ -2795,13 +2772,18 @@ class Document extends Node with NodeSelector with DocumentEvent {
  * MDN
  */
 class MessageEvent extends Event {
-  var source: Window = _
-  var origin: js.String = _
-  var data: js.Any = _
+  def source: Window = ???
+  def origin: js.String = ???
+  /**
+   * The data from the server
+   *
+   * MDN
+   */
+  def data: js.Any = ???
 
   def initMessageEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, dataArg: js.Any, originArg: js.String, lastEventIdArg: js.String, sourceArg: Window): Unit = ???
 
-  var ports: js.Any = _
+  def ports: js.Any = ???
 }
 
 
@@ -2812,8 +2794,18 @@ class MessageEvent extends Event {
  * MDN
  */
 class CanvasRenderingContext2D extends js.Object {
-  var miterLimit: js.Number = _
-  var font: js.String = _
+  /**
+   * Default 10
+   *
+   * MDN
+   */
+  var miterLimit: js.Number = ???
+  /**
+   * Default value 10px sans-serif
+   *
+   * MDN
+   */
+  var font: js.String = ???
   /**
    * With globalAlpha applied this sets how shapes and images are drawn onto the
    * existing bitmap. Possible values: source-atop source-in source-out
@@ -2822,92 +2814,97 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  var globalCompositeOperation: js.String = _
-  var msFillRule: js.String = _
+  var globalCompositeOperation: js.String = ???
+
   /**
    * Type of endings on the end of lines. Possible values: butt (default), round, square
    *
    * MDN
    */
-  var lineCap: js.String = _
-  var msImageSmoothingEnabled: js.Boolean = _
+  var lineCap: js.String = ???
+
   /**
    * Specifies where to start a dasharray on a line.
    *
    * MDN
    */
-  var lineDashOffset: js.Number = _
+  var lineDashOffset: js.Number = ???
   /**
    * Color of the shadow. Default fully-transparent black.
    *
    * MDN
    */
-  var shadowColor: js.String = _
+  var shadowColor: js.String = ???
   /**
    * Defines the type of corners where two lines meet. Possible values: round, bevel,
    * miter (default)
    *
    * MDN
    */
-  var lineJoin: js.String = _
+  var lineJoin: js.String = ???
   /**
    * Horizontal distance the shadow will be offset. Default 0.
    *
    * MDN
    */
-  var shadowOffsetX: js.Number = _
-  var lineWidth: js.Number = _
+  var shadowOffsetX: js.Number = ???
+  /**
+   * Width of lines. Default 1.0
+   *
+   * MDN
+   */
+  var lineWidth: js.Number = ???
   /**
    * Back-reference to the canvas element for which this context was created. Read
    * only.
    *
    * MDN
    */
-  var canvas: HTMLCanvasElement = _
+  var canvas: HTMLCanvasElement = ???
   /**
    * Color or style to use for the lines around shapes. Default #000 (black).
    *
    * MDN
    */
-  var strokeStyle: js.Any = _
+  var strokeStyle: js.Any = ???
   /**
    * Alpha value that is applied to shapes and images before they are composited onto the
    * canvas. Default 1.0 (opaque).
    *
    * MDN
    */
-  var globalAlpha: js.Number = _
+  var globalAlpha: js.Number = ???
   /**
    * Vertical distance the shadow will be offset. Default 0.
    *
    * MDN
    */
-  var shadowOffsetY: js.Number = _
+  var shadowOffsetY: js.Number = ???
   /**
    * Color or style to use inside shapes. Default #000 (black).
    *
    * MDN
    */
-  var fillStyle: js.Any = _
+  var fillStyle: js.Any = ???
   /**
    * Specifies the blurring effect. Default 0
    *
    * MDN
    */
-  var shadowBlur: js.Number = _
+  var shadowBlur: js.Number = ???
   /**
    * Possible values: start (default), end, left, right or center.
    *
    * MDN
    */
-  var textAlign: js.String = _
+  var textAlign: js.String = ???
   /**
    * Possible values: top, hanging, middle, alphabetic (default), ideographic,
    * bottom
    *
    * MDN
    */
-  var textBaseline: js.String = _
+  var textBaseline: js.String = ???
 
   /**
    * Restores the drawing style state to the last element on the 'state stack' saved by
@@ -3141,14 +3138,14 @@ class CanvasRenderingContext2D extends js.Object {
  * MDN
  */
 class XMLHttpRequest extends EventTarget {
-  var responseBody: js.Any = _
+
   /**
    * The status of the response to the request. This is the HTTP result code (for example,
    * status is 200 for a successful request).
    *
    * MDN
    */
-  var status: js.Number = _
+  def status: js.Number = ???
   /**
    * The state of the request: Value State Description 0 UNSENT open()has not been
    * called yet. 1 OPENED send()has not been called yet. 2 HEADERS_RECEIVED send() has
@@ -3157,14 +3154,14 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var readyState: js.Number = _
+  def readyState: js.Number = ???
   /**
    * The response to the request as text, or null if the request was unsuccessful or has
    * not yet been sent.
    *
    * MDN
    */
-  var responseText: js.String = _
+  def responseText: js.String = ???
   /**
    * The response to the request as a DOM Document object, or null if the request was
    * unsuccessful, has not yet been sent, or cannot be parsed as XML or HTML. The response
@@ -3175,16 +3172,16 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var responseXML: Document = _
-  var ontimeout: js.Function1[Event, _] = _
+  def responseXML: Document = ???
+  var ontimeout: js.Function1[Event, _] = ???
   /**
    * The response string returned by the HTTP server. Unlike status, this includes the
    * entire text of the response message ("200 OK", for example).
    *
    * MDN
    */
-  var statusText: js.String = _
-  var onreadystatechange: js.Function1[Event, _] = _
+  def statusText: js.String = ???
+  var onreadystatechange: js.Function1[Event, _] = ???
   /**
    * The number of milliseconds a request can take before automatically being
    * terminated. A value of 0 (which is the default) means there is no timeout. Note: You
@@ -3192,8 +3189,8 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var timeout: js.Number = _
-  var onload: js.Function1[Event, _] = _
+  var timeout: js.Number = ???
+  var onload: js.Function1[Event, _] = ???
 
   def open(method: js.String, url: js.String, async: js.Boolean, user: js.String, password: js.String): Unit = ???
 
@@ -3246,11 +3243,6 @@ class XMLHttpRequest extends EventTarget {
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
-  var LOADING: js.Number = _
-  var DONE: js.Number = _
-  var UNSENT: js.Number = _
-  var OPENED: js.Number = _
-  var HEADERS_RECEIVED: js.Number = _
   /**
    * The response entity body according to responseType, as an ArrayBuffer, Blob,
    * Document, JavaScript object (for "json"), or string. This is null if the request is
@@ -3258,7 +3250,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var response: js.Any = _
+  def response: js.Any = ???
   /**
    * Indicates whether or not cross-site Access-Control requests should be made using
    * credentials such as cookies or authorization headers. The default is false. Note:
@@ -3269,9 +3261,9 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var withCredentials: js.Boolean = _
-  var onprogress: js.Function1[ProgressEvent, js.Any] = _
-  var onabort: js.Function1[js.Any, js.Any] = _
+  var withCredentials: js.Boolean = ???
+  var onprogress: js.Function1[ProgressEvent, js.Any] = ???
+  var onabort: js.Function1[js.Any, js.Any] = ???
   /**
    * Can be set to change the response type. Value Data type of response property ""
    * (empty string) String (this is the default) "arraybuffer" ArrayBuffer "blob"
@@ -3297,16 +3289,16 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var responseType: js.String = _
-  var onloadend: js.Function1[ProgressEvent, js.Any] = _
+  var responseType: js.String = ???
+  var onloadend: js.Function1[ProgressEvent, js.Any] = ???
   /**
    * The upload process can be tracked by adding an event listener to upload.
    *
    * MDN
    */
-  var upload: XMLHttpRequestEventTarget = _
-  var onerror: js.Function1[ErrorEvent, js.Any] = _
-  var onloadstart: js.Function1[js.Any, js.Any] = _
+  var upload: XMLHttpRequestEventTarget = ???
+  var onerror: js.Function1[ErrorEvent, js.Any] = ???
+  var onloadstart: js.Function1[js.Any, js.Any] = ???
 }
 
 /**
@@ -3320,11 +3312,11 @@ class XMLHttpRequest extends EventTarget {
  */
 object XMLHttpRequest extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(XMLHttpRequest),List())))) */
-  var LOADING: js.Number = _
-  var DONE: js.Number = _
-  var UNSENT: js.Number = _
-  var OPENED: js.Number = _
-  var HEADERS_RECEIVED: js.Number = _
+  var LOADING: js.Number = ???
+  var DONE: js.Number = ???
+  var UNSENT: js.Number = ???
+  var OPENED: js.Number = ???
+  var HEADERS_RECEIVED: js.Number = ???
 }
 
 class Screen extends js.Object {
@@ -3336,46 +3328,40 @@ class Screen extends js.Object {
    *
    * MDN
    */
-  var width: js.Number = _
-  var deviceXDPI: js.Number = _
-  var fontSmoothingEnabled: js.Boolean = _
-  var bufferDepth: js.Number = _
-  var logicalXDPI: js.Number = _
-  var systemXDPI: js.Number = _
+  def width: js.Number = ???
+
   /**
    * Returns the amount of vertical space available to the window on the screen.
    *
    * MDN
    */
-  var availHeight: js.Number = _
+  def availHeight: js.Number = ???
   /**
    * Returns the height of the screen in pixels.
    *
    * MDN
    */
-  var height: js.Number = _
-  var logicalYDPI: js.Number = _
-  var systemYDPI: js.Number = _
-  var updateInterval: js.Number = _
+  def height: js.Number = ???
+
   /**
    * Returns the color depth of the screen.
    *
    * MDN
    */
-  var colorDepth: js.Number = _
+  def colorDepth: js.Number = ???
   /**
    * Returns the amount of horizontal space in pixels available to the window.
    *
    * MDN
    */
-  var availWidth: js.Number = _
-  var deviceYDPI: js.Number = _
+  def availWidth: js.Number = ???
+
   /**
    * Returns the bit depth of the screen.
    *
    * MDN
    */
-  var pixelDepth: js.Number = _
+  def pixelDepth: js.Number = ???
 }
 
 
@@ -3394,21 +3380,21 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  var altitudeAccuracy: js.Number = _
+  def altitudeAccuracy: js.Number = ???
   /**
    * The Coordinates.longitude read-only property is a double representing the
    * longitude of the position in decimal degrees.
    *
    * MDN
    */
-  var longitude: js.Number = _
+  def longitude: js.Number = ???
   /**
    * The Coordinates.latitude read-only property is a double representing the
    * latitude of the position in decimal degrees.
    *
    * MDN
    */
-  var latitude: js.Number = _
+  def latitude: js.Number = ???
   /**
    * The Coordinates.speed read-only property is a double representing the velocity
    * of the device in meters per second. This value is null if the implementation is not
@@ -3416,7 +3402,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  var speed: js.Number = _
+  def speed: js.Number = ???
   /**
    * The Coordinates.heading read-only property is a double representing the
    * direction in which the device is traveling. This value, specified in degrees,
@@ -3427,7 +3413,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  var heading: js.Number = _
+  def heading: js.Number = ???
   /**
    * The Coordinates.altitude read-only property is a double representing the
    * altitude of the position in meters, relative to sea level. This value is null if the
@@ -3435,7 +3421,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  var altitude: js.Number = _
+  def altitude: js.Number = ???
   /**
    * The Coordinates.accuracy read-only property is a strictly positive double
    * representing the accuracy, with a 95% confidence level, of the
@@ -3444,7 +3430,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  var accuracy: js.Number = _
+  def accuracy: js.Number = ???
 }
 
 
@@ -3462,7 +3448,7 @@ trait NavigatorGeolocation extends js.Object {
    *
    * MDN
    */
-  var geolocation: Geolocation = _
+  def geolocation: Geolocation = ???
 }
 
 trait NavigatorContentUtils extends js.Object {
@@ -3485,14 +3471,14 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  var effectAllowed: js.String = _
+  def effectAllowed: js.String = ???
   /**
    * The actual effect that will be used, and should always be one of the possible values
    * of effectAllowed.
    *
    * MDN
    */
-  var dropEffect: js.String = _
+  def dropEffect: js.String = ???
 
   def clearData(format: js.String): js.Boolean = ???
 
@@ -3530,8 +3516,8 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  var types: DOMStringList = _
-  var files: FileList = _
+  def types: DOMStringList = ???
+  def files: FileList = ???
 }
 
 
@@ -3549,7 +3535,7 @@ class FocusEvent extends UIEvent {
    *
    * MDN
    */
-  var relatedTarget: EventTarget = _
+  def relatedTarget: EventTarget = ???
 
   def initFocusEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, relatedTargetArg: EventTarget): Unit = ???
 }
@@ -3568,7 +3554,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  var startOffset: js.Number = _
+  def startOffset: js.Number = ???
   /**
    * The Range.collapsed read-only property returns a Boolean flag indicating
    * whether the start and end points of the Range are at the same position. It returns
@@ -3577,14 +3563,14 @@ class Range extends js.Object {
    *
    * MDN
    */
-  var collapsed: js.Boolean = _
+  def collapsed: js.Boolean = ???
   /**
    * The Range.endOffset read-only property returns a number representing where in
    * the Range.endContainer the Range ends.
    *
    * MDN
    */
-  var endOffset: js.Number = _
+  def endOffset: js.Number = ???
   /**
    * The Range.startContainer read-only property returns the Node within which the
    * Range starts. To change the start position of a node, use one of the
@@ -3592,7 +3578,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  var startContainer: Node = _
+  def startContainer: Node = ???
   /**
    * The Range.endContainer read-only property returns the Node within which the
    * Range ends. To change the end position of a node, use the Range.setEnd() method or a
@@ -3600,7 +3586,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  var endContainer: Node = _
+  def endContainer: Node = ???
   /**
    * The Range.commonAncestorContainer read-only property returns the deepest, or
    * further down the document tree, Node that contains both the Range.startContainer
@@ -3608,7 +3594,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  var commonAncestorContainer: Node = _
+  def commonAncestorContainer: Node = ???
 
   /**
    * The Range.setStart() method sets the start position of a Range.
@@ -3767,11 +3753,6 @@ class Range extends js.Object {
    */
   def setEndAfter(refNode: Node): Unit = ???
 
-  var END_TO_END: js.Number = _
-  var START_TO_START: js.Number = _
-  var START_TO_END: js.Number = _
-  var END_TO_START: js.Number = _
-
   /**
    * The Range.createContextualFragment() method returns a DocumentFragment by
    * invoking the HTML fragment parsing algorithm or the XML fragment parsing
@@ -3794,14 +3775,23 @@ class Range extends js.Object {
  */
 object Range extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Range),List())))) */
-  var END_TO_END: js.Number = _
-  var START_TO_START: js.Number = _
-  var START_TO_END: js.Number = _
-  var END_TO_START: js.Number = _
+  val END_TO_END: js.Number = ???
+  val START_TO_START: js.Number = ???
+  val START_TO_END: js.Number = ???
+  val END_TO_START: js.Number = ???
 }
 
+/**
+ * The DOM Storage mechanism is a means through which string key/value pairs can
+ * be securely stored and later retrieved for use. The goal of this addition is
+ * to provide a comprehensive means through which interactive applications can
+ * be built (including advanced abilities, such as being able to work "offline"
+ * for extended periods of time).
+ *
+ * MDN
+ */
 class Storage {
-  var length: js.Number = _
+  var length: js.Number = ???
 
   def getItem(key: js.String): js.Dynamic = ???
 
@@ -3833,38 +3823,34 @@ class Storage {
  * MDN
  */
 class DocumentType extends Node {
-  var name: js.String = _
-  var notations: NamedNodeMap = _
-  var systemId: js.String = _
-  var internalSubset: js.String = _
-  var entities: NamedNodeMap = _
-  var publicId: js.String = _
+  def name: js.String = ???
+  def notations: NamedNodeMap = ???
+  def systemId: js.String = ???
+  def internalSubset: js.String = ???
+  def entities: NamedNodeMap = ???
+  def publicId: js.String = ???
 }
 
 
 class MutationEvent extends Event {
-  var newValue: js.String = _
-  var attrChange: js.Number = _
-  var attrName: js.String = _
-  var prevValue: js.String = _
-  var relatedNode: Node = _
+  def newValue: js.String = ???
+  def attrChange: js.Number = ???
+  def attrName: js.String = ???
+  def prevValue: js.String = ???
+  def relatedNode: Node = ???
 
   def initMutationEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, relatedNodeArg: Node, prevValueArg: js.String, newValueArg: js.String, attrNameArg: js.String, attrChangeArg: js.Number): Unit = ???
 
-  var MODIFICATION: js.Number = _
-  var REMOVAL: js.Number = _
-  var ADDITION: js.Number = _
 }
 
 object MutationEvent extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(MutationEvent),List())))) */
-  var MODIFICATION: js.Number = _
-  var REMOVAL: js.Number = _
-  var ADDITION: js.Number = _
+  val MODIFICATION: js.Number = ???
+  val REMOVAL: js.Number = ???
+  val ADDITION: js.Number = ???
 }
 
 trait DragEvent extends MouseEvent {
-  var dataTransfer: DataTransfer = _
+  def dataTransfer: DataTransfer = ???
 
   def initDragEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, screenXArg: js.Number, screenYArg: js.Number, clientXArg: js.Number, clientYArg: js.Number, ctrlKeyArg: js.Boolean, altKeyArg: js.Boolean, shiftKeyArg: js.Boolean, metaKeyArg: js.Boolean, buttonArg: js.Number, relatedTargetArg: EventTarget, dataTransferArg: DataTransfer): Unit = ???
 }
@@ -3885,7 +3871,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var redirectStart: js.Number = _
+  def redirectStart: js.Number = ???
   /**
    * The PerformanceTiming.domainLookupEnd read-only property returns an unsigned
    * long long representing the moment, in miliseconds since the UNIX epoch, where the
@@ -3895,7 +3881,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var domainLookupEnd: js.Number = _
+  def domainLookupEnd: js.Number = ???
   /**
    * The PerformanceTiming.responseStart read-only property returns an unsigned
    * long long representing the moment, in miliseconds since the UNIX epoch, when the
@@ -3904,7 +3890,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var responseStart: js.Number = _
+  def responseStart: js.Number = ???
   /**
    * The PerformanceTiming.domComplete read-only property returns an unsigned long
    * long representing the moment, in miliseconds since the UNIX epoch, when the parser
@@ -3913,7 +3899,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var domComplete: js.Number = _
+  def domComplete: js.Number = ???
   /**
    * The PerformanceTiming.domainLookupStart read-only property returns an
    * unsigned long long representing the moment, in miliseconds since the UNIX epoch,
@@ -3923,7 +3909,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var domainLookupStart: js.Number = _
+  def domainLookupStart: js.Number = ???
   /**
    * The PerformanceTiming.loadEventStart read-only property returns an unsigned
    * long long representing the moment, in miliseconds since the UNIX epoch, when the
@@ -3932,8 +3918,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var loadEventStart: js.Number = _
-  var msFirstPaint: js.Number = _
+  def loadEventStart: js.Number = ???
   /**
    * The PerformanceTiming.unloadEventEnd read-only property returns an unsigned
    * long long representing the moment, in miliseconds since the UNIX epoch, the unload
@@ -3943,7 +3928,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var unloadEventEnd: js.Number = _
+  def unloadEventEnd: js.Number = ???
   /**
    * The PerformanceTiming.fetchStart read-only property returns an unsigned long
    * long representing the moment, in miliseconds since the UNIX epoch, the browser is
@@ -3952,7 +3937,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var fetchStart: js.Number = _
+  def fetchStart: js.Number = ???
   /**
    * The PerformanceTiming.requestStart read-only property returns an unsigned
    * long long representing the moment, in miliseconds since the UNIX epoch, when the
@@ -3963,7 +3948,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var requestStart: js.Number = _
+  def requestStart: js.Number = ???
   /**
    * The PerformanceTiming.domInteractive read-only property returns an unsigned
    * long long representing the moment, in miliseconds since the UNIX epoch, when the
@@ -3973,7 +3958,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var domInteractive: js.Number = _
+  def domInteractive: js.Number = ???
   /**
    * The PerformanceTiming.navigationStart read-only property returns an unsigned
    * long long representing the moment, in miliseconds since the UNIX epoch, right
@@ -3983,7 +3968,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var navigationStart: js.Number = _
+  def navigationStart: js.Number = ???
   /**
    * The PerformanceTiming.connectEnd read-only property returns an unsigned long
    * long representing the moment, in miliseconds since the UNIX epoch, where the
@@ -3995,7 +3980,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var connectEnd: js.Number = _
+  def connectEnd: js.Number = ???
   /**
    * The PerformanceTiming.loadEventEnd read-only property returns an unsigned
    * long long representing the moment, in miliseconds since the UNIX epoch, when the
@@ -4004,7 +3989,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var loadEventEnd: js.Number = _
+  def loadEventEnd: js.Number = ???
   /**
    * The PerformanceTiming.connectStart read-only property returns an unsigned
    * long long representing the moment, in miliseconds since the UNIX epoch, where the
@@ -4015,7 +4000,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var connectStart: js.Number = _
+  def connectStart: js.Number = ???
   /**
    * The PerformanceTiming.responseEnd read-only property returns an unsigned long
    * long representing the moment, in miliseconds since the UNIX epoch, when the
@@ -4024,7 +4009,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var responseEnd: js.Number = _
+  def responseEnd: js.Number = ???
   /**
    * The PerformanceTiming.domLoading read-only property returns an unsigned long
    * long representing the moment, in miliseconds since the UNIX epoch, when the parser
@@ -4033,7 +4018,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var domLoading: js.Number = _
+  def domLoading: js.Number = ???
   /**
    * The PerformanceTiming.redirectEnd read-only property returns an unsigned long
    * long representing the moment, in miliseconds since the UNIX epoch, the last HTTP
@@ -4043,7 +4028,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var redirectEnd: js.Number = _
+  def redirectEnd: js.Number = ???
   /**
    * The PerformanceTiming.unloadEventStart read-only property returns an
    * unsigned long long representing the moment, in miliseconds since the UNIX epoch,
@@ -4053,7 +4038,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var unloadEventStart: js.Number = _
+  def unloadEventStart: js.Number = ???
   /**
    * The PerformanceTiming.domContentLoadedEventStart read-only property
    * returns an unsigned long long representing the moment, in miliseconds since the
@@ -4063,7 +4048,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var domContentLoadedEventStart: js.Number = _
+  def domContentLoadedEventStart: js.Number = ???
   /**
    * The PerformanceTiming.domContentLoadedEventEnd read-only property returns
    * an unsigned long long representing the moment, in miliseconds since the UNIX
@@ -4072,7 +4057,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  var domContentLoadedEventEnd: js.Number = _
+  def domContentLoadedEventEnd: js.Number = ???
 
   /**
    * Is a jsonizer returning a JSON object representing the specific
@@ -4085,18 +4070,16 @@ class PerformanceTiming extends js.Object {
 
 
 trait EventException extends js.Object {
-  var code: js.Number = _
-  var message: js.String = _
+  def code: js.Number = ???
+  def message: js.String = ???
 
-  var DISPATCH_REQUEST_ERR: js.Number = _
-  var UNSPECIFIED_EVENT_TYPE_ERR: js.Number = _
-  var name: js.String = _
+  def name: js.String = ???
 }
 
 object EventException extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(EventException),List())))) */
-  var DISPATCH_REQUEST_ERR: js.Number = _
-  var UNSPECIFIED_EVENT_TYPE_ERR: js.Number = _
+  val DISPATCH_REQUEST_ERR: js.Number = ???
+  val UNSPECIFIED_EVENT_TYPE_ERR: js.Number = ???
 }
 
 /**
@@ -4116,11 +4099,11 @@ trait NavigatorOnLine extends js.Object {
    *
    * MDN
    */
-  var onLine: js.Boolean = _
+  def onLine: js.Boolean = ???
 }
 
 trait WindowLocalStorage extends js.Object {
-  var localStorage: Storage = _
+  def localStorage: Storage = ???
 }
 
 
@@ -4142,50 +4125,50 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  var hash: js.String = _
+  var hash: js.String = ???
   /**
    * Is a DOMString containing the protocol scheme of the URL, including the final ':'.
    *
    * MDN
    */
-  var protocol: js.String = _
+  var protocol: js.String = ???
   /**
    * Is a DOMString containing a '?' followed by the parameters of the URL.
    *
    * MDN
    */
-  var search: js.String = _
+  var search: js.String = ???
   /**
    * Is a DOMString containing the whole URL.
    *
    * MDN
    */
-  var href: js.String = _
+  var href: js.String = ???
   /**
    * Is a DOMString containing the domain of the URL.
    *
    * MDN
    */
-  var hostname: js.String = _
+  var hostname: js.String = ???
   /**
    * Is a DOMString containing the port number of the URL.
    *
    * MDN
    */
-  var port: js.String = _
+  var port: js.String = ???
   /**
    * Is a DOMString containing an initial '/' followed by the path of the URL.
    *
    * MDN
    */
-  var pathname: js.String = _
+  var pathname: js.String = ???
   /**
    * Is a DOMString containing the host, that is the hostname, a ':', and the port of the
    * URL.
    *
    * MDN
    */
-  var host: js.String = _
+  var host: js.String = ???
 
   def reload(flag: js.Boolean): Unit = ???
 
@@ -4221,10 +4204,10 @@ trait Location extends js.Object {
 
 
 class PerformanceEntry extends js.Object {
-  var name: js.String = _
-  var startTime: js.Number = _
-  var duration: js.Number = _
-  var entryType: js.String = _
+  def name: js.String = ???
+  def startTime: js.Number = ???
+  def duration: js.Number = ???
+  def entryType: js.String = ???
 }
 
 
@@ -4239,13 +4222,13 @@ class UIEvent extends Event {
    *
    * MDN
    */
-  val detail: js.Number = ???
+  def detail: js.Number = ???
   /**
    * A view which generated the event. Read only.
    *
    * MDN
    */
-  val view: Window = ???
+  def view: Window = ???
 
   def initUIEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number): Unit = ???
 }
@@ -4263,26 +4246,28 @@ class WheelEvent extends MouseEvent {
    *
    * MDN
    */
-  val deltaZ: js.Number = ???
+  def deltaZ: js.Number = ???
   /**
    * Horizontal scroll amount. Read only.
    *
    * MDN
    */
-  val deltaX: js.Number = ???
+  def deltaX: js.Number = ???
   /**
    * Unit of delta values. See Delta modes for a list of permitted values. Read only.
    *
    * MDN
    */
-  val deltaMode: js.Number = ???
-  var deltaY: js.Number = _
+  def deltaMode: js.Number = ???
+
+  /**
+   * Vertical scroll amount. Read only.
+   *
+   * MDN
+   */
+  def deltaY: js.Number = ???
 
   def initWheelEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, screenXArg: js.Number, screenYArg: js.Number, clientXArg: js.Number, clientYArg: js.Number, buttonArg: js.Number, relatedTargetArg: EventTarget, modifiersListArg: js.String, deltaXArg: js.Number, deltaYArg: js.Number, deltaZArg: js.Number, deltaMode: js.Number): Unit = ???
-
-  var DOM_DELTA_PIXEL: js.Number = _
-  var DOM_DELTA_LINE: js.Number = _
-  var DOM_DELTA_PAGE: js.Number = _
 
   def getCurrentPoint(element: Element): Unit = ???
 }
@@ -4300,19 +4285,19 @@ object WheelEvent extends js.Object {
    *
    * MDN
    */
-  var DOM_DELTA_PIXEL: js.Number = _
+  val DOM_DELTA_PIXEL: js.Number = ???
   /**
    * The delta values are specified in lines.
    *
    * MDN
    */
-  var DOM_DELTA_LINE: js.Number = _
+  val DOM_DELTA_LINE: js.Number = ???
   /**
    * The delta values are specified in pages.
    *
    * MDN
    */
-  var DOM_DELTA_PAGE: js.Number = _
+  val DOM_DELTA_PAGE: js.Number = ???
 }
 
 /**
@@ -4331,7 +4316,7 @@ class Text extends CharacterData {
    *
    * MDN
    */
-  var wholeText: js.String = _
+  def wholeText: js.String = ???
 
   /**
    * The Text.splitText() method breaks the Textnode into two nodes at the specified
@@ -4372,18 +4357,15 @@ trait PositionError extends js.Object {
    *
    * MDN
    */
-  var code: js.Number = _
+  def code: js.Number = ???
   /**
    * The PositionError.message read-only property returns a human-readable
    * DOMString describing the details of the error.
    *
    * MDN
    */
-  var message: js.String = _
+  def message: js.String = ???
 
-  var POSITION_UNAVAILABLE: js.Number = _
-  var PERMISSION_DENIED: js.Number = _
-  var TIMEOUT: js.Number = _
 }
 
 /**
@@ -4393,14 +4375,14 @@ trait PositionError extends js.Object {
  * MDN
  */
 object PositionError extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(PositionError),List())))) */
-  var POSITION_UNAVAILABLE: js.Number = _
-  var PERMISSION_DENIED: js.Number = _
-  var TIMEOUT: js.Number = _
+
+  val POSITION_UNAVAILABLE: js.Number = ???
+  val PERMISSION_DENIED: js.Number = ???
+  val TIMEOUT: js.Number = ???
 }
 
 class StyleSheetList extends js.Object {
-  var length: js.Number = _
+  def length: js.Number = ???
 
   def item(index: js.Number): StyleSheet = ???
 
@@ -4425,7 +4407,7 @@ class CustomEvent extends Event {
    *
    * MDN
    */
-  var detail: Object = _
+  def detail: Object = ???
 
   /**
    * Initializes the event in a manner analogous to the similarly-named method in the
@@ -4495,7 +4477,7 @@ class History extends js.Object {
    *
    * MDN
    */
-  var length: js.Number = _
+  def length: js.Number = ???
 
   def back(distance: js.Any): Unit = ???
 
@@ -4541,7 +4523,7 @@ class History extends js.Object {
    *
    * MDN
    */
-  var state: js.Any = _
+  def state: js.Any = ???
 
   def replaceState(statedata: js.Any, title: js.String, url: js.String): Unit = ???
 
@@ -4592,7 +4574,7 @@ class TimeRanges extends js.Object {
    *
    * MDN
    */
-  var length: js.Number = _
+  def length: js.Number = ???
 
   /**
    * Returns the time for the start of the range with the specified index.
@@ -4611,7 +4593,7 @@ class TimeRanges extends js.Object {
 
 
 class BeforeUnloadEvent extends Event {
-  var returnValue: js.String = _
+  def returnValue: js.String = ???
 }
 
 
@@ -4629,14 +4611,14 @@ class Event extends js.Object {
    *
    * MDN
    */
-  var timeStamp: js.Number = _
+  def timeStamp: js.Number = ???
   /**
    * Returns a boolean indicating whether or not event.preventDefault() was called on
    * the event.
    *
    * MDN
    */
-  var defaultPrevented: js.Boolean = _
+  def defaultPrevented: js.Boolean = ???
   /**
    * Indicates whether or not the event was initiated by the browser (after a user click
    * for instance) or by a script (using an event creation method, like
@@ -4644,7 +4626,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  var isTrusted: js.Boolean = _
+  def isTrusted: js.Boolean = ???
   /**
    * Identifies the current target for the event, as the event traverses the DOM. It
    * always refers to the element the event handler has been attached to as opposed to
@@ -4652,13 +4634,13 @@ class Event extends js.Object {
    *
    * MDN
    */
-  var currentTarget: EventTarget = _
+  def currentTarget: EventTarget = ???
   /**
    * A boolean indicating whether the bubbling of the event has been canceled or not.
    *
    * MDN
    */
-  var cancelBubble: js.Boolean = _
+  def cancelBubble: js.Boolean = ???
   /**
    * This property of event objects is the object the event was dispatched on. It is
    * different than event.currentTarget when the event handler is called in bubbling
@@ -4666,27 +4648,27 @@ class Event extends js.Object {
    *
    * MDN
    */
-  var target: EventTarget = _
+  def target: EventTarget = ???
   /**
    * Indicates which phase of the event flow is currently being evaluated.
    *
    * MDN
    */
-  var eventPhase: js.Number = _
+  def eventPhase: js.Number = ???
   /**
    * A boolean indicating whether the event is cancelable.
    *
    * MDN
    */
-  var cancelable: js.Boolean = _
-  var `type`: js.String = _
-  var srcElement: Element = _
+  def cancelable: js.Boolean = ???
+  def `type`: js.String = ???
+  def srcElement: Element = ???
   /**
    * A boolean indicating whether the event bubbles up through the DOM or not.
    *
    * MDN
    */
-  var bubbles: js.Boolean = _
+  def bubbles: js.Boolean = ???
 
   /**
    * The initEvent method is used to initialize the value of an event created using
@@ -4719,10 +4701,6 @@ class Event extends js.Object {
    * MDN
    */
   def preventDefault(): Unit = ???
-
-  var CAPTURING_PHASE: js.Number = _
-  var AT_TARGET: js.Number = _
-  var BUBBLING_PHASE: js.Number = _
 }
 
 /**
@@ -4734,10 +4712,9 @@ class Event extends js.Object {
  * MDN
  */
 object Event extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Event),List())))) */
-  var CAPTURING_PHASE: js.Number = _
-  var AT_TARGET: js.Number = _
-  var BUBBLING_PHASE: js.Number = _
+  def CAPTURING_PHASE: js.Number = ???
+  def AT_TARGET: js.Number = ???
+  def BUBBLING_PHASE: js.Number = ???
 }
 
 /**
@@ -4754,20 +4731,20 @@ class ImageData extends js.Object {
    *
    * MDN
    */
-  var width: js.Number = _
+  def width: js.Number = ???
   /**
    * Is a Uint8ClampedArray representing a one-dimensional array containing the data
    * in the RGBA order, with integer values between 0 and 255 (included).
    *
    * MDN
    */
-  var data: js.Array[js.Number] = _
+  def data: js.Array[js.Number] = ???
   /**
    * Is an unsigned long representing the actual height, in pixels, of the ImageData.
    *
    * MDN
    */
-  var height: js.Number = _
+  def height: js.Number = ???
 }
 
 
@@ -4786,7 +4763,7 @@ trait ErrorEventHandler extends js.Object {
  * MDN
  */
 class NamedNodeMap extends js.Object {
-  var length: js.Number = _
+  def length: js.Number = ???
 
   def removeNamedItemNS(namespaceURI: js.String, localName: js.String): Attr = ???
 
@@ -4811,8 +4788,8 @@ class NamedNodeMap extends js.Object {
 
 
 class MediaList extends js.Object {
-  var length: js.Number = _
-  var mediaText: js.String = _
+  def length: js.Number = ???
+  def mediaText: js.String = ???
 
   def deleteMedium(oldMedium: js.String): Unit = ???
 
@@ -4838,42 +4815,31 @@ class MediaList extends js.Object {
  * MDN
  */
 class ProcessingInstruction extends Node {
-  var target: js.String = _
-  var data: js.String = _
+  def target: js.String = ???
+  def data: js.String = ???
 }
 
 
 class TextEvent extends UIEvent {
-  var inputMethod: js.Number = _
-  var data: js.String = _
-  var locale: js.String = _
+  def inputMethod: js.Number = ???
+  def data: js.String = ???
+  def locale: js.String = ???
 
   def initTextEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, dataArg: js.String, inputMethod: js.Number, locale: js.String): Unit = ???
 
-  var DOM_INPUT_METHOD_KEYBOARD: js.Number = _
-  var DOM_INPUT_METHOD_DROP: js.Number = _
-  var DOM_INPUT_METHOD_IME: js.Number = _
-  var DOM_INPUT_METHOD_SCRIPT: js.Number = _
-  var DOM_INPUT_METHOD_VOICE: js.Number = _
-  var DOM_INPUT_METHOD_UNKNOWN: js.Number = _
-  var DOM_INPUT_METHOD_PASTE: js.Number = _
-  var DOM_INPUT_METHOD_HANDWRITING: js.Number = _
-  var DOM_INPUT_METHOD_OPTION: js.Number = _
-  var DOM_INPUT_METHOD_MULTIMODAL: js.Number = _
 }
 
 object TextEvent extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextEvent),List())))) */
-  var DOM_INPUT_METHOD_KEYBOARD: js.Number = _
-  var DOM_INPUT_METHOD_DROP: js.Number = _
-  var DOM_INPUT_METHOD_IME: js.Number = _
-  var DOM_INPUT_METHOD_SCRIPT: js.Number = _
-  var DOM_INPUT_METHOD_VOICE: js.Number = _
-  var DOM_INPUT_METHOD_UNKNOWN: js.Number = _
-  var DOM_INPUT_METHOD_PASTE: js.Number = _
-  var DOM_INPUT_METHOD_HANDWRITING: js.Number = _
-  var DOM_INPUT_METHOD_OPTION: js.Number = _
-  var DOM_INPUT_METHOD_MULTIMODAL: js.Number = _
+  val DOM_INPUT_METHOD_KEYBOARD: js.Number = ???
+  val DOM_INPUT_METHOD_DROP: js.Number = ???
+  val DOM_INPUT_METHOD_IME: js.Number = ???
+  val DOM_INPUT_METHOD_SCRIPT: js.Number = ???
+  val DOM_INPUT_METHOD_VOICE: js.Number = ???
+  val DOM_INPUT_METHOD_UNKNOWN: js.Number = ???
+  val DOM_INPUT_METHOD_PASTE: js.Number = ???
+  val DOM_INPUT_METHOD_HANDWRITING: js.Number = ???
+  val DOM_INPUT_METHOD_OPTION: js.Number = ???
+  val DOM_INPUT_METHOD_MULTIMODAL: js.Number = ???
 }
 
 /**
@@ -4903,7 +4869,7 @@ trait Position extends js.Object {
    *
    * MDN
    */
-  var timestamp: js.Number = _
+  def timestamp: js.Number = ???
   /**
    * The Position.coords read-only property, a Coordinates object, represents a
    * geographic attitude: it contains the location, that is longitude and latitude on
@@ -4912,7 +4878,7 @@ trait Position extends js.Object {
    *
    * MDN
    */
-  var coords: Coordinates = _
+  def coords: Coordinates = ???
 }
 
 
@@ -4943,33 +4909,39 @@ class StyleSheet extends js.Object {
    *
    * MDN
    */
-  var disabled: js.Boolean = _
+  def disabled: js.Boolean = ???
   /**
    * ownerNode returns the node that associates this style sheet with the document.
    *
    * MDN
    */
-  var ownerNode: Node = _
+  def ownerNode: Node = ???
   /**
    * Returns a StyleSheet including this one, if any; returns null if there aren't any.
    *
    * MDN
    */
-  var parentStyleSheet: StyleSheet = _
+  def parentStyleSheet: StyleSheet = ???
   /**
    * Returns a MediaList representing the intended destination medium for style
    * information.
    *
    * MDN
    */
-  var media: MediaList = _
-  var `type`: js.String = _
+  def media: MediaList = ???
+
+  /**
+   * Returns a DOMString representing the style sheet language for this style sheet.
+   *
+   * MDN
+   */
+  def `type`: js.String = ???
   /**
    * Returns a DOMString representing the advisory title of the current style sheet.
    *
    * MDN
    */
-  var title: js.String = _
+  var title: js.String = ???
 }
 
 
@@ -4980,7 +4952,7 @@ class StyleSheet extends js.Object {
  * MDN
  */
 class NodeList extends js.Object {
-  var length: js.Number = _
+  def length: js.Number = ???
 
   /**
    * Returns a node from a NodeList by index.
@@ -5039,23 +5011,6 @@ class NodeFilter extends js.Object {
    * MDN
    */
   def acceptNode(n: Node): js.Number = ???
-
-  var SHOW_ENTITY_REFERENCE: js.Number = _
-  var SHOW_NOTATION: js.Number = _
-  var SHOW_ENTITY: js.Number = _
-  var SHOW_DOCUMENT: js.Number = _
-  var SHOW_PROCESSING_INSTRUCTION: js.Number = _
-  var FILTER_REJECT: js.Number = _
-  var SHOW_CDATA_SECTION: js.Number = _
-  var FILTER_ACCEPT: js.Number = _
-  var SHOW_ALL: js.Number = _
-  var SHOW_DOCUMENT_TYPE: js.Number = _
-  var SHOW_TEXT: js.Number = _
-  var SHOW_ELEMENT: js.Number = _
-  var SHOW_COMMENT: js.Number = _
-  var FILTER_SKIP: js.Number = _
-  var SHOW_ATTRIBUTE: js.Number = _
-  var SHOW_DOCUMENT_FRAGMENT: js.Number = _
 }
 
 /**
@@ -5067,12 +5022,12 @@ class NodeFilter extends js.Object {
  * MDN
  */
 object NodeFilter extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(NodeFilter),List())))) */
-  var SHOW_ENTITY_REFERENCE: js.Number = _
-  var SHOW_NOTATION: js.Number = _
-  var SHOW_ENTITY: js.Number = _
-  var SHOW_DOCUMENT: js.Number = _
-  var SHOW_PROCESSING_INSTRUCTION: js.Number = _
+
+  val SHOW_ENTITY_REFERENCE: js.Number = ???
+  val SHOW_NOTATION: js.Number = ???
+  val SHOW_ENTITY: js.Number = ???
+  val SHOW_DOCUMENT: js.Number = ???
+  val SHOW_PROCESSING_INSTRUCTION: js.Number = ???
   /**
    * Value to be returned by the NodeFilter.acceptNode() method when a node should be
    * rejected. The children of rejected nodes are not visited by the NodeIterator or
@@ -5080,20 +5035,20 @@ object NodeFilter extends js.Object {
    *
    * MDN
    */
-  var FILTER_REJECT: js.Number = _
-  var SHOW_CDATA_SECTION: js.Number = _
+  val FILTER_REJECT: js.Number = ???
+  val SHOW_CDATA_SECTION: js.Number = ???
   /**
    * Value returned by the NodeFilter.acceptNode() method when a node should be
    * accepted.
    *
    * MDN
    */
-  var FILTER_ACCEPT: js.Number = _
-  var SHOW_ALL: js.Number = _
-  var SHOW_DOCUMENT_TYPE: js.Number = _
-  var SHOW_TEXT: js.Number = _
-  var SHOW_ELEMENT: js.Number = _
-  var SHOW_COMMENT: js.Number = _
+  val FILTER_ACCEPT: js.Number = ???
+  val SHOW_ALL: js.Number = ???
+  val SHOW_DOCUMENT_TYPE: js.Number = ???
+  val SHOW_TEXT: js.Number = ???
+  val SHOW_ELEMENT: js.Number = ???
+  val SHOW_COMMENT: js.Number = ???
   /**
    * Value to be returned by NodeFilter.acceptNode() for nodes to be skipped by the
    * NodeIterator or TreeWalker object. The children of skipped nodes are still
@@ -5101,26 +5056,21 @@ object NodeFilter extends js.Object {
    *
    * MDN
    */
-  var FILTER_SKIP: js.Number = _
-  var SHOW_ATTRIBUTE: js.Number = _
-  var SHOW_DOCUMENT_FRAGMENT: js.Number = _
+  val FILTER_SKIP: js.Number = ???
+  val SHOW_ATTRIBUTE: js.Number = ???
+  val SHOW_DOCUMENT_FRAGMENT: js.Number = ???
 }
 
 class MediaError extends js.Object {
-  var code: js.Number = _
-  var MEDIA_ERR_ABORTED: js.Number = _
-  var MEDIA_ERR_NETWORK: js.Number = _
-  var MEDIA_ERR_SRC_NOT_SUPPORTED: js.Number = _
-  var MEDIA_ERR_DECODE: js.Number = _
-  var msExtendedCode: js.Number = _
+  def code: js.Number = ???
+
 }
 
 object MediaError extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(MediaError),List())))) */
-  var MEDIA_ERR_ABORTED: js.Number = _
-  var MEDIA_ERR_NETWORK: js.Number = _
-  var MEDIA_ERR_SRC_NOT_SUPPORTED: js.Number = _
-  var MEDIA_ERR_DECODE: js.Number = _
+  val MEDIA_ERR_ABORTED: js.Number = ???
+  val MEDIA_ERR_NETWORK: js.Number = ???
+  val MEDIA_ERR_SRC_NOT_SUPPORTED: js.Number = ???
+  val MEDIA_ERR_DECODE: js.Number = ???
 }
 
 /**
@@ -5132,22 +5082,22 @@ object MediaError extends js.Object {
  * MDN
  */
 class Comment extends CharacterData {
-  var text: js.String = _
+  var text: js.String = ???
 }
 
 
 class PerformanceResourceTiming extends PerformanceEntry {
-  var redirectStart: js.Number = _
-  var redirectEnd: js.Number = _
-  var domainLookupEnd: js.Number = _
-  var responseStart: js.Number = _
-  var domainLookupStart: js.Number = _
-  var fetchStart: js.Number = _
-  var requestStart: js.Number = _
-  var connectEnd: js.Number = _
-  var connectStart: js.Number = _
-  var initiatorType: js.String = _
-  var responseEnd: js.Number = _
+  def redirectStart: js.Number = ???
+  def redirectEnd: js.Number = ???
+  def domainLookupEnd: js.Number = ???
+  def responseStart: js.Number = ???
+  def domainLookupStart: js.Number = ???
+  def fetchStart: js.Number = ???
+  def requestStart: js.Number = ???
+  def connectEnd: js.Number = ???
+  def connectStart: js.Number = ???
+  def initiatorType: js.String = ???
+  var responseEnd: js.Number = ???
 }
 
 
@@ -5175,33 +5125,33 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  val oldValue: js.Any = ???
+  def oldValue: js.Any = ???
   /**
    * The new value of the key. The newValue is null when the change has been invoked by
    * storage clear() method or the key has been removed from the storage. Read only.
    *
    * MDN
    */
-  val newValue: js.Any = ???
+  def newValue: js.Any = ???
   /**
    * The URL of the document whose key changed. Read only.
    *
    * MDN
    */
-  val url: js.String = ???
+  def url: js.String = ???
   /**
    * Represents the Storage object that was affected. Read only.
    *
    * MDN
    */
-  val storageArea: Storage = ???
+  def storageArea: Storage = ???
   /**
    * Represents the key changed. The key attribute is null when the change is caused by
    * the storage clear() method. Read only.
    *
    * MDN
    */
-  val key: js.String = ???
+  def key: js.String = ???
 
   /**
    * Initializes the event in a manner analogous to the similarly-named method in the
@@ -5228,13 +5178,13 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  var length: js.Number = _
+  def length: js.Number = ???
   /**
    * Is a DOMString representing the textual data contained in this object.
    *
    * MDN
    */
-  var data: js.String = _
+  var data: js.String = ???
 
   /**
    * Removes the specified amount of characters, starting at the specified offset,
@@ -5294,37 +5244,9 @@ class DOMException extends js.Object {
    *
    * MDN
    */
-  var code: js.Number = _
-  var message: js.String = _
+  def code: js.Number = ???
+  def message: js.String = ???
 
-  var HIERARCHY_REQUEST_ERR: js.Number = _
-  var NO_MODIFICATION_ALLOWED_ERR: js.Number = _
-  var INVALID_MODIFICATION_ERR: js.Number = _
-  var NAMESPACE_ERR: js.Number = _
-  var INVALID_CHARACTER_ERR: js.Number = _
-  var TYPE_MISMATCH_ERR: js.Number = _
-  var ABORT_ERR: js.Number = _
-  var INVALID_STATE_ERR: js.Number = _
-  var SECURITY_ERR: js.Number = _
-  var NETWORK_ERR: js.Number = _
-  var WRONG_DOCUMENT_ERR: js.Number = _
-  var QUOTA_EXCEEDED_ERR: js.Number = _
-  var INDEX_SIZE_ERR: js.Number = _
-  var DOMSTRING_SIZE_ERR: js.Number = _
-  var SYNTAX_ERR: js.Number = _
-  var SERIALIZE_ERR: js.Number = _
-  var VALIDATION_ERR: js.Number = _
-  var NOT_FOUND_ERR: js.Number = _
-  var URL_MISMATCH_ERR: js.Number = _
-  var PARSE_ERR: js.Number = _
-  var NO_DATA_ALLOWED_ERR: js.Number = _
-  var NOT_SUPPORTED_ERR: js.Number = _
-  var INVALID_ACCESS_ERR: js.Number = _
-  var INUSE_ATTRIBUTE_ERR: js.Number = _
-  var name: js.String = _
-  var INVALID_NODE_TYPE_ERR: js.Number = _
-  var DATA_CLONE_ERR: js.Number = _
-  var TIMEOUT_ERR: js.Number = _
 }
 
 /**
@@ -5334,31 +5256,31 @@ class DOMException extends js.Object {
  * MDN
  */
 object DOMException extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DOMException),List())))) */
-  var HIERARCHY_REQUEST_ERR: js.Number = _
-  var NO_MODIFICATION_ALLOWED_ERR: js.Number = _
-  var INVALID_MODIFICATION_ERR: js.Number = _
-  var NAMESPACE_ERR: js.Number = _
-  var INVALID_CHARACTER_ERR: js.Number = _
-  var TYPE_MISMATCH_ERR: js.Number = _
-  var ABORT_ERR: js.Number = _
-  var INVALID_STATE_ERR: js.Number = _
-  var SECURITY_ERR: js.Number = _
-  var NETWORK_ERR: js.Number = _
-  var WRONG_DOCUMENT_ERR: js.Number = _
-  var QUOTA_EXCEEDED_ERR: js.Number = _
-  var INDEX_SIZE_ERR: js.Number = _
-  var DOMSTRING_SIZE_ERR: js.Number = _
-  var SYNTAX_ERR: js.Number = _
-  var SERIALIZE_ERR: js.Number = _
-  var VALIDATION_ERR: js.Number = _
-  var NOT_FOUND_ERR: js.Number = _
-  var URL_MISMATCH_ERR: js.Number = _
-  var PARSE_ERR: js.Number = _
-  var NO_DATA_ALLOWED_ERR: js.Number = _
-  var NOT_SUPPORTED_ERR: js.Number = _
-  var INVALID_ACCESS_ERR: js.Number = _
-  var INUSE_ATTRIBUTE_ERR: js.Number = _
+
+  val HIERARCHY_REQUEST_ERR: js.Number = ???
+  val NO_MODIFICATION_ALLOWED_ERR: js.Number = ???
+  val INVALID_MODIFICATION_ERR: js.Number = ???
+  val NAMESPACE_ERR: js.Number = ???
+  val INVALID_CHARACTER_ERR: js.Number = ???
+  val TYPE_MISMATCH_ERR: js.Number = ???
+  val ABORT_ERR: js.Number = ???
+  val INVALID_STATE_ERR: js.Number = ???
+  val SECURITY_ERR: js.Number = ???
+  val NETWORK_ERR: js.Number = ???
+  val WRONG_DOCUMENT_ERR: js.Number = ???
+  val QUOTA_EXCEEDED_ERR: js.Number = ???
+  val INDEX_SIZE_ERR: js.Number = ???
+  val DOMSTRING_SIZE_ERR: js.Number = ???
+  val SYNTAX_ERR: js.Number = ???
+  val SERIALIZE_ERR: js.Number = ???
+  val VALIDATION_ERR: js.Number = ???
+  val NOT_FOUND_ERR: js.Number = ???
+  val URL_MISMATCH_ERR: js.Number = ???
+  val PARSE_ERR: js.Number = ???
+  val NO_DATA_ALLOWED_ERR: js.Number = ???
+  val NOT_SUPPORTED_ERR: js.Number = ???
+  val INVALID_ACCESS_ERR: js.Number = ???
+  val INUSE_ATTRIBUTE_ERR: js.Number = ???
 }
 
 /**
@@ -5370,22 +5292,22 @@ object DOMException extends js.Object {
  * MDN
  */
 class Attr extends Node {
-  var expando: js.Boolean = _
+
   /**
    * This property now always returns true.
    *
    * MDN
    */
-  var specified: js.Boolean = _
+  def specified: js.Boolean = ???
   /**
    * Since you get an Attr object from an Element, you should already know the associated
    * element.
    *
    * MDN
    */
-  var ownerElement: Element = _
-  var value: js.String = _
-  var name: js.String = _
+  def ownerElement: Element = ???
+  var value: js.String = ???
+  def name: js.String = ???
 }
 
 
@@ -5403,8 +5325,8 @@ class PerformanceNavigation extends js.Object {
    *
    * MDN
    */
-  var redirectCount: js.Number = _
-  var `type`: js.Number = _
+  def redirectCount: js.Number = ???
+  def `type`: js.Number = ???
 
   /**
    * Is a jsonizer returning a json object representing the PerformanceNavigation
@@ -5414,10 +5336,6 @@ class PerformanceNavigation extends js.Object {
    */
   def toJSON(): js.Dynamic = ???
 
-  var TYPE_RELOAD: js.Number = _
-  var TYPE_RESERVED: js.Number = _
-  var TYPE_BACK_FORWARD: js.Number = _
-  var TYPE_NAVIGATE: js.Number = _
 }
 
 /**
@@ -5427,11 +5345,11 @@ class PerformanceNavigation extends js.Object {
  * MDN
  */
 object PerformanceNavigation extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(PerformanceNavigation),List())))) */
-  var TYPE_RELOAD: js.Number = _
-  var TYPE_RESERVED: js.Number = _
-  var TYPE_BACK_FORWARD: js.Number = _
-  var TYPE_NAVIGATE: js.Number = _
+
+  val TYPE_RELOAD: js.Number = ???
+  val TYPE_RESERVED: js.Number = ???
+  val TYPE_BACK_FORWARD: js.Number = ???
+  val TYPE_NAVIGATE: js.Number = ???
 }
 
 
@@ -5441,18 +5359,18 @@ object PerformanceNavigation extends js.Object {
  * MDN
  */
 trait LinkStyle extends js.Object {
-  var styleSheet: StyleSheet = _
+
   /**
    * Returns the StyleSheet object associated with the given element, or null if there
    * is none.
    *
    * MDN
    */
-  var sheet: StyleSheet = _
+  def sheet: StyleSheet = ???
 }
 
 class ClientRectList extends js.Object {
-  var length: js.Number = _
+  def length: js.Number = ???
 
   def item(index: js.Number): ClientRect = ???
 
@@ -5469,7 +5387,7 @@ trait External extends js.Object {
 
 
 trait ObjectURLOptions extends js.Object {
-  var oneTimeOnly: js.Boolean = _
+  def oneTimeOnly: js.Boolean = ???
 }
 
 /**
@@ -5479,26 +5397,26 @@ trait ObjectURLOptions extends js.Object {
  * MDN
  */
 trait ErrorEvent extends Event {
-  var colno: js.Number = _
+  def colno: js.Number = ???
   /**
    * Is a DOMString containing the name of the script file in which the error occurred.
    *
    * MDN
    */
-  var filename: js.String = _
+  def filename: js.String = ???
   /**
    * Is an integer containing the line number of the script file on which the error
    * occurred.
    *
    * MDN
    */
-  var lineno: js.Number = _
+  def lineno: js.Number = ???
   /**
    * Is a DOMString containing a human-readable error message describing the problem.
    *
    * MDN
    */
-  var message: js.String = _
+  def message: js.String = ???
 
   def initErrorEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, messageArg: js.String, filenameArg: js.String, linenoArg: js.Number): Unit = ???
 }
@@ -5537,7 +5455,7 @@ trait TextTrackCue extends EventTarget {
  * MDN
  */
 trait DOMTokenList extends js.Object {
-  var length: js.Number = _
+  def length: js.Number = ???
 
   def contains(token: js.String): js.Boolean = ???
 
@@ -5559,8 +5477,8 @@ trait DOMTokenList extends js.Object {
 
 
 trait MessageChannel extends js.Object {
-  var port2: MessagePort = _
-  var port1: MessagePort = _
+  def port2: MessagePort = ???
+  def port1: MessagePort = ???
 }
 
 
@@ -5571,7 +5489,7 @@ trait MessageChannel extends js.Object {
  * MDN
  */
 trait TransitionEvent extends Event {
-  var propertyName: js.String = _
+  def propertyName: js.String = ???
   /**
    * The TransionnEvent.elapsedTime read-only property is a float giving the amount
    * of time the animation has been running, in seconds, when this event fired. This
@@ -5579,7 +5497,7 @@ trait TransitionEvent extends Event {
    *
    * MDN
    */
-  var elapsedTime: js.Number = _
+  def elapsedTime: js.Number = ???
 
   /**
    * The TransitionEvent.initTransitionEvent() method Initializes a transition
@@ -5606,8 +5524,14 @@ trait MediaQueryList extends js.Object {
    *
    * MDN
    */
-  var matches: js.Boolean = _
-  var media: js.String = _
+  def matches: js.Boolean = ???
+
+  /**
+   * The serialized media query list
+   *
+   * MDN
+   */
+  var media: js.String = ???
 
   /**
    * Adds a new listener to the media query list. If the specified listener is already in
@@ -5638,7 +5562,7 @@ trait DOMError extends js.Object {
    *
    * MDN
    */
-  var name: js.String = _
+  def name: js.String = ???
 
 }
 
@@ -5656,21 +5580,21 @@ trait CloseEvent extends Event {
    *
    * MDN
    */
-  var wasClean: js.Boolean = _
+  def wasClean: js.Boolean = ???
   /**
    * A string indicating the reason the server closed the connection. This is specific
    * to the particular server and sub-protocol.
    *
    * MDN
    */
-  var reason: js.String = _
+  def reason: js.String = ???
   /**
    * The WebSocket connection close code provided by the server. See Close codes for
    * possible values.
    *
    * MDN
    */
-  var code: js.Number = _
+  def code: js.Number = ???
 
   def initCloseEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, wasCleanArg: js.Boolean, codeArg: js.Number, reasonArg: js.String): Unit = ???
 }
@@ -5696,14 +5620,14 @@ class WebSocket protected() extends EventTarget {
    *
    * MDN
    */
-  var protocol: js.String = _
+  var protocol: js.String = ???
   /**
    * The current state of the connection; this is one of the Ready state constants. Read
    * only.
    *
    * MDN
    */
-  var readyState: js.Number = _
+  def readyState: js.Number = ???
   /**
    * The number of bytes of data that have been queued using calls to send() but not yet
    * transmitted to the network. This value does not reset to zero when the connection is
@@ -5711,7 +5635,7 @@ class WebSocket protected() extends EventTarget {
    *
    * MDN
    */
-  val bufferedAmount: js.Number = ???
+  def bufferedAmount: js.Number = ???
   /**
    * An event listener to be called when the WebSocket connection's readyState changes
    * to OPEN; this indicates that the connection is ready to send and receive data. The
@@ -5719,35 +5643,35 @@ class WebSocket protected() extends EventTarget {
    *
    * MDN
    */
-  var onopen: js.Function1[Event, Unit] = _
+  var onopen: js.Function1[Event, Unit] = ???
   /**
    * The extensions selected by the server. This is currently only the empty string or a
    * list of extensions as negotiated by the connection.
    *
    * MDN
    */
-  var extensions: js.String = _
+  def extensions: js.String = ???
   /**
    * An event listener to be called when a message is received from the server. The
    * listener receives a MessageEvent named "message".
    *
    * MDN
    */
-  var onmessage: js.Function1[MessageEvent, Unit] = _
+  var onmessage: js.Function1[MessageEvent, Unit] = ???
   /**
    * An event listener to be called when the WebSocket connection's readyState changes
    * to CLOSED. The listener receives a CloseEvent named "close".
    *
    * MDN
    */
-  var onclose: js.Function1[CloseEvent, Unit] = _
+  var onclose: js.Function1[CloseEvent, Unit] = ???
   /**
    * An event listener to be called when an error occurs. This is a simple event named
    * "error".
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, Unit] = _
+  var onerror: js.Function1[ErrorEvent, Unit] = ???
   /**
    * A string indicating the type of binary data being transmitted by the connection.
    * This should be either "blob" if DOM Blob objects are being used or "arraybuffer"
@@ -5755,7 +5679,7 @@ class WebSocket protected() extends EventTarget {
    *
    * MDN
    */
-  var binaryType: js.String = _
+  var binaryType: js.String = ???
   /**
    * The URL as resolved by the constructor. This is always an absolute URL. Read only.
    *
@@ -5786,10 +5710,6 @@ class WebSocket protected() extends EventTarget {
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
-  var OPEN: js.Number = _
-  var CLOSING: js.Number = _
-  var CONNECTING: js.Number = _
-  var CLOSED: js.Number = _
 }
 
 /**
@@ -5804,20 +5724,20 @@ object WebSocket extends js.Object {
    *
    * MDN
    */
-  var OPEN: js.Number = _
+  val OPEN: js.Number = ???
   /**
    * The connection is in the process of closing.
    *
    * MDN
    */
-  var CLOSING: js.Number = _
-  var CONNECTING: js.Number = _
+  val CLOSING: js.Number = ???
+  val CONNECTING: js.Number = ???
   /**
    * The connection is closed or couldn't be opened.
    *
    * MDN
    */
-  var CLOSED: js.Number = _
+  val CLOSED: js.Number = ???
 }
 
 /**
@@ -5837,7 +5757,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  var loaded: js.Number = _
+  def loaded: js.Number = ???
   /**
    * The ProgressEvent.lengthComputable read-only property is a Boolean flag
    * indicating if the resource concerned by the ProgressEvent has a length that can be
@@ -5845,7 +5765,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  var lengthComputable: js.Boolean = _
+  def lengthComputable: js.Boolean = ???
   /**
    * The ProgressEvent.total read-only property is an unsigned long long
    * representing the total amount of work that the underlying process is in the
@@ -5854,7 +5774,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  var total: js.Number = _
+  def total: js.Number = ???
 
   /**
    * The ProgressEvent.initProgressEvent() method Initializes an animation event
@@ -5880,7 +5800,7 @@ trait FileList extends js.Object {
    *
    * MDN
    */
-  var length: js.Number = _
+  def length: js.Number = ???
 
   /**
    * Returns a File object representing the file at the specified index in the file list.
@@ -5910,14 +5830,14 @@ trait File extends Blob {
    *
    * MDN
    */
-  var lastModifiedDate: js.Any = _
+  def lastModifiedDate: js.Any = ???
   /**
    * Returns the name of the file. For security reasons, the path is excluded from this
    * property.
    *
    * MDN
    */
-  var name: js.String = _
+  def name: js.String = ???
 }
 
 
@@ -5964,20 +5884,20 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var onprogress: js.Function1[ProgressEvent, js.Any] = _
+  var onprogress: js.Function1[ProgressEvent, js.Any] = ???
   /**
    * The function to call when a request encounters an error.
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = _
+  var onerror: js.Function1[ErrorEvent, js.Any] = ???
   /**
    * The function to call when an HTTP request returns after successfully loading
    * content.
    *
    * MDN
    */
-  var onload: js.Function1[js.Any, js.Any] = _
+  var onload: js.Function1[js.Any, js.Any] = ???
   /**
    * A function that is called if the event times out; this only happens if a timeout has
    * been previously established by setting the value of the XMLHttpRequest object's
@@ -5985,25 +5905,25 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var ontimeout: js.Function1[js.Any, js.Any] = _
+  var ontimeout: js.Function1[js.Any, js.Any] = ???
   /**
    * The function to call when a request is aborted.
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, js.Any] = _
+  var onabort: js.Function1[js.Any, js.Any] = ???
   /**
    * A function that gets called when the HTTP request first begins loading data.
    *
    * MDN
    */
-  var onloadstart: js.Function1[js.Any, js.Any] = _
+  var onloadstart: js.Function1[js.Any, js.Any] = ???
   /**
    * A function that is called when the load is completed, even if the request failed.
    *
    * MDN
    */
-  var onloadend: js.Function1[ProgressEvent, js.Any] = _
+  var onloadend: js.Function1[ProgressEvent, js.Any] = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
@@ -6055,7 +5975,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  var animationName: js.String = _
+  def animationName: js.String = ???
   /**
    * The AnimationEvent.elapsedTime read-only property is a float giving the amount
    * of time the animation has been running, in seconds, when this event fired,
@@ -6065,7 +5985,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  var elapsedTime: js.Number = _
+  def elapsedTime: js.Number = ???
 
   /**
    * The AnimationEvent.initAnimationEvent() method Initializes an animation
@@ -6079,7 +5999,7 @@ trait AnimationEvent extends Event {
 
 
 trait WindowConsole extends js.Object {
-  var console: Console = _
+  var console: Console = ???
 }
 
 
@@ -6197,7 +6117,7 @@ trait WindowBase64 extends js.Object {
  * MDN
  */
 trait DOMStringList extends js.Object {
-  var length: js.Number = _
+  def length: js.Number = ???
 
   def contains(str: js.String): js.Boolean = ???
 
@@ -6260,7 +6180,7 @@ trait MediaQueryListListener extends js.Object {
 
 
 trait MessagePort extends EventTarget {
-  var onmessage: js.Function1[js.Any, js.Any] = _
+  var onmessage: js.Function1[js.Any, js.Any] = ???
 
   def close(): Unit = ???
 
@@ -6289,7 +6209,7 @@ trait FileReader {
    *
    * MDN
    */
-  var error: DOMError = _
+  def error: DOMError = ???
 
   /**
    * The readAsArrayBuffer method is used to starts reading the contents of the
@@ -6326,8 +6246,8 @@ trait FileReader {
 
 
 trait BlobPropertyBag extends js.Object {
-  var `type`: js.String = _
-  var endings: js.String = _
+  def `type`: js.String = ???
+  def endings: js.String = ???
 }
 
 /**
@@ -6343,13 +6263,13 @@ class Blob extends js.Object {
 
   def this(blobParts: js.Array[js.Any]) = this()
 
-  var `type`: js.String = _
+  def `type`: js.String = ???
   /**
    * The size, in bytes, of the data contained in the Blob object.
    *
    * MDN
    */
-  var size: js.Number = _
+  def size: js.Number = ???
 
   def msDetachStream(): js.Dynamic = ???
 
@@ -6384,15 +6304,15 @@ object Blob extends js.Object {
 }
 
 trait ApplicationCache extends EventTarget {
-  var status: js.Number = _
-  var ondownloading: js.Function1[Event, _] = _
-  var onprogress: js.Function1[ProgressEvent, js.Any] = _
-  var onupdateready: js.Function1[Event, _] = _
-  var oncached: js.Function1[Event, _] = _
-  var onobsolete: js.Function1[Event, _] = _
-  var onerror: js.Function1[ErrorEvent, js.Any] = _
-  var onchecking: js.Function1[Event, _] = _
-  var onnoupdate: js.Function1[Event, _] = _
+  def status: js.Number = ???
+  var ondownloading: js.Function1[Event, _] = ???
+  var onprogress: js.Function1[ProgressEvent, js.Any] = ???
+  var onupdateready: js.Function1[Event, _] = ???
+  var oncached: js.Function1[Event, _] = ???
+  var onobsolete: js.Function1[Event, _] = ???
+  var onerror: js.Function1[ErrorEvent, js.Any] = ???
+  var onchecking: js.Function1[Event, _] = ???
+  var onnoupdate: js.Function1[Event, _] = ???
 
   def swapCache(): Unit = ???
 
@@ -6404,22 +6324,16 @@ trait ApplicationCache extends EventTarget {
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
-  var CHECKING: js.Number = _
-  var UNCACHED: js.Number = _
-  var UPDATEREADY: js.Number = _
-  var DOWNLOADING: js.Number = _
-  var IDLE: js.Number = _
-  var OBSOLETE: js.Number = _
 }
 
 object ApplicationCache extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ApplicationCache),List())))) */
-  var CHECKING: js.Number = _
-  var UNCACHED: js.Number = _
-  var UPDATEREADY: js.Number = _
-  var DOWNLOADING: js.Number = _
-  var IDLE: js.Number = _
-  var OBSOLETE: js.Number = _
+  val CHECKING: js.Number = ???
+  val UNCACHED: js.Number = ???
+  val UPDATEREADY: js.Number = ???
+  val DOWNLOADING: js.Number = ???
+  val IDLE: js.Number = ???
+  val OBSOLETE: js.Number = ???
 }
 
 trait FrameRequestCallback extends js.Object {
@@ -6427,14 +6341,14 @@ trait FrameRequestCallback extends js.Object {
 }
 
 trait PopStateEvent extends Event {
-  var state: js.Any = _
+  def state: js.Any = ???
 
   def initPopStateEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, stateArg: js.Any): Unit = ???
 }
 
 
 trait DOMSettableTokenList extends DOMTokenList {
-  var value: js.String = _
+  def value: js.String = ???
 }
 
 
@@ -6484,7 +6398,7 @@ trait AbstractWorker extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = _
+  var onerror: js.Function1[ErrorEvent, js.Any] = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
@@ -6506,44 +6420,44 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  var customError: js.Boolean = _
+  def customError: js.Boolean = ???
   /**
    * The element has a required attribute, but no value.
    *
    * MDN
    */
-  var valueMissing: js.Boolean = _
+  def valueMissing: js.Boolean = ???
   /**
    * The value does not fit the rules determined by the step attribute (that is, it's not
    * evenly divisible by the step value).
    *
    * MDN
    */
-  var stepMismatch: js.Boolean = _
+  def stepMismatch: js.Boolean = ???
   /**
    * The value is less than the minimum specified by the min attribute.
    *
    * MDN
    */
-  var rangeUnderflow: js.Boolean = _
+  def rangeUnderflow: js.Boolean = ???
   /**
    * The value is greater than the maximum specified by the max attribute.
    *
    * MDN
    */
-  var rangeOverflow: js.Boolean = _
+  def rangeOverflow: js.Boolean = ???
   /**
    * The value is not in the required syntax (when type is email or url).
    *
    * MDN
    */
-  var typeMismatch: js.Boolean = _
+  def typeMismatch: js.Boolean = ???
   /**
    * The value does not match the specified pattern.
    *
    * MDN
    */
-  var patternMismatch: js.Boolean = _
+  def patternMismatch: js.Boolean = ???
   /**
    * The value exceeds the specified maxlength for HTMLInputElement or
    * HTMLTextAreaElement objects. Note: This will never be true in Gecko, because
@@ -6551,14 +6465,14 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  var tooLong: js.Boolean = _
+  def tooLong: js.Boolean = ???
   /**
    * The element meets all constraint validations, and is therefore considered to be
    * valid.
    *
    * MDN
    */
-  var valid: js.Boolean = _
+  def valid: js.Boolean = ???
 }
 
 
@@ -6580,7 +6494,7 @@ class Worker protected() extends AbstractWorker {
    *
    * MDN
    */
-  var onmessage: js.Function1[js.Any, js.Any] = _
+  var onmessage: js.Function1[js.Any, js.Any] = ???
 
   def postMessage(message: js.Any, ports: js.Any): Unit = ???
 
