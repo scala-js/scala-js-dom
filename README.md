@@ -10,6 +10,19 @@ See [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example o
 License
 -------
 
+Documentation marked "MDN" is thanks to Mozilla Contributors
+at https://developer.mozilla.org/en-US/docs/Web/API and available
+under the Creative Commons Attribution-ShareAlike v2.5 or later.
+http://creativecommons.org/licenses/by-sa/2.5/
+
+This should not affect you, as a user of the library, as long as you don't
+modify these MDN materials (e.g. you leave them as is, or replace them
+wholesale). In particular, packaging this library with MDN materials unchanged
+is fine for any purpose (including commercial) according to the CC-Attribuet-SAk
+License.
+
+Everything else (e.g. the code) is under the MIT License
+
 The MIT License (MIT)
 
 Copyright (c) 2013 Li Haoyi
