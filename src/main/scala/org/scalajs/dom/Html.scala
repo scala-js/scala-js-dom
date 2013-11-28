@@ -27,7 +27,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.String = _
+  var width: js.String = ???
 
   /**
    * Is a DOMString containing the width in pixels of the horizontal and vertical
@@ -35,7 +35,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var cellSpacing: js.String = _
+  var cellSpacing: js.String = ???
   /**
    * Is an HTMLTableSectionElement representing the first <tfoot> that is a child of
    * the element, or null if none is found. When set, if the object doesn't represent a
@@ -47,7 +47,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var tFoot: HTMLTableSectionElement = _
+  var tFoot: HTMLTableSectionElement = ???
   /**
    * Is a DOMString containing the type of the external borders of the table. It reflects
    * the obsolete frame attribute and can take one of the following values: "void",
@@ -55,7 +55,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var frame: js.String = _
+  var frame: js.String = ???
 
   /**
    * Returns a live HTMLCollection containing all the rows of the element, that is all
@@ -66,7 +66,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var rows: HTMLCollection = _
+  var rows: HTMLCollection = ???
   /**
    * Is a DOMString containing the type of the internal borders of the table. It reflects
    * the obsolete rules attribute and can take one of the following values: "none",
@@ -74,15 +74,15 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var rules: js.String = _
-  var cols: js.Number = _
+  var rules: js.String = ???
+  var cols: js.Number = ???
   /**
    * Is a DOMString containing a description of the purpose or the structure of the
    * table. It reflects the obsolete summary attribute.
    *
    * MDN
    */
-  var summary: js.String = _
+  var summary: js.String = ???
   /**
    * Is an HTMLTableCaptionElement representing the first <caption> that is a child of
    * the element, or null if none is found. When set, if the object doesn't represent a
@@ -93,7 +93,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var caption: HTMLTableCaptionElement = _
+  var caption: HTMLTableCaptionElement = ???
   /**
    * Returns a live HTMLCollection containing all the <tbody> of the element. The
    * HTMLCollection is live and is automatically updated when the HTMLTableElement
@@ -101,7 +101,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var tBodies: HTMLCollection = _
+  var tBodies: HTMLCollection = ???
   /**
    * Is an HTMLTableSectionElement representing the first <thead> that is a child of
    * the element, or null if none is found. When set, if the object doesn't represent a
@@ -113,7 +113,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var tHead: HTMLTableSectionElement = _
+  var tHead: HTMLTableSectionElement = ???
   /**
    * Is a DOMString containing an enumerated value reflecting the align attribute. It
    * indicates the alignment of the element's contents with respect to the surrounding
@@ -121,7 +121,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = _
+  var align: js.String = ???
 
   /**
    * Is a DOMString containing the width in pixels of the horizontal and vertical sapce
@@ -130,14 +130,14 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var cellPadding: js.String = _
+  var cellPadding: js.String = ???
   /**
    * Is a DOMString containing the width in pixels of the border of the table. It reflects
    * the obsolete border attribute.
    *
    * MDN
    */
-  var border: js.String = _
+  var border: js.String = ???
 
   def deleteRow(index: js.Number): Unit = ???
 
@@ -248,18 +248,18 @@ class HTMLBaseElement extends HTMLElement {
    *
    * MDN
    */
-  var target: js.String = _
+  var target: js.String = ???
   /**
    * Is a DOMString that reflects the href HTML attribute, containing a base URL for
    * relative URLs in the document.
    *
    * MDN
    */
-  var href: js.String = _
+  var href: js.String = ???
 }
 
 trait HTMLNextIdElement extends HTMLElement {
-  var n: js.String = _
+  var n: js.String = ???
 }
 
 /**
@@ -277,7 +277,7 @@ class HTMLParagraphElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = _
+  var align: js.String = ???
 }
 
 
@@ -292,25 +292,25 @@ trait HTMLAreasCollection extends HTMLCollection {
 }
 
 class HTMLAppletElement extends HTMLElement {
-  var width: js.Number = _
-  var codeType: js.String = _
-  var `object`: js.String = _
-  var form: HTMLFormElement = _
-  var code: js.String = _
-  var archive: js.String = _
-  var alt: js.String = _
-  var standby: js.String = _
-  var classid: js.String = _
-  var name: js.String = _
-  var useMap: js.String = _
-  var data: js.String = _
-  var height: js.String = _
-  var altHtml: js.String = _
-  var contentDocument: Document = _
-  var codeBase: js.String = _
-  var declare: js.Boolean = _
-  var `type`: js.String = _
-  var BaseHref: js.String = _
+  var width: js.Number = ???
+  var codeType: js.String = ???
+  var `object`: js.String = ???
+  var form: HTMLFormElement = ???
+  var code: js.String = ???
+  var archive: js.String = ???
+  var alt: js.String = ???
+  var standby: js.String = ???
+  var classid: js.String = ???
+  var name: js.String = ???
+  var useMap: js.String = ???
+  var data: js.String = ???
+  var height: js.String = ???
+  var altHtml: js.String = ???
+  var contentDocument: Document = ???
+  var codeBase: js.String = ???
+  var declare: js.Boolean = ???
+  var `type`: js.String = ???
+  var BaseHref: js.String = ???
 }
 
 /**
@@ -327,7 +327,7 @@ class HTMLOListElement extends HTMLElement {
    *
    * MDN
    */
-  var start: js.Number = _
+  var start: js.Number = ???
 }
 
 /**
@@ -349,7 +349,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.String = _
+  var value: js.String = ???
   /**
    * The form that this element is associated with. If this element is a descendant of a
    * form element, then this attribute is the ID of that form element. If the element is
@@ -365,34 +365,34 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var name: js.String = _
+  var name: js.String = ???
   /**
    * Reflects the size HTML attribute, which contains the number of visible items in the
    * control. The default is 1, HTML5 unless multiple is true, in which case it is 4.
    *
    * MDN
    */
-  var size: js.Number = _
+  var size: js.Number = ???
   /**
    * The number of <option> elements in this select element.
    *
    * MDN
    */
-  var length: js.Number = _
+  var length: js.Number = ???
   /**
    * The index of the first selected <option> element.
    *
    * MDN
    */
-  var selectedIndex: js.Number = _
+  var selectedIndex: js.Number = ???
   /**
    * Reflects the multiple HTML attribute, whichindicates whether multiple items can
    * be selected.
    *
    * MDN
    */
-  var multiple: js.Boolean = _
-  var `type`: js.String = _
+  var multiple: js.Boolean = ???
+  var `type`: js.String = ???
 
   def remove(index: js.Number): Unit = ???
 
@@ -444,7 +444,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var autofocus: js.Boolean = _
+  var autofocus: js.Boolean = ???
   /**
    * The validity states that this control is in. Read only. HTML5
    *
@@ -457,7 +457,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var required: js.Boolean = _
+  var required: js.Boolean = ???
   /**
    * Indicates whether the button is a candidate for constraint validation. It is false
    * if any conditions bar it from constraint validation. Read only. HTML5
@@ -472,8 +472,8 @@ class HTMLSelectElement extends HTMLElement {
 }
 
 trait HTMLBlockElement extends HTMLElement {
-  var width: js.Number = _
-  var cite: js.String = _
+  var width: js.Number = ???
+  var cite: js.String = ???
 }
 
 /**
@@ -489,31 +489,31 @@ class HTMLMetaElement extends HTMLElement {
    *
    * MDN
    */
-  var httpEquiv: js.String = _
+  var httpEquiv: js.String = ???
   /**
    * Gets or sets the name of a meta-data property to define for a document.
    *
    * MDN
    */
-  var name: js.String = _
+  var name: js.String = ???
   /**
    * Gets or sets the value of meta-data property.
    *
    * MDN
    */
-  var content: js.String = _
-  var url: js.String = _
+  var content: js.String = ???
+  var url: js.String = ???
   /**
    * Gets or sets the name of a scheme used to interpret the value of a meta-data property.
    *
    * MDN
    */
-  var scheme: js.String = _
-  var charset: js.String = _
+  var scheme: js.String = ???
+  var charset: js.String = ???
 }
 
 class HTMLDDElement extends HTMLElement {
-  var noWrap: js.Boolean = _
+  var noWrap: js.Boolean = ???
 }
 
 /**
@@ -531,49 +531,49 @@ class HTMLLinkElement extends HTMLElement with LinkStyle {
    *
    * MDN
    */
-  var rel: js.String = _
+  var rel: js.String = ???
   /**
    * Gets or sets the name of the target frame to which the resource applies.
    *
    * MDN
    */
-  var target: js.String = _
+  var target: js.String = ???
   /**
    * Gets or sets the URI for the target resource.
    *
    * MDN
    */
-  var href: js.String = _
+  var href: js.String = ???
   /**
    * Gets or sets a list of one or more media formats to which the resource applies.
    *
    * MDN
    */
-  var media: js.String = _
+  var media: js.String = ???
   /**
    * Gets or sets the reverse relationship of the linked resource from the resource to
    * the document.
    *
    * MDN
    */
-  var rev: js.String = _
-  var `type`: js.String = _
+  var rev: js.String = ???
+  var `type`: js.String = ???
   /**
    * Gets or sets the character encoding for the target resource.
    *
    * MDN
    */
-  var charset: js.String = _
+  var charset: js.String = ???
   /**
    * Gets or sets the language code for the linked resource.
    *
    * MDN
    */
-  var hreflang: js.String = _
+  var hreflang: js.String = ???
 }
 
 class HTMLFontElement extends HTMLElement {
-  var face: js.String = _
+  var face: js.String = ???
 }
 
 /**
@@ -590,8 +590,8 @@ class HTMLTableCaptionElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = _
-  var vAlign: js.String = _
+  var align: js.String = ???
+  var vAlign: js.String = ???
 }
 
 /**
@@ -608,27 +608,27 @@ class HTMLOptionElement extends HTMLElement {
    *
    * MDN
    */
-  var index: js.Number = _
+  var index: js.Number = ???
   /**
    * Contains the initial value of the selected HTML attribute, indicating whether the
    * option is selected by default or not.
    *
    * MDN
    */
-  var defaultSelected: js.Boolean = _
+  var defaultSelected: js.Boolean = ???
   /**
    * Reflects the value of the value HTML attribute, if it exists; otherwise reflects
    * value of the Node.textContent property.
    *
    * MDN
    */
-  var value: js.String = _
+  var value: js.String = ???
   /**
    * Contains the text content of the element.
    *
    * MDN
    */
-  var text: js.String = _
+  var text: js.String = ???
   /**
    * If the option is a descendent of a <select> element, then this property has the same
    * value as the form property of the corresponding HTMLSelectElement object;
@@ -636,7 +636,7 @@ class HTMLOptionElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = _
+  var form: HTMLFormElement = ???
   /**
    * Reflects the value of the label HTML attribute, which provides a label for the
    * option. If this attribute isn't specifically set, reading it returns the
@@ -644,13 +644,13 @@ class HTMLOptionElement extends HTMLElement {
    *
    * MDN
    */
-  var label: js.String = _
+  var label: js.String = ???
   /**
    * Indicates whether the option is currently selected.
    *
    * MDN
    */
-  var selected: js.Boolean = _
+  var selected: js.Boolean = ???
 
   def create(): HTMLOptionElement = ???
 }
@@ -669,18 +669,18 @@ class HTMLMapElement extends HTMLElement {
    *
    * MDN
    */
-  var name: js.String = _
+  var name: js.String = ???
   /**
    * Is a live HTMLCollection representing the <area> elements associated to this
    * <map>.
    *
    * MDN
    */
-  var areas: HTMLAreasCollection = _
+  var areas: HTMLAreasCollection = ???
 }
 
 class HTMLMenuElement extends HTMLElement {
-  var `type`: js.String = _
+  var `type`: js.String = ???
 }
 
 /**
@@ -695,7 +695,7 @@ class HTMLCollection extends js.Object {
    *
    * MDN
    */
-  var length: js.Number = _
+  var length: js.Number = ???
 
   def item(nameOrIndex: js.Any, optionalIndex: js.Any): Element = ???
 
@@ -740,91 +740,91 @@ class HTMLImageElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.Number = _
-  var vspace: js.Number = _
+  var width: js.Number = ???
+  var vspace: js.Number = ???
   /**
    * Intrinsic height of the image in CSS pixels, if it is available; otherwise, 0.
    *
    * MDN
    */
-  var naturalHeight: js.Number = _
+  var naturalHeight: js.Number = ???
   /**
    * Reflects the alt HTML attribute, indicating fallback context for the image.
    *
    * MDN
    */
-  var alt: js.String = _
+  var alt: js.String = ???
   /**
    * Indicates the alignment of the image with respect to the surrounding context.
    *
    * MDN
    */
-  var align: js.String = _
+  var align: js.String = ???
   /**
    * Reflects the src HTML attribute, containing the URL of the image.
    *
    * MDN
    */
-  var src: js.String = _
+  var src: js.String = ???
   /**
    * Reflects the usemap HTML attribute, containing a partial URL of a map element.
    *
    * MDN
    */
-  var useMap: js.String = _
+  var useMap: js.String = ???
   /**
    * Intrinsic width of the image in CSS pixels, if it is available; otherwise, 0.
    *
    * MDN
    */
-  var naturalWidth: js.Number = _
-  var name: js.String = _
+  var naturalWidth: js.Number = ???
+  var name: js.String = ???
   /**
    * Reflects the height HTML attribute, indicating the rendered height of the image in
    * CSS pixels.
    *
    * MDN
    */
-  var height: js.Number = _
+  var height: js.Number = ???
   /**
    * Width of the border around the image.
    *
    * MDN
    */
-  var border: js.String = _
+  var border: js.String = ???
   /**
    * Space to the left and right of the image.
    *
    * MDN
    */
-  var hspace: js.Number = _
+  var hspace: js.Number = ???
   /**
    * URI of a long description of the image.
    *
    * MDN
    */
-  var longDesc: js.String = _
-  var href: js.String = _
+  var longDesc: js.String = ???
+  var href: js.String = ???
   /**
    * Reflects the ismap HTML attribute, indicating that the image is part of a
    * server-side image map.
    *
    * MDN
    */
-  var isMap: js.Boolean = _
+  var isMap: js.Boolean = ???
   /**
    * True if the browser has fetched the image, and it is in a supported image type that was
    * decoded without errors.
    *
    * MDN
    */
-  var complete: js.Boolean = _
+  var complete: js.Boolean = ???
 
   def create(): HTMLImageElement = ???
 
-  var msPlayToPrimary: js.Boolean = _
-  var msPlayToDisabled: js.Boolean = _
-  var msPlayToSource: js.Any = _
+  var msPlayToPrimary: js.Boolean = ???
+  var msPlayToDisabled: js.Boolean = ???
+  var msPlayToSource: js.Any = ???
 }
 
 /**
@@ -841,87 +841,87 @@ class HTMLAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var protocol: js.String = _
+  var protocol: js.String = ???
   /**
    * Is a DOMString containing tThe search element (including leading question mark
    * '?'), if any, of the referenced URL.
    *
    * MDN
    */
-  var search: js.String = _
+  var search: js.String = ???
   /**
    * Is a DOMString that reflects the alt HTML attribute, containing alternative text
    * for the element.
    *
    * MDN
    */
-  var alt: js.String = _
+  var alt: js.String = ???
   /**
    * Is a DOMString that reflects the coords HTML attribute, containing coordinates to
    * define the hot-spot region.
    *
    * MDN
    */
-  var coords: js.String = _
+  var coords: js.String = ???
   /**
    * Is a DOMString containing the hostname in the referenced URL.
    *
    * MDN
    */
-  var hostname: js.String = _
+  var hostname: js.String = ???
   /**
    * Is a DOMString containing the port component, if any, of the referenced URL.
    *
    * MDN
    */
-  var port: js.String = _
+  var port: js.String = ???
   /**
    * Is a DOMString containing the path name component, if any, of the referenced URL.
    *
    * MDN
    */
-  var pathname: js.String = _
+  var pathname: js.String = ???
   /**
    * Is a DOMString containing the hostname and port (if it's not the default port) in the
    * referenced URL.
    *
    * MDN
    */
-  var host: js.String = _
+  var host: js.String = ???
   /**
    * Is a DOMString containing the fragment identifier (including the leading hash
    * mark (#)), if any, in the referenced URL.
    *
    * MDN
    */
-  var hash: js.String = _
+  var hash: js.String = ???
   /**
    * Is a DOMString that reflects the target HTML attribute, indicating the browsing
    * context in which to open the linked resource.
    *
    * MDN
    */
-  var target: js.String = _
+  var target: js.String = ???
   /**
    * Is a DOMString containing that reflects the href HTML attribute, containing a
    * valid URL of a linked resource.
    *
    * MDN
    */
-  var href: js.String = _
+  var href: js.String = ???
   /**
    * Is a Boolean flag indicating if the area is inactive (true) or active (false).
    *
    * MDN
    */
-  var noHref: js.Boolean = _
+  var noHref: js.Boolean = ???
   /**
    * Is a DOMString teflects the shape HTML attribute, indicating the shape of the
    * hot-spot, limited to known values.
    *
    * MDN
    */
-  var shape: js.String = _
+  var shape: js.String = ???
 
 }
 
@@ -938,8 +938,8 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.String = _
-  var status: js.Any = _
+  var value: js.String = ???
+  var status: js.Any = ???
   /**
    * The form that this button is associated with. If the button is a descendant of a form
    * element, then this attribute is the ID of that form element. If the button is not a
@@ -948,15 +948,15 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = _
+  var form: HTMLFormElement = ???
   /**
    * The name of the object when submitted with a form. HTML5 If specified, it must not be
    * the empty string.
    *
    * MDN
    */
-  var name: js.String = _
-  var `type`: js.String = _
+  var name: js.String = ???
+  var `type`: js.String = ???
   /**
    * A localized message that describes the validation constraints that the control
    * does not satisfy (if any). This attribute is the empty string if the control is not a
@@ -965,7 +965,7 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: js.String = _
+  var validationMessage: js.String = ???
   /**
    * A name or keyword indicating where to display the response that is received after
    * submitting the form. If specified, this attribute overrides the target attribute
@@ -973,14 +973,14 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formTarget: js.String = _
+  var formTarget: js.String = ???
   /**
    * Indicates whether the button is a candidate for constraint validation. It is false
    * if any conditions bar it from constraint validation.
    *
    * MDN
    */
-  var willValidate: js.Boolean = _
+  var willValidate: js.Boolean = ???
   /**
    * The URI of a resource that processes information submitted by the button. If
    * specified, this attribute overrides the action attribute of the <form> element
@@ -988,7 +988,7 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formAction: js.String = _
+  var formAction: js.String = ???
   /**
    * The control should have input focus when the page loads, unless the user overrides
    * it, for example by typing in a different control. Only one form-associated element
@@ -996,13 +996,13 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var autofocus: js.Boolean = _
+  var autofocus: js.Boolean = ???
   /**
    * The validity states that this button is in.
    *
    * MDN
    */
-  var validity: ValidityState = _
+  var validity: ValidityState = ???
   /**
    * Indicates that the form is not to be validated when it is submitted. If specified,
    * this attribute overrides the enctype attribute of the <form> element that owns
@@ -1010,8 +1010,8 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formNoValidate: js.String = _
-  var formEnctype: js.String = _
+  var formNoValidate: js.String = ???
+  var formEnctype: js.String = ???
   /**
    * The HTTP method that the browser uses to submit the form. If specified, this
    * attribute overrides the method attribute of the <form> element that owns this
@@ -1019,7 +1019,7 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formMethod: js.String = _
+  var formMethod: js.String = ???
 
   def checkValidity(): js.Boolean = ???
 
@@ -1039,15 +1039,15 @@ class HTMLSourceElement extends HTMLElement {
    *
    * MDN
    */
-  var src: js.String = _
+  var src: js.String = ???
   /**
    * Reflects the media HTML attribute, containing the intended type of the media
    * resource.
    *
    * MDN
    */
-  var media: js.String = _
-  var `type`: js.String = _
+  var media: js.String = ???
+  var `type`: js.String = ???
 }
 
 /**
@@ -1059,7 +1059,7 @@ class HTMLSourceElement extends HTMLElement {
  * MDN
  */
 class HTMLScriptElement extends HTMLElement {
-  var defer: js.Boolean = _
+  var defer: js.Boolean = ???
   /**
    * The IDL attribute text must return a concatenation of the contents of all the Text
    * nodes that are children of the <script> element (ignoring any other nodes such as
@@ -1070,24 +1070,24 @@ class HTMLScriptElement extends HTMLElement {
    *
    * MDN
    */
-  var text: js.String = _
+  var text: js.String = ???
   /**
    * Represents gives the address of the external script resource to use. It reflects
    * the src attribute.
    *
    * MDN
    */
-  var src: js.String = _
-  var htmlFor: js.String = _
+  var src: js.String = ???
+  var htmlFor: js.String = ???
   /**
    * Represents the character encoding of the external script resource. It reflects
    * the charset attribute.
    *
    * MDN
    */
-  var charset: js.String = _
-  var `type`: js.String = _
-  var event: js.String = _
+  var charset: js.String = ???
+  var `type`: js.String = ???
+  var event: js.String = ???
   /**
    * The async and defer attributes are boolean attributes that indicate how the script
    * should be executed. The defer and async attributes must not be specified if the src
@@ -1110,7 +1110,7 @@ class HTMLScriptElement extends HTMLElement {
    *
    * MDN
    */
-  var async: js.Boolean = _
+  var async: js.Boolean = ???
 }
 
 /**
@@ -1127,14 +1127,14 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var rowIndex: js.Number = _
+  var rowIndex: js.Number = ???
   /**
    * Returns a live HTMLCollection containing the cells in the row. The HTMLCollection
    * is live and is automatically updated when cells are added or removed.
    *
    * MDN
    */
-  var cells: HTMLCollection = _
+  var cells: HTMLCollection = ???
   /**
    * Is a DOMString containing an enumerated value reflecting the align attribute. It
    * indicates the alignment of the element's contents with respect to the surrounding
@@ -1142,18 +1142,18 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: js.String = _
-  var borderColorLight: js.Any = _
+  var align: js.String = ???
+  var borderColorLight: js.Any = ???
   /**
    * Returns a long value which gives the logical position of the row within the table
    * section it belongs to. If the row is not part of a section, returns -1.
    *
    * MDN
    */
-  var sectionRowIndex: js.Number = _
-  var borderColor: js.Any = _
-  var height: js.Any = _
-  var borderColorDark: js.Any = _
+  var sectionRowIndex: js.Number = ???
+  var borderColor: js.Any = ???
+  var height: js.Any = ???
+  var borderColorDark: js.Any = ???
 
   def deleteCell(index: js.Number): Unit = ???
 
@@ -1193,27 +1193,27 @@ class HTMLHtmlElement extends HTMLElement {
    *
    * MDN
    */
-  var version: js.String = _
+  var version: js.String = ???
 }
 
 class HTMLFrameElement extends HTMLElement with GetSVGDocument {
-  var width: js.Any = _
-  var scrolling: js.String = _
-  var marginHeight: js.String = _
-  var marginWidth: js.String = _
-  var borderColor: js.Any = _
-  var frameSpacing: js.Any = _
-  var frameBorder: js.String = _
-  var noResize: js.Boolean = _
-  var contentWindow: Window = _
-  var src: js.String = _
-  var name: js.String = _
-  var height: js.Any = _
-  var contentDocument: Document = _
-  var border: js.String = _
-  var longDesc: js.String = _
-  var onload: js.Function1[Event, _] = _
-  var security: js.Any = _
+  var width: js.Any = ???
+  var scrolling: js.String = ???
+  var marginHeight: js.String = ???
+  var marginWidth: js.String = ???
+  var borderColor: js.Any = ???
+  var frameSpacing: js.Any = ???
+  var frameBorder: js.String = ???
+  var noResize: js.Boolean = ???
+  var contentWindow: Window = ???
+  var src: js.String = ???
+  var name: js.String = ???
+  var height: js.Any = ???
+  var contentDocument: Document = ???
+  var border: js.String = ???
+  var longDesc: js.String = ???
+  var onload: js.Function1[Event, _] = ???
+  var security: js.Any = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
@@ -1229,13 +1229,13 @@ class HTMLFrameElement extends HTMLElement with GetSVGDocument {
  * MDN
  */
 class HTMLQuoteElement extends HTMLElement {
-  var dateTime: js.String = _
+  var dateTime: js.String = ???
   /**
    * Reflects the cite HTML attribute, containing a URL for the source of the quotation.
    *
    * MDN
    */
-  var cite: js.String = _
+  var cite: js.String = ???
 }
 
 /**
@@ -1260,25 +1260,25 @@ class HTMLDListElement extends HTMLElement {
 }
 
 class HTMLFrameSetElement extends HTMLElement {
-  var ononline: js.Function1[Event, _] = _
-  var borderColor: js.Any = _
-  var rows: js.String = _
-  var cols: js.String = _
-  var frameSpacing: js.Any = _
-  var onmessage: js.Function1[MessageEvent, js.Any] = _
-  var onerror: js.Function1[Event, _] = _
-  var frameBorder: js.String = _
-  var onresize: js.Function1[UIEvent, js.Any] = _
-  var name: js.String = _
-  var onafterprint: js.Function1[Event, _] = _
-  var onbeforeprint: js.Function1[Event, _] = _
-  var onoffline: js.Function1[Event, _] = _
-  var border: js.String = _
-  var onunload: js.Function1[Event, _] = _
-  var onhashchange: js.Function1[Event, _] = _
-  var onload: js.Function1[Event, _] = _
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = _
-  var onstorage: js.Function1[StorageEvent, js.Any] = _
+  var ononline: js.Function1[Event, _] = ???
+  var borderColor: js.Any = ???
+  var rows: js.String = ???
+  var cols: js.String = ???
+  var frameSpacing: js.Any = ???
+  var onmessage: js.Function1[MessageEvent, js.Any] = ???
+  var onerror: js.Function1[Event, _] = ???
+  var frameBorder: js.String = ???
+  var onresize: js.Function1[UIEvent, js.Any] = ???
+  var name: js.String = ???
+  var onafterprint: js.Function1[Event, _] = ???
+  var onbeforeprint: js.Function1[Event, _] = ???
+  var onoffline: js.Function1[Event, _] = ???
+  var border: js.String = ???
+  var onunload: js.Function1[Event, _] = ???
+  var onhashchange: js.Function1[Event, _] = ???
+  var onload: js.Function1[Event, _] = ???
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = ???
+  var onstorage: js.Function1[StorageEvent, js.Any] = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
@@ -1297,8 +1297,8 @@ class HTMLLabelElement extends HTMLElement {
    *
    * MDN
    */
-  var htmlFor: js.String = _
-  var form: HTMLFormElement = _
+  var htmlFor: js.String = ???
+  def form: HTMLFormElement = ???
 }
 
 /**
@@ -1309,8 +1309,8 @@ class HTMLLabelElement extends HTMLElement {
  * MDN
  */
 class HTMLLegendElement extends HTMLElement {
-  var align: js.String = _
-  var form: HTMLFormElement = _
+  var align: js.String = ???
+  def form: HTMLFormElement = ???
 }
 
 class HTMLDirectoryElement extends HTMLElement {
@@ -1331,7 +1331,7 @@ class HTMLLIElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.Number = _
+  var value: js.Number = ???
 }
 
 /**
@@ -1348,66 +1348,52 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var width: js.String = _
-  /**
-   * Indicates whether the browser should provide scrollbars for the frame.
-   *
-   * MDN
-   */
-  var scrolling: js.String = _
-  var marginHeight: js.String = _
-  var marginWidth: js.String = _
-  var frameSpacing: js.Any = _
-  var frameBorder: js.String = _
-  var noResize: js.Boolean = _
-  var vspace: js.Number = _
+  var width: js.String = ???
+
+
+
   /**
    * The window proxy for the nested browsing context.
    *
    * MDN
    */
-  var contentWindow: Window = _
-  /**
-   * Specifies the alignment of the frame with respect to the surrounding context.
-   *
-   * MDN
-   */
-  var align: js.String = _
+  var contentWindow: Window = ???
+
   /**
    * Reflects the src HTML attribute, containing the address of the content to be
    * embedded.
    *
    * MDN
    */
-  var src: js.String = _
+  var src: js.String = ???
   /**
    * Reflects the name HTML attribute, containing a name by which to refer to the frame.
    *
    * MDN
    */
-  var name: js.String = _
+  var name: js.String = ???
   /**
    * Reflects the height HTML attribute, indicating the height of the frame.
    *
    * MDN
    */
-  var height: js.String = _
-  var border: js.String = _
+  var height: js.String = ???
+  var border: js.String = ???
   /**
    * The active document in the inline frame's nested browsing context.
    *
    * MDN
    */
-  var contentDocument: Document = _
-  var hspace: js.Number = _
+  var contentDocument: Document = ???
+
   /**
    * URI of a long description of the frame.
    *
    * MDN
    */
-  var longDesc: js.String = _
-  var security: js.Any = _
-  var onload: js.Function1[Event, _] = _
+  var longDesc: js.String = ???
+  var security: js.Any = ???
+  var onload: js.Function1[Event, _] = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
@@ -1419,7 +1405,7 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var sandbox: DOMSettableTokenList = _
+  var sandbox: DOMSettableTokenList = ???
 }
 
 /**
@@ -1430,23 +1416,23 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
  * MDN
  */
 class HTMLBodyElement extends HTMLElement {
-  var scroll: js.String = _
+  var scroll: js.String = ???
   /**
    * Reflects the ononline HTML attribute value for a function to call when network
    * communication is restored.
    *
    * MDN
    */
-  var ononline: js.Function1[Event, _] = _
-  var noWrap: js.Boolean = _
+  var ononline: js.Function1[Event, _] = ???
+
   /**
    * Reflects the onmessage HTML attribute value for a function to call when the
    * document receives a message.
    *
    * MDN
    */
-  var onmessage: js.Function1[MessageEvent, js.Any] = _
-  var text: js.Any = _
+  var onmessage: js.Function1[MessageEvent, js.Any] = ???
+  var text: js.Any = ???
   /**
    * Exposes the window.onerror event handler to call when the document fails to load
    * properly. Note: This handler is triggered when the event reaches the window, not
@@ -1455,55 +1441,54 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onerror: js.Function1[Event, _] = _
-  var bgProperties: js.String = _
+  var onerror: js.Function1[Event, _] = ???
+
   /**
    * Reflects the onresize HTML attribute value for a function to call when the
    * document has been resized.
    *
    * MDN
    */
-  var onresize: js.Function1[UIEvent, js.Any] = _
-  var link: js.Any = _
-  var aLink: js.Any = _
-  var bottomMargin: js.Any = _
-  var topMargin: js.Any = _
+  var onresize: js.Function1[UIEvent, js.Any] = ???
+  var link: js.Any = ???
+  var aLink: js.Any = ???
+
   /**
    * Reflects the onafterprint HTML attribute value for a function to call after the
    * user has printed the document.
    *
    * MDN
    */
-  var onafterprint: js.Function1[Event, _] = _
-  var vLink: js.Any = _
+  var onafterprint: js.Function1[Event, _] = ???
+  var vLink: js.Any = ???
   /**
    * Reflects the onbeforeprint HTML attribute value for a function to call when the
    * user has requested printing the document.
    *
    * MDN
    */
-  var onbeforeprint: js.Function1[Event, _] = _
+  var onbeforeprint: js.Function1[Event, _] = ???
   /**
    * Reflects the onoffline HTML attribute value for a function to call when network
    * communication fails.
    *
    * MDN
    */
-  var onoffline: js.Function1[Event, _] = _
+  var onoffline: js.Function1[Event, _] = ???
   /**
    * Reflects the onunload HTML attribute value for a function to call when when the
    * document is going away.
    *
    * MDN
    */
-  var onunload: js.Function1[Event, _] = _
+  var onunload: js.Function1[Event, _] = ???
   /**
    * Reflects the onhashchange HTML attribute value for a function to call when the
    * fragment identifier in the address of the document changes.
    *
    * MDN
    */
-  var onhashchange: js.Function1[Event, _] = _
+  var onhashchange: js.Function1[Event, _] = ???
   /**
    * Exposes the window.onload event handler to call when the window gains focus. Note:
    * This handler is triggered when the event reaches the window, not the body element.
@@ -1511,23 +1496,23 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onload: js.Function1[Event, _] = _
-  var rightMargin: js.Any = _
+  var onload: js.Function1[Event, _] = ???
+  var rightMargin: js.Any = ???
   /**
    * Reflects the onbeforeunload HTML attribute value for a function to call when the
    * document is about to be unloaded.
    *
    * MDN
    */
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = _
-  var leftMargin: js.Any = _
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = ???
+  var leftMargin: js.Any = ???
   /**
    * Reflects the onpopstate HTML attribute value for a function to call when the
    * storage area has changed.
    *
    * MDN
    */
-  var onstorage: js.Function1[StorageEvent, js.Any] = _
+  var onstorage: js.Function1[StorageEvent, js.Any] = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
@@ -1539,7 +1524,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onpopstate: js.Function1[PopStateEvent, js.Any] = _
+  var onpopstate: js.Function1[PopStateEvent, js.Any] = ???
 }
 
 /**
@@ -1558,7 +1543,7 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: js.String = _
+  var align: js.String = ???
   /**
    * Returns a live HTMLCollection containing the rows in the section. The
    * HTMLCollection is live and is automatically updated when rows are added or
@@ -1566,7 +1551,7 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var rows: HTMLCollection = _
+  var rows: HTMLCollection = ???
 
   def deleteRow(index: js.Number): Unit = ???
 
@@ -1604,8 +1589,8 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.String = _
-  var status: js.Boolean = _
+  var width: js.String = ???
+  var status: js.Boolean = ???
   /**
    * The containing form element, if this element is in a form. If this element is not
    * contained in a form element: HTML5 this can be the id attribute of any <form> element
@@ -1614,19 +1599,19 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = _
+  def form: HTMLFormElement = ???
   /**
    * The index of the beginning of selected text.
    *
    * MDN
    */
-  var selectionStart: js.Number = _
+  var selectionStart: js.Number = ???
   /**
    * Indicates that a checkbox is neither on nor off.
    *
    * MDN
    */
-  var indeterminate: js.Boolean = _
+  var indeterminate: js.Boolean = ???
   /**
    * Reflects the readonly HTML attribute, indicating that the user cannot modify the
    * value of the control. HTML5This is ignored if the value of the type attribute is
@@ -1634,7 +1619,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var readOnly: js.Boolean = _
+  var readOnly: js.Boolean = ???
   /**
    * Reflects the size HTML attribute, containing size of the control. This value is in
    * pixels unless the value of type is text or password, in which case, it is an integer
@@ -1643,40 +1628,42 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var size: js.Number = _
-  var loop: js.Number = _
+  var size: js.Number = ???
+
   /**
    * The index of the end of selected text.
    *
    * MDN
    */
-  var selectionEnd: js.Number = _
-  var vrml: js.String = _
-  var lowsrc: js.String = _
-  var vspace: js.Number = _
+  var selectionEnd: js.Number = ???
+
   /**
    * Reflects the accept HTML attribute, containing comma-separated list of file
    * types accepted by the server when type is file.
    *
    * MDN
    */
-  var accept: js.String = _
+  var accept: js.String = ???
   /**
    * Reflects the alt HTML attribute, containing alternative text to use when type is
    * image.
    *
    * MDN
    */
-  var alt: js.String = _
+  var alt: js.String = ???
   /**
    * The default state of a radio button or checkbox as originally specified in HTML that
    * created this object.
    *
    * MDN
    */
-  var defaultChecked: js.Boolean = _
-  var align: js.String = _
-  var value: js.String = _
+  var defaultChecked: js.Boolean = ???
+  /**
+   * Current value in the control.
+   *
+   * MDN
+   */
+  var value: js.String = ???
   /**
    * Reflects the src HTML attribute, which specifies a URI for the location of an image
    * to display on the graphical submit button, if the value of type is image; otherwise
@@ -1684,31 +1671,31 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var src: js.String = _
+  var src: js.String = ???
   /**
    * Reflects the name HTML attribute, containing a name that identifies the element
    * when submitting the form.
    *
    * MDN
    */
-  var name: js.String = _
-  var useMap: js.String = _
+  var name: js.String = ???
+
   /**
    * Reflects the height HTML attribute, which defines the height of the image
    * displayed for the button, if the value of type is image.
    *
    * MDN
    */
-  var height: js.String = _
-  var border: js.String = _
-  var dynsrc: js.String = _
+  var height: js.String = ???
+
+
   /**
    * The current state of the element when type is checkbox or radio.
    *
    * MDN
    */
-  var checked: js.Boolean = _
-  var hspace: js.Number = _
+  var checked: js.Boolean = ???
+
   /**
    * Reflects the maxlength HTML attribute, containing the maximum length of text (in
    * Unicode code points) that the value can be changed to. The constraint is evaluated
@@ -1717,16 +1704,18 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var maxLength: js.Number = _
-  var `type`: js.String = _
+  var maxLength: js.Number = ???
+  /**
+   * Reflects the type HTML attribute, indicating the type of control to display.
+   * See type attribute of <input> for possible values.
+   */
+  var `type`: js.String = ???
   /**
    * The default value as originally specified in HTML that created this object.
    *
    * MDN
    */
-  var defaultValue: js.String = _
-  var complete: js.Boolean = _
-  var start: js.String = _
+  var defaultValue: js.String = ???
 
   /**
    * Selects a range of text in the element (but does not focus it). The optional
@@ -1755,15 +1744,15 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: js.String = _
-  var files: FileList = _
+  var validationMessage: js.String = ???
+  var files: FileList = ???
   /**
    * Reflects the max HTML attribute, containing the maximum (numeric or date-time)
    * value for this item, which must not be less than its minimum (min attribute) value.
    *
    * MDN
    */
-  var max: js.String = _
+  var max: js.String = ???
   /**
    * Reflects the formtarget HTML attribute, containing a name or keyword indicating
    * where to display the response that is received after submitting the form. If
@@ -1772,14 +1761,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formTarget: js.String = _
+  var formTarget: js.String = ???
   /**
    * Indicates whether the element is a candidate for constraint validation. It is
    * false if any conditions bar it from constraint validation.
    *
    * MDN
    */
-  var willValidate: js.Boolean = _
+  var willValidate: js.Boolean = ???
   /**
    * Reflects the step HTML attribute, which works with min and max to limit the
    * increments at which a numeric or date-time value can be set. It can be the string any
@@ -1788,7 +1777,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var step: js.String = _
+  var step: js.String = ???
   /**
    * Reflects the autofocus HTML attribute, which specifies that a form control
    * should have input focus when the page loads, unless the user overrides it, for
@@ -1798,22 +1787,29 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var autofocus: js.Boolean = _
+  var autofocus: js.Boolean = ???
   /**
    * Reflects the required HTML attribute, indicating that the user must fill in a
    * value before submitting a form.
    *
    * MDN
    */
-  var required: js.Boolean = _
-  var formEnctype: js.String = _
+  var required: js.Boolean = ???
+  /**
+   * Reflects the formenctype HTML attribute, containing the type of content that
+   * is used to submit the form to the server. If specified, this attribute
+   * overrides the enctype attribute of the <form> element that owns this element.
+   *
+   * MDN
+   */
+  var formEnctype: js.String = ???
   /**
    * The value of the element, interpreted as one of the following in order: a time value a
    * number null if conversion is not possible
    *
    * MDN
    */
-  var valueAsNumber: js.Number = _
+  var valueAsNumber: js.Number = ???
   /**
    * Reflects the placeholder HTML attribute, containing a hint to the user of what can
    * be entered in the control. The placeholder text must not contain carriage returns
@@ -1822,7 +1818,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var placeholder: js.String = _
+  var placeholder: js.String = ???
   /**
    * Reflects the formmethod HTML attribute, containing the HTTP method that the
    * browser uses to submit the form. If specified, this attribute overrides the method
@@ -1830,7 +1826,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formMethod: js.String = _
+  var formMethod: js.String = ???
   /**
    * Identifies a list of pre-defined options to suggest to the user. The value must be
    * the id of a <datalist> element in the same document. The browser displays only
@@ -1839,7 +1835,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var list: HTMLElement = _
+  var list: HTMLElement = ???
   /**
    * Reflects the autocomplete HTML attribute, indicating whether the value of the
    * control can be automatically completed by the browser. Ignored if the value of the
@@ -1852,7 +1848,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var autocomplete: js.String = _
+  var autocomplete: js.String = ???
   /**
    * Reflects the min HTML attribute, containing the minimum (numeric or date-time)
    * value for this item, which must not be greater than its maximum (max attribute)
@@ -1860,7 +1856,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var min: js.String = _
+  var min: js.String = ???
   /**
    * Reflects the formaction HTML attribute, containing the URI of a program that
    * processes information submitted by the element. If specified, this attribute
@@ -1868,7 +1864,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formAction: js.String = _
+  var formAction: js.String = ???
   /**
    * Reflects the pattern HTML attribute, containing a regular expression that the
    * control's value is checked against. The pattern must match the entire value, not
@@ -1878,13 +1874,13 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var pattern: js.String = _
+  var pattern: js.String = ???
   /**
    * The validity state that this element is in. 
    *
    * MDN
    */
-  var validity: ValidityState = _
+  var validity: ValidityState = ???
   /**
    * Reflects the formnovalidate HTML attribute, indicating that the form is not to
    * be validated when it is submitted. If specified, this attribute overrides the
@@ -1892,14 +1888,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formNoValidate: js.String = _
+  var formNoValidate: js.String = ???
   /**
    * Reflects the multiple HTML attribute, indicating whether more than one value is
    * possible (e.g., multiple files).
    *
    * MDN
    */
-  var multiple: js.Boolean = _
+  var multiple: js.Boolean = ???
 
   /**
    * Returns false if the element is a candidate for constraint validation, and it does
@@ -1960,118 +1956,117 @@ class HTMLAnchorElement extends HTMLElement {
    *
    * MDN
    */
-  var rel: js.String = _
+  var rel: js.String = ???
   /**
    * Is a DOMString representing the protocol component, including trailing colon
    * (':'), of the referenced URL.
    *
    * MDN
    */
-  var protocol: js.String = _
+  var protocol: js.String = ???
   /**
    * Is a DOMString representing tThe search element, including leading question mark
    * ('?'), if any, of the referenced URL.
    *
    * MDN
    */
-  var search: js.String = _
+  var search: js.String = ???
   /**
    * Is a DOMString representing a comma-separated list of coordinates.
    *
    * MDN
    */
-  var coords: js.String = _
+  var coords: js.String = ???
   /**
    * Is a DOMString representing the hostname in the referenced URL.
    *
    * MDN
    */
-  var hostname: js.String = _
+  var hostname: js.String = ???
   /**
    * Is a DOMString representing the path name component, if any, of the referenced URL.
    *
    * MDN
    */
-  var pathname: js.String = _
-  var Methods: js.String = _
+  var pathname: js.String = ???
+
   /**
    * Is a DOMString that reflects the target HTML attribute, indicating where to
    * display the linked resource.
    *
    * MDN
    */
-  var target: js.String = _
-  var protocolLong: js.String = _
+  var target: js.String = ???
+
   /**
    * Is a DOMString that reflects the href HTML attribute, containing a valid URL of a
    * linked resource.
    *
    * MDN
    */
-  var href: js.String = _
+  var href: js.String = ???
   /**
    * Is a DOMString representing the anchor name.
    *
    * MDN
    */
-  var name: js.String = _
+  var name: js.String = ???
   /**
    * Is a DOMString representing the character encoding of the linked resource.
    *
    * MDN
    */
-  var charset: js.String = _
+  var charset: js.String = ???
   /**
    * Is a DOMString that reflects the hreflang HTML attribute, indicating the language
    * of the linked resource.
    *
    * MDN
    */
-  var hreflang: js.String = _
+  var hreflang: js.String = ???
   /**
    * Is a DOMString representing the port component, if any, of the referenced URL.
    *
    * MDN
    */
-  var port: js.String = _
+  var port: js.String = ???
   /**
    * Is a DOMString representing the hostname and port (if it's not the default port) in
    * the referenced URL.
    *
    * MDN
    */
-  var host: js.String = _
+  var host: js.String = ???
   /**
    * Is a DOMString representing the fragment identifier, including the leading hash
    * mark ('#'), if any, in the referenced URL.
    *
    * MDN
    */
-  var hash: js.String = _
-  var nameProp: js.String = _
-  var urn: js.String = _
+  var hash: js.String = ???
+
   /**
    * Is a DOMString representing that the rev HTML attribute, specifying the
    * relationship of the link object to the target object.
    *
    * MDN
    */
-  var rev: js.String = _
+  var rev: js.String = ???
   /**
    * Is a DOMString representing the shape of the active area.
    *
    * MDN
    */
-  var shape: js.String = _
-  var `type`: js.String = _
-  var mimeType: js.String = _
+  var shape: js.String = ???
+  var `type`: js.String = ???
+  var mimeType: js.String = ???
 
   /**
    * Is a DOMString being a synonym for the Node.textContent property.
    *
    * MDN
    */
-  var text: js.String = _
+  var text: js.String = ???
 }
 
 /**
@@ -2089,22 +2084,28 @@ class HTMLParamElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.String = _
+  var value: js.String = ???
   /**
    * Is a DOMString representing the name of the parameter. It reflects the name
    * attribute.
    *
    * MDN
    */
-  var name: js.String = _
-  var `type`: js.String = _
+  var name: js.String = ???
+  /**
+   * Is a DOMString that reflects the type HTML attribute, indicating the MIME
+   * type of the linked resource
+   *
+   * MDN
+   */
+  var `type`: js.String = ???
   /**
    * Is a DOMString containing the type of the value. It reflects the valuetype
    * attribute and has one of the values: "data", "ref", or "object".
    *
    * MDN
    */
-  var valueType: js.String = _
+  var valueType: js.String = ???
 }
 
 /**
@@ -2121,14 +2122,12 @@ class HTMLPreElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.Number = _
-  var cite: js.String = _
+  var width: js.Number = ???
 }
 
 
 class HTMLPhraseElement extends HTMLElement {
-  var dateTime: js.String = _
-  var cite: js.String = _
+  var dateTime: js.String = ???
 }
 
 
@@ -2147,14 +2146,14 @@ class HTMLCanvasElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.Number = _
+  var width: js.Number = ???
   /**
    * Reflects the height HTML attribute, specifying the height of the coordinate space
    * in CSS pixels.
    *
    * MDN
    */
-  var height: js.Number = _
+  var height: js.Number = ???
 
   /**
    * Returns a data: URL containing a representation of the image in the format
@@ -2181,8 +2180,6 @@ class HTMLCanvasElement extends HTMLElement {
    * MDN
    */
   def getContext(contextId: js.String, args: js.Any*): js.Dynamic = ???
-
-  def msToBlob(): Blob = ???
 }
 
 
@@ -2198,7 +2195,7 @@ class HTMLTitleElement extends HTMLElement {
    *
    * MDN
    */
-  var text: js.String = _
+  var text: js.String = ???
 }
 
 
@@ -2215,8 +2212,13 @@ class HTMLStyleElement extends HTMLElement with LinkStyle {
    *
    * MDN
    */
-  var media: js.String = _
-  var `type`: js.String = _
+  var media: js.String = ???
+  /**
+   * Returns the type of the current style.
+   *
+   * MDN
+   */
+  var `type`: js.String = ???
 }
 
 
@@ -2257,21 +2259,21 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var width: js.Number = _
+  var width: js.Number = ???
   /**
    * Is a DOMSettableTokenList describing a list of id of <th> elements that represents
    * headers associated with the cell. It reflects the headers attribute.
    *
    * MDN
    */
-  var headers: js.String = _
+  var headers: js.String = ???
   /**
    * Is a long representing the cell position in the cells collection of the <tr> it
    * belongs to. If the cell doesn't belong to a <tr>, it returns -1.
    *
    * MDN
    */
-  var cellIndex: js.Number = _
+  var cellIndex: js.Number = ???
   /**
    * Is a DOMString containing an enumerated value reflecting the align attribute. It
    * indicates the alignment of the element's contents with respect to the surrounding
@@ -2279,47 +2281,47 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: js.String = _
-  var borderColorLight: js.Any = _
+  var align: js.String = ???
+
   /**
    * Is an unsigned long that represents the number of columns this cell must span. It
    * reflects the colspan attribute.
    *
    * MDN
    */
-  var colSpan: js.Number = _
-  var borderColor: js.Any = _
+  var colSpan: js.Number = ???
+
   /**
    * Is a DOMString containing a name grouping cells in virtual. It reflects the
    * obsolete axis attribute.
    *
    * MDN
    */
-  var axis: js.String = _
+  var axis: js.String = ???
   /**
    * Is a DOMString containing a length of pixel of the hinted height of the cell. It
    * reflects the obsolete height attribute.
    *
    * MDN
    */
-  var height: js.Any = _
+  var height: js.Any = ???
   /**
    * Is a Boolean value reflecting the nowrap attribute and indicating if cell content
    * can be broken in several lines.
    *
    * MDN
    */
-  var noWrap: js.Boolean = _
-  var abbr: js.String = _
+  var noWrap: js.Boolean = ???
+
   /**
    * Is an unsigned long that represents the number of rows this cell must span. It
    * reflects the rowspan attribute.
    *
    * MDN
    */
-  var rowSpan: js.Number = _
-  var scope: js.String = _
-  var borderColorDark: js.Any = _
+  var rowSpan: js.Number = ???
+
+
 }
 
 
@@ -2339,7 +2341,7 @@ class HTMLBaseFontElement extends HTMLElement {
    *
    * MDN
    */
-  var face: js.String = _
+  var face: js.String = ???
   /**
    * Is a DOMString representing the font size as either a numeric or relative value.
    * Numeric values range from 1 to 7 with 1 being the smallest and 3 the default. Relative
@@ -2347,7 +2349,7 @@ class HTMLBaseFontElement extends HTMLElement {
    *
    * MDN
    */
-  var size: js.Number = _
+  var size: js.Number = ???
 }
 
 
@@ -2365,8 +2367,8 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.String = _
-  var status: js.Any = _
+  var value: js.String = ???
+  var status: js.Any = ???
   /**
    * The containing form element, if this element is in a form. If this element is not
    * contained in a form element, it can be the id attribute of any <form> element in the
@@ -2374,13 +2376,13 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = _
+  var form: HTMLFormElement = ???
   /**
    * Reflects name HTML attribute, containing the name of the control.
    *
    * MDN
    */
-  var name: js.String = _
+  var name: js.String = ???
   /**
    * The index of the beginning of selected text. If no text is selected, contains the
    * index of the character that follows the input cursor. On being set, the control
@@ -2389,33 +2391,33 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var selectionStart: js.Number = _
+  var selectionStart: js.Number = ???
   /**
    * Reflects the rows HTML attribute, indicating the number of visible text lines for
    * the control.
    *
    * MDN
    */
-  var rows: js.Number = _
+  var rows: js.Number = ???
   /**
    * Reflects the cols HTML attribute, indicating the visible width of the text area.
    *
    * MDN
    */
-  var cols: js.Number = _
+  var cols: js.Number = ???
   /**
    * Reflects the readonly HTML attribute, indicating that the user cannot modify the
    * value of the control.
    *
    * MDN
    */
-  var readOnly: js.Boolean = _
+  var readOnly: js.Boolean = ???
   /**
    * Reflects the wrap HTML attribute, indicating how the control wraps text.
    *
    * MDN
    */
-  var wrap: js.String = _
+  var wrap: js.String = ???
   /**
    * The index of the end of selected text. If no text is selected, contains the index of
    * the character that follows the input cursor. On being set, the control behaves as if
@@ -2424,15 +2426,18 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var selectionEnd: js.Number = _
-  var `type`: js.String = _
+  var selectionEnd: js.Number = ???
+  /**
+   * The string textarea.
+   */
+  def `type`: js.String = ???
   /**
    * The control's default value, which behaves like the element.textContent
    * property.
    *
    * MDN
    */
-  var defaultValue: js.String = _
+  var defaultValue: js.String = ???
 
   /**
    * Selects a range of text, and sets selectionStart and selectionEnd. If either
@@ -2458,27 +2463,27 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: js.String = _
+  var validationMessage: js.String = ???
   /**
    * Reflects the autofocus HTML attribute, indicating that the control should have
    * input focus when the page loads
    *
    * MDN
    */
-  var autofocus: js.Boolean = _
+  var autofocus: js.Boolean = ???
   /**
    * The validity states that this element is in.
    *
    * MDN
    */
-  var validity: ValidityState = _
+  var validity: ValidityState = ???
   /**
    * Reflects the required HTML attribute, indicating that the user must specify a
    * value before submitting the form.
    *
    * MDN
    */
-  var required: js.Boolean = _
+  var required: js.Boolean = ???
   /**
    * Reflects the maxlength HTML attribute, indicating the maximum number of
    * characters the user can enter. This constraint is evaluated only when the value
@@ -2486,21 +2491,21 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var maxLength: js.Number = _
+  var maxLength: js.Number = ???
   /**
    * Indicates whether the element is a candidate for constraint validation. It is
    * false if any conditions bar it from constraint validation.
    *
    * MDN
    */
-  var willValidate: js.Boolean = _
+  var willValidate: js.Boolean = ???
   /**
    * Reflects the placeholder HTML attribute, containing a hint to the user about what
    * to enter in the control.
    *
    * MDN
    */
-  var placeholder: js.String = _
+  var placeholder: js.String = ???
 
   /**
    * Returns false if the button is a candidate for constraint validation, and it does
@@ -2531,14 +2536,14 @@ class HTMLTextAreaElement extends HTMLElement {
  * MDN
  */
 class HTMLModElement extends HTMLElement {
-  var dateTime: js.String = _
+  var dateTime: js.String = ???
   /**
    * Reflects the cite HTML attribute, containing a URI of a resource explaining the
    * change.
    *
    * MDN
    */
-  var cite: js.String = _
+  var cite: js.String = ???
 }
 
 
@@ -2550,27 +2555,27 @@ class HTMLModElement extends HTMLElement {
  * MDN
  */
 class HTMLTableColElement extends HTMLElement with HTMLTableAlignment {
-  var width: js.Any = _
+  var width: js.Any = ???
   /**
    * Indicates the horizontal alignment of the cell data in the column.
    *
    * MDN
    */
-  var align: js.String = _
+  var align: js.String = ???
   /**
    * Reflects the span HTML attribute, indicating the number of columns to apply this
    * object's attributes to. Must be a positive integer.
    *
    * MDN
    */
-  var span: js.Number = _
+  var span: js.Number = ???
 }
 
 
 trait HTMLTableAlignment extends js.Object {
-  var ch: js.String = _
-  var vAlign: js.String = _
-  var chOff: js.String = _
+  var ch: js.String = ???
+  var vAlign: js.String = ???
+  var chOff: js.String = ???
 }
 
 /**
@@ -2599,8 +2604,8 @@ class HTMLDivElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = _
-  var noWrap: js.Boolean = _
+  var align: js.String = ???
+
 }
 
 
@@ -2616,7 +2621,7 @@ class HTMLBRElement extends HTMLElement {
    *
    * MDN
    */
-  var clear: js.String = _
+  var clear: js.String = ???
 }
 
 
@@ -2633,13 +2638,13 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var initialTime: js.Number = _
+  var initialTime: js.Number = ???
   /**
    * The ranges of the media source that the browser has played, if any.
    *
    * MDN
    */
-  var played: TimeRanges = _
+  var played: TimeRanges = ???
   /**
    * The absolute URL of the chosen media resource (if, for example, the server selects a
    * media file based on the resolution of the user's display), or an empty string if the
@@ -2647,41 +2652,41 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var currentSrc: js.String = _
-  var autobuffer: js.Boolean = _
+  var currentSrc: js.String = ???
+
   /**
    * Reflects the loop HTML attribute, indicating whether the media element should
    * start over when it reaches the end.
    *
    * MDN
    */
-  var loop: js.Boolean = _
+  var loop: js.Boolean = ???
   /**
    * Indicates whether the media element has ended playback.
    *
    * MDN
    */
-  var ended: js.Boolean = _
+  var ended: js.Boolean = ???
   /**
    * The ranges of the media source that the browser has buffered (if any) at the moment
    * the buffered property is accessed. The returned TimeRanges object is normalized.
    *
    * MDN
    */
-  var buffered: TimeRanges = _
+  var buffered: TimeRanges = ???
   /**
    * The MediaError object for the most recent error, or null if there has not been an
    * error.
    *
    * MDN
    */
-  var error: MediaError = _
+  var error: MediaError = ???
   /**
    * The time ranges that the user is able to seek to, if any.
    *
    * MDN
    */
-  var seekable: TimeRanges = _
+  var seekable: TimeRanges = ???
   /**
    * Reflects the autoplay HTML attribute, indicating whether playback should
    * automatically begin as soon as enough media is available to do so without
@@ -2689,20 +2694,20 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var autoplay: js.Boolean = _
+  var autoplay: js.Boolean = ???
   /**
    * Reflects the controls HTML attribute, indicating whether user interface items
    * for controlling the resource should be displayed.
    *
    * MDN
    */
-  var controls: js.Boolean = _
+  var controls: js.Boolean = ???
   /**
    * The audio volume, from 0.0 (silent) to 1.0 (loudest).
    *
    * MDN
    */
-  var volume: js.Number = _
+  var volume: js.Number = ???
   /**
    * Reflects the src HTML attribute, containing the URL of a media resource to use.
    * Gecko implements a similar functionality is available for streams:
@@ -2710,7 +2715,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var src: js.String = _
+  var src: js.String = ???
   /**
    * The current rate at which the media is being played back. This is used to implement
    * user controls for fast forward, slow motion, and so forth. The normal playback rate
@@ -2723,7 +2728,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var playbackRate: js.Number = _
+  var playbackRate: js.Number = ???
   /**
    * The length of the media in seconds, or zero if no media data is available.  If the
    * media data is available but the length is unknown, this value is NaN.  If the media is
@@ -2731,13 +2736,13 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var duration: js.Number = _
+  var duration: js.Number = ???
   /**
    * true if the audio is muted, and false otherwise.
    *
    * MDN
    */
-  var muted: js.Boolean = _
+  var muted: js.Boolean = ???
   /**
    * The default playback rate for the media. 1.0 is "normal speed," values lower than
    * 1.0 make the media play slower than normal, higher values make it play faster. The
@@ -2745,26 +2750,26 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var defaultPlaybackRate: js.Number = _
+  var defaultPlaybackRate: js.Number = ???
   /**
    * Indicates whether the media element is paused.
    *
    * MDN
    */
-  var paused: js.Boolean = _
+  var paused: js.Boolean = ???
   /**
    * Indicates whether the media is in the process of seeking to a new position.
    *
    * MDN
    */
-  var seeking: js.Boolean = _
+  var seeking: js.Boolean = ???
   /**
    * The current playback time, in seconds. Setting this value seeks the media to the new
    * time.
    *
    * MDN
    */
-  var currentTime: js.Number = _
+  var currentTime: js.Number = ???
   /**
    * Reflects the preload HTML attribute, indicating what data should be preloaded, if
    * any. Possible values are: none, metadata, auto. See preload attribute
@@ -2772,7 +2777,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var preload: js.String = _
+  var preload: js.String = ???
   /**
    * The current state of fetching the media over the network. Constant Value
    * Description NETWORK_EMPTY 0 There is no data yet.  The readyState is also
@@ -2781,7 +2786,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var networkState: js.Number = _
+  var networkState: js.Number = ???
 
   def pause(): Unit = ???
 
@@ -2808,43 +2813,18 @@ class HTMLMediaElement extends HTMLElement {
    */
   def canPlayType(`type`: js.String): js.String = ???
 
-  var HAVE_METADATA: js.Number = _
-  var HAVE_CURRENT_DATA: js.Number = _
-  var HAVE_NOTHING: js.Number = _
-  var NETWORK_NO_SOURCE: js.Number = _
-  var HAVE_ENOUGH_DATA: js.Number = _
-  var NETWORK_EMPTY: js.Number = _
-  var NETWORK_LOADING: js.Number = _
-  var NETWORK_IDLE: js.Number = _
-  var HAVE_FUTURE_DATA: js.Number = _
-  var msAudioCategory: js.String = _
-  var msRealTime: js.Boolean = _
-  var msPlayToPrimary: js.Boolean = _
   /**
    * Represents the list of TextTrack objects contained in the element.
    *
    * MDN
    */
-  var textTracks: TextTrackList = _
-  var msPlayToDisabled: js.Boolean = _
+  var textTracks: TextTrackList = ???
   /**
    * Represents the list of AudioTrack objects contained in the element.
    *
    * MDN
    */
-  var audioTracks: AudioTrackList = _
-  var msPlayToSource: js.Any = _
-  var msAudioDeviceType: js.String = _
-
-  def msClearEffects(): Unit = ???
-
-  def msSetMediaProtectionManager(mediaProtectionManager: js.Any): Unit = ???
-
-  def msSetMediaProtectionManager(): Unit = ???
-
-  def msInsertAudioEffect(activatableClassId: js.String, effectRequired: js.Boolean, config: js.Any): Unit = ???
-
-  def msInsertAudioEffect(activatableClassId: js.String, effectRequired: js.Boolean): Unit = ???
+  var audioTracks: AudioTrackList = ???
 }
 
 /**
@@ -2862,36 +2842,36 @@ object HTMLMediaElement extends js.Object {
    *
    * MDN
    */
-  var HAVE_METADATA: js.Number = _
+  val HAVE_METADATA: js.Number = ???
   /**
    * Data is available for the current playback position, but not enough to actually
    * play more than one frame.
    *
    * MDN
    */
-  var HAVE_CURRENT_DATA: js.Number = _
+  val HAVE_CURRENT_DATA: js.Number = ???
   /**
    * No information is available about the media resource.
    *
    * MDN
    */
-  var HAVE_NOTHING: js.Number = _
-  var NETWORK_NO_SOURCE: js.Number = _
+  val HAVE_NOTHING: js.Number = ???
+  val NETWORK_NO_SOURCE: js.Number = ???
   /**
    * Enough data is available—and the download rate is high enough—that the media can be
    * played through to the end without interruption.
    *
    * MDN
    */
-  var HAVE_ENOUGH_DATA: js.Number = _
+  val HAVE_ENOUGH_DATA: js.Number = ???
   /**
    * There is no data yet.  The readyState is also HAVE_NOTHING.
    *
    * MDN
    */
-  var NETWORK_EMPTY: js.Number = _
-  var NETWORK_LOADING: js.Number = _
-  var NETWORK_IDLE: js.Number = _
+  val NETWORK_EMPTY: js.Number = ???
+  val NETWORK_LOADING: js.Number = ???
+  val NETWORK_IDLE: js.Number = ???
   /**
    * Data for the current playback position as well as for at least a little bit of time
    * into the future is available (in other words, at least two frames of video, for
@@ -2899,11 +2879,11 @@ object HTMLMediaElement extends js.Object {
    *
    * MDN
    */
-  var HAVE_FUTURE_DATA: js.Number = _
+  val HAVE_FUTURE_DATA: js.Number = ???
 }
 
 class HTMLDTElement extends HTMLElement {
-  var noWrap: js.Boolean = _
+  var noWrap: js.Boolean = ???
 }
 
 
@@ -2915,7 +2895,7 @@ class HTMLDTElement extends HTMLElement {
  * MDN
  */
 class HTMLFieldSetElement extends HTMLElement {
-  var align: js.String = _
+  var align: js.String = ???
   /**
    * The containing form element, if this element is in a form. If the button is not a
    * descendant of a form element, then the attribute can be the ID of any form element in
@@ -2923,7 +2903,7 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = _
+  def form: HTMLFormElement = ???
   /**
    * A localized message that describes the validation constraints that the element
    * does not satisfy (if any). This is the empty string if the element is not a candidate
@@ -2932,20 +2912,20 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: js.String = _
+  def validationMessage: js.String = ???
   /**
    * The validity states that this element is in.
    *
    * MDN
    */
-  var validity: ValidityState = _
+  var validity: ValidityState = ???
   /**
    * Always false because <fieldset> objects are never candidates for constraint
    * validation.
    *
    * MDN
    */
-  var willValidate: js.Boolean = _
+  var willValidate: js.Boolean = ???
 
   /**
    * Always returns true because <fieldset> objects are never candidates for
@@ -2967,10 +2947,10 @@ class HTMLFieldSetElement extends HTMLElement {
 
 
 class HTMLBGSoundElement extends HTMLElement {
-  var balance: js.Any = _
-  var volume: js.Any = _
-  var src: js.String = _
-  var loop: js.Number = _
+  var balance: js.Any = ???
+  var volume: js.Any = ???
+  var src: js.String = ???
+  var loop: js.Number = ???
 }
 
 
@@ -2981,27 +2961,27 @@ class HTMLBGSoundElement extends HTMLElement {
  * MDN
  */
 class HTMLElement extends Element {
-  var onblur: js.Function1[FocusEvent, _] = _
-  var onfocus: js.Function1[FocusEvent, _] = _
-  var onmouseleave: js.Function1[MouseEvent, _] = _
-  var onbeforecut: js.Function1[DragEvent, _] = _
-  var onkeydown: js.Function1[KeyboardEvent, _] = _
-  var onkeyup: js.Function1[KeyboardEvent, _] = _
-  var onreset: js.Function1[Event, _] = _
-  var onhelp: js.Function1[Event, _] = _
-  var ondragleave: js.Function1[DragEvent, _] = _
-  var className: js.String = _
-  var onfocusin: js.Function1[FocusEvent, _] = _
-  var onseeked: js.Function1[Event, _] = _
-  var recordNumber: js.Any = _
+  var onblur: js.Function1[FocusEvent, _] = ???
+  var onfocus: js.Function1[FocusEvent, _] = ???
+  var onmouseleave: js.Function1[MouseEvent, _] = ???
+  var onbeforecut: js.Function1[DragEvent, _] = ???
+  var onkeydown: js.Function1[KeyboardEvent, _] = ???
+  var onkeyup: js.Function1[KeyboardEvent, _] = ???
+  var onreset: js.Function1[Event, _] = ???
+  var onhelp: js.Function1[Event, _] = ???
+  var ondragleave: js.Function1[DragEvent, _] = ???
+  var className: js.String = ???
+  var onfocusin: js.Function1[FocusEvent, _] = ???
+  var onseeked: js.Function1[Event, _] = ???
+  var recordNumber: js.Any = ???
   /**
    * Establishes the text to be displayed in a 'tool tip' popup when the mouse is over the
    * displayed node.
    *
    * MDN
    */
-  var title: js.String = _
-  var parentTextEdit: Element = _
+  var title: js.String = ???
+
 
   /**
    * Gets the markup of the element including its content. When used as a
@@ -3009,36 +2989,36 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var outerHTML: js.String = _
-  var ondurationchange: js.Function1[Event, _] = _
+  var outerHTML: js.String = ???
+  var ondurationchange: js.Function1[Event, _] = ???
   /**
    * Height of an element relative to the element's offsetParent.
    *
    * MDN
    */
-  def offsetHeight: js.Number = _
-  var all: HTMLCollection = _
+  def offsetHeight: js.Number = ???
+
   /**
    * The dir attribute gets or sets the text writing directionality of the content of the
    * current element.
    *
    * MDN
    */
-  var dir: js.String = _
-  var onemptied: js.Function1[Event, _] = _
-  var onseeking: js.Function1[Event, _] = _
-  var oncanplay: js.Function1[Event, _] = _
-  var ondeactivate: js.Function1[UIEvent, js.Any] = _
+  var dir: js.String = ???
+  var onemptied: js.Function1[Event, _] = ???
+  var onseeking: js.Function1[Event, _] = ???
+  var oncanplay: js.Function1[Event, _] = ???
+  var ondeactivate: js.Function1[UIEvent, js.Any] = ???
 
-  var onloadstart: js.Function1[Event, _] = _
-  var ondragenter: js.Function1[DragEvent, js.Any] = _
-  var onsubmit: js.Function1[Event, _] = _
+  var onloadstart: js.Function1[Event, _] = ???
+  var ondragenter: js.Function1[DragEvent, js.Any] = ???
+  var onsubmit: js.Function1[Event, _] = ???
 
-  var onchange: js.Function1[Event, _] = _
-  var id: js.String = _
-  var uniqueID: js.String = _
-  var onbeforeactivate: js.Function1[UIEvent, js.Any] = _
-  var oncanplaythrough: js.Function1[Event, _] = _
+  var onchange: js.Function1[Event, _] = ???
+  var id: js.String = ???
+
+  var onbeforeactivate: js.Function1[UIEvent, js.Any] = ???
+  var oncanplaythrough: js.Function1[Event, _] = ???
   /**
    * offsetParent returns a reference to the object which is the closest (nearest in the
    * containment hierarchy) positioned containing element. If the element is
@@ -3049,16 +3029,16 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  def offsetParent: Element = _
-  var onsuspend: js.Function1[Event, _] = _
-  var readyState: js.Any = _
-  var onmouseenter: js.Function1[MouseEvent, js.Any] = _
+  def offsetParent: Element = ???
+  var onsuspend: js.Function1[Event, _] = ???
+  var readyState: js.Any = ???
+  var onmouseenter: js.Function1[MouseEvent, js.Any] = ???
 
-  var onmouseout: js.Function1[MouseEvent, js.Any] = _
-  var parentElement: HTMLElement = _
-  var onmousewheel: js.Function1[WheelEvent, js.Any] = _
-  var onvolumechange: js.Function1[Event, _] = _
-  var filters: Object = _
+  var onmouseout: js.Function1[MouseEvent, js.Any] = ???
+  var parentElement: HTMLElement = ???
+  var onmousewheel: js.Function1[WheelEvent, js.Any] = ???
+  var onvolumechange: js.Function1[Event, _] = ???
+  var filters: Object = ???
   /**
    * The ParentNode.children read-only property returns a live HTMLCollection of
    * child elements of the given object.
@@ -3069,10 +3049,10 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var children: HTMLCollection = _
-  var ondragend: js.Function1[DragEvent, js.Any] = _
-  var onbeforepaste: js.Function1[DragEvent, js.Any] = _
-  var ondragover: js.Function1[DragEvent, js.Any] = _
+  var children: HTMLCollection = ???
+  var ondragend: js.Function1[DragEvent, js.Any] = ???
+  var onbeforepaste: js.Function1[DragEvent, js.Any] = ???
+  var ondragover: js.Function1[DragEvent, js.Any] = ???
 
   /**
    * offsetTop returns the distance of the current element relative to the top of
@@ -3080,11 +3060,11 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  def offsetTop: js.Number = _
-  var onmouseup: js.Function1[MouseEvent, js.Any] = _
-  var ondragstart: js.Function1[DragEvent, js.Any] = _
-  var onbeforecopy: js.Function1[DragEvent, js.Any] = _
-  var ondrag: js.Function1[DragEvent, js.Any] = _
+  def offsetTop: js.Number = ???
+  var onmouseup: js.Function1[MouseEvent, js.Any] = ???
+  var ondragstart: js.Function1[DragEvent, js.Any] = ???
+  var onbeforecopy: js.Function1[DragEvent, js.Any] = ???
+  var ondrag: js.Function1[DragEvent, js.Any] = ???
   /**
    * innerHTML sets or gets the HTML syntax describing the element's descendants.
    *
@@ -3093,89 +3073,89 @@ class HTMLElement extends Element {
    * &lt and &gt respectively. Use Node.textContent to get a correct copy of these
    * text nodes' contents.
    */
-  var innerHTML: js.String = _
-  var onmouseover: js.Function1[MouseEvent, js.Any] = _
+  var innerHTML: js.String = ???
+  var onmouseover: js.Function1[MouseEvent, js.Any] = ???
   /**
    * This property gets or sets the base language of an element's attribute values and
    * text content.
    *
    * MDN
    */
-  var lang: js.String = _
+  var lang: js.String = ???
 
-  var onpause: js.Function1[Event, _] = _
+  var onpause: js.Function1[Event, _] = ???
 
-  var onmousedown: js.Function1[MouseEvent, js.Any] = _
-  var onclick: js.Function1[MouseEvent, js.Any] = _
-  var onwaiting: js.Function1[Event, _] = _
+  var onmousedown: js.Function1[MouseEvent, js.Any] = ???
+  var onclick: js.Function1[MouseEvent, js.Any] = ???
+  var onwaiting: js.Function1[Event, _] = ???
   /**
    * Returns the number of pixels that the upper left corner of the current element is
    * offset to the left within the offsetParent node.
    *
    * MDN
    */
-  var offsetLeft: js.Number = _
+  var offsetLeft: js.Number = ???
 
-  var onpaste: js.Function1[DragEvent, js.Any] = _
+  var onpaste: js.Function1[DragEvent, js.Any] = ???
 
-  var onstalled: js.Function1[Event, _] = _
-  var onmousemove: js.Function1[MouseEvent, js.Any] = _
+  var onstalled: js.Function1[Event, _] = ???
+  var onmousemove: js.Function1[MouseEvent, js.Any] = ???
   /**
    * isContentEditable returns true if the contents of the element are editable;
    * otherwise it returns false.
    *
    * MDN
    */
-  var isContentEditable: js.Boolean = _
-  var onratechange: js.Function1[Event, _] = _
+  var isContentEditable: js.Boolean = ???
+  var onratechange: js.Function1[Event, _] = ???
   /**
    * contentEditable is used to indicate whether or not the element is editable. This
    * enumerated attribute can have the following values:
    *
    * MDN
    */
-  var contentEditable: js.String = _
+  var contentEditable: js.String = ???
   /**
    * Gets/sets the tab order of the current element.
    *
    * MDN
    */
-  var tabIndex: js.Number = _
+  var tabIndex: js.Number = ???
 
-  var onprogress: js.Function1[js.Any, js.Any] = _
-  var ondblclick: js.Function1[MouseEvent, js.Any] = _
-  var oncontextmenu: js.Function1[MouseEvent, js.Any] = _
-  var onloadedmetadata: js.Function1[Event, _] = _
-  var onplay: js.Function1[Event, _] = _
-  var onplaying: js.Function1[Event, _] = _
+  var onprogress: js.Function1[js.Any, js.Any] = ???
+  var ondblclick: js.Function1[MouseEvent, js.Any] = ???
+  var oncontextmenu: js.Function1[MouseEvent, js.Any] = ???
+  var onloadedmetadata: js.Function1[Event, _] = ???
+  var onplay: js.Function1[Event, _] = ???
+  var onplaying: js.Function1[Event, _] = ???
 
-  var onfocusout: js.Function1[FocusEvent, _] = _
-  var onabort: js.Function1[UIEvent, js.Any] = _
+  var onfocusout: js.Function1[FocusEvent, _] = ???
+  var onabort: js.Function1[UIEvent, js.Any] = ???
 
-  var onreadystatechange: js.Function1[Event, _] = _
-  var onkeypress: js.Function1[KeyboardEvent, js.Any] = _
-  var onloadeddata: js.Function1[Event, _] = _
-  var onbeforedeactivate: js.Function1[UIEvent, js.Any] = _
+  var onreadystatechange: js.Function1[Event, _] = ???
+  var onkeypress: js.Function1[KeyboardEvent, js.Any] = ???
+  var onloadeddata: js.Function1[Event, _] = ???
+  var onbeforedeactivate: js.Function1[UIEvent, js.Any] = ???
 
-  var disabled: js.Boolean = _
-  var onactivate: js.Function1[UIEvent, js.Any] = _
-  var accessKey: js.String = _
-  var onselectstart: js.Function1[Event, _] = _
-  var ontimeupdate: js.Function1[Event, _] = _
-  var oncut: js.Function1[DragEvent, js.Any] = _
-  var onselect: js.Function1[UIEvent, js.Any] = _
-  var ondrop: js.Function1[DragEvent, js.Any] = _
+  var disabled: js.Boolean = ???
+  var onactivate: js.Function1[UIEvent, js.Any] = ???
+  var accessKey: js.String = ???
+  var onselectstart: js.Function1[Event, _] = ???
+  var ontimeupdate: js.Function1[Event, _] = ???
+  var oncut: js.Function1[DragEvent, js.Any] = ???
+  var onselect: js.Function1[UIEvent, js.Any] = ???
+  var ondrop: js.Function1[DragEvent, js.Any] = ???
   /**
    * Returns the layout width of an element.
    *
    * MDN
    */
-  def offsetWidth: js.Number = _
-  var oncopy: js.Function1[DragEvent, js.Any] = _
-  var onended: js.Function1[Event, _] = _
-  var onscroll: js.Function1[UIEvent, js.Any] = _
+  def offsetWidth: js.Number = ???
+  var oncopy: js.Function1[DragEvent, js.Any] = ???
+  var onended: js.Function1[Event, _] = ???
+  var onscroll: js.Function1[UIEvent, js.Any] = ???
 
-  var oninput: js.Function1[Event, _] = _
+  var oninput: js.Function1[Event, _] = ???
 
   def dragDrop(): js.Boolean = ???
 
@@ -3250,11 +3230,11 @@ class HTMLElement extends Element {
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
-  var oncuechange: js.Function1[Event, _] = _
-  var spellcheck: js.Boolean = _
-  var classList: DOMTokenList = _
-  var onmsmanipulationstatechanged: js.Function1[js.Any, js.Any] = _
-  var draggable: js.Boolean = _
+
+  var oncuechange: js.Function1[Event, _] = ???
+  var spellcheck: js.Boolean = ???
+  var classList: DOMTokenList = ???
+  var draggable: js.Boolean = ???
 }
 
 
@@ -3266,15 +3246,15 @@ class HTMLElement extends Element {
  * MDN
  */
 class HTMLHRElement extends HTMLElement {
-  var width: js.Number = _
+  var width: js.Number = ???
   /**
    * Enumerated attribute indicating alignment of the rule with respect to the
    * surrounding context.
    *
    * MDN
    */
-  var align: js.String = _
-  var noShade: js.Boolean = _
+  var align: js.String = ???
+
 }
 
 
@@ -3293,93 +3273,93 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var width: js.String = _
+  var width: js.String = ???
   /**
    * Reflects the codetype HTML attribute, specifying the content type of the data.
    *
    * MDN
    */
-  var codeType: js.String = _
-  var `object`: Object = _
+  var codeType: js.String = ???
+  var `object`: Object = ???
   /**
    * The object element's form owner, or null if there isn't one.
    *
    * MDN
    */
-  var form: HTMLFormElement = _
+  var form: HTMLFormElement = ???
   /**
    * The name of an applet class file, containing either the applet's subclass, or the
    * path to get to the class, including the class file itself.
    *
    * MDN
    */
-  var code: js.String = _
+  var code: js.String = ???
   /**
    * Reflects the archive HTML attribute, containing a list of archives for resources
    * for this object.
    *
    * MDN
    */
-  var archive: js.String = _
+  var archive: js.String = ???
   /**
    * Reflects the standby HTML attribute, specifying a message to display while the
    * object loads.
    *
    * MDN
    */
-  var standby: js.String = _
-  var alt: js.String = _
-  var classid: js.String = _
+  var standby: js.String = ???
+  var alt: js.String = ???
+  var classid: js.String = ???
   /**
    * Reflects the name HTML attribute, specifying the name of the object (HTML 4, or of a
    * browsing context (HTML5.
    *
    * MDN
    */
-  var name: js.String = _
+  var name: js.String = ???
   /**
    * Reflects the usemap HTML attribute, specifying a <map> element to use.
    *
    * MDN
    */
-  var useMap: js.String = _
+  var useMap: js.String = ???
   /**
    * Reflects the data HTML attribute, specifying the address of a resource's data.
    *
    * MDN
    */
-  var data: js.String = _
+  var data: js.String = ???
   /**
    * Reflects the height HTML attribute, specifying the displayed height of the
    * resource in CSS pixels.
    *
    * MDN
    */
-  var height: js.String = _
+  var height: js.String = ???
   /**
    * The active document of the object element's nested browsing context, if any;
    * otherwise null.
    *
    * MDN
    */
-  var contentDocument: Document = _
-  var altHtml: js.String = _
+  var contentDocument: Document = ???
+  var altHtml: js.String = ???
   /**
    * Reflects the codebase HTML attribute, specifying the base path to use to resolve
    * relative URIs.
    *
    * MDN
    */
-  var codeBase: js.String = _
+  var codeBase: js.String = ???
   /**
    * Reflects the declare HTML attribute, indicating that this is a declaration, not an
    * instantiation, of the object.
    *
    * MDN
    */
-  var declare: js.Boolean = _
-  var `type`: js.String = _
-  var BaseHref: js.String = _
+  var declare: js.Boolean = ???
+  var `type`: js.String = ???
+  var BaseHref: js.String = ???
   /**
    * A localized message that describes the validation constraints that the control
    * does not satisfy (if any). This is the empty string if the control is not a candidate
@@ -3388,20 +3368,20 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var validationMessage: js.String = _
+  var validationMessage: js.String = ???
   /**
    * The validity states that this element is in.
    *
    * MDN
    */
-  var validity: ValidityState = _
+  def validity: ValidityState = ???
   /**
    * Indicates whether the element is a candidate for constraint validation. Always
    * false for HTMLObjectElement objects.
    *
    * MDN
    */
-  var willValidate: js.Boolean = _
+  var willValidate: js.Boolean = ???
 
   /**
    * Always returns true, because object objects are never candidates for constraint
@@ -3436,24 +3416,23 @@ class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var width: js.String = _
-  var palette: js.String = _
+  var width: js.String = ???
+
   /**
    * Reflects the src HTML attribute, containing the address of the resource.
    *
    * MDN
    */
-  var src: js.String = _
-  var name: js.String = _
-  var pluginspage: js.String = _
+  var src: js.String = ???
+
   /**
    * Reflects the height HTML attribute, containing the displayed height of the
    * resource.
    *
    * MDN
    */
-  var height: js.String = _
-  var units: js.String = _
+  var height: js.String = ???
+
 }
 
 
@@ -3466,18 +3445,14 @@ class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
  * MDN
  */
 class HTMLOptGroupElement extends HTMLElement {
-  var index: js.Number = _
-  var defaultSelected: js.Boolean = _
-  var text: js.String = _
-  var value: js.String = _
-  var form: HTMLFormElement = _
+
   /**
    * Set or get the label for the group.
    *
    * MDN
    */
-  var label: js.String = _
-  var selected: js.Boolean = _
+  var label: js.String = ???
+
 }
 
 
@@ -3495,14 +3470,14 @@ class HTMLIsIndexElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = _
-  var action: js.String = _
+  var form: HTMLFormElement = ???
+  var action: js.String = ???
   /**
    * Is a DOMString representing a text to be prompted for the field.
    *
    * MDN
    */
-  var prompt: js.String = _
+  var prompt: js.String = ???
 }
 
 
@@ -3520,7 +3495,7 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var width: js.Number = _
+  var width: js.Number = ???
   /**
    * Returns an unsigned long containing the intrinsic width of the resource in CSS
    * pixels, taking into account the dimensions, aspect ratio, clean aperture,
@@ -3529,7 +3504,7 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var videoWidth: js.Number = _
+  var videoWidth: js.Number = ???
   /**
    * Returns an unsigned long containing the intrinsic height of the resource in CSS
    * pixels, taking into account the dimensions, aspect ratio, clean aperture,
@@ -3538,38 +3513,21 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var videoHeight: js.Number = _
+  var videoHeight: js.Number = ???
   /**
    * Is a DOMString that reflects the height HTML attribute, which specifies the height
    * of the display area, in CSS pixels.
    *
    * MDN
    */
-  var height: js.Number = _
+  var height: js.Number = ???
   /**
    * Is a DOMString that reflects the poster HTML attribute, which specifies an image to
    * show while no video data is available.
    *
    * MDN
    */
-  var poster: js.String = _
-  var msIsStereo3D: js.Boolean = _
-  var msStereo3DPackingMode: js.String = _
-  var onMSVideoOptimalLayoutChanged: js.Function1[js.Any, _] = _
-  var onMSVideoFrameStepCompleted: js.Function1[js.Any, _] = _
-  var msStereo3DRenderMode: js.String = _
-  var msIsLayoutOptimalForPlayback: js.Boolean = _
-  var msHorizontalMirror: js.Boolean = _
-  var onMSVideoFormatChanged: js.Function1[js.Any, js.Any] = _
-  var msZoom: js.Boolean = _
-
-  def msInsertVideoEffect(activatableClassId: js.String, effectRequired: js.Boolean, config: js.Any): Unit = ???
-
-  def msInsertVideoEffect(activatableClassId: js.String, effectRequired: js.Boolean): Unit = ???
-
-  def msSetVideoRectangle(left: js.Number, top: js.Number, right: js.Number, bottom: js.Number): Unit = ???
-
-  def msFrameStep(forward: js.Boolean): Unit = ???
+  var poster: js.String = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
@@ -3592,14 +3550,14 @@ class HTMLProgressElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.Number = _
+  var value: js.Number = ???
   /**
    * This property reflect the content attribute of the same name, limited to numbers
    * greater than zero. Its default value is 1.0.
    *
    * MDN
    */
-  var max: js.Number = _
+  var max: js.Number = ???
   /**
    * If the progress bar is an indeterminate progress bar, then the position property
    * return −1. Otherwise, it returns the result of dividing the current value by the
@@ -3607,8 +3565,8 @@ class HTMLProgressElement extends HTMLElement {
    *
    * MDN
    */
-  var position: js.Number = _
-  var form: HTMLFormElement = _
+  var position: js.Number = ???
+  var form: HTMLFormElement = ???
 }
 
 
@@ -3625,7 +3583,7 @@ class HTMLDataListElement extends HTMLElement {
    *
    * MDN
    */
-  var options: HTMLCollection = _
+  var options: HTMLCollection = ???
 }
 
 
@@ -3636,27 +3594,27 @@ class HTMLDataListElement extends HTMLElement {
  * MDN
  */
 class HTMLTrackElement extends HTMLElement {
-  var kind: js.String = _
-  var src: js.String = _
-  var srclang: js.String = _
-  var track: TextTrack = _
-  var label: js.String = _
+  var kind: js.String = ???
+  var src: js.String = ???
+  var srclang: js.String = ???
+  var track: TextTrack = ???
+  var label: js.String = ???
 }
 
 class HTMLMarqueeElement extends HTMLElement {
-  var width: js.String = _
-  var onbounce: js.Function1[Event, _] = _
-  var vspace: js.Number = _
-  var trueSpeed: js.Boolean = _
-  var scrollAmount: js.Number = _
-  var scrollDelay: js.Number = _
-  var behavior: js.String = _
-  var height: js.String = _
-  var loop: js.Number = _
-  var direction: js.String = _
-  var hspace: js.Number = _
-  var onstart: js.Function1[Event, _] = _
-  var onfinish: js.Function1[Event, _] = _
+  var width: js.String = ???
+  var onbounce: js.Function1[Event, _] = ???
+  var vspace: js.Number = ???
+  var trueSpeed: js.Boolean = ???
+  var scrollAmount: js.Number = ???
+  var scrollDelay: js.Number = ???
+  var behavior: js.String = ???
+  var height: js.String = ???
+  var loop: js.Number = ???
+  var direction: js.String = ???
+  var hspace: js.Number = ???
+  var onstart: js.Function1[Event, _] = ???
+  var onfinish: js.Function1[Event, _] = ???
 
   def stop(): Unit = ???
 
@@ -3691,7 +3649,7 @@ class HTMLHeadElement extends HTMLElement {
    *
    * MDN
    */
-  var profile: js.String = _
+  var profile: js.String = ???
 }
 
 
@@ -3708,7 +3666,7 @@ class HTMLHeadingElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = _
+  var align: js.String = ???
 }
 
 
@@ -3724,26 +3682,26 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var length: js.Number = _
+  var length: js.Number = ???
   /**
    * target gets/sets the target of the action (i.e., the frame to render its output in).
    *
    * MDN
    */
-  var target: js.String = _
+  var target: js.String = ???
   /**
    * acceptCharset returns a list of the supported character encodings for the given
    * FORM element. This list can be comma- or space-separated.
    *
    * MDN
    */
-  var acceptCharset: js.String = _
+  var acceptCharset: js.String = ???
   /**
    * enctype gets/sets the content type of the FORM element.
    *
    * MDN
    */
-  var enctype: js.String = _
+  var enctype: js.String = ???
   /**
    * elements returns an HTMLFormControlsCollection (HTML 4 HTMLCollection) of all
    * the form controls contained in the FORM element, with the exception of input
@@ -3751,32 +3709,32 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var elements: HTMLCollection = _
+  var elements: HTMLCollection = ???
   /**
    * action gets/sets the action of the <form> element.
    *
    * MDN
    */
-  var action: js.String = _
+  var action: js.String = ???
   /**
    * name returns the name of the current form element as a string.
    *
    * MDN
    */
-  var name: js.String = _
+  var name: js.String = ???
   /**
    * method gets/sets the HTTP method used to submit the form.
    *
    * MDN
    */
-  var method: js.String = _
+  var method: js.String = ???
   /**
    * encoding is an alternative name for the enctype element on the DOM HTMLFormElement
    * object.
    *
    * MDN
    */
-  var encoding: js.String = _
+  var encoding: js.String = ???
 
   /**
    * reset restores a form element's default values.
@@ -3828,14 +3786,14 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var autocomplete: js.String = _
+  var autocomplete: js.String = ???
   /**
    * Reflects the novalidate HTML attribute, indicating that the form should not be
    * validated.
    *
    * MDN
    */
-  var noValidate: js.Boolean = _
+  var noValidate: js.Boolean = ???
 
   def checkValidity(): js.Boolean = ???
 }
