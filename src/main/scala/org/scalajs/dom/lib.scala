@@ -1,10 +1,7 @@
-package org.scalajs
-
+package org.scalajs.dom
 import scala.scalajs.js
 
-package dom {
-
-trait PositionOptions extends js.Object {
+class PositionOptions extends js.Object {
   var enableHighAccuracy: js.Boolean = _
   var timeout: js.Number = _
   var maximumAge: js.Number = _
@@ -17,7 +14,7 @@ trait NavigatorID extends js.Object {
   var platform: js.String = _
 }
 
-trait TreeWalker extends js.Object {
+class TreeWalker extends js.Object {
   var whatToShow: js.Number = _
   var filter: NodeFilter = _
   var root: Node = _
@@ -32,11 +29,9 @@ trait TreeWalker extends js.Object {
   def previousNode(): Node = ???
 }
 
-object TreeWalker extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TreeWalker),List())))) */
-}
 
-trait Performance extends js.Object {
+
+class Performance extends js.Object {
   var navigation: PerformanceNavigation = _
   var timing: PerformanceTiming = _
   def getEntriesByType(entryType: js.String): js.Dynamic = ???
@@ -61,19 +56,15 @@ trait Performance extends js.Object {
   def now(): js.Number = ???
 }
 
-object Performance extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Performance),List())))) */
-}
 
-trait CompositionEvent extends UIEvent {
+
+class CompositionEvent extends UIEvent {
   var data: js.String = _
   var locale: js.String = _
   def initCompositionEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, dataArg: js.String, locale: js.String): Unit = ???
 }
 
-object CompositionEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CompositionEvent),List())))) */
-}
+
 
 trait WindowTimers extends WindowTimersExtension {
   def clearTimeout(handle: js.Number): Unit = ???
@@ -82,25 +73,14 @@ trait WindowTimers extends WindowTimersExtension {
   def setInterval(handler: js.Any, timeout: js.Any, args: js.Any*): js.Number = ???
 }
 
-trait Navigator extends NavigatorID with NavigatorOnLine with NavigatorContentUtils with MSNavigatorExtensions with NavigatorGeolocation with MSNavigatorDoNotTrack with NavigatorStorageUtils with MSFileSaver {
-  var msMaxTouchPoints: js.Number = _
-  var msPointerEnabled: js.Boolean = _
-  var msManipulationViewsEnabled: js.Boolean = _
-  def msLaunchUri(uri: js.String, successCallback: MSLaunchUriCallback, noHandlerCallback: MSLaunchUriCallback): Unit = ???
-  def msLaunchUri(uri: js.String, successCallback: MSLaunchUriCallback): Unit = ???
-  def msLaunchUri(uri: js.String): Unit = ???
-}
-
-object Navigator extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Navigator),List())))) */
-}
+class Navigator extends NavigatorID with NavigatorOnLine with NavigatorContentUtils with NavigatorGeolocation with NavigatorStorageUtils
 
 trait NodeSelector extends js.Object {
   def querySelectorAll(selectors: js.String): NodeList = ???
   def querySelector(selectors: js.String): Element = ???
 }
 
-trait ClientRect extends js.Object {
+class ClientRect extends js.Object {
   var left: js.Number = _
   var width: js.Number = _
   var right: js.Number = _
@@ -109,15 +89,13 @@ trait ClientRect extends js.Object {
   var height: js.Number = _
 }
 
-object ClientRect extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ClientRect),List())))) */
-}
+
 
 trait PositionErrorCallback extends js.Object {
   def apply(error: PositionError): Unit = ???
 }
 
-trait DOMImplementation extends js.Object {
+class DOMImplementation extends js.Object {
   def createDocumentType(qualifiedName: js.String, publicId: js.String, systemId: js.String): DocumentType = ???
   def createDocument(namespaceURI: js.String, qualifiedName: js.String, doctype: DocumentType): Document = ???
   def hasFeature(feature: js.String, version: js.String): js.Boolean = ???
@@ -125,11 +103,9 @@ trait DOMImplementation extends js.Object {
   def createHTMLDocument(title: js.String): Document = ???
 }
 
-object DOMImplementation extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DOMImplementation),List())))) */
-}
 
-trait Element extends Node with NodeSelector with ElementTraversal {
+
+class Element extends Node with NodeSelector with ElementTraversal {
   var scrollTop: js.Number = _
   var clientLeft: js.Number = _
   var scrollLeft: js.Number = _
@@ -168,11 +144,9 @@ trait Element extends Node with NodeSelector with ElementTraversal {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object Element extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Element),List())))) */
-}
 
-trait Node extends EventTarget {
+
+class Node extends EventTarget {
   var nodeType: js.Number = _
   var previousSibling: Node = _
   var localName: js.String = _
@@ -254,8 +228,6 @@ class MouseEvent extends UIEvent {
   var which: js.Number = _
   var pageX: js.Number = _
   var offsetY: js.Number = _
-  var x: js.Number = _
-  var y: js.Number = _
   var metaKey: js.Boolean = _
   var altKey: js.Boolean = _
   var ctrlKey: js.Boolean = _
@@ -274,14 +246,12 @@ class MouseEvent extends UIEvent {
   def getModifierState(keyArg: js.String): js.Boolean = ???
 }
 
-object MouseEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(MouseEvent),List())))) */
-}
+
 
 trait RangeException extends js.Object {
   var code: js.Number = _
   var message: js.String = _
-
+  
   var INVALID_NODE_TYPE_ERR: js.Number = _
   var BAD_BOUNDARYPOINTS_ERR: js.Number = _
   var name: js.String = _
@@ -293,33 +263,27 @@ object RangeException extends js.Object {
   var BAD_BOUNDARYPOINTS_ERR: js.Number = _
 }
 
-trait TextMetrics extends js.Object {
+class TextMetrics extends js.Object {
   var width: js.Number = _
 }
 
-object TextMetrics extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextMetrics),List())))) */
-}
+
 
 trait DocumentEvent extends js.Object {
   def createEvent(eventInterface: js.String): Event = ???
 }
 
-trait CDATASection extends Text {
+class CDATASection extends Text {
 }
 
-object CDATASection extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CDATASection),List())))) */
-}
+
 
 trait StyleMedia extends js.Object {
   var `type`: js.String = _
   def matchMedium(mediaquery: js.String): js.Boolean = ???
 }
 
-object StyleMedia extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(StyleMedia),List())))) */
-}
+
 
 trait TextRange extends js.Object {
   var boundingLeft: js.Number = _
@@ -370,14 +334,12 @@ trait TextRange extends js.Object {
   def queryCommandEnabled(cmdID: js.String): js.Boolean = ???
 }
 
-object TextRange extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextRange),List())))) */
-}
 
 
 
 
-trait Selection extends js.Object {
+
+class Selection extends js.Object {
   var isCollapsed: js.Boolean = _
   var anchorNode: Node = _
   var focusNode: Node = _
@@ -386,7 +348,7 @@ trait Selection extends js.Object {
   var rangeCount: js.Number = _
   def addRange(range: Range): Unit = ???
   def collapseToEnd(): Unit = ???
-
+  
   def selectAllChildren(parentNode: Node): Unit = ???
   def getRangeAt(index: js.Number): Range = ???
   def collapse(parentNode: Node, offset: js.Number): Unit = ???
@@ -396,11 +358,9 @@ trait Selection extends js.Object {
   def removeRange(range: Range): Unit = ???
 }
 
-object Selection extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Selection),List())))) */
-}
 
-trait NodeIterator extends js.Object {
+
+class NodeIterator extends js.Object {
   var whatToShow: js.Number = _
   var filter: NodeFilter = _
   var root: Node = _
@@ -410,9 +370,7 @@ trait NodeIterator extends js.Object {
   def previousNode(): Node = ???
 }
 
-object NodeIterator extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(NodeIterator),List())))) */
-}
+
 
 trait ControlRangeCollection extends js.Object {
   var length: js.Number = _
@@ -438,9 +396,7 @@ trait ControlRangeCollection extends js.Object {
   def select(): Unit = ???
 }
 
-object ControlRangeCollection extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ControlRangeCollection),List())))) */
-}
+
 
 trait WindowSessionStorage extends js.Object {
   var sessionStorage: Storage = _
@@ -451,11 +407,9 @@ trait MouseWheelEvent extends MouseEvent {
   def initMouseWheelEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, screenXArg: js.Number, screenYArg: js.Number, clientXArg: js.Number, clientYArg: js.Number, buttonArg: js.Number, relatedTargetArg: EventTarget, modifiersListArg: js.String, wheelDeltaArg: js.Number): Unit = ???
 }
 
-object MouseWheelEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(MouseWheelEvent),List())))) */
-}
 
-trait Window extends EventTarget with MSEventAttachmentTarget with WindowLocalStorage with MSWindowExtensions with WindowSessionStorage with WindowTimers with WindowBase64 with IDBEnvironment with WindowConsole {
+
+class Window extends EventTarget with WindowLocalStorage with WindowSessionStorage with WindowTimers with WindowBase64 with IDBEnvironment with WindowConsole {
   var ondragend: js.Function1[DragEvent, js.Any] = _
   var onkeydown: js.Function1[KeyboardEvent, js.Any] = _
   var ondragover: js.Function1[DragEvent, js.Any] = _
@@ -554,7 +508,7 @@ trait Window extends EventTarget with MSEventAttachmentTarget with WindowLocalSt
   def prompt(message: js.String, defaul: js.String): js.String = ???
   def prompt(message: js.String): js.String = ???
   def prompt(): js.String = ???
-
+  
   def open(url: js.String, target: js.String, features: js.String, replace: js.Boolean): Window = ???
   def open(url: js.String, target: js.String, features: js.String): Window = ???
   def open(url: js.String, target: js.String): Window = ???
@@ -605,9 +559,7 @@ trait Window extends EventTarget with MSEventAttachmentTarget with WindowLocalSt
   def msRequestAnimationFrame(callback: FrameRequestCallback): js.Number = ???
 }
 
-object Window extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Window),List())))) */
-}
+
 
 trait StyleSheetPageList extends js.Object {
   var length: js.Number = _
@@ -618,11 +570,9 @@ trait StyleSheetPageList extends js.Object {
   def update(index: js.Number, v: CSSPageRule): Unit = ???
 }
 
-object StyleSheetPageList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(StyleSheetPageList),List())))) */
-}
 
-trait EventTarget extends js.Object {
+
+class EventTarget extends js.Object {
   def removeEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
   def removeEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
   def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
@@ -630,15 +580,13 @@ trait EventTarget extends js.Object {
   def dispatchEvent(evt: Event): js.Boolean = ???
 }
 
-trait CanvasGradient extends js.Object {
+class CanvasGradient extends js.Object {
   def addColorStop(offset: js.Number, color: js.String): Unit = ???
 }
 
-object CanvasGradient extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CanvasGradient),List())))) */
-}
 
-trait TouchEvent{
+
+class TouchEvent{
   val altKey: Boolean = ???
   val changedTouches: TouchList = ???
   val ctrlKey: Boolean = ???
@@ -650,7 +598,7 @@ trait TouchEvent{
   val target: js.Any = ???
 }
 
-trait TouchList extends js.Object {
+class TouchList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): TouchEvent = ???
   @scala.scalajs.js.annotation.JSBracketAccess
@@ -692,8 +640,7 @@ object KeyboardEvent extends js.Object {
   var DOM_KEY_LOCATION_MOBILE: js.Number = _
 }
 
-trait Document extends Node with NodeSelector with MSEventAttachmentTarget with DocumentEvent with MSResourceMetadata with MSNodeExtensions {
-  var compatible: MSCompatibleInfoCollection = _
+class Document extends Node with NodeSelector with DocumentEvent {
   var onkeydown: js.Function1[KeyboardEvent, _] = _
   var onkeyup: js.Function1[KeyboardEvent, _] = _
   var implementation: DOMImplementation = _
@@ -707,7 +654,6 @@ trait Document extends Node with NodeSelector with MSEventAttachmentTarget with 
   var onseeked: js.Function1[Event, _] = _
   var security: js.String = _
   var title: js.String = _
-  var namespaces: MSNamespaceInfoCollection = _
   var defaultCharset: js.String = _
   var embeds: HTMLCollection = _
   var styleSheets: StyleSheetList = _
@@ -722,13 +668,9 @@ trait Document extends Node with NodeSelector with MSEventAttachmentTarget with 
   var onseeking: js.Function1[Event, _] = _
   var ondeactivate: js.Function1[UIEvent, js.Any] = _
   var oncanplay: js.Function1[Event, _] = _
-  var ondatasetchanged: js.Function1[MSEventObj, js.Any] = _
-  var onrowsdelete: js.Function1[MSEventObj, js.Any] = _
-  var Script: MSScriptHost = _
   var onloadstart: js.Function1[Event, _] = _
   var URLUnencoded: js.String = _
   var defaultView: Window = _
-  var oncontrolselect: js.Function1[MSEventObj, js.Any] = _
   var ondragenter: js.Function1[DragEvent, js.Any] = _
   var onsubmit: js.Function1[Event, _] = _
   var inputEncoding: js.String = _
@@ -745,26 +687,18 @@ trait Document extends Node with NodeSelector with MSEventAttachmentTarget with 
   var documentMode: js.Number = _
   var characterSet: js.String = _
   var anchors: HTMLCollection = _
-  var onbeforeupdate: js.Function1[MSEventObj, js.Any] = _
-  var ondatasetcomplete: js.Function1[MSEventObj, js.Any] = _
   var plugins: HTMLCollection = _
   var onsuspend: js.Function1[Event, _] = _
   var rootElement: SVGSVGElement = _
   var readyState: js.String = _
   var referrer: js.String = _
   var alinkColor: js.String = _
-  var onerrorupdate: js.Function1[MSEventObj, js.Any] = _
   var parentWindow: Window = _
   var onmouseout: js.Function1[MouseEvent, js.Any] = _
-  var onmsthumbnailclick: js.Function1[MSSiteModeEvent, js.Any] = _
   var onmousewheel: js.Function1[MouseWheelEvent, js.Any] = _
   var onvolumechange: js.Function1[Event, _] = _
-  var oncellchange: js.Function1[MSEventObj, js.Any] = _
-  var onrowexit: js.Function1[MSEventObj, js.Any] = _
-  var onrowsinserted: js.Function1[MSEventObj, js.Any] = _
   var xmlVersion: js.String = _
   var msCapsLockWarningOff: js.Boolean = _
-  var onpropertychange: js.Function1[MSEventObj, js.Any] = _
   var ondragend: js.Function1[DragEvent, js.Any] = _
   var doctype: DocumentType = _
   var ondragover: js.Function1[DragEvent, js.Any] = _
@@ -779,16 +713,13 @@ trait Document extends Node with NodeSelector with MSEventAttachmentTarget with 
   var onclick: js.Function1[MouseEvent, js.Any] = _
   var onwaiting: js.Function1[Event, _] = _
   var onstop: js.Function1[Event, _] = _
-  var onmssitemodejumplistitemremoved: js.Function1[MSSiteModeEvent, js.Any] = _
   var applets: HTMLCollection = _
   var body: HTMLElement = _
   var domain: js.String = _
   var xmlStandalone: js.Boolean = _
-  var selection: MSSelection = _
   var onstalled: js.Function1[Event, _] = _
   var onmousemove: js.Function1[MouseEvent, js.Any] = _
   var documentElement: Element = _
-  var onbeforeeditfocus: js.Function1[MSEventObj, js.Any] = _
   var onratechange: js.Function1[Event, _] = _
   var onprogress: js.Function1[js.Any, js.Any] = _
   var ondblclick: js.Function1[MouseEvent, js.Any] = _
@@ -797,7 +728,6 @@ trait Document extends Node with NodeSelector with MSEventAttachmentTarget with 
   var media: js.String = _
   var onerror: js.Function1[Event, _] = _
   var onplay: js.Function1[Event, _] = _
-  var onafterupdate: js.Function1[MSEventObj, js.Any] = _
   var onplaying: js.Function1[Event, _] = _
   var images: HTMLCollection = _
   var location: Location = _
@@ -805,7 +735,6 @@ trait Document extends Node with NodeSelector with MSEventAttachmentTarget with 
   var onfocusout: js.Function1[FocusEvent, js.Any] = _
   var onselectionchange: js.Function1[Event, _] = _
   var onstoragecommit: js.Function1[StorageEvent, js.Any] = _
-  var ondataavailable: js.Function1[MSEventObj, js.Any] = _
   var onreadystatechange: js.Function1[Event, _] = _
   var lastModified: js.String = _
   var onkeypress: js.Function1[KeyboardEvent, js.Any] = _
@@ -821,7 +750,6 @@ trait Document extends Node with NodeSelector with MSEventAttachmentTarget with 
   var onended: js.Function1[Event, _] = _
   var compatMode: js.String = _
   var onscroll: js.Function1[UIEvent, js.Any] = _
-  var onrowenter: js.Function1[MSEventObj, js.Any] = _
   var onload: js.Function1[Event, _] = _
   var oninput: js.Function1[Event, _] = _
   def queryCommandValue(commandId: js.String): js.String = ???
@@ -870,8 +798,6 @@ trait Document extends Node with NodeSelector with MSEventAttachmentTarget with 
   def createAttribute(name: js.String): Attr = ???
   def createTextNode(data: js.String): Text = ???
   def createNodeIterator(root: Node, whatToShow: js.Number, filter: NodeFilter, entityReferenceExpansion: js.Boolean): NodeIterator = ???
-  def createEventObject(eventObj: js.Any): MSEventObj = ???
-  def createEventObject(): MSEventObj = ???
   def getSelection(): Selection = ???
   def getElementById(elementId: js.String): HTMLElement = ???
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
@@ -902,11 +828,9 @@ trait Document extends Node with NodeSelector with MSEventAttachmentTarget with 
   def clear(): Unit = ???
 }
 
-object Document extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Document),List())))) */
-}
 
-trait MessageEvent extends Event {
+
+class MessageEvent extends Event {
   var source: Window = _
   var origin: js.String = _
   var data: js.Any = _
@@ -914,11 +838,9 @@ trait MessageEvent extends Event {
   var ports: js.Any = _
 }
 
-object MessageEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(MessageEvent),List())))) */
-}
 
-trait CanvasRenderingContext2D extends js.Object {
+
+class CanvasRenderingContext2D extends js.Object {
   var miterLimit: js.Number = _
   var font: js.String = _
   var globalCompositeOperation: js.String = _
@@ -992,9 +914,7 @@ trait CanvasRenderingContext2D extends js.Object {
   def createLinearGradient(x0: js.Number, y0: js.Number, x1: js.Number, y1: js.Number): CanvasGradient = ???
 }
 
-object CanvasRenderingContext2D extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CanvasRenderingContext2D),List())))) */
-}
+
 
 trait WindowModal extends js.Object {
   var dialogArguments: js.Any = _
@@ -1050,7 +970,7 @@ object XMLHttpRequest extends js.Object {
   var HEADERS_RECEIVED: js.Number = _
 }
 
-trait Screen extends js.Object {
+class Screen extends js.Object {
   var width: js.Number = _
   var deviceXDPI: js.Number = _
   var fontSmoothingEnabled: js.Boolean = _
@@ -1068,9 +988,7 @@ trait Screen extends js.Object {
   var pixelDepth: js.Number = _
 }
 
-object Screen extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Screen),List())))) */
-}
+
 
 trait Coordinates extends js.Object {
   var altitudeAccuracy: js.Number = _
@@ -1082,9 +1000,7 @@ trait Coordinates extends js.Object {
   var accuracy: js.Number = _
 }
 
-object Coordinates extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Coordinates),List())))) */
-}
+
 
 trait NavigatorGeolocation extends js.Object {
   var geolocation: Geolocation = _
@@ -1106,20 +1022,16 @@ trait DataTransfer extends js.Object {
   var files: FileList = _
 }
 
-object DataTransfer extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DataTransfer),List())))) */
-}
 
-trait FocusEvent extends UIEvent {
+
+class FocusEvent extends UIEvent {
   var relatedTarget: EventTarget = _
   def initFocusEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, relatedTargetArg: EventTarget): Unit = ???
 }
 
-object FocusEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(FocusEvent),List())))) */
-}
 
-trait Range extends js.Object {
+
+class Range extends js.Object {
   var startOffset: js.Number = _
   var collapsed: js.Boolean = _
   var endOffset: js.Number = _
@@ -1132,7 +1044,7 @@ trait Range extends js.Object {
   def selectNode(refNode: Node): Unit = ???
   def detach(): Unit = ???
   def getBoundingClientRect(): ClientRect = ???
-
+  
   def compareBoundaryPoints(how: js.Number, sourceRange: Range): js.Number = ???
   def insertNode(newNode: Node): Unit = ???
   def collapse(toStart: js.Boolean): Unit = ???
@@ -1161,7 +1073,7 @@ object Range extends js.Object {
   var END_TO_START: js.Number = _
 }
 
-trait Storage extends MSStorageExtensions {
+class Storage {
   var length: js.Number = _
   def getItem(key: js.String): js.Dynamic = ???
   @scala.scalajs.js.annotation.JSBracketAccess
@@ -1178,9 +1090,7 @@ trait Storage extends MSStorageExtensions {
   def update(index: js.Number, v: js.Any): Unit = ???
 }
 
-object Storage extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Storage),List())))) */
-}
+
 
 trait TextRangeCollection extends js.Object {
   var length: js.Number = _
@@ -1191,11 +1101,9 @@ trait TextRangeCollection extends js.Object {
   def update(index: js.Number, v: TextRange): Unit = ???
 }
 
-object TextRangeCollection extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextRangeCollection),List())))) */
-}
 
-trait DocumentType extends Node {
+
+class DocumentType extends Node {
   var name: js.String = _
   var notations: NamedNodeMap = _
   var systemId: js.String = _
@@ -1204,11 +1112,9 @@ trait DocumentType extends Node {
   var publicId: js.String = _
 }
 
-object DocumentType extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DocumentType),List())))) */
-}
 
-trait MutationEvent extends Event {
+
+class MutationEvent extends Event {
   var newValue: js.String = _
   var attrChange: js.Number = _
   var attrName: js.String = _
@@ -1232,13 +1138,11 @@ trait DragEvent extends MouseEvent {
   def initDragEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, screenXArg: js.Number, screenYArg: js.Number, clientXArg: js.Number, clientYArg: js.Number, ctrlKeyArg: js.Boolean, altKeyArg: js.Boolean, shiftKeyArg: js.Boolean, metaKeyArg: js.Boolean, buttonArg: js.Number, relatedTargetArg: EventTarget, dataTransferArg: DataTransfer): Unit = ???
 }
 
-object DragEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DragEvent),List())))) */
-}
 
 
 
-trait PerformanceTiming extends js.Object {
+
+class PerformanceTiming extends js.Object {
   var redirectStart: js.Number = _
   var domainLookupEnd: js.Number = _
   var responseStart: js.Number = _
@@ -1263,14 +1167,12 @@ trait PerformanceTiming extends js.Object {
   def toJSON(): js.Dynamic = ???
 }
 
-object PerformanceTiming extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(PerformanceTiming),List())))) */
-}
+
 
 trait EventException extends js.Object {
   var code: js.Number = _
   var message: js.String = _
-
+  
   var DISPATCH_REQUEST_ERR: js.Number = _
   var UNSPECIFIED_EVENT_TYPE_ERR: js.Number = _
   var name: js.String = _
@@ -1307,9 +1209,7 @@ trait XDomainRequest extends js.Object {
   def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object XDomainRequest extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(XDomainRequest),List())))) */
-}
+
 
 
 
@@ -1340,33 +1240,27 @@ trait Location extends js.Object {
   def reload(): Unit = ???
   def replace(url: js.String): Unit = ???
   def assign(url: js.String): Unit = ???
-
+  
 }
 
-object Location extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Location),List())))) */
-}
 
-trait PerformanceEntry extends js.Object {
+
+class PerformanceEntry extends js.Object {
   var name: js.String = _
   var startTime: js.Number = _
   var duration: js.Number = _
   var entryType: js.String = _
 }
 
-object PerformanceEntry extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(PerformanceEntry),List())))) */
-}
 
-trait UIEvent extends Event {
+
+class UIEvent extends Event {
   var detail: js.Number = _
   var view: Window = _
   def initUIEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number): Unit = ???
 }
 
-object UIEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(UIEvent),List())))) */
-}
+
 
 
 class WheelEvent extends MouseEvent {
@@ -1388,20 +1282,18 @@ object WheelEvent extends js.Object {
   var DOM_DELTA_PAGE: js.Number = _
 }
 
-trait Text extends CharacterData with MSNodeExtensions {
+class Text extends CharacterData {
   var wholeText: js.String = _
   def splitText(offset: js.Number): Text = ???
   def replaceWholeText(content: js.String): Text = ???
 }
 
-object Text extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Text),List())))) */
-}
+
 
 trait PositionError extends js.Object {
   var code: js.Number = _
   var message: js.String = _
-
+  
   var POSITION_UNAVAILABLE: js.Number = _
   var PERMISSION_DENIED: js.Number = _
   var TIMEOUT: js.Number = _
@@ -1414,7 +1306,7 @@ object PositionError extends js.Object {
   var TIMEOUT: js.Number = _
 }
 
-trait StyleSheetList extends js.Object {
+class StyleSheetList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): StyleSheet = ???
   def item(): StyleSheet = ???
@@ -1424,18 +1316,14 @@ trait StyleSheetList extends js.Object {
   def update(index: js.Number, v: StyleSheet): Unit = ???
 }
 
-object StyleSheetList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(StyleSheetList),List())))) */
-}
 
-trait CustomEvent extends Event {
+
+class CustomEvent extends Event {
   var detail: Object = _
   def initCustomEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, detailArg: Object): Unit = ???
 }
 
-object CustomEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CustomEvent),List())))) */
-}
+
 
 trait Geolocation extends js.Object {
   def clearWatch(watchId: js.Number): Unit = ???
@@ -1447,13 +1335,11 @@ trait Geolocation extends js.Object {
   def watchPosition(successCallback: PositionCallback): js.Number = ???
 }
 
-object Geolocation extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Geolocation),List())))) */
-}
 
 
 
-trait History extends js.Object {
+
+class History extends js.Object {
   var length: js.Number = _
   def back(distance: js.Any): Unit = ???
   def back(): Unit = ???
@@ -1468,29 +1354,23 @@ trait History extends js.Object {
   def pushState(statedata: js.Any, title: js.String): Unit = ???
 }
 
-object History extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(History),List())))) */
-}
 
-trait TimeRanges extends js.Object {
+
+class TimeRanges extends js.Object {
   var length: js.Number = _
   def start(index: js.Number): js.Number = ???
   def end(index: js.Number): js.Number = ???
 }
 
-object TimeRanges extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TimeRanges),List())))) */
-}
 
-trait BeforeUnloadEvent extends Event {
+
+class BeforeUnloadEvent extends Event {
   var returnValue: js.String = _
 }
 
-object BeforeUnloadEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(BeforeUnloadEvent),List())))) */
-}
 
-trait Event extends js.Object {
+
+class Event extends js.Object {
   var timeStamp: js.Number = _
   var defaultPrevented: js.Boolean = _
   var isTrusted: js.Boolean = _
@@ -1518,22 +1398,20 @@ object Event extends js.Object {
   var BUBBLING_PHASE: js.Number = _
 }
 
-trait ImageData extends js.Object {
+class ImageData extends js.Object {
   var width: js.Number = _
   var data: js.Array[js.Number] = _
   var height: js.Number = _
 }
 
-object ImageData extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ImageData),List())))) */
-}
+
 
 
 trait ErrorEventHandler extends js.Object {
   def apply(event: Event, source: js.String, fileno: js.Number, columnNumber: js.Number): Unit = ???
 }
 
-trait NamedNodeMap extends js.Object {
+class NamedNodeMap extends js.Object {
   var length: js.Number = _
   def removeNamedItemNS(namespaceURI: js.String, localName: js.String): Attr = ???
   def item(index: js.Number): Attr = ???
@@ -1548,11 +1426,9 @@ trait NamedNodeMap extends js.Object {
   def setNamedItemNS(arg: Attr): Attr = ???
 }
 
-object NamedNodeMap extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(NamedNodeMap),List())))) */
-}
 
-trait MediaList extends js.Object {
+
+class MediaList extends js.Object {
   var length: js.Number = _
   var mediaText: js.String = _
   def deleteMedium(oldMedium: js.String): Unit = ???
@@ -1562,23 +1438,19 @@ trait MediaList extends js.Object {
   def apply(index: js.Number): js.String = ???
   @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.String): Unit = ???
-
+  
 }
 
-object MediaList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(MediaList),List())))) */
-}
 
-trait ProcessingInstruction extends Node {
+
+class ProcessingInstruction extends Node {
   var target: js.String = _
   var data: js.String = _
 }
 
-object ProcessingInstruction extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ProcessingInstruction),List())))) */
-}
 
-trait TextEvent extends UIEvent {
+
+class TextEvent extends UIEvent {
   var inputMethod: js.Number = _
   var data: js.String = _
   var locale: js.String = _
@@ -1609,21 +1481,17 @@ object TextEvent extends js.Object {
   var DOM_INPUT_METHOD_MULTIMODAL: js.Number = _
 }
 
-trait DocumentFragment extends Node with NodeSelector with MSEventAttachmentTarget with MSNodeExtensions {
+class DocumentFragment extends Node with NodeSelector {
 }
 
-object DocumentFragment extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DocumentFragment),List())))) */
-}
+
 
 trait Position extends js.Object {
   var timestamp: js.Number = _
   var coords: Coordinates = _
 }
 
-object Position extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Position),List())))) */
-}
+
 
 trait BookmarkCollection extends js.Object {
   var length: js.Number = _
@@ -1634,17 +1502,13 @@ trait BookmarkCollection extends js.Object {
   def update(index: js.Number, v: js.Any): Unit = ???
 }
 
-object BookmarkCollection extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(BookmarkCollection),List())))) */
-}
+
 
 class PerformanceMark extends PerformanceEntry {
 }
 
 
 trait ElementCSSInlineStyle extends js.Object {
-  var runtimeStyle: MSStyleCSSProperties = _
-  var currentStyle: MSCurrentStyleCSSProperties = _
   def doScroll(component: js.Any): Unit = ???
   def doScroll(): Unit = ???
   def componentFromPoint(x: js.Number, y: js.Number): js.String = ???
@@ -1666,7 +1530,7 @@ class StyleSheet extends js.Object {
 }
 
 
-trait NodeList extends js.Object {
+class NodeList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): Node = ???
   @scala.scalajs.js.annotation.JSBracketAccess
@@ -1675,33 +1539,27 @@ trait NodeList extends js.Object {
   def update(index: js.Number, v: Node): Unit = ???
 }
 
-object NodeList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(NodeList),List())))) */
-}
+
 
 trait NodeListOf[TNode <: Node] extends NodeList {
   override def item(index: js.Number): TNode = ???
   @scala.scalajs.js.annotation.JSBracketAccess
   override def apply(index: js.Number): TNode = ???
-
+  
 }
 
 class XMLSerializer extends js.Object {
   def serializeToString(target: Node): js.String = ???
 }
 
-object XMLSerializer extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(XMLSerializer),List())))) */
+
+
+class PerformanceMeasure extends PerformanceEntry {
 }
 
-trait PerformanceMeasure extends PerformanceEntry {
-}
 
-object PerformanceMeasure extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(PerformanceMeasure),List())))) */
-}
 
-trait NodeFilter extends js.Object {
+class NodeFilter extends js.Object {
   def acceptNode(n: Node): js.Number = ???
   var SHOW_ENTITY_REFERENCE: js.Number = _
   var SHOW_NOTATION: js.Number = _
@@ -1741,7 +1599,7 @@ object NodeFilter extends js.Object {
   var SHOW_DOCUMENT_FRAGMENT: js.Number = _
 }
 
-trait MediaError extends js.Object {
+class MediaError extends js.Object {
   var code: js.Number = _
   var MEDIA_ERR_ABORTED: js.Number = _
   var MEDIA_ERR_NETWORK: js.Number = _
@@ -1758,15 +1616,13 @@ object MediaError extends js.Object {
   var MEDIA_ERR_DECODE: js.Number = _
 }
 
-trait Comment extends CharacterData {
+class Comment extends CharacterData {
   var text: js.String = _
 }
 
-object Comment extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Comment),List())))) */
-}
 
-trait PerformanceResourceTiming extends PerformanceEntry {
+
+class PerformanceResourceTiming extends PerformanceEntry {
   var redirectStart: js.Number = _
   var redirectEnd: js.Number = _
   var domainLookupEnd: js.Number = _
@@ -1780,18 +1636,14 @@ trait PerformanceResourceTiming extends PerformanceEntry {
   var responseEnd: js.Number = _
 }
 
-object PerformanceResourceTiming extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(PerformanceResourceTiming),List())))) */
+
+
+class CanvasPattern extends js.Object {
 }
 
-trait CanvasPattern extends js.Object {
-}
 
-object CanvasPattern extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CanvasPattern),List())))) */
-}
 
-trait StorageEvent extends Event {
+class StorageEvent extends Event {
   var oldValue: js.Any = _
   var newValue: js.Any = _
   var url: js.String = _
@@ -1800,11 +1652,9 @@ trait StorageEvent extends Event {
   def initStorageEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, keyArg: js.String, oldValueArg: js.Any, newValueArg: js.Any, urlArg: js.String, storageAreaArg: Storage): Unit = ???
 }
 
-object StorageEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(StorageEvent),List())))) */
-}
 
-trait CharacterData extends Node {
+
+class CharacterData extends Node {
   var length: js.Number = _
   var data: js.String = _
   def deleteData(offset: js.Number, count: js.Number): Unit = ???
@@ -1814,14 +1664,12 @@ trait CharacterData extends Node {
   def substringData(offset: js.Number, count: js.Number): js.String = ???
 }
 
-object CharacterData extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CharacterData),List())))) */
-}
 
-trait DOMException extends js.Object {
+
+class DOMException extends js.Object {
   var code: js.Number = _
   var message: js.String = _
-
+  
   var HIERARCHY_REQUEST_ERR: js.Number = _
   var NO_MODIFICATION_ALLOWED_ERR: js.Number = _
   var INVALID_MODIFICATION_ERR: js.Number = _
@@ -1880,7 +1728,7 @@ object DOMException extends js.Object {
   var INUSE_ATTRIBUTE_ERR: js.Number = _
 }
 
-trait Attr extends Node {
+class Attr extends Node {
   var expando: js.Boolean = _
   var specified: js.Boolean = _
   var ownerElement: Element = _
@@ -1888,11 +1736,9 @@ trait Attr extends Node {
   var name: js.String = _
 }
 
-object Attr extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Attr),List())))) */
-}
 
-trait PerformanceNavigation extends js.Object {
+
+class PerformanceNavigation extends js.Object {
   var redirectCount: js.Number = _
   var `type`: js.Number = _
   def toJSON(): js.Dynamic = ???
@@ -1919,7 +1765,7 @@ trait LinkStyle extends js.Object {
   var sheet: StyleSheet = _
 }
 
-trait ClientRectList extends js.Object {
+class ClientRectList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): ClientRect = ???
   @scala.scalajs.js.annotation.JSBracketAccess
@@ -1928,29 +1774,19 @@ trait ClientRectList extends js.Object {
   def update(index: js.Number, v: ClientRect): Unit = ???
 }
 
-object ClientRectList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ClientRectList),List())))) */
-}
+
 
 trait External extends js.Object {
 }
 
-object External extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(External),List())))) */
-}
-
-object Audio extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(src),true,Some(TypeRef(CoreType(string),List())))),Some(TypeRef(TypeName(HTMLAudioElement),List())))) */
-}
-
-object Option extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(text),true,Some(TypeRef(CoreType(string),List()))), FunParam(Ident(value),true,Some(TypeRef(CoreType(string),List()))), FunParam(Ident(defaultSelected),true,Some(TypeRef(CoreType(boolean),List()))), FunParam(Ident(selected),true,Some(TypeRef(CoreType(boolean),List())))),Some(TypeRef(TypeName(HTMLOptionElement),List())))) */
-}
 
 
-object Image extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(width),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(height),true,Some(TypeRef(CoreType(number),List())))),Some(TypeRef(TypeName(HTMLImageElement),List())))) */
-}
+
+
+
+
+
+
 
 trait ObjectURLOptions extends js.Object {
   var oneTimeOnly: js.Boolean = _
@@ -1964,17 +1800,13 @@ trait ErrorEvent extends Event {
   def initErrorEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, messageArg: js.String, filenameArg: js.String, linenoArg: js.Number): Unit = ???
 }
 
-object ErrorEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ErrorEvent),List())))) */
-}
+
 
 trait TrackEvent extends Event {
   var track: js.Any = _
 }
 
-object TrackEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TrackEvent),List())))) */
-}
+
 
 trait TextTrackCue extends EventTarget {
   var onenter: js.Function1[Event, _] = _
@@ -1990,9 +1822,7 @@ trait TextTrackCue extends EventTarget {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object TextTrackCue extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextTrackCue),List())))) */
-}
+
 
 
 trait DOMTokenList extends js.Object {
@@ -2006,25 +1836,19 @@ trait DOMTokenList extends js.Object {
   def apply(index: js.Number): js.String = ???
   @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.String): Unit = ???
-
+  
 }
 
-object DOMTokenList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DOMTokenList),List())))) */
-}
 
-object WindowTimers extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(WindowTimers),List())))) */
-}
+
+
 
 trait MessageChannel extends js.Object {
   var port2: MessagePort = _
   var port1: MessagePort = _
 }
 
-object MessageChannel extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(MessageChannel),List())))) */
-}
+
 
 trait TransitionEvent extends Event {
   var propertyName: js.String = _
@@ -2032,9 +1856,7 @@ trait TransitionEvent extends Event {
   def initTransitionEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, propertyNameArg: js.String, elapsedTimeArg: js.Number): Unit = ???
 }
 
-object TransitionEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TransitionEvent),List())))) */
-}
+
 
 trait MediaQueryList extends js.Object {
   var matches: js.Boolean = _
@@ -2043,18 +1865,14 @@ trait MediaQueryList extends js.Object {
   def removeListener(listener: MediaQueryListListener): Unit = ???
 }
 
-object MediaQueryList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(MediaQueryList),List())))) */
-}
+
 
 trait DOMError extends js.Object {
   var name: js.String = _
-
+  
 }
 
-object DOMError extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DOMError),List())))) */
-}
+
 
 trait CloseEvent extends Event {
   var wasClean: js.Boolean = _
@@ -2063,9 +1881,7 @@ trait CloseEvent extends Event {
   def initCloseEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, wasCleanArg: js.Boolean, codeArg: js.Number, reasonArg: js.String): Unit = ???
 }
 
-object CloseEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CloseEvent),List())))) */
-}
+
 
 class WebSocket protected () extends EventTarget {
   def this(url: js.String) = this()
@@ -2107,9 +1923,7 @@ trait ProgressEvent extends Event {
   def initProgressEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, lengthComputableArg: js.Boolean, loadedArg: js.Number, totalArg: js.Number): Unit = ???
 }
 
-object ProgressEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ProgressEvent),List())))) */
-}
+
 
 
 trait FileList extends js.Object {
@@ -2121,9 +1935,7 @@ trait FileList extends js.Object {
   def update(index: js.Number, v: File): Unit = ???
 }
 
-object FileList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(FileList),List())))) */
-}
+
 
 
 
@@ -2132,9 +1944,7 @@ trait File extends Blob {
   var name: js.String = _
 }
 
-object File extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(File),List())))) */
-}
+
 
 trait URL extends js.Object {
   def revokeObjectURL(url: js.String): Unit = ???
@@ -2154,9 +1964,7 @@ trait XMLHttpRequestEventTarget extends EventTarget {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object XMLHttpRequestEventTarget extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(XMLHttpRequestEventTarget),List())))) */
-}
+
 
 
 
@@ -2174,9 +1982,7 @@ trait AudioTrackList extends EventTarget {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object AudioTrackList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(AudioTrackList),List())))) */
-}
+
 
 
 
@@ -2193,9 +1999,7 @@ trait AnimationEvent extends Event {
   def initAnimationEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, animationNameArg: js.String, elapsedTimeArg: js.Number): Unit = ???
 }
 
-object AnimationEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(AnimationEvent),List())))) */
-}
+
 
 
 trait WindowConsole extends js.Object {
@@ -2211,9 +2015,7 @@ trait AudioTrack extends js.Object {
   var enabled: js.Boolean = _
 }
 
-object AudioTrack extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(AudioTrack),List())))) */
-}
+
 
 
 trait TextTrackCueList extends js.Object {
@@ -2226,9 +2028,7 @@ trait TextTrackCueList extends js.Object {
   def getCueById(id: js.String): TextTrackCue = ???
 }
 
-object TextTrackCueList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextTrackCueList),List())))) */
-}
+
 
 trait TextTrackList extends js.Object {
   var length: js.Number = _
@@ -2239,9 +2039,7 @@ trait TextTrackList extends js.Object {
   def update(index: js.Number, v: TextTrack): Unit = ???
 }
 
-object TextTrackList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextTrackList),List())))) */
-}
+
 
 trait Console extends js.Object {
   def info(message: js.Any, optionalParams: js.Any*): Unit = ???
@@ -2257,9 +2055,7 @@ trait Console extends js.Object {
   def profileEnd(): Unit = ???
 }
 
-object Console extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Console),List())))) */
-}
+
 
 trait WindowBase64 extends js.Object {
   def btoa(rawString: js.String): js.String = ???
@@ -2277,9 +2073,7 @@ trait DOMStringList extends js.Object {
   def update(index: js.Number, v: js.String): Unit = ???
 }
 
-object DOMStringList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DOMStringList),List())))) */
-}
+
 
 
 trait TextTrack extends EventTarget {
@@ -2330,11 +2124,9 @@ trait MessagePort extends EventTarget {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object MessagePort extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(MessagePort),List())))) */
-}
 
-trait FileReader extends MSBaseReader {
+
+trait FileReader {
   var error: DOMError = _
   def readAsArrayBuffer(blob: Blob): Unit = ???
   def readAsDataURL(blob: Blob): Unit = ???
@@ -2342,9 +2134,7 @@ trait FileReader extends MSBaseReader {
   def readAsText(blob: Blob): Unit = ???
 }
 
-object FileReader extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(FileReader),List())))) */
-}
+
 
 trait BlobPropertyBag extends js.Object {
   var `type`: js.String = _
@@ -2410,18 +2200,14 @@ trait PopStateEvent extends Event {
   def initPopStateEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, stateArg: js.Any): Unit = ???
 }
 
-object PopStateEvent extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(PopStateEvent),List())))) */
-}
+
 
 
 trait DOMSettableTokenList extends DOMTokenList {
   var value: js.String = _
 }
 
-object DOMSettableTokenList extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(DOMSettableTokenList),List())))) */
-}
+
 
 
 class FormData extends js.Object {
@@ -2453,10 +2239,6 @@ trait ValidityState extends js.Object {
   var valid: js.Boolean = _
 }
 
-object ValidityState extends js.Object {
-/* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ValidityState),List())))) */
-}
-
 
 
 class Worker protected () extends AbstractWorker {
@@ -2472,219 +2254,4 @@ class Worker protected () extends AbstractWorker {
 object Worker extends js.Object {
 }
 
-}
 
-package dom {
-  object globals extends js.GlobalScope {
-    def parseInt(string: js.String, radix: js.Number): js.Number = ???
-    def parseFloat(string: js.String, radix: js.Number): js.Number = ???
-    var ondragend: js.Function1[DragEvent, js.Any] = _
-    var onkeydown: js.Function1[KeyboardEvent, js.Any] = _
-    var ondragover: js.Function1[DragEvent, js.Any] = _
-    var onkeyup: js.Function1[KeyboardEvent, js.Any] = _
-    var onreset: js.Function1[Event, _] = _
-    var onmouseup: js.Function1[MouseEvent, js.Any] = _
-    var ondragstart: js.Function1[DragEvent, js.Any] = _
-    var ondrag: js.Function1[DragEvent, js.Any] = _
-    var screenX: js.Number = _
-    var onmouseover: js.Function1[MouseEvent, js.Any] = _
-    var ondragleave: js.Function1[DragEvent, js.Any] = _
-    var history: History = _
-    var pageXOffset: js.Number = _
-    var name: js.String = _
-    var onafterprint: js.Function1[Event, _] = _
-    var onpause: js.Function1[Event, _] = _
-    var onbeforeprint: js.Function1[Event, _] = _
-    var top: Window = _
-    var onmousedown: js.Function1[MouseEvent, js.Any] = _
-    var onseeked: js.Function1[Event, _] = _
-    var opener: Window = _
-    var onclick: js.Function1[MouseEvent, js.Any] = _
-    var innerHeight: js.Number = _
-    var onwaiting: js.Function1[Event, _] = _
-    var ononline: js.Function1[Event, _] = _
-    var ondurationchange: js.Function1[Event, _] = _
-    var frames: Window = _
-    var onblur: js.Function1[FocusEvent, js.Any] = _
-    var onemptied: js.Function1[Event, _] = _
-    var onseeking: js.Function1[Event, _] = _
-    var oncanplay: js.Function1[Event, _] = _
-    var outerWidth: js.Number = _
-    var onstalled: js.Function1[Event, _] = _
-    var onmousemove: js.Function1[MouseEvent, js.Any] = _
-    var innerWidth: js.Number = _
-    var onoffline: js.Function1[Event, _] = _
-    var length: js.Number = _
-    var screen: Screen = _
-    var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = _
-    var onratechange: js.Function1[Event, _] = _
-    var onstorage: js.Function1[StorageEvent, js.Any] = _
-    var onloadstart: js.Function1[Event, _] = _
-    var ondragenter: js.Function1[DragEvent, js.Any] = _
-    var onsubmit: js.Function1[Event, _] = _
-    var self: Window = _
-    var document: Document = _
-    var onprogress: js.Function1[js.Any, js.Any] = _
-    var ondblclick: js.Function1[MouseEvent, js.Any] = _
-    var pageYOffset: js.Number = _
-    var oncontextmenu: js.Function1[MouseEvent, js.Any] = _
-    var onchange: js.Function1[Event, _] = _
-    var onloadedmetadata: js.Function1[Event, _] = _
-    var onplay: js.Function1[Event, _] = _
-    var onerror: ErrorEventHandler = _
-    var onplaying: js.Function1[Event, _] = _
-    var parent: Window = _
-    var location: Location = _
-    var oncanplaythrough: js.Function1[Event, _] = _
-    var onabort: js.Function1[UIEvent, js.Any] = _
-    var onreadystatechange: js.Function1[Event, _] = _
-    var outerHeight: js.Number = _
-    var onkeypress: js.Function1[KeyboardEvent, js.Any] = _
-    var frameElement: Element = _
-    var onloadeddata: js.Function1[Event, _] = _
-    var onsuspend: js.Function1[Event, _] = _
-    var window: Window = _
-    var onfocus: js.Function1[FocusEvent, js.Any] = _
-    var onmessage: js.Function1[MessageEvent, js.Any] = _
-    var ontimeupdate: js.Function1[Event, _] = _
-    var onresize: js.Function1[UIEvent, js.Any] = _
-    var onselect: js.Function1[UIEvent, js.Any] = _
-    var navigator: Navigator = _
-    var styleMedia: StyleMedia = _
-    var ondrop: js.Function1[DragEvent, js.Any] = _
-    var onmouseout: js.Function1[MouseEvent, js.Any] = _
-    var onended: js.Function1[Event, _] = _
-    var onhashchange: js.Function1[Event, _] = _
-    var onunload: js.Function1[Event, _] = _
-    var onscroll: js.Function1[UIEvent, js.Any] = _
-    var screenY: js.Number = _
-    var onmousewheel: js.Function1[MouseWheelEvent, js.Any] = _
-    var onload: js.Function1[Event, _] = _
-    var onvolumechange: js.Function1[Event, _] = _
-    var oninput: js.Function1[Event, _] = _
-    var performance: Performance = _
-    def alert(message: js.String): Unit = ???
-    def alert(): Unit = ???
-    def scroll(x: js.Number, y: js.Number): Unit = ???
-    def scroll(x: js.Number): Unit = ???
-    def scroll(): Unit = ???
-    def focus(): Unit = ???
-    def scrollTo(x: js.Number, y: js.Number): Unit = ???
-    def scrollTo(x: js.Number): Unit = ???
-    def scrollTo(): Unit = ???
-    def print(): Unit = ???
-    def prompt(message: js.String, defaul: js.String): js.String = ???
-    def prompt(message: js.String): js.String = ???
-    def prompt(): js.String = ???
-
-    def open(url: js.String, target: js.String, features: js.String, replace: js.Boolean): Window = ???
-    def open(url: js.String, target: js.String, features: js.String): Window = ???
-    def open(url: js.String, target: js.String): Window = ???
-    def open(url: js.String): Window = ???
-    def open(): Window = ???
-    def scrollBy(x: js.Number, y: js.Number): Unit = ???
-    def scrollBy(x: js.Number): Unit = ???
-    def scrollBy(): Unit = ???
-    def confirm(message: js.String): js.Boolean = ???
-    def confirm(): js.Boolean = ???
-    def close(): Unit = ???
-    def postMessage(message: js.Any, targetOrigin: js.String, ports: js.Any): Unit = ???
-    def postMessage(message: js.Any, targetOrigin: js.String): Unit = ???
-    def showModalDialog(url: js.String, argument: js.Any, options: js.Any): js.Dynamic = ???
-    def showModalDialog(url: js.String, argument: js.Any): js.Dynamic = ???
-    def showModalDialog(url: js.String): js.Dynamic = ???
-    def showModalDialog(): js.Dynamic = ???
-    def blur(): Unit = ???
-    def getSelection(): Selection = ???
-    def getComputedStyle(elt: Element, pseudoElt: js.String): CSSStyleDeclaration = ???
-    def getComputedStyle(elt: Element): CSSStyleDeclaration = ???
-    def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
-    def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
-    def removeEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
-    def removeEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
-    def dispatchEvent(evt: Event): js.Boolean = ???
-    def attachEvent(event: js.String, listener: js.Function1[Event, Unit]): js.Boolean = ???
-    def detachEvent(event: js.String, listener: js.Function1[Event, Unit]): Unit = ???
-    var localStorage: Storage = _
-    var status: js.String = _
-    var onmouseleave: js.Function1[MouseEvent, js.Any] = _
-    var screenLeft: js.Number = _
-    var offscreenBuffering: js.Any = _
-    var maxConnectionsPerServer: js.Number = _
-    var onmouseenter: js.Function1[MouseEvent, js.Any] = _
-    var clipboardData: DataTransfer = _
-    var defaultStatus: js.String = _
-    var clientInformation: Navigator = _
-    var closed: js.Boolean = _
-    var onhelp: js.Function1[Event, _] = _
-    var external: External = _
-    var event: MSEventObj = _
-    var onfocusout: js.Function1[FocusEvent, js.Any] = _
-    var screenTop: js.Number = _
-    var onfocusin: js.Function1[FocusEvent, js.Any] = _
-    def showModelessDialog(url: js.String, argument: js.Any, options: js.Any): Window = ???
-    def showModelessDialog(url: js.String, argument: js.Any): Window = ???
-    def showModelessDialog(url: js.String): Window = ???
-    def showModelessDialog(): Window = ???
-    def navigate(url: js.String): Unit = ???
-    def resizeBy(x: js.Number, y: js.Number): Unit = ???
-    def resizeBy(x: js.Number): Unit = ???
-    def resizeBy(): Unit = ???
-    def item(index: js.Any): js.Dynamic = ???
-    def resizeTo(x: js.Number, y: js.Number): Unit = ???
-    def resizeTo(x: js.Number): Unit = ???
-    def resizeTo(): Unit = ???
-    def createPopup(arguments: js.Any): MSPopupWindow = ???
-    def createPopup(): MSPopupWindow = ???
-    def toStaticHTML(html: js.String): js.String = ???
-    def execScript(code: js.String, language: js.String): js.Dynamic = ???
-    def execScript(code: js.String): js.Dynamic = ???
-    def msWriteProfilerMark(profilerMarkName: js.String): Unit = ???
-    def moveTo(x: js.Number, y: js.Number): Unit = ???
-    def moveTo(x: js.Number): Unit = ???
-    def moveTo(): Unit = ???
-    def moveBy(x: js.Number, y: js.Number): Unit = ???
-    def moveBy(x: js.Number): Unit = ???
-    def moveBy(): Unit = ???
-    def showHelp(url: js.String, helpArg: js.Any, features: js.String): Unit = ???
-    def showHelp(url: js.String, helpArg: js.Any): Unit = ???
-    def showHelp(url: js.String): Unit = ???
-    var sessionStorage: Storage = _
-    def clearTimeout(handle: js.Number): Unit = ???
-    def setTimeout(handler: js.Any, timeout: js.Any, args: js.Any*): js.Number = ???
-    def clearInterval(handle: js.Number): Unit = ???
-    def setInterval(handler: js.Any, timeout: js.Any, args: js.Any*): js.Number = ???
-    var URL: URL = _
-    var MSApp: MSApp = _
-    var onmspointerdown: js.Function1[js.Any, js.Any] = _
-    var animationStartTime: js.Number = _
-    var onmsgesturedoubletap: js.Function1[js.Any, js.Any] = _
-    var onmspointerhover: js.Function1[js.Any, js.Any] = _
-    var onmsgesturehold: js.Function1[js.Any, js.Any] = _
-    var onmspointermove: js.Function1[js.Any, js.Any] = _
-    var onmsgesturechange: js.Function1[js.Any, js.Any] = _
-    var onmsgesturestart: js.Function1[js.Any, js.Any] = _
-    var onmspointercancel: js.Function1[js.Any, js.Any] = _
-    var onmsgestureend: js.Function1[js.Any, js.Any] = _
-    var onmsgesturetap: js.Function1[js.Any, js.Any] = _
-    var onmspointerout: js.Function1[js.Any, js.Any] = _
-    var msAnimationStartTime: js.Number = _
-    var applicationCache: ApplicationCache = _
-    var onmsinertiastart: js.Function1[js.Any, js.Any] = _
-    var onmspointerover: js.Function1[js.Any, js.Any] = _
-    var onpopstate: js.Function1[PopStateEvent, js.Any] = _
-    var onmspointerup: js.Function1[js.Any, js.Any] = _
-    def msCancelRequestAnimationFrame(handle: js.Number): Unit = ???
-    def matchMedia(mediaQuery: js.String): MediaQueryList = ???
-    def cancelAnimationFrame(handle: js.Number): Unit = ???
-    def msIsStaticHTML(html: js.String): js.Boolean = ???
-    def msMatchMedia(mediaQuery: js.String): MediaQueryList = ???
-    def requestAnimationFrame(callback: FrameRequestCallback): js.Number = ???
-    def msRequestAnimationFrame(callback: FrameRequestCallback): js.Number = ???
-    def btoa(rawString: js.String): js.String = ???
-    def atob(encodedString: js.String): js.String = ???
-    var msIndexedDB: IDBFactory = _
-    var indexedDB: IDBFactory = _
-    var console: Console = _
-  }
-}

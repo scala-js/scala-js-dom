@@ -1,8 +1,6 @@
 package org.scalajs.dom
-
 import scala.scalajs.js
-
-trait CSSStyleDeclaration extends js.Object {
+class CSSStyleDeclaration extends js.Object {
   var backgroundAttachment: js.String = _
   var visibility: js.String = _
   var textAlignLast: js.String = _
@@ -281,15 +279,10 @@ trait CSSStyleDeclaration extends js.Object {
   var msFlexPreferredSize: js.String = _
 }
 
-object CSSStyleDeclaration extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSStyleDeclaration),List())))) */
-}
-
-trait CSSStyleSheet extends StyleSheet {
+class CSSStyleSheet extends StyleSheet {
   var owningElement: Element = _
   var imports: StyleSheetList = _
   var isAlternate: js.Boolean = _
-  var rules: MSCSSRuleList = _
   var isPrefAlternate: js.Boolean = _
   var readOnly: js.Boolean = _
   var cssText: js.String = _
@@ -313,20 +306,12 @@ trait CSSStyleSheet extends StyleSheet {
   def removeImport(lIndex: js.Number): Unit = ???
 }
 
-object CSSStyleSheet extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSStyleSheet),List())))) */
-}
-trait CSSStyleRule extends CSSRule {
+class CSSStyleRule extends CSSRule {
   var selectorText: js.String = _
-  var style: MSStyleCSSProperties = _
   var readOnly: js.Boolean = _
 }
 
-object CSSStyleRule extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSStyleRule),List())))) */
-}
-
-trait CSSMediaRule extends CSSRule {
+class CSSMediaRule extends CSSRule {
   var media: MediaList = _
   var cssRules: CSSRuleList = _
   def insertRule(rule: js.String, index: js.Number): js.Number = ???
@@ -335,31 +320,18 @@ trait CSSMediaRule extends CSSRule {
   def deleteRule(): Unit = ???
 }
 
-object CSSMediaRule extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSMediaRule),List())))) */
-}
-
-trait CSSNamespaceRule extends CSSRule {
+class CSSNamespaceRule extends CSSRule {
   var namespaceURI: js.String = _
   var prefix: js.String = _
 }
 
-object CSSNamespaceRule extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSNamespaceRule),List())))) */
-}
-
-trait CSSImportRule extends CSSRule {
+class CSSImportRule extends CSSRule {
   var styleSheet: CSSStyleSheet = _
   var href: js.String = _
   var media: MediaList = _
 }
 
-object CSSImportRule extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSImportRule),List())))) */
-}
-
-
-trait CSSRule extends js.Object {
+class CSSRule extends js.Object {
   var cssText: js.String = _
   var parentStyleSheet: CSSStyleSheet = _
   var parentRule: CSSRule = _
@@ -378,7 +350,6 @@ trait CSSRule extends js.Object {
 }
 
 object CSSRule extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSRule),List())))) */
   var IMPORT_RULE: js.Number = _
   var MEDIA_RULE: js.Number = _
   var STYLE_RULE: js.Number = _
@@ -388,27 +359,21 @@ object CSSRule extends js.Object {
   var FONT_FACE_RULE: js.Number = _
   var CHARSET_RULE: js.Number = _
 }
-trait CSSFontFaceRule extends CSSRule {
+class CSSFontFaceRule extends CSSRule {
   var style: CSSStyleDeclaration = _
 }
 
-object CSSFontFaceRule extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSFontFaceRule),List())))) */
-}
 
-trait CSSPageRule extends CSSRule {
+class CSSPageRule extends CSSRule {
   var pseudoClass: js.String = _
   var selectorText: js.String = _
   var selector: js.String = _
   var style: CSSStyleDeclaration = _
 }
 
-object CSSPageRule extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSPageRule),List())))) */
-}
 
 
-trait CSSRuleList extends js.Object {
+class CSSRuleList extends js.Object {
   var length: js.Number = _
   def item(index: js.Number): CSSRule = ???
   @scala.scalajs.js.annotation.JSBracketAccess
@@ -417,10 +382,7 @@ trait CSSRuleList extends js.Object {
   def update(index: js.Number, v: CSSRule): Unit = ???
 }
 
-object CSSRuleList extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSRuleList),List())))) */
-}
-trait CSSKeyframesRule extends CSSRule {
+class CSSKeyframesRule extends CSSRule {
   var name: js.String = _
   var cssRules: CSSRuleList = _
   def findRule(rule: js.String): CSSKeyframeRule = ???
@@ -428,16 +390,9 @@ trait CSSKeyframesRule extends CSSRule {
   def appendRule(rule: js.String): Unit = ???
 }
 
-object CSSKeyframesRule extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSKeyframesRule),List())))) */
-}
 
 
-trait CSSKeyframeRule extends CSSRule {
+class CSSKeyframeRule extends CSSRule {
   var keyText: js.String = _
   var style: CSSStyleDeclaration = _
-}
-
-object CSSKeyframeRule extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(CSSKeyframeRule),List())))) */
 }

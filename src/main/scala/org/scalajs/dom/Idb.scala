@@ -1,8 +1,7 @@
 package org.scalajs.dom
-
 import scala.scalajs.js
 
-trait IDBObjectStore extends js.Object {
+class IDBObjectStore extends js.Object {
   var indexNames: DOMStringList = _
   var name: js.String = _
   var transaction: IDBTransaction = _
@@ -25,20 +24,14 @@ trait IDBObjectStore extends js.Object {
   def delete(key: js.Any): IDBRequest = ???
 }
 
-object IDBObjectStore extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBObjectStore),List())))) */
-}
-
-trait IDBVersionChangeEvent extends Event {
+class IDBVersionChangeEvent extends Event {
   var newVersion: js.Number = _
   var oldVersion: js.Number = _
 }
 
-object IDBVersionChangeEvent extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBVersionChangeEvent),List())))) */
-}
 
-trait IDBIndex extends js.Object {
+
+class IDBIndex extends js.Object {
   var unique: js.Boolean = _
   var name: js.String = _
   var keyPath: js.String = _
@@ -55,10 +48,8 @@ trait IDBIndex extends js.Object {
   def openCursor(): IDBRequest = ???
 }
 
-object IDBIndex extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBIndex),List())))) */
-}
-trait IDBCursor extends js.Object {
+
+class IDBCursor extends js.Object {
   var source: js.Any = _
   var direction: js.String = _
   var key: js.Any = _
@@ -79,19 +70,17 @@ object IDBCursor extends js.Object {
   var NEXT: js.String = _
   var NEXT_NO_DUPLICATE: js.String = _
 }
-trait IDBCursorWithValue extends IDBCursor {
+class IDBCursorWithValue extends IDBCursor {
   var value: js.Any = _
 }
 
-object IDBCursorWithValue extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBCursorWithValue),List())))) */
-}
+
 
 trait IDBEnvironment extends js.Object {
   var msIndexedDB: IDBFactory = _
   var indexedDB: IDBFactory = _
 }
-trait IDBKeyRange extends js.Object {
+class IDBKeyRange extends js.Object {
   var upper: js.Any = _
   var upperOpen: js.Boolean = _
   var lower: js.Any = _
@@ -106,10 +95,8 @@ trait IDBKeyRange extends js.Object {
   def upperBound(bound: js.Any): IDBKeyRange = ???
 }
 
-object IDBKeyRange extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBKeyRange),List())))) */
-}
-trait IDBTransaction extends EventTarget {
+
+class IDBTransaction extends EventTarget {
   var oncomplete: js.Function1[Event, js.Any] = _
   var db: IDBDatabase = _
   var mode: js.String = _
@@ -131,7 +118,7 @@ object IDBTransaction extends js.Object {
   var VERSION_CHANGE: js.String = _
   var READ_WRITE: js.String = _
 }
-trait IDBDatabase extends EventTarget {
+class IDBDatabase extends EventTarget {
   var version: js.String = _
   var name: js.String = _
   var objectStoreNames: DOMStringList = _
@@ -147,31 +134,25 @@ trait IDBDatabase extends EventTarget {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object IDBDatabase extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBDatabase),List())))) */
-}
 
-trait IDBOpenDBRequest extends IDBRequest {
+
+class IDBOpenDBRequest extends IDBRequest {
   var onupgradeneeded: js.Function1[IDBVersionChangeEvent, js.Any] = _
   var onblocked: js.Function1[Event, js.Any] = _
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object IDBOpenDBRequest extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBOpenDBRequest),List())))) */
-}
-trait IDBFactory extends js.Object {
+
+class IDBFactory extends js.Object {
   def open(name: js.String, version: js.Number): IDBOpenDBRequest = ???
   def open(name: js.String): IDBOpenDBRequest = ???
   def cmp(first: js.Any, second: js.Any): js.Number = ???
   def deleteDatabase(name: js.String): IDBOpenDBRequest = ???
 }
 
-object IDBFactory extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBFactory),List())))) */
-}
-trait IDBRequest extends EventTarget {
+
+class IDBRequest extends EventTarget {
   var source: js.Any = _
   var onsuccess: js.Function1[Event, js.Any] = _
   var error: DOMError = _
@@ -183,6 +164,4 @@ trait IDBRequest extends EventTarget {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object IDBRequest extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBRequest),List())))) */
-}
+

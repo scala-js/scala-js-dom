@@ -1,8 +1,7 @@
 package org.scalajs.dom
-
 import scala.scalajs.js
 
-trait HTMLTableElement extends HTMLElement with MSDataBindingTableExtensions with MSDataBindingExtensions {
+class HTMLTableElement extends HTMLElement {
   var width: js.String = _
   var borderColorLight: js.Any = _
   var cellSpacing: js.String = _
@@ -38,41 +37,22 @@ trait HTMLTableElement extends HTMLElement with MSDataBindingTableExtensions wit
   def createTFoot(): HTMLElement = ???
 }
 
-object HTMLTableElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTableElement),List())))) */
+class HTMLTableDataCellElement extends HTMLTableCellElement {
 }
 
-trait HTMLTableDataCellElement extends HTMLTableCellElement {
-}
-
-object HTMLTableDataCellElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTableDataCellElement),List())))) */
-}
-
-trait HTMLBaseElement extends HTMLElement {
+class HTMLBaseElement extends HTMLElement {
   var target: js.String = _
   var href: js.String = _
-}
-
-object HTMLBaseElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLBaseElement),List())))) */
 }
 
 trait HTMLNextIdElement extends HTMLElement {
   var n: js.String = _
 }
 
-object HTMLNextIdElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLNextIdElement),List())))) */
-}
-
-trait HTMLParagraphElement extends HTMLElement {
+class HTMLParagraphElement extends HTMLElement {
   var align: js.String = _
 }
 
-object HTMLParagraphElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLParagraphElement),List())))) */
-}
 
 trait HTMLAreasCollection extends HTMLCollection {
   def remove(index: js.Number): Unit = ???
@@ -81,11 +61,7 @@ trait HTMLAreasCollection extends HTMLCollection {
   def add(element: HTMLElement): Unit = ???
 }
 
-object HTMLAreasCollection extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLAreasCollection),List())))) */
-}
-
-trait HTMLAppletElement extends HTMLElement with MSDataBindingExtensions with MSDataBindingRecordSetExtensions {
+class HTMLAppletElement extends HTMLElement{
   var width: js.Number = _
   var codeType: js.String = _
   var `object`: js.String = _
@@ -107,19 +83,11 @@ trait HTMLAppletElement extends HTMLElement with MSDataBindingExtensions with MS
   var BaseHref: js.String = _
 }
 
-object HTMLAppletElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLAppletElement),List())))) */
-}
-
-trait HTMLOListElement extends HTMLElement {
+class HTMLOListElement extends HTMLElement {
   var start: js.Number = _
 }
 
-object HTMLOListElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLOListElement),List())))) */
-}
-
-trait HTMLSelectElement extends HTMLElement with MSHTMLCollectionExtensions with MSDataBindingExtensions {
+class HTMLSelectElement extends HTMLElement {
   var options: HTMLSelectElement = _
   var value: js.String = _
   var form: HTMLFormElement = _
@@ -150,20 +118,12 @@ trait HTMLSelectElement extends HTMLElement with MSHTMLCollectionExtensions with
   def setCustomValidity(error: js.String): Unit = ???
 }
 
-object HTMLSelectElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLSelectElement),List())))) */
-}
-
 trait HTMLBlockElement extends HTMLElement {
   var width: js.Number = _
   var cite: js.String = _
 }
 
-object HTMLBlockElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLBlockElement),List())))) */
-}
-
-trait HTMLMetaElement extends HTMLElement {
+class HTMLMetaElement extends HTMLElement {
   var httpEquiv: js.String = _
   var name: js.String = _
   var content: js.String = _
@@ -172,19 +132,11 @@ trait HTMLMetaElement extends HTMLElement {
   var charset: js.String = _
 }
 
-object HTMLMetaElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLMetaElement),List())))) */
-}
-
-trait HTMLDDElement extends HTMLElement {
+class HTMLDDElement extends HTMLElement {
   var noWrap: js.Boolean = _
 }
 
-object HTMLDDElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLDDElement),List())))) */
-}
-
-trait HTMLLinkElement extends HTMLElement with LinkStyle {
+class HTMLLinkElement extends HTMLElement with LinkStyle {
   var rel: js.String = _
   var target: js.String = _
   var href: js.String = _
@@ -195,28 +147,16 @@ trait HTMLLinkElement extends HTMLElement with LinkStyle {
   var hreflang: js.String = _
 }
 
-object HTMLLinkElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLLinkElement),List())))) */
-}
-
-trait HTMLFontElement extends HTMLElement {
+class HTMLFontElement extends HTMLElement {
   var face: js.String = _
 }
 
-object HTMLFontElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLFontElement),List())))) */
-}
-
-trait HTMLTableCaptionElement extends HTMLElement {
+class HTMLTableCaptionElement extends HTMLElement {
   var align: js.String = _
   var vAlign: js.String = _
 }
 
-object HTMLTableCaptionElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTableCaptionElement),List())))) */
-}
-
-trait HTMLOptionElement extends HTMLElement with MSDataBindingExtensions {
+class HTMLOptionElement extends HTMLElement{
   var index: js.Number = _
   var defaultSelected: js.Boolean = _
   var value: js.String = _
@@ -227,28 +167,16 @@ trait HTMLOptionElement extends HTMLElement with MSDataBindingExtensions {
   def create(): HTMLOptionElement = ???
 }
 
-object HTMLOptionElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLOptionElement),List())))) */
-}
-
-trait HTMLMapElement extends HTMLElement {
+class HTMLMapElement extends HTMLElement {
   var name: js.String = _
   var areas: HTMLAreasCollection = _
 }
 
-object HTMLMapElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLMapElement),List())))) */
-}
-
-trait HTMLMenuElement extends HTMLElement {
+class HTMLMenuElement extends HTMLElement {
   var `type`: js.String = _
 }
 
-object HTMLMenuElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLMenuElement),List())))) */
-}
-
-trait HTMLCollection extends MSHTMLCollectionExtensions {
+class HTMLCollection {
   var length: js.Number = _
   def item(nameOrIndex: js.Any, optionalIndex: js.Any): Element = ???
   def item(nameOrIndex: js.Any): Element = ???
@@ -260,11 +188,7 @@ trait HTMLCollection extends MSHTMLCollectionExtensions {
   def update(name: js.Number, v: Element): Unit = ???
 }
 
-object HTMLCollection extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLCollection),List())))) */
-}
-
-trait HTMLImageElement extends HTMLElement with MSImageResourceExtensions with MSDataBindingExtensions with MSResourceMetadata {
+class HTMLImageElement extends HTMLElement {
   var width: js.Number = _
   var vspace: js.Number = _
   var naturalHeight: js.Number = _
@@ -287,11 +211,7 @@ trait HTMLImageElement extends HTMLElement with MSImageResourceExtensions with M
   var msPlayToSource: js.Any = _
 }
 
-object HTMLImageElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLImageElement),List())))) */
-}
-
-trait HTMLAreaElement extends HTMLElement {
+class HTMLAreaElement extends HTMLElement {
   var protocol: js.String = _
   var search: js.String = _
   var alt: js.String = _
@@ -308,11 +228,7 @@ trait HTMLAreaElement extends HTMLElement {
 
 }
 
-object HTMLAreaElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLAreaElement),List())))) */
-}
-
-trait HTMLButtonElement extends HTMLElement with MSDataBindingExtensions {
+class HTMLButtonElement extends HTMLElement {
   var value: js.String = _
   var status: js.Any = _
   var form: HTMLFormElement = _
@@ -332,21 +248,13 @@ trait HTMLButtonElement extends HTMLElement with MSDataBindingExtensions {
   def setCustomValidity(error: js.String): Unit = ???
 }
 
-object HTMLButtonElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLButtonElement),List())))) */
-}
-
-trait HTMLSourceElement extends HTMLElement {
+class HTMLSourceElement extends HTMLElement {
   var src: js.String = _
   var media: js.String = _
   var `type`: js.String = _
 }
 
-object HTMLSourceElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLSourceElement),List())))) */
-}
-
-trait HTMLScriptElement extends HTMLElement {
+class HTMLScriptElement extends HTMLElement {
   var defer: js.Boolean = _
   var text: js.String = _
   var src: js.String = _
@@ -357,11 +265,7 @@ trait HTMLScriptElement extends HTMLElement {
   var async: js.Boolean = _
 }
 
-object HTMLScriptElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLScriptElement),List())))) */
-}
-
-trait HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
+class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
   var rowIndex: js.Number = _
   var cells: HTMLCollection = _
   var align: js.String = _
@@ -376,19 +280,11 @@ trait HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
   def insertCell(): HTMLElement = ???
 }
 
-object HTMLTableRowElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTableRowElement),List())))) */
-}
-
-trait HTMLHtmlElement extends HTMLElement {
+class HTMLHtmlElement extends HTMLElement {
   var version: js.String = _
 }
 
-object HTMLHtmlElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLHtmlElement),List())))) */
-}
-
-trait HTMLFrameElement extends HTMLElement with GetSVGDocument with MSDataBindingExtensions {
+class HTMLFrameElement extends HTMLElement with GetSVGDocument {
   var width: js.Any = _
   var scrolling: js.String = _
   var marginHeight: js.String = _
@@ -410,34 +306,18 @@ trait HTMLFrameElement extends HTMLElement with GetSVGDocument with MSDataBindin
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]  ): Unit = ???
 }
 
-object HTMLFrameElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLFrameElement),List())))) */
-}
-
-trait HTMLQuoteElement extends HTMLElement {
+class HTMLQuoteElement extends HTMLElement {
   var dateTime: js.String = _
   var cite: js.String = _
 }
 
-object HTMLQuoteElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLQuoteElement),List())))) */
+class HTMLTableHeaderCellElement extends HTMLTableCellElement {
 }
 
-trait HTMLTableHeaderCellElement extends HTMLTableCellElement {
+class HTMLDListElement extends HTMLElement {
 }
 
-object HTMLTableHeaderCellElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTableHeaderCellElement),List())))) */
-}
-
-trait HTMLDListElement extends HTMLElement {
-}
-
-object HTMLDListElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLDListElement),List())))) */
-}
-
-trait HTMLFrameSetElement extends HTMLElement {
+class HTMLFrameSetElement extends HTMLElement {
   var ononline: js.Function1[Event, _] = _
   var borderColor: js.Any = _
   var rows: js.String = _
@@ -461,44 +341,24 @@ trait HTMLFrameSetElement extends HTMLElement {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object HTMLFrameSetElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLFrameSetElement),List())))) */
-}
-
-trait HTMLLabelElement extends HTMLElement with MSDataBindingExtensions {
+class HTMLLabelElement extends HTMLElement {
   var htmlFor: js.String = _
   var form: HTMLFormElement = _
 }
 
-object HTMLLabelElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLLabelElement),List())))) */
-}
-
-trait HTMLLegendElement extends HTMLElement with MSDataBindingExtensions {
+class HTMLLegendElement extends HTMLElement {
   var align: js.String = _
   var form: HTMLFormElement = _
 }
 
-object HTMLLegendElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLLegendElement),List())))) */
+class HTMLDirectoryElement extends HTMLElement {
 }
 
-trait HTMLDirectoryElement extends HTMLElement {
-}
-
-object HTMLDirectoryElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLDirectoryElement),List())))) */
-}
-
-trait HTMLLIElement extends HTMLElement {
+class HTMLLIElement extends HTMLElement {
   var value: js.Number = _
 }
 
-object HTMLLIElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLLIElement),List())))) */
-}
-
-trait HTMLIFrameElement extends HTMLElement with GetSVGDocument with MSDataBindingExtensions {
+class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
   var width: js.String = _
   var scrolling: js.String = _
   var marginHeight: js.String = _
@@ -523,11 +383,7 @@ trait HTMLIFrameElement extends HTMLElement with GetSVGDocument with MSDataBindi
   var sandbox: DOMSettableTokenList = _
 }
 
-object HTMLIFrameElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLIFrameElement),List())))) */
-}
-
-trait HTMLBodyElement extends HTMLElement {
+class HTMLBodyElement extends HTMLElement {
   var scroll: js.String = _
   var ononline: js.Function1[Event, _] = _
   var noWrap: js.Boolean = _
@@ -557,11 +413,7 @@ trait HTMLBodyElement extends HTMLElement {
   var onpopstate: js.Function1[PopStateEvent, js.Any] = _
 }
 
-object HTMLBodyElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLBodyElement),List())))) */
-}
-
-trait HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
+class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
   var align: js.String = _
   var rows: HTMLCollection = _
   def deleteRow(index: js.Number): Unit = ???
@@ -573,11 +425,7 @@ trait HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
   def insertRow(): HTMLElement = ???
 }
 
-object HTMLTableSectionElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTableSectionElement),List())))) */
-}
-
-trait HTMLInputElement extends HTMLElement with MSDataBindingExtensions {
+class HTMLInputElement extends HTMLElement {
   var width: js.String = _
   var status: js.Boolean = _
   var form: HTMLFormElement = _
@@ -639,11 +487,7 @@ trait HTMLInputElement extends HTMLElement with MSDataBindingExtensions {
   def setCustomValidity(error: js.String): Unit = ???
 }
 
-object HTMLInputElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLInputElement),List())))) */
-}
-
-trait HTMLAnchorElement extends HTMLElement with MSDataBindingExtensions {
+class HTMLAnchorElement extends HTMLElement {
   var rel: js.String = _
   var protocol: js.String = _
   var search: js.String = _
@@ -670,39 +514,26 @@ trait HTMLAnchorElement extends HTMLElement with MSDataBindingExtensions {
   var text: js.String = _
 }
 
-object HTMLAnchorElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLAnchorElement),List())))) */
-}
-
-trait HTMLParamElement extends HTMLElement {
+class HTMLParamElement extends HTMLElement {
   var value: js.String = _
   var name: js.String = _
   var `type`: js.String = _
   var valueType: js.String = _
 }
 
-object HTMLParamElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLParamElement),List())))) */
-}
-trait HTMLPreElement extends HTMLElement {
+class HTMLPreElement extends HTMLElement {
   var width: js.Number = _
   var cite: js.String = _
 }
 
-object HTMLPreElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLPreElement),List())))) */
-}
 
-trait HTMLPhraseElement extends HTMLElement {
+class HTMLPhraseElement extends HTMLElement {
   var dateTime: js.String = _
   var cite: js.String = _
 }
 
-object HTMLPhraseElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLPhraseElement),List())))) */
-}
 
-trait HTMLCanvasElement extends HTMLElement {
+class HTMLCanvasElement extends HTMLElement {
   var width: js.Number = _
   var height: js.Number = _
   def toDataURL(`type`: js.String, args: js.Any*): js.String = ???
@@ -710,42 +541,27 @@ trait HTMLCanvasElement extends HTMLElement {
   def msToBlob(): Blob = ???
 }
 
-object HTMLCanvasElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLCanvasElement),List())))) */
-}
 
-trait HTMLTitleElement extends HTMLElement {
+class HTMLTitleElement extends HTMLElement {
   var text: js.String = _
 }
 
-object HTMLTitleElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTitleElement),List())))) */
-}
 
-trait HTMLStyleElement extends HTMLElement with LinkStyle {
+class HTMLStyleElement extends HTMLElement with LinkStyle {
   var media: js.String = _
   var `type`: js.String = _
 }
 
-object HTMLStyleElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLStyleElement),List())))) */
+
+class HTMLUnknownElement extends HTMLElement {
 }
 
-trait HTMLUnknownElement extends HTMLElement with MSDataBindingRecordSetReadonlyExtensions {
+
+class HTMLAudioElement extends HTMLMediaElement {
 }
 
-object HTMLUnknownElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLUnknownElement),List())))) */
-}
 
-trait HTMLAudioElement extends HTMLMediaElement {
-}
-
-object HTMLAudioElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLAudioElement),List())))) */
-}
-
-trait HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
+class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
   var width: js.Number = _
   var headers: js.String = _
   var cellIndex: js.Number = _
@@ -762,21 +578,15 @@ trait HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
   var borderColorDark: js.Any = _
 }
 
-object HTMLTableCellElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTableCellElement),List())))) */
-}
 
 
-trait HTMLBaseFontElement extends HTMLElement {
+class HTMLBaseFontElement extends HTMLElement {
   var face: js.String = _
   var size: js.Number = _
 }
 
-object HTMLBaseFontElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLBaseFontElement),List())))) */
-}
 
-trait HTMLTextAreaElement extends HTMLElement with MSDataBindingExtensions {
+class HTMLTextAreaElement extends HTMLElement {
   var value: js.String = _
   var status: js.Any = _
   var form: HTMLFormElement = _
@@ -803,58 +613,40 @@ trait HTMLTextAreaElement extends HTMLElement with MSDataBindingExtensions {
   def setCustomValidity(error: js.String): Unit = ???
 }
 
-object HTMLTextAreaElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTextAreaElement),List())))) */
-}
-trait HTMLModElement extends HTMLElement {
+class HTMLModElement extends HTMLElement {
   var dateTime: js.String = _
   var cite: js.String = _
 }
 
-object HTMLModElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLModElement),List())))) */
-}
 
-trait HTMLTableColElement extends HTMLElement with HTMLTableAlignment {
+class HTMLTableColElement extends HTMLElement with HTMLTableAlignment {
   var width: js.Any = _
   var align: js.String = _
   var span: js.Number = _
 }
 
-object HTMLTableColElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTableColElement),List())))) */
-}
 
 trait HTMLTableAlignment extends js.Object {
   var ch: js.String = _
   var vAlign: js.String = _
   var chOff: js.String = _
 }
-trait HTMLUListElement extends HTMLElement {
+class HTMLUListElement extends HTMLElement {
 }
 
-object HTMLUListElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLUListElement),List())))) */
-}
 
-trait HTMLDivElement extends HTMLElement with MSDataBindingExtensions {
+class HTMLDivElement extends HTMLElement {
   var align: js.String = _
   var noWrap: js.Boolean = _
 }
 
-object HTMLDivElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLDivElement),List())))) */
-}
 
-trait HTMLBRElement extends HTMLElement {
+class HTMLBRElement extends HTMLElement {
   var clear: js.String = _
 }
 
-object HTMLBRElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLBRElement),List())))) */
-}
 
-trait HTMLMediaElement extends HTMLElement {
+class HTMLMediaElement extends HTMLElement {
   var initialTime: js.Number = _
   var played: TimeRanges = _
   var currentSrc: js.String = _
@@ -918,15 +710,12 @@ object HTMLMediaElement extends js.Object {
   var HAVE_FUTURE_DATA: js.Number = _
 }
 
-trait HTMLDTElement extends HTMLElement {
+class HTMLDTElement extends HTMLElement {
   var noWrap: js.Boolean = _
 }
 
-object HTMLDTElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLDTElement),List())))) */
-}
 
-trait HTMLFieldSetElement extends HTMLElement {
+class HTMLFieldSetElement extends HTMLElement {
   var align: js.String = _
   var form: HTMLFormElement = _
   var validationMessage: js.String = _
@@ -936,28 +725,21 @@ trait HTMLFieldSetElement extends HTMLElement {
   def setCustomValidity(error: js.String): Unit = ???
 }
 
-object HTMLFieldSetElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLFieldSetElement),List())))) */
-}
 
-trait HTMLBGSoundElement extends HTMLElement {
+class HTMLBGSoundElement extends HTMLElement {
   var balance: js.Any = _
   var volume: js.Any = _
   var src: js.String = _
   var loop: js.Number = _
 }
 
-object HTMLBGSoundElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLBGSoundElement),List())))) */
-}
 
-trait HTMLElement extends Element with ElementCSSInlineStyle with MSEventAttachmentTarget with MSNodeExtensions {
+class HTMLElement extends Element with ElementCSSInlineStyle {
   var onblur: js.Function1[FocusEvent, _] = _
   var onfocus: js.Function1[FocusEvent, _] = _
   var onmouseleave: js.Function1[MouseEvent, _] = _
   var onbeforecut: js.Function1[DragEvent, _] = _
   var onkeydown: js.Function1[KeyboardEvent, _] = _
-  var onmove: js.Function1[MSEventObj, _] = _
   var onkeyup: js.Function1[KeyboardEvent, _] = _
   var onreset: js.Function1[Event, _] = _
   var onhelp: js.Function1[Event, _] = _
@@ -977,39 +759,25 @@ trait HTMLElement extends Element with ElementCSSInlineStyle with MSEventAttachm
   var onseeking: js.Function1[Event, _] = _
   var oncanplay: js.Function1[Event, _] = _
   var ondeactivate: js.Function1[UIEvent, js.Any] = _
-  var ondatasetchanged: js.Function1[MSEventObj, js.Any] = _
-  var onrowsdelete: js.Function1[MSEventObj, js.Any] = _
   var sourceIndex: js.Number = _
   var onloadstart: js.Function1[Event, _] = _
-  var onlosecapture: js.Function1[MSEventObj, js.Any] = _
   var ondragenter: js.Function1[DragEvent, js.Any] = _
-  var oncontrolselect: js.Function1[MSEventObj, js.Any] = _
   var onsubmit: js.Function1[Event, _] = _
-  var behaviorUrns: MSBehaviorUrnsCollection = _
   var scopeName: js.String = _
   var onchange: js.Function1[Event, _] = _
   var id: js.String = _
-  var onlayoutcomplete: js.Function1[MSEventObj, js.Any] = _
   var uniqueID: js.String = _
   var onbeforeactivate: js.Function1[UIEvent, js.Any] = _
   var oncanplaythrough: js.Function1[Event, _] = _
-  var onbeforeupdate: js.Function1[MSEventObj, js.Any] = _
-  var onfilterchange: js.Function1[MSEventObj, js.Any] = _
   var offsetParent: Element = _
-  var ondatasetcomplete: js.Function1[MSEventObj, js.Any] = _
   var onsuspend: js.Function1[Event, _] = _
   var readyState: js.Any = _
   var onmouseenter: js.Function1[MouseEvent, js.Any] = _
   var innerText: js.String = _
-  var onerrorupdate: js.Function1[MSEventObj, js.Any] = _
   var onmouseout: js.Function1[MouseEvent, js.Any] = _
   var parentElement: HTMLElement = _
   var onmousewheel: js.Function1[MouseWheelEvent, js.Any] = _
   var onvolumechange: js.Function1[Event, _] = _
-  var oncellchange: js.Function1[MSEventObj, js.Any] = _
-  var onrowexit: js.Function1[MSEventObj, js.Any] = _
-  var onrowsinserted: js.Function1[MSEventObj, js.Any] = _
-  var onpropertychange: js.Function1[MSEventObj, js.Any] = _
   var filters: Object = _
   var children: HTMLCollection = _
   var ondragend: js.Function1[DragEvent, js.Any] = _
@@ -1029,19 +797,15 @@ trait HTMLElement extends Element with ElementCSSInlineStyle with MSEventAttachm
   var onmousedown: js.Function1[MouseEvent, js.Any] = _
   var onclick: js.Function1[MouseEvent, js.Any] = _
   var onwaiting: js.Function1[Event, _] = _
-  var onresizestart: js.Function1[MSEventObj, js.Any] = _
   var offsetLeft: js.Number = _
   var isTextEdit: js.Boolean = _
   var isDisabled: js.Boolean = _
   var onpaste: js.Function1[DragEvent, js.Any] = _
   var canHaveHTML: js.Boolean = _
-  var onmoveend: js.Function1[MSEventObj, js.Any] = _
   var language: js.String = _
   var onstalled: js.Function1[Event, _] = _
   var onmousemove: js.Function1[MouseEvent, js.Any] = _
-  var style: MSStyleCSSProperties = _
   var isContentEditable: js.Boolean = _
-  var onbeforeeditfocus: js.Function1[MSEventObj, js.Any] = _
   var onratechange: js.Function1[Event, _] = _
   var contentEditable: js.String = _
   var tabIndex: js.Number = _
@@ -1050,14 +814,11 @@ trait HTMLElement extends Element with ElementCSSInlineStyle with MSEventAttachm
   var ondblclick: js.Function1[MouseEvent, js.Any] = _
   var oncontextmenu: js.Function1[MouseEvent, js.Any] = _
   var onloadedmetadata: js.Function1[Event, _] = _
-  var onafterupdate: js.Function1[MSEventObj, js.Any] = _
   var onplay: js.Function1[Event, _] = _
-  var onresizeend: js.Function1[MSEventObj, js.Any] = _
   var onplaying: js.Function1[Event, _] = _
   var isMultiLine: js.Boolean = _
   var onfocusout: js.Function1[FocusEvent, _] = _
   var onabort: js.Function1[UIEvent, js.Any] = _
-  var ondataavailable: js.Function1[MSEventObj, js.Any] = _
   var hideFocus: js.Boolean = _
   var onreadystatechange: js.Function1[Event, _] = _
   var onkeypress: js.Function1[KeyboardEvent, js.Any] = _
@@ -1067,7 +828,6 @@ trait HTMLElement extends Element with ElementCSSInlineStyle with MSEventAttachm
   var disabled: js.Boolean = _
   var onactivate: js.Function1[UIEvent, js.Any] = _
   var accessKey: js.String = _
-  var onmovestart: js.Function1[MSEventObj, js.Any] = _
   var onselectstart: js.Function1[Event, _] = _
   var ontimeupdate: js.Function1[Event, _] = _
   var oncut: js.Function1[DragEvent, js.Any] = _
@@ -1077,7 +837,6 @@ trait HTMLElement extends Element with ElementCSSInlineStyle with MSEventAttachm
   var oncopy: js.Function1[DragEvent, js.Any] = _
   var onended: js.Function1[Event, _] = _
   var onscroll: js.Function1[UIEvent, js.Any] = _
-  var onrowenter: js.Function1[MSEventObj, js.Any] = _
   var canHaveChildren: js.Boolean = _
   var oninput: js.Function1[Event, _] = _
   def dragDrop(): js.Boolean = ???
@@ -1118,21 +877,15 @@ trait HTMLElement extends Element with ElementCSSInlineStyle with MSEventAttachm
   var draggable: js.Boolean = _
 }
 
-object HTMLElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLElement),List())))) */
-}
 
-trait HTMLHRElement extends HTMLElement {
+class HTMLHRElement extends HTMLElement {
   var width: js.Number = _
   var align: js.String = _
   var noShade: js.Boolean = _
 }
 
-object HTMLHRElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLHRElement),List())))) */
-}
 
-trait HTMLObjectElement extends HTMLElement with GetSVGDocument with MSDataBindingExtensions with MSDataBindingRecordSetExtensions {
+class HTMLObjectElement extends HTMLElement with GetSVGDocument {
   var width: js.String = _
   var codeType: js.String = _
   var `object`: Object = _
@@ -1159,11 +912,8 @@ trait HTMLObjectElement extends HTMLElement with GetSVGDocument with MSDataBindi
   def setCustomValidity(error: js.String): Unit = ???
 }
 
-object HTMLObjectElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLObjectElement),List())))) */
-}
 
-trait HTMLEmbedElement extends HTMLElement with GetSVGDocument {
+class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
   var width: js.String = _
   var palette: js.String = _
   var src: js.String = _
@@ -1173,11 +923,8 @@ trait HTMLEmbedElement extends HTMLElement with GetSVGDocument {
   var units: js.String = _
 }
 
-object HTMLEmbedElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLEmbedElement),List())))) */
-}
 
-trait HTMLOptGroupElement extends HTMLElement with MSDataBindingExtensions {
+class HTMLOptGroupElement extends HTMLElement {
   var index: js.Number = _
   var defaultSelected: js.Boolean = _
   var text: js.String = _
@@ -1187,21 +934,15 @@ trait HTMLOptGroupElement extends HTMLElement with MSDataBindingExtensions {
   var selected: js.Boolean = _
 }
 
-object HTMLOptGroupElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLOptGroupElement),List())))) */
-}
 
-trait HTMLIsIndexElement extends HTMLElement {
+class HTMLIsIndexElement extends HTMLElement {
   var form: HTMLFormElement = _
   var action: js.String = _
   var prompt: js.String = _
 }
 
-object HTMLIsIndexElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLIsIndexElement),List())))) */
-}
 
-trait HTMLVideoElement extends HTMLMediaElement {
+class HTMLVideoElement extends HTMLMediaElement {
   var width: js.Number = _
   var videoWidth: js.Number = _
   var videoHeight: js.Number = _
@@ -1224,30 +965,21 @@ trait HTMLVideoElement extends HTMLMediaElement {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object HTMLVideoElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLVideoElement),List())))) */
-}
 
-trait HTMLProgressElement extends HTMLElement {
+class HTMLProgressElement extends HTMLElement {
   var value: js.Number = _
   var max: js.Number = _
   var position: js.Number = _
   var form: HTMLFormElement = _
 }
 
-object HTMLProgressElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLProgressElement),List())))) */
-}
 
-trait HTMLDataListElement extends HTMLElement {
+class HTMLDataListElement extends HTMLElement {
   var options: HTMLCollection = _
 }
 
-object HTMLDataListElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLDataListElement),List())))) */
-}
 
-trait HTMLTrackElement extends HTMLElement {
+class HTMLTrackElement extends HTMLElement {
   var kind: js.String = _
   var src: js.String = _
   var srclang: js.String = _
@@ -1255,10 +987,7 @@ trait HTMLTrackElement extends HTMLElement {
   var label: js.String = _
 }
 
-object HTMLTrackElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLTrackElement),List())))) */
-}
-trait HTMLMarqueeElement extends HTMLElement with MSDataBindingExtensions  {
+class HTMLMarqueeElement extends HTMLElement {
   var width: js.String = _
   var onbounce: js.Function1[Event, _] = _
   var vspace: js.Number = _
@@ -1278,35 +1007,21 @@ trait HTMLMarqueeElement extends HTMLElement with MSDataBindingExtensions  {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
-object HTMLMarqueeElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLMarqueeElement),List())))) */
+class HTMLSpanElement extends HTMLElement {
 }
 
 
-trait HTMLSpanElement extends HTMLElement with MSDataBindingExtensions {
-}
-
-object HTMLSpanElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLSpanElement),List())))) */
-}
-
-trait HTMLHeadElement extends HTMLElement {
+class HTMLHeadElement extends HTMLElement {
   var profile: js.String = _
 }
 
-object HTMLHeadElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLHeadElement),List())))) */
-}
 
-trait HTMLHeadingElement extends HTMLElement {
+class HTMLHeadingElement extends HTMLElement {
   var align: js.String = _
 }
 
-object HTMLHeadingElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLHeadingElement),List())))) */
-}
 
-trait HTMLFormElement extends HTMLElement with MSHTMLCollectionExtensions {
+class HTMLFormElement extends HTMLElement {
   var length: js.Number = _
   var target: js.String = _
   var acceptCharset: js.String = _
@@ -1331,9 +1046,6 @@ trait HTMLFormElement extends HTMLElement with MSHTMLCollectionExtensions {
   def checkValidity(): js.Boolean = ???
 }
 
-object HTMLFormElement extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLFormElement),List())))) */
-}
 
 
 
