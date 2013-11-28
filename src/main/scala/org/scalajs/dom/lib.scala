@@ -2055,6 +2055,14 @@ class TouchList extends js.Object {
  */
 class KeyboardEvent extends UIEvent with ModifierKeyEvent{
   /**
+   * A system and implementation dependent numerical code identifying the
+   * unmodified value of the pressed key. This is usually the decimal ASCII
+   * (RFC 20) or Windows 1252 code corresponding to the key; see Virtual key
+   * codes for a list of Gecko's keyCode values. If the key can't be identified,
+   * this value is 0. Read only.
+   */
+  def keyCode: js.Number = ???
+  /**
    * The location of the key on the keyboard or other input device.
    * See the constants in the KeyboardEvent object.
    *
