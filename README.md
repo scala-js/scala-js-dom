@@ -18,8 +18,8 @@ http://creativecommons.org/licenses/by-sa/2.5/
 This should not affect you, as a user of the library, as long as you don't
 modify these MDN materials (e.g. you leave them as is, or replace them
 wholesale). In particular, packaging this library with MDN materials unchanged
-is fine for any purpose (including commercial) according to the CC-Attribuet-SAk
-License.
+is fine for any purpose (including commercial) according to the
+CC-Attribute-ShareAlike License.
 
 Everything else (e.g. the code) is under the MIT License
 
