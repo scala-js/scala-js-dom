@@ -427,15 +427,8 @@ class DOMImplementation extends js.Object {
  * MDN
  */
 class Element extends Node with NodeSelector {
-  /**
-   * innerHTML sets or gets the HTML syntax describing the element's descendants.
-   *
-   * Note: If a <div>, <span>, or <noembed> node has a child text node that includes
-   * the characters (&), (<), or (>), innerHTML returns these characters as &amp,
-   * &lt and &gt respectively. Use Node.textContent to get a correct copy of these
-   * text nodes' contents.
-   */
-  var innerHTML: js.String = ???
+
+
   /**
    * scrollTop gets or sets the number of pixels that the content of an element is
    * scrolled upward.

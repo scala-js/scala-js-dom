@@ -3002,6 +3002,13 @@ class HTMLElement extends Element {
    */
   var title: js.String = _
   var parentTextEdit: Element = _
+
+  /**
+   * Gets the markup of the element including its content. When used as a
+   * setter, replaces the element with nodes parsed from the given string.
+   *
+   * MDN
+   */
   var outerHTML: js.String = _
   var ondurationchange: js.Function1[Event, _] = _
   /**
@@ -3009,7 +3016,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var offsetHeight: js.Number = _
+  def offsetHeight: js.Number = _
   var all: HTMLCollection = _
   /**
    * The dir attribute gets or sets the text writing directionality of the content of the
@@ -3022,11 +3029,11 @@ class HTMLElement extends Element {
   var onseeking: js.Function1[Event, _] = _
   var oncanplay: js.Function1[Event, _] = _
   var ondeactivate: js.Function1[UIEvent, js.Any] = _
-  var sourceIndex: js.Number = _
+
   var onloadstart: js.Function1[Event, _] = _
   var ondragenter: js.Function1[DragEvent, js.Any] = _
   var onsubmit: js.Function1[Event, _] = _
-  var scopeName: js.String = _
+
   var onchange: js.Function1[Event, _] = _
   var id: js.String = _
   var uniqueID: js.String = _
@@ -3042,25 +3049,50 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var offsetParent: Element = _
+  def offsetParent: Element = _
   var onsuspend: js.Function1[Event, _] = _
   var readyState: js.Any = _
   var onmouseenter: js.Function1[MouseEvent, js.Any] = _
-  var innerText: js.String = _
+
   var onmouseout: js.Function1[MouseEvent, js.Any] = _
   var parentElement: HTMLElement = _
   var onmousewheel: js.Function1[WheelEvent, js.Any] = _
   var onvolumechange: js.Function1[Event, _] = _
   var filters: Object = _
+  /**
+   * The ParentNode.children read-only property returns a live HTMLCollection of
+   * child elements of the given object.
+   *
+   * The items in the returned collection are objects and not strings. To get data
+   * from those node objects, you must use their properties (e.g.
+   * elementNodeReference.children[1].nodeName to get the name, etc.).
+   *
+   * MDN
+   */
   var children: HTMLCollection = _
   var ondragend: js.Function1[DragEvent, js.Any] = _
   var onbeforepaste: js.Function1[DragEvent, js.Any] = _
   var ondragover: js.Function1[DragEvent, js.Any] = _
-  var offsetTop: js.Number = _
+
+  /**
+   * offsetTop returns the distance of the current element relative to the top of
+   * the offsetParent node.
+   *
+   * MDN
+   */
+  def offsetTop: js.Number = _
   var onmouseup: js.Function1[MouseEvent, js.Any] = _
   var ondragstart: js.Function1[DragEvent, js.Any] = _
   var onbeforecopy: js.Function1[DragEvent, js.Any] = _
   var ondrag: js.Function1[DragEvent, js.Any] = _
+  /**
+   * innerHTML sets or gets the HTML syntax describing the element's descendants.
+   *
+   * Note: If a <div>, <span>, or <noembed> node has a child text node that includes
+   * the characters (&), (<), or (>), innerHTML returns these characters as &amp,
+   * &lt and &gt respectively. Use Node.textContent to get a correct copy of these
+   * text nodes' contents.
+   */
   var innerHTML: js.String = _
   var onmouseover: js.Function1[MouseEvent, js.Any] = _
   /**
@@ -3070,9 +3102,9 @@ class HTMLElement extends Element {
    * MDN
    */
   var lang: js.String = _
-  var uniqueNumber: js.Number = _
+
   var onpause: js.Function1[Event, _] = _
-  var tagUrn: js.String = _
+
   var onmousedown: js.Function1[MouseEvent, js.Any] = _
   var onclick: js.Function1[MouseEvent, js.Any] = _
   var onwaiting: js.Function1[Event, _] = _
@@ -3083,11 +3115,9 @@ class HTMLElement extends Element {
    * MDN
    */
   var offsetLeft: js.Number = _
-  var isTextEdit: js.Boolean = _
-  var isDisabled: js.Boolean = _
+
   var onpaste: js.Function1[DragEvent, js.Any] = _
-  var canHaveHTML: js.Boolean = _
-  var language: js.String = _
+
   var onstalled: js.Function1[Event, _] = _
   var onmousemove: js.Function1[MouseEvent, js.Any] = _
   /**
@@ -3111,22 +3141,22 @@ class HTMLElement extends Element {
    * MDN
    */
   var tabIndex: js.Number = _
-  var document: Document = _
+
   var onprogress: js.Function1[js.Any, js.Any] = _
   var ondblclick: js.Function1[MouseEvent, js.Any] = _
   var oncontextmenu: js.Function1[MouseEvent, js.Any] = _
   var onloadedmetadata: js.Function1[Event, _] = _
   var onplay: js.Function1[Event, _] = _
   var onplaying: js.Function1[Event, _] = _
-  var isMultiLine: js.Boolean = _
+
   var onfocusout: js.Function1[FocusEvent, _] = _
   var onabort: js.Function1[UIEvent, js.Any] = _
-  var hideFocus: js.Boolean = _
+
   var onreadystatechange: js.Function1[Event, _] = _
   var onkeypress: js.Function1[KeyboardEvent, js.Any] = _
   var onloadeddata: js.Function1[Event, _] = _
   var onbeforedeactivate: js.Function1[UIEvent, js.Any] = _
-  var outerText: js.String = _
+
   var disabled: js.Boolean = _
   var onactivate: js.Function1[UIEvent, js.Any] = _
   var accessKey: js.String = _
@@ -3140,11 +3170,11 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var offsetWidth: js.Number = _
+  def offsetWidth: js.Number = _
   var oncopy: js.Function1[DragEvent, js.Any] = _
   var onended: js.Function1[Event, _] = _
   var onscroll: js.Function1[UIEvent, js.Any] = _
-  var canHaveChildren: js.Boolean = _
+
   var oninput: js.Function1[Event, _] = _
 
   def dragDrop(): js.Boolean = ???
@@ -3220,7 +3250,6 @@ class HTMLElement extends Element {
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
-  var onmscontentzoom: js.Function1[js.Any, js.Any] = _
   var oncuechange: js.Function1[Event, _] = _
   var spellcheck: js.Boolean = _
   var classList: DOMTokenList = _
