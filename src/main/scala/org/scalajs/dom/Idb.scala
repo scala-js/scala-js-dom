@@ -25,21 +25,21 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  var indexNames: DOMStringList = _
-  var name: js.String = _
+  def indexNames: DOMStringList = _
+  def name: js.String = _
   /**
    * The name of the transaction to which this object store belongs.
    *
    * MDN
    */
-  var transaction: IDBTransaction = _
+  def transaction: IDBTransaction = _
   /**
    * The key path of this object store. If this attribute is null, the application must
    * provide a key for each modification operation.
    *
    * MDN
    */
-  var keyPath: js.String = _
+  def keyPath: js.String = _
 
   def count(key: js.Any): IDBRequest = ???
 
@@ -138,20 +138,35 @@ class IDBVersionChangeEvent extends Event {
    *
    * MDN
    */
-  var newVersion: js.Number = _
+  def newVersion: js.Number = _
   /**
    * Returns the old version of the database.
    *
    * MDN
    */
-  var oldVersion: js.Number = _
+  def oldVersion: js.Number = _
 }
 
 
 /**
- * You can retrieve records in an object store either through their keys or by using an
- * index. An index lets you look up records in an object store using properties of the
- * values in the object stores records.
+ * The IDBIndex interface of the IndexedDB API provides asynchronous access
+ * to an index in a database. An index is a kind of object store for looking
+ * up records in another object store, called the referenced object store.
+ * You use this interface to retrieve data.
+ *
+ * You can retrieve records in an object store through their keys or by using
+ * an index (cursors provide a third way: see IDBCursor). An index lets you
+ * look up records in an object store using properties of the values in the
+ * object stores records.
+ *
+ * The index is a persistent key-value storage where the value part of its
+ * records is the key part of a record in the referenced object store. The
+ * records in an index are automatically populated whenever records in the
+ * referenced object store are inserted, updated, or deleted. Each record in
+ * an index can point to only one record in its referenced object store, but
+ * several indexes can reference the same object store. When the object store
+ * changes, all indexes that refers to the object store are automatically
+ * updated.
  *
  * MDN
  */
@@ -161,20 +176,20 @@ class IDBIndex extends js.Object {
    *
    * MDN
    */
-  var unique: js.Boolean = _
-  var name: js.String = _
+  def unique: js.Boolean = _
+  def name: js.String = _
   /**
    * The key path of this index. If null, this index is not auto-populated.
    *
    * MDN
    */
-  var keyPath: js.String = _
+  def keyPath: js.String = _
   /**
    * The name of the object store referenced by this index.
    *
    * MDN
    */
-  var objectStore: IDBObjectStore = _
+  def objectStore: IDBObjectStore = _
 
   def count(key: js.Any): IDBRequest = ???
 
@@ -230,6 +245,9 @@ class IDBIndex extends js.Object {
 
 
 /**
+ * The IDBCursor interface of the IndexedDB API represents a cursor for traversing
+ * or iterating over multiple records in a database.
+ *
  * The cursor has a source that indicates which index or object store it is iterating.
  * It has a position within the range, and moves in a direction that is increasing or
  * decreasing in the order of record keys. The cursor enables an application to
@@ -246,21 +264,21 @@ class IDBCursor extends js.Object {
    *
    * MDN
    */
-  var source: js.Any = _
+  def source: js.Any = _
   /**
    * Is a DOMString that, on getting, returns the direction of traversal of the cursor.
    * See Constants for possible values.
    *
    * MDN
    */
-  var direction: js.String = _
+  def direction: js.String = _
   /**
    * Returns the key for the record at the cursor's position. If the cursor is outside its
    * range, this is set to undefined. The cursor's key can be any data type.
    *
    * MDN
    */
-  var key: js.Any = _
+  def key: js.Any = _
   /**
    * Returns the cursor's current effective key. If the cursor is currently being
    * iterated or has iterated outside its range, this is set to undefined. The cursor's
@@ -268,7 +286,7 @@ class IDBCursor extends js.Object {
    *
    * MDN
    */
-  var primaryKey: js.Any = _
+  def primaryKey: js.Any = _
 
   /**
    * This method may raise a DOMException with a DOMError of the following types:
@@ -293,10 +311,6 @@ class IDBCursor extends js.Object {
    */
   def update(value: js.Any): IDBRequest = ???
 
-  var PREV: js.String = _
-  var PREV_NO_DUPLICATE: js.String = _
-  var NEXT: js.String = _
-  var NEXT_NO_DUPLICATE: js.String = _
 }
 
 /**
@@ -308,11 +322,11 @@ class IDBCursor extends js.Object {
  * MDN
  */
 object IDBCursor extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBCursor),List())))) */
-  var PREV: js.String = _
-  var PREV_NO_DUPLICATE: js.String = _
-  var NEXT: js.String = _
-  var NEXT_NO_DUPLICATE: js.String = _
+
+  val PREV: js.String = _
+  val PREV_NO_DUPLICATE: js.String = _
+  val NEXT: js.String = _
+  val NEXT_NO_DUPLICATE: js.String = _
 }
 
 /**
@@ -321,17 +335,18 @@ object IDBCursor extends js.Object {
  * MDN
  */
 class IDBCursorWithValue extends IDBCursor {
-  var value: js.Any = _
+  def value: js.Any = _
 }
 
 
 /**
- * The following code opens a database asynchronously and makes a request.
+ * The IDBEvironment interface of the IndexedDB API provides asynchronous access
+ * to a client-side database. It is implemented by window and Worker objects.
  *
  * MDN
  */
 trait IDBEnvironment extends js.Object {
-  var msIndexedDB: IDBFactory = _
+
   /**
    * an IDBRequest object that communicates back to the requesting application
    * through events. This design means that any number of requests can be active on any
@@ -339,10 +354,16 @@ trait IDBEnvironment extends js.Object {
    *
    * MDN
    */
-  var indexedDB: IDBFactory = _
+  def indexedDB: IDBFactory = _
 }
 
 /**
+ * The IDBKeyRange interface of the IndexedDB API represents a continuous interval
+ * over some data type that is used for keys. Records can be retrieved from object
+ * stores and indexes using keys or a range of keys. You can limit the range using
+ * lower and upper bounds. For example, you can iterate over all values of a key
+ * between x and y.
+ *
  * A key range can have a single value or a range with upper and lower bounds or
  * endpoints. If the key range has both upper and lower bounds, then it is bounded; if it
  * has no bounds, it is unbounded. A bounded key range can either be open (the endpoints
@@ -357,25 +378,25 @@ class IDBKeyRange extends js.Object {
    *
    * MDN
    */
-  var upper: js.Any = _
+  def upper: js.Any = _
   /**
    * Returns false if the upper-bound value is included in the key range.
    *
    * MDN
    */
-  var upperOpen: js.Boolean = _
+  def upperOpen: js.Boolean = _
   /**
    * The lower bound of the key range (can be any type.)
    *
    * MDN
    */
-  var lower: js.Any = _
+  def lower: js.Any = _
   /**
    * Returns false if the lower-bound value is included in the key range.
    *
    * MDN
    */
-  var lowerOpen: js.Boolean = _
+  def lowerOpen: js.Boolean = _
 
   def bound(lower: js.Any, upper: js.Any, lowerOpen: js.Boolean, upperOpen: js.Boolean): IDBKeyRange = ???
 
@@ -418,8 +439,12 @@ class IDBKeyRange extends js.Object {
 
 
 /**
- * The following are key concepts that you must understand when accessing data in
- * IndexedDB:
+ * The IDBTransaction interface of the IndexedDB API provides a static,
+ * asynchronous transaction on a database using event handler attributes. All
+ * reading and writing of data are done within transactions. You actually use
+ * IDBDatabase to start transactions and use IDBTransaction to set the mode of
+ * the transaction and access an object store and make your request. You can
+ * also use it to abort transactions.
  *
  * MDN
  */
@@ -435,14 +460,14 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  var db: IDBDatabase = _
+  def db: IDBDatabase = _
   /**
    * The mode for isolating access to data in the object stores that are in the scope of the
    * transaction. For possible values, see Constants. The default value is readonly.
    *
    * MDN
    */
-  var mode: js.String = _
+  def mode: js.String = _
   /**
    * The error returned in the event of an unsuccessful transaction. Null if the
    * transaction is not finished, is finished and successfully committed, or was
@@ -453,7 +478,7 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  var error: DOMError = _
+  def error: DOMError = _
   /**
    * The event handler for the onerror event.
    *
@@ -488,26 +513,15 @@ class IDBTransaction extends EventTarget {
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
-
-  var READ_ONLY: js.String = _
-  var VERSION_CHANGE: js.String = _
-  var READ_WRITE: js.String = _
 }
 
-/**
- * The following are key concepts that you must understand when accessing data in
- * IndexedDB:
- *
- * MDN
- */
 object IDBTransaction extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(IDBTransaction),List())))) */
   /**
    * Allows data to be read but not changed.
    *
    * MDN
    */
-  var READ_ONLY: js.String = _
+  val READ_ONLY: js.String = _
   /**
    * Allows any operation to be performed, including ones that delete and create object
    * stores and indexes. This mode is for updating the version number of transactions
@@ -516,16 +530,21 @@ object IDBTransaction extends js.Object {
    *
    * MDN
    */
-  var VERSION_CHANGE: js.String = _
+  val VERSION_CHANGE: js.String = _
   /**
    * Allows reading and writing of data in existing data stores to be changed.
    *
    * MDN
    */
-  var READ_WRITE: js.String = _
+  val READ_WRITE: js.String = _
 }
 
 /**
+ * The IDBDatabase interface of the IndexedDB API provides asynchronous access
+ * to a connection to a database. Use it to create, manipulate, and delete
+ * objects in that database. The interface also provides the only way to get a
+ * transaction and manage versions on that database.
+ *
  * Everything you do in IndexedDB always happens in the context of a transaction,
  * representing interactions with data in the database. All objects in
  * IndexedDB—including object stores, indexes, and cursors—are tied to a
@@ -541,20 +560,20 @@ class IDBDatabase extends EventTarget {
    *
    * MDN
    */
-  var version: js.String = _
+  def version: js.String = _
   /**
    * A DOMString that contains the name of the connected database.
    *
    * MDN
    */
-  var name: js.String = _
+  def name: js.String = _
   /**
    * A DOMStringList that contains a list of the names of the object stores currently in
    * the connected database.
    *
    * MDN
    */
-  var objectStoreNames: DOMStringList = _
+  def objectStoreNames: DOMStringList = _
   /**
    * Fires when access to the database fails.
    *
@@ -619,8 +638,8 @@ class IDBDatabase extends EventTarget {
 
 
 /**
- * In the following code snippet, we open a database asynchronously and make a
- * request. Event handlers are registered for responding to various situations.
+ * The IDBOpenDBRequest interface of the IndexedDB API provides access to results
+ * of requests to open databases using specific event handler attributes.
  *
  * MDN
  */
@@ -649,8 +668,10 @@ class IDBOpenDBRequest extends IDBRequest {
 
 
 /**
- * In the following code snippet, we open a database asynchronously and make a
- * request. Event handlers are registered for responding to various situations.
+ * The IDBFactory interface of the IndexedDB API lets applications asynchronously
+ * access the indexed databases. The object that implements the interface is
+ * window.indexedDB. You open — that is, create and access — and delete a
+ * database with the object and not directly with IDBFactory.
  *
  * MDN
  */
@@ -684,6 +705,11 @@ class IDBFactory extends js.Object {
 
 
 /**
+ * The IDBRequest interface of the IndexedDB API provides access to results of
+ * asynchronous requests to databases and database objects using event handler
+ * attributes. Each reading and writing operation on a database is done using
+ * a request.
+ *
  * The request object does not initially contain any information about the result of
  * the operation, but once information becomes available, an event is fired on the
  * request, and the information becomes available through the properties of the
@@ -698,7 +724,7 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  var source: js.Any = _
+  def source: js.Any = _
   /**
    * The event handler for the success event.
    *
@@ -711,7 +737,7 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  var error: DOMError = _
+  def error: DOMError = _
   /**
    * The transaction for the request. This property can be null for certain requests,
    * such as for request returned from IDBFactory.open (You're just connecting to a
@@ -719,7 +745,7 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  var transaction: IDBTransaction = _
+  def transaction: IDBTransaction = _
   /**
    * The event handler for the error event.
    *
@@ -732,14 +758,14 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  var readyState: js.String = _
+  def readyState: js.String = _
   /**
    * Returns the result of the request. If the the request failed and the result is not
    * available, the InvalidStateError exception is thrown.
    *
    * MDN
    */
-  var result: js.Any = _
+  def result: js.Any = _
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
