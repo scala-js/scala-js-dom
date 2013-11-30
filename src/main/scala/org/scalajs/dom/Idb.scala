@@ -25,21 +25,21 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def indexNames: DOMStringList = _
-  def name: js.String = _
+  def indexNames: DOMStringList = ???
+  def name: js.String = ???
   /**
    * The name of the transaction to which this object store belongs.
    *
    * MDN
    */
-  def transaction: IDBTransaction = _
+  def transaction: IDBTransaction = ???
   /**
    * The key path of this object store. If this attribute is null, the application must
    * provide a key for each modification operation.
    *
    * MDN
    */
-  def keyPath: js.String = _
+  def keyPath: js.String = ???
 
   def count(key: js.Any): IDBRequest = ???
 
@@ -138,13 +138,13 @@ class IDBVersionChangeEvent extends Event {
    *
    * MDN
    */
-  def newVersion: js.Number = _
+  def newVersion: js.Number = ???
   /**
    * Returns the old version of the database.
    *
    * MDN
    */
-  def oldVersion: js.Number = _
+  def oldVersion: js.Number = ???
 }
 
 
@@ -176,20 +176,20 @@ class IDBIndex extends js.Object {
    *
    * MDN
    */
-  def unique: js.Boolean = _
-  def name: js.String = _
+  def unique: js.Boolean = ???
+  def name: js.String = ???
   /**
    * The key path of this index. If null, this index is not auto-populated.
    *
    * MDN
    */
-  def keyPath: js.String = _
+  def keyPath: js.String = ???
   /**
    * The name of the object store referenced by this index.
    *
    * MDN
    */
-  def objectStore: IDBObjectStore = _
+  def objectStore: IDBObjectStore = ???
 
   def count(key: js.Any): IDBRequest = ???
 
@@ -264,21 +264,21 @@ class IDBCursor extends js.Object {
    *
    * MDN
    */
-  def source: js.Any = _
+  def source: js.Any = ???
   /**
    * Is a DOMString that, on getting, returns the direction of traversal of the cursor.
    * See Constants for possible values.
    *
    * MDN
    */
-  def direction: js.String = _
+  def direction: js.String = ???
   /**
    * Returns the key for the record at the cursor's position. If the cursor is outside its
    * range, this is set to undefined. The cursor's key can be any data type.
    *
    * MDN
    */
-  def key: js.Any = _
+  def key: js.Any = ???
   /**
    * Returns the cursor's current effective key. If the cursor is currently being
    * iterated or has iterated outside its range, this is set to undefined. The cursor's
@@ -286,7 +286,7 @@ class IDBCursor extends js.Object {
    *
    * MDN
    */
-  def primaryKey: js.Any = _
+  def primaryKey: js.Any = ???
 
   /**
    * This method may raise a DOMException with a DOMError of the following types:
@@ -315,10 +315,10 @@ class IDBCursor extends js.Object {
 
 object IDBCursor extends js.Object {
 
-  val PREV: js.String = _
-  val PREV_NO_DUPLICATE: js.String = _
-  val NEXT: js.String = _
-  val NEXT_NO_DUPLICATE: js.String = _
+  val PREV: js.String = ???
+  val PREV_NO_DUPLICATE: js.String = ???
+  val NEXT: js.String = ???
+  val NEXT_NO_DUPLICATE: js.String = ???
 }
 
 /**
@@ -327,7 +327,7 @@ object IDBCursor extends js.Object {
  * MDN
  */
 class IDBCursorWithValue extends IDBCursor {
-  def value: js.Any = _
+  def value: js.Any = ???
 }
 
 
@@ -346,7 +346,7 @@ trait IDBEnvironment extends js.Object {
    *
    * MDN
    */
-  def indexedDB: IDBFactory = _
+  def indexedDB: IDBFactory = ???
 }
 
 /**
@@ -370,25 +370,25 @@ class IDBKeyRange extends js.Object {
    *
    * MDN
    */
-  def upper: js.Any = _
+  def upper: js.Any = ???
   /**
    * Returns false if the upper-bound value is included in the key range.
    *
    * MDN
    */
-  def upperOpen: js.Boolean = _
+  def upperOpen: js.Boolean = ???
   /**
    * The lower bound of the key range (can be any type.)
    *
    * MDN
    */
-  def lower: js.Any = _
+  def lower: js.Any = ???
   /**
    * Returns false if the lower-bound value is included in the key range.
    *
    * MDN
    */
-  def lowerOpen: js.Boolean = _
+  def lowerOpen: js.Boolean = ???
 
   def bound(lower: js.Any, upper: js.Any, lowerOpen: js.Boolean, upperOpen: js.Boolean): IDBKeyRange = ???
 
@@ -446,20 +446,20 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  var oncomplete: js.Function1[Event, js.Any] = _
+  var oncomplete: js.Function1[Event, js.Any] = ???
   /**
    * The database connection with which this transaction is associated.
    *
    * MDN
    */
-  def db: IDBDatabase = _
+  def db: IDBDatabase = ???
   /**
    * The mode for isolating access to data in the object stores that are in the scope of the
    * transaction. For possible values, see Constants. The default value is readonly.
    *
    * MDN
    */
-  def mode: js.String = _
+  def mode: js.String = ???
   /**
    * The error returned in the event of an unsuccessful transaction. Null if the
    * transaction is not finished, is finished and successfully committed, or was
@@ -470,19 +470,19 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  def error: DOMError = _
+  def error: DOMError = ???
   /**
    * The event handler for the onerror event.
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = _
+  var onerror: js.Function1[ErrorEvent, js.Any] = ???
   /**
    * The event handler for the onabort event.
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, js.Any] = _
+  var onabort: js.Function1[js.Any, js.Any] = ???
 
   /**
    * Returns immediately, and rolls back all the changes to objects in the database
@@ -513,7 +513,7 @@ object IDBTransaction extends js.Object {
    *
    * MDN
    */
-  val READ_ONLY: js.String = _
+  val READ_ONLY: js.String = ???
   /**
    * Allows any operation to be performed, including ones that delete and create object
    * stores and indexes. This mode is for updating the version number of transactions
@@ -522,13 +522,13 @@ object IDBTransaction extends js.Object {
    *
    * MDN
    */
-  val VERSION_CHANGE: js.String = _
+  val VERSION_CHANGE: js.String = ???
   /**
    * Allows reading and writing of data in existing data stores to be changed.
    *
    * MDN
    */
-  val READ_WRITE: js.String = _
+  val READ_WRITE: js.String = ???
 }
 
 /**
@@ -552,32 +552,32 @@ class IDBDatabase extends EventTarget {
    *
    * MDN
    */
-  def version: js.String = _
+  def version: js.String = ???
   /**
    * A DOMString that contains the name of the connected database.
    *
    * MDN
    */
-  def name: js.String = _
+  def name: js.String = ???
   /**
    * A DOMStringList that contains a list of the names of the object stores currently in
    * the connected database.
    *
    * MDN
    */
-  def objectStoreNames: DOMStringList = _
+  def objectStoreNames: DOMStringList = ???
   /**
    * Fires when access to the database fails.
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = _
+  var onerror: js.Function1[ErrorEvent, js.Any] = ???
   /**
    * Fires when access of the database is aborted.
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, js.Any] = _
+  var onabort: js.Function1[js.Any, js.Any] = ???
 
   def createObjectStore(name: js.String, optionalParameters: js.Any): IDBObjectStore = ???
 
@@ -642,7 +642,7 @@ class IDBOpenDBRequest extends IDBRequest {
    *
    * MDN
    */
-  var onupgradeneeded: js.Function1[IDBVersionChangeEvent, js.Any] = _
+  var onupgradeneeded: js.Function1[IDBVersionChangeEvent, js.Any] = ???
   /**
    * The event handler for the blocked event. This event is triggered when the
    * upgradeneeded should be triggered because of a version change but the database is
@@ -651,7 +651,7 @@ class IDBOpenDBRequest extends IDBRequest {
    *
    * MDN
    */
-  var onblocked: js.Function1[Event, js.Any] = _
+  var onblocked: js.Function1[Event, js.Any] = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
@@ -716,20 +716,20 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  def source: js.Any = _
+  def source: js.Any = ???
   /**
    * The event handler for the success event.
    *
    * MDN
    */
-  var onsuccess: js.Function1[Event, js.Any] = _
+  var onsuccess: js.Function1[Event, js.Any] = ???
   /**
    * A DOMError containing the relevant error. The following error codes are returned
    * under certain conditions:
    *
    * MDN
    */
-  def error: DOMError = _
+  def error: DOMError = ???
   /**
    * The transaction for the request. This property can be null for certain requests,
    * such as for request returned from IDBFactory.open (You're just connecting to a
@@ -737,27 +737,27 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  def transaction: IDBTransaction = _
+  def transaction: IDBTransaction = ???
   /**
    * The event handler for the error event.
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = _
+  var onerror: js.Function1[ErrorEvent, js.Any] = ???
   /**
    * The state of the request. Every request starts in the pending state. The state
    * changes to done when the request completes successfully or when an error occurs.
    *
    * MDN
    */
-  def readyState: js.String = _
+  def readyState: js.String = ???
   /**
    * Returns the result of the request. If the the request failed and the result is not
    * available, the InvalidStateError exception is thrown.
    *
    * MDN
    */
-  def result: js.Any = _
+  def result: js.Any = ???
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
