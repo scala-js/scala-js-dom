@@ -1,11 +1,18 @@
 scala-js-dom
 ============
 
-Provides a nice statically typed interface to the DOM such that it can be called from Scala code without resorting to `js.Dynamic`. Initially translated using the [scala-js-ts-importer](https://github.com/sjrd/scala-js-ts-importer) from Typescript definition files, but it has since been heavily edited to clean up various rough edges and to make it a more pleasant experience to use from Scala.
+Provides a nice statically typed interface to the DOM such that it can be called from Scala code without resorting to `js.Dynamic`.
 
-Also contains useful extension methods in `scala/scalajs/extensions`, which allow the DOM api to be used in a more idiomatic and fluent way.
+Also contains useful extension methods in `org.scalajs.dom.extensions`, which allow the DOM api to be used in a more idiomatic and fluent way. The goal of this project is to provide a thin-but-idiomatic-scala interface to modern browser APIs. In particular:
 
-See [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. There remain lots more cleanup to do, but this should be a reasonable place to start from. Pull requests/forks are welcome!
+- Deprecated properties/methods/types will not be present.
+- IE-only, Chrome-only, FF-only, and in general browser-specific attributes will not be present.
+- The name of a Scala type should map directly to the name of the corresponding Javascript type.
+- Any type which is a Javascript type (e.g. you can `instanceof` in javascipt) should be a Scala `class`; any other interface which isn't a Javascript type should be a `trait`.
+- Read-only members should be `def`, and not-directly-instantiable classes should have `private` constructors.
+- `org.scalajs.dom` contains DOM class/member stubs, while `org.scalajs.dom.extensions` contains implicit conversions and useful Scala types (e.g. `Color`) to make usage of the DOM more idiomatic Scala.
+
+See [scala-js-game-2](https://github.com/lihaoyi/scala-js-game-2) ([live demo](http://lihaoyi.github.io/scala-js-game-2/))and [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. There remain lots more cleanup to do, but this should be a reasonable place to start from. Pull requests/forks are welcome!
 
 License
 -------
