@@ -58,6 +58,9 @@ class PositionOptions extends js.Object {
  * The NavigatorID interface contains methods and properties related to the
  * identity of the browser.
  *
+ * There is no object of type NavigatorID, but other interfaces, like Navigator
+ * or WorkerNavigator, implement it.
+ *
  * MDN
  */
 trait NavigatorID extends js.Object {
@@ -95,39 +98,19 @@ trait NavigatorID extends js.Object {
  * The TreeWalker object represents the nodes of a document subtree and a position
  * within them.
  *
+ * A TreeWalker can be created using the Document.createTreeWalker() method.
+ *
  * MDN
  */
 class TreeWalker extends js.Object {
   /**
    * Returns an unsigned long being a bitmask made of constants describing the types of
    * Node that must to be presented. Non-matching nodes are skipped, but their children
-   * may be included, if relevant. The possible values are: Constant Numerical value
-   * Description NodeFilter.SHOW_ALL -1 (that is the max value of unsigned long) Shows
-   * all nodes. NodeFilter.SHOW_ATTRIBUTE 2 Shows attribute Attr nodes. This is
-   * meaningful only when creating a TreeWalker with an Attr node as its root; in this
-   * case, it means that the attribute node will appear in the first position of the
-   * iteration or traversal. Since attributes are never children of other nodes, they
-   * do not appear when traversing over the document tree.
-   * NodeFilter.SHOW_CDATA_SECTION 8 Shows CDATASection nodes.
-   * NodeFilter.SHOW_COMMENT 128 Shows Comment nodes. NodeFilter.SHOW_DOCUMENT
-   * 256 Shows Document nodes. NodeFilter.SHOW_DOCUMENT_FRAGMENT 1024 Shows
-   * DocumentFragment nodes. NodeFilter.SHOW_DOCUMENT_TYPE 512 Shows
-   * DocumentType nodes. NodeFilter.SHOW_ELEMENT 1 Shows Element nodes.
-   * NodeFilter.SHOW_ENTITY 32 Shows Entity nodes. This is meaningful only when
-   * creating a TreeWalker with an Entity node as its root; in this case, it means that the
-   * Entity node will appear in the first position of the traversal. Since entities are
-   * not part of the document tree, they do not appear when traversing over the document
-   * tree. NodeFilter.SHOW_ENTITY_REFERENCE 16 Shows EntityReference nodes.
-   * NodeFilter.SHOW_NOTATION 2048 Shows Notation nodes. This is meaningful only
-   * when creating a TreeWalker with a Notation node as its root; in this case, it means
-   * that the Notation node will appear in the first position of the traversal. Since
-   * entities are not part of the document tree, they do not appear when traversing over
-   * the document tree. NodeFilter.SHOW_PROCESSING_INSTRUCTION 64 Shows
-   * ProcessingInstruction nodes. NodeFilter.SHOW_TEXT 4 Shows Text nodes.
+   * may be included, if relevant.
    *
    * MDN
    */
-  var whatToShow: js.Number = ???
+  def whatToShow: js.Number = ???
   /**
    * The TreeWalker.filter read-only property returns a NodeFilter that is the
    * filtering object associated with the TreeWalker.
@@ -230,6 +213,9 @@ class TreeWalker extends js.Object {
 
 
 /**
+ * An object of this type can be obtained by calling the Window.performance read-only
+ * attribute.
+ *
  * An object of this type can be obtained by calling the Window.performance read-only
  * attribute.
  *
@@ -353,8 +339,12 @@ trait WindowTimers extends WindowTimersExtension {
 }
 
 /**
- * The Navigator interface represents the state and the identity of the user agent. It
- * allows scripts to query it and to register themselves to carry on some activities.
+ * The Navigator interface represents the state and the identity of the user
+ * agent. It allows scripts to query it and to register themselves to carry
+ * on some activities.
+ *
+ * A Navigator object can be retrieved using the read-only Window.navigator
+ * property.
  *
  * MDN
  */
@@ -649,6 +639,15 @@ class Element extends Node with NodeSelector {
  * A Node is an interface from which a number of DOM types inherit, and allows these
  * various types to be treated (or tested) similarly.
  *
+ * The following interfaces all inherit from Node its methods and properties:
+ * Document, Element, CharacterData (which Text, Comment, and CDATASection
+ * inherit), ProcessingInstruction, DocumentFragment, DocumentType, Notation,
+ * Entity, EntityReference
+ *
+ * These interfaces may return null in particular cases where the methods
+ * and properties are not relevant. They may throw an exception - for example
+ * when adding children to a node type for which no children can exist.
+ *
  * MDN
  */
 class Node extends EventTarget {
@@ -925,12 +924,7 @@ class Node extends EventTarget {
   def DOCUMENT_POSITION_PRECEDING: js.Number = ???
 }
 
-/**
- * A Node is an interface from which a number of DOM types inherit, and allows these
- * various types to be treated (or tested) similarly.
- *
- * MDN
- */
+
 object Node extends js.Object {
   def ENTITY_REFERENCE_NODE: js.Number = ???
   def ATTRIBUTE_NODE: js.Number = ???
@@ -985,6 +979,12 @@ trait ModifierKeyEvent extends js.Object{
 /**
  * The DOM MouseEvent interface represents events that occur due to the user
  * interacting with a pointing device (such as a mouse).
+ *
+ * Common events using this interface include click, dblclick, mouseup,
+ * mousedown. The list of all events using this interface is provided in
+ * the Events reference.
+ *
+ * MouseEvent derives from UIEvent, which in turn derives from Event.
  *
  * MDN
  */
@@ -1075,9 +1075,13 @@ trait DocumentEvent extends js.Object {
 }
 
 /**
- * A CDATA Section can be used within XML to include extended portions of unescaped
- * text, such that the symbols < and & do not need escaping as they normally do within XML
- * when used as text.
+ * A CDATA Section can be used within XML to include extended portions of
+ * unescaped text, such that the symbols < and & do not need escaping as they
+ * normally do within XML when used as text.
+ *
+ * As a CDATASection has no properties or methods unique to itself and only
+ * directly implements the Text interface, one can refer to Text to find
+ * its properties and methods.
  *
  * MDN
  */
@@ -1222,6 +1226,8 @@ class Selection extends js.Object {
  * The NodeIterator interface represents an iterator over the members of a list of the
  * nodes in a subtree of the DOM. The nodes will be returned in document order.
  *
+ * A NodeIterator can be created using the Document.createNodeIterator() method.
+ *
  * MDN
  */
 class NodeIterator extends js.Object {
@@ -1320,12 +1326,18 @@ trait WindowSessionStorage extends js.Object {
 }
 
 /**
- * This section provides a brief reference for all of the methods, properties, and
- * events available through the DOM window object. The window object implements the
- * Window interface, which in turn inherits from the AbstractView interface. Some
- * additional global functions, namespaces objects, interfaces, and
- * constructors, not typically associated with the window, but available on it, are
- * listed in the JavaScript Reference and DOM Reference.
+ * The window object represents the window itself. The document property of
+ * a window points to the DOM document loaded in that window. A window for a
+ * given document can be obtained using the document.defaultView property.
+ *
+ * In a tabbed browser, such as Firefox, each tab contains its own window
+ * object (and if you're writing an extension, the browser window itself
+ * is a separate window too - see Working with windows in chrome code for
+ * more information). That is, the window object is not shared between tabs
+ * in the same window. Some methods, namely window.resizeTo and window.resizeBy
+ * apply to the whole window and not to the specific tab the window object
+ * belongs to. Generally, anything that can't reasonably pertain to a tab
+ * pertains to the window instead.
  *
  * MDN
  */
@@ -1909,6 +1921,13 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
  * EventTarget is a DOM interface implemented by objects that can receive DOM events
  * and have listeners for them.
  *
+ * Element, document, and window are the most common event targets, but other
+ * objects can be event targets too, for example XMLHttpRequest, AudioNode,
+ * AudioContext and others.
+ *
+ * Many event targets (including elements, documents, and windows) also support
+ * setting event handlers via on... properties and attributes.
+ *
  * MDN
  */
 class EventTarget extends js.Object {
@@ -1970,6 +1989,10 @@ class CanvasGradient extends js.Object {
  * for example. The event can describe one or more points of contact with the screen and
  * includes support for detecting movement, addition and removal of contact points,
  * and so forth.
+ *
+ * Touches are represented by the Touch object; each touch is described by
+ * a position, size and shape, amount of pressure, and target element. Lists
+ * of touches are represented by TouchList objects.
  *
  * MDN
  */
@@ -3143,7 +3166,10 @@ class CanvasRenderingContext2D extends js.Object {
  * by Mozilla, Apple, and Google. It's now being standardized in the W3C. It provides
  * an easy way to retrieve data from a URL without having to do a full page refresh. A Web
  * page can update just a part of the page without disrupting what the user is doing.
- *  XMLHttpRequest is used heavily in AJAX programming.
+ * XMLHttpRequest is used heavily in AJAX programming.
+ *
+ * Despite its name, XMLHttpRequest can be used to retrieve any type of data,
+ * not just XML, and it supports protocols other than HTTP (including file and ftp).
  *
  * MDN
  */
@@ -3311,15 +3337,6 @@ class XMLHttpRequest extends EventTarget {
   var onloadstart: js.Function1[js.Any, js.Any] = ???
 }
 
-/**
- * XMLHttpRequest is a JavaScript object that was designed by Microsoft and adopted
- * by Mozilla, Apple, and Google. It's now being standardized in the W3C. It provides
- * an easy way to retrieve data from a URL without having to do a full page refresh. A Web
- * page can update just a part of the page without disrupting what the user is doing.
- *  XMLHttpRequest is used heavily in AJAX programming.
- *
- * MDN
- */
 object XMLHttpRequest extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(XMLHttpRequest),List())))) */
   var LOADING: js.Number = ???
@@ -3448,6 +3465,9 @@ trait Coordinates extends js.Object {
  * The NavigatorGeolocation interface contains a constructor method allowing
  * objects implementing it to obtain a Geolocation instance.
  *
+ * There is no object of type NavigatorGeolocation, but some, like Navigator
+ * implements it.
+ *
  * MDN
  */
 trait NavigatorGeolocation extends js.Object {
@@ -3469,6 +3489,9 @@ trait NavigatorContentUtils extends js.Object {
  * The DataTransfer object is used to hold the data that is being dragged during a drag
  * and drop operation. It may hold one or more data items, each of one or more data types.
  * For more information about drag and drop, see Drag and Drop.
+ *
+ * This object is available from the dataTransfer property of all drag events.
+ * It cannot be created separately.
  *
  * MDN
  */
@@ -3554,6 +3577,10 @@ class FocusEvent extends UIEvent {
 /**
  * The Range interface represents a fragment of a document that can contain nodes and
  * parts of text nodes in a given document.
+ *
+ * A range can be created using the createRange method of the Document object.
+ * Range objects can also be retrieved by using the getRangeAt method of the
+ * Selection object. There also is the Range() constructor available.
  *
  * MDN
  */
@@ -3777,12 +3804,6 @@ class Range extends js.Object {
   def createContextualFragment(fragment: js.String): DocumentFragment = ???
 }
 
-/**
- * The Range interface represents a fragment of a document that can contain nodes and
- * parts of text nodes in a given document.
- *
- * MDN
- */
 object Range extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Range),List())))) */
   val END_TO_END: js.Number = ???
@@ -4316,6 +4337,11 @@ object WheelEvent extends js.Object {
  * that contains the element's text.  However, if the element contains markup, it is
  * parsed into information items and Text nodes that form its children.
  *
+ * New documents have a single Text node for each block of text. Over time,
+ * more Text nodes may be created as the document's content changes.  The
+ * Node.normalize() method merges adjacent Text objects back into a single
+ * node for each block of text.
+ *
  * MDN
  */
 class Text extends CharacterData {
@@ -4608,10 +4634,14 @@ class BeforeUnloadEvent extends Event {
 
 
 /**
- * This chapter describes the DOM Event Model. The Event interface itself is
- * described, as well as the interfaces for event registration on nodes in the DOM, and
- * event listeners, and several longer examples that show how the various event
- * interfaces relate to one another.
+ * Event handlers may be attached to various objects including DOM elements,
+ * document, the window object, etc. When an event occurs, an event object
+ * is created and passed sequentially to the event listeners.
+ *
+ * The DOM Event interface is accessible from within the handler function,
+ * via the event object passed as the first argument. The following simple
+ * example shows how an event object is passed to the event handler function,
+ * and can be used from within one such function.
  *
  * MDN
  */
@@ -4713,14 +4743,6 @@ class Event extends js.Object {
   def preventDefault(): Unit = ???
 }
 
-/**
- * This chapter describes the DOM Event Model. The Event interface itself is
- * described, as well as the interfaces for event registration on nodes in the DOM, and
- * event listeners, and several longer examples that show how the various event
- * interfaces relate to one another.
- *
- * MDN
- */
 object Event extends js.Object {
   def CAPTURING_PHASE: js.Number = ???
   def AT_TARGET: js.Number = ???
@@ -4899,6 +4921,9 @@ class PerformanceMark extends PerformanceEntry {
  * DOMParser can parse XML or HTML source stored in a string into a DOM Document.
  * DOMParser is specified in DOM Parsing and Serialization.
  *
+ * Note that XMLHttpRequest supports parsing XML and HTML from URL-addressable
+ * resources.
+ *
  * MDN
  */
 class DOMParser extends js.Object {
@@ -4951,7 +4976,7 @@ class StyleSheet extends js.Object {
    *
    * MDN
    */
-  var title: js.String = ???
+  def title: js.String = ???
 }
 
 
@@ -5831,6 +5856,14 @@ trait FileList extends js.Object {
  * The File interface provides information about -- and access to the contents of --
  * files.
  *
+ * These are generally retrieved from a FileList object returned as a result
+ * of a user selecting files using the input element, or from a drag and drop
+ * operation's DataTransfer object.
+ *
+ * The file reference can be saved when the form is submitted while the user
+ * is offline, so that the data can be retrieved and uploaded when the Internet
+ * connection is restored.
+ *
  * MDN
  */
 trait File extends Blob {
@@ -6266,6 +6299,10 @@ trait BlobPropertyBag extends js.Object {
  * interface is based on Blob, inheriting blob functionality and expanding it to
  * support files on the user's system.
  *
+ * An easy way to construct a Blob is by invoking the Blob constuctor. Another
+ * way is to use the slice() method to create a blob that contains a subset of
+ * another blob's data.
+ *
  * MDN
  */
 class Blob extends js.Object {
@@ -6302,14 +6339,6 @@ class Blob extends js.Object {
   def msClose(): Unit = ???
 }
 
-/**
- * A Blob object represents a file-like object of immutable, raw data. Blobs
- * represent data that isn't necessarily in a JavaScript-native format. The File
- * interface is based on Blob, inheriting blob functionality and expanding it to
- * support files on the user's system.
- *
- * MDN
- */
 object Blob extends js.Object {
 }
 
@@ -6491,6 +6520,12 @@ trait ValidityState extends js.Object {
  * can send messages back to their creators. Creating a worker is as simple as calling
  * the Worker() constructor, specifying a script to be run in the worker thread.
  *
+ * Of note is the fact that workers may in turn spawn new workers as long as
+ * those workers are hosted within the same origin as the parent page.  In
+ * addition, workers may use XMLHttpRequest for network I/O, with the exception
+ * that the responseXML and channel attributes on XMLHttpRequest always return
+ * null.
+ *
  * MDN
  */
 class Worker protected() extends AbstractWorker {
@@ -6531,14 +6566,6 @@ class Worker protected() extends AbstractWorker {
 
   override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
-
-/**
- * The Worker interface represents a background task that can be easily created and
- * can send messages back to their creators. Creating a worker is as simple as calling
- * the Worker() constructor, specifying a script to be run in the worker thread.
- *
- * MDN
- */
 
 object Worker extends js.Object {
 }
