@@ -4303,12 +4303,6 @@ class WheelEvent extends MouseEvent {
   def getCurrentPoint(element: Element): Unit = ???
 }
 
-/**
- * The DOM WheelEvent represents events that occur due to the user moving a mouse wheel
- * or similar input device.
- *
- * MDN
- */
 object WheelEvent extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(WheelEvent),List())))) */
   /**
@@ -4404,12 +4398,6 @@ trait PositionError extends js.Object {
 
 }
 
-/**
- * The PositionError interface represents the reason of an error occuring when using
- * the geolocating device.
- *
- * MDN
- */
 object PositionError extends js.Object {
 
   val POSITION_UNAVAILABLE: js.Number = ???
@@ -5048,14 +5036,6 @@ class NodeFilter extends js.Object {
   def acceptNode(n: Node): js.Number = ???
 }
 
-/**
- * A NodeFilter interface represents an object used to filter the nodes in a
- * NodeIterator or TreeWalker. They don't know anything about the DOM or how to
- * traverse nodes; they just know how to evaluate a single node against the provided
- * filter.
- *
- * MDN
- */
 object NodeFilter extends js.Object {
 
   val SHOW_ENTITY_REFERENCE: js.Number = ???
@@ -5284,12 +5264,6 @@ class DOMException extends js.Object {
 
 }
 
-/**
- * The DOMException interface represents an anormal event happening when a method or
- * a property is used.
- *
- * MDN
- */
 object DOMException extends js.Object {
 
   val HIERARCHY_REQUEST_ERR: js.Number = ???
@@ -5373,12 +5347,6 @@ class PerformanceNavigation extends js.Object {
 
 }
 
-/**
- * The PerformanceNavigation interface represents information about how the
- * navigtion to the current document was done.
- *
- * MDN
- */
 object PerformanceNavigation extends js.Object {
 
   val TYPE_RELOAD: js.Number = ???
@@ -5747,12 +5715,6 @@ class WebSocket protected() extends EventTarget {
 
 }
 
-/**
- * The WebSocket object provides the API for creating and managing a WebSocket
- * connection to a server, as well as for sending and receiving data on the connection.
- *
- * MDN
- */
 object WebSocket extends js.Object {
   /**
    * The connection is open and ready to communicate.
@@ -6412,14 +6374,6 @@ class FormData extends js.Object {
   def append(name: js.Any, value: js.Any): Unit = ???
 }
 
-/**
- * XMLHttpRequest Level 2 adds support for the new FormData interface. FormData
- * objects provide a way to easily construct a set of key/value pairs representing
- * form fields and their values, which can then be easily sent using the
- * XMLHttpRequest send() method.
- *
- * MDN
- */
 object FormData extends js.Object {
 }
 

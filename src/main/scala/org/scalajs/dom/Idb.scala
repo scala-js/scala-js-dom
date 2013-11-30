@@ -313,14 +313,6 @@ class IDBCursor extends js.Object {
 
 }
 
-/**
- * The cursor has a source that indicates which index or object store it is iterating.
- * It has a position within the range, and moves in a direction that is increasing or
- * decreasing in the order of record keys. The cursor enables an application to
- * asynchronously process all the records in the cursor's range.
- *
- * MDN
- */
 object IDBCursor extends js.Object {
 
   val PREV: js.String = _

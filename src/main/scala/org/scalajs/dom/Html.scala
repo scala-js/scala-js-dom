@@ -2827,13 +2827,6 @@ class HTMLMediaElement extends HTMLElement {
   var audioTracks: AudioTrackList = ???
 }
 
-/**
- * The HTMLMediaElement interface has special properties and methods (beyond the
- * properties and methods available for all children of HTMLElement), that are
- * common to all media-related objects.
- *
- * MDN
- */
 object HTMLMediaElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(HTMLMediaElement),List())))) */
   /**

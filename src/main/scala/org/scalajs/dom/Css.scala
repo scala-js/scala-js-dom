@@ -487,13 +487,6 @@ class CSSRule extends js.Object {
   var VIEWPORT_RULE: js.Number = _
 }
 
-/**
- * An object implementing the CSSRule DOM interface represents a single CSS at-rule.
- * References to a CSSRule-implementing object may be obtained by looking at a CSS
- * style sheet's cssRules list.
- *
- * MDN
- */
 object CSSRule extends js.Object {
   var IMPORT_RULE: js.Number = _
   var MEDIA_RULE: js.Number = _
