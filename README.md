@@ -12,7 +12,16 @@ Also contains useful extension methods in `org.scalajs.dom.extensions`, which al
 - Read-only members should be `def`, and not-directly-instantiable classes should have `private` constructors.
 - `org.scalajs.dom` contains DOM class/member stubs, while `org.scalajs.dom.extensions` contains implicit conversions and useful Scala types (e.g. `Color`) to make usage of the DOM more idiomatic Scala.
 
-See [scala-js-game-2](https://github.com/lihaoyi/scala-js-game-2) ([live demo](http://lihaoyi.github.io/scala-js-game-2/))and [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. There remain lots more cleanup to do, but this should be a reasonable place to start from. Pull requests/forks are welcome!
+Usage
+-----
+
+Add the following to your sbt build definition:
+
+    libraryDependencies += "org.scala-lang.modules.scalajs" %% "scalajs-dom" % "0.1-SNAPSHOT"
+
+then enjoy the types available in `org.scalajs.dom`.
+
+See also [scala-js-game-2](https://github.com/lihaoyi/scala-js-game-2) ([live demo](http://lihaoyi.github.io/scala-js-game-2/)) and [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. There remain lots more cleanup to do, but this should be a reasonable place to start from. Pull requests/forks are welcome!
 
 License
 -------
