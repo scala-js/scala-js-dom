@@ -1,6 +1,7 @@
 package org.scalajs.dom.extensions
 
 import scala.scalajs.js
+import org.scalajs.dom
 
 /**
  * Used to extend out javascript *Collections to make them usable as normal
@@ -72,6 +73,18 @@ object Color {
     Yellow,
     Black
   )
+}
+
+object Image {
+  def createBase64Svg(s: String) = {
+    val img =
+      dom.document
+        .createElement("img")
+        .asInstanceOf[dom.HTMLImageElement]
+
+    img.src = "data:image/svg+xml;base64," + s
+    img
+  }
 }
 
 /**

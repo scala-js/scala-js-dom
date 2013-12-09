@@ -13,9 +13,21 @@ package object extensions {
 
   implicit class PimpedSVGTransformList(coll: dom.SVGTransformList) extends EasySeq[dom.SVGTransform](coll.numberOfItems, coll.getItem)
 
-  implicit class Castable(x: js.Dynamic) {
-    def to[T] = x.asInstanceOf[T]
+  implicit class Castable(x: Any) {
+    def cast[T] = x.asInstanceOf[T]
   }
+
+  implicit def pimpAnimatedNumber(x: dom.SVGAnimatedNumber) = x.baseVal.toDouble
+
+  implicit def pimpAnimatedNumberRaw(x: dom.SVGAnimatedNumber) = x.baseVal
+
+  implicit def pimpRichAnimatedNumber(x: dom.SVGAnimatedNumber) = x.baseVal.toDouble: runtime.RichDouble
+
+  implicit def pimpAnimatedLength(x: dom.SVGAnimatedLength) = x.baseVal.value.toDouble
+
+  implicit def pimpAnimatedLengthRaw(x: dom.SVGAnimatedLength) = x.baseVal.value
+
+  implicit def pimpRichAnimatedLength(x: dom.SVGAnimatedLength) = x.baseVal.value.toDouble: runtime.RichDouble
 
   implicit class pimpedContext(val ctx: CanvasRenderingContext2D) {
     def prepCircle(x: Double, y: Double, r: Double) = {

@@ -1215,9 +1215,7 @@ class HTMLFrameElement extends HTMLElement with GetSVGDocument {
   var onload: js.Function1[Event, _] = ???
   var security: js.Any = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
 /**
@@ -1280,9 +1278,7 @@ class HTMLFrameSetElement extends HTMLElement {
   var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = ???
   var onstorage: js.Function1[StorageEvent, js.Any] = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
 /**
@@ -1298,6 +1294,7 @@ class HTMLLabelElement extends HTMLElement {
    * MDN
    */
   var htmlFor: js.String = ???
+
   def form: HTMLFormElement = ???
 }
 
@@ -1310,6 +1307,7 @@ class HTMLLabelElement extends HTMLElement {
  */
 class HTMLLegendElement extends HTMLElement {
   var align: js.String = ???
+
   def form: HTMLFormElement = ???
 }
 
@@ -1349,7 +1347,6 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    * MDN
    */
   var width: js.String = ???
-
 
 
   /**
@@ -1395,9 +1392,6 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
   var security: js.Any = ???
   var onload: js.Function1[Event, _] = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
-
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
   /**
    * Reflects the sandbox HTML attribute, indicating extra restrictions on the
@@ -1514,9 +1508,6 @@ class HTMLBodyElement extends HTMLElement {
    */
   var onstorage: js.Function1[StorageEvent, js.Any] = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
-
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
   /**
    * Reflects the onpopstate HTML attribute value for a function to call when the user
@@ -1591,6 +1582,7 @@ class HTMLInputElement extends HTMLElement {
    */
   var width: js.String = ???
   var status: js.Boolean = ???
+
   /**
    * The containing form element, if this element is in a form. If this element is not
    * contained in a form element: HTML5 this can be the id attribute of any <form> element
@@ -1600,6 +1592,7 @@ class HTMLInputElement extends HTMLElement {
    * MDN
    */
   def form: HTMLFormElement = ???
+
   /**
    * The index of the beginning of selected text.
    *
@@ -2427,10 +2420,12 @@ class HTMLTextAreaElement extends HTMLElement {
    * MDN
    */
   var selectionEnd: js.Number = ???
+
   /**
    * The string textarea.
    */
   def `type`: js.String = ???
+
   /**
    * The control's default value, which behaves like the element.textContent
    * property.
@@ -2889,6 +2884,7 @@ class HTMLDTElement extends HTMLElement {
  */
 class HTMLFieldSetElement extends HTMLElement {
   var align: js.String = ???
+
   /**
    * The containing form element, if this element is in a form. If the button is not a
    * descendant of a form element, then the attribute can be the ID of any form element in
@@ -2897,6 +2893,7 @@ class HTMLFieldSetElement extends HTMLElement {
    * MDN
    */
   def form: HTMLFormElement = ???
+
   /**
    * A localized message that describes the validation constraints that the element
    * does not satisfy (if any). This is the empty string if the element is not a candidate
@@ -2906,6 +2903,7 @@ class HTMLFieldSetElement extends HTMLElement {
    * MDN
    */
   def validationMessage: js.String = ???
+
   /**
    * The validity states that this element is in.
    *
@@ -2984,6 +2982,7 @@ class HTMLElement extends Element {
    */
   var outerHTML: js.String = ???
   var ondurationchange: js.Function1[Event, _] = ???
+
   /**
    * Height of an element relative to the element's offsetParent.
    *
@@ -3012,6 +3011,7 @@ class HTMLElement extends Element {
 
   var onbeforeactivate: js.Function1[UIEvent, js.Any] = ???
   var oncanplaythrough: js.Function1[Event, _] = ???
+
   /**
    * offsetParent returns a reference to the object which is the closest (nearest in the
    * containment hierarchy) positioned containing element. If the element is
@@ -3023,6 +3023,7 @@ class HTMLElement extends Element {
    * MDN
    */
   def offsetParent: Element = ???
+
   var onsuspend: js.Function1[Event, _] = ???
   var readyState: js.Any = ???
   var onmouseenter: js.Function1[MouseEvent, js.Any] = ???
@@ -3042,7 +3043,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var children: HTMLCollection = ???
+
   var ondragend: js.Function1[DragEvent, js.Any] = ???
   var onbeforepaste: js.Function1[DragEvent, js.Any] = ???
   var ondragover: js.Function1[DragEvent, js.Any] = ???
@@ -3054,6 +3055,7 @@ class HTMLElement extends Element {
    * MDN
    */
   def offsetTop: js.Number = ???
+
   var onmouseup: js.Function1[MouseEvent, js.Any] = ???
   var ondragstart: js.Function1[DragEvent, js.Any] = ???
   var onbeforecopy: js.Function1[DragEvent, js.Any] = ???
@@ -3138,12 +3140,14 @@ class HTMLElement extends Element {
   var oncut: js.Function1[DragEvent, js.Any] = ???
   var onselect: js.Function1[UIEvent, js.Any] = ???
   var ondrop: js.Function1[DragEvent, js.Any] = ???
+
   /**
    * Returns the layout width of an element.
    *
    * MDN
    */
   def offsetWidth: js.Number = ???
+
   var oncopy: js.Function1[DragEvent, js.Any] = ???
   var onended: js.Function1[Event, _] = ???
   var onscroll: js.Function1[UIEvent, js.Any] = ???
@@ -3218,10 +3222,6 @@ class HTMLElement extends Element {
   def addBehavior(bstrUrl: js.String): js.Number = ???
 
   def insertAdjacentHTML(where: js.String, html: js.String): Unit = ???
-
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
-
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 
 
   var oncuechange: js.Function1[Event, _] = ???
@@ -3362,12 +3362,14 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    * MDN
    */
   var validationMessage: js.String = ???
+
   /**
    * The validity states that this element is in.
    *
    * MDN
    */
   def validity: ValidityState = ???
+
   /**
    * Indicates whether the element is a candidate for constraint validation. Always
    * false for HTMLObjectElement objects.
@@ -3522,9 +3524,7 @@ class HTMLVideoElement extends HTMLMediaElement {
    */
   var poster: js.String = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
 
@@ -3613,9 +3613,7 @@ class HTMLMarqueeElement extends HTMLElement {
 
   def start(): Unit = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
 
-  override def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
 }
 
 /**
