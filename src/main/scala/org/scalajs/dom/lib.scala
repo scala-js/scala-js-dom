@@ -3092,7 +3092,7 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  var strokeStyle: js.Any = ???
+  var strokeStyle: js.String = ???
   /**
    * Alpha value that is applied to shapes and images before they are composited onto the
    * canvas. Default 1.0 (opaque).
@@ -3111,7 +3111,7 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  var fillStyle: js.Any = ???
+  var fillStyle: js.String = ???
   /**
    * Specifies the blurring effect. Default 0
    *

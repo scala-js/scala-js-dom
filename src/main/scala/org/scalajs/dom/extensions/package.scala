@@ -29,6 +29,8 @@ package object extensions {
 
   implicit def pimpRichAnimatedLength(x: dom.SVGAnimatedLength) = x.baseVal.value.toDouble: runtime.RichDouble
 
+  implicit def color2String(c: Color) = c.toString
+  implicit def color2JsString(c: Color) = c.toString: js.String
   implicit class pimpedContext(val ctx: CanvasRenderingContext2D) {
     def prepCircle(x: Double, y: Double, r: Double) = {
       ctx.beginPath()
