@@ -3228,6 +3228,13 @@ class HTMLElement extends Element {
   var spellcheck: js.Boolean = ???
   var classList: DOMTokenList = ???
   var draggable: js.Boolean = ???
+
+  /**
+   * Returns an object that represents the element's style attribute.
+   * 
+   * MDN
+   */
+  var style: CSSStyleDeclaration = ???
 }
 
 
