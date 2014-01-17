@@ -4033,7 +4033,7 @@ object Range extends js.Object {
  *
  * MDN
  */
-class Storage {
+class Storage extends js.Object {
   var length: js.Number = ???
 
   def getItem(key: js.String): js.Dynamic = ???
