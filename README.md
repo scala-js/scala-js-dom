@@ -21,7 +21,7 @@ Add the following to your sbt build definition:
 
 then enjoy the types available in `org.scalajs.dom`.
 
-See also [scala-js-game-2](https://github.com/lihaoyi/scala-js-game-2) ([live demo](http://lihaoyi.github.io/scala-js-game-2/)) and [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. There remain lots more cleanup to do, but this should be a reasonable place to start from. Pull requests/forks are welcome!
+See also [roll](https://github.com/lihaoyi/roll) ([live demo](http://lihaoyi.github.io/roll/)) and [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. There remain lots more cleanup to do, but this should be a reasonable place to start from. Pull requests/forks are welcome!
 
 Contributing
 ------------
