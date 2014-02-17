@@ -338,12 +338,33 @@ class CompositionEvent extends UIEvent {
 
 
 trait WindowTimers extends WindowTimersExtension {
+  /**
+   * Clears the delay set by window.setTimeout().
+   *
+   * MDN
+   */
   def clearTimeout(handle: js.Number): Unit = ???
 
+  /**
+   * Calls a function or executes a code snippet after a specified delay.
+   *
+   * MDN
+   */
   def setTimeout(handler: js.Any, timeout: js.Any, args: js.Any*): js.Number = ???
 
+  /**
+   * Cancels repeated action which was set up using setInterval.
+   *
+   * MDN
+   */
   def clearInterval(handle: js.Number): Unit = ???
 
+  /**
+   * Calls a function or executes a code snippet repeatedly, with a fixed time
+   * delay between each call to that function.
+   *
+   * MDN
+   */
   def setInterval(handler: js.Any, timeout: js.Any, args: js.Any*): js.Number = ???
 }
 
@@ -360,8 +381,22 @@ trait WindowTimers extends WindowTimersExtension {
 class Navigator extends NavigatorID with NavigatorOnLine with NavigatorContentUtils with NavigatorGeolocation with NavigatorStorageUtils
 
 trait NodeSelector extends js.Object {
+  /**
+   * Returns a list of the elements within the document (using depth-first
+   * pre-order traversal of the document's nodes) that match the specified
+   * group of selectors.
+   *
+   * MDN
+   */
   def querySelectorAll(selectors: js.String): NodeList = ???
 
+  /**
+   * Returns the first element within the document (using depth-first pre-order
+   * traversal of the document's nodes) that matches the specified group of
+   * selectors.
+   *
+   * MDN
+   */
   def querySelector(selectors: js.String): Element = ???
 }
 
@@ -521,6 +556,15 @@ class Element extends Node with NodeSelector with ParentNode {
    */
   def scrollWidth: js.Number = ???
 
+  /**
+   * Returns the inner height of an element in pixels, including padding but not
+   * the horizontal scrollbar height, border, or margin.
+   *
+   * clientHeight can be calculated as CSS height + CSS padding - height of
+   * horizontal scrollbar (if present).
+   *
+   * MDN
+   */
   def clientHeight: js.Number = ???
 
   /**
@@ -539,6 +583,13 @@ class Element extends Node with NodeSelector with ParentNode {
    */
   def scrollHeight: js.Number = ???
 
+  /**
+   * getAttribute() returns the value of the named attribute on the specified element.
+   * If the named attribute does not exist, the value returned will either be null or ""
+   * (the empty string); see Notes for details.
+   *
+   * MDN
+   */
   def getAttribute(name: js.String): js.String = ???
 
   /**
@@ -595,8 +646,6 @@ class Element extends Node with NodeSelector with ParentNode {
    */
   def setAttributeNodeNS(newAttr: Attr): Attr = ???
 
-  def msMatchesSelector(selectors: js.String): js.Boolean = ???
-
   /**
    * hasAttribute returns a boolean value indicating whether the specified element
    * has the specified attribute or not.
@@ -605,6 +654,11 @@ class Element extends Node with NodeSelector with ParentNode {
    */
   def hasAttribute(name: js.String): js.Boolean = ???
 
+  /**
+   * removeAttribute removes an attribute from the specified element.
+   *
+   * MDN
+   */
   def removeAttribute(name: js.String): Unit = ???
 
   /**
@@ -628,10 +682,6 @@ class Element extends Node with NodeSelector with ParentNode {
    * MDN
    */
   def getAttributeNode(name: js.String): Attr = ???
-
-  def fireEvent(eventName: js.String, eventObj: js.Any): js.Boolean = ???
-
-  def fireEvent(eventName: js.String): js.Boolean = ???
 
   /**
    * Returns a list of elements with the given tag name. The subtree underneath the
@@ -666,8 +716,20 @@ class Element extends Node with NodeSelector with ParentNode {
    */
   def removeAttributeNode(oldAttr: Attr): Attr = ???
 
+  /**
+   * Adds a new attribute or changes the value of an existing attribute on the
+   * specified element.
+   *
+   * MSN
+   */
   def setAttribute(name: js.String, value: js.String): Unit = ???
 
+  /**
+   * Adds a new attribute or changes the value of an existing attribute on the
+   * specified element.
+   *
+   * MDN
+   */
   def setAttribute(name: js.String): Unit = ???
 
   /**
@@ -936,7 +998,12 @@ class Node extends EventTarget {
    * MDN
    */
   def lookupNamespaceURI(prefix: js.String): js.String = ???
-
+  /**
+   * Clone a Node, and optionally, all of its contents. By default, it clones the content
+   * of the node.
+   *
+   * MDN
+   */
   def cloneNode(deep: js.Boolean): Node = ???
 
   /**
@@ -961,7 +1028,12 @@ class Node extends EventTarget {
    * MDN
    */
   def replaceChild(newChild: Node, oldChild: Node): Node = ???
-
+  /**
+   * Inserts the first Node given in a parameter immediately before the second, child of
+   * this element, Node.
+   *
+   * MDN
+   */
   def insertBefore(newChild: Node, refChild: Node): Node = ???
 
   /**
@@ -971,42 +1043,6 @@ class Node extends EventTarget {
    * MDN
    */
   def insertBefore(newChild: Node): Node = ???
-
-  def ENTITY_REFERENCE_NODE: js.Number = ???
-
-  def ATTRIBUTE_NODE: js.Number = ???
-
-  def DOCUMENT_FRAGMENT_NODE: js.Number = ???
-
-  def TEXT_NODE: js.Number = ???
-
-  def ELEMENT_NODE: js.Number = ???
-
-  def COMMENT_NODE: js.Number = ???
-
-  def DOCUMENT_POSITION_DISCONNECTED: js.Number = ???
-
-  def DOCUMENT_POSITION_CONTAINED_BY: js.Number = ???
-
-  def DOCUMENT_POSITION_CONTAINS: js.Number = ???
-
-  def DOCUMENT_TYPE_NODE: js.Number = ???
-
-  def DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: js.Number = ???
-
-  def DOCUMENT_NODE: js.Number = ???
-
-  def ENTITY_NODE: js.Number = ???
-
-  def PROCESSING_INSTRUCTION_NODE: js.Number = ???
-
-  def CDATA_SECTION_NODE: js.Number = ???
-
-  def NOTATION_NODE: js.Number = ???
-
-  def DOCUMENT_POSITION_FOLLOWING: js.Number = ???
-
-  def DOCUMENT_POSITION_PRECEDING: js.Number = ???
 }
 
 
@@ -1460,20 +1496,20 @@ trait WindowSessionStorage extends js.Object {
  * MDN
  */
 class Window extends EventTarget with WindowLocalStorage with WindowSessionStorage with WindowTimers with WindowBase64 with IDBEnvironment with WindowConsole {
-  var ondragend: js.Function1[DragEvent, js.Any] = ???
+  var ondragend: js.Function1[DragEvent, _] = ???
   /**
    * An event handler property for keydown events on the window.
    *
    * MDN
    */
-  var onkeydown: js.Function1[KeyboardEvent, js.Any] = ???
-  var ondragover: js.Function1[DragEvent, js.Any] = ???
+  var onkeydown: js.Function1[KeyboardEvent, _] = ???
+  var ondragover: js.Function1[DragEvent, _] = ???
   /**
    * An event handler property for keyup events on the window.
    *
    * MDN
    */
-  var onkeyup: js.Function1[KeyboardEvent, js.Any] = ???
+  var onkeyup: js.Function1[KeyboardEvent, _] = ???
   /**
    * An event handler property for reset events on the window.
    *
@@ -1485,9 +1521,9 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onmouseup: js.Function1[MouseEvent, js.Any] = ???
-  var ondragstart: js.Function1[DragEvent, js.Any] = ???
-  var ondrag: js.Function1[DragEvent, js.Any] = ???
+  var onmouseup: js.Function1[MouseEvent, _] = ???
+  var ondragstart: js.Function1[DragEvent, _] = ???
+  var ondrag: js.Function1[DragEvent, _] = ???
   /**
    * Returns the horizontal distance of the left border of the user's browser from the
    * left side of the screen.
@@ -1500,8 +1536,8 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onmouseover: js.Function1[MouseEvent, js.Any] = ???
-  var ondragleave: js.Function1[DragEvent, js.Any] = ???
+  var onmouseover: js.Function1[MouseEvent, _] = ???
+  var ondragleave: js.Function1[DragEvent, _] = ???
 
   /**
    * The Window.history read-only property returns a reference to the History object,
@@ -1556,7 +1592,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onmousedown: js.Function1[MouseEvent, js.Any] = ???
+  var onmousedown: js.Function1[MouseEvent, _] = ???
   var onseeked: js.Function1[Event, _] = ???
   /**
    * Returns a reference to the window that opened this current window.
@@ -1571,7 +1607,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onclick: js.Function1[MouseEvent, js.Any] = ???
+  var onclick: js.Function1[MouseEvent, _] = ???
 
   /**
    * Gets the height of the content area of the browser window including, if rendered,
@@ -1599,7 +1635,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onblur: js.Function1[FocusEvent, js.Any] = ???
+  var onblur: js.Function1[FocusEvent, _] = ???
   var onemptied: js.Function1[Event, _] = ???
   var onseeking: js.Function1[Event, _] = ???
   var oncanplay: js.Function1[Event, _] = ???
@@ -1619,7 +1655,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onmousemove: js.Function1[MouseEvent, js.Any] = ???
+  var onmousemove: js.Function1[MouseEvent, _] = ???
   /**
    * Gets the width of the content area of the browser window including, if rendered, the
    * vertical scrollbar.
@@ -1651,11 +1687,18 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = ???
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = ???
   var onratechange: js.Function1[Event, _] = ???
-  var onstorage: js.Function1[StorageEvent, js.Any] = ???
+  var onstorage: js.Function1[StorageEvent, _] = ???
   var onloadstart: js.Function1[Event, _] = ???
-  var ondragenter: js.Function1[DragEvent, js.Any] = ???
+  /**
+   * Called for an element when the mouse pointer first moves over the element while
+   * something is being dragged. This might be used to change the appearance of the
+   * element to indicate to the user that the object can be dropped on it.
+   *
+   * MDN
+   */
+  var ondragenter: js.Function1[DragEvent, _] = ???
   /**
    * An event handler property for submits on window forms.
    *
@@ -1677,8 +1720,8 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    */
   def document: Document = ???
 
-  var onprogress: js.Function1[js.Any, js.Any] = ???
-  var ondblclick: js.Function1[MouseEvent, js.Any] = ???
+  var onprogress: js.Function1[js.Any, _] = ???
+  var ondblclick: js.Function1[MouseEvent, _] = ???
 
   /**
    * Returns the number of pixels that the document has already been scrolled
@@ -1693,7 +1736,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var oncontextmenu: js.Function1[MouseEvent, js.Any] = ???
+  var oncontextmenu: js.Function1[MouseEvent, _] = ???
   /**
    * An event handler property for change events on the window.
    *
@@ -1730,7 +1773,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onabort: js.Function1[UIEvent, js.Any] = ???
+  var onabort: js.Function1[UIEvent, _] = ???
   var onreadystatechange: js.Function1[Event, _] = ???
 
   /**
@@ -1747,7 +1790,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onkeypress: js.Function1[KeyboardEvent, js.Any] = ???
+  var onkeypress: js.Function1[KeyboardEvent, _] = ???
 
   /**
    * Returns the element (such as <iframe> or <object>) in which the window is embedded,
@@ -1772,21 +1815,21 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onfocus: js.Function1[FocusEvent, js.Any] = ???
-  var onmessage: js.Function1[MessageEvent, js.Any] = ???
+  var onfocus: js.Function1[FocusEvent, _] = ???
+  var onmessage: js.Function1[MessageEvent, _] = ???
   var ontimeupdate: js.Function1[Event, _] = ???
   /**
    * An event handler for the resize event on the window.
    *
    * MDN
    */
-  var onresize: js.Function1[UIEvent, js.Any] = ???
+  var onresize: js.Function1[UIEvent, _] = ???
   /**
    * An event handler property for window selection.
    *
    * MDN
    */
-  var onselect: js.Function1[UIEvent, js.Any] = ???
+  var onselect: js.Function1[UIEvent, _] = ???
 
   /**
    * The Window.navigator read-only property returns a reference to the Navigator
@@ -1799,13 +1842,13 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
 
   def styleMedia: StyleMedia = ???
 
-  var ondrop: js.Function1[DragEvent, js.Any] = ???
+  var ondrop: js.Function1[DragEvent, _] = ???
   /**
    * An event handler property for mouseout events on the window.
    *
    * MDN
    */
-  var onmouseout: js.Function1[MouseEvent, js.Any] = ???
+  var onmouseout: js.Function1[MouseEvent, _] = ???
   var onended: js.Function1[Event, _] = ???
   /**
    * An event handler property for hash change events on the window; called when the part
@@ -1826,7 +1869,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onscroll: js.Function1[UIEvent, js.Any] = ???
+  var onscroll: js.Function1[UIEvent, _] = ???
 
   /**
    * Returns the vertical distance of the top border of the user's browser from the top
@@ -1836,7 +1879,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    */
   def screenY: js.Number = ???
 
-  var onmousewheel: js.Function1[WheelEvent, js.Any] = ???
+  var onmousewheel: js.Function1[WheelEvent, _] = ???
   /**
    * An event handler property for window loading.
    *
@@ -2026,10 +2069,8 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onpopstate: js.Function1[PopStateEvent, js.Any] = ???
-  var onmspointerup: js.Function1[js.Any, js.Any] = ???
-
-  def msCancelRequestAnimationFrame(handle: js.Number): Unit = ???
+  var onpopstate: js.Function1[PopStateEvent, _] = ???
+  var onmspointerup: js.Function1[js.Any, _] = ???
 
   /**
    * Returns a new MediaQueryList object representing the parsed results of the
@@ -2047,10 +2088,6 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    */
   def cancelAnimationFrame(handle: js.Number): Unit = ???
 
-  def msIsStaticHTML(html: js.String): js.Boolean = ???
-
-  def msMatchMedia(mediaQuery: js.String): MediaQueryList = ???
-
   /**
    * The window.requestAnimationFrame() method tells the browser that you wish to
    * perform an animation and requests that the browser call a specified function to
@@ -2060,8 +2097,6 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    * MDN
    */
   def requestAnimationFrame(callback: FrameRequestCallback): js.Number = ???
-
-  def msRequestAnimationFrame(callback: FrameRequestCallback): js.Number = ???
 }
 
 
@@ -2305,7 +2340,17 @@ object KeyboardEvent extends js.Object {
  * MDN
  */
 class Document extends Node with NodeSelector with DocumentEvent with ParentNode {
+  /**
+   * The keydown event is raised when the user presses a keyboard key.
+   *
+   * MDN
+   */
   var onkeydown: js.Function1[KeyboardEvent, _] = ???
+  /**
+   * The keyup event is raised when the user releases a key that's been pressed.
+   *
+   * MDN
+   */
   var onkeyup: js.Function1[KeyboardEvent, _] = ???
 
   /**
@@ -2326,9 +2371,9 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
   def scripts: HTMLCollection = ???
 
   var onhelp: js.Function1[Event, _] = ???
-  var ondragleave: js.Function1[DragEvent, js.Any] = ???
+  var ondragleave: js.Function1[DragEvent, _] = ???
 
-  var onfocusin: js.Function1[FocusEvent, js.Any] = ???
+  var onfocusin: js.Function1[FocusEvent, _] = ???
   /**
    * The default value for this property in Mozilla Firefox is purple (#551a8b in
    * hexadecimal).
@@ -2369,7 +2414,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def forms: HTMLCollection = ???
 
-  var onblur: js.Function1[FocusEvent, js.Any] = ???
+  var onblur: js.Function1[FocusEvent, _] = ???
   /**
    * The Document.dir property is a DOMString representing the directionality of the
    * text of the document, whether left to right (default) or right to left. Possible
@@ -2387,7 +2432,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
   var designMode: js.String = ???
 
   var onseeking: js.Function1[Event, _] = ???
-  var ondeactivate: js.Function1[UIEvent, js.Any] = ???
+  var ondeactivate: js.Function1[UIEvent, _] = ???
   var oncanplay: js.Function1[Event, _] = ???
   var onloadstart: js.Function1[Event, _] = ???
 
@@ -2399,7 +2444,20 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def defaultView: Window = ???
 
-  var ondragenter: js.Function1[DragEvent, js.Any] = ???
+  /**
+   * Called for an element when the mouse pointer first moves over the element
+   * while something is being dragged. This might be used to change the
+   * appearance of the element to indicate to the user that the object can be
+   * dropped on it.
+   *
+   * MDN
+   */
+  var ondragenter: js.Function1[DragEvent, _] = ???
+  /**
+   * The submit event is raised when the user clicks a submit button in a form
+   *
+   * MDN
+   */
   var onsubmit: js.Function1[Event, _] = ???
 
   /**
@@ -2418,6 +2476,11 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def activeElement: Element = ???
 
+  /**
+   * The onchange property sets and returns the event handler for the change event.
+   *
+   * MDN
+   */
   var onchange: js.Function1[Event, _] = ???
 
   /**
@@ -2437,7 +2500,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def URL: js.String = ???
 
-  var onbeforeactivate: js.Function1[UIEvent, js.Any] = ???
+  var onbeforeactivate: js.Function1[UIEvent, _] = ???
 
   /**
    * Returns the <head> element of the current document. If there are more than one
@@ -2512,9 +2575,15 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   var alinkColor: js.String = ???
-
-  var onmouseout: js.Function1[MouseEvent, js.Any] = ???
-  var onmousewheel: js.Function1[WheelEvent, js.Any] = ???
+  /**
+   * The mouseout event is raised when the mouse leaves an element (e.g, when the
+   * mouse moves off of an image in the web page, the mouseout event is raised for
+   * that image element).
+   *
+   * MDN
+   */
+  var onmouseout: js.Function1[MouseEvent, _] = ???
+  var onmousewheel: js.Function1[WheelEvent, _] = ???
   var onvolumechange: js.Function1[Event, _] = ???
 
   /**
@@ -2525,7 +2594,12 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def xmlVersion: js.String = ???
 
-  var ondragend: js.Function1[DragEvent, js.Any] = ???
+  /**
+   * Called when the drag operation is finished.
+   *
+   * MDN
+   */
+  var ondragend: js.Function1[DragEvent, _] = ???
 
   /**
    * Returns the Document Type Declaration (DTD) associated with current document.
@@ -2536,7 +2610,14 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def doctype: DocumentType = ???
 
-  var ondragover: js.Function1[DragEvent, js.Any] = ???
+  /**
+   * This event handler is called for an element when something is being dragged
+   * over top of it. If the object can be dropped on the element, the drag
+   * session should be notified.
+   *
+   * MDN
+   */
+  var ondragover: js.Function1[DragEvent, _] = ???
   /**
    * The default value for this property in Mozilla Firefox is white (#ffffff in
    * hexadecimal).
@@ -2544,10 +2625,28 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   var bgColor: js.String = ???
-  var ondragstart: js.Function1[DragEvent, js.Any] = ???
-  var onmouseup: js.Function1[MouseEvent, js.Any] = ???
-  var ondrag: js.Function1[DragEvent, js.Any] = ???
-  var onmouseover: js.Function1[MouseEvent, js.Any] = ???
+  /**
+   * An alias for ondraggesture; this is the HTML 5 spec name for the event and
+   * may be used in HTML or XUL; however, for backward compatibility with older
+   * versions of Firefox, you may wish to continue using ondraggesture in XUL.
+   *
+   * MDN
+   */
+  var ondragstart: js.Function1[DragEvent, _] = ???
+  var onmouseup: js.Function1[MouseEvent, _] = ???
+  /**
+   * Called periodically throughout the drag and drop operation.
+   *
+   * MDN
+   */
+  var ondrag: js.Function1[DragEvent, _] = ???
+  /**
+   * The mouseover event is raised when the user moves the mouse over a
+   * particular element.
+   *
+   * MDN
+   */
+  var onmouseover: js.Function1[MouseEvent, _] = ???
   /**
    * linkColor gets/sets the color of links within the document.
    *
@@ -2555,8 +2654,18 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   var linkColor: js.String = ???
   var onpause: js.Function1[Event, _] = ???
-  var onmousedown: js.Function1[MouseEvent, js.Any] = ???
-  var onclick: js.Function1[MouseEvent, js.Any] = ???
+  /**
+   * The mousedown event is raised when the user presses the mouse button.
+   *
+   * MDN
+   */
+  var onmousedown: js.Function1[MouseEvent, _] = ???
+  /**
+   * The onclick property returns the onClick event handler code on the current element.
+   *
+   * MDN
+   */
+  var onclick: js.Function1[MouseEvent, _] = ???
   var onwaiting: js.Function1[Event, _] = ???
   var onstop: js.Function1[Event, _] = ???
 
@@ -2592,7 +2701,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
   def xmlStandalone: js.Boolean = ???
 
   var onstalled: js.Function1[Event, _] = ???
-  var onmousemove: js.Function1[MouseEvent, js.Any] = ???
+  var onmousemove: js.Function1[MouseEvent, _] = ???
 
   /**
    * Returns the Element that is the root element of the document (for example, the
@@ -2603,9 +2712,9 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
   def documentElement: Element = ???
 
   var onratechange: js.Function1[Event, _] = ???
-  var onprogress: js.Function1[js.Any, js.Any] = ???
-  var ondblclick: js.Function1[MouseEvent, js.Any] = ???
-  var oncontextmenu: js.Function1[MouseEvent, js.Any] = ???
+  var onprogress: js.Function1[js.Any, _] = ???
+  var ondblclick: js.Function1[MouseEvent, _] = ???
+  var oncontextmenu: js.Function1[MouseEvent, _] = ???
   var onloadedmetadata: js.Function1[Event, _] = ???
 
   var onerror: js.Function1[Event, _] = ???
@@ -2627,10 +2736,10 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   var location: Location = ???
-  var onabort: js.Function1[UIEvent, js.Any] = ???
-  var onfocusout: js.Function1[FocusEvent, js.Any] = ???
+  var onabort: js.Function1[UIEvent, _] = ???
+  var onfocusout: js.Function1[FocusEvent, _] = ???
   var onselectionchange: js.Function1[Event, _] = ???
-  var onstoragecommit: js.Function1[StorageEvent, js.Any] = ???
+  var onstoragecommit: js.Function1[StorageEvent, _] = ???
   /**
    * Returns the event handling code for the readystatechange event.
    *
@@ -2646,12 +2755,12 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def lastModified: js.String = ???
 
-  var onkeypress: js.Function1[KeyboardEvent, js.Any] = ???
+  var onkeypress: js.Function1[KeyboardEvent, _] = ???
   var onloadeddata: js.Function1[Event, _] = ???
-  var onbeforedeactivate: js.Function1[UIEvent, js.Any] = ???
-  var onactivate: js.Function1[UIEvent, js.Any] = ???
+  var onbeforedeactivate: js.Function1[UIEvent, _] = ???
+  var onactivate: js.Function1[UIEvent, _] = ???
   var onselectstart: js.Function1[Event, _] = ???
-  var onfocus: js.Function1[FocusEvent, js.Any] = ???
+  var onfocus: js.Function1[FocusEvent, _] = ???
   /**
    * fgColor gets/sets the foreground color, or text color, of the current document.
    *
@@ -2659,8 +2768,8 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   var fgColor: js.String = ???
   var ontimeupdate: js.Function1[Event, _] = ???
-  var onselect: js.Function1[UIEvent, js.Any] = ???
-  var ondrop: js.Function1[DragEvent, js.Any] = ???
+  var onselect: js.Function1[UIEvent, _] = ???
+  var ondrop: js.Function1[DragEvent, _] = ???
   var onended: js.Function1[Event, _] = ???
 
   /**
@@ -2670,7 +2779,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def compatMode: js.String = ???
 
-  var onscroll: js.Function1[UIEvent, js.Any] = ???
+  var onscroll: js.Function1[UIEvent, _] = ???
   var onload: js.Function1[Event, _] = ???
   var oninput: js.Function1[Event, _] = ???
 
@@ -2972,11 +3081,6 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   def getElementById(elementId: js.String): HTMLElement = ???
-
-
-  def msElementsFromPoint(x: js.Number, y: js.Number): NodeList = ???
-
-  def msElementsFromRect(left: js.Number, top: js.Number, width: js.Number, height: js.Number): NodeList = ???
 
   /**
    * In recent versions of Mozilla-based applications as well as in Internet Explorer
@@ -3495,8 +3599,8 @@ class XMLHttpRequest extends EventTarget {
    * MDN
    */
   var withCredentials: js.Boolean = ???
-  var onprogress: js.Function1[ProgressEvent, js.Any] = ???
-  var onabort: js.Function1[js.Any, js.Any] = ???
+  var onprogress: js.Function1[ProgressEvent, _] = ???
+  var onabort: js.Function1[js.Any, _] = ???
   /**
    * Can be set to change the response type. Value Data type of response property ""
    * (empty string) String (this is the default) "arraybuffer" ArrayBuffer "blob"
@@ -3523,15 +3627,15 @@ class XMLHttpRequest extends EventTarget {
    * MDN
    */
   var responseType: js.String = ???
-  var onloadend: js.Function1[ProgressEvent, js.Any] = ???
+  var onloadend: js.Function1[ProgressEvent, _] = ???
   /**
    * The upload process can be tracked by adding an event listener to upload.
    *
    * MDN
    */
   var upload: XMLHttpRequestEventTarget = ???
-  var onerror: js.Function1[ErrorEvent, js.Any] = ???
-  var onloadstart: js.Function1[js.Any, js.Any] = ???
+  var onerror: js.Function1[ErrorEvent, _] = ???
+  var onloadstart: js.Function1[js.Any, _] = ???
 }
 
 object XMLHttpRequest extends js.Object {
@@ -6190,20 +6294,20 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var onprogress: js.Function1[ProgressEvent, js.Any] = ???
+  var onprogress: js.Function1[ProgressEvent, _] = ???
   /**
    * The function to call when a request encounters an error.
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = ???
+  var onerror: js.Function1[ErrorEvent, _] = ???
   /**
    * The function to call when an HTTP request returns after successfully loading
    * content.
    *
    * MDN
    */
-  var onload: js.Function1[js.Any, js.Any] = ???
+  var onload: js.Function1[js.Any, _] = ???
   /**
    * A function that is called if the event times out; this only happens if a timeout has
    * been previously established by setting the value of the XMLHttpRequest object's
@@ -6211,25 +6315,25 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var ontimeout: js.Function1[js.Any, js.Any] = ???
+  var ontimeout: js.Function1[js.Any, _] = ???
   /**
    * The function to call when a request is aborted.
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, js.Any] = ???
+  var onabort: js.Function1[js.Any, _] = ???
   /**
    * A function that gets called when the HTTP request first begins loading data.
    *
    * MDN
    */
-  var onloadstart: js.Function1[js.Any, js.Any] = ???
+  var onloadstart: js.Function1[js.Any, _] = ???
   /**
    * A function that is called when the load is completed, even if the request failed.
    *
    * MDN
    */
-  var onloadend: js.Function1[ProgressEvent, js.Any] = ???
+  var onloadend: js.Function1[ProgressEvent, _] = ???
 
 
 }
@@ -6237,8 +6341,8 @@ trait XMLHttpRequestEventTarget extends EventTarget {
 
 trait AudioTrackList extends EventTarget {
   var length: js.Number = _
-  var onchange: js.Function1[js.Any, js.Any] = _
-  var onaddtrack: js.Function1[TrackEvent, js.Any] = _
+  var onchange: js.Function1[js.Any, _] = _
+  var onaddtrack: js.Function1[TrackEvent, _] = _
 
   def getTrackById(id: js.String): AudioTrack = ???
 
@@ -6255,11 +6359,7 @@ trait AudioTrackList extends EventTarget {
 
 
 trait WindowTimersExtension extends js.Object {
-  def msSetImmediate(expression: js.Any, args: js.Any*): js.Number = ???
-
   def clearImmediate(handle: js.Number): Unit = ???
-
-  def msClearImmediate(handle: js.Number): Unit = ???
 
   def setImmediate(expression: js.Any, args: js.Any*): js.Number = ???
 }
@@ -6365,8 +6465,6 @@ trait Console extends js.Object {
 
   def assert(test: js.Boolean, message: js.String, optionalParams: js.Any*): Unit = ???
 
-  def msIsIndependentlyComposed(element: Element): js.Boolean = ???
-
   def clear(): Unit = ???
 
   /**
@@ -6442,8 +6540,8 @@ trait TextTrack extends EventTarget {
   var cues: TextTrackCueList = _
   var oncuechange: js.Function1[Event, _] = _
   var kind: js.String = _
-  var onload: js.Function1[js.Any, js.Any] = _
-  var onerror: js.Function1[ErrorEvent, js.Any] = _
+  var onload: js.Function1[js.Any, _] = _
+  var onerror: js.Function1[ErrorEvent, _] = _
   var label: js.String = _
 
 
@@ -6480,7 +6578,7 @@ trait MediaQueryListListener extends js.Object {
 
 
 trait MessagePort extends EventTarget {
-  var onmessage: js.Function1[js.Any, js.Any] = ???
+  var onmessage: js.Function1[js.Any, _] = ???
 
   def close(): Unit = ???
 
@@ -6575,8 +6673,6 @@ class Blob extends js.Object {
    */
   def size: js.Number = ???
 
-  def msDetachStream(): js.Dynamic = ???
-
   def slice(start: js.Number, end: js.Number, contentType: js.String): Blob = ???
 
   def slice(start: js.Number, end: js.Number): Blob = ???
@@ -6592,8 +6688,6 @@ class Blob extends js.Object {
   def slice(): Blob = ???
 
   def close(): Unit = ???
-
-  def msClose(): Unit = ???
 }
 
 object Blob extends js.Object {
@@ -6603,11 +6697,11 @@ trait ApplicationCache extends EventTarget {
   def status: js.Number = ???
 
   var ondownloading: js.Function1[Event, _] = ???
-  var onprogress: js.Function1[ProgressEvent, js.Any] = ???
+  var onprogress: js.Function1[ProgressEvent, _] = ???
   var onupdateready: js.Function1[Event, _] = ???
   var oncached: js.Function1[Event, _] = ???
   var onobsolete: js.Function1[Event, _] = ???
-  var onerror: js.Function1[ErrorEvent, js.Any] = ???
+  var onerror: js.Function1[ErrorEvent, _] = ???
   var onchecking: js.Function1[Event, _] = ???
   var onnoupdate: js.Function1[Event, _] = ???
 
@@ -6684,7 +6778,7 @@ trait AbstractWorker extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = ???
+  var onerror: js.Function1[ErrorEvent, _] = ???
 
 
 }
@@ -6792,7 +6886,7 @@ class Worker protected() extends AbstractWorker {
    *
    * MDN
    */
-  var onmessage: js.Function1[js.Any, js.Any] = ???
+  var onmessage: js.Function1[js.Any, _] = ???
 
   def postMessage(message: js.Any, ports: js.Any): Unit = ???
 

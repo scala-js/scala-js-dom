@@ -459,7 +459,7 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  var oncomplete: js.Function1[Event, js.Any] = ???
+  var oncomplete: js.Function1[Event, _] = ???
 
   /**
    * The database connection with which this transaction is associated.
@@ -493,13 +493,13 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = ???
+  var onerror: js.Function1[ErrorEvent, _] = ???
   /**
    * The event handler for the onabort event.
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, js.Any] = ???
+  var onabort: js.Function1[js.Any, _] = ???
 
   /**
    * Returns immediately, and rolls back all the changes to objects in the database
@@ -589,13 +589,13 @@ class IDBDatabase extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = ???
+  var onerror: js.Function1[ErrorEvent, _] = ???
   /**
    * Fires when access of the database is aborted.
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, js.Any] = ???
+  var onabort: js.Function1[js.Any, _] = ???
 
   def createObjectStore(name: js.String, optionalParameters: js.Any): IDBObjectStore = ???
 
@@ -658,7 +658,7 @@ class IDBOpenDBRequest extends IDBRequest {
    *
    * MDN
    */
-  var onupgradeneeded: js.Function1[IDBVersionChangeEvent, js.Any] = ???
+  var onupgradeneeded: js.Function1[IDBVersionChangeEvent, _] = ???
   /**
    * The event handler for the blocked event. This event is triggered when the
    * upgradeneeded should be triggered because of a version change but the database is
@@ -667,7 +667,7 @@ class IDBOpenDBRequest extends IDBRequest {
    *
    * MDN
    */
-  var onblocked: js.Function1[Event, js.Any] = ???
+  var onblocked: js.Function1[Event, _] = ???
 
 
 }
@@ -737,7 +737,7 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  var onsuccess: js.Function1[Event, js.Any] = ???
+  var onsuccess: js.Function1[Event, _] = ???
 
   /**
    * A DOMError containing the relevant error. The following error codes are returned
@@ -761,7 +761,7 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, js.Any] = ???
+  var onerror: js.Function1[ErrorEvent, _] = ???
 
   /**
    * The state of the request. Every request starts in the pending state. The state

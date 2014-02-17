@@ -1263,10 +1263,10 @@ class HTMLFrameSetElement extends HTMLElement {
   var rows: js.String = ???
   var cols: js.String = ???
   var frameSpacing: js.Any = ???
-  var onmessage: js.Function1[MessageEvent, js.Any] = ???
+  var onmessage: js.Function1[MessageEvent, _] = ???
   var onerror: js.Function1[Event, _] = ???
   var frameBorder: js.String = ???
-  var onresize: js.Function1[UIEvent, js.Any] = ???
+  var onresize: js.Function1[UIEvent, _] = ???
   var name: js.String = ???
   var onafterprint: js.Function1[Event, _] = ???
   var onbeforeprint: js.Function1[Event, _] = ???
@@ -1275,8 +1275,8 @@ class HTMLFrameSetElement extends HTMLElement {
   var onunload: js.Function1[Event, _] = ???
   var onhashchange: js.Function1[Event, _] = ???
   var onload: js.Function1[Event, _] = ???
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = ???
-  var onstorage: js.Function1[StorageEvent, js.Any] = ???
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = ???
+  var onstorage: js.Function1[StorageEvent, _] = ???
 
 
 }
@@ -1425,7 +1425,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onmessage: js.Function1[MessageEvent, js.Any] = ???
+  var onmessage: js.Function1[MessageEvent, _] = ???
   var text: js.Any = ???
   /**
    * Exposes the window.onerror event handler to call when the document fails to load
@@ -1443,7 +1443,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onresize: js.Function1[UIEvent, js.Any] = ???
+  var onresize: js.Function1[UIEvent, _] = ???
   var link: js.Any = ???
   var aLink: js.Any = ???
 
@@ -1498,7 +1498,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = ???
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = ???
   var leftMargin: js.Any = ???
   /**
    * Reflects the onpopstate HTML attribute value for a function to call when the
@@ -1506,7 +1506,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onstorage: js.Function1[StorageEvent, js.Any] = ???
+  var onstorage: js.Function1[StorageEvent, _] = ???
 
 
   /**
@@ -1515,7 +1515,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onpopstate: js.Function1[PopStateEvent, js.Any] = ???
+  var onpopstate: js.Function1[PopStateEvent, _] = ???
 }
 
 /**
@@ -3000,16 +3000,16 @@ class HTMLElement extends Element {
   var onemptied: js.Function1[Event, _] = ???
   var onseeking: js.Function1[Event, _] = ???
   var oncanplay: js.Function1[Event, _] = ???
-  var ondeactivate: js.Function1[UIEvent, js.Any] = ???
+  var ondeactivate: js.Function1[UIEvent, _] = ???
 
   var onloadstart: js.Function1[Event, _] = ???
-  var ondragenter: js.Function1[DragEvent, js.Any] = ???
+  var ondragenter: js.Function1[DragEvent, _] = ???
   var onsubmit: js.Function1[Event, _] = ???
 
   var onchange: js.Function1[Event, _] = ???
   var id: js.String = ???
 
-  var onbeforeactivate: js.Function1[UIEvent, js.Any] = ???
+  var onbeforeactivate: js.Function1[UIEvent, _] = ???
   var oncanplaythrough: js.Function1[Event, _] = ???
 
   /**
@@ -3026,11 +3026,11 @@ class HTMLElement extends Element {
 
   var onsuspend: js.Function1[Event, _] = ???
   var readyState: js.Any = ???
-  var onmouseenter: js.Function1[MouseEvent, js.Any] = ???
+  var onmouseenter: js.Function1[MouseEvent, _] = ???
 
-  var onmouseout: js.Function1[MouseEvent, js.Any] = ???
+  var onmouseout: js.Function1[MouseEvent, _] = ???
   var parentElement: HTMLElement = ???
-  var onmousewheel: js.Function1[WheelEvent, js.Any] = ???
+  var onmousewheel: js.Function1[WheelEvent, _] = ???
   var onvolumechange: js.Function1[Event, _] = ???
   var filters: Object = ???
   /**
@@ -3044,9 +3044,9 @@ class HTMLElement extends Element {
    * MDN
    */
 
-  var ondragend: js.Function1[DragEvent, js.Any] = ???
-  var onbeforepaste: js.Function1[DragEvent, js.Any] = ???
-  var ondragover: js.Function1[DragEvent, js.Any] = ???
+  var ondragend: js.Function1[DragEvent, _] = ???
+  var onbeforepaste: js.Function1[DragEvent, _] = ???
+  var ondragover: js.Function1[DragEvent, _] = ???
 
   /**
    * offsetTop returns the distance of the current element relative to the top of
@@ -3056,10 +3056,10 @@ class HTMLElement extends Element {
    */
   def offsetTop: js.Number = ???
 
-  var onmouseup: js.Function1[MouseEvent, js.Any] = ???
-  var ondragstart: js.Function1[DragEvent, js.Any] = ???
-  var onbeforecopy: js.Function1[DragEvent, js.Any] = ???
-  var ondrag: js.Function1[DragEvent, js.Any] = ???
+  var onmouseup: js.Function1[MouseEvent, _] = ???
+  var ondragstart: js.Function1[DragEvent, _] = ???
+  var onbeforecopy: js.Function1[DragEvent, _] = ???
+  var ondrag: js.Function1[DragEvent, _] = ???
   /**
    * innerHTML sets or gets the HTML syntax describing the element's descendants.
    *
@@ -3069,7 +3069,7 @@ class HTMLElement extends Element {
    * text nodes' contents.
    */
   var innerHTML: js.String = ???
-  var onmouseover: js.Function1[MouseEvent, js.Any] = ???
+  var onmouseover: js.Function1[MouseEvent, _] = ???
   /**
    * This property gets or sets the base language of an element's attribute values and
    * text content.
@@ -3080,8 +3080,8 @@ class HTMLElement extends Element {
 
   var onpause: js.Function1[Event, _] = ???
 
-  var onmousedown: js.Function1[MouseEvent, js.Any] = ???
-  var onclick: js.Function1[MouseEvent, js.Any] = ???
+  var onmousedown: js.Function1[MouseEvent, _] = ???
+  var onclick: js.Function1[MouseEvent, _] = ???
   var onwaiting: js.Function1[Event, _] = ???
   /**
    * Returns the number of pixels that the upper left corner of the current element is
@@ -3091,10 +3091,10 @@ class HTMLElement extends Element {
    */
   var offsetLeft: js.Number = ???
 
-  var onpaste: js.Function1[DragEvent, js.Any] = ???
+  var onpaste: js.Function1[DragEvent, _] = ???
 
   var onstalled: js.Function1[Event, _] = ???
-  var onmousemove: js.Function1[MouseEvent, js.Any] = ???
+  var onmousemove: js.Function1[MouseEvent, _] = ???
   /**
    * isContentEditable returns true if the contents of the element are editable;
    * otherwise it returns false.
@@ -3117,29 +3117,29 @@ class HTMLElement extends Element {
    */
   var tabIndex: js.Number = ???
 
-  var onprogress: js.Function1[js.Any, js.Any] = ???
-  var ondblclick: js.Function1[MouseEvent, js.Any] = ???
-  var oncontextmenu: js.Function1[MouseEvent, js.Any] = ???
+  var onprogress: js.Function1[js.Any, _] = ???
+  var ondblclick: js.Function1[MouseEvent, _] = ???
+  var oncontextmenu: js.Function1[MouseEvent, _] = ???
   var onloadedmetadata: js.Function1[Event, _] = ???
   var onplay: js.Function1[Event, _] = ???
   var onplaying: js.Function1[Event, _] = ???
 
   var onfocusout: js.Function1[FocusEvent, _] = ???
-  var onabort: js.Function1[UIEvent, js.Any] = ???
+  var onabort: js.Function1[UIEvent, _] = ???
 
   var onreadystatechange: js.Function1[Event, _] = ???
-  var onkeypress: js.Function1[KeyboardEvent, js.Any] = ???
+  var onkeypress: js.Function1[KeyboardEvent, _] = ???
   var onloadeddata: js.Function1[Event, _] = ???
-  var onbeforedeactivate: js.Function1[UIEvent, js.Any] = ???
+  var onbeforedeactivate: js.Function1[UIEvent, _] = ???
 
   var disabled: js.Boolean = ???
-  var onactivate: js.Function1[UIEvent, js.Any] = ???
+  var onactivate: js.Function1[UIEvent, _] = ???
   var accessKey: js.String = ???
   var onselectstart: js.Function1[Event, _] = ???
   var ontimeupdate: js.Function1[Event, _] = ???
-  var oncut: js.Function1[DragEvent, js.Any] = ???
-  var onselect: js.Function1[UIEvent, js.Any] = ???
-  var ondrop: js.Function1[DragEvent, js.Any] = ???
+  var oncut: js.Function1[DragEvent, _] = ???
+  var onselect: js.Function1[UIEvent, _] = ???
+  var ondrop: js.Function1[DragEvent, _] = ???
 
   /**
    * Returns the layout width of an element.
@@ -3148,9 +3148,9 @@ class HTMLElement extends Element {
    */
   def offsetWidth: js.Number = ???
 
-  var oncopy: js.Function1[DragEvent, js.Any] = ???
+  var oncopy: js.Function1[DragEvent, _] = ???
   var onended: js.Function1[Event, _] = ???
-  var onscroll: js.Function1[UIEvent, js.Any] = ???
+  var onscroll: js.Function1[UIEvent, _] = ???
 
   var oninput: js.Function1[Event, _] = ???
 
