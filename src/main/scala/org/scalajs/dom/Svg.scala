@@ -1315,9 +1315,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    */
   def createSVGTransformFromMatrix(matrix: SVGMatrix): SVGTransform = ???
 
-  def getComputedStyle(elt: Element, pseudoElt: js.String): CSSStyleDeclaration = ???
-
-  def getComputedStyle(elt: Element): CSSStyleDeclaration = ???
+  def getComputedStyle(elt: Element, pseudoElt: js.String = ???): CSSStyleDeclaration = ???
 
   /**
    * Searches this SVG document fragment (i.e., the search is restricted to a subset of

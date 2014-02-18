@@ -44,11 +44,7 @@ class IDBObjectStore extends js.Object {
    */
   def keyPath: js.String = ???
 
-  def count(key: js.Any): IDBRequest = ???
-
-  def count(): IDBRequest = ???
-
-  def add(value: js.Any, key: js.Any): IDBRequest = ???
+  def count(key: js.Any = ???): IDBRequest = ???
 
   /**
    * To determine if the add operation has completed successfully, listen for the
@@ -59,7 +55,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def add(value: js.Any): IDBRequest = ???
+  def add(value: js.Any, key: js.Any = ???): IDBRequest = ???
 
   /**
    * Clearing an object store consists of removing all records from the object store and
@@ -68,18 +64,13 @@ class IDBObjectStore extends js.Object {
    * MDN
    */
   def clear(): IDBRequest = ???
-
-  def createIndex(name: js.String, keyPath: js.String, optionalParameters: js.Any): IDBIndex = ???
-
   /**
    * Note that this method must be called only from a VersionChange transaction mode
    * callback.
    *
    * MDN
    */
-  def createIndex(name: js.String, keyPath: js.String): IDBIndex = ???
-
-  def put(value: js.Any, key: js.Any): IDBRequest = ???
+  def createIndex(name: js.String, keyPath: js.String, optionalParameters: js.Any = ???): IDBIndex = ???
 
   /**
    * If the record is successfully stored, then a success event is fired on the returned
@@ -88,13 +79,9 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def put(value: js.Any): IDBRequest = ???
+  def put(value: js.Any, key: js.Any = ???): IDBRequest = ???
 
-  def openCursor(range: js.Any, direction: js.String): IDBRequest = ???
-
-  def openCursor(range: js.Any): IDBRequest = ???
-
-  def openCursor(): IDBRequest = ???
+  def openCursor(range: js.Any = ???, direction: js.String = ???): IDBRequest = ???
 
   /**
    * Note that this method must be called only from a VersionChange transaction mode
@@ -215,18 +202,13 @@ class IDBIndex extends js.Object {
    * MDN
    */
   def getKey(key: js.Any): IDBRequest = ???
-
-  def openKeyCursor(range: IDBKeyRange, direction: js.String): IDBRequest = ???
-
-  def openKeyCursor(range: IDBKeyRange): IDBRequest = ???
-
   /**
    * Returns an IDBRequest object, and, in a separate thread, creates a cursor over the
    * specified key range, as arranged by this index.
    *
    * MDN
    */
-  def openKeyCursor(): IDBRequest = ???
+  def openKeyCursor(range: IDBKeyRange = ???, direction: js.String = ???): IDBRequest = ???
 
   /**
    * Returns an IDBRequest object, and, in a separate thread, finds either the value in
@@ -236,18 +218,14 @@ class IDBIndex extends js.Object {
    * MDN
    */
   def get(key: js.Any): IDBRequest = ???
-
-  def openCursor(range: IDBKeyRange, direction: js.String): IDBRequest = ???
-
-  def openCursor(range: IDBKeyRange): IDBRequest = ???
-
   /**
    * The method sets the position of the cursor to the appropriate record, based on the
    * specified direction.
    *
    * MDN
    */
-  def openCursor(): IDBRequest = ???
+  def openCursor(range: IDBKeyRange = ???, direction: js.String = ???): IDBRequest = ???
+
 }
 
 
@@ -402,11 +380,6 @@ class IDBKeyRange extends js.Object {
    * MDN
    */
   def lowerOpen: js.Boolean = ???
-
-  def bound(lower: js.Any, upper: js.Any, lowerOpen: js.Boolean, upperOpen: js.Boolean): IDBKeyRange = ???
-
-  def bound(lower: js.Any, upper: js.Any, lowerOpen: js.Boolean): IDBKeyRange = ???
-
   /**
    * The bounds can be open (that is, the bounds exclude the endpoint values) or closed
    * (that is, the bounds include the endpoint values). By default, the bounds are
@@ -414,7 +387,8 @@ class IDBKeyRange extends js.Object {
    *
    * MDN
    */
-  def bound(lower: js.Any, upper: js.Any): IDBKeyRange = ???
+  def bound(lower: js.Any, upper: js.Any, lowerOpen: js.Boolean = ???, upperOpen: js.Boolean = ???): IDBKeyRange = ???
+
 
   /**
    * This method may raise a DOMException with a DOMError of the following types:
@@ -422,24 +396,19 @@ class IDBKeyRange extends js.Object {
    * MDN
    */
   def only(value: js.Any): IDBKeyRange = ???
-
-  def lowerBound(bound: js.Any, open: js.Boolean): IDBKeyRange = ???
-
   /**
    * By default, it includes the lower endpoint value and is closed.
    *
    * MDN
    */
-  def lowerBound(bound: js.Any): IDBKeyRange = ???
-
-  def upperBound(bound: js.Any, open: js.Boolean): IDBKeyRange = ???
+  def lowerBound(bound: js.Any, open: js.Boolean = ???): IDBKeyRange = ???
 
   /**
    * By default, it includes the upper endpoint value and is closed.
    *
    * MDN
    */
-  def upperBound(bound: js.Any): IDBKeyRange = ???
+  def upperBound(bound: js.Any, open: js.Boolean = ???): IDBKeyRange = ???
 }
 
 
@@ -596,9 +565,6 @@ class IDBDatabase extends EventTarget {
    * MDN
    */
   var onabort: js.Function1[js.Any, _] = ???
-
-  def createObjectStore(name: js.String, optionalParameters: js.Any): IDBObjectStore = ???
-
   /**
    * The method takes the name of the store as well as a parameter object. The parameter
    * object lets you define important optional properties. You can use the property to
@@ -608,7 +574,8 @@ class IDBDatabase extends EventTarget {
    *
    * MDN
    */
-  def createObjectStore(name: js.String): IDBObjectStore = ???
+  def createObjectStore(name: js.String, optionalParameters: js.Any = ???): IDBObjectStore = ???
+
 
   /**
    * The connection is not actually closed until all transactions created using this
@@ -619,9 +586,6 @@ class IDBDatabase extends EventTarget {
    * MDN
    */
   def close(): Unit = ???
-
-  def transaction(storeNames: js.Any, mode: js.String): IDBTransaction = ???
-
   /**
    * Immediately returns a transaction object (IDBTransaction) containing the
    * IDBTransaction.objectStore method, which you can use to access your object
@@ -629,7 +593,8 @@ class IDBDatabase extends EventTarget {
    *
    * MDN
    */
-  def transaction(storeNames: js.Any): IDBTransaction = ???
+  def transaction(storeNames: js.Any, mode: js.String = ???): IDBTransaction = ???
+
 
   /**
    * As with createObjectStore, this method can be called only within a versionchange

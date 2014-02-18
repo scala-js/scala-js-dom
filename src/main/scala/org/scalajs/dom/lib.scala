@@ -256,37 +256,25 @@ class Performance extends js.Object {
    */
   def toJSON(): js.Dynamic = ???
 
-  def getMeasures(measureName: js.String): js.Dynamic = ???
+  def getMeasures(measureName: js.String = ???): js.Dynamic = ???
 
-  def getMeasures(): js.Dynamic = ???
 
-  def clearMarks(markName: js.String): Unit = ???
+  def clearMarks(markName: js.String = ???): Unit = ???
 
-  def clearMarks(): Unit = ???
+  def getMarks(markName: js.String = ???): js.Dynamic = ???
 
-  def getMarks(markName: js.String): js.Dynamic = ???
-
-  def getMarks(): js.Dynamic = ???
 
   def clearResourceTimings(): Unit = ???
 
   def mark(markName: js.String): Unit = ???
 
-  def measure(measureName: js.String, startMarkName: js.String, endMarkName: js.String): Unit = ???
+  def measure(measureName: js.String, startMarkName: js.String = ???, endMarkName: js.String = ???): Unit = ???
 
-  def measure(measureName: js.String, startMarkName: js.String): Unit = ???
-
-  def measure(measureName: js.String): Unit = ???
-
-  def getEntriesByName(name: js.String, entryType: js.String): js.Dynamic = ???
-
-  def getEntriesByName(name: js.String): js.Dynamic = ???
+  def getEntriesByName(name: js.String, entryType: js.String = ???): js.Dynamic = ???
 
   def getEntries(): js.Dynamic = ???
 
-  def clearMeasures(measureName: js.String): Unit = ???
-
-  def clearMeasures(): Unit = ???
+  def clearMeasures(measureName: js.String = ???): Unit = ???
 
   def setResourceTimingBufferSize(maxSize: js.Number): Unit = ???
 
@@ -722,23 +710,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MSN
    */
-  def setAttribute(name: js.String, value: js.String): Unit = ???
-
-  /**
-   * Adds a new attribute or changes the value of an existing attribute on the
-   * specified element.
-   *
-   * MDN
-   */
-  def setAttribute(name: js.String): Unit = ???
-
-  /**
-   * Adds a new attribute or changes the value of an existing attribute on the specified
-   * element.
-   *
-   * MDN
-   */
-  def setAttribute(): Unit = ???
+  def setAttribute(name: js.String = ???, value: js.String = ???): Unit = ???
 
   /**
    * removeAttributeNS removes the specified attribute from an element.
@@ -1004,15 +976,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def cloneNode(deep: js.Boolean): Node = ???
-
-  /**
-   * Clone a Node, and optionally, all of its contents. By default, it clones the content
-   * of the node.
-   *
-   * MDN
-   */
-  def cloneNode(): Node = ???
+  def cloneNode(deep: js.Boolean = ???): Node = ???
 
   /**
    * hasChildNodes returns a Boolean value indicating whether the current Node has
@@ -1034,15 +998,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def insertBefore(newChild: Node, refChild: Node): Node = ???
-
-  /**
-   * Inserts the first Node given in a parameter immediately before the second, child of
-   * this element, Node.
-   *
-   * MDN
-   */
-  def insertBefore(newChild: Node): Node = ???
+  def insertBefore(newChild: Node, refChild: Node = ???): Node = ???
 }
 
 
@@ -1907,17 +1863,12 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    * MDN
    */
   def alert(): Unit = ???
-
-  def scroll(x: js.Number, y: js.Number): Unit = ???
-
-  def scroll(x: js.Number): Unit = ???
-
   /**
    * Scrolls the window to a particular place in the document.
    *
    * MDN
    */
-  def scroll(): Unit = ???
+  def scroll(x: js.Number = ???, y: js.Number = ???): Unit = ???
 
   /**
    * Makes a request to bring the window to the front. It may fail due to user settings and
@@ -1926,17 +1877,12 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    * MDN
    */
   def focus(): Unit = ???
-
-  def scrollTo(x: js.Number, y: js.Number): Unit = ???
-
-  def scrollTo(x: js.Number): Unit = ???
-
   /**
    * Scrolls to a particular set of coordinates in the document.
    *
    * MDN
    */
-  def scrollTo(): Unit = ???
+  def scrollTo(x: js.Number = ???, y: js.Number = ???): Unit = ???
 
   /**
    * Opens the Print Dialog to print the current document.
@@ -1945,9 +1891,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    */
   def print(): Unit = ???
 
-  def prompt(message: js.String, defaul: js.String): js.String = ???
-
-  def prompt(message: js.String): js.String = ???
+  def prompt(message: js.String, default: js.String = ???): js.String = ???
 
   /**
    * The Window.prompt() displays a dialog with an optional message prompting the user
@@ -1956,34 +1900,22 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    * MDN
    */
   def prompt(): js.String = ???
-
-  def open(url: js.String, target: js.String, features: js.String, replace: js.Boolean): Window = ???
-
-  def open(url: js.String, target: js.String, features: js.String): Window = ???
-
-  def open(url: js.String, target: js.String): Window = ???
-
-  def open(url: js.String): Window = ???
-
   /**
    * Loads a resource in a new browsing context or an existing one.
    *
    * MDN
    */
-  def open(): Window = ???
-
-  def scrollBy(x: js.Number, y: js.Number): Unit = ???
-
-  def scrollBy(x: js.Number): Unit = ???
+  def open(url: js.String = ???,
+           target: js.String = ???,
+           features: js.String = ???,
+           replace: js.Boolean = ???): Window = ???
 
   /**
    * Scrolls the document in the window by the given amount.
    *
    * MDN
    */
-  def scrollBy(): Unit = ???
-
-  def confirm(message: js.String): js.Boolean = ???
+  def scrollBy(x: js.Number = 0, y: js.Number = 0): Unit = ???
 
   /**
    * The Window.confirm() method displays a modal dialog with an optional message and
@@ -1991,7 +1923,8 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def confirm(): js.Boolean = ???
+  def confirm(message: js.String = ???): js.Boolean = ???
+
 
   /**
    * Closes the current window, or a referenced window.
@@ -1999,9 +1932,6 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    * MDN
    */
   def close(): Unit = ???
-
-  def postMessage(message: js.Any, targetOrigin: js.String, ports: js.Any): Unit = ???
-
   /**
    * The window.postMessage method safely enables cross-origin communication.
    * Normally, scripts on different pages are allowed to access each other if and only if
@@ -2013,20 +1943,19 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def postMessage(message: js.Any, targetOrigin: js.String): Unit = ???
-
-  def showModalDialog(url: js.String, argument: js.Any, options: js.Any): js.Dynamic = ???
-
-  def showModalDialog(url: js.String, argument: js.Any): js.Dynamic = ???
-
-  def showModalDialog(url: js.String): js.Dynamic = ???
+  def postMessage(message: js.Any, targetOrigin: js.String, transfer: js.Any = ???): Unit = ???
 
   /**
-   * Creates and displays a modal dialog box containing a specified HTML document.
+   * The Window.showModalDialog() creates and displays a modal dialog box containing
+   * a specified HTML document.
    *
-   * MDN
+   * @param url The URI of the document to display in the dialog box
+   * @param argument An optional variant the contains values that should be passed to the
+   *                 dialog box; these are made available in the `window` object's
+   *                 `dialogArguments` property.
+   * @param options An optional String that specifies window ornamentation
    */
-  def showModalDialog(): js.Dynamic = ???
+  def showModalDialog(url: js.String = ???, argument: js.Any = ???, options: js.Any = ???): js.Dynamic = ???
 
   /**
    * The window.blur() method is the programmatic equivalent of the user shifting
@@ -2043,17 +1972,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    */
   def getSelection(): Selection = ???
 
-  def getComputedStyle(elt: Element, pseudoElt: js.String): CSSStyleDeclaration = ???
-
-  /**
-   * getComputedStyle() gives the values of all the CSS properties of an element after
-   * applying the active stylesheets and resolving any basic computation those values
-   * may contain.
-   *
-   * MDN
-   */
-  def getComputedStyle(elt: Element): CSSStyleDeclaration = ???
-
+  def getComputedStyle(elt: Element, pseudoElt: js.String = ???): CSSStyleDeclaration = ???
 
   /**
    * An OfflineResourceList object providing access to the offline resources for the
@@ -2070,7 +1989,6 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    * MDN
    */
   var onpopstate: js.Function1[PopStateEvent, _] = ???
-  var onmspointerup: js.Function1[js.Any, _] = ???
 
   /**
    * Returns a new MediaQueryList object representing the parsed results of the
@@ -2114,17 +2032,13 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
  * MDN
  */
 class EventTarget extends js.Object {
-  def removeEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
-
   /**
    * Removes the event listener previously registered with
    * EventTarget.addEventListener.
    *
    * MDN
    */
-  def removeEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
-
-  def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit], useCapture: js.Boolean): Unit = ???
+  def removeEventListener(`type`: js.String, listener: js.Function1[Event, _], useCapture: js.Boolean = ???): Unit = ???
 
   /**
    * The EventTarget.addEventListener() method registers the specified listener on
@@ -2134,7 +2048,7 @@ class EventTarget extends js.Object {
    *
    * MDN
    */
-  def addEventListener(`type`: js.String, listener: js.Function1[Event, Unit]): Unit = ???
+  def addEventListener(`type`: js.String, listener: js.Function1[Event, _], useCapture: js.Boolean = ???): Unit = ???
 
   /**
    * Dispatches an Event at the specified EventTarget, invoking the affected
@@ -2822,11 +2736,6 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   def createProcessingInstruction(target: js.String, data: js.String): ProcessingInstruction = ???
-
-  def execCommand(commandId: js.String, showUI: js.Boolean, value: js.Any): js.Boolean = ???
-
-  def execCommand(commandId: js.String, showUI: js.Boolean): js.Boolean = ???
-
   /**
    * When an HTML document has been switched to designMode, the document object exposes
    * the execCommand method which allows one to run commands to manipulate the
@@ -2837,7 +2746,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def execCommand(commandId: js.String): js.Boolean = ???
+  def execCommand(commandId: js.String, showUI: js.Boolean = ???, value: js.Any = ???): js.Boolean = ???
 
   /**
    * Returns the element from the document whose elementFromPoint method is being
@@ -2904,21 +2813,13 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   def createElementNS(namespaceURI: js.String, qualifiedName: js.String): Element = ???
-
-  def open(url: js.String, name: js.String, features: js.String, replace: js.Boolean): js.Dynamic = ???
-
-  def open(url: js.String, name: js.String, features: js.String): js.Dynamic = ???
-
-  def open(url: js.String, name: js.String): js.Dynamic = ???
-
-  def open(url: js.String): js.Dynamic = ???
-
   /**
    * The document.open() method opens a document for writing.
    *
    * MDN
    */
-  def open(): js.Dynamic = ???
+  def open(url: js.String = ???, name: js.String = ???, features: js.String = ???, replace: js.Boolean = ???): js.Dynamic = ???
+
 
   /**
    * Reports whether or not the specified editor query command is supported by the
@@ -2986,9 +2887,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def createRange(): Range = ???
 
-  def fireEvent(eventName: js.String, eventObj: js.Any): js.Boolean = ???
-
-  def fireEvent(eventName: js.String): js.Boolean = ???
+  def fireEvent(eventName: js.String, eventObj: js.Any = ???): js.Boolean = ???
 
   /**
    * createComment() creates a new comment node, and returns it.
@@ -3014,11 +2913,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def createDocumentFragment(): DocumentFragment = ???
 
-  def createStyleSheet(href: js.String, index: js.Number): CSSStyleSheet = ???
-
-  def createStyleSheet(href: js.String): CSSStyleSheet = ???
-
-  def createStyleSheet(): CSSStyleSheet = ???
+  def createStyleSheet(href: js.String = ???, index: js.Number = ???): CSSStyleSheet = ???
 
   /**
    * Returns a list of elements with a given name in the (X)HTML document.
@@ -3278,21 +3173,11 @@ class CanvasRenderingContext2D extends js.Object {
 
   def quadraticCurveTo(cpx: js.Number, cpy: js.Number, x: js.Number, y: js.Number): Unit = ???
 
-  def putImageData(imagedata: ImageData, dx: js.Number, dy: js.Number, dirtyX: js.Number, dirtyY: js.Number, dirtyWidth: js.Number, dirtyHeight: js.Number): Unit = ???
-
-  def putImageData(imagedata: ImageData, dx: js.Number, dy: js.Number, dirtyX: js.Number, dirtyY: js.Number, dirtyWidth: js.Number): Unit = ???
-
-  def putImageData(imagedata: ImageData, dx: js.Number, dy: js.Number, dirtyX: js.Number, dirtyY: js.Number): Unit = ???
-
-  def putImageData(imagedata: ImageData, dx: js.Number, dy: js.Number, dirtyX: js.Number): Unit = ???
-
-  def putImageData(imagedata: ImageData, dx: js.Number, dy: js.Number): Unit = ???
+  def putImageData(imagedata: ImageData, dx: js.Number, dy: js.Number, dirtyX: js.Number = ???, dirtyY: js.Number = ???, dirtyWidth: js.Number = ???, dirtyHeight: js.Number = ???): Unit = ???
 
   def rotate(angle: js.Number): Unit = ???
 
-  def fillText(text: js.String, x: js.Number, y: js.Number, maxWidth: js.Number): Unit = ???
-
-  def fillText(text: js.String, x: js.Number, y: js.Number): Unit = ???
+  def fillText(text: js.String, x: js.Number, y: js.Number, maxWidth: js.Number = ???): Unit = ???
 
   /**
    * Moves the origin point of the context to (x, y).
@@ -3318,17 +3203,12 @@ class CanvasRenderingContext2D extends js.Object {
    * MDN
    */
   def getLineDash(): js.Array[js.Number] = ???
-
-  def fill(fillRule: js.String): Unit = ???
-
   /**
    * Fills the subpaths with the current fill style.
    *
    * MDN
    */
-  def fill(): Unit = ???
-
-  def createImageData(imageDataOrSw: js.Any, sh: js.Number): ImageData = ???
+  def fill(fillRule: js.String = ???): Unit = ???
 
   /**
    * Creates a new, blank ImageData object with the specified dimensions. All of the
@@ -3336,7 +3216,8 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def createImageData(imageDataOrSw: js.Any): ImageData = ???
+  def createImageData(imageDataOrSw: js.Any, sh: js.Number = ???): ImageData = ???
+
 
   def createPattern(image: HTMLElement, repetition: js.String): CanvasPattern = ???
 
@@ -3349,9 +3230,6 @@ class CanvasRenderingContext2D extends js.Object {
   def closePath(): Unit = ???
 
   def rect(x: js.Number, y: js.Number, w: js.Number, h: js.Number): Unit = ???
-
-  def clip(fillRule: js.String): Unit = ???
-
   /**
    * Creates a clipping path from the current sub-paths. Everything drawn after clip()
    * is called appears inside the clipping path only. For an example, see Clipping paths
@@ -3359,7 +3237,8 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def clip(): Unit = ???
+  def clip(fillRule: js.String = ???): Unit = ???
+
 
   /**
    * Sets all pixels in the rectangle defined by starting point (x, y) and size (width,
@@ -3394,26 +3273,13 @@ class CanvasRenderingContext2D extends js.Object {
   def fillRect(x: js.Number, y: js.Number, w: js.Number, h: js.Number): Unit = ???
 
   def bezierCurveTo(cp1x: js.Number, cp1y: js.Number, cp2x: js.Number, cp2y: js.Number, x: js.Number, y: js.Number): Unit = ???
-
-  def drawImage(image: HTMLElement, offsetX: js.Number, offsetY: js.Number, width: js.Number, height: js.Number, canvasOffsetX: js.Number, canvasOffsetY: js.Number, canvasImageWidth: js.Number, canvasImageHeight: js.Number): Unit = ???
-
-  def drawImage(image: HTMLElement, offsetX: js.Number, offsetY: js.Number, width: js.Number, height: js.Number, canvasOffsetX: js.Number, canvasOffsetY: js.Number, canvasImageWidth: js.Number): Unit = ???
-
-  def drawImage(image: HTMLElement, offsetX: js.Number, offsetY: js.Number, width: js.Number, height: js.Number, canvasOffsetX: js.Number, canvasOffsetY: js.Number): Unit = ???
-
-  def drawImage(image: HTMLElement, offsetX: js.Number, offsetY: js.Number, width: js.Number, height: js.Number, canvasOffsetX: js.Number): Unit = ???
-
-  def drawImage(image: HTMLElement, offsetX: js.Number, offsetY: js.Number, width: js.Number, height: js.Number): Unit = ???
-
-  def drawImage(image: HTMLElement, offsetX: js.Number, offsetY: js.Number, width: js.Number): Unit = ???
-
   /**
    * Draws the specified image. This method is available in multiple formats,
    * providing a great deal of flexibility in its use.
    *
    * MDN
    */
-  def drawImage(image: HTMLElement, offsetX: js.Number, offsetY: js.Number): Unit = ???
+  def drawImage(image: HTMLElement, offsetX: js.Number, offsetY: js.Number, width: js.Number = ???, height: js.Number = ???, canvasOffsetX: js.Number = ???, canvasOffsetY: js.Number = ???, canvasImageWidth: js.Number = ???, canvasImageHeight: js.Number = ???): Unit = ???
 
   def transform(m11: js.Number, m12: js.Number, m21: js.Number, m22: js.Number, dx: js.Number, dy: js.Number): Unit = ???
 
@@ -3434,9 +3300,7 @@ class CanvasRenderingContext2D extends js.Object {
 
   def setLineDash(segments: js.Array[js.Number]): Unit = ???
 
-  def strokeText(text: js.String, x: js.Number, y: js.Number, maxWidth: js.Number): Unit = ???
-
-  def strokeText(text: js.String, x: js.Number, y: js.Number): Unit = ???
+  def strokeText(text: js.String, x: js.Number, y: js.Number, maxWidth: js.Number = ???): Unit = ???
 
   /**
    * Starts a new path by resetting the list of sub-paths. Call this method when you want
@@ -3530,25 +3394,15 @@ class XMLHttpRequest extends EventTarget {
    */
   var timeout: js.Number = ???
   var onload: js.Function1[Event, _] = ???
-
-  def open(method: js.String, url: js.String, async: js.Boolean, user: js.String, password: js.String): Unit = ???
-
-  def open(method: js.String, url: js.String, async: js.Boolean, user: js.String): Unit = ???
-
-  def open(method: js.String, url: js.String, async: js.Boolean): Unit = ???
-
   /**
    * Initializes a request. This method is to be used from JavaScript code; to
    * initialize a request from native code, use openRequest()instead.
    *
    * MDN
    */
-  def open(method: js.String, url: js.String): Unit = ???
+  def open(method: js.String, url: js.String, async: js.Boolean = ???, user: js.String = ???, password: js.String = ???): Unit = ???
 
   def create(): XMLHttpRequest = ???
-
-  def send(data: js.Any): Unit = ???
-
   /**
    * Sends the request. If the request is asynchronous (which is the default), this
    * method returns as soon as the request is sent. If the request is synchronous, this
@@ -3556,7 +3410,8 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def send(): Unit = ???
+  def send(data: js.Any = ???): Unit = ???
+
 
   /**
    * Aborts the request if it has already been sent.
@@ -3822,9 +3677,6 @@ trait DataTransfer extends js.Object {
    * MDN
    */
   def dropEffect: js.String = ???
-
-  def clearData(format: js.String): js.Boolean = ???
-
   /**
    * Remove the data associated with a given type. The type argument is optional. If the
    * type is empty or not specified, the data associated with all types is removed. If
@@ -3833,7 +3685,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def clearData(): js.Boolean = ???
+  def clearData(format: js.String = ???): js.Boolean = ???
 
   /**
    * Set the data for a given type. If data for the type does not exist, it is added at the
@@ -4546,8 +4398,6 @@ trait Location extends js.Object {
    */
   var host: js.String = ???
 
-  def reload(flag: js.Boolean): Unit = ???
-
   /**
    * The Location.reload()method Reloads the resource from the current URL. Its
    * optional unique parameter is a Boolean, which, when it is true, causes the page to
@@ -4556,7 +4406,8 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  def reload(): Unit = ???
+  def reload(flag: js.Boolean = ???): Unit = ???
+
 
   /**
    * The Location.replace()method replaces the current resource with the one at the
@@ -4760,9 +4611,7 @@ object PositionError extends js.Object {
 class StyleSheetList extends js.Object {
   def length: js.Number = ???
 
-  def item(index: js.Number): StyleSheet = ???
-
-  def item(): StyleSheet = ???
+  def item(index: js.Number = ???): StyleSheet = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: js.Number): StyleSheet = ???
@@ -4812,9 +4661,8 @@ trait Geolocation extends js.Object {
    */
   def clearWatch(watchId: js.Number): Unit = ???
 
-  def getCurrentPosition(successCallback: js.Function1[Position, Unit], errorCallback: js.Function1[PositionError, Unit], options: PositionOptions): Unit = ???
+  def getCurrentPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _], options: PositionOptions = ???): Unit = ???
 
-  def getCurrentPosition(successCallback: js.Function1[Position, Unit], errorCallback: js.Function1[PositionError, Unit]): Unit = ???
 
   /**
    * The Geolocation.getCurrentPosition() method is used to get the current position
@@ -4822,11 +4670,7 @@ trait Geolocation extends js.Object {
    *
    * MDN
    */
-  def getCurrentPosition(successCallback: js.Function1[Position, Unit]): Unit = ???
-
-  def watchPosition(successCallback: js.Function1[Position, Unit], errorCallback: js.Function1[PositionError, Unit], options: PositionOptions): js.Number = ???
-
-  def watchPosition(successCallback: js.Function1[Position, Unit], errorCallback: js.Function1[PositionError, Unit]): js.Number = ???
+  def getCurrentPosition(successCallback: js.Function1[Position, _]): Unit = ???
 
   /**
    * The Geolocation.watchPosition() method is used to register a handler function
@@ -4835,7 +4679,7 @@ trait Geolocation extends js.Object {
    *
    * MDN
    */
-  def watchPosition(successCallback: js.Function1[Position, Unit]): js.Number = ???
+  def watchPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _] = ???, options: PositionOptions = ???): js.Number = ???
 }
 
 
@@ -6008,22 +5852,15 @@ trait CloseEvent extends Event {
  * connection to a server, as well as for sending and receiving data on the connection.
  *
  * MDN
+ *
+ * @param url The URL as resolved by the constructor. This is always an absolute
+ *            URL. Read only.
+ * @param protocol A string indicating the name of the sub-protocol the server selected; this will be
+ *                 one of the strings specified in the protocols parameter when creating the
+ *                 WebSocket object.
  */
-class WebSocket protected() extends EventTarget {
-  def this(url: js.String) = this()
-
-  def this(url: js.String, prototcol: js.String) = this()
-
-  def this(url: js.String, prototcol: js.Array[js.String]) = this()
-
-  /**
-   * A string indicating the name of the sub-protocol the server selected; this will be
-   * one of the strings specified in the protocols parameter when creating the
-   * WebSocket object.
-   *
-   * MDN
-   */
-  var protocol: js.String = ???
+class WebSocket(var url: js.String = ???, var protocol: js.String = ???) extends EventTarget {
+  def this(url: js.String, protocol: js.Array[js.String]) = this("", "")
 
   /**
    * The current state of the connection; this is one of the Ready state constants. Read
@@ -6049,7 +5886,7 @@ class WebSocket protected() extends EventTarget {
    *
    * MDN
    */
-  var onopen: js.Function1[Event, Unit] = ???
+  var onopen: js.Function1[Event, _] = ???
 
   /**
    * The extensions selected by the server. This is currently only the empty string or a
@@ -6065,21 +5902,21 @@ class WebSocket protected() extends EventTarget {
    *
    * MDN
    */
-  var onmessage: js.Function1[MessageEvent, Unit] = ???
+  var onmessage: js.Function1[MessageEvent, _] = ???
   /**
    * An event listener to be called when the WebSocket connection's readyState changes
    * to CLOSED. The listener receives a CloseEvent named "close".
    *
    * MDN
    */
-  var onclose: js.Function1[CloseEvent, Unit] = ???
+  var onclose: js.Function1[CloseEvent, _] = ???
   /**
    * An event listener to be called when an error occurs. This is a simple event named
    * "error".
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, Unit] = ???
+  var onerror: js.Function1[ErrorEvent, _] = ???
   /**
    * A string indicating the type of binary data being transmitted by the connection.
    * This should be either "blob" if DOM Blob objects are being used or "arraybuffer"
@@ -6088,16 +5925,6 @@ class WebSocket protected() extends EventTarget {
    * MDN
    */
   var binaryType: js.String = ???
-  /**
-   * The URL as resolved by the constructor. This is always an absolute URL. Read only.
-   *
-   * MDN
-   */
-  val url: js.String = ???
-
-  def close(code: js.Number, reason: js.String): Unit = ???
-
-  def close(code: js.Number): Unit = ???
 
   /**
    * Closes the WebSocket connection or connection attempt, if any. If the connection
@@ -6105,7 +5932,8 @@ class WebSocket protected() extends EventTarget {
    *
    * MDN
    */
-  def close(): Unit = ???
+
+  def close(code: js.Number = ???, reason: js.String = ???): Unit = ???
 
   /**
    * Transmits data to the server over the WebSocket connection.
@@ -6267,9 +6095,6 @@ trait URL extends js.Object {
    * MDN
    */
   def revokeObjectURL(url: js.String): Unit = ???
-
-  def createObjectURL(`object`: js.Any, options: ObjectURLOptions): js.String = ???
-
   /**
    * The URL.createObjectURL() static method creates a DOMString containing an URL
    * representing the object given in parameter. The URL lifetime is tied to the
@@ -6278,7 +6103,8 @@ trait URL extends js.Object {
    *
    * MDN
    */
-  def createObjectURL(`object`: js.Any): js.String = ???
+  def createObjectURL(`object`: js.Any, options: ObjectURLOptions = ???): js.String = ???
+
 }
 
 /**
@@ -6459,9 +6285,7 @@ trait Console extends js.Object {
    */
   def info(message: js.Any, optionalParams: js.Any*): Unit = ???
 
-  def profile(reportName: js.String): Unit = ???
-
-  def profile(): Unit = ???
+  def profile(reportName: js.String = ???): Unit = ???
 
   def assert(test: js.Boolean, message: js.String, optionalParams: js.Any*): Unit = ???
 
@@ -6582,9 +6406,7 @@ trait MessagePort extends EventTarget {
 
   def close(): Unit = ???
 
-  def postMessage(message: js.Any, ports: js.Any): Unit = ???
-
-  def postMessage(message: js.Any): Unit = ???
+  def postMessage(message: js.Any, ports: js.Any = ???): Unit = ???
 
   def start(): Unit = ???
 
@@ -6659,10 +6481,7 @@ trait BlobPropertyBag extends js.Object {
  *
  * MDN
  */
-class Blob extends js.Object {
-  def this(blobParts: js.Array[js.Any], options: BlobPropertyBag) = this()
-
-  def this(blobParts: js.Array[js.Any]) = this()
+class Blob(blobParts: js.Array[js.Any] = ???, options: BlobPropertyBag = ???) extends js.Object {
 
   def `type`: js.String = ???
 
@@ -6672,20 +6491,13 @@ class Blob extends js.Object {
    * MDN
    */
   def size: js.Number = ???
-
-  def slice(start: js.Number, end: js.Number, contentType: js.String): Blob = ???
-
-  def slice(start: js.Number, end: js.Number): Blob = ???
-
-  def slice(start: js.Number): Blob = ???
-
   /**
    * The slice is used to create a new Blob object containing the data in the specified
    * range of bytes of the source Blob.
    *
    * MDN
    */
-  def slice(): Blob = ???
+  def slice(start: js.Number = ???, end: js.Number = ???, contentType: js.String = ???): Blob = ???
 
   def close(): Unit = ???
 }
@@ -6748,17 +6560,15 @@ trait DOMSettableTokenList extends DOMTokenList {
  *
  * MDN
  */
-class FormData extends js.Object {
-  def this(form: HTMLFormElement) = this()
-
-  def append(name: js.Any, value: js.Any, blobName: js.String): Unit = ???
+class FormData(form: HTMLFormElement = ???) extends js.Object {
 
   /**
    * Appends a key/value pair to the FormData object.
    *
    * MDN
    */
-  def append(name: js.Any, value: js.Any): Unit = ???
+  def append(name: js.Any, value: js.Any, blobName: js.String = ???): Unit = ???
+
 }
 
 object FormData extends js.Object {
@@ -6875,8 +6685,7 @@ trait ValidityState extends js.Object {
  *
  * MDN
  */
-class Worker protected() extends AbstractWorker {
-  def this(stringUrl: js.String) = this()
+class Worker (stringUrl: js.String) extends AbstractWorker {
 
   /**
    * The Worker.onmessage property represents an EventHandler, that is a function to
@@ -6888,8 +6697,6 @@ class Worker protected() extends AbstractWorker {
    */
   var onmessage: js.Function1[js.Any, _] = ???
 
-  def postMessage(message: js.Any, ports: js.Any): Unit = ???
-
   /**
    * The Worker.postMessage() method sends a message to the worker's inner scope. This
    * accepts a single parameter, which is the data to send to the worker. The data may be
@@ -6898,7 +6705,7 @@ class Worker protected() extends AbstractWorker {
    *
    * MDN
    */
-  def postMessage(message: js.Any): Unit = ???
+  def postMessage(message: js.Any, ports: js.Any = ???): Unit = ???
 
   /**
    * The Worker.terminate() method immediately terminates the Worker. This does not

@@ -138,9 +138,6 @@ class HTMLTableElement extends HTMLElement {
    * MDN
    */
   var border: js.String = ???
-
-  def deleteRow(index: js.Number): Unit = ???
-
   /**
    * Removes the row corresponding to the index given in parameter. If the index value is
    * -1 the last row is removed; if it smaller than -1 or greater than the amount of rows in
@@ -148,7 +145,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def deleteRow(): Unit = ???
+  def deleteRow(index: js.Number = ???): Unit = ???
 
   def createTBody(): HTMLElement = ???
 
@@ -158,9 +155,6 @@ class HTMLTableElement extends HTMLElement {
    * MDN
    */
   def deleteCaption(): Unit = ???
-
-  def insertRow(index: js.Number): HTMLElement = ???
-
   /**
    * Returns an HTMLElement representing a new row of the table. It inserts it in the rows
    * collection immediately before the <tr> element at the givent index position. If
@@ -170,7 +164,9 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def insertRow(): HTMLElement = ???
+  def insertRow(index: js.Number = ???): HTMLElement = ???
+
+
 
   /**
    * Removes the first <tfoot> that is a child of the element.
@@ -205,11 +201,7 @@ class HTMLTableElement extends HTMLElement {
    */
   def createCaption(): HTMLElement = ???
 
-  def moveRow(indexFrom: js.Number, indexTo: js.Number): Object = ???
-
-  def moveRow(indexFrom: js.Number): Object = ???
-
-  def moveRow(): Object = ???
+  def moveRow(indexFrom: js.Number = ???, indexTo: js.Number = ???): Object = ???
 
   /**
    * Returns an HTMLElement representing the first <tfoot> that is a child of the
@@ -282,13 +274,9 @@ class HTMLParagraphElement extends HTMLElement {
 
 
 trait HTMLAreasCollection extends HTMLCollection {
-  def remove(index: js.Number): Unit = ???
+  def remove(index: js.Number = ???): Unit = ???
 
-  def remove(): Unit = ???
-
-  def add(element: HTMLElement, before: js.Any): Unit = ???
-
-  def add(element: HTMLElement): Unit = ???
+  def add(element: HTMLElement, before: js.Any = ???): Unit = ???
 }
 
 class HTMLAppletElement extends HTMLElement {
@@ -393,31 +381,21 @@ class HTMLSelectElement extends HTMLElement {
    */
   var multiple: js.Boolean = ???
   var `type`: js.String = ???
-
-  def remove(index: js.Number): Unit = ???
-
   /**
    * Removes the element at the specified index from the options collection for this
    * select element.
    *
    * MDN
    */
-  def remove(): Unit = ???
-
-  def add(element: HTMLElement, before: js.Any): Unit = ???
-
+  def remove(index: js.Number = ???): Unit = ???
   /**
    * Adds an element to the collection of option elements for this select element.
    *
    * MDN
    */
-  def add(element: HTMLElement): Unit = ???
+  def add(element: HTMLElement, before: js.Any = ???): Unit = ???
 
-  def item(name: js.Any, index: js.Any): js.Dynamic = ???
-
-  def item(name: js.Any): js.Dynamic = ???
-
-  def item(): js.Dynamic = ???
+  def item(name: js.Any = ???, index: js.Any = ???): js.Dynamic = ???
 
   def namedItem(name: js.String): js.Dynamic = ???
 
@@ -696,18 +674,14 @@ class HTMLCollection extends js.Object {
    * MDN
    */
   var length: js.Number = ???
-
-  def item(nameOrIndex: js.Any, optionalIndex: js.Any): Element = ???
-
-  def item(nameOrIndex: js.Any): Element = ???
-
   /**
    * Returns the specific node at the given zero-based index into the list. Returns null
    * if the index is out of range.
    *
    * MDN
    */
-  def item(): Element = ???
+  def item(nameOrIndex: js.Any = ???, optionalIndex: js.Any = ???): Element = ???
+
 
   /**
    * Returns the specific node whose ID or, as a fallback, name matches the string
@@ -822,9 +796,6 @@ class HTMLImageElement extends HTMLElement {
 
   def create(): HTMLImageElement = ???
 
-  var msPlayToPrimary: js.Boolean = ???
-  var msPlayToDisabled: js.Boolean = ???
-  var msPlayToSource: js.Any = ???
 }
 
 /**
@@ -1154,9 +1125,6 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
   var borderColor: js.Any = ???
   var height: js.Any = ???
   var borderColorDark: js.Any = ???
-
-  def deleteCell(index: js.Number): Unit = ???
-
   /**
    * Removes the cell at the given position in the row. If the given position is greater
    * (or equal as it starts at zero) than the amount of cells in the row, or is smaller than
@@ -1164,10 +1132,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def deleteCell(): Unit = ???
-
-  def insertCell(index: js.Number): HTMLElement = ???
-
+  def deleteCell(index: js.Number = ???): Unit = ???
   /**
    * Inserts a new cell just before the given position in the row. If the given position is
    * not given or is -1, it appends the cell to the row. If the given position is greater (or
@@ -1176,7 +1141,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def insertCell(): HTMLElement = ???
+  def insertCell(index: js.Number = ???): HTMLElement = ???
 }
 
 /**
@@ -1543,9 +1508,6 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    * MDN
    */
   var rows: HTMLCollection = ???
-
-  def deleteRow(index: js.Number): Unit = ???
-
   /**
    * Removes the cell at the given position in the section. If the given position is
    * greater (or equal as it starts at zero) than the amount of rows in the section, or is
@@ -1553,17 +1515,13 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def deleteRow(): Unit = ???
+  def deleteRow(index: js.Number = ???): Unit = ???
 
-  def moveRow(indexFrom: js.Number, indexTo: js.Number): Object = ???
+  def moveRow(indexFrom: js.Number = ???, indexTo: js.Number = ???): Object = ???
 
-  def moveRow(indexFrom: js.Number): Object = ???
 
-  def moveRow(): Object = ???
+  def insertRow(index: js.Number = ???): HTMLElement = ???
 
-  def insertRow(index: js.Number): HTMLElement = ???
-
-  def insertRow(): HTMLElement = ???
 }
 
 /**
@@ -1899,9 +1857,6 @@ class HTMLInputElement extends HTMLElement {
    * MDN
    */
   def checkValidity(): js.Boolean = ???
-
-  def stepDown(n: js.Number): Unit = ???
-
   /**
    * Decrements the value by (step * n), where n defaults to 1 if not specified. Throws an
    * INVALID_STATE_ERR exception: if the method is not applicable to for the current
@@ -1910,9 +1865,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def stepDown(): Unit = ???
-
-  def stepUp(n: js.Number): Unit = ???
+  def stepDown(n: js.Number = ???): Unit = ???
 
   /**
    * Increments the value by (step * n), where n defaults to 1 if not specified. Throws an
@@ -1922,7 +1875,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def stepUp(): Unit = ???
+  def stepUp(n: js.Number = ???): Unit = ???
 
   /**
    * Sets a custom validity message for the element. If this message is not the empty
@@ -3156,15 +3109,11 @@ class HTMLElement extends Element {
 
   def dragDrop(): js.Boolean = ???
 
-  def scrollIntoView(top: js.Boolean): Unit = ???
-
-  def scrollIntoView(): Unit = ???
+  def scrollIntoView(top: js.Boolean = ???): Unit = ???
 
   def addFilter(filter: Object): Unit = ???
 
-  def setCapture(containerCapture: js.Boolean): Unit = ???
-
-  def setCapture(): Unit = ???
+  def setCapture(containerCapture: js.Boolean = ???): Unit = ???
 
   /**
    * Sets focus on the specified element, if it can be focused.
@@ -3207,19 +3156,13 @@ class HTMLElement extends Element {
 
   def insertAdjacentElement(position: js.String, insertedElement: Element): Element = ???
 
-  def mergeAttributes(source: HTMLElement, preserveIdentity: js.Boolean): Unit = ???
-
-  def mergeAttributes(source: HTMLElement): Unit = ???
+  def mergeAttributes(source: HTMLElement, preserveIdentity: js.Boolean = ???): Unit = ???
 
   def replaceAdjacentText(where: js.String, newText: js.String): js.String = ???
 
-  def applyElement(apply: Element, where: js.String): Element = ???
+  def applyElement(apply: Element, where: js.String = ???): Element = ???
 
-  def applyElement(apply: Element): Element = ???
-
-  def addBehavior(bstrUrl: js.String, factory: js.Any): js.Number = ???
-
-  def addBehavior(bstrUrl: js.String): js.Number = ???
+  def addBehavior(bstrUrl: js.String, factory: js.Any = ???): js.Number = ???
 
   def insertAdjacentHTML(where: js.String, html: js.String): Unit = ???
 
@@ -3740,11 +3683,6 @@ class HTMLFormElement extends HTMLElement {
    * MDN
    */
   def reset(): Unit = ???
-
-  def item(name: js.Any, index: js.Any): js.Dynamic = ???
-
-  def item(name: js.Any): js.Dynamic = ???
-
   /**
    * Gets the item in the elements collection at the specified index, or null if there is
    * no item at that index. You can also specify the index in array-style brackets or
@@ -3752,7 +3690,7 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  def item(): js.Dynamic = ???
+  def item(name: js.Any = ???, index: js.Any = ???): js.Dynamic = ???
 
   /**
    * This method does something similar to activating a submit button of the form.
