@@ -634,7 +634,7 @@ object SVGAngle extends js.Object {
  * MDN
  */
 class SVGElement extends Element {
-  var onmouseover: js.Function1[MouseEvent, js.Any] = ???
+  var onmouseover: js.Function1[MouseEvent, _] = ???
 
   /**
    * The element which established the current viewport. Often, the nearest ancestor
@@ -644,21 +644,21 @@ class SVGElement extends Element {
    */
   def viewportElement: SVGElement = ???
 
-  var onmousemove: js.Function1[MouseEvent, js.Any] = ???
-  var onmouseout: js.Function1[MouseEvent, js.Any] = ???
-  var ondblclick: js.Function1[MouseEvent, js.Any] = ???
-  var onfocusout: js.Function1[FocusEvent, js.Any] = ???
-  var onfocusin: js.Function1[FocusEvent, js.Any] = ???
+  var onmousemove: js.Function1[MouseEvent, _] = ???
+  var onmouseout: js.Function1[MouseEvent, _] = ???
+  var ondblclick: js.Function1[MouseEvent, _] = ???
+  var onfocusout: js.Function1[FocusEvent, _] = ???
+  var onfocusin: js.Function1[FocusEvent, _] = ???
   /**
    * Corresponds to attribute xml:base on the given element.
    *
    * MDN
    */
   var xmlbase: js.String = ???
-  var onmousedown: js.Function1[MouseEvent, js.Any] = ???
-  var onload: js.Function1[Event, js.Any] = ???
-  var onmouseup: js.Function1[MouseEvent, js.Any] = ???
-  var onclick: js.Function1[MouseEvent, js.Any] = ???
+  var onmousedown: js.Function1[MouseEvent, _] = ???
+  var onload: js.Function1[Event, _] = ???
+  var onmouseup: js.Function1[MouseEvent, _] = ???
+  var onclick: js.Function1[MouseEvent, _] = ???
 
   /**
    * The nearest ancestor <svg> element. Null if the given element is the outermost svg
@@ -1023,7 +1023,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    * MDN
    */
   var contentStyleType: js.String = ???
-  var onzoom: js.Function1[js.Any, js.Any] = ???
+  var onzoom: js.Function1[js.Any, _] = ???
 
   /**
    * Corresponds to attribute y on the given <svg> element.
@@ -1047,7 +1047,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    */
   def viewport: SVGRect = ???
 
-  var onerror: js.Function1[Event, js.Any] = ???
+  var onerror: js.Function1[Event, _] = ???
 
   /**
    * Corresponding size of a pixel unit along the y-axis of the viewport.
@@ -1056,7 +1056,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    */
   def pixelUnitToMillimeterY: js.Number = ???
 
-  var onresize: js.Function1[UIEvent, js.Any] = ???
+  var onresize: js.Function1[UIEvent, _] = ???
 
   /**
    * Corresponding size of a screen pixel along the y-axis of the viewport.
@@ -1072,7 +1072,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    */
   def height: SVGAnimatedLength = ???
 
-  var onabort: js.Function1[UIEvent, js.Any] = ???
+  var onabort: js.Function1[UIEvent, _] = ???
   /**
    * Corresponds to attribute contentScriptType on the given <svg> element.
    *
@@ -1099,7 +1099,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    */
   def currentTranslate: SVGPoint = ???
 
-  var onunload: js.Function1[Event, js.Any] = ???
+  var onunload: js.Function1[Event, _] = ???
 
   /**
    * On an outermost <svg> element, this attribute indicates the current scale factor
@@ -1115,7 +1115,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    */
   def currentScale: js.Number = ???
 
-  var onscroll: js.Function1[UIEvent, js.Any] = ???
+  var onscroll: js.Function1[UIEvent, _] = ???
 
   /**
    * User interface (UI) events in DOM Level 2 indicate the screen positions at which the
@@ -1315,9 +1315,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    */
   def createSVGTransformFromMatrix(matrix: SVGMatrix): SVGTransform = ???
 
-  def getComputedStyle(elt: Element, pseudoElt: js.String): CSSStyleDeclaration = ???
-
-  def getComputedStyle(elt: Element): CSSStyleDeclaration = ???
+  def getComputedStyle(elt: Element, pseudoElt: js.String = ???): CSSStyleDeclaration = ???
 
   /**
    * Searches this SVG document fragment (i.e., the search is restricted to a subset of

@@ -138,9 +138,6 @@ class HTMLTableElement extends HTMLElement {
    * MDN
    */
   var border: js.String = ???
-
-  def deleteRow(index: js.Number): Unit = ???
-
   /**
    * Removes the row corresponding to the index given in parameter. If the index value is
    * -1 the last row is removed; if it smaller than -1 or greater than the amount of rows in
@@ -148,7 +145,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def deleteRow(): Unit = ???
+  def deleteRow(index: js.Number = ???): Unit = ???
 
   def createTBody(): HTMLElement = ???
 
@@ -158,9 +155,6 @@ class HTMLTableElement extends HTMLElement {
    * MDN
    */
   def deleteCaption(): Unit = ???
-
-  def insertRow(index: js.Number): HTMLElement = ???
-
   /**
    * Returns an HTMLElement representing a new row of the table. It inserts it in the rows
    * collection immediately before the <tr> element at the givent index position. If
@@ -170,7 +164,9 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def insertRow(): HTMLElement = ???
+  def insertRow(index: js.Number = ???): HTMLElement = ???
+
+
 
   /**
    * Removes the first <tfoot> that is a child of the element.
@@ -205,11 +201,7 @@ class HTMLTableElement extends HTMLElement {
    */
   def createCaption(): HTMLElement = ???
 
-  def moveRow(indexFrom: js.Number, indexTo: js.Number): Object = ???
-
-  def moveRow(indexFrom: js.Number): Object = ???
-
-  def moveRow(): Object = ???
+  def moveRow(indexFrom: js.Number = ???, indexTo: js.Number = ???): Object = ???
 
   /**
    * Returns an HTMLElement representing the first <tfoot> that is a child of the
@@ -282,13 +274,9 @@ class HTMLParagraphElement extends HTMLElement {
 
 
 trait HTMLAreasCollection extends HTMLCollection {
-  def remove(index: js.Number): Unit = ???
+  def remove(index: js.Number = ???): Unit = ???
 
-  def remove(): Unit = ???
-
-  def add(element: HTMLElement, before: js.Any): Unit = ???
-
-  def add(element: HTMLElement): Unit = ???
+  def add(element: HTMLElement, before: js.Any = ???): Unit = ???
 }
 
 class HTMLAppletElement extends HTMLElement {
@@ -393,31 +381,21 @@ class HTMLSelectElement extends HTMLElement {
    */
   var multiple: js.Boolean = ???
   var `type`: js.String = ???
-
-  def remove(index: js.Number): Unit = ???
-
   /**
    * Removes the element at the specified index from the options collection for this
    * select element.
    *
    * MDN
    */
-  def remove(): Unit = ???
-
-  def add(element: HTMLElement, before: js.Any): Unit = ???
-
+  def remove(index: js.Number = ???): Unit = ???
   /**
    * Adds an element to the collection of option elements for this select element.
    *
    * MDN
    */
-  def add(element: HTMLElement): Unit = ???
+  def add(element: HTMLElement, before: js.Any = ???): Unit = ???
 
-  def item(name: js.Any, index: js.Any): js.Dynamic = ???
-
-  def item(name: js.Any): js.Dynamic = ???
-
-  def item(): js.Dynamic = ???
+  def item(name: js.Any = ???, index: js.Any = ???): js.Dynamic = ???
 
   def namedItem(name: js.String): js.Dynamic = ???
 
@@ -696,18 +674,14 @@ class HTMLCollection extends js.Object {
    * MDN
    */
   var length: js.Number = ???
-
-  def item(nameOrIndex: js.Any, optionalIndex: js.Any): Element = ???
-
-  def item(nameOrIndex: js.Any): Element = ???
-
   /**
    * Returns the specific node at the given zero-based index into the list. Returns null
    * if the index is out of range.
    *
    * MDN
    */
-  def item(): Element = ???
+  def item(nameOrIndex: js.Any = ???, optionalIndex: js.Any = ???): Element = ???
+
 
   /**
    * Returns the specific node whose ID or, as a fallback, name matches the string
@@ -822,9 +796,6 @@ class HTMLImageElement extends HTMLElement {
 
   def create(): HTMLImageElement = ???
 
-  var msPlayToPrimary: js.Boolean = ???
-  var msPlayToDisabled: js.Boolean = ???
-  var msPlayToSource: js.Any = ???
 }
 
 /**
@@ -1154,9 +1125,6 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
   var borderColor: js.Any = ???
   var height: js.Any = ???
   var borderColorDark: js.Any = ???
-
-  def deleteCell(index: js.Number): Unit = ???
-
   /**
    * Removes the cell at the given position in the row. If the given position is greater
    * (or equal as it starts at zero) than the amount of cells in the row, or is smaller than
@@ -1164,10 +1132,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def deleteCell(): Unit = ???
-
-  def insertCell(index: js.Number): HTMLElement = ???
-
+  def deleteCell(index: js.Number = ???): Unit = ???
   /**
    * Inserts a new cell just before the given position in the row. If the given position is
    * not given or is -1, it appends the cell to the row. If the given position is greater (or
@@ -1176,7 +1141,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def insertCell(): HTMLElement = ???
+  def insertCell(index: js.Number = ???): HTMLElement = ???
 }
 
 /**
@@ -1263,10 +1228,10 @@ class HTMLFrameSetElement extends HTMLElement {
   var rows: js.String = ???
   var cols: js.String = ???
   var frameSpacing: js.Any = ???
-  var onmessage: js.Function1[MessageEvent, js.Any] = ???
+  var onmessage: js.Function1[MessageEvent, _] = ???
   var onerror: js.Function1[Event, _] = ???
   var frameBorder: js.String = ???
-  var onresize: js.Function1[UIEvent, js.Any] = ???
+  var onresize: js.Function1[UIEvent, _] = ???
   var name: js.String = ???
   var onafterprint: js.Function1[Event, _] = ???
   var onbeforeprint: js.Function1[Event, _] = ???
@@ -1275,8 +1240,8 @@ class HTMLFrameSetElement extends HTMLElement {
   var onunload: js.Function1[Event, _] = ???
   var onhashchange: js.Function1[Event, _] = ???
   var onload: js.Function1[Event, _] = ???
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = ???
-  var onstorage: js.Function1[StorageEvent, js.Any] = ???
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = ???
+  var onstorage: js.Function1[StorageEvent, _] = ???
 
 
 }
@@ -1425,7 +1390,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onmessage: js.Function1[MessageEvent, js.Any] = ???
+  var onmessage: js.Function1[MessageEvent, _] = ???
   var text: js.Any = ???
   /**
    * Exposes the window.onerror event handler to call when the document fails to load
@@ -1443,7 +1408,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onresize: js.Function1[UIEvent, js.Any] = ???
+  var onresize: js.Function1[UIEvent, _] = ???
   var link: js.Any = ???
   var aLink: js.Any = ???
 
@@ -1498,7 +1463,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, js.Any] = ???
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = ???
   var leftMargin: js.Any = ???
   /**
    * Reflects the onpopstate HTML attribute value for a function to call when the
@@ -1506,7 +1471,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onstorage: js.Function1[StorageEvent, js.Any] = ???
+  var onstorage: js.Function1[StorageEvent, _] = ???
 
 
   /**
@@ -1515,7 +1480,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onpopstate: js.Function1[PopStateEvent, js.Any] = ???
+  var onpopstate: js.Function1[PopStateEvent, _] = ???
 }
 
 /**
@@ -1543,9 +1508,6 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    * MDN
    */
   var rows: HTMLCollection = ???
-
-  def deleteRow(index: js.Number): Unit = ???
-
   /**
    * Removes the cell at the given position in the section. If the given position is
    * greater (or equal as it starts at zero) than the amount of rows in the section, or is
@@ -1553,17 +1515,13 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def deleteRow(): Unit = ???
+  def deleteRow(index: js.Number = ???): Unit = ???
 
-  def moveRow(indexFrom: js.Number, indexTo: js.Number): Object = ???
+  def moveRow(indexFrom: js.Number = ???, indexTo: js.Number = ???): Object = ???
 
-  def moveRow(indexFrom: js.Number): Object = ???
 
-  def moveRow(): Object = ???
+  def insertRow(index: js.Number = ???): HTMLElement = ???
 
-  def insertRow(index: js.Number): HTMLElement = ???
-
-  def insertRow(): HTMLElement = ???
 }
 
 /**
@@ -1899,9 +1857,6 @@ class HTMLInputElement extends HTMLElement {
    * MDN
    */
   def checkValidity(): js.Boolean = ???
-
-  def stepDown(n: js.Number): Unit = ???
-
   /**
    * Decrements the value by (step * n), where n defaults to 1 if not specified. Throws an
    * INVALID_STATE_ERR exception: if the method is not applicable to for the current
@@ -1910,9 +1865,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def stepDown(): Unit = ???
-
-  def stepUp(n: js.Number): Unit = ???
+  def stepDown(n: js.Number = ???): Unit = ???
 
   /**
    * Increments the value by (step * n), where n defaults to 1 if not specified. Throws an
@@ -1922,7 +1875,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def stepUp(): Unit = ???
+  def stepUp(n: js.Number = ???): Unit = ???
 
   /**
    * Sets a custom validity message for the element. If this message is not the empty
@@ -3000,16 +2953,16 @@ class HTMLElement extends Element {
   var onemptied: js.Function1[Event, _] = ???
   var onseeking: js.Function1[Event, _] = ???
   var oncanplay: js.Function1[Event, _] = ???
-  var ondeactivate: js.Function1[UIEvent, js.Any] = ???
+  var ondeactivate: js.Function1[UIEvent, _] = ???
 
   var onloadstart: js.Function1[Event, _] = ???
-  var ondragenter: js.Function1[DragEvent, js.Any] = ???
+  var ondragenter: js.Function1[DragEvent, _] = ???
   var onsubmit: js.Function1[Event, _] = ???
 
   var onchange: js.Function1[Event, _] = ???
   var id: js.String = ???
 
-  var onbeforeactivate: js.Function1[UIEvent, js.Any] = ???
+  var onbeforeactivate: js.Function1[UIEvent, _] = ???
   var oncanplaythrough: js.Function1[Event, _] = ???
 
   /**
@@ -3026,11 +2979,11 @@ class HTMLElement extends Element {
 
   var onsuspend: js.Function1[Event, _] = ???
   var readyState: js.Any = ???
-  var onmouseenter: js.Function1[MouseEvent, js.Any] = ???
+  var onmouseenter: js.Function1[MouseEvent, _] = ???
 
-  var onmouseout: js.Function1[MouseEvent, js.Any] = ???
+  var onmouseout: js.Function1[MouseEvent, _] = ???
   var parentElement: HTMLElement = ???
-  var onmousewheel: js.Function1[WheelEvent, js.Any] = ???
+  var onmousewheel: js.Function1[WheelEvent, _] = ???
   var onvolumechange: js.Function1[Event, _] = ???
   var filters: Object = ???
   /**
@@ -3044,9 +2997,9 @@ class HTMLElement extends Element {
    * MDN
    */
 
-  var ondragend: js.Function1[DragEvent, js.Any] = ???
-  var onbeforepaste: js.Function1[DragEvent, js.Any] = ???
-  var ondragover: js.Function1[DragEvent, js.Any] = ???
+  var ondragend: js.Function1[DragEvent, _] = ???
+  var onbeforepaste: js.Function1[DragEvent, _] = ???
+  var ondragover: js.Function1[DragEvent, _] = ???
 
   /**
    * offsetTop returns the distance of the current element relative to the top of
@@ -3056,10 +3009,10 @@ class HTMLElement extends Element {
    */
   def offsetTop: js.Number = ???
 
-  var onmouseup: js.Function1[MouseEvent, js.Any] = ???
-  var ondragstart: js.Function1[DragEvent, js.Any] = ???
-  var onbeforecopy: js.Function1[DragEvent, js.Any] = ???
-  var ondrag: js.Function1[DragEvent, js.Any] = ???
+  var onmouseup: js.Function1[MouseEvent, _] = ???
+  var ondragstart: js.Function1[DragEvent, _] = ???
+  var onbeforecopy: js.Function1[DragEvent, _] = ???
+  var ondrag: js.Function1[DragEvent, _] = ???
   /**
    * innerHTML sets or gets the HTML syntax describing the element's descendants.
    *
@@ -3069,7 +3022,7 @@ class HTMLElement extends Element {
    * text nodes' contents.
    */
   var innerHTML: js.String = ???
-  var onmouseover: js.Function1[MouseEvent, js.Any] = ???
+  var onmouseover: js.Function1[MouseEvent, _] = ???
   /**
    * This property gets or sets the base language of an element's attribute values and
    * text content.
@@ -3080,8 +3033,8 @@ class HTMLElement extends Element {
 
   var onpause: js.Function1[Event, _] = ???
 
-  var onmousedown: js.Function1[MouseEvent, js.Any] = ???
-  var onclick: js.Function1[MouseEvent, js.Any] = ???
+  var onmousedown: js.Function1[MouseEvent, _] = ???
+  var onclick: js.Function1[MouseEvent, _] = ???
   var onwaiting: js.Function1[Event, _] = ???
   /**
    * Returns the number of pixels that the upper left corner of the current element is
@@ -3091,10 +3044,10 @@ class HTMLElement extends Element {
    */
   var offsetLeft: js.Number = ???
 
-  var onpaste: js.Function1[DragEvent, js.Any] = ???
+  var onpaste: js.Function1[DragEvent, _] = ???
 
   var onstalled: js.Function1[Event, _] = ???
-  var onmousemove: js.Function1[MouseEvent, js.Any] = ???
+  var onmousemove: js.Function1[MouseEvent, _] = ???
   /**
    * isContentEditable returns true if the contents of the element are editable;
    * otherwise it returns false.
@@ -3117,29 +3070,29 @@ class HTMLElement extends Element {
    */
   var tabIndex: js.Number = ???
 
-  var onprogress: js.Function1[js.Any, js.Any] = ???
-  var ondblclick: js.Function1[MouseEvent, js.Any] = ???
-  var oncontextmenu: js.Function1[MouseEvent, js.Any] = ???
+  var onprogress: js.Function1[js.Any, _] = ???
+  var ondblclick: js.Function1[MouseEvent, _] = ???
+  var oncontextmenu: js.Function1[MouseEvent, _] = ???
   var onloadedmetadata: js.Function1[Event, _] = ???
   var onplay: js.Function1[Event, _] = ???
   var onplaying: js.Function1[Event, _] = ???
 
   var onfocusout: js.Function1[FocusEvent, _] = ???
-  var onabort: js.Function1[UIEvent, js.Any] = ???
+  var onabort: js.Function1[UIEvent, _] = ???
 
   var onreadystatechange: js.Function1[Event, _] = ???
-  var onkeypress: js.Function1[KeyboardEvent, js.Any] = ???
+  var onkeypress: js.Function1[KeyboardEvent, _] = ???
   var onloadeddata: js.Function1[Event, _] = ???
-  var onbeforedeactivate: js.Function1[UIEvent, js.Any] = ???
+  var onbeforedeactivate: js.Function1[UIEvent, _] = ???
 
   var disabled: js.Boolean = ???
-  var onactivate: js.Function1[UIEvent, js.Any] = ???
+  var onactivate: js.Function1[UIEvent, _] = ???
   var accessKey: js.String = ???
   var onselectstart: js.Function1[Event, _] = ???
   var ontimeupdate: js.Function1[Event, _] = ???
-  var oncut: js.Function1[DragEvent, js.Any] = ???
-  var onselect: js.Function1[UIEvent, js.Any] = ???
-  var ondrop: js.Function1[DragEvent, js.Any] = ???
+  var oncut: js.Function1[DragEvent, _] = ???
+  var onselect: js.Function1[UIEvent, _] = ???
+  var ondrop: js.Function1[DragEvent, _] = ???
 
   /**
    * Returns the layout width of an element.
@@ -3148,23 +3101,19 @@ class HTMLElement extends Element {
    */
   def offsetWidth: js.Number = ???
 
-  var oncopy: js.Function1[DragEvent, js.Any] = ???
+  var oncopy: js.Function1[DragEvent, _] = ???
   var onended: js.Function1[Event, _] = ???
-  var onscroll: js.Function1[UIEvent, js.Any] = ???
+  var onscroll: js.Function1[UIEvent, _] = ???
 
   var oninput: js.Function1[Event, _] = ???
 
   def dragDrop(): js.Boolean = ???
 
-  def scrollIntoView(top: js.Boolean): Unit = ???
-
-  def scrollIntoView(): Unit = ???
+  def scrollIntoView(top: js.Boolean = ???): Unit = ???
 
   def addFilter(filter: Object): Unit = ???
 
-  def setCapture(containerCapture: js.Boolean): Unit = ???
-
-  def setCapture(): Unit = ???
+  def setCapture(containerCapture: js.Boolean = ???): Unit = ???
 
   /**
    * Sets focus on the specified element, if it can be focused.
@@ -3207,19 +3156,13 @@ class HTMLElement extends Element {
 
   def insertAdjacentElement(position: js.String, insertedElement: Element): Element = ???
 
-  def mergeAttributes(source: HTMLElement, preserveIdentity: js.Boolean): Unit = ???
-
-  def mergeAttributes(source: HTMLElement): Unit = ???
+  def mergeAttributes(source: HTMLElement, preserveIdentity: js.Boolean = ???): Unit = ???
 
   def replaceAdjacentText(where: js.String, newText: js.String): js.String = ???
 
-  def applyElement(apply: Element, where: js.String): Element = ???
+  def applyElement(apply: Element, where: js.String = ???): Element = ???
 
-  def applyElement(apply: Element): Element = ???
-
-  def addBehavior(bstrUrl: js.String, factory: js.Any): js.Number = ???
-
-  def addBehavior(bstrUrl: js.String): js.Number = ???
+  def addBehavior(bstrUrl: js.String, factory: js.Any = ???): js.Number = ???
 
   def insertAdjacentHTML(where: js.String, html: js.String): Unit = ???
 
@@ -3740,11 +3683,6 @@ class HTMLFormElement extends HTMLElement {
    * MDN
    */
   def reset(): Unit = ???
-
-  def item(name: js.Any, index: js.Any): js.Dynamic = ???
-
-  def item(name: js.Any): js.Dynamic = ???
-
   /**
    * Gets the item in the elements collection at the specified index, or null if there is
    * no item at that index. You can also specify the index in array-style brackets or
@@ -3752,7 +3690,7 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  def item(): js.Dynamic = ???
+  def item(name: js.Any = ???, index: js.Any = ???): js.Dynamic = ???
 
   /**
    * This method does something similar to activating a submit button of the form.

@@ -186,9 +186,7 @@ class CSSStyleDeclaration extends js.Object {
   @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: js.Number, v: js.String): Unit = ???
 
-  def setProperty(propertyName: js.String, value: js.String, priority: js.String): Unit = ???
-
-  def setProperty(propertyName: js.String, value: js.String): Unit = ???
+  def setProperty(propertyName: js.String, value: js.String, priority: js.String = ???): Unit = ???
 
   var animationFillMode: js.String = _
   var floodColor: js.String = _
@@ -335,40 +333,28 @@ class CSSStyleSheet extends StyleSheet {
   var cssRules: CSSRuleList = _
   var id: js.String = _
 
-  def addImport(bstrURL: js.String, lIndex: js.Number): js.Number = ???
+  def addImport(bstrURL: js.String, lIndex: js.Number = ???): js.Number = ???
 
-  def addImport(bstrURL: js.String): js.Number = ???
-
-  def addPageRule(bstrSelector: js.String, bstrStyle: js.String, lIndex: js.Number): js.Number = ???
-
-  def addPageRule(bstrSelector: js.String, bstrStyle: js.String): js.Number = ???
-
-  def insertRule(rule: js.String, index: js.Number): js.Number = ???
-
+  def addPageRule(bstrSelector: js.String, bstrStyle: js.String, lIndex: js.Number = ???): js.Number = ???
   /**
    * The CSSStyleSheet.insertRule() method inserts a new style rule into the current
    * style sheet.
    *
    * MDN
    */
-  def insertRule(rule: js.String): js.Number = ???
+  def insertRule(rule: js.String, index: js.Number = ???): js.Number = ???
+
 
   def removeRule(lIndex: js.Number): Unit = ???
-
-  def deleteRule(index: js.Number): Unit = ???
-
   /**
    * Deletes a rule from the style sheet.
    *
    * MDN
    */
-  def deleteRule(): Unit = ???
+  def deleteRule(index: js.Number = ???): Unit = ???
 
-  def addRule(bstrSelector: js.String, bstrStyle: js.String, lIndex: js.Number): js.Number = ???
 
-  def addRule(bstrSelector: js.String, bstrStyle: js.String): js.Number = ???
-
-  def addRule(bstrSelector: js.String): js.Number = ???
+  def addRule(bstrSelector: js.String, bstrStyle: js.String = ???, lIndex: js.Number = ???): js.Number = ???
 
   def removeImport(lIndex: js.Number): Unit = ???
 }
@@ -406,13 +392,10 @@ class CSSMediaRule extends CSSRule {
   var media: MediaList = _
   var cssRules: CSSRuleList = _
 
-  def insertRule(rule: js.String, index: js.Number): js.Number = ???
+  def insertRule(rule: js.String, index: js.Number = ???): js.Number = ???
 
-  def insertRule(rule: js.String): js.Number = ???
 
-  def deleteRule(index: js.Number): Unit = ???
-
-  def deleteRule(): Unit = ???
+  def deleteRule(index: js.Number = ???): Unit = ???
 }
 
 /**
