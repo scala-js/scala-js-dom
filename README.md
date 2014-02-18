@@ -29,7 +29,7 @@ Contributing
 Scala-js-dom is a work in progress. The current code base is a hodgepodge of auto-generated/scraped/hand-tweaked code, and is full of rough edges. If you see something that you think can be improved, feel free to send a pull request. These could include:
 
 - Improved doc-comments; who doesn't love better docs?
-- Missing methods/properties/classes; send the PR adding it in including it together with a link to an authoritative source (e.g. MDN) and it should get merge
+- Missing methods/properties/classes; send the PR adding it in including it together with a link to an authoritative source (e.g. MDN) and it should get merged.
 - Additional extensions (in `org.scalajs.dom.extensions`). These currently represent an arbitrary collection of helpers that have been needed so far. If there's some implicit that you find you need and you think other people will to, send a pull request and we can talk about it.
 
 License
