@@ -4397,7 +4397,16 @@ trait Location extends js.Object {
    * MDN
    */
   var host: js.String = ???
-
+  /**
+   * Theorigin read-only property is a String containing the Unicode serialization of the 
+   * origin of the represented URL, that is, for http and https, the scheme followed by 
+   * '://', followed by the domain, followed by ':', followed by the port (the default 
+   * port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme, 
+   * the value is browser dependant. 
+   * 
+   * MDN
+   */
+  def origin: js.String = ???
   /**
    * The Location.reload()method Reloads the resource from the current URL. Its
    * optional unique parameter is a Boolean, which, when it is true, causes the page to
