@@ -4,7 +4,7 @@ name := "Scala.js DOM"
 
 normalizedName := "scalajs-dom"
 
-version := "0.3-SNAPSHOT"
+version := "0.3"
 
 organization := "org.scala-lang.modules.scalajs"
 
