@@ -1,7 +1,7 @@
 scala-js-dom
 ============
 
-Scala-js-dom provides a nice statically typed interface to the DOM such that it can be called from Scala code without resorting to `js.Dynamic`. All javascript globals functions, singletons and classes are members of the `org.scalajs.dom`, e.g. 
+Scala-js-dom provides a nice statically typed interface to the DOM such that it can be called from Scala code without resorting to `js.Dynamic`. All javascript globals functions, singletons and classes are members of the `org.scalajs.dom` package, e.g. 
 
 ```scala
 import org.scalajs.dom
