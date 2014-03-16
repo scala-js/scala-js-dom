@@ -26,7 +26,7 @@ Usage
 
 Add the following to your sbt build definition:
 
-    libraryDependencies += "org.scala-lang.modules.scalajs" %% "scalajs-dom" % "0.2"
+    libraryDependencies += "org.scala-lang.modules.scalajs" %% "scalajs-dom" % "0.3"
 
 then enjoy the types available in `org.scalajs.dom`.
 
