@@ -1,9 +1,16 @@
 scala-js-dom
 ============
 
-Provides a nice statically typed interface to the DOM such that it can be called from Scala code without resorting to `js.Dynamic`.
+Scala-js-dom provides a nice statically typed interface to the DOM such that it can be called from Scala code without resorting to `js.Dynamic`. All javascript globals functions, singletons and classes are members of the `org.scalajs.dom`, e.g. 
 
-Also contains useful extension methods in `org.scalajs.dom.extensions`, which allow the DOM api to be used in a more idiomatic and fluent way. The goal of this project is to provide a thin-but-idiomatic-scala interface to modern browser APIs. In particular:
+```scala
+import org.scalajs.dom
+dom.alert("HAI")
+```
+
+Will cause a javascript alert box saying `HAI` to appear. Other javascript classes and objects can be similarly accessed e.g. `new dom.XMLHttpRequest()` to perform a new Ajax request, `dom.document` to access the global `document` object, or `dom.setInterval(() => ???, 1000)` to schedule a recurring task every second. The names of these functions/singletons/classes match their Javascript equivalents exactly, so if you want to know how to do something (e.g. "how do I open a websocket connection") the syntax is the same as if you were using raw Javascript.
+
+Scala-js-dom also contains useful extension methods in `org.scalajs.dom.extensions`, which allow the DOM api to be used in a more idiomatic and fluent way. The goal of this project is to provide a thin-but-idiomatic-scala interface to modern browser APIs. In particular:
 
 - Deprecated properties/methods/types will not be present.
 - IE-only, Chrome-only, FF-only, and in general browser-specific attributes will not be present.
@@ -11,6 +18,8 @@ Also contains useful extension methods in `org.scalajs.dom.extensions`, which al
 - Any type which is a Javascript type (e.g. you can `instanceof` in javascipt) should be a Scala `class`; any other interface which isn't a Javascript type should be a `trait`.
 - Read-only members should be `def`, and not-directly-instantiable classes should have `private` constructors.
 - `org.scalajs.dom` contains DOM class/member stubs, while `org.scalajs.dom.extensions` contains implicit conversions and useful Scala types (e.g. `Color`) to make usage of the DOM more idiomatic Scala.
+
+Apart from `Color`, Scala-js-dom contains some useful helpers in `org.scalajs.dom.extensions` that serve no purpose other than to make your use of the DOM more pleasant. Examples include the `Ajax.get` and `Ajax.post` methods which let you avoid messing with `dom.XMLHttpRequest` directly, or `KeyCodes` which provides a nice list of the keycodes that result from pressing various keys on the keyboard.
 
 Usage
 -----
@@ -21,7 +30,7 @@ Add the following to your sbt build definition:
 
 then enjoy the types available in `org.scalajs.dom`.
 
-See also [roll](https://github.com/lihaoyi/roll) ([live demo](http://lihaoyi.github.io/roll/)) and [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. There remain lots more cleanup to do, but this should be a reasonable place to start from. Pull requests/forks are welcome!
+See also [roll](https://github.com/lihaoyi/roll) ([live demo](http://lihaoyi.github.io/roll/)) and [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. [Scala-js-fiddle](http://www.scala-js-fiddle.com/) also contains a pile of [fun examples](http://www.scala-js-fiddle.com/gist/9405209/Oscilloscope.scala) that demonstate its usage. Pull requests/forks are welcome!
 
 Contributing
 ------------
