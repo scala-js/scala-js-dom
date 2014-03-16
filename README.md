@@ -10,14 +10,16 @@ dom.alert("HAI")
 
 Will cause a javascript alert box saying `HAI` to appear. Other javascript classes and objects can be similarly accessed e.g. `new dom.XMLHttpRequest()` to perform a new Ajax request, `dom.document` to access the global `document` object, or `dom.setInterval(() => ???, 1000)` to schedule a recurring task every second. The names of these functions/singletons/classes match their Javascript equivalents exactly, so if you want to know how to do something (e.g. "how do I open a websocket connection") the syntax is the same as if you were using raw Javascript.
 
-Scala-js-dom also contains useful extension methods in `org.scalajs.dom.extensions`, which allow the DOM api to be used in a more idiomatic and fluent way. The goal of this project is to provide a thin-but-idiomatic-scala interface to modern browser APIs. In particular:
+The goal of this project is to provide a thin-but-idiomatic-scala interface to modern browser APIs. In particular:
 
 - Deprecated properties/methods/types will not be present.
 - IE-only, Chrome-only, FF-only, and in general browser-specific attributes will not be present.
 - The name of a Scala type should map directly to the name of the corresponding Javascript type.
 - Any type which is a Javascript type (e.g. you can `instanceof` in javascipt) should be a Scala `class`; any other interface which isn't a Javascript type should be a `trait`.
 - Read-only members should be `def`, and not-directly-instantiable classes should have `private` constructors.
-- `org.scalajs.dom` contains DOM class/member stubs, while `org.scalajs.dom.extensions` contains implicit conversions and useful Scala types (e.g. `Color`) to make usage of the DOM more idiomatic Scala.
+
+Extensions
+----------
 
 Apart from `Color`, Scala-js-dom contains some useful helpers in `org.scalajs.dom.extensions` that serve no purpose other than to make your use of the DOM more pleasant. Examples include the `Ajax.get` and `Ajax.post` methods which let you avoid messing with `dom.XMLHttpRequest` directly, or `KeyCodes` which provides a nice list of the keycodes that result from pressing various keys on the keyboard.
 
