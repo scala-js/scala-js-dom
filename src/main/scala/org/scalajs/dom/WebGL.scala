@@ -528,8 +528,7 @@ class WebGLRenderingContext extends js.Object {
   def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, format: js.Number, `type`: js.Number, pixels: ImageData): Unit = ???
   def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLImageElement): Unit = ???  
   def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLCanvasElement): Unit = ???
-  // TODO: We need HTMLVideoElement!
-  //def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLVideoElement): Unit = ???
+  def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLVideoElement): Unit = ???
 
   def texParameterf(target: js.Number, pname: js.Number, param: js.Number): Unit = ???
   def texParameteri(target: js.Number, pname: js.Number, param: js.Number): Unit = ???
@@ -538,8 +537,7 @@ class WebGLRenderingContext extends js.Object {
   def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, format: js.Number, `type`: js.Number, pixels: ImageData): Unit = ???
   def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLImageElement): Unit = ???
   def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLCanvasElement): Unit = ???
-  // TODO: We need HTMLVideoElement!
-  // def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLVideoElement): Unit = ???
+  def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLVideoElement): Unit = ???
 
   def uniform1f(location: WebGLUniformLocation, x: js.Number): Unit = ???
   def uniform1fv(location: WebGLUniformLocation, v: Float32Array): Unit = ???
