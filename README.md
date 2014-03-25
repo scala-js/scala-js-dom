@@ -21,7 +21,8 @@ The goal of this project is to provide a thin-but-idiomatic-scala interface to m
 Extensions
 ----------
 
-Apart from `Color`, Scala-js-dom contains some useful helpers in `org.scalajs.dom.extensions` that serve no purpose other than to make your use of the DOM more pleasant. Examples include the `Ajax.get` and `Ajax.post` methods which let you avoid messing with `dom.XMLHttpRequest` directly, or `KeyCodes` which provides a nice list of the keycodes that result from pressing various keys on the keyboard.
+Apart from `Color`, Scala-js-dom contains some useful helpers and implicit classes in `org.scalajs.dom.extensions` that serve no purpose other than to make your use of the DOM more pleasant.
+Examples include the `Ajax.get` and `Ajax.post` methods which let you avoid messing with `dom.XMLHttpRequest` directly, or `KeyCodes` which provides a nice list of the keycodes that result from pressing various keys on the keyboard.
 
 Usage
 -----
