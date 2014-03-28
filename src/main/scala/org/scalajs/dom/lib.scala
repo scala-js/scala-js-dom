@@ -6338,8 +6338,13 @@ trait Console extends js.Object {
 
 
 trait WindowBase64 extends js.Object {
+  /**
+   * Creates a base-64 encoded ASCII string from a "string" of binary data.
+   */
   def btoa(rawString: js.String): js.String = ???
-
+  /**
+   * Decodes a string of data which has been encoded using base-64 encoding.
+   */
   def atob(encodedString: js.String): js.String = ???
 }
 
