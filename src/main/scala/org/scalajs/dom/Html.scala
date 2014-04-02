@@ -2927,13 +2927,6 @@ class HTMLElement extends Element {
   var title: js.String = ???
 
 
-  /**
-   * Gets the markup of the element including its content. When used as a
-   * setter, replaces the element with nodes parsed from the given string.
-   *
-   * MDN
-   */
-  var outerHTML: js.String = ???
   var ondurationchange: js.Function1[Event, _] = ???
 
   /**
@@ -2960,7 +2953,6 @@ class HTMLElement extends Element {
   var onsubmit: js.Function1[Event, _] = ???
 
   var onchange: js.Function1[Event, _] = ???
-  var id: js.String = ???
 
   var onbeforeactivate: js.Function1[UIEvent, _] = ???
   var oncanplaythrough: js.Function1[Event, _] = ???
@@ -3013,15 +3005,6 @@ class HTMLElement extends Element {
   var ondragstart: js.Function1[DragEvent, _] = ???
   var onbeforecopy: js.Function1[DragEvent, _] = ???
   var ondrag: js.Function1[DragEvent, _] = ???
-  /**
-   * innerHTML sets or gets the HTML syntax describing the element's descendants.
-   *
-   * Note: If a <div>, <span>, or <noembed> node has a child text node that includes
-   * the characters (&), (<), or (>), innerHTML returns these characters as &amp,
-   * &lt and &gt respectively. Use Node.textContent to get a correct copy of these
-   * text nodes' contents.
-   */
-  var innerHTML: js.String = ???
   var onmouseover: js.Function1[MouseEvent, _] = ???
   /**
    * This property gets or sets the base language of an element's attribute values and
@@ -3043,8 +3026,6 @@ class HTMLElement extends Element {
    * MDN
    */
   var offsetLeft: js.Number = ???
-
-  var onpaste: js.Function1[DragEvent, _] = ???
 
   var onstalled: js.Function1[Event, _] = ???
   var onmousemove: js.Function1[MouseEvent, _] = ???
@@ -3087,10 +3068,8 @@ class HTMLElement extends Element {
 
   var disabled: js.Boolean = ???
   var onactivate: js.Function1[UIEvent, _] = ???
-  var accessKey: js.String = ???
   var onselectstart: js.Function1[Event, _] = ???
   var ontimeupdate: js.Function1[Event, _] = ???
-  var oncut: js.Function1[DragEvent, _] = ???
   var onselect: js.Function1[UIEvent, _] = ???
   var ondrop: js.Function1[DragEvent, _] = ???
 
@@ -3101,7 +3080,6 @@ class HTMLElement extends Element {
    */
   def offsetWidth: js.Number = ???
 
-  var oncopy: js.Function1[DragEvent, _] = ???
   var onended: js.Function1[Event, _] = ???
   var onscroll: js.Function1[UIEvent, _] = ???
 
@@ -3109,11 +3087,7 @@ class HTMLElement extends Element {
 
   def dragDrop(): js.Boolean = ???
 
-  def scrollIntoView(top: js.Boolean = ???): Unit = ???
-
   def addFilter(filter: Object): Unit = ???
-
-  def setCapture(containerCapture: js.Boolean = ???): Unit = ???
 
   /**
    * Sets focus on the specified element, if it can be focused.
@@ -3125,8 +3099,6 @@ class HTMLElement extends Element {
   def getAdjacentText(where: js.String): js.String = ???
 
   def insertAdjacentText(where: js.String, text: js.String): Unit = ???
-
-  def getElementsByClassName(classNames: js.String): NodeList = ???
 
   def setActive(): Unit = ???
 
@@ -3164,12 +3136,8 @@ class HTMLElement extends Element {
 
   def addBehavior(bstrUrl: js.String, factory: js.Any = ???): js.Number = ???
 
-  def insertAdjacentHTML(where: js.String, html: js.String): Unit = ???
-
-
   var oncuechange: js.Function1[Event, _] = ???
   var spellcheck: js.Boolean = ???
-  var classList: DOMTokenList = ???
   var draggable: js.Boolean = ???
 
   /**
