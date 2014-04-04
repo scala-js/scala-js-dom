@@ -614,10 +614,6 @@ class Element extends Node with NodeSelector with ParentNode {
   def scrollIntoView(top: js.Boolean = ???): Unit = ???
 
   /**
-   * According to MDN, supported by FF>4.0. NOT SUPPORTED by Opera, Chrome, Safari, IE
-   */
-  def setCapture(containerCapture: js.Boolean = ???): Unit = ???
-  /**
    * Supported by FF>8, Opera>7, Chrome>1, IE>4, Safari>4
    */
   def insertAdjacentHTML(where: js.String, html: js.String): Unit = ???
