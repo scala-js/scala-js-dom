@@ -591,17 +591,8 @@ class Element extends Node with NodeSelector with ParentNode {
 
   var id: js.String = ???
 
-  /**
-   * Supported by FF>3.0, any IE. Unknown about Opera. NOT SUPPORTED by Chrome, Safari
-   */
   var oncut: js.Function1[DragEvent, _] = ???
-  /**
-   * Supported by FF>3.0, any IE. Unknown about Opera. NOT SUPPORTED by Chrome, Safari
-   */
   var oncopy: js.Function1[DragEvent, _] = ???
-  /**
-   * Supported by FF>3.0, any IE. Unknown about Opera. NOT SUPPORTED by Chrome, Safari
-   */
   var onpaste: js.Function1[DragEvent, _] = ???
 
   var accessKey: js.String = ???
