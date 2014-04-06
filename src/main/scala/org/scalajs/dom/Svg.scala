@@ -668,15 +668,6 @@ class SVGElement extends Element {
    */
   def ownerSVGElement: SVGSVGElement = ???
 
-  /**
-   * The value of the id attribute on the given element, or the empty string if id is not
-   * present.
-   *
-   * MDN
-   */
-  var id: js.String = ???
-
-
 }
 
 

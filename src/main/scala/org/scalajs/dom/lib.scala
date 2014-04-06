@@ -485,7 +485,7 @@ trait ParentNode extends js.Object {
  * described in the specific interfaces, inheriting from Element: the HTMLElement
  * interface for HTML elements, or the SVGElement interface for SVG elements.
  *
- * MDN
+ * https://developer.mozilla.org/en-US/docs/Web/API/element
  */
 class Element extends Node with NodeSelector with ParentNode {
 
@@ -572,6 +572,44 @@ class Element extends Node with NodeSelector with ParentNode {
   def scrollHeight: js.Number = ???
 
   /**
+   * Gets the markup of the element including its content. When used as a
+   * setter, replaces the element with nodes parsed from the given string.
+   *
+   * Supported by FF>10, any Opera, any Chrome, any IE, any Safari
+   */
+  var outerHTML: js.String = ???
+
+  /**
+   * innerHTML sets or gets the HTML syntax describing the element's descendants.
+   *
+   * Note: If a <div>, <span>, or <noembed> node has a child text node that includes
+   * the characters (&), (<), or (>), innerHTML returns these characters as &amp,
+   * &lt and &gt respectively. Use Node.textContent to get a correct copy of these
+   * text nodes' contents.
+   */
+  var innerHTML: js.String = ???
+
+  var id: js.String = ???
+
+  var oncut: js.Function1[DragEvent, _] = ???
+  var oncopy: js.Function1[DragEvent, _] = ???
+  var onpaste: js.Function1[DragEvent, _] = ???
+
+  var accessKey: js.String = ???
+
+  /**
+   * Supported by FF>3.6, any Opera, any Chrome, any IE, any Safari
+   */
+  var classList: DOMTokenList = ???
+
+  def scrollIntoView(top: js.Boolean = ???): Unit = ???
+
+  /**
+   * Supported by FF>8, Opera>7, Chrome>1, IE>4, Safari>4
+   */
+  def insertAdjacentHTML(where: js.String, html: js.String): Unit = ???
+
+  /**
    * getAttribute() returns the value of the named attribute on the specified element.
    * If the named attribute does not exist, the value returned will either be null or ""
    * (the empty string); see Notes for details.
@@ -595,6 +633,8 @@ class Element extends Node with NodeSelector with ParentNode {
    * MDN
    */
   def getElementsByTagNameNS(namespaceURI: js.String, localName: js.String): NodeList = ???
+
+  def getElementsByClassName(classNames: js.String): NodeList = ???
 
   /**
    * hasAttributeNS returns a boolean value indicating whether the current element
