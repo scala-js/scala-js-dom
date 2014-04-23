@@ -92,6 +92,11 @@ trait TypedArray[T] extends js.Object {
    * Returns a new view of this typed array. from `begin` to the end.
    */ 
   def subarray(begin: js.Number): T = ???
+  
+  /**
+   * The number of entries in this typed array.
+   */
+  val length: js.Number = ???
 }
 
 /**
