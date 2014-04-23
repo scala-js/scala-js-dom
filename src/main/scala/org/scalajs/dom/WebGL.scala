@@ -977,6 +977,10 @@ class WebGLRenderingContext extends js.Object {
    */
   def bufferData(target: js.Number, data: ArrayBuffer, usage: js.Number): Unit = ???
 
+  def bufferSubData(target: js.Number, offset: js.Number, data: ArrayBufferView): Unit = ???
+  
+  def bufferSubData(target: js.Number, offset: js.Number, data: ArrayBuffer): Unit = ???
+
   /**
    * Returns the completeness status for the framebuffer.
    * 
@@ -1110,7 +1114,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Creates a new [[WebGLRenderbuffer]].
    */
-  def createRenderBuffer(): WebGLRenderbuffer = ???
+  def createRenderbuffer(): WebGLRenderbuffer = ???
   
   /**
    * Creates a new [[WebGLShader]].
@@ -1322,7 +1326,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Returns a new [[WebGLActiveInfo]] object describing the given uniform at `index`.
    */
-  def getActiveUniform(program: WebGLProgram, index: js.Number): Unit = ???
+  def getActiveUniform(program: WebGLProgram, index: js.Number): WebGLActiveInfo = ???
   
   /**
    * Returns a new array containing the shaders attached to the given program. 
@@ -1496,7 +1500,7 @@ class WebGLRenderingContext extends js.Object {
    * @param mode  the desired mode.  Must be one of [[WebGLRenderingContext.FASTEST]],
    *              [[WebGLRenderingContext.NICEST]], or [[WebGLRenderingContext.DONT_CARE]].
    */
-  def hint(target: js.Number, mode: js.Number): js.Any = ???
+  def hint(target: js.Number, mode: js.Number): Unit = ???
   
   /**
    * Returns `true` if the `buffer` is valid, `false` otherwise.
@@ -1640,7 +1644,7 @@ class WebGLRenderingContext extends js.Object {
    *             or [[WebGLRenderingContext.FRONT_AND_BACK]].
    * @param mask  the write mask.  Set bits are allowed to be written to the corresponding stencil buffer bit.
    */
-  def stencilMaskSeperate(face: js.Number, mask: js.Number): Unit = ???
+  def stencilMaskSeparate(face: js.Number, mask: js.Number): Unit = ???
   
   /**
    * Configure the effect of a stencil or depth test failing for front or back faces.
@@ -1668,7 +1672,7 @@ class WebGLRenderingContext extends js.Object {
    * @param zfail  the effect of the stencil test passing but the depth test failing.  Parameters are as fail.
    * @param zpass  the effect of the stencil test failing but the depth test passing.  Parameters are as fail.
    */  
-  def stencilOpSeperate(face: js.Number, fail: js.Number, zfail: js.Number, zpass: js.Number): Unit = ???
+  def stencilOpSeparate(face: js.Number, fail: js.Number, zfail: js.Number, zpass: js.Number): Unit = ???
   
   /**
    * Loads a 2-dimensional texture into a texture unit from source data.
