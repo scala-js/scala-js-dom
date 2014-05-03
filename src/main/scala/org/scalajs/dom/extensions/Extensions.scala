@@ -181,7 +181,6 @@ object Ajax{
             withCredentials: Boolean): Future[dom.XMLHttpRequest] = {
     val req = new dom.XMLHttpRequest()
     val promise = Promise[dom.XMLHttpRequest]
-    req.withCredentials = withCredentials
 
     req.onreadystatechange = {(e: dom.Event) =>
       if (req.readyState.toInt == 4){
@@ -192,6 +191,7 @@ object Ajax{
       }
     }
     req.open(method, url)
+    req.withCredentials = withCredentials
     headers.foreach(x => req.setRequestHeader(x._1, x._2))
     req.send(data)
     promise.future
