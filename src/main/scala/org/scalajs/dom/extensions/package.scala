@@ -8,7 +8,7 @@ package object extensions {
 
   implicit class PimpedNodeList(nodes: dom.NodeList) extends EasySeq[dom.Node](nodes.length, nodes.apply)
 
-  implicit class PimpedTouchList(nodes: dom.TouchList) extends EasySeq[dom.TouchEvent](nodes.length, nodes.apply)
+  implicit class PimpedTouchList(nodes: dom.TouchList) extends EasySeq[dom.Touch](nodes.length, nodes.apply)
 
   implicit class PimpedHtmlCollection(coll: dom.HTMLCollection) extends EasySeq[dom.Element](coll.length, coll.apply)
 
