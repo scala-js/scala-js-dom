@@ -2054,7 +2054,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def requestAnimationFrame(callback: FrameRequestCallback): js.Number = ???
+  def requestAnimationFrame(callback: js.Function1[js.Number, _]): js.Number = ???
 }
 
 
@@ -6710,10 +6710,6 @@ object ApplicationCache extends js.Object {
   val DOWNLOADING: js.Number = ???
   val IDLE: js.Number = ???
   val OBSOLETE: js.Number = ???
-}
-
-trait FrameRequestCallback extends js.Object {
-  def apply(time: js.Number): Unit = ???
 }
 
 trait PopStateEvent extends Event {
