@@ -2181,28 +2181,7 @@ class TouchEvent extends UIEvent with ModifierKeyEvent {
  *
  * MDN
  */
-class TouchList extends js.Object {
-  /**
-   * This read-only property indicates the number of items in a TouchList.
-   *
-   * MDN
-   */
-  def length: Int = ???
-
-  /**
-   * Returns the Touch object at the specified index in the list. You can also simply
-   * reference the TouchList using array syntax (touchList[x]).
-   *
-   * MDN
-   */
-  def item(index: Int): Touch = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): Touch = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: Touch): Unit = ???
-}
+class TouchList extends JsList[Touch]
 
 /**
  * A Touch object represents a single point of contact between the user and a touch-sensitive
@@ -5357,38 +5336,25 @@ class StyleSheet extends js.Object {
   def title: String = ???
 }
 
+trait JsList[T] extends js.Object{
+  def length: Int = ???
+  def item(index: Int): T = ???
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def apply(index: Int): T = ???
 
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: T): Unit = ???
+}
 /**
  * NodeList objects are collections of nodes such as those returned by
  * Node.childNodes and the querySelectorAll method.
  *
  * MDN
  */
-class NodeList extends js.Object {
-  def length: Int = ???
-
-  /**
-   * Returns a node from a NodeList by index.
-   *
-   * MDN
-   */
-  def item(index: Int): Node = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): Node = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: Node): Unit = ???
-}
+class NodeList extends JsList[Node]
 
 
-trait NodeListOf[TNode <: Node] extends NodeList {
-  override def item(index: Int): TNode = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  override def apply(index: Int): TNode = ???
-
-}
+trait NodeListOf[TNode <: Node] extends JsList[TNode]
 
 class XMLSerializer extends js.Object {
   def serializeToString(target: Node): String = ???
@@ -5782,18 +5748,7 @@ trait LinkStyle extends js.Object {
   def sheet: StyleSheet = ???
 }
 
-class ClientRectList extends js.Object {
-  def length: Int = ???
-
-  def item(index: Int): ClientRect = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): ClientRect = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: ClientRect): Unit = ???
-}
-
+class ClientRectList extends JsList[ClientRect]
 
 trait External extends js.Object {
 }
@@ -5868,8 +5823,7 @@ trait TextTrackCue extends EventTarget {
  *
  * MDN
  */
-trait DOMTokenList extends js.Object {
-  def length: Int = ???
+trait DOMTokenList extends JsList[String]{
 
   def contains(token: String): Boolean = ???
 
@@ -5878,14 +5832,6 @@ trait DOMTokenList extends js.Object {
   def toggle(token: String): Boolean = ???
 
   def add(token: String): Unit = ???
-
-  def item(index: Int): String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: String): Unit = ???
 
 }
 
@@ -6194,28 +6140,7 @@ trait ProgressEvent extends Event {
  *
  * MDN
  */
-trait FileList extends js.Object {
-  /**
-   * A read-only value indicating the number of files in the list.
-   *
-   * MDN
-   */
-  def length: Int = ???
-
-  /**
-   * Returns a File object representing the file at the specified index in the file list.
-   *
-   * MDN
-   */
-  def item(index: Int): File = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): File = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: File): Unit = ???
-}
-
+trait FileList extends JsList[File]
 
 /**
  * The File interface provides information about -- and access to the contents of --
@@ -6336,22 +6261,12 @@ trait XMLHttpRequestEventTarget extends EventTarget {
 }
 
 
-trait AudioTrackList extends EventTarget {
-  var length: Int = _
-  var onchange: js.Function1[js.Any, _] = _
-  var onaddtrack: js.Function1[TrackEvent, _] = _
+trait AudioTrackList extends EventTarget with JsList[AudioTrack] {
+
+  var onchange: js.Function1[js.Any, _] = ???
+  var onaddtrack: js.Function1[TrackEvent, _] = ???
 
   def getTrackById(id: String): AudioTrack = ???
-
-  def item(index: Int): AudioTrack = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): AudioTrack = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: AudioTrack): Unit = ???
-
-
 }
 
 
@@ -6412,32 +6327,12 @@ trait AudioTrack extends js.Object {
 }
 
 
-trait TextTrackCueList extends js.Object {
-  var length: Int = _
-
-  def item(index: Int): TextTrackCue = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): TextTrackCue = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: TextTrackCue): Unit = ???
-
+trait TextTrackCueList extends JsList[TextTrackCue]{
   def getCueById(id: String): TextTrackCue = ???
 }
 
 
-trait TextTrackList extends js.Object {
-  var length: Int = _
-
-  def item(index: Int): TextTrack = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): TextTrack = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: TextTrack): Unit = ???
-}
+trait TextTrackList extends JsList[TextTrack]
 
 
 /**
@@ -6517,18 +6412,8 @@ trait WindowBase64 extends js.Object {
  *
  * MDN
  */
-trait DOMStringList extends js.Object {
-  def length: Int = ???
-
+trait DOMStringList extends JsList[String]{
   def contains(str: String): Boolean = ???
-
-  def item(index: Int): String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: String): Unit = ???
 }
 
 

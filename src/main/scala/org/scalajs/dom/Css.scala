@@ -516,17 +516,7 @@ class CSSPageRule extends CSSRule {
  *
  * MDN
  */
-class CSSRuleList extends js.Object {
-  var length: Int = _
-
-  def item(index: Int): CSSRule = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): CSSRule = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: CSSRule): Unit = ???
-}
+class CSSRuleList extends JsList[CSSRule]
 
 /**
  * The CSSKeyframesRule interface describes an object representing a complete set

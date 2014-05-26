@@ -55,11 +55,16 @@ trait TypedArray[T] extends js.Object {
   def apply(index: Int): Int = ???
   @JSBracketAccess
   def update(index: Int, value: Int): Unit = ???
-  
+
   /**
    * Copies the contents of `array` into this array, starting at `offset`.
    */
-  def set(array: T, offset: Int = ???): Unit = ???
+  def set(array: T): Unit = ???
+
+  /**
+   * Copies the contents of `array` into this array, starting at `offset`.
+   */
+  def set(array: T, offset: Int): Unit = ???
 
   /**
    * Copies the contents of `array` into this array, starting at `offset`.

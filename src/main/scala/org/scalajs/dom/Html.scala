@@ -666,13 +666,8 @@ class HTMLMenuElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLCollection extends js.Object {
-  /**
-   * The number of items in the collection.
-   *
-   * MDN
-   */
-  var length: Int = ???
+class HTMLCollection extends JsList[Element]{
+
   /**
    * Returns the specific node at the given zero-based index into the list. Returns null
    * if the index is out of range.
@@ -692,11 +687,6 @@ class HTMLCollection extends js.Object {
    */
   def namedItem(name: String): Element = ???
 
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(name: Int): Element = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(name: Int, v: Element): Unit = ???
 }
 
 /**
