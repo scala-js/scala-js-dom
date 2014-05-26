@@ -18,20 +18,15 @@ package object extensions {
     def cast[T] = x.asInstanceOf[T]
   }
 
-  implicit def pimpAnimatedNumber(x: dom.SVGAnimatedNumber) = x.baseVal.toDouble
+  implicit def pimpAnimatedNumber(x: dom.SVGAnimatedNumber) = x.baseVal
 
-  implicit def pimpAnimatedNumberRaw(x: dom.SVGAnimatedNumber) = x.baseVal
+  implicit def pimpRichAnimatedNumber(x: dom.SVGAnimatedNumber) = x.baseVal: runtime.RichDouble
 
-  implicit def pimpRichAnimatedNumber(x: dom.SVGAnimatedNumber) = x.baseVal.toDouble: runtime.RichDouble
+  implicit def pimpAnimatedLength(x: dom.SVGAnimatedLength) = x.baseVal.value
 
-  implicit def pimpAnimatedLength(x: dom.SVGAnimatedLength) = x.baseVal.value.toDouble
-
-  implicit def pimpAnimatedLengthRaw(x: dom.SVGAnimatedLength) = x.baseVal.value
-
-  implicit def pimpRichAnimatedLength(x: dom.SVGAnimatedLength) = x.baseVal.value.toDouble: runtime.RichDouble
+  implicit def pimpRichAnimatedLength(x: dom.SVGAnimatedLength) = x.baseVal.value: runtime.RichDouble
 
   implicit def color2String(c: Color) = c.toString
-  implicit def color2JsString(c: Color) = c.toString: js.String
   implicit class pimpedContext(val ctx: CanvasRenderingContext2D) {
     def prepCircle(x: Double, y: Double, r: Double) = {
       ctx.beginPath()
