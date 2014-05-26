@@ -17,10 +17,10 @@ trait GetSVGDocument extends js.Object {
 }
 
 class SVGPathSegCurvetoQuadraticRel extends SVGPathSeg {
-  var y: js.Number = ???
-  var y1: js.Number = ???
-  var x: js.Number = ???
-  var x1: js.Number = ???
+  var y: Double = ???
+  var y1: Double = ???
+  var x: Double = ???
+  var x1: Double = ???
 }
 
 /**
@@ -68,19 +68,19 @@ class SVGGElement extends SVGElement with SVGStylable with SVGTransformable with
 
 
 class SVGPathSegCurvetoCubicSmoothAbs extends SVGPathSeg {
-  var y: js.Number = ???
-  var x2: js.Number = ???
-  var x: js.Number = ???
-  var y2: js.Number = ???
+  var y: Double = ???
+  var x2: Double = ???
+  var x: Double = ???
+  var y2: Double = ???
 }
 
 
 class SVGZoomEvent extends UIEvent {
   def zoomRectScreen: SVGRect = ???
 
-  def previousScale: js.Number = ???
+  def previousScale: Double = ???
 
-  def newScale: js.Number = ???
+  def newScale: Double = ???
 
   def previousTranslate: SVGPoint = ???
 
@@ -101,8 +101,8 @@ object SVGUnitTypes extends js.Object {
 }
 
 class SVGPathSegMovetoRel extends SVGPathSeg {
-  var y: js.Number = ???
-  var x: js.Number = ???
+  var y: Double = ???
+  var x: Double = ???
 }
 
 
@@ -153,8 +153,8 @@ class SVGDescElement extends SVGElement with SVGStylable with SVGLangSpace {
 
 
 class SVGPathSegCurvetoQuadraticSmoothRel extends SVGPathSeg {
-  var y: js.Number = ???
-  var x: js.Number = ???
+  var y: Double = ???
+  var x: Double = ???
 }
 
 
@@ -221,7 +221,7 @@ class SVGTextPositioningElement extends SVGTextContentElement {
 
 
 class SVGPathSegLinetoVerticalRel extends SVGPathSeg {
-  var y: js.Number = ???
+  var y: Double = ???
 }
 
 
@@ -239,14 +239,14 @@ class SVGAnimatedString extends js.Object {
    *
    * MDN
    */
-  def animVal: js.String = ???
+  def animVal: String = ???
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: js.String = ???
+  var baseVal: String = ???
 }
 
 
@@ -281,7 +281,7 @@ trait SVGTests extends js.Object {
    *
    * MDN
    */
-  def hasExtension(extension: js.String): js.Boolean = ???
+  def hasExtension(extension: String): Boolean = ???
 }
 
 /**
@@ -376,7 +376,7 @@ class SVGAnimatedAngle extends js.Object {
  * MDN
  */
 class SVGScriptElement extends SVGElement with SVGExternalResourcesRequired with SVGURIReference {
-  def `type`: js.String = ???
+  def `type`: String = ???
 }
 
 
@@ -547,7 +547,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  var valueAsString: js.String = ???
+  var valueAsString: String = ???
   /**
    * The value as a floating point value, in the units expressed by unitType. Setting
    * this attribute will cause value and valueAsString to be updated automatically to
@@ -557,7 +557,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  var valueInSpecifiedUnits: js.Number = ???
+  var valueInSpecifiedUnits: Double = ???
   /**
    * The value as a floating point value, in user units. Setting this attribute will
    * cause valueInSpecifiedUnits and valueAsString to be updated automatically to
@@ -567,7 +567,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  var value: js.Number = ???
+  var value: Double = ???
 
   /**
    * The type of the value as specified by one of the SVG_ANGLETYPE_* constants defined
@@ -588,7 +588,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  def newValueSpecifiedUnits(unitType: Int, valueInSpecifiedUnits: js.Number): Unit = ???
+  def newValueSpecifiedUnits(unitType: Int, valueInSpecifiedUnits: Double): Unit = ???
 
   /**
    * Preserve the same underlying stored value, but reset the stored unit identifier to
@@ -654,7 +654,7 @@ class SVGElement extends Element {
    *
    * MDN
    */
-  var xmlbase: js.String = ???
+  var xmlbase: String = ???
   var onmousedown: js.Function1[MouseEvent, _] = ???
   var onload: js.Function1[Event, _] = ???
   var onmouseup: js.Function1[MouseEvent, _] = ???
@@ -672,18 +672,18 @@ class SVGElement extends Element {
 
 
 class SVGPathSegLinetoHorizontalAbs extends SVGPathSeg {
-  var x: js.Number = ???
+  var x: Double = ???
 }
 
 
 class SVGPathSegArcAbs extends SVGPathSeg {
-  var y: js.Number = ???
-  var sweepFlag: js.Boolean = ???
-  var r2: js.Number = ???
-  var x: js.Number = ???
-  var angle: js.Number = ???
-  var r1: js.Number = ???
-  var largeArcFlag: js.Boolean = ???
+  var y: Double = ???
+  var sweepFlag: Boolean = ???
+  var r2: Double = ???
+  var x: Double = ???
+  var angle: Double = ???
+  var r1: Double = ???
+  var largeArcFlag: Boolean = ???
 }
 
 
@@ -851,7 +851,7 @@ class SVGDefsElement extends SVGElement with SVGStylable with SVGTransformable w
 
 
 class SVGPathSegLinetoHorizontalRel extends SVGPathSeg {
-  var x: js.Number = ???
+  var x: Double = ???
 }
 
 
@@ -946,13 +946,13 @@ trait SVGTransformable extends SVGLocatable {
 }
 
 trait SVGLangSpace extends js.Object {
-  var xmllang: js.String = ???
-  var xmlspace: js.String = ???
+  var xmllang: String = ???
+  var xmlspace: String = ???
 }
 
 class SVGPoint extends js.Object {
-  var y: js.Number = ???
-  var x: js.Number = ???
+  var y: Double = ???
+  var x: Double = ???
 
   def matrixTransform(matrix: SVGMatrix): SVGPoint = ???
 }
@@ -1013,7 +1013,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  var contentStyleType: js.String = ???
+  var contentStyleType: String = ???
   var onzoom: js.Function1[js.Any, _] = ???
 
   /**
@@ -1045,7 +1045,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def pixelUnitToMillimeterY: js.Number = ???
+  def pixelUnitToMillimeterY: Double = ???
 
   var onresize: js.Function1[UIEvent, _] = ???
 
@@ -1054,7 +1054,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def screenPixelToMillimeterY: js.Number = ???
+  def screenPixelToMillimeterY: Double = ???
 
   /**
    * Corresponds to attribute height on the given <svg> element.
@@ -1069,7 +1069,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  var contentScriptType: js.String = ???
+  var contentScriptType: String = ???
 
   /**
    * Size of a pixel units (as defined by CSS2) along the x-axis of the viewport, which
@@ -1080,7 +1080,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def pixelUnitToMillimeterX: js.Number = ???
+  def pixelUnitToMillimeterX: Double = ???
 
   /**
    * On an outermost <svg> element, the corresponding translation factor that takes
@@ -1104,7 +1104,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def currentScale: js.Number = ???
+  def currentScale: Double = ???
 
   var onscroll: js.Function1[UIEvent, _] = ???
 
@@ -1116,7 +1116,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def screenPixelToMillimeterX: js.Number = ???
+  def screenPixelToMillimeterX: Double = ???
 
   /**
    * Adjusts the clock for this SVG document fragment, establishing a new current time.
@@ -1172,7 +1172,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def checkIntersection(element: SVGElement, rect: SVGRect): js.Boolean = ???
+  def checkIntersection(element: SVGElement, rect: SVGRect): Boolean = ???
 
   /**
    * Cancels all currently active suspendRedraw() method calls. This method is most
@@ -1270,7 +1270,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def checkEnclosure(element: SVGElement, rect: SVGRect): js.Boolean = ???
+  def checkEnclosure(element: SVGElement, rect: SVGRect): Boolean = ???
 
   /**
    * Creates an SVGMatrix object outside of any document trees. The object is
@@ -1306,7 +1306,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    */
   def createSVGTransformFromMatrix(matrix: SVGMatrix): SVGTransform = ???
 
-  def getComputedStyle(elt: Element, pseudoElt: js.String = ???): CSSStyleDeclaration = ???
+  def getComputedStyle(elt: Element, pseudoElt: String = ???): CSSStyleDeclaration = ???
 
   /**
    * Searches this SVG document fragment (i.e., the search is restricted to a subset of
@@ -1316,7 +1316,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def getElementById(elementId: js.String): Element = ???
+  def getElementById(elementId: String): Element = ???
 
 
 }
@@ -1367,7 +1367,7 @@ class SVGTSpanElement extends SVGTextPositioningElement {
 
 
 class SVGPathSegLinetoVerticalAbs extends SVGPathSeg {
-  var y: js.Number = ???
+  var y: Double = ???
 }
 
 
@@ -1384,9 +1384,9 @@ class SVGStyleElement extends SVGElement with SVGLangSpace {
    *
    * MDN
    */
-  var media: js.String = ???
+  var media: String = ???
 
-  def `type`: js.String = ???
+  def `type`: String = ???
 
   /**
    * Corresponds to attribute title on the given element. A DOMException is raised with
@@ -1395,7 +1395,7 @@ class SVGStyleElement extends SVGElement with SVGLangSpace {
    *
    * MDN
    */
-  var title: js.String = ???
+  var title: String = ???
 }
 
 
@@ -1500,14 +1500,14 @@ class SVGAnimatedNumber extends js.Object {
    *
    * MDN
    */
-  def animVal: js.Number = ???
+  def animVal: Double = ???
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: js.Number = ???
+  var baseVal: Double = ???
 }
 
 
@@ -1516,19 +1516,19 @@ class SVGMetadataElement extends SVGElement {
 
 
 class SVGPathSegArcRel extends SVGPathSeg {
-  var y: js.Number = ???
-  var sweepFlag: js.Boolean = ???
-  var r2: js.Number = ???
-  var x: js.Number = ???
-  var angle: js.Number = ???
-  var r1: js.Number = ???
-  var largeArcFlag: js.Boolean = ???
+  var y: Double = ???
+  var sweepFlag: Boolean = ???
+  var r2: Double = ???
+  var x: Double = ???
+  var angle: Double = ???
+  var r1: Double = ???
+  var largeArcFlag: Boolean = ???
 }
 
 
 class SVGPathSegMovetoAbs extends SVGPathSeg {
-  var y: js.Number = ???
-  var x: js.Number = ???
+  var y: Double = ???
+  var x: Double = ???
 }
 
 
@@ -1552,7 +1552,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def replaceItem(newItem: js.String, index: Int): js.String = ???
+  def replaceItem(newItem: String, index: Int): String = ???
 
   /**
    * Returns the specified item from the list. The returned item is the item itself and
@@ -1563,7 +1563,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def getItem(index: Int): js.String = ???
+  def getItem(index: Int): String = ???
 
   /**
    * Clears all existing current items from the list, with the result being an empty
@@ -1584,7 +1584,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def appendItem(newItem: js.String): js.String = ???
+  def appendItem(newItem: String): String = ???
 
   /**
    * Clears all existing current items from the list and re-initializes the list to hold
@@ -1597,7 +1597,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def initialize(newItem: js.String): js.String = ???
+  def initialize(newItem: String): String = ???
 
   /**
    * Removes an existing item from the list. Exceptions: a DOMException with code
@@ -1608,7 +1608,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def removeItem(index: Int): js.String = ???
+  def removeItem(index: Int): String = ???
 
   /**
    * Inserts a new item into the list at the specified position. The first item is number
@@ -1623,7 +1623,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def insertItemBefore(newItem: js.String, index: Int): js.String = ???
+  def insertItemBefore(newItem: String, index: Int): String = ???
 }
 
 
@@ -1644,7 +1644,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  var valueAsString: js.String = ???
+  var valueAsString: String = ???
   /**
    * The value as a floating point value, in the units expressed by unitType. Setting
    * this attribute will cause value and valueAsString to be updated automatically to
@@ -1654,7 +1654,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  var valueInSpecifiedUnits: js.Number = ???
+  var valueInSpecifiedUnits: Double = ???
   /**
    * The value as a floating point value, in user units. Setting this attribute will
    * cause valueInSpecifiedUnits and valueAsString to be updated automatically to
@@ -1664,7 +1664,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  var value: js.Number = ???
+  var value: Double = ???
 
   /**
    * The type of the value as specified by one of the SVG_LENGTHTYPE_* constants defined
@@ -1685,7 +1685,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  def newValueSpecifiedUnits(unitType: Int, valueInSpecifiedUnits: js.Number): Unit = ???
+  def newValueSpecifiedUnits(unitType: Int, valueInSpecifiedUnits: Double): Unit = ???
 
   /**
    * Preserve the same underlying stored value, but reset the stored unit identifier to
@@ -1737,12 +1737,12 @@ class SVGPolygonElement extends SVGElement with SVGStylable with SVGTransformabl
 
 
 class SVGPathSegCurvetoCubicRel extends SVGPathSeg {
-  var y: js.Number = ???
-  var y1: js.Number = ???
-  var x2: js.Number = ???
-  var x: js.Number = ???
-  var x1: js.Number = ???
-  var y2: js.Number = ???
+  var y: Double = ???
+  var y1: Double = ???
+  var x2: Double = ???
+  var x: Double = ???
+  var x1: Double = ???
+  var y2: Double = ???
 }
 
 
@@ -1796,7 +1796,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def angle: js.Number = ???
+  def angle: Double = ???
 
   /**
    * The matrix that represents this transformation. The matrix object is live,
@@ -1825,7 +1825,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setTranslate(tx: js.Number, ty: js.Number): Unit = ???
+  def setTranslate(tx: Double, ty: Double): Unit = ???
 
   /**
    * Sets the transform type to SVG_TRANSFORM_SCALE, with parameters sx and sy
@@ -1835,7 +1835,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setScale(sx: js.Number, sy: js.Number): Unit = ???
+  def setScale(sx: Double, sy: Double): Unit = ???
 
   /**
    * Sets the transform type to SVG_TRANSFORM_MATRIX, with parameter matrix defining
@@ -1856,7 +1856,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setSkewY(angle: js.Number): Unit = ???
+  def setSkewY(angle: Double): Unit = ???
 
   /**
    * Sets the transform type to SVG_TRANSFORM_ROTATE, with parameter angle defining
@@ -1867,7 +1867,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setRotate(angle: js.Number, cx: js.Number, cy: js.Number): Unit = ???
+  def setRotate(angle: Double, cx: Double, cy: Double): Unit = ???
 
   /**
    * Sets the transform type to SVG_TRANSFORM_SKEWX, with parameter angle defining
@@ -1877,7 +1877,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setSkewX(angle: js.Number): Unit = ???
+  def setSkewX(angle: Double): Unit = ???
 
 }
 
@@ -1912,7 +1912,7 @@ trait SVGURIReference extends js.Object {
 class SVGPathSeg extends js.Object {
   def pathSegType: Int = ???
 
-  def pathSegTypeAsLetter: js.String = ???
+  def pathSegTypeAsLetter: String = ???
 }
 
 object SVGPathSeg extends js.Object {
@@ -1952,7 +1952,7 @@ class SVGNumber extends js.Object {
    *
    * MDN
    */
-  var value: js.Number = ???
+  var value: Double = ???
 }
 
 
@@ -1968,7 +1968,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def getPathSegAtLength(distance: js.Number): Int = ???
+  def getPathSegAtLength(distance: Double): Int = ???
 
   /**
    * Returns the (x,y) coordinate in user space which is distance units along the path,
@@ -1976,7 +1976,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def getPointAtLength(distance: js.Number): SVGPoint = ???
+  def getPointAtLength(distance: Double): SVGPoint = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticAbs object.
@@ -1987,7 +1987,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoQuadraticAbs(x: js.Number, y: js.Number, x1: js.Number, y1: js.Number): SVGPathSegCurvetoQuadraticAbs = ???
+  def createSVGPathSegCurvetoQuadraticAbs(x: Double, y: Double, x1: Double, y1: Double): SVGPathSegCurvetoQuadraticAbs = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoRel object. Parameters:
@@ -1996,7 +1996,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoRel(x: js.Number, y: js.Number): SVGPathSegLinetoRel = ???
+  def createSVGPathSegLinetoRel(x: Double, y: Double): SVGPathSegLinetoRel = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticRel object.
@@ -2007,7 +2007,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoQuadraticRel(x: js.Number, y: js.Number, x1: js.Number, y1: js.Number): SVGPathSegCurvetoQuadraticRel = ???
+  def createSVGPathSegCurvetoQuadraticRel(x: Double, y: Double, x1: Double, y1: Double): SVGPathSegCurvetoQuadraticRel = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoCubicAbs object.
@@ -2020,7 +2020,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoCubicAbs(x: js.Number, y: js.Number, x1: js.Number, y1: js.Number, x2: js.Number, y2: js.Number): SVGPathSegCurvetoCubicAbs = ???
+  def createSVGPathSegCurvetoCubicAbs(x: Double, y: Double, x1: Double, y1: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicAbs = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoAbs object. Parameters:
@@ -2029,7 +2029,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoAbs(x: js.Number, y: js.Number): SVGPathSegLinetoAbs = ???
+  def createSVGPathSegLinetoAbs(x: Double, y: Double): SVGPathSegLinetoAbs = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegClosePath object.
@@ -2049,7 +2049,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoCubicRel(x: js.Number, y: js.Number, x1: js.Number, y1: js.Number, x2: js.Number, y2: js.Number): SVGPathSegCurvetoCubicRel = ???
+  def createSVGPathSegCurvetoCubicRel(x: Double, y: Double, x1: Double, y1: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicRel = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticSmoothRel
@@ -2058,7 +2058,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoQuadraticSmoothRel(x: js.Number, y: js.Number): SVGPathSegCurvetoQuadraticSmoothRel = ???
+  def createSVGPathSegCurvetoQuadraticSmoothRel(x: Double, y: Double): SVGPathSegCurvetoQuadraticSmoothRel = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegMovetoRel object. Parameters:
@@ -2067,7 +2067,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegMovetoRel(x: js.Number, y: js.Number): SVGPathSegMovetoRel = ???
+  def createSVGPathSegMovetoRel(x: Double, y: Double): SVGPathSegMovetoRel = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoCubicSmoothAbs object.
@@ -2078,7 +2078,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoCubicSmoothAbs(x: js.Number, y: js.Number, x2: js.Number, y2: js.Number): SVGPathSegCurvetoCubicSmoothAbs = ???
+  def createSVGPathSegCurvetoCubicSmoothAbs(x: Double, y: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicSmoothAbs = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegMovetoAbs object. Parameters:
@@ -2087,7 +2087,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegMovetoAbs(x: js.Number, y: js.Number): SVGPathSegMovetoAbs = ???
+  def createSVGPathSegMovetoAbs(x: Double, y: Double): SVGPathSegMovetoAbs = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoVerticalRel object.
@@ -2096,7 +2096,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoVerticalRel(y: js.Number): SVGPathSegLinetoVerticalRel = ???
+  def createSVGPathSegLinetoVerticalRel(y: Double): SVGPathSegLinetoVerticalRel = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegArcRel object. Parameters: float x
@@ -2109,7 +2109,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegArcRel(x: js.Number, y: js.Number, r1: js.Number, r2: js.Number, angle: js.Number, largeArcFlag: js.Boolean, sweepFlag: js.Boolean): SVGPathSegArcRel = ???
+  def createSVGPathSegArcRel(x: Double, y: Double, r1: Double, r2: Double, angle: Double, largeArcFlag: Boolean, sweepFlag: Boolean): SVGPathSegArcRel = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticSmoothAbs
@@ -2118,7 +2118,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoQuadraticSmoothAbs(x: js.Number, y: js.Number): SVGPathSegCurvetoQuadraticSmoothAbs = ???
+  def createSVGPathSegCurvetoQuadraticSmoothAbs(x: Double, y: Double): SVGPathSegCurvetoQuadraticSmoothAbs = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoHorizontalRel object.
@@ -2127,9 +2127,9 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoHorizontalRel(x: js.Number): SVGPathSegLinetoHorizontalRel = ???
+  def createSVGPathSegLinetoHorizontalRel(x: Double): SVGPathSegLinetoHorizontalRel = ???
 
-  def getTotalLength(): js.Number = ???
+  def getTotalLength(): Double = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoCubicSmoothRel object.
@@ -2140,7 +2140,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoCubicSmoothRel(x: js.Number, y: js.Number, x2: js.Number, y2: js.Number): SVGPathSegCurvetoCubicSmoothRel = ???
+  def createSVGPathSegCurvetoCubicSmoothRel(x: Double, y: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicSmoothRel = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoHorizontalAbs object.
@@ -2149,7 +2149,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoHorizontalAbs(x: js.Number): SVGPathSegLinetoHorizontalAbs = ???
+  def createSVGPathSegLinetoHorizontalAbs(x: Double): SVGPathSegLinetoHorizontalAbs = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoVerticalAbs object.
@@ -2158,7 +2158,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoVerticalAbs(y: js.Number): SVGPathSegLinetoVerticalAbs = ???
+  def createSVGPathSegLinetoVerticalAbs(y: Double): SVGPathSegLinetoVerticalAbs = ???
 
   /**
    * Returns a stand-alone, parentless SVGPathSegArcAbs object. Parameters: float x
@@ -2171,7 +2171,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegArcAbs(x: js.Number, y: js.Number, r1: js.Number, r2: js.Number, angle: js.Number, largeArcFlag: js.Boolean, sweepFlag: js.Boolean): SVGPathSegArcAbs = ???
+  def createSVGPathSegArcAbs(x: Double, y: Double, r1: Double, r2: Double, angle: Double, largeArcFlag: Boolean, sweepFlag: Boolean): SVGPathSegArcAbs = ???
 }
 
 
@@ -2283,49 +2283,49 @@ class SVGRect extends js.Object {
    *
    * MDN
    */
-  var y: js.Number = ???
+  var y: Double = ???
   /**
    * The width coordinate of the rectangle, in user units.
    *
    * MDN
    */
-  var width: js.Number = ???
+  var width: Double = ???
   /**
    * The x coordinate of the rectangle, in user units.
    *
    * MDN
    */
-  var x: js.Number = ???
+  var x: Double = ???
   /**
    * The height coordinate of the rectangle, in user units.
    *
    * MDN
    */
-  var height: js.Number = ???
+  var height: Double = ???
 }
 
 
 class SVGPathSegCurvetoCubicAbs extends SVGPathSeg {
-  var y: js.Number = ???
-  var y1: js.Number = ???
-  var x2: js.Number = ???
-  var x: js.Number = ???
-  var x1: js.Number = ???
-  var y2: js.Number = ???
+  var y: Double = ???
+  var y1: Double = ???
+  var x2: Double = ???
+  var x: Double = ???
+  var x1: Double = ???
+  var y2: Double = ???
 }
 
 
 class SVGPathSegCurvetoQuadraticAbs extends SVGPathSeg {
-  var y: js.Number = ???
-  var y1: js.Number = ???
-  var x: js.Number = ???
-  var x1: js.Number = ???
+  var y: Double = ???
+  var y1: Double = ???
+  var x: Double = ???
+  var x1: Double = ???
 }
 
 
 class SVGPathSegLinetoAbs extends SVGPathSeg {
-  var y: js.Number = ???
-  var x: js.Number = ???
+  var y: Double = ???
+  var x: Double = ???
 }
 
 
@@ -2335,12 +2335,12 @@ class SVGPathSegLinetoAbs extends SVGPathSeg {
  * MDN
  */
 class SVGMatrix extends js.Object {
-  var e: js.Number = ???
-  var c: js.Number = ???
-  var a: js.Number = ???
-  var b: js.Number = ???
-  var d: js.Number = ???
-  var f: js.Number = ???
+  var e: Double = ???
+  var c: Double = ???
+  var a: Double = ???
+  var b: Double = ???
+  var d: Double = ???
+  var f: Double = ???
 
   /**
    * Performs matrix multiplication. This matrix is post-multiplied by another
@@ -2364,7 +2364,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def skewY(angle: js.Number): SVGMatrix = ???
+  def skewY(angle: Double): SVGMatrix = ???
 
   /**
    * Return the inverse matrix Exceptions: a DOMException with code
@@ -2380,7 +2380,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def scaleNonUniform(scaleFactorX: js.Number, scaleFactorY: js.Number): SVGMatrix = ???
+  def scaleNonUniform(scaleFactorX: Double, scaleFactorY: Double): SVGMatrix = ???
 
   /**
    * Post-multiplies a rotation transformation on the current matrix and returns the
@@ -2388,7 +2388,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def rotate(angle: js.Number): SVGMatrix = ???
+  def rotate(angle: Double): SVGMatrix = ???
 
   /**
    * Post-multiplies the transformation [-1 0 0 1 0 0] and returns the resulting
@@ -2404,7 +2404,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def translate(x: js.Number, y: js.Number): SVGMatrix = ???
+  def translate(x: Double, y: Double): SVGMatrix = ???
 
   /**
    * Post-multiplies a uniform scale transformation on the current matrix and returns
@@ -2412,7 +2412,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def scale(scaleFactor: js.Number): SVGMatrix = ???
+  def scale(scaleFactor: Double): SVGMatrix = ???
 
   /**
    * Post-multiplies a rotation transformation on the current matrix and returns the
@@ -2423,7 +2423,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def rotateFromVector(x: js.Number, y: js.Number): SVGMatrix = ???
+  def rotateFromVector(x: Double, y: Double): SVGMatrix = ???
 
   /**
    * Post-multiplies a skewX transformation on the current matrix and returns the
@@ -2431,7 +2431,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def skewX(angle: js.Number): SVGMatrix = ???
+  def skewX(angle: Double): SVGMatrix = ???
 }
 
 
@@ -2493,9 +2493,9 @@ class SVGUseElement extends SVGElement with SVGStylable with SVGTransformable wi
 trait SVGException extends js.Object {
   def code: Int = ???
 
-  def message: js.String = ???
+  def message: String = ???
 
-  def name: js.String = ???
+  def name: String = ???
 }
 
 object SVGException extends js.Object {
@@ -2618,16 +2618,16 @@ class SVGRectElement extends SVGElement with SVGStylable with SVGTransformable w
 
 
 class SVGPathSegCurvetoQuadraticSmoothAbs extends SVGPathSeg {
-  var y: js.Number = ???
-  var x: js.Number = ???
+  var y: Double = ???
+  var x: Double = ???
 }
 
 
 class SVGPathSegCurvetoCubicSmoothRel extends SVGPathSeg {
-  var y: js.Number = ???
-  var x2: js.Number = ???
-  var x: js.Number = ???
-  var y2: js.Number = ???
+  var y: Double = ???
+  var x2: Double = ???
+  var x: Double = ???
+  var y2: Double = ???
 }
 
 
@@ -2915,8 +2915,8 @@ class SVGNumberList extends js.Object {
 
 
 class SVGPathSegLinetoRel extends SVGPathSeg {
-  var y: js.Number = ???
-  var x: js.Number = ???
+  var y: Double = ???
+  var x: Double = ???
 }
 
 
@@ -2934,14 +2934,14 @@ class SVGAnimatedBoolean extends js.Object {
    *
    * MDN
    */
-  def animVal: js.Boolean = ???
+  def animVal: Boolean = ???
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: js.Boolean = ???
+  var baseVal: Boolean = ???
 }
 
 
@@ -3173,7 +3173,7 @@ class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable wit
    *
    * MDN
    */
-  def setFilterRes(filterResX: js.Number, filterResY: js.Number): Unit = ???
+  def setFilterRes(filterResX: Double, filterResY: Double): Unit = ???
 }
 
 
@@ -3233,7 +3233,7 @@ class SVGFEGaussianBlurElement extends SVGElement with SVGFilterPrimitiveStandar
 
   def stdDeviationY: SVGAnimatedNumber = ???
 
-  def setStdDeviation(stdDeviationX: js.Number, stdDeviationY: js.Number): Unit = ???
+  def setStdDeviation(stdDeviationX: Double, stdDeviationY: Double): Unit = ???
 }
 
 

@@ -43,7 +43,7 @@ package object extensions {
       ctx.stroke()
     }
 
-    def prepPath(points: Seq[(js.Number, js.Number)], closed: Boolean = true) = {
+    def prepPath(points: Seq[(Double, Double)], closed: Boolean = true) = {
       ctx.beginPath()
       if (closed) ctx.moveTo(points.last._1, points.last._2)
       for (p <- points) {
@@ -51,17 +51,17 @@ package object extensions {
       }
     }
 
-    def fillPath(points: (js.Number, js.Number)*) = {
+    def fillPath(points: (Double, Double)*) = {
       prepPath(points)
       ctx.fill()
     }
 
-    def strokePath(points: (js.Number, js.Number)*) = {
+    def strokePath(points: (Double, Double)*) = {
       prepPath(points)
       ctx.stroke()
     }
 
-    def strokePathOpen(points: (js.Number, js.Number)*) = {
+    def strokePathOpen(points: (Double, Double)*) = {
       prepPath(points, closed = false)
       ctx.stroke()
     }

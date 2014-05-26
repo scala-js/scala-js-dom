@@ -32,7 +32,7 @@ class PositionOptions extends js.Object {
    *
    * MDN
    */
-  var enableHighAccuracy: js.Boolean = ???
+  var enableHighAccuracy: Boolean = ???
   /**
    * The PositionOptions.timeout property is a positive long value representing the
    * maximum length of time (in milliseconds) the device is allowed to take in order to
@@ -72,7 +72,7 @@ trait NavigatorID extends js.Object {
    *
    * MDN
    */
-  def appVersion: js.String = ???
+  def appVersion: String = ???
 
   /**
    * Returns the name of the browser. The HTML5 specification also allows any browser to
@@ -80,21 +80,21 @@ trait NavigatorID extends js.Object {
    *
    * MDN
    */
-  def appName: js.String = ???
+  def appName: String = ???
 
   /**
    * Returns the user agent string for the current browser.
    *
    * MDN
    */
-  def userAgent: js.String = ???
+  def userAgent: String = ???
 
   /**
    * Returns a string representing the platform of the browser.
    *
    * MDN
    */
-  def platform: js.String = ???
+  def platform: String = ???
 }
 
 /**
@@ -146,7 +146,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def expandEntityReferences: js.Boolean = ???
+  def expandEntityReferences: Boolean = ???
 
   /**
    * The TreeWalker.previousSibling() method moves the current Node to its previous
@@ -247,7 +247,7 @@ class Performance extends js.Object {
    */
   def timing: PerformanceTiming = ???
 
-  def getEntriesByType(entryType: js.String): js.Dynamic = ???
+  def getEntriesByType(entryType: String): js.Dynamic = ???
 
   /**
    * Is a jsonizer returning a json object representing the Performance object.
@@ -256,25 +256,25 @@ class Performance extends js.Object {
    */
   def toJSON(): js.Dynamic = ???
 
-  def getMeasures(measureName: js.String = ???): js.Dynamic = ???
+  def getMeasures(measureName: String = ???): js.Dynamic = ???
 
 
-  def clearMarks(markName: js.String = ???): Unit = ???
+  def clearMarks(markName: String = ???): Unit = ???
 
-  def getMarks(markName: js.String = ???): js.Dynamic = ???
+  def getMarks(markName: String = ???): js.Dynamic = ???
 
 
   def clearResourceTimings(): Unit = ???
 
-  def mark(markName: js.String): Unit = ???
+  def mark(markName: String): Unit = ???
 
-  def measure(measureName: js.String, startMarkName: js.String = ???, endMarkName: js.String = ???): Unit = ???
+  def measure(measureName: String, startMarkName: String = ???, endMarkName: String = ???): Unit = ???
 
-  def getEntriesByName(name: js.String, entryType: js.String = ???): js.Dynamic = ???
+  def getEntriesByName(name: String, entryType: String = ???): js.Dynamic = ???
 
   def getEntries(): js.Dynamic = ???
 
-  def clearMeasures(measureName: js.String = ???): Unit = ???
+  def clearMeasures(measureName: String = ???): Unit = ???
 
   def setResourceTimingBufferSize(maxSize: Int): Unit = ???
 
@@ -306,7 +306,7 @@ class CompositionEvent extends UIEvent {
    *
    * MDN
    */
-  def data: js.String = ???
+  def data: String = ???
 
   /**
    * The locale of current input method (for example, the keyboard layout locale if the
@@ -314,14 +314,14 @@ class CompositionEvent extends UIEvent {
    *
    * MDN
    */
-  def locale: js.String = ???
+  def locale: String = ???
 
   /**
    * Initializes the attributes of a composition event.
    *
    * MDN
    */
-  def initCompositionEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, dataArg: js.String, locale: js.String): Unit = ???
+  def initCompositionEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, dataArg: String, locale: String): Unit = ???
 }
 
 
@@ -376,7 +376,7 @@ trait NodeSelector extends js.Object {
    *
    * MDN
    */
-  def querySelectorAll(selectors: js.String): NodeList = ???
+  def querySelectorAll(selectors: String): NodeList = ???
 
   /**
    * Returns the first element within the document (using depth-first pre-order
@@ -385,16 +385,16 @@ trait NodeSelector extends js.Object {
    *
    * MDN
    */
-  def querySelector(selectors: js.String): Element = ???
+  def querySelector(selectors: String): Element = ???
 }
 
 class ClientRect extends js.Object {
-  var left: js.Number = ???
-  var width: js.Number = ???
-  var right: js.Number = ???
-  var top: js.Number = ???
-  var bottom: js.Number = ???
-  var height: js.Number = ???
+  var left: Double = ???
+  var width: Double = ???
+  var right: Double = ???
+  var top: Double = ???
+  var bottom: Double = ???
+  var height: Double = ???
 }
 
 
@@ -411,16 +411,16 @@ class DOMImplementation extends js.Object {
    *
    * MDN
    */
-  def createDocumentType(qualifiedName: js.String, publicId: js.String, systemId: js.String): DocumentType = ???
+  def createDocumentType(qualifiedName: String, publicId: String, systemId: String): DocumentType = ???
 
   /**
    * « DOM Reference « DOMImplementation
    *
    * MDN
    */
-  def createDocument(namespaceURI: js.String, qualifiedName: js.String, doctype: DocumentType): Document = ???
+  def createDocument(namespaceURI: String, qualifiedName: String, doctype: DocumentType): Document = ???
 
-  def hasFeature(feature: js.String, version: js.String): js.Boolean = ???
+  def hasFeature(feature: String, version: String): Boolean = ???
 
   /**
    * Returns a Boolean indicating if a given feature is supported or not. This function
@@ -430,14 +430,14 @@ class DOMImplementation extends js.Object {
    *
    * MDN
    */
-  def hasFeature(feature: js.String): js.Boolean = ???
+  def hasFeature(feature: String): Boolean = ???
 
   /**
    * Creates and returns an HTML Document.
    *
    * MDN
    */
-  def createHTMLDocument(title: js.String): Document = ???
+  def createHTMLDocument(title: String): Document = ???
 }
 
 /**
@@ -524,7 +524,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def tagName: js.String = ???
+  def tagName: String = ???
 
   /**
    * clientWidth is the inner width of an element in pixels. It includes padding but not
@@ -577,7 +577,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * Supported by FF>10, any Opera, any Chrome, any IE, any Safari
    */
-  var outerHTML: js.String = ???
+  var outerHTML: String = ???
 
   /**
    * innerHTML sets or gets the HTML syntax describing the element's descendants.
@@ -587,27 +587,27 @@ class Element extends Node with NodeSelector with ParentNode {
    * &lt and &gt respectively. Use Node.textContent to get a correct copy of these
    * text nodes' contents.
    */
-  var innerHTML: js.String = ???
+  var innerHTML: String = ???
 
-  var id: js.String = ???
+  var id: String = ???
 
   var oncut: js.Function1[DragEvent, _] = ???
   var oncopy: js.Function1[DragEvent, _] = ???
   var onpaste: js.Function1[DragEvent, _] = ???
 
-  var accessKey: js.String = ???
+  var accessKey: String = ???
 
   /**
    * Supported by FF>3.6, any Opera, any Chrome, any IE, any Safari
    */
   var classList: DOMTokenList = ???
 
-  def scrollIntoView(top: js.Boolean = ???): Unit = ???
+  def scrollIntoView(top: Boolean = ???): Unit = ???
 
   /**
    * Supported by FF>8, Opera>7, Chrome>1, IE>4, Safari>4
    */
-  def insertAdjacentHTML(where: js.String, html: js.String): Unit = ???
+  def insertAdjacentHTML(where: String, html: String): Unit = ???
 
   /**
    * getAttribute() returns the value of the named attribute on the specified element.
@@ -616,7 +616,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def getAttribute(name: js.String): js.String = ???
+  def getAttribute(name: String): String = ???
 
   /**
    * getAttribute() returns the value of the named attribute on the specified element.
@@ -625,16 +625,16 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def getAttribute(): js.String = ???
+  def getAttribute(): String = ???
 
   /**
    * Returns a list of elements with the given tag name belonging to the given namespace.
    *
    * MDN
    */
-  def getElementsByTagNameNS(namespaceURI: js.String, localName: js.String): NodeList = ???
+  def getElementsByTagNameNS(namespaceURI: String, localName: String): NodeList = ???
 
-  def getElementsByClassName(classNames: js.String): NodeList = ???
+  def getElementsByClassName(classNames: String): NodeList = ???
 
   /**
    * hasAttributeNS returns a boolean value indicating whether the current element
@@ -642,7 +642,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def hasAttributeNS(namespaceURI: js.String, localName: js.String): js.Boolean = ???
+  def hasAttributeNS(namespaceURI: String, localName: String): Boolean = ???
 
   /**
    * Returns a text rectangle object that encloses a group of text rectangles.
@@ -658,14 +658,14 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def getAttributeNS(namespaceURI: js.String, localName: js.String): js.String = ???
+  def getAttributeNS(namespaceURI: String, localName: String): String = ???
 
   /**
    * Returns the Attr node for the attribute with the given namespace and name.
    *
    * MDN
    */
-  def getAttributeNodeNS(namespaceURI: js.String, localName: js.String): Attr = ???
+  def getAttributeNodeNS(namespaceURI: String, localName: String): Attr = ???
 
   /**
    * setAttributeNodeNS adds a new namespaced attribute node to an element.
@@ -680,14 +680,14 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def hasAttribute(name: js.String): js.Boolean = ???
+  def hasAttribute(name: String): Boolean = ???
 
   /**
    * removeAttribute removes an attribute from the specified element.
    *
    * MDN
    */
-  def removeAttribute(name: js.String): Unit = ???
+  def removeAttribute(name: String): Unit = ???
 
   /**
    * removeAttribute removes an attribute from the specified element.
@@ -702,14 +702,14 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def setAttributeNS(namespaceURI: js.String, qualifiedName: js.String, value: js.String): Unit = ???
+  def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit = ???
 
   /**
    * Returns the specified attribute of the specified element, as an Attr node.
    *
    * MDN
    */
-  def getAttributeNode(name: js.String): Attr = ???
+  def getAttributeNode(name: String): Attr = ???
 
   /**
    * Returns a list of elements with the given tag name. The subtree underneath the
@@ -720,7 +720,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def getElementsByTagName(name: js.String): NodeList = ???
+  def getElementsByTagName(name: String): NodeList = ???
 
   /**
    * Returns a collection of rectangles that indicate the bounding rectangles for each
@@ -750,14 +750,14 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MSN
    */
-  def setAttribute(name: js.String = ???, value: js.String = ???): Unit = ???
+  def setAttribute(name: String = ???, value: String = ???): Unit = ???
 
   /**
    * removeAttributeNS removes the specified attribute from an element.
    *
    * MDN
    */
-  def removeAttributeNS(namespaceURI: js.String, localName: js.String): Unit = ???
+  def removeAttributeNS(namespaceURI: String, localName: String): Unit = ???
 
 
 }
@@ -805,7 +805,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def localName: js.String = ???
+  def localName: String = ???
 
   /**
    * The namespace URI of this node, or null if it is no namespace. In Firefox 3.5 and
@@ -816,7 +816,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def namespaceURI: js.String = ???
+  def namespaceURI: String = ???
 
   /**
    * Is a DOMString representing the textual content of an element and all its
@@ -824,7 +824,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var textContent: js.String = ???
+  var textContent: String = ???
 
   /**
    * Returns a Node that is the parent of this node. If there is no such node, like if this
@@ -852,7 +852,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def nodeValue: js.String = ???
+  def nodeValue: String = ???
 
   /**
    * Returns a Node representing the last direct child node of the node, or null if the
@@ -879,7 +879,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def nodeName: js.String = ???
+  def nodeName: String = ???
 
   /**
    * Returns the Document that this node belongs to. If no document is associated with
@@ -919,7 +919,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var prefix: js.String = ???
+  var prefix: String = ???
 
   /**
    * Removes a child node from the current element, which must be a child of the current
@@ -945,14 +945,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def isSupported(feature: js.String, version: js.String): js.Boolean = ???
+  def isSupported(feature: String, version: String): Boolean = ???
 
   /**
    * If #targetElm is first div element in document, "true" will be displayed.
    *
    * MDN
    */
-  def isEqualNode(arg: Node): js.Boolean = ???
+  def isEqualNode(arg: Node): Boolean = ???
 
   /**
    * Returns the prefix for a given namespaceURI if present, and null if not. When
@@ -960,7 +960,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def lookupPrefix(namespaceURI: js.String): js.String = ???
+  def lookupPrefix(namespaceURI: String): String = ???
 
   /**
    * isDefaultNamespace accepts a namespace URI as an argument and returns true if the
@@ -968,7 +968,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def isDefaultNamespace(namespaceURI: js.String): js.Boolean = ???
+  def isDefaultNamespace(namespaceURI: String): Boolean = ???
 
   /**
    * Compares the position of the current node against another node in any other
@@ -992,7 +992,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def isSameNode(other: Node): js.Boolean = ???
+  def isSameNode(other: Node): Boolean = ???
 
   /**
    * hasAttributes returns a boolean value of true or false, indicating if the current
@@ -1000,7 +1000,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def hasAttributes(): js.Boolean = ???
+  def hasAttributes(): Boolean = ???
 
   /**
    * Takes a prefix and returns the namespaceURI associated with it on the given node if
@@ -1009,14 +1009,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def lookupNamespaceURI(prefix: js.String): js.String = ???
+  def lookupNamespaceURI(prefix: String): String = ???
   /**
    * Clone a Node, and optionally, all of its contents. By default, it clones the content
    * of the node.
    *
    * MDN
    */
-  def cloneNode(deep: js.Boolean = ???): Node = ???
+  def cloneNode(deep: Boolean = ???): Node = ???
 
   /**
    * hasChildNodes returns a Boolean value indicating whether the current Node has
@@ -1024,7 +1024,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def hasChildNodes(): js.Boolean = ???
+  def hasChildNodes(): Boolean = ???
 
   /**
    * Replaces one child Node of the current one with the second one given in parameter.
@@ -1087,7 +1087,7 @@ trait ModifierKeyEvent extends js.Object {
    *
    * MDN
    */
-  def metaKey: js.Boolean = ???
+  def metaKey: Boolean = ???
 
   /**
    * The altKey property indicates if the alt key was pressed (true) or not (false) when
@@ -1095,7 +1095,7 @@ trait ModifierKeyEvent extends js.Object {
    *
    * MDN
    */
-  def altKey: js.Boolean = ???
+  def altKey: Boolean = ???
 
   /**
    * A Boolean value indicating whether or not the control key was down when the touch
@@ -1183,7 +1183,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    */
   def clientX: Int = ???
 
-  def initMouseEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: js.Boolean, altKeyArg: js.Boolean, shiftKeyArg: js.Boolean, metaKeyArg: js.Boolean, buttonArg: Int, relatedTargetArg: EventTarget): Unit = ???
+  def initMouseEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean, altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean, buttonArg: Int, relatedTargetArg: EventTarget): Unit = ???
 
   /**
    * Returns the current state of the specified modifier key. See the
@@ -1191,7 +1191,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def getModifierState(keyArg: js.String): js.Boolean = ???
+  def getModifierState(keyArg: String): Boolean = ???
 }
 
 
@@ -1213,7 +1213,7 @@ class TextMetrics extends js.Object {
 
 
 trait DocumentEvent extends js.Object {
-  def createEvent(eventInterface: js.String): Event = ???
+  def createEvent(eventInterface: String): Event = ???
 }
 
 /**
@@ -1232,9 +1232,9 @@ class CDATASection extends Text {
 
 
 trait StyleMedia extends js.Object {
-  def `type`: js.String = ???
+  def `type`: String = ???
 
-  def matchMedium(mediaquery: js.String): js.Boolean = ???
+  def matchMedium(mediaquery: String): Boolean = ???
 }
 
 
@@ -1255,7 +1255,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def isCollapsed: js.Boolean = ???
+  def isCollapsed: Boolean = ???
 
   /**
    * Returns the node in which the selection begins.
@@ -1433,7 +1433,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  def expandEntityReferences: js.Boolean = ???
+  def expandEntityReferences: Boolean = ???
 
   /**
    * The NodeIterator.nextNode() method returns the next node in the set represented
@@ -1558,7 +1558,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * The onafterprint property sets and returns the onafterprint event handler code
    * for the current window.
@@ -1894,7 +1894,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    */
   def performance: Performance = ???
 
-  def alert(message: js.String): Unit = ???
+  def alert(message: String): Unit = ???
 
   /**
    * The Window.alert() method displays an alert dialog with the optional specified
@@ -1931,7 +1931,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    */
   def print(): Unit = ???
 
-  def prompt(message: js.String, default: js.String = ???): js.String = ???
+  def prompt(message: String, default: String = ???): String = ???
 
   /**
    * The Window.prompt() displays a dialog with an optional message prompting the user
@@ -1939,16 +1939,16 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def prompt(): js.String = ???
+  def prompt(): String = ???
   /**
    * Loads a resource in a new browsing context or an existing one.
    *
    * MDN
    */
-  def open(url: js.String = ???,
-           target: js.String = ???,
-           features: js.String = ???,
-           replace: js.Boolean = ???): Window = ???
+  def open(url: String = ???,
+           target: String = ???,
+           features: String = ???,
+           replace: Boolean = ???): Window = ???
 
   /**
    * Scrolls the document in the window by the given amount.
@@ -1963,7 +1963,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def confirm(message: js.String = ???): js.Boolean = ???
+  def confirm(message: String = ???): Boolean = ???
 
 
   /**
@@ -1983,7 +1983,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def postMessage(message: js.Any, targetOrigin: js.String, transfer: js.Any = ???): Unit = ???
+  def postMessage(message: js.Any, targetOrigin: String, transfer: js.Any = ???): Unit = ???
 
   /**
    * The Window.showModalDialog() creates and displays a modal dialog box containing
@@ -1995,7 +1995,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *                 `dialogArguments` property.
    * @param options An optional String that specifies window ornamentation
    */
-  def showModalDialog(url: js.String = ???, argument: js.Any = ???, options: js.Any = ???): js.Dynamic = ???
+  def showModalDialog(url: String = ???, argument: js.Any = ???, options: js.Any = ???): js.Dynamic = ???
 
   /**
    * The window.blur() method is the programmatic equivalent of the user shifting
@@ -2012,7 +2012,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    */
   def getSelection(): Selection = ???
 
-  def getComputedStyle(elt: Element, pseudoElt: js.String = ???): CSSStyleDeclaration = ???
+  def getComputedStyle(elt: Element, pseudoElt: String = ???): CSSStyleDeclaration = ???
 
   /**
    * An OfflineResourceList object providing access to the offline resources for the
@@ -2036,7 +2036,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def matchMedia(mediaQuery: js.String): MediaQueryList = ???
+  def matchMedia(mediaQuery: String): MediaQueryList = ???
 
   /**
    * Cancels an animation frame request previously scheduled through a call to
@@ -2078,7 +2078,7 @@ class EventTarget extends js.Object {
    *
    * MDN
    */
-  def removeEventListener(`type`: js.String, listener: js.Function1[Event, _], useCapture: js.Boolean = ???): Unit = ???
+  def removeEventListener(`type`: String, listener: js.Function1[Event, _], useCapture: Boolean = ???): Unit = ???
 
   /**
    * The EventTarget.addEventListener() method registers the specified listener on
@@ -2088,7 +2088,7 @@ class EventTarget extends js.Object {
    *
    * MDN
    */
-  def addEventListener(`type`: js.String, listener: js.Function1[Event, _], useCapture: js.Boolean = ???): Unit = ???
+  def addEventListener(`type`: String, listener: js.Function1[Event, _], useCapture: Boolean = ???): Unit = ???
 
   /**
    * Dispatches an Event at the specified EventTarget, invoking the affected
@@ -2098,7 +2098,7 @@ class EventTarget extends js.Object {
    *
    * MDN
    */
-  def dispatchEvent(evt: Event): js.Boolean = ???
+  def dispatchEvent(evt: Event): Boolean = ???
 }
 
 /**
@@ -2116,7 +2116,7 @@ class CanvasGradient extends js.Object {
    *
    * MDN
    */
-  def addColorStop(offset: js.Number, color: js.String): Unit = ???
+  def addColorStop(offset: Double, color: String): Unit = ???
 }
 
 
@@ -2283,7 +2283,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def radiusX: js.Number = ???
+  def radiusX: Double = ???
 
   /**
    * The Y radius of the ellipse that most closely circumscribes the area of contact with the screen.
@@ -2292,7 +2292,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def radiusY: js.Number = ???
+  def radiusY: Double = ???
 
   /**
    * The angle (in degrees) that the ellipse described by radiusX and radiusY must be rotated,
@@ -2301,7 +2301,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def rotationAngle: js.Number = ???
+  def rotationAngle: Double = ???
 
   /**
    * The amount of pressure being applied to the surface by the user, as a float
@@ -2310,7 +2310,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def force: js.Number = ???
+  def force: Double = ???
 
   /**
    * The Element on which the touch point started when it was first placed on the surface,
@@ -2364,7 +2364,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def locale: js.String = ???
+  def locale: String = ???
 
   /**
    * The key value of the key represented by the event. If the value has a printed
@@ -2375,21 +2375,21 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def key: js.String = ???
+  def key: String = ???
 
   /**
    * true if the key is being held down such that it is automatically repeating
    *
    * MDN
    */
-  def repeat: js.Boolean = ???
+  def repeat: Boolean = ???
 
   /**
    * Returns the current state of the specified modifier key.
    */
-  def getModifierState(keyArg: js.String): js.Boolean = ???
+  def getModifierState(keyArg: String): Boolean = ???
 
-  def initKeyboardEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, keyArg: js.String, locationArg: Int, modifiersListArg: js.String, repeat: js.Boolean, locale: js.String): Unit = ???
+  def initKeyboardEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, keyArg: String, locationArg: Int, modifiersListArg: String, repeat: Boolean, locale: String): Unit = ???
 }
 
 object KeyboardEvent extends js.Object {
@@ -2456,14 +2456,14 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  var vlinkColor: js.String = ???
+  var vlinkColor: String = ???
   var onseeked: js.Function1[Event, _] = ???
   /**
    * Returns the title of the current document.
    *
    * MDN
    */
-  var title: js.String = ???
+  var title: String = ???
 
   /**
    * Returns a list of the embedded <embed> elements within the current document.
@@ -2498,14 +2498,14 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  var dir: js.String = ???
+  var dir: String = ???
   var onemptied: js.Function1[Event, _] = ???
   /**
    * Can be used to make any document editable, for example in a <iframe />:
    *
    * MDN
    */
-  var designMode: js.String = ???
+  var designMode: String = ???
 
   var onseeking: js.Function1[Event, _] = ???
   var ondeactivate: js.Function1[UIEvent, _] = ???
@@ -2542,7 +2542,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def inputEncoding: js.String = ???
+  def inputEncoding: String = ???
 
   /**
    * Returns the currently focused element, that is, the element that will get
@@ -2567,14 +2567,14 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def links: HTMLCollection = ???
 
-  var uniqueID: js.String = ???
+  var uniqueID: String = ???
 
   /**
    * Returns a string containing the URL of the current document.
    *
    * MDN
    */
-  def URL: js.String = ???
+  def URL: String = ???
 
   var onbeforeactivate: js.Function1[UIEvent, _] = ???
 
@@ -2592,7 +2592,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def cookie: js.String = ???
+  def cookie: String = ???
 
   /**
    * Returns the encoding as determined by the XML declaration. Should be null if
@@ -2600,7 +2600,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def xmlEncoding: js.String = ???
+  def xmlEncoding: String = ???
 
   var oncanplaythrough: js.Function1[Event, _] = ???
 
@@ -2609,7 +2609,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def characterSet: js.String = ???
+  def characterSet: String = ???
 
   /**
    * anchors returns a list of all of the anchors in the document.
@@ -2635,14 +2635,14 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  var readyState: js.String = ???
+  var readyState: String = ???
 
   /**
    * Returns the URI of the page that linked to this page.
    *
    * MDN
    */
-  def referrer: js.String = ???
+  def referrer: String = ???
 
   /**
    * color is a string containing the name of the color (e.g., "blue", "darkblue", etc.)
@@ -2650,7 +2650,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  var alinkColor: js.String = ???
+  var alinkColor: String = ???
   /**
    * The mouseout event is raised when the mouse leaves an element (e.g, when the
    * mouse moves off of an image in the web page, the mouseout event is raised for
@@ -2668,7 +2668,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def xmlVersion: js.String = ???
+  def xmlVersion: String = ???
 
   /**
    * Called when the drag operation is finished.
@@ -2700,7 +2700,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  var bgColor: js.String = ???
+  var bgColor: String = ???
   /**
    * An alias for ondraggesture; this is the HTML 5 spec name for the event and
    * may be used in HTML or XUL; however, for backward compatibility with older
@@ -2728,7 +2728,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  var linkColor: js.String = ???
+  var linkColor: String = ???
   var onpause: js.Function1[Event, _] = ???
   /**
    * The mousedown event is raised when the user presses the mouse button.
@@ -2766,7 +2766,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  var domain: js.String = ???
+  var domain: String = ???
 
   /**
    * Returns true if the XML declaration specifies the document is standalone (e.g., An
@@ -2774,7 +2774,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def xmlStandalone: js.Boolean = ???
+  def xmlStandalone: Boolean = ???
 
   var onstalled: js.Function1[Event, _] = ???
   var onmousemove: js.Function1[MouseEvent, _] = ???
@@ -2829,7 +2829,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def lastModified: js.String = ???
+  def lastModified: String = ???
 
   var onkeypress: js.Function1[KeyboardEvent, _] = ???
   var onloadeddata: js.Function1[Event, _] = ???
@@ -2842,7 +2842,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  var fgColor: js.String = ???
+  var fgColor: String = ???
   var ontimeupdate: js.Function1[Event, _] = ???
   var onselect: js.Function1[UIEvent, _] = ???
   var ondrop: js.Function1[DragEvent, _] = ???
@@ -2853,7 +2853,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def compatMode: js.String = ???
+  def compatMode: String = ???
 
   var onscroll: js.Function1[UIEvent, _] = ???
   var onload: js.Function1[Event, _] = ???
@@ -2864,7 +2864,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def queryCommandValue(commandId: js.String): js.String = ???
+  def queryCommandValue(commandId: String): String = ???
 
   /**
    * Adopts a node from an external document. The node and its subtree is removed from the
@@ -2881,7 +2881,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def queryCommandIndeterm(commandId: js.String): js.Boolean = ???
+  def queryCommandIndeterm(commandId: String): Boolean = ???
 
   /**
    * Returns a list of elements with the given tag name belonging to the given namespace.
@@ -2889,7 +2889,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def getElementsByTagNameNS(namespaceURI: js.String, localName: js.String): NodeList = ???
+  def getElementsByTagNameNS(namespaceURI: String, localName: String): NodeList = ???
 
   /**
    * createProcessingInstruction() creates a new processing instruction node, and
@@ -2897,7 +2897,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createProcessingInstruction(target: js.String, data: js.String): ProcessingInstruction = ???
+  def createProcessingInstruction(target: String, data: String): ProcessingInstruction = ???
   /**
    * When an HTML document has been switched to designMode, the document object exposes
    * the execCommand method which allows one to run commands to manipulate the
@@ -2908,7 +2908,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def execCommand(commandId: js.String, showUI: js.Boolean = ???, value: js.Any = ???): js.Boolean = ???
+  def execCommand(commandId: String, showUI: Boolean = ???, value: js.Any = ???): Boolean = ???
 
   /**
    * Returns the element from the document whose elementFromPoint method is being
@@ -2925,7 +2925,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createCDATASection(data: js.String): CDATASection = ???
+  def createCDATASection(data: String): CDATASection = ???
 
   /**
    * This method never did anything but throw an exception, and was removed in Gecko 14.0
@@ -2933,14 +2933,14 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def queryCommandText(commandId: js.String): js.String = ???
+  def queryCommandText(commandId: String): String = ???
 
   /**
    * Writes a string of text to a document stream opened by document.open().
    *
    * MDN
    */
-  def write(content: js.String*): Unit = ???
+  def write(content: String*): Unit = ???
 
   def updateSettings(): Unit = ???
 
@@ -2951,7 +2951,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createElement(tagName: js.String): HTMLElement = ???
+  def createElement(tagName: String): HTMLElement = ???
 
   /**
    * Releases mouse capture if it's currently enabled on an element within this
@@ -2967,20 +2967,20 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def writeln(content: js.String*): Unit = ???
+  def writeln(content: String*): Unit = ???
 
   /**
    * Creates an element with the specified namespace URI and qualified name.
    *
    * MDN
    */
-  def createElementNS(namespaceURI: js.String, qualifiedName: js.String): Element = ???
+  def createElementNS(namespaceURI: String, qualifiedName: String): Element = ???
   /**
    * The document.open() method opens a document for writing.
    *
    * MDN
    */
-  def open(url: js.String = ???, name: js.String = ???, features: js.String = ???, replace: js.Boolean = ???): js.Dynamic = ???
+  def open(url: String = ???, name: String = ???, features: String = ???, replace: Boolean = ???): js.Dynamic = ???
 
 
   /**
@@ -2989,7 +2989,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def queryCommandSupported(commandId: js.String): js.Boolean = ???
+  def queryCommandSupported(commandId: String): Boolean = ???
 
   /**
    * The Document.createTreeWalker() creator method returns a newly created
@@ -2997,21 +2997,21 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: js.Boolean): TreeWalker = ???
+  def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): TreeWalker = ???
 
   /**
    * Creates a new attribute node in a given namespace and returns it.
    *
    * MDN
    */
-  def createAttributeNS(namespaceURI: js.String, qualifiedName: js.String): Attr = ???
+  def createAttributeNS(namespaceURI: String, qualifiedName: String): Attr = ???
 
   /**
    * Returns true if the formating command can be executed on the current range.
    *
    * MDN
    */
-  def queryCommandEnabled(commandId: js.String): js.Boolean = ???
+  def queryCommandEnabled(commandId: String): Boolean = ???
 
   def focus(): Unit = ???
 
@@ -3031,7 +3031,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def getElementsByClassName(classNames: js.String): NodeList = ???
+  def getElementsByClassName(classNames: String): NodeList = ???
 
   /**
    * Creates a copy of a node from an external document that can be inserted into the
@@ -3039,7 +3039,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def importNode(importedNode: Node, deep: js.Boolean): Node = ???
+  def importNode(importedNode: Node, deep: Boolean): Node = ???
 
   /**
    * Once a Range is created, you need to set its boundary points before you can make use of
@@ -3049,14 +3049,14 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def createRange(): Range = ???
 
-  def fireEvent(eventName: js.String, eventObj: js.Any = ???): js.Boolean = ???
+  def fireEvent(eventName: String, eventObj: js.Any = ???): Boolean = ???
 
   /**
    * createComment() creates a new comment node, and returns it.
    *
    * MDN
    */
-  def createComment(data: js.String): Comment = ???
+  def createComment(data: String): Comment = ???
 
   /**
    * Returns a HTMLCollection of elements with the given tag name. The complete
@@ -3066,7 +3066,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def getElementsByTagName(tagname: js.String): NodeList = ???
+  def getElementsByTagName(tagname: String): NodeList = ???
 
   /**
    * Creates a new empty DocumentFragment.
@@ -3075,21 +3075,21 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def createDocumentFragment(): DocumentFragment = ???
 
-  def createStyleSheet(href: js.String = ???, index: Int = ???): CSSStyleSheet = ???
+  def createStyleSheet(href: String = ???, index: Int = ???): CSSStyleSheet = ???
 
   /**
    * Returns a list of elements with a given name in the (X)HTML document.
    *
    * MDN
    */
-  def getElementsByName(elementName: js.String): NodeList = ???
+  def getElementsByName(elementName: String): NodeList = ???
 
   /**
    * Returns true if the formating command has been executed on the current range.
    *
    * MDN
    */
-  def queryCommandState(commandId: js.String): js.Boolean = ???
+  def queryCommandState(commandId: String): Boolean = ???
 
   /**
    * Returns a Boolean value indicating whether the document or any element inside the
@@ -3098,7 +3098,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def hasFocus(): js.Boolean = ???
+  def hasFocus(): Boolean = ???
 
   /**
    * This method never did anything and always threw an exception, so it was removed in
@@ -3106,23 +3106,23 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def execCommandShowHelp(commandId: js.String): js.Boolean = ???
+  def execCommandShowHelp(commandId: String): Boolean = ???
 
   /**
    * createAttribute creates a new attribute node, and returns it.
    *
    * MDN
    */
-  def createAttribute(name: js.String): Attr = ???
+  def createAttribute(name: String): Attr = ???
 
-  def createTextNode(data: js.String): Text = ???
+  def createTextNode(data: String): Text = ???
 
   /**
    * Supported in FF 3.5+, Chrome 1+, Opera 9+, Safari 3+, IE9+
    *
    * MDN
    */
-  def createNodeIterator(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: js.Boolean): NodeIterator = ???
+  def createNodeIterator(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): NodeIterator = ???
 
   /**
    * The DOM getSelection() method is available on the Window and Document interfaces.
@@ -3137,7 +3137,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def getElementById(elementId: js.String): HTMLElement = ???
+  def getElementById(elementId: String): HTMLElement = ???
 
   /**
    * In recent versions of Mozilla-based applications as well as in Internet Explorer
@@ -3159,7 +3159,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
 class MessageEvent extends Event {
   def source: Window = ???
 
-  def origin: js.String = ???
+  def origin: String = ???
 
   /**
    * The data from the server
@@ -3168,7 +3168,7 @@ class MessageEvent extends Event {
    */
   def data: js.Any = ???
 
-  def initMessageEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, dataArg: js.Any, originArg: js.String, lastEventIdArg: js.String, sourceArg: Window): Unit = ???
+  def initMessageEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, dataArg: js.Any, originArg: String, lastEventIdArg: String, sourceArg: Window): Unit = ???
 
   def ports: js.Any = ???
 }
@@ -3186,13 +3186,13 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  var miterLimit: js.Number = ???
+  var miterLimit: Double = ???
   /**
    * Default value 10px sans-serif
    *
    * MDN
    */
-  var font: js.String = ???
+  var font: String = ???
   /**
    * With globalAlpha applied this sets how shapes and images are drawn onto the
    * existing bitmap. Possible values: source-atop source-in source-out
@@ -3201,46 +3201,46 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  var globalCompositeOperation: js.String = ???
+  var globalCompositeOperation: String = ???
 
   /**
    * Type of endings on the end of lines. Possible values: butt (default), round, square
    *
    * MDN
    */
-  var lineCap: js.String = ???
+  var lineCap: String = ???
 
   /**
    * Specifies where to start a dasharray on a line.
    *
    * MDN
    */
-  var lineDashOffset: js.Number = ???
+  var lineDashOffset: Double = ???
   /**
    * Color of the shadow. Default fully-transparent black.
    *
    * MDN
    */
-  var shadowColor: js.String = ???
+  var shadowColor: String = ???
   /**
    * Defines the type of corners where two lines meet. Possible values: round, bevel,
    * miter (default)
    *
    * MDN
    */
-  var lineJoin: js.String = ???
+  var lineJoin: String = ???
   /**
    * Horizontal distance the shadow will be offset. Default 0.
    *
    * MDN
    */
-  var shadowOffsetX: js.Number = ???
+  var shadowOffsetX: Double = ???
   /**
    * Width of lines. Default 1.0
    *
    * MDN
    */
-  var lineWidth: js.Number = ???
+  var lineWidth: Double = ???
   /**
    * Back-reference to the canvas element for which this context was created. Read
    * only.
@@ -3253,45 +3253,45 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  var strokeStyle: js.String = ???
+  var strokeStyle: String = ???
   /**
    * Alpha value that is applied to shapes and images before they are composited onto the
    * canvas. Default 1.0 (opaque).
    *
    * MDN
    */
-  var globalAlpha: js.Number = ???
+  var globalAlpha: Double = ???
   /**
    * Vertical distance the shadow will be offset. Default 0.
    *
    * MDN
    */
-  var shadowOffsetY: js.Number = ???
+  var shadowOffsetY: Double = ???
   /**
    * Color or style to use inside shapes. Default #000 (black).
    *
    * MDN
    */
-  var fillStyle: js.String = ???
+  var fillStyle: String = ???
   /**
    * Specifies the blurring effect. Default 0
    *
    * MDN
    */
-  var shadowBlur: js.Number = ???
+  var shadowBlur: Double = ???
   /**
    * Possible values: start (default), end, left, right or center.
    *
    * MDN
    */
-  var textAlign: js.String = ???
+  var textAlign: String = ???
   /**
    * Possible values: top, hanging, middle, alphabetic (default), ideographic,
    * bottom
    *
    * MDN
    */
-  var textBaseline: js.String = ???
+  var textBaseline: String = ???
 
   /**
    * Restores the drawing style state to the last element on the 'state stack' saved by
@@ -3301,7 +3301,7 @@ class CanvasRenderingContext2D extends js.Object {
    */
   def restore(): Unit = ???
 
-  def setTransform(m11: js.Number, m12: js.Number, m21: js.Number, m22: js.Number, dx: js.Number, dy: js.Number): Unit = ???
+  def setTransform(m11: Double, m12: Double, m21: Double, m22: Double, dx: Double, dy: Double): Unit = ???
 
   /**
    * Saves the current drawing style state using a stack so you can revert any change you
@@ -3311,7 +3311,7 @@ class CanvasRenderingContext2D extends js.Object {
    */
   def save(): Unit = ???
 
-  def arc(x: js.Number, y: js.Number, radius: js.Number, startAngle: js.Number, endAngle: js.Number, anticlockwise: js.Boolean): Unit = ???
+  def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Unit = ???
 
   /**
    * Adds an arc to the path which is centered at (x, y) position with radius r starting at
@@ -3320,57 +3320,57 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def arc(x: js.Number, y: js.Number, radius: js.Number, startAngle: js.Number, endAngle: js.Number): Unit = ???
+  def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit = ???
 
-  def measureText(text: js.String): TextMetrics = ???
+  def measureText(text: String): TextMetrics = ???
 
-  def isPointInPath(x: js.Number, y: js.Number, fillRule: js.String): js.Boolean = ???
+  def isPointInPath(x: Double, y: Double, fillRule: String): Boolean = ???
 
   /**
    * Reports whether or not the specified point is contained in the current path.
    *
    * MDN
    */
-  def isPointInPath(x: js.Number, y: js.Number): js.Boolean = ???
+  def isPointInPath(x: Double, y: Double): Boolean = ???
 
-  def quadraticCurveTo(cpx: js.Number, cpy: js.Number, x: js.Number, y: js.Number): Unit = ???
+  def quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double): Unit = ???
 
-  def putImageData(imagedata: ImageData, dx: js.Number, dy: js.Number, dirtyX: js.Number = ???, dirtyY: js.Number = ???, dirtyWidth: js.Number = ???, dirtyHeight: js.Number = ???): Unit = ???
+  def putImageData(imagedata: ImageData, dx: Double, dy: Double, dirtyX: Double = ???, dirtyY: Double = ???, dirtyWidth: Double = ???, dirtyHeight: Double = ???): Unit = ???
 
-  def rotate(angle: js.Number): Unit = ???
+  def rotate(angle: Double): Unit = ???
 
-  def fillText(text: js.String, x: js.Number, y: js.Number, maxWidth: js.Number = ???): Unit = ???
+  def fillText(text: String, x: Double, y: Double, maxWidth: Double = ???): Unit = ???
 
   /**
    * Moves the origin point of the context to (x, y).
    *
    * MDN
    */
-  def translate(x: js.Number, y: js.Number): Unit = ???
+  def translate(x: Double, y: Double): Unit = ???
 
-  def scale(x: js.Number, y: js.Number): Unit = ???
+  def scale(x: Double, y: Double): Unit = ???
 
-  def createRadialGradient(x0: js.Number, y0: js.Number, r0: js.Number, x1: js.Number, y1: js.Number, r1: js.Number): CanvasGradient = ???
+  def createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): CanvasGradient = ???
 
   /**
    * Connects the last point in the subpath to the x, y coordinates with a straight line.
    *
    * MDN
    */
-  def lineTo(x: js.Number, y: js.Number): Unit = ???
+  def lineTo(x: Double, y: Double): Unit = ???
 
   /**
    * Returns a dash list array containing an even number of non-negative numbers.
    *
    * MDN
    */
-  def getLineDash(): js.Array[js.Number] = ???
+  def getLineDash(): js.Array[Double] = ???
   /**
    * Fills the subpaths with the current fill style.
    *
    * MDN
    */
-  def fill(fillRule: js.String = ???): Unit = ???
+  def fill(fillRule: String = ???): Unit = ???
 
   /**
    * Creates a new, blank ImageData object with the specified dimensions. All of the
@@ -3378,10 +3378,10 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def createImageData(imageDataOrSw: js.Any, sh: js.Number = ???): ImageData = ???
+  def createImageData(imageDataOrSw: js.Any, sh: Double = ???): ImageData = ???
 
 
-  def createPattern(image: HTMLElement, repetition: js.String): CanvasPattern = ???
+  def createPattern(image: HTMLElement, repetition: String): CanvasPattern = ???
 
   /**
    * Tries to draw a straight line from the current point to the start. If the shape has
@@ -3391,7 +3391,7 @@ class CanvasRenderingContext2D extends js.Object {
    */
   def closePath(): Unit = ???
 
-  def rect(x: js.Number, y: js.Number, w: js.Number, h: js.Number): Unit = ???
+  def rect(x: Double, y: Double, w: Double, h: Double): Unit = ???
   /**
    * Creates a clipping path from the current sub-paths. Everything drawn after clip()
    * is called appears inside the clipping path only. For an example, see Clipping paths
@@ -3399,7 +3399,7 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def clip(fillRule: js.String = ???): Unit = ???
+  def clip(fillRule: String = ???): Unit = ???
 
 
   /**
@@ -3408,14 +3408,14 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def clearRect(x: js.Number, y: js.Number, w: js.Number, h: js.Number): Unit = ???
+  def clearRect(x: Double, y: Double, w: Double, h: Double): Unit = ???
 
   /**
    * Moves the starting point of a new subpath to the (x, y) coordinates.
    *
    * MDN
    */
-  def moveTo(x: js.Number, y: js.Number): Unit = ???
+  def moveTo(x: Double, y: Double): Unit = ???
 
   /**
    * Returns an ImageData object representing the underlying pixel data for the area of
@@ -3424,7 +3424,7 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def getImageData(sx: js.Number, sy: js.Number, sw: js.Number, sh: js.Number): ImageData = ???
+  def getImageData(sx: Double, sy: Double, sw: Double, sh: Double): ImageData = ???
 
   /**
    * Draws a filled rectangle at (x, y) position whose size is determined by width and
@@ -3432,18 +3432,18 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def fillRect(x: js.Number, y: js.Number, w: js.Number, h: js.Number): Unit = ???
+  def fillRect(x: Double, y: Double, w: Double, h: Double): Unit = ???
 
-  def bezierCurveTo(cp1x: js.Number, cp1y: js.Number, cp2x: js.Number, cp2y: js.Number, x: js.Number, y: js.Number): Unit = ???
+  def bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): Unit = ???
   /**
    * Draws the specified image. This method is available in multiple formats,
    * providing a great deal of flexibility in its use.
    *
    * MDN
    */
-  def drawImage(image: HTMLElement, offsetX: js.Number, offsetY: js.Number, width: js.Number = ???, height: js.Number = ???, canvasOffsetX: js.Number = ???, canvasOffsetY: js.Number = ???, canvasImageWidth: js.Number = ???, canvasImageHeight: js.Number = ???): Unit = ???
+  def drawImage(image: HTMLElement, offsetX: Double, offsetY: Double, width: Double = ???, height: Double = ???, canvasOffsetX: Double = ???, canvasOffsetY: Double = ???, canvasImageWidth: Double = ???, canvasImageHeight: Double = ???): Unit = ???
 
-  def transform(m11: js.Number, m12: js.Number, m21: js.Number, m22: js.Number, dx: js.Number, dy: js.Number): Unit = ???
+  def transform(m11: Double, m12: Double, m21: Double, m22: Double, dx: Double, dy: Double): Unit = ???
 
   /**
    * Strokes the subpaths with the current stroke style.
@@ -3458,11 +3458,11 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def strokeRect(x: js.Number, y: js.Number, w: js.Number, h: js.Number): Unit = ???
+  def strokeRect(x: Double, y: Double, w: Double, h: Double): Unit = ???
 
-  def setLineDash(segments: js.Array[js.Number]): Unit = ???
+  def setLineDash(segments: js.Array[Double]): Unit = ???
 
-  def strokeText(text: js.String, x: js.Number, y: js.Number, maxWidth: js.Number = ???): Unit = ???
+  def strokeText(text: String, x: Double, y: Double, maxWidth: Double = ???): Unit = ???
 
   /**
    * Starts a new path by resetting the list of sub-paths. Call this method when you want
@@ -3478,9 +3478,9 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def arcTo(x1: js.Number, y1: js.Number, x2: js.Number, y2: js.Number, radius: js.Number): Unit = ???
+  def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit = ???
 
-  def createLinearGradient(x0: js.Number, y0: js.Number, x1: js.Number, y1: js.Number): CanvasGradient = ???
+  def createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient = ???
 }
 
 
@@ -3522,7 +3522,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def responseText: js.String = ???
+  def responseText: String = ???
 
   /**
    * The response to the request as a DOM Document object, or null if the request was
@@ -3544,7 +3544,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def statusText: js.String = ???
+  def statusText: String = ???
 
   var onreadystatechange: js.Function1[Event, _] = ???
   /**
@@ -3562,7 +3562,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def open(method: js.String, url: js.String, async: js.Boolean = ???, user: js.String = ???, password: js.String = ???): Unit = ???
+  def open(method: String, url: String, async: Boolean = ???, user: String = ???, password: String = ???): Unit = ???
 
   def create(): XMLHttpRequest = ???
   /**
@@ -3582,7 +3582,7 @@ class XMLHttpRequest extends EventTarget {
    */
   def abort(): Unit = ???
 
-  def getAllResponseHeaders(): js.String = ???
+  def getAllResponseHeaders(): String = ???
 
   /**
    * Sets the value of an HTTP request header. You must call setRequestHeader()
@@ -3591,9 +3591,9 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def setRequestHeader(header: js.String, value: js.String): Unit = ???
+  def setRequestHeader(header: String, value: String): Unit = ???
 
-  def getResponseHeader(header: js.String): js.String = ???
+  def getResponseHeader(header: String): String = ???
 
 
   /**
@@ -3615,7 +3615,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var withCredentials: js.Boolean = ???
+  var withCredentials: Boolean = ???
   var onprogress: js.Function1[ProgressEvent, _] = ???
   var onabort: js.Function1[js.Any, _] = ???
   /**
@@ -3643,7 +3643,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var responseType: js.String = ???
+  var responseType: String = ???
   var onloadend: js.Function1[ProgressEvent, _] = ???
   /**
    * The upload process can be tracked by adding an event listener to upload.
@@ -3727,7 +3727,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def altitudeAccuracy: js.Number = ???
+  def altitudeAccuracy: Double = ???
 
   /**
    * The Coordinates.longitude read-only property is a double representing the
@@ -3735,7 +3735,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def longitude: js.Number = ???
+  def longitude: Double = ???
 
   /**
    * The Coordinates.latitude read-only property is a double representing the
@@ -3743,7 +3743,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def latitude: js.Number = ???
+  def latitude: Double = ???
 
   /**
    * The Coordinates.speed read-only property is a double representing the velocity
@@ -3752,7 +3752,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def speed: js.Number = ???
+  def speed: Double = ???
 
   /**
    * The Coordinates.heading read-only property is a double representing the
@@ -3764,7 +3764,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def heading: js.Number = ???
+  def heading: Double = ???
 
   /**
    * The Coordinates.altitude read-only property is a double representing the
@@ -3773,7 +3773,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def altitude: js.Number = ???
+  def altitude: Double = ???
 
   /**
    * The Coordinates.accuracy read-only property is a strictly positive double
@@ -3783,7 +3783,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def accuracy: js.Number = ???
+  def accuracy: Double = ???
 }
 
 
@@ -3830,7 +3830,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def effectAllowed: js.String = ???
+  def effectAllowed: String = ???
 
   /**
    * The actual effect that will be used, and should always be one of the possible values
@@ -3838,7 +3838,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def dropEffect: js.String = ???
+  def dropEffect: String = ???
   /**
    * Remove the data associated with a given type. The type argument is optional. If the
    * type is empty or not specified, the data associated with all types is removed. If
@@ -3847,7 +3847,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def clearData(format: js.String = ???): js.Boolean = ???
+  def clearData(format: String = ???): Boolean = ???
 
   /**
    * Set the data for a given type. If data for the type does not exist, it is added at the
@@ -3857,7 +3857,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def setData(format: js.String, data: js.String): js.Boolean = ???
+  def setData(format: String, data: String): Boolean = ???
 
   /**
    * Retrieves the data for a given type, or an empty string if data for that type does not
@@ -3865,7 +3865,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def getData(format: js.String): js.String = ???
+  def getData(format: String): String = ???
 
   /**
    * Holds a list of the format types of the data that is stored for the first item, in the
@@ -3895,7 +3895,7 @@ class FocusEvent extends UIEvent {
    */
   def relatedTarget: EventTarget = ???
 
-  def initFocusEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int, relatedTargetArg: EventTarget): Unit = ???
+  def initFocusEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, relatedTargetArg: EventTarget): Unit = ???
 }
 
 
@@ -3926,7 +3926,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def collapsed: js.Boolean = ???
+  def collapsed: Boolean = ???
 
   /**
    * The Range.endOffset read-only property returns a number representing where in
@@ -4036,7 +4036,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def collapse(toStart: js.Boolean): Unit = ???
+  def collapse(toStart: Boolean): Unit = ???
 
   /**
    * The Range.selectNodeContents() sets the Range to contain the contents of
@@ -4131,7 +4131,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def createContextualFragment(fragment: js.String): DocumentFragment = ???
+  def createContextualFragment(fragment: String): DocumentFragment = ???
 }
 
 object Range extends js.Object {
@@ -4154,21 +4154,21 @@ object Range extends js.Object {
 class Storage extends js.Object {
   var length: Int = ???
 
-  def getItem(key: js.String): js.Dynamic = ???
+  def getItem(key: String): js.Dynamic = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(key: js.String): js.Any = ???
+  def apply(key: String): js.Any = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(key: js.String, v: js.Any): Unit = ???
+  def update(key: String, v: js.Any): Unit = ???
 
-  def setItem(key: js.String, data: js.String): Unit = ???
+  def setItem(key: String, data: String): Unit = ???
 
   def clear(): Unit = ???
 
-  def removeItem(key: js.String): Unit = ???
+  def removeItem(key: String): Unit = ???
 
-  def key(index: Int): js.String = ???
+  def key(index: Int): String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: Int): js.Any = ???
@@ -4184,32 +4184,32 @@ class Storage extends js.Object {
  * MDN
  */
 class DocumentType extends Node {
-  def name: js.String = ???
+  def name: String = ???
 
   def notations: NamedNodeMap = ???
 
-  def systemId: js.String = ???
+  def systemId: String = ???
 
-  def internalSubset: js.String = ???
+  def internalSubset: String = ???
 
   def entities: NamedNodeMap = ???
 
-  def publicId: js.String = ???
+  def publicId: String = ???
 }
 
 
 class MutationEvent extends Event {
-  def newValue: js.String = ???
+  def newValue: String = ???
 
   def attrChange: Int = ???
 
-  def attrName: js.String = ???
+  def attrName: String = ???
 
-  def prevValue: js.String = ???
+  def prevValue: String = ???
 
   def relatedNode: Node = ???
 
-  def initMutationEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, relatedNodeArg: Node, prevValueArg: js.String, newValueArg: js.String, attrNameArg: js.String, attrChangeArg: Int): Unit = ???
+  def initMutationEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, relatedNodeArg: Node, prevValueArg: String, newValueArg: String, attrNameArg: String, attrChangeArg: Int): Unit = ???
 
 }
 
@@ -4222,7 +4222,7 @@ object MutationEvent extends js.Object {
 trait DragEvent extends MouseEvent {
   def dataTransfer: DataTransfer = ???
 
-  def initDragEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: js.Boolean, altKeyArg: js.Boolean, shiftKeyArg: js.Boolean, metaKeyArg: js.Boolean, buttonArg: Int, relatedTargetArg: EventTarget, dataTransferArg: DataTransfer): Unit = ???
+  def initDragEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean, altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean, buttonArg: Int, relatedTargetArg: EventTarget, dataTransferArg: DataTransfer): Unit = ???
 }
 
 
@@ -4461,9 +4461,9 @@ class PerformanceTiming extends js.Object {
 trait EventException extends js.Object {
   def code: Int = ???
 
-  def message: js.String = ???
+  def message: String = ???
 
-  def name: js.String = ???
+  def name: String = ???
 }
 
 object EventException extends js.Object {
@@ -4489,7 +4489,7 @@ trait NavigatorOnLine extends js.Object {
    *
    * MDN
    */
-  def onLine: js.Boolean = ???
+  def onLine: Boolean = ???
 }
 
 trait WindowLocalStorage extends js.Object {
@@ -4515,50 +4515,50 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  var hash: js.String = ???
+  var hash: String = ???
   /**
    * Is a DOMString containing the protocol scheme of the URL, including the final ':'.
    *
    * MDN
    */
-  var protocol: js.String = ???
+  var protocol: String = ???
   /**
    * Is a DOMString containing a '?' followed by the parameters of the URL.
    *
    * MDN
    */
-  var search: js.String = ???
+  var search: String = ???
   /**
    * Is a DOMString containing the whole URL.
    *
    * MDN
    */
-  var href: js.String = ???
+  var href: String = ???
   /**
    * Is a DOMString containing the domain of the URL.
    *
    * MDN
    */
-  var hostname: js.String = ???
+  var hostname: String = ???
   /**
    * Is a DOMString containing the port number of the URL.
    *
    * MDN
    */
-  var port: js.String = ???
+  var port: String = ???
   /**
    * Is a DOMString containing an initial '/' followed by the path of the URL.
    *
    * MDN
    */
-  var pathname: js.String = ???
+  var pathname: String = ???
   /**
    * Is a DOMString containing the host, that is the hostname, a ':', and the port of the
    * URL.
    *
    * MDN
    */
-  var host: js.String = ???
+  var host: String = ???
   /**
    * Theorigin read-only property is a String containing the Unicode serialization of the 
    * origin of the represented URL, that is, for http and https, the scheme followed by 
@@ -4568,7 +4568,7 @@ trait Location extends js.Object {
    * 
    * MDN
    */
-  def origin: js.String = ???
+  def origin: String = ???
   /**
    * The Location.reload()method Reloads the resource from the current URL. Its
    * optional unique parameter is a Boolean, which, when it is true, causes the page to
@@ -4577,7 +4577,7 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  def reload(flag: js.Boolean = ???): Unit = ???
+  def reload(flag: Boolean = ???): Unit = ???
 
 
   /**
@@ -4588,7 +4588,7 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  def replace(url: js.String): Unit = ???
+  def replace(url: String): Unit = ???
 
   /**
    * The Location.assign()method loading the object at the URL providing in
@@ -4596,19 +4596,19 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  def assign(url: js.String): Unit = ???
+  def assign(url: String): Unit = ???
 
 }
 
 
 class PerformanceEntry extends js.Object {
-  def name: js.String = ???
+  def name: String = ???
 
   def startTime: Int = ???
 
   def duration: Int = ???
 
-  def entryType: js.String = ???
+  def entryType: String = ???
 }
 
 
@@ -4632,7 +4632,7 @@ class UIEvent extends Event {
    */
   def view: Window = ???
 
-  def initUIEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int): Unit = ???
+  def initUIEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int): Unit = ???
 }
 
 
@@ -4648,14 +4648,14 @@ class WheelEvent extends MouseEvent {
    *
    * MDN
    */
-  def deltaZ: js.Number = ???
+  def deltaZ: Double = ???
 
   /**
    * Horizontal scroll amount. Read only.
    *
    * MDN
    */
-  def deltaX: js.Number = ???
+  def deltaX: Double = ???
 
   /**
    * Unit of delta values. See Delta modes for a list of permitted values. Read only.
@@ -4669,9 +4669,9 @@ class WheelEvent extends MouseEvent {
    *
    * MDN
    */
-  def deltaY: js.Number = ???
+  def deltaY: Double = ???
 
-  def initWheelEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, buttonArg: Int, relatedTargetArg: EventTarget, modifiersListArg: js.String, deltaXArg: Double, deltaYArg: Double, deltaZArg: Double, deltaMode: Int): Unit = ???
+  def initWheelEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, buttonArg: Int, relatedTargetArg: EventTarget, modifiersListArg: String, deltaXArg: Double, deltaYArg: Double, deltaZArg: Double, deltaMode: Int): Unit = ???
 
   def getCurrentPoint(element: Element): Unit = ???
 }
@@ -4719,7 +4719,7 @@ class Text extends CharacterData {
    *
    * MDN
    */
-  def wholeText: js.String = ???
+  def wholeText: String = ???
 
   /**
    * The Text.splitText() method breaks the Textnode into two nodes at the specified
@@ -4737,7 +4737,7 @@ class Text extends CharacterData {
    *
    * MDN
    */
-  def replaceWholeText(content: js.String): Text = ???
+  def replaceWholeText(content: String): Text = ???
 }
 
 
@@ -4768,7 +4768,7 @@ trait PositionError extends js.Object {
    *
    * MDN
    */
-  def message: js.String = ???
+  def message: String = ???
 
 }
 
@@ -4811,7 +4811,7 @@ class CustomEvent extends Event {
    *
    * MDN
    */
-  def initCustomEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, detailArg: Object): Unit = ???
+  def initCustomEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, detailArg: Object): Unit = ???
 }
 
 
@@ -4916,7 +4916,7 @@ class History extends js.Object {
    */
   def state: js.Any = ???
 
-  def replaceState(statedata: js.Any, title: js.String, url: js.String): Unit = ???
+  def replaceState(statedata: js.Any, title: String, url: String): Unit = ???
 
   /**
    * Updates the most recent entry on the history stack to have the specified data,
@@ -4931,9 +4931,9 @@ class History extends js.Object {
    *
    * MDN
    */
-  def replaceState(statedata: js.Any, title: js.String): Unit = ???
+  def replaceState(statedata: js.Any, title: String): Unit = ???
 
-  def pushState(statedata: js.Any, title: js.String, url: js.String): Unit = ???
+  def pushState(statedata: js.Any, title: String, url: String): Unit = ???
 
   /**
    * Pushes the given data onto the session history stack with the specified title and,
@@ -4948,7 +4948,7 @@ class History extends js.Object {
    *
    * MDN
    */
-  def pushState(statedata: js.Any, title: js.String): Unit = ???
+  def pushState(statedata: js.Any, title: String): Unit = ???
 }
 
 
@@ -4984,7 +4984,7 @@ class TimeRanges extends js.Object {
 
 
 class BeforeUnloadEvent extends Event {
-  def returnValue: js.String = ???
+  def returnValue: String = ???
 }
 
 
@@ -5014,7 +5014,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def defaultPrevented: js.Boolean = ???
+  def defaultPrevented: Boolean = ???
 
   /**
    * Indicates whether or not the event was initiated by the browser (after a user click
@@ -5023,7 +5023,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def isTrusted: js.Boolean = ???
+  def isTrusted: Boolean = ???
 
   /**
    * Identifies the current target for the event, as the event traverses the DOM. It
@@ -5039,7 +5039,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def cancelBubble: js.Boolean = ???
+  def cancelBubble: Boolean = ???
 
   /**
    * This property of event objects is the object the event was dispatched on. It is
@@ -5062,9 +5062,9 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def cancelable: js.Boolean = ???
+  def cancelable: Boolean = ???
 
-  def `type`: js.String = ???
+  def `type`: String = ???
 
   def srcElement: Element = ???
 
@@ -5073,7 +5073,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def bubbles: js.Boolean = ???
+  def bubbles: Boolean = ???
 
   /**
    * The initEvent method is used to initialize the value of an event created using
@@ -5081,7 +5081,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def initEvent(eventTypeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean): Unit = ???
+  def initEvent(eventTypeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean): Unit = ???
 
   /**
    * Stops the propagation of events further along in the DOM.
@@ -5150,7 +5150,7 @@ class ImageData extends js.Object {
 
 
 trait ErrorEventHandler extends js.Object {
-  def apply(event: Event, source: js.String, fileno: Int, columnNumber: Int): Unit = ???
+  def apply(event: Event, source: String, fileno: Int, columnNumber: Int): Unit = ???
 }
 
 /**
@@ -5166,7 +5166,7 @@ trait ErrorEventHandler extends js.Object {
 class NamedNodeMap extends js.Object {
   def length: Int = ???
 
-  def removeNamedItemNS(namespaceURI: js.String, localName: js.String): Attr = ???
+  def removeNamedItemNS(namespaceURI: String, localName: String): Attr = ???
 
   def item(index: Int): Attr = ???
 
@@ -5176,13 +5176,13 @@ class NamedNodeMap extends js.Object {
   @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: Int, v: Attr): Unit = ???
 
-  def removeNamedItem(name: js.String): Attr = ???
+  def removeNamedItem(name: String): Attr = ???
 
-  def getNamedItem(name: js.String): Attr = ???
+  def getNamedItem(name: String): Attr = ???
 
   def setNamedItem(arg: Attr): Attr = ???
 
-  def getNamedItemNS(namespaceURI: js.String, localName: js.String): Attr = ???
+  def getNamedItemNS(namespaceURI: String, localName: String): Attr = ???
 
   def setNamedItemNS(arg: Attr): Attr = ???
 }
@@ -5191,19 +5191,19 @@ class NamedNodeMap extends js.Object {
 class MediaList extends js.Object {
   def length: Int = ???
 
-  def mediaText: js.String = ???
+  def mediaText: String = ???
 
-  def deleteMedium(oldMedium: js.String): Unit = ???
+  def deleteMedium(oldMedium: String): Unit = ???
 
-  def appendMedium(newMedium: js.String): Unit = ???
+  def appendMedium(newMedium: String): Unit = ???
 
-  def item(index: Int): js.String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): js.String = ???
+  def item(index: Int): String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: js.String): Unit = ???
+  def apply(index: Int): String = ???
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: String): Unit = ???
 
 }
 
@@ -5217,20 +5217,20 @@ class MediaList extends js.Object {
  * MDN
  */
 class ProcessingInstruction extends Node {
-  def target: js.String = ???
+  def target: String = ???
 
-  def data: js.String = ???
+  def data: String = ???
 }
 
 
 class TextEvent extends UIEvent {
   def inputMethod: Int = ???
 
-  def data: js.String = ???
+  def data: String = ???
 
-  def locale: js.String = ???
+  def locale: String = ???
 
-  def initTextEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, dataArg: js.String, inputMethod: Int, locale: js.String): Unit = ???
+  def initTextEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, dataArg: String, inputMethod: Int, locale: String): Unit = ???
 
 }
 
@@ -5301,7 +5301,7 @@ class PerformanceMark extends PerformanceEntry {
  * MDN
  */
 class DOMParser extends js.Object {
-  def parseFromString(source: js.String, mimeType: js.String): Document = ???
+  def parseFromString(source: String, mimeType: String): Document = ???
 }
 
 
@@ -5318,7 +5318,7 @@ class StyleSheet extends js.Object {
    *
    * MDN
    */
-  def disabled: js.Boolean = ???
+  def disabled: Boolean = ???
 
   /**
    * ownerNode returns the node that associates this style sheet with the document.
@@ -5347,14 +5347,14 @@ class StyleSheet extends js.Object {
    *
    * MDN
    */
-  def `type`: js.String = ???
+  def `type`: String = ???
 
   /**
    * Returns a DOMString representing the advisory title of the current style sheet.
    *
    * MDN
    */
-  def title: js.String = ???
+  def title: String = ???
 }
 
 
@@ -5391,7 +5391,7 @@ trait NodeListOf[TNode <: Node] extends NodeList {
 }
 
 class XMLSerializer extends js.Object {
-  def serializeToString(target: Node): js.String = ???
+  def serializeToString(target: Node): String = ???
 }
 
 
@@ -5487,7 +5487,7 @@ object MediaError extends js.Object {
  * MDN
  */
 class Comment extends CharacterData {
-  var text: js.String = ???
+  var text: String = ???
 }
 
 
@@ -5510,7 +5510,7 @@ class PerformanceResourceTiming extends PerformanceEntry {
 
   def connectStart: Int = ???
 
-  def initiatorType: js.String = ???
+  def initiatorType: String = ???
 
   var responseEnd: Int = ???
 }
@@ -5555,7 +5555,7 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  def url: js.String = ???
+  def url: String = ???
 
   /**
    * Represents the Storage object that was affected. Read only.
@@ -5570,7 +5570,7 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  def key: js.String = ???
+  def key: String = ???
 
   /**
    * Initializes the event in a manner analogous to the similarly-named method in the
@@ -5578,7 +5578,7 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  def initStorageEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, keyArg: js.String, oldValueArg: js.Any, newValueArg: js.Any, urlArg: js.String, storageAreaArg: Storage): Unit = ???
+  def initStorageEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, keyArg: String, oldValueArg: js.Any, newValueArg: js.Any, urlArg: String, storageAreaArg: Storage): Unit = ???
 }
 
 
@@ -5604,7 +5604,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  var data: js.String = ???
+  var data: String = ???
 
   /**
    * Removes the specified amount of characters, starting at the specified offset,
@@ -5622,7 +5622,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def replaceData(offset: Int, count: Int, arg: js.String): Unit = ???
+  def replaceData(offset: Int, count: Int, arg: String): Unit = ???
 
   /**
    * Appends the given DOMString to the CharacterData.data string; when this method
@@ -5630,7 +5630,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def appendData(arg: js.String): Unit = ???
+  def appendData(arg: String): Unit = ???
 
   /**
    * Inserts the specified characters, at the specified offset, in the
@@ -5639,7 +5639,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def insertData(offset: Int, arg: js.String): Unit = ???
+  def insertData(offset: Int, arg: String): Unit = ???
 
   /**
    * Returns a DOMString containing the part of CharacterData.data of the specified
@@ -5647,7 +5647,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def substringData(offset: Int, count: Int): js.String = ???
+  def substringData(offset: Int, count: Int): String = ???
 }
 
 
@@ -5666,7 +5666,7 @@ class DOMException extends js.Object {
    */
   def code: Int = ???
 
-  def message: js.String = ???
+  def message: String = ???
 
 }
 
@@ -5713,7 +5713,7 @@ class Attr extends Node {
    *
    * MDN
    */
-  def specified: js.Boolean = ???
+  def specified: Boolean = ???
 
   /**
    * Since you get an Attr object from an Element, you should already know the associated
@@ -5723,9 +5723,9 @@ class Attr extends Node {
    */
   def ownerElement: Element = ???
 
-  var value: js.String = ???
+  var value: String = ???
 
-  def name: js.String = ???
+  def name: String = ???
 }
 
 
@@ -5800,7 +5800,7 @@ trait External extends js.Object {
 
 
 trait ObjectURLOptions extends js.Object {
-  def oneTimeOnly: js.Boolean = ???
+  def oneTimeOnly: Boolean = ???
 }
 
 /**
@@ -5817,7 +5817,7 @@ trait ErrorEvent extends Event {
    *
    * MDN
    */
-  def filename: js.String = ???
+  def filename: String = ???
 
   /**
    * Is an integer containing the line number of the script file on which the error
@@ -5832,9 +5832,9 @@ trait ErrorEvent extends Event {
    *
    * MDN
    */
-  def message: js.String = ???
+  def message: String = ???
 
-  def initErrorEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, messageArg: js.String, filenameArg: js.String, linenoArg: Int): Unit = ???
+  def initErrorEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, messageArg: String, filenameArg: String, linenoArg: Int): Unit = ???
 }
 
 
@@ -5847,9 +5847,9 @@ trait TextTrackCue extends EventTarget {
   var onenter: js.Function1[Event, _] = _
   var track: TextTrack = _
   var endTime: Int = _
-  var text: js.String = _
-  var pauseOnExit: js.Boolean = _
-  var id: js.String = _
+  var text: String = _
+  var pauseOnExit: Boolean = _
+  var id: String = _
   var startTime: Int = _
   var onexit: js.Function1[Event, _] = _
 
@@ -5871,21 +5871,21 @@ trait TextTrackCue extends EventTarget {
 trait DOMTokenList extends js.Object {
   def length: Int = ???
 
-  def contains(token: js.String): js.Boolean = ???
+  def contains(token: String): Boolean = ???
 
-  def remove(token: js.String): Unit = ???
+  def remove(token: String): Unit = ???
 
-  def toggle(token: js.String): js.Boolean = ???
+  def toggle(token: String): Boolean = ???
 
-  def add(token: js.String): Unit = ???
+  def add(token: String): Unit = ???
 
-  def item(index: Int): js.String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): js.String = ???
+  def item(index: Int): String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: js.String): Unit = ???
+  def apply(index: Int): String = ???
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: String): Unit = ???
 
 }
 
@@ -5904,7 +5904,7 @@ trait MessageChannel extends js.Object {
  * MDN
  */
 trait TransitionEvent extends Event {
-  def propertyName: js.String = ???
+  def propertyName: String = ???
 
   /**
    * The TransionnEvent.elapsedTime read-only property is a float giving the amount
@@ -5922,7 +5922,7 @@ trait TransitionEvent extends Event {
    *
    * MDN
    */
-  def initTransitionEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, propertyNameArg: js.String, elapsedTimeArg: Int): Unit = ???
+  def initTransitionEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, propertyNameArg: String, elapsedTimeArg: Int): Unit = ???
 }
 
 
@@ -5940,14 +5940,14 @@ trait MediaQueryList extends js.Object {
    *
    * MDN
    */
-  def matches: js.Boolean = ???
+  def matches: Boolean = ???
 
   /**
    * The serialized media query list
    *
    * MDN
    */
-  var media: js.String = ???
+  var media: String = ???
 
   /**
    * Adds a new listener to the media query list. If the specified listener is already in
@@ -5978,7 +5978,7 @@ trait DOMError extends js.Object {
    *
    * MDN
    */
-  def name: js.String = ???
+  def name: String = ???
 
 }
 
@@ -5996,7 +5996,7 @@ trait CloseEvent extends Event {
    *
    * MDN
    */
-  def wasClean: js.Boolean = ???
+  def wasClean: Boolean = ???
 
   /**
    * A string indicating the reason the server closed the connection. This is specific
@@ -6004,7 +6004,7 @@ trait CloseEvent extends Event {
    *
    * MDN
    */
-  def reason: js.String = ???
+  def reason: String = ???
 
   /**
    * The WebSocket connection close code provided by the server. See Close codes for
@@ -6014,7 +6014,7 @@ trait CloseEvent extends Event {
    */
   def code: Int = ???
 
-  def initCloseEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, wasCleanArg: js.Boolean, codeArg: Int, reasonArg: js.String): Unit = ???
+  def initCloseEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, wasCleanArg: Boolean, codeArg: Int, reasonArg: String): Unit = ???
 }
 
 
@@ -6030,8 +6030,8 @@ trait CloseEvent extends Event {
  *                 one of the strings specified in the protocols parameter when creating the
  *                 WebSocket object.
  */
-class WebSocket(var url: js.String = ???, var protocol: js.String = ???) extends EventTarget {
-  def this(url: js.String, protocol: js.Array[js.String]) = this("", "")
+class WebSocket(var url: String = ???, var protocol: String = ???) extends EventTarget {
+  def this(url: String, protocol: js.Array[String]) = this("", "")
 
   /**
    * The current state of the connection; this is one of the Ready state constants. Read
@@ -6065,7 +6065,7 @@ class WebSocket(var url: js.String = ???, var protocol: js.String = ???) extends
    *
    * MDN
    */
-  def extensions: js.String = ???
+  def extensions: String = ???
 
   /**
    * An event listener to be called when a message is received from the server. The
@@ -6095,7 +6095,7 @@ class WebSocket(var url: js.String = ???, var protocol: js.String = ???) extends
    *
    * MDN
    */
-  var binaryType: js.String = ???
+  var binaryType: String = ???
 
   /**
    * Closes the WebSocket connection or connection attempt, if any. If the connection
@@ -6104,7 +6104,7 @@ class WebSocket(var url: js.String = ???, var protocol: js.String = ???) extends
    * MDN
    */
 
-  def close(code: Int = ???, reason: js.String = ???): Unit = ???
+  def close(code: Int = ???, reason: String = ???): Unit = ???
 
   /**
    * Transmits data to the server over the WebSocket connection.
@@ -6164,7 +6164,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def lengthComputable: js.Boolean = ???
+  def lengthComputable: Boolean = ???
 
   /**
    * The ProgressEvent.total read-only property is an unsigned long long
@@ -6182,7 +6182,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def initProgressEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, lengthComputableArg: js.Boolean, loadedArg: Int, totalArg: Int): Unit = ???
+  def initProgressEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, lengthComputableArg: Boolean, loadedArg: Int, totalArg: Int): Unit = ???
 }
 
 
@@ -6246,7 +6246,7 @@ trait File extends Blob {
    *
    * MDN
    */
-  def name: js.String = ???
+  def name: String = ???
 }
 
 
@@ -6265,7 +6265,7 @@ trait URL extends js.Object {
    *
    * MDN
    */
-  def revokeObjectURL(url: js.String): Unit = ???
+  def revokeObjectURL(url: String): Unit = ???
   /**
    * The URL.createObjectURL() static method creates a DOMString containing an URL
    * representing the object given in parameter. The URL lifetime is tied to the
@@ -6274,7 +6274,7 @@ trait URL extends js.Object {
    *
    * MDN
    */
-  def createObjectURL(`object`: js.Any, options: ObjectURLOptions = ???): js.String = ???
+  def createObjectURL(`object`: js.Any, options: ObjectURLOptions = ???): String = ???
 
 }
 
@@ -6341,7 +6341,7 @@ trait AudioTrackList extends EventTarget {
   var onchange: js.Function1[js.Any, _] = _
   var onaddtrack: js.Function1[TrackEvent, _] = _
 
-  def getTrackById(id: js.String): AudioTrack = ???
+  def getTrackById(id: String): AudioTrack = ???
 
   def item(index: Int): AudioTrack = ???
 
@@ -6374,7 +6374,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  def animationName: js.String = ???
+  def animationName: String = ???
 
   /**
    * The AnimationEvent.elapsedTime read-only property is a float giving the amount
@@ -6394,7 +6394,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  def initAnimationEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, animationNameArg: js.String, elapsedTimeArg: Int): Unit = ???
+  def initAnimationEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, animationNameArg: String, elapsedTimeArg: Int): Unit = ???
 }
 
 
@@ -6404,11 +6404,11 @@ trait WindowConsole extends js.Object {
 
 
 trait AudioTrack extends js.Object {
-  var kind: js.String = _
-  var language: js.String = _
-  var id: js.String = _
-  var label: js.String = _
-  var enabled: js.Boolean = _
+  var kind: String = _
+  var language: String = _
+  var id: String = _
+  var label: String = _
+  var enabled: Boolean = _
 }
 
 
@@ -6423,7 +6423,7 @@ trait TextTrackCueList extends js.Object {
   @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: Int, v: TextTrackCue): Unit = ???
 
-  def getCueById(id: js.String): TextTrackCue = ???
+  def getCueById(id: String): TextTrackCue = ???
 }
 
 
@@ -6456,9 +6456,9 @@ trait Console extends js.Object {
    */
   def info(message: js.Any, optionalParams: js.Any*): Unit = ???
 
-  def profile(reportName: js.String = ???): Unit = ???
+  def profile(reportName: String = ???): Unit = ???
 
-  def assert(test: js.Boolean, message: js.String, optionalParams: js.Any*): Unit = ???
+  def assert(test: Boolean, message: String, optionalParams: js.Any*): Unit = ???
 
   def clear(): Unit = ???
 
@@ -6503,11 +6503,11 @@ trait WindowBase64 extends js.Object {
   /**
    * Creates a base-64 encoded ASCII string from a "string" of binary data.
    */
-  def btoa(rawString: js.String): js.String = ???
+  def btoa(rawString: String): String = ???
   /**
    * Decodes a string of data which has been encoded using base-64 encoding.
    */
-  def atob(encodedString: js.String): js.String = ???
+  def atob(encodedString: String): String = ???
 }
 
 
@@ -6520,29 +6520,29 @@ trait WindowBase64 extends js.Object {
 trait DOMStringList extends js.Object {
   def length: Int = ???
 
-  def contains(str: js.String): js.Boolean = ???
+  def contains(str: String): Boolean = ???
 
-  def item(index: Int): js.String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): js.String = ???
+  def item(index: Int): String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: js.String): Unit = ???
+  def apply(index: Int): String = ???
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: String): Unit = ???
 }
 
 
 trait TextTrack extends EventTarget {
-  var language: js.String = _
+  var language: String = _
   var mode: js.Any = _
   var readyState: Int = _
   var activeCues: TextTrackCueList = _
   var cues: TextTrackCueList = _
   var oncuechange: js.Function1[Event, _] = _
-  var kind: js.String = _
+  var kind: String = _
   var onload: js.Function1[js.Any, _] = _
   var onerror: js.Function1[ErrorEvent, _] = _
-  var label: js.String = _
+  var label: String = _
 
 
   var ERROR: Int = _
@@ -6625,7 +6625,7 @@ trait FileReader {
    */
   def readAsDataURL(blob: Blob): Unit = ???
 
-  def readAsText(blob: Blob, encoding: js.String): Unit = ???
+  def readAsText(blob: Blob, encoding: String): Unit = ???
 
   /**
    * The readAsText method is used to starts reading the contents of the specified Blob
@@ -6640,9 +6640,9 @@ trait FileReader {
 
 
 trait BlobPropertyBag extends js.Object {
-  def `type`: js.String = ???
+  def `type`: String = ???
 
-  def endings: js.String = ???
+  def endings: String = ???
 }
 
 /**
@@ -6659,7 +6659,7 @@ trait BlobPropertyBag extends js.Object {
  */
 class Blob(blobParts: js.Array[js.Any] = ???, options: BlobPropertyBag = ???) extends js.Object {
 
-  def `type`: js.String = ???
+  def `type`: String = ???
 
   /**
    * The size, in bytes, of the data contained in the Blob object.
@@ -6673,7 +6673,7 @@ class Blob(blobParts: js.Array[js.Any] = ???, options: BlobPropertyBag = ???) ex
    *
    * MDN
    */
-  def slice(start: Int = ???, end: Int = ???, contentType: js.String = ???): Blob = ???
+  def slice(start: Int = ???, end: Int = ???, contentType: String = ???): Blob = ???
 
   def close(): Unit = ???
 }
@@ -6715,12 +6715,12 @@ object ApplicationCache extends js.Object {
 trait PopStateEvent extends Event {
   def state: js.Any = ???
 
-  def initPopStateEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, stateArg: js.Any): Unit = ???
+  def initPopStateEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, stateArg: js.Any): Unit = ???
 }
 
 
 trait DOMSettableTokenList extends DOMTokenList {
-  def value: js.String = ???
+  def value: String = ???
 }
 
 
@@ -6739,7 +6739,7 @@ class FormData(form: HTMLFormElement = ???) extends js.Object {
    *
    * MDN
    */
-  def append(name: js.Any, value: js.Any, blobName: js.String = ???): Unit = ???
+  def append(name: js.Any, value: js.Any, blobName: String = ???): Unit = ???
 
 }
 
@@ -6780,14 +6780,14 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  def customError: js.Boolean = ???
+  def customError: Boolean = ???
 
   /**
    * The element has a required attribute, but no value.
    *
    * MDN
    */
-  def valueMissing: js.Boolean = ???
+  def valueMissing: Boolean = ???
 
   /**
    * The value does not fit the rules determined by the step attribute (that is, it's not
@@ -6795,35 +6795,35 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  def stepMismatch: js.Boolean = ???
+  def stepMismatch: Boolean = ???
 
   /**
    * The value is less than the minimum specified by the min attribute.
    *
    * MDN
    */
-  def rangeUnderflow: js.Boolean = ???
+  def rangeUnderflow: Boolean = ???
 
   /**
    * The value is greater than the maximum specified by the max attribute.
    *
    * MDN
    */
-  def rangeOverflow: js.Boolean = ???
+  def rangeOverflow: Boolean = ???
 
   /**
    * The value is not in the required syntax (when type is email or url).
    *
    * MDN
    */
-  def typeMismatch: js.Boolean = ???
+  def typeMismatch: Boolean = ???
 
   /**
    * The value does not match the specified pattern.
    *
    * MDN
    */
-  def patternMismatch: js.Boolean = ???
+  def patternMismatch: Boolean = ???
 
   /**
    * The value exceeds the specified maxlength for HTMLInputElement or
@@ -6832,7 +6832,7 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  def tooLong: js.Boolean = ???
+  def tooLong: Boolean = ???
 
   /**
    * The element meets all constraint validations, and is therefore considered to be
@@ -6840,7 +6840,7 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  def valid: js.Boolean = ???
+  def valid: Boolean = ???
 }
 
 
@@ -6857,7 +6857,7 @@ trait ValidityState extends js.Object {
  *
  * MDN
  */
-class Worker (stringUrl: js.String) extends AbstractWorker {
+class Worker (stringUrl: String) extends AbstractWorker {
 
   /**
    * The Worker.onmessage property represents an EventHandler, that is a function to

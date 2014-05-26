@@ -16,29 +16,29 @@ class WebGLContextAttributes extends js.Object {
   /**
    * When `true`, the drawing buffer has an alpha channel.
    */
-  var alpha: js.Boolean = ???
+  var alpha: Boolean = ???
   /**
    * When `true`, the drawing buffer has a depth buffer of at least 16 bits.
    */
-  var depth: js.Boolean = ???
+  var depth: Boolean = ???
   /**
    * When `true`, the drawing buffer has a stencil buffer of at least 8 bits.
    */
-  var stencil: js.Boolean = ???
+  var stencil: Boolean = ???
   /**
    * When `true` and antialiasing is supported, the drawing buffer will use an antialiasing method if it's choice.
    */
-  var antialias: js.Boolean = ???
+  var antialias: Boolean = ???
   /**
    * When `true` the page compositor assumes the buffer's contents is premultiplied.  Used for sensible transparency when using
    * WebGL canvases for overlays.
    */
-  var premultipliedAlpha: js.Boolean = ???
+  var premultipliedAlpha: Boolean = ???
   /**
    * When `true`, the drawing buffer is preserved after rendering, otherwise it is cleared.  On some implementations preserving the drawing buffer
    * can dramatically impact performance.
    */
-  var preserveDrawingBuffer: js.Boolean = ???
+  var preserveDrawingBuffer: Boolean = ???
 }
 
 /**
@@ -91,7 +91,7 @@ class WebGLActiveInfo private () extends js.Object {
   /**
    * The name of the requested variable.
    */
-  val name: js.String = ???  
+  val name: String = ???
 }
 
 /**
@@ -834,7 +834,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Returns `true` if the context has been lost,  `false` otherwise.
    */
-  def isContextLost(): js.Boolean = ???
+  def isContextLost(): Boolean = ???
   
   /**
    * Returns an array of strings naming supported WebGL extensions.
@@ -846,7 +846,7 @@ class WebGLRenderingContext extends js.Object {
    * 
    * @param name  the name of the extension
    */
-  def getExtension(name: js.String): js.Any = ???
+  def getExtension(name: String): js.Any = ???
   
   /**
    * Selects the active texture unit.
@@ -863,7 +863,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Associates a vertex attribute index with a named attribute variable.
    */
-  def bindAttribLocation(program: WebGLProgram, index:  Int, name: js.String): Unit = ???
+  def bindAttribLocation(program: WebGLProgram, index:  Int, name: String): Unit = ???
   
   /**
    * Loads a a target into a [[WebGLBuffer]].
@@ -899,7 +899,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Sets the blend color used in [[WebGLRenderingContext.BLEND_COLOR]].
    */
-  def blendColor(red: js.Number, green: js.Number, blue: js.Number, alpha: js.Number): Unit = ???
+  def blendColor(red: Double, green: Double, blue: Double, alpha: Double): Unit = ???
   
   /**
    * Specifies the equation used for RGB and Alpha blending.
@@ -1007,7 +1007,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Sets the clear color to use with [[WebGLRenderingContext#clear]].
    */
-  def clearColor(red: js.Number, green: js.Number, blue: js.Number, alpha: js.Number): Unit = ???
+  def clearColor(red: Double, green: Double, blue: Double, alpha: Double): Unit = ???
 
   /**
    * Sets the clear depth to use with [[WebGLRenderingContext#clear]].
@@ -1022,7 +1022,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Enable and disable writing to the given channels.  For each channel, `true` will allow writing, `false` will prevent it.
    */
-  def colorMask(red: js.Boolean, green: js.Boolean, blue: js.Boolean, alpha: js.Boolean): Unit = ???
+  def colorMask(red: Boolean, green: Boolean, blue: Boolean, alpha: Boolean): Unit = ???
   
   /**
    * Compiles the provided shader.
@@ -1196,7 +1196,7 @@ class WebGLRenderingContext extends js.Object {
    * 
    * @param flag  when `false`, depth writing is disabled, otherwise it is enabled.
    */
-  def depthMask(flag: js.Boolean): Unit = ???
+  def depthMask(flag: Boolean): Unit = ???
   
   /**
    * Sets the mapping from normalized device coordinates to window coordinates.
@@ -1208,7 +1208,7 @@ class WebGLRenderingContext extends js.Object {
    * @param zNear the near clipping plane, initially 0.
    * @param zFar the far clipping plane, initially 1
    */
-  def depthRange(zNear: js.Number, zFar: js.Number): Unit = ???
+  def depthRange(zNear: Double, zFar: Double): Unit = ???
   
   /**
    * Detaches a [[WebGLShader]] from a [[WebGLProgram]].
@@ -1336,7 +1336,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Returns the index of the named attribute, or -1 on error.
    */
-  def getAttribLocation(program: WebGLProgram, name: js.String):  Int = ???
+  def getAttribLocation(program: WebGLProgram, name: String):  Int = ???
   
   /**
    * Returns the value of the requested parameter for a buffer.
@@ -1406,7 +1406,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Returns a string containing information about the last link or validation operation for a program.
    */
-  def getProgramInfoLog(program: WebGLProgram): js.String = ???
+  def getProgramInfoLog(program: WebGLProgram): String = ???
   
   /**
    * Returns the value of a parameter on the active renderbuffer.
@@ -1445,12 +1445,12 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Returns the information log from the last compile of the shader.
    */
-  def getShaderInfoLog(shader: WebGLShader): js.String = ???
+  def getShaderInfoLog(shader: WebGLShader): String = ???
   
   /**
    * Returns the source of the given shader.
    */
-  def getShaderSource(shader: WebGLShader): js.String = ???
+  def getShaderSource(shader: WebGLShader): String = ???
   
   /**
    * Returns the value of the given texture parameter on the target of the active texture.
@@ -1472,7 +1472,7 @@ class WebGLRenderingContext extends js.Object {
    * Returns a new [[WebGLUniformLocation]] that represents the location of the given uniform in the specified program.
    * If the uniform does not exist, or another error occurs, returns `null`. 
    */
-  def getUniformLocation(program: WebGLProgram, name: js.String): WebGLUniformLocation = ???
+  def getUniformLocation(program: WebGLProgram, name: String): WebGLUniformLocation = ???
   
   /**
    * Returns the value of the named parameter for a given vertex attribute index.
@@ -1505,38 +1505,38 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Returns `true` if the `buffer` is valid, `false` otherwise.
    */
-  def isBuffer(buffer: js.Any): js.Boolean = ???
+  def isBuffer(buffer: js.Any): Boolean = ???
   
   /**
    * Returns `true` if the specified capability is enabled, `false` otherwise.
    * @see [[WebGLRenderingContext#enable]]
    */
-  def isEnabled(cap:  Int): js.Boolean = ???
+  def isEnabled(cap:  Int): Boolean = ???
   
   /**
    * Returns `true` if the `framebuffer` is valid, `false` otherwise.
    */
-  def isFramebuffer(framebuffer: js.Any): js.Boolean = ???
+  def isFramebuffer(framebuffer: js.Any): Boolean = ???
   
   /**
    * Returns `true` if the `program` is valid, `false` otherwise.
    */
-  def isProgram(program: js.Any): js.Boolean = ???
+  def isProgram(program: js.Any): Boolean = ???
   
   /**
    * Returns `true` if the `renderbuffer` is valid, `false` otherwise.
    */
-  def isRenderbuffer(renderbuffer: js.Any): js.Boolean = ???
+  def isRenderbuffer(renderbuffer: js.Any): Boolean = ???
   
   /**
    * Returns `true` if the `shader` is valid, `false` otherwise.
    */
-  def isShader(shader: js.Any): js.Boolean = ???
+  def isShader(shader: js.Any): Boolean = ???
   
   /**
    * Returns `true` if the `texture` is valid, `false` otherwise.
    */  
-  def isTexture(texture: js.Any): js.Boolean = ???
+  def isTexture(texture: js.Any): Boolean = ???
   
   /**
    * Specifies the line width.
@@ -1598,7 +1598,7 @@ class WebGLRenderingContext extends js.Object {
    * @param value  the sample coverage value, clamped to 0..1.
    * @param invert  if true, the mask will be bitwise-inverted.
    */
-  def sampleCoverage(value:  Int, invert: js.Boolean): Unit = ???
+  def sampleCoverage(value:  Int, invert: Boolean): Unit = ???
   
   /**
    * Sets the scissor rectangle.  When [[WebGLRenderingContext.SCISSOR_TEST]] is enabled, rendering will be restricted to this rectangle.
@@ -1608,7 +1608,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Sets the GLSL source for the given shader.
    */
-  def shaderSource(shader: WebGLShader, source: js.String): Unit = ???
+  def shaderSource(shader: WebGLShader, source: String): Unit = ???
   
   /**
    * Sets the stencil test for front and back faces.
@@ -1855,7 +1855,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param x  the scalar to bind to.
    */
-  def uniform1f(location: WebGLUniformLocation, x: js.Number): Unit = ???
+  def uniform1f(location: WebGLUniformLocation, x: Double): Unit = ???
 
   /**
    * Loads a a scalar float into a [[WebGLUniformLocation]].
@@ -1871,7 +1871,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to.
    */
-  def uniform1fv(location: WebGLUniformLocation, v: js.Array[js.Number]): Unit = ???
+  def uniform1fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit = ???
   
   /**
    * Loads a a scalar integer into a [[WebGLUniformLocation]].
@@ -1904,7 +1904,7 @@ class WebGLRenderingContext extends js.Object {
    * @param x  the first float component
    * @param y  the second float component
    */
-  def uniform2f(location: WebGLUniformLocation, x: js.Number, y: js.Number): Unit = ???
+  def uniform2f(location: WebGLUniformLocation, x: Double, y: Double): Unit = ???
 
   /**
    * Loads a a 2-vector of floats into a [[WebGLUniformLocation]].
@@ -1920,7 +1920,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind into a [[WebGLUniformLocation]].
    * @param v  a js.Array to bind to.
    */
-  def uniform2fv(location: WebGLUniformLocation, v: js.Array[js.Number]): Unit = ???
+  def uniform2fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit = ???
   
   /**
    * Loads a a 2-vector of integers into a [[WebGLUniformLocation]].
@@ -1955,7 +1955,7 @@ class WebGLRenderingContext extends js.Object {
    * @param y  the second float component. 
    * @param z  the third float component. 
    */
-  def uniform3f(location: WebGLUniformLocation, x: js.Number, y: js.Number, z: js.Number): Unit = ???
+  def uniform3f(location: WebGLUniformLocation, x: Double, y: Double, z: Double): Unit = ???
 
   /**
    * Loads a a 3-vector of floats into a [[WebGLUniformLocation]].
@@ -1971,7 +1971,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to.
    */
-  def uniform3fv(location: WebGLUniformLocation, v: js.Array[js.Number]): Unit = ???
+  def uniform3fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit = ???
   
   /**
    * Loads a a 3-vector of integers into a [[WebGLUniformLocation]].
@@ -2008,7 +2008,7 @@ class WebGLRenderingContext extends js.Object {
    * @param z  the third float component. 
    * @param w  the fourth float component. 
    */
-  def uniform4f(location: WebGLUniformLocation, x: js.Number, y: js.Number, z: js.Number, w: js.Number): Unit = ???
+  def uniform4f(location: WebGLUniformLocation, x: Double, y: Double, z: Double, w: Double): Unit = ???
 
   /**
    * Loads a a 4-vector of floats into a [[WebGLUniformLocation]].
@@ -2024,7 +2024,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to.
    */
-  def uniform4fv(location: WebGLUniformLocation, v: js.Array[js.Number]): Unit = ???
+  def uniform4fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit = ???
   
   /**
    * Loads a a 4-vector of integers into a [[WebGLUniformLocation]].
@@ -2060,7 +2060,7 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source [[Float32Array]] containing the matrix data.
    */
-  def uniformMatrix2fv(location: WebGLUniformLocation, transpose: js.Boolean, value: Float32Array): Unit = ???
+  def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit = ???
 
   /**
    * Loads a a 4x2 matrix into a [[WebGLUniformLocation]].
@@ -2069,7 +2069,7 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source `js.Array` containing the matrix data.
    */
-  def uniformMatrix2fv(location: WebGLUniformLocation, transpose: js.Boolean, value: js.Array[js.Number]): Unit = ???
+  def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit = ???
   
   /**
    * Loads a a 4x3 matrix into a [[WebGLUniformLocation]].
@@ -2078,7 +2078,7 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source [[Float32Array]] containing the matrix data.
    */
-  def uniformMatrix3fv(location: WebGLUniformLocation, transpose: js.Boolean, value: Float32Array): Unit = ???
+  def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit = ???
   
   /**
    * Loads a a 4x3 matrix into a [[WebGLUniformLocation]].
@@ -2087,7 +2087,7 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source `js.Array` containing the matrix data.
    */  
-  def uniformMatrix3fv(location: WebGLUniformLocation, transpose: js.Boolean, value: js.Array[js.Number]): Unit = ???
+  def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit = ???
 
   /**
    * Loads a a 4x4 matrix into a [[WebGLUniformLocation]].
@@ -2096,7 +2096,7 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source [[Float32Array]] containing the matrix data.
    */
-  def uniformMatrix4fv(location: WebGLUniformLocation, transpose: js.Boolean, value: Float32Array): Unit = ???
+  def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit = ???
   
   /**
    * Loads a a 4x4 matrix into a [[WebGLUniformLocation]].
@@ -2105,7 +2105,7 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source `js.Array` containing the matrix data.
    */  
-  def uniformMatrix4fv(location: WebGLUniformLocation, transpose: js.Boolean, value: js.Array[js.Number]): Unit = ???
+  def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit = ???
   
   /**
    * Makes a [[WebGLProgram]] become the active program. 
@@ -2123,7 +2123,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param x  the scalar to load.
    */
-  def vertexAttrib1f(indx: Int, x: js.Number): Unit = ???
+  def vertexAttrib1f(indx: Int, x: Double): Unit = ???
 
   /**
    * Loads a scalar into a vertex attribute.
@@ -2139,7 +2139,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib1fv(indx: Int, values: js.Array[js.Number]): Unit = ???
+  def vertexAttrib1fv(indx: Int, values: js.Array[Double]): Unit = ???
   
   /**
    * Loads a 2-vector into a vertex attribute.
@@ -2148,7 +2148,7 @@ class WebGLRenderingContext extends js.Object {
    * @param x  the first component.
    * @param y  the second component. 
    */
-  def vertexAttrib2f(indx: Int, x: js.Number, y: js.Number): Unit = ???
+  def vertexAttrib2f(indx: Int, x: Double, y: Double): Unit = ???
 
   /**
    * Loads a 2-vector into a vertex attribute.
@@ -2164,7 +2164,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib2fv(indx: Int, values: js.Array[js.Number]): Unit = ???
+  def vertexAttrib2fv(indx: Int, values: js.Array[Double]): Unit = ???
  
   /**
    * Loads a 3-vector into a vertex attribute.
@@ -2174,7 +2174,7 @@ class WebGLRenderingContext extends js.Object {
    * @param y  the second component. 
    * @param z  the third component. 
    */
-  def vertexAttrib3f(indx: Int, x: js.Number, y: js.Number, z: js.Number): Unit = ???
+  def vertexAttrib3f(indx: Int, x: Double, y: Double, z: Double): Unit = ???
 
   /**
    * Loads a 3-vector into a vertex attribute.
@@ -2190,7 +2190,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib3fv(indx: Int, values: js.Array[js.Number]): Unit = ???
+  def vertexAttrib3fv(indx: Int, values: js.Array[Double]): Unit = ???
   
   /**
    * Loads a 4-vector into a vertex attribute.
@@ -2201,7 +2201,7 @@ class WebGLRenderingContext extends js.Object {
    * @param z  the third component. 
    * @param w  the fourth component. 
    */
-  def vertexAttrib4f(indx: Int, x: js.Number, y: js.Number, z: js.Number, w: js.Number): Unit = ???
+  def vertexAttrib4f(indx: Int, x: Double, y: Double, z: Double, w: Double): Unit = ???
 
   /**
    * Loads a 4-vector into a vertex attribute.
@@ -2217,7 +2217,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib4fv(indx: Int, values: js.Array[js.Number]): Unit = ???
+  def vertexAttrib4fv(indx: Int, values: js.Array[Double]): Unit = ???
   
   /**
    * Defines an array of generic vertex attribute data.
@@ -2231,10 +2231,10 @@ class WebGLRenderingContext extends js.Object {
    * @param stride the gap between attributes.  0 would be packed together.
    * @param offset the offset to the first component in the array. 
    */
-  def vertexAttribPointer(indx: Int, size: Int, `type`: Int, normalized: js.Boolean, stride: Int, offset: Int): Unit = ???
+  def vertexAttribPointer(indx: Int, size: Int, `type`: Int, normalized: Boolean, stride: Int, offset: Int): Unit = ???
   
   /**
    * Sets the OpenGL viewport to render within.
    */
-  def viewport(x: js.Number, y: js.Number, width: js.Number, height: js.Number): Unit = ???
+  def viewport(x: Double, y: Double, width: Double, height: Double): Unit = ???
 }

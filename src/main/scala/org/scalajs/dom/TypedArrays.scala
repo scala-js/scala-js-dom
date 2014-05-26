@@ -27,7 +27,7 @@ class ArrayBuffer extends js.Object {
 }
 
 object ArrayBuffer {
-  def isView(value: js.Any): js.Boolean = ???
+  def isView(value: js.Any): Boolean = ???
 }
 
 trait ArrayBufferView extends js.Object {
@@ -466,32 +466,32 @@ class DataView(buffer: ArrayBuffer, byteOffset: Int, byteLength: Int) extends js
   /**
    * Returns the signed 16-bit integer at `byteOffset`, if `littleEndian` uses little endian, otherwise uses big endian.
    */
-  def getInt16(byteOffset: Int, littleEndian: js.Boolean = ???): Int = ???
+  def getInt16(byteOffset: Int, littleEndian: Boolean = ???): Int = ???
   
   /**
    * Returns the unsigned 16-bit integer at `byteOffset`, if `littleEndian` uses little endian, otherwise uses big endian.
    */
-  def getUint16(byteOffset: Int, littleEndian: js.Boolean = ???): Int = ???
+  def getUint16(byteOffset: Int, littleEndian: Boolean = ???): Int = ???
   
   /**
    * Returns the signed 32-bit integer at `byteOffset`, if `littleEndian` uses little endian, otherwise uses big endian.
    */
-  def getInt32(byteOffset: Int, littleEndian: js.Boolean = ???): Int = ???
+  def getInt32(byteOffset: Int, littleEndian: Boolean = ???): Int = ???
 
   /**
    * Returns the unsigned 32-bit integer at `byteOffset`, if `littleEndian` uses little endian, otherwise uses big endian.
    */
-  def getUint32(byteOffset: Int, littleEndian: js.Boolean = ???): Int = ???
+  def getUint32(byteOffset: Int, littleEndian: Boolean = ???): Int = ???
   
   /**
    * Returns the 32-bit IEEE-754 float at `byteOffset`, if `littleEndian` uses little endian, otherwise uses big endian.
    */
-  def getFloat32(byteOffset: Int, littleEndian: js.Boolean = ???): Int = ???
+  def getFloat32(byteOffset: Int, littleEndian: Boolean = ???): Int = ???
 
   /**
    * Returns the 64-bit IEEE-754 float at `byteOffset`, if `littleEndian` uses little endian, otherwise uses big endian.
    */
-  def getFloat64(byteOffset: Int, littleEndian: js.Boolean = ???): Int = ???
+  def getFloat64(byteOffset: Int, littleEndian: Boolean = ???): Int = ???
 
   /**
    * Sets the signed byte at `byteOffset` to `value`.
@@ -506,30 +506,30 @@ class DataView(buffer: ArrayBuffer, byteOffset: Int, byteLength: Int) extends js
   /**
    * Sets the signed short at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setInt16(byteOffset: Int, value: Int, littleEndian: js.Boolean = ???): Int = ???
+  def setInt16(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
 
   /**
    * Sets the unsigned short at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setUint16(byteOffset: Int, value: Int, littleEndian: js.Boolean = ???): Int = ???
+  def setUint16(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
   
   /**
    * Sets the signed integer at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setInt32(byteOffset: Int, value: Int, littleEndian: js.Boolean = ???): Int = ???
+  def setInt32(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
 
   /**
    * Sets the unsigned integer at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setUint32(byteOffset: Int, value: Int, littleEndian: js.Boolean = ???): Int = ???
+  def setUint32(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
 
   /**
    * Sets the 32-bit IEEE 754 float at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setFloat32(byteOffset: Int, value: Int, littleEndian: js.Boolean = ???): Int = ???
+  def setFloat32(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
 
   /**
    * Sets the 64-bit IEEE 754 float at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setFloat64(byteOffset: Int, value: Int, littleEndian: js.Boolean = ???): Int = ???
+  def setFloat64(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
 }

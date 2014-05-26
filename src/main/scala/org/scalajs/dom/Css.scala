@@ -19,289 +19,289 @@ import scala.scalajs.js
  * MDN
  */
 class CSSStyleDeclaration extends js.Object {
-  var backgroundAttachment: js.String = _
-  var visibility: js.String = _
-  var textAlignLast: js.String = _
-  var borderRightStyle: js.String = _
-  var counterIncrement: js.String = _
-  var orphans: js.String = _
-  var cssText: js.String = _
-  var borderStyle: js.String = _
-  var pointerEvents: js.String = _
-  var borderTopColor: js.String = _
-  var markerEnd: js.String = _
-  var textIndent: js.String = _
-  var listStyleImage: js.String = _
-  var cursor: js.String = _
-  var listStylePosition: js.String = _
-  var wordWrap: js.String = _
-  var borderTopStyle: js.String = _
-  var alignmentBaseline: js.String = _
-  var opacity: js.String = _
-  var direction: js.String = _
-  var strokeMiterlimit: js.String = _
-  var maxWidth: js.String = _
-  var color: js.String = _
-  var clip: js.String = _
-  var borderRightWidth: js.String = _
-  var verticalAlign: js.String = _
-  var overflow: js.String = _
-  var mask: js.String = _
-  var borderLeftStyle: js.String = _
-  var emptyCells: js.String = _
-  var stopOpacity: js.String = _
-  var paddingRight: js.String = _
+  var backgroundAttachment: String = _
+  var visibility: String = _
+  var textAlignLast: String = _
+  var borderRightStyle: String = _
+  var counterIncrement: String = _
+  var orphans: String = _
+  var cssText: String = _
+  var borderStyle: String = _
+  var pointerEvents: String = _
+  var borderTopColor: String = _
+  var markerEnd: String = _
+  var textIndent: String = _
+  var listStyleImage: String = _
+  var cursor: String = _
+  var listStylePosition: String = _
+  var wordWrap: String = _
+  var borderTopStyle: String = _
+  var alignmentBaseline: String = _
+  var opacity: String = _
+  var direction: String = _
+  var strokeMiterlimit: String = _
+  var maxWidth: String = _
+  var color: String = _
+  var clip: String = _
+  var borderRightWidth: String = _
+  var verticalAlign: String = _
+  var overflow: String = _
+  var mask: String = _
+  var borderLeftStyle: String = _
+  var emptyCells: String = _
+  var stopOpacity: String = _
+  var paddingRight: String = _
   var parentRule: CSSRule = _
-  var background: js.String = _
-  var boxSizing: js.String = _
-  var textJustify: js.String = _
-  var height: js.String = _
-  var paddingTop: js.String = _
+  var background: String = _
+  var boxSizing: String = _
+  var textJustify: String = _
+  var height: String = _
+  var paddingTop: String = _
   var length: Int = _
-  var right: js.String = _
-  var baselineShift: js.String = _
-  var borderLeft: js.String = _
-  var widows: js.String = _
-  var lineHeight: js.String = _
-  var left: js.String = _
-  var textUnderlinePosition: js.String = _
-  var glyphOrientationHorizontal: js.String = _
-  var display: js.String = _
-  var textAnchor: js.String = _
-  var cssFloat: js.String = _
-  var strokeDasharray: js.String = _
-  var rubyAlign: js.String = _
-  var fontSizeAdjust: js.String = _
-  var borderLeftColor: js.String = _
-  var backgroundImage: js.String = _
-  var listStyleType: js.String = _
-  var strokeWidth: js.String = _
-  var textOverflow: js.String = _
-  var fillRule: js.String = _
-  var borderBottomColor: js.String = _
-  var zIndex: js.String = _
-  var position: js.String = _
-  var listStyle: js.String = _
-  var msTransformOrigin: js.String = _
-  var dominantBaseline: js.String = _
-  var overflowY: js.String = _
-  var fill: js.String = _
-  var captionSide: js.String = _
-  var borderCollapse: js.String = _
-  var boxShadow: js.String = _
-  var quotes: js.String = _
-  var tableLayout: js.String = _
-  var unicodeBidi: js.String = _
-  var borderBottomWidth: js.String = _
-  var backgroundSize: js.String = _
-  var textDecoration: js.String = _
-  var strokeDashoffset: js.String = _
-  var fontSize: js.String = _
-  var border: js.String = _
-  var pageBreakBefore: js.String = _
-  var borderTopRightRadius: js.String = _
-  var msTransform: js.String = _
-  var borderBottomLeftRadius: js.String = _
-  var textTransform: js.String = _
-  var rubyPosition: js.String = _
-  var strokeLinejoin: js.String = _
-  var clipPath: js.String = _
-  var borderRightColor: js.String = _
-  var fontFamily: js.String = _
-  var clear: js.String = _
-  var content: js.String = _
-  var backgroundClip: js.String = _
-  var marginBottom: js.String = _
-  var counterReset: js.String = _
-  var outlineWidth: js.String = _
-  var marginRight: js.String = _
-  var paddingLeft: js.String = _
-  var borderBottom: js.String = _
-  var wordBreak: js.String = _
-  var marginTop: js.String = _
-  var top: js.String = _
-  var fontWeight: js.String = _
-  var borderRight: js.String = _
-  var width: js.String = _
-  var kerning: js.String = _
-  var pageBreakAfter: js.String = _
-  var borderBottomStyle: js.String = _
-  var fontStretch: js.String = _
-  var padding: js.String = _
-  var strokeOpacity: js.String = _
-  var markerStart: js.String = _
-  var bottom: js.String = _
-  var borderLeftWidth: js.String = _
-  var clipRule: js.String = _
-  var backgroundPosition: js.String = _
-  var backgroundColor: js.String = _
-  var pageBreakInside: js.String = _
-  var backgroundOrigin: js.String = _
-  var strokeLinecap: js.String = _
-  var borderTopWidth: js.String = _
-  var outlineStyle: js.String = _
-  var borderTop: js.String = _
-  var outlineColor: js.String = _
-  var paddingBottom: js.String = _
-  var marginLeft: js.String = _
-  var font: js.String = _
-  var outline: js.String = _
-  var wordSpacing: js.String = _
-  var maxHeight: js.String = _
-  var fillOpacity: js.String = _
-  var letterSpacing: js.String = _
-  var borderSpacing: js.String = _
-  var backgroundRepeat: js.String = _
-  var borderRadius: js.String = _
-  var borderWidth: js.String = _
-  var borderBottomRightRadius: js.String = _
-  var whiteSpace: js.String = _
-  var fontStyle: js.String = _
-  var minWidth: js.String = _
-  var stopColor: js.String = _
-  var borderTopLeftRadius: js.String = _
-  var borderColor: js.String = _
-  var marker: js.String = _
-  var glyphOrientationVertical: js.String = _
-  var markerMid: js.String = _
-  var fontVariant: js.String = _
-  var minHeight: js.String = _
-  var stroke: js.String = _
-  var rubyOverhang: js.String = _
-  var overflowX: js.String = _
-  var textAlign: js.String = _
-  var margin: js.String = _
+  var right: String = _
+  var baselineShift: String = _
+  var borderLeft: String = _
+  var widows: String = _
+  var lineHeight: String = _
+  var left: String = _
+  var textUnderlinePosition: String = _
+  var glyphOrientationHorizontal: String = _
+  var display: String = _
+  var textAnchor: String = _
+  var cssFloat: String = _
+  var strokeDasharray: String = _
+  var rubyAlign: String = _
+  var fontSizeAdjust: String = _
+  var borderLeftColor: String = _
+  var backgroundImage: String = _
+  var listStyleType: String = _
+  var strokeWidth: String = _
+  var textOverflow: String = _
+  var fillRule: String = _
+  var borderBottomColor: String = _
+  var zIndex: String = _
+  var position: String = _
+  var listStyle: String = _
+  var msTransformOrigin: String = _
+  var dominantBaseline: String = _
+  var overflowY: String = _
+  var fill: String = _
+  var captionSide: String = _
+  var borderCollapse: String = _
+  var boxShadow: String = _
+  var quotes: String = _
+  var tableLayout: String = _
+  var unicodeBidi: String = _
+  var borderBottomWidth: String = _
+  var backgroundSize: String = _
+  var textDecoration: String = _
+  var strokeDashoffset: String = _
+  var fontSize: String = _
+  var border: String = _
+  var pageBreakBefore: String = _
+  var borderTopRightRadius: String = _
+  var msTransform: String = _
+  var borderBottomLeftRadius: String = _
+  var textTransform: String = _
+  var rubyPosition: String = _
+  var strokeLinejoin: String = _
+  var clipPath: String = _
+  var borderRightColor: String = _
+  var fontFamily: String = _
+  var clear: String = _
+  var content: String = _
+  var backgroundClip: String = _
+  var marginBottom: String = _
+  var counterReset: String = _
+  var outlineWidth: String = _
+  var marginRight: String = _
+  var paddingLeft: String = _
+  var borderBottom: String = _
+  var wordBreak: String = _
+  var marginTop: String = _
+  var top: String = _
+  var fontWeight: String = _
+  var borderRight: String = _
+  var width: String = _
+  var kerning: String = _
+  var pageBreakAfter: String = _
+  var borderBottomStyle: String = _
+  var fontStretch: String = _
+  var padding: String = _
+  var strokeOpacity: String = _
+  var markerStart: String = _
+  var bottom: String = _
+  var borderLeftWidth: String = _
+  var clipRule: String = _
+  var backgroundPosition: String = _
+  var backgroundColor: String = _
+  var pageBreakInside: String = _
+  var backgroundOrigin: String = _
+  var strokeLinecap: String = _
+  var borderTopWidth: String = _
+  var outlineStyle: String = _
+  var borderTop: String = _
+  var outlineColor: String = _
+  var paddingBottom: String = _
+  var marginLeft: String = _
+  var font: String = _
+  var outline: String = _
+  var wordSpacing: String = _
+  var maxHeight: String = _
+  var fillOpacity: String = _
+  var letterSpacing: String = _
+  var borderSpacing: String = _
+  var backgroundRepeat: String = _
+  var borderRadius: String = _
+  var borderWidth: String = _
+  var borderBottomRightRadius: String = _
+  var whiteSpace: String = _
+  var fontStyle: String = _
+  var minWidth: String = _
+  var stopColor: String = _
+  var borderTopLeftRadius: String = _
+  var borderColor: String = _
+  var marker: String = _
+  var glyphOrientationVertical: String = _
+  var markerMid: String = _
+  var fontVariant: String = _
+  var minHeight: String = _
+  var stroke: String = _
+  var rubyOverhang: String = _
+  var overflowX: String = _
+  var textAlign: String = _
+  var margin: String = _
 
-  def getPropertyPriority(propertyName: js.String): js.String = ???
+  def getPropertyPriority(propertyName: String): String = ???
 
-  def getPropertyValue(propertyName: js.String): js.String = ???
+  def getPropertyValue(propertyName: String): String = ???
 
-  def removeProperty(propertyName: js.String): js.String = ???
+  def removeProperty(propertyName: String): String = ???
 
-  def item(index: Int): js.String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): js.String = ???
+  def item(index: Int): String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: js.String): Unit = ???
+  def apply(index: Int): String = ???
 
-  def setProperty(propertyName: js.String, value: js.String, priority: js.String = ???): Unit = ???
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: String): Unit = ???
 
-  var animationFillMode: js.String = _
-  var floodColor: js.String = _
-  var animationIterationCount: js.String = _
-  var textShadow: js.String = _
-  var backfaceVisibility: js.String = _
-  var msAnimationIterationCount: js.String = _
-  var animationDelay: js.String = _
-  var animationTimingFunction: js.String = _
+  def setProperty(propertyName: String, value: String, priority: String = ???): Unit = ???
+
+  var animationFillMode: String = _
+  var floodColor: String = _
+  var animationIterationCount: String = _
+  var textShadow: String = _
+  var backfaceVisibility: String = _
+  var msAnimationIterationCount: String = _
+  var animationDelay: String = _
+  var animationTimingFunction: String = _
   var columnWidth: js.Any = _
-  var msScrollSnapX: js.String = _
+  var msScrollSnapX: String = _
   var columnRuleColor: js.Any = _
   var columnRuleWidth: js.Any = _
-  var transitionDelay: js.String = _
-  var transition: js.String = _
-  var msFlowFrom: js.String = _
-  var msScrollSnapType: js.String = _
-  var msContentZoomSnapType: js.String = _
-  var msGridColumns: js.String = _
-  var msAnimationName: js.String = _
-  var msGridRowAlign: js.String = _
-  var msContentZoomChaining: js.String = _
+  var transitionDelay: String = _
+  var transition: String = _
+  var msFlowFrom: String = _
+  var msScrollSnapType: String = _
+  var msContentZoomSnapType: String = _
+  var msGridColumns: String = _
+  var msAnimationName: String = _
+  var msGridRowAlign: String = _
+  var msContentZoomChaining: String = _
   var msGridColumn: js.Any = _
   var msHyphenateLimitZone: js.Any = _
-  var msScrollRails: js.String = _
-  var msAnimationDelay: js.String = _
-  var enableBackground: js.String = _
-  var msWrapThrough: js.String = _
-  var columnRuleStyle: js.String = _
-  var msAnimation: js.String = _
-  var msFlexFlow: js.String = _
-  var msScrollSnapY: js.String = _
+  var msScrollRails: String = _
+  var msAnimationDelay: String = _
+  var enableBackground: String = _
+  var msWrapThrough: String = _
+  var columnRuleStyle: String = _
+  var msAnimation: String = _
+  var msFlexFlow: String = _
+  var msScrollSnapY: String = _
   var msHyphenateLimitLines: js.Any = _
-  var msTouchAction: js.String = _
-  var msScrollLimit: js.String = _
-  var animation: js.String = _
-  var transform: js.String = _
-  var colorInterpolationFilters: js.String = _
-  var transitionTimingFunction: js.String = _
-  var msBackfaceVisibility: js.String = _
-  var animationPlayState: js.String = _
-  var transformOrigin: js.String = _
+  var msTouchAction: String = _
+  var msScrollLimit: String = _
+  var animation: String = _
+  var transform: String = _
+  var colorInterpolationFilters: String = _
+  var transitionTimingFunction: String = _
+  var msBackfaceVisibility: String = _
+  var animationPlayState: String = _
+  var transformOrigin: String = _
   var msScrollLimitYMin: js.Any = _
-  var msFontFeatureSettings: js.String = _
+  var msFontFeatureSettings: String = _
   var msContentZoomLimitMin: js.Any = _
   var columnGap: js.Any = _
-  var transitionProperty: js.String = _
-  var msAnimationDuration: js.String = _
-  var msAnimationFillMode: js.String = _
-  var msFlexDirection: js.String = _
-  var msTransitionDuration: js.String = _
-  var fontFeatureSettings: js.String = _
-  var breakBefore: js.String = _
-  var msFlexWrap: js.String = _
-  var perspective: js.String = _
-  var msFlowInto: js.String = _
-  var msTransformStyle: js.String = _
-  var msScrollTranslation: js.String = _
-  var msTransitionProperty: js.String = _
-  var msUserSelect: js.String = _
-  var msOverflowStyle: js.String = _
-  var msScrollSnapPointsY: js.String = _
-  var animationDirection: js.String = _
-  var animationDuration: js.String = _
-  var msFlex: js.String = _
-  var msTransitionTimingFunction: js.String = _
-  var animationName: js.String = _
-  var columnRule: js.String = _
+  var transitionProperty: String = _
+  var msAnimationDuration: String = _
+  var msAnimationFillMode: String = _
+  var msFlexDirection: String = _
+  var msTransitionDuration: String = _
+  var fontFeatureSettings: String = _
+  var breakBefore: String = _
+  var msFlexWrap: String = _
+  var perspective: String = _
+  var msFlowInto: String = _
+  var msTransformStyle: String = _
+  var msScrollTranslation: String = _
+  var msTransitionProperty: String = _
+  var msUserSelect: String = _
+  var msOverflowStyle: String = _
+  var msScrollSnapPointsY: String = _
+  var animationDirection: String = _
+  var animationDuration: String = _
+  var msFlex: String = _
+  var msTransitionTimingFunction: String = _
+  var animationName: String = _
+  var columnRule: String = _
   var msGridColumnSpan: js.Any = _
-  var msFlexNegative: js.String = _
-  var columnFill: js.String = _
+  var msFlexNegative: String = _
+  var columnFill: String = _
   var msGridRow: js.Any = _
-  var msFlexOrder: js.String = _
-  var msFlexItemAlign: js.String = _
-  var msFlexPositive: js.String = _
+  var msFlexOrder: String = _
+  var msFlexItemAlign: String = _
+  var msFlexPositive: String = _
   var msContentZoomLimitMax: js.Any = _
   var msScrollLimitYMax: js.Any = _
-  var msGridColumnAlign: js.String = _
-  var perspectiveOrigin: js.String = _
-  var lightingColor: js.String = _
-  var columns: js.String = _
-  var msScrollChaining: js.String = _
-  var msHyphenateLimitChars: js.String = _
-  var msTouchSelect: js.String = _
-  var floodOpacity: js.String = _
-  var msAnimationDirection: js.String = _
-  var msAnimationPlayState: js.String = _
-  var columnSpan: js.String = _
-  var msContentZooming: js.String = _
-  var msPerspective: js.String = _
-  var msFlexPack: js.String = _
-  var msScrollSnapPointsX: js.String = _
-  var msContentZoomSnapPoints: js.String = _
+  var msGridColumnAlign: String = _
+  var perspectiveOrigin: String = _
+  var lightingColor: String = _
+  var columns: String = _
+  var msScrollChaining: String = _
+  var msHyphenateLimitChars: String = _
+  var msTouchSelect: String = _
+  var floodOpacity: String = _
+  var msAnimationDirection: String = _
+  var msAnimationPlayState: String = _
+  var columnSpan: String = _
+  var msContentZooming: String = _
+  var msPerspective: String = _
+  var msFlexPack: String = _
+  var msScrollSnapPointsX: String = _
+  var msContentZoomSnapPoints: String = _
   var msGridRowSpan: js.Any = _
-  var msContentZoomSnap: js.String = _
+  var msContentZoomSnap: String = _
   var msScrollLimitXMin: js.Any = _
-  var breakInside: js.String = _
-  var msHighContrastAdjust: js.String = _
-  var msFlexLinePack: js.String = _
-  var msGridRows: js.String = _
-  var transitionDuration: js.String = _
-  var msHyphens: js.String = _
-  var breakAfter: js.String = _
-  var msTransition: js.String = _
-  var msPerspectiveOrigin: js.String = _
-  var msContentZoomLimit: js.String = _
+  var breakInside: String = _
+  var msHighContrastAdjust: String = _
+  var msFlexLinePack: String = _
+  var msGridRows: String = _
+  var transitionDuration: String = _
+  var msHyphens: String = _
+  var breakAfter: String = _
+  var msTransition: String = _
+  var msPerspectiveOrigin: String = _
+  var msContentZoomLimit: String = _
   var msScrollLimitXMax: js.Any = _
-  var msFlexAlign: js.String = _
+  var msFlexAlign: String = _
   var msWrapMargin: js.Any = _
   var columnCount: js.Any = _
-  var msAnimationTimingFunction: js.String = _
-  var msTransitionDelay: js.String = _
-  var transformStyle: js.String = _
-  var msWrapFlow: js.String = _
-  var msFlexPreferredSize: js.String = _
+  var msAnimationTimingFunction: String = _
+  var msTransitionDelay: String = _
+  var transformStyle: String = _
+  var msWrapFlow: String = _
+  var msFlexPreferredSize: String = _
 }
 
 /**
@@ -313,10 +313,10 @@ class CSSStyleDeclaration extends js.Object {
 class CSSStyleSheet extends StyleSheet {
   var owningElement: Element = _
   var imports: StyleSheetList = _
-  var isAlternate: js.Boolean = _
-  var isPrefAlternate: js.Boolean = _
-  var readOnly: js.Boolean = _
-  var cssText: js.String = _
+  var isAlternate: Boolean = _
+  var isPrefAlternate: Boolean = _
+  var readOnly: Boolean = _
+  var cssText: String = _
   /**
    * If this style sheet is imported into the document using an @import rule, the
    * ownerRule property will return that CSSImportRule, otherwise it returns null.
@@ -324,25 +324,25 @@ class CSSStyleSheet extends StyleSheet {
    * MDN
    */
   var ownerRule: CSSRule = _
-  var href: js.String = _
+  var href: String = _
   /**
    * Returns a CSSRuleList of the CSS rules in the style sheet.
    *
    * MDN
    */
   var cssRules: CSSRuleList = _
-  var id: js.String = _
+  var id: String = _
 
-  def addImport(bstrURL: js.String, lIndex: Int = ???): Int = ???
+  def addImport(bstrURL: String, lIndex: Int = ???): Int = ???
 
-  def addPageRule(bstrSelector: js.String, bstrStyle: js.String, lIndex: Int = ???): Int = ???
+  def addPageRule(bstrSelector: String, bstrStyle: String, lIndex: Int = ???): Int = ???
   /**
    * The CSSStyleSheet.insertRule() method inserts a new style rule into the current
    * style sheet.
    *
    * MDN
    */
-  def insertRule(rule: js.String, index: Int = ???): Int = ???
+  def insertRule(rule: String, index: Int = ???): Int = ???
 
 
   def removeRule(lIndex: Int): Unit = ???
@@ -354,7 +354,7 @@ class CSSStyleSheet extends StyleSheet {
   def deleteRule(index: Int = ???): Unit = ???
 
 
-  def addRule(bstrSelector: js.String, bstrStyle: js.String = ???, lIndex: Int = ???): Int = ???
+  def addRule(bstrSelector: String, bstrStyle: String = ???, lIndex: Int = ???): Int = ???
 
   def removeImport(lIndex: Int): Unit = ???
 }
@@ -371,8 +371,8 @@ class CSSStyleRule extends CSSRule {
    *
    * MDN
    */
-  var selectorText: js.String = _
-  var readOnly: js.Boolean = _
+  var selectorText: String = _
+  var readOnly: Boolean = _
 }
 
 /**
@@ -392,7 +392,7 @@ class CSSMediaRule extends CSSRule {
   var media: MediaList = _
   var cssRules: CSSRuleList = _
 
-  def insertRule(rule: js.String, index: Int = ???): Int = ???
+  def insertRule(rule: String, index: Int = ???): Int = ???
 
 
   def deleteRule(index: Int = ???): Unit = ???
@@ -411,19 +411,19 @@ class CSSNamespaceRule extends CSSRule {
    *
    * MDN
    */
-  var namespaceURI: js.String = _
+  var namespaceURI: String = _
   /**
    * Returns a DOMString with the name of the prefix associated to this namespace. If
    * there is no such prefix, returns  null.
    *
    * MDN
    */
-  var prefix: js.String = _
+  var prefix: String = _
 }
 
 class CSSImportRule extends CSSRule {
   var styleSheet: CSSStyleSheet = _
-  var href: js.String = _
+  var href: String = _
   var media: MediaList = _
 }
 
@@ -441,7 +441,7 @@ class CSSRule extends js.Object {
    *
    * MDN
    */
-  var cssText: js.String = _
+  var cssText: String = _
   /**
    * parentStyleSheet returns the stylesheet object in which the current rule is
    * defined.
@@ -493,14 +493,14 @@ class CSSFontFaceRule extends CSSRule {
  * MDN
  */
 class CSSPageRule extends CSSRule {
-  var pseudoClass: js.String = _
+  var pseudoClass: String = _
   /**
    * Represents the text of the page selector associated with the at-rule.
    *
    * MDN
    */
-  var selectorText: js.String = _
-  var selector: js.String = _
+  var selectorText: String = _
+  var selector: String = _
   /**
    * Returns the declaration block associated with the at-rule.
    *
@@ -542,7 +542,7 @@ class CSSKeyframesRule extends CSSRule {
    *
    * MDN
    */
-  var name: js.String = _
+  var name: String = _
   /**
    * Returns a CSSRuleList of the CSS rules in the media rule.
    *
@@ -557,7 +557,7 @@ class CSSKeyframesRule extends CSSRule {
    *
    * MDN
    */
-  def findRule(rule: js.String): CSSKeyframeRule = ???
+  def findRule(rule: String): CSSKeyframeRule = ???
 
   /**
    * Deletes a keyframe rule from the current CSSKeyframesRule. The parameter is the
@@ -566,7 +566,7 @@ class CSSKeyframesRule extends CSSRule {
    *
    * MDN
    */
-  def deleteRule(rule: js.String): Unit = ???
+  def deleteRule(rule: String): Unit = ???
 
   /**
    * Inserts a new keyframe rule into the current CSSKeyframesRule. The parameter is a
@@ -576,7 +576,7 @@ class CSSKeyframesRule extends CSSRule {
    *
    * MDN
    */
-  def appendRule(rule: js.String): Unit = ???
+  def appendRule(rule: String): Unit = ???
 }
 
 
@@ -595,7 +595,7 @@ class CSSKeyframeRule extends CSSRule {
    *
    * MDN
    */
-  var keyText: js.String = _
+  var keyText: String = _
   /**
    * Returns a CSSStyleDeclaration of the CSS style associated with the keyfrom.
    *

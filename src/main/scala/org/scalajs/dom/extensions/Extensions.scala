@@ -7,7 +7,7 @@ import org.scalajs.dom
  * Used to extend out javascript *Collections to make them usable as normal
  * Scala Seq[*]s
  */
-class EasySeq[T](jsLength: js.Number, jsApply: js.Number => T) extends Seq[T] {
+class EasySeq[T](jsLength: Double, jsApply: Double => T) extends Seq[T] {
   def length = jsLength.toInt
 
   def apply(x: Int) = jsApply(x)
@@ -175,7 +175,7 @@ object Ajax{
   }
   def apply(method: String,
             url: String,
-            data: js.String,
+            data: String,
             timeout: Int,
             headers: Seq[(String, String)],
             withCredentials: Boolean): Future[dom.XMLHttpRequest] = {

@@ -27,7 +27,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.String = ???
+  var width: String = ???
 
   /**
    * Is a DOMString containing the width in pixels of the horizontal and vertical
@@ -35,7 +35,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var cellSpacing: js.String = ???
+  var cellSpacing: String = ???
   /**
    * Is an HTMLTableSectionElement representing the first <tfoot> that is a child of
    * the element, or null if none is found. When set, if the object doesn't represent a
@@ -55,7 +55,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var frame: js.String = ???
+  var frame: String = ???
 
   /**
    * Returns a live HTMLCollection containing all the rows of the element, that is all
@@ -74,14 +74,14 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var rules: js.String = ???
+  var rules: String = ???
   /**
    * Is a DOMString containing a description of the purpose or the structure of the
    * table. It reflects the obsolete summary attribute.
    *
    * MDN
    */
-  var summary: js.String = ???
+  var summary: String = ???
   /**
    * Is an HTMLTableCaptionElement representing the first <caption> that is a child of
    * the element, or null if none is found. When set, if the object doesn't represent a
@@ -120,7 +120,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
 
   /**
    * Is a DOMString containing the width in pixels of the horizontal and vertical sapce
@@ -129,14 +129,14 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var cellPadding: js.String = ???
+  var cellPadding: String = ???
   /**
    * Is a DOMString containing the width in pixels of the border of the table. It reflects
    * the obsolete border attribute.
    *
    * MDN
    */
-  var border: js.String = ???
+  var border: String = ???
   /**
    * Removes the row corresponding to the index given in parameter. If the index value is
    * -1 the last row is removed; if it smaller than -1 or greater than the amount of rows in
@@ -239,18 +239,18 @@ class HTMLBaseElement extends HTMLElement {
    *
    * MDN
    */
-  var target: js.String = ???
+  var target: String = ???
   /**
    * Is a DOMString that reflects the href HTML attribute, containing a base URL for
    * relative URLs in the document.
    *
    * MDN
    */
-  var href: js.String = ???
+  var href: String = ???
 }
 
 trait HTMLNextIdElement extends HTMLElement {
-  var n: js.String = ???
+  var n: String = ???
 }
 
 /**
@@ -268,7 +268,7 @@ class HTMLParagraphElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
 }
 
 
@@ -279,25 +279,25 @@ trait HTMLAreasCollection extends HTMLCollection {
 }
 
 class HTMLAppletElement extends HTMLElement {
-  var width: js.Number = ???
-  var codeType: js.String = ???
-  var `object`: js.String = ???
+  var width: Double = ???
+  var codeType: String = ???
+  var `object`: String = ???
   var form: HTMLFormElement = ???
-  var code: js.String = ???
-  var archive: js.String = ???
-  var alt: js.String = ???
-  var standby: js.String = ???
-  var classid: js.String = ???
-  var name: js.String = ???
-  var useMap: js.String = ???
-  var data: js.String = ???
-  var height: js.String = ???
-  var altHtml: js.String = ???
+  var code: String = ???
+  var archive: String = ???
+  var alt: String = ???
+  var standby: String = ???
+  var classid: String = ???
+  var name: String = ???
+  var useMap: String = ???
+  var data: String = ???
+  var height: String = ???
+  var altHtml: String = ???
   var contentDocument: Document = ???
-  var codeBase: js.String = ???
-  var declare: js.Boolean = ???
-  var `type`: js.String = ???
-  var BaseHref: js.String = ???
+  var codeBase: String = ???
+  var declare: Boolean = ???
+  var `type`: String = ???
+  var BaseHref: String = ???
 }
 
 /**
@@ -336,7 +336,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.String = ???
+  var value: String = ???
   /**
    * The form that this element is associated with. If this element is a descendant of a
    * form element, then this attribute is the ID of that form element. If the element is
@@ -352,7 +352,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * Reflects the size HTML attribute, which contains the number of visible items in the
    * control. The default is 1, HTML5 unless multiple is true, in which case it is 4.
@@ -378,8 +378,8 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var multiple: js.Boolean = ???
-  var `type`: js.String = ???
+  var multiple: Boolean = ???
+  var `type`: String = ???
   /**
    * Removes the element at the specified index from the options collection for this
    * select element.
@@ -396,13 +396,13 @@ class HTMLSelectElement extends HTMLElement {
 
   def item(name: js.Any = ???, index: js.Any = ???): js.Dynamic = ???
 
-  def namedItem(name: js.String): js.Dynamic = ???
+  def namedItem(name: String): js.Dynamic = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(name: js.String): js.Any = ???
+  def apply(name: String): js.Any = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(name: js.String, v: js.Any): Unit = ???
+  def update(name: String, v: js.Any): Unit = ???
 
   /**
    * A localized message that describes the validation constraints that the control
@@ -412,7 +412,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  val validationMessage: js.String = ???
+  val validationMessage: String = ???
   /**
    * Reflects the autofocus HTML attribute, which indicates whether the control
    * should have input focus when the page loads, unless the user overrides it, for
@@ -421,7 +421,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var autofocus: js.Boolean = ???
+  var autofocus: Boolean = ???
   /**
    * The validity states that this control is in. Read only. HTML5
    *
@@ -434,23 +434,23 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var required: js.Boolean = ???
+  var required: Boolean = ???
   /**
    * Indicates whether the button is a candidate for constraint validation. It is false
    * if any conditions bar it from constraint validation. Read only. HTML5
    *
    * MDN
    */
-  val willValidate: js.Boolean = ???
+  val willValidate: Boolean = ???
 
-  def checkValidity(): js.Boolean = ???
+  def checkValidity(): Boolean = ???
 
-  def setCustomValidity(error: js.String): Unit = ???
+  def setCustomValidity(error: String): Unit = ???
 }
 
 trait HTMLBlockElement extends HTMLElement {
-  var width: js.Number = ???
-  var cite: js.String = ???
+  var width: Double = ???
+  var cite: String = ???
 }
 
 /**
@@ -466,31 +466,31 @@ class HTMLMetaElement extends HTMLElement {
    *
    * MDN
    */
-  var httpEquiv: js.String = ???
+  var httpEquiv: String = ???
   /**
    * Gets or sets the name of a meta-data property to define for a document.
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * Gets or sets the value of meta-data property.
    *
    * MDN
    */
-  var content: js.String = ???
-  var url: js.String = ???
+  var content: String = ???
+  var url: String = ???
   /**
    * Gets or sets the name of a scheme used to interpret the value of a meta-data property.
    *
    * MDN
    */
-  var scheme: js.String = ???
-  var charset: js.String = ???
+  var scheme: String = ???
+  var charset: String = ???
 }
 
 class HTMLDDElement extends HTMLElement {
-  var noWrap: js.Boolean = ???
+  var noWrap: Boolean = ???
 }
 
 /**
@@ -508,49 +508,49 @@ class HTMLLinkElement extends HTMLElement with LinkStyle {
    *
    * MDN
    */
-  var rel: js.String = ???
+  var rel: String = ???
   /**
    * Gets or sets the name of the target frame to which the resource applies.
    *
    * MDN
    */
-  var target: js.String = ???
+  var target: String = ???
   /**
    * Gets or sets the URI for the target resource.
    *
    * MDN
    */
-  var href: js.String = ???
+  var href: String = ???
   /**
    * Gets or sets a list of one or more media formats to which the resource applies.
    *
    * MDN
    */
-  var media: js.String = ???
+  var media: String = ???
   /**
    * Gets or sets the reverse relationship of the linked resource from the resource to
    * the document.
    *
    * MDN
    */
-  var rev: js.String = ???
-  var `type`: js.String = ???
+  var rev: String = ???
+  var `type`: String = ???
   /**
    * Gets or sets the character encoding for the target resource.
    *
    * MDN
    */
-  var charset: js.String = ???
+  var charset: String = ???
   /**
    * Gets or sets the language code for the linked resource.
    *
    * MDN
    */
-  var hreflang: js.String = ???
+  var hreflang: String = ???
 }
 
 class HTMLFontElement extends HTMLElement {
-  var face: js.String = ???
+  var face: String = ???
 }
 
 /**
@@ -567,8 +567,8 @@ class HTMLTableCaptionElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = ???
-  var vAlign: js.String = ???
+  var align: String = ???
+  var vAlign: String = ???
 }
 
 /**
@@ -592,20 +592,20 @@ class HTMLOptionElement extends HTMLElement {
    *
    * MDN
    */
-  var defaultSelected: js.Boolean = ???
+  var defaultSelected: Boolean = ???
   /**
    * Reflects the value of the value HTML attribute, if it exists; otherwise reflects
    * value of the Node.textContent property.
    *
    * MDN
    */
-  var value: js.String = ???
+  var value: String = ???
   /**
    * Contains the text content of the element.
    *
    * MDN
    */
-  var text: js.String = ???
+  var text: String = ???
   /**
    * If the option is a descendent of a <select> element, then this property has the same
    * value as the form property of the corresponding HTMLSelectElement object;
@@ -621,13 +621,13 @@ class HTMLOptionElement extends HTMLElement {
    *
    * MDN
    */
-  var label: js.String = ???
+  var label: String = ???
   /**
    * Indicates whether the option is currently selected.
    *
    * MDN
    */
-  var selected: js.Boolean = ???
+  var selected: Boolean = ???
 
   def create(): HTMLOptionElement = ???
 }
@@ -646,7 +646,7 @@ class HTMLMapElement extends HTMLElement {
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * Is a live HTMLCollection representing the <area> elements associated to this
    * <map>.
@@ -657,7 +657,7 @@ class HTMLMapElement extends HTMLElement {
 }
 
 class HTMLMenuElement extends HTMLElement {
-  var `type`: js.String = ???
+  var `type`: String = ???
 }
 
 /**
@@ -690,7 +690,7 @@ class HTMLCollection extends js.Object {
    *
    * MDN
    */
-  def namedItem(name: js.String): Element = ???
+  def namedItem(name: String): Element = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
   def apply(name: Int): Element = ???
@@ -726,32 +726,32 @@ class HTMLImageElement extends HTMLElement {
    *
    * MDN
    */
-  var alt: js.String = ???
+  var alt: String = ???
   /**
    * Indicates the alignment of the image with respect to the surrounding context.
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
   /**
    * Reflects the src HTML attribute, containing the URL of the image.
    *
    * MDN
    */
-  var src: js.String = ???
+  var src: String = ???
   /**
    * Reflects the usemap HTML attribute, containing a partial URL of a map element.
    *
    * MDN
    */
-  var useMap: js.String = ???
+  var useMap: String = ???
   /**
    * Intrinsic width of the image in CSS pixels, if it is available; otherwise, 0.
    *
    * MDN
    */
   var naturalWidth: Int = ???
-  var name: js.String = ???
+  var name: String = ???
   /**
    * Reflects the height HTML attribute, indicating the rendered height of the image in
    * CSS pixels.
@@ -764,7 +764,7 @@ class HTMLImageElement extends HTMLElement {
    *
    * MDN
    */
-  var border: js.String = ???
+  var border: String = ???
   /**
    * Space to the left and right of the image.
    *
@@ -776,22 +776,22 @@ class HTMLImageElement extends HTMLElement {
    *
    * MDN
    */
-  var longDesc: js.String = ???
-  var href: js.String = ???
+  var longDesc: String = ???
+  var href: String = ???
   /**
    * Reflects the ismap HTML attribute, indicating that the image is part of a
    * server-side image map.
    *
    * MDN
    */
-  var isMap: js.Boolean = ???
+  var isMap: Boolean = ???
   /**
    * True if the browser has fetched the image, and it is in a supported image type that was
    * decoded without errors.
    *
    * MDN
    */
-  var complete: js.Boolean = ???
+  var complete: Boolean = ???
 
   def create(): HTMLImageElement = ???
 
@@ -811,87 +811,87 @@ class HTMLAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var protocol: js.String = ???
+  var protocol: String = ???
   /**
    * Is a DOMString containing tThe search element (including leading question mark
    * '?'), if any, of the referenced URL.
    *
    * MDN
    */
-  var search: js.String = ???
+  var search: String = ???
   /**
    * Is a DOMString that reflects the alt HTML attribute, containing alternative text
    * for the element.
    *
    * MDN
    */
-  var alt: js.String = ???
+  var alt: String = ???
   /**
    * Is a DOMString that reflects the coords HTML attribute, containing coordinates to
    * define the hot-spot region.
    *
    * MDN
    */
-  var coords: js.String = ???
+  var coords: String = ???
   /**
    * Is a DOMString containing the hostname in the referenced URL.
    *
    * MDN
    */
-  var hostname: js.String = ???
+  var hostname: String = ???
   /**
    * Is a DOMString containing the port component, if any, of the referenced URL.
    *
    * MDN
    */
-  var port: js.String = ???
+  var port: String = ???
   /**
    * Is a DOMString containing the path name component, if any, of the referenced URL.
    *
    * MDN
    */
-  var pathname: js.String = ???
+  var pathname: String = ???
   /**
    * Is a DOMString containing the hostname and port (if it's not the default port) in the
    * referenced URL.
    *
    * MDN
    */
-  var host: js.String = ???
+  var host: String = ???
   /**
    * Is a DOMString containing the fragment identifier (including the leading hash
    * mark (#)), if any, in the referenced URL.
    *
    * MDN
    */
-  var hash: js.String = ???
+  var hash: String = ???
   /**
    * Is a DOMString that reflects the target HTML attribute, indicating the browsing
    * context in which to open the linked resource.
    *
    * MDN
    */
-  var target: js.String = ???
+  var target: String = ???
   /**
    * Is a DOMString containing that reflects the href HTML attribute, containing a
    * valid URL of a linked resource.
    *
    * MDN
    */
-  var href: js.String = ???
+  var href: String = ???
   /**
    * Is a Boolean flag indicating if the area is inactive (true) or active (false).
    *
    * MDN
    */
-  var noHref: js.Boolean = ???
+  var noHref: Boolean = ???
   /**
    * Is a DOMString teflects the shape HTML attribute, indicating the shape of the
    * hot-spot, limited to known values.
    *
    * MDN
    */
-  var shape: js.String = ???
+  var shape: String = ???
 
 }
 
@@ -908,7 +908,7 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.String = ???
+  var value: String = ???
   var status: js.Any = ???
   /**
    * The form that this button is associated with. If the button is a descendant of a form
@@ -925,8 +925,8 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var name: js.String = ???
-  var `type`: js.String = ???
+  var name: String = ???
+  var `type`: String = ???
   /**
    * A localized message that describes the validation constraints that the control
    * does not satisfy (if any). This attribute is the empty string if the control is not a
@@ -935,7 +935,7 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: js.String = ???
+  var validationMessage: String = ???
   /**
    * A name or keyword indicating where to display the response that is received after
    * submitting the form. If specified, this attribute overrides the target attribute
@@ -943,14 +943,14 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formTarget: js.String = ???
+  var formTarget: String = ???
   /**
    * Indicates whether the button is a candidate for constraint validation. It is false
    * if any conditions bar it from constraint validation.
    *
    * MDN
    */
-  var willValidate: js.Boolean = ???
+  var willValidate: Boolean = ???
   /**
    * The URI of a resource that processes information submitted by the button. If
    * specified, this attribute overrides the action attribute of the <form> element
@@ -958,7 +958,7 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formAction: js.String = ???
+  var formAction: String = ???
   /**
    * The control should have input focus when the page loads, unless the user overrides
    * it, for example by typing in a different control. Only one form-associated element
@@ -966,7 +966,7 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var autofocus: js.Boolean = ???
+  var autofocus: Boolean = ???
   /**
    * The validity states that this button is in.
    *
@@ -980,8 +980,8 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formNoValidate: js.String = ???
-  var formEnctype: js.String = ???
+  var formNoValidate: String = ???
+  var formEnctype: String = ???
   /**
    * The HTTP method that the browser uses to submit the form. If specified, this
    * attribute overrides the method attribute of the <form> element that owns this
@@ -989,11 +989,11 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formMethod: js.String = ???
+  var formMethod: String = ???
 
-  def checkValidity(): js.Boolean = ???
+  def checkValidity(): Boolean = ???
 
-  def setCustomValidity(error: js.String): Unit = ???
+  def setCustomValidity(error: String): Unit = ???
 }
 
 /**
@@ -1009,15 +1009,15 @@ class HTMLSourceElement extends HTMLElement {
    *
    * MDN
    */
-  var src: js.String = ???
+  var src: String = ???
   /**
    * Reflects the media HTML attribute, containing the intended type of the media
    * resource.
    *
    * MDN
    */
-  var media: js.String = ???
-  var `type`: js.String = ???
+  var media: String = ???
+  var `type`: String = ???
 }
 
 /**
@@ -1029,7 +1029,7 @@ class HTMLSourceElement extends HTMLElement {
  * MDN
  */
 class HTMLScriptElement extends HTMLElement {
-  var defer: js.Boolean = ???
+  var defer: Boolean = ???
   /**
    * The IDL attribute text must return a concatenation of the contents of all the Text
    * nodes that are children of the <script> element (ignoring any other nodes such as
@@ -1040,24 +1040,24 @@ class HTMLScriptElement extends HTMLElement {
    *
    * MDN
    */
-  var text: js.String = ???
+  var text: String = ???
   /**
    * Represents gives the address of the external script resource to use. It reflects
    * the src attribute.
    *
    * MDN
    */
-  var src: js.String = ???
-  var htmlFor: js.String = ???
+  var src: String = ???
+  var htmlFor: String = ???
   /**
    * Represents the character encoding of the external script resource. It reflects
    * the charset attribute.
    *
    * MDN
    */
-  var charset: js.String = ???
-  var `type`: js.String = ???
-  var event: js.String = ???
+  var charset: String = ???
+  var `type`: String = ???
+  var event: String = ???
   /**
    * The async and defer attributes are boolean attributes that indicate how the script
    * should be executed. The defer and async attributes must not be specified if the src
@@ -1080,7 +1080,7 @@ class HTMLScriptElement extends HTMLElement {
    *
    * MDN
    */
-  var async: js.Boolean = ???
+  var async: Boolean = ???
 }
 
 /**
@@ -1112,7 +1112,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
   var borderColorLight: js.Any = ???
   /**
    * Returns a long value which gives the logical position of the row within the table
@@ -1157,25 +1157,25 @@ class HTMLHtmlElement extends HTMLElement {
    *
    * MDN
    */
-  var version: js.String = ???
+  var version: String = ???
 }
 
 class HTMLFrameElement extends HTMLElement with GetSVGDocument {
   var width: js.Any = ???
-  var scrolling: js.String = ???
-  var marginHeight: js.String = ???
-  var marginWidth: js.String = ???
+  var scrolling: String = ???
+  var marginHeight: String = ???
+  var marginWidth: String = ???
   var borderColor: js.Any = ???
   var frameSpacing: js.Any = ???
-  var frameBorder: js.String = ???
-  var noResize: js.Boolean = ???
+  var frameBorder: String = ???
+  var noResize: Boolean = ???
   var contentWindow: Window = ???
-  var src: js.String = ???
-  var name: js.String = ???
+  var src: String = ???
+  var name: String = ???
   var height: js.Any = ???
   var contentDocument: Document = ???
-  var border: js.String = ???
-  var longDesc: js.String = ???
+  var border: String = ???
+  var longDesc: String = ???
   var onload: js.Function1[Event, _] = ???
   var security: js.Any = ???
 
@@ -1191,13 +1191,13 @@ class HTMLFrameElement extends HTMLElement with GetSVGDocument {
  * MDN
  */
 class HTMLQuoteElement extends HTMLElement {
-  var dateTime: js.String = ???
+  var dateTime: String = ???
   /**
    * Reflects the cite HTML attribute, containing a URL for the source of the quotation.
    *
    * MDN
    */
-  var cite: js.String = ???
+  var cite: String = ???
 }
 
 /**
@@ -1224,18 +1224,18 @@ class HTMLDListElement extends HTMLElement {
 class HTMLFrameSetElement extends HTMLElement {
   var ononline: js.Function1[Event, _] = ???
   var borderColor: js.Any = ???
-  var rows: js.String = ???
-  var cols: js.String = ???
+  var rows: String = ???
+  var cols: String = ???
   var frameSpacing: js.Any = ???
   var onmessage: js.Function1[MessageEvent, _] = ???
   var onerror: js.Function1[Event, _] = ???
-  var frameBorder: js.String = ???
+  var frameBorder: String = ???
   var onresize: js.Function1[UIEvent, _] = ???
-  var name: js.String = ???
+  var name: String = ???
   var onafterprint: js.Function1[Event, _] = ???
   var onbeforeprint: js.Function1[Event, _] = ???
   var onoffline: js.Function1[Event, _] = ???
-  var border: js.String = ???
+  var border: String = ???
   var onunload: js.Function1[Event, _] = ???
   var onhashchange: js.Function1[Event, _] = ???
   var onload: js.Function1[Event, _] = ???
@@ -1257,7 +1257,7 @@ class HTMLLabelElement extends HTMLElement {
    *
    * MDN
    */
-  var htmlFor: js.String = ???
+  var htmlFor: String = ???
 
   def form: HTMLFormElement = ???
 }
@@ -1270,7 +1270,7 @@ class HTMLLabelElement extends HTMLElement {
  * MDN
  */
 class HTMLLegendElement extends HTMLElement {
-  var align: js.String = ???
+  var align: String = ???
 
   def form: HTMLFormElement = ???
 }
@@ -1310,7 +1310,7 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var width: js.String = ???
+  var width: String = ???
 
 
   /**
@@ -1326,20 +1326,20 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var src: js.String = ???
+  var src: String = ???
   /**
    * Reflects the name HTML attribute, containing a name by which to refer to the frame.
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * Reflects the height HTML attribute, indicating the height of the frame.
    *
    * MDN
    */
-  var height: js.String = ???
-  var border: js.String = ???
+  var height: String = ???
+  var border: String = ???
   /**
    * The active document in the inline frame's nested browsing context.
    *
@@ -1352,7 +1352,7 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var longDesc: js.String = ???
+  var longDesc: String = ???
   var security: js.Any = ???
   var onload: js.Function1[Event, _] = ???
 
@@ -1374,7 +1374,7 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
  * MDN
  */
 class HTMLBodyElement extends HTMLElement {
-  var scroll: js.String = ???
+  var scroll: String = ???
   /**
    * Reflects the ononline HTML attribute value for a function to call when network
    * communication is restored.
@@ -1498,7 +1498,7 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
   /**
    * Returns a live HTMLCollection containing the rows in the section. The
    * HTMLCollection is live and is automatically updated when rows are added or
@@ -1537,8 +1537,8 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.String = ???
-  var status: js.Boolean = ???
+  var width: String = ???
+  var status: Boolean = ???
 
   /**
    * The containing form element, if this element is in a form. If this element is not
@@ -1561,7 +1561,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var indeterminate: js.Boolean = ???
+  var indeterminate: Boolean = ???
   /**
    * Reflects the readonly HTML attribute, indicating that the user cannot modify the
    * value of the control. HTML5This is ignored if the value of the type attribute is
@@ -1569,7 +1569,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var readOnly: js.Boolean = ???
+  var readOnly: Boolean = ???
   /**
    * Reflects the size HTML attribute, containing size of the control. This value is in
    * pixels unless the value of type is text or password, in which case, it is an integer
@@ -1593,27 +1593,27 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var accept: js.String = ???
+  var accept: String = ???
   /**
    * Reflects the alt HTML attribute, containing alternative text to use when type is
    * image.
    *
    * MDN
    */
-  var alt: js.String = ???
+  var alt: String = ???
   /**
    * The default state of a radio button or checkbox as originally specified in HTML that
    * created this object.
    *
    * MDN
    */
-  var defaultChecked: js.Boolean = ???
+  var defaultChecked: Boolean = ???
   /**
    * Current value in the control.
    *
    * MDN
    */
-  var value: js.String = ???
+  var value: String = ???
   /**
    * Reflects the src HTML attribute, which specifies a URI for the location of an image
    * to display on the graphical submit button, if the value of type is image; otherwise
@@ -1621,14 +1621,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var src: js.String = ???
+  var src: String = ???
   /**
    * Reflects the name HTML attribute, containing a name that identifies the element
    * when submitting the form.
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
 
   /**
    * Reflects the height HTML attribute, which defines the height of the image
@@ -1636,7 +1636,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var height: js.String = ???
+  var height: String = ???
 
 
   /**
@@ -1644,7 +1644,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var checked: js.Boolean = ???
+  var checked: Boolean = ???
 
   /**
    * Reflects the maxlength HTML attribute, containing the maximum length of text (in
@@ -1659,13 +1659,13 @@ class HTMLInputElement extends HTMLElement {
    * Reflects the type HTML attribute, indicating the type of control to display.
    * See type attribute of <input> for possible values.
    */
-  var `type`: js.String = ???
+  var `type`: String = ???
   /**
    * The default value as originally specified in HTML that created this object.
    *
    * MDN
    */
-  var defaultValue: js.String = ???
+  var defaultValue: String = ???
 
   /**
    * Selects a range of text in the element (but does not focus it). The optional
@@ -1694,7 +1694,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: js.String = ???
+  var validationMessage: String = ???
   var files: FileList = ???
   /**
    * Reflects the max HTML attribute, containing the maximum (numeric or date-time)
@@ -1702,7 +1702,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var max: js.String = ???
+  var max: String = ???
   /**
    * Reflects the formtarget HTML attribute, containing a name or keyword indicating
    * where to display the response that is received after submitting the form. If
@@ -1711,14 +1711,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formTarget: js.String = ???
+  var formTarget: String = ???
   /**
    * Indicates whether the element is a candidate for constraint validation. It is
    * false if any conditions bar it from constraint validation.
    *
    * MDN
    */
-  var willValidate: js.Boolean = ???
+  var willValidate: Boolean = ???
   /**
    * Reflects the step HTML attribute, which works with min and max to limit the
    * increments at which a numeric or date-time value can be set. It can be the string any
@@ -1727,7 +1727,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var step: js.String = ???
+  var step: String = ???
   /**
    * Reflects the autofocus HTML attribute, which specifies that a form control
    * should have input focus when the page loads, unless the user overrides it, for
@@ -1737,14 +1737,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var autofocus: js.Boolean = ???
+  var autofocus: Boolean = ???
   /**
    * Reflects the required HTML attribute, indicating that the user must fill in a
    * value before submitting a form.
    *
    * MDN
    */
-  var required: js.Boolean = ???
+  var required: Boolean = ???
   /**
    * Reflects the formenctype HTML attribute, containing the type of content that
    * is used to submit the form to the server. If specified, this attribute
@@ -1752,7 +1752,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formEnctype: js.String = ???
+  var formEnctype: String = ???
   /**
    * The value of the element, interpreted as one of the following in order: a time value a
    * number null if conversion is not possible
@@ -1768,7 +1768,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var placeholder: js.String = ???
+  var placeholder: String = ???
   /**
    * Reflects the formmethod HTML attribute, containing the HTTP method that the
    * browser uses to submit the form. If specified, this attribute overrides the method
@@ -1776,7 +1776,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formMethod: js.String = ???
+  var formMethod: String = ???
   /**
    * Identifies a list of pre-defined options to suggest to the user. The value must be
    * the id of a <datalist> element in the same document. The browser displays only
@@ -1798,7 +1798,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var autocomplete: js.String = ???
+  var autocomplete: String = ???
   /**
    * Reflects the min HTML attribute, containing the minimum (numeric or date-time)
    * value for this item, which must not be greater than its maximum (max attribute)
@@ -1806,7 +1806,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var min: js.String = ???
+  var min: String = ???
   /**
    * Reflects the formaction HTML attribute, containing the URI of a program that
    * processes information submitted by the element. If specified, this attribute
@@ -1814,7 +1814,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formAction: js.String = ???
+  var formAction: String = ???
   /**
    * Reflects the pattern HTML attribute, containing a regular expression that the
    * control's value is checked against. The pattern must match the entire value, not
@@ -1824,7 +1824,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var pattern: js.String = ???
+  var pattern: String = ???
   /**
    * The validity state that this element is in. 
    *
@@ -1838,14 +1838,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formNoValidate: js.String = ???
+  var formNoValidate: String = ???
   /**
    * Reflects the multiple HTML attribute, indicating whether more than one value is
    * possible (e.g., multiple files).
    *
    * MDN
    */
-  var multiple: js.Boolean = ???
+  var multiple: Boolean = ???
 
   /**
    * Returns false if the element is a candidate for constraint validation, and it does
@@ -1855,7 +1855,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def checkValidity(): js.Boolean = ???
+  def checkValidity(): Boolean = ???
   /**
    * Decrements the value by (step * n), where n defaults to 1 if not specified. Throws an
    * INVALID_STATE_ERR exception: if the method is not applicable to for the current
@@ -1883,7 +1883,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def setCustomValidity(error: js.String): Unit = ???
+  def setCustomValidity(error: String): Unit = ???
 }
 
 /**
@@ -1901,39 +1901,39 @@ class HTMLAnchorElement extends HTMLElement {
    *
    * MDN
    */
-  var rel: js.String = ???
+  var rel: String = ???
   /**
    * Is a DOMString representing the protocol component, including trailing colon
    * (':'), of the referenced URL.
    *
    * MDN
    */
-  var protocol: js.String = ???
+  var protocol: String = ???
   /**
    * Is a DOMString representing tThe search element, including leading question mark
    * ('?'), if any, of the referenced URL.
    *
    * MDN
    */
-  var search: js.String = ???
+  var search: String = ???
   /**
    * Is a DOMString representing a comma-separated list of coordinates.
    *
    * MDN
    */
-  var coords: js.String = ???
+  var coords: String = ???
   /**
    * Is a DOMString representing the hostname in the referenced URL.
    *
    * MDN
    */
-  var hostname: js.String = ???
+  var hostname: String = ???
   /**
    * Is a DOMString representing the path name component, if any, of the referenced URL.
    *
    * MDN
    */
-  var pathname: js.String = ???
+  var pathname: String = ???
 
   /**
    * Is a DOMString that reflects the target HTML attribute, indicating where to
@@ -1941,7 +1941,7 @@ class HTMLAnchorElement extends HTMLElement {
    *
    * MDN
    */
-  var target: js.String = ???
+  var target: String = ???
 
   /**
    * Is a DOMString that reflects the href HTML attribute, containing a valid URL of a
@@ -1949,46 +1949,46 @@ class HTMLAnchorElement extends HTMLElement {
    *
    * MDN
    */
-  var href: js.String = ???
+  var href: String = ???
   /**
    * Is a DOMString representing the anchor name.
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * Is a DOMString representing the character encoding of the linked resource.
    *
    * MDN
    */
-  var charset: js.String = ???
+  var charset: String = ???
   /**
    * Is a DOMString that reflects the hreflang HTML attribute, indicating the language
    * of the linked resource.
    *
    * MDN
    */
-  var hreflang: js.String = ???
+  var hreflang: String = ???
   /**
    * Is a DOMString representing the port component, if any, of the referenced URL.
    *
    * MDN
    */
-  var port: js.String = ???
+  var port: String = ???
   /**
    * Is a DOMString representing the hostname and port (if it's not the default port) in
    * the referenced URL.
    *
    * MDN
    */
-  var host: js.String = ???
+  var host: String = ???
   /**
    * Is a DOMString representing the fragment identifier, including the leading hash
    * mark ('#'), if any, in the referenced URL.
    *
    * MDN
    */
-  var hash: js.String = ???
+  var hash: String = ???
 
   /**
    * Is a DOMString representing that the rev HTML attribute, specifying the
@@ -1996,22 +1996,22 @@ class HTMLAnchorElement extends HTMLElement {
    *
    * MDN
    */
-  var rev: js.String = ???
+  var rev: String = ???
   /**
    * Is a DOMString representing the shape of the active area.
    *
    * MDN
    */
-  var shape: js.String = ???
-  var `type`: js.String = ???
-  var mimeType: js.String = ???
+  var shape: String = ???
+  var `type`: String = ???
+  var mimeType: String = ???
 
   /**
    * Is a DOMString being a synonym for the Node.textContent property.
    *
    * MDN
    */
-  var text: js.String = ???
+  var text: String = ???
 }
 
 /**
@@ -2029,28 +2029,28 @@ class HTMLParamElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.String = ???
+  var value: String = ???
   /**
    * Is a DOMString representing the name of the parameter. It reflects the name
    * attribute.
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * Is a DOMString that reflects the type HTML attribute, indicating the MIME
    * type of the linked resource
    *
    * MDN
    */
-  var `type`: js.String = ???
+  var `type`: String = ???
   /**
    * Is a DOMString containing the type of the value. It reflects the valuetype
    * attribute and has one of the values: "data", "ref", or "object".
    *
    * MDN
    */
-  var valueType: js.String = ???
+  var valueType: String = ???
 }
 
 /**
@@ -2072,7 +2072,7 @@ class HTMLPreElement extends HTMLElement {
 
 
 class HTMLPhraseElement extends HTMLElement {
-  var dateTime: js.String = ???
+  var dateTime: String = ???
 }
 
 
@@ -2113,7 +2113,7 @@ class HTMLCanvasElement extends HTMLElement {
    *
    * MDN
    */
-  def toDataURL(`type`: js.String, args: js.Any*): js.String = ???
+  def toDataURL(`type`: String, args: js.Any*): String = ???
 
   /**
    * Returns a drawing context on the canvas, or null if the context ID is not supported. A
@@ -2124,7 +2124,7 @@ class HTMLCanvasElement extends HTMLElement {
    *
    * MDN
    */
-  def getContext(contextId: js.String, args: js.Any*): js.Dynamic = ???
+  def getContext(contextId: String, args: js.Any*): js.Dynamic = ???
 }
 
 
@@ -2140,7 +2140,7 @@ class HTMLTitleElement extends HTMLElement {
    *
    * MDN
    */
-  var text: js.String = ???
+  var text: String = ???
 }
 
 
@@ -2157,13 +2157,13 @@ class HTMLStyleElement extends HTMLElement with LinkStyle {
    *
    * MDN
    */
-  var media: js.String = ???
+  var media: String = ???
   /**
    * Returns the type of the current style.
    *
    * MDN
    */
-  var `type`: js.String = ???
+  var `type`: String = ???
 }
 
 
@@ -2211,7 +2211,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var headers: js.String = ???
+  var headers: String = ???
   /**
    * Is a long representing the cell position in the cells collection of the <tr> it
    * belongs to. If the cell doesn't belong to a <tr>, it returns -1.
@@ -2226,7 +2226,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
 
   /**
    * Is an unsigned long that represents the number of columns this cell must span. It
@@ -2242,7 +2242,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var axis: js.String = ???
+  var axis: String = ???
   /**
    * Is a DOMString containing a length of pixel of the hinted height of the cell. It
    * reflects the obsolete height attribute.
@@ -2256,7 +2256,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var noWrap: js.Boolean = ???
+  var noWrap: Boolean = ???
 
   /**
    * Is an unsigned long that represents the number of rows this cell must span. It
@@ -2286,7 +2286,7 @@ class HTMLBaseFontElement extends HTMLElement {
    *
    * MDN
    */
-  var face: js.String = ???
+  var face: String = ???
   /**
    * Is a DOMString representing the font size as either a numeric or relative value.
    * Numeric values range from 1 to 7 with 1 being the smallest and 3 the default. Relative
@@ -2312,7 +2312,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.String = ???
+  var value: String = ???
   var status: js.Any = ???
   /**
    * The containing form element, if this element is in a form. If this element is not
@@ -2327,7 +2327,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * The index of the beginning of selected text. If no text is selected, contains the
    * index of the character that follows the input cursor. On being set, the control
@@ -2356,13 +2356,13 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var readOnly: js.Boolean = ???
+  var readOnly: Boolean = ???
   /**
    * Reflects the wrap HTML attribute, indicating how the control wraps text.
    *
    * MDN
    */
-  var wrap: js.String = ???
+  var wrap: String = ???
   /**
    * The index of the end of selected text. If no text is selected, contains the index of
    * the character that follows the input cursor. On being set, the control behaves as if
@@ -2376,7 +2376,7 @@ class HTMLTextAreaElement extends HTMLElement {
   /**
    * The string textarea.
    */
-  def `type`: js.String = ???
+  def `type`: String = ???
 
   /**
    * The control's default value, which behaves like the element.textContent
@@ -2384,7 +2384,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var defaultValue: js.String = ???
+  var defaultValue: String = ???
 
   /**
    * Selects a range of text, and sets selectionStart and selectionEnd. If either
@@ -2410,14 +2410,14 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: js.String = ???
+  var validationMessage: String = ???
   /**
    * Reflects the autofocus HTML attribute, indicating that the control should have
    * input focus when the page loads
    *
    * MDN
    */
-  var autofocus: js.Boolean = ???
+  var autofocus: Boolean = ???
   /**
    * The validity states that this element is in.
    *
@@ -2430,7 +2430,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var required: js.Boolean = ???
+  var required: Boolean = ???
   /**
    * Reflects the maxlength HTML attribute, indicating the maximum number of
    * characters the user can enter. This constraint is evaluated only when the value
@@ -2445,14 +2445,14 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var willValidate: js.Boolean = ???
+  var willValidate: Boolean = ???
   /**
    * Reflects the placeholder HTML attribute, containing a hint to the user about what
    * to enter in the control.
    *
    * MDN
    */
-  var placeholder: js.String = ???
+  var placeholder: String = ???
 
   /**
    * Returns false if the button is a candidate for constraint validation, and it does
@@ -2462,7 +2462,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  def checkValidity(): js.Boolean = ???
+  def checkValidity(): Boolean = ???
 
   /**
    * Sets a custom validity message for the element. If this message is not the empty
@@ -2471,7 +2471,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  def setCustomValidity(error: js.String): Unit = ???
+  def setCustomValidity(error: String): Unit = ???
 }
 
 /**
@@ -2483,14 +2483,14 @@ class HTMLTextAreaElement extends HTMLElement {
  * MDN
  */
 class HTMLModElement extends HTMLElement {
-  var dateTime: js.String = ???
+  var dateTime: String = ???
   /**
    * Reflects the cite HTML attribute, containing a URI of a resource explaining the
    * change.
    *
    * MDN
    */
-  var cite: js.String = ???
+  var cite: String = ???
 }
 
 
@@ -2508,7 +2508,7 @@ class HTMLTableColElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
   /**
    * Reflects the span HTML attribute, indicating the number of columns to apply this
    * object's attributes to. Must be a positive integer.
@@ -2520,9 +2520,9 @@ class HTMLTableColElement extends HTMLElement with HTMLTableAlignment {
 
 
 trait HTMLTableAlignment extends js.Object {
-  var ch: js.String = ???
-  var vAlign: js.String = ???
-  var chOff: js.String = ???
+  var ch: String = ???
+  var vAlign: String = ???
+  var chOff: String = ???
 }
 
 /**
@@ -2551,7 +2551,7 @@ class HTMLDivElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
 
 }
 
@@ -2568,7 +2568,7 @@ class HTMLBRElement extends HTMLElement {
    *
    * MDN
    */
-  var clear: js.String = ???
+  var clear: String = ???
 }
 
 
@@ -2585,7 +2585,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var initialTime: js.Number = ???
+  var initialTime: Double = ???
   /**
    * The ranges of the media source that the browser has played, if any.
    *
@@ -2599,7 +2599,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var currentSrc: js.String = ???
+  var currentSrc: String = ???
 
   /**
    * Reflects the loop HTML attribute, indicating whether the media element should
@@ -2607,13 +2607,13 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var loop: js.Boolean = ???
+  var loop: Boolean = ???
   /**
    * Indicates whether the media element has ended playback.
    *
    * MDN
    */
-  var ended: js.Boolean = ???
+  var ended: Boolean = ???
   /**
    * The ranges of the media source that the browser has buffered (if any) at the moment
    * the buffered property is accessed. The returned TimeRanges object is normalized.
@@ -2641,20 +2641,20 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var autoplay: js.Boolean = ???
+  var autoplay: Boolean = ???
   /**
    * Reflects the controls HTML attribute, indicating whether user interface items
    * for controlling the resource should be displayed.
    *
    * MDN
    */
-  var controls: js.Boolean = ???
+  var controls: Boolean = ???
   /**
    * The audio volume, from 0.0 (silent) to 1.0 (loudest).
    *
    * MDN
    */
-  var volume: js.Number = ???
+  var volume: Double = ???
   /**
    * Reflects the src HTML attribute, containing the URL of a media resource to use.
    * Gecko implements a similar functionality is available for streams:
@@ -2662,7 +2662,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var src: js.String = ???
+  var src: String = ???
   /**
    * The current rate at which the media is being played back. This is used to implement
    * user controls for fast forward, slow motion, and so forth. The normal playback rate
@@ -2675,7 +2675,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var playbackRate: js.Number = ???
+  var playbackRate: Double = ???
   /**
    * The length of the media in seconds, or zero if no media data is available.  If the
    * media data is available but the length is unknown, this value is NaN.  If the media is
@@ -2683,13 +2683,13 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var duration: js.Number = ???
+  var duration: Double = ???
   /**
    * true if the audio is muted, and false otherwise.
    *
    * MDN
    */
-  var muted: js.Boolean = ???
+  var muted: Boolean = ???
   /**
    * The default playback rate for the media. 1.0 is "normal speed," values lower than
    * 1.0 make the media play slower than normal, higher values make it play faster. The
@@ -2697,26 +2697,26 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var defaultPlaybackRate: js.Number = ???
+  var defaultPlaybackRate: Double = ???
   /**
    * Indicates whether the media element is paused.
    *
    * MDN
    */
-  var paused: js.Boolean = ???
+  var paused: Boolean = ???
   /**
    * Indicates whether the media is in the process of seeking to a new position.
    *
    * MDN
    */
-  var seeking: js.Boolean = ???
+  var seeking: Boolean = ???
   /**
    * The current playback time, in seconds. Setting this value seeks the media to the new
    * time.
    *
    * MDN
    */
-  var currentTime: js.Number = ???
+  var currentTime: Double = ???
   /**
    * Reflects the preload HTML attribute, indicating what data should be preloaded, if
    * any. Possible values are: none, metadata, auto. See preload attribute
@@ -2724,7 +2724,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var preload: js.String = ???
+  var preload: String = ???
   /**
    * The current state of fetching the media over the network. Constant Value
    * Description NETWORK_EMPTY 0 There is no data yet.  The readyState is also
@@ -2758,7 +2758,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  def canPlayType(`type`: js.String): js.String = ???
+  def canPlayType(`type`: String): String = ???
 
   /**
    * Represents the list of TextTrack objects contained in the element.
@@ -2823,7 +2823,7 @@ object HTMLMediaElement extends js.Object {
 }
 
 class HTMLDTElement extends HTMLElement {
-  var noWrap: js.Boolean = ???
+  var noWrap: Boolean = ???
 }
 
 
@@ -2835,7 +2835,7 @@ class HTMLDTElement extends HTMLElement {
  * MDN
  */
 class HTMLFieldSetElement extends HTMLElement {
-  var align: js.String = ???
+  var align: String = ???
 
   /**
    * The containing form element, if this element is in a form. If the button is not a
@@ -2854,7 +2854,7 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  def validationMessage: js.String = ???
+  def validationMessage: String = ???
 
   /**
    * The validity states that this element is in.
@@ -2868,7 +2868,7 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  var willValidate: js.Boolean = ???
+  var willValidate: Boolean = ???
 
   /**
    * Always returns true because <fieldset> objects are never candidates for
@@ -2876,7 +2876,7 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  def checkValidity(): js.Boolean = ???
+  def checkValidity(): Boolean = ???
 
   /**
    * Sets a custom validity message for the field set. If this message is not the empty
@@ -2885,15 +2885,15 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  def setCustomValidity(error: js.String): Unit = ???
+  def setCustomValidity(error: String): Unit = ???
 }
 
 
 class HTMLBGSoundElement extends HTMLElement {
   var balance: js.Any = ???
   var volume: js.Any = ???
-  var src: js.String = ???
-  var loop: js.Number = ???
+  var src: String = ???
+  var loop: Double = ???
 }
 
 
@@ -2913,7 +2913,7 @@ class HTMLElement extends Element {
   var onreset: js.Function1[Event, _] = ???
   var onhelp: js.Function1[Event, _] = ???
   var ondragleave: js.Function1[DragEvent, _] = ???
-  var className: js.String = ???
+  var className: String = ???
   var onfocusin: js.Function1[FocusEvent, _] = ???
   var onseeked: js.Function1[Event, _] = ???
   var recordNumber: js.Any = ???
@@ -2923,7 +2923,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var title: js.String = ???
+  var title: String = ???
 
 
   var ondurationchange: js.Function1[Event, _] = ???
@@ -2933,7 +2933,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  def offsetHeight: js.Number = ???
+  def offsetHeight: Double = ???
 
   /**
    * The dir attribute gets or sets the text writing directionality of the content of the
@@ -2941,7 +2941,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var dir: js.String = ???
+  var dir: String = ???
   var onemptied: js.Function1[Event, _] = ???
   var onseeking: js.Function1[Event, _] = ???
   var oncanplay: js.Function1[Event, _] = ???
@@ -2998,7 +2998,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  def offsetTop: js.Number = ???
+  def offsetTop: Double = ???
 
   var onmouseup: js.Function1[MouseEvent, _] = ???
   var ondragstart: js.Function1[DragEvent, _] = ???
@@ -3011,7 +3011,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var lang: js.String = ???
+  var lang: String = ???
 
   var onpause: js.Function1[Event, _] = ???
 
@@ -3024,7 +3024,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var offsetLeft: js.Number = ???
+  var offsetLeft: Double = ???
 
   var onstalled: js.Function1[Event, _] = ???
   var onmousemove: js.Function1[MouseEvent, _] = ???
@@ -3034,7 +3034,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var isContentEditable: js.Boolean = ???
+  var isContentEditable: Boolean = ???
   var onratechange: js.Function1[Event, _] = ???
   /**
    * contentEditable is used to indicate whether or not the element is editable. This
@@ -3042,7 +3042,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var contentEditable: js.String = ???
+  var contentEditable: String = ???
   /**
    * Gets/sets the tab order of the current element.
    *
@@ -3065,7 +3065,7 @@ class HTMLElement extends Element {
   var onloadeddata: js.Function1[Event, _] = ???
   var onbeforedeactivate: js.Function1[UIEvent, _] = ???
 
-  var disabled: js.Boolean = ???
+  var disabled: Boolean = ???
   var onactivate: js.Function1[UIEvent, _] = ???
   var onselectstart: js.Function1[Event, _] = ???
   var ontimeupdate: js.Function1[Event, _] = ???
@@ -3077,7 +3077,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  def offsetWidth: js.Number = ???
+  def offsetWidth: Double = ???
 
   var onended: js.Function1[Event, _] = ???
   var onscroll: js.Function1[UIEvent, _] = ???
@@ -3098,7 +3098,7 @@ class HTMLElement extends Element {
    */
   def blur(): Unit = ???
 
-  def contains(child: HTMLElement): js.Boolean = ???
+  def contains(child: HTMLElement): Boolean = ???
 
   /**
    * The click method simulates a mouse click on an element.
@@ -3108,8 +3108,8 @@ class HTMLElement extends Element {
   def click(): Unit = ???
 
   var oncuechange: js.Function1[Event, _] = ???
-  var spellcheck: js.Boolean = ???
-  var draggable: js.Boolean = ???
+  var spellcheck: Boolean = ???
+  var draggable: Boolean = ???
 
   /**
    * Returns an object that represents the element's style attribute.
@@ -3128,14 +3128,14 @@ class HTMLElement extends Element {
  * MDN
  */
 class HTMLHRElement extends HTMLElement {
-  var width: js.Number = ???
+  var width: Double = ???
   /**
    * Enumerated attribute indicating alignment of the rule with respect to the
    * surrounding context.
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
 
 }
 
@@ -3155,13 +3155,13 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var width: js.String = ???
+  var width: String = ???
   /**
    * Reflects the codetype HTML attribute, specifying the content type of the data.
    *
    * MDN
    */
-  var codeType: js.String = ???
+  var codeType: String = ???
   var `object`: Object = ???
   /**
    * The object element's form owner, or null if there isn't one.
@@ -3175,49 +3175,49 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var code: js.String = ???
+  var code: String = ???
   /**
    * Reflects the archive HTML attribute, containing a list of archives for resources
    * for this object.
    *
    * MDN
    */
-  var archive: js.String = ???
+  var archive: String = ???
   /**
    * Reflects the standby HTML attribute, specifying a message to display while the
    * object loads.
    *
    * MDN
    */
-  var standby: js.String = ???
-  var alt: js.String = ???
-  var classid: js.String = ???
+  var standby: String = ???
+  var alt: String = ???
+  var classid: String = ???
   /**
    * Reflects the name HTML attribute, specifying the name of the object (HTML 4, or of a
    * browsing context (HTML5.
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * Reflects the usemap HTML attribute, specifying a <map> element to use.
    *
    * MDN
    */
-  var useMap: js.String = ???
+  var useMap: String = ???
   /**
    * Reflects the data HTML attribute, specifying the address of a resource's data.
    *
    * MDN
    */
-  var data: js.String = ???
+  var data: String = ???
   /**
    * Reflects the height HTML attribute, specifying the displayed height of the
    * resource in CSS pixels.
    *
    * MDN
    */
-  var height: js.String = ???
+  var height: String = ???
   /**
    * The active document of the object element's nested browsing context, if any;
    * otherwise null.
@@ -3225,23 +3225,23 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    * MDN
    */
   var contentDocument: Document = ???
-  var altHtml: js.String = ???
+  var altHtml: String = ???
   /**
    * Reflects the codebase HTML attribute, specifying the base path to use to resolve
    * relative URIs.
    *
    * MDN
    */
-  var codeBase: js.String = ???
+  var codeBase: String = ???
   /**
    * Reflects the declare HTML attribute, indicating that this is a declaration, not an
    * instantiation, of the object.
    *
    * MDN
    */
-  var declare: js.Boolean = ???
-  var `type`: js.String = ???
-  var BaseHref: js.String = ???
+  var declare: Boolean = ???
+  var `type`: String = ???
+  var BaseHref: String = ???
   /**
    * A localized message that describes the validation constraints that the control
    * does not satisfy (if any). This is the empty string if the control is not a candidate
@@ -3250,7 +3250,7 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var validationMessage: js.String = ???
+  var validationMessage: String = ???
 
   /**
    * The validity states that this element is in.
@@ -3265,7 +3265,7 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var willValidate: js.Boolean = ???
+  var willValidate: Boolean = ???
 
   /**
    * Always returns true, because object objects are never candidates for constraint
@@ -3273,7 +3273,7 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  def checkValidity(): js.Boolean = ???
+  def checkValidity(): Boolean = ???
 
   /**
    * Sets a custom validity message for the element. If this message is not the empty
@@ -3282,7 +3282,7 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  def setCustomValidity(error: js.String): Unit = ???
+  def setCustomValidity(error: String): Unit = ???
 }
 
 
@@ -3300,14 +3300,14 @@ class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var width: js.String = ???
+  var width: String = ???
 
   /**
    * Reflects the src HTML attribute, containing the address of the resource.
    *
    * MDN
    */
-  var src: js.String = ???
+  var src: String = ???
 
   /**
    * Reflects the height HTML attribute, containing the displayed height of the
@@ -3315,7 +3315,7 @@ class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var height: js.String = ???
+  var height: String = ???
 
 }
 
@@ -3335,7 +3335,7 @@ class HTMLOptGroupElement extends HTMLElement {
    *
    * MDN
    */
-  var label: js.String = ???
+  var label: String = ???
 
 }
 
@@ -3355,13 +3355,13 @@ class HTMLIsIndexElement extends HTMLElement {
    * MDN
    */
   var form: HTMLFormElement = ???
-  var action: js.String = ???
+  var action: String = ???
   /**
    * Is a DOMString representing a text to be prompted for the field.
    *
    * MDN
    */
-  var prompt: js.String = ???
+  var prompt: String = ???
 }
 
 
@@ -3411,7 +3411,7 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var poster: js.String = ???
+  var poster: String = ???
 
 
 }
@@ -3432,14 +3432,14 @@ class HTMLProgressElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.Number = ???
+  var value: Double = ???
   /**
    * This property reflect the content attribute of the same name, limited to numbers
    * greater than zero. Its default value is 1.0.
    *
    * MDN
    */
-  var max: js.Number = ???
+  var max: Double = ???
   /**
    * If the progress bar is an indeterminate progress bar, then the position property
    * return −1. Otherwise, it returns the result of dividing the current value by the
@@ -3447,7 +3447,7 @@ class HTMLProgressElement extends HTMLElement {
    *
    * MDN
    */
-  var position: js.Number = ???
+  var position: Double = ???
   var form: HTMLFormElement = ???
 }
 
@@ -3476,24 +3476,24 @@ class HTMLDataListElement extends HTMLElement {
  * MDN
  */
 class HTMLTrackElement extends HTMLElement {
-  var kind: js.String = ???
-  var src: js.String = ???
-  var srclang: js.String = ???
+  var kind: String = ???
+  var src: String = ???
+  var srclang: String = ???
   var track: TextTrack = ???
-  var label: js.String = ???
+  var label: String = ???
 }
 
 class HTMLMarqueeElement extends HTMLElement {
-  var width: js.String = ???
+  var width: String = ???
   var onbounce: js.Function1[Event, _] = ???
   var vspace: Int = ???
-  var trueSpeed: js.Boolean = ???
-  var scrollAmount: js.Number = ???
-  var scrollDelay: js.Number = ???
-  var behavior: js.String = ???
-  var height: js.String = ???
+  var trueSpeed: Boolean = ???
+  var scrollAmount: Double = ???
+  var scrollDelay: Double = ???
+  var behavior: String = ???
+  var height: String = ???
   var loop: Int = ???
-  var direction: js.String = ???
+  var direction: String = ???
   var hspace: Int = ???
   var onstart: js.Function1[Event, _] = ???
   var onfinish: js.Function1[Event, _] = ???
@@ -3529,7 +3529,7 @@ class HTMLHeadElement extends HTMLElement {
    *
    * MDN
    */
-  var profile: js.String = ???
+  var profile: String = ???
 }
 
 
@@ -3546,7 +3546,7 @@ class HTMLHeadingElement extends HTMLElement {
    *
    * MDN
    */
-  var align: js.String = ???
+  var align: String = ???
 }
 
 
@@ -3568,20 +3568,20 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var target: js.String = ???
+  var target: String = ???
   /**
    * acceptCharset returns a list of the supported character encodings for the given
    * FORM element. This list can be comma- or space-separated.
    *
    * MDN
    */
-  var acceptCharset: js.String = ???
+  var acceptCharset: String = ???
   /**
    * enctype gets/sets the content type of the FORM element.
    *
    * MDN
    */
-  var enctype: js.String = ???
+  var enctype: String = ???
   /**
    * elements returns an HTMLFormControlsCollection (HTML 4 HTMLCollection) of all
    * the form controls contained in the FORM element, with the exception of input
@@ -3595,26 +3595,26 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var action: js.String = ???
+  var action: String = ???
   /**
    * name returns the name of the current form element as a string.
    *
    * MDN
    */
-  var name: js.String = ???
+  var name: String = ???
   /**
    * method gets/sets the HTTP method used to submit the form.
    *
    * MDN
    */
-  var method: js.String = ???
+  var method: String = ???
   /**
    * encoding is an alternative name for the enctype element on the DOM HTMLFormElement
    * object.
    *
    * MDN
    */
-  var encoding: js.String = ???
+  var encoding: String = ???
 
   /**
    * reset restores a form element's default values.
@@ -3646,13 +3646,13 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  def namedItem(name: js.String): js.Dynamic = ???
+  def namedItem(name: String): js.Dynamic = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(name: js.String): js.Any = ???
+  def apply(name: String): js.Any = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(name: js.String, v: js.Any): Unit = ???
+  def update(name: String, v: js.Any): Unit = ???
 
   /**
    * Reflects the autocomplete HTML attribute, containing a string that indicates
@@ -3661,16 +3661,16 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var autocomplete: js.String = ???
+  var autocomplete: String = ???
   /**
    * Reflects the novalidate HTML attribute, indicating that the form should not be
    * validated.
    *
    * MDN
    */
-  var noValidate: js.Boolean = ???
+  var noValidate: Boolean = ???
 
-  def checkValidity(): js.Boolean = ???
+  def checkValidity(): Boolean = ???
 }
 
 
