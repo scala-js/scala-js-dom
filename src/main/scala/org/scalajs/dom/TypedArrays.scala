@@ -52,9 +52,9 @@ trait ArrayBufferView extends js.Object {
  */
 trait TypedArray[T] extends js.Object {
   @JSBracketAccess
-  def apply(index: Int): Int = ???
+  def apply(index: Int): Double = ???
   @JSBracketAccess
-  def update(index: Int, value: Int): Unit = ???
+  def update(index: Int, value: Double): Unit = ???
 
   /**
    * Copies the contents of `array` into this array, starting at `offset`.
@@ -486,17 +486,17 @@ class DataView(buffer: ArrayBuffer, byteOffset: Int, byteLength: Int) extends js
   /**
    * Returns the unsigned 32-bit integer at `byteOffset`, if `littleEndian` uses little endian, otherwise uses big endian.
    */
-  def getUint32(byteOffset: Int, littleEndian: Boolean = ???): Int = ???
+  def getUint32(byteOffset: Int, littleEndian: Boolean = ???): Double = ???
   
   /**
    * Returns the 32-bit IEEE-754 float at `byteOffset`, if `littleEndian` uses little endian, otherwise uses big endian.
    */
-  def getFloat32(byteOffset: Int, littleEndian: Boolean = ???): Int = ???
+  def getFloat32(byteOffset: Int, littleEndian: Boolean = ???): Double = ???
 
   /**
    * Returns the 64-bit IEEE-754 float at `byteOffset`, if `littleEndian` uses little endian, otherwise uses big endian.
    */
-  def getFloat64(byteOffset: Int, littleEndian: Boolean = ???): Int = ???
+  def getFloat64(byteOffset: Int, littleEndian: Boolean = ???): Double = ???
 
   /**
    * Sets the signed byte at `byteOffset` to `value`.

@@ -666,7 +666,7 @@ class HTMLMenuElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLCollection extends JsList[Element]{
+class HTMLCollection extends DOMList[Element]{
 
   /**
    * Returns the specific node at the given zero-based index into the list. Returns null

@@ -8,9 +8,9 @@ version := "0.5-SNAPSHOT"
 
 organization := "org.scala-lang.modules.scalajs"
 
-scalaVersion := "2.11.0"
+scalaVersion := "2.11.1"
 
-crossScalaVersions := Seq("2.10.4", "2.11.0")
+crossScalaVersions := Seq("2.10.4", "2.11.1")
 
 homepage := Some(url("http://scala-js.org/"))
 

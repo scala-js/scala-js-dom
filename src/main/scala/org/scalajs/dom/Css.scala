@@ -516,7 +516,7 @@ class CSSPageRule extends CSSRule {
  *
  * MDN
  */
-class CSSRuleList extends JsList[CSSRule]
+class CSSRuleList extends DOMList[CSSRule]
 
 /**
  * The CSSKeyframesRule interface describes an object representing a complete set

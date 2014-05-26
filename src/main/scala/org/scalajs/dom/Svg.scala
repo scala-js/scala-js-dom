@@ -1127,7 +1127,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def setCurrentTime(seconds: Int): Unit = ???
+  def setCurrentTime(seconds: Double): Unit = ???
 
   /**
    * Creates an SVGLength object outside of any document trees. The object is

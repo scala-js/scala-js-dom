@@ -2181,7 +2181,7 @@ class TouchEvent extends UIEvent with ModifierKeyEvent {
  *
  * MDN
  */
-class TouchList extends JsList[Touch]
+class TouchList extends DOMList[Touch]
 
 /**
  * A Touch object represents a single point of contact between the user and a touch-sensitive
@@ -3533,7 +3533,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var timeout: Int = ???
+  var timeout: Double = ???
   var onload: js.Function1[Event, _] = ???
   /**
    * Initializes a request. This method is to be used from JavaScript code; to
@@ -4583,7 +4583,7 @@ trait Location extends js.Object {
 class PerformanceEntry extends js.Object {
   def name: String = ???
 
-  def startTime: Int = ???
+  def startTime: Double = ???
 
   def duration: Int = ???
 
@@ -4985,7 +4985,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def timeStamp: Int = ???
+  def timeStamp: Double = ???
 
   /**
    * Returns a boolean indicating whether or not event.preventDefault() was called on
@@ -5336,7 +5336,7 @@ class StyleSheet extends js.Object {
   def title: String = ???
 }
 
-trait JsList[T] extends js.Object{
+trait DOMList[T] extends js.Object{
   def length: Int = ???
   def item(index: Int): T = ???
   @scala.scalajs.js.annotation.JSBracketAccess
@@ -5351,10 +5351,10 @@ trait JsList[T] extends js.Object{
  *
  * MDN
  */
-class NodeList extends JsList[Node]
+class NodeList extends DOMList[Node]
 
 
-trait NodeListOf[TNode <: Node] extends JsList[TNode]
+trait NodeListOf[TNode <: Node] extends DOMList[TNode]
 
 class XMLSerializer extends js.Object {
   def serializeToString(target: Node): String = ???
@@ -5748,7 +5748,7 @@ trait LinkStyle extends js.Object {
   def sheet: StyleSheet = ???
 }
 
-class ClientRectList extends JsList[ClientRect]
+class ClientRectList extends DOMList[ClientRect]
 
 trait External extends js.Object {
 }
@@ -5801,11 +5801,11 @@ trait TrackEvent extends Event {
 trait TextTrackCue extends EventTarget {
   var onenter: js.Function1[Event, _] = _
   var track: TextTrack = _
-  var endTime: Int = _
+  var endTime: Double = _
   var text: String = _
   var pauseOnExit: Boolean = _
   var id: String = _
-  var startTime: Int = _
+  var startTime: Double = _
   var onexit: js.Function1[Event, _] = _
 
   def getCueAsHTML(): DocumentFragment = ???
@@ -5823,7 +5823,7 @@ trait TextTrackCue extends EventTarget {
  *
  * MDN
  */
-trait DOMTokenList extends JsList[String]{
+trait DOMTokenList extends DOMList[String]{
 
   def contains(token: String): Boolean = ???
 
@@ -5859,7 +5859,7 @@ trait TransitionEvent extends Event {
    *
    * MDN
    */
-  def elapsedTime: Int = ???
+  def elapsedTime: Double = ???
 
   /**
    * The TransitionEvent.initTransitionEvent() method Initializes a transition
@@ -6140,7 +6140,7 @@ trait ProgressEvent extends Event {
  *
  * MDN
  */
-trait FileList extends JsList[File]
+trait FileList extends DOMList[File]
 
 /**
  * The File interface provides information about -- and access to the contents of --
@@ -6261,7 +6261,7 @@ trait XMLHttpRequestEventTarget extends EventTarget {
 }
 
 
-trait AudioTrackList extends EventTarget with JsList[AudioTrack] {
+trait AudioTrackList extends EventTarget with DOMList[AudioTrack] {
 
   var onchange: js.Function1[js.Any, _] = ???
   var onaddtrack: js.Function1[TrackEvent, _] = ???
@@ -6300,7 +6300,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  def elapsedTime: Int = ???
+  def elapsedTime: Double = ???
 
   /**
    * The AnimationEvent.initAnimationEvent() method Initializes an animation
@@ -6327,12 +6327,12 @@ trait AudioTrack extends js.Object {
 }
 
 
-trait TextTrackCueList extends JsList[TextTrackCue]{
+trait TextTrackCueList extends DOMList[TextTrackCue]{
   def getCueById(id: String): TextTrackCue = ???
 }
 
 
-trait TextTrackList extends JsList[TextTrack]
+trait TextTrackList extends DOMList[TextTrack]
 
 
 /**
@@ -6412,7 +6412,7 @@ trait WindowBase64 extends js.Object {
  *
  * MDN
  */
-trait DOMStringList extends JsList[String]{
+trait DOMStringList extends DOMList[String]{
   def contains(str: String): Boolean = ???
 }
 
