@@ -3228,11 +3228,9 @@ class CanvasRenderingContext2D extends js.Object {
    */
   var canvas: HTMLCanvasElement = ???
   /**
-   * Color or style to use for the lines around shapes. Default #000 (black).
-   *
-   * MDN
+   * A CSS color, a CanvasGradient or CanvasPattern, to use as a line around shapes.
    */
-  var strokeStyle: String = ???
+  var strokeStyle: js.Any = ???
   /**
    * Alpha value that is applied to shapes and images before they are composited onto the
    * canvas. Default 1.0 (opaque).
@@ -3247,11 +3245,9 @@ class CanvasRenderingContext2D extends js.Object {
    */
   var shadowOffsetY: Double = ???
   /**
-   * Color or style to use inside shapes. Default #000 (black).
-   *
-   * MDN
+   * A CSS color, a CanvasGradient or CanvasPattern, to use as a fill.
    */
-  var fillStyle: String = ???
+  var fillStyle: js.Any = ???
   /**
    * Specifies the blurring effect. Default 0
    *
