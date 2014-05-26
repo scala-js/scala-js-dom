@@ -128,14 +128,14 @@ class IDBVersionChangeEvent extends Event {
    *
    * MDN
    */
-  def newVersion: js.Number = ???
+  def newVersion: Int = ???
 
   /**
    * Returns the old version of the database.
    *
    * MDN
    */
-  def oldVersion: js.Number = ???
+  def oldVersion: Int = ???
 }
 
 
@@ -281,7 +281,7 @@ class IDBCursor extends js.Object {
    *
    * MDN
    */
-  def advance(count: js.Number): Unit = ???
+  def advance(count: Int): Unit = ???
 
   /**
    * Returns an IDBRequest object, and, in a separate thread, deletes the record at the
@@ -647,7 +647,7 @@ class IDBOpenDBRequest extends IDBRequest {
  * MDN
  */
 class IDBFactory extends js.Object {
-  def open(name: js.String, version: js.Number): IDBOpenDBRequest = ???
+  def open(name: js.String, version: Int): IDBOpenDBRequest = ???
 
   /**
    * An obsolete method to request opening a connection to a database, still
@@ -663,7 +663,7 @@ class IDBFactory extends js.Object {
    *
    * MDN
    */
-  def cmp(first: js.Any, second: js.Any): js.Number = ???
+  def cmp(first: js.Any, second: js.Any): Int = ???
 
   /**
    * The deletion operation (performed in a different thread) consists of the

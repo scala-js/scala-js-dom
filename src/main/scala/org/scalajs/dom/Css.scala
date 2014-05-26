@@ -57,7 +57,7 @@ class CSSStyleDeclaration extends js.Object {
   var textJustify: js.String = _
   var height: js.String = _
   var paddingTop: js.String = _
-  var length: js.Number = _
+  var length: Int = _
   var right: js.String = _
   var baselineShift: js.String = _
   var borderLeft: js.String = _
@@ -178,13 +178,13 @@ class CSSStyleDeclaration extends js.Object {
 
   def removeProperty(propertyName: js.String): js.String = ???
 
-  def item(index: js.Number): js.String = ???
+  def item(index: Int): js.String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): js.String = ???
+  def apply(index: Int): js.String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: js.String): Unit = ???
+  def update(index: Int, v: js.String): Unit = ???
 
   def setProperty(propertyName: js.String, value: js.String, priority: js.String = ???): Unit = ???
 
@@ -333,30 +333,30 @@ class CSSStyleSheet extends StyleSheet {
   var cssRules: CSSRuleList = _
   var id: js.String = _
 
-  def addImport(bstrURL: js.String, lIndex: js.Number = ???): js.Number = ???
+  def addImport(bstrURL: js.String, lIndex: Int = ???): Int = ???
 
-  def addPageRule(bstrSelector: js.String, bstrStyle: js.String, lIndex: js.Number = ???): js.Number = ???
+  def addPageRule(bstrSelector: js.String, bstrStyle: js.String, lIndex: Int = ???): Int = ???
   /**
    * The CSSStyleSheet.insertRule() method inserts a new style rule into the current
    * style sheet.
    *
    * MDN
    */
-  def insertRule(rule: js.String, index: js.Number = ???): js.Number = ???
+  def insertRule(rule: js.String, index: Int = ???): Int = ???
 
 
-  def removeRule(lIndex: js.Number): Unit = ???
+  def removeRule(lIndex: Int): Unit = ???
   /**
    * Deletes a rule from the style sheet.
    *
    * MDN
    */
-  def deleteRule(index: js.Number = ???): Unit = ???
+  def deleteRule(index: Int = ???): Unit = ???
 
 
-  def addRule(bstrSelector: js.String, bstrStyle: js.String = ???, lIndex: js.Number = ???): js.Number = ???
+  def addRule(bstrSelector: js.String, bstrStyle: js.String = ???, lIndex: Int = ???): Int = ???
 
-  def removeImport(lIndex: js.Number): Unit = ???
+  def removeImport(lIndex: Int): Unit = ???
 }
 
 /**
@@ -392,10 +392,10 @@ class CSSMediaRule extends CSSRule {
   var media: MediaList = _
   var cssRules: CSSRuleList = _
 
-  def insertRule(rule: js.String, index: js.Number = ???): js.Number = ???
+  def insertRule(rule: js.String, index: Int = ???): Int = ???
 
 
-  def deleteRule(index: js.Number = ???): Unit = ???
+  def deleteRule(index: Int = ???): Unit = ???
 }
 
 /**
@@ -456,29 +456,29 @@ class CSSRule extends js.Object {
    * MDN
    */
   var parentRule: CSSRule = _
-  var `type`: js.Number = _
-  var IMPORT_RULE: js.Number = _
-  var MEDIA_RULE: js.Number = _
-  var STYLE_RULE: js.Number = _
-  var NAMESPACE_RULE: js.Number = _
-  var PAGE_RULE: js.Number = _
-  var UNKNOWN_RULE: js.Number = _
-  var FONT_FACE_RULE: js.Number = _
-  var CHARSET_RULE: js.Number = _
-  var KEYFRAMES_RULE: js.Number = _
-  var KEYFRAME_RULE: js.Number = _
-  var VIEWPORT_RULE: js.Number = _
+  var `type`: Int = _
+  var IMPORT_RULE: Int = _
+  var MEDIA_RULE: Int = _
+  var STYLE_RULE: Int = _
+  var NAMESPACE_RULE: Int = _
+  var PAGE_RULE: Int = _
+  var UNKNOWN_RULE: Int = _
+  var FONT_FACE_RULE: Int = _
+  var CHARSET_RULE: Int = _
+  var KEYFRAMES_RULE: Int = _
+  var KEYFRAME_RULE: Int = _
+  var VIEWPORT_RULE: Int = _
 }
 
 object CSSRule extends js.Object {
-  var IMPORT_RULE: js.Number = _
-  var MEDIA_RULE: js.Number = _
-  var STYLE_RULE: js.Number = _
-  var NAMESPACE_RULE: js.Number = _
-  var PAGE_RULE: js.Number = _
-  var UNKNOWN_RULE: js.Number = _
-  var FONT_FACE_RULE: js.Number = _
-  var CHARSET_RULE: js.Number = _
+  var IMPORT_RULE: Int = _
+  var MEDIA_RULE: Int = _
+  var STYLE_RULE: Int = _
+  var NAMESPACE_RULE: Int = _
+  var PAGE_RULE: Int = _
+  var UNKNOWN_RULE: Int = _
+  var FONT_FACE_RULE: Int = _
+  var CHARSET_RULE: Int = _
 }
 
 class CSSFontFaceRule extends CSSRule {
@@ -517,15 +517,15 @@ class CSSPageRule extends CSSRule {
  * MDN
  */
 class CSSRuleList extends js.Object {
-  var length: js.Number = _
+  var length: Int = _
 
-  def item(index: js.Number): CSSRule = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): CSSRule = ???
+  def item(index: Int): CSSRule = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: CSSRule): Unit = ???
+  def apply(index: Int): CSSRule = ???
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: CSSRule): Unit = ???
 }
 
 /**

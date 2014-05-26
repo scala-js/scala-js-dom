@@ -75,7 +75,6 @@ class HTMLTableElement extends HTMLElement {
    * MDN
    */
   var rules: js.String = ???
-  var cols: js.Number = ???
   /**
    * Is a DOMString containing a description of the purpose or the structure of the
    * table. It reflects the obsolete summary attribute.
@@ -145,7 +144,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def deleteRow(index: js.Number = ???): Unit = ???
+  def deleteRow(index: Int = ???): Unit = ???
 
   def createTBody(): HTMLElement = ???
 
@@ -164,7 +163,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def insertRow(index: js.Number = ???): HTMLElement = ???
+  def insertRow(index: Int = ???): HTMLElement = ???
 
 
 
@@ -201,7 +200,7 @@ class HTMLTableElement extends HTMLElement {
    */
   def createCaption(): HTMLElement = ???
 
-  def moveRow(indexFrom: js.Number = ???, indexTo: js.Number = ???): Object = ???
+  def moveRow(indexFrom: Int = ???, indexTo: Int = ???): Object = ???
 
   /**
    * Returns an HTMLElement representing the first <tfoot> that is a child of the
@@ -274,7 +273,7 @@ class HTMLParagraphElement extends HTMLElement {
 
 
 trait HTMLAreasCollection extends HTMLCollection {
-  def remove(index: js.Number = ???): Unit = ???
+  def remove(index: Int = ???): Unit = ???
 
   def add(element: HTMLElement, before: js.Any = ???): Unit = ???
 }
@@ -315,7 +314,7 @@ class HTMLOListElement extends HTMLElement {
    *
    * MDN
    */
-  var start: js.Number = ???
+  var start: Int= ???
 }
 
 /**
@@ -360,19 +359,19 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var size: js.Number = ???
+  var size: Int= ???
   /**
    * The number of <option> elements in this select element.
    *
    * MDN
    */
-  var length: js.Number = ???
+  var length: Int = ???
   /**
    * The index of the first selected <option> element.
    *
    * MDN
    */
-  var selectedIndex: js.Number = ???
+  var selectedIndex: Int = ???
   /**
    * Reflects the multiple HTML attribute, whichindicates whether multiple items can
    * be selected.
@@ -387,7 +386,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  def remove(index: js.Number = ???): Unit = ???
+  def remove(index: Int = ???): Unit = ???
   /**
    * Adds an element to the collection of option elements for this select element.
    *
@@ -586,7 +585,7 @@ class HTMLOptionElement extends HTMLElement {
    *
    * MDN
    */
-  var index: js.Number = ???
+  var index: Int = ???
   /**
    * Contains the initial value of the selected HTML attribute, indicating whether the
    * option is selected by default or not.
@@ -673,7 +672,7 @@ class HTMLCollection extends js.Object {
    *
    * MDN
    */
-  var length: js.Number = ???
+  var length: Int = ???
   /**
    * Returns the specific node at the given zero-based index into the list. Returns null
    * if the index is out of range.
@@ -694,10 +693,10 @@ class HTMLCollection extends js.Object {
   def namedItem(name: js.String): Element = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(name: js.Number): Element = ???
+  def apply(name: Int): Element = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(name: js.Number, v: Element): Unit = ???
+  def update(name: Int, v: Element): Unit = ???
 }
 
 /**
@@ -714,14 +713,14 @@ class HTMLImageElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.Number = ???
-  var vspace: js.Number = ???
+  var width: Int = ???
+  var vspace: Int = ???
   /**
    * Intrinsic height of the image in CSS pixels, if it is available; otherwise, 0.
    *
    * MDN
    */
-  var naturalHeight: js.Number = ???
+  var naturalHeight: Int = ???
   /**
    * Reflects the alt HTML attribute, indicating fallback context for the image.
    *
@@ -751,7 +750,7 @@ class HTMLImageElement extends HTMLElement {
    *
    * MDN
    */
-  var naturalWidth: js.Number = ???
+  var naturalWidth: Int = ???
   var name: js.String = ???
   /**
    * Reflects the height HTML attribute, indicating the rendered height of the image in
@@ -759,7 +758,7 @@ class HTMLImageElement extends HTMLElement {
    *
    * MDN
    */
-  var height: js.Number = ???
+  var height: Int = ???
   /**
    * Width of the border around the image.
    *
@@ -771,7 +770,7 @@ class HTMLImageElement extends HTMLElement {
    *
    * MDN
    */
-  var hspace: js.Number = ???
+  var hspace: Int = ???
   /**
    * URI of a long description of the image.
    *
@@ -1098,7 +1097,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var rowIndex: js.Number = ???
+  var rowIndex: Int = ???
   /**
    * Returns a live HTMLCollection containing the cells in the row. The HTMLCollection
    * is live and is automatically updated when cells are added or removed.
@@ -1121,7 +1120,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var sectionRowIndex: js.Number = ???
+  var sectionRowIndex: Int = ???
   var borderColor: js.Any = ???
   var height: js.Any = ???
   var borderColorDark: js.Any = ???
@@ -1132,7 +1131,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def deleteCell(index: js.Number = ???): Unit = ???
+  def deleteCell(index: Int = ???): Unit = ???
   /**
    * Inserts a new cell just before the given position in the row. If the given position is
    * not given or is -1, it appends the cell to the row. If the given position is greater (or
@@ -1141,7 +1140,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def insertCell(index: js.Number = ???): HTMLElement = ???
+  def insertCell(index: Int = ???): HTMLElement = ???
 }
 
 /**
@@ -1294,7 +1293,7 @@ class HTMLLIElement extends HTMLElement {
    *
    * MDN
    */
-  var value: js.Number = ???
+  var value: Int = ???
 }
 
 /**
@@ -1515,12 +1514,12 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def deleteRow(index: js.Number = ???): Unit = ???
+  def deleteRow(index: Int = ???): Unit = ???
 
-  def moveRow(indexFrom: js.Number = ???, indexTo: js.Number = ???): Object = ???
+  def moveRow(indexFrom: Int = ???, indexTo: Int = ???): Object = ???
 
 
-  def insertRow(index: js.Number = ???): HTMLElement = ???
+  def insertRow(index: Int = ???): HTMLElement = ???
 
 }
 
@@ -1556,7 +1555,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var selectionStart: js.Number = ???
+  var selectionStart: Int = ???
   /**
    * Indicates that a checkbox is neither on nor off.
    *
@@ -1579,14 +1578,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var size: js.Number = ???
+  var size: Int = ???
 
   /**
    * The index of the end of selected text.
    *
    * MDN
    */
-  var selectionEnd: js.Number = ???
+  var selectionEnd: Int = ???
 
   /**
    * Reflects the accept HTML attribute, containing comma-separated list of file
@@ -1655,7 +1654,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var maxLength: js.Number = ???
+  var maxLength: Int = ???
   /**
    * Reflects the type HTML attribute, indicating the type of control to display.
    * See type attribute of <input> for possible values.
@@ -1677,7 +1676,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def setSelectionRange(start: js.Number, end: js.Number): Unit = ???
+  def setSelectionRange(start: Int, end: Int): Unit = ???
 
   /**
    * Selects the input text in the element, and focuses it so the user can subsequently
@@ -1760,7 +1759,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var valueAsNumber: js.Number = ???
+  var valueAsNumber: Int = ???
   /**
    * Reflects the placeholder HTML attribute, containing a hint to the user of what can
    * be entered in the control. The placeholder text must not contain carriage returns
@@ -1865,7 +1864,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def stepDown(n: js.Number = ???): Unit = ???
+  def stepDown(n: Int = ???): Unit = ???
 
   /**
    * Increments the value by (step * n), where n defaults to 1 if not specified. Throws an
@@ -1875,7 +1874,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def stepUp(n: js.Number = ???): Unit = ???
+  def stepUp(n: Int = ???): Unit = ???
 
   /**
    * Sets a custom validity message for the element. If this message is not the empty
@@ -2068,7 +2067,7 @@ class HTMLPreElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.Number = ???
+  var width: Int = ???
 }
 
 
@@ -2092,14 +2091,14 @@ class HTMLCanvasElement extends HTMLElement {
    *
    * MDN
    */
-  var width: js.Number = ???
+  var width: Int = ???
   /**
    * Reflects the height HTML attribute, specifying the height of the coordinate space
    * in CSS pixels.
    *
    * MDN
    */
-  var height: js.Number = ???
+  var height: Int = ???
 
   /**
    * Returns a data: URL containing a representation of the image in the format
@@ -2205,7 +2204,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var width: js.Number = ???
+  var width: Int = ???
   /**
    * Is a DOMSettableTokenList describing a list of id of <th> elements that represents
    * headers associated with the cell. It reflects the headers attribute.
@@ -2219,7 +2218,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var cellIndex: js.Number = ???
+  var cellIndex: Int = ???
   /**
    * Is a DOMString containing an enumerated value reflecting the align attribute. It
    * indicates the alignment of the element's contents with respect to the surrounding
@@ -2235,7 +2234,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var colSpan: js.Number = ???
+  var colSpan: Int = ???
 
   /**
    * Is a DOMString containing a name grouping cells in virtual. It reflects the
@@ -2265,7 +2264,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var rowSpan: js.Number = ???
+  var rowSpan: Int = ???
 
 
 }
@@ -2295,7 +2294,7 @@ class HTMLBaseFontElement extends HTMLElement {
    *
    * MDN
    */
-  var size: js.Number = ???
+  var size: Int = ???
 }
 
 
@@ -2337,20 +2336,20 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var selectionStart: js.Number = ???
+  var selectionStart: Int = ???
   /**
    * Reflects the rows HTML attribute, indicating the number of visible text lines for
    * the control.
    *
    * MDN
    */
-  var rows: js.Number = ???
+  var rows: Int = ???
   /**
    * Reflects the cols HTML attribute, indicating the visible width of the text area.
    *
    * MDN
    */
-  var cols: js.Number = ???
+  var cols: Int = ???
   /**
    * Reflects the readonly HTML attribute, indicating that the user cannot modify the
    * value of the control.
@@ -2372,7 +2371,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var selectionEnd: js.Number = ???
+  var selectionEnd: Int = ???
 
   /**
    * The string textarea.
@@ -2394,7 +2393,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  def setSelectionRange(start: js.Number, end: js.Number): Unit = ???
+  def setSelectionRange(start: Int, end: Int): Unit = ???
 
   /**
    * Selects the contents of the control.
@@ -2439,7 +2438,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var maxLength: js.Number = ???
+  var maxLength: Int = ???
   /**
    * Indicates whether the element is a candidate for constraint validation. It is
    * false if any conditions bar it from constraint validation.
@@ -2516,7 +2515,7 @@ class HTMLTableColElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var span: js.Number = ???
+  var span: Int = ???
 }
 
 
@@ -2734,7 +2733,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var networkState: js.Number = ???
+  var networkState: Int = ???
 
   def pause(): Unit = ???
 
@@ -2783,36 +2782,36 @@ object HTMLMediaElement extends js.Object {
    *
    * MDN
    */
-  val HAVE_METADATA: js.Number = ???
+  val HAVE_METADATA: Int = ???
   /**
    * Data is available for the current playback position, but not enough to actually
    * play more than one frame.
    *
    * MDN
    */
-  val HAVE_CURRENT_DATA: js.Number = ???
+  val HAVE_CURRENT_DATA: Int = ???
   /**
    * No information is available about the media resource.
    *
    * MDN
    */
-  val HAVE_NOTHING: js.Number = ???
-  val NETWORK_NO_SOURCE: js.Number = ???
+  val HAVE_NOTHING: Int = ???
+  val NETWORK_NO_SOURCE: Int = ???
   /**
    * Enough data is available—and the download rate is high enough—that the media can be
    * played through to the end without interruption.
    *
    * MDN
    */
-  val HAVE_ENOUGH_DATA: js.Number = ???
+  val HAVE_ENOUGH_DATA: Int = ???
   /**
    * There is no data yet.  The readyState is also HAVE_NOTHING.
    *
    * MDN
    */
-  val NETWORK_EMPTY: js.Number = ???
-  val NETWORK_LOADING: js.Number = ???
-  val NETWORK_IDLE: js.Number = ???
+  val NETWORK_EMPTY: Int = ???
+  val NETWORK_LOADING: Int = ???
+  val NETWORK_IDLE: Int = ???
   /**
    * Data for the current playback position as well as for at least a little bit of time
    * into the future is available (in other words, at least two frames of video, for
@@ -2820,7 +2819,7 @@ object HTMLMediaElement extends js.Object {
    *
    * MDN
    */
-  val HAVE_FUTURE_DATA: js.Number = ???
+  val HAVE_FUTURE_DATA: Int = ???
 }
 
 class HTMLDTElement extends HTMLElement {
@@ -3049,7 +3048,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var tabIndex: js.Number = ???
+  var tabIndex: Int = ???
 
   var onprogress: js.Function1[js.Any, _] = ???
   var ondblclick: js.Function1[MouseEvent, _] = ???
@@ -3085,10 +3084,6 @@ class HTMLElement extends Element {
 
   var oninput: js.Function1[Event, _] = ???
 
-  def dragDrop(): js.Boolean = ???
-
-  def addFilter(filter: Object): Unit = ???
-
   /**
    * Sets focus on the specified element, if it can be focused.
    *
@@ -3096,26 +3091,12 @@ class HTMLElement extends Element {
    */
   def focus(): Unit = ???
 
-  def getAdjacentText(where: js.String): js.String = ???
-
-  def insertAdjacentText(where: js.String, text: js.String): Unit = ???
-
-  def setActive(): Unit = ???
-
-  def removeFilter(filter: Object): Unit = ???
-
   /**
    * The blur method removes keyboard focus from the current element.
    *
    * MDN
    */
   def blur(): Unit = ???
-
-  def clearAttributes(): Unit = ???
-
-  def releaseCapture(): Unit = ???
-
-  def removeBehavior(cookie: js.Number): js.Boolean = ???
 
   def contains(child: HTMLElement): js.Boolean = ???
 
@@ -3125,16 +3106,6 @@ class HTMLElement extends Element {
    * MDN
    */
   def click(): Unit = ???
-
-  def insertAdjacentElement(position: js.String, insertedElement: Element): Element = ???
-
-  def mergeAttributes(source: HTMLElement, preserveIdentity: js.Boolean = ???): Unit = ???
-
-  def replaceAdjacentText(where: js.String, newText: js.String): js.String = ???
-
-  def applyElement(apply: Element, where: js.String = ???): Element = ???
-
-  def addBehavior(bstrUrl: js.String, factory: js.Any = ???): js.Number = ???
 
   var oncuechange: js.Function1[Event, _] = ???
   var spellcheck: js.Boolean = ???
@@ -3408,7 +3379,7 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var width: js.Number = ???
+  var width: Int = ???
   /**
    * Returns an unsigned long containing the intrinsic width of the resource in CSS
    * pixels, taking into account the dimensions, aspect ratio, clean aperture,
@@ -3417,7 +3388,7 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var videoWidth: js.Number = ???
+  var videoWidth: Int = ???
   /**
    * Returns an unsigned long containing the intrinsic height of the resource in CSS
    * pixels, taking into account the dimensions, aspect ratio, clean aperture,
@@ -3426,14 +3397,14 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var videoHeight: js.Number = ???
+  var videoHeight: Int = ???
   /**
    * Is a DOMString that reflects the height HTML attribute, which specifies the height
    * of the display area, in CSS pixels.
    *
    * MDN
    */
-  var height: js.Number = ???
+  var height: Int = ???
   /**
    * Is a DOMString that reflects the poster HTML attribute, which specifies an image to
    * show while no video data is available.
@@ -3515,15 +3486,15 @@ class HTMLTrackElement extends HTMLElement {
 class HTMLMarqueeElement extends HTMLElement {
   var width: js.String = ???
   var onbounce: js.Function1[Event, _] = ???
-  var vspace: js.Number = ???
+  var vspace: Int = ???
   var trueSpeed: js.Boolean = ???
   var scrollAmount: js.Number = ???
   var scrollDelay: js.Number = ???
   var behavior: js.String = ???
   var height: js.String = ???
-  var loop: js.Number = ???
+  var loop: Int = ???
   var direction: js.String = ???
-  var hspace: js.Number = ???
+  var hspace: Int = ???
   var onstart: js.Function1[Event, _] = ???
   var onfinish: js.Function1[Event, _] = ???
 
@@ -3591,7 +3562,7 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var length: js.Number = ???
+  var length: Int = ???
   /**
    * target gets/sets the target of the action (i.e., the frame to render its output in).
    *

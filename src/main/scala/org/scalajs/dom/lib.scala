@@ -41,7 +41,7 @@ class PositionOptions extends js.Object {
    *
    * MDN
    */
-  var timeout: js.Number = ???
+  var timeout: Int = ???
   /**
    * The PositionOptions.maximumAge property is a positive long value indicating the
    * maximum age in milliseconds of a possible cached position that is acceptable to
@@ -51,7 +51,7 @@ class PositionOptions extends js.Object {
    *
    * MDN
    */
-  var maximumAge: js.Number = ???
+  var maximumAge: Int = ???
 }
 
 /**
@@ -113,7 +113,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def whatToShow: js.Number = ???
+  def whatToShow: Int = ???
 
   /**
    * The TreeWalker.filter read-only property returns a NodeFilter that is the
@@ -276,7 +276,7 @@ class Performance extends js.Object {
 
   def clearMeasures(measureName: js.String = ???): Unit = ???
 
-  def setResourceTimingBufferSize(maxSize: js.Number): Unit = ???
+  def setResourceTimingBufferSize(maxSize: Int): Unit = ???
 
   /**
    * Returns a DOMHighResTimeStamp representing the amount of miliseconds elapsed
@@ -285,7 +285,7 @@ class Performance extends js.Object {
    *
    * MDN
    */
-  def now(): js.Number = ???
+  def now(): Int = ???
 }
 
 
@@ -331,21 +331,21 @@ trait WindowTimers extends WindowTimersExtension {
    *
    * MDN
    */
-  def clearTimeout(handle: js.Number): Unit = ???
+  def clearTimeout(handle: Int): Unit = ???
 
   /**
    * Calls a function or executes a code snippet after a specified delay.
    *
    * MDN
    */
-  def setTimeout(handler: js.Any, timeout: js.Any, args: js.Any*): js.Number = ???
+  def setTimeout(handler: js.Any, timeout: js.Any, args: js.Any*): Int = ???
 
   /**
    * Cancels repeated action which was set up using setInterval.
    *
    * MDN
    */
-  def clearInterval(handle: js.Number): Unit = ???
+  def clearInterval(handle: Int): Unit = ???
 
   /**
    * Calls a function or executes a code snippet repeatedly, with a fixed time
@@ -353,7 +353,7 @@ trait WindowTimers extends WindowTimersExtension {
    *
    * MDN
    */
-  def setInterval(handler: js.Any, timeout: js.Any, args: js.Any*): js.Number = ???
+  def setInterval(handler: js.Any, timeout: js.Any, args: js.Any*): Int = ???
 }
 
 /**
@@ -475,7 +475,7 @@ trait ParentNode extends js.Object {
    *
    * MDN
    */
-  def childElementCount: js.Number = ???
+  def childElementCount: Int = ???
 
 }
 
@@ -496,7 +496,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  var scrollTop: js.Number = ???
+  var scrollTop: Int = ???
 
   /**
    * The width of the left border of an element in pixels. It includes the width of the
@@ -506,7 +506,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def clientLeft: js.Number = ???
+  def clientLeft: Int = ???
 
   /**
    * scrollLeft gets or sets the number of pixels that an element's content is scrolled
@@ -514,7 +514,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  var scrollLeft: js.Number = ???
+  var scrollLeft: Int = ???
 
   /**
    * In XML (and XML-based languages such as XHTML), tagName preserves case. On
@@ -532,7 +532,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def clientWidth: js.Number = ???
+  def clientWidth: Int = ???
 
   /**
    * scrollWidth is a read–only property that returns either the width in pixels of the
@@ -542,7 +542,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def scrollWidth: js.Number = ???
+  def scrollWidth: Int = ???
 
   /**
    * Returns the inner height of an element in pixels, including padding but not
@@ -553,7 +553,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def clientHeight: js.Number = ???
+  def clientHeight: Int = ???
 
   /**
    * The width of the top border of an element in pixels. It does not include the top margin
@@ -561,7 +561,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def clientTop: js.Number = ???
+  def clientTop: Int = ???
 
   /**
    * Height of the scroll view of an element; it includes the element padding but not its
@@ -569,7 +569,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def scrollHeight: js.Number = ???
+  def scrollHeight: Int = ???
 
   /**
    * Gets the markup of the element including its content. When used as a
@@ -785,7 +785,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def nodeType: js.Number = ???
+  def nodeType: Int = ???
 
   /**
    * Returns the node immediately preceding the specified one in its parent's
@@ -976,7 +976,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def compareDocumentPosition(other: Node): js.Number = ???
+  def compareDocumentPosition(other: Node): Int = ???
 
   /**
    * Puts the specified node and all of its subtree into a "normalized" form. In a
@@ -1043,41 +1043,41 @@ class Node extends EventTarget {
 
 
 object Node extends js.Object {
-  def ENTITY_REFERENCE_NODE: js.Number = ???
+  def ENTITY_REFERENCE_NODE: Int = ???
 
-  def ATTRIBUTE_NODE: js.Number = ???
+  def ATTRIBUTE_NODE: Int = ???
 
-  def DOCUMENT_FRAGMENT_NODE: js.Number = ???
+  def DOCUMENT_FRAGMENT_NODE: Int = ???
 
-  def TEXT_NODE: js.Number = ???
+  def TEXT_NODE: Int = ???
 
-  def ELEMENT_NODE: js.Number = ???
+  def ELEMENT_NODE: Int = ???
 
-  def COMMENT_NODE: js.Number = ???
+  def COMMENT_NODE: Int = ???
 
-  def DOCUMENT_POSITION_DISCONNECTED: js.Number = ???
+  def DOCUMENT_POSITION_DISCONNECTED: Int = ???
 
-  def DOCUMENT_POSITION_CONTAINED_BY: js.Number = ???
+  def DOCUMENT_POSITION_CONTAINED_BY: Int = ???
 
-  def DOCUMENT_POSITION_CONTAINS: js.Number = ???
+  def DOCUMENT_POSITION_CONTAINS: Int = ???
 
-  def DOCUMENT_TYPE_NODE: js.Number = ???
+  def DOCUMENT_TYPE_NODE: Int = ???
 
-  def DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: js.Number = ???
+  def DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Int = ???
 
-  def DOCUMENT_NODE: js.Number = ???
+  def DOCUMENT_NODE: Int = ???
 
-  def ENTITY_NODE: js.Number = ???
+  def ENTITY_NODE: Int = ???
 
-  def PROCESSING_INSTRUCTION_NODE: js.Number = ???
+  def PROCESSING_INSTRUCTION_NODE: Int = ???
 
-  def CDATA_SECTION_NODE: js.Number = ???
+  def CDATA_SECTION_NODE: Int = ???
 
-  def NOTATION_NODE: js.Number = ???
+  def NOTATION_NODE: Int = ???
 
-  def DOCUMENT_POSITION_FOLLOWING: js.Number = ???
+  def DOCUMENT_POSITION_FOLLOWING: Int = ???
 
-  def DOCUMENT_POSITION_PRECEDING: js.Number = ???
+  def DOCUMENT_POSITION_PRECEDING: Int = ???
 }
 
 trait ModifierKeyEvent extends js.Object {
@@ -1134,7 +1134,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def screenX: js.Number = ???
+  def screenX: Int = ???
 
   /**
    * The clientY property provides the Y coordinate of the mouse pointer in local (DOM
@@ -1142,7 +1142,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def clientY: js.Number = ???
+  def clientY: Int = ???
 
   /**
    * The screenY property provides the Y coordinate of the mouse pointer in global
@@ -1150,7 +1150,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def screenY: js.Number = ???
+  def screenY: Int = ???
 
   /**
    * The relatedTarget property is the secondary target for the event, if there is one.
@@ -1165,7 +1165,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def button: js.Number = ???
+  def button: Int = ???
 
   /**
    * The buttons property indicates which buttons were pressed on the mouse to trigger
@@ -1173,7 +1173,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def buttons: js.Number = ???
+  def buttons: Int = ???
 
   /**
    * The clientX property provides the X coordinate of the mouse pointer in local (DOM
@@ -1181,9 +1181,9 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def clientX: js.Number = ???
+  def clientX: Int = ???
 
-  def initMouseEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, screenXArg: js.Number, screenYArg: js.Number, clientXArg: js.Number, clientYArg: js.Number, ctrlKeyArg: js.Boolean, altKeyArg: js.Boolean, shiftKeyArg: js.Boolean, metaKeyArg: js.Boolean, buttonArg: js.Number, relatedTargetArg: EventTarget): Unit = ???
+  def initMouseEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: js.Boolean, altKeyArg: js.Boolean, shiftKeyArg: js.Boolean, metaKeyArg: js.Boolean, buttonArg: Int, relatedTargetArg: EventTarget): Unit = ???
 
   /**
    * Returns the current state of the specified modifier key. See the
@@ -1208,7 +1208,7 @@ class TextMetrics extends js.Object {
    *
    * MDN
    */
-  var width: js.Number = ???
+  var width: Int = ???
 }
 
 
@@ -1279,7 +1279,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def anchorOffset: js.Number = ???
+  def anchorOffset: Int = ???
 
   /**
    * Returns a number representing the offset of the selection's anchor within the
@@ -1289,14 +1289,14 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def focusOffset: js.Number = ???
+  def focusOffset: Int = ???
 
   /**
    * Returns the number of ranges in the selection.
    *
    * MDN
    */
-  def rangeCount: js.Number = ???
+  def rangeCount: Int = ???
 
   /**
    * A range object that will be added to the selection.
@@ -1326,7 +1326,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def getRangeAt(index: js.Number): Range = ???
+  def getRangeAt(index: Int): Range = ???
 
   /**
    * Collapses the current selection to a single point. The document is not modified. If
@@ -1334,7 +1334,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def collapse(parentNode: Node, offset: js.Number): Unit = ???
+  def collapse(parentNode: Node, offset: Int): Unit = ???
 
   /**
    * Removes all ranges from the selection, leaving the anchorNode and focusNode
@@ -1408,7 +1408,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  var whatToShow: js.Number = ???
+  var whatToShow: Int = ???
 
   /**
    * The NodeIterator.filter read-only method returns a NodeFilter object, that is an
@@ -1526,7 +1526,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var screenX: js.Number = ???
+  var screenX: Int = ???
   /**
    * An event handler property for mouseover events on the window.
    *
@@ -1550,7 +1550,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def pageXOffset: js.Number = ???
+  def pageXOffset: Int = ???
 
   /**
    * The name of the window is used primarily for setting targets for hyperlinks and
@@ -1611,7 +1611,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def innerHeight: js.Number = ???
+  def innerHeight: Int = ???
 
   var onwaiting: js.Function1[Event, _] = ???
   var ononline: js.Function1[Event, _] = ???
@@ -1643,7 +1643,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def outerWidth: js.Number = ???
+  def outerWidth: Int = ???
 
   var onstalled: js.Function1[Event, _] = ???
   /**
@@ -1658,7 +1658,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var innerWidth: js.Number = ???
+  var innerWidth: Int = ???
   var onoffline: js.Function1[Event, _] = ???
 
   /**
@@ -1666,7 +1666,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def length: js.Number = ???
+  def length: Int = ???
 
   /**
    * Specifies the height of the screen, in pixels, minus permanent or semipermanent
@@ -1725,7 +1725,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def pageYOffset: js.Number = ???
+  def pageYOffset: Int = ???
 
   /**
    * An event handler property for right-click events on the window.
@@ -1779,7 +1779,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def outerHeight: js.Number = ???
+  def outerHeight: Int = ???
 
   /**
    * An event handler property for keypress events on the window.
@@ -1873,7 +1873,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def screenY: js.Number = ???
+  def screenY: Int = ???
 
   var onmousewheel: js.Function1[WheelEvent, _] = ???
   /**
@@ -1908,7 +1908,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def scroll(x: js.Number = ???, y: js.Number = ???): Unit = ???
+  def scroll(x: Int, y: Int): Unit = ???
 
   /**
    * Makes a request to bring the window to the front. It may fail due to user settings and
@@ -1922,7 +1922,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def scrollTo(x: js.Number = ???, y: js.Number = ???): Unit = ???
+  def scrollTo(x: Int, y: Int): Unit = ???
 
   /**
    * Opens the Print Dialog to print the current document.
@@ -1955,7 +1955,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def scrollBy(x: js.Number = 0, y: js.Number = 0): Unit = ???
+  def scrollBy(x: Int, y: Int): Unit = ???
 
   /**
    * The Window.confirm() method displays a modal dialog with an optional message and
@@ -2044,7 +2044,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def cancelAnimationFrame(handle: js.Number): Unit = ???
+  def cancelAnimationFrame(handle: Int): Unit = ???
 
   /**
    * The window.requestAnimationFrame() method tells the browser that you wish to
@@ -2054,7 +2054,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def requestAnimationFrame(callback: js.Function1[js.Number, _]): js.Number = ???
+  def requestAnimationFrame(callback: js.Function1[Int, _]): Int = ???
 }
 
 
@@ -2187,7 +2187,7 @@ class TouchList extends js.Object {
    *
    * MDN
    */
-  def length: js.Number = ???
+  def length: Int = ???
 
   /**
    * Returns the Touch object at the specified index in the list. You can also simply
@@ -2195,13 +2195,13 @@ class TouchList extends js.Object {
    *
    * MDN
    */
-  def item(index: js.Number): Touch = ???
+  def item(index: Int): Touch = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): Touch = ???
+  def apply(index: Int): Touch = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: Node): Unit = ???
+  def update(index: Int, v: Touch): Unit = ???
 }
 
 /**
@@ -2224,7 +2224,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def identifier: js.Number = ???
+  def identifier: Int = ???
 
   /**
    * The X coordinate of the touch point relative to the left edge of the screen.
@@ -2232,7 +2232,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def screenX: js.Number = ???
+  def screenX: Int = ???
 
   /**
    * The Y coordinate of the touch point relative to the top edge of the screen.
@@ -2240,7 +2240,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def screenY: js.Number = ???
+  def screenY: Int = ???
 
   /**
    * The X coordinate of the touch point relative to the left edge of the browser viewport,
@@ -2248,7 +2248,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def clientX: js.Number = ???
+  def clientX: Int = ???
 
   /**
    * The Y coordinate of the touch point relative to the top edge of the browser viewport,
@@ -2256,7 +2256,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def clientY: js.Number = ???
+  def clientY: Int = ???
 
   /**
    *  The X coordinate of the touch point relative to the left edge of the document. Unlike clientX,
@@ -2265,7 +2265,7 @@ class Touch extends js.Object {
    * MDN
    *  Read only.
    */
-  def pageX: js.Number = ???
+  def pageX: Int = ???
 
   /**
    * The Y coordinate of the touch point relative to the top of the document. Unlike clientY, this value
@@ -2274,7 +2274,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def pageY: js.Number = ???
+  def pageY: Int = ???
 
   /**
    * The X radius of the ellipse that most closely circumscribes the area of contact with the screen.
@@ -2345,7 +2345,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    * codes for a list of Gecko's keyCode values. If the key can't be identified,
    * this value is 0. Read only.
    */
-  def keyCode: js.Number = ???
+  def keyCode: Int = ???
 
   /**
    * The location of the key on the keyboard or other input device.
@@ -2353,7 +2353,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def location: js.Number = ???
+  def location: Int = ???
 
   /**
    * A locale string indicating the locale the keyboard is configured for. This may
@@ -2389,21 +2389,21 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    */
   def getModifierState(keyArg: js.String): js.Boolean = ???
 
-  def initKeyboardEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, keyArg: js.String, locationArg: js.Number, modifiersListArg: js.String, repeat: js.Boolean, locale: js.String): Unit = ???
+  def initKeyboardEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, keyArg: js.String, locationArg: Int, modifiersListArg: js.String, repeat: js.Boolean, locale: js.String): Unit = ???
 }
 
 object KeyboardEvent extends js.Object {
-  def DOM_KEY_LOCATION_RIGHT: js.Number = ???
+  def DOM_KEY_LOCATION_RIGHT: Int = ???
 
-  def DOM_KEY_LOCATION_STANDARD: js.Number = ???
+  def DOM_KEY_LOCATION_STANDARD: Int = ???
 
-  def DOM_KEY_LOCATION_LEFT: js.Number = ???
+  def DOM_KEY_LOCATION_LEFT: Int = ???
 
-  def DOM_KEY_LOCATION_NUMPAD: js.Number = ???
+  def DOM_KEY_LOCATION_NUMPAD: Int = ???
 
-  def DOM_KEY_LOCATION_JOYSTICK: js.Number = ???
+  def DOM_KEY_LOCATION_JOYSTICK: Int = ???
 
-  def DOM_KEY_LOCATION_MOBILE: js.Number = ???
+  def DOM_KEY_LOCATION_MOBILE: Int = ???
 }
 
 /**
@@ -2918,7 +2918,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def elementFromPoint(x: js.Number, y: js.Number): Element = ???
+  def elementFromPoint(x: Int, y: Int): Element = ???
 
   /**
    * createCDATASection() creates a new CDATA section node, and returns it.
@@ -2997,7 +2997,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createTreeWalker(root: Node, whatToShow: js.Number, filter: NodeFilter, entityReferenceExpansion: js.Boolean): TreeWalker = ???
+  def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: js.Boolean): TreeWalker = ???
 
   /**
    * Creates a new attribute node in a given namespace and returns it.
@@ -3075,7 +3075,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def createDocumentFragment(): DocumentFragment = ???
 
-  def createStyleSheet(href: js.String = ???, index: js.Number = ???): CSSStyleSheet = ???
+  def createStyleSheet(href: js.String = ???, index: Int = ???): CSSStyleSheet = ???
 
   /**
    * Returns a list of elements with a given name in the (X)HTML document.
@@ -3122,7 +3122,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createNodeIterator(root: Node, whatToShow: js.Number, filter: NodeFilter, entityReferenceExpansion: js.Boolean): NodeIterator = ???
+  def createNodeIterator(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: js.Boolean): NodeIterator = ???
 
   /**
    * The DOM getSelection() method is available on the Window and Document interfaces.
@@ -3504,7 +3504,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def status: js.Number = ???
+  def status: Int = ???
 
   /**
    * The state of the request: Value State Description 0 UNSENT open()has not been
@@ -3514,7 +3514,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def readyState: js.Number = ???
+  def readyState: Int = ???
 
   /**
    * The response to the request as text, or null if the request was unsuccessful or has
@@ -3554,7 +3554,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var timeout: js.Number = ???
+  var timeout: Int = ???
   var onload: js.Function1[Event, _] = ???
   /**
    * Initializes a request. This method is to be used from JavaScript code; to
@@ -3657,11 +3657,11 @@ class XMLHttpRequest extends EventTarget {
 
 object XMLHttpRequest extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(XMLHttpRequest),List())))) */
-  var LOADING: js.Number = ???
-  var DONE: js.Number = ???
-  var UNSENT: js.Number = ???
-  var OPENED: js.Number = ???
-  var HEADERS_RECEIVED: js.Number = ???
+  var LOADING: Int = ???
+  var DONE: Int = ???
+  var UNSENT: Int = ???
+  var OPENED: Int = ???
+  var HEADERS_RECEIVED: Int = ???
 }
 
 class Screen extends js.Object {
@@ -3673,42 +3673,42 @@ class Screen extends js.Object {
    *
    * MDN
    */
-  def width: js.Number = ???
+  def width: Int = ???
 
   /**
    * Returns the amount of vertical space available to the window on the screen.
    *
    * MDN
    */
-  def availHeight: js.Number = ???
+  def availHeight: Int = ???
 
   /**
    * Returns the height of the screen in pixels.
    *
    * MDN
    */
-  def height: js.Number = ???
+  def height: Int = ???
 
   /**
    * Returns the color depth of the screen.
    *
    * MDN
    */
-  def colorDepth: js.Number = ???
+  def colorDepth: Int = ???
 
   /**
    * Returns the amount of horizontal space in pixels available to the window.
    *
    * MDN
    */
-  def availWidth: js.Number = ???
+  def availWidth: Int = ???
 
   /**
    * Returns the bit depth of the screen.
    *
    * MDN
    */
-  def pixelDepth: js.Number = ???
+  def pixelDepth: Int = ???
 }
 
 
@@ -3895,7 +3895,7 @@ class FocusEvent extends UIEvent {
    */
   def relatedTarget: EventTarget = ???
 
-  def initFocusEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, relatedTargetArg: EventTarget): Unit = ???
+  def initFocusEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int, relatedTargetArg: EventTarget): Unit = ???
 }
 
 
@@ -3916,7 +3916,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def startOffset: js.Number = ???
+  def startOffset: Int = ???
 
   /**
    * The Range.collapsed read-only property returns a Boolean flag indicating
@@ -3934,7 +3934,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def endOffset: js.Number = ???
+  def endOffset: Int = ???
 
   /**
    * The Range.startContainer read-only property returns the Node within which the
@@ -3968,7 +3968,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def setStart(refNode: Node, offset: js.Number): Unit = ???
+  def setStart(refNode: Node, offset: Int): Unit = ???
 
   /**
    * The Range.setEndBefore() method sets the end position of a Range relative to
@@ -4022,7 +4022,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def compareBoundaryPoints(how: js.Number, sourceRange: Range): js.Number = ???
+  def compareBoundaryPoints(how: Int, sourceRange: Range): Int = ???
 
   /**
    * The Range.insertNode() method inserts a node at the start of the Range.
@@ -4059,7 +4059,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def setEnd(refNode: Node, offset: js.Number): Unit = ???
+  def setEnd(refNode: Node, offset: Int): Unit = ???
 
   /**
    * The Range.cloneRange() method returns a Range object with boundary points
@@ -4136,10 +4136,10 @@ class Range extends js.Object {
 
 object Range extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Range),List())))) */
-  val END_TO_END: js.Number = ???
-  val START_TO_START: js.Number = ???
-  val START_TO_END: js.Number = ???
-  val END_TO_START: js.Number = ???
+  val END_TO_END: Int = ???
+  val START_TO_START: Int = ???
+  val START_TO_END: Int = ???
+  val END_TO_START: Int = ???
 }
 
 /**
@@ -4152,7 +4152,7 @@ object Range extends js.Object {
  * MDN
  */
 class Storage extends js.Object {
-  var length: js.Number = ???
+  var length: Int = ???
 
   def getItem(key: js.String): js.Dynamic = ???
 
@@ -4168,13 +4168,13 @@ class Storage extends js.Object {
 
   def removeItem(key: js.String): Unit = ???
 
-  def key(index: js.Number): js.String = ???
+  def key(index: Int): js.String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): js.Any = ???
+  def apply(index: Int): js.Any = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: js.Any): Unit = ???
+  def update(index: Int, v: js.Any): Unit = ???
 }
 
 
@@ -4201,7 +4201,7 @@ class DocumentType extends Node {
 class MutationEvent extends Event {
   def newValue: js.String = ???
 
-  def attrChange: js.Number = ???
+  def attrChange: Int = ???
 
   def attrName: js.String = ???
 
@@ -4209,20 +4209,20 @@ class MutationEvent extends Event {
 
   def relatedNode: Node = ???
 
-  def initMutationEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, relatedNodeArg: Node, prevValueArg: js.String, newValueArg: js.String, attrNameArg: js.String, attrChangeArg: js.Number): Unit = ???
+  def initMutationEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, relatedNodeArg: Node, prevValueArg: js.String, newValueArg: js.String, attrNameArg: js.String, attrChangeArg: Int): Unit = ???
 
 }
 
 object MutationEvent extends js.Object {
-  val MODIFICATION: js.Number = ???
-  val REMOVAL: js.Number = ???
-  val ADDITION: js.Number = ???
+  val MODIFICATION: Int = ???
+  val REMOVAL: Int = ???
+  val ADDITION: Int = ???
 }
 
 trait DragEvent extends MouseEvent {
   def dataTransfer: DataTransfer = ???
 
-  def initDragEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, screenXArg: js.Number, screenYArg: js.Number, clientXArg: js.Number, clientYArg: js.Number, ctrlKeyArg: js.Boolean, altKeyArg: js.Boolean, shiftKeyArg: js.Boolean, metaKeyArg: js.Boolean, buttonArg: js.Number, relatedTargetArg: EventTarget, dataTransferArg: DataTransfer): Unit = ???
+  def initDragEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: js.Boolean, altKeyArg: js.Boolean, shiftKeyArg: js.Boolean, metaKeyArg: js.Boolean, buttonArg: Int, relatedTargetArg: EventTarget, dataTransferArg: DataTransfer): Unit = ???
 }
 
 
@@ -4241,7 +4241,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def redirectStart: js.Number = ???
+  def redirectStart: Int = ???
 
   /**
    * The PerformanceTiming.domainLookupEnd read-only property returns an unsigned
@@ -4252,7 +4252,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domainLookupEnd: js.Number = ???
+  def domainLookupEnd: Int = ???
 
   /**
    * The PerformanceTiming.responseStart read-only property returns an unsigned
@@ -4262,7 +4262,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def responseStart: js.Number = ???
+  def responseStart: Int = ???
 
   /**
    * The PerformanceTiming.domComplete read-only property returns an unsigned long
@@ -4272,7 +4272,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domComplete: js.Number = ???
+  def domComplete: Int = ???
 
   /**
    * The PerformanceTiming.domainLookupStart read-only property returns an
@@ -4283,7 +4283,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domainLookupStart: js.Number = ???
+  def domainLookupStart: Int = ???
 
   /**
    * The PerformanceTiming.loadEventStart read-only property returns an unsigned
@@ -4293,7 +4293,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def loadEventStart: js.Number = ???
+  def loadEventStart: Int = ???
 
   /**
    * The PerformanceTiming.unloadEventEnd read-only property returns an unsigned
@@ -4304,7 +4304,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def unloadEventEnd: js.Number = ???
+  def unloadEventEnd: Int = ???
 
   /**
    * The PerformanceTiming.fetchStart read-only property returns an unsigned long
@@ -4314,7 +4314,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def fetchStart: js.Number = ???
+  def fetchStart: Int = ???
 
   /**
    * The PerformanceTiming.requestStart read-only property returns an unsigned
@@ -4326,7 +4326,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def requestStart: js.Number = ???
+  def requestStart: Int = ???
 
   /**
    * The PerformanceTiming.domInteractive read-only property returns an unsigned
@@ -4337,7 +4337,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domInteractive: js.Number = ???
+  def domInteractive: Int = ???
 
   /**
    * The PerformanceTiming.navigationStart read-only property returns an unsigned
@@ -4348,7 +4348,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def navigationStart: js.Number = ???
+  def navigationStart: Int = ???
 
   /**
    * The PerformanceTiming.connectEnd read-only property returns an unsigned long
@@ -4361,7 +4361,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def connectEnd: js.Number = ???
+  def connectEnd: Int = ???
 
   /**
    * The PerformanceTiming.loadEventEnd read-only property returns an unsigned
@@ -4371,7 +4371,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def loadEventEnd: js.Number = ???
+  def loadEventEnd: Int = ???
 
   /**
    * The PerformanceTiming.connectStart read-only property returns an unsigned
@@ -4383,7 +4383,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def connectStart: js.Number = ???
+  def connectStart: Int = ???
 
   /**
    * The PerformanceTiming.responseEnd read-only property returns an unsigned long
@@ -4393,7 +4393,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def responseEnd: js.Number = ???
+  def responseEnd: Int = ???
 
   /**
    * The PerformanceTiming.domLoading read-only property returns an unsigned long
@@ -4403,7 +4403,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domLoading: js.Number = ???
+  def domLoading: Int = ???
 
   /**
    * The PerformanceTiming.redirectEnd read-only property returns an unsigned long
@@ -4414,7 +4414,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def redirectEnd: js.Number = ???
+  def redirectEnd: Int = ???
 
   /**
    * The PerformanceTiming.unloadEventStart read-only property returns an
@@ -4425,7 +4425,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def unloadEventStart: js.Number = ???
+  def unloadEventStart: Int = ???
 
   /**
    * The PerformanceTiming.domContentLoadedEventStart read-only property
@@ -4436,7 +4436,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domContentLoadedEventStart: js.Number = ???
+  def domContentLoadedEventStart: Int = ???
 
   /**
    * The PerformanceTiming.domContentLoadedEventEnd read-only property returns
@@ -4446,7 +4446,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domContentLoadedEventEnd: js.Number = ???
+  def domContentLoadedEventEnd: Int = ???
 
   /**
    * Is a jsonizer returning a JSON object representing the specific
@@ -4459,7 +4459,7 @@ class PerformanceTiming extends js.Object {
 
 
 trait EventException extends js.Object {
-  def code: js.Number = ???
+  def code: Int = ???
 
   def message: js.String = ???
 
@@ -4468,8 +4468,8 @@ trait EventException extends js.Object {
 
 object EventException extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(EventException),List())))) */
-  val DISPATCH_REQUEST_ERR: js.Number = ???
-  val UNSPECIFIED_EVENT_TYPE_ERR: js.Number = ???
+  val DISPATCH_REQUEST_ERR: Int = ???
+  val UNSPECIFIED_EVENT_TYPE_ERR: Int = ???
 }
 
 /**
@@ -4604,9 +4604,9 @@ trait Location extends js.Object {
 class PerformanceEntry extends js.Object {
   def name: js.String = ???
 
-  def startTime: js.Number = ???
+  def startTime: Int = ???
 
-  def duration: js.Number = ???
+  def duration: Int = ???
 
   def entryType: js.String = ???
 }
@@ -4623,7 +4623,7 @@ class UIEvent extends Event {
    *
    * MDN
    */
-  def detail: js.Number = ???
+  def detail: Int = ???
 
   /**
    * A view which generated the event. Read only.
@@ -4632,7 +4632,7 @@ class UIEvent extends Event {
    */
   def view: Window = ???
 
-  def initUIEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number): Unit = ???
+  def initUIEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int): Unit = ???
 }
 
 
@@ -4662,7 +4662,7 @@ class WheelEvent extends MouseEvent {
    *
    * MDN
    */
-  def deltaMode: js.Number = ???
+  def deltaMode: Int = ???
 
   /**
    * Vertical scroll amount. Read only.
@@ -4671,7 +4671,7 @@ class WheelEvent extends MouseEvent {
    */
   def deltaY: js.Number = ???
 
-  def initWheelEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: js.Number, screenXArg: js.Number, screenYArg: js.Number, clientXArg: js.Number, clientYArg: js.Number, buttonArg: js.Number, relatedTargetArg: EventTarget, modifiersListArg: js.String, deltaXArg: js.Number, deltaYArg: js.Number, deltaZArg: js.Number, deltaMode: js.Number): Unit = ???
+  def initWheelEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, buttonArg: Int, relatedTargetArg: EventTarget, modifiersListArg: js.String, deltaXArg: Double, deltaYArg: Double, deltaZArg: Double, deltaMode: Int): Unit = ???
 
   def getCurrentPoint(element: Element): Unit = ???
 }
@@ -4683,19 +4683,19 @@ object WheelEvent extends js.Object {
    *
    * MDN
    */
-  val DOM_DELTA_PIXEL: js.Number = ???
+  val DOM_DELTA_PIXEL: Int = ???
   /**
    * The delta values are specified in lines.
    *
    * MDN
    */
-  val DOM_DELTA_LINE: js.Number = ???
+  val DOM_DELTA_LINE: Int = ???
   /**
    * The delta values are specified in pages.
    *
    * MDN
    */
-  val DOM_DELTA_PAGE: js.Number = ???
+  val DOM_DELTA_PAGE: Int = ???
 }
 
 /**
@@ -4727,7 +4727,7 @@ class Text extends CharacterData {
    *
    * MDN
    */
-  def splitText(offset: js.Number): Text = ???
+  def splitText(offset: Int): Text = ???
 
   /**
    * The Text.replaceWholeText() method replaces the text of the node and all of its
@@ -4760,7 +4760,7 @@ trait PositionError extends js.Object {
    *
    * MDN
    */
-  def code: js.Number = ???
+  def code: Int = ???
 
   /**
    * The PositionError.message read-only property returns a human-readable
@@ -4774,21 +4774,21 @@ trait PositionError extends js.Object {
 
 object PositionError extends js.Object {
 
-  val POSITION_UNAVAILABLE: js.Number = ???
-  val PERMISSION_DENIED: js.Number = ???
-  val TIMEOUT: js.Number = ???
+  val POSITION_UNAVAILABLE: Int = ???
+  val PERMISSION_DENIED: Int = ???
+  val TIMEOUT: Int = ???
 }
 
 class StyleSheetList extends js.Object {
-  def length: js.Number = ???
+  def length: Int = ???
 
-  def item(index: js.Number = ???): StyleSheet = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): StyleSheet = ???
+  def item(index: Int = ???): StyleSheet = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: StyleSheet): Unit = ???
+  def apply(index: Int): StyleSheet = ???
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: StyleSheet): Unit = ???
 }
 
 
@@ -4830,7 +4830,7 @@ trait Geolocation extends js.Object {
    *
    * MDN
    */
-  def clearWatch(watchId: js.Number): Unit = ???
+  def clearWatch(watchId: Int): Unit = ???
 
   def getCurrentPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _], options: PositionOptions = ???): Unit = ???
 
@@ -4850,7 +4850,7 @@ trait Geolocation extends js.Object {
    *
    * MDN
    */
-  def watchPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _] = ???, options: PositionOptions = ???): js.Number = ???
+  def watchPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _] = ???, options: PositionOptions = ???): Int = ???
 }
 
 
@@ -4868,7 +4868,7 @@ class History extends js.Object {
    *
    * MDN
    */
-  def length: js.Number = ???
+  def length: Int = ???
 
   def back(distance: js.Any): Unit = ???
 
@@ -4965,21 +4965,21 @@ class TimeRanges extends js.Object {
    *
    * MDN
    */
-  def length: js.Number = ???
+  def length: Int = ???
 
   /**
    * Returns the time for the start of the range with the specified index.
    *
    * MDN
    */
-  def start(index: js.Number): js.Number = ???
+  def start(index: Int): Int = ???
 
   /**
    * Returns the time offset at which a specified time range ends.
    *
    * MDN
    */
-  def end(index: js.Number): js.Number = ???
+  def end(index: Int): Int = ???
 }
 
 
@@ -5006,7 +5006,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def timeStamp: js.Number = ???
+  def timeStamp: Int = ???
 
   /**
    * Returns a boolean indicating whether or not event.preventDefault() was called on
@@ -5055,7 +5055,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def eventPhase: js.Number = ???
+  def eventPhase: Int = ???
 
   /**
    * A boolean indicating whether the event is cancelable.
@@ -5109,11 +5109,11 @@ class Event extends js.Object {
 }
 
 object Event extends js.Object {
-  def CAPTURING_PHASE: js.Number = ???
+  def CAPTURING_PHASE: Int = ???
 
-  def AT_TARGET: js.Number = ???
+  def AT_TARGET: Int = ???
 
-  def BUBBLING_PHASE: js.Number = ???
+  def BUBBLING_PHASE: Int = ???
 }
 
 /**
@@ -5130,7 +5130,7 @@ class ImageData extends js.Object {
    *
    * MDN
    */
-  def width: js.Number = ???
+  def width: Int = ???
 
   /**
    * Is a Uint8ClampedArray representing a one-dimensional array containing the data
@@ -5138,19 +5138,19 @@ class ImageData extends js.Object {
    *
    * MDN
    */
-  def data: js.Array[js.Number] = ???
+  def data: js.Array[Int] = ???
 
   /**
    * Is an unsigned long representing the actual height, in pixels, of the ImageData.
    *
    * MDN
    */
-  def height: js.Number = ???
+  def height: Int = ???
 }
 
 
 trait ErrorEventHandler extends js.Object {
-  def apply(event: Event, source: js.String, fileno: js.Number, columnNumber: js.Number): Unit = ???
+  def apply(event: Event, source: js.String, fileno: Int, columnNumber: Int): Unit = ???
 }
 
 /**
@@ -5164,17 +5164,17 @@ trait ErrorEventHandler extends js.Object {
  * MDN
  */
 class NamedNodeMap extends js.Object {
-  def length: js.Number = ???
+  def length: Int = ???
 
   def removeNamedItemNS(namespaceURI: js.String, localName: js.String): Attr = ???
 
-  def item(index: js.Number): Attr = ???
+  def item(index: Int): Attr = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): Attr = ???
+  def apply(index: Int): Attr = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: Attr): Unit = ???
+  def update(index: Int, v: Attr): Unit = ???
 
   def removeNamedItem(name: js.String): Attr = ???
 
@@ -5189,7 +5189,7 @@ class NamedNodeMap extends js.Object {
 
 
 class MediaList extends js.Object {
-  def length: js.Number = ???
+  def length: Int = ???
 
   def mediaText: js.String = ???
 
@@ -5197,13 +5197,13 @@ class MediaList extends js.Object {
 
   def appendMedium(newMedium: js.String): Unit = ???
 
-  def item(index: js.Number): js.String = ???
+  def item(index: Int): js.String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): js.String = ???
+  def apply(index: Int): js.String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: js.String): Unit = ???
+  def update(index: Int, v: js.String): Unit = ???
 
 }
 
@@ -5224,27 +5224,27 @@ class ProcessingInstruction extends Node {
 
 
 class TextEvent extends UIEvent {
-  def inputMethod: js.Number = ???
+  def inputMethod: Int = ???
 
   def data: js.String = ???
 
   def locale: js.String = ???
 
-  def initTextEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, dataArg: js.String, inputMethod: js.Number, locale: js.String): Unit = ???
+  def initTextEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, viewArg: Window, dataArg: js.String, inputMethod: Int, locale: js.String): Unit = ???
 
 }
 
 object TextEvent extends js.Object {
-  val DOM_INPUT_METHOD_KEYBOARD: js.Number = ???
-  val DOM_INPUT_METHOD_DROP: js.Number = ???
-  val DOM_INPUT_METHOD_IME: js.Number = ???
-  val DOM_INPUT_METHOD_SCRIPT: js.Number = ???
-  val DOM_INPUT_METHOD_VOICE: js.Number = ???
-  val DOM_INPUT_METHOD_UNKNOWN: js.Number = ???
-  val DOM_INPUT_METHOD_PASTE: js.Number = ???
-  val DOM_INPUT_METHOD_HANDWRITING: js.Number = ???
-  val DOM_INPUT_METHOD_OPTION: js.Number = ???
-  val DOM_INPUT_METHOD_MULTIMODAL: js.Number = ???
+  val DOM_INPUT_METHOD_KEYBOARD: Int = ???
+  val DOM_INPUT_METHOD_DROP: Int = ???
+  val DOM_INPUT_METHOD_IME: Int = ???
+  val DOM_INPUT_METHOD_SCRIPT: Int = ???
+  val DOM_INPUT_METHOD_VOICE: Int = ???
+  val DOM_INPUT_METHOD_UNKNOWN: Int = ???
+  val DOM_INPUT_METHOD_PASTE: Int = ???
+  val DOM_INPUT_METHOD_HANDWRITING: Int = ???
+  val DOM_INPUT_METHOD_OPTION: Int = ???
+  val DOM_INPUT_METHOD_MULTIMODAL: Int = ???
 }
 
 /**
@@ -5274,7 +5274,7 @@ trait Position extends js.Object {
    *
    * MDN
    */
-  def timestamp: js.Number = ???
+  def timestamp: Int = ???
 
   /**
    * The Position.coords read-only property, a Coordinates object, represents a
@@ -5365,28 +5365,28 @@ class StyleSheet extends js.Object {
  * MDN
  */
 class NodeList extends js.Object {
-  def length: js.Number = ???
+  def length: Int = ???
 
   /**
    * Returns a node from a NodeList by index.
    *
    * MDN
    */
-  def item(index: js.Number): Node = ???
+  def item(index: Int): Node = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): Node = ???
+  def apply(index: Int): Node = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: Node): Unit = ???
+  def update(index: Int, v: Node): Unit = ???
 }
 
 
 trait NodeListOf[TNode <: Node] extends NodeList {
-  override def item(index: js.Number): TNode = ???
+  override def item(index: Int): TNode = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  override def apply(index: js.Number): TNode = ???
+  override def apply(index: Int): TNode = ???
 
 }
 
@@ -5423,16 +5423,16 @@ class NodeFilter extends js.Object {
    *
    * MDN
    */
-  def acceptNode(n: Node): js.Number = ???
+  def acceptNode(n: Node): Int = ???
 }
 
 object NodeFilter extends js.Object {
 
-  val SHOW_ENTITY_REFERENCE: js.Number = ???
-  val SHOW_NOTATION: js.Number = ???
-  val SHOW_ENTITY: js.Number = ???
-  val SHOW_DOCUMENT: js.Number = ???
-  val SHOW_PROCESSING_INSTRUCTION: js.Number = ???
+  val SHOW_ENTITY_REFERENCE: Int = ???
+  val SHOW_NOTATION: Int = ???
+  val SHOW_ENTITY: Int = ???
+  val SHOW_DOCUMENT: Int = ???
+  val SHOW_PROCESSING_INSTRUCTION: Int = ???
   /**
    * Value to be returned by the NodeFilter.acceptNode() method when a node should be
    * rejected. The children of rejected nodes are not visited by the NodeIterator or
@@ -5440,20 +5440,20 @@ object NodeFilter extends js.Object {
    *
    * MDN
    */
-  val FILTER_REJECT: js.Number = ???
-  val SHOW_CDATA_SECTION: js.Number = ???
+  val FILTER_REJECT: Int = ???
+  val SHOW_CDATA_SECTION: Int = ???
   /**
    * Value returned by the NodeFilter.acceptNode() method when a node should be
    * accepted.
    *
    * MDN
    */
-  val FILTER_ACCEPT: js.Number = ???
-  val SHOW_ALL: js.Number = ???
-  val SHOW_DOCUMENT_TYPE: js.Number = ???
-  val SHOW_TEXT: js.Number = ???
-  val SHOW_ELEMENT: js.Number = ???
-  val SHOW_COMMENT: js.Number = ???
+  val FILTER_ACCEPT: Int = ???
+  val SHOW_ALL: Int = ???
+  val SHOW_DOCUMENT_TYPE: Int = ???
+  val SHOW_TEXT: Int = ???
+  val SHOW_ELEMENT: Int = ???
+  val SHOW_COMMENT: Int = ???
   /**
    * Value to be returned by NodeFilter.acceptNode() for nodes to be skipped by the
    * NodeIterator or TreeWalker object. The children of skipped nodes are still
@@ -5461,21 +5461,21 @@ object NodeFilter extends js.Object {
    *
    * MDN
    */
-  val FILTER_SKIP: js.Number = ???
-  val SHOW_ATTRIBUTE: js.Number = ???
-  val SHOW_DOCUMENT_FRAGMENT: js.Number = ???
+  val FILTER_SKIP: Int = ???
+  val SHOW_ATTRIBUTE: Int = ???
+  val SHOW_DOCUMENT_FRAGMENT: Int = ???
 }
 
 class MediaError extends js.Object {
-  def code: js.Number = ???
+  def code: Int = ???
 
 }
 
 object MediaError extends js.Object {
-  val MEDIA_ERR_ABORTED: js.Number = ???
-  val MEDIA_ERR_NETWORK: js.Number = ???
-  val MEDIA_ERR_SRC_NOT_SUPPORTED: js.Number = ???
-  val MEDIA_ERR_DECODE: js.Number = ???
+  val MEDIA_ERR_ABORTED: Int = ???
+  val MEDIA_ERR_NETWORK: Int = ???
+  val MEDIA_ERR_SRC_NOT_SUPPORTED: Int = ???
+  val MEDIA_ERR_DECODE: Int = ???
 }
 
 /**
@@ -5492,27 +5492,27 @@ class Comment extends CharacterData {
 
 
 class PerformanceResourceTiming extends PerformanceEntry {
-  def redirectStart: js.Number = ???
+  def redirectStart: Int = ???
 
-  def redirectEnd: js.Number = ???
+  def redirectEnd: Int = ???
 
-  def domainLookupEnd: js.Number = ???
+  def domainLookupEnd: Int = ???
 
-  def responseStart: js.Number = ???
+  def responseStart: Int = ???
 
-  def domainLookupStart: js.Number = ???
+  def domainLookupStart: Int = ???
 
-  def fetchStart: js.Number = ???
+  def fetchStart: Int = ???
 
-  def requestStart: js.Number = ???
+  def requestStart: Int = ???
 
-  def connectEnd: js.Number = ???
+  def connectEnd: Int = ???
 
-  def connectStart: js.Number = ???
+  def connectStart: Int = ???
 
   def initiatorType: js.String = ???
 
-  var responseEnd: js.Number = ???
+  var responseEnd: Int = ???
 }
 
 
@@ -5597,7 +5597,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def length: js.Number = ???
+  def length: Int = ???
 
   /**
    * Is a DOMString representing the textual data contained in this object.
@@ -5613,7 +5613,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def deleteData(offset: js.Number, count: js.Number): Unit = ???
+  def deleteData(offset: Int, count: Int): Unit = ???
 
   /**
    * Replaces the specified amount of characters, starting at the specified offset,
@@ -5622,7 +5622,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def replaceData(offset: js.Number, count: js.Number, arg: js.String): Unit = ???
+  def replaceData(offset: Int, count: Int, arg: js.String): Unit = ???
 
   /**
    * Appends the given DOMString to the CharacterData.data string; when this method
@@ -5639,7 +5639,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def insertData(offset: js.Number, arg: js.String): Unit = ???
+  def insertData(offset: Int, arg: js.String): Unit = ???
 
   /**
    * Returns a DOMString containing the part of CharacterData.data of the specified
@@ -5647,7 +5647,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def substringData(offset: js.Number, count: js.Number): js.String = ???
+  def substringData(offset: Int, count: Int): js.String = ???
 }
 
 
@@ -5664,7 +5664,7 @@ class DOMException extends js.Object {
    *
    * MDN
    */
-  def code: js.Number = ???
+  def code: Int = ???
 
   def message: js.String = ???
 
@@ -5672,30 +5672,30 @@ class DOMException extends js.Object {
 
 object DOMException extends js.Object {
 
-  val HIERARCHY_REQUEST_ERR: js.Number = ???
-  val NO_MODIFICATION_ALLOWED_ERR: js.Number = ???
-  val INVALID_MODIFICATION_ERR: js.Number = ???
-  val NAMESPACE_ERR: js.Number = ???
-  val INVALID_CHARACTER_ERR: js.Number = ???
-  val TYPE_MISMATCH_ERR: js.Number = ???
-  val ABORT_ERR: js.Number = ???
-  val INVALID_STATE_ERR: js.Number = ???
-  val SECURITY_ERR: js.Number = ???
-  val NETWORK_ERR: js.Number = ???
-  val WRONG_DOCUMENT_ERR: js.Number = ???
-  val QUOTA_EXCEEDED_ERR: js.Number = ???
-  val INDEX_SIZE_ERR: js.Number = ???
-  val DOMSTRING_SIZE_ERR: js.Number = ???
-  val SYNTAX_ERR: js.Number = ???
-  val SERIALIZE_ERR: js.Number = ???
-  val VALIDATION_ERR: js.Number = ???
-  val NOT_FOUND_ERR: js.Number = ???
-  val URL_MISMATCH_ERR: js.Number = ???
-  val PARSE_ERR: js.Number = ???
-  val NO_DATA_ALLOWED_ERR: js.Number = ???
-  val NOT_SUPPORTED_ERR: js.Number = ???
-  val INVALID_ACCESS_ERR: js.Number = ???
-  val INUSE_ATTRIBUTE_ERR: js.Number = ???
+  val HIERARCHY_REQUEST_ERR: Int = ???
+  val NO_MODIFICATION_ALLOWED_ERR: Int = ???
+  val INVALID_MODIFICATION_ERR: Int = ???
+  val NAMESPACE_ERR: Int = ???
+  val INVALID_CHARACTER_ERR: Int = ???
+  val TYPE_MISMATCH_ERR: Int = ???
+  val ABORT_ERR: Int = ???
+  val INVALID_STATE_ERR: Int = ???
+  val SECURITY_ERR: Int = ???
+  val NETWORK_ERR: Int = ???
+  val WRONG_DOCUMENT_ERR: Int = ???
+  val QUOTA_EXCEEDED_ERR: Int = ???
+  val INDEX_SIZE_ERR: Int = ???
+  val DOMSTRING_SIZE_ERR: Int = ???
+  val SYNTAX_ERR: Int = ???
+  val SERIALIZE_ERR: Int = ???
+  val VALIDATION_ERR: Int = ???
+  val NOT_FOUND_ERR: Int = ???
+  val URL_MISMATCH_ERR: Int = ???
+  val PARSE_ERR: Int = ???
+  val NO_DATA_ALLOWED_ERR: Int = ???
+  val NOT_SUPPORTED_ERR: Int = ???
+  val INVALID_ACCESS_ERR: Int = ???
+  val INUSE_ATTRIBUTE_ERR: Int = ???
 }
 
 /**
@@ -5743,9 +5743,9 @@ class PerformanceNavigation extends js.Object {
    *
    * MDN
    */
-  def redirectCount: js.Number = ???
+  def redirectCount: Int = ???
 
-  def `type`: js.Number = ???
+  def `type`: Int = ???
 
   /**
    * Is a jsonizer returning a json object representing the PerformanceNavigation
@@ -5759,10 +5759,10 @@ class PerformanceNavigation extends js.Object {
 
 object PerformanceNavigation extends js.Object {
 
-  val TYPE_RELOAD: js.Number = ???
-  val TYPE_RESERVED: js.Number = ???
-  val TYPE_BACK_FORWARD: js.Number = ???
-  val TYPE_NAVIGATE: js.Number = ???
+  val TYPE_RELOAD: Int = ???
+  val TYPE_RESERVED: Int = ???
+  val TYPE_BACK_FORWARD: Int = ???
+  val TYPE_NAVIGATE: Int = ???
 }
 
 
@@ -5783,15 +5783,15 @@ trait LinkStyle extends js.Object {
 }
 
 class ClientRectList extends js.Object {
-  def length: js.Number = ???
+  def length: Int = ???
 
-  def item(index: js.Number): ClientRect = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): ClientRect = ???
+  def item(index: Int): ClientRect = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: ClientRect): Unit = ???
+  def apply(index: Int): ClientRect = ???
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: ClientRect): Unit = ???
 }
 
 
@@ -5810,7 +5810,7 @@ trait ObjectURLOptions extends js.Object {
  * MDN
  */
 trait ErrorEvent extends Event {
-  def colno: js.Number = ???
+  def colno: Int = ???
 
   /**
    * Is a DOMString containing the name of the script file in which the error occurred.
@@ -5825,7 +5825,7 @@ trait ErrorEvent extends Event {
    *
    * MDN
    */
-  def lineno: js.Number = ???
+  def lineno: Int = ???
 
   /**
    * Is a DOMString containing a human-readable error message describing the problem.
@@ -5834,7 +5834,7 @@ trait ErrorEvent extends Event {
    */
   def message: js.String = ???
 
-  def initErrorEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, messageArg: js.String, filenameArg: js.String, linenoArg: js.Number): Unit = ???
+  def initErrorEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, messageArg: js.String, filenameArg: js.String, linenoArg: Int): Unit = ???
 }
 
 
@@ -5846,11 +5846,11 @@ trait TrackEvent extends Event {
 trait TextTrackCue extends EventTarget {
   var onenter: js.Function1[Event, _] = _
   var track: TextTrack = _
-  var endTime: js.Number = _
+  var endTime: Int = _
   var text: js.String = _
   var pauseOnExit: js.Boolean = _
   var id: js.String = _
-  var startTime: js.Number = _
+  var startTime: Int = _
   var onexit: js.Function1[Event, _] = _
 
   def getCueAsHTML(): DocumentFragment = ???
@@ -5869,7 +5869,7 @@ trait TextTrackCue extends EventTarget {
  * MDN
  */
 trait DOMTokenList extends js.Object {
-  def length: js.Number = ???
+  def length: Int = ???
 
   def contains(token: js.String): js.Boolean = ???
 
@@ -5879,13 +5879,13 @@ trait DOMTokenList extends js.Object {
 
   def add(token: js.String): Unit = ???
 
-  def item(index: js.Number): js.String = ???
+  def item(index: Int): js.String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): js.String = ???
+  def apply(index: Int): js.String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: js.String): Unit = ???
+  def update(index: Int, v: js.String): Unit = ???
 
 }
 
@@ -5913,7 +5913,7 @@ trait TransitionEvent extends Event {
    *
    * MDN
    */
-  def elapsedTime: js.Number = ???
+  def elapsedTime: Int = ???
 
   /**
    * The TransitionEvent.initTransitionEvent() method Initializes a transition
@@ -5922,7 +5922,7 @@ trait TransitionEvent extends Event {
    *
    * MDN
    */
-  def initTransitionEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, propertyNameArg: js.String, elapsedTimeArg: js.Number): Unit = ???
+  def initTransitionEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, propertyNameArg: js.String, elapsedTimeArg: Int): Unit = ???
 }
 
 
@@ -6012,9 +6012,9 @@ trait CloseEvent extends Event {
    *
    * MDN
    */
-  def code: js.Number = ???
+  def code: Int = ???
 
-  def initCloseEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, wasCleanArg: js.Boolean, codeArg: js.Number, reasonArg: js.String): Unit = ???
+  def initCloseEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, wasCleanArg: js.Boolean, codeArg: Int, reasonArg: js.String): Unit = ???
 }
 
 
@@ -6039,7 +6039,7 @@ class WebSocket(var url: js.String = ???, var protocol: js.String = ???) extends
    *
    * MDN
    */
-  def readyState: js.Number = ???
+  def readyState: Int = ???
 
   /**
    * The number of bytes of data that have been queued using calls to send() but not yet
@@ -6048,7 +6048,7 @@ class WebSocket(var url: js.String = ???, var protocol: js.String = ???) extends
    *
    * MDN
    */
-  def bufferedAmount: js.Number = ???
+  def bufferedAmount: Int = ???
 
   /**
    * An event listener to be called when the WebSocket connection's readyState changes
@@ -6104,7 +6104,7 @@ class WebSocket(var url: js.String = ???, var protocol: js.String = ???) extends
    * MDN
    */
 
-  def close(code: js.Number = ???, reason: js.String = ???): Unit = ???
+  def close(code: Int = ???, reason: js.String = ???): Unit = ???
 
   /**
    * Transmits data to the server over the WebSocket connection.
@@ -6122,20 +6122,20 @@ object WebSocket extends js.Object {
    *
    * MDN
    */
-  val OPEN: js.Number = ???
+  val OPEN: Int = ???
   /**
    * The connection is in the process of closing.
    *
    * MDN
    */
-  val CLOSING: js.Number = ???
-  val CONNECTING: js.Number = ???
+  val CLOSING: Int = ???
+  val CONNECTING: Int = ???
   /**
    * The connection is closed or couldn't be opened.
    *
    * MDN
    */
-  val CLOSED: js.Number = ???
+  val CLOSED: Int = ???
 }
 
 /**
@@ -6155,7 +6155,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def loaded: js.Number = ???
+  def loaded: Int = ???
 
   /**
    * The ProgressEvent.lengthComputable read-only property is a Boolean flag
@@ -6174,7 +6174,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def total: js.Number = ???
+  def total: Int = ???
 
   /**
    * The ProgressEvent.initProgressEvent() method Initializes an animation event
@@ -6182,7 +6182,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def initProgressEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, lengthComputableArg: js.Boolean, loadedArg: js.Number, totalArg: js.Number): Unit = ???
+  def initProgressEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, lengthComputableArg: js.Boolean, loadedArg: Int, totalArg: Int): Unit = ???
 }
 
 
@@ -6200,20 +6200,20 @@ trait FileList extends js.Object {
    *
    * MDN
    */
-  def length: js.Number = ???
+  def length: Int = ???
 
   /**
    * Returns a File object representing the file at the specified index in the file list.
    *
    * MDN
    */
-  def item(index: js.Number): File = ???
+  def item(index: Int): File = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): File = ???
+  def apply(index: Int): File = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: File): Unit = ???
+  def update(index: Int, v: File): Unit = ???
 }
 
 
@@ -6337,28 +6337,28 @@ trait XMLHttpRequestEventTarget extends EventTarget {
 
 
 trait AudioTrackList extends EventTarget {
-  var length: js.Number = _
+  var length: Int = _
   var onchange: js.Function1[js.Any, _] = _
   var onaddtrack: js.Function1[TrackEvent, _] = _
 
   def getTrackById(id: js.String): AudioTrack = ???
 
-  def item(index: js.Number): AudioTrack = ???
+  def item(index: Int): AudioTrack = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): AudioTrack = ???
+  def apply(index: Int): AudioTrack = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: AudioTrack): Unit = ???
+  def update(index: Int, v: AudioTrack): Unit = ???
 
 
 }
 
 
 trait WindowTimersExtension extends js.Object {
-  def clearImmediate(handle: js.Number): Unit = ???
+  def clearImmediate(handle: Int): Unit = ???
 
-  def setImmediate(expression: js.Any, args: js.Any*): js.Number = ???
+  def setImmediate(expression: js.Any, args: js.Any*): Int = ???
 }
 
 /**
@@ -6385,7 +6385,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  def elapsedTime: js.Number = ???
+  def elapsedTime: Int = ???
 
   /**
    * The AnimationEvent.initAnimationEvent() method Initializes an animation
@@ -6394,7 +6394,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  def initAnimationEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, animationNameArg: js.String, elapsedTimeArg: js.Number): Unit = ???
+  def initAnimationEvent(typeArg: js.String, canBubbleArg: js.Boolean, cancelableArg: js.Boolean, animationNameArg: js.String, elapsedTimeArg: Int): Unit = ???
 }
 
 
@@ -6413,30 +6413,30 @@ trait AudioTrack extends js.Object {
 
 
 trait TextTrackCueList extends js.Object {
-  var length: js.Number = _
+  var length: Int = _
 
-  def item(index: js.Number): TextTrackCue = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): TextTrackCue = ???
+  def item(index: Int): TextTrackCue = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: TextTrackCue): Unit = ???
+  def apply(index: Int): TextTrackCue = ???
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: TextTrackCue): Unit = ???
 
   def getCueById(id: js.String): TextTrackCue = ???
 }
 
 
 trait TextTrackList extends js.Object {
-  var length: js.Number = _
+  var length: Int = _
 
-  def item(index: js.Number): TextTrack = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): TextTrack = ???
+  def item(index: Int): TextTrack = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: TextTrack): Unit = ???
+  def apply(index: Int): TextTrack = ???
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: TextTrack): Unit = ???
 }
 
 
@@ -6518,24 +6518,24 @@ trait WindowBase64 extends js.Object {
  * MDN
  */
 trait DOMStringList extends js.Object {
-  def length: js.Number = ???
+  def length: Int = ???
 
   def contains(str: js.String): js.Boolean = ???
 
-  def item(index: js.Number): js.String = ???
+  def item(index: Int): js.String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: js.Number): js.String = ???
+  def apply(index: Int): js.String = ???
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: js.Number, v: js.String): Unit = ???
+  def update(index: Int, v: js.String): Unit = ???
 }
 
 
 trait TextTrack extends EventTarget {
   var language: js.String = _
   var mode: js.Any = _
-  var readyState: js.Number = _
+  var readyState: Int = _
   var activeCues: TextTrackCueList = _
   var cues: TextTrackCueList = _
   var oncuechange: js.Function1[Event, _] = _
@@ -6545,24 +6545,24 @@ trait TextTrack extends EventTarget {
   var label: js.String = _
 
 
-  var ERROR: js.Number = _
-  var SHOWING: js.Number = _
-  var LOADING: js.Number = _
-  var LOADED: js.Number = _
-  var NONE: js.Number = _
-  var HIDDEN: js.Number = _
-  var DISABLED: js.Number = _
+  var ERROR: Int = _
+  var SHOWING: Int = _
+  var LOADING: Int = _
+  var LOADED: Int = _
+  var NONE: Int = _
+  var HIDDEN: Int = _
+  var DISABLED: Int = _
 }
 
 object TextTrack extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextTrack),List())))) */
-  var ERROR: js.Number = _
-  var SHOWING: js.Number = _
-  var LOADING: js.Number = _
-  var LOADED: js.Number = _
-  var NONE: js.Number = _
-  var HIDDEN: js.Number = _
-  var DISABLED: js.Number = _
+  var ERROR: Int = _
+  var SHOWING: Int = _
+  var LOADING: Int = _
+  var LOADED: Int = _
+  var NONE: Int = _
+  var HIDDEN: Int = _
+  var DISABLED: Int = _
 }
 
 /**
@@ -6666,14 +6666,14 @@ class Blob(blobParts: js.Array[js.Any] = ???, options: BlobPropertyBag = ???) ex
    *
    * MDN
    */
-  def size: js.Number = ???
+  def size: Int = ???
   /**
    * The slice is used to create a new Blob object containing the data in the specified
    * range of bytes of the source Blob.
    *
    * MDN
    */
-  def slice(start: js.Number = ???, end: js.Number = ???, contentType: js.String = ???): Blob = ???
+  def slice(start: Int = ???, end: Int = ???, contentType: js.String = ???): Blob = ???
 
   def close(): Unit = ???
 }
@@ -6682,7 +6682,7 @@ object Blob extends js.Object {
 }
 
 trait ApplicationCache extends EventTarget {
-  def status: js.Number = ???
+  def status: Int = ???
 
   var ondownloading: js.Function1[Event, _] = ???
   var onprogress: js.Function1[ProgressEvent, _] = ???
@@ -6704,12 +6704,12 @@ trait ApplicationCache extends EventTarget {
 
 object ApplicationCache extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ApplicationCache),List())))) */
-  val CHECKING: js.Number = ???
-  val UNCACHED: js.Number = ???
-  val UPDATEREADY: js.Number = ???
-  val DOWNLOADING: js.Number = ???
-  val IDLE: js.Number = ???
-  val OBSOLETE: js.Number = ???
+  val CHECKING: Int = ???
+  val UNCACHED: Int = ???
+  val UPDATEREADY: Int = ???
+  val DOWNLOADING: Int = ???
+  val IDLE: Int = ???
+  val OBSOLETE: Int = ???
 }
 
 trait PopStateEvent extends Event {

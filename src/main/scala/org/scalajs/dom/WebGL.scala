@@ -83,11 +83,11 @@ class WebGLActiveInfo private () extends js.Object {
   /**
    * The size of the requested variable.
    */
-  val size: js.Number = ???
+  val size:  Int = ???
   /**
    * The type of the requested variable.
    */
-  val `type`: js.Number = ???
+  val `type`:  Int = ???
   /**
    * The name of the requested variable.
    */
@@ -101,17 +101,17 @@ class WebGLShaderPrecisionFormat private () extends js.Object {
   /**
    * The base 2 log of the absolute value of the minimum value that can be represented.
    */
-  val rangeMin: js.Number = ???
+  val rangeMin:  Int = ???
   
   /**
    * The base 2 log of the absolute value of the maximum value that can be represented.
    */
-  val rangeMax: js.Number = ???
+  val rangeMax:  Int = ???
   
   /**
    * The number of bits of precision that can be represented. For integer formats this value is always 0.
    */
-  val precision: js.Number = ???
+  val precision:  Int = ???
 }
 
 /**
@@ -125,19 +125,19 @@ object WebGLRenderingContext extends js.Object {
    * Specifies the depth buffer should be cleared.
    * @see [[WebGLRenderingContext#clear]]
    */
-  val DEPTH_BUFFER_BIT: js.Number = ???
+  val DEPTH_BUFFER_BIT:  Int = ???
   
   /**
    * Specifies the stencil buffer should be cleared.
    * @see [[WebGLRenderingContext#clear]]
    */
-  val STENCIL_BUFFER_BIT: js.Number = ???
+  val STENCIL_BUFFER_BIT:  Int = ???
   
   /**
    * Specifies the color buffer should be cleared.
    * @see [[WebGLRenderingContext#clear]]
    */
-  val COLOR_BUFFER_BIT: js.Number = ???
+  val COLOR_BUFFER_BIT:  Int = ???
   
   /* BeginMode */
   /**
@@ -146,7 +146,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]] 
    */
-  val POINTS: js.Number = ???
+  val POINTS:  Int = ???
   
   /**
    * Specifies the elements should be drawn as lines.
@@ -154,7 +154,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val LINES: js.Number = ???
+  val LINES:  Int = ???
   
   /**
    * Specifies the elements should be drawn as a line loop.
@@ -162,7 +162,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */  
-  val LINE_LOOP: js.Number = ???
+  val LINE_LOOP:  Int = ???
   
   /**
    * Specifies the elements should be drawn as a line strip.
@@ -170,7 +170,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val LINE_STRIP: js.Number = ???
+  val LINE_STRIP:  Int = ???
   
   /**
    * Specifies the elements should be drawn as triangles.
@@ -178,7 +178,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val TRIANGLES: js.Number = ???
+  val TRIANGLES:  Int = ???
   
   /**
    * Specifies the elements should be drawn as a triangle strip.
@@ -186,7 +186,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val TRIANGLE_STRIP: js.Number = ???
+  val TRIANGLE_STRIP:  Int = ???
   
   
   /**
@@ -195,7 +195,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */  
-  val TRIANGLE_FAN: js.Number = ???
+  val TRIANGLE_FAN:  Int = ???
   
   /* AlphaFunction (not supported in ES20) */
   /*    NEVER */
@@ -210,75 +210,75 @@ object WebGLRenderingContext extends js.Object {
   /* BlendingFactorDest */
   val ZERO = 0
   val ONE = 1
-  val SRC_COLOR: js.Number = ???
-  val ONE_MINUS_SRC_COLOR: js.Number = ???
-  val SRC_ALPHA: js.Number = ???
-  val ONE_MINUS_SRC_ALPHA: js.Number = ???
-  val DST_ALPHA: js.Number = ???
-  val ONE_MINUS_DST_ALPHA: js.Number = ???
+  val SRC_COLOR:  Int = ???
+  val ONE_MINUS_SRC_COLOR:  Int = ???
+  val SRC_ALPHA:  Int = ???
+  val ONE_MINUS_SRC_ALPHA:  Int = ???
+  val DST_ALPHA:  Int = ???
+  val ONE_MINUS_DST_ALPHA:  Int = ???
   
   /* BlendingFactorSrc */
   /*    ZERO */
   /*    ONE */
-  val DST_COLOR: js.Number = ???
-  val ONE_MINUS_DST_COLOR: js.Number = ???
-  val SRC_ALPHA_SATURATE: js.Number = ???
+  val DST_COLOR:  Int = ???
+  val ONE_MINUS_DST_COLOR:  Int = ???
+  val SRC_ALPHA_SATURATE:  Int = ???
   /*    SRC_ALPHA */
   /*    ONE_MINUS_SRC_ALPHA */
   /*    DST_ALPHA */
   /*    ONE_MINUS_DST_ALPHA */
   
   /* BlendEquationSeparate */
-  val FUNC_ADD: js.Number = ???
-  val BLEND_EQUATION: js.Number = ???
-  val BLEND_EQUATION_RGB: js.Number = ???   /* same as BLEND_EQUATION */
-  val BLEND_EQUATION_ALPHA: js.Number = ???
+  val FUNC_ADD:  Int = ???
+  val BLEND_EQUATION:  Int = ???
+  val BLEND_EQUATION_RGB:  Int = ???   /* same as BLEND_EQUATION */
+  val BLEND_EQUATION_ALPHA:  Int = ???
   
   /* BlendSubtract */
-  val FUNC_SUBTRACT: js.Number = ???
-  val FUNC_REVERSE_SUBTRACT: js.Number = ???
+  val FUNC_SUBTRACT:  Int = ???
+  val FUNC_REVERSE_SUBTRACT:  Int = ???
   
   /* Separate Blend Functions */
-  val BLEND_DST_RGB: js.Number = ???
-  val BLEND_SRC_RGB: js.Number = ???
-  val BLEND_DST_ALPHA: js.Number = ???
-  val BLEND_SRC_ALPHA: js.Number = ???
-  val CONSTANT_COLOR: js.Number = ???
-  val ONE_MINUS_CONSTANT_COLOR: js.Number = ???
-  val CONSTANT_ALPHA: js.Number = ???
-  val ONE_MINUS_CONSTANT_ALPHA: js.Number = ???
-  val BLEND_COLOR: js.Number = ???
+  val BLEND_DST_RGB:  Int = ???
+  val BLEND_SRC_RGB:  Int = ???
+  val BLEND_DST_ALPHA:  Int = ???
+  val BLEND_SRC_ALPHA:  Int = ???
+  val CONSTANT_COLOR:  Int = ???
+  val ONE_MINUS_CONSTANT_COLOR:  Int = ???
+  val CONSTANT_ALPHA:  Int = ???
+  val ONE_MINUS_CONSTANT_ALPHA:  Int = ???
+  val BLEND_COLOR:  Int = ???
   
   /* Buffer Objects */
-  val ARRAY_BUFFER: js.Number = ???
-  val ELEMENT_ARRAY_BUFFER: js.Number = ???
-  val ARRAY_BUFFER_BINDING: js.Number = ???
-  val ELEMENT_ARRAY_BUFFER_BINDING: js.Number = ???
+  val ARRAY_BUFFER:  Int = ???
+  val ELEMENT_ARRAY_BUFFER:  Int = ???
+  val ARRAY_BUFFER_BINDING:  Int = ???
+  val ELEMENT_ARRAY_BUFFER_BINDING:  Int = ???
   
-  val STREAM_DRAW: js.Number = ???
-  val STATIC_DRAW: js.Number = ???
-  val DYNAMIC_DRAW: js.Number = ???
+  val STREAM_DRAW:  Int = ???
+  val STATIC_DRAW:  Int = ???
+  val DYNAMIC_DRAW:  Int = ???
   
-  val BUFFER_SIZE: js.Number = ???
-  val BUFFER_USAGE: js.Number = ???
+  val BUFFER_SIZE:  Int = ???
+  val BUFFER_USAGE:  Int = ???
   
-  val CURRENT_VERTEX_ATTRIB: js.Number = ???
+  val CURRENT_VERTEX_ATTRIB:  Int = ???
   
   /* CullFaceMode */
   /**
    * Specifies front faces.
    */
-  val FRONT: js.Number = ???
+  val FRONT:  Int = ???
   
   /**
    * Specifies back faces.
    */
-  val BACK: js.Number = ???
+  val BACK:  Int = ???
   
   /**
    * Specifies both front and back faces.
    */
-  val FRONT_AND_BACK: js.Number = ???
+  val FRONT_AND_BACK:  Int = ???
   
   /* DepthFunction */
   /*    NEVER */
@@ -295,38 +295,38 @@ object WebGLRenderingContext extends js.Object {
   /**
    * Capability to enable/disable backface culling.
    */
-  val CULL_FACE: js.Number = ???
+  val CULL_FACE:  Int = ???
   /**
    * Capability to enable/disable blending.
    */
-  val BLEND: js.Number = ???
+  val BLEND:  Int = ???
   
   /**
    * Capability to enable/disable dithering.
    */  
-  val DITHER: js.Number = ???
+  val DITHER:  Int = ???
   
   /**
    * Capability to enable/disable the stencil test.
    */
-  val STENCIL_TEST: js.Number = ???
+  val STENCIL_TEST:  Int = ???
   
   /**
    * Capability to enable/disable the depth test.
    */  
-  val DEPTH_TEST: js.Number = ???
+  val DEPTH_TEST:  Int = ???
   
   /**
    * Capability to enable/disable the scissor test.
    */  
-  val SCISSOR_TEST: js.Number = ???
+  val SCISSOR_TEST:  Int = ???
 
   /**
    * Capability to enable/disable polygon offset.
    */  
-  val POLYGON_OFFSET_FILL: js.Number = ???
-  val SAMPLE_ALPHA_TO_COVERAGE: js.Number = ???
-  val SAMPLE_COVERAGE: js.Number = ???
+  val POLYGON_OFFSET_FILL:  Int = ???
+  val SAMPLE_ALPHA_TO_COVERAGE:  Int = ???
+  val SAMPLE_COVERAGE:  Int = ???
   
   /* ErrorCode */
   /**
@@ -337,82 +337,82 @@ object WebGLRenderingContext extends js.Object {
   /**
    * An invalid enumerated name has been passed to an API function.
    */
-  val INVALID_ENUM: js.Number = ???
+  val INVALID_ENUM:  Int = ???
   
   /**
    * An invalid value has been passed to an API function.
    */
-  val INVALID_VALUE: js.Number = ???
+  val INVALID_VALUE:  Int = ???
   
   /**
    * The requested operation is not valid.
    */
-  val INVALID_OPERATION: js.Number = ???
+  val INVALID_OPERATION:  Int = ???
   
   /**
    * The operation requested could not be completed because it ran out of memory.
    */
-  val OUT_OF_MEMORY: js.Number = ???
+  val OUT_OF_MEMORY:  Int = ???
   
   /* FrontFaceDirection */
   /**
    * Clockwise wound triangles are front-facing.
    */  
-  val CW: js.Number = ???
+  val CW:  Int = ???
   /**
    * Counter-Clockwise wound triangles are front-facing.
    */  
-  val CCW: js.Number = ???
+  val CCW:  Int = ???
   
   /* GetPName */
-  val LINE_WIDTH: js.Number = ???
-  val ALIASED_POINT_SIZE_RANGE: js.Number = ???
-  val ALIASED_LINE_WIDTH_RANGE: js.Number = ???
-  val CULL_FACE_MODE: js.Number = ???
-  val FRONT_FACE: js.Number = ???
-  val DEPTH_RANGE: js.Number = ???
-  val DEPTH_WRITEMASK: js.Number = ???
-  val DEPTH_CLEAR_VALUE: js.Number = ???
-  val DEPTH_FUNC: js.Number = ???
-  val STENCIL_CLEAR_VALUE: js.Number = ???
-  val STENCIL_FUNC: js.Number = ???
-  val STENCIL_FAIL: js.Number = ???
-  val STENCIL_PASS_DEPTH_FAIL: js.Number = ???
-  val STENCIL_PASS_DEPTH_PASS: js.Number = ???
-  val STENCIL_REF: js.Number = ???
-  val STENCIL_VALUE_MASK: js.Number = ???
-  val STENCIL_WRITEMASK: js.Number = ???
-  val STENCIL_BACK_FUNC: js.Number = ???
-  val STENCIL_BACK_FAIL: js.Number = ???
-  val STENCIL_BACK_PASS_DEPTH_FAIL: js.Number = ???
-  val STENCIL_BACK_PASS_DEPTH_PASS: js.Number = ???
-  val STENCIL_BACK_REF: js.Number = ???
-  val STENCIL_BACK_VALUE_MASK: js.Number = ???
-  val STENCIL_BACK_WRITEMASK: js.Number = ???
-  val VIEWPORT: js.Number = ???
-  val SCISSOR_BOX: js.Number = ???
+  val LINE_WIDTH:  Int = ???
+  val ALIASED_POINT_SIZE_RANGE:  Int = ???
+  val ALIASED_LINE_WIDTH_RANGE:  Int = ???
+  val CULL_FACE_MODE:  Int = ???
+  val FRONT_FACE:  Int = ???
+  val DEPTH_RANGE:  Int = ???
+  val DEPTH_WRITEMASK:  Int = ???
+  val DEPTH_CLEAR_VALUE:  Int = ???
+  val DEPTH_FUNC:  Int = ???
+  val STENCIL_CLEAR_VALUE:  Int = ???
+  val STENCIL_FUNC:  Int = ???
+  val STENCIL_FAIL:  Int = ???
+  val STENCIL_PASS_DEPTH_FAIL:  Int = ???
+  val STENCIL_PASS_DEPTH_PASS:  Int = ???
+  val STENCIL_REF:  Int = ???
+  val STENCIL_VALUE_MASK:  Int = ???
+  val STENCIL_WRITEMASK:  Int = ???
+  val STENCIL_BACK_FUNC:  Int = ???
+  val STENCIL_BACK_FAIL:  Int = ???
+  val STENCIL_BACK_PASS_DEPTH_FAIL:  Int = ???
+  val STENCIL_BACK_PASS_DEPTH_PASS:  Int = ???
+  val STENCIL_BACK_REF:  Int = ???
+  val STENCIL_BACK_VALUE_MASK:  Int = ???
+  val STENCIL_BACK_WRITEMASK:  Int = ???
+  val VIEWPORT:  Int = ???
+  val SCISSOR_BOX:  Int = ???
   /*    SCISSOR_TEST */
-  val COLOR_CLEAR_VALUE: js.Number = ???
-  val COLOR_WRITEMASK: js.Number = ???
-  val UNPACK_ALIGNMENT: js.Number = ???
-  val PACK_ALIGNMENT: js.Number = ???
-  val MAX_TEXTURE_SIZE: js.Number = ???
-  val MAX_VIEWPORT_DIMS: js.Number = ???
-  val SUBPIXEL_BITS: js.Number = ???
-  val RED_BITS: js.Number = ???
-  val GREEN_BITS: js.Number = ???
-  val BLUE_BITS: js.Number = ???
-  val ALPHA_BITS: js.Number = ???
-  val DEPTH_BITS: js.Number = ???
-  val STENCIL_BITS: js.Number = ???
-  val POLYGON_OFFSET_UNITS: js.Number = ???
+  val COLOR_CLEAR_VALUE:  Int = ???
+  val COLOR_WRITEMASK:  Int = ???
+  val UNPACK_ALIGNMENT:  Int = ???
+  val PACK_ALIGNMENT:  Int = ???
+  val MAX_TEXTURE_SIZE:  Int = ???
+  val MAX_VIEWPORT_DIMS:  Int = ???
+  val SUBPIXEL_BITS:  Int = ???
+  val RED_BITS:  Int = ???
+  val GREEN_BITS:  Int = ???
+  val BLUE_BITS:  Int = ???
+  val ALPHA_BITS:  Int = ???
+  val DEPTH_BITS:  Int = ???
+  val STENCIL_BITS:  Int = ???
+  val POLYGON_OFFSET_UNITS:  Int = ???
   /*    POLYGON_OFFSET_FILL */
-  val POLYGON_OFFSET_FACTOR: js.Number = ???
-  val TEXTURE_BINDING_2D: js.Number = ???
-  val SAMPLE_BUFFERS: js.Number = ???
-  val SAMPLES: js.Number = ???
-  val SAMPLE_COVERAGE_VALUE: js.Number = ???
-  val SAMPLE_COVERAGE_INVERT: js.Number = ???
+  val POLYGON_OFFSET_FACTOR:  Int = ???
+  val TEXTURE_BINDING_2D:  Int = ???
+  val SAMPLE_BUFFERS:  Int = ???
+  val SAMPLES:  Int = ???
+  val SAMPLE_COVERAGE_VALUE:  Int = ???
+  val SAMPLE_COVERAGE_INVERT:  Int = ???
   
   /* GetTextureParameter */
   /*    TEXTURE_MAG_FILTER */
@@ -420,89 +420,89 @@ object WebGLRenderingContext extends js.Object {
   /*    TEXTURE_WRAP_S */
   /*    TEXTURE_WRAP_T */
   
-  val COMPRESSED_TEXTURE_FORMATS: js.Number = ???
+  val COMPRESSED_TEXTURE_FORMATS:  Int = ???
   
   /* HintMode */
-  val DONT_CARE: js.Number = ???
-  val FASTEST: js.Number = ???
-  val NICEST: js.Number = ???
+  val DONT_CARE:  Int = ???
+  val FASTEST:  Int = ???
+  val NICEST:  Int = ???
   
   /* HintTarget */
-  val GENERATE_MIPMAP_HINT: js.Number = ???
+  val GENERATE_MIPMAP_HINT:  Int = ???
   
   /* DataType */
-  val BYTE: js.Number = ???
-  val UNSIGNED_BYTE: js.Number = ???
-  val SHORT: js.Number = ???
-  val UNSIGNED_SHORT: js.Number = ???
-  val INT: js.Number = ???
-  val UNSIGNED_INT: js.Number = ???
-  val FLOAT: js.Number = ???
+  val BYTE:  Int = ???
+  val UNSIGNED_BYTE:  Int = ???
+  val SHORT:  Int = ???
+  val UNSIGNED_SHORT:  Int = ???
+  val INT:  Int = ???
+  val UNSIGNED_INT:  Int = ???
+  val FLOAT:  Int = ???
   
   /* PixelFormat */
-  val DEPTH_COMPONENT: js.Number = ???
-  val ALPHA: js.Number = ???
-  val RGB: js.Number = ???
-  val RGBA: js.Number = ???
-  val LUMINANCE: js.Number = ???
-  val LUMINANCE_ALPHA: js.Number = ???
+  val DEPTH_COMPONENT:  Int = ???
+  val ALPHA:  Int = ???
+  val RGB:  Int = ???
+  val RGBA:  Int = ???
+  val LUMINANCE:  Int = ???
+  val LUMINANCE_ALPHA:  Int = ???
   
   /* PixelType */
   /*    UNSIGNED_BYTE */
-  val UNSIGNED_SHORT_4_4_4_4: js.Number = ???
-  val UNSIGNED_SHORT_5_5_5_1: js.Number = ???
-  val UNSIGNED_SHORT_5_6_5: js.Number = ???
+  val UNSIGNED_SHORT_4_4_4_4:  Int = ???
+  val UNSIGNED_SHORT_5_5_5_1:  Int = ???
+  val UNSIGNED_SHORT_5_6_5:  Int = ???
   
   /* Shaders */
-  val FRAGMENT_SHADER: js.Number = ???
-  val VERTEX_SHADER: js.Number = ???
-  val MAX_VERTEX_ATTRIBS: js.Number = ???
-  val MAX_VERTEX_UNIFORM_VECTORS: js.Number = ???
-  val MAX_VARYING_VECTORS: js.Number = ???
-  val MAX_COMBINED_TEXTURE_IMAGE_UNITS: js.Number = ???
-  val MAX_VERTEX_TEXTURE_IMAGE_UNITS: js.Number = ???
-  val MAX_TEXTURE_IMAGE_UNITS: js.Number = ???
-  val MAX_FRAGMENT_UNIFORM_VECTORS: js.Number = ???
-  val SHADER_TYPE: js.Number = ???
-  val DELETE_STATUS: js.Number = ???
-  val LINK_STATUS: js.Number = ???
-  val VALIDATE_STATUS: js.Number = ???
-  val ATTACHED_SHADERS: js.Number = ???
-  val ACTIVE_UNIFORMS: js.Number = ???
-  val ACTIVE_ATTRIBUTES: js.Number = ???
-  val SHADING_LANGUAGE_VERSION: js.Number = ???
-  val CURRENT_PROGRAM: js.Number = ???
+  val FRAGMENT_SHADER:  Int = ???
+  val VERTEX_SHADER:  Int = ???
+  val MAX_VERTEX_ATTRIBS:  Int = ???
+  val MAX_VERTEX_UNIFORM_VECTORS:  Int = ???
+  val MAX_VARYING_VECTORS:  Int = ???
+  val MAX_COMBINED_TEXTURE_IMAGE_UNITS:  Int = ???
+  val MAX_VERTEX_TEXTURE_IMAGE_UNITS:  Int = ???
+  val MAX_TEXTURE_IMAGE_UNITS:  Int = ???
+  val MAX_FRAGMENT_UNIFORM_VECTORS:  Int = ???
+  val SHADER_TYPE:  Int = ???
+  val DELETE_STATUS:  Int = ???
+  val LINK_STATUS:  Int = ???
+  val VALIDATE_STATUS:  Int = ???
+  val ATTACHED_SHADERS:  Int = ???
+  val ACTIVE_UNIFORMS:  Int = ???
+  val ACTIVE_ATTRIBUTES:  Int = ???
+  val SHADING_LANGUAGE_VERSION:  Int = ???
+  val CURRENT_PROGRAM:  Int = ???
   
   /* StencilFunction */
-  val NEVER: js.Number = ???
-  val LESS: js.Number = ???
-  val EQUAL: js.Number = ???
-  val LEQUAL: js.Number = ???
-  val GREATER: js.Number = ???
-  val NOTEQUAL: js.Number = ???
-  val GEQUAL: js.Number = ???
-  val ALWAYS: js.Number = ???
+  val NEVER:  Int = ???
+  val LESS:  Int = ???
+  val EQUAL:  Int = ???
+  val LEQUAL:  Int = ???
+  val GREATER:  Int = ???
+  val NOTEQUAL:  Int = ???
+  val GEQUAL:  Int = ???
+  val ALWAYS:  Int = ???
   
   /* StencilOp */
   /*    ZERO */
-  val KEEP: js.Number = ???
-  val REPLACE: js.Number = ???
-  val INCR: js.Number = ???
-  val DECR: js.Number = ???
-  val INVERT: js.Number = ???
-  val INCR_WRAP: js.Number = ???
-  val DECR_WRAP: js.Number = ???
+  val KEEP:  Int = ???
+  val REPLACE:  Int = ???
+  val INCR:  Int = ???
+  val DECR:  Int = ???
+  val INVERT:  Int = ???
+  val INCR_WRAP:  Int = ???
+  val DECR_WRAP:  Int = ???
   
   /* StringName */
-  val VENDOR: js.Number = ???
-  val RENDERER: js.Number = ???
-  val VERSION: js.Number = ???
+  val VENDOR:  Int = ???
+  val RENDERER:  Int = ???
+  val VERSION:  Int = ???
   
   /* TextureMagFilter */
   /** Specifies nearest neighbour interpolation. */
-  val NEAREST: js.Number = ???
+  val NEAREST:  Int = ???
   /** Specifies linear interpolation. */
-  val LINEAR: js.Number = ???
+  val LINEAR:  Int = ???
   
   /* TextureMinFilter */
   /*    NEAREST */
@@ -510,22 +510,22 @@ object WebGLRenderingContext extends js.Object {
   /**
    * Specifies nearest neighbour interpolation on the nearest mipmap level.
    */
-  val NEAREST_MIPMAP_NEAREST: js.Number = ???
+  val NEAREST_MIPMAP_NEAREST:  Int = ???
   
   /**
    * Specifies linear interpolation on the nearest mipmap level.
    */
-  val LINEAR_MIPMAP_NEAREST: js.Number = ???
+  val LINEAR_MIPMAP_NEAREST:  Int = ???
   
   /**
    * Specifies nearest neighbour interpolation, linearly blending between mipmap levels.
    */
-  val NEAREST_MIPMAP_LINEAR: js.Number = ???
+  val NEAREST_MIPMAP_LINEAR:  Int = ???
   
   /**
    * Specifies linear interpolation linearly blending between mipmap levels.
    */
-  val LINEAR_MIPMAP_LINEAR: js.Number = ???
+  val LINEAR_MIPMAP_LINEAR:  Int = ???
   
   /* TextureParameterName */
   /**
@@ -533,7 +533,7 @@ object WebGLRenderingContext extends js.Object {
    * 
    * Can be one of [[NEAREST]] or [[LINEAR]].
    */
-  val TEXTURE_MAG_FILTER: js.Number = ???
+  val TEXTURE_MAG_FILTER:  Int = ???
 
   /**
    * The texture minification filter.
@@ -542,270 +542,270 @@ object WebGLRenderingContext extends js.Object {
    * [[NEAREST_MIPMAP_LINEAR]], [[LINEAR_MIPMAP_LINEAR]].
    */
 
-  val TEXTURE_MIN_FILTER: js.Number = ???
+  val TEXTURE_MIN_FILTER:  Int = ???
   
   /**
    * The horizontal texture wrap mode.
    * 
    * Can be one of [[REPEAT]], [[CLAMP_TO_EDGE]], [[MIRRORED_REPEAT]].  
    */
-  val TEXTURE_WRAP_S: js.Number = ???
+  val TEXTURE_WRAP_S:  Int = ???
   
   /**
    * The vertical texture wrap.
    *
    * Can be one of [[REPEAT]], [[CLAMP_TO_EDGE]], [[MIRRORED_REPEAT]].  
    */
-  val TEXTURE_WRAP_T: js.Number = ???
+  val TEXTURE_WRAP_T:  Int = ???
   
   /* TextureTarget */
   /**
    * The target for a simple 2 dimensional texture.
    */
-  val TEXTURE_2D: js.Number = ???
-  val TEXTURE: js.Number = ???
+  val TEXTURE_2D:  Int = ???
+  val TEXTURE:  Int = ???
   
   /**
    * The target for a cube mapped texture.
    */
-  val TEXTURE_CUBE_MAP: js.Number = ???
-  val TEXTURE_BINDING_CUBE_MAP: js.Number = ???
-  val TEXTURE_CUBE_MAP_POSITIVE_X: js.Number = ???
-  val TEXTURE_CUBE_MAP_NEGATIVE_X: js.Number = ???
-  val TEXTURE_CUBE_MAP_POSITIVE_Y: js.Number = ???
-  val TEXTURE_CUBE_MAP_NEGATIVE_Y: js.Number = ???
-  val TEXTURE_CUBE_MAP_POSITIVE_Z: js.Number = ???
-  val TEXTURE_CUBE_MAP_NEGATIVE_Z: js.Number = ???
-  val MAX_CUBE_MAP_TEXTURE_SIZE: js.Number = ???
+  val TEXTURE_CUBE_MAP:  Int = ???
+  val TEXTURE_BINDING_CUBE_MAP:  Int = ???
+  val TEXTURE_CUBE_MAP_POSITIVE_X:  Int = ???
+  val TEXTURE_CUBE_MAP_NEGATIVE_X:  Int = ???
+  val TEXTURE_CUBE_MAP_POSITIVE_Y:  Int = ???
+  val TEXTURE_CUBE_MAP_NEGATIVE_Y:  Int = ???
+  val TEXTURE_CUBE_MAP_POSITIVE_Z:  Int = ???
+  val TEXTURE_CUBE_MAP_NEGATIVE_Z:  Int = ???
+  val MAX_CUBE_MAP_TEXTURE_SIZE:  Int = ???
   
   /* TextureUnit */
   /** Identifies texture unit 0. This texture unit is guaranteed to exist. */
-  val TEXTURE0: js.Number = ???
+  val TEXTURE0:  Int = ???
   
   /** Identifies texture unit 1. This texture unit is guaranteed to exist. */
-  val TEXTURE1: js.Number = ???
+  val TEXTURE1:  Int = ???
   
   /** Identifies texture unit 2. This texture unit is guaranteed to exist. */  
-  val TEXTURE2: js.Number = ???
+  val TEXTURE2:  Int = ???
   
   /** Identifies texture unit 3. This texture unit is guaranteed to exist. */  
-  val TEXTURE3: js.Number = ???
+  val TEXTURE3:  Int = ???
   
   /** Identifies texture unit 4. This texture unit is guaranteed to exist. */  
-  val TEXTURE4: js.Number = ???
+  val TEXTURE4:  Int = ???
   
   /** Identifies texture unit 5. This texture unit is guaranteed to exist. */  
-  val TEXTURE5: js.Number = ???
+  val TEXTURE5:  Int = ???
   
   /** Identifies texture unit 6. This texture unit is guaranteed to exist. */  
-  val TEXTURE6: js.Number = ???
+  val TEXTURE6:  Int = ???
   
   /** Identifies texture unit 7. This texture unit is guaranteed to exist. */  
-  val TEXTURE7: js.Number = ???
+  val TEXTURE7:  Int = ???
   
   /** Identifies texture unit 8. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */  
-  val TEXTURE8: js.Number = ???
+  val TEXTURE8:  Int = ???
   
   /** Identifies texture unit 9. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE9: js.Number = ???
+  val TEXTURE9:  Int = ???
   
   /** Identifies texture unit 10. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE10: js.Number = ???
+  val TEXTURE10:  Int = ???
   
   /** Identifies texture unit 11. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE11: js.Number = ???
+  val TEXTURE11:  Int = ???
   
   /** Identifies texture unit 12. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE12: js.Number = ???
+  val TEXTURE12:  Int = ???
   
   /** Identifies texture unit 13. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE13: js.Number = ???
+  val TEXTURE13:  Int = ???
   
   /** Identifies texture unit 14. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE14: js.Number = ???
+  val TEXTURE14:  Int = ???
   
   /** Identifies texture unit 15. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE15: js.Number = ???
+  val TEXTURE15:  Int = ???
   
   /** Identifies texture unit 16. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE16: js.Number = ???
+  val TEXTURE16:  Int = ???
   
   /** Identifies texture unit 17. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE17: js.Number = ???
+  val TEXTURE17:  Int = ???
   
   /** Identifies texture unit 18. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE18: js.Number = ???
+  val TEXTURE18:  Int = ???
   
   /** Identifies texture unit 19. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE19: js.Number = ???
+  val TEXTURE19:  Int = ???
   
   /** Identifies texture unit 20. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE20: js.Number = ???
+  val TEXTURE20:  Int = ???
   
   /** Identifies texture unit 21. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE21: js.Number = ???
+  val TEXTURE21:  Int = ???
   
   /** Identifies texture unit 22. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE22: js.Number = ???
+  val TEXTURE22:  Int = ???
   
   /** Identifies texture unit 23. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE23: js.Number = ???
+  val TEXTURE23:  Int = ???
   
   /** Identifies texture unit 24. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE24: js.Number = ???
+  val TEXTURE24:  Int = ???
   
   /** Identifies texture unit 25. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE25: js.Number = ???
+  val TEXTURE25:  Int = ???
   
   /** Identifies texture unit 26. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE26: js.Number = ???
+  val TEXTURE26:  Int = ???
   
   /** Identifies texture unit 27. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE27: js.Number = ???
+  val TEXTURE27:  Int = ???
   
   /** Identifies texture unit 28. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE28: js.Number = ???
+  val TEXTURE28:  Int = ???
   
   /** Identifies texture unit 29. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE29: js.Number = ???
+  val TEXTURE29:  Int = ???
   
   /** Identifies texture unit 30. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE30: js.Number = ???
+  val TEXTURE30:  Int = ???
   
   /** Identifies texture unit 31. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE31: js.Number = ???
+  val TEXTURE31:  Int = ???
   
   /** The currently active texture unit. */
-  val ACTIVE_TEXTURE: js.Number = ???
+  val ACTIVE_TEXTURE:  Int = ???
   
   /* TextureWrapMode */
   /**
    * Repeat the texture along this axis.
    */  
-  val REPEAT: js.Number = ???
+  val REPEAT:  Int = ???
   /**
    * Clamp the texture along this axis.  The colour of the edge pixels will be replicated to infinity.
    */    
-  val CLAMP_TO_EDGE: js.Number = ???
+  val CLAMP_TO_EDGE:  Int = ???
   /**
    * Repeat the texture along this axis, mirroring it each step.
    */    
-  val MIRRORED_REPEAT: js.Number = ???
+  val MIRRORED_REPEAT:  Int = ???
   
   /* Uniform Types */
-  val FLOAT_VEC2: js.Number = ???
-  val FLOAT_VEC3: js.Number = ???
-  val FLOAT_VEC4: js.Number = ???
-  val INT_VEC2: js.Number = ???
-  val INT_VEC3: js.Number = ???
-  val INT_VEC4: js.Number = ???
-  val BOOL: js.Number = ???
-  val BOOL_VEC2: js.Number = ???
-  val BOOL_VEC3: js.Number = ???
-  val BOOL_VEC4: js.Number = ???
-  val FLOAT_MAT2: js.Number = ???
-  val FLOAT_MAT3: js.Number = ???
-  val FLOAT_MAT4: js.Number = ???
-  val SAMPLER_2D: js.Number = ???
-  val SAMPLER_CUBE: js.Number = ???
+  val FLOAT_VEC2:  Int = ???
+  val FLOAT_VEC3:  Int = ???
+  val FLOAT_VEC4:  Int = ???
+  val INT_VEC2:  Int = ???
+  val INT_VEC3:  Int = ???
+  val INT_VEC4:  Int = ???
+  val BOOL:  Int = ???
+  val BOOL_VEC2:  Int = ???
+  val BOOL_VEC3:  Int = ???
+  val BOOL_VEC4:  Int = ???
+  val FLOAT_MAT2:  Int = ???
+  val FLOAT_MAT3:  Int = ???
+  val FLOAT_MAT4:  Int = ???
+  val SAMPLER_2D:  Int = ???
+  val SAMPLER_CUBE:  Int = ???
   
   /* Vertex Arrays */
-  val VERTEX_ATTRIB_ARRAY_ENABLED: js.Number = ???
-  val VERTEX_ATTRIB_ARRAY_SIZE: js.Number = ???
-  val VERTEX_ATTRIB_ARRAY_STRIDE: js.Number = ???
-  val VERTEX_ATTRIB_ARRAY_TYPE: js.Number = ???
-  val VERTEX_ATTRIB_ARRAY_NORMALIZED: js.Number = ???
-  val VERTEX_ATTRIB_ARRAY_POINTER: js.Number = ???
-  val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: js.Number = ???
+  val VERTEX_ATTRIB_ARRAY_ENABLED:  Int = ???
+  val VERTEX_ATTRIB_ARRAY_SIZE:  Int = ???
+  val VERTEX_ATTRIB_ARRAY_STRIDE:  Int = ???
+  val VERTEX_ATTRIB_ARRAY_TYPE:  Int = ???
+  val VERTEX_ATTRIB_ARRAY_NORMALIZED:  Int = ???
+  val VERTEX_ATTRIB_ARRAY_POINTER:  Int = ???
+  val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING:  Int = ???
   
   /* Shader Source */
-  val COMPILE_STATUS: js.Number = ???
+  val COMPILE_STATUS:  Int = ???
   
   /* Shader Precision-Specified Types */
   /**
    * Specifies a low precision float.
    */
-  val LOW_FLOAT: js.Number = ???
+  val LOW_FLOAT:  Int = ???
   /**
    * Specifies a medium precision float.
    */
-  val MEDIUM_FLOAT: js.Number = ???
+  val MEDIUM_FLOAT:  Int = ???
   /**
    * Specifies a high precision float.
    */  
-  val HIGH_FLOAT: js.Number = ???
+  val HIGH_FLOAT:  Int = ???
   /**
    * Specifies a low precision integer.
    */  
-  val LOW_INT: js.Number = ???
+  val LOW_INT:  Int = ???
   /**
    * Specifies a medium precision float.
    */  
-  val MEDIUM_INT: js.Number = ???
+  val MEDIUM_INT:  Int = ???
   /**
    * Specifies a high precision float.
    */
-  val HIGH_INT: js.Number = ???
+  val HIGH_INT:  Int = ???
   
   /* Framebuffer Object. */
   /**
    * The framebuffer target.
    */
-  val FRAMEBUFFER: js.Number = ???
+  val FRAMEBUFFER:  Int = ???
   
   /**
    * The renderbuffer target.
    */
-  val RENDERBUFFER: js.Number = ???
+  val RENDERBUFFER:  Int = ???
   
-  val RGBA4: js.Number = ???
-  val RGB5_A1: js.Number = ???
-  val RGB565: js.Number = ???
-  val DEPTH_COMPONENT16: js.Number = ???
-  val STENCIL_INDEX: js.Number = ???
-  val STENCIL_INDEX8: js.Number = ???
-  val DEPTH_STENCIL: js.Number = ???
+  val RGBA4:  Int = ???
+  val RGB5_A1:  Int = ???
+  val RGB565:  Int = ???
+  val DEPTH_COMPONENT16:  Int = ???
+  val STENCIL_INDEX:  Int = ???
+  val STENCIL_INDEX8:  Int = ???
+  val DEPTH_STENCIL:  Int = ???
   
-  val RENDERBUFFER_WIDTH: js.Number = ???
-  val RENDERBUFFER_HEIGHT: js.Number = ???
-  val RENDERBUFFER_INTERNAL_FORMAT: js.Number = ???
-  val RENDERBUFFER_RED_SIZE: js.Number = ???
-  val RENDERBUFFER_GREEN_SIZE: js.Number = ???
-  val RENDERBUFFER_BLUE_SIZE: js.Number = ???
-  val RENDERBUFFER_ALPHA_SIZE: js.Number = ???
-  val RENDERBUFFER_DEPTH_SIZE: js.Number = ???
-  val RENDERBUFFER_STENCIL_SIZE: js.Number = ???
+  val RENDERBUFFER_WIDTH:  Int = ???
+  val RENDERBUFFER_HEIGHT:  Int = ???
+  val RENDERBUFFER_INTERNAL_FORMAT:  Int = ???
+  val RENDERBUFFER_RED_SIZE:  Int = ???
+  val RENDERBUFFER_GREEN_SIZE:  Int = ???
+  val RENDERBUFFER_BLUE_SIZE:  Int = ???
+  val RENDERBUFFER_ALPHA_SIZE:  Int = ???
+  val RENDERBUFFER_DEPTH_SIZE:  Int = ???
+  val RENDERBUFFER_STENCIL_SIZE:  Int = ???
   
-  val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE: js.Number = ???
-  val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME: js.Number = ???
-  val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL: js.Number = ???
-  val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE: js.Number = ???
+  val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE:  Int = ???
+  val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME:  Int = ???
+  val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL:  Int = ???
+  val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE:  Int = ???
   
-  val COLOR_ATTACHMENT0: js.Number = ???
-  val DEPTH_ATTACHMENT: js.Number = ???
-  val STENCIL_ATTACHMENT: js.Number = ???
-  val DEPTH_STENCIL_ATTACHMENT: js.Number = ???
+  val COLOR_ATTACHMENT0:  Int = ???
+  val DEPTH_ATTACHMENT:  Int = ???
+  val STENCIL_ATTACHMENT:  Int = ???
+  val DEPTH_STENCIL_ATTACHMENT:  Int = ???
   
   val NONE = 0
   
-  val FRAMEBUFFER_COMPLETE: js.Number = ???
-  val FRAMEBUFFER_INCOMPLETE_ATTACHMENT: js.Number = ???
-  val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT: js.Number = ???
-  val FRAMEBUFFER_INCOMPLETE_DIMENSIONS: js.Number = ???
-  val FRAMEBUFFER_UNSUPPORTED: js.Number = ???
+  val FRAMEBUFFER_COMPLETE:  Int = ???
+  val FRAMEBUFFER_INCOMPLETE_ATTACHMENT:  Int = ???
+  val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT:  Int = ???
+  val FRAMEBUFFER_INCOMPLETE_DIMENSIONS:  Int = ???
+  val FRAMEBUFFER_UNSUPPORTED:  Int = ???
   
-  val FRAMEBUFFER_BINDING: js.Number = ???
-  val RENDERBUFFER_BINDING: js.Number = ???
-  val MAX_RENDERBUFFER_SIZE: js.Number = ???
+  val FRAMEBUFFER_BINDING:  Int = ???
+  val RENDERBUFFER_BINDING:  Int = ???
+  val MAX_RENDERBUFFER_SIZE:  Int = ???
   
-  val INVALID_FRAMEBUFFER_OPERATION: js.Number = ???
+  val INVALID_FRAMEBUFFER_OPERATION:  Int = ???
   
   /* WebGL-specific enums */
-  val UNPACK_FLIP_Y_WEBGL: js.Number = ???
-  val UNPACK_PREMULTIPLY_ALPHA_WEBGL: js.Number = ???
-  val CONTEXT_LOST_WEBGL: js.Number = ???
-  val UNPACK_COLORSPACE_CONVERSION_WEBGL: js.Number = ???
-  val BROWSER_DEFAULT_WEBGL: js.Number = ???
+  val UNPACK_FLIP_Y_WEBGL:  Int = ???
+  val UNPACK_PREMULTIPLY_ALPHA_WEBGL:  Int = ???
+  val CONTEXT_LOST_WEBGL:  Int = ???
+  val UNPACK_COLORSPACE_CONVERSION_WEBGL:  Int = ???
+  val BROWSER_DEFAULT_WEBGL:  Int = ???
 }
 
 class WebGLRenderingContext extends js.Object {
@@ -818,13 +818,13 @@ class WebGLRenderingContext extends js.Object {
    * The actual width of the drawing buffer.
    * This may be different than the underlying HTMLCanvasElement width.
    */
-  val drawingBufferWidth: js.Number = ???
+  val drawingBufferWidth:  Int = ???
   
   /**
    * The actual height of the drawing buffer. 
    * This may be different than the underlying HTMLCanvasElement height.
    */
-  val drawingBufferHeight: js.Number = ???
+  val drawingBufferHeight:  Int = ???
   
   /**
    * Returns `null` if [[isContextLost]] would return `false`, otherwise returns a copy of the context parameters.
@@ -853,7 +853,7 @@ class WebGLRenderingContext extends js.Object {
    * 
    * @param texture  an integer specifying the texture unit to make active. Must be in 0 .. MAX_COMBINED_TEXTURE_UNITS-1
    */
-  def activeTexture(texture: js.Number): Unit = ???
+  def activeTexture(texture:  Int): Unit = ???
   
   /**
    * Attaches a shader (fragment or vertex) to a [[WebGLProgram]].
@@ -863,14 +863,14 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Associates a vertex attribute index with a named attribute variable.
    */
-  def bindAttribLocation(program: WebGLProgram, index: js.Number, name: js.String): Unit = ???
+  def bindAttribLocation(program: WebGLProgram, index:  Int, name: js.String): Unit = ???
   
   /**
    * Loads a a target into a [[WebGLBuffer]].
    * 
    * @param target the target to bind the buffer to.  May be [[WebGLRenderingContext.ARRAY_BUFFER]] or [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]
    */
-  def bindBuffer(target: js.Number, buffer: WebGLBuffer): Unit = ???
+  def bindBuffer(target: Int, buffer: WebGLBuffer): Unit = ???
   
   /**
    * Loads a a target into a [[WebGLFramebuffer]].
@@ -878,7 +878,7 @@ class WebGLRenderingContext extends js.Object {
    * @param target  the target to bind the framebuffer to.  Must be [[WebGLRenderingContext.FRAMEBUFFER]].
    * @param framebuffer  a framebuffer object, or null to bind the default framebuffer.
    */
-  def bindFramebuffer(target: js.Number, framebuffer: WebGLFramebuffer): Unit = ???
+  def bindFramebuffer(target: Int, framebuffer: WebGLFramebuffer): Unit = ???
   
   /**
    * Loads a a target into a [[WebGLRenderbuffer]].
@@ -886,7 +886,7 @@ class WebGLRenderingContext extends js.Object {
    * @param target  target to bind to, must be [[WebGLRenderingContext.RENDERBUFFER]]
    * @param renderbuffer the renderbuffer to bind.  If `null`, any object bound to `target` us unbound.
    */
-  def bindRenderbuffer(target: js.Number, renderbuffer: WebGLRenderbuffer): Unit = ???
+  def bindRenderbuffer(target: Int, renderbuffer: WebGLRenderbuffer): Unit = ???
   
   /**
    * Loads a the active texture unit into a [[WebGLTexture]].
@@ -894,7 +894,7 @@ class WebGLRenderingContext extends js.Object {
    * @param target  the target to bind to.  Must be [[WebGLRenderingContext.TEXTURE_2D]] or [[WebGLRenderingContext.TEXTURE_CUBE_MAP]]
    * @param texture  the texture to bind. 
    */
-  def bindTexture(target: js.Number, texture: WebGLTexture): Unit = ???
+  def bindTexture(target: Int, texture: WebGLTexture): Unit = ???
   
   /**
    * Sets the blend color used in [[WebGLRenderingContext.BLEND_COLOR]].
@@ -906,7 +906,7 @@ class WebGLRenderingContext extends js.Object {
    * 
    * @param mode  blend equation to use.  Can be one of [[WebGLRenderingContext.FUNC_ADD]], [[WebGLRenderingContext.FUNC_SUBTRACT]], or [[WebGLRenderingContext.FUNC_REVERSE_SUBTRACT]]
    */
-  def blendEquation(mode: js.Number): Unit = ???
+  def blendEquation(mode: Int): Unit = ???
   
   /**
    * Specifies the equation used for RGB and Alpha blending separately.
@@ -914,7 +914,7 @@ class WebGLRenderingContext extends js.Object {
    * @param modeRGB  blend equation to use for RGB components.  Can be one of [[WebGLRenderingContext.FUNC_ADD]], [[WebGLRenderingContext.FUNC_SUBTRACT]], or [[WebGLRenderingContext.FUNC_REVERSE_SUBTRACT]]
    * @param modeAlpha  blend equation to use for alpha components.  Can be one of [[WebGLRenderingContext.FUNC_ADD]], [[WebGLRenderingContext.FUNC_SUBTRACT]], or [[WebGLRenderingContext.FUNC_REVERSE_SUBTRACT]]
    */
-  def blendEquationSeparate(modeRGB: js.Number, modeAlpha: js.Number): Unit = ???
+  def blendEquationSeparate(modeRGB: Int, modeAlpha: Int): Unit = ???
   
   /**
    * Specifies how the blending factors are computed for source and destination pixels.
@@ -930,7 +930,7 @@ class WebGLRenderingContext extends js.Object {
    *                 ` ONE_MINUS_CONSTANT_COLOR`, [[WebGLRenderingContext.CONSTANT_ALPHA]], or [[WebGLRenderingContext.ONE_MINUS_CONSTANT_ALPHA]].
    *                 This value is initially [[WebGLRenderingContext.ZERO]].
    */
-  def blendFunc(sfactor: js.Number, dfactor: js.Number): Unit = ???
+  def blendFunc(sfactor: Int, dfactor: Int): Unit = ???
 
   /**
    * Specifies how the blending factors are computed for source and destination pixels, separately for alpha and RGB.
@@ -950,7 +950,7 @@ class WebGLRenderingContext extends js.Object {
    * @param dstAlpha The destination blending factor for Alpha.  Accepted values are the same as srcRGB.
    *                 The initial value is [[WebGLRenderingContext.ZERO]].
    */
-  def blendFuncSeparate(srcRGB: js.Number, dstRGB: js.Number, srcAlpha: js.Number, dstAlpha: js.Number): Unit = ???
+  def blendFuncSeparate(srcRGB: Int, dstRGB:  Int, srcAlpha:  Int, dstAlpha:  Int): Unit = ???
   
   /**
    * Sets the size of the bound [[WebGLBuffer]] for the given `target`.  The contents of the buffer are cleared to 0.
@@ -958,7 +958,7 @@ class WebGLRenderingContext extends js.Object {
    * @param size  The size of the new buffer
    * @param usage  The specified usage for this buffer.  May be [[WebGLRenderingContext.STREAM_DRAW]], [[WebGLRenderingContext.STATIC_DRAW]] or [[WebGLRenderingContext.DYNAMIC_DRAW]].
    */
-  def bufferData(target: js.Number, size: js.Number, usage: js.Number): Unit = ???
+  def bufferData(target:  Int, size:  Int, usage:  Int): Unit = ???
   
   /**
    * Resizes the bound [[WebGLBuffer]] for the given `target` to the size of the passed buffer, and replaces its contents with the contents of the buffer.
@@ -966,7 +966,7 @@ class WebGLRenderingContext extends js.Object {
    * @param data the source data for the new buffer.
    * @param usage  The specified usage for this buffer.  May be [[WebGLRenderingContext.STREAM_DRAW]], [[WebGLRenderingContext.STATIC_DRAW]] or [[WebGLRenderingContext.DYNAMIC_DRAW]].
    */
-  def bufferData(target: js.Number, data: ArrayBufferView, usage: js.Number): Unit = ???
+  def bufferData(target:  Int, data: ArrayBufferView, usage:  Int): Unit = ???
   
   /**
    * Resizes the bound [[WebGLBuffer]] for the given `target` to the size of the passed buffer, and replaces its contents with the contents of the buffer.
@@ -975,11 +975,11 @@ class WebGLRenderingContext extends js.Object {
    * @param data the source data for the new buffer.
    * @param usage  The specified usage for this buffer.  May be [[WebGLRenderingContext.STREAM_DRAW]], [[WebGLRenderingContext.STATIC_DRAW]] or [[WebGLRenderingContext.DYNAMIC_DRAW]].
    */
-  def bufferData(target: js.Number, data: ArrayBuffer, usage: js.Number): Unit = ???
+  def bufferData(target:  Int, data: ArrayBuffer, usage:  Int): Unit = ???
 
-  def bufferSubData(target: js.Number, offset: js.Number, data: ArrayBufferView): Unit = ???
+  def bufferSubData(target:  Int, offset:  Int, data: ArrayBufferView): Unit = ???
   
-  def bufferSubData(target: js.Number, offset: js.Number, data: ArrayBuffer): Unit = ???
+  def bufferSubData(target:  Int, offset:  Int, data: ArrayBuffer): Unit = ???
 
   /**
    * Returns the completeness status for the framebuffer.
@@ -995,14 +995,14 @@ class WebGLRenderingContext extends js.Object {
    * @param target  the target framebuffer object, must be [[WebGLRenderingContext.FRAMEBUFFER]].
    * @return the framebuffer status.
    */
-  def checkFramebufferStatus(target: js.Number): js.Number = ???
+  def checkFramebufferStatus(target:  Int):  Int = ???
   
   /**
    * Clears the buffers specified in `mask` with the current [[WebGLRenderingContext#clearColor]], [[WebGLRenderingContext#clearDepth]] and [[WebGLRenderingContext#clearStencil]].
    * 
    * @param mask  The buffers to clear, a bitmask of one or more of [[WebGLRenderingContext.COLOR_BUFFER_BIT]], [[WebGLRenderingContext.DEPTH_BUFFER_BIT]] and [[WebGLRenderingContext.STENCIL_BUFFER_BIT]].
    */
-  def clear(mask: js.Number): Unit = ???
+  def clear(mask:  Int): Unit = ???
 
   /**
    * Sets the clear color to use with [[WebGLRenderingContext#clear]].
@@ -1012,12 +1012,12 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Sets the clear depth to use with [[WebGLRenderingContext#clear]].
    */
-  def clearDepth(depth: js.Number): Unit = ???
+  def clearDepth(depth:  Int): Unit = ???
   
   /**
    * Sets the stencil value to use with [[WebGLRenderingContext#clear]].
    */  
-  def clearStencil(s: js.Number): Unit = ???
+  def clearStencil(s:  Int): Unit = ???
   
   /**
    * Enable and disable writing to the given channels.  For each channel, `true` will allow writing, `false` will prevent it.
@@ -1045,7 +1045,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param border the border width.  Must be 0.
    *  @param data  the compressed image data.
    */
-  def compressedTexImage2D(target: js.Number, level: js.Number, internalformat: js.Number, width: js.Number, height: js.Number, border: js.Number, data: ArrayBufferView): Unit = ???
+  def compressedTexImage2D(target:  Int, level:  Int, internalformat:  Int, width:  Int, height:  Int, border:  Int, data: ArrayBufferView): Unit = ???
   
   /**
    * Loads a 2-dimensional texture subimage into a texture unit, compressed with the specified algorithm.
@@ -1061,7 +1061,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param height the height of the texture image.
    *  @param data  the compressed image data.
    */
-  def compressedTexSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, width: js.Number, height: js.Number, format: js.Number, data: ArrayBufferView): Unit = ???
+  def compressedTexSubImage2D(target:  Int, level:  Int, xoffset:  Int, yoffset:  Int, width:  Int, height:  Int, format:  Int, data: ArrayBufferView): Unit = ???
     
   /**
    * Loads a 2-dimensional texture into a texture unit from the current framebuffer.
@@ -1077,7 +1077,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param height the height of the texture image.
    *  @param border the border width.  Must be 0.
    */
-  def copyTexImage2D(target: js.Number, level: js.Number, internalformat: js.Number, x: js.Number, y: js.Number, width: js.Number, height: js.Number, border: js.Number): Unit = ???
+  def copyTexImage2D(target:  Int, level:  Int, internalformat:  Int, x:  Int, y:  Int, width:  Int, height:  Int, border:  Int): Unit = ???
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from the current framebuffer.
@@ -1094,7 +1094,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param width  the width of the texture image.
    *  @param height the height of the texture image.
    */
-  def copyTexSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, x: js.Number, y: js.Number, width: js.Number, height: js.Number): Unit = ???
+  def copyTexSubImage2D(target:  Int, level:  Int, xoffset:  Int, yoffset:  Int, x:  Int, y:  Int, width:  Int, height:  Int): Unit = ???
  
   /**
    * Creates a new [[WebGLBuffer]].
@@ -1119,7 +1119,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Creates a new [[WebGLShader]].
    */
-  def createShader(`type`: js.Number): WebGLShader = ???
+  def createShader(`type`:  Int): WebGLShader = ???
   
   /**
    * Creates a new [[WebGLTexture]].
@@ -1132,7 +1132,7 @@ class WebGLRenderingContext extends js.Object {
    * @param mode the culling mode, may be [[WebGLRenderingContext.FRONT]], [[WebGLRenderingContext.BACK]] or [[WebGLRenderingContext.FRONT_AND_BACK]].
    *             When [[WebGLRenderingContext.FRONT_AND_BACK]] is set, no triangles are drawn, however lines and points will.
    */
-  def cullFace(mode: js.Number): Unit = ???
+  def cullFace(mode:  Int): Unit = ???
   
   /**
    * Flags the specified [[WebGLBuffer]] for deletion.  When it is no longer used by the WebGL system it
@@ -1189,7 +1189,7 @@ class WebGLRenderingContext extends js.Object {
    * @param func  the function to allow the fragment to be drawn.  Values are [[WebGLRenderingContext.NEVER]], [[WebGLRenderingContext.LESS]], [[WebGLRenderingContext.EQUAL]], [[WebGLRenderingContext.LEQUAL]]
    *              [[WebGLRenderingContext.GREATER]], [[WebGLRenderingContext.NOTEQUAL]], [[WebGLRenderingContext.GEQUAL]], and [[WebGLRenderingContext.ALWAYS]].
    */
-  def depthFunc(func: js.Number): Unit = ???
+  def depthFunc(func:  Int): Unit = ???
   
   /**
    * Enables/disables writing to the depth buffer.
@@ -1225,12 +1225,12 @@ class WebGLRenderingContext extends js.Object {
    *             [[WebGLRenderingContext.SAMPLE_ALPHA_TO_COVERAGE]], [[WebGLRenderingContext.SAMPLE_COVERAGE]],
    *             [[WebGLRenderingContext.SCISSOR_TEST]], or [[WebGLRenderingContext.STENCIL_TEST]]. 
    */
-  def disable(cap: js.Number): Unit = ???
+  def disable(cap:  Int): Unit = ???
 
   /**
    * Disables the generic vertex attribute array specified by index.
    */
-  def disableVertexAttribArray(index: js.Number): Unit = ???
+  def disableVertexAttribArray(index:  Int): Unit = ???
   
   /**
    * Renders the primitives in the active arrays.
@@ -1239,7 +1239,7 @@ class WebGLRenderingContext extends js.Object {
    * @param first  the starting index into the arrays.
    * @param count  the number of indices to draw.
    */
-  def drawArrays(mode: js.Number, first: js.Number, count: js.Number): Unit = ???
+  def drawArrays(mode:  Int, first:  Int, count:  Int): Unit = ???
   
   /**
    * Renders the primitives in the active arrays using an [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]] to index them.
@@ -1253,7 +1253,7 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.UNSIGNED_BYTE]] or [[WebGLRenderingContext.UNSIGNED_SHORT]]
    * @param offset the offset into the [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]] to begin drawing from.
    */
-  def drawElements(mode: js.Number, count: js.Number, `type`: js.Number, offset: js.Number): Unit = ???
+  def drawElements(mode:  Int, count:  Int, `type`:  Int, offset:  Int): Unit = ???
   
   /**
    * Enables a GL capability.
@@ -1263,12 +1263,12 @@ class WebGLRenderingContext extends js.Object {
    *             [[WebGLRenderingContext.SAMPLE_ALPHA_TO_COVERAGE]], [[WebGLRenderingContext.SAMPLE_COVERAGE]],
    *             [[WebGLRenderingContext.SCISSOR_TEST]], or [[WebGLRenderingContext.STENCIL_TEST]]. 
    */
-  def enable(cap: js.Number): Unit = ???
+  def enable(cap:  Int): Unit = ???
   
   /**
    * Enables the generic vertex attribute array specified by index.
    */
-  def enableVertexAttribArray(index: js.Number): Unit = ???
+  def enableVertexAttribArray(index:  Int): Unit = ???
   
   /**
    * Block until all GL execution is complete.
@@ -1290,7 +1290,7 @@ class WebGLRenderingContext extends js.Object {
    * @param renderbuffertarget  must be [[WebGLRenderingContext.RENDERBUFFER]]
    * @param renderbuffer  the renderbuffer to attach.
    */
-  def framebufferRenderbuffer(target: js.Number, attachment: js.Number, renderbuffertarget: js.Number, renderbuffer: WebGLRenderbuffer): Unit = ???
+  def framebufferRenderbuffer(target:  Int, attachment:  Int, renderbuffertarget:  Int, renderbuffer: WebGLRenderbuffer): Unit = ???
   
   /**
    * Attach a [[WebGLTexture]] to a [[WebGLFramebuffer]].
@@ -1302,31 +1302,31 @@ class WebGLRenderingContext extends js.Object {
    * @param texture  the texture to be attached
    * @param level  the miplevel to be attached
    */
-  def framebufferTexture2D(target: js.Number, attachment: js.Number, textarget: js.Number, texture: WebGLTexture, level: js.Number): Unit = ???
+  def framebufferTexture2D(target:  Int, attachment:  Int, textarget:  Int, texture: WebGLTexture, level:  Int): Unit = ???
 
   /**
    * Specifies the winding that is considered front-facing for the purposes of CULL_FACE.
    * 
    * @param mode  The winding to consider front-facing.  May be [[WebGLRenderingContext.CW]] or [[WebGLRenderingContext.CCW]]
    */
-  def frontFace(mode: js.Number): Unit = ???
+  def frontFace(mode:  Int): Unit = ???
   
   /**
    * Generate the complete set of mipmaps for the active texture derived from level 0.
    * 
    * @param target  the texture target, may be [[WebGLRenderingContext.TEXTURE_2D]] or [[WebGLRenderingContext.TEXTURE_CUBE_MAP]].
    */
-  def generateMipmap(target: js.Number): Unit = ???
+  def generateMipmap(target:  Int): Unit = ???
   
   /**
    * Returns a new [[WebGLActiveInfo]] object describing the given attribute at `index`.
    */
-  def getActiveAttrib(program: WebGLProgram, index: js.Number): WebGLActiveInfo = ???
+  def getActiveAttrib(program: WebGLProgram, index:  Int): WebGLActiveInfo = ???
 
   /**
    * Returns a new [[WebGLActiveInfo]] object describing the given uniform at `index`.
    */
-  def getActiveUniform(program: WebGLProgram, index: js.Number): WebGLActiveInfo = ???
+  def getActiveUniform(program: WebGLProgram, index:  Int): WebGLActiveInfo = ???
   
   /**
    * Returns a new array containing the shaders attached to the given program. 
@@ -1336,7 +1336,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Returns the index of the named attribute, or -1 on error.
    */
-  def getAttribLocation(program: WebGLProgram, name: js.String): js.Number = ???
+  def getAttribLocation(program: WebGLProgram, name: js.String):  Int = ???
   
   /**
    * Returns the value of the requested parameter for a buffer.
@@ -1345,7 +1345,7 @@ class WebGLRenderingContext extends js.Object {
    * @param value  the buffer parameter to retrieve, may be [[WebGLRenderingContext.BUFFER_SIZE]] or [[WebGLRenderingContext.BUFFER_USAGE]]
    * 
    */
-  def getBufferParameter(target: js.Number, pname: js.Number): js.Number = ???
+  def getBufferParameter(target:  Int, pname:  Int):  Int = ???
   
   /**
    * Returns the value for the given `pname`.  Returns a value who's type depends on the requested parameter. 
@@ -1367,7 +1367,7 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.TEXTURE_BINDING_2D]], [[WebGLRenderingContext.TEXTURE_BINDING_CUBE_MAP]], [[WebGLRenderingContext.UNPACK_ALIGNMENT]], [[WebGLRenderingContext.UNPACK_COLORSPACE_CONVERSION_WEBGL]], [[WebGLRenderingContext.UNPACK_FLIP_Y_WEBGL]],
    *               [[WebGLRenderingContext.UNPACK_PREMULTIPLY_ALPHA_WEBGL]], [[WebGLRenderingContext.VENDOR]], [[WebGLRenderingContext.VERSION]] or [[WebGLRenderingContext.VIEWPORT]].
    */
-  def getParameter(pname: js.Number): js.Any = ???
+  def getParameter(pname:  Int): js.Any = ???
   
   /**
    * Returns the error value, and resets the error to [[WebGLRenderingContext.NO_ERROR]].
@@ -1377,7 +1377,7 @@ class WebGLRenderingContext extends js.Object {
    * 
    * @return the error code.  One of [[WebGLRenderingContext.NO_ERROR]], [[WebGLRenderingContext.INVALID_ENUM]], [[WebGLRenderingContext.INVALID_VALUE]], [[WebGLRenderingContext.INVALID_OPERATION]], [[WebGLRenderingContext.INVALID_FRAMEBUFFER_OPERATION]], or [[WebGLRenderingContext.OUT_OF_MEMORY]].
    */
-  def getError(): js.Number = ???
+  def getError():  Int = ???
     
   /**
    * Returns the value for the given parameter name on for the target and attachment.
@@ -1390,7 +1390,7 @@ class WebGLRenderingContext extends js.Object {
    *              [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_OBJECT_NAME]], [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL]], or
    *              [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE]]
    */
-  def getFramebufferAttachmentParameter(target: js.Number, attachment: js.Number, pname: js.Number): js.Any = ???
+  def getFramebufferAttachmentParameter(target:  Int, attachment:  Int, pname:  Int): js.Any = ???
   
   /**
    * Returns the value for the given parameter name for the program.
@@ -1401,7 +1401,7 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.VALIDATE_STATUS]], [[WebGLRenderingContext.ATTACHED_SHADERS]],
    *               [[WebGLRenderingContext.ACTIVE_ATTRIBUTES]], or [[WebGLRenderingContext.ACTIVE_UNIFORMS]].
    */
-  def getProgramParameter(program: WebGLProgram, pname: js.Number): js.Any = ???
+  def getProgramParameter(program: WebGLProgram, pname:  Int): js.Any = ???
   
   /**
    * Returns a string containing information about the last link or validation operation for a program.
@@ -1419,7 +1419,7 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.RENDERBUFFER_BLUE_SIZE]], [[WebGLRenderingContext.RENDERBUFFER_ALPHA_SIZE]],
    *               [[WebGLRenderingContext.RENDERBUFFER_STENCIL_SIZE]], or [[WebGLRenderingContext.RENDERBUFFER_DEPTH_SIZE]]
    */
-  def getRenderbufferParameter(target: js.Number, pname: js.Number): js.Any = ???
+  def getRenderbufferParameter(target:  Int, pname:  Int): js.Any = ???
     
   /**
    * Returns the value of a parameter on the specified [[WebGLShader]].
@@ -1430,7 +1430,7 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.DELETE_STATUS]] or [[WebGLRenderingContext.COMPILE_STATUS]]
    * 
    */
-  def getShaderParameter(shader: WebGLShader, pname: js.Number): js.Any = ???
+  def getShaderParameter(shader: WebGLShader, pname:  Int): js.Any = ???
  
   /**
    * Returns a new [[WebGLShaderPrecisionFormat]] for the given shader type and precision type.
@@ -1440,7 +1440,7 @@ class WebGLRenderingContext extends js.Object {
    *                      [[WebGLRenderingContext.MEDIUM_FLOAT]], [[WebGLRenderingContext.HIGH_FLOAT]], [[WebGLRenderingContext.LOW_INT]],
    *                      [[WebGLRenderingContext.MEDIUM_INT]], or [[WebGLRenderingContext.HIGH_INT]]. 
    */
-  def getShaderPrecisionFormat(shadertype: js.Number, precisiontype: js.Number): WebGLShaderPrecisionFormat = ???
+  def getShaderPrecisionFormat(shadertype:  Int, precisiontype:  Int): WebGLShaderPrecisionFormat = ???
   
   /**
    * Returns the information log from the last compile of the shader.
@@ -1460,7 +1460,7 @@ class WebGLRenderingContext extends js.Object {
    *                [[WebGLRenderingContext.TEXTURE_MIN_FILTER]], [[WebGLRenderingContext.TEXTURE_WRAP_S]],
    *                 or [[WebGLRenderingContext.TEXTURE_WRAP_T]].
    */
-  def getTexParameter(target: js.Number, pname: js.Number): js.Any = ???
+  def getTexParameter(target:  Int, pname:  Int): js.Any = ???
     
   /**
    * Returns the value of the uniform in the given program and location.  The return type is dependent
@@ -1484,14 +1484,14 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_NORMALIZED]], [[WebGLRenderingContext.CURRENT_VERTEX_ATTRIB]]
    *               
    */
-  def getVertexAttrib(index: js.Number, pname: js.Number): js.Any = ???
+  def getVertexAttrib(index:  Int, pname:  Int): js.Any = ???
   /**
    * Returns the offset of the vertex attribute.
    * 
    * @param index  the index of the vertex attribute to retrieve
    * @param pname  must be [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_POINTER]]
    */
-  def getVertexAttribOffset(index: js.Number, pname: js.Number): js.Number = ???
+  def getVertexAttribOffset(index:  Int, pname:  Int):  Int = ???
    
   /**
    * Specifies implementation specific hints.
@@ -1500,7 +1500,7 @@ class WebGLRenderingContext extends js.Object {
    * @param mode  the desired mode.  Must be one of [[WebGLRenderingContext.FASTEST]],
    *              [[WebGLRenderingContext.NICEST]], or [[WebGLRenderingContext.DONT_CARE]].
    */
-  def hint(target: js.Number, mode: js.Number): Unit = ???
+  def hint(target:  Int, mode:  Int): Unit = ???
   
   /**
    * Returns `true` if the `buffer` is valid, `false` otherwise.
@@ -1511,7 +1511,7 @@ class WebGLRenderingContext extends js.Object {
    * Returns `true` if the specified capability is enabled, `false` otherwise.
    * @see [[WebGLRenderingContext#enable]]
    */
-  def isEnabled(cap: js.Number): js.Boolean = ???
+  def isEnabled(cap:  Int): js.Boolean = ???
   
   /**
    * Returns `true` if the `framebuffer` is valid, `false` otherwise.
@@ -1541,7 +1541,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Specifies the line width.
    */
-  def lineWidth(width: js.Number): Unit = ???
+  def lineWidth(width:  Int): Unit = ???
   
   /**
    * Attempts to link the specified [[WebGLProgram]].
@@ -1555,14 +1555,14 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.UNPACK_ALIGNMENT]], [[WebGLRenderingContext.UNPACK_FLIP_Y_WEBGL]],
    *               [[WebGLRenderingContext.UNPACK_PREMULTIPLY_ALPHA_WEBGL]] or [[WebGLRenderingContext.UNPACK_COLORSPACE_CONVERSION_WEBGL]].
    */
-  def pixelStorei(pname: js.Number, param: js.Number): Unit = ???
+  def pixelStorei(pname:  Int, param:  Int): Unit = ???
   
   /**
    * Specifies the polygon offset.  When [[WebGLRenderingContext.POLYGON_OFFSET_FILL]] is enabled, depth values for a fragment have an offset applied
    * to them, calculated as `factor`*DZ + r*`units`, where DZ is the change in z based on the polygon's screen area, and r is the minimum value that
    * is guaranteed produce a measurable offset. 
    */
-  def polygonOffset(factor: js.Number, units: js.Number): Unit = ???
+  def polygonOffset(factor:  Int, units:  Int): Unit = ???
   
   /**
    * Reads pixels from the framebuffer into `pixels`.
@@ -1575,7 +1575,7 @@ class WebGLRenderingContext extends js.Object {
    *             [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]],
    *             [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]]
    */ 
-  def readPixels(x: js.Number, y: js.Number, width: js.Number, height: js.Number, format: js.Number, `type`: js.Number, pixels: ArrayBufferView): Unit = ???
+  def readPixels(x: Int, y: Int, width:  Int, height:  Int, format:  Int, `type`:  Int, pixels: ArrayBufferView): Unit = ???
   
   /**
    * Create renderbuffer image storage.
@@ -1587,7 +1587,7 @@ class WebGLRenderingContext extends js.Object {
    *                        [[WebGLRenderingContext.RGB5_A1]], [[WebGLRenderingContext.DEPTH_COMPONENT16]], [[WebGLRenderingContext.STENCIL_INDEX8]] or
    *                        [[WebGLRenderingContext.DEPTH_STENCIL]]. 
    */
-  def renderbufferStorage(target: js.Number, internalformat: js.Number, width: js.Number, height: js.Number): Unit = ???
+  def renderbufferStorage(target:  Int, internalformat:  Int, width:  Int, height:  Int): Unit = ???
   
   /**
    * Sets the sampling coverage parameters for primitive antialiasing.
@@ -1598,12 +1598,12 @@ class WebGLRenderingContext extends js.Object {
    * @param value  the sample coverage value, clamped to 0..1.
    * @param invert  if true, the mask will be bitwise-inverted.
    */
-  def sampleCoverage(value: js.Number, invert: js.Boolean): Unit = ???
+  def sampleCoverage(value:  Int, invert: js.Boolean): Unit = ???
   
   /**
    * Sets the scissor rectangle.  When [[WebGLRenderingContext.SCISSOR_TEST]] is enabled, rendering will be restricted to this rectangle.
    */
-  def scissor(x: js.Number, y: js.Number, width: js.Number, height: js.Number): Unit = ???
+  def scissor(x:  Int, y:  Int, width:  Int, height:  Int): Unit = ???
   
   /**
    * Sets the GLSL source for the given shader.
@@ -1618,7 +1618,7 @@ class WebGLRenderingContext extends js.Object {
    * @param ref  the reference value to test against in the stencil buffer
    * @param mask mask that is ANDed with `ref` and the tested value and stored in the stencil buffer.
    */
-  def stencilFunc(func: js.Number, ref: js.Number, mask: js.Number): Unit = ???
+  def stencilFunc(func:  Int, ref:  Int, mask:  Int): Unit = ???
   
   /**
    * Sets the stencil test for the given face type.
@@ -1630,13 +1630,13 @@ class WebGLRenderingContext extends js.Object {
    * @param ref  the reference value to test against in the stencil buffer
    * @param mask mask that is ANDed with `ref` and the tested value and stored in the stencil buffer.
    */
-  def stencilFuncSeparate(face: js.Number, func: js.Number, ref: js.Number, mask: js.Number): Unit = ???
+  def stencilFuncSeparate(face:  Int, func:  Int, ref:  Int, mask:  Int): Unit = ???
   
   /**
    * Configure which bits in the stencil buffer may be written to by front or back faces.
    * @param mask  the write mask.  Set bits are allowed to be written to the corresponding stencil buffer bit.
    */
-  def stencilMask(mask: js.Number): Unit = ???
+  def stencilMask(mask:  Int): Unit = ???
 
   /**
    * Configure which bits in the stencil buffer may be written to by the given face type.
@@ -1644,7 +1644,7 @@ class WebGLRenderingContext extends js.Object {
    *             or [[WebGLRenderingContext.FRONT_AND_BACK]].
    * @param mask  the write mask.  Set bits are allowed to be written to the corresponding stencil buffer bit.
    */
-  def stencilMaskSeparate(face: js.Number, mask: js.Number): Unit = ???
+  def stencilMaskSeparate(face:  Int, mask:  Int): Unit = ???
   
   /**
    * Configure the effect of a stencil or depth test failing for front or back faces.
@@ -1657,7 +1657,7 @@ class WebGLRenderingContext extends js.Object {
    * @param zfail  the effect of the stencil test passing but the depth test failing.  Parameters are as fail.
    * @param zpass  the effect of the stencil test failing but the depth test passing.  Parameters are as fail.
    */
-  def stencilOp(fail: js.Number, zfail: js.Number, zpass: js.Number): Unit = ???
+  def stencilOp(fail:  Int, zfail:  Int, zpass:  Int): Unit = ???
   
   /**
    * Configure the effect of a stencil or depth test failing for the specified faces.
@@ -1672,7 +1672,7 @@ class WebGLRenderingContext extends js.Object {
    * @param zfail  the effect of the stencil test passing but the depth test failing.  Parameters are as fail.
    * @param zpass  the effect of the stencil test failing but the depth test passing.  Parameters are as fail.
    */  
-  def stencilOpSeparate(face: js.Number, fail: js.Number, zfail: js.Number, zpass: js.Number): Unit = ???
+  def stencilOpSeparate(face:  Int, fail:  Int, zfail:  Int, zpass:  Int): Unit = ???
   
   /**
    * Loads a 2-dimensional texture into a texture unit from source data.
@@ -1687,7 +1687,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param border the border width.  Must be 0.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, width: js.Number, height: js.Number, border: js.Number, format: js.Number, `type`: js.Number, pixels: ArrayBufferView): Unit = ???
+  def texImage2D(target:  Int, level:  Int, internalformat:  Int, width:  Int, height:  Int, border:  Int, format:  Int, `type`:  Int, pixels: ArrayBufferView): Unit = ???
 
   /**
    * Loads a 2-dimensional texture into a texture unit from an ImageData object.
@@ -1702,7 +1702,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param border the border width.  Must be 0.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, format: js.Number, `type`: js.Number, pixels: ImageData): Unit = ???
+  def texImage2D(target:  Int, level:  Int, internalformat:  Int, format:  Int, `type`:  Int, pixels: ImageData): Unit = ???
 
   /**
    * Loads a 2-dimensional texture into a texture unit from an HTMLImageElement object.
@@ -1717,7 +1717,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param border the border width.  Must be 0.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLImageElement): Unit = ???  
+  def texImage2D(target:  Int, level:  Int, internalformat:  Int, format:  Int, `type`:  Int, pixels: HTMLImageElement): Unit = ???
 
   /**
    * Loads a 2-dimensional texture into a texture unit from an HTMLCanvasElement object.
@@ -1732,7 +1732,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param border the border width.  Must be 0.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLCanvasElement): Unit = ???
+  def texImage2D(target:  Int, level:  Int, internalformat:  Int, format:  Int, `type`:  Int, pixels: HTMLCanvasElement): Unit = ???
 
   /**
    * Loads a 2-dimensional texture into a texture unit from an HTMLVideoElement object.
@@ -1747,7 +1747,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param border the border width.  Must be 0.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: js.Number, level: js.Number, internalformat: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLVideoElement): Unit = ???
+  def texImage2D(target:  Int, level:  Int, internalformat:  Int, format:  Int, `type`:  Int, pixels: HTMLVideoElement): Unit = ???
 
   /**
    * Sets the texture parameter for the active texture unit.
@@ -1757,7 +1757,7 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.TEXTURE_WRAP_S]], or [[WebGLRenderingContext.TEXTURE_WRAP_T]]
    * @param param  the value to set.  See the corresponding parameters for valid values.
    */
-  def texParameterf(target: js.Number, pname: js.Number, param: js.Number): Unit = ???
+  def texParameterf(target:  Int, pname:  Int, param:  Int): Unit = ???
   
   /**
    * Sets the texture parameter for the active texture unit.
@@ -1767,7 +1767,7 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.TEXTURE_WRAP_S]], or [[WebGLRenderingContext.TEXTURE_WRAP_T]]
    * @param param  the value to set.  See the corresponding parameters for valid values.
    */
-  def texParameteri(target: js.Number, pname: js.Number, param: js.Number): Unit = ???
+  def texParameteri(target:  Int, pname:  Int, param:  Int): Unit = ???
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from an [[ArrayBufferView]].
@@ -1783,7 +1783,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param height the height of the texture image.
    *  @param pixels the image data.
    */
-  def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, width: js.Number, height: js.Number, format: js.Number, `type`: js.Number, pixels: ArrayBufferView): Unit = ???
+  def texSubImage2D(target:  Int, level:  Int, xoffset:  Int, yoffset:  Int, width:  Int, height:  Int, format:  Int, `type`:  Int, pixels: ArrayBufferView): Unit = ???
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from an `ImageData` object.
@@ -1799,7 +1799,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param height the height of the texture image.
    *  @param pixels the image data.
    */
-  def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, format: js.Number, `type`: js.Number, pixels: ImageData): Unit = ???
+  def texSubImage2D(target:  Int, level:  Int, xoffset:  Int, yoffset:  Int, format:  Int, `type`:  Int, pixels: ImageData): Unit = ???
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from an `HTMLImageElement`.
@@ -1815,7 +1815,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param height the height of the texture image.
    *  @param pixels the image data.
    */
-  def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLImageElement): Unit = ???
+  def texSubImage2D(target:  Int, level:  Int, xoffset:  Int, yoffset:  Int, format:  Int, `type`:  Int, pixels: HTMLImageElement): Unit = ???
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from an `HTMLCanvasElement`.
@@ -1831,7 +1831,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param height the height of the texture image.
    *  @param pixels the image data.
    */
-  def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLCanvasElement): Unit = ???
+  def texSubImage2D(target:  Int, level:  Int, xoffset:  Int, yoffset:  Int, format:  Int, `type`:  Int, pixels: HTMLCanvasElement): Unit = ???
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from an `HTMLVideoElement`.
@@ -1847,7 +1847,7 @@ class WebGLRenderingContext extends js.Object {
    *  @param height the height of the texture image.
    *  @param pixels the image data.
    */
-  def texSubImage2D(target: js.Number, level: js.Number, xoffset: js.Number, yoffset: js.Number, format: js.Number, `type`: js.Number, pixels: HTMLVideoElement): Unit = ???
+  def texSubImage2D(target:  Int, level:  Int, xoffset:  Int, yoffset:  Int, format:  Int, `type`:  Int, pixels: HTMLVideoElement): Unit = ???
 
   /**
    * Loads a a scalar float into a [[WebGLUniformLocation]].
@@ -1879,7 +1879,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param x  the scalar to bind to.
    */
-  def uniform1i(location: WebGLUniformLocation, x: js.Number): Unit = ???
+  def uniform1i(location: WebGLUniformLocation, x:  Int): Unit = ???
 
   /**
    * Loads a a scalar integer into a [[WebGLUniformLocation]].
@@ -1895,7 +1895,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to
    */
-  def uniform1iv(location: WebGLUniformLocation, v: js.Array[js.Number]): Unit = ???
+  def uniform1iv(location: WebGLUniformLocation, v: js.Array[ Int]): Unit = ???
 
   /**
    * Loads a a 2-vector of floats into a [[WebGLUniformLocation]].
@@ -1929,7 +1929,7 @@ class WebGLRenderingContext extends js.Object {
    * @param x  the first integer component
    * @param y  the second integer component
    */
-  def uniform2i(location: WebGLUniformLocation, x: js.Number, y: js.Number): Unit = ???
+  def uniform2i(location: WebGLUniformLocation, x:  Int, y:  Int): Unit = ???
 
   /**
    * Loads a a 2-vector of integers into a [[WebGLUniformLocation]].
@@ -1945,7 +1945,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to
    */
-  def uniform2iv(location: WebGLUniformLocation, v: js.Array[js.Number]): Unit = ???
+  def uniform2iv(location: WebGLUniformLocation, v: js.Array[ Int]): Unit = ???
 
   /**
    * Loads a a 3-vector of floats into a [[WebGLUniformLocation]].
@@ -1981,7 +1981,7 @@ class WebGLRenderingContext extends js.Object {
    * @param y  the second integer component
    * @param z  the third integer component
    */
-  def uniform3i(location: WebGLUniformLocation, x: js.Number, y: js.Number, z: js.Number): Unit = ???
+  def uniform3i(location: WebGLUniformLocation, x: Int, y:  Int, z:  Int): Unit = ???
 
   /**
    * Loads a a 3-vector of integers into a [[WebGLUniformLocation]].
@@ -1997,7 +1997,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to
    */
-  def uniform3iv(location: WebGLUniformLocation, v: js.Array[js.Number]): Unit = ???
+  def uniform3iv(location: WebGLUniformLocation, v: js.Array[ Int]): Unit = ???
 
   /**
    * Loads a a 4-vector of floats into a [[WebGLUniformLocation]].
@@ -2035,7 +2035,7 @@ class WebGLRenderingContext extends js.Object {
    * @param z  the third integer component
    * @param w  the third integer component
    */
-  def uniform4i(location: WebGLUniformLocation, x: js.Number, y: js.Number, z: js.Number, w: js.Number): Unit = ???
+  def uniform4i(location: WebGLUniformLocation, x: Int, y: Int, z: Int, w: Int): Unit = ???
 
   /**
    * Loads a a 4-vector of integers into a [[WebGLUniformLocation]].
@@ -2051,7 +2051,7 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to
    */
-  def uniform4iv(location: WebGLUniformLocation, v: js.Array[js.Number]): Unit = ???
+  def uniform4iv(location: WebGLUniformLocation, v: js.Array[Int]): Unit = ???
 
   /**
    * Loads a a 4x2 matrix into a [[WebGLUniformLocation]].
@@ -2123,7 +2123,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param x  the scalar to load.
    */
-  def vertexAttrib1f(indx: js.Number, x: js.Number): Unit = ???
+  def vertexAttrib1f(indx: Int, x: js.Number): Unit = ???
 
   /**
    * Loads a scalar into a vertex attribute.
@@ -2131,7 +2131,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib1fv(indx: js.Number, values: Float32Array): Unit = ???
+  def vertexAttrib1fv(indx: Int, values: Float32Array): Unit = ???
 
   /**
    * Loads a scalar into a vertex attribute.
@@ -2139,7 +2139,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib1fv(indx: js.Number, values: js.Array[js.Number]): Unit = ???
+  def vertexAttrib1fv(indx: Int, values: js.Array[js.Number]): Unit = ???
   
   /**
    * Loads a 2-vector into a vertex attribute.
@@ -2148,7 +2148,7 @@ class WebGLRenderingContext extends js.Object {
    * @param x  the first component.
    * @param y  the second component. 
    */
-  def vertexAttrib2f(indx: js.Number, x: js.Number, y: js.Number): Unit = ???
+  def vertexAttrib2f(indx: Int, x: js.Number, y: js.Number): Unit = ???
 
   /**
    * Loads a 2-vector into a vertex attribute.
@@ -2156,7 +2156,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib2fv(indx: js.Number, values: Float32Array): Unit = ???
+  def vertexAttrib2fv(indx: Int, values: Float32Array): Unit = ???
 
   /**
    * Loads a 2-vector into a vertex attribute.
@@ -2164,7 +2164,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib2fv(indx: js.Number, values: js.Array[js.Number]): Unit = ???
+  def vertexAttrib2fv(indx: Int, values: js.Array[js.Number]): Unit = ???
  
   /**
    * Loads a 3-vector into a vertex attribute.
@@ -2174,7 +2174,7 @@ class WebGLRenderingContext extends js.Object {
    * @param y  the second component. 
    * @param z  the third component. 
    */
-  def vertexAttrib3f(indx: js.Number, x: js.Number, y: js.Number, z: js.Number): Unit = ???
+  def vertexAttrib3f(indx: Int, x: js.Number, y: js.Number, z: js.Number): Unit = ???
 
   /**
    * Loads a 3-vector into a vertex attribute.
@@ -2182,7 +2182,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib3fv(indx: js.Number, values: Float32Array): Unit = ???
+  def vertexAttrib3fv(indx: Int, values: Float32Array): Unit = ???
 
   /**
    * Loads a 3-vector into a vertex attribute.
@@ -2190,7 +2190,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib3fv(indx: js.Number, values: js.Array[js.Number]): Unit = ???
+  def vertexAttrib3fv(indx: Int, values: js.Array[js.Number]): Unit = ???
   
   /**
    * Loads a 4-vector into a vertex attribute.
@@ -2201,7 +2201,7 @@ class WebGLRenderingContext extends js.Object {
    * @param z  the third component. 
    * @param w  the fourth component. 
    */
-  def vertexAttrib4f(indx: js.Number, x: js.Number, y: js.Number, z: js.Number, w: js.Number): Unit = ???
+  def vertexAttrib4f(indx: Int, x: js.Number, y: js.Number, z: js.Number, w: js.Number): Unit = ???
 
   /**
    * Loads a 4-vector into a vertex attribute.
@@ -2209,7 +2209,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib4fv(indx: js.Number, values: Float32Array): Unit = ???
+  def vertexAttrib4fv(indx: Int, values: Float32Array): Unit = ???
 
   /**
    * Loads a 4-vector into a vertex attribute.
@@ -2217,7 +2217,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute.
    * @param values the source array for the attribute.
    */
-  def vertexAttrib4fv(indx: js.Number, values: js.Array[js.Number]): Unit = ???
+  def vertexAttrib4fv(indx: Int, values: js.Array[js.Number]): Unit = ???
   
   /**
    * Defines an array of generic vertex attribute data.
@@ -2231,7 +2231,7 @@ class WebGLRenderingContext extends js.Object {
    * @param stride the gap between attributes.  0 would be packed together.
    * @param offset the offset to the first component in the array. 
    */
-  def vertexAttribPointer(indx: js.Number, size: js.Number, `type`: js.Number, normalized: js.Boolean, stride: js.Number, offset: js.Number): Unit = ???
+  def vertexAttribPointer(indx: Int, size: Int, `type`: Int, normalized: js.Boolean, stride: Int, offset: Int): Unit = ???
   
   /**
    * Sets the OpenGL viewport to render within.
