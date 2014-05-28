@@ -1208,7 +1208,7 @@ class TextMetrics extends js.Object {
    *
    * MDN
    */
-  var width: Int = ???
+  var width: Double = ???
 }
 
 
