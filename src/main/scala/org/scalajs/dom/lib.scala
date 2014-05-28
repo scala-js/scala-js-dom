@@ -2054,7 +2054,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def requestAnimationFrame(callback: js.Function1[Int, _]): Int = ???
+  def requestAnimationFrame(callback: js.Function1[Double, _]): Int = ???
 }
 
 
