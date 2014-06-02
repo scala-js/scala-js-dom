@@ -2055,6 +2055,13 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    * MDN
    */
   def requestAnimationFrame(callback: js.Function1[Double, _]): Int = ???
+
+  /**
+   * Returns a URL object that provides static methods used for creating and managing object URLs.
+   *
+   * MDN
+   */
+  val URL: URL = ???
 }
 
 
