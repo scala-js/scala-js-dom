@@ -30,12 +30,12 @@ Usage
 Add the following to your sbt build definition:
 
 ```scala
-libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "0.5"
+libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "0.6"
 ```
 
 then enjoy the types available in `org.scalajs.dom`.
 
-scalajs-dom 0.5 is built and published for Scala.js 0.5.0-M3 and following in
+scalajs-dom 0.6 is built and published for Scala.js 0.5.0 and following in
 the 0.5.x series, with both Scala 2.10 and 2.11.
 
 See also [roll](https://github.com/lihaoyi/roll) ([live demo](http://lihaoyi.github.io/roll/)) and [scala-js-games](https://github.com/lihaoyi/scala-js-games) for an example of its use. [Scala-js-fiddle](http://www.scala-js-fiddle.com/) also contains a pile of [fun examples](http://www.scala-js-fiddle.com/gist/9405209/Oscilloscope.scala) that demonstrate its usage. Pull requests/forks are welcome!
