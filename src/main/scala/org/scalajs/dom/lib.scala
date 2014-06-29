@@ -4194,6 +4194,196 @@ object MutationEvent extends js.Object {
   val ADDITION: Int = ???
 }
 
+/**
+ * MutationObserver provides developers a way to react to changes in a DOM.
+ * It is designed as a replacement for Mutation Events defined in the 
+ * DOM3 Events specification.
+ *
+ * MDN
+ */
+class MutationObserver(callback: js.Function2[js.Array[MutationRecord], MutationObserver, _]) extends js.Object {
+  /**
+   * Registers the MutationObserver instance to receive notifications of DOM
+   * mutations on the specified node.
+   *
+   * MDN
+   */
+  def observe(target: Node, options: MutationObserverInit): Unit = ???
+
+  /**
+   * Stops the MutationObserver instance from receiving notifications of DOM
+   * mutations. Until the observe() method is used again, observer's callback
+   * will not be invoked.
+   *
+   * MDN
+   */
+  def disconnect(): Unit = ???
+
+  /**
+   * Empties the MutationObserver instance's record queue
+   * and returns what was in there.
+   *
+   * MDN
+   */
+  def takeRecords(): js.Array[MutationRecord] = ???
+}
+
+/**
+ * MutationObserverInit is an object which can specify the following properties:
+ * NOTE: At the very least, childList, attributes, or characterDatamust be set
+ * to true. Otherwise, "An invalid or illegal string was specified" error is thrown.
+ *
+ * MDN
+ */
+trait MutationObserverInit extends js.Object {
+  /**
+   * Set to true if additions and removals of the target node's child elements
+   * (including text nodes) are to be observed.
+   *
+   * MDN
+   */
+  var childList: js.UndefOr[Boolean] = ???
+  /**
+   * Set to true if mutations to target's attributes are to be observed.
+   *
+   * MDN
+   */
+  var attributes: js.UndefOr[Boolean] = ???
+  /**
+   * Set to true if mutations to target's data are to be observed.
+   *
+   * MDN
+   */
+  var characterData: js.UndefOr[Boolean] = ???
+  /**
+   * Set to true if mutations to not just target, but also target's descendants
+   * are to be observed.
+   *
+   * MDN
+   */
+  var subtree: js.UndefOr[Boolean] = ???
+  /**
+   * Set to true if attributes is set to true and target's attribute value
+   * before the mutation needs to be recorded.
+   *
+   * MDN
+   */
+  var attributeOldValue: js.UndefOr[Boolean] = ???
+  /**
+   * Set to true if characterData is set to true and target's data before the
+   * mutation needs to be recorded.
+   *
+   * MDN
+   */
+  var characterDataOldValue: js.UndefOr[Boolean] = ???
+  /**
+   * Set to an array of attribute local names (without namespace) if not all
+   * attribute mutations need to be observed.
+   *
+   * MDN
+   */
+  var attributeFilter: js.UndefOr[js.Array[String]] = ???
+}
+
+/** Factory for [[MutationObserverInit]] objects. */
+object MutationObserverInit {
+  /**
+   * Creates a new [[MutationObserverInit]] object with the given values.
+   * Default values for the `Boolean` parameters are `false`.
+   * If the value of `attributeFilter` is `js.undefined`, created object won't
+   * have `attributeFilter` property.
+   */
+  def apply(
+    childList: Boolean = false,
+    attributes: Boolean = false,
+    characterData: Boolean = false,
+    subtree: Boolean = false,
+    attributeOldValue: Boolean = false,
+    characterDataOldValue: Boolean = false,
+    attributeFilter: js.UndefOr[js.Array[String]] = js.undefined): MutationObserverInit = {
+    val res = js.Dynamic.literal(
+      "childList" -> childList,
+      "attributes" -> attributes,
+      "characterData" -> characterData,
+      "subtree" -> subtree,
+      "attributeOldValue" -> attributeOldValue,
+      "characterDataOldValue" -> characterDataOldValue)
+      .asInstanceOf[MutationObserverInit]
+    attributeFilter.foreach(res.attributeFilter = _)
+    res
+  }
+}
+
+/**
+ * MutationRecord is the object that will be passed to the observer's callback. 
+ * It has the following properties:
+ *
+ * MDN
+ */
+trait MutationRecord extends js.Object {
+  /**
+   * Returns attributes if the mutation was an attribute mutation, characterData
+   * if it was a mutation to a CharacterData node, and childList if it was a
+   * mutation to the tree of nodes.
+   *
+   * MDN
+   */
+  def `type`: String = ???
+  /**
+   * Returns the node the mutation affected, depending on the type.
+   * For attributes, it is the element whose attribute changed.
+   * For characterData, it is the CharacterData node.
+   * For childList, it is the node whose children changed.
+   *
+   * MDN
+   */
+  def target: Node = ???
+  /**
+   * Return the nodes added. Will be an empty NodeList if no nodes were added.
+   *
+   * MDN
+   */
+  def addedNodes: NodeList = ???
+  /**
+   * Return the nodes removed. Will be an empty NodeList if no nodes were removed.
+   *
+   * MDN
+   */
+  def removedNodes: NodeList = ???
+  /**
+   * Return the previous sibling of the added or removed nodes, or null.
+   *
+   * MDN
+   */
+  def previousSibling: Node = ???
+  /**
+   * Return the next sibling of the added or removed nodes, or null.
+   *
+   * MDN
+   */
+  def nextSibling: Node = ???
+  /**
+   * Returns the local name of the changed attribute, or null.
+   *
+   * MDN
+   */
+  def attributeName: String = ???
+  /**
+   * Returns the namespace of the changed attribute, or null.
+   *
+   * MDN
+   */
+  def attributeNamespace: String = ???
+  /**
+   * The return value depends on the type. For attributes, it is the value of
+   * the changed attribute before the change. For characterData, it is the data
+   * of the changed node before the change. For childList, it is null.
+   *
+   * MDN
+   */
+  def oldValue: String = ???
+}
+
 trait DragEvent extends MouseEvent {
   def dataTransfer: DataTransfer = ???
 
