@@ -11,7 +11,14 @@ import scala.scalajs.js.annotation._
 /**
  * An ArrayBuffer is an underlying buffer of bytes, which views such as [[Int8Array]] use for underlying storage.
  */
-class ArrayBuffer extends js.Object {
+class ArrayBuffer private () extends js.Object {
+  /**
+   * Construct a new ArrayBuffer of the specified size. Its contents are initialized to 0.
+   *
+   * @param length The size, in bytes, of the ArrayBuffer to create.
+   */
+  def this(length: Int) = this()
+
   /**
    * The length, in bytes, of this ArrayBuffer.
    */
@@ -501,40 +508,40 @@ class DataView(buffer: ArrayBuffer, byteOffset: Int, byteLength: Int) extends js
   /**
    * Sets the signed byte at `byteOffset` to `value`.
    */
-  def setInt8(byteOffset: Int, value: Int): Int = ???
+  def setInt8(byteOffset: Int, value: Int): Unit = ???
 
   /**
    * Sets the unsigned byte at `byteOffset` to `value`.
    */
-  def setUint8(byteOffset: Int, value: Int): Int = ???
+  def setUint8(byteOffset: Int, value: Int): Unit = ???
 
   /**
    * Sets the signed short at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setInt16(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
+  def setInt16(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Unit = ???
 
   /**
    * Sets the unsigned short at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setUint16(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
+  def setUint16(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Unit = ???
   
   /**
    * Sets the signed integer at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setInt32(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
+  def setInt32(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Unit = ???
 
   /**
    * Sets the unsigned integer at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setUint32(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
+  def setUint32(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Unit = ???
 
   /**
    * Sets the 32-bit IEEE 754 float at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setFloat32(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
+  def setFloat32(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Unit = ???
 
   /**
    * Sets the 64-bit IEEE 754 float at `byteOffset` to `value`. If `littleEndian` is `true`, uses little-endian, otherwise uses big-endian.
    */
-  def setFloat64(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Int = ???
+  def setFloat64(byteOffset: Int, value: Int, littleEndian: Boolean = ???): Unit = ???
 }
