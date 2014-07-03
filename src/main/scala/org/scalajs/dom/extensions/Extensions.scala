@@ -191,6 +191,7 @@ object Ajax{
       }
     }
     req.open(method, url)
+    req.timeout = timeout
     req.withCredentials = withCredentials
     headers.foreach(x => req.setRequestHeader(x._1, x._2))
     req.send(data)
