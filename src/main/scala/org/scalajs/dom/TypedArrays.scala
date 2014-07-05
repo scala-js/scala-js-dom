@@ -57,11 +57,11 @@ trait ArrayBufferView extends js.Object {
 /**
  * Defines common functionality across all typed arrays.
  */
-trait TypedArray[T] extends js.Object {
+trait TypedArray[T, B] extends js.Object {
   @JSBracketAccess
-  def apply(index: Int): Double = ???
+  def apply(index: Int): B = ???
   @JSBracketAccess
-  def update(index: Int, value: Double): Unit = ???
+  def update(index: Int, value: B): Unit = ???
 
   /**
    * Copies the contents of `array` into this array, starting at `offset`.
@@ -76,7 +76,7 @@ trait TypedArray[T] extends js.Object {
   /**
    * Copies the contents of `array` into this array, starting at `offset`.
    */
-  def set(array: js.Array[Int], offset: Int = ???): Unit = ???
+  def set(array: js.Array[B], offset: Int = ???): Unit = ???
 
   /**
    * Returns a new view of this typed array. from `begin` to `end` inclusive.
@@ -95,7 +95,7 @@ trait TypedArray[T] extends js.Object {
  */
 class Int8Array private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Int8Array] {
+    with TypedArray[Int8Array, Int] {
   
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
@@ -130,7 +130,7 @@ object Int8Array extends js.Object {
  */
 class Uint8Array private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Uint8Array] {
+    with TypedArray[Uint8Array, Int] {
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -164,7 +164,7 @@ object Uint8Array extends js.Object {
  */
 class Uint8ClampedArray private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Uint8ClampedArray]{
+    with TypedArray[Uint8ClampedArray, Int]{
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -198,7 +198,7 @@ object Uint8ClampedArray extends js.Object {
  */
 class Int16Array private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Int16Array] {
+    with TypedArray[Int16Array, Int] {
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -232,7 +232,7 @@ object Int16Array extends js.Object {
  */
 class Uint16Array private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Uint16Array] {
+    with TypedArray[Uint16Array, Int] {
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -266,7 +266,7 @@ object Uint16Array extends js.Object {
  */
 class Uint16ClampedArray private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Uint16ClampedArray] {
+    with TypedArray[Uint16ClampedArray, Int] {
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -300,7 +300,7 @@ object Uint16ClampedArray extends js.Object {
  */
 class Int32Array private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Int32Array] {
+    with TypedArray[Int32Array, Int] {
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -333,7 +333,7 @@ object Int32Array extends js.Object {
  */
 class Uint32Array private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Uint32Array] {
+    with TypedArray[Uint32Array, Int] {
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -367,7 +367,7 @@ object Uint32Array extends js.Object {
  */
 class Uint32ClampedArray private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Uint32ClampedArray] {
+    with TypedArray[Uint32ClampedArray, Int] {
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -401,7 +401,7 @@ object Uint32ClampedArray extends js.Object {
  */
 class Float32Array private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Float32Array] {
+    with TypedArray[Float32Array, Float] {
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -415,7 +415,7 @@ class Float32Array private () extends js.Object
   /**
    * Construct a new array with a copy of the provided array. The underlying ArrayBuffer is newly created.
    */
-  def this(array: js.Array[Int]) = this()
+  def this(array: js.Array[Float]) = this()
 
   /**
    * Construct a new array with `buffer` as storage, using a view from the specified `byteOffset` with the given `length`.
@@ -435,7 +435,7 @@ object Float32Array extends js.Object {
  */
 class Float64Array private () extends js.Object
     with ArrayBufferView
-    with TypedArray[Float64Array] {
+    with TypedArray[Float64Array, Double] {
   /**
    * Construct a new array of the given length, with contents initialized to 0. The underlying ArrayBuffer is newly created.
    */
@@ -449,7 +449,7 @@ class Float64Array private () extends js.Object
   /**
    * Construct a new array with a copy of the provided array. The underlying ArrayBuffer is newly created. 
    */
-  def this(array: js.Array[Int]) = this()
+  def this(array: js.Array[Double]) = this()
 
   /**
    * Construct a new array with `buffer` as storage, using a view from the specified `byteOffset` with the given `length`.
