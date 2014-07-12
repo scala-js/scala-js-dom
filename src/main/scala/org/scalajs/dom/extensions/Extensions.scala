@@ -162,28 +162,28 @@ object Ajax{
   def get(url: String,
           data: String = "",
           timeout: Int = 0,
-          headers: Set[(String, String)] = Set.empty,
+          headers: Map[String, String] = Map.empty,
           withCredentials: Boolean = false) = {
     apply("GET", url, data, timeout, headers, withCredentials)
   }
   def post(url: String,
            data: String = "",
            timeout: Int = 0,
-           headers: Set[(String, String)] = Set.empty,
+           headers: Map[String, String] = Map.empty,
            withCredentials: Boolean = false) = {
     apply("POST", url, data, timeout, headers, withCredentials)
   }
   def put(url: String,
              data: String = "",
              timeout: Int = 0,
-             headers: Set[(String, String)] = Set.empty,
+             headers: Map[String, String] = Map.empty,
              withCredentials: Boolean = false) = {
     apply("PUT", url, data, timeout, headers, withCredentials)
   }
   def delete(url: String,
              data: String = "",
              timeout: Int = 0,
-             headers: Set[(String, String)] = Set.empty,
+             headers: Map[String, String] = Map.empty,
              withCredentials: Boolean = false) = {
     apply("DELETE", url, data, timeout, headers, withCredentials)
   }
@@ -191,9 +191,9 @@ object Ajax{
             url: String,
             data: String,
             timeout: Int,
-            headers: Set[(String, String)],
+            headers: Map[String, String],
             withCredentials: Boolean): Future[dom.XMLHttpRequest] = {
-    val ajaxReq = Set("X-Requested-With"->"XMLHttpRequest")
+    val ajaxReq = Map("X-Requested-With"->"XMLHttpRequest")
     val req = new dom.XMLHttpRequest()
     val promise = Promise[dom.XMLHttpRequest]
 
