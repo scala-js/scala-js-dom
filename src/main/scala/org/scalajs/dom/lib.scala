@@ -6675,7 +6675,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  val error: DOMError = ???
+  def error: DOMError = ???
 
   /**
    * A number indicating the state of the FileReader. This will be one of the State constants.
@@ -6685,7 +6685,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  val readyState: Short = ???
+  def readyState: Short = ???
 
   /**
    * The file's contents. This property is only valid after the read operation is
@@ -6694,7 +6694,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  val result: js.Any = ???
+  def result: js.Any = ???
 
   /**
    * A handler for the abort event. This event is triggered each time the reading
