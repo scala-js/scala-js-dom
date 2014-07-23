@@ -3805,7 +3805,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def effectAllowed: String = ???
+  var effectAllowed: String = ???
 
   /**
    * The actual effect that will be used, and should always be one of the possible values
@@ -3813,7 +3813,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def dropEffect: String = ???
+  var dropEffect: String = ???
   /**
    * Remove the data associated with a given type. The type argument is optional. If the
    * type is empty or not specified, the data associated with all types is removed. If
