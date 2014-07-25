@@ -1746,7 +1746,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onerror: ErrorEventHandler = ???
+  var onerror: js.Function4[Event, String, Int, Int, _]
   var onplaying: js.Function1[Event, _] = ???
 
   /**
@@ -5313,10 +5313,6 @@ class ImageData extends js.Object {
   def height: Int = ???
 }
 
-
-trait ErrorEventHandler extends js.Object {
-  def apply(event: Event, source: String, fileno: Int, columnNumber: Int): Unit = ???
-}
 
 /**
  * A collection of nodes returned by Node.attributes (also potentially for
