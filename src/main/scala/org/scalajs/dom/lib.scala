@@ -1746,7 +1746,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onerror: js.Function4[Event, String, Int, Int, _]
+  var onerror: js.Function4[Event, String, Int, Int, _] = ???
   var onplaying: js.Function1[Event, _] = ???
 
   /**
