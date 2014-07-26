@@ -6267,6 +6267,74 @@ object WebSocket extends js.Object {
 }
 
 /**
+ * EventSource enables servers to push data to Web pages over HTTP or using dedicated server-push protocols.
+ * Event streams requests can be redirected using HTTP 301 and 307 redirects as with normal HTTP requests.
+ * Clients will reconnect if the connection is closed; a client can be told to stop reconnecting using
+ * the HTTP 204 No Content response code.
+ * W3C 2012
+ * @param URL
+ * @param settings
+ */
+class EventSource(URL: String, settings: js.Dynamic = null) extends EventTarget {
+
+  /**
+   * The url attribute must return the absolute URL that resulted from resolving the value that
+   * was passed to the constructor.
+   * W3C 2012
+   * @return
+   */
+  def url: String = ???
+
+  /**
+   * The withCredentials attribute must return the value to which it was last initialized.
+   * When the object is created without withCredentials presents in the settings, it must be initialized to false.
+   * If it has the value true, then set CORS mode to Use Credentials and initialize the new EventSource
+   * object's withCredentials attribute.
+   * W3C 2012
+   */
+  def withCredentials: Boolean = ???
+
+  /**
+   * The readyState attribute represents the state of the connection.
+   * W3C 2012
+   */
+  def readyState: Int = ???
+
+  var onopen: js.Function1[Event, _] = ???
+
+  var onmessage: js.Function1[MessageEvent, _] = ???
+
+  var onerror: js.Function1[Event, _] = ???
+
+  /**
+   * The close() method must abort any instances of the fetch algorithm started for this EventSource object,
+   * and must set the readyState attribute to CLOSED.
+   * W3C 2012
+   */
+  def close(): Unit = ???
+
+}
+
+object EventSource extends js.Object {
+  /**
+   * The connection has not yet been established, or it was closed and the user agent is reconnecting.
+   * W3C 2012
+   */
+  val CONNECTING: Int = 0
+  /**
+   * The user agent has an open connection and is dispatching events as it receives them.
+   * W3C 2012
+   */
+  val OPEN: Int = 1
+  /**
+   * The connection is not open, and the user agent is not trying to reconnect. Either there was a fatal
+   * error or the close() method was invoked.
+   * W3C 2012
+   */
+  val CLOSED: Int = 2
+}
+
+/**
  * The ProgressEvent interface represents events measuring progress of an
  * underlying process, like an HTTP request (for an XMLHttpRequest, or the loading of
  * the underlying resource of an <img>, <audio>, <video>, <style> or <link>).
