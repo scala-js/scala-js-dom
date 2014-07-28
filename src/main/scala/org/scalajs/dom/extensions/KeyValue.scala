@@ -203,136 +203,142 @@ object KeyValue {
   // ===================================================================================================================
   // 6.3.7 Device Keys
 
-  /** The Brightness Down key. Typically controls the display brightness. */
-  final val BrightnessDown = "BrightnessDown"
+  object Device {
 
-  /** The Brightness Up key. Typically controls the display brightness. */
-  final val BrightnessUp = "BrightnessUp"
+    /** The Brightness Down key. Typically controls the display brightness. */
+    final val BrightnessDown = "BrightnessDown"
 
-  /** The Camera key. */
-  final val Camera = "Camera"
+    /** The Brightness Up key. Typically controls the display brightness. */
+    final val BrightnessUp = "BrightnessUp"
 
-  /** Toggle removable media to eject (open) and insert (close) state. */
-  final val Eject = "Eject"
+    /** The Camera key. */
+    final val Camera = "Camera"
 
-  /** The LogOff key. */
-  final val LogOff = "LogOff"
+    /** Toggle removable media to eject (open) and insert (close) state. */
+    final val Eject = "Eject"
 
-  /**
-   * Toggle power state.
-   *
-   * Note: Some devices might not expose this key to the operating environment.
-   */
-  final val Power = "Power"
+    /** The LogOff key. */
+    final val LogOff = "LogOff"
 
-  /** The PowerOff key. Sometime called "PowerDown". */
-  final val PowerOff = "PowerOff"
+    /**
+     * Toggle power state.
+     *
+     * Note: Some devices might not expose this key to the operating environment.
+     */
+    final val Power = "Power"
 
-  /** The Print Screen (PrintScrn, SnapShot) key, to initiate print-screen function. */
-  final val PrintScreen = "PrintScreen"
+    /** The PowerOff key. Sometime called "PowerDown". */
+    final val PowerOff = "PowerOff"
 
-  /** The Hibernate key. This key saves the current state of the computer to disk so that it can be restored. The computer will then shutdown. */
-  final val Hibernate = "Hibernate"
+    /** The Print Screen (PrintScrn, SnapShot) key, to initiate print-screen function. */
+    final val PrintScreen = "PrintScreen"
 
-  /** The Standby key. This key turns off the display and places the computer into a low-power mode without completely shutting down. It is sometimes called the "Suspend" or "Sleep" key. */
-  final val Standby = "Standby"
+    /** The Hibernate key. This key saves the current state of the computer to disk so that it can be restored. The computer will then shutdown. */
+    final val Hibernate = "Hibernate"
 
-  /** The WakeUp key. */
-  final val WakeUp = "WakeUp"
+    /** The Standby key. This key turns off the display and places the computer into a low-power mode without completely shutting down. It is sometimes called the "Suspend" or "Sleep" key. */
+    final val Standby = "Standby"
+
+    /** The WakeUp key. */
+    final val WakeUp = "WakeUp"
+  }
 
   // ===================================================================================================================
   // 6.3.8 IME and Composition Keys
 
-  /** The All Candidates key, to initate the multi-candidate mode. */
-  final val AllCandidates = "AllCandidates"
+  object IME {
 
-  /** The Alphanumeric key. */
-  final val Alphanumeric = "Alphanumeric"
+    /** The All Candidates key, to initate the multi-candidate mode. */
+    final val AllCandidates = "AllCandidates"
 
-  /** The Code Input key, to initiate the Code Input mode to allow characters to be entered by their code points. */
-  final val CodeInput = "CodeInput"
+    /** The Alphanumeric key. */
+    final val Alphanumeric = "Alphanumeric"
 
-  /** The Compose key, also known as Multi_key on the X Window System. This key acts in a manner similar to a dead key, triggering a mode where subsequent key presses are combined to produce a different character. */
-  final val Compose = "Compose"
+    /** The Code Input key, to initiate the Code Input mode to allow characters to be entered by their code points. */
+    final val CodeInput = "CodeInput"
 
-  /** The Convert key, to convert the current input method sequence. */
-  final val Convert = "Convert"
+    /** The Compose key, also known as Multi_key on the X Window System. This key acts in a manner similar to a dead key, triggering a mode where subsequent key presses are combined to produce a different character. */
+    final val Compose = "Compose"
 
-  /** The Final Mode (Final) key used on some Asian keyboards, to enable the final mode for IMEs. */
-  final val FinalMode = "FinalMode"
+    /** The Convert key, to convert the current input method sequence. */
+    final val Convert = "Convert"
 
-  /** Switch to the first character group. (ISO/IEC 9995) */
-  final val GroupFirst = "GroupFirst"
+    /** The Final Mode (Final) key used on some Asian keyboards, to enable the final mode for IMEs. */
+    final val FinalMode = "FinalMode"
 
-  /** Switch to the last character group. (ISO/IEC 9995) */
-  final val GroupLast = "GroupLast"
+    /** Switch to the first character group. (ISO/IEC 9995) */
+    final val GroupFirst = "GroupFirst"
 
-  /** Switch to the next character group. (ISO/IEC 9995) */
-  final val GroupNext = "GroupNext"
+    /** Switch to the last character group. (ISO/IEC 9995) */
+    final val GroupLast = "GroupLast"
 
-  /** Switch to the previous character group. (ISO/IEC 9995) */
-  final val GroupPrevious = "GroupPrevious"
+    /** Switch to the next character group. (ISO/IEC 9995) */
+    final val GroupNext = "GroupNext"
 
-  /** The Mode Change key, to toggle between or cycle through input modes of IMEs. */
-  final val ModeChange = "ModeChange"
+    /** Switch to the previous character group. (ISO/IEC 9995) */
+    final val GroupPrevious = "GroupPrevious"
 
-  /** The Next Candidate function key. */
-  final val NextCandidate = "NextCandidate"
+    /** The Mode Change key, to toggle between or cycle through input modes of IMEs. */
+    final val ModeChange = "ModeChange"
 
-  /** The Nonconvert (Don't Convert) key, to accept current input method sequence without conversion in IMEs. */
-  final val NonConvert = "NonConvert"
+    /** The Next Candidate function key. */
+    final val NextCandidate = "NextCandidate"
 
-  /** The Previous Candidate function key. */
-  final val PreviousCandidate = "PreviousCandidate"
+    /** The Nonconvert (Don't Convert) key, to accept current input method sequence without conversion in IMEs. */
+    final val NonConvert = "NonConvert"
 
-  /** The Process key. */
-  final val Process = "Process"
+    /** The Previous Candidate function key. */
+    final val PreviousCandidate = "PreviousCandidate"
 
-  /** The Single Candidate function key. */
-  final val SingleCandidate = "SingleCandidate"
+    /** The Process key. */
+    final val Process = "Process"
 
-  // Keys specific to Korean keyboards
+    /** The Single Candidate function key. */
+    final val SingleCandidate = "SingleCandidate"
 
-  /** The Roman Characters function key, also known as the 'Youngja' or 'Young' key. */
-  final val RomanCharacters = "RomanCharacters"
+    // Keys specific to Korean keyboards
 
-  /** The Hangul (Korean characters) Mode key, to toggle between Hangul and English modes. */
-  final val HangulMode = "HangulMode"
+    /** The Roman Characters function key, also known as the 'Youngja' or 'Young' key. */
+    final val RomanCharacters = "RomanCharacters"
 
-  /** The Hanja (Korean characters) Mode key. */
-  final val HanjaMode = "HanjaMode"
+    /** The Hangul (Korean characters) Mode key, to toggle between Hangul and English modes. */
+    final val HangulMode = "HangulMode"
 
-  /** The Junja (Korean characters) Mode key. */
-  final val JunjaMode = "JunjaMode"
+    /** The Hanja (Korean characters) Mode key. */
+    final val HanjaMode = "HanjaMode"
 
-  // Keys specific to Japanese keyboards
+    /** The Junja (Korean characters) Mode key. */
+    final val JunjaMode = "JunjaMode"
 
-  /** The Zenkaku (Full-Width) Characters key. */
-  final val Zenkaku = "Zenkaku"
+    // Keys specific to Japanese keyboards
 
-  /** The (Half-Width) Characters key. */
-  final val Hankaku = "Hankaku"
+    /** The Zenkaku (Full-Width) Characters key. */
+    final val Zenkaku = "Zenkaku"
 
-  /** The Zenkaku/Hankaku (full-width/half-width) toggle key. */
-  final val ZenkakuHankaku = "ZenkakuHankaku"
+    /** The (Half-Width) Characters key. */
+    final val Hankaku = "Hankaku"
 
-  /** The Kana Mode (Kana Lock) key. */
-  final val KanaMode = "KanaMode"
+    /** The Zenkaku/Hankaku (full-width/half-width) toggle key. */
+    final val ZenkakuHankaku = "ZenkakuHankaku"
 
-  /** The Kanji (Japanese name for ideographic characters of Chinese origin) Mode key. */
-  final val KanjiMode = "KanjiMode"
+    /** The Kana Mode (Kana Lock) key. */
+    final val KanaMode = "KanaMode"
 
-  /** The Hiragana (Japanese Kana characters) key. */
-  final val Hiragana = "Hiragana"
+    /** The Kanji (Japanese name for ideographic characters of Chinese origin) Mode key. */
+    final val KanjiMode = "KanjiMode"
 
-  /** The Katakana (Japanese Kana characters) key. */
-  final val Katakana = "Katakana"
+    /** The Hiragana (Japanese Kana characters) key. */
+    final val Hiragana = "Hiragana"
 
-  /** The Hiragana/Katakana toggle key. */
-  final val HiraganaKatakana = "HiraganaKatakana"
+    /** The Katakana (Japanese Kana characters) key. */
+    final val Katakana = "Katakana"
 
-  /** The Eisu key. This key may close the IME, but it's purpose is defined by the current IME. */
-  final val Eisu = "Eisu"
+    /** The Hiragana/Katakana toggle key. */
+    final val HiraganaKatakana = "HiraganaKatakana"
+
+    /** The Eisu key. This key may close the IME, but it's purpose is defined by the current IME. */
+    final val Eisu = "Eisu"
+  }
 
   // ===================================================================================================================
   // General-Purpose Function Keys
@@ -388,92 +394,98 @@ object KeyValue {
   // ===================================================================================================================
   // Mediamedia Keys
 
-  /** Close the current document or message. */
-  final val Close = "Close"
+  object Multimedia {
 
-  /** Open an editor to forward the current message. */
-  final val MailForward = "MailForward"
+    /** Close the current document or message. */
+    final val Close = "Close"
 
-  /** Open an editor to reply to the current message. */
-  final val MailReply = "MailReply"
+    /** Open an editor to forward the current message. */
+    final val MailForward = "MailForward"
 
-  /** Send the current message. */
-  final val MailSend = "MailSend"
+    /** Open an editor to reply to the current message. */
+    final val MailReply = "MailReply"
 
-  /** Toggle media between play and pause states. */
-  final val MediaPlayPause = "MediaPlayPause"
+    /** Send the current message. */
+    final val MailSend = "MailSend"
 
-  /** Select media. */
-  final val MediaSelect = "MediaSelect"
+    /** Toggle media between play and pause states. */
+    final val MediaPlayPause = "MediaPlayPause"
 
-  /** Stop media playing, pausing, forwarding, rewinding, or recording, if not already stopped. */
-  final val MediaStop = "MediaStop"
+    /** Select media. */
+    final val MediaSelect = "MediaSelect"
 
-  /** Seek to next media or program track. */
-  final val MediaTrackNext = "MediaTrackNext"
+    /** Stop media playing, pausing, forwarding, rewinding, or recording, if not already stopped. */
+    final val MediaStop = "MediaStop"
 
-  /** Seek to previous media or program track. */
-  final val MediaTrackPrevious = "MediaTrackPrevious"
+    /** Seek to next media or program track. */
+    final val MediaTrackNext = "MediaTrackNext"
 
-  /** Open a new document or message. */
-  final val New = "New"
+    /** Seek to previous media or program track. */
+    final val MediaTrackPrevious = "MediaTrackPrevious"
 
-  /** Open an existing document or message. */
-  final val Open = "Open"
+    /** Open a new document or message. */
+    final val New = "New"
 
-  /** Print the current document or message. */
-  final val Print = "Print"
+    /** Open an existing document or message. */
+    final val Open = "Open"
 
-  /** Save the current document or message. */
-  final val Save = "Save"
+    /** Print the current document or message. */
+    final val Print = "Print"
 
-  /** Spellcheck the current document or selection. */
-  final val SpellCheck = "SpellCheck"
+    /** Save the current document or message. */
+    final val Save = "Save"
 
-  /** Decrease audio volume. */
-  final val VolumeDown = "VolumeDown"
+    /** Spellcheck the current document or selection. */
+    final val SpellCheck = "SpellCheck"
 
-  /** Increase audio volume. */
-  final val VolumeUp = "VolumeUp"
+    /** Decrease audio volume. */
+    final val VolumeDown = "VolumeDown"
 
-  /** Toggle between muted state and prior volume level. */
-  final val VolumeMute = "VolumeMute"
+    /** Increase audio volume. */
+    final val VolumeUp = "VolumeUp"
+
+    /** Toggle between muted state and prior volume level. */
+    final val VolumeMute = "VolumeMute"
+  }
 
   // ===================================================================================================================
   // Application Keys
 
-  /** The 'Calculator' key. This is often the generic 'LaunchApplication' key, as index 2. */
-  final val LaunchCalculator = "LaunchCalculator"
+  object Application {
 
-  /** The 'Calendar' key. */
-  final val LaunchCalendar = "LaunchCalendar"
+    /** The 'Calculator' key. This is often the generic 'LaunchApplication' key, as index 2. */
+    final val LaunchCalculator = "LaunchCalculator"
 
-  /** The 'Mail' key. */
-  final val LaunchMail = "LaunchMail"
+    /** The 'Calendar' key. */
+    final val LaunchCalendar = "LaunchCalendar"
 
-  /** The 'Media Player' key. */
-  final val LaunchMediaPlayer = "LaunchMediaPlayer"
+    /** The 'Mail' key. */
+    final val LaunchMail = "LaunchMail"
 
-  /** The 'Music Player' key. */
-  final val LaunchMusicPlayer = "LaunchMusicPlayer"
+    /** The 'Media Player' key. */
+    final val LaunchMediaPlayer = "LaunchMediaPlayer"
 
-  /** The 'My Computer' key. This is often the generic 'LaunchApplication' key, as index 1. */
-  final val LaunchMyComputer = "LaunchMyComputer"
+    /** The 'Music Player' key. */
+    final val LaunchMusicPlayer = "LaunchMusicPlayer"
 
-  /** The 'Screen Saver' key. */
-  final val LaunchScreenSaver = "LaunchScreenSaver"
+    /** The 'My Computer' key. This is often the generic 'LaunchApplication' key, as index 1. */
+    final val LaunchMyComputer = "LaunchMyComputer"
 
-  /** The 'Spreadsheet' key. */
-  final val LaunchSpreadsheet = "LaunchSpreadsheet"
+    /** The 'Screen Saver' key. */
+    final val LaunchScreenSaver = "LaunchScreenSaver"
 
-  /** The 'Web Browser' key. */
-  final val LaunchWebBrowser = "LaunchWebBrowser"
+    /** The 'Spreadsheet' key. */
+    final val LaunchSpreadsheet = "LaunchSpreadsheet"
 
-  /** The 'WebCam' key. */
-  final val LaunchWebCam = "LaunchWebCam"
+    /** The 'Web Browser' key. */
+    final val LaunchWebBrowser = "LaunchWebBrowser"
 
-  /** The 'Word Processor' key. */
-  final val LaunchWordProcessor = "LaunchWordProcessor"
+    /** The 'WebCam' key. */
+    final val LaunchWebCam = "LaunchWebCam"
+
+    /** The 'Word Processor' key. */
+    final val LaunchWordProcessor = "LaunchWordProcessor"
+  }
 
   // ===================================================================================================================
   // Browser Keys
@@ -502,224 +514,227 @@ object KeyValue {
   // ===================================================================================================================
   // Media Controller Keys
 
-  /** Adjust audio balance leftward. (VK_AUDIO_BALANCE_LEFT) */
-  final val AudioBalanceLeft = "AudioBalanceLeft"
+  object MediaControl {
 
-  /** Adjust audio balance rightward. (VK_AUDIO_BALANCE_RIGHT) */
-  final val AudioBalanceRight = "AudioBalanceRight"
+    /** Adjust audio balance leftward. (VK_AUDIO_BALANCE_LEFT) */
+    final val AudioBalanceLeft = "AudioBalanceLeft"
 
-  /** Decrease audio bass boost or cycle down through bass boost states. (VK_BASS_BOOST_DOWN) */
-  final val AudioBassBoostDown = "AudioBassBoostDown"
+    /** Adjust audio balance rightward. (VK_AUDIO_BALANCE_RIGHT) */
+    final val AudioBalanceRight = "AudioBalanceRight"
 
-  /** Increase audio bass boost or cycle up through bass boost states. (VK_BASS_BOOST_UP) */
-  final val AudioBassBoostUp = "AudioBassBoostUp"
+    /** Decrease audio bass boost or cycle down through bass boost states. (VK_BASS_BOOST_DOWN) */
+    final val AudioBassBoostDown = "AudioBassBoostDown"
 
-  /** Adjust audio fader towards front. (VK_FADER_FRONT) */
-  final val AudioFaderFront = "AudioFaderFront"
+    /** Increase audio bass boost or cycle up through bass boost states. (VK_BASS_BOOST_UP) */
+    final val AudioBassBoostUp = "AudioBassBoostUp"
 
-  /** Adjust audio fader towards rear. (VK_FADER_REAR) */
-  final val AudioFaderRear = "AudioFaderRear"
+    /** Adjust audio fader towards front. (VK_FADER_FRONT) */
+    final val AudioFaderFront = "AudioFaderFront"
 
-  /** Advance surround audio mode to next available mode. (VK_SURROUND_MODE_NEXT) */
-  final val AudioSurroundModeNext = "AudioSurroundModeNext"
+    /** Adjust audio fader towards rear. (VK_FADER_REAR) */
+    final val AudioFaderRear = "AudioFaderRear"
 
-  /** Select next (numerically or logically) lower channel. (VK_CHANNEL_DOWN) */
-  final val ChannelDown = "ChannelDown"
+    /** Advance surround audio mode to next available mode. (VK_SURROUND_MODE_NEXT) */
+    final val AudioSurroundModeNext = "AudioSurroundModeNext"
 
-  /** Select next (numerically or logically) higher channel. (VK_CHANNEL_UP) */
-  final val ChannelUp = "ChannelUp"
+    /** Select next (numerically or logically) lower channel. (VK_CHANNEL_DOWN) */
+    final val ChannelDown = "ChannelDown"
 
-  /** General purpose color-coded media function key, as index 0 (red). (VK_COLORED_KEY_0) */
-  final val ColorF0Red = "ColorF0Red"
+    /** Select next (numerically or logically) higher channel. (VK_CHANNEL_UP) */
+    final val ChannelUp = "ChannelUp"
 
-  /** General purpose color-coded media function key, as index 1 (green). (VK_COLORED_KEY_1) */
-  final val ColorF1Green = "ColorF1Green"
+    /** General purpose color-coded media function key, as index 0 (red). (VK_COLORED_KEY_0) */
+    final val ColorF0Red = "ColorF0Red"
 
-  /** General purpose color-coded media function key, as index 2 (yellow). (VK_COLORED_KEY_2) */
-  final val ColorF2Yellow = "ColorF2Yellow"
+    /** General purpose color-coded media function key, as index 1 (green). (VK_COLORED_KEY_1) */
+    final val ColorF1Green = "ColorF1Green"
 
-  /** General purpose color-coded media function key, as index 3 (blue). (VK_COLORED_KEY_3) */
-  final val ColorF3Blue = "ColorF3Blue"
+    /** General purpose color-coded media function key, as index 2 (yellow). (VK_COLORED_KEY_2) */
+    final val ColorF2Yellow = "ColorF2Yellow"
 
-  /** General purpose color-coded media function key, as index 4 (grey). (VK_COLORED_KEY_4) */
-  final val ColorF4Grey = "ColorF4Grey"
+    /** General purpose color-coded media function key, as index 3 (blue). (VK_COLORED_KEY_3) */
+    final val ColorF3Blue = "ColorF3Blue"
 
-  /** General purpose color-coded media function key, as index 5 (brown). (VK_COLORED_KEY_5) */
-  final val ColorF5Brown = "ColorF5Brown"
+    /** General purpose color-coded media function key, as index 4 (grey). (VK_COLORED_KEY_4) */
+    final val ColorF4Grey = "ColorF4Grey"
 
-  /** Toggle the display of Closed Captions. (VK_CC) */
-  final val ClosedCaptionToggle = "ClosedCaptionToggle"
+    /** General purpose color-coded media function key, as index 5 (brown). (VK_COLORED_KEY_5) */
+    final val ColorF5Brown = "ColorF5Brown"
 
-  /** Adjust brightness of device, by toggling between or cycling through states. (VK_DIMMER) */
-  final val Dimmer = "Dimmer"
+    /** Toggle the display of Closed Captions. (VK_CC) */
+    final val ClosedCaptionToggle = "ClosedCaptionToggle"
 
-  /** Swap video sources. (VK_DISPLAY_SWAP) */
-  final val DisplaySwap = "DisplaySwap"
+    /** Adjust brightness of device, by toggling between or cycling through states. (VK_DIMMER) */
+    final val Dimmer = "Dimmer"
 
-  /** Exit the current application. (VK_EXIT) */
-  final val Exit = "Exit"
+    /** Swap video sources. (VK_DISPLAY_SWAP) */
+    final val DisplaySwap = "DisplaySwap"
 
-  /** Clear program or content stored as favorite 0. (VK_CLEAR_FAVORITE_0) */
-  final val FavoriteClear0 = "FavoriteClear0"
+    /** Exit the current application. (VK_EXIT) */
+    final val Exit = "Exit"
 
-  /** Clear program or content stored as favorite 1. (VK_CLEAR_FAVORITE_1) */
-  final val FavoriteClear1 = "FavoriteClear1"
+    /** Clear program or content stored as favorite 0. (VK_CLEAR_FAVORITE_0) */
+    final val FavoriteClear0 = "FavoriteClear0"
 
-  /** Clear program or content stored as favorite 2. (VK_CLEAR_FAVORITE_2) */
-  final val FavoriteClear2 = "FavoriteClear2"
+    /** Clear program or content stored as favorite 1. (VK_CLEAR_FAVORITE_1) */
+    final val FavoriteClear1 = "FavoriteClear1"
 
-  /** Clear program or content stored as favorite 3. (VK_CLEAR_FAVORITE_3) */
-  final val FavoriteClear3 = "FavoriteClear3"
+    /** Clear program or content stored as favorite 2. (VK_CLEAR_FAVORITE_2) */
+    final val FavoriteClear2 = "FavoriteClear2"
 
-  /** Select (recall) program or content stored as favorite 0. (VK_RECALL_FAVORITE_0) */
-  final val FavoriteRecall0 = "FavoriteRecall0"
+    /** Clear program or content stored as favorite 3. (VK_CLEAR_FAVORITE_3) */
+    final val FavoriteClear3 = "FavoriteClear3"
 
-  /** Select (recall) program or content stored as favorite 1. (VK_RECALL_FAVORITE_1) */
-  final val FavoriteRecall1 = "FavoriteRecall1"
+    /** Select (recall) program or content stored as favorite 0. (VK_RECALL_FAVORITE_0) */
+    final val FavoriteRecall0 = "FavoriteRecall0"
 
-  /** Select (recall) program or content stored as favorite 2. (VK_RECALL_FAVORITE_2) */
-  final val FavoriteRecall2 = "FavoriteRecall2"
+    /** Select (recall) program or content stored as favorite 1. (VK_RECALL_FAVORITE_1) */
+    final val FavoriteRecall1 = "FavoriteRecall1"
 
-  /** Select (recall) program or content stored as favorite 3. (VK_RECALL_FAVORITE_3) */
-  final val FavoriteRecall3 = "FavoriteRecall3"
+    /** Select (recall) program or content stored as favorite 2. (VK_RECALL_FAVORITE_2) */
+    final val FavoriteRecall2 = "FavoriteRecall2"
 
-  /** Store current program or content as favorite 0. (VK_STORE_FAVORITE_0) */
-  final val FavoriteStore0 = "FavoriteStore0"
+    /** Select (recall) program or content stored as favorite 3. (VK_RECALL_FAVORITE_3) */
+    final val FavoriteRecall3 = "FavoriteRecall3"
 
-  /** Store current program or content as favorite 1. (VK_STORE_FAVORITE_1) */
-  final val FavoriteStore1 = "FavoriteStore1"
+    /** Store current program or content as favorite 0. (VK_STORE_FAVORITE_0) */
+    final val FavoriteStore0 = "FavoriteStore0"
 
-  /** Store current program or content as favorite 2. (VK_STORE_FAVORITE_2) */
-  final val FavoriteStore2 = "FavoriteStore2"
+    /** Store current program or content as favorite 1. (VK_STORE_FAVORITE_1) */
+    final val FavoriteStore1 = "FavoriteStore1"
 
-  /** Store current program or content as favorite 3. (VK_STORE_FAVORITE_3) */
-  final val FavoriteStore3 = "FavoriteStore3"
+    /** Store current program or content as favorite 2. (VK_STORE_FAVORITE_2) */
+    final val FavoriteStore2 = "FavoriteStore2"
 
-  /** Toggle display of program or content guide. (VK_GUIDE) */
-  final val Guide = "Guide"
+    /** Store current program or content as favorite 3. (VK_STORE_FAVORITE_3) */
+    final val FavoriteStore3 = "FavoriteStore3"
 
-  /** If guide is active and displayed, then display next day's content. (VK_NEXT_DAY) */
-  final val GuideNextDay = "GuideNextDay"
+    /** Toggle display of program or content guide. (VK_GUIDE) */
+    final val Guide = "Guide"
 
-  /** If guide is active and displayed, then display previous day's content. (VK_PREV_DAY) */
-  final val GuidePreviousDay = "GuidePreviousDay"
+    /** If guide is active and displayed, then display next day's content. (VK_NEXT_DAY) */
+    final val GuideNextDay = "GuideNextDay"
 
-  /** Toggle display of information about currently selected context or media. (VK_INFO) */
-  final val Info = "Info"
+    /** If guide is active and displayed, then display previous day's content. (VK_PREV_DAY) */
+    final val GuidePreviousDay = "GuidePreviousDay"
 
-  /** Toggle instant replay. (VK_INSTANT_REPLAY) */
-  final val InstantReplay = "InstantReplay"
+    /** Toggle display of information about currently selected context or media. (VK_INFO) */
+    final val Info = "Info"
 
-  /** Launch linked content, if available and appropriate. (VK_LINK) */
-  final val Link = "Link"
+    /** Toggle instant replay. (VK_INSTANT_REPLAY) */
+    final val InstantReplay = "InstantReplay"
 
-  /** List the current program. (VK_LIST) */
-  final val ListProgram = "ListProgram"
+    /** Launch linked content, if available and appropriate. (VK_LINK) */
+    final val Link = "Link"
 
-  /** Toggle display listing of currently available live content or programs. (VK_LIVE) */
-  final val LiveContent = "LiveContent"
+    /** List the current program. (VK_LIST) */
+    final val ListProgram = "ListProgram"
 
-  /** Lock or unlock current content or program. (VK_LOCK) */
-  final val Lock = "Lock"
+    /** Toggle display listing of currently available live content or programs. (VK_LIVE) */
+    final val LiveContent = "LiveContent"
 
-  /**
-   * Show a list of media applications. (VK_APPS)
-   *
-   * Note: Do not confuse this key value with the Windows' VK_APPS / VK_CONTEXT_MENU key, which is encoded as 'ContextMenu'.
-   */
-  final val MediaApps = "MediaApps"
+    /** Lock or unlock current content or program. (VK_LOCK) */
+    final val Lock = "Lock"
 
-  /** Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (VK_FAST_FWD) */
-  final val MediaFastForward = "MediaFastForward"
+    /**
+     * Show a list of media applications. (VK_APPS)
+     *
+     * Note: Do not confuse this key value with the Windows' VK_APPS / VK_CONTEXT_MENU key, which is encoded as 'ContextMenu'.
+     */
+    final val MediaApps = "MediaApps"
 
-  /** Select previously selected channel or media. (VK_LAST) */
-  final val MediaLast = "MediaLast"
+    /** Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (VK_FAST_FWD) */
+    final val MediaFastForward = "MediaFastForward"
 
-  /**
-   * Pause the currently playing media. (VK_PAUSE)
-   *
-   * Note: Media controller devices should use this value rather than 'Pause' for their pause keys.
-   */
-  final val MediaPause = "MediaPause"
+    /** Select previously selected channel or media. (VK_LAST) */
+    final val MediaLast = "MediaLast"
 
-  /** Initiate or continue media playback at normal speed, if not currently playing at normal speed. (VK_PLAY) */
-  final val MediaPlay = "MediaPlay"
+    /**
+     * Pause the currently playing media. (VK_PAUSE)
+     *
+     * Note: Media controller devices should use this value rather than 'Pause' for their pause keys.
+     */
+    final val MediaPause = "MediaPause"
 
-  /** Initiate or resume recording of currently selected media. (VK_RECORD) */
-  final val MediaRecord = "MediaRecord"
+    /** Initiate or continue media playback at normal speed, if not currently playing at normal speed. (VK_PLAY) */
+    final val MediaPlay = "MediaPlay"
 
-  /** Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding. (VK_REWIND) */
-  final val MediaRewind = "MediaRewind"
+    /** Initiate or resume recording of currently selected media. (VK_RECORD) */
+    final val MediaRecord = "MediaRecord"
 
-  /** Skip forward to next content or program. (VK_SKIP) */
-  final val MediaSkip = "MediaSkip"
+    /** Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding. (VK_REWIND) */
+    final val MediaRewind = "MediaRewind"
 
-  /** Cycle to next favorite channel (in favorites list). (VK_NEXT_FAVORITE_CHANNEL) */
-  final val NextFavoriteChannel = "NextFavoriteChannel"
+    /** Skip forward to next content or program. (VK_SKIP) */
+    final val MediaSkip = "MediaSkip"
 
-  /** Cycle to next user profile (if there are multiple user profiles). (VK_USER) */
-  final val NextUserProfile = "NextUserProfile"
+    /** Cycle to next favorite channel (in favorites list). (VK_NEXT_FAVORITE_CHANNEL) */
+    final val NextFavoriteChannel = "NextFavoriteChannel"
 
-  /** Access on-demand content or programs. (VK_ON_DEMAND) */
-  final val OnDemand = "OnDemand"
+    /** Cycle to next user profile (if there are multiple user profiles). (VK_USER) */
+    final val NextUserProfile = "NextUserProfile"
 
-  /** Move picture-in-picture window down. (VK_PINP_DOWN) */
-  final val PinPDown = "PinPDown"
+    /** Access on-demand content or programs. (VK_ON_DEMAND) */
+    final val OnDemand = "OnDemand"
 
-  /** Move picture-in-picture window. (VK_PINP_MOVE) */
-  final val PinPMove = "PinPMove"
+    /** Move picture-in-picture window down. (VK_PINP_DOWN) */
+    final val PinPDown = "PinPDown"
 
-  /** Toggle display of picture-in-picture window. (VK_PINP_TOGGLE) */
-  final val PinPToggle = "PinPToggle"
+    /** Move picture-in-picture window. (VK_PINP_MOVE) */
+    final val PinPMove = "PinPMove"
 
-  /** Move picture-in-picture window up. (VK_PINP_UP) */
-  final val PinPUp = "PinPUp"
+    /** Toggle display of picture-in-picture window. (VK_PINP_TOGGLE) */
+    final val PinPToggle = "PinPToggle"
 
-  /** Decrease media playback speed. (VK_PLAY_SPEED_DOWN) */
-  final val PlaySpeedDown = "PlaySpeedDown"
+    /** Move picture-in-picture window up. (VK_PINP_UP) */
+    final val PinPUp = "PinPUp"
 
-  /** Reset playback to normal speed. (VK_PLAY_SPEED_RESET) */
-  final val PlaySpeedReset = "PlaySpeedReset"
+    /** Decrease media playback speed. (VK_PLAY_SPEED_DOWN) */
+    final val PlaySpeedDown = "PlaySpeedDown"
 
-  /** Increase media playback speed. (VK_PLAY_SPEED_UP) */
-  final val PlaySpeedUp = "PlaySpeedUp"
+    /** Reset playback to normal speed. (VK_PLAY_SPEED_RESET) */
+    final val PlaySpeedReset = "PlaySpeedReset"
 
-  /** Toggle random media or content shuffle mode. (VK_RANDOM_TOGGLE) */
-  final val RandomToggle = "RandomToggle"
+    /** Increase media playback speed. (VK_PLAY_SPEED_UP) */
+    final val PlaySpeedUp = "PlaySpeedUp"
 
-  /** Not a physical key, but this key code is sent when the remote control battery is low. (VK_RC_LOW_BATTERY) */
-  final val RcLowBattery = "RcLowBattery"
+    /** Toggle random media or content shuffle mode. (VK_RANDOM_TOGGLE) */
+    final val RandomToggle = "RandomToggle"
 
-  /** Toggle or cycle between media recording speeds. (VK_RECORD_SPEED_NEXT) */
-  final val RecordSpeedNext = "RecordSpeedNext"
+    /** Not a physical key, but this key code is sent when the remote control battery is low. (VK_RC_LOW_BATTERY) */
+    final val RcLowBattery = "RcLowBattery"
 
-  /** Toggle RF (radio frequency) input bypass mode (pass RF input directly to the RF output). (VK_RF_BYPASS) */
-  final val RfBypass = "RfBypass"
+    /** Toggle or cycle between media recording speeds. (VK_RECORD_SPEED_NEXT) */
+    final val RecordSpeedNext = "RecordSpeedNext"
 
-  /** Toggle scan channels mode. (VK_SCAN_CHANNELS_TOGGLE) */
-  final val ScanChannelsToggle = "ScanChannelsToggle"
+    /** Toggle RF (radio frequency) input bypass mode (pass RF input directly to the RF output). (VK_RF_BYPASS) */
+    final val RfBypass = "RfBypass"
 
-  /** Advance display screen mode to next available mode. (VK_SCREEN_MODE_NEXT) */
-  final val ScreenModeNext = "ScreenModeNext"
+    /** Toggle scan channels mode. (VK_SCAN_CHANNELS_TOGGLE) */
+    final val ScanChannelsToggle = "ScanChannelsToggle"
 
-  /** Toggle display of device settings screen. (VK_SETTINGS) */
-  final val Settings = "Settings"
+    /** Advance display screen mode to next available mode. (VK_SCREEN_MODE_NEXT) */
+    final val ScreenModeNext = "ScreenModeNext"
 
-  /** Toggle split screen mode. (VK_SPLIT_SCREEN_TOGGLE) */
-  final val SplitScreenToggle = "SplitScreenToggle"
+    /** Toggle display of device settings screen. (VK_SETTINGS) */
+    final val Settings = "Settings"
 
-  /** Toggle display of subtitles, if available. (VK_SUBTITLE) */
-  final val Subtitle = "Subtitle"
+    /** Toggle split screen mode. (VK_SPLIT_SCREEN_TOGGLE) */
+    final val SplitScreenToggle = "SplitScreenToggle"
 
-  /** Toggle display of teletext, if available (VK_TELETEXT). */
-  final val Teletext = "Teletext"
+    /** Toggle display of subtitles, if available. (VK_SUBTITLE) */
+    final val Subtitle = "Subtitle"
 
-  /** Advance video mode to next available mode.(VK_VIDEO_MODE_NEXT) */
-  final val VideoModeNext = "VideoModeNext"
+    /** Toggle display of teletext, if available (VK_TELETEXT). */
+    final val Teletext = "Teletext"
 
-  /** Cause device to identify itself in some manner, e.g., audibly or visibly. (VK_WINK) */
-  final val Wink = "Wink"
+    /** Advance video mode to next available mode.(VK_VIDEO_MODE_NEXT) */
+    final val VideoModeNext = "VideoModeNext"
 
-  /** Toggle between full-screen and scaled content, or alter magnification level. (VK_ZOOM) */
-  final val ZoomToggle = "ZoomToggle"
+    /** Cause device to identify itself in some manner, e.g., audibly or visibly. (VK_WINK) */
+    final val Wink = "Wink"
+
+    /** Toggle between full-screen and scaled content, or alter magnification level. (VK_ZOOM) */
+    final val ZoomToggle = "ZoomToggle"
+  }
 }
