@@ -12,6 +12,541 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
+class HTMLDocument extends Document {
+
+  /**
+   * Returns the title of the current document.
+   *
+   * MDN
+   */
+  var title: String = ???
+
+  /**
+   * Gets/sets the domain portion of the origin of the current document, as used by the
+   * same origin policy.
+   *
+   * MDN
+   */
+  var domain: String = ???
+
+  /**
+   * The Document.location property returns a Location object, which
+   * contains information about the URL of the document and provides methods for
+   * changing that URL and load another URL.
+   *
+   * MDN
+   */
+  var location: Location = ???
+
+  /**
+   * Returns a string containing the URL of the current document.
+   *
+   * MDN
+   */
+  def URL: String = ???
+
+  /**
+   * Returns the URI of the page that linked to this page.
+   *
+   * MDN
+   */
+  def referrer: String = ???
+
+  /**
+   * Returns a semicolon-separated list of the cookies for that document or sets a
+   * single cookie.
+   *
+   * MDN
+   */
+  def cookie: String = ???
+
+  /**
+   * The Document.dir property is a DOMString representing the directionality of the
+   * text of the document, whether left to right (default) or right to left. Possible
+   * values are 'rtl', right to left, and 'ltr', left to right.
+   *
+   * MDN
+   */
+  var dir: String = ???
+
+  /**
+   * Can be used to make any document editable, for example in a <iframe />:
+   *
+   * MDN
+   */
+  var designMode: String = ???
+
+  /**
+   * Indicates whether the document is rendered in Quirks mode or Strict mode.
+   *
+   * MDN
+   */
+  def compatMode: String = ???
+
+  /**
+   * Returns "loading" while the document is loading, "interactive" once it is
+   * finished parsing but still loading sub-resources, and "complete" once it has
+   * loaded.
+   *
+   * MDN
+   */
+  var readyState: String = ???
+
+  var uniqueID: String = ???
+
+  /**
+   * fgColor gets/sets the foreground color, or text color, of the current document.
+   *
+   * MDN
+   */
+  @deprecated
+  var fgColor: String = ???
+
+  /**
+   * The default value for this property in Mozilla Firefox is white (#ffffff in
+   * hexadecimal).
+   *
+   * MDN
+   */
+  @deprecated
+  var bgColor: String = ???
+
+  /**
+   * linkColor gets/sets the color of links within the document.
+   *
+   * MDN
+   */
+  @deprecated
+  var linkColor: String = ???
+
+  /**
+   * color is a string containing the name of the color (e.g., "blue", "darkblue", etc.)
+   * or the hexadecimal value of the color (e.g., #0000FF)
+   *
+   * MDN
+   */
+  @deprecated
+  var alinkColor: String = ???
+
+  @deprecated
+  var vlinkColor: String = ???
+
+  /**
+   * In browsers returns the window object associated with the document or null if none
+   * available.
+   *
+   * MDN
+   */
+  def defaultView: Window = ???
+
+  /**
+   * Returns the <head> element of the current document. If there are more than one
+   * <head> elements, the first one is returned.
+   *
+   * MDN
+   */
+  def head: HTMLHeadElement = ???
+
+  /**
+   * Returns the <body> or <frameset> node of the current document, or null if no such
+   * element exists.
+   *
+   * MDN
+   */
+  def body: HTMLElement = ???
+
+  /**
+   * Returns the currently focused element, that is, the element that will get
+   * keystroke events if the user types any. This attribute is read only.
+   *
+   * MDN
+   */
+  def activeElement: Element = ???
+
+  /**
+   * Returns a list of the embedded <embed> elements within the current document.
+   *
+   * MDN
+   */
+  def embeds: HTMLCollection = ???
+
+  /**
+   * forms returns a collection (an HTMLCollection) of the form elements within the
+   * current document.
+   *
+   * MDN
+   */
+  def forms: HTMLCollection = ???
+
+  /**
+   * The links property returns a collection of all AREA elements and anchor elements in
+   * a document with a value for the href attribute.
+   *
+   * MDN
+   */
+  def links: HTMLCollection = ???
+
+  /**
+   * anchors returns a list of all of the anchors in the document.
+   *
+   * MDN
+   */
+  def anchors: HTMLCollection = ???
+
+  /**
+   * Returns an HTMLCollection object containing one or more HTMLEmbedElements or
+   * null which represent the <embed> elements in the current document.
+   *
+   * MDN
+   */
+  def plugins: HTMLCollection = ???
+
+  /**
+   * applets returns an ordered list of the applets within a document.
+   *
+   * MDN
+   */
+  @deprecated
+  def applets: HTMLCollection = ???
+
+  /**
+   * document.images returns a collection of the images in the current HTML document.
+   *
+   * MDN
+   */
+  def images: HTMLCollection = ???
+
+  /**
+   * Returns the current value of the current range for a formating command.
+   *
+   * MDN
+   */
+  def queryCommandValue(commandId: String): String = ???
+
+  /**
+   * Returns true if the formating command is in an indeterminate state on the current
+   * range.
+   *
+   * MDN
+   */
+  def queryCommandIndeterm(commandId: String): Boolean = ???
+
+  /**
+   * This method never did anything but throw an exception, and was removed in Gecko 14.0
+   * (Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11).
+   *
+   * MDN
+   */
+  def queryCommandText(commandId: String): String = ???
+
+  /**
+   * Reports whether or not the specified editor query command is supported by the
+   * browser.
+   *
+   * MDN
+   */
+  def queryCommandSupported(commandId: String): Boolean = ???
+
+  /**
+   * Returns true if the formating command can be executed on the current range.
+   *
+   * MDN
+   */
+  def queryCommandEnabled(commandId: String): Boolean = ???
+
+  /**
+   * Returns true if the formating command has been executed on the current range.
+   *
+   * MDN
+   */
+  def queryCommandState(commandId: String): Boolean = ???
+
+  /**
+   * When an HTML document has been switched to designMode, the document object exposes
+   * the execCommand method which allows one to run commands to manipulate the
+   * contents of the editable region. Most commands affect the document's selection
+   * (bold, italics, etc), while others insert new elements (adding a link) or affect an
+   * entire line (indenting). When using contentEditable,
+   * calling execCommand will affect the currently active editable element.
+   *
+   * MDN
+   */
+  def execCommand(commandId: String, showUI: Boolean = ???, value: js.Any = ???): Boolean = ???
+
+  /**
+   * This method never did anything and always threw an exception, so it was removed in
+   * Gecko 14.0 (Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11).
+   *
+   * MDN
+   */
+  def execCommandShowHelp(commandId: String): Boolean = ???
+
+  /**
+   * Writes a string of text to a document stream opened by document.open().
+   *
+   * MDN
+   */
+  def write(content: String*): Unit = ???
+
+  /**
+   * Writes a string of text followed by a newline character to a document.
+   *
+   * MDN
+   */
+  def writeln(content: String*): Unit = ???
+
+  /**
+   * The document.open() method opens a document for writing.
+   *
+   * MDN
+   */
+  def open(url: String = ???, name: String = ???, features: String = ???, replace: Boolean = ???): js.Dynamic = ???
+
+  /**
+   * The document.close() method finishes writing to a document, opened with
+   * document.open().
+   *
+   * MDN
+   */
+  def close(): Unit = ???
+
+  def updateSettings(): Unit = ???
+
+  def fireEvent(eventName: String, eventObj: js.Any = ???): Boolean = ???
+
+  def focus(): Unit = ???
+
+  /**
+   * Returns a Boolean value indicating whether the document or any element inside the
+   * document has focus. This method can be used to determine whether the active element
+   * in a document has focus.
+   *
+   * MDN
+   */
+  def hasFocus(): Boolean = ???
+
+  /**
+   * The DOM getSelection() method is available on the Window and Document interfaces.
+   * See window.getSelection() for details.
+   *
+   * MDN
+   */
+  def getSelection(): Selection = ???
+
+  /**
+   * In recent versions of Mozilla-based applications as well as in Internet Explorer
+   * and Netscape 4 this method does nothing.
+   *
+   * MDN
+   */
+  @deprecated
+  def clear(): Unit = ???
+
+  var onbeforeactivate: js.Function1[UIEvent, _] = ???
+
+  var onactivate: js.Function1[UIEvent, _] = ???
+
+  var onbeforedeactivate: js.Function1[UIEvent, _] = ???
+
+  var ondeactivate: js.Function1[UIEvent, _] = ???
+
+  var onloadstart: js.Function1[Event, _] = ???
+
+  var onload: js.Function1[Event, _] = ???
+
+  /**
+   * The onchange property sets and returns the event handler for the change event.
+   *
+   * MDN
+   */
+  var onchange: js.Function1[Event, _] = ???
+
+  /**
+   * Returns the event handling code for the readystatechange event.
+   *
+   * MDN
+   */
+  var onreadystatechange: js.Function1[Event, _] = ???
+
+  /**
+   * The submit event is raised when the user clicks a submit button in a form
+   *
+   * MDN
+   */
+  var onsubmit: js.Function1[Event, _] = ???
+
+  var onfocus: js.Function1[FocusEvent, _] = ???
+
+  var onblur: js.Function1[FocusEvent, _] = ???
+
+  var onfocusin: js.Function1[FocusEvent, _] = ???
+
+  var onfocusout: js.Function1[FocusEvent, _] = ???
+
+  var onselect: js.Function1[UIEvent, _] = ???
+
+  var onselectstart: js.Function1[Event, _] = ???
+
+  var onselectionchange: js.Function1[Event, _] = ???
+
+  var oninput: js.Function1[Event, _] = ???
+
+    /**
+   * The keydown event is raised when the user presses a keyboard key.
+   *
+   * MDN
+   */
+  var onkeydown: js.Function1[KeyboardEvent, _] = ???
+
+  /**
+   * The keyup event is raised when the user releases a key that's been pressed.
+   *
+   * MDN
+   */
+  var onkeyup: js.Function1[KeyboardEvent, _] = ???
+
+  var onkeypress: js.Function1[KeyboardEvent, _] = ???
+
+  /**
+   * The onclick property returns the onClick event handler code on the current element.
+   *
+   * MDN
+   */
+  var onclick: js.Function1[MouseEvent, _] = ???
+
+  var ondblclick: js.Function1[MouseEvent, _] = ???
+
+  var onmouseup: js.Function1[MouseEvent, _] = ???
+
+  /**
+   * The mouseover event is raised when the user moves the mouse over a
+   * particular element.
+   *
+   * MDN
+   */
+  var onmouseover: js.Function1[MouseEvent, _] = ???
+
+  /**
+   * The mousedown event is raised when the user presses the mouse button.
+   *
+   * MDN
+   */
+  var onmousedown: js.Function1[MouseEvent, _] = ???
+
+  var onmousemove: js.Function1[MouseEvent, _] = ???
+
+  /**
+   * The mouseout event is raised when the mouse leaves an element (e.g, when the
+   * mouse moves off of an image in the web page, the mouseout event is raised for
+   * that image element).
+   *
+   * MDN
+   */
+  var onmouseout: js.Function1[MouseEvent, _] = ???
+
+  var onmousewheel: js.Function1[WheelEvent, _] = ???
+
+  var onscroll: js.Function1[UIEvent, _] = ???
+
+  /**
+   * Called periodically throughout the drag and drop operation.
+   *
+   * MDN
+   */
+  var ondrag: js.Function1[DragEvent, _] = ???
+
+  /**
+   * Called for an element when the mouse pointer first moves over the element
+   * while something is being dragged. This might be used to change the
+   * appearance of the element to indicate to the user that the object can be
+   * dropped on it.
+   *
+   * MDN
+   */
+  var ondragenter: js.Function1[DragEvent, _] = ???
+
+  var ondragleave: js.Function1[DragEvent, _] = ???
+
+   /**
+   * This event handler is called for an element when something is being dragged
+   * over top of it. If the object can be dropped on the element, the drag
+   * session should be notified.
+   *
+   * MDN
+   */
+  var ondragover: js.Function1[DragEvent, _] = ???
+
+  /**
+   * An alias for ondraggesture; this is the HTML 5 spec name for the event and
+   * may be used in HTML or XUL; however, for backward compatibility with older
+   * versions of Firefox, you may wish to continue using ondraggesture in XUL.
+   *
+   * MDN
+   */
+  var ondragstart: js.Function1[DragEvent, _] = ???
+
+  /**
+   * Called when the drag operation is finished.
+   *
+   * MDN
+   */
+  var ondragend: js.Function1[DragEvent, _] = ???
+
+  var ondrop: js.Function1[DragEvent, _] = ???
+
+  var onreset: js.Function1[Event, _] = ???
+
+  var onhelp: js.Function1[Event, _] = ???
+
+  var onseeked: js.Function1[Event, _] = ???
+
+  var onemptied: js.Function1[Event, _] = ???
+
+  var onseeking: js.Function1[Event, _] = ???
+  
+  var oncanplay: js.Function1[Event, _] = ???
+
+  var ontimeupdate: js.Function1[Event, _] = ???
+
+  var onended: js.Function1[Event, _] = ???
+
+  var onsuspend: js.Function1[Event, _] = ???
+
+  var onpause: js.Function1[Event, _] = ???
+
+  var onwaiting: js.Function1[Event, _] = ???
+
+  var onstop: js.Function1[Event, _] = ???
+  
+  var onstalled: js.Function1[Event, _] = ???
+
+  var onratechange: js.Function1[Event, _] = ???
+
+  var onvolumechange: js.Function1[Event, _] = ???
+
+  var onprogress: js.Function1[js.Any, _] = ???
+
+  var oncontextmenu: js.Function1[MouseEvent, _] = ???
+  
+  var ondurationchange: js.Function1[Event, _] = ???
+
+  var onloadeddata: js.Function1[Event, _] = ???
+
+  var onloadedmetadata: js.Function1[Event, _] = ???
+
+  var onerror: js.Function1[Event, _] = ???
+
+  var onplay: js.Function1[Event, _] = ???
+
+  var onplaying: js.Function1[Event, _] = ???
+
+  var onabort: js.Function1[UIEvent, _] = ???
+
+  var oncanplaythrough: js.Function1[Event, _] = ???
+
+  var onstoragecommit: js.Function1[StorageEvent, _] = ???
+}
+
 /**
  * The HTMLTableElement interface provides special properties and methods (beyond
  * the regular HTMLElement object interface it also has available to it by

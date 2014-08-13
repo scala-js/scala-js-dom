@@ -11,6 +11,7 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.Dynamic.global
 
 /**
  * The PositionOptions interface describes the options to use when calling the
@@ -1714,7 +1715,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def document: Document = ???
+  def document: HTMLDocument = ???
 
   var onprogress: js.Function1[js.Any, _] = ???
   var ondblclick: js.Function1[MouseEvent, _] = ???
@@ -2395,183 +2396,15 @@ object KeyboardEvent extends js.Object {
  * MDN
  */
 class Document extends Node with NodeSelector with DocumentEvent with ParentNode {
-  /**
-   * The keydown event is raised when the user presses a keyboard key.
-   *
-   * MDN
-   */
-  var onkeydown: js.Function1[KeyboardEvent, _] = ???
-  /**
-   * The keyup event is raised when the user releases a key that's been pressed.
-   *
-   * MDN
-   */
-  var onkeyup: js.Function1[KeyboardEvent, _] = ???
-
-  /**
-   * Returns a DOMImplementation object associated with the current document.
-   *
-   * MDN
-   */
-  def implementation: DOMImplementation = ???
-
-  var onreset: js.Function1[Event, _] = ???
-
-  /**
-   * Returns a list of the <script> elements in the document. The returned object is an
-   * HTMLCollection.
-   *
-   * MDN
-   */
-  def scripts: HTMLCollection = ???
-
-  var onhelp: js.Function1[Event, _] = ???
-  var ondragleave: js.Function1[DragEvent, _] = ???
-
-  var onfocusin: js.Function1[FocusEvent, _] = ???
-  /**
-   * The default value for this property in Mozilla Firefox is purple (#551a8b in
-   * hexadecimal).
-   *
-   * MDN
-   */
-  var vlinkColor: String = ???
-  var onseeked: js.Function1[Event, _] = ???
-  /**
-   * Returns the title of the current document.
-   *
-   * MDN
-   */
-  var title: String = ???
-
-  /**
-   * Returns a list of the embedded <embed> elements within the current document.
-   *
-   * MDN
-   */
-  def embeds: HTMLCollection = ???
-
-  /**
-   * Returns a list of StyleSheet objects for stylesheets explicitly linked into or
-   * embedded in a document.
-   *
-   * MDN
-   */
-  def styleSheets: StyleSheetList = ???
-
-  var ondurationchange: js.Function1[Event, _] = ???
-
-  /**
-   * forms returns a collection (an HTMLCollection) of the form elements within the
-   * current document.
-   *
-   * MDN
-   */
-  def forms: HTMLCollection = ???
-
-  var onblur: js.Function1[FocusEvent, _] = ???
-  /**
-   * The Document.dir property is a DOMString representing the directionality of the
-   * text of the document, whether left to right (default) or right to left. Possible
-   * values are 'rtl', right to left, and 'ltr', left to right.
-   *
-   * MDN
-   */
-  var dir: String = ???
-  var onemptied: js.Function1[Event, _] = ???
-  /**
-   * Can be used to make any document editable, for example in a <iframe />:
-   *
-   * MDN
-   */
-  var designMode: String = ???
-
-  var onseeking: js.Function1[Event, _] = ???
-  var ondeactivate: js.Function1[UIEvent, _] = ???
-  var oncanplay: js.Function1[Event, _] = ???
-  var onloadstart: js.Function1[Event, _] = ???
-
-  /**
-   * In browsers returns the window object associated with the document or null if none
-   * available.
-   *
-   * MDN
-   */
-  def defaultView: Window = ???
-
-  /**
-   * Called for an element when the mouse pointer first moves over the element
-   * while something is being dragged. This might be used to change the
-   * appearance of the element to indicate to the user that the object can be
-   * dropped on it.
-   *
-   * MDN
-   */
-  var ondragenter: js.Function1[DragEvent, _] = ???
-  /**
-   * The submit event is raised when the user clicks a submit button in a form
-   *
-   * MDN
-   */
-  var onsubmit: js.Function1[Event, _] = ???
-
+ 
   /**
    * Returns a string representing the encoding under which the document was parsed
    * (e.g. ISO-8859-1).
    *
    * MDN
    */
+  @deprecated
   def inputEncoding: String = ???
-
-  /**
-   * Returns the currently focused element, that is, the element that will get
-   * keystroke events if the user types any. This attribute is read only.
-   *
-   * MDN
-   */
-  def activeElement: Element = ???
-
-  /**
-   * The onchange property sets and returns the event handler for the change event.
-   *
-   * MDN
-   */
-  var onchange: js.Function1[Event, _] = ???
-
-  /**
-   * The links property returns a collection of all AREA elements and anchor elements in
-   * a document with a value for the href attribute.
-   *
-   * MDN
-   */
-  def links: HTMLCollection = ???
-
-  var uniqueID: String = ???
-
-  /**
-   * Returns a string containing the URL of the current document.
-   *
-   * MDN
-   */
-  def URL: String = ???
-
-  var onbeforeactivate: js.Function1[UIEvent, _] = ???
-
-  /**
-   * Returns the <head> element of the current document. If there are more than one
-   * <head> elements, the first one is returned.
-   *
-   * MDN
-   */
-  def head: HTMLHeadElement = ???
-
-  /**
-   * Returns a semicolon-separated list of the cookies for that document or sets a
-   * single cookie.
-   *
-   * MDN
-   */
-  def cookie: String = ???
 
   /**
    * Returns the encoding as determined by the XML declaration. Should be null if
@@ -2579,67 +2412,8 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
+  @deprecated
   def xmlEncoding: String = ???
-
-  var oncanplaythrough: js.Function1[Event, _] = ???
-
-  /**
-   * Returns the character encoding of the current document.
-   *
-   * MDN
-   */
-  def characterSet: String = ???
-
-  /**
-   * anchors returns a list of all of the anchors in the document.
-   *
-   * MDN
-   */
-  def anchors: HTMLCollection = ???
-
-  /**
-   * Returns an HTMLCollection object containing one or more HTMLEmbedElements or
-   * null which represent the <embed> elements in the current document.
-   *
-   * MDN
-   */
-  def plugins: HTMLCollection = ???
-
-  var onsuspend: js.Function1[Event, _] = ???
-
-  /**
-   * Returns "loading" while the document is loading, "interactive" once it is
-   * finished parsing but still loading sub-resources, and "complete" once it has
-   * loaded.
-   *
-   * MDN
-   */
-  var readyState: String = ???
-
-  /**
-   * Returns the URI of the page that linked to this page.
-   *
-   * MDN
-   */
-  def referrer: String = ???
-
-  /**
-   * color is a string containing the name of the color (e.g., "blue", "darkblue", etc.)
-   * or the hexadecimal value of the color (e.g., #0000FF)
-   *
-   * MDN
-   */
-  var alinkColor: String = ???
-  /**
-   * The mouseout event is raised when the mouse leaves an element (e.g, when the
-   * mouse moves off of an image in the web page, the mouseout event is raised for
-   * that image element).
-   *
-   * MDN
-   */
-  var onmouseout: js.Function1[MouseEvent, _] = ???
-  var onmousewheel: js.Function1[WheelEvent, _] = ???
-  var onvolumechange: js.Function1[Event, _] = ???
 
   /**
    * Returns the version number as specified in the XML declaration (e.g., <?xml
@@ -2647,14 +2421,24 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
+  @deprecated
   def xmlVersion: String = ???
 
   /**
-   * Called when the drag operation is finished.
+   * Returns true if the XML declaration specifies the document is standalone (e.g., An
+   * external part of the DTD affects the document's content), else false.
    *
    * MDN
    */
-  var ondragend: js.Function1[DragEvent, _] = ???
+  @deprecated
+  def xmlStandalone: Boolean = ???
+
+  /**
+   * Returns the character encoding of the current document.
+   *
+   * MDN
+   */
+  def characterSet: String = ???
 
   /**
    * Returns the Document Type Declaration (DTD) associated with current document.
@@ -2666,99 +2450,6 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
   def doctype: DocumentType = ???
 
   /**
-   * This event handler is called for an element when something is being dragged
-   * over top of it. If the object can be dropped on the element, the drag
-   * session should be notified.
-   *
-   * MDN
-   */
-  var ondragover: js.Function1[DragEvent, _] = ???
-  /**
-   * The default value for this property in Mozilla Firefox is white (#ffffff in
-   * hexadecimal).
-   *
-   * MDN
-   */
-  var bgColor: String = ???
-  /**
-   * An alias for ondraggesture; this is the HTML 5 spec name for the event and
-   * may be used in HTML or XUL; however, for backward compatibility with older
-   * versions of Firefox, you may wish to continue using ondraggesture in XUL.
-   *
-   * MDN
-   */
-  var ondragstart: js.Function1[DragEvent, _] = ???
-  var onmouseup: js.Function1[MouseEvent, _] = ???
-  /**
-   * Called periodically throughout the drag and drop operation.
-   *
-   * MDN
-   */
-  var ondrag: js.Function1[DragEvent, _] = ???
-  /**
-   * The mouseover event is raised when the user moves the mouse over a
-   * particular element.
-   *
-   * MDN
-   */
-  var onmouseover: js.Function1[MouseEvent, _] = ???
-  /**
-   * linkColor gets/sets the color of links within the document.
-   *
-   * MDN
-   */
-  var linkColor: String = ???
-  var onpause: js.Function1[Event, _] = ???
-  /**
-   * The mousedown event is raised when the user presses the mouse button.
-   *
-   * MDN
-   */
-  var onmousedown: js.Function1[MouseEvent, _] = ???
-  /**
-   * The onclick property returns the onClick event handler code on the current element.
-   *
-   * MDN
-   */
-  var onclick: js.Function1[MouseEvent, _] = ???
-  var onwaiting: js.Function1[Event, _] = ???
-  var onstop: js.Function1[Event, _] = ???
-
-  /**
-   * applets returns an ordered list of the applets within a document.
-   *
-   * MDN
-   */
-  def applets: HTMLCollection = ???
-
-  /**
-   * Returns the <body> or <frameset> node of the current document, or null if no such
-   * element exists.
-   *
-   * MDN
-   */
-  def body: HTMLElement = ???
-
-  /**
-   * Gets/sets the domain portion of the origin of the current document, as used by the
-   * same origin policy.
-   *
-   * MDN
-   */
-  var domain: String = ???
-
-  /**
-   * Returns true if the XML declaration specifies the document is standalone (e.g., An
-   * external part of the DTD affects the document's content), else false.
-   *
-   * MDN
-   */
-  def xmlStandalone: Boolean = ???
-
-  var onstalled: js.Function1[Event, _] = ???
-  var onmousemove: js.Function1[MouseEvent, _] = ???
-
-  /**
    * Returns the Element that is the root element of the document (for example, the
    * <html> element for HTML documents).
    *
@@ -2766,41 +2457,15 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def documentElement: Element = ???
 
-  var onratechange: js.Function1[Event, _] = ???
-  var onprogress: js.Function1[js.Any, _] = ???
-  var ondblclick: js.Function1[MouseEvent, _] = ???
-  var oncontextmenu: js.Function1[MouseEvent, _] = ???
-  var onloadedmetadata: js.Function1[Event, _] = ???
-
-  var onerror: js.Function1[Event, _] = ???
-  var onplay: js.Function1[Event, _] = ???
-  var onplaying: js.Function1[Event, _] = ???
+  def documentURI: String = ???
 
   /**
-   * document.images returns a collection of the images in the current HTML document.
+   * Returns a list of StyleSheet objects for stylesheets explicitly linked into or
+   * embedded in a document.
    *
    * MDN
    */
-  def images: HTMLCollection = ???
-
-  /**
-   * The Document.location property returns a Location object, which
-   * contains information about the URL of the document and provides methods for
-   * changing that URL and load another URL.
-   *
-   * MDN
-   */
-  var location: Location = ???
-  var onabort: js.Function1[UIEvent, _] = ???
-  var onfocusout: js.Function1[FocusEvent, _] = ???
-  var onselectionchange: js.Function1[Event, _] = ???
-  var onstoragecommit: js.Function1[StorageEvent, _] = ???
-  /**
-   * Returns the event handling code for the readystatechange event.
-   *
-   * MDN
-   */
-  var onreadystatechange: js.Function1[Event, _] = ???
+  def styleSheets: StyleSheetList = ???
 
   /**
    * Returns a string containing the date and time on which the current document was last
@@ -2810,232 +2475,19 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    */
   def lastModified: String = ???
 
-  var onkeypress: js.Function1[KeyboardEvent, _] = ???
-  var onloadeddata: js.Function1[Event, _] = ???
-  var onbeforedeactivate: js.Function1[UIEvent, _] = ???
-  var onactivate: js.Function1[UIEvent, _] = ???
-  var onselectstart: js.Function1[Event, _] = ???
-  var onfocus: js.Function1[FocusEvent, _] = ???
   /**
-   * fgColor gets/sets the foreground color, or text color, of the current document.
+   * Returns an object reference to the identified element.
    *
    * MDN
    */
-  var fgColor: String = ???
-  var ontimeupdate: js.Function1[Event, _] = ???
-  var onselect: js.Function1[UIEvent, _] = ???
-  var ondrop: js.Function1[DragEvent, _] = ???
-  var onended: js.Function1[Event, _] = ???
+  def getElementById(elementId: String): Element = ???
 
   /**
-   * Indicates whether the document is rendered in Quirks mode or Strict mode.
+   * Returns a list of elements with a given name in the (X)HTML document.
    *
    * MDN
    */
-  def compatMode: String = ???
-
-  var onscroll: js.Function1[UIEvent, _] = ???
-  var onload: js.Function1[Event, _] = ???
-  var oninput: js.Function1[Event, _] = ???
-
-  /**
-   * Returns the current value of the current range for a formating command.
-   *
-   * MDN
-   */
-  def queryCommandValue(commandId: String): String = ???
-
-  /**
-   * Adopts a node from an external document. The node and its subtree is removed from the
-   * document it's in (if any), and its ownerDocument is changed to the current
-   * document. The node can then be inserted into the current document.
-   *
-   * MDN
-   */
-  def adoptNode(source: Node): Node = ???
-
-  /**
-   * Returns true if the formating command is in an indeterminate state on the current
-   * range.
-   *
-   * MDN
-   */
-  def queryCommandIndeterm(commandId: String): Boolean = ???
-
-  /**
-   * Returns a list of elements with the given tag name belonging to the given namespace.
-   * The complete document is searched, including the root node.
-   *
-   * MDN
-   */
-  def getElementsByTagNameNS(namespaceURI: String, localName: String): NodeList = ???
-
-  /**
-   * createProcessingInstruction() creates a new processing instruction node, and
-   * returns it.
-   *
-   * MDN
-   */
-  def createProcessingInstruction(target: String, data: String): ProcessingInstruction = ???
-  /**
-   * When an HTML document has been switched to designMode, the document object exposes
-   * the execCommand method which allows one to run commands to manipulate the
-   * contents of the editable region. Most commands affect the document's selection
-   * (bold, italics, etc), while others insert new elements (adding a link) or affect an
-   * entire line (indenting). When using contentEditable,
-   * calling execCommand will affect the currently active editable element.
-   *
-   * MDN
-   */
-  def execCommand(commandId: String, showUI: Boolean = ???, value: js.Any = ???): Boolean = ???
-
-  /**
-   * Returns the element from the document whose elementFromPoint method is being
-   * called which is the topmost element which lies under the given point.  To get an
-   * element, specify the point via coordinates, in CSS pixels, relative to the
-   * upper-left-most point in the window or frame containing the document.
-   *
-   * MDN
-   */
-  def elementFromPoint(x: Int, y: Int): Element = ???
-
-  /**
-   * createCDATASection() creates a new CDATA section node, and returns it.
-   *
-   * MDN
-   */
-  def createCDATASection(data: String): CDATASection = ???
-
-  /**
-   * This method never did anything but throw an exception, and was removed in Gecko 14.0
-   * (Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11).
-   *
-   * MDN
-   */
-  def queryCommandText(commandId: String): String = ???
-
-  /**
-   * Writes a string of text to a document stream opened by document.open().
-   *
-   * MDN
-   */
-  def write(content: String*): Unit = ???
-
-  def updateSettings(): Unit = ???
-
-  /**
-   * In an HTML document creates the specified HTML element or HTMLUnknownElement if
-   * the element is not known. In a XUL document creates the specified XUL element. In
-   * other documents creates an element with a null namespaceURI.
-   *
-   * MDN
-   */
-  def createElement(tagName: String): HTMLElement = ???
-
-  /**
-   * Releases mouse capture if it's currently enabled on an element within this
-   * document. Enabling mouse capture on an element is done by calling
-   * element.setCapture().
-   *
-   * MDN
-   */
-  def releaseCapture(): Unit = ???
-
-  /**
-   * Writes a string of text followed by a newline character to a document.
-   *
-   * MDN
-   */
-  def writeln(content: String*): Unit = ???
-
-  /**
-   * Creates an element with the specified namespace URI and qualified name.
-   *
-   * MDN
-   */
-  def createElementNS(namespaceURI: String, qualifiedName: String): Element = ???
-  /**
-   * The document.open() method opens a document for writing.
-   *
-   * MDN
-   */
-  def open(url: String = ???, name: String = ???, features: String = ???, replace: Boolean = ???): js.Dynamic = ???
-
-
-  /**
-   * Reports whether or not the specified editor query command is supported by the
-   * browser.
-   *
-   * MDN
-   */
-  def queryCommandSupported(commandId: String): Boolean = ???
-
-  /**
-   * The Document.createTreeWalker() creator method returns a newly created
-   * TreeWalker object.
-   *
-   * MDN
-   */
-  def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): TreeWalker = ???
-
-  /**
-   * Creates a new attribute node in a given namespace and returns it.
-   *
-   * MDN
-   */
-  def createAttributeNS(namespaceURI: String, qualifiedName: String): Attr = ???
-
-  /**
-   * Returns true if the formating command can be executed on the current range.
-   *
-   * MDN
-   */
-  def queryCommandEnabled(commandId: String): Boolean = ???
-
-  def focus(): Unit = ???
-
-  /**
-   * The document.close() method finishes writing to a document, opened with
-   * document.open().
-   *
-   * MDN
-   */
-  def close(): Unit = ???
-
-  /**
-   * Returns a set of elements which have all the given class names. When called on the
-   * document object, the complete document is searched, including the root node. You
-   * may also call getElementsByClassName on any element; it will return only elements
-   * which are descendants of the specified root element with the given class names.
-   *
-   * MDN
-   */
-  def getElementsByClassName(classNames: String): NodeList = ???
-
-  /**
-   * Creates a copy of a node from an external document that can be inserted into the
-   * current document.
-   *
-   * MDN
-   */
-  def importNode(importedNode: Node, deep: Boolean): Node = ???
-
-  /**
-   * Once a Range is created, you need to set its boundary points before you can make use of
-   * most of its methods.
-   *
-   * MDN
-   */
-  def createRange(): Range = ???
-
-  def fireEvent(eventName: String, eventObj: js.Any = ???): Boolean = ???
-
-  /**
-   * createComment() creates a new comment node, and returns it.
-   *
-   * MDN
-   */
-  def createComment(data: String): Comment = ???
+  def getElementsByName(elementName: String): NodeList = ???
 
   /**
    * Returns a HTMLCollection of elements with the given tag name. The complete
@@ -3048,44 +2500,65 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
   def getElementsByTagName(tagname: String): NodeList = ???
 
   /**
-   * Creates a new empty DocumentFragment.
+   * Returns a list of elements with the given tag name belonging to the given namespace.
+   * The complete document is searched, including the root node.
    *
    * MDN
    */
-  def createDocumentFragment(): DocumentFragment = ???
-
-  def createStyleSheet(href: String = ???, index: Int = ???): CSSStyleSheet = ???
-
-  /**
-   * Returns a list of elements with a given name in the (X)HTML document.
-   *
-   * MDN
-   */
-  def getElementsByName(elementName: String): NodeList = ???
+  def getElementsByTagNameNS(namespaceURI: String, localName: String): NodeList = ???
 
   /**
-   * Returns true if the formating command has been executed on the current range.
+   * Returns a set of elements which have all the given class names. When called on the
+   * document object, the complete document is searched, including the root node. You
+   * may also call getElementsByClassName on any element; it will return only elements
+   * which are descendants of the specified root element with the given class names.
    *
    * MDN
    */
-  def queryCommandState(commandId: String): Boolean = ???
+  def getElementsByClassName(classNames: String): NodeList = ???
 
   /**
-   * Returns a Boolean value indicating whether the document or any element inside the
-   * document has focus. This method can be used to determine whether the active element
-   * in a document has focus.
+   * Returns the element from the document whose elementFromPoint method is being
+   * called which is the topmost element which lies under the given point.  To get an
+   * element, specify the point via coordinates, in CSS pixels, relative to the
+   * upper-left-most point in the window or frame containing the document.
    *
    * MDN
    */
-  def hasFocus(): Boolean = ???
+  def elementFromPoint(x: Int, y: Int): Element = ???
 
   /**
-   * This method never did anything and always threw an exception, so it was removed in
-   * Gecko 14.0 (Firefox 14.0 / Thunderbird 14.0 / SeaMonkey 2.11).
+   * Adopts a node from an external document. The node and its subtree is removed from the
+   * document it's in (if any), and its ownerDocument is changed to the current
+   * document. The node can then be inserted into the current document.
    *
    * MDN
    */
-  def execCommandShowHelp(commandId: String): Boolean = ???
+  def adoptNode(source: Node): Node = ???
+
+  /**
+   * Creates a copy of a node from an external document that can be inserted into the
+   * current document.
+   *
+   * MDN
+   */
+  def importNode(importedNode: Node, deep: Boolean): Node = ???
+
+  /**
+   * In an HTML document creates the specified HTML element or HTMLUnknownElement if
+   * the element is not known. In a XUL document creates the specified XUL element. In
+   * other documents creates an element with a null namespaceURI.
+   *
+   * MDN
+   */
+  def createElement(tagName: String): Element = ???
+
+  /**
+   * Creates an element with the specified namespace URI and qualified name.
+   *
+   * MDN
+   */
+  def createElementNS(namespaceURI: String, qualifiedName: String): Element = ???
 
   /**
    * createAttribute creates a new attribute node, and returns it.
@@ -3093,6 +2566,52 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   def createAttribute(name: String): Attr = ???
+
+  /**
+   * Creates a new attribute node in a given namespace and returns it.
+   *
+   * MDN
+   */
+  def createAttributeNS(namespaceURI: String, qualifiedName: String): Attr = ???
+
+  /**
+   * createProcessingInstruction() creates a new processing instruction node, and
+   * returns it.
+   *
+   * MDN
+   */
+  def createProcessingInstruction(target: String, data: String): ProcessingInstruction = ???
+
+  /**
+   * createCDATASection() creates a new CDATA section node, and returns it.
+   *
+   * MDN
+   */
+  def createCDATASection(data: String): CDATASection = ???
+
+  /**
+   * Once a Range is created, you need to set its boundary points before you can make use of
+   * most of its methods.
+   *
+   * MDN
+   */
+  def createRange(): Range = ???
+
+  /**
+   * createComment() creates a new comment node, and returns it.
+   *
+   * MDN
+   */
+  def createComment(data: String): Comment = ???
+
+  /**
+   * Creates a new empty DocumentFragment.
+   *
+   * MDN
+   */
+  def createDocumentFragment(): DocumentFragment = ???
+
+  def createStyleSheet(href: String = ???, index: Int = ???): CSSStyleSheet = ???
 
   def createTextNode(data: String): Text = ???
 
@@ -3104,29 +2623,23 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
   def createNodeIterator(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): NodeIterator = ???
 
   /**
-   * The DOM getSelection() method is available on the Window and Document interfaces.
-   * See window.getSelection() for details.
+   * The Document.createTreeWalker() creator method returns a newly created
+   * TreeWalker object.
    *
    * MDN
    */
-  def getSelection(): Selection = ???
+  def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): TreeWalker = ???
 
   /**
-   * Returns an object reference to the identified element.
+   * Releases mouse capture if it's currently enabled on an element within this
+   * document. Enabling mouse capture on an element is done by calling
+   * element.setCapture().
    *
    * MDN
    */
-  def getElementById(elementId: String): HTMLElement = ???
-
-  /**
-   * In recent versions of Mozilla-based applications as well as in Internet Explorer
-   * and Netscape 4 this method does nothing.
-   *
-   * MDN
-   */
-  def clear(): Unit = ???
+  @deprecated
+  def releaseCapture(): Unit = ???
 }
-
 
 /**
  * A MessageEvent is sent to clients using WebSockets when data is received from the
@@ -7108,4 +6621,3 @@ class Worker (stringUrl: String) extends AbstractWorker {
 
 object Worker extends js.Object {
 }
-
