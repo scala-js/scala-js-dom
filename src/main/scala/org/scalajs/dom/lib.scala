@@ -2858,7 +2858,7 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def fill(fillRule: String = ???): Unit = ???
+  def fill(): Unit = ???
 
   /**
    * Creates a new, blank ImageData object with the specified dimensions. All of the
