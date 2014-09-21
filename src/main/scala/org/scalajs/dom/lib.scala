@@ -339,7 +339,7 @@ trait WindowTimers extends WindowTimersExtension {
    *
    * MDN
    */
-  def setTimeout(handler: js.Any, timeout: js.Any, args: js.Any*): Int = ???
+  def setTimeout(handler: js.Function0[Any], timeout: Int): Int = ???
 
   /**
    * Cancels repeated action which was set up using setInterval.
@@ -354,7 +354,7 @@ trait WindowTimers extends WindowTimersExtension {
    *
    * MDN
    */
-  def setInterval(handler: js.Any, timeout: js.Any, args: js.Any*): Int = ???
+  def setInterval(handler: js.Function0[Any], timeout: Int): Int = ???
 }
 
 /**
@@ -6036,7 +6036,7 @@ trait AudioTrackList extends EventTarget with DOMList[AudioTrack] {
 trait WindowTimersExtension extends js.Object {
   def clearImmediate(handle: Int): Unit = ???
 
-  def setImmediate(expression: js.Any, args: js.Any*): Int = ???
+  def setImmediate(handler: js.Function0[Any]): Int = ???
 }
 
 /**
