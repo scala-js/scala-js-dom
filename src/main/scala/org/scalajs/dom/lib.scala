@@ -1135,7 +1135,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def screenX: Int = ???
+  def screenX: Double = ???
 
   /**
    * The clientY property provides the Y coordinate of the mouse pointer in local (DOM
@@ -1143,7 +1143,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def clientY: Int = ???
+  def clientY: Double = ???
 
   /**
    * The screenY property provides the Y coordinate of the mouse pointer in global
@@ -1151,7 +1151,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def screenY: Int = ???
+  def screenY: Double = ???
 
   /**
    * The relatedTarget property is the secondary target for the event, if there is one.
@@ -1182,7 +1182,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def clientX: Int = ???
+  def clientX: Double = ???
 
   def initMouseEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean, altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean, buttonArg: Int, relatedTargetArg: EventTarget): Unit = ???
 
