@@ -1138,6 +1138,24 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
   def screenX: Double = ???
 
   /**
+   * The pageX property is an integer value in pixels for the X coordinate of the
+   * mouse pointer, relative to the whole document, when the mouse event fired.
+   * This property takes into account any horizontal scrolling of the page.
+   *
+   * MDN
+   */
+  def pageX: Double = ???
+
+  /**
+   * The pageY property is an integer value in pixels for the Y coordinate of the
+   * mouse pointer, relative to the whole document, when the mouse event fired.
+   * This property takes into account any vertical scrolling of the page.
+   *
+   * MDN
+   */
+  def pageY: Double = ???
+
+  /**
    * The clientY property provides the Y coordinate of the mouse pointer in local (DOM
    * content) coordinates.
    *
