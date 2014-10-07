@@ -1116,6 +1116,29 @@ trait ModifierKeyEvent extends js.Object {
 }
 
 /**
+ * The hashchange event is fired when the fragment identifier of the URL has
+ * changed (the part of the URL that follows the # symbol, including the #
+ * symbol).
+ *
+ * MDN
+ */
+trait HashChangeEvent extends Event {
+  /**
+   * The new URL to which the window is navigating.
+   *
+   * MDN
+   */
+  def newURL: String = ???
+
+  /**
+   * The previous URL from which the window was navigated.
+   *
+   * MDN
+   */
+  def oldURL: String = ???
+}
+
+/**
  * The DOM MouseEvent interface represents events that occur due to the user
  * interacting with a pointing device (such as a mouse).
  *
@@ -1871,7 +1894,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onhashchange: js.Function1[Event, _] = ???
+  var onhashchange: js.Function1[HashChangeEvent, _] = ???
   /**
    * The unload event is raised when the window is unloading its content and resources.
    * The resources removal is processed  after the unload event occurs.
