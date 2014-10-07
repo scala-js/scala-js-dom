@@ -1762,7 +1762,7 @@ class HTMLFrameSetElement extends HTMLElement {
   var onoffline: js.Function1[Event, _] = ???
   var border: String = ???
   var onunload: js.Function1[Event, _] = ???
-  var onhashchange: js.Function1[Event, _] = ???
+  var onhashchange: js.Function1[HashChangeEvent, _] = ???
   var onload: js.Function1[Event, _] = ???
   var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = ???
   var onstorage: js.Function1[StorageEvent, _] = ???
