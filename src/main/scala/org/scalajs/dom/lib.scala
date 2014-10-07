@@ -751,7 +751,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MSN
    */
-  def setAttribute(name: String = ???, value: String = ???): Unit = ???
+  def setAttribute(name: String, value: String): Unit = ???
 
   /**
    * removeAttributeNS removes the specified attribute from an element.
