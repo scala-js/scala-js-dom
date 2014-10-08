@@ -2253,7 +2253,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def screenX: Int = ???
+  def screenX: Double = ???
 
   /**
    * The Y coordinate of the touch point relative to the top edge of the screen.
@@ -2261,7 +2261,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def screenY: Int = ???
+  def screenY: Double = ???
 
   /**
    * The X coordinate of the touch point relative to the left edge of the browser viewport,
@@ -2269,7 +2269,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def clientX: Int = ???
+  def clientX: Double = ???
 
   /**
    * The Y coordinate of the touch point relative to the top edge of the browser viewport,
@@ -2277,7 +2277,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def clientY: Int = ???
+  def clientY: Double = ???
 
   /**
    *  The X coordinate of the touch point relative to the left edge of the document. Unlike clientX,
@@ -2286,7 +2286,7 @@ class Touch extends js.Object {
    * MDN
    *  Read only.
    */
-  def pageX: Int = ???
+  def pageX: Double = ???
 
   /**
    * The Y coordinate of the touch point relative to the top of the document. Unlike clientY, this value
@@ -2295,7 +2295,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def pageY: Int = ???
+  def pageY: Double = ???
 
   /**
    * The X radius of the ellipse that most closely circumscribes the area of contact with the screen.
