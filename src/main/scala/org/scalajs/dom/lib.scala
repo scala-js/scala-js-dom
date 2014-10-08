@@ -2357,8 +2357,19 @@ class Touch extends js.Object {
  * text from hand-writing system like tablet PC, key events may not be fired.
  *
  * MDN
+ *
+ * Warning: keypress event is to be deprecated in favor of beforeinput event eventually
+ *
+ * W3C
  */
 class KeyboardEvent extends UIEvent with ModifierKeyEvent {
+  /**
+   * Returns the Unicode value of a character key pressed during a keypress event.
+   *
+   * Note: Required especially in Gecko based browsers
+   */
+  def charCode: Int = ???
+
   /**
    * A system and implementation dependent numerical code identifying the
    * unmodified value of the pressed key. This is usually the decimal ASCII
