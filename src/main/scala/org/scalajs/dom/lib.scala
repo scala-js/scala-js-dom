@@ -2577,7 +2577,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def elementFromPoint(x: Int, y: Int): Element = ???
+  def elementFromPoint(x: Double, y: Double): Element = ???
 
   /**
    * Adopts a node from an external document. The node and its subtree is removed from the
@@ -3213,21 +3213,21 @@ class Screen extends js.Object {
    *
    * MDN
    */
-  def width: Int = ???
+  def width: Double = ???
 
   /**
    * Returns the amount of vertical space available to the window on the screen.
    *
    * MDN
    */
-  def availHeight: Int = ???
+  def availHeight: Double = ???
 
   /**
    * Returns the height of the screen in pixels.
    *
    * MDN
    */
-  def height: Int = ???
+  def height: Double = ???
 
   /**
    * Returns the color depth of the screen.
@@ -3241,7 +3241,7 @@ class Screen extends js.Object {
    *
    * MDN
    */
-  def availWidth: Int = ???
+  def availWidth: Double = ???
 
   /**
    * Returns the bit depth of the screen.
