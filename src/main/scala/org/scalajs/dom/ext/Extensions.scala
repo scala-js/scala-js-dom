@@ -1,9 +1,12 @@
 package org.scalajs.dom.ext
 
-import org.scalajs.dom.html
+import scala.language.implicitConversions
+import scala.concurrent.{Promise, Future}
 
 import scala.scalajs.js
+
 import org.scalajs.dom
+import org.scalajs.dom.{html, raw}
 
 /**
  * Used to extend out javascript *Collections to make them usable as normal
@@ -151,7 +154,7 @@ object KeyCode {
   val z = 90
 }
 
-import scala.concurrent.{Promise, Future}
+
 /**
  * Thrown when `Ajax.get` or `Ajax.post` receives a non-20X response code.
  * Contains the XMLHttpRequest that resulted in that response
@@ -245,3 +248,58 @@ sealed class Storage(domStorage: dom.Storage) {
 object SessionStorage extends Storage(dom.sessionStorage)
 
 object LocalStorage extends Storage(dom.localStorage)
+
+/**
+ * W3C recommendation for touch events
+ *
+ * @see http://www.w3.org/TR/touch-events/
+ */
+trait TouchEvents extends js.Object {
+  /**
+   * The touchstart event is fired when a touch point is placed on the touch
+   * surface.
+   *
+   * MDN
+   */
+  var ontouchstart: js.Function1[raw.TouchEvent, _] = js.native
+
+  /**
+   * The touchmove event is fired when a touch point is moved along the touch
+   * surface.
+   *
+   * MDN
+   */
+  var ontouchmove: js.Function1[raw.TouchEvent, _] = js.native
+
+  /**
+   * The touchend event is fired when a touch point is removed from the touch
+   * surface.
+   *
+   * MDN
+   */
+  var ontouchend: js.Function1[raw.TouchEvent, _] = js.native
+
+  /**
+   * The touchcancel event is fired when a touch point has been disrupted in an
+   * implementation-specific manner (too many touch points for example).
+   *
+   * MDN
+   */
+  var ontouchcancel: js.Function1[raw.TouchEvent, _] = js.native
+}
+
+/**
+ * Implicits to add touch event handlers to [[raw.HTMLDocument]] and
+ * [[raw.Window]].
+ *
+ * @note Touch events may not be available on all modern browsers. See
+ *       http://www.quirksmode.org/mobile/tableTouch.html#t00 for a compatibility
+ *       table.
+ */
+object TouchEvents {
+  implicit def HTMLDocumentToTouchEvents(html: raw.HTMLDocument): TouchEvents =
+    html.asInstanceOf[TouchEvents]
+
+  implicit def WindowToTouchEvents(window: raw.Window): TouchEvents =
+    window.asInstanceOf[TouchEvents]
+}
