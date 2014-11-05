@@ -107,7 +107,6 @@ object ChCode {
 
   /** keys that have different charCode representation when shift key is pressed */
   private val letterKey2Char = for(letterKeyCode  <- A to Z) yield (letterKeyCode, >>(letterKeyCode)_)
-  private implicit def Char2Int(ch: Char): Int = ch.toInt
   val shiftableKey2Char = Map[Int, Boolean => Int](
     (Num0,                >(')',      Num0)),
     (Num1,                >('!',      Num1)),
