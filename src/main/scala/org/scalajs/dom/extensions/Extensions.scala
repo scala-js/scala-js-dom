@@ -148,7 +148,7 @@ object KeyCode {
   val z = 90
 }
 
-import scala.concurrent.{Promise, Future}
+import scala.concurrent.{Promise, Future, ExecutionContext}
 /**
  * Thrown when `Ajax.get` or `Ajax.post` receives a non-20X response code.
  * Contains the XMLHttpRequest that resulted in that respons
@@ -163,28 +163,28 @@ object Ajax{
           data: String = "",
           timeout: Int = 0,
           headers: Map[String, String] = Map.empty,
-          withCredentials: Boolean = false) = {
+          withCredentials: Boolean = false)(implicit ec: ExecutionContext) = {
     apply("GET", url, data, timeout, headers, withCredentials)
   }
   def post(url: String,
            data: String = "",
            timeout: Int = 0,
            headers: Map[String, String] = Map.empty,
-           withCredentials: Boolean = false) = {
+           withCredentials: Boolean = false)(implicit ec: ExecutionContext) = {
     apply("POST", url, data, timeout, headers, withCredentials)
   }
   def put(url: String,
              data: String = "",
              timeout: Int = 0,
              headers: Map[String, String] = Map.empty,
-             withCredentials: Boolean = false) = {
+             withCredentials: Boolean = false)(implicit ec: ExecutionContext) = {
     apply("PUT", url, data, timeout, headers, withCredentials)
   }
   def delete(url: String,
              data: String = "",
              timeout: Int = 0,
              headers: Map[String, String] = Map.empty,
-             withCredentials: Boolean = false) = {
+             withCredentials: Boolean = false)(implicit ec: ExecutionContext) = {
     apply("DELETE", url, data, timeout, headers, withCredentials)
   }
   def apply(method: String,
@@ -192,24 +192,26 @@ object Ajax{
             data: String,
             timeout: Int,
             headers: Map[String, String],
-            withCredentials: Boolean): Future[dom.XMLHttpRequest] = {
+            withCredentials: Boolean)(implicit ec: ExecutionContext): Future[dom.XMLHttpRequest] = {
     val ajaxReq = Map("X-Requested-With"->"XMLHttpRequest")
     val req = new dom.XMLHttpRequest()
     val promise = Promise[dom.XMLHttpRequest]
 
-    req.onreadystatechange = {(e: dom.Event) =>
-      if (req.readyState.toInt == 4){
-        if (200 <= req.status && req.status < 300)
-          promise.success(req)
-        else
-          promise.failure(AjaxException(req))
+    Future {
+      req.onreadystatechange = {(e: dom.Event) =>
+        if (req.readyState == 4){
+          if (200 <= req.status && req.status < 300)
+            promise.success(req)
+          else
+            promise.failure(AjaxException(req))
+        }
       }
+      req.open(method, url)
+      req.withCredentials = withCredentials
+      headers.foreach(x => req.setRequestHeader(x._1, x._2))
+      req.send(data)
     }
-    req.open(method, url)
-    req.timeout = timeout
-    req.withCredentials = withCredentials
-    (headers ++ ajaxReq).foreach(x => req.setRequestHeader(x._1, x._2))
-    req.send(data)
+    
     promise.future
   }
 }
