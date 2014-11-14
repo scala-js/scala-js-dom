@@ -58,7 +58,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def cookie: String = ???
+  var cookie: String = ???
 
   /**
    * The Document.dir property is a DOMString representing the directionality of the
