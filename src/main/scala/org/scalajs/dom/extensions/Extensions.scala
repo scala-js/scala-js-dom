@@ -213,3 +213,24 @@ object Ajax{
     promise.future
   }
 }
+
+/**
+ * Wraps [[dom.Storage]] replacing null-returning methods with option-returning ones
+ */
+sealed class Storage(domStorage: dom.Storage) {
+  def length: Int = domStorage.length
+
+  def apply(key: String): Option[String] = Option(domStorage.getItem(key))
+
+  def update(key: String, data: String): Unit = domStorage.setItem(key, data)
+
+  def clear(): Unit = domStorage.clear()
+
+  def remove(key: String): Unit = domStorage.removeItem(key)
+
+  def key(index: Int): Option[String] = Option(domStorage.key(index))
+}
+
+object SessionStorage extends Storage(dom.sessionStorage)
+
+object LocalStorage extends Storage(dom.localStorage)
