@@ -3694,13 +3694,7 @@ object Range extends js.Object {
 class Storage extends js.Object {
   var length: Int = ???
 
-  def getItem(key: String): js.Dynamic = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(key: String): js.Any = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(key: String, v: js.Any): Unit = ???
+  def getItem(key: String): String = ???
 
   def setItem(key: String, data: String): Unit = ???
 
@@ -3709,12 +3703,6 @@ class Storage extends js.Object {
   def removeItem(key: String): Unit = ???
 
   def key(index: Int): String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): js.Any = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: js.Any): Unit = ???
 }
 
 
