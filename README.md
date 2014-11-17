@@ -15,7 +15,7 @@ The goal of this project is to provide a thin-but-idiomatic-scala interface to m
 - Deprecated properties/methods/types will not be present.
 - IE-only, Chrome-only, FF-only, and in general browser-specific attributes will not be present.
 - The name of a Scala type should map directly to the name of the corresponding Javascript type.
-- Any type which is a Javascript type (e.g. you can `instanceof` in javascipt) should be a Scala `class`; any other interface which isn't a Javascript type should be a `trait`.
+- Any type which is a Javascript type (e.g. you can `instanceof` in javascript) should be a Scala `class`; any other interface which isn't a Javascript type should be a `trait`.
 - Read-only members should be `def`, and not-directly-instantiable classes should have `private` constructors.
 
 Extensions
