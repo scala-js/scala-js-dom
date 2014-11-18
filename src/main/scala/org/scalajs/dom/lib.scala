@@ -12,6 +12,111 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.Dynamic.global
+  
+object XPathResult extends js.Object {
+  
+  /**    
+   * A result set containing whatever type naturally results from evaluation
+   * of the expression. Note that if the result is a node-set then
+   * UNORDERED_NODE_ITERATOR_TYPE is always the resulting type.
+   * 
+   * MDN
+   */ 
+  val ANY_TYPE = 0
+
+  /** 
+   * A result containing a single number. This is useful for example, in an
+   * XPath expression using the count() function.
+   *
+   * MDN
+   */
+  val NUMBER_TYPE = 1   
+
+  /** 
+   * A result containing a single string.
+   *
+   * MDN
+   */
+  val STRING_TYPE = 2   
+
+  /** 
+   * A result containing a single boolean value. This is useful for example,
+   * in an XPath expression using the not() function.
+   *
+   * MDN
+   */
+  val BOOLEAN_TYPE = 3   
+
+  /** 
+   * A result node-set containing all the nodes matching the expression. The
+   * nodes may not necessarily be in the same order that they appear in the
+   * document.
+   *
+   * MDN
+   */
+  val UNORDERED_NODE_ITERATOR_TYPE = 4   
+
+  /** 
+   * A result node-set containing all the nodes matching the expression. The
+   * nodes in the result set are in the same order that they appear in the
+   * document.
+   *
+   * MDN
+   */
+  val ORDERED_NODE_ITERATOR_TYPE = 5   
+ 
+  /** 
+   * A result node-set containing snapshots of all the nodes matching the
+   * expression. The nodes may not necessarily be in the same order that they
+   * appear in the document.
+   *
+   * MDN
+   */
+  val UNORDERED_NODE_SNAPSHOT_TYPE = 6   
+  
+  /** 
+   * A result node-set containing snapshots of all the nodes matching the
+   * expression. The nodes in the result set are in the same order that they
+   * appear in the document.
+   *
+   * MDN
+   */
+  val ORDERED_NODE_SNAPSHOT_TYPE = 7   
+  
+  /** 
+   * A result node-set containing any single node that matches the expression.
+   * The node is not necessarily the first node in the document that matches
+   * the expression.
+   *
+   * MDN
+   */
+  val ANY_UNORDERED_NODE_TYPE = 8   
+  
+  /** 
+   * A result node-set containing the first node in the document that matches
+   * the expression.
+   *
+   * MDN
+   */
+  val FIRST_ORDERED_NODE_TYPE = 9   
+}
+
+class XPathResult extends js.Object {
+  def booleanValue: Boolean = ???
+  def invalidIteratorState: Boolean = ???
+  def numberValue: Double = ???
+  def resultType: Int = ???
+  def singleNodeValue: Node = ???
+  def snapshotLength: Int = ???
+  def stringValue: String = ???
+
+  def iterateNext(): js.Dynamic = ???
+  def snapshotItem(): js.Dynamic = ???
+}
+
+class XPathNSResolver extends js.Object {
+  def lookupNamespaceURI(prefix: String): String = ???
+}
 
 /**
  * The PositionOptions interface describes the options to use when calling the
@@ -2448,6 +2553,13 @@ object KeyboardEvent extends js.Object {
  * MDN
  */
 class Document extends Node with NodeSelector with DocumentEvent with ParentNode {
+
+  /** 
+   * Returns a DOMImplementation object associated with the current document.
+   *
+   * MDN
+   */
+  def implementation: DOMImplementation = ???
  
   /**
    * Returns a string representing the encoding under which the document was parsed
@@ -2587,6 +2699,65 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   def adoptNode(source: Node): Node = ???
+
+  /** 
+   * Returns an XPathResult based on an XPath expression and other given
+   * parameters.
+   * 
+   * MDN
+   *
+   * @param xpathExpression is a string representing the XPath to be
+   *     evaluated.
+   * @param contextNode specifies the context node for the query (see the
+   *     http://www.w3.org/TR/xpath XPath specification). It's common to pass
+   *     document as the context node.
+   * @param namespaceResolver an `XPathNSResolver`
+   * @param resultType is an integer that corresponds to the type of result
+   *     XPathResult to return. Use named constant properties, such as
+   *     XPathResult.ANY_TYPE, of the XPathResult constructor, which
+   *     correspond to integers from 0 to 9.
+   * @param result is an existing XPathResult to use for the results. null is
+   *     the most common and will create a new XPathResult
+   */
+  def evaluate(xpathExpression: String, contextNode: Node, 
+      namespaceResolver: XPathNSResolver, resultType: Int, 
+      result: XPathResult): XPathResult = ???
+
+  /** 
+   * Returns an XPathResult based on an XPath expression and other given
+   * parameters.
+   * 
+   * MDN
+   * 
+   * @param xpathExpression is a string representing the XPath to be
+   *     evaluated.
+   * @param contextNode specifies the context node for the query (see the
+   *     [http://www.w3.org/TR/xpath XPath specification). It's common to pass
+   *     document as the context node.
+   * @param namespaceResolver is a function that will be passed any namespace
+   *     prefixes and should return a string representing the namespace URI
+   *     associated with that prefix. It will be used to resolve prefixes
+   *     within the XPath itself, so that they can be matched with the
+   *     document. null is common for HTML documents or when no namespace
+   *     prefixes are used.
+   * @param resultType is an integer that corresponds to the type of result
+   *     XPathResult to return. Use named constant properties, such as
+   *     XPathResult.ANY_TYPE, of the XPathResult constructor, which
+   *     correspond to integers from 0 to 9.
+   * @param result is an existing XPathResult to use for the results. null is
+   *     the most common and will create a new XPathResult
+   */
+  def evaluate(xpathExpression: String, contextNode: Node, 
+      namespaceResolver: js.Function1[String, String], resultType: Int, 
+      result: XPathResult): XPathResult = ???  
+
+  /** 
+   * Creates an XPathNSResolver which resolves namespaces with respect to the
+   * definitions in scope for a specified node.
+   *
+   * MDN.
+   */
+  def createNSResolver(node: Node): XPathNSResolver = ???
 
   /**
    * Creates a copy of a node from an external document that can be inserted into the
