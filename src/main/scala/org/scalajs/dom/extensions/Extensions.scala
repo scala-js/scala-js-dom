@@ -204,7 +204,7 @@ object Ajax{
 
     req.onreadystatechange = {(e: dom.Event) =>
       if (req.readyState.toInt == 4){
-        if (200 <= req.status && req.status < 300)
+        if ((req.status >= 200 && req.status < 300) || req.status == 304)
           promise.success(req)
         else
           promise.failure(AjaxException(req))
