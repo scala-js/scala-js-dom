@@ -2562,39 +2562,12 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
   def implementation: DOMImplementation = js.native
 
   /**
-   * Returns a string representing the encoding under which the document was parsed
-   * (e.g. ISO-8859-1).
-   *
-   * MDN
-   */
-  @deprecated
-  def inputEncoding: String = js.native
-
-  /**
-   * Returns the encoding as determined by the XML declaration. Should be null if
-   * unspecified or unknown.
-   *
-   * MDN
-   */
-  @deprecated
-  def xmlEncoding: String = js.native
-
-  /**
-   * Returns the version number as specified in the XML declaration (e.g., <?xml
-   * version="1.0"?>) or "1.0" if the declaration is absent.
-   *
-   * MDN
-   */
-  @deprecated
-  def xmlVersion: String = js.native
-
-  /**
    * Returns true if the XML declaration specifies the document is standalone (e.g., An
    * external part of the DTD affects the document's content), else false.
    *
    * MDN
    */
-  @deprecated
+  @deprecated("Not supported by all browsers", "forever")
   def xmlStandalone: Boolean = js.native
 
   /**
@@ -2860,7 +2833,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  @deprecated
+  @deprecated("Non standard.", "forever")
   def releaseCapture(): Unit = js.native
 }
 

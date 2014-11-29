@@ -99,7 +99,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  @deprecated
+  @deprecated("Use the CSS style color instead.", "DOM Level 2")
   var fgColor: String = js.native
 
   /**
@@ -108,7 +108,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  @deprecated
+  @deprecated("Use the CSS style background-color instead.", "DOM Level 2")
   var bgColor: String = js.native
 
   /**
@@ -116,7 +116,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  @deprecated
+  @deprecated("Use the CSS style color with the pseudo-class :link instead.", "DOM Level 2")
   var linkColor: String = js.native
 
   /**
@@ -125,10 +125,10 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  @deprecated
+  @deprecated("Use the CSS style color with the pseudo-class :active instead.", "DOM Level 2")
   var alinkColor: String = js.native
 
-  @deprecated
+  @deprecated("Use the CSS style color with the pseudo-class :visited instead.", "DOM Level 2")
   var vlinkColor: String = js.native
 
   /**
@@ -206,7 +206,6 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  @deprecated
   def applets: HTMLCollection = js.native
 
   /**
@@ -332,15 +331,6 @@ class HTMLDocument extends Document {
    * MDN
    */
   def getSelection(): Selection = js.native
-
-  /**
-   * In recent versions of Mozilla-based applications as well as in Internet Explorer
-   * and Netscape 4 this method does nothing.
-   *
-   * MDN
-   */
-  @deprecated
-  def clear(): Unit = js.native
 
   var onbeforeactivate: js.Function1[UIEvent, _] = js.native
 
