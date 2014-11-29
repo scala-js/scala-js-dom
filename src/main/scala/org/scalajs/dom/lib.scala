@@ -12,110 +12,110 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.Dynamic.global
-  
+
 object XPathResult extends js.Object {
-  
-  /**    
+
+  /**
    * A result set containing whatever type naturally results from evaluation
    * of the expression. Note that if the result is a node-set then
    * UNORDERED_NODE_ITERATOR_TYPE is always the resulting type.
-   * 
+   *
    * MDN
-   */ 
-  val ANY_TYPE = 0
+   */
+  val ANY_TYPE: Int = js.native
 
-  /** 
+  /**
    * A result containing a single number. This is useful for example, in an
    * XPath expression using the count() function.
    *
    * MDN
    */
-  val NUMBER_TYPE = 1   
+  val NUMBER_TYPE: Int = js.native
 
-  /** 
+  /**
    * A result containing a single string.
    *
    * MDN
    */
-  val STRING_TYPE = 2   
+  val STRING_TYPE: Int = js.native
 
-  /** 
+  /**
    * A result containing a single boolean value. This is useful for example,
    * in an XPath expression using the not() function.
    *
    * MDN
    */
-  val BOOLEAN_TYPE = 3   
+  val BOOLEAN_TYPE: Int = js.native
 
-  /** 
+  /**
    * A result node-set containing all the nodes matching the expression. The
    * nodes may not necessarily be in the same order that they appear in the
    * document.
    *
    * MDN
    */
-  val UNORDERED_NODE_ITERATOR_TYPE = 4   
+  val UNORDERED_NODE_ITERATOR_TYPE: Int = js.native
 
-  /** 
+  /**
    * A result node-set containing all the nodes matching the expression. The
    * nodes in the result set are in the same order that they appear in the
    * document.
    *
    * MDN
    */
-  val ORDERED_NODE_ITERATOR_TYPE = 5   
- 
-  /** 
+  val ORDERED_NODE_ITERATOR_TYPE: Int = js.native
+
+  /**
    * A result node-set containing snapshots of all the nodes matching the
    * expression. The nodes may not necessarily be in the same order that they
    * appear in the document.
    *
    * MDN
    */
-  val UNORDERED_NODE_SNAPSHOT_TYPE = 6   
-  
-  /** 
+  val UNORDERED_NODE_SNAPSHOT_TYPE: Int = js.native
+
+  /**
    * A result node-set containing snapshots of all the nodes matching the
    * expression. The nodes in the result set are in the same order that they
    * appear in the document.
    *
    * MDN
    */
-  val ORDERED_NODE_SNAPSHOT_TYPE = 7   
-  
-  /** 
+  val ORDERED_NODE_SNAPSHOT_TYPE: Int = js.native
+
+  /**
    * A result node-set containing any single node that matches the expression.
    * The node is not necessarily the first node in the document that matches
    * the expression.
    *
    * MDN
    */
-  val ANY_UNORDERED_NODE_TYPE = 8   
-  
-  /** 
+  val ANY_UNORDERED_NODE_TYPE: Int = js.native
+
+  /**
    * A result node-set containing the first node in the document that matches
    * the expression.
    *
    * MDN
    */
-  val FIRST_ORDERED_NODE_TYPE = 9   
+  val FIRST_ORDERED_NODE_TYPE: Int = js.native
 }
 
 class XPathResult extends js.Object {
-  def booleanValue: Boolean = ???
-  def invalidIteratorState: Boolean = ???
-  def numberValue: Double = ???
-  def resultType: Int = ???
-  def singleNodeValue: Node = ???
-  def snapshotLength: Int = ???
-  def stringValue: String = ???
+  def booleanValue: Boolean = js.native
+  def invalidIteratorState: Boolean = js.native
+  def numberValue: Double = js.native
+  def resultType: Int = js.native
+  def singleNodeValue: Node = js.native
+  def snapshotLength: Int = js.native
+  def stringValue: String = js.native
 
-  def iterateNext(): js.Dynamic = ???
-  def snapshotItem(): js.Dynamic = ???
+  def iterateNext(): js.Dynamic = js.native
+  def snapshotItem(): js.Dynamic = js.native
 }
 
 class XPathNSResolver extends js.Object {
-  def lookupNamespaceURI(prefix: String): String = ???
+  def lookupNamespaceURI(prefix: String): String = js.native
 }
 
 /**
@@ -138,7 +138,7 @@ class PositionOptions extends js.Object {
    *
    * MDN
    */
-  var enableHighAccuracy: Boolean = ???
+  var enableHighAccuracy: Boolean = js.native
   /**
    * The PositionOptions.timeout property is a positive long value representing the
    * maximum length of time (in milliseconds) the device is allowed to take in order to
@@ -147,7 +147,7 @@ class PositionOptions extends js.Object {
    *
    * MDN
    */
-  var timeout: Int = ???
+  var timeout: Int = js.native
   /**
    * The PositionOptions.maximumAge property is a positive long value indicating the
    * maximum age in milliseconds of a possible cached position that is acceptable to
@@ -157,7 +157,7 @@ class PositionOptions extends js.Object {
    *
    * MDN
    */
-  var maximumAge: Int = ???
+  var maximumAge: Int = js.native
 }
 
 /**
@@ -178,7 +178,7 @@ trait NavigatorID extends js.Object {
    *
    * MDN
    */
-  def appVersion: String = ???
+  def appVersion: String = js.native
 
   /**
    * Returns the name of the browser. The HTML5 specification also allows any browser to
@@ -186,21 +186,21 @@ trait NavigatorID extends js.Object {
    *
    * MDN
    */
-  def appName: String = ???
+  def appName: String = js.native
 
   /**
    * Returns the user agent string for the current browser.
    *
    * MDN
    */
-  def userAgent: String = ???
+  def userAgent: String = js.native
 
   /**
    * Returns a string representing the platform of the browser.
    *
    * MDN
    */
-  def platform: String = ???
+  def platform: String = js.native
 }
 
 /**
@@ -219,7 +219,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def whatToShow: Int = ???
+  def whatToShow: Int = js.native
 
   /**
    * The TreeWalker.filter read-only property returns a NodeFilter that is the
@@ -227,7 +227,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def filter: NodeFilter = ???
+  def filter: NodeFilter = js.native
 
   /**
    * The TreeWalker.root read-only property returns the node that is the root of what
@@ -235,7 +235,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def root: Node = ???
+  def root: Node = js.native
 
   /**
    * The TreeWalker.currentNode property represents the Node on which the TreeWalker
@@ -243,7 +243,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def currentNode: Node = ???
+  def currentNode: Node = js.native
 
   /**
    * The TreeWalker.expandEntityReferences read-only property returns a Boolean
@@ -252,7 +252,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def expandEntityReferences: Boolean = ???
+  def expandEntityReferences: Boolean = js.native
 
   /**
    * The TreeWalker.previousSibling() method moves the current Node to its previous
@@ -261,7 +261,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def previousSibling(): Node = ???
+  def previousSibling(): Node = js.native
 
   /**
    * The TreeWalker.lastChild() method moves the current Node to the last visible
@@ -271,7 +271,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def lastChild(): Node = ???
+  def lastChild(): Node = js.native
 
   /**
    * The TreeWalker.nextSibling() method moves the current Node to its next sibling,
@@ -280,7 +280,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def nextSibling(): Node = ???
+  def nextSibling(): Node = js.native
 
   /**
    * The TreeWalker.nextNode() method moves the current Node to the next visible node
@@ -289,7 +289,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def nextNode(): Node = ???
+  def nextNode(): Node = js.native
 
   /**
    * The TreeWalker.parentNode() method moves the current Node to the first visible
@@ -300,7 +300,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def parentNode(): Node = ???
+  def parentNode(): Node = js.native
 
   /**
    * The TreeWalker.firstChild() method moves the current Node to the first visible
@@ -310,7 +310,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def firstChild(): Node = ???
+  def firstChild(): Node = js.native
 
   /**
    * The TreeWalker.previousNode() method moves the current Node to the previous
@@ -321,7 +321,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def previousNode(): Node = ???
+  def previousNode(): Node = js.native
 }
 
 
@@ -343,7 +343,7 @@ class Performance extends js.Object {
    *
    * MDN
    */
-  def navigation: PerformanceNavigation = ???
+  def navigation: PerformanceNavigation = js.native
 
   /**
    * The Performance.timing read-only property returns a PerformanceTiming object
@@ -351,38 +351,38 @@ class Performance extends js.Object {
    *
    * MDN
    */
-  def timing: PerformanceTiming = ???
+  def timing: PerformanceTiming = js.native
 
-  def getEntriesByType(entryType: String): js.Dynamic = ???
+  def getEntriesByType(entryType: String): js.Dynamic = js.native
 
   /**
    * Is a jsonizer returning a json object representing the Performance object.
    *
    * MDN
    */
-  def toJSON(): js.Dynamic = ???
+  def toJSON(): js.Dynamic = js.native
 
-  def getMeasures(measureName: String = ???): js.Dynamic = ???
-
-
-  def clearMarks(markName: String = ???): Unit = ???
-
-  def getMarks(markName: String = ???): js.Dynamic = ???
+  def getMeasures(measureName: String = js.native): js.Dynamic = js.native
 
 
-  def clearResourceTimings(): Unit = ???
+  def clearMarks(markName: String = js.native): Unit = js.native
 
-  def mark(markName: String): Unit = ???
+  def getMarks(markName: String = js.native): js.Dynamic = js.native
 
-  def measure(measureName: String, startMarkName: String = ???, endMarkName: String = ???): Unit = ???
 
-  def getEntriesByName(name: String, entryType: String = ???): js.Dynamic = ???
+  def clearResourceTimings(): Unit = js.native
 
-  def getEntries(): js.Dynamic = ???
+  def mark(markName: String): Unit = js.native
 
-  def clearMeasures(measureName: String = ???): Unit = ???
+  def measure(measureName: String, startMarkName: String = js.native, endMarkName: String = js.native): Unit = js.native
 
-  def setResourceTimingBufferSize(maxSize: Int): Unit = ???
+  def getEntriesByName(name: String, entryType: String = js.native): js.Dynamic = js.native
+
+  def getEntries(): js.Dynamic = js.native
+
+  def clearMeasures(measureName: String = js.native): Unit = js.native
+
+  def setResourceTimingBufferSize(maxSize: Int): Unit = js.native
 
   /**
    * Returns a DOMHighResTimeStamp representing the amount of miliseconds elapsed
@@ -391,7 +391,7 @@ class Performance extends js.Object {
    *
    * MDN
    */
-  def now(): Int = ???
+  def now(): Int = js.native
 }
 
 
@@ -412,7 +412,7 @@ class CompositionEvent extends UIEvent {
    *
    * MDN
    */
-  def data: String = ???
+  def data: String = js.native
 
   /**
    * The locale of current input method (for example, the keyboard layout locale if the
@@ -420,14 +420,14 @@ class CompositionEvent extends UIEvent {
    *
    * MDN
    */
-  def locale: String = ???
+  def locale: String = js.native
 
   /**
    * Initializes the attributes of a composition event.
    *
    * MDN
    */
-  def initCompositionEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, dataArg: String, locale: String): Unit = ???
+  def initCompositionEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, dataArg: String, locale: String): Unit = js.native
 }
 
 
@@ -437,21 +437,21 @@ trait WindowTimers extends WindowTimersExtension {
    *
    * MDN
    */
-  def clearTimeout(handle: Int): Unit = ???
+  def clearTimeout(handle: Int): Unit = js.native
 
   /**
    * Calls a function or executes a code snippet after a specified delay.
    *
    * MDN
    */
-  def setTimeout(handler: js.Function0[Any], timeout: Int): Int = ???
+  def setTimeout(handler: js.Function0[Any], timeout: Int): Int = js.native
 
   /**
    * Cancels repeated action which was set up using setInterval.
    *
    * MDN
    */
-  def clearInterval(handle: Int): Unit = ???
+  def clearInterval(handle: Int): Unit = js.native
 
   /**
    * Calls a function or executes a code snippet repeatedly, with a fixed time
@@ -459,7 +459,7 @@ trait WindowTimers extends WindowTimersExtension {
    *
    * MDN
    */
-  def setInterval(handler: js.Function0[Any], timeout: Int): Int = ???
+  def setInterval(handler: js.Function0[Any], timeout: Int): Int = js.native
 }
 
 /**
@@ -482,7 +482,7 @@ trait NodeSelector extends js.Object {
    *
    * MDN
    */
-  def querySelectorAll(selectors: String): NodeList = ???
+  def querySelectorAll(selectors: String): NodeList = js.native
 
   /**
    * Returns the first element within the document (using depth-first pre-order
@@ -491,16 +491,16 @@ trait NodeSelector extends js.Object {
    *
    * MDN
    */
-  def querySelector(selectors: String): Element = ???
+  def querySelector(selectors: String): Element = js.native
 }
 
 class ClientRect extends js.Object {
-  var left: Double = ???
-  var width: Double = ???
-  var right: Double = ???
-  var top: Double = ???
-  var bottom: Double = ???
-  var height: Double = ???
+  var left: Double = js.native
+  var width: Double = js.native
+  var right: Double = js.native
+  var top: Double = js.native
+  var bottom: Double = js.native
+  var height: Double = js.native
 }
 
 
@@ -517,16 +517,16 @@ class DOMImplementation extends js.Object {
    *
    * MDN
    */
-  def createDocumentType(qualifiedName: String, publicId: String, systemId: String): DocumentType = ???
+  def createDocumentType(qualifiedName: String, publicId: String, systemId: String): DocumentType = js.native
 
   /**
    * « DOM Reference « DOMImplementation
    *
    * MDN
    */
-  def createDocument(namespaceURI: String, qualifiedName: String, doctype: DocumentType): Document = ???
+  def createDocument(namespaceURI: String, qualifiedName: String, doctype: DocumentType): Document = js.native
 
-  def hasFeature(feature: String, version: String): Boolean = ???
+  def hasFeature(feature: String, version: String): Boolean = js.native
 
   /**
    * Returns a Boolean indicating if a given feature is supported or not. This function
@@ -536,14 +536,14 @@ class DOMImplementation extends js.Object {
    *
    * MDN
    */
-  def hasFeature(feature: String): Boolean = ???
+  def hasFeature(feature: String): Boolean = js.native
 
   /**
    * Creates and returns an HTML Document.
    *
    * MDN
    */
-  def createHTMLDocument(title: String): Document = ???
+  def createHTMLDocument(title: String): Document = js.native
 }
 
 /**
@@ -560,28 +560,28 @@ trait ParentNode extends js.Object {
    *
    * MDN
    */
-  def children: HTMLCollection = ???
+  def children: HTMLCollection = js.native
 
   /**
    * Returns the Element that is the first child of the object, or null if there is none.
    *
    * MDN
    */
-  def firstElementChild: Element = ???
+  def firstElementChild: Element = js.native
 
   /**
    * Returns the Element that is the last child of the object, or null if there is none.
    *
    * MDN
    */
-  def lastElementChild: Element = ???
+  def lastElementChild: Element = js.native
 
   /**
    * Returns an unsigned long giving the amount of children that the object has.
    *
    * MDN
    */
-  def childElementCount: Int = ???
+  def childElementCount: Int = js.native
 
 }
 
@@ -602,7 +602,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  var scrollTop: Int = ???
+  var scrollTop: Int = js.native
 
   /**
    * The width of the left border of an element in pixels. It includes the width of the
@@ -612,7 +612,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def clientLeft: Int = ???
+  def clientLeft: Int = js.native
 
   /**
    * scrollLeft gets or sets the number of pixels that an element's content is scrolled
@@ -620,7 +620,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  var scrollLeft: Int = ???
+  var scrollLeft: Int = js.native
 
   /**
    * In XML (and XML-based languages such as XHTML), tagName preserves case. On
@@ -630,7 +630,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def tagName: String = ???
+  def tagName: String = js.native
 
   /**
    * clientWidth is the inner width of an element in pixels. It includes padding but not
@@ -638,7 +638,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def clientWidth: Int = ???
+  def clientWidth: Int = js.native
 
   /**
    * scrollWidth is a read–only property that returns either the width in pixels of the
@@ -648,7 +648,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def scrollWidth: Int = ???
+  def scrollWidth: Int = js.native
 
   /**
    * Returns the inner height of an element in pixels, including padding but not
@@ -659,7 +659,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def clientHeight: Int = ???
+  def clientHeight: Int = js.native
 
   /**
    * The width of the top border of an element in pixels. It does not include the top margin
@@ -667,7 +667,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def clientTop: Int = ???
+  def clientTop: Int = js.native
 
   /**
    * Height of the scroll view of an element; it includes the element padding but not its
@@ -675,7 +675,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def scrollHeight: Int = ???
+  def scrollHeight: Int = js.native
 
   /**
    * Gets the markup of the element including its content. When used as a
@@ -683,7 +683,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * Supported by FF>10, any Opera, any Chrome, any IE, any Safari
    */
-  var outerHTML: String = ???
+  var outerHTML: String = js.native
 
   /**
    * innerHTML sets or gets the HTML syntax describing the element's descendants.
@@ -693,27 +693,27 @@ class Element extends Node with NodeSelector with ParentNode {
    * &lt and &gt respectively. Use Node.textContent to get a correct copy of these
    * text nodes' contents.
    */
-  var innerHTML: String = ???
+  var innerHTML: String = js.native
 
-  var id: String = ???
+  var id: String = js.native
 
-  var oncut: js.Function1[DragEvent, _] = ???
-  var oncopy: js.Function1[DragEvent, _] = ???
-  var onpaste: js.Function1[DragEvent, _] = ???
+  var oncut: js.Function1[DragEvent, _] = js.native
+  var oncopy: js.Function1[DragEvent, _] = js.native
+  var onpaste: js.Function1[DragEvent, _] = js.native
 
-  var accessKey: String = ???
+  var accessKey: String = js.native
 
   /**
    * Supported by FF>3.6, any Opera, any Chrome, any IE, any Safari
    */
-  var classList: DOMTokenList = ???
+  var classList: DOMTokenList = js.native
 
-  def scrollIntoView(top: Boolean = ???): Unit = ???
+  def scrollIntoView(top: Boolean = js.native): Unit = js.native
 
   /**
    * Supported by FF>8, Opera>7, Chrome>1, IE>4, Safari>4
    */
-  def insertAdjacentHTML(where: String, html: String): Unit = ???
+  def insertAdjacentHTML(where: String, html: String): Unit = js.native
 
   /**
    * getAttribute() returns the value of the named attribute on the specified element.
@@ -722,7 +722,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def getAttribute(name: String): String = ???
+  def getAttribute(name: String): String = js.native
 
   /**
    * getAttribute() returns the value of the named attribute on the specified element.
@@ -731,16 +731,16 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def getAttribute(): String = ???
+  def getAttribute(): String = js.native
 
   /**
    * Returns a list of elements with the given tag name belonging to the given namespace.
    *
    * MDN
    */
-  def getElementsByTagNameNS(namespaceURI: String, localName: String): NodeList = ???
+  def getElementsByTagNameNS(namespaceURI: String, localName: String): NodeList = js.native
 
-  def getElementsByClassName(classNames: String): NodeList = ???
+  def getElementsByClassName(classNames: String): NodeList = js.native
 
   /**
    * hasAttributeNS returns a boolean value indicating whether the current element
@@ -748,14 +748,14 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def hasAttributeNS(namespaceURI: String, localName: String): Boolean = ???
+  def hasAttributeNS(namespaceURI: String, localName: String): Boolean = js.native
 
   /**
    * Returns a text rectangle object that encloses a group of text rectangles.
    *
    * MDN
    */
-  def getBoundingClientRect(): ClientRect = ???
+  def getBoundingClientRect(): ClientRect = js.native
 
   /**
    * getAttributeNS returns the string value of the attribute with the specified
@@ -764,21 +764,21 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def getAttributeNS(namespaceURI: String, localName: String): String = ???
+  def getAttributeNS(namespaceURI: String, localName: String): String = js.native
 
   /**
    * Returns the Attr node for the attribute with the given namespace and name.
    *
    * MDN
    */
-  def getAttributeNodeNS(namespaceURI: String, localName: String): Attr = ???
+  def getAttributeNodeNS(namespaceURI: String, localName: String): Attr = js.native
 
   /**
    * setAttributeNodeNS adds a new namespaced attribute node to an element.
    *
    * MDN
    */
-  def setAttributeNodeNS(newAttr: Attr): Attr = ???
+  def setAttributeNodeNS(newAttr: Attr): Attr = js.native
 
   /**
    * hasAttribute returns a boolean value indicating whether the specified element
@@ -786,21 +786,21 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def hasAttribute(name: String): Boolean = ???
+  def hasAttribute(name: String): Boolean = js.native
 
   /**
    * removeAttribute removes an attribute from the specified element.
    *
    * MDN
    */
-  def removeAttribute(name: String): Unit = ???
+  def removeAttribute(name: String): Unit = js.native
 
   /**
    * removeAttribute removes an attribute from the specified element.
    *
    * MDN
    */
-  def removeAttribute(): Unit = ???
+  def removeAttribute(): Unit = js.native
 
   /**
    * setAttributeNS adds a new attribute or changes the value of an attribute with the
@@ -808,14 +808,14 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit = ???
+  def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit = js.native
 
   /**
    * Returns the specified attribute of the specified element, as an Attr node.
    *
    * MDN
    */
-  def getAttributeNode(name: String): Attr = ???
+  def getAttributeNode(name: String): Attr = js.native
 
   /**
    * Returns a list of elements with the given tag name. The subtree underneath the
@@ -826,7 +826,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def getElementsByTagName(name: String): NodeList = ???
+  def getElementsByTagName(name: String): NodeList = js.native
 
   /**
    * Returns a collection of rectangles that indicate the bounding rectangles for each
@@ -834,21 +834,21 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  def getClientRects(): ClientRectList = ???
+  def getClientRects(): ClientRectList = js.native
 
   /**
    * setAttributeNode() adds a new Attr node to the specified element.
    *
    * MDN
    */
-  def setAttributeNode(newAttr: Attr): Attr = ???
+  def setAttributeNode(newAttr: Attr): Attr = js.native
 
   /**
    * removeAttributeNode removes the specified attribute from the current element.
    *
    * MDN
    */
-  def removeAttributeNode(oldAttr: Attr): Attr = ???
+  def removeAttributeNode(oldAttr: Attr): Attr = js.native
 
   /**
    * Adds a new attribute or changes the value of an existing attribute on the
@@ -856,14 +856,14 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MSN
    */
-  def setAttribute(name: String, value: String): Unit = ???
+  def setAttribute(name: String, value: String): Unit = js.native
 
   /**
    * removeAttributeNS removes the specified attribute from an element.
    *
    * MDN
    */
-  def removeAttributeNS(namespaceURI: String, localName: String): Unit = ???
+  def removeAttributeNS(namespaceURI: String, localName: String): Unit = js.native
 
 
 }
@@ -891,7 +891,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def nodeType: Int = ???
+  def nodeType: Int = js.native
 
   /**
    * Returns the node immediately preceding the specified one in its parent's
@@ -899,7 +899,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def previousSibling: Node = ???
+  def previousSibling: Node = js.native
 
   /**
    * Returns a DOMString representing the local part of the qualified name of an
@@ -911,7 +911,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def localName: String = ???
+  def localName: String = js.native
 
   /**
    * The namespace URI of this node, or null if it is no namespace. In Firefox 3.5 and
@@ -922,7 +922,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def namespaceURI: String = ???
+  def namespaceURI: String = js.native
 
   /**
    * Is a DOMString representing the textual content of an element and all its
@@ -930,7 +930,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var textContent: String = ???
+  var textContent: String = js.native
 
   /**
    * Returns a Node that is the parent of this node. If there is no such node, like if this
@@ -939,7 +939,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def parentNode: Node = ???
+  def parentNode: Node = js.native
 
   /**
    * Returns the node immediately following the specified one in its parent's
@@ -947,7 +947,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def nextSibling: Node = ???
+  def nextSibling: Node = js.native
 
   /**
    * Is a DOMString representing the value of an object. For most Node type, this returns
@@ -958,7 +958,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def nodeValue: String = ???
+  def nodeValue: String = js.native
 
   /**
    * Returns a Node representing the last direct child node of the node, or null if the
@@ -966,7 +966,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def lastChild: Node = ???
+  def lastChild: Node = js.native
 
   /**
    * Returns a live NodeList containing all the children of this node. NodeList being
@@ -975,7 +975,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def childNodes: NodeList = ???
+  def childNodes: NodeList = js.native
 
   /**
    * Returns a DOMString containing the name of the Node. The structure of the name will
@@ -985,7 +985,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def nodeName: String = ???
+  def nodeName: String = js.native
 
   /**
    * Returns the Document that this node belongs to. If no document is associated with
@@ -993,7 +993,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def ownerDocument: Document = ???
+  def ownerDocument: Document = js.native
 
   /**
    * .attributes is a collection of all attribute nodes registered to the specified
@@ -1008,7 +1008,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def attributes: NamedNodeMap = ???
+  def attributes: NamedNodeMap = js.native
 
   /**
    * Returns the node's first child in the tree, or null if the node is childless. If the
@@ -1016,7 +1016,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def firstChild: Node = ???
+  def firstChild: Node = js.native
 
   /**
    * Is a DOMString representing the namespace prefix of the node, or null if no prefix is
@@ -1025,7 +1025,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  var prefix: String = ???
+  var prefix: String = js.native
 
   /**
    * Removes a child node from the current element, which must be a child of the current
@@ -1033,7 +1033,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def removeChild(oldChild: Node): Node = ???
+  def removeChild(oldChild: Node): Node = js.native
 
   /**
    * Adds a node to the end of the list of children of a specified parent node. If the node
@@ -1042,7 +1042,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def appendChild(newChild: Node): Node = ???
+  def appendChild(newChild: Node): Node = js.native
 
   /**
    * The Node.isSupported()returns a Boolean flag containing the result of a test
@@ -1051,14 +1051,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def isSupported(feature: String, version: String): Boolean = ???
+  def isSupported(feature: String, version: String): Boolean = js.native
 
   /**
    * If #targetElm is first div element in document, "true" will be displayed.
    *
    * MDN
    */
-  def isEqualNode(arg: Node): Boolean = ???
+  def isEqualNode(arg: Node): Boolean = js.native
 
   /**
    * Returns the prefix for a given namespaceURI if present, and null if not. When
@@ -1066,7 +1066,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def lookupPrefix(namespaceURI: String): String = ???
+  def lookupPrefix(namespaceURI: String): String = js.native
 
   /**
    * isDefaultNamespace accepts a namespace URI as an argument and returns true if the
@@ -1074,7 +1074,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def isDefaultNamespace(namespaceURI: String): Boolean = ???
+  def isDefaultNamespace(namespaceURI: String): Boolean = js.native
 
   /**
    * Compares the position of the current node against another node in any other
@@ -1082,7 +1082,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def compareDocumentPosition(other: Node): Int = ???
+  def compareDocumentPosition(other: Node): Int = js.native
 
   /**
    * Puts the specified node and all of its subtree into a "normalized" form. In a
@@ -1091,14 +1091,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def normalize(): Unit = ???
+  def normalize(): Unit = js.native
 
   /**
    * Tests whether two nodes are the same, that is they reference the same object.
    *
    * MDN
    */
-  def isSameNode(other: Node): Boolean = ???
+  def isSameNode(other: Node): Boolean = js.native
 
   /**
    * hasAttributes returns a boolean value of true or false, indicating if the current
@@ -1106,7 +1106,7 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def hasAttributes(): Boolean = ???
+  def hasAttributes(): Boolean = js.native
 
   /**
    * Takes a prefix and returns the namespaceURI associated with it on the given node if
@@ -1115,14 +1115,14 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def lookupNamespaceURI(prefix: String): String = ???
+  def lookupNamespaceURI(prefix: String): String = js.native
   /**
    * Clone a Node, and optionally, all of its contents. By default, it clones the content
    * of the node.
    *
    * MDN
    */
-  def cloneNode(deep: Boolean = ???): Node = ???
+  def cloneNode(deep: Boolean = js.native): Node = js.native
 
   /**
    * hasChildNodes returns a Boolean value indicating whether the current Node has
@@ -1130,60 +1130,60 @@ class Node extends EventTarget {
    *
    * MDN
    */
-  def hasChildNodes(): Boolean = ???
+  def hasChildNodes(): Boolean = js.native
 
   /**
    * Replaces one child Node of the current one with the second one given in parameter.
    *
    * MDN
    */
-  def replaceChild(newChild: Node, oldChild: Node): Node = ???
+  def replaceChild(newChild: Node, oldChild: Node): Node = js.native
   /**
    * Inserts the first Node given in a parameter immediately before the second, child of
    * this element, Node.
    *
    * MDN
    */
-  def insertBefore(newChild: Node, refChild: Node = ???): Node = ???
+  def insertBefore(newChild: Node, refChild: Node = js.native): Node = js.native
 }
 
 
 object Node extends js.Object {
-  def ENTITY_REFERENCE_NODE: Int = ???
+  def ENTITY_REFERENCE_NODE: Int = js.native
 
-  def ATTRIBUTE_NODE: Int = ???
+  def ATTRIBUTE_NODE: Int = js.native
 
-  def DOCUMENT_FRAGMENT_NODE: Int = ???
+  def DOCUMENT_FRAGMENT_NODE: Int = js.native
 
-  def TEXT_NODE: Int = ???
+  def TEXT_NODE: Int = js.native
 
-  def ELEMENT_NODE: Int = ???
+  def ELEMENT_NODE: Int = js.native
 
-  def COMMENT_NODE: Int = ???
+  def COMMENT_NODE: Int = js.native
 
-  def DOCUMENT_POSITION_DISCONNECTED: Int = ???
+  def DOCUMENT_POSITION_DISCONNECTED: Int = js.native
 
-  def DOCUMENT_POSITION_CONTAINED_BY: Int = ???
+  def DOCUMENT_POSITION_CONTAINED_BY: Int = js.native
 
-  def DOCUMENT_POSITION_CONTAINS: Int = ???
+  def DOCUMENT_POSITION_CONTAINS: Int = js.native
 
-  def DOCUMENT_TYPE_NODE: Int = ???
+  def DOCUMENT_TYPE_NODE: Int = js.native
 
-  def DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Int = ???
+  def DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: Int = js.native
 
-  def DOCUMENT_NODE: Int = ???
+  def DOCUMENT_NODE: Int = js.native
 
-  def ENTITY_NODE: Int = ???
+  def ENTITY_NODE: Int = js.native
 
-  def PROCESSING_INSTRUCTION_NODE: Int = ???
+  def PROCESSING_INSTRUCTION_NODE: Int = js.native
 
-  def CDATA_SECTION_NODE: Int = ???
+  def CDATA_SECTION_NODE: Int = js.native
 
-  def NOTATION_NODE: Int = ???
+  def NOTATION_NODE: Int = js.native
 
-  def DOCUMENT_POSITION_FOLLOWING: Int = ???
+  def DOCUMENT_POSITION_FOLLOWING: Int = js.native
 
-  def DOCUMENT_POSITION_PRECEDING: Int = ???
+  def DOCUMENT_POSITION_PRECEDING: Int = js.native
 }
 
 trait ModifierKeyEvent extends js.Object {
@@ -1193,7 +1193,7 @@ trait ModifierKeyEvent extends js.Object {
    *
    * MDN
    */
-  def metaKey: Boolean = ???
+  def metaKey: Boolean = js.native
 
   /**
    * The altKey property indicates if the alt key was pressed (true) or not (false) when
@@ -1201,7 +1201,7 @@ trait ModifierKeyEvent extends js.Object {
    *
    * MDN
    */
-  def altKey: Boolean = ???
+  def altKey: Boolean = js.native
 
   /**
    * A Boolean value indicating whether or not the control key was down when the touch
@@ -1209,7 +1209,7 @@ trait ModifierKeyEvent extends js.Object {
    *
    * MDN
    */
-  def ctrlKey: Boolean = ???
+  def ctrlKey: Boolean = js.native
 
   /**
    * A Boolean value indicating whether or not the shift key was down when the touch event
@@ -1217,7 +1217,7 @@ trait ModifierKeyEvent extends js.Object {
    *
    * MDN
    */
-  def shiftKey: Boolean = ???
+  def shiftKey: Boolean = js.native
 }
 
 /**
@@ -1233,14 +1233,14 @@ trait HashChangeEvent extends Event {
    *
    * MDN
    */
-  def newURL: String = ???
+  def newURL: String = js.native
 
   /**
    * The previous URL from which the window was navigated.
    *
    * MDN
    */
-  def oldURL: String = ???
+  def oldURL: String = js.native
 }
 
 /**
@@ -1263,7 +1263,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def screenX: Double = ???
+  def screenX: Double = js.native
 
   /**
    * The pageX property is an integer value in pixels for the X coordinate of the
@@ -1272,7 +1272,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def pageX: Double = ???
+  def pageX: Double = js.native
 
   /**
    * The pageY property is an integer value in pixels for the Y coordinate of the
@@ -1281,7 +1281,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def pageY: Double = ???
+  def pageY: Double = js.native
 
   /**
    * The clientY property provides the Y coordinate of the mouse pointer in local (DOM
@@ -1289,7 +1289,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def clientY: Double = ???
+  def clientY: Double = js.native
 
   /**
    * The screenY property provides the Y coordinate of the mouse pointer in global
@@ -1297,14 +1297,14 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def screenY: Double = ???
+  def screenY: Double = js.native
 
   /**
    * The relatedTarget property is the secondary target for the event, if there is one.
    *
    * MDN
    */
-  def relatedTarget: EventTarget = ???
+  def relatedTarget: EventTarget = js.native
 
   /**
    * The button property indicates which button was pressed on the mouse to trigger the
@@ -1312,7 +1312,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def button: Int = ???
+  def button: Int = js.native
 
   /**
    * The buttons property indicates which buttons were pressed on the mouse to trigger
@@ -1320,7 +1320,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def buttons: Int = ???
+  def buttons: Int = js.native
 
   /**
    * The clientX property provides the X coordinate of the mouse pointer in local (DOM
@@ -1328,9 +1328,9 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def clientX: Double = ???
+  def clientX: Double = js.native
 
-  def initMouseEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean, altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean, buttonArg: Int, relatedTargetArg: EventTarget): Unit = ???
+  def initMouseEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean, altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean, buttonArg: Int, relatedTargetArg: EventTarget): Unit = js.native
 
   /**
    * Returns the current state of the specified modifier key. See the
@@ -1338,7 +1338,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def getModifierState(keyArg: String): Boolean = ???
+  def getModifierState(keyArg: String): Boolean = js.native
 }
 
 
@@ -1355,12 +1355,12 @@ class TextMetrics extends js.Object {
    *
    * MDN
    */
-  var width: Double = ???
+  var width: Double = js.native
 }
 
 
 trait DocumentEvent extends js.Object {
-  def createEvent(eventInterface: String): Event = ???
+  def createEvent(eventInterface: String): Event = js.native
 }
 
 /**
@@ -1379,9 +1379,9 @@ class CDATASection extends Text {
 
 
 trait StyleMedia extends js.Object {
-  def `type`: String = ???
+  def `type`: String = js.native
 
-  def matchMedium(mediaquery: String): Boolean = ???
+  def matchMedium(mediaquery: String): Boolean = js.native
 }
 
 
@@ -1402,21 +1402,21 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def isCollapsed: Boolean = ???
+  def isCollapsed: Boolean = js.native
 
   /**
    * Returns the node in which the selection begins.
    *
    * MDN
    */
-  def anchorNode: Node = ???
+  def anchorNode: Node = js.native
 
   /**
    * Returns the node in which the selection ends.
    *
    * MDN
    */
-  def focusNode: Node = ???
+  def focusNode: Node = js.native
 
   /**
    * Returns a number representing the offset of the selection's anchor within the
@@ -1426,7 +1426,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def anchorOffset: Int = ???
+  def anchorOffset: Int = js.native
 
   /**
    * Returns a number representing the offset of the selection's anchor within the
@@ -1436,21 +1436,21 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def focusOffset: Int = ???
+  def focusOffset: Int = js.native
 
   /**
    * Returns the number of ranges in the selection.
    *
    * MDN
    */
-  def rangeCount: Int = ???
+  def rangeCount: Int = js.native
 
   /**
    * A range object that will be added to the selection.
    *
    * MDN
    */
-  def addRange(range: Range): Unit = ???
+  def addRange(range: Range): Unit = js.native
 
   /**
    * Collapses the selection to the end of the last range in the selection.  If the
@@ -1458,7 +1458,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def collapseToEnd(): Unit = ???
+  def collapseToEnd(): Unit = js.native
 
   /**
    * Adds all the children of the specified node to the selection. Previous selection is
@@ -1466,14 +1466,14 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def selectAllChildren(parentNode: Node): Unit = ???
+  def selectAllChildren(parentNode: Node): Unit = js.native
 
   /**
    * Returns a range object representing one of the ranges currently selected.
    *
    * MDN
    */
-  def getRangeAt(index: Int): Range = ???
+  def getRangeAt(index: Int): Range = js.native
 
   /**
    * Collapses the current selection to a single point. The document is not modified. If
@@ -1481,7 +1481,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def collapse(parentNode: Node, offset: Int): Unit = ???
+  def collapse(parentNode: Node, offset: Int): Unit = js.native
 
   /**
    * Removes all ranges from the selection, leaving the anchorNode and focusNode
@@ -1489,7 +1489,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def removeAllRanges(): Unit = ???
+  def removeAllRanges(): Unit = js.native
 
   /**
    * Collapses the selection to the start of the first range in the selection.  If the
@@ -1497,7 +1497,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def collapseToStart(): Unit = ???
+  def collapseToStart(): Unit = js.native
 
   /**
    * Deletes the actual text being represented by a selection object from the
@@ -1505,14 +1505,14 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def deleteFromDocument(): Unit = ???
+  def deleteFromDocument(): Unit = js.native
 
   /**
    * Removes a range from the selection.
    *
    * MDN
    */
-  def removeRange(range: Range): Unit = ???
+  def removeRange(range: Range): Unit = js.native
 }
 
 
@@ -1555,7 +1555,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  var whatToShow: Int = ???
+  var whatToShow: Int = js.native
 
   /**
    * The NodeIterator.filter read-only method returns a NodeFilter object, that is an
@@ -1563,7 +1563,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  def filter: NodeFilter = ???
+  def filter: NodeFilter = js.native
 
   /**
    * The NodeIterator.root read-only property represents the Node that is the root of
@@ -1571,7 +1571,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  def root: Node = ???
+  def root: Node = js.native
 
   /**
    * The NodeIterator.expandEntityReferences read-only property returns a Boolean
@@ -1580,7 +1580,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  def expandEntityReferences: Boolean = ???
+  def expandEntityReferences: Boolean = js.native
 
   /**
    * The NodeIterator.nextNode() method returns the next node in the set represented
@@ -1589,7 +1589,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  def nextNode(): Node = ???
+  def nextNode(): Node = js.native
 
   /**
    * This operation is a no-op. It doesn't do anything. Previously it was telling the
@@ -1597,7 +1597,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  def detach(): Unit = ???
+  def detach(): Unit = js.native
 
   /**
    * The NodeIterator.previousNode() method returns the previous node in the set
@@ -1606,7 +1606,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
-  def previousNode(): Node = ???
+  def previousNode(): Node = js.native
 }
 
 
@@ -1619,7 +1619,7 @@ trait WindowSessionStorage extends js.Object {
    *
    * MDN
    */
-  def sessionStorage: Storage = ???
+  def sessionStorage: Storage = js.native
 }
 
 /**
@@ -1639,48 +1639,48 @@ trait WindowSessionStorage extends js.Object {
  * MDN
  */
 class Window extends EventTarget with WindowLocalStorage with WindowSessionStorage with WindowTimers with WindowBase64 with IDBEnvironment with WindowConsole {
-  var ondragend: js.Function1[DragEvent, _] = ???
+  var ondragend: js.Function1[DragEvent, _] = js.native
   /**
    * An event handler property for keydown events on the window.
    *
    * MDN
    */
-  var onkeydown: js.Function1[KeyboardEvent, _] = ???
-  var ondragover: js.Function1[DragEvent, _] = ???
+  var onkeydown: js.Function1[KeyboardEvent, _] = js.native
+  var ondragover: js.Function1[DragEvent, _] = js.native
   /**
    * An event handler property for keyup events on the window.
    *
    * MDN
    */
-  var onkeyup: js.Function1[KeyboardEvent, _] = ???
+  var onkeyup: js.Function1[KeyboardEvent, _] = js.native
   /**
    * An event handler property for reset events on the window.
    *
    * MDN
    */
-  var onreset: js.Function1[Event, _] = ???
+  var onreset: js.Function1[Event, _] = js.native
   /**
    * An event handler property for mouseup events on the window.
    *
    * MDN
    */
-  var onmouseup: js.Function1[MouseEvent, _] = ???
-  var ondragstart: js.Function1[DragEvent, _] = ???
-  var ondrag: js.Function1[DragEvent, _] = ???
+  var onmouseup: js.Function1[MouseEvent, _] = js.native
+  var ondragstart: js.Function1[DragEvent, _] = js.native
+  var ondrag: js.Function1[DragEvent, _] = js.native
   /**
    * Returns the horizontal distance of the left border of the user's browser from the
    * left side of the screen.
    *
    * MDN
    */
-  var screenX: Int = ???
+  var screenX: Int = js.native
   /**
    * An event handler property for mouseover events on the window.
    *
    * MDN
    */
-  var onmouseover: js.Function1[MouseEvent, _] = ???
-  var ondragleave: js.Function1[DragEvent, _] = ???
+  var onmouseover: js.Function1[MouseEvent, _] = js.native
+  var ondragleave: js.Function1[DragEvent, _] = js.native
 
   /**
    * The Window.history read-only property returns a reference to the History object,
@@ -1689,7 +1689,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def history: History = ???
+  def history: History = js.native
 
   /**
    * Returns the number of pixels that the document has already been scrolled
@@ -1697,7 +1697,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def pageXOffset: Int = ???
+  def pageXOffset: Int = js.native
 
   /**
    * The name of the window is used primarily for setting targets for hyperlinks and
@@ -1705,22 +1705,22 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * The onafterprint property sets and returns the onafterprint event handler code
    * for the current window.
    *
    * MDN
    */
-  var onafterprint: js.Function1[Event, _] = ???
-  var onpause: js.Function1[Event, _] = ???
+  var onafterprint: js.Function1[Event, _] = js.native
+  var onpause: js.Function1[Event, _] = js.native
   /**
    * The onbeforeprint property sets and returns the onbeforeprint event handler code
    * for the current window.
    *
    * MDN
    */
-  var onbeforeprint: js.Function1[Event, _] = ???
+  var onbeforeprint: js.Function1[Event, _] = js.native
 
   /**
    * Returns a reference to the topmost window in the window hierarchy. This property is
@@ -1728,21 +1728,21 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def top: Window = ???
+  def top: Window = js.native
 
   /**
    * An event handler property for mousedown events on the window.
    *
    * MDN
    */
-  var onmousedown: js.Function1[MouseEvent, _] = ???
-  var onseeked: js.Function1[Event, _] = ???
+  var onmousedown: js.Function1[MouseEvent, _] = js.native
+  var onseeked: js.Function1[Event, _] = js.native
   /**
    * Returns a reference to the window that opened this current window.
    *
    * MDN
    */
-  var opener: Window = ???
+  var opener: Window = js.native
   /**
    * Called when the user clicks the mouse button while the cursor is in the window. This
    * event is fired for any mouse button pressed; you can look at the event properties to
@@ -1750,7 +1750,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onclick: js.Function1[MouseEvent, _] = ???
+  var onclick: js.Function1[MouseEvent, _] = js.native
 
   /**
    * Gets the height of the content area of the browser window including, if rendered,
@@ -1758,11 +1758,11 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def innerHeight: Int = ???
+  def innerHeight: Int = js.native
 
-  var onwaiting: js.Function1[Event, _] = ???
-  var ononline: js.Function1[Event, _] = ???
-  var ondurationchange: js.Function1[Event, _] = ???
+  var onwaiting: js.Function1[Event, _] = js.native
+  var ononline: js.Function1[Event, _] = js.native
+  var ondurationchange: js.Function1[Event, _] = js.native
 
   /**
    * Returns the window itself, which is an array-like object, listing the direct
@@ -1770,7 +1770,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def frames: Window = ???
+  def frames: Window = js.native
 
   /**
    * The onblur property can be used to set the blur handler on the window, which is
@@ -1778,10 +1778,10 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onblur: js.Function1[FocusEvent, _] = ???
-  var onemptied: js.Function1[Event, _] = ???
-  var onseeking: js.Function1[Event, _] = ???
-  var oncanplay: js.Function1[Event, _] = ???
+  var onblur: js.Function1[FocusEvent, _] = js.native
+  var onemptied: js.Function1[Event, _] = js.native
+  var onseeking: js.Function1[Event, _] = js.native
+  var oncanplay: js.Function1[Event, _] = js.native
 
   /**
    * window.outerWidth gets the width of the outside of the browser window. It
@@ -1790,30 +1790,30 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def outerWidth: Int = ???
+  def outerWidth: Int = js.native
 
-  var onstalled: js.Function1[Event, _] = ???
+  var onstalled: js.Function1[Event, _] = js.native
   /**
    * An event handler property for mousemove events on the window.
    *
    * MDN
    */
-  var onmousemove: js.Function1[MouseEvent, _] = ???
+  var onmousemove: js.Function1[MouseEvent, _] = js.native
   /**
    * Gets the width of the content area of the browser window including, if rendered, the
    * vertical scrollbar.
    *
    * MDN
    */
-  var innerWidth: Int = ???
-  var onoffline: js.Function1[Event, _] = ???
+  var innerWidth: Int = js.native
+  var onoffline: js.Function1[Event, _] = js.native
 
   /**
    * Returns the number of frames (either frame or iframe elements) in the window.
    *
    * MDN
    */
-  def length: Int = ???
+  def length: Int = js.native
 
   /**
    * Specifies the height of the screen, in pixels, minus permanent or semipermanent
@@ -1822,7 +1822,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def screen: Screen = ???
+  def screen: Screen = js.native
 
   /**
    * An event that fires when a window is about to unload its resources. The document is
@@ -1830,10 +1830,10 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = ???
-  var onratechange: js.Function1[Event, _] = ???
-  var onstorage: js.Function1[StorageEvent, _] = ???
-  var onloadstart: js.Function1[Event, _] = ???
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = js.native
+  var onratechange: js.Function1[Event, _] = js.native
+  var onstorage: js.Function1[StorageEvent, _] = js.native
+  var onloadstart: js.Function1[Event, _] = js.native
   /**
    * Called for an element when the mouse pointer first moves over the element while
    * something is being dragged. This might be used to change the appearance of the
@@ -1841,30 +1841,30 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var ondragenter: js.Function1[DragEvent, _] = ???
+  var ondragenter: js.Function1[DragEvent, _] = js.native
   /**
    * An event handler property for submits on window forms.
    *
    * MDN
    */
-  var onsubmit: js.Function1[Event, _] = ???
+  var onsubmit: js.Function1[Event, _] = js.native
 
   /**
    * Returns an object reference to the window object itself.
    *
    * MDN
    */
-  def self: Window = ???
+  def self: Window = js.native
 
   /**
    * Returns a reference to the document that the window contains.
    *
    * MDN
    */
-  def document: HTMLDocument = ???
+  def document: HTMLDocument = js.native
 
-  var onprogress: js.Function1[js.Any, _] = ???
-  var ondblclick: js.Function1[MouseEvent, _] = ???
+  var onprogress: js.Function1[js.Any, _] = js.native
+  var ondblclick: js.Function1[MouseEvent, _] = js.native
 
   /**
    * Returns the number of pixels that the document has already been scrolled
@@ -1872,36 +1872,36 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def pageYOffset: Int = ???
+  def pageYOffset: Int = js.native
 
   /**
    * An event handler property for right-click events on the window.
    *
    * MDN
    */
-  var oncontextmenu: js.Function1[MouseEvent, _] = ???
+  var oncontextmenu: js.Function1[MouseEvent, _] = js.native
   /**
    * An event handler property for change events on the window.
    *
    * MDN
    */
-  var onchange: js.Function1[Event, _] = ???
-  var onloadedmetadata: js.Function1[Event, _] = ???
-  var onplay: js.Function1[Event, _] = ???
+  var onchange: js.Function1[Event, _] = js.native
+  var onloadedmetadata: js.Function1[Event, _] = js.native
+  var onplay: js.Function1[Event, _] = js.native
   /**
    * An event handler property for errors raised on the window.
    *
    * MDN
    */
-  var onerror: js.Function4[Event, String, Int, Int, _] = ???
-  var onplaying: js.Function1[Event, _] = ???
+  var onerror: js.Function4[Event, String, Int, Int, _] = js.native
+  var onplaying: js.Function1[Event, _] = js.native
 
   /**
    * Returns a reference to the parent of the current window or subframe.
    *
    * MDN
    */
-  def parent: Window = ???
+  def parent: Window = js.native
 
   /**
    * The Window.location property returns a Location object with
@@ -1909,15 +1909,15 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var location: Location = ???
-  var oncanplaythrough: js.Function1[Event, _] = ???
+  var location: Location = js.native
+  var oncanplaythrough: js.Function1[Event, _] = js.native
   /**
    * An event handler property for abort events on the window.
    *
    * MDN
    */
-  var onabort: js.Function1[UIEvent, _] = ???
-  var onreadystatechange: js.Function1[Event, _] = ???
+  var onabort: js.Function1[UIEvent, _] = js.native
+  var onreadystatechange: js.Function1[Event, _] = js.native
 
   /**
    * window.outerHeight gets the height in pixels of the whole browser window. It
@@ -1926,14 +1926,14 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def outerHeight: Int = ???
+  def outerHeight: Int = js.native
 
   /**
    * An event handler property for keypress events on the window.
    *
    * MDN
    */
-  var onkeypress: js.Function1[KeyboardEvent, _] = ???
+  var onkeypress: js.Function1[KeyboardEvent, _] = js.native
 
   /**
    * Returns the element (such as <iframe> or <object>) in which the window is embedded,
@@ -1941,38 +1941,38 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def frameElement: Element = ???
+  def frameElement: Element = js.native
 
-  var onloadeddata: js.Function1[Event, _] = ???
-  var onsuspend: js.Function1[Event, _] = ???
+  var onloadeddata: js.Function1[Event, _] = js.native
+  var onsuspend: js.Function1[Event, _] = js.native
 
   /**
    * The window property of a window object points to the window object itself.
    *
    * MDN
    */
-  def window: Window = ???
+  def window: Window = js.native
 
   /**
    * An event handler property for focus events on the window.
    *
    * MDN
    */
-  var onfocus: js.Function1[FocusEvent, _] = ???
-  var onmessage: js.Function1[MessageEvent, _] = ???
-  var ontimeupdate: js.Function1[Event, _] = ???
+  var onfocus: js.Function1[FocusEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var ontimeupdate: js.Function1[Event, _] = js.native
   /**
    * An event handler for the resize event on the window.
    *
    * MDN
    */
-  var onresize: js.Function1[UIEvent, _] = ???
+  var onresize: js.Function1[UIEvent, _] = js.native
   /**
    * An event handler property for window selection.
    *
    * MDN
    */
-  var onselect: js.Function1[UIEvent, _] = ???
+  var onselect: js.Function1[UIEvent, _] = js.native
 
   /**
    * The Window.navigator read-only property returns a reference to the Navigator
@@ -1981,38 +1981,38 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def navigator: Navigator = ???
+  def navigator: Navigator = js.native
 
-  def styleMedia: StyleMedia = ???
+  def styleMedia: StyleMedia = js.native
 
-  var ondrop: js.Function1[DragEvent, _] = ???
+  var ondrop: js.Function1[DragEvent, _] = js.native
   /**
    * An event handler property for mouseout events on the window.
    *
    * MDN
    */
-  var onmouseout: js.Function1[MouseEvent, _] = ???
-  var onended: js.Function1[Event, _] = ???
+  var onmouseout: js.Function1[MouseEvent, _] = js.native
+  var onended: js.Function1[Event, _] = js.native
   /**
    * An event handler property for hash change events on the window; called when the part
    * of the URL after the hash mark ("#") changes.
    *
    * MDN
    */
-  var onhashchange: js.Function1[HashChangeEvent, _] = ???
+  var onhashchange: js.Function1[HashChangeEvent, _] = js.native
   /**
    * The unload event is raised when the window is unloading its content and resources.
    * The resources removal is processed  after the unload event occurs.
    *
    * MDN
    */
-  var onunload: js.Function1[Event, _] = ???
+  var onunload: js.Function1[Event, _] = js.native
   /**
    * Specifies the function to be called when the window is scrolled.
    *
    * MDN
    */
-  var onscroll: js.Function1[UIEvent, _] = ???
+  var onscroll: js.Function1[UIEvent, _] = js.native
 
   /**
    * Returns the vertical distance of the top border of the user's browser from the top
@@ -2020,17 +2020,17 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def screenY: Int = ???
+  def screenY: Int = js.native
 
-  var onmousewheel: js.Function1[WheelEvent, _] = ???
+  var onmousewheel: js.Function1[WheelEvent, _] = js.native
   /**
    * An event handler property for window loading.
    *
    * MDN
    */
-  var onload: js.Function1[Event, _] = ???
-  var onvolumechange: js.Function1[Event, _] = ???
-  var oninput: js.Function1[Event, _] = ???
+  var onload: js.Function1[Event, _] = js.native
+  var onvolumechange: js.Function1[Event, _] = js.native
+  var oninput: js.Function1[Event, _] = js.native
 
   /**
    * The Web Performance API allows web pages access to certain functions for measuring
@@ -2039,9 +2039,9 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def performance: Performance = ???
+  def performance: Performance = js.native
 
-  def alert(message: String): Unit = ???
+  def alert(message: String): Unit = js.native
 
   /**
    * The Window.alert() method displays an alert dialog with the optional specified
@@ -2049,13 +2049,13 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def alert(): Unit = ???
+  def alert(): Unit = js.native
   /**
    * Scrolls the window to a particular place in the document.
    *
    * MDN
    */
-  def scroll(x: Int, y: Int): Unit = ???
+  def scroll(x: Int, y: Int): Unit = js.native
 
   /**
    * Makes a request to bring the window to the front. It may fail due to user settings and
@@ -2063,22 +2063,22 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def focus(): Unit = ???
+  def focus(): Unit = js.native
   /**
    * Scrolls to a particular set of coordinates in the document.
    *
    * MDN
    */
-  def scrollTo(x: Int, y: Int): Unit = ???
+  def scrollTo(x: Int, y: Int): Unit = js.native
 
   /**
    * Opens the Print Dialog to print the current document.
    *
    * MDN
    */
-  def print(): Unit = ???
+  def print(): Unit = js.native
 
-  def prompt(message: String, default: String = ???): String = ???
+  def prompt(message: String, default: String = js.native): String = js.native
 
   /**
    * The Window.prompt() displays a dialog with an optional message prompting the user
@@ -2086,23 +2086,23 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def prompt(): String = ???
+  def prompt(): String = js.native
   /**
    * Loads a resource in a new browsing context or an existing one.
    *
    * MDN
    */
-  def open(url: String = ???,
-           target: String = ???,
-           features: String = ???,
-           replace: Boolean = ???): Window = ???
+  def open(url: String = js.native,
+           target: String = js.native,
+           features: String = js.native,
+           replace: Boolean = js.native): Window = js.native
 
   /**
    * Scrolls the document in the window by the given amount.
    *
    * MDN
    */
-  def scrollBy(x: Int, y: Int): Unit = ???
+  def scrollBy(x: Int, y: Int): Unit = js.native
 
   /**
    * The Window.confirm() method displays a modal dialog with an optional message and
@@ -2110,7 +2110,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def confirm(message: String = ???): Boolean = ???
+  def confirm(message: String = js.native): Boolean = js.native
 
 
   /**
@@ -2118,7 +2118,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def close(): Unit = ???
+  def close(): Unit = js.native
   /**
    * The window.postMessage method safely enables cross-origin communication.
    * Normally, scripts on different pages are allowed to access each other if and only if
@@ -2130,7 +2130,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def postMessage(message: js.Any, targetOrigin: String, transfer: js.Any = ???): Unit = ???
+  def postMessage(message: js.Any, targetOrigin: String, transfer: js.Any = js.native): Unit = js.native
 
   /**
    * The Window.showModalDialog() creates and displays a modal dialog box containing
@@ -2142,7 +2142,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *                 `dialogArguments` property.
    * @param options An optional String that specifies window ornamentation
    */
-  def showModalDialog(url: String = ???, argument: js.Any = ???, options: js.Any = ???): js.Dynamic = ???
+  def showModalDialog(url: String = js.native, argument: js.Any = js.native, options: js.Any = js.native): js.Dynamic = js.native
 
   /**
    * The window.blur() method is the programmatic equivalent of the user shifting
@@ -2150,16 +2150,16 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def blur(): Unit = ???
+  def blur(): Unit = js.native
 
   /**
    * Returns a selection object representing the range of text selected by the user.
    *
    * MDN
    */
-  def getSelection(): Selection = ???
+  def getSelection(): Selection = js.native
 
-  def getComputedStyle(elt: Element, pseudoElt: String = ???): CSSStyleDeclaration = ???
+  def getComputedStyle(elt: Element, pseudoElt: String = js.native): CSSStyleDeclaration = js.native
 
   /**
    * An OfflineResourceList object providing access to the offline resources for the
@@ -2167,7 +2167,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def applicationCache: ApplicationCache = ???
+  def applicationCache: ApplicationCache = js.native
 
   /**
    * An event handler property for popstate events, which are fired when navigating to a
@@ -2175,7 +2175,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  var onpopstate: js.Function1[PopStateEvent, _] = ???
+  var onpopstate: js.Function1[PopStateEvent, _] = js.native
 
   /**
    * Returns a new MediaQueryList object representing the parsed results of the
@@ -2183,7 +2183,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def matchMedia(mediaQuery: String): MediaQueryList = ???
+  def matchMedia(mediaQuery: String): MediaQueryList = js.native
 
   /**
    * Cancels an animation frame request previously scheduled through a call to
@@ -2191,7 +2191,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def cancelAnimationFrame(handle: Int): Unit = ???
+  def cancelAnimationFrame(handle: Int): Unit = js.native
 
   /**
    * The window.requestAnimationFrame() method tells the browser that you wish to
@@ -2201,7 +2201,7 @@ class Window extends EventTarget with WindowLocalStorage with WindowSessionStora
    *
    * MDN
    */
-  def requestAnimationFrame(callback: js.Function1[Double, _]): Int = ???
+  def requestAnimationFrame(callback: js.Function1[Double, _]): Int = js.native
 }
 
 
@@ -2225,7 +2225,7 @@ class EventTarget extends js.Object {
    *
    * MDN
    */
-  def removeEventListener(`type`: String, listener: js.Function1[Event, _], useCapture: Boolean = ???): Unit = ???
+  def removeEventListener(`type`: String, listener: js.Function1[Event, _], useCapture: Boolean = js.native): Unit = js.native
 
   /**
    * The EventTarget.addEventListener() method registers the specified listener on
@@ -2235,7 +2235,7 @@ class EventTarget extends js.Object {
    *
    * MDN
    */
-  def addEventListener(`type`: String, listener: js.Function1[Event, _], useCapture: Boolean = ???): Unit = ???
+  def addEventListener(`type`: String, listener: js.Function1[Event, _], useCapture: Boolean = js.native): Unit = js.native
 
   /**
    * Dispatches an Event at the specified EventTarget, invoking the affected
@@ -2245,7 +2245,7 @@ class EventTarget extends js.Object {
    *
    * MDN
    */
-  def dispatchEvent(evt: Event): Boolean = ???
+  def dispatchEvent(evt: Event): Boolean = js.native
 }
 
 /**
@@ -2263,7 +2263,7 @@ class CanvasGradient extends js.Object {
    *
    * MDN
    */
-  def addColorStop(offset: Double, color: String): Unit = ???
+  def addColorStop(offset: Double, color: String): Unit = js.native
 }
 
 
@@ -2288,7 +2288,7 @@ class TouchEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def changedTouches: TouchList = ???
+  def changedTouches: TouchList = js.native
 
 
   /**
@@ -2298,7 +2298,7 @@ class TouchEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def targetTouches: TouchList = ???
+  def targetTouches: TouchList = js.native
 
   /**
    * A TouchList listing all the Touch objects for touch points that are still in contact
@@ -2307,7 +2307,7 @@ class TouchEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def touches: TouchList = ???
+  def touches: TouchList = js.native
 
   /**
    * The target of the touches associated with this event. This target corresponds to
@@ -2317,7 +2317,7 @@ class TouchEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  override def target: EventTarget = ???
+  override def target: EventTarget = js.native
 }
 
 /**
@@ -2350,7 +2350,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def identifier: Int = ???
+  def identifier: Int = js.native
 
   /**
    * The X coordinate of the touch point relative to the left edge of the screen.
@@ -2358,7 +2358,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def screenX: Double = ???
+  def screenX: Double = js.native
 
   /**
    * The Y coordinate of the touch point relative to the top edge of the screen.
@@ -2366,7 +2366,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def screenY: Double = ???
+  def screenY: Double = js.native
 
   /**
    * The X coordinate of the touch point relative to the left edge of the browser viewport,
@@ -2374,7 +2374,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def clientX: Double = ???
+  def clientX: Double = js.native
 
   /**
    * The Y coordinate of the touch point relative to the top edge of the browser viewport,
@@ -2382,7 +2382,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def clientY: Double = ???
+  def clientY: Double = js.native
 
   /**
    *  The X coordinate of the touch point relative to the left edge of the document. Unlike clientX,
@@ -2391,7 +2391,7 @@ class Touch extends js.Object {
    * MDN
    *  Read only.
    */
-  def pageX: Double = ???
+  def pageX: Double = js.native
 
   /**
    * The Y coordinate of the touch point relative to the top of the document. Unlike clientY, this value
@@ -2400,7 +2400,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def pageY: Double = ???
+  def pageY: Double = js.native
 
   /**
    * The X radius of the ellipse that most closely circumscribes the area of contact with the screen.
@@ -2409,7 +2409,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def radiusX: Double = ???
+  def radiusX: Double = js.native
 
   /**
    * The Y radius of the ellipse that most closely circumscribes the area of contact with the screen.
@@ -2418,7 +2418,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def radiusY: Double = ???
+  def radiusY: Double = js.native
 
   /**
    * The angle (in degrees) that the ellipse described by radiusX and radiusY must be rotated,
@@ -2427,7 +2427,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def rotationAngle: Double = ???
+  def rotationAngle: Double = js.native
 
   /**
    * The amount of pressure being applied to the surface by the user, as a float
@@ -2436,7 +2436,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def force: Double = ???
+  def force: Double = js.native
 
   /**
    * The Element on which the touch point started when it was first placed on the surface,
@@ -2449,7 +2449,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def target: EventTarget = ???
+  def target: EventTarget = js.native
 
 }
 /**
@@ -2473,7 +2473,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    *
    * Note: Required especially in Gecko based browsers
    */
-  def charCode: Int = ???
+  def charCode: Int = js.native
 
   /**
    * A system and implementation dependent numerical code identifying the
@@ -2482,7 +2482,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    * codes for a list of Gecko's keyCode values. If the key can't be identified,
    * this value is 0. Read only.
    */
-  def keyCode: Int = ???
+  def keyCode: Int = js.native
 
   /**
    * The location of the key on the keyboard or other input device.
@@ -2490,7 +2490,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def location: Int = ???
+  def location: Int = js.native
 
   /**
    * A locale string indicating the locale the keyboard is configured for. This may
@@ -2501,7 +2501,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def locale: String = ???
+  def locale: String = js.native
 
   /**
    * The key value of the key represented by the event. If the value has a printed
@@ -2512,35 +2512,35 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    *
    * MDN
    */
-  def key: String = ???
+  def key: String = js.native
 
   /**
    * true if the key is being held down such that it is automatically repeating
    *
    * MDN
    */
-  def repeat: Boolean = ???
+  def repeat: Boolean = js.native
 
   /**
    * Returns the current state of the specified modifier key.
    */
-  def getModifierState(keyArg: String): Boolean = ???
+  def getModifierState(keyArg: String): Boolean = js.native
 
-  def initKeyboardEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, keyArg: String, locationArg: Int, modifiersListArg: String, repeat: Boolean, locale: String): Unit = ???
+  def initKeyboardEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, keyArg: String, locationArg: Int, modifiersListArg: String, repeat: Boolean, locale: String): Unit = js.native
 }
 
 object KeyboardEvent extends js.Object {
-  def DOM_KEY_LOCATION_RIGHT: Int = ???
+  def DOM_KEY_LOCATION_RIGHT: Int = js.native
 
-  def DOM_KEY_LOCATION_STANDARD: Int = ???
+  def DOM_KEY_LOCATION_STANDARD: Int = js.native
 
-  def DOM_KEY_LOCATION_LEFT: Int = ???
+  def DOM_KEY_LOCATION_LEFT: Int = js.native
 
-  def DOM_KEY_LOCATION_NUMPAD: Int = ???
+  def DOM_KEY_LOCATION_NUMPAD: Int = js.native
 
-  def DOM_KEY_LOCATION_JOYSTICK: Int = ???
+  def DOM_KEY_LOCATION_JOYSTICK: Int = js.native
 
-  def DOM_KEY_LOCATION_MOBILE: Int = ???
+  def DOM_KEY_LOCATION_MOBILE: Int = js.native
 }
 
 /**
@@ -2554,13 +2554,13 @@ object KeyboardEvent extends js.Object {
  */
 class Document extends Node with NodeSelector with DocumentEvent with ParentNode {
 
-  /** 
+  /**
    * Returns a DOMImplementation object associated with the current document.
    *
    * MDN
    */
-  def implementation: DOMImplementation = ???
- 
+  def implementation: DOMImplementation = js.native
+
   /**
    * Returns a string representing the encoding under which the document was parsed
    * (e.g. ISO-8859-1).
@@ -2568,7 +2568,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   @deprecated
-  def inputEncoding: String = ???
+  def inputEncoding: String = js.native
 
   /**
    * Returns the encoding as determined by the XML declaration. Should be null if
@@ -2577,7 +2577,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   @deprecated
-  def xmlEncoding: String = ???
+  def xmlEncoding: String = js.native
 
   /**
    * Returns the version number as specified in the XML declaration (e.g., <?xml
@@ -2586,7 +2586,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   @deprecated
-  def xmlVersion: String = ???
+  def xmlVersion: String = js.native
 
   /**
    * Returns true if the XML declaration specifies the document is standalone (e.g., An
@@ -2595,14 +2595,14 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   @deprecated
-  def xmlStandalone: Boolean = ???
+  def xmlStandalone: Boolean = js.native
 
   /**
    * Returns the character encoding of the current document.
    *
    * MDN
    */
-  def characterSet: String = ???
+  def characterSet: String = js.native
 
   /**
    * Returns the Document Type Declaration (DTD) associated with current document.
@@ -2611,7 +2611,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def doctype: DocumentType = ???
+  def doctype: DocumentType = js.native
 
   /**
    * Returns the Element that is the root element of the document (for example, the
@@ -2619,9 +2619,9 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def documentElement: Element = ???
+  def documentElement: Element = js.native
 
-  def documentURI: String = ???
+  def documentURI: String = js.native
 
   /**
    * Returns a list of StyleSheet objects for stylesheets explicitly linked into or
@@ -2629,7 +2629,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def styleSheets: StyleSheetList = ???
+  def styleSheets: StyleSheetList = js.native
 
   /**
    * Returns a string containing the date and time on which the current document was last
@@ -2637,21 +2637,21 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def lastModified: String = ???
+  def lastModified: String = js.native
 
   /**
    * Returns an object reference to the identified element.
    *
    * MDN
    */
-  def getElementById(elementId: String): Element = ???
+  def getElementById(elementId: String): Element = js.native
 
   /**
    * Returns a list of elements with a given name in the (X)HTML document.
    *
    * MDN
    */
-  def getElementsByName(elementName: String): NodeList = ???
+  def getElementsByName(elementName: String): NodeList = js.native
 
   /**
    * Returns a HTMLCollection of elements with the given tag name. The complete
@@ -2661,7 +2661,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def getElementsByTagName(tagname: String): NodeList = ???
+  def getElementsByTagName(tagname: String): NodeList = js.native
 
   /**
    * Returns a list of elements with the given tag name belonging to the given namespace.
@@ -2669,7 +2669,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def getElementsByTagNameNS(namespaceURI: String, localName: String): NodeList = ???
+  def getElementsByTagNameNS(namespaceURI: String, localName: String): NodeList = js.native
 
   /**
    * Returns a set of elements which have all the given class names. When called on the
@@ -2679,7 +2679,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def getElementsByClassName(classNames: String): NodeList = ???
+  def getElementsByClassName(classNames: String): NodeList = js.native
 
   /**
    * Returns the element from the document whose elementFromPoint method is being
@@ -2689,7 +2689,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def elementFromPoint(x: Double, y: Double): Element = ???
+  def elementFromPoint(x: Double, y: Double): Element = js.native
 
   /**
    * Adopts a node from an external document. The node and its subtree is removed from the
@@ -2698,12 +2698,12 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def adoptNode(source: Node): Node = ???
+  def adoptNode(source: Node): Node = js.native
 
-  /** 
+  /**
    * Returns an XPathResult based on an XPath expression and other given
    * parameters.
-   * 
+   *
    * MDN
    *
    * @param xpathExpression is a string representing the XPath to be
@@ -2719,16 +2719,16 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * @param result is an existing XPathResult to use for the results. null is
    *     the most common and will create a new XPathResult
    */
-  def evaluate(xpathExpression: String, contextNode: Node, 
-      namespaceResolver: XPathNSResolver, resultType: Int, 
-      result: XPathResult): XPathResult = ???
+  def evaluate(xpathExpression: String, contextNode: Node,
+      namespaceResolver: XPathNSResolver, resultType: Int,
+      result: XPathResult): XPathResult = js.native
 
-  /** 
+  /**
    * Returns an XPathResult based on an XPath expression and other given
    * parameters.
-   * 
+   *
    * MDN
-   * 
+   *
    * @param xpathExpression is a string representing the XPath to be
    *     evaluated.
    * @param contextNode specifies the context node for the query (see the
@@ -2747,17 +2747,17 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * @param result is an existing XPathResult to use for the results. null is
    *     the most common and will create a new XPathResult
    */
-  def evaluate(xpathExpression: String, contextNode: Node, 
-      namespaceResolver: js.Function1[String, String], resultType: Int, 
-      result: XPathResult): XPathResult = ???  
+  def evaluate(xpathExpression: String, contextNode: Node,
+      namespaceResolver: js.Function1[String, String], resultType: Int,
+      result: XPathResult): XPathResult = js.native
 
-  /** 
+  /**
    * Creates an XPathNSResolver which resolves namespaces with respect to the
    * definitions in scope for a specified node.
    *
    * MDN.
    */
-  def createNSResolver(node: Node): XPathNSResolver = ???
+  def createNSResolver(node: Node): XPathNSResolver = js.native
 
   /**
    * Creates a copy of a node from an external document that can be inserted into the
@@ -2765,7 +2765,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def importNode(importedNode: Node, deep: Boolean): Node = ???
+  def importNode(importedNode: Node, deep: Boolean): Node = js.native
 
   /**
    * In an HTML document creates the specified HTML element or HTMLUnknownElement if
@@ -2774,28 +2774,28 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createElement(tagName: String): Element = ???
+  def createElement(tagName: String): Element = js.native
 
   /**
    * Creates an element with the specified namespace URI and qualified name.
    *
    * MDN
    */
-  def createElementNS(namespaceURI: String, qualifiedName: String): Element = ???
+  def createElementNS(namespaceURI: String, qualifiedName: String): Element = js.native
 
   /**
    * createAttribute creates a new attribute node, and returns it.
    *
    * MDN
    */
-  def createAttribute(name: String): Attr = ???
+  def createAttribute(name: String): Attr = js.native
 
   /**
    * Creates a new attribute node in a given namespace and returns it.
    *
    * MDN
    */
-  def createAttributeNS(namespaceURI: String, qualifiedName: String): Attr = ???
+  def createAttributeNS(namespaceURI: String, qualifiedName: String): Attr = js.native
 
   /**
    * createProcessingInstruction() creates a new processing instruction node, and
@@ -2803,14 +2803,14 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createProcessingInstruction(target: String, data: String): ProcessingInstruction = ???
+  def createProcessingInstruction(target: String, data: String): ProcessingInstruction = js.native
 
   /**
    * createCDATASection() creates a new CDATA section node, and returns it.
    *
    * MDN
    */
-  def createCDATASection(data: String): CDATASection = ???
+  def createCDATASection(data: String): CDATASection = js.native
 
   /**
    * Once a Range is created, you need to set its boundary points before you can make use of
@@ -2818,32 +2818,32 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createRange(): Range = ???
+  def createRange(): Range = js.native
 
   /**
    * createComment() creates a new comment node, and returns it.
    *
    * MDN
    */
-  def createComment(data: String): Comment = ???
+  def createComment(data: String): Comment = js.native
 
   /**
    * Creates a new empty DocumentFragment.
    *
    * MDN
    */
-  def createDocumentFragment(): DocumentFragment = ???
+  def createDocumentFragment(): DocumentFragment = js.native
 
-  def createStyleSheet(href: String = ???, index: Int = ???): CSSStyleSheet = ???
+  def createStyleSheet(href: String = js.native, index: Int = js.native): CSSStyleSheet = js.native
 
-  def createTextNode(data: String): Text = ???
+  def createTextNode(data: String): Text = js.native
 
   /**
    * Supported in FF 3.5+, Chrome 1+, Opera 9+, Safari 3+, IE9+
    *
    * MDN
    */
-  def createNodeIterator(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): NodeIterator = ???
+  def createNodeIterator(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): NodeIterator = js.native
 
   /**
    * The Document.createTreeWalker() creator method returns a newly created
@@ -2851,7 +2851,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    *
    * MDN
    */
-  def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): TreeWalker = ???
+  def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): TreeWalker = js.native
 
   /**
    * Releases mouse capture if it's currently enabled on an element within this
@@ -2861,7 +2861,7 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
    * MDN
    */
   @deprecated
-  def releaseCapture(): Unit = ???
+  def releaseCapture(): Unit = js.native
 }
 
 /**
@@ -2872,20 +2872,20 @@ class Document extends Node with NodeSelector with DocumentEvent with ParentNode
  * MDN
  */
 class MessageEvent extends Event {
-  def source: Window = ???
+  def source: Window = js.native
 
-  def origin: String = ???
+  def origin: String = js.native
 
   /**
    * The data from the server
    *
    * MDN
    */
-  def data: js.Any = ???
+  def data: js.Any = js.native
 
-  def initMessageEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, dataArg: js.Any, originArg: String, lastEventIdArg: String, sourceArg: Window): Unit = ???
+  def initMessageEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, dataArg: js.Any, originArg: String, lastEventIdArg: String, sourceArg: Window): Unit = js.native
 
-  def ports: js.Any = ???
+  def ports: js.Any = js.native
 }
 
 
@@ -2901,13 +2901,13 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  var miterLimit: Double = ???
+  var miterLimit: Double = js.native
   /**
    * Default value 10px sans-serif
    *
    * MDN
    */
-  var font: String = ???
+  var font: String = js.native
   /**
    * With globalAlpha applied this sets how shapes and images are drawn onto the
    * existing bitmap. Possible values: source-atop source-in source-out
@@ -2916,93 +2916,93 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  var globalCompositeOperation: String = ???
+  var globalCompositeOperation: String = js.native
 
   /**
    * Type of endings on the end of lines. Possible values: butt (default), round, square
    *
    * MDN
    */
-  var lineCap: String = ???
+  var lineCap: String = js.native
 
   /**
    * Specifies where to start a dasharray on a line.
    *
    * MDN
    */
-  var lineDashOffset: Double = ???
+  var lineDashOffset: Double = js.native
   /**
    * Color of the shadow. Default fully-transparent black.
    *
    * MDN
    */
-  var shadowColor: String = ???
+  var shadowColor: String = js.native
   /**
    * Defines the type of corners where two lines meet. Possible values: round, bevel,
    * miter (default)
    *
    * MDN
    */
-  var lineJoin: String = ???
+  var lineJoin: String = js.native
   /**
    * Horizontal distance the shadow will be offset. Default 0.
    *
    * MDN
    */
-  var shadowOffsetX: Double = ???
+  var shadowOffsetX: Double = js.native
   /**
    * Width of lines. Default 1.0
    *
    * MDN
    */
-  var lineWidth: Double = ???
+  var lineWidth: Double = js.native
   /**
    * Back-reference to the canvas element for which this context was created. Read
    * only.
    *
    * MDN
    */
-  var canvas: HTMLCanvasElement = ???
+  var canvas: HTMLCanvasElement = js.native
   /**
    * A CSS color, a CanvasGradient or CanvasPattern, to use as a line around shapes.
    */
-  var strokeStyle: js.Any = ???
+  var strokeStyle: js.Any = js.native
   /**
    * Alpha value that is applied to shapes and images before they are composited onto the
    * canvas. Default 1.0 (opaque).
    *
    * MDN
    */
-  var globalAlpha: Double = ???
+  var globalAlpha: Double = js.native
   /**
    * Vertical distance the shadow will be offset. Default 0.
    *
    * MDN
    */
-  var shadowOffsetY: Double = ???
+  var shadowOffsetY: Double = js.native
   /**
    * A CSS color, a CanvasGradient or CanvasPattern, to use as a fill.
    */
-  var fillStyle: js.Any = ???
+  var fillStyle: js.Any = js.native
   /**
    * Specifies the blurring effect. Default 0
    *
    * MDN
    */
-  var shadowBlur: Double = ???
+  var shadowBlur: Double = js.native
   /**
    * Possible values: start (default), end, left, right or center.
    *
    * MDN
    */
-  var textAlign: String = ???
+  var textAlign: String = js.native
   /**
    * Possible values: top, hanging, middle, alphabetic (default), ideographic,
    * bottom
    *
    * MDN
    */
-  var textBaseline: String = ???
+  var textBaseline: String = js.native
 
   /**
    * Restores the drawing style state to the last element on the 'state stack' saved by
@@ -3010,9 +3010,9 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def restore(): Unit = ???
+  def restore(): Unit = js.native
 
-  def setTransform(m11: Double, m12: Double, m21: Double, m22: Double, dx: Double, dy: Double): Unit = ???
+  def setTransform(m11: Double, m12: Double, m21: Double, m22: Double, dx: Double, dy: Double): Unit = js.native
 
   /**
    * Saves the current drawing style state using a stack so you can revert any change you
@@ -3020,9 +3020,9 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def save(): Unit = ???
+  def save(): Unit = js.native
 
-  def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Unit = ???
+  def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Unit = js.native
 
   /**
    * Adds an arc to the path which is centered at (x, y) position with radius r starting at
@@ -3031,57 +3031,57 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit = ???
+  def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit = js.native
 
-  def measureText(text: String): TextMetrics = ???
+  def measureText(text: String): TextMetrics = js.native
 
-  def isPointInPath(x: Double, y: Double, fillRule: String): Boolean = ???
+  def isPointInPath(x: Double, y: Double, fillRule: String): Boolean = js.native
 
   /**
    * Reports whether or not the specified point is contained in the current path.
    *
    * MDN
    */
-  def isPointInPath(x: Double, y: Double): Boolean = ???
+  def isPointInPath(x: Double, y: Double): Boolean = js.native
 
-  def quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double): Unit = ???
+  def quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double): Unit = js.native
 
-  def putImageData(imagedata: ImageData, dx: Double, dy: Double, dirtyX: Double = ???, dirtyY: Double = ???, dirtyWidth: Double = ???, dirtyHeight: Double = ???): Unit = ???
+  def putImageData(imagedata: ImageData, dx: Double, dy: Double, dirtyX: Double = js.native, dirtyY: Double = js.native, dirtyWidth: Double = js.native, dirtyHeight: Double = js.native): Unit = js.native
 
-  def rotate(angle: Double): Unit = ???
+  def rotate(angle: Double): Unit = js.native
 
-  def fillText(text: String, x: Double, y: Double, maxWidth: Double = ???): Unit = ???
+  def fillText(text: String, x: Double, y: Double, maxWidth: Double = js.native): Unit = js.native
 
   /**
    * Moves the origin point of the context to (x, y).
    *
    * MDN
    */
-  def translate(x: Double, y: Double): Unit = ???
+  def translate(x: Double, y: Double): Unit = js.native
 
-  def scale(x: Double, y: Double): Unit = ???
+  def scale(x: Double, y: Double): Unit = js.native
 
-  def createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): CanvasGradient = ???
+  def createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): CanvasGradient = js.native
 
   /**
    * Connects the last point in the subpath to the x, y coordinates with a straight line.
    *
    * MDN
    */
-  def lineTo(x: Double, y: Double): Unit = ???
+  def lineTo(x: Double, y: Double): Unit = js.native
 
   /**
    * Returns a dash list array containing an even number of non-negative numbers.
    *
    * MDN
    */
-  def getLineDash(): js.Array[Double] = ???
+  def getLineDash(): js.Array[Double] = js.native
   /**
    * Fills the subpaths with the current fill style.
    *
    * MDN
    */
-  def fill(): Unit = ???
+  def fill(): Unit = js.native
 
   /**
    * Creates a new, blank ImageData object with the specified dimensions. All of the
@@ -3089,10 +3089,10 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def createImageData(imageDataOrSw: js.Any, sh: Double = ???): ImageData = ???
+  def createImageData(imageDataOrSw: js.Any, sh: Double = js.native): ImageData = js.native
 
 
-  def createPattern(image: HTMLElement, repetition: String): CanvasPattern = ???
+  def createPattern(image: HTMLElement, repetition: String): CanvasPattern = js.native
 
   /**
    * Tries to draw a straight line from the current point to the start. If the shape has
@@ -3100,9 +3100,9 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def closePath(): Unit = ???
+  def closePath(): Unit = js.native
 
-  def rect(x: Double, y: Double, w: Double, h: Double): Unit = ???
+  def rect(x: Double, y: Double, w: Double, h: Double): Unit = js.native
   /**
    * Creates a clipping path from the current sub-paths. Everything drawn after clip()
    * is called appears inside the clipping path only. For an example, see Clipping paths
@@ -3110,7 +3110,7 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def clip(fillRule: String = ???): Unit = ???
+  def clip(fillRule: String = js.native): Unit = js.native
 
 
   /**
@@ -3119,14 +3119,14 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def clearRect(x: Double, y: Double, w: Double, h: Double): Unit = ???
+  def clearRect(x: Double, y: Double, w: Double, h: Double): Unit = js.native
 
   /**
    * Moves the starting point of a new subpath to the (x, y) coordinates.
    *
    * MDN
    */
-  def moveTo(x: Double, y: Double): Unit = ???
+  def moveTo(x: Double, y: Double): Unit = js.native
 
   /**
    * Returns an ImageData object representing the underlying pixel data for the area of
@@ -3135,7 +3135,7 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def getImageData(sx: Double, sy: Double, sw: Double, sh: Double): ImageData = ???
+  def getImageData(sx: Double, sy: Double, sw: Double, sh: Double): ImageData = js.native
 
   /**
    * Draws a filled rectangle at (x, y) position whose size is determined by width and
@@ -3143,25 +3143,25 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def fillRect(x: Double, y: Double, w: Double, h: Double): Unit = ???
+  def fillRect(x: Double, y: Double, w: Double, h: Double): Unit = js.native
 
-  def bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): Unit = ???
+  def bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): Unit = js.native
   /**
    * Draws the specified image. This method is available in multiple formats,
    * providing a great deal of flexibility in its use.
    *
    * MDN
    */
-  def drawImage(image: HTMLElement, offsetX: Double, offsetY: Double, width: Double = ???, height: Double = ???, canvasOffsetX: Double = ???, canvasOffsetY: Double = ???, canvasImageWidth: Double = ???, canvasImageHeight: Double = ???): Unit = ???
+  def drawImage(image: HTMLElement, offsetX: Double, offsetY: Double, width: Double = js.native, height: Double = js.native, canvasOffsetX: Double = js.native, canvasOffsetY: Double = js.native, canvasImageWidth: Double = js.native, canvasImageHeight: Double = js.native): Unit = js.native
 
-  def transform(m11: Double, m12: Double, m21: Double, m22: Double, dx: Double, dy: Double): Unit = ???
+  def transform(m11: Double, m12: Double, m21: Double, m22: Double, dx: Double, dy: Double): Unit = js.native
 
   /**
    * Strokes the subpaths with the current stroke style.
    *
    * MDN
    */
-  def stroke(): Unit = ???
+  def stroke(): Unit = js.native
 
   /**
    * Paints a rectangle which has a starting point at (x, y) and has a w width and an h height
@@ -3169,11 +3169,11 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def strokeRect(x: Double, y: Double, w: Double, h: Double): Unit = ???
+  def strokeRect(x: Double, y: Double, w: Double, h: Double): Unit = js.native
 
-  def setLineDash(segments: js.Array[Double]): Unit = ???
+  def setLineDash(segments: js.Array[Double]): Unit = js.native
 
-  def strokeText(text: String, x: Double, y: Double, maxWidth: Double = ???): Unit = ???
+  def strokeText(text: String, x: Double, y: Double, maxWidth: Double = js.native): Unit = js.native
 
   /**
    * Starts a new path by resetting the list of sub-paths. Call this method when you want
@@ -3181,7 +3181,7 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def beginPath(): Unit = ???
+  def beginPath(): Unit = js.native
 
   /**
    * Adds an arc with the given control points and radius, connected to the previous
@@ -3189,9 +3189,9 @@ class CanvasRenderingContext2D extends js.Object {
    *
    * MDN
    */
-  def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit = ???
+  def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit = js.native
 
-  def createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient = ???
+  def createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient = js.native
 }
 
 
@@ -3215,7 +3215,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def status: Int = ???
+  def status: Int = js.native
 
   /**
    * The state of the request: Value State Description 0 UNSENT open()has not been
@@ -3225,7 +3225,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def readyState: Int = ???
+  def readyState: Int = js.native
 
   /**
    * The response to the request as text, or null if the request was unsuccessful or has
@@ -3233,7 +3233,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def responseText: String = ???
+  def responseText: String = js.native
 
   /**
    * The response to the request as a DOM Document object, or null if the request was
@@ -3245,9 +3245,9 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def responseXML: Document = ???
+  def responseXML: Document = js.native
 
-  var ontimeout: js.Function1[Event, _] = ???
+  var ontimeout: js.Function1[Event, _] = js.native
 
   /**
    * The response string returned by the HTTP server. Unlike status, this includes the
@@ -3255,9 +3255,9 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def statusText: String = ???
+  def statusText: String = js.native
 
-  var onreadystatechange: js.Function1[Event, _] = ???
+  var onreadystatechange: js.Function1[Event, _] = js.native
   /**
    * The number of milliseconds a request can take before automatically being
    * terminated. A value of 0 (which is the default) means there is no timeout. Note: You
@@ -3265,17 +3265,17 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var timeout: Double = ???
-  var onload: js.Function1[Event, _] = ???
+  var timeout: Double = js.native
+  var onload: js.Function1[Event, _] = js.native
   /**
    * Initializes a request. This method is to be used from JavaScript code; to
    * initialize a request from native code, use openRequest()instead.
    *
    * MDN
    */
-  def open(method: String, url: String, async: Boolean = ???, user: String = ???, password: String = ???): Unit = ???
+  def open(method: String, url: String, async: Boolean = js.native, user: String = js.native, password: String = js.native): Unit = js.native
 
-  def create(): XMLHttpRequest = ???
+  def create(): XMLHttpRequest = js.native
   /**
    * Sends the request. If the request is asynchronous (which is the default), this
    * method returns as soon as the request is sent. If the request is synchronous, this
@@ -3283,7 +3283,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def send(data: js.Any = ???): Unit = ???
+  def send(data: js.Any = js.native): Unit = js.native
 
 
   /**
@@ -3291,9 +3291,9 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def abort(): Unit = ???
+  def abort(): Unit = js.native
 
-  def getAllResponseHeaders(): String = ???
+  def getAllResponseHeaders(): String = js.native
 
   /**
    * Sets the value of an HTTP request header. You must call setRequestHeader()
@@ -3302,9 +3302,9 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def setRequestHeader(header: String, value: String): Unit = ???
+  def setRequestHeader(header: String, value: String): Unit = js.native
 
-  def getResponseHeader(header: String): String = ???
+  def getResponseHeader(header: String): String = js.native
 
 
   /**
@@ -3314,7 +3314,7 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  def response: js.Any = ???
+  def response: js.Any = js.native
 
   /**
    * Indicates whether or not cross-site Access-Control requests should be made using
@@ -3326,9 +3326,9 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var withCredentials: Boolean = ???
-  var onprogress: js.Function1[ProgressEvent, _] = ???
-  var onabort: js.Function1[js.Any, _] = ???
+  var withCredentials: Boolean = js.native
+  var onprogress: js.Function1[ProgressEvent, _] = js.native
+  var onabort: js.Function1[js.Any, _] = js.native
   /**
    * Can be set to change the response type. Value Data type of response property ""
    * (empty string) String (this is the default) "arraybuffer" ArrayBuffer "blob"
@@ -3354,25 +3354,25 @@ class XMLHttpRequest extends EventTarget {
    *
    * MDN
    */
-  var responseType: String = ???
-  var onloadend: js.Function1[ProgressEvent, _] = ???
+  var responseType: String = js.native
+  var onloadend: js.Function1[ProgressEvent, _] = js.native
   /**
    * The upload process can be tracked by adding an event listener to upload.
    *
    * MDN
    */
-  var upload: XMLHttpRequestEventTarget = ???
-  var onerror: js.Function1[ErrorEvent, _] = ???
-  var onloadstart: js.Function1[js.Any, _] = ???
+  var upload: XMLHttpRequestEventTarget = js.native
+  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onloadstart: js.Function1[js.Any, _] = js.native
 }
 
 object XMLHttpRequest extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(XMLHttpRequest),List())))) */
-  var LOADING: Int = ???
-  var DONE: Int = ???
-  var UNSENT: Int = ???
-  var OPENED: Int = ???
-  var HEADERS_RECEIVED: Int = ???
+  var LOADING: Int = js.native
+  var DONE: Int = js.native
+  var UNSENT: Int = js.native
+  var OPENED: Int = js.native
+  var HEADERS_RECEIVED: Int = js.native
 }
 
 class Screen extends js.Object {
@@ -3384,42 +3384,42 @@ class Screen extends js.Object {
    *
    * MDN
    */
-  def width: Double = ???
+  def width: Double = js.native
 
   /**
    * Returns the amount of vertical space available to the window on the screen.
    *
    * MDN
    */
-  def availHeight: Double = ???
+  def availHeight: Double = js.native
 
   /**
    * Returns the height of the screen in pixels.
    *
    * MDN
    */
-  def height: Double = ???
+  def height: Double = js.native
 
   /**
    * Returns the color depth of the screen.
    *
    * MDN
    */
-  def colorDepth: Int = ???
+  def colorDepth: Int = js.native
 
   /**
    * Returns the amount of horizontal space in pixels available to the window.
    *
    * MDN
    */
-  def availWidth: Double = ???
+  def availWidth: Double = js.native
 
   /**
    * Returns the bit depth of the screen.
    *
    * MDN
    */
-  def pixelDepth: Int = ???
+  def pixelDepth: Int = js.native
 }
 
 
@@ -3438,7 +3438,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def altitudeAccuracy: Double = ???
+  def altitudeAccuracy: Double = js.native
 
   /**
    * The Coordinates.longitude read-only property is a double representing the
@@ -3446,7 +3446,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def longitude: Double = ???
+  def longitude: Double = js.native
 
   /**
    * The Coordinates.latitude read-only property is a double representing the
@@ -3454,7 +3454,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def latitude: Double = ???
+  def latitude: Double = js.native
 
   /**
    * The Coordinates.speed read-only property is a double representing the velocity
@@ -3463,7 +3463,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def speed: Double = ???
+  def speed: Double = js.native
 
   /**
    * The Coordinates.heading read-only property is a double representing the
@@ -3475,7 +3475,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def heading: Double = ???
+  def heading: Double = js.native
 
   /**
    * The Coordinates.altitude read-only property is a double representing the
@@ -3484,7 +3484,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def altitude: Double = ???
+  def altitude: Double = js.native
 
   /**
    * The Coordinates.accuracy read-only property is a strictly positive double
@@ -3494,7 +3494,7 @@ trait Coordinates extends js.Object {
    *
    * MDN
    */
-  def accuracy: Double = ???
+  def accuracy: Double = js.native
 }
 
 
@@ -3515,7 +3515,7 @@ trait NavigatorGeolocation extends js.Object {
    *
    * MDN
    */
-  def geolocation: Geolocation = ???
+  def geolocation: Geolocation = js.native
 }
 
 trait NavigatorContentUtils extends js.Object {
@@ -3541,7 +3541,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  var effectAllowed: String = ???
+  var effectAllowed: String = js.native
 
   /**
    * The actual effect that will be used, and should always be one of the possible values
@@ -3549,7 +3549,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  var dropEffect: String = ???
+  var dropEffect: String = js.native
   /**
    * Remove the data associated with a given type. The type argument is optional. If the
    * type is empty or not specified, the data associated with all types is removed. If
@@ -3558,7 +3558,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def clearData(format: String = ???): Boolean = ???
+  def clearData(format: String = js.native): Boolean = js.native
 
   /**
    * Set the data for a given type. If data for the type does not exist, it is added at the
@@ -3568,7 +3568,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def setData(format: String, data: String): Boolean = ???
+  def setData(format: String, data: String): Boolean = js.native
 
   /**
    * Retrieves the data for a given type, or an empty string if data for that type does not
@@ -3576,7 +3576,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def getData(format: String): String = ???
+  def getData(format: String): String = js.native
 
   /**
    * Holds a list of the format types of the data that is stored for the first item, in the
@@ -3584,9 +3584,9 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def types: DOMStringList = ???
+  def types: DOMStringList = js.native
 
-  def files: FileList = ???
+  def files: FileList = js.native
 }
 
 
@@ -3604,9 +3604,9 @@ class FocusEvent extends UIEvent {
    *
    * MDN
    */
-  def relatedTarget: EventTarget = ???
+  def relatedTarget: EventTarget = js.native
 
-  def initFocusEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, relatedTargetArg: EventTarget): Unit = ???
+  def initFocusEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, relatedTargetArg: EventTarget): Unit = js.native
 }
 
 
@@ -3627,7 +3627,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def startOffset: Int = ???
+  def startOffset: Int = js.native
 
   /**
    * The Range.collapsed read-only property returns a Boolean flag indicating
@@ -3637,7 +3637,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def collapsed: Boolean = ???
+  def collapsed: Boolean = js.native
 
   /**
    * The Range.endOffset read-only property returns a number representing where in
@@ -3645,7 +3645,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def endOffset: Int = ???
+  def endOffset: Int = js.native
 
   /**
    * The Range.startContainer read-only property returns the Node within which the
@@ -3654,7 +3654,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def startContainer: Node = ???
+  def startContainer: Node = js.native
 
   /**
    * The Range.endContainer read-only property returns the Node within which the
@@ -3663,7 +3663,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def endContainer: Node = ???
+  def endContainer: Node = js.native
 
   /**
    * The Range.commonAncestorContainer read-only property returns the deepest, or
@@ -3672,14 +3672,14 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def commonAncestorContainer: Node = ???
+  def commonAncestorContainer: Node = js.native
 
   /**
    * The Range.setStart() method sets the start position of a Range.
    *
    * MDN
    */
-  def setStart(refNode: Node, offset: Int): Unit = ???
+  def setStart(refNode: Node, offset: Int): Unit = js.native
 
   /**
    * The Range.setEndBefore() method sets the end position of a Range relative to
@@ -3688,7 +3688,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def setEndBefore(refNode: Node): Unit = ???
+  def setEndBefore(refNode: Node): Unit = js.native
 
   /**
    * The Range.setStartBefore() method sets the start position of a Range relative to
@@ -3697,7 +3697,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def setStartBefore(refNode: Node): Unit = ???
+  def setStartBefore(refNode: Node): Unit = js.native
 
   /**
    * The Range.selectNode() method sets the Range to contain the Node and its contents.
@@ -3706,7 +3706,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def selectNode(refNode: Node): Unit = ???
+  def selectNode(refNode: Node): Unit = js.native
 
   /**
    * The Range.detach() method releases a Range from use. This lets the browser choose
@@ -3716,7 +3716,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def detach(): Unit = ???
+  def detach(): Unit = js.native
 
   /**
    * The Range.getBoundingClientRect() method returns a ClientRect object that
@@ -3725,7 +3725,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def getBoundingClientRect(): ClientRect = ???
+  def getBoundingClientRect(): ClientRect = js.native
 
   /**
    * The Range.compareBoundaryPoints() method compares the boundary points of the
@@ -3733,21 +3733,21 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def compareBoundaryPoints(how: Int, sourceRange: Range): Int = ???
+  def compareBoundaryPoints(how: Int, sourceRange: Range): Int = js.native
 
   /**
    * The Range.insertNode() method inserts a node at the start of the Range.
    *
    * MDN
    */
-  def insertNode(newNode: Node): Unit = ???
+  def insertNode(newNode: Node): Unit = js.native
 
   /**
    * The Range.collapse() method collapses the Range to one of its boundary points.
    *
    * MDN
    */
-  def collapse(toStart: Boolean): Unit = ???
+  def collapse(toStart: Boolean): Unit = js.native
 
   /**
    * The Range.selectNodeContents() sets the Range to contain the contents of
@@ -3755,7 +3755,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def selectNodeContents(refNode: Node): Unit = ???
+  def selectNodeContents(refNode: Node): Unit = js.native
 
   /**
    * The Range.cloneContents() returns a DocumentFragment copying the objects of
@@ -3763,14 +3763,14 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def cloneContents(): DocumentFragment = ???
+  def cloneContents(): DocumentFragment = js.native
 
   /**
    * The Range.setEnd() method sets the end position of a Range.
    *
    * MDN
    */
-  def setEnd(refNode: Node, offset: Int): Unit = ???
+  def setEnd(refNode: Node, offset: Int): Unit = js.native
 
   /**
    * The Range.cloneRange() method returns a Range object with boundary points
@@ -3778,7 +3778,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def cloneRange(): Range = ???
+  def cloneRange(): Range = js.native
 
   /**
    * The Range.getClientRects() method returns a list of ClientRect objects
@@ -3788,7 +3788,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def getClientRects(): ClientRectList = ???
+  def getClientRects(): ClientRectList = js.native
 
   /**
    * The Range.surroundContents() method moves content of the Range into a new node,
@@ -3796,14 +3796,14 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def surroundContents(newParent: Node): Unit = ???
+  def surroundContents(newParent: Node): Unit = js.native
 
   /**
    * The Range.deleteContents() removes the contents of the Range from the Document.
    *
    * MDN
    */
-  def deleteContents(): Unit = ???
+  def deleteContents(): Unit = js.native
 
   /**
    * The Range.setStartAfter() method sets the start position of a Range relative to a
@@ -3812,7 +3812,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def setStartAfter(refNode: Node): Unit = ???
+  def setStartAfter(refNode: Node): Unit = js.native
 
   /**
    * The Range.extractContents() method moves contents of the Range from the
@@ -3820,7 +3820,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def extractContents(): DocumentFragment = ???
+  def extractContents(): DocumentFragment = js.native
 
   /**
    * The Range.setEndAfter() method sets the end position of a Range relative to
@@ -3829,7 +3829,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def setEndAfter(refNode: Node): Unit = ???
+  def setEndAfter(refNode: Node): Unit = js.native
 
   /**
    * The Range.createContextualFragment() method returns a DocumentFragment by
@@ -3842,15 +3842,15 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def createContextualFragment(fragment: String): DocumentFragment = ???
+  def createContextualFragment(fragment: String): DocumentFragment = js.native
 }
 
 object Range extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Range),List())))) */
-  val END_TO_END: Int = ???
-  val START_TO_START: Int = ???
-  val START_TO_END: Int = ???
-  val END_TO_START: Int = ???
+  val END_TO_END: Int = js.native
+  val START_TO_START: Int = js.native
+  val START_TO_END: Int = js.native
+  val END_TO_START: Int = js.native
 }
 
 /**
@@ -3863,17 +3863,17 @@ object Range extends js.Object {
  * MDN
  */
 class Storage extends js.Object {
-  var length: Int = ???
+  var length: Int = js.native
 
-  def getItem(key: String): String = ???
+  def getItem(key: String): String = js.native
 
-  def setItem(key: String, data: String): Unit = ???
+  def setItem(key: String, data: String): Unit = js.native
 
-  def clear(): Unit = ???
+  def clear(): Unit = js.native
 
-  def removeItem(key: String): Unit = ???
+  def removeItem(key: String): Unit = js.native
 
-  def key(index: Int): String = ???
+  def key(index: Int): String = js.native
 }
 
 
@@ -3883,44 +3883,44 @@ class Storage extends js.Object {
  * MDN
  */
 class DocumentType extends Node {
-  def name: String = ???
+  def name: String = js.native
 
-  def notations: NamedNodeMap = ???
+  def notations: NamedNodeMap = js.native
 
-  def systemId: String = ???
+  def systemId: String = js.native
 
-  def internalSubset: String = ???
+  def internalSubset: String = js.native
 
-  def entities: NamedNodeMap = ???
+  def entities: NamedNodeMap = js.native
 
-  def publicId: String = ???
+  def publicId: String = js.native
 }
 
 
 class MutationEvent extends Event {
-  def newValue: String = ???
+  def newValue: String = js.native
 
-  def attrChange: Int = ???
+  def attrChange: Int = js.native
 
-  def attrName: String = ???
+  def attrName: String = js.native
 
-  def prevValue: String = ???
+  def prevValue: String = js.native
 
-  def relatedNode: Node = ???
+  def relatedNode: Node = js.native
 
-  def initMutationEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, relatedNodeArg: Node, prevValueArg: String, newValueArg: String, attrNameArg: String, attrChangeArg: Int): Unit = ???
+  def initMutationEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, relatedNodeArg: Node, prevValueArg: String, newValueArg: String, attrNameArg: String, attrChangeArg: Int): Unit = js.native
 
 }
 
 object MutationEvent extends js.Object {
-  val MODIFICATION: Int = ???
-  val REMOVAL: Int = ???
-  val ADDITION: Int = ???
+  val MODIFICATION: Int = js.native
+  val REMOVAL: Int = js.native
+  val ADDITION: Int = js.native
 }
 
 /**
  * MutationObserver provides developers a way to react to changes in a DOM.
- * It is designed as a replacement for Mutation Events defined in the 
+ * It is designed as a replacement for Mutation Events defined in the
  * DOM3 Events specification.
  *
  * MDN
@@ -3932,7 +3932,7 @@ class MutationObserver(callback: js.Function2[js.Array[MutationRecord], Mutation
    *
    * MDN
    */
-  def observe(target: Node, options: MutationObserverInit): Unit = ???
+  def observe(target: Node, options: MutationObserverInit): Unit = js.native
 
   /**
    * Stops the MutationObserver instance from receiving notifications of DOM
@@ -3941,7 +3941,7 @@ class MutationObserver(callback: js.Function2[js.Array[MutationRecord], Mutation
    *
    * MDN
    */
-  def disconnect(): Unit = ???
+  def disconnect(): Unit = js.native
 
   /**
    * Empties the MutationObserver instance's record queue
@@ -3949,7 +3949,7 @@ class MutationObserver(callback: js.Function2[js.Array[MutationRecord], Mutation
    *
    * MDN
    */
-  def takeRecords(): js.Array[MutationRecord] = ???
+  def takeRecords(): js.Array[MutationRecord] = js.native
 }
 
 /**
@@ -3966,47 +3966,47 @@ trait MutationObserverInit extends js.Object {
    *
    * MDN
    */
-  var childList: js.UndefOr[Boolean] = ???
+  var childList: js.UndefOr[Boolean] = js.native
   /**
    * Set to true if mutations to target's attributes are to be observed.
    *
    * MDN
    */
-  var attributes: js.UndefOr[Boolean] = ???
+  var attributes: js.UndefOr[Boolean] = js.native
   /**
    * Set to true if mutations to target's data are to be observed.
    *
    * MDN
    */
-  var characterData: js.UndefOr[Boolean] = ???
+  var characterData: js.UndefOr[Boolean] = js.native
   /**
    * Set to true if mutations to not just target, but also target's descendants
    * are to be observed.
    *
    * MDN
    */
-  var subtree: js.UndefOr[Boolean] = ???
+  var subtree: js.UndefOr[Boolean] = js.native
   /**
    * Set to true if attributes is set to true and target's attribute value
    * before the mutation needs to be recorded.
    *
    * MDN
    */
-  var attributeOldValue: js.UndefOr[Boolean] = ???
+  var attributeOldValue: js.UndefOr[Boolean] = js.native
   /**
    * Set to true if characterData is set to true and target's data before the
    * mutation needs to be recorded.
    *
    * MDN
    */
-  var characterDataOldValue: js.UndefOr[Boolean] = ???
+  var characterDataOldValue: js.UndefOr[Boolean] = js.native
   /**
    * Set to an array of attribute local names (without namespace) if not all
    * attribute mutations need to be observed.
    *
    * MDN
    */
-  var attributeFilter: js.UndefOr[js.Array[String]] = ???
+  var attributeFilter: js.UndefOr[js.Array[String]] = js.native
 }
 
 /** Factory for [[MutationObserverInit]] objects. */
@@ -4039,7 +4039,7 @@ object MutationObserverInit {
 }
 
 /**
- * MutationRecord is the object that will be passed to the observer's callback. 
+ * MutationRecord is the object that will be passed to the observer's callback.
  * It has the following properties:
  *
  * MDN
@@ -4052,7 +4052,7 @@ trait MutationRecord extends js.Object {
    *
    * MDN
    */
-  def `type`: String = ???
+  def `type`: String = js.native
   /**
    * Returns the node the mutation affected, depending on the type.
    * For attributes, it is the element whose attribute changed.
@@ -4061,43 +4061,43 @@ trait MutationRecord extends js.Object {
    *
    * MDN
    */
-  def target: Node = ???
+  def target: Node = js.native
   /**
    * Return the nodes added. Will be an empty NodeList if no nodes were added.
    *
    * MDN
    */
-  def addedNodes: NodeList = ???
+  def addedNodes: NodeList = js.native
   /**
    * Return the nodes removed. Will be an empty NodeList if no nodes were removed.
    *
    * MDN
    */
-  def removedNodes: NodeList = ???
+  def removedNodes: NodeList = js.native
   /**
    * Return the previous sibling of the added or removed nodes, or null.
    *
    * MDN
    */
-  def previousSibling: Node = ???
+  def previousSibling: Node = js.native
   /**
    * Return the next sibling of the added or removed nodes, or null.
    *
    * MDN
    */
-  def nextSibling: Node = ???
+  def nextSibling: Node = js.native
   /**
    * Returns the local name of the changed attribute, or null.
    *
    * MDN
    */
-  def attributeName: String = ???
+  def attributeName: String = js.native
   /**
    * Returns the namespace of the changed attribute, or null.
    *
    * MDN
    */
-  def attributeNamespace: String = ???
+  def attributeNamespace: String = js.native
   /**
    * The return value depends on the type. For attributes, it is the value of
    * the changed attribute before the change. For characterData, it is the data
@@ -4105,13 +4105,13 @@ trait MutationRecord extends js.Object {
    *
    * MDN
    */
-  def oldValue: String = ???
+  def oldValue: String = js.native
 }
 
 trait DragEvent extends MouseEvent {
-  def dataTransfer: DataTransfer = ???
+  def dataTransfer: DataTransfer = js.native
 
-  def initDragEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean, altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean, buttonArg: Int, relatedTargetArg: EventTarget, dataTransferArg: DataTransfer): Unit = ???
+  def initDragEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean, altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean, buttonArg: Int, relatedTargetArg: EventTarget, dataTransferArg: DataTransfer): Unit = js.native
 }
 
 
@@ -4130,7 +4130,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def redirectStart: Int = ???
+  def redirectStart: Int = js.native
 
   /**
    * The PerformanceTiming.domainLookupEnd read-only property returns an unsigned
@@ -4141,7 +4141,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domainLookupEnd: Int = ???
+  def domainLookupEnd: Int = js.native
 
   /**
    * The PerformanceTiming.responseStart read-only property returns an unsigned
@@ -4151,7 +4151,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def responseStart: Int = ???
+  def responseStart: Int = js.native
 
   /**
    * The PerformanceTiming.domComplete read-only property returns an unsigned long
@@ -4161,7 +4161,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domComplete: Int = ???
+  def domComplete: Int = js.native
 
   /**
    * The PerformanceTiming.domainLookupStart read-only property returns an
@@ -4172,7 +4172,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domainLookupStart: Int = ???
+  def domainLookupStart: Int = js.native
 
   /**
    * The PerformanceTiming.loadEventStart read-only property returns an unsigned
@@ -4182,7 +4182,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def loadEventStart: Int = ???
+  def loadEventStart: Int = js.native
 
   /**
    * The PerformanceTiming.unloadEventEnd read-only property returns an unsigned
@@ -4193,7 +4193,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def unloadEventEnd: Int = ???
+  def unloadEventEnd: Int = js.native
 
   /**
    * The PerformanceTiming.fetchStart read-only property returns an unsigned long
@@ -4203,7 +4203,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def fetchStart: Int = ???
+  def fetchStart: Int = js.native
 
   /**
    * The PerformanceTiming.requestStart read-only property returns an unsigned
@@ -4215,7 +4215,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def requestStart: Int = ???
+  def requestStart: Int = js.native
 
   /**
    * The PerformanceTiming.domInteractive read-only property returns an unsigned
@@ -4226,7 +4226,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domInteractive: Int = ???
+  def domInteractive: Int = js.native
 
   /**
    * The PerformanceTiming.navigationStart read-only property returns an unsigned
@@ -4237,7 +4237,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def navigationStart: Int = ???
+  def navigationStart: Int = js.native
 
   /**
    * The PerformanceTiming.connectEnd read-only property returns an unsigned long
@@ -4250,7 +4250,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def connectEnd: Int = ???
+  def connectEnd: Int = js.native
 
   /**
    * The PerformanceTiming.loadEventEnd read-only property returns an unsigned
@@ -4260,7 +4260,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def loadEventEnd: Int = ???
+  def loadEventEnd: Int = js.native
 
   /**
    * The PerformanceTiming.connectStart read-only property returns an unsigned
@@ -4272,7 +4272,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def connectStart: Int = ???
+  def connectStart: Int = js.native
 
   /**
    * The PerformanceTiming.responseEnd read-only property returns an unsigned long
@@ -4282,7 +4282,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def responseEnd: Int = ???
+  def responseEnd: Int = js.native
 
   /**
    * The PerformanceTiming.domLoading read-only property returns an unsigned long
@@ -4292,7 +4292,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domLoading: Int = ???
+  def domLoading: Int = js.native
 
   /**
    * The PerformanceTiming.redirectEnd read-only property returns an unsigned long
@@ -4303,7 +4303,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def redirectEnd: Int = ???
+  def redirectEnd: Int = js.native
 
   /**
    * The PerformanceTiming.unloadEventStart read-only property returns an
@@ -4314,7 +4314,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def unloadEventStart: Int = ???
+  def unloadEventStart: Int = js.native
 
   /**
    * The PerformanceTiming.domContentLoadedEventStart read-only property
@@ -4325,7 +4325,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domContentLoadedEventStart: Int = ???
+  def domContentLoadedEventStart: Int = js.native
 
   /**
    * The PerformanceTiming.domContentLoadedEventEnd read-only property returns
@@ -4335,7 +4335,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domContentLoadedEventEnd: Int = ???
+  def domContentLoadedEventEnd: Int = js.native
 
   /**
    * Is a jsonizer returning a JSON object representing the specific
@@ -4343,22 +4343,22 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def toJSON(): js.Dynamic = ???
+  def toJSON(): js.Dynamic = js.native
 }
 
 
 trait EventException extends js.Object {
-  def code: Int = ???
+  def code: Int = js.native
 
-  def message: String = ???
+  def message: String = js.native
 
-  def name: String = ???
+  def name: String = js.native
 }
 
 object EventException extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(EventException),List())))) */
-  val DISPATCH_REQUEST_ERR: Int = ???
-  val UNSPECIFIED_EVENT_TYPE_ERR: Int = ???
+  val DISPATCH_REQUEST_ERR: Int = js.native
+  val UNSPECIFIED_EVENT_TYPE_ERR: Int = js.native
 }
 
 /**
@@ -4378,11 +4378,11 @@ trait NavigatorOnLine extends js.Object {
    *
    * MDN
    */
-  def onLine: Boolean = ???
+  def onLine: Boolean = js.native
 }
 
 trait WindowLocalStorage extends js.Object {
-  def localStorage: Storage = ???
+  def localStorage: Storage = js.native
 }
 
 
@@ -4404,60 +4404,60 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  var hash: String = ???
+  var hash: String = js.native
   /**
    * Is a DOMString containing the protocol scheme of the URL, including the final ':'.
    *
    * MDN
    */
-  var protocol: String = ???
+  var protocol: String = js.native
   /**
    * Is a DOMString containing a '?' followed by the parameters of the URL.
    *
    * MDN
    */
-  var search: String = ???
+  var search: String = js.native
   /**
    * Is a DOMString containing the whole URL.
    *
    * MDN
    */
-  var href: String = ???
+  var href: String = js.native
   /**
    * Is a DOMString containing the domain of the URL.
    *
    * MDN
    */
-  var hostname: String = ???
+  var hostname: String = js.native
   /**
    * Is a DOMString containing the port number of the URL.
    *
    * MDN
    */
-  var port: String = ???
+  var port: String = js.native
   /**
    * Is a DOMString containing an initial '/' followed by the path of the URL.
    *
    * MDN
    */
-  var pathname: String = ???
+  var pathname: String = js.native
   /**
    * Is a DOMString containing the host, that is the hostname, a ':', and the port of the
    * URL.
    *
    * MDN
    */
-  var host: String = ???
+  var host: String = js.native
   /**
-   * Theorigin read-only property is a String containing the Unicode serialization of the 
-   * origin of the represented URL, that is, for http and https, the scheme followed by 
-   * '://', followed by the domain, followed by ':', followed by the port (the default 
-   * port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme, 
-   * the value is browser dependant. 
-   * 
+   * Theorigin read-only property is a String containing the Unicode serialization of the
+   * origin of the represented URL, that is, for http and https, the scheme followed by
+   * '://', followed by the domain, followed by ':', followed by the port (the default
+   * port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme,
+   * the value is browser dependant.
+   *
    * MDN
    */
-  def origin: String = ???
+  def origin: String = js.native
   /**
    * The Location.reload()method Reloads the resource from the current URL. Its
    * optional unique parameter is a Boolean, which, when it is true, causes the page to
@@ -4466,7 +4466,7 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  def reload(flag: Boolean = ???): Unit = ???
+  def reload(flag: Boolean = js.native): Unit = js.native
 
 
   /**
@@ -4477,7 +4477,7 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  def replace(url: String): Unit = ???
+  def replace(url: String): Unit = js.native
 
   /**
    * The Location.assign()method loading the object at the URL providing in
@@ -4485,19 +4485,19 @@ trait Location extends js.Object {
    *
    * MDN
    */
-  def assign(url: String): Unit = ???
+  def assign(url: String): Unit = js.native
 
 }
 
 
 class PerformanceEntry extends js.Object {
-  def name: String = ???
+  def name: String = js.native
 
-  def startTime: Double = ???
+  def startTime: Double = js.native
 
-  def duration: Int = ???
+  def duration: Int = js.native
 
-  def entryType: String = ???
+  def entryType: String = js.native
 }
 
 
@@ -4512,16 +4512,16 @@ class UIEvent extends Event {
    *
    * MDN
    */
-  def detail: Int = ???
+  def detail: Int = js.native
 
   /**
    * A view which generated the event. Read only.
    *
    * MDN
    */
-  def view: Window = ???
+  def view: Window = js.native
 
-  def initUIEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int): Unit = ???
+  def initUIEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int): Unit = js.native
 }
 
 
@@ -4537,32 +4537,32 @@ class WheelEvent extends MouseEvent {
    *
    * MDN
    */
-  def deltaZ: Double = ???
+  def deltaZ: Double = js.native
 
   /**
    * Horizontal scroll amount. Read only.
    *
    * MDN
    */
-  def deltaX: Double = ???
+  def deltaX: Double = js.native
 
   /**
    * Unit of delta values. See Delta modes for a list of permitted values. Read only.
    *
    * MDN
    */
-  def deltaMode: Int = ???
+  def deltaMode: Int = js.native
 
   /**
    * Vertical scroll amount. Read only.
    *
    * MDN
    */
-  def deltaY: Double = ???
+  def deltaY: Double = js.native
 
-  def initWheelEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, buttonArg: Int, relatedTargetArg: EventTarget, modifiersListArg: String, deltaXArg: Double, deltaYArg: Double, deltaZArg: Double, deltaMode: Int): Unit = ???
+  def initWheelEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int, screenYArg: Int, clientXArg: Int, clientYArg: Int, buttonArg: Int, relatedTargetArg: EventTarget, modifiersListArg: String, deltaXArg: Double, deltaYArg: Double, deltaZArg: Double, deltaMode: Int): Unit = js.native
 
-  def getCurrentPoint(element: Element): Unit = ???
+  def getCurrentPoint(element: Element): Unit = js.native
 }
 
 object WheelEvent extends js.Object {
@@ -4572,19 +4572,19 @@ object WheelEvent extends js.Object {
    *
    * MDN
    */
-  val DOM_DELTA_PIXEL: Int = ???
+  val DOM_DELTA_PIXEL: Int = js.native
   /**
    * The delta values are specified in lines.
    *
    * MDN
    */
-  val DOM_DELTA_LINE: Int = ???
+  val DOM_DELTA_LINE: Int = js.native
   /**
    * The delta values are specified in pages.
    *
    * MDN
    */
-  val DOM_DELTA_PAGE: Int = ???
+  val DOM_DELTA_PAGE: Int = js.native
 }
 
 /**
@@ -4608,7 +4608,7 @@ class Text extends CharacterData {
    *
    * MDN
    */
-  def wholeText: String = ???
+  def wholeText: String = js.native
 
   /**
    * The Text.splitText() method breaks the Textnode into two nodes at the specified
@@ -4616,7 +4616,7 @@ class Text extends CharacterData {
    *
    * MDN
    */
-  def splitText(offset: Int): Text = ???
+  def splitText(offset: Int): Text = js.native
 
   /**
    * The Text.replaceWholeText() method replaces the text of the node and all of its
@@ -4626,7 +4626,7 @@ class Text extends CharacterData {
    *
    * MDN
    */
-  def replaceWholeText(content: String): Text = ???
+  def replaceWholeText(content: String): Text = js.native
 }
 
 
@@ -4649,7 +4649,7 @@ trait PositionError extends js.Object {
    *
    * MDN
    */
-  def code: Int = ???
+  def code: Int = js.native
 
   /**
    * The PositionError.message read-only property returns a human-readable
@@ -4657,27 +4657,27 @@ trait PositionError extends js.Object {
    *
    * MDN
    */
-  def message: String = ???
+  def message: String = js.native
 
 }
 
 object PositionError extends js.Object {
 
-  val POSITION_UNAVAILABLE: Int = ???
-  val PERMISSION_DENIED: Int = ???
-  val TIMEOUT: Int = ???
+  val POSITION_UNAVAILABLE: Int = js.native
+  val PERMISSION_DENIED: Int = js.native
+  val TIMEOUT: Int = js.native
 }
 
 class StyleSheetList extends js.Object {
-  def length: Int = ???
+  def length: Int = js.native
 
-  def item(index: Int = ???): StyleSheet = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): StyleSheet = ???
+  def item(index: Int = js.native): StyleSheet = js.native
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: StyleSheet): Unit = ???
+  def apply(index: Int): StyleSheet = js.native
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: StyleSheet): Unit = js.native
 }
 
 
@@ -4692,7 +4692,7 @@ class CustomEvent extends Event {
    *
    * MDN
    */
-  def detail: Object = ???
+  def detail: Object = js.native
 
   /**
    * Initializes the event in a manner analogous to the similarly-named method in the
@@ -4700,7 +4700,7 @@ class CustomEvent extends Event {
    *
    * MDN
    */
-  def initCustomEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, detailArg: Object): Unit = ???
+  def initCustomEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, detailArg: Object): Unit = js.native
 }
 
 
@@ -4719,9 +4719,9 @@ trait Geolocation extends js.Object {
    *
    * MDN
    */
-  def clearWatch(watchId: Int): Unit = ???
+  def clearWatch(watchId: Int): Unit = js.native
 
-  def getCurrentPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _], options: PositionOptions = ???): Unit = ???
+  def getCurrentPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _], options: PositionOptions = js.native): Unit = js.native
 
 
   /**
@@ -4730,7 +4730,7 @@ trait Geolocation extends js.Object {
    *
    * MDN
    */
-  def getCurrentPosition(successCallback: js.Function1[Position, _]): Unit = ???
+  def getCurrentPosition(successCallback: js.Function1[Position, _]): Unit = js.native
 
   /**
    * The Geolocation.watchPosition() method is used to register a handler function
@@ -4739,7 +4739,7 @@ trait Geolocation extends js.Object {
    *
    * MDN
    */
-  def watchPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _] = ???, options: PositionOptions = ???): Int = ???
+  def watchPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _] = js.native, options: PositionOptions = js.native): Int = js.native
 }
 
 
@@ -4757,9 +4757,9 @@ class History extends js.Object {
    *
    * MDN
    */
-  def length: Int = ???
+  def length: Int = js.native
 
-  def back(distance: js.Any): Unit = ???
+  def back(distance: js.Any): Unit = js.native
 
   /**
    * Goes to the previous page in session history, the same action as when the user clicks
@@ -4769,9 +4769,9 @@ class History extends js.Object {
    *
    * MDN
    */
-  def back(): Unit = ???
+  def back(): Unit = js.native
 
-  def forward(distance: js.Any): Unit = ???
+  def forward(distance: js.Any): Unit = js.native
 
   /**
    * Goes to the next page in session history, the same action as when the user clicks the
@@ -4781,9 +4781,9 @@ class History extends js.Object {
    *
    * MDN
    */
-  def forward(): Unit = ???
+  def forward(): Unit = js.native
 
-  def go(delta: js.Any): Unit = ???
+  def go(delta: js.Any): Unit = js.native
 
   /**
    * Loads a page from the session history, identified by its relative location to the
@@ -4795,7 +4795,7 @@ class History extends js.Object {
    *
    * MDN
    */
-  def go(): Unit = ???
+  def go(): Unit = js.native
 
   /**
    * Returns an any value representing the state at the top of the history stack. This is a
@@ -4803,9 +4803,9 @@ class History extends js.Object {
    *
    * MDN
    */
-  def state: js.Any = ???
+  def state: js.Any = js.native
 
-  def replaceState(statedata: js.Any, title: String, url: String): Unit = ???
+  def replaceState(statedata: js.Any, title: String, url: String): Unit = js.native
 
   /**
    * Updates the most recent entry on the history stack to have the specified data,
@@ -4820,9 +4820,9 @@ class History extends js.Object {
    *
    * MDN
    */
-  def replaceState(statedata: js.Any, title: String): Unit = ???
+  def replaceState(statedata: js.Any, title: String): Unit = js.native
 
-  def pushState(statedata: js.Any, title: String, url: String): Unit = ???
+  def pushState(statedata: js.Any, title: String, url: String): Unit = js.native
 
   /**
    * Pushes the given data onto the session history stack with the specified title and,
@@ -4837,7 +4837,7 @@ class History extends js.Object {
    *
    * MDN
    */
-  def pushState(statedata: js.Any, title: String): Unit = ???
+  def pushState(statedata: js.Any, title: String): Unit = js.native
 }
 
 
@@ -4854,26 +4854,26 @@ class TimeRanges extends js.Object {
    *
    * MDN
    */
-  def length: Int = ???
+  def length: Int = js.native
 
   /**
    * Returns the time for the start of the range with the specified index.
    *
    * MDN
    */
-  def start(index: Int): Int = ???
+  def start(index: Int): Int = js.native
 
   /**
    * Returns the time offset at which a specified time range ends.
    *
    * MDN
    */
-  def end(index: Int): Int = ???
+  def end(index: Int): Int = js.native
 }
 
 
 class BeforeUnloadEvent extends Event {
-  def returnValue: String = ???
+  def returnValue: String = js.native
 }
 
 
@@ -4895,7 +4895,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def timeStamp: Double = ???
+  def timeStamp: Double = js.native
 
   /**
    * Returns a boolean indicating whether or not event.preventDefault() was called on
@@ -4903,7 +4903,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def defaultPrevented: Boolean = ???
+  def defaultPrevented: Boolean = js.native
 
   /**
    * Indicates whether or not the event was initiated by the browser (after a user click
@@ -4912,7 +4912,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def isTrusted: Boolean = ???
+  def isTrusted: Boolean = js.native
 
   /**
    * Identifies the current target for the event, as the event traverses the DOM. It
@@ -4921,14 +4921,14 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def currentTarget: EventTarget = ???
+  def currentTarget: EventTarget = js.native
 
   /**
    * A boolean indicating whether the bubbling of the event has been canceled or not.
    *
    * MDN
    */
-  def cancelBubble: Boolean = ???
+  def cancelBubble: Boolean = js.native
 
   /**
    * This property of event objects is the object the event was dispatched on. It is
@@ -4937,32 +4937,32 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def target: EventTarget = ???
+  def target: EventTarget = js.native
 
   /**
    * Indicates which phase of the event flow is currently being evaluated.
    *
    * MDN
    */
-  def eventPhase: Int = ???
+  def eventPhase: Int = js.native
 
   /**
    * A boolean indicating whether the event is cancelable.
    *
    * MDN
    */
-  def cancelable: Boolean = ???
+  def cancelable: Boolean = js.native
 
-  def `type`: String = ???
+  def `type`: String = js.native
 
-  def srcElement: Element = ???
+  def srcElement: Element = js.native
 
   /**
    * A boolean indicating whether the event bubbles up through the DOM or not.
    *
    * MDN
    */
-  def bubbles: Boolean = ???
+  def bubbles: Boolean = js.native
 
   /**
    * The initEvent method is used to initialize the value of an event created using
@@ -4970,14 +4970,14 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def initEvent(eventTypeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean): Unit = ???
+  def initEvent(eventTypeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean): Unit = js.native
 
   /**
    * Stops the propagation of events further along in the DOM.
    *
    * MDN
    */
-  def stopPropagation(): Unit = ???
+  def stopPropagation(): Unit = js.native
 
   /**
    * For this particular event, no other listener will be called. Neither those
@@ -4986,7 +4986,7 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def stopImmediatePropagation(): Unit = ???
+  def stopImmediatePropagation(): Unit = js.native
 
   /**
    * Cancels the event if it is cancelable, without stopping further propagation of the
@@ -4994,15 +4994,15 @@ class Event extends js.Object {
    *
    * MDN
    */
-  def preventDefault(): Unit = ???
+  def preventDefault(): Unit = js.native
 }
 
 object Event extends js.Object {
-  def CAPTURING_PHASE: Int = ???
+  def CAPTURING_PHASE: Int = js.native
 
-  def AT_TARGET: Int = ???
+  def AT_TARGET: Int = js.native
 
-  def BUBBLING_PHASE: Int = ???
+  def BUBBLING_PHASE: Int = js.native
 }
 
 /**
@@ -5019,7 +5019,7 @@ class ImageData extends js.Object {
    *
    * MDN
    */
-  def width: Int = ???
+  def width: Int = js.native
 
   /**
    * Is a Uint8ClampedArray representing a one-dimensional array containing the data
@@ -5027,14 +5027,14 @@ class ImageData extends js.Object {
    *
    * MDN
    */
-  def data: js.Array[Int] = ???
+  def data: js.Array[Int] = js.native
 
   /**
    * Is an unsigned long representing the actual height, in pixels, of the ImageData.
    *
    * MDN
    */
-  def height: Int = ???
+  def height: Int = js.native
 }
 
 
@@ -5049,46 +5049,46 @@ class ImageData extends js.Object {
  * MDN
  */
 class NamedNodeMap extends js.Object {
-  def length: Int = ???
+  def length: Int = js.native
 
-  def removeNamedItemNS(namespaceURI: String, localName: String): Attr = ???
+  def removeNamedItemNS(namespaceURI: String, localName: String): Attr = js.native
 
-  def item(index: Int): Attr = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): Attr = ???
+  def item(index: Int): Attr = js.native
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: Attr): Unit = ???
+  def apply(index: Int): Attr = js.native
 
-  def removeNamedItem(name: String): Attr = ???
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: Attr): Unit = js.native
 
-  def getNamedItem(name: String): Attr = ???
+  def removeNamedItem(name: String): Attr = js.native
 
-  def setNamedItem(arg: Attr): Attr = ???
+  def getNamedItem(name: String): Attr = js.native
 
-  def getNamedItemNS(namespaceURI: String, localName: String): Attr = ???
+  def setNamedItem(arg: Attr): Attr = js.native
 
-  def setNamedItemNS(arg: Attr): Attr = ???
+  def getNamedItemNS(namespaceURI: String, localName: String): Attr = js.native
+
+  def setNamedItemNS(arg: Attr): Attr = js.native
 }
 
 
 class MediaList extends js.Object {
-  def length: Int = ???
+  def length: Int = js.native
 
-  def mediaText: String = ???
+  def mediaText: String = js.native
 
-  def deleteMedium(oldMedium: String): Unit = ???
+  def deleteMedium(oldMedium: String): Unit = js.native
 
-  def appendMedium(newMedium: String): Unit = ???
+  def appendMedium(newMedium: String): Unit = js.native
 
-  def item(index: Int): String = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): String = ???
+  def item(index: Int): String = js.native
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: String): Unit = ???
+  def apply(index: Int): String = js.native
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(index: Int, v: String): Unit = js.native
 
 }
 
@@ -5102,34 +5102,34 @@ class MediaList extends js.Object {
  * MDN
  */
 class ProcessingInstruction extends Node {
-  def target: String = ???
+  def target: String = js.native
 
-  def data: String = ???
+  def data: String = js.native
 }
 
 
 class TextEvent extends UIEvent {
-  def inputMethod: Int = ???
+  def inputMethod: Int = js.native
 
-  def data: String = ???
+  def data: String = js.native
 
-  def locale: String = ???
+  def locale: String = js.native
 
-  def initTextEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, dataArg: String, inputMethod: Int, locale: String): Unit = ???
+  def initTextEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: Window, dataArg: String, inputMethod: Int, locale: String): Unit = js.native
 
 }
 
 object TextEvent extends js.Object {
-  val DOM_INPUT_METHOD_KEYBOARD: Int = ???
-  val DOM_INPUT_METHOD_DROP: Int = ???
-  val DOM_INPUT_METHOD_IME: Int = ???
-  val DOM_INPUT_METHOD_SCRIPT: Int = ???
-  val DOM_INPUT_METHOD_VOICE: Int = ???
-  val DOM_INPUT_METHOD_UNKNOWN: Int = ???
-  val DOM_INPUT_METHOD_PASTE: Int = ???
-  val DOM_INPUT_METHOD_HANDWRITING: Int = ???
-  val DOM_INPUT_METHOD_OPTION: Int = ???
-  val DOM_INPUT_METHOD_MULTIMODAL: Int = ???
+  val DOM_INPUT_METHOD_KEYBOARD: Int = js.native
+  val DOM_INPUT_METHOD_DROP: Int = js.native
+  val DOM_INPUT_METHOD_IME: Int = js.native
+  val DOM_INPUT_METHOD_SCRIPT: Int = js.native
+  val DOM_INPUT_METHOD_VOICE: Int = js.native
+  val DOM_INPUT_METHOD_UNKNOWN: Int = js.native
+  val DOM_INPUT_METHOD_PASTE: Int = js.native
+  val DOM_INPUT_METHOD_HANDWRITING: Int = js.native
+  val DOM_INPUT_METHOD_OPTION: Int = js.native
+  val DOM_INPUT_METHOD_MULTIMODAL: Int = js.native
 }
 
 /**
@@ -5159,7 +5159,7 @@ trait Position extends js.Object {
    *
    * MDN
    */
-  def timestamp: Int = ???
+  def timestamp: Int = js.native
 
   /**
    * The Position.coords read-only property, a Coordinates object, represents a
@@ -5169,7 +5169,7 @@ trait Position extends js.Object {
    *
    * MDN
    */
-  def coords: Coordinates = ???
+  def coords: Coordinates = js.native
 }
 
 
@@ -5186,7 +5186,7 @@ class PerformanceMark extends PerformanceEntry {
  * MDN
  */
 class DOMParser extends js.Object {
-  def parseFromString(source: String, mimeType: String): Document = ???
+  def parseFromString(source: String, mimeType: String): Document = js.native
 }
 
 
@@ -5203,21 +5203,21 @@ class StyleSheet extends js.Object {
    *
    * MDN
    */
-  def disabled: Boolean = ???
+  def disabled: Boolean = js.native
 
   /**
    * ownerNode returns the node that associates this style sheet with the document.
    *
    * MDN
    */
-  def ownerNode: Node = ???
+  def ownerNode: Node = js.native
 
   /**
    * Returns a StyleSheet including this one, if any; returns null if there aren't any.
    *
    * MDN
    */
-  def parentStyleSheet: StyleSheet = ???
+  def parentStyleSheet: StyleSheet = js.native
 
   /**
    * Returns a MediaList representing the intended destination medium for style
@@ -5225,31 +5225,31 @@ class StyleSheet extends js.Object {
    *
    * MDN
    */
-  def media: MediaList = ???
+  def media: MediaList = js.native
 
   /**
    * Returns a DOMString representing the style sheet language for this style sheet.
    *
    * MDN
    */
-  def `type`: String = ???
+  def `type`: String = js.native
 
   /**
    * Returns a DOMString representing the advisory title of the current style sheet.
    *
    * MDN
    */
-  def title: String = ???
+  def title: String = js.native
 }
 
 trait DOMList[T] extends js.Object{
-  def length: Int = ???
-  def item(index: Int): T = ???
+  def length: Int = js.native
+  def item(index: Int): T = js.native
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): T = ???
+  def apply(index: Int): T = js.native
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: T): Unit = ???
+  def update(index: Int, v: T): Unit = js.native
 }
 /**
  * NodeList objects are collections of nodes such as those returned by
@@ -5263,7 +5263,7 @@ class NodeList extends DOMList[Node]
 trait NodeListOf[TNode <: Node] extends DOMList[TNode]
 
 class XMLSerializer extends js.Object {
-  def serializeToString(target: Node): String = ???
+  def serializeToString(target: Node): String = js.native
 }
 
 
@@ -5295,16 +5295,16 @@ class NodeFilter extends js.Object {
    *
    * MDN
    */
-  def acceptNode(n: Node): Int = ???
+  def acceptNode(n: Node): Int = js.native
 }
 
 object NodeFilter extends js.Object {
 
-  val SHOW_ENTITY_REFERENCE: Int = ???
-  val SHOW_NOTATION: Int = ???
-  val SHOW_ENTITY: Int = ???
-  val SHOW_DOCUMENT: Int = ???
-  val SHOW_PROCESSING_INSTRUCTION: Int = ???
+  val SHOW_ENTITY_REFERENCE: Int = js.native
+  val SHOW_NOTATION: Int = js.native
+  val SHOW_ENTITY: Int = js.native
+  val SHOW_DOCUMENT: Int = js.native
+  val SHOW_PROCESSING_INSTRUCTION: Int = js.native
   /**
    * Value to be returned by the NodeFilter.acceptNode() method when a node should be
    * rejected. The children of rejected nodes are not visited by the NodeIterator or
@@ -5312,20 +5312,20 @@ object NodeFilter extends js.Object {
    *
    * MDN
    */
-  val FILTER_REJECT: Int = ???
-  val SHOW_CDATA_SECTION: Int = ???
+  val FILTER_REJECT: Int = js.native
+  val SHOW_CDATA_SECTION: Int = js.native
   /**
    * Value returned by the NodeFilter.acceptNode() method when a node should be
    * accepted.
    *
    * MDN
    */
-  val FILTER_ACCEPT: Int = ???
-  val SHOW_ALL: Int = ???
-  val SHOW_DOCUMENT_TYPE: Int = ???
-  val SHOW_TEXT: Int = ???
-  val SHOW_ELEMENT: Int = ???
-  val SHOW_COMMENT: Int = ???
+  val FILTER_ACCEPT: Int = js.native
+  val SHOW_ALL: Int = js.native
+  val SHOW_DOCUMENT_TYPE: Int = js.native
+  val SHOW_TEXT: Int = js.native
+  val SHOW_ELEMENT: Int = js.native
+  val SHOW_COMMENT: Int = js.native
   /**
    * Value to be returned by NodeFilter.acceptNode() for nodes to be skipped by the
    * NodeIterator or TreeWalker object. The children of skipped nodes are still
@@ -5333,21 +5333,21 @@ object NodeFilter extends js.Object {
    *
    * MDN
    */
-  val FILTER_SKIP: Int = ???
-  val SHOW_ATTRIBUTE: Int = ???
-  val SHOW_DOCUMENT_FRAGMENT: Int = ???
+  val FILTER_SKIP: Int = js.native
+  val SHOW_ATTRIBUTE: Int = js.native
+  val SHOW_DOCUMENT_FRAGMENT: Int = js.native
 }
 
 class MediaError extends js.Object {
-  def code: Int = ???
+  def code: Int = js.native
 
 }
 
 object MediaError extends js.Object {
-  val MEDIA_ERR_ABORTED: Int = ???
-  val MEDIA_ERR_NETWORK: Int = ???
-  val MEDIA_ERR_SRC_NOT_SUPPORTED: Int = ???
-  val MEDIA_ERR_DECODE: Int = ???
+  val MEDIA_ERR_ABORTED: Int = js.native
+  val MEDIA_ERR_NETWORK: Int = js.native
+  val MEDIA_ERR_SRC_NOT_SUPPORTED: Int = js.native
+  val MEDIA_ERR_DECODE: Int = js.native
 }
 
 /**
@@ -5359,32 +5359,32 @@ object MediaError extends js.Object {
  * MDN
  */
 class Comment extends CharacterData {
-  var text: String = ???
+  var text: String = js.native
 }
 
 
 class PerformanceResourceTiming extends PerformanceEntry {
-  def redirectStart: Int = ???
+  def redirectStart: Int = js.native
 
-  def redirectEnd: Int = ???
+  def redirectEnd: Int = js.native
 
-  def domainLookupEnd: Int = ???
+  def domainLookupEnd: Int = js.native
 
-  def responseStart: Int = ???
+  def responseStart: Int = js.native
 
-  def domainLookupStart: Int = ???
+  def domainLookupStart: Int = js.native
 
-  def fetchStart: Int = ???
+  def fetchStart: Int = js.native
 
-  def requestStart: Int = ???
+  def requestStart: Int = js.native
 
-  def connectEnd: Int = ???
+  def connectEnd: Int = js.native
 
-  def connectStart: Int = ???
+  def connectStart: Int = js.native
 
-  def initiatorType: String = ???
+  def initiatorType: String = js.native
 
-  var responseEnd: Int = ???
+  var responseEnd: Int = js.native
 }
 
 
@@ -5412,7 +5412,7 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  def oldValue: js.Any = ???
+  def oldValue: js.Any = js.native
 
   /**
    * The new value of the key. The newValue is null when the change has been invoked by
@@ -5420,21 +5420,21 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  def newValue: js.Any = ???
+  def newValue: js.Any = js.native
 
   /**
    * The URL of the document whose key changed. Read only.
    *
    * MDN
    */
-  def url: String = ???
+  def url: String = js.native
 
   /**
    * Represents the Storage object that was affected. Read only.
    *
    * MDN
    */
-  def storageArea: Storage = ???
+  def storageArea: Storage = js.native
 
   /**
    * Represents the key changed. The key attribute is null when the change is caused by
@@ -5442,7 +5442,7 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  def key: String = ???
+  def key: String = js.native
 
   /**
    * Initializes the event in a manner analogous to the similarly-named method in the
@@ -5450,7 +5450,7 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  def initStorageEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, keyArg: String, oldValueArg: js.Any, newValueArg: js.Any, urlArg: String, storageAreaArg: Storage): Unit = ???
+  def initStorageEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, keyArg: String, oldValueArg: js.Any, newValueArg: js.Any, urlArg: String, storageAreaArg: Storage): Unit = js.native
 }
 
 
@@ -5469,14 +5469,14 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def length: Int = ???
+  def length: Int = js.native
 
   /**
    * Is a DOMString representing the textual data contained in this object.
    *
    * MDN
    */
-  var data: String = ???
+  var data: String = js.native
 
   /**
    * Removes the specified amount of characters, starting at the specified offset,
@@ -5485,7 +5485,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def deleteData(offset: Int, count: Int): Unit = ???
+  def deleteData(offset: Int, count: Int): Unit = js.native
 
   /**
    * Replaces the specified amount of characters, starting at the specified offset,
@@ -5494,7 +5494,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def replaceData(offset: Int, count: Int, arg: String): Unit = ???
+  def replaceData(offset: Int, count: Int, arg: String): Unit = js.native
 
   /**
    * Appends the given DOMString to the CharacterData.data string; when this method
@@ -5502,7 +5502,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def appendData(arg: String): Unit = ???
+  def appendData(arg: String): Unit = js.native
 
   /**
    * Inserts the specified characters, at the specified offset, in the
@@ -5511,7 +5511,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def insertData(offset: Int, arg: String): Unit = ???
+  def insertData(offset: Int, arg: String): Unit = js.native
 
   /**
    * Returns a DOMString containing the part of CharacterData.data of the specified
@@ -5519,7 +5519,7 @@ class CharacterData extends Node {
    *
    * MDN
    */
-  def substringData(offset: Int, count: Int): String = ???
+  def substringData(offset: Int, count: Int): String = js.native
 }
 
 
@@ -5536,38 +5536,38 @@ class DOMException extends js.Object {
    *
    * MDN
    */
-  def code: Int = ???
+  def code: Int = js.native
 
-  def message: String = ???
+  def message: String = js.native
 
 }
 
 object DOMException extends js.Object {
 
-  val HIERARCHY_REQUEST_ERR: Int = ???
-  val NO_MODIFICATION_ALLOWED_ERR: Int = ???
-  val INVALID_MODIFICATION_ERR: Int = ???
-  val NAMESPACE_ERR: Int = ???
-  val INVALID_CHARACTER_ERR: Int = ???
-  val TYPE_MISMATCH_ERR: Int = ???
-  val ABORT_ERR: Int = ???
-  val INVALID_STATE_ERR: Int = ???
-  val SECURITY_ERR: Int = ???
-  val NETWORK_ERR: Int = ???
-  val WRONG_DOCUMENT_ERR: Int = ???
-  val QUOTA_EXCEEDED_ERR: Int = ???
-  val INDEX_SIZE_ERR: Int = ???
-  val DOMSTRING_SIZE_ERR: Int = ???
-  val SYNTAX_ERR: Int = ???
-  val SERIALIZE_ERR: Int = ???
-  val VALIDATION_ERR: Int = ???
-  val NOT_FOUND_ERR: Int = ???
-  val URL_MISMATCH_ERR: Int = ???
-  val PARSE_ERR: Int = ???
-  val NO_DATA_ALLOWED_ERR: Int = ???
-  val NOT_SUPPORTED_ERR: Int = ???
-  val INVALID_ACCESS_ERR: Int = ???
-  val INUSE_ATTRIBUTE_ERR: Int = ???
+  val HIERARCHY_REQUEST_ERR: Int = js.native
+  val NO_MODIFICATION_ALLOWED_ERR: Int = js.native
+  val INVALID_MODIFICATION_ERR: Int = js.native
+  val NAMESPACE_ERR: Int = js.native
+  val INVALID_CHARACTER_ERR: Int = js.native
+  val TYPE_MISMATCH_ERR: Int = js.native
+  val ABORT_ERR: Int = js.native
+  val INVALID_STATE_ERR: Int = js.native
+  val SECURITY_ERR: Int = js.native
+  val NETWORK_ERR: Int = js.native
+  val WRONG_DOCUMENT_ERR: Int = js.native
+  val QUOTA_EXCEEDED_ERR: Int = js.native
+  val INDEX_SIZE_ERR: Int = js.native
+  val DOMSTRING_SIZE_ERR: Int = js.native
+  val SYNTAX_ERR: Int = js.native
+  val SERIALIZE_ERR: Int = js.native
+  val VALIDATION_ERR: Int = js.native
+  val NOT_FOUND_ERR: Int = js.native
+  val URL_MISMATCH_ERR: Int = js.native
+  val PARSE_ERR: Int = js.native
+  val NO_DATA_ALLOWED_ERR: Int = js.native
+  val NOT_SUPPORTED_ERR: Int = js.native
+  val INVALID_ACCESS_ERR: Int = js.native
+  val INUSE_ATTRIBUTE_ERR: Int = js.native
 }
 
 /**
@@ -5585,7 +5585,7 @@ class Attr extends Node {
    *
    * MDN
    */
-  def specified: Boolean = ???
+  def specified: Boolean = js.native
 
   /**
    * Since you get an Attr object from an Element, you should already know the associated
@@ -5593,11 +5593,11 @@ class Attr extends Node {
    *
    * MDN
    */
-  def ownerElement: Element = ???
+  def ownerElement: Element = js.native
 
-  var value: String = ???
+  var value: String = js.native
 
-  def name: String = ???
+  def name: String = js.native
 }
 
 
@@ -5615,9 +5615,9 @@ class PerformanceNavigation extends js.Object {
    *
    * MDN
    */
-  def redirectCount: Int = ???
+  def redirectCount: Int = js.native
 
-  def `type`: Int = ???
+  def `type`: Int = js.native
 
   /**
    * Is a jsonizer returning a json object representing the PerformanceNavigation
@@ -5625,16 +5625,16 @@ class PerformanceNavigation extends js.Object {
    *
    * MDN
    */
-  def toJSON(): js.Dynamic = ???
+  def toJSON(): js.Dynamic = js.native
 
 }
 
 object PerformanceNavigation extends js.Object {
 
-  val TYPE_RELOAD: Int = ???
-  val TYPE_RESERVED: Int = ???
-  val TYPE_BACK_FORWARD: Int = ???
-  val TYPE_NAVIGATE: Int = ???
+  val TYPE_RELOAD: Int = js.native
+  val TYPE_RESERVED: Int = js.native
+  val TYPE_BACK_FORWARD: Int = js.native
+  val TYPE_NAVIGATE: Int = js.native
 }
 
 
@@ -5651,7 +5651,7 @@ trait LinkStyle extends js.Object {
    *
    * MDN
    */
-  def sheet: StyleSheet = ???
+  def sheet: StyleSheet = js.native
 }
 
 class ClientRectList extends DOMList[ClientRect]
@@ -5661,7 +5661,7 @@ trait External extends js.Object {
 
 
 trait ObjectURLOptions extends js.Object {
-  def oneTimeOnly: Boolean = ???
+  def oneTimeOnly: Boolean = js.native
 }
 
 /**
@@ -5671,14 +5671,14 @@ trait ObjectURLOptions extends js.Object {
  * MDN
  */
 trait ErrorEvent extends Event {
-  def colno: Int = ???
+  def colno: Int = js.native
 
   /**
    * Is a DOMString containing the name of the script file in which the error occurred.
    *
    * MDN
    */
-  def filename: String = ???
+  def filename: String = js.native
 
   /**
    * Is an integer containing the line number of the script file on which the error
@@ -5686,35 +5686,35 @@ trait ErrorEvent extends Event {
    *
    * MDN
    */
-  def lineno: Int = ???
+  def lineno: Int = js.native
 
   /**
    * Is a DOMString containing a human-readable error message describing the problem.
    *
    * MDN
    */
-  def message: String = ???
+  def message: String = js.native
 
-  def initErrorEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, messageArg: String, filenameArg: String, linenoArg: Int): Unit = ???
+  def initErrorEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, messageArg: String, filenameArg: String, linenoArg: Int): Unit = js.native
 }
 
 
 trait TrackEvent extends Event {
-  var track: js.Any = _
+  var track: js.Any = js.native
 }
 
 
 trait TextTrackCue extends EventTarget {
-  var onenter: js.Function1[Event, _] = _
-  var track: TextTrack = _
-  var endTime: Double = _
-  var text: String = _
-  var pauseOnExit: Boolean = _
-  var id: String = _
-  var startTime: Double = _
-  var onexit: js.Function1[Event, _] = _
+  var onenter: js.Function1[Event, _] = js.native
+  var track: TextTrack = js.native
+  var endTime: Double = js.native
+  var text: String = js.native
+  var pauseOnExit: Boolean = js.native
+  var id: String = js.native
+  var startTime: Double = js.native
+  var onexit: js.Function1[Event, _] = js.native
 
-  def getCueAsHTML(): DocumentFragment = ???
+  def getCueAsHTML(): DocumentFragment = js.native
 
 
 }
@@ -5731,21 +5731,21 @@ trait TextTrackCue extends EventTarget {
  */
 trait DOMTokenList extends DOMList[String]{
 
-  def contains(token: String): Boolean = ???
+  def contains(token: String): Boolean = js.native
 
-  def remove(token: String): Unit = ???
+  def remove(token: String): Unit = js.native
 
-  def toggle(token: String): Boolean = ???
+  def toggle(token: String): Boolean = js.native
 
-  def add(token: String): Unit = ???
+  def add(token: String): Unit = js.native
 
 }
 
 
 trait MessageChannel extends js.Object {
-  def port2: MessagePort = ???
+  def port2: MessagePort = js.native
 
-  def port1: MessagePort = ???
+  def port1: MessagePort = js.native
 }
 
 
@@ -5756,7 +5756,7 @@ trait MessageChannel extends js.Object {
  * MDN
  */
 trait TransitionEvent extends Event {
-  def propertyName: String = ???
+  def propertyName: String = js.native
 
   /**
    * The TransionnEvent.elapsedTime read-only property is a float giving the amount
@@ -5765,7 +5765,7 @@ trait TransitionEvent extends Event {
    *
    * MDN
    */
-  def elapsedTime: Double = ???
+  def elapsedTime: Double = js.native
 
   /**
    * The TransitionEvent.initTransitionEvent() method Initializes a transition
@@ -5774,7 +5774,7 @@ trait TransitionEvent extends Event {
    *
    * MDN
    */
-  def initTransitionEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, propertyNameArg: String, elapsedTimeArg: Int): Unit = ???
+  def initTransitionEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, propertyNameArg: String, elapsedTimeArg: Int): Unit = js.native
 }
 
 
@@ -5792,14 +5792,14 @@ trait MediaQueryList extends js.Object {
    *
    * MDN
    */
-  def matches: Boolean = ???
+  def matches: Boolean = js.native
 
   /**
    * The serialized media query list
    *
    * MDN
    */
-  var media: String = ???
+  var media: String = js.native
 
   /**
    * Adds a new listener to the media query list. If the specified listener is already in
@@ -5807,7 +5807,7 @@ trait MediaQueryList extends js.Object {
    *
    * MDN
    */
-  def addListener(listener: MediaQueryListListener): Unit = ???
+  def addListener(listener: MediaQueryListListener): Unit = js.native
 
   /**
    * Removes a listener from the media query list. Does nothing if the specified
@@ -5815,7 +5815,7 @@ trait MediaQueryList extends js.Object {
    *
    * MDN
    */
-  def removeListener(listener: MediaQueryListListener): Unit = ???
+  def removeListener(listener: MediaQueryListListener): Unit = js.native
 }
 
 
@@ -5830,7 +5830,7 @@ trait DOMError extends js.Object {
    *
    * MDN
    */
-  def name: String = ???
+  def name: String = js.native
 
 }
 
@@ -5848,7 +5848,7 @@ trait CloseEvent extends Event {
    *
    * MDN
    */
-  def wasClean: Boolean = ???
+  def wasClean: Boolean = js.native
 
   /**
    * A string indicating the reason the server closed the connection. This is specific
@@ -5856,7 +5856,7 @@ trait CloseEvent extends Event {
    *
    * MDN
    */
-  def reason: String = ???
+  def reason: String = js.native
 
   /**
    * The WebSocket connection close code provided by the server. See Close codes for
@@ -5864,9 +5864,9 @@ trait CloseEvent extends Event {
    *
    * MDN
    */
-  def code: Int = ???
+  def code: Int = js.native
 
-  def initCloseEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, wasCleanArg: Boolean, codeArg: Int, reasonArg: String): Unit = ???
+  def initCloseEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, wasCleanArg: Boolean, codeArg: Int, reasonArg: String): Unit = js.native
 }
 
 
@@ -5882,7 +5882,7 @@ trait CloseEvent extends Event {
  *                 one of the strings specified in the protocols parameter when creating the
  *                 WebSocket object.
  */
-class WebSocket(var url: String = ???, var protocol: String = ???) extends EventTarget {
+class WebSocket(var url: String = js.native, var protocol: String = js.native) extends EventTarget {
   def this(url: String, protocol: js.Array[String]) = this("", "")
 
   /**
@@ -5891,7 +5891,7 @@ class WebSocket(var url: String = ???, var protocol: String = ???) extends Event
    *
    * MDN
    */
-  def readyState: Int = ???
+  def readyState: Int = js.native
 
   /**
    * The number of bytes of data that have been queued using calls to send() but not yet
@@ -5900,7 +5900,7 @@ class WebSocket(var url: String = ???, var protocol: String = ???) extends Event
    *
    * MDN
    */
-  def bufferedAmount: Int = ???
+  def bufferedAmount: Int = js.native
 
   /**
    * An event listener to be called when the WebSocket connection's readyState changes
@@ -5909,7 +5909,7 @@ class WebSocket(var url: String = ???, var protocol: String = ???) extends Event
    *
    * MDN
    */
-  var onopen: js.Function1[Event, _] = ???
+  var onopen: js.Function1[Event, _] = js.native
 
   /**
    * The extensions selected by the server. This is currently only the empty string or a
@@ -5917,7 +5917,7 @@ class WebSocket(var url: String = ???, var protocol: String = ???) extends Event
    *
    * MDN
    */
-  def extensions: String = ???
+  def extensions: String = js.native
 
   /**
    * An event listener to be called when a message is received from the server. The
@@ -5925,21 +5925,21 @@ class WebSocket(var url: String = ???, var protocol: String = ???) extends Event
    *
    * MDN
    */
-  var onmessage: js.Function1[MessageEvent, _] = ???
+  var onmessage: js.Function1[MessageEvent, _] = js.native
   /**
    * An event listener to be called when the WebSocket connection's readyState changes
    * to CLOSED. The listener receives a CloseEvent named "close".
    *
    * MDN
    */
-  var onclose: js.Function1[CloseEvent, _] = ???
+  var onclose: js.Function1[CloseEvent, _] = js.native
   /**
    * An event listener to be called when an error occurs. This is a simple event named
    * "error".
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = ???
+  var onerror: js.Function1[ErrorEvent, _] = js.native
   /**
    * A string indicating the type of binary data being transmitted by the connection.
    * This should be either "blob" if DOM Blob objects are being used or "arraybuffer"
@@ -5947,7 +5947,7 @@ class WebSocket(var url: String = ???, var protocol: String = ???) extends Event
    *
    * MDN
    */
-  var binaryType: String = ???
+  var binaryType: String = js.native
 
   /**
    * Closes the WebSocket connection or connection attempt, if any. If the connection
@@ -5956,14 +5956,14 @@ class WebSocket(var url: String = ???, var protocol: String = ???) extends Event
    * MDN
    */
 
-  def close(code: Int = ???, reason: String = ???): Unit = ???
+  def close(code: Int = js.native, reason: String = js.native): Unit = js.native
 
   /**
    * Transmits data to the server over the WebSocket connection.
    *
    * MDN
    */
-  def send(data: js.Any): Unit = ???
+  def send(data: js.Any): Unit = js.native
 
 
 }
@@ -5974,20 +5974,20 @@ object WebSocket extends js.Object {
    *
    * MDN
    */
-  val OPEN: Int = ???
+  val OPEN: Int = js.native
   /**
    * The connection is in the process of closing.
    *
    * MDN
    */
-  val CLOSING: Int = ???
-  val CONNECTING: Int = ???
+  val CLOSING: Int = js.native
+  val CONNECTING: Int = js.native
   /**
    * The connection is closed or couldn't be opened.
    *
    * MDN
    */
-  val CLOSED: Int = ???
+  val CLOSED: Int = js.native
 }
 
 /**
@@ -6007,7 +6007,7 @@ class EventSource(URL: String, settings: js.Dynamic = null) extends EventTarget 
    * W3C 2012
    * @return
    */
-  def url: String = ???
+  def url: String = js.native
 
   /**
    * The withCredentials attribute must return the value to which it was last initialized.
@@ -6016,26 +6016,26 @@ class EventSource(URL: String, settings: js.Dynamic = null) extends EventTarget 
    * object's withCredentials attribute.
    * W3C 2012
    */
-  def withCredentials: Boolean = ???
+  def withCredentials: Boolean = js.native
 
   /**
    * The readyState attribute represents the state of the connection.
    * W3C 2012
    */
-  def readyState: Int = ???
+  def readyState: Int = js.native
 
-  var onopen: js.Function1[Event, _] = ???
+  var onopen: js.Function1[Event, _] = js.native
 
-  var onmessage: js.Function1[MessageEvent, _] = ???
+  var onmessage: js.Function1[MessageEvent, _] = js.native
 
-  var onerror: js.Function1[Event, _] = ???
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * The close() method must abort any instances of the fetch algorithm started for this EventSource object,
    * and must set the readyState attribute to CLOSED.
    * W3C 2012
    */
-  def close(): Unit = ???
+  def close(): Unit = js.native
 
 }
 
@@ -6044,18 +6044,18 @@ object EventSource extends js.Object {
    * The connection has not yet been established, or it was closed and the user agent is reconnecting.
    * W3C 2012
    */
-  val CONNECTING: Int = 0
+  val CONNECTING: Int = js.native
   /**
    * The user agent has an open connection and is dispatching events as it receives them.
    * W3C 2012
    */
-  val OPEN: Int = 1
+  val OPEN: Int = js.native
   /**
    * The connection is not open, and the user agent is not trying to reconnect. Either there was a fatal
    * error or the close() method was invoked.
    * W3C 2012
    */
-  val CLOSED: Int = 2
+  val CLOSED: Int = js.native
 }
 
 /**
@@ -6075,7 +6075,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def loaded: Int = ???
+  def loaded: Int = js.native
 
   /**
    * The ProgressEvent.lengthComputable read-only property is a Boolean flag
@@ -6084,7 +6084,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def lengthComputable: Boolean = ???
+  def lengthComputable: Boolean = js.native
 
   /**
    * The ProgressEvent.total read-only property is an unsigned long long
@@ -6094,7 +6094,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def total: Int = ???
+  def total: Int = js.native
 
   /**
    * The ProgressEvent.initProgressEvent() method Initializes an animation event
@@ -6102,7 +6102,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def initProgressEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, lengthComputableArg: Boolean, loadedArg: Int, totalArg: Int): Unit = ???
+  def initProgressEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, lengthComputableArg: Boolean, loadedArg: Int, totalArg: Int): Unit = js.native
 }
 
 
@@ -6137,7 +6137,7 @@ trait File extends Blob {
    *
    * MDN
    */
-  def lastModifiedDate: js.Any = ???
+  def lastModifiedDate: js.Any = js.native
 
   /**
    * Returns the name of the file. For security reasons, the path is excluded from this
@@ -6145,7 +6145,7 @@ trait File extends Blob {
    *
    * MDN
    */
-  def name: String = ???
+  def name: String = js.native
 }
 
 
@@ -6164,7 +6164,7 @@ trait URL extends js.Object {
    *
    * MDN
    */
-  def revokeObjectURL(url: String): Unit = ???
+  def revokeObjectURL(url: String): Unit = js.native
   /**
    * The URL.createObjectURL() static method creates a DOMString containing an URL
    * representing the object given in parameter. The URL lifetime is tied to the
@@ -6173,7 +6173,7 @@ trait URL extends js.Object {
    *
    * MDN
    */
-  def createObjectURL(`object`: js.Any, options: ObjectURLOptions = ???): String = ???
+  def createObjectURL(`object`: js.Any, options: ObjectURLOptions = js.native): String = js.native
 
 }
 
@@ -6190,20 +6190,20 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var onprogress: js.Function1[ProgressEvent, _] = ???
+  var onprogress: js.Function1[ProgressEvent, _] = js.native
   /**
    * The function to call when a request encounters an error.
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = ???
+  var onerror: js.Function1[ErrorEvent, _] = js.native
   /**
    * The function to call when an HTTP request returns after successfully loading
    * content.
    *
    * MDN
    */
-  var onload: js.Function1[js.Any, _] = ???
+  var onload: js.Function1[js.Any, _] = js.native
   /**
    * A function that is called if the event times out; this only happens if a timeout has
    * been previously established by setting the value of the XMLHttpRequest object's
@@ -6211,25 +6211,25 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var ontimeout: js.Function1[js.Any, _] = ???
+  var ontimeout: js.Function1[js.Any, _] = js.native
   /**
    * The function to call when a request is aborted.
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, _] = ???
+  var onabort: js.Function1[js.Any, _] = js.native
   /**
    * A function that gets called when the HTTP request first begins loading data.
    *
    * MDN
    */
-  var onloadstart: js.Function1[js.Any, _] = ???
+  var onloadstart: js.Function1[js.Any, _] = js.native
   /**
    * A function that is called when the load is completed, even if the request failed.
    *
    * MDN
    */
-  var onloadend: js.Function1[ProgressEvent, _] = ???
+  var onloadend: js.Function1[ProgressEvent, _] = js.native
 
 
 }
@@ -6237,17 +6237,17 @@ trait XMLHttpRequestEventTarget extends EventTarget {
 
 trait AudioTrackList extends EventTarget with DOMList[AudioTrack] {
 
-  var onchange: js.Function1[js.Any, _] = ???
-  var onaddtrack: js.Function1[TrackEvent, _] = ???
+  var onchange: js.Function1[js.Any, _] = js.native
+  var onaddtrack: js.Function1[TrackEvent, _] = js.native
 
-  def getTrackById(id: String): AudioTrack = ???
+  def getTrackById(id: String): AudioTrack = js.native
 }
 
 
 trait WindowTimersExtension extends js.Object {
-  def clearImmediate(handle: Int): Unit = ???
+  def clearImmediate(handle: Int): Unit = js.native
 
-  def setImmediate(handler: js.Function0[Any]): Int = ???
+  def setImmediate(handler: js.Function0[Any]): Int = js.native
 }
 
 /**
@@ -6263,7 +6263,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  def animationName: String = ???
+  def animationName: String = js.native
 
   /**
    * The AnimationEvent.elapsedTime read-only property is a float giving the amount
@@ -6274,7 +6274,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  def elapsedTime: Double = ???
+  def elapsedTime: Double = js.native
 
   /**
    * The AnimationEvent.initAnimationEvent() method Initializes an animation
@@ -6283,26 +6283,26 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
-  def initAnimationEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, animationNameArg: String, elapsedTimeArg: Int): Unit = ???
+  def initAnimationEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, animationNameArg: String, elapsedTimeArg: Int): Unit = js.native
 }
 
 
 trait WindowConsole extends js.Object {
-  var console: Console = ???
+  var console: Console = js.native
 }
 
 
 trait AudioTrack extends js.Object {
-  var kind: String = _
-  var language: String = _
-  var id: String = _
-  var label: String = _
-  var enabled: Boolean = _
+  var kind: String = js.native
+  var language: String = js.native
+  var id: String = js.native
+  var label: String = js.native
+  var enabled: Boolean = js.native
 }
 
 
 trait TextTrackCueList extends DOMList[TextTrackCue]{
-  def getCueById(id: String): TextTrackCue = ???
+  def getCueById(id: String): TextTrackCue = js.native
 }
 
 
@@ -6323,13 +6323,13 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def info(message: js.Any, optionalParams: js.Any*): Unit = ???
+  def info(message: js.Any, optionalParams: js.Any*): Unit = js.native
 
-  def profile(reportName: String = ???): Unit = ???
+  def profile(reportName: String = js.native): Unit = js.native
 
-  def assert(test: Boolean, message: String, optionalParams: js.Any*): Unit = ???
+  def assert(test: Boolean, message: String, optionalParams: js.Any*): Unit = js.native
 
-  def clear(): Unit = ???
+  def clear(): Unit = js.native
 
   /**
    * Displays an interactive list of the properties of the specified JavaScript
@@ -6338,7 +6338,7 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def dir(value: js.Any, optionalParams: js.Any*): Unit = ???
+  def dir(value: js.Any, optionalParams: js.Any*): Unit = js.native
 
   /**
    * Outputs a warning message. You may use string substitution and additional
@@ -6346,7 +6346,7 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def warn(message: js.Any, optionalParams: js.Any*): Unit = ???
+  def warn(message: js.Any, optionalParams: js.Any*): Unit = js.native
 
   /**
    * Outputs an error message. You may use string substitution and additional
@@ -6354,7 +6354,7 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def error(message: js.Any, optionalParams: js.Any*): Unit = ???
+  def error(message: js.Any, optionalParams: js.Any*): Unit = js.native
 
   /**
    * For general output of logging information. You may use string substitution and
@@ -6362,9 +6362,9 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def log(message: js.Any, optionalParams: js.Any*): Unit = ???
+  def log(message: js.Any, optionalParams: js.Any*): Unit = js.native
 
-  def profileEnd(): Unit = ???
+  def profileEnd(): Unit = js.native
 }
 
 
@@ -6372,11 +6372,11 @@ trait WindowBase64 extends js.Object {
   /**
    * Creates a base-64 encoded ASCII string from a "string" of binary data.
    */
-  def btoa(rawString: String): String = ???
+  def btoa(rawString: String): String = js.native
   /**
    * Decodes a string of data which has been encoded using base-64 encoding.
    */
-  def atob(encodedString: String): String = ???
+  def atob(encodedString: String): String = js.native
 }
 
 
@@ -6387,41 +6387,41 @@ trait WindowBase64 extends js.Object {
  * MDN
  */
 trait DOMStringList extends DOMList[String]{
-  def contains(str: String): Boolean = ???
+  def contains(str: String): Boolean = js.native
 }
 
 
 trait TextTrack extends EventTarget {
-  var language: String = _
-  var mode: js.Any = _
-  var readyState: Int = _
-  var activeCues: TextTrackCueList = _
-  var cues: TextTrackCueList = _
-  var oncuechange: js.Function1[Event, _] = _
-  var kind: String = _
-  var onload: js.Function1[js.Any, _] = _
-  var onerror: js.Function1[ErrorEvent, _] = _
-  var label: String = _
+  var language: String = js.native
+  var mode: js.Any = js.native
+  var readyState: Int = js.native
+  var activeCues: TextTrackCueList = js.native
+  var cues: TextTrackCueList = js.native
+  var oncuechange: js.Function1[Event, _] = js.native
+  var kind: String = js.native
+  var onload: js.Function1[js.Any, _] = js.native
+  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var label: String = js.native
 
 
-  var ERROR: Int = _
-  var SHOWING: Int = _
-  var LOADING: Int = _
-  var LOADED: Int = _
-  var NONE: Int = _
-  var HIDDEN: Int = _
-  var DISABLED: Int = _
+  var ERROR: Int = js.native
+  var SHOWING: Int = js.native
+  var LOADING: Int = js.native
+  var LOADED: Int = js.native
+  var NONE: Int = js.native
+  var HIDDEN: Int = js.native
+  var DISABLED: Int = js.native
 }
 
 object TextTrack extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextTrack),List())))) */
-  var ERROR: Int = _
-  var SHOWING: Int = _
-  var LOADING: Int = _
-  var LOADED: Int = _
-  var NONE: Int = _
-  var HIDDEN: Int = _
-  var DISABLED: Int = _
+  var ERROR: Int = js.native
+  var SHOWING: Int = js.native
+  var LOADING: Int = js.native
+  var LOADED: Int = js.native
+  var NONE: Int = js.native
+  var HIDDEN: Int = js.native
+  var DISABLED: Int = js.native
 }
 
 /**
@@ -6432,18 +6432,18 @@ object TextTrack extends js.Object {
  * MDN
  */
 trait MediaQueryListListener extends js.Object {
-  def apply(mql: MediaQueryList): Unit = ???
+  def apply(mql: MediaQueryList): Unit = js.native
 }
 
 
 trait MessagePort extends EventTarget {
-  var onmessage: js.Function1[js.Any, _] = ???
+  var onmessage: js.Function1[js.Any, _] = js.native
 
-  def close(): Unit = ???
+  def close(): Unit = js.native
 
-  def postMessage(message: js.Any, ports: js.Any = ???): Unit = ???
+  def postMessage(message: js.Any, ports: js.Any = js.native): Unit = js.native
 
-  def start(): Unit = ???
+  def start(): Unit = js.native
 
 
 }
@@ -6463,7 +6463,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  def error: DOMError = ???
+  def error: DOMError = js.native
 
   /**
    * A number indicating the state of the FileReader. This will be one of the State constants.
@@ -6473,7 +6473,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  def readyState: Short = ???
+  def readyState: Short = js.native
 
   /**
    * The file's contents. This property is only valid after the read operation is
@@ -6482,7 +6482,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  def result: js.Any = ???
+  def result: js.Any = js.native
 
   /**
    * A handler for the abort event. This event is triggered each time the reading
@@ -6490,7 +6490,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  var onabort: js.Function1[Event, _] = ???
+  var onabort: js.Function1[Event, _] = js.native
 
   /**
    * A handler for the error event. This event is triggered each time the reading
@@ -6498,7 +6498,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[Event, _] = ???
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * A handler for the load event. This event is triggered each time the reading
@@ -6506,7 +6506,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  var onload: js.Function1[UIEvent, _] = ???
+  var onload: js.Function1[UIEvent, _] = js.native
 
   /**
    * A handler for the loadstart event. This event is triggered each time the reading
@@ -6514,7 +6514,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  var onloadstart: js.Function1[ProgressEvent, _] = ???
+  var onloadstart: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A handler for the loadend event. This event is triggered each time the reading
@@ -6522,7 +6522,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  var onloadend: js.Function1[ProgressEvent, _] = ???
+  var onloadend: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A handler for the progress event. This event is triggered while reading
@@ -6530,14 +6530,14 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  var onprogress: js.Function1[ProgressEvent, _] = ???
+  var onprogress: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * Aborts the read operation. Upon return, the readyState will be DONE.
    *
    * MDN
    */
-  def abort(): Unit = ???
+  def abort(): Unit = js.native
 
   /**
    * The readAsArrayBuffer method is used to starts reading the contents of the
@@ -6547,7 +6547,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  def readAsArrayBuffer(blob: Blob): Unit = ???
+  def readAsArrayBuffer(blob: Blob): Unit = js.native
 
   /**
    * The readAsDataURL method is used to starts reading the contents of the specified
@@ -6557,7 +6557,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  def readAsDataURL(blob: Blob): Unit = ???
+  def readAsDataURL(blob: Blob): Unit = js.native
 
   /**
    * The readAsText method is used to read the contents of the specified Blob or File.
@@ -6566,22 +6566,22 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  def readAsText(blob: Blob, encoding: String = "UTF-8"): Unit = ???
+  def readAsText(blob: Blob, encoding: String = "UTF-8"): Unit = js.native
 
 }
 
 object FileReader extends js.Object {
   //states
-  val EMPTY: Short = 0
-  val LOADING: Short = 1
-  val DONE: Short = 2
+  val EMPTY: Short = js.native
+  val LOADING: Short = js.native
+  val DONE: Short = js.native
 }
 
 
 trait BlobPropertyBag extends js.Object {
-  def `type`: String = ???
+  def `type`: String = js.native
 
-  def endings: String = ???
+  def endings: String = js.native
 }
 
 /**
@@ -6596,70 +6596,70 @@ trait BlobPropertyBag extends js.Object {
  *
  * MDN
  */
-class Blob(blobParts: js.Array[js.Any] = ???, options: BlobPropertyBag = ???) extends js.Object {
+class Blob(blobParts: js.Array[js.Any] = js.native, options: BlobPropertyBag = js.native) extends js.Object {
 
-  def `type`: String = ???
+  def `type`: String = js.native
 
   /**
    * The size, in bytes, of the data contained in the Blob object.
    *
    * MDN
    */
-  def size: Int = ???
+  def size: Int = js.native
   /**
    * The slice is used to create a new Blob object containing the data in the specified
    * range of bytes of the source Blob.
    *
    * MDN
    */
-  def slice(start: Int = ???, end: Int = ???, contentType: String = ???): Blob = ???
+  def slice(start: Int = js.native, end: Int = js.native, contentType: String = js.native): Blob = js.native
 
-  def close(): Unit = ???
+  def close(): Unit = js.native
 }
 
 object Blob extends js.Object {
 }
 
 trait ApplicationCache extends EventTarget {
-  def status: Int = ???
+  def status: Int = js.native
 
-  var ondownloading: js.Function1[Event, _] = ???
-  var onprogress: js.Function1[ProgressEvent, _] = ???
-  var onupdateready: js.Function1[Event, _] = ???
-  var oncached: js.Function1[Event, _] = ???
-  var onobsolete: js.Function1[Event, _] = ???
-  var onerror: js.Function1[ErrorEvent, _] = ???
-  var onchecking: js.Function1[Event, _] = ???
-  var onnoupdate: js.Function1[Event, _] = ???
+  var ondownloading: js.Function1[Event, _] = js.native
+  var onprogress: js.Function1[ProgressEvent, _] = js.native
+  var onupdateready: js.Function1[Event, _] = js.native
+  var oncached: js.Function1[Event, _] = js.native
+  var onobsolete: js.Function1[Event, _] = js.native
+  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onchecking: js.Function1[Event, _] = js.native
+  var onnoupdate: js.Function1[Event, _] = js.native
 
-  def swapCache(): Unit = ???
+  def swapCache(): Unit = js.native
 
-  def abort(): Unit = ???
+  def abort(): Unit = js.native
 
-  def update(): Unit = ???
+  def update(): Unit = js.native
 
 
 }
 
 object ApplicationCache extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ApplicationCache),List())))) */
-  val CHECKING: Int = ???
-  val UNCACHED: Int = ???
-  val UPDATEREADY: Int = ???
-  val DOWNLOADING: Int = ???
-  val IDLE: Int = ???
-  val OBSOLETE: Int = ???
+  val CHECKING: Int = js.native
+  val UNCACHED: Int = js.native
+  val UPDATEREADY: Int = js.native
+  val DOWNLOADING: Int = js.native
+  val IDLE: Int = js.native
+  val OBSOLETE: Int = js.native
 }
 
 trait PopStateEvent extends Event {
-  def state: js.Any = ???
+  def state: js.Any = js.native
 
-  def initPopStateEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, stateArg: js.Any): Unit = ???
+  def initPopStateEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, stateArg: js.Any): Unit = js.native
 }
 
 
 trait DOMSettableTokenList extends DOMTokenList {
-  def value: String = ???
+  def value: String = js.native
 }
 
 
@@ -6671,14 +6671,14 @@ trait DOMSettableTokenList extends DOMTokenList {
  *
  * MDN
  */
-class FormData(form: HTMLFormElement = ???) extends js.Object {
+class FormData(form: HTMLFormElement = js.native) extends js.Object {
 
   /**
    * Appends a key/value pair to the FormData object.
    *
    * MDN
    */
-  def append(name: js.Any, value: js.Any, blobName: String = ???): Unit = ???
+  def append(name: js.Any, value: js.Any, blobName: String = js.native): Unit = js.native
 
 }
 
@@ -6699,7 +6699,7 @@ trait AbstractWorker extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = ???
+  var onerror: js.Function1[ErrorEvent, _] = js.native
 
 
 }
@@ -6719,14 +6719,14 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  def customError: Boolean = ???
+  def customError: Boolean = js.native
 
   /**
    * The element has a required attribute, but no value.
    *
    * MDN
    */
-  def valueMissing: Boolean = ???
+  def valueMissing: Boolean = js.native
 
   /**
    * The value does not fit the rules determined by the step attribute (that is, it's not
@@ -6734,35 +6734,35 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  def stepMismatch: Boolean = ???
+  def stepMismatch: Boolean = js.native
 
   /**
    * The value is less than the minimum specified by the min attribute.
    *
    * MDN
    */
-  def rangeUnderflow: Boolean = ???
+  def rangeUnderflow: Boolean = js.native
 
   /**
    * The value is greater than the maximum specified by the max attribute.
    *
    * MDN
    */
-  def rangeOverflow: Boolean = ???
+  def rangeOverflow: Boolean = js.native
 
   /**
    * The value is not in the required syntax (when type is email or url).
    *
    * MDN
    */
-  def typeMismatch: Boolean = ???
+  def typeMismatch: Boolean = js.native
 
   /**
    * The value does not match the specified pattern.
    *
    * MDN
    */
-  def patternMismatch: Boolean = ???
+  def patternMismatch: Boolean = js.native
 
   /**
    * The value exceeds the specified maxlength for HTMLInputElement or
@@ -6771,7 +6771,7 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  def tooLong: Boolean = ???
+  def tooLong: Boolean = js.native
 
   /**
    * The element meets all constraint validations, and is therefore considered to be
@@ -6779,7 +6779,7 @@ trait ValidityState extends js.Object {
    *
    * MDN
    */
-  def valid: Boolean = ???
+  def valid: Boolean = js.native
 }
 
 
@@ -6806,7 +6806,7 @@ class Worker (stringUrl: String) extends AbstractWorker {
    *
    * MDN
    */
-  var onmessage: js.Function1[js.Any, _] = ???
+  var onmessage: js.Function1[js.Any, _] = js.native
 
   /**
    * The Worker.postMessage() method sends a message to the worker's inner scope. This
@@ -6816,7 +6816,7 @@ class Worker (stringUrl: String) extends AbstractWorker {
    *
    * MDN
    */
-  def postMessage(message: js.Any, ports: js.Any = ???): Unit = ???
+  def postMessage(message: js.Any, ports: js.Any = js.native): Unit = js.native
 
   /**
    * The Worker.terminate() method immediately terminates the Worker. This does not
@@ -6825,7 +6825,7 @@ class Worker (stringUrl: String) extends AbstractWorker {
    *
    * MDN
    */
-  def terminate(): Unit = ???
+  def terminate(): Unit = js.native
 
 
 }

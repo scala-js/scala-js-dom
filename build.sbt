@@ -1,4 +1,5 @@
-scalaJSSettings
+lazy val root = project.in(file(".")).
+  enablePlugins(ScalaJSPlugin)
 
 name := "Scala.js DOM"
 
@@ -8,9 +9,9 @@ version := "0.7.0-SNAPSHOT"
 
 organization := "org.scala-lang.modules.scalajs"
 
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.2"
 
-crossScalaVersions := Seq("2.10.4", "2.11.1")
+crossScalaVersions := Seq("2.10.4", "2.11.2")
 
 homepage := Some(url("http://scala-js.org/"))
 

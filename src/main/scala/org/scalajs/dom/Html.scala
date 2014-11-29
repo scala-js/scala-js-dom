@@ -19,7 +19,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var title: String = ???
+  var title: String = js.native
 
   /**
    * Gets/sets the domain portion of the origin of the current document, as used by the
@@ -27,7 +27,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var domain: String = ???
+  var domain: String = js.native
 
   /**
    * The Document.location property returns a Location object, which
@@ -36,21 +36,21 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var location: Location = ???
+  var location: Location = js.native
 
   /**
    * Returns a string containing the URL of the current document.
    *
    * MDN
    */
-  def URL: String = ???
+  def URL: String = js.native
 
   /**
    * Returns the URI of the page that linked to this page.
    *
    * MDN
    */
-  def referrer: String = ???
+  def referrer: String = js.native
 
   /**
    * Returns a semicolon-separated list of the cookies for that document or sets a
@@ -58,7 +58,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var cookie: String = ???
+  var cookie: String = js.native
 
   /**
    * The Document.dir property is a DOMString representing the directionality of the
@@ -67,21 +67,21 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var dir: String = ???
+  var dir: String = js.native
 
   /**
    * Can be used to make any document editable, for example in a <iframe />:
    *
    * MDN
    */
-  var designMode: String = ???
+  var designMode: String = js.native
 
   /**
    * Indicates whether the document is rendered in Quirks mode or Strict mode.
    *
    * MDN
    */
-  def compatMode: String = ???
+  def compatMode: String = js.native
 
   /**
    * Returns "loading" while the document is loading, "interactive" once it is
@@ -90,9 +90,9 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var readyState: String = ???
+  var readyState: String = js.native
 
-  var uniqueID: String = ???
+  var uniqueID: String = js.native
 
   /**
    * fgColor gets/sets the foreground color, or text color, of the current document.
@@ -100,7 +100,7 @@ class HTMLDocument extends Document {
    * MDN
    */
   @deprecated
-  var fgColor: String = ???
+  var fgColor: String = js.native
 
   /**
    * The default value for this property in Mozilla Firefox is white (#ffffff in
@@ -109,7 +109,7 @@ class HTMLDocument extends Document {
    * MDN
    */
   @deprecated
-  var bgColor: String = ???
+  var bgColor: String = js.native
 
   /**
    * linkColor gets/sets the color of links within the document.
@@ -117,7 +117,7 @@ class HTMLDocument extends Document {
    * MDN
    */
   @deprecated
-  var linkColor: String = ???
+  var linkColor: String = js.native
 
   /**
    * color is a string containing the name of the color (e.g., "blue", "darkblue", etc.)
@@ -126,10 +126,10 @@ class HTMLDocument extends Document {
    * MDN
    */
   @deprecated
-  var alinkColor: String = ???
+  var alinkColor: String = js.native
 
   @deprecated
-  var vlinkColor: String = ???
+  var vlinkColor: String = js.native
 
   /**
    * In browsers returns the window object associated with the document or null if none
@@ -137,7 +137,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def defaultView: Window = ???
+  def defaultView: Window = js.native
 
   /**
    * Returns the <head> element of the current document. If there are more than one
@@ -145,7 +145,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def head: HTMLHeadElement = ???
+  def head: HTMLHeadElement = js.native
 
   /**
    * Returns the <body> or <frameset> node of the current document, or null if no such
@@ -153,7 +153,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def body: HTMLElement = ???
+  def body: HTMLElement = js.native
 
   /**
    * Returns the currently focused element, that is, the element that will get
@@ -161,14 +161,14 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def activeElement: Element = ???
+  def activeElement: Element = js.native
 
   /**
    * Returns a list of the embedded <embed> elements within the current document.
    *
    * MDN
    */
-  def embeds: HTMLCollection = ???
+  def embeds: HTMLCollection = js.native
 
   /**
    * forms returns a collection (an HTMLCollection) of the form elements within the
@@ -176,7 +176,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def forms: HTMLCollection = ???
+  def forms: HTMLCollection = js.native
 
   /**
    * The links property returns a collection of all AREA elements and anchor elements in
@@ -184,14 +184,14 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def links: HTMLCollection = ???
+  def links: HTMLCollection = js.native
 
   /**
    * anchors returns a list of all of the anchors in the document.
    *
    * MDN
    */
-  def anchors: HTMLCollection = ???
+  def anchors: HTMLCollection = js.native
 
   /**
    * Returns an HTMLCollection object containing one or more HTMLEmbedElements or
@@ -199,7 +199,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def plugins: HTMLCollection = ???
+  def plugins: HTMLCollection = js.native
 
   /**
    * applets returns an ordered list of the applets within a document.
@@ -207,21 +207,21 @@ class HTMLDocument extends Document {
    * MDN
    */
   @deprecated
-  def applets: HTMLCollection = ???
+  def applets: HTMLCollection = js.native
 
   /**
    * document.images returns a collection of the images in the current HTML document.
    *
    * MDN
    */
-  def images: HTMLCollection = ???
+  def images: HTMLCollection = js.native
 
   /**
    * Returns the current value of the current range for a formating command.
    *
    * MDN
    */
-  def queryCommandValue(commandId: String): String = ???
+  def queryCommandValue(commandId: String): String = js.native
 
   /**
    * Returns true if the formating command is in an indeterminate state on the current
@@ -229,7 +229,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def queryCommandIndeterm(commandId: String): Boolean = ???
+  def queryCommandIndeterm(commandId: String): Boolean = js.native
 
   /**
    * This method never did anything but throw an exception, and was removed in Gecko 14.0
@@ -237,7 +237,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def queryCommandText(commandId: String): String = ???
+  def queryCommandText(commandId: String): String = js.native
 
   /**
    * Reports whether or not the specified editor query command is supported by the
@@ -245,21 +245,21 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def queryCommandSupported(commandId: String): Boolean = ???
+  def queryCommandSupported(commandId: String): Boolean = js.native
 
   /**
    * Returns true if the formating command can be executed on the current range.
    *
    * MDN
    */
-  def queryCommandEnabled(commandId: String): Boolean = ???
+  def queryCommandEnabled(commandId: String): Boolean = js.native
 
   /**
    * Returns true if the formating command has been executed on the current range.
    *
    * MDN
    */
-  def queryCommandState(commandId: String): Boolean = ???
+  def queryCommandState(commandId: String): Boolean = js.native
 
   /**
    * When an HTML document has been switched to designMode, the document object exposes
@@ -271,7 +271,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def execCommand(commandId: String, showUI: Boolean = ???, value: js.Any = ???): Boolean = ???
+  def execCommand(commandId: String, showUI: Boolean = js.native, value: js.Any = js.native): Boolean = js.native
 
   /**
    * This method never did anything and always threw an exception, so it was removed in
@@ -279,28 +279,28 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def execCommandShowHelp(commandId: String): Boolean = ???
+  def execCommandShowHelp(commandId: String): Boolean = js.native
 
   /**
    * Writes a string of text to a document stream opened by document.open().
    *
    * MDN
    */
-  def write(content: String*): Unit = ???
+  def write(content: String*): Unit = js.native
 
   /**
    * Writes a string of text followed by a newline character to a document.
    *
    * MDN
    */
-  def writeln(content: String*): Unit = ???
+  def writeln(content: String*): Unit = js.native
 
   /**
    * The document.open() method opens a document for writing.
    *
    * MDN
    */
-  def open(url: String = ???, name: String = ???, features: String = ???, replace: Boolean = ???): js.Dynamic = ???
+  def open(url: String = js.native, name: String = js.native, features: String = js.native, replace: Boolean = js.native): js.Dynamic = js.native
 
   /**
    * The document.close() method finishes writing to a document, opened with
@@ -308,13 +308,13 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def close(): Unit = ???
+  def close(): Unit = js.native
 
-  def updateSettings(): Unit = ???
+  def updateSettings(): Unit = js.native
 
-  def fireEvent(eventName: String, eventObj: js.Any = ???): Boolean = ???
+  def fireEvent(eventName: String, eventObj: js.Any = js.native): Boolean = js.native
 
-  def focus(): Unit = ???
+  def focus(): Unit = js.native
 
   /**
    * Returns a Boolean value indicating whether the document or any element inside the
@@ -323,7 +323,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def hasFocus(): Boolean = ???
+  def hasFocus(): Boolean = js.native
 
   /**
    * The DOM getSelection() method is available on the Window and Document interfaces.
@@ -331,7 +331,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  def getSelection(): Selection = ???
+  def getSelection(): Selection = js.native
 
   /**
    * In recent versions of Mozilla-based applications as well as in Internet Explorer
@@ -340,83 +340,83 @@ class HTMLDocument extends Document {
    * MDN
    */
   @deprecated
-  def clear(): Unit = ???
+  def clear(): Unit = js.native
 
-  var onbeforeactivate: js.Function1[UIEvent, _] = ???
+  var onbeforeactivate: js.Function1[UIEvent, _] = js.native
 
-  var onactivate: js.Function1[UIEvent, _] = ???
+  var onactivate: js.Function1[UIEvent, _] = js.native
 
-  var onbeforedeactivate: js.Function1[UIEvent, _] = ???
+  var onbeforedeactivate: js.Function1[UIEvent, _] = js.native
 
-  var ondeactivate: js.Function1[UIEvent, _] = ???
+  var ondeactivate: js.Function1[UIEvent, _] = js.native
 
-  var onloadstart: js.Function1[Event, _] = ???
+  var onloadstart: js.Function1[Event, _] = js.native
 
-  var onload: js.Function1[Event, _] = ???
+  var onload: js.Function1[Event, _] = js.native
 
   /**
    * The onchange property sets and returns the event handler for the change event.
    *
    * MDN
    */
-  var onchange: js.Function1[Event, _] = ???
+  var onchange: js.Function1[Event, _] = js.native
 
   /**
    * Returns the event handling code for the readystatechange event.
    *
    * MDN
    */
-  var onreadystatechange: js.Function1[Event, _] = ???
+  var onreadystatechange: js.Function1[Event, _] = js.native
 
   /**
    * The submit event is raised when the user clicks a submit button in a form
    *
    * MDN
    */
-  var onsubmit: js.Function1[Event, _] = ???
+  var onsubmit: js.Function1[Event, _] = js.native
 
-  var onfocus: js.Function1[FocusEvent, _] = ???
+  var onfocus: js.Function1[FocusEvent, _] = js.native
 
-  var onblur: js.Function1[FocusEvent, _] = ???
+  var onblur: js.Function1[FocusEvent, _] = js.native
 
-  var onfocusin: js.Function1[FocusEvent, _] = ???
+  var onfocusin: js.Function1[FocusEvent, _] = js.native
 
-  var onfocusout: js.Function1[FocusEvent, _] = ???
+  var onfocusout: js.Function1[FocusEvent, _] = js.native
 
-  var onselect: js.Function1[UIEvent, _] = ???
+  var onselect: js.Function1[UIEvent, _] = js.native
 
-  var onselectstart: js.Function1[Event, _] = ???
+  var onselectstart: js.Function1[Event, _] = js.native
 
-  var onselectionchange: js.Function1[Event, _] = ???
+  var onselectionchange: js.Function1[Event, _] = js.native
 
-  var oninput: js.Function1[Event, _] = ???
+  var oninput: js.Function1[Event, _] = js.native
 
     /**
    * The keydown event is raised when the user presses a keyboard key.
    *
    * MDN
    */
-  var onkeydown: js.Function1[KeyboardEvent, _] = ???
+  var onkeydown: js.Function1[KeyboardEvent, _] = js.native
 
   /**
    * The keyup event is raised when the user releases a key that's been pressed.
    *
    * MDN
    */
-  var onkeyup: js.Function1[KeyboardEvent, _] = ???
+  var onkeyup: js.Function1[KeyboardEvent, _] = js.native
 
-  var onkeypress: js.Function1[KeyboardEvent, _] = ???
+  var onkeypress: js.Function1[KeyboardEvent, _] = js.native
 
   /**
    * The onclick property returns the onClick event handler code on the current element.
    *
    * MDN
    */
-  var onclick: js.Function1[MouseEvent, _] = ???
+  var onclick: js.Function1[MouseEvent, _] = js.native
 
-  var ondblclick: js.Function1[MouseEvent, _] = ???
+  var ondblclick: js.Function1[MouseEvent, _] = js.native
 
-  var onmouseup: js.Function1[MouseEvent, _] = ???
+  var onmouseup: js.Function1[MouseEvent, _] = js.native
 
   /**
    * The mouseover event is raised when the user moves the mouse over a
@@ -424,16 +424,16 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var onmouseover: js.Function1[MouseEvent, _] = ???
+  var onmouseover: js.Function1[MouseEvent, _] = js.native
 
   /**
    * The mousedown event is raised when the user presses the mouse button.
    *
    * MDN
    */
-  var onmousedown: js.Function1[MouseEvent, _] = ???
+  var onmousedown: js.Function1[MouseEvent, _] = js.native
 
-  var onmousemove: js.Function1[MouseEvent, _] = ???
+  var onmousemove: js.Function1[MouseEvent, _] = js.native
 
   /**
    * The mouseout event is raised when the mouse leaves an element (e.g, when the
@@ -442,18 +442,18 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var onmouseout: js.Function1[MouseEvent, _] = ???
+  var onmouseout: js.Function1[MouseEvent, _] = js.native
 
-  var onmousewheel: js.Function1[WheelEvent, _] = ???
+  var onmousewheel: js.Function1[WheelEvent, _] = js.native
 
-  var onscroll: js.Function1[UIEvent, _] = ???
+  var onscroll: js.Function1[UIEvent, _] = js.native
 
   /**
    * Called periodically throughout the drag and drop operation.
    *
    * MDN
    */
-  var ondrag: js.Function1[DragEvent, _] = ???
+  var ondrag: js.Function1[DragEvent, _] = js.native
 
   /**
    * Called for an element when the mouse pointer first moves over the element
@@ -463,9 +463,9 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var ondragenter: js.Function1[DragEvent, _] = ???
+  var ondragenter: js.Function1[DragEvent, _] = js.native
 
-  var ondragleave: js.Function1[DragEvent, _] = ???
+  var ondragleave: js.Function1[DragEvent, _] = js.native
 
    /**
    * This event handler is called for an element when something is being dragged
@@ -474,7 +474,7 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var ondragover: js.Function1[DragEvent, _] = ???
+  var ondragover: js.Function1[DragEvent, _] = js.native
 
   /**
    * An alias for ondraggesture; this is the HTML 5 spec name for the event and
@@ -483,68 +483,68 @@ class HTMLDocument extends Document {
    *
    * MDN
    */
-  var ondragstart: js.Function1[DragEvent, _] = ???
+  var ondragstart: js.Function1[DragEvent, _] = js.native
 
   /**
    * Called when the drag operation is finished.
    *
    * MDN
    */
-  var ondragend: js.Function1[DragEvent, _] = ???
+  var ondragend: js.Function1[DragEvent, _] = js.native
 
-  var ondrop: js.Function1[DragEvent, _] = ???
+  var ondrop: js.Function1[DragEvent, _] = js.native
 
-  var onreset: js.Function1[Event, _] = ???
+  var onreset: js.Function1[Event, _] = js.native
 
-  var onhelp: js.Function1[Event, _] = ???
+  var onhelp: js.Function1[Event, _] = js.native
 
-  var onseeked: js.Function1[Event, _] = ???
+  var onseeked: js.Function1[Event, _] = js.native
 
-  var onemptied: js.Function1[Event, _] = ???
+  var onemptied: js.Function1[Event, _] = js.native
 
-  var onseeking: js.Function1[Event, _] = ???
-  
-  var oncanplay: js.Function1[Event, _] = ???
+  var onseeking: js.Function1[Event, _] = js.native
 
-  var ontimeupdate: js.Function1[Event, _] = ???
+  var oncanplay: js.Function1[Event, _] = js.native
 
-  var onended: js.Function1[Event, _] = ???
+  var ontimeupdate: js.Function1[Event, _] = js.native
 
-  var onsuspend: js.Function1[Event, _] = ???
+  var onended: js.Function1[Event, _] = js.native
 
-  var onpause: js.Function1[Event, _] = ???
+  var onsuspend: js.Function1[Event, _] = js.native
 
-  var onwaiting: js.Function1[Event, _] = ???
+  var onpause: js.Function1[Event, _] = js.native
 
-  var onstop: js.Function1[Event, _] = ???
-  
-  var onstalled: js.Function1[Event, _] = ???
+  var onwaiting: js.Function1[Event, _] = js.native
 
-  var onratechange: js.Function1[Event, _] = ???
+  var onstop: js.Function1[Event, _] = js.native
 
-  var onvolumechange: js.Function1[Event, _] = ???
+  var onstalled: js.Function1[Event, _] = js.native
 
-  var onprogress: js.Function1[js.Any, _] = ???
+  var onratechange: js.Function1[Event, _] = js.native
 
-  var oncontextmenu: js.Function1[MouseEvent, _] = ???
-  
-  var ondurationchange: js.Function1[Event, _] = ???
+  var onvolumechange: js.Function1[Event, _] = js.native
 
-  var onloadeddata: js.Function1[Event, _] = ???
+  var onprogress: js.Function1[js.Any, _] = js.native
 
-  var onloadedmetadata: js.Function1[Event, _] = ???
+  var oncontextmenu: js.Function1[MouseEvent, _] = js.native
 
-  var onerror: js.Function1[Event, _] = ???
+  var ondurationchange: js.Function1[Event, _] = js.native
 
-  var onplay: js.Function1[Event, _] = ???
+  var onloadeddata: js.Function1[Event, _] = js.native
 
-  var onplaying: js.Function1[Event, _] = ???
+  var onloadedmetadata: js.Function1[Event, _] = js.native
 
-  var onabort: js.Function1[UIEvent, _] = ???
+  var onerror: js.Function1[Event, _] = js.native
 
-  var oncanplaythrough: js.Function1[Event, _] = ???
+  var onplay: js.Function1[Event, _] = js.native
 
-  var onstoragecommit: js.Function1[StorageEvent, _] = ???
+  var onplaying: js.Function1[Event, _] = js.native
+
+  var onabort: js.Function1[UIEvent, _] = js.native
+
+  var oncanplaythrough: js.Function1[Event, _] = js.native
+
+  var onstoragecommit: js.Function1[StorageEvent, _] = js.native
 }
 
 /**
@@ -562,7 +562,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var width: String = ???
+  var width: String = js.native
 
   /**
    * Is a DOMString containing the width in pixels of the horizontal and vertical
@@ -570,7 +570,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var cellSpacing: String = ???
+  var cellSpacing: String = js.native
   /**
    * Is an HTMLTableSectionElement representing the first <tfoot> that is a child of
    * the element, or null if none is found. When set, if the object doesn't represent a
@@ -582,7 +582,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var tFoot: HTMLTableSectionElement = ???
+  var tFoot: HTMLTableSectionElement = js.native
   /**
    * Is a DOMString containing the type of the external borders of the table. It reflects
    * the obsolete frame attribute and can take one of the following values: "void",
@@ -590,7 +590,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var frame: String = ???
+  var frame: String = js.native
 
   /**
    * Returns a live HTMLCollection containing all the rows of the element, that is all
@@ -601,7 +601,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var rows: HTMLCollection = ???
+  var rows: HTMLCollection = js.native
   /**
    * Is a DOMString containing the type of the internal borders of the table. It reflects
    * the obsolete rules attribute and can take one of the following values: "none",
@@ -609,14 +609,14 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var rules: String = ???
+  var rules: String = js.native
   /**
    * Is a DOMString containing a description of the purpose or the structure of the
    * table. It reflects the obsolete summary attribute.
    *
    * MDN
    */
-  var summary: String = ???
+  var summary: String = js.native
   /**
    * Is an HTMLTableCaptionElement representing the first <caption> that is a child of
    * the element, or null if none is found. When set, if the object doesn't represent a
@@ -627,7 +627,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var caption: HTMLTableCaptionElement = ???
+  var caption: HTMLTableCaptionElement = js.native
   /**
    * Returns a live HTMLCollection containing all the <tbody> of the element. The
    * HTMLCollection is live and is automatically updated when the HTMLTableElement
@@ -635,7 +635,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var tBodies: HTMLCollection = ???
+  var tBodies: HTMLCollection = js.native
   /**
    * Is an HTMLTableSectionElement representing the first <thead> that is a child of
    * the element, or null if none is found. When set, if the object doesn't represent a
@@ -647,7 +647,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var tHead: HTMLTableSectionElement = ???
+  var tHead: HTMLTableSectionElement = js.native
   /**
    * Is a DOMString containing an enumerated value reflecting the align attribute. It
    * indicates the alignment of the element's contents with respect to the surrounding
@@ -655,7 +655,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var align: String = ???
+  var align: String = js.native
 
   /**
    * Is a DOMString containing the width in pixels of the horizontal and vertical sapce
@@ -664,14 +664,14 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  var cellPadding: String = ???
+  var cellPadding: String = js.native
   /**
    * Is a DOMString containing the width in pixels of the border of the table. It reflects
    * the obsolete border attribute.
    *
    * MDN
    */
-  var border: String = ???
+  var border: String = js.native
   /**
    * Removes the row corresponding to the index given in parameter. If the index value is
    * -1 the last row is removed; if it smaller than -1 or greater than the amount of rows in
@@ -679,16 +679,16 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def deleteRow(index: Int = ???): Unit = ???
+  def deleteRow(index: Int = js.native): Unit = js.native
 
-  def createTBody(): HTMLElement = ???
+  def createTBody(): HTMLElement = js.native
 
   /**
    * Removes the first <caption> that is a child of the element.
    *
    * MDN
    */
-  def deleteCaption(): Unit = ???
+  def deleteCaption(): Unit = js.native
   /**
    * Returns an HTMLElement representing a new row of the table. It inserts it in the rows
    * collection immediately before the <tr> element at the givent index position. If
@@ -698,7 +698,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def insertRow(index: Int = ???): HTMLElement = ???
+  def insertRow(index: Int = js.native): HTMLElement = js.native
 
 
 
@@ -707,7 +707,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def deleteTFoot(): Unit = ???
+  def deleteTFoot(): Unit = js.native
 
   /**
    * Returns an HTMLElement representing the first <thead> that is a child of the
@@ -717,14 +717,14 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def createTHead(): HTMLElement = ???
+  def createTHead(): HTMLElement = js.native
 
   /**
    * Removes the first <thead> that is a child of the element.
    *
    * MDN
    */
-  def deleteTHead(): Unit = ???
+  def deleteTHead(): Unit = js.native
 
   /**
    * Returns an HTMLElement representing the first <caption> that is a child of the
@@ -733,9 +733,9 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def createCaption(): HTMLElement = ???
+  def createCaption(): HTMLElement = js.native
 
-  def moveRow(indexFrom: Int = ???, indexTo: Int = ???): Object = ???
+  def moveRow(indexFrom: Int = js.native, indexTo: Int = js.native): Object = js.native
 
   /**
    * Returns an HTMLElement representing the first <tfoot> that is a child of the
@@ -745,7 +745,7 @@ class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def createTFoot(): HTMLElement = ???
+  def createTFoot(): HTMLElement = js.native
 }
 
 /**
@@ -774,18 +774,18 @@ class HTMLBaseElement extends HTMLElement {
    *
    * MDN
    */
-  var target: String = ???
+  var target: String = js.native
   /**
    * Is a DOMString that reflects the href HTML attribute, containing a base URL for
    * relative URLs in the document.
    *
    * MDN
    */
-  var href: String = ???
+  var href: String = js.native
 }
 
 trait HTMLNextIdElement extends HTMLElement {
-  var n: String = ???
+  var n: String = js.native
 }
 
 /**
@@ -803,36 +803,36 @@ class HTMLParagraphElement extends HTMLElement {
    *
    * MDN
    */
-  var align: String = ???
+  var align: String = js.native
 }
 
 
 trait HTMLAreasCollection extends HTMLCollection {
-  def remove(index: Int = ???): Unit = ???
+  def remove(index: Int = js.native): Unit = js.native
 
-  def add(element: HTMLElement, before: js.Any = ???): Unit = ???
+  def add(element: HTMLElement, before: js.Any = js.native): Unit = js.native
 }
 
 class HTMLAppletElement extends HTMLElement {
-  var width: Double = ???
-  var codeType: String = ???
-  var `object`: String = ???
-  var form: HTMLFormElement = ???
-  var code: String = ???
-  var archive: String = ???
-  var alt: String = ???
-  var standby: String = ???
-  var classid: String = ???
-  var name: String = ???
-  var useMap: String = ???
-  var data: String = ???
-  var height: String = ???
-  var altHtml: String = ???
-  var contentDocument: Document = ???
-  var codeBase: String = ???
-  var declare: Boolean = ???
-  var `type`: String = ???
-  var BaseHref: String = ???
+  var width: Double = js.native
+  var codeType: String = js.native
+  var `object`: String = js.native
+  var form: HTMLFormElement = js.native
+  var code: String = js.native
+  var archive: String = js.native
+  var alt: String = js.native
+  var standby: String = js.native
+  var classid: String = js.native
+  var name: String = js.native
+  var useMap: String = js.native
+  var data: String = js.native
+  var height: String = js.native
+  var altHtml: String = js.native
+  var contentDocument: Document = js.native
+  var codeBase: String = js.native
+  var declare: Boolean = js.native
+  var `type`: String = js.native
+  var BaseHref: String = js.native
 }
 
 /**
@@ -849,7 +849,7 @@ class HTMLOListElement extends HTMLElement {
    *
    * MDN
    */
-  var start: Int= ???
+  var start: Int= js.native
 }
 
 /**
@@ -865,13 +865,13 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  val options: HTMLSelectElement = ???
+  val options: HTMLSelectElement = js.native
   /**
    * The value of this form control, that is, of the first selected option.
    *
    * MDN
    */
-  var value: String = ???
+  var value: String = js.native
   /**
    * The form that this element is associated with. If this element is a descendant of a
    * form element, then this attribute is the ID of that form element. If the element is
@@ -880,64 +880,64 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  val form: HTMLFormElement = ???
+  val form: HTMLFormElement = js.native
   /**
    * Reflects the name HTML attribute, containing the name of this control used by
    * servers and DOM search functions.
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * Reflects the size HTML attribute, which contains the number of visible items in the
    * control. The default is 1, HTML5 unless multiple is true, in which case it is 4.
    *
    * MDN
    */
-  var size: Int= ???
+  var size: Int= js.native
   /**
    * The number of <option> elements in this select element.
    *
    * MDN
    */
-  var length: Int = ???
+  var length: Int = js.native
   /**
    * The index of the first selected <option> element.
    *
    * MDN
    */
-  var selectedIndex: Int = ???
+  var selectedIndex: Int = js.native
   /**
    * Reflects the multiple HTML attribute, whichindicates whether multiple items can
    * be selected.
    *
    * MDN
    */
-  var multiple: Boolean = ???
-  var `type`: String = ???
+  var multiple: Boolean = js.native
+  var `type`: String = js.native
   /**
    * Removes the element at the specified index from the options collection for this
    * select element.
    *
    * MDN
    */
-  def remove(index: Int = ???): Unit = ???
+  def remove(index: Int = js.native): Unit = js.native
   /**
    * Adds an element to the collection of option elements for this select element.
    *
    * MDN
    */
-  def add(element: HTMLElement, before: js.Any = ???): Unit = ???
+  def add(element: HTMLElement, before: js.Any = js.native): Unit = js.native
 
-  def item(name: js.Any = ???, index: js.Any = ???): js.Dynamic = ???
+  def item(name: js.Any = js.native, index: js.Any = js.native): js.Dynamic = js.native
 
-  def namedItem(name: String): js.Dynamic = ???
-
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(name: String): js.Any = ???
+  def namedItem(name: String): js.Dynamic = js.native
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(name: String, v: js.Any): Unit = ???
+  def apply(name: String): js.Any = js.native
+
+  @scala.scalajs.js.annotation.JSBracketAccess
+  def update(name: String, v: js.Any): Unit = js.native
 
   /**
    * A localized message that describes the validation constraints that the control
@@ -947,7 +947,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  val validationMessage: String = ???
+  val validationMessage: String = js.native
   /**
    * Reflects the autofocus HTML attribute, which indicates whether the control
    * should have input focus when the page loads, unless the user overrides it, for
@@ -956,36 +956,36 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  var autofocus: Boolean = ???
+  var autofocus: Boolean = js.native
   /**
    * The validity states that this control is in. Read only. HTML5
    *
    * MDN
    */
-  val validity: ValidityState = ???
+  val validity: ValidityState = js.native
   /**
    * Reflects the required HTML attribute, which indicates whether the user is
    * required to select a value before submitting the form. HTML5
    *
    * MDN
    */
-  var required: Boolean = ???
+  var required: Boolean = js.native
   /**
    * Indicates whether the button is a candidate for constraint validation. It is false
    * if any conditions bar it from constraint validation. Read only. HTML5
    *
    * MDN
    */
-  val willValidate: Boolean = ???
+  val willValidate: Boolean = js.native
 
-  def checkValidity(): Boolean = ???
+  def checkValidity(): Boolean = js.native
 
-  def setCustomValidity(error: String): Unit = ???
+  def setCustomValidity(error: String): Unit = js.native
 }
 
 trait HTMLBlockElement extends HTMLElement {
-  var width: Double = ???
-  var cite: String = ???
+  var width: Double = js.native
+  var cite: String = js.native
 }
 
 /**
@@ -1001,31 +1001,31 @@ class HTMLMetaElement extends HTMLElement {
    *
    * MDN
    */
-  var httpEquiv: String = ???
+  var httpEquiv: String = js.native
   /**
    * Gets or sets the name of a meta-data property to define for a document.
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * Gets or sets the value of meta-data property.
    *
    * MDN
    */
-  var content: String = ???
-  var url: String = ???
+  var content: String = js.native
+  var url: String = js.native
   /**
    * Gets or sets the name of a scheme used to interpret the value of a meta-data property.
    *
    * MDN
    */
-  var scheme: String = ???
-  var charset: String = ???
+  var scheme: String = js.native
+  var charset: String = js.native
 }
 
 class HTMLDDElement extends HTMLElement {
-  var noWrap: Boolean = ???
+  var noWrap: Boolean = js.native
 }
 
 /**
@@ -1043,49 +1043,49 @@ class HTMLLinkElement extends HTMLElement with LinkStyle {
    *
    * MDN
    */
-  var rel: String = ???
+  var rel: String = js.native
   /**
    * Gets or sets the name of the target frame to which the resource applies.
    *
    * MDN
    */
-  var target: String = ???
+  var target: String = js.native
   /**
    * Gets or sets the URI for the target resource.
    *
    * MDN
    */
-  var href: String = ???
+  var href: String = js.native
   /**
    * Gets or sets a list of one or more media formats to which the resource applies.
    *
    * MDN
    */
-  var media: String = ???
+  var media: String = js.native
   /**
    * Gets or sets the reverse relationship of the linked resource from the resource to
    * the document.
    *
    * MDN
    */
-  var rev: String = ???
-  var `type`: String = ???
+  var rev: String = js.native
+  var `type`: String = js.native
   /**
    * Gets or sets the character encoding for the target resource.
    *
    * MDN
    */
-  var charset: String = ???
+  var charset: String = js.native
   /**
    * Gets or sets the language code for the linked resource.
    *
    * MDN
    */
-  var hreflang: String = ???
+  var hreflang: String = js.native
 }
 
 class HTMLFontElement extends HTMLElement {
-  var face: String = ???
+  var face: String = js.native
 }
 
 /**
@@ -1102,8 +1102,8 @@ class HTMLTableCaptionElement extends HTMLElement {
    *
    * MDN
    */
-  var align: String = ???
-  var vAlign: String = ???
+  var align: String = js.native
+  var vAlign: String = js.native
 }
 
 /**
@@ -1120,27 +1120,27 @@ class HTMLOptionElement extends HTMLElement {
    *
    * MDN
    */
-  var index: Int = ???
+  var index: Int = js.native
   /**
    * Contains the initial value of the selected HTML attribute, indicating whether the
    * option is selected by default or not.
    *
    * MDN
    */
-  var defaultSelected: Boolean = ???
+  var defaultSelected: Boolean = js.native
   /**
    * Reflects the value of the value HTML attribute, if it exists; otherwise reflects
    * value of the Node.textContent property.
    *
    * MDN
    */
-  var value: String = ???
+  var value: String = js.native
   /**
    * Contains the text content of the element.
    *
    * MDN
    */
-  var text: String = ???
+  var text: String = js.native
   /**
    * If the option is a descendent of a <select> element, then this property has the same
    * value as the form property of the corresponding HTMLSelectElement object;
@@ -1148,7 +1148,7 @@ class HTMLOptionElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = ???
+  var form: HTMLFormElement = js.native
   /**
    * Reflects the value of the label HTML attribute, which provides a label for the
    * option. If this attribute isn't specifically set, reading it returns the
@@ -1156,15 +1156,15 @@ class HTMLOptionElement extends HTMLElement {
    *
    * MDN
    */
-  var label: String = ???
+  var label: String = js.native
   /**
    * Indicates whether the option is currently selected.
    *
    * MDN
    */
-  var selected: Boolean = ???
+  var selected: Boolean = js.native
 
-  def create(): HTMLOptionElement = ???
+  def create(): HTMLOptionElement = js.native
 }
 
 /**
@@ -1181,18 +1181,18 @@ class HTMLMapElement extends HTMLElement {
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * Is a live HTMLCollection representing the <area> elements associated to this
    * <map>.
    *
    * MDN
    */
-  var areas: HTMLAreasCollection = ???
+  var areas: HTMLAreasCollection = js.native
 }
 
 class HTMLMenuElement extends HTMLElement {
-  var `type`: String = ???
+  var `type`: String = js.native
 }
 
 /**
@@ -1209,7 +1209,7 @@ class HTMLCollection extends DOMList[Element]{
    *
    * MDN
    */
-  def item(nameOrIndex: js.Any = ???, optionalIndex: js.Any = ???): Element = ???
+  def item(nameOrIndex: js.Any = js.native, optionalIndex: js.Any = js.native): Element = js.native
 
 
   /**
@@ -1220,7 +1220,7 @@ class HTMLCollection extends DOMList[Element]{
    *
    * MDN
    */
-  def namedItem(name: String): Element = ???
+  def namedItem(name: String): Element = js.native
 
 }
 
@@ -1238,87 +1238,87 @@ class HTMLImageElement extends HTMLElement {
    *
    * MDN
    */
-  var width: Int = ???
-  var vspace: Int = ???
+  var width: Int = js.native
+  var vspace: Int = js.native
   /**
    * Intrinsic height of the image in CSS pixels, if it is available; otherwise, 0.
    *
    * MDN
    */
-  var naturalHeight: Int = ???
+  var naturalHeight: Int = js.native
   /**
    * Reflects the alt HTML attribute, indicating fallback context for the image.
    *
    * MDN
    */
-  var alt: String = ???
+  var alt: String = js.native
   /**
    * Indicates the alignment of the image with respect to the surrounding context.
    *
    * MDN
    */
-  var align: String = ???
+  var align: String = js.native
   /**
    * Reflects the src HTML attribute, containing the URL of the image.
    *
    * MDN
    */
-  var src: String = ???
+  var src: String = js.native
   /**
    * Reflects the usemap HTML attribute, containing a partial URL of a map element.
    *
    * MDN
    */
-  var useMap: String = ???
+  var useMap: String = js.native
   /**
    * Intrinsic width of the image in CSS pixels, if it is available; otherwise, 0.
    *
    * MDN
    */
-  var naturalWidth: Int = ???
-  var name: String = ???
+  var naturalWidth: Int = js.native
+  var name: String = js.native
   /**
    * Reflects the height HTML attribute, indicating the rendered height of the image in
    * CSS pixels.
    *
    * MDN
    */
-  var height: Int = ???
+  var height: Int = js.native
   /**
    * Width of the border around the image.
    *
    * MDN
    */
-  var border: String = ???
+  var border: String = js.native
   /**
    * Space to the left and right of the image.
    *
    * MDN
    */
-  var hspace: Int = ???
+  var hspace: Int = js.native
   /**
    * URI of a long description of the image.
    *
    * MDN
    */
-  var longDesc: String = ???
-  var href: String = ???
+  var longDesc: String = js.native
+  var href: String = js.native
   /**
    * Reflects the ismap HTML attribute, indicating that the image is part of a
    * server-side image map.
    *
    * MDN
    */
-  var isMap: Boolean = ???
+  var isMap: Boolean = js.native
   /**
    * True if the browser has fetched the image, and it is in a supported image type that was
    * decoded without errors.
    *
    * MDN
    */
-  var complete: Boolean = ???
+  var complete: Boolean = js.native
 
-  def create(): HTMLImageElement = ???
+  def create(): HTMLImageElement = js.native
 
 }
 
@@ -1336,87 +1336,87 @@ class HTMLAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var protocol: String = ???
+  var protocol: String = js.native
   /**
    * Is a DOMString containing tThe search element (including leading question mark
    * '?'), if any, of the referenced URL.
    *
    * MDN
    */
-  var search: String = ???
+  var search: String = js.native
   /**
    * Is a DOMString that reflects the alt HTML attribute, containing alternative text
    * for the element.
    *
    * MDN
    */
-  var alt: String = ???
+  var alt: String = js.native
   /**
    * Is a DOMString that reflects the coords HTML attribute, containing coordinates to
    * define the hot-spot region.
    *
    * MDN
    */
-  var coords: String = ???
+  var coords: String = js.native
   /**
    * Is a DOMString containing the hostname in the referenced URL.
    *
    * MDN
    */
-  var hostname: String = ???
+  var hostname: String = js.native
   /**
    * Is a DOMString containing the port component, if any, of the referenced URL.
    *
    * MDN
    */
-  var port: String = ???
+  var port: String = js.native
   /**
    * Is a DOMString containing the path name component, if any, of the referenced URL.
    *
    * MDN
    */
-  var pathname: String = ???
+  var pathname: String = js.native
   /**
    * Is a DOMString containing the hostname and port (if it's not the default port) in the
    * referenced URL.
    *
    * MDN
    */
-  var host: String = ???
+  var host: String = js.native
   /**
    * Is a DOMString containing the fragment identifier (including the leading hash
    * mark (#)), if any, in the referenced URL.
    *
    * MDN
    */
-  var hash: String = ???
+  var hash: String = js.native
   /**
    * Is a DOMString that reflects the target HTML attribute, indicating the browsing
    * context in which to open the linked resource.
    *
    * MDN
    */
-  var target: String = ???
+  var target: String = js.native
   /**
    * Is a DOMString containing that reflects the href HTML attribute, containing a
    * valid URL of a linked resource.
    *
    * MDN
    */
-  var href: String = ???
+  var href: String = js.native
   /**
    * Is a Boolean flag indicating if the area is inactive (true) or active (false).
    *
    * MDN
    */
-  var noHref: Boolean = ???
+  var noHref: Boolean = js.native
   /**
    * Is a DOMString teflects the shape HTML attribute, indicating the shape of the
    * hot-spot, limited to known values.
    *
    * MDN
    */
-  var shape: String = ???
+  var shape: String = js.native
 
 }
 
@@ -1433,8 +1433,8 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var value: String = ???
-  var status: js.Any = ???
+  var value: String = js.native
+  var status: js.Any = js.native
   /**
    * The form that this button is associated with. If the button is a descendant of a form
    * element, then this attribute is the ID of that form element. If the button is not a
@@ -1443,15 +1443,15 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = ???
+  var form: HTMLFormElement = js.native
   /**
    * The name of the object when submitted with a form. HTML5 If specified, it must not be
    * the empty string.
    *
    * MDN
    */
-  var name: String = ???
-  var `type`: String = ???
+  var name: String = js.native
+  var `type`: String = js.native
   /**
    * A localized message that describes the validation constraints that the control
    * does not satisfy (if any). This attribute is the empty string if the control is not a
@@ -1460,7 +1460,7 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: String = ???
+  var validationMessage: String = js.native
   /**
    * A name or keyword indicating where to display the response that is received after
    * submitting the form. If specified, this attribute overrides the target attribute
@@ -1468,14 +1468,14 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formTarget: String = ???
+  var formTarget: String = js.native
   /**
    * Indicates whether the button is a candidate for constraint validation. It is false
    * if any conditions bar it from constraint validation.
    *
    * MDN
    */
-  var willValidate: Boolean = ???
+  var willValidate: Boolean = js.native
   /**
    * The URI of a resource that processes information submitted by the button. If
    * specified, this attribute overrides the action attribute of the <form> element
@@ -1483,7 +1483,7 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formAction: String = ???
+  var formAction: String = js.native
   /**
    * The control should have input focus when the page loads, unless the user overrides
    * it, for example by typing in a different control. Only one form-associated element
@@ -1491,13 +1491,13 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var autofocus: Boolean = ???
+  var autofocus: Boolean = js.native
   /**
    * The validity states that this button is in.
    *
    * MDN
    */
-  var validity: ValidityState = ???
+  var validity: ValidityState = js.native
   /**
    * Indicates that the form is not to be validated when it is submitted. If specified,
    * this attribute overrides the enctype attribute of the <form> element that owns
@@ -1505,8 +1505,8 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formNoValidate: String = ???
-  var formEnctype: String = ???
+  var formNoValidate: String = js.native
+  var formEnctype: String = js.native
   /**
    * The HTTP method that the browser uses to submit the form. If specified, this
    * attribute overrides the method attribute of the <form> element that owns this
@@ -1514,11 +1514,11 @@ class HTMLButtonElement extends HTMLElement {
    *
    * MDN
    */
-  var formMethod: String = ???
+  var formMethod: String = js.native
 
-  def checkValidity(): Boolean = ???
+  def checkValidity(): Boolean = js.native
 
-  def setCustomValidity(error: String): Unit = ???
+  def setCustomValidity(error: String): Unit = js.native
 }
 
 /**
@@ -1534,15 +1534,15 @@ class HTMLSourceElement extends HTMLElement {
    *
    * MDN
    */
-  var src: String = ???
+  var src: String = js.native
   /**
    * Reflects the media HTML attribute, containing the intended type of the media
    * resource.
    *
    * MDN
    */
-  var media: String = ???
-  var `type`: String = ???
+  var media: String = js.native
+  var `type`: String = js.native
 }
 
 /**
@@ -1554,7 +1554,7 @@ class HTMLSourceElement extends HTMLElement {
  * MDN
  */
 class HTMLScriptElement extends HTMLElement {
-  var defer: Boolean = ???
+  var defer: Boolean = js.native
   /**
    * The IDL attribute text must return a concatenation of the contents of all the Text
    * nodes that are children of the <script> element (ignoring any other nodes such as
@@ -1565,24 +1565,24 @@ class HTMLScriptElement extends HTMLElement {
    *
    * MDN
    */
-  var text: String = ???
+  var text: String = js.native
   /**
    * Represents gives the address of the external script resource to use. It reflects
    * the src attribute.
    *
    * MDN
    */
-  var src: String = ???
-  var htmlFor: String = ???
+  var src: String = js.native
+  var htmlFor: String = js.native
   /**
    * Represents the character encoding of the external script resource. It reflects
    * the charset attribute.
    *
    * MDN
    */
-  var charset: String = ???
-  var `type`: String = ???
-  var event: String = ???
+  var charset: String = js.native
+  var `type`: String = js.native
+  var event: String = js.native
   /**
    * The async and defer attributes are boolean attributes that indicate how the script
    * should be executed. The defer and async attributes must not be specified if the src
@@ -1605,7 +1605,7 @@ class HTMLScriptElement extends HTMLElement {
    *
    * MDN
    */
-  var async: Boolean = ???
+  var async: Boolean = js.native
 }
 
 /**
@@ -1622,14 +1622,14 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var rowIndex: Int = ???
+  var rowIndex: Int = js.native
   /**
    * Returns a live HTMLCollection containing the cells in the row. The HTMLCollection
    * is live and is automatically updated when cells are added or removed.
    *
    * MDN
    */
-  var cells: HTMLCollection = ???
+  var cells: HTMLCollection = js.native
   /**
    * Is a DOMString containing an enumerated value reflecting the align attribute. It
    * indicates the alignment of the element's contents with respect to the surrounding
@@ -1637,18 +1637,18 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: String = ???
-  var borderColorLight: js.Any = ???
+  var align: String = js.native
+  var borderColorLight: js.Any = js.native
   /**
    * Returns a long value which gives the logical position of the row within the table
    * section it belongs to. If the row is not part of a section, returns -1.
    *
    * MDN
    */
-  var sectionRowIndex: Int = ???
-  var borderColor: js.Any = ???
-  var height: js.Any = ???
-  var borderColorDark: js.Any = ???
+  var sectionRowIndex: Int = js.native
+  var borderColor: js.Any = js.native
+  var height: js.Any = js.native
+  var borderColorDark: js.Any = js.native
   /**
    * Removes the cell at the given position in the row. If the given position is greater
    * (or equal as it starts at zero) than the amount of cells in the row, or is smaller than
@@ -1656,7 +1656,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def deleteCell(index: Int = ???): Unit = ???
+  def deleteCell(index: Int = js.native): Unit = js.native
   /**
    * Inserts a new cell just before the given position in the row. If the given position is
    * not given or is -1, it appends the cell to the row. If the given position is greater (or
@@ -1665,7 +1665,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def insertCell(index: Int = ???): HTMLElement = ???
+  def insertCell(index: Int = js.native): HTMLElement = js.native
 }
 
 /**
@@ -1682,27 +1682,27 @@ class HTMLHtmlElement extends HTMLElement {
    *
    * MDN
    */
-  var version: String = ???
+  var version: String = js.native
 }
 
 class HTMLFrameElement extends HTMLElement with GetSVGDocument {
-  var width: js.Any = ???
-  var scrolling: String = ???
-  var marginHeight: String = ???
-  var marginWidth: String = ???
-  var borderColor: js.Any = ???
-  var frameSpacing: js.Any = ???
-  var frameBorder: String = ???
-  var noResize: Boolean = ???
-  var contentWindow: Window = ???
-  var src: String = ???
-  var name: String = ???
-  var height: js.Any = ???
-  var contentDocument: Document = ???
-  var border: String = ???
-  var longDesc: String = ???
-  var onload: js.Function1[Event, _] = ???
-  var security: js.Any = ???
+  var width: js.Any = js.native
+  var scrolling: String = js.native
+  var marginHeight: String = js.native
+  var marginWidth: String = js.native
+  var borderColor: js.Any = js.native
+  var frameSpacing: js.Any = js.native
+  var frameBorder: String = js.native
+  var noResize: Boolean = js.native
+  var contentWindow: Window = js.native
+  var src: String = js.native
+  var name: String = js.native
+  var height: js.Any = js.native
+  var contentDocument: Document = js.native
+  var border: String = js.native
+  var longDesc: String = js.native
+  var onload: js.Function1[Event, _] = js.native
+  var security: js.Any = js.native
 
 
 }
@@ -1716,13 +1716,13 @@ class HTMLFrameElement extends HTMLElement with GetSVGDocument {
  * MDN
  */
 class HTMLQuoteElement extends HTMLElement {
-  var dateTime: String = ???
+  var dateTime: String = js.native
   /**
    * Reflects the cite HTML attribute, containing a URL for the source of the quotation.
    *
    * MDN
    */
-  var cite: String = ???
+  var cite: String = js.native
 }
 
 /**
@@ -1747,25 +1747,25 @@ class HTMLDListElement extends HTMLElement {
 }
 
 class HTMLFrameSetElement extends HTMLElement {
-  var ononline: js.Function1[Event, _] = ???
-  var borderColor: js.Any = ???
-  var rows: String = ???
-  var cols: String = ???
-  var frameSpacing: js.Any = ???
-  var onmessage: js.Function1[MessageEvent, _] = ???
-  var onerror: js.Function1[Event, _] = ???
-  var frameBorder: String = ???
-  var onresize: js.Function1[UIEvent, _] = ???
-  var name: String = ???
-  var onafterprint: js.Function1[Event, _] = ???
-  var onbeforeprint: js.Function1[Event, _] = ???
-  var onoffline: js.Function1[Event, _] = ???
-  var border: String = ???
-  var onunload: js.Function1[Event, _] = ???
-  var onhashchange: js.Function1[HashChangeEvent, _] = ???
-  var onload: js.Function1[Event, _] = ???
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = ???
-  var onstorage: js.Function1[StorageEvent, _] = ???
+  var ononline: js.Function1[Event, _] = js.native
+  var borderColor: js.Any = js.native
+  var rows: String = js.native
+  var cols: String = js.native
+  var frameSpacing: js.Any = js.native
+  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
+  var frameBorder: String = js.native
+  var onresize: js.Function1[UIEvent, _] = js.native
+  var name: String = js.native
+  var onafterprint: js.Function1[Event, _] = js.native
+  var onbeforeprint: js.Function1[Event, _] = js.native
+  var onoffline: js.Function1[Event, _] = js.native
+  var border: String = js.native
+  var onunload: js.Function1[Event, _] = js.native
+  var onhashchange: js.Function1[HashChangeEvent, _] = js.native
+  var onload: js.Function1[Event, _] = js.native
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = js.native
+  var onstorage: js.Function1[StorageEvent, _] = js.native
 
 
 }
@@ -1782,9 +1782,9 @@ class HTMLLabelElement extends HTMLElement {
    *
    * MDN
    */
-  var htmlFor: String = ???
+  var htmlFor: String = js.native
 
-  def form: HTMLFormElement = ???
+  def form: HTMLFormElement = js.native
 }
 
 /**
@@ -1795,9 +1795,9 @@ class HTMLLabelElement extends HTMLElement {
  * MDN
  */
 class HTMLLegendElement extends HTMLElement {
-  var align: String = ???
+  var align: String = js.native
 
-  def form: HTMLFormElement = ???
+  def form: HTMLFormElement = js.native
 }
 
 class HTMLDirectoryElement extends HTMLElement {
@@ -1818,7 +1818,7 @@ class HTMLLIElement extends HTMLElement {
    *
    * MDN
    */
-  var value: Int = ???
+  var value: Int = js.native
 }
 
 /**
@@ -1835,7 +1835,7 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var width: String = ???
+  var width: String = js.native
 
 
   /**
@@ -1843,7 +1843,7 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var contentWindow: Window = ???
+  var contentWindow: Window = js.native
 
   /**
    * Reflects the src HTML attribute, containing the address of the content to be
@@ -1851,35 +1851,35 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var src: String = ???
+  var src: String = js.native
   /**
    * Reflects the name HTML attribute, containing a name by which to refer to the frame.
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * Reflects the height HTML attribute, indicating the height of the frame.
    *
    * MDN
    */
-  var height: String = ???
-  var border: String = ???
+  var height: String = js.native
+  var border: String = js.native
   /**
    * The active document in the inline frame's nested browsing context.
    *
    * MDN
    */
-  var contentDocument: Document = ???
+  var contentDocument: Document = js.native
 
   /**
    * URI of a long description of the frame.
    *
    * MDN
    */
-  var longDesc: String = ???
-  var security: js.Any = ???
-  var onload: js.Function1[Event, _] = ???
+  var longDesc: String = js.native
+  var security: js.Any = js.native
+  var onload: js.Function1[Event, _] = js.native
 
 
   /**
@@ -1888,7 +1888,7 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var sandbox: DOMSettableTokenList = ???
+  var sandbox: DOMSettableTokenList = js.native
 }
 
 /**
@@ -1899,14 +1899,14 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
  * MDN
  */
 class HTMLBodyElement extends HTMLElement {
-  var scroll: String = ???
+  var scroll: String = js.native
   /**
    * Reflects the ononline HTML attribute value for a function to call when network
    * communication is restored.
    *
    * MDN
    */
-  var ononline: js.Function1[Event, _] = ???
+  var ononline: js.Function1[Event, _] = js.native
 
   /**
    * Reflects the onmessage HTML attribute value for a function to call when the
@@ -1914,8 +1914,8 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onmessage: js.Function1[MessageEvent, _] = ???
-  var text: js.Any = ???
+  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var text: js.Any = js.native
   /**
    * Exposes the window.onerror event handler to call when the document fails to load
    * properly. Note: This handler is triggered when the event reaches the window, not
@@ -1924,7 +1924,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onerror: js.Function1[Event, _] = ???
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * Reflects the onresize HTML attribute value for a function to call when the
@@ -1932,9 +1932,9 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onresize: js.Function1[UIEvent, _] = ???
-  var link: js.Any = ???
-  var aLink: js.Any = ???
+  var onresize: js.Function1[UIEvent, _] = js.native
+  var link: js.Any = js.native
+  var aLink: js.Any = js.native
 
   /**
    * Reflects the onafterprint HTML attribute value for a function to call after the
@@ -1942,36 +1942,36 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onafterprint: js.Function1[Event, _] = ???
-  var vLink: js.Any = ???
+  var onafterprint: js.Function1[Event, _] = js.native
+  var vLink: js.Any = js.native
   /**
    * Reflects the onbeforeprint HTML attribute value for a function to call when the
    * user has requested printing the document.
    *
    * MDN
    */
-  var onbeforeprint: js.Function1[Event, _] = ???
+  var onbeforeprint: js.Function1[Event, _] = js.native
   /**
    * Reflects the onoffline HTML attribute value for a function to call when network
    * communication fails.
    *
    * MDN
    */
-  var onoffline: js.Function1[Event, _] = ???
+  var onoffline: js.Function1[Event, _] = js.native
   /**
    * Reflects the onunload HTML attribute value for a function to call when when the
    * document is going away.
    *
    * MDN
    */
-  var onunload: js.Function1[Event, _] = ???
+  var onunload: js.Function1[Event, _] = js.native
   /**
    * Reflects the onhashchange HTML attribute value for a function to call when the
    * fragment identifier in the address of the document changes.
    *
    * MDN
    */
-  var onhashchange: js.Function1[Event, _] = ???
+  var onhashchange: js.Function1[Event, _] = js.native
   /**
    * Exposes the window.onload event handler to call when the window gains focus. Note:
    * This handler is triggered when the event reaches the window, not the body element.
@@ -1979,23 +1979,23 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onload: js.Function1[Event, _] = ???
-  var rightMargin: js.Any = ???
+  var onload: js.Function1[Event, _] = js.native
+  var rightMargin: js.Any = js.native
   /**
    * Reflects the onbeforeunload HTML attribute value for a function to call when the
    * document is about to be unloaded.
    *
    * MDN
    */
-  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = ???
-  var leftMargin: js.Any = ???
+  var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = js.native
+  var leftMargin: js.Any = js.native
   /**
    * Reflects the onpopstate HTML attribute value for a function to call when the
    * storage area has changed.
    *
    * MDN
    */
-  var onstorage: js.Function1[StorageEvent, _] = ???
+  var onstorage: js.Function1[StorageEvent, _] = js.native
 
 
   /**
@@ -2004,7 +2004,7 @@ class HTMLBodyElement extends HTMLElement {
    *
    * MDN
    */
-  var onpopstate: js.Function1[PopStateEvent, _] = ???
+  var onpopstate: js.Function1[PopStateEvent, _] = js.native
 }
 
 /**
@@ -2023,7 +2023,7 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: String = ???
+  var align: String = js.native
   /**
    * Returns a live HTMLCollection containing the rows in the section. The
    * HTMLCollection is live and is automatically updated when rows are added or
@@ -2031,7 +2031,7 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var rows: HTMLCollection = ???
+  var rows: HTMLCollection = js.native
   /**
    * Removes the cell at the given position in the section. If the given position is
    * greater (or equal as it starts at zero) than the amount of rows in the section, or is
@@ -2039,12 +2039,12 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  def deleteRow(index: Int = ???): Unit = ???
+  def deleteRow(index: Int = js.native): Unit = js.native
 
-  def moveRow(indexFrom: Int = ???, indexTo: Int = ???): Object = ???
+  def moveRow(indexFrom: Int = js.native, indexTo: Int = js.native): Object = js.native
 
 
-  def insertRow(index: Int = ???): HTMLElement = ???
+  def insertRow(index: Int = js.native): HTMLElement = js.native
 
 }
 
@@ -2062,8 +2062,8 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var width: String = ???
-  var status: Boolean = ???
+  var width: String = js.native
+  var status: Boolean = js.native
 
   /**
    * The containing form element, if this element is in a form. If this element is not
@@ -2073,20 +2073,20 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def form: HTMLFormElement = ???
+  def form: HTMLFormElement = js.native
 
   /**
    * The index of the beginning of selected text.
    *
    * MDN
    */
-  var selectionStart: Int = ???
+  var selectionStart: Int = js.native
   /**
    * Indicates that a checkbox is neither on nor off.
    *
    * MDN
    */
-  var indeterminate: Boolean = ???
+  var indeterminate: Boolean = js.native
   /**
    * Reflects the readonly HTML attribute, indicating that the user cannot modify the
    * value of the control. HTML5This is ignored if the value of the type attribute is
@@ -2094,7 +2094,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var readOnly: Boolean = ???
+  var readOnly: Boolean = js.native
   /**
    * Reflects the size HTML attribute, containing size of the control. This value is in
    * pixels unless the value of type is text or password, in which case, it is an integer
@@ -2103,14 +2103,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var size: Int = ???
+  var size: Int = js.native
 
   /**
    * The index of the end of selected text.
    *
    * MDN
    */
-  var selectionEnd: Int = ???
+  var selectionEnd: Int = js.native
 
   /**
    * Reflects the accept HTML attribute, containing comma-separated list of file
@@ -2118,27 +2118,27 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var accept: String = ???
+  var accept: String = js.native
   /**
    * Reflects the alt HTML attribute, containing alternative text to use when type is
    * image.
    *
    * MDN
    */
-  var alt: String = ???
+  var alt: String = js.native
   /**
    * The default state of a radio button or checkbox as originally specified in HTML that
    * created this object.
    *
    * MDN
    */
-  var defaultChecked: Boolean = ???
+  var defaultChecked: Boolean = js.native
   /**
    * Current value in the control.
    *
    * MDN
    */
-  var value: String = ???
+  var value: String = js.native
   /**
    * Reflects the src HTML attribute, which specifies a URI for the location of an image
    * to display on the graphical submit button, if the value of type is image; otherwise
@@ -2146,14 +2146,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var src: String = ???
+  var src: String = js.native
   /**
    * Reflects the name HTML attribute, containing a name that identifies the element
    * when submitting the form.
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
 
   /**
    * Reflects the height HTML attribute, which defines the height of the image
@@ -2161,7 +2161,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var height: String = ???
+  var height: String = js.native
 
 
   /**
@@ -2169,7 +2169,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var checked: Boolean = ???
+  var checked: Boolean = js.native
 
   /**
    * Reflects the maxlength HTML attribute, containing the maximum length of text (in
@@ -2179,18 +2179,18 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var maxLength: Int = ???
+  var maxLength: Int = js.native
   /**
    * Reflects the type HTML attribute, indicating the type of control to display.
    * See type attribute of <input> for possible values.
    */
-  var `type`: String = ???
+  var `type`: String = js.native
   /**
    * The default value as originally specified in HTML that created this object.
    *
    * MDN
    */
-  var defaultValue: String = ???
+  var defaultValue: String = js.native
 
   /**
    * Selects a range of text in the element (but does not focus it). The optional
@@ -2201,7 +2201,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def setSelectionRange(start: Int, end: Int): Unit = ???
+  def setSelectionRange(start: Int, end: Int): Unit = js.native
 
   /**
    * Selects the input text in the element, and focuses it so the user can subsequently
@@ -2209,7 +2209,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def select(): Unit = ???
+  def select(): Unit = js.native
 
   /**
    * A localized message that describes the validation constraints that the control
@@ -2219,15 +2219,15 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: String = ???
-  var files: FileList = ???
+  var validationMessage: String = js.native
+  var files: FileList = js.native
   /**
    * Reflects the max HTML attribute, containing the maximum (numeric or date-time)
    * value for this item, which must not be less than its minimum (min attribute) value.
    *
    * MDN
    */
-  var max: String = ???
+  var max: String = js.native
   /**
    * Reflects the formtarget HTML attribute, containing a name or keyword indicating
    * where to display the response that is received after submitting the form. If
@@ -2236,14 +2236,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formTarget: String = ???
+  var formTarget: String = js.native
   /**
    * Indicates whether the element is a candidate for constraint validation. It is
    * false if any conditions bar it from constraint validation.
    *
    * MDN
    */
-  var willValidate: Boolean = ???
+  var willValidate: Boolean = js.native
   /**
    * Reflects the step HTML attribute, which works with min and max to limit the
    * increments at which a numeric or date-time value can be set. It can be the string any
@@ -2252,7 +2252,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var step: String = ???
+  var step: String = js.native
   /**
    * Reflects the autofocus HTML attribute, which specifies that a form control
    * should have input focus when the page loads, unless the user overrides it, for
@@ -2262,14 +2262,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var autofocus: Boolean = ???
+  var autofocus: Boolean = js.native
   /**
    * Reflects the required HTML attribute, indicating that the user must fill in a
    * value before submitting a form.
    *
    * MDN
    */
-  var required: Boolean = ???
+  var required: Boolean = js.native
   /**
    * Reflects the formenctype HTML attribute, containing the type of content that
    * is used to submit the form to the server. If specified, this attribute
@@ -2277,14 +2277,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formEnctype: String = ???
+  var formEnctype: String = js.native
   /**
    * The value of the element, interpreted as one of the following in order: a time value a
    * number null if conversion is not possible
    *
    * MDN
    */
-  var valueAsNumber: Int = ???
+  var valueAsNumber: Int = js.native
   /**
    * Reflects the placeholder HTML attribute, containing a hint to the user of what can
    * be entered in the control. The placeholder text must not contain carriage returns
@@ -2293,7 +2293,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var placeholder: String = ???
+  var placeholder: String = js.native
   /**
    * Reflects the formmethod HTML attribute, containing the HTTP method that the
    * browser uses to submit the form. If specified, this attribute overrides the method
@@ -2301,7 +2301,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formMethod: String = ???
+  var formMethod: String = js.native
   /**
    * Identifies a list of pre-defined options to suggest to the user. The value must be
    * the id of a <datalist> element in the same document. The browser displays only
@@ -2310,7 +2310,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var list: HTMLElement = ???
+  var list: HTMLElement = js.native
   /**
    * Reflects the autocomplete HTML attribute, indicating whether the value of the
    * control can be automatically completed by the browser. Ignored if the value of the
@@ -2323,7 +2323,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var autocomplete: String = ???
+  var autocomplete: String = js.native
   /**
    * Reflects the min HTML attribute, containing the minimum (numeric or date-time)
    * value for this item, which must not be greater than its maximum (max attribute)
@@ -2331,7 +2331,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var min: String = ???
+  var min: String = js.native
   /**
    * Reflects the formaction HTML attribute, containing the URI of a program that
    * processes information submitted by the element. If specified, this attribute
@@ -2339,7 +2339,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formAction: String = ???
+  var formAction: String = js.native
   /**
    * Reflects the pattern HTML attribute, containing a regular expression that the
    * control's value is checked against. The pattern must match the entire value, not
@@ -2349,13 +2349,13 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var pattern: String = ???
+  var pattern: String = js.native
   /**
    * The validity state that this element is in. 
    *
    * MDN
    */
-  var validity: ValidityState = ???
+  var validity: ValidityState = js.native
   /**
    * Reflects the formnovalidate HTML attribute, indicating that the form is not to
    * be validated when it is submitted. If specified, this attribute overrides the
@@ -2363,14 +2363,14 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var formNoValidate: String = ???
+  var formNoValidate: String = js.native
   /**
    * Reflects the multiple HTML attribute, indicating whether more than one value is
    * possible (e.g., multiple files).
    *
    * MDN
    */
-  var multiple: Boolean = ???
+  var multiple: Boolean = js.native
 
   /**
    * Returns false if the element is a candidate for constraint validation, and it does
@@ -2380,7 +2380,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def checkValidity(): Boolean = ???
+  def checkValidity(): Boolean = js.native
   /**
    * Decrements the value by (step * n), where n defaults to 1 if not specified. Throws an
    * INVALID_STATE_ERR exception: if the method is not applicable to for the current
@@ -2389,7 +2389,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def stepDown(n: Int = ???): Unit = ???
+  def stepDown(n: Int = js.native): Unit = js.native
 
   /**
    * Increments the value by (step * n), where n defaults to 1 if not specified. Throws an
@@ -2399,7 +2399,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def stepUp(n: Int = ???): Unit = ???
+  def stepUp(n: Int = js.native): Unit = js.native
 
   /**
    * Sets a custom validity message for the element. If this message is not the empty
@@ -2408,7 +2408,7 @@ class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  def setCustomValidity(error: String): Unit = ???
+  def setCustomValidity(error: String): Unit = js.native
 }
 
 /**
@@ -2426,39 +2426,39 @@ class HTMLAnchorElement extends HTMLElement {
    *
    * MDN
    */
-  var rel: String = ???
+  var rel: String = js.native
   /**
    * Is a DOMString representing the protocol component, including trailing colon
    * (':'), of the referenced URL.
    *
    * MDN
    */
-  var protocol: String = ???
+  var protocol: String = js.native
   /**
    * Is a DOMString representing tThe search element, including leading question mark
    * ('?'), if any, of the referenced URL.
    *
    * MDN
    */
-  var search: String = ???
+  var search: String = js.native
   /**
    * Is a DOMString representing a comma-separated list of coordinates.
    *
    * MDN
    */
-  var coords: String = ???
+  var coords: String = js.native
   /**
    * Is a DOMString representing the hostname in the referenced URL.
    *
    * MDN
    */
-  var hostname: String = ???
+  var hostname: String = js.native
   /**
    * Is a DOMString representing the path name component, if any, of the referenced URL.
    *
    * MDN
    */
-  var pathname: String = ???
+  var pathname: String = js.native
 
   /**
    * Is a DOMString that reflects the target HTML attribute, indicating where to
@@ -2466,7 +2466,7 @@ class HTMLAnchorElement extends HTMLElement {
    *
    * MDN
    */
-  var target: String = ???
+  var target: String = js.native
 
   /**
    * Is a DOMString that reflects the href HTML attribute, containing a valid URL of a
@@ -2474,46 +2474,46 @@ class HTMLAnchorElement extends HTMLElement {
    *
    * MDN
    */
-  var href: String = ???
+  var href: String = js.native
   /**
    * Is a DOMString representing the anchor name.
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * Is a DOMString representing the character encoding of the linked resource.
    *
    * MDN
    */
-  var charset: String = ???
+  var charset: String = js.native
   /**
    * Is a DOMString that reflects the hreflang HTML attribute, indicating the language
    * of the linked resource.
    *
    * MDN
    */
-  var hreflang: String = ???
+  var hreflang: String = js.native
   /**
    * Is a DOMString representing the port component, if any, of the referenced URL.
    *
    * MDN
    */
-  var port: String = ???
+  var port: String = js.native
   /**
    * Is a DOMString representing the hostname and port (if it's not the default port) in
    * the referenced URL.
    *
    * MDN
    */
-  var host: String = ???
+  var host: String = js.native
   /**
    * Is a DOMString representing the fragment identifier, including the leading hash
    * mark ('#'), if any, in the referenced URL.
    *
    * MDN
    */
-  var hash: String = ???
+  var hash: String = js.native
 
   /**
    * Is a DOMString representing that the rev HTML attribute, specifying the
@@ -2521,22 +2521,22 @@ class HTMLAnchorElement extends HTMLElement {
    *
    * MDN
    */
-  var rev: String = ???
+  var rev: String = js.native
   /**
    * Is a DOMString representing the shape of the active area.
    *
    * MDN
    */
-  var shape: String = ???
-  var `type`: String = ???
-  var mimeType: String = ???
+  var shape: String = js.native
+  var `type`: String = js.native
+  var mimeType: String = js.native
 
   /**
    * Is a DOMString being a synonym for the Node.textContent property.
    *
    * MDN
    */
-  var text: String = ???
+  var text: String = js.native
 }
 
 /**
@@ -2554,28 +2554,28 @@ class HTMLParamElement extends HTMLElement {
    *
    * MDN
    */
-  var value: String = ???
+  var value: String = js.native
   /**
    * Is a DOMString representing the name of the parameter. It reflects the name
    * attribute.
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * Is a DOMString that reflects the type HTML attribute, indicating the MIME
    * type of the linked resource
    *
    * MDN
    */
-  var `type`: String = ???
+  var `type`: String = js.native
   /**
    * Is a DOMString containing the type of the value. It reflects the valuetype
    * attribute and has one of the values: "data", "ref", or "object".
    *
    * MDN
    */
-  var valueType: String = ???
+  var valueType: String = js.native
 }
 
 /**
@@ -2592,12 +2592,12 @@ class HTMLPreElement extends HTMLElement {
    *
    * MDN
    */
-  var width: Int = ???
+  var width: Int = js.native
 }
 
 
 class HTMLPhraseElement extends HTMLElement {
-  var dateTime: String = ???
+  var dateTime: String = js.native
 }
 
 
@@ -2616,14 +2616,14 @@ class HTMLCanvasElement extends HTMLElement {
    *
    * MDN
    */
-  var width: Int = ???
+  var width: Int = js.native
   /**
    * Reflects the height HTML attribute, specifying the height of the coordinate space
    * in CSS pixels.
    *
    * MDN
    */
-  var height: Int = ???
+  var height: Int = js.native
 
   /**
    * Returns a data: URL containing a representation of the image in the format
@@ -2638,7 +2638,7 @@ class HTMLCanvasElement extends HTMLElement {
    *
    * MDN
    */
-  def toDataURL(`type`: String, args: js.Any*): String = ???
+  def toDataURL(`type`: String, args: js.Any*): String = js.native
 
   /**
    * Returns a drawing context on the canvas, or null if the context ID is not supported. A
@@ -2649,7 +2649,7 @@ class HTMLCanvasElement extends HTMLElement {
    *
    * MDN
    */
-  def getContext(contextId: String, args: js.Any*): js.Dynamic = ???
+  def getContext(contextId: String, args: js.Any*): js.Dynamic = js.native
 }
 
 
@@ -2665,7 +2665,7 @@ class HTMLTitleElement extends HTMLElement {
    *
    * MDN
    */
-  var text: String = ???
+  var text: String = js.native
 }
 
 
@@ -2682,13 +2682,13 @@ class HTMLStyleElement extends HTMLElement with LinkStyle {
    *
    * MDN
    */
-  var media: String = ???
+  var media: String = js.native
   /**
    * Returns the type of the current style.
    *
    * MDN
    */
-  var `type`: String = ???
+  var `type`: String = js.native
 }
 
 
@@ -2729,21 +2729,21 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var width: Int = ???
+  var width: Int = js.native
   /**
    * Is a DOMSettableTokenList describing a list of id of <th> elements that represents
    * headers associated with the cell. It reflects the headers attribute.
    *
    * MDN
    */
-  var headers: String = ???
+  var headers: String = js.native
   /**
    * Is a long representing the cell position in the cells collection of the <tr> it
    * belongs to. If the cell doesn't belong to a <tr>, it returns -1.
    *
    * MDN
    */
-  var cellIndex: Int = ???
+  var cellIndex: Int = js.native
   /**
    * Is a DOMString containing an enumerated value reflecting the align attribute. It
    * indicates the alignment of the element's contents with respect to the surrounding
@@ -2751,7 +2751,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var align: String = ???
+  var align: String = js.native
 
   /**
    * Is an unsigned long that represents the number of columns this cell must span. It
@@ -2759,7 +2759,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var colSpan: Int = ???
+  var colSpan: Int = js.native
 
   /**
    * Is a DOMString containing a name grouping cells in virtual. It reflects the
@@ -2767,21 +2767,21 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var axis: String = ???
+  var axis: String = js.native
   /**
    * Is a DOMString containing a length of pixel of the hinted height of the cell. It
    * reflects the obsolete height attribute.
    *
    * MDN
    */
-  var height: js.Any = ???
+  var height: js.Any = js.native
   /**
    * Is a Boolean value reflecting the nowrap attribute and indicating if cell content
    * can be broken in several lines.
    *
    * MDN
    */
-  var noWrap: Boolean = ???
+  var noWrap: Boolean = js.native
 
   /**
    * Is an unsigned long that represents the number of rows this cell must span. It
@@ -2789,7 +2789,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
    *
    * MDN
    */
-  var rowSpan: Int = ???
+  var rowSpan: Int = js.native
 
 
 }
@@ -2811,7 +2811,7 @@ class HTMLBaseFontElement extends HTMLElement {
    *
    * MDN
    */
-  var face: String = ???
+  var face: String = js.native
   /**
    * Is a DOMString representing the font size as either a numeric or relative value.
    * Numeric values range from 1 to 7 with 1 being the smallest and 3 the default. Relative
@@ -2819,7 +2819,7 @@ class HTMLBaseFontElement extends HTMLElement {
    *
    * MDN
    */
-  var size: Int = ???
+  var size: Int = js.native
 }
 
 
@@ -2837,8 +2837,8 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var value: String = ???
-  var status: js.Any = ???
+  var value: String = js.native
+  var status: js.Any = js.native
   /**
    * The containing form element, if this element is in a form. If this element is not
    * contained in a form element, it can be the id attribute of any <form> element in the
@@ -2846,13 +2846,13 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = ???
+  var form: HTMLFormElement = js.native
   /**
    * Reflects name HTML attribute, containing the name of the control.
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * The index of the beginning of selected text. If no text is selected, contains the
    * index of the character that follows the input cursor. On being set, the control
@@ -2861,33 +2861,33 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var selectionStart: Int = ???
+  var selectionStart: Int = js.native
   /**
    * Reflects the rows HTML attribute, indicating the number of visible text lines for
    * the control.
    *
    * MDN
    */
-  var rows: Int = ???
+  var rows: Int = js.native
   /**
    * Reflects the cols HTML attribute, indicating the visible width of the text area.
    *
    * MDN
    */
-  var cols: Int = ???
+  var cols: Int = js.native
   /**
    * Reflects the readonly HTML attribute, indicating that the user cannot modify the
    * value of the control.
    *
    * MDN
    */
-  var readOnly: Boolean = ???
+  var readOnly: Boolean = js.native
   /**
    * Reflects the wrap HTML attribute, indicating how the control wraps text.
    *
    * MDN
    */
-  var wrap: String = ???
+  var wrap: String = js.native
   /**
    * The index of the end of selected text. If no text is selected, contains the index of
    * the character that follows the input cursor. On being set, the control behaves as if
@@ -2896,12 +2896,12 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var selectionEnd: Int = ???
+  var selectionEnd: Int = js.native
 
   /**
    * The string textarea.
    */
-  def `type`: String = ???
+  def `type`: String = js.native
 
   /**
    * The control's default value, which behaves like the element.textContent
@@ -2909,7 +2909,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var defaultValue: String = ???
+  var defaultValue: String = js.native
 
   /**
    * Selects a range of text, and sets selectionStart and selectionEnd. If either
@@ -2918,14 +2918,14 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  def setSelectionRange(start: Int, end: Int): Unit = ???
+  def setSelectionRange(start: Int, end: Int): Unit = js.native
 
   /**
    * Selects the contents of the control.
    *
    * MDN
    */
-  def select(): Unit = ???
+  def select(): Unit = js.native
 
   /**
    * A localized message that describes the validation constraints that the control
@@ -2935,27 +2935,27 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var validationMessage: String = ???
+  var validationMessage: String = js.native
   /**
    * Reflects the autofocus HTML attribute, indicating that the control should have
    * input focus when the page loads
    *
    * MDN
    */
-  var autofocus: Boolean = ???
+  var autofocus: Boolean = js.native
   /**
    * The validity states that this element is in.
    *
    * MDN
    */
-  var validity: ValidityState = ???
+  var validity: ValidityState = js.native
   /**
    * Reflects the required HTML attribute, indicating that the user must specify a
    * value before submitting the form.
    *
    * MDN
    */
-  var required: Boolean = ???
+  var required: Boolean = js.native
   /**
    * Reflects the maxlength HTML attribute, indicating the maximum number of
    * characters the user can enter. This constraint is evaluated only when the value
@@ -2963,21 +2963,21 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  var maxLength: Int = ???
+  var maxLength: Int = js.native
   /**
    * Indicates whether the element is a candidate for constraint validation. It is
    * false if any conditions bar it from constraint validation.
    *
    * MDN
    */
-  var willValidate: Boolean = ???
+  var willValidate: Boolean = js.native
   /**
    * Reflects the placeholder HTML attribute, containing a hint to the user about what
    * to enter in the control.
    *
    * MDN
    */
-  var placeholder: String = ???
+  var placeholder: String = js.native
 
   /**
    * Returns false if the button is a candidate for constraint validation, and it does
@@ -2987,7 +2987,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  def checkValidity(): Boolean = ???
+  def checkValidity(): Boolean = js.native
 
   /**
    * Sets a custom validity message for the element. If this message is not the empty
@@ -2996,7 +2996,7 @@ class HTMLTextAreaElement extends HTMLElement {
    *
    * MDN
    */
-  def setCustomValidity(error: String): Unit = ???
+  def setCustomValidity(error: String): Unit = js.native
 }
 
 /**
@@ -3008,14 +3008,14 @@ class HTMLTextAreaElement extends HTMLElement {
  * MDN
  */
 class HTMLModElement extends HTMLElement {
-  var dateTime: String = ???
+  var dateTime: String = js.native
   /**
    * Reflects the cite HTML attribute, containing a URI of a resource explaining the
    * change.
    *
    * MDN
    */
-  var cite: String = ???
+  var cite: String = js.native
 }
 
 
@@ -3027,27 +3027,27 @@ class HTMLModElement extends HTMLElement {
  * MDN
  */
 class HTMLTableColElement extends HTMLElement with HTMLTableAlignment {
-  var width: js.Any = ???
+  var width: js.Any = js.native
   /**
    * Indicates the horizontal alignment of the cell data in the column.
    *
    * MDN
    */
-  var align: String = ???
+  var align: String = js.native
   /**
    * Reflects the span HTML attribute, indicating the number of columns to apply this
    * object's attributes to. Must be a positive integer.
    *
    * MDN
    */
-  var span: Int = ???
+  var span: Int = js.native
 }
 
 
 trait HTMLTableAlignment extends js.Object {
-  var ch: String = ???
-  var vAlign: String = ???
-  var chOff: String = ???
+  var ch: String = js.native
+  var vAlign: String = js.native
+  var chOff: String = js.native
 }
 
 /**
@@ -3076,7 +3076,7 @@ class HTMLDivElement extends HTMLElement {
    *
    * MDN
    */
-  var align: String = ???
+  var align: String = js.native
 
 }
 
@@ -3093,7 +3093,7 @@ class HTMLBRElement extends HTMLElement {
    *
    * MDN
    */
-  var clear: String = ???
+  var clear: String = js.native
 }
 
 
@@ -3110,13 +3110,13 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var initialTime: Double = ???
+  var initialTime: Double = js.native
   /**
    * The ranges of the media source that the browser has played, if any.
    *
    * MDN
    */
-  var played: TimeRanges = ???
+  var played: TimeRanges = js.native
   /**
    * The absolute URL of the chosen media resource (if, for example, the server selects a
    * media file based on the resolution of the user's display), or an empty string if the
@@ -3124,7 +3124,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var currentSrc: String = ???
+  var currentSrc: String = js.native
 
   /**
    * Reflects the loop HTML attribute, indicating whether the media element should
@@ -3132,33 +3132,33 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var loop: Boolean = ???
+  var loop: Boolean = js.native
   /**
    * Indicates whether the media element has ended playback.
    *
    * MDN
    */
-  var ended: Boolean = ???
+  var ended: Boolean = js.native
   /**
    * The ranges of the media source that the browser has buffered (if any) at the moment
    * the buffered property is accessed. The returned TimeRanges object is normalized.
    *
    * MDN
    */
-  var buffered: TimeRanges = ???
+  var buffered: TimeRanges = js.native
   /**
    * The MediaError object for the most recent error, or null if there has not been an
    * error.
    *
    * MDN
    */
-  var error: MediaError = ???
+  var error: MediaError = js.native
   /**
    * The time ranges that the user is able to seek to, if any.
    *
    * MDN
    */
-  var seekable: TimeRanges = ???
+  var seekable: TimeRanges = js.native
   /**
    * Reflects the autoplay HTML attribute, indicating whether playback should
    * automatically begin as soon as enough media is available to do so without
@@ -3166,20 +3166,20 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var autoplay: Boolean = ???
+  var autoplay: Boolean = js.native
   /**
    * Reflects the controls HTML attribute, indicating whether user interface items
    * for controlling the resource should be displayed.
    *
    * MDN
    */
-  var controls: Boolean = ???
+  var controls: Boolean = js.native
   /**
    * The audio volume, from 0.0 (silent) to 1.0 (loudest).
    *
    * MDN
    */
-  var volume: Double = ???
+  var volume: Double = js.native
   /**
    * Reflects the src HTML attribute, containing the URL of a media resource to use.
    * Gecko implements a similar functionality is available for streams:
@@ -3187,7 +3187,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var src: String = ???
+  var src: String = js.native
   /**
    * The current rate at which the media is being played back. This is used to implement
    * user controls for fast forward, slow motion, and so forth. The normal playback rate
@@ -3200,7 +3200,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var playbackRate: Double = ???
+  var playbackRate: Double = js.native
   /**
    * The length of the media in seconds, or zero if no media data is available.  If the
    * media data is available but the length is unknown, this value is NaN.  If the media is
@@ -3208,13 +3208,13 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var duration: Double = ???
+  var duration: Double = js.native
   /**
    * true if the audio is muted, and false otherwise.
    *
    * MDN
    */
-  var muted: Boolean = ???
+  var muted: Boolean = js.native
   /**
    * The default playback rate for the media. 1.0 is "normal speed," values lower than
    * 1.0 make the media play slower than normal, higher values make it play faster. The
@@ -3222,26 +3222,26 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var defaultPlaybackRate: Double = ???
+  var defaultPlaybackRate: Double = js.native
   /**
    * Indicates whether the media element is paused.
    *
    * MDN
    */
-  var paused: Boolean = ???
+  var paused: Boolean = js.native
   /**
    * Indicates whether the media is in the process of seeking to a new position.
    *
    * MDN
    */
-  var seeking: Boolean = ???
+  var seeking: Boolean = js.native
   /**
    * The current playback time, in seconds. Setting this value seeks the media to the new
    * time.
    *
    * MDN
    */
-  var currentTime: Double = ???
+  var currentTime: Double = js.native
   /**
    * Reflects the preload HTML attribute, indicating what data should be preloaded, if
    * any. Possible values are: none, metadata, auto. See preload attribute
@@ -3249,7 +3249,7 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var preload: String = ???
+  var preload: String = js.native
   /**
    * The current state of fetching the media over the network. Constant Value
    * Description NETWORK_EMPTY 0 There is no data yet.  The readyState is also
@@ -3258,9 +3258,9 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  var networkState: Int = ???
+  var networkState: Int = js.native
 
-  def pause(): Unit = ???
+  def pause(): Unit = js.native
 
   /**
    * Begins playback of the media. If you have changed the src attribute of the media
@@ -3269,34 +3269,34 @@ class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  def play(): Unit = ???
+  def play(): Unit = js.native
 
   /**
    * Begins loading the media content from the server.
    *
    * MDN
    */
-  def load(): Unit = ???
+  def load(): Unit = js.native
 
   /**
    * Determines whether the specified media type can be played back.
    *
    * MDN
    */
-  def canPlayType(`type`: String): String = ???
+  def canPlayType(`type`: String): String = js.native
 
   /**
    * Represents the list of TextTrack objects contained in the element.
    *
    * MDN
    */
-  var textTracks: TextTrackList = ???
+  var textTracks: TextTrackList = js.native
   /**
    * Represents the list of AudioTrack objects contained in the element.
    *
    * MDN
    */
-  var audioTracks: AudioTrackList = ???
+  var audioTracks: AudioTrackList = js.native
 }
 
 object HTMLMediaElement extends js.Object {
@@ -3307,36 +3307,36 @@ object HTMLMediaElement extends js.Object {
    *
    * MDN
    */
-  val HAVE_METADATA: Int = ???
+  val HAVE_METADATA: Int = js.native
   /**
    * Data is available for the current playback position, but not enough to actually
    * play more than one frame.
    *
    * MDN
    */
-  val HAVE_CURRENT_DATA: Int = ???
+  val HAVE_CURRENT_DATA: Int = js.native
   /**
    * No information is available about the media resource.
    *
    * MDN
    */
-  val HAVE_NOTHING: Int = ???
-  val NETWORK_NO_SOURCE: Int = ???
+  val HAVE_NOTHING: Int = js.native
+  val NETWORK_NO_SOURCE: Int = js.native
   /**
    * Enough data is available—and the download rate is high enough—that the media can be
    * played through to the end without interruption.
    *
    * MDN
    */
-  val HAVE_ENOUGH_DATA: Int = ???
+  val HAVE_ENOUGH_DATA: Int = js.native
   /**
    * There is no data yet.  The readyState is also HAVE_NOTHING.
    *
    * MDN
    */
-  val NETWORK_EMPTY: Int = ???
-  val NETWORK_LOADING: Int = ???
-  val NETWORK_IDLE: Int = ???
+  val NETWORK_EMPTY: Int = js.native
+  val NETWORK_LOADING: Int = js.native
+  val NETWORK_IDLE: Int = js.native
   /**
    * Data for the current playback position as well as for at least a little bit of time
    * into the future is available (in other words, at least two frames of video, for
@@ -3344,11 +3344,11 @@ object HTMLMediaElement extends js.Object {
    *
    * MDN
    */
-  val HAVE_FUTURE_DATA: Int = ???
+  val HAVE_FUTURE_DATA: Int = js.native
 }
 
 class HTMLDTElement extends HTMLElement {
-  var noWrap: Boolean = ???
+  var noWrap: Boolean = js.native
 }
 
 
@@ -3360,7 +3360,7 @@ class HTMLDTElement extends HTMLElement {
  * MDN
  */
 class HTMLFieldSetElement extends HTMLElement {
-  var align: String = ???
+  var align: String = js.native
 
   /**
    * The containing form element, if this element is in a form. If the button is not a
@@ -3369,7 +3369,7 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  def form: HTMLFormElement = ???
+  def form: HTMLFormElement = js.native
 
   /**
    * A localized message that describes the validation constraints that the element
@@ -3379,21 +3379,21 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  def validationMessage: String = ???
+  def validationMessage: String = js.native
 
   /**
    * The validity states that this element is in.
    *
    * MDN
    */
-  var validity: ValidityState = ???
+  var validity: ValidityState = js.native
   /**
    * Always false because <fieldset> objects are never candidates for constraint
    * validation.
    *
    * MDN
    */
-  var willValidate: Boolean = ???
+  var willValidate: Boolean = js.native
 
   /**
    * Always returns true because <fieldset> objects are never candidates for
@@ -3401,7 +3401,7 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  def checkValidity(): Boolean = ???
+  def checkValidity(): Boolean = js.native
 
   /**
    * Sets a custom validity message for the field set. If this message is not the empty
@@ -3410,15 +3410,15 @@ class HTMLFieldSetElement extends HTMLElement {
    *
    * MDN
    */
-  def setCustomValidity(error: String): Unit = ???
+  def setCustomValidity(error: String): Unit = js.native
 }
 
 
 class HTMLBGSoundElement extends HTMLElement {
-  var balance: js.Any = ???
-  var volume: js.Any = ???
-  var src: String = ???
-  var loop: Double = ???
+  var balance: js.Any = js.native
+  var volume: js.Any = js.native
+  var src: String = js.native
+  var loop: Double = js.native
 }
 
 
@@ -3429,36 +3429,36 @@ class HTMLBGSoundElement extends HTMLElement {
  * MDN
  */
 class HTMLElement extends Element {
-  var onblur: js.Function1[FocusEvent, _] = ???
-  var onfocus: js.Function1[FocusEvent, _] = ???
-  var onmouseleave: js.Function1[MouseEvent, _] = ???
-  var onbeforecut: js.Function1[DragEvent, _] = ???
-  var onkeydown: js.Function1[KeyboardEvent, _] = ???
-  var onkeyup: js.Function1[KeyboardEvent, _] = ???
-  var onreset: js.Function1[Event, _] = ???
-  var onhelp: js.Function1[Event, _] = ???
-  var ondragleave: js.Function1[DragEvent, _] = ???
-  var className: String = ???
-  var onfocusin: js.Function1[FocusEvent, _] = ???
-  var onseeked: js.Function1[Event, _] = ???
-  var recordNumber: js.Any = ???
+  var onblur: js.Function1[FocusEvent, _] = js.native
+  var onfocus: js.Function1[FocusEvent, _] = js.native
+  var onmouseleave: js.Function1[MouseEvent, _] = js.native
+  var onbeforecut: js.Function1[DragEvent, _] = js.native
+  var onkeydown: js.Function1[KeyboardEvent, _] = js.native
+  var onkeyup: js.Function1[KeyboardEvent, _] = js.native
+  var onreset: js.Function1[Event, _] = js.native
+  var onhelp: js.Function1[Event, _] = js.native
+  var ondragleave: js.Function1[DragEvent, _] = js.native
+  var className: String = js.native
+  var onfocusin: js.Function1[FocusEvent, _] = js.native
+  var onseeked: js.Function1[Event, _] = js.native
+  var recordNumber: js.Any = js.native
   /**
    * Establishes the text to be displayed in a 'tool tip' popup when the mouse is over the
    * displayed node.
    *
    * MDN
    */
-  var title: String = ???
+  var title: String = js.native
 
 
-  var ondurationchange: js.Function1[Event, _] = ???
+  var ondurationchange: js.Function1[Event, _] = js.native
 
   /**
    * Height of an element relative to the element's offsetParent.
    *
    * MDN
    */
-  def offsetHeight: Double = ???
+  def offsetHeight: Double = js.native
 
   /**
    * The dir attribute gets or sets the text writing directionality of the content of the
@@ -3466,20 +3466,20 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var dir: String = ???
-  var onemptied: js.Function1[Event, _] = ???
-  var onseeking: js.Function1[Event, _] = ???
-  var oncanplay: js.Function1[Event, _] = ???
-  var ondeactivate: js.Function1[UIEvent, _] = ???
+  var dir: String = js.native
+  var onemptied: js.Function1[Event, _] = js.native
+  var onseeking: js.Function1[Event, _] = js.native
+  var oncanplay: js.Function1[Event, _] = js.native
+  var ondeactivate: js.Function1[UIEvent, _] = js.native
 
-  var onloadstart: js.Function1[Event, _] = ???
-  var ondragenter: js.Function1[DragEvent, _] = ???
-  var onsubmit: js.Function1[Event, _] = ???
+  var onloadstart: js.Function1[Event, _] = js.native
+  var ondragenter: js.Function1[DragEvent, _] = js.native
+  var onsubmit: js.Function1[Event, _] = js.native
 
-  var onchange: js.Function1[Event, _] = ???
+  var onchange: js.Function1[Event, _] = js.native
 
-  var onbeforeactivate: js.Function1[UIEvent, _] = ???
-  var oncanplaythrough: js.Function1[Event, _] = ???
+  var onbeforeactivate: js.Function1[UIEvent, _] = js.native
+  var oncanplaythrough: js.Function1[Event, _] = js.native
 
   /**
    * offsetParent returns a reference to the object which is the closest (nearest in the
@@ -3491,17 +3491,17 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  def offsetParent: Element = ???
+  def offsetParent: Element = js.native
 
-  var onsuspend: js.Function1[Event, _] = ???
-  var readyState: js.Any = ???
-  var onmouseenter: js.Function1[MouseEvent, _] = ???
+  var onsuspend: js.Function1[Event, _] = js.native
+  var readyState: js.Any = js.native
+  var onmouseenter: js.Function1[MouseEvent, _] = js.native
 
-  var onmouseout: js.Function1[MouseEvent, _] = ???
-  var parentElement: HTMLElement = ???
-  var onmousewheel: js.Function1[WheelEvent, _] = ???
-  var onvolumechange: js.Function1[Event, _] = ???
-  var filters: Object = ???
+  var onmouseout: js.Function1[MouseEvent, _] = js.native
+  var parentElement: HTMLElement = js.native
+  var onmousewheel: js.Function1[WheelEvent, _] = js.native
+  var onvolumechange: js.Function1[Event, _] = js.native
+  var filters: Object = js.native
   /**
    * The ParentNode.children read-only property returns a live HTMLCollection of
    * child elements of the given object.
@@ -3513,9 +3513,9 @@ class HTMLElement extends Element {
    * MDN
    */
 
-  var ondragend: js.Function1[DragEvent, _] = ???
-  var onbeforepaste: js.Function1[DragEvent, _] = ???
-  var ondragover: js.Function1[DragEvent, _] = ???
+  var ondragend: js.Function1[DragEvent, _] = js.native
+  var onbeforepaste: js.Function1[DragEvent, _] = js.native
+  var ondragover: js.Function1[DragEvent, _] = js.native
 
   /**
    * offsetTop returns the distance of the current element relative to the top of
@@ -3523,125 +3523,125 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  def offsetTop: Double = ???
+  def offsetTop: Double = js.native
 
-  var onmouseup: js.Function1[MouseEvent, _] = ???
-  var ondragstart: js.Function1[DragEvent, _] = ???
-  var onbeforecopy: js.Function1[DragEvent, _] = ???
-  var ondrag: js.Function1[DragEvent, _] = ???
-  var onmouseover: js.Function1[MouseEvent, _] = ???
+  var onmouseup: js.Function1[MouseEvent, _] = js.native
+  var ondragstart: js.Function1[DragEvent, _] = js.native
+  var onbeforecopy: js.Function1[DragEvent, _] = js.native
+  var ondrag: js.Function1[DragEvent, _] = js.native
+  var onmouseover: js.Function1[MouseEvent, _] = js.native
   /**
    * This property gets or sets the base language of an element's attribute values and
    * text content.
    *
    * MDN
    */
-  var lang: String = ???
+  var lang: String = js.native
 
-  var onpause: js.Function1[Event, _] = ???
+  var onpause: js.Function1[Event, _] = js.native
 
-  var onmousedown: js.Function1[MouseEvent, _] = ???
-  var onclick: js.Function1[MouseEvent, _] = ???
-  var onwaiting: js.Function1[Event, _] = ???
+  var onmousedown: js.Function1[MouseEvent, _] = js.native
+  var onclick: js.Function1[MouseEvent, _] = js.native
+  var onwaiting: js.Function1[Event, _] = js.native
   /**
    * Returns the number of pixels that the upper left corner of the current element is
    * offset to the left within the offsetParent node.
    *
    * MDN
    */
-  var offsetLeft: Double = ???
+  var offsetLeft: Double = js.native
 
-  var onstalled: js.Function1[Event, _] = ???
-  var onmousemove: js.Function1[MouseEvent, _] = ???
+  var onstalled: js.Function1[Event, _] = js.native
+  var onmousemove: js.Function1[MouseEvent, _] = js.native
   /**
    * isContentEditable returns true if the contents of the element are editable;
    * otherwise it returns false.
    *
    * MDN
    */
-  var isContentEditable: Boolean = ???
-  var onratechange: js.Function1[Event, _] = ???
+  var isContentEditable: Boolean = js.native
+  var onratechange: js.Function1[Event, _] = js.native
   /**
    * contentEditable is used to indicate whether or not the element is editable. This
    * enumerated attribute can have the following values:
    *
    * MDN
    */
-  var contentEditable: String = ???
+  var contentEditable: String = js.native
   /**
    * Gets/sets the tab order of the current element.
    *
    * MDN
    */
-  var tabIndex: Int = ???
+  var tabIndex: Int = js.native
 
-  var onprogress: js.Function1[js.Any, _] = ???
-  var ondblclick: js.Function1[MouseEvent, _] = ???
-  var oncontextmenu: js.Function1[MouseEvent, _] = ???
-  var onloadedmetadata: js.Function1[Event, _] = ???
-  var onplay: js.Function1[Event, _] = ???
-  var onplaying: js.Function1[Event, _] = ???
+  var onprogress: js.Function1[js.Any, _] = js.native
+  var ondblclick: js.Function1[MouseEvent, _] = js.native
+  var oncontextmenu: js.Function1[MouseEvent, _] = js.native
+  var onloadedmetadata: js.Function1[Event, _] = js.native
+  var onplay: js.Function1[Event, _] = js.native
+  var onplaying: js.Function1[Event, _] = js.native
 
-  var onfocusout: js.Function1[FocusEvent, _] = ???
-  var onabort: js.Function1[UIEvent, _] = ???
+  var onfocusout: js.Function1[FocusEvent, _] = js.native
+  var onabort: js.Function1[UIEvent, _] = js.native
 
-  var onreadystatechange: js.Function1[Event, _] = ???
-  var onkeypress: js.Function1[KeyboardEvent, _] = ???
-  var onloadeddata: js.Function1[Event, _] = ???
-  var onbeforedeactivate: js.Function1[UIEvent, _] = ???
+  var onreadystatechange: js.Function1[Event, _] = js.native
+  var onkeypress: js.Function1[KeyboardEvent, _] = js.native
+  var onloadeddata: js.Function1[Event, _] = js.native
+  var onbeforedeactivate: js.Function1[UIEvent, _] = js.native
 
-  var disabled: Boolean = ???
-  var onactivate: js.Function1[UIEvent, _] = ???
-  var onselectstart: js.Function1[Event, _] = ???
-  var ontimeupdate: js.Function1[Event, _] = ???
-  var onselect: js.Function1[UIEvent, _] = ???
-  var ondrop: js.Function1[DragEvent, _] = ???
+  var disabled: Boolean = js.native
+  var onactivate: js.Function1[UIEvent, _] = js.native
+  var onselectstart: js.Function1[Event, _] = js.native
+  var ontimeupdate: js.Function1[Event, _] = js.native
+  var onselect: js.Function1[UIEvent, _] = js.native
+  var ondrop: js.Function1[DragEvent, _] = js.native
 
   /**
    * Returns the layout width of an element.
    *
    * MDN
    */
-  def offsetWidth: Double = ???
+  def offsetWidth: Double = js.native
 
-  var onended: js.Function1[Event, _] = ???
-  var onscroll: js.Function1[UIEvent, _] = ???
+  var onended: js.Function1[Event, _] = js.native
+  var onscroll: js.Function1[UIEvent, _] = js.native
 
-  var oninput: js.Function1[Event, _] = ???
+  var oninput: js.Function1[Event, _] = js.native
 
   /**
    * Sets focus on the specified element, if it can be focused.
    *
    * MDN
    */
-  def focus(): Unit = ???
+  def focus(): Unit = js.native
 
   /**
    * The blur method removes keyboard focus from the current element.
    *
    * MDN
    */
-  def blur(): Unit = ???
+  def blur(): Unit = js.native
 
-  def contains(child: HTMLElement): Boolean = ???
+  def contains(child: HTMLElement): Boolean = js.native
 
   /**
    * The click method simulates a mouse click on an element.
    *
    * MDN
    */
-  def click(): Unit = ???
+  def click(): Unit = js.native
 
-  var oncuechange: js.Function1[Event, _] = ???
-  var spellcheck: Boolean = ???
-  var draggable: Boolean = ???
+  var oncuechange: js.Function1[Event, _] = js.native
+  var spellcheck: Boolean = js.native
+  var draggable: Boolean = js.native
 
   /**
    * Returns an object that represents the element's style attribute.
-   * 
+   *
    * MDN
    */
-  var style: CSSStyleDeclaration = ???
+  var style: CSSStyleDeclaration = js.native
 }
 
 
@@ -3653,14 +3653,14 @@ class HTMLElement extends Element {
  * MDN
  */
 class HTMLHRElement extends HTMLElement {
-  var width: Double = ???
+  var width: Double = js.native
   /**
    * Enumerated attribute indicating alignment of the rule with respect to the
    * surrounding context.
    *
    * MDN
    */
-  var align: String = ???
+  var align: String = js.native
 
 }
 
@@ -3680,93 +3680,93 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var width: String = ???
+  var width: String = js.native
   /**
    * Reflects the codetype HTML attribute, specifying the content type of the data.
    *
    * MDN
    */
-  var codeType: String = ???
-  var `object`: Object = ???
+  var codeType: String = js.native
+  var `object`: Object = js.native
   /**
    * The object element's form owner, or null if there isn't one.
    *
    * MDN
    */
-  var form: HTMLFormElement = ???
+  var form: HTMLFormElement = js.native
   /**
    * The name of an applet class file, containing either the applet's subclass, or the
    * path to get to the class, including the class file itself.
    *
    * MDN
    */
-  var code: String = ???
+  var code: String = js.native
   /**
    * Reflects the archive HTML attribute, containing a list of archives for resources
    * for this object.
    *
    * MDN
    */
-  var archive: String = ???
+  var archive: String = js.native
   /**
    * Reflects the standby HTML attribute, specifying a message to display while the
    * object loads.
    *
    * MDN
    */
-  var standby: String = ???
-  var alt: String = ???
-  var classid: String = ???
+  var standby: String = js.native
+  var alt: String = js.native
+  var classid: String = js.native
   /**
    * Reflects the name HTML attribute, specifying the name of the object (HTML 4, or of a
    * browsing context (HTML5.
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * Reflects the usemap HTML attribute, specifying a <map> element to use.
    *
    * MDN
    */
-  var useMap: String = ???
+  var useMap: String = js.native
   /**
    * Reflects the data HTML attribute, specifying the address of a resource's data.
    *
    * MDN
    */
-  var data: String = ???
+  var data: String = js.native
   /**
    * Reflects the height HTML attribute, specifying the displayed height of the
    * resource in CSS pixels.
    *
    * MDN
    */
-  var height: String = ???
+  var height: String = js.native
   /**
    * The active document of the object element's nested browsing context, if any;
    * otherwise null.
    *
    * MDN
    */
-  var contentDocument: Document = ???
-  var altHtml: String = ???
+  var contentDocument: Document = js.native
+  var altHtml: String = js.native
   /**
    * Reflects the codebase HTML attribute, specifying the base path to use to resolve
    * relative URIs.
    *
    * MDN
    */
-  var codeBase: String = ???
+  var codeBase: String = js.native
   /**
    * Reflects the declare HTML attribute, indicating that this is a declaration, not an
    * instantiation, of the object.
    *
    * MDN
    */
-  var declare: Boolean = ???
-  var `type`: String = ???
-  var BaseHref: String = ???
+  var declare: Boolean = js.native
+  var `type`: String = js.native
+  var BaseHref: String = js.native
   /**
    * A localized message that describes the validation constraints that the control
    * does not satisfy (if any). This is the empty string if the control is not a candidate
@@ -3775,14 +3775,14 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var validationMessage: String = ???
+  var validationMessage: String = js.native
 
   /**
    * The validity states that this element is in.
    *
    * MDN
    */
-  def validity: ValidityState = ???
+  def validity: ValidityState = js.native
 
   /**
    * Indicates whether the element is a candidate for constraint validation. Always
@@ -3790,7 +3790,7 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var willValidate: Boolean = ???
+  var willValidate: Boolean = js.native
 
   /**
    * Always returns true, because object objects are never candidates for constraint
@@ -3798,7 +3798,7 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  def checkValidity(): Boolean = ???
+  def checkValidity(): Boolean = js.native
 
   /**
    * Sets a custom validity message for the element. If this message is not the empty
@@ -3807,7 +3807,7 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  def setCustomValidity(error: String): Unit = ???
+  def setCustomValidity(error: String): Unit = js.native
 }
 
 
@@ -3825,14 +3825,14 @@ class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var width: String = ???
+  var width: String = js.native
 
   /**
    * Reflects the src HTML attribute, containing the address of the resource.
    *
    * MDN
    */
-  var src: String = ???
+  var src: String = js.native
 
   /**
    * Reflects the height HTML attribute, containing the displayed height of the
@@ -3840,7 +3840,7 @@ class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
    *
    * MDN
    */
-  var height: String = ???
+  var height: String = js.native
 
 }
 
@@ -3860,7 +3860,7 @@ class HTMLOptGroupElement extends HTMLElement {
    *
    * MDN
    */
-  var label: String = ???
+  var label: String = js.native
 
 }
 
@@ -3879,14 +3879,14 @@ class HTMLIsIndexElement extends HTMLElement {
    *
    * MDN
    */
-  var form: HTMLFormElement = ???
-  var action: String = ???
+  var form: HTMLFormElement = js.native
+  var action: String = js.native
   /**
    * Is a DOMString representing a text to be prompted for the field.
    *
    * MDN
    */
-  var prompt: String = ???
+  var prompt: String = js.native
 }
 
 
@@ -3904,7 +3904,7 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var width: Int = ???
+  var width: Int = js.native
   /**
    * Returns an unsigned long containing the intrinsic width of the resource in CSS
    * pixels, taking into account the dimensions, aspect ratio, clean aperture,
@@ -3913,7 +3913,7 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var videoWidth: Int = ???
+  var videoWidth: Int = js.native
   /**
    * Returns an unsigned long containing the intrinsic height of the resource in CSS
    * pixels, taking into account the dimensions, aspect ratio, clean aperture,
@@ -3922,21 +3922,21 @@ class HTMLVideoElement extends HTMLMediaElement {
    *
    * MDN
    */
-  var videoHeight: Int = ???
+  var videoHeight: Int = js.native
   /**
    * Is a DOMString that reflects the height HTML attribute, which specifies the height
    * of the display area, in CSS pixels.
    *
    * MDN
    */
-  var height: Int = ???
+  var height: Int = js.native
   /**
    * Is a DOMString that reflects the poster HTML attribute, which specifies an image to
    * show while no video data is available.
    *
    * MDN
    */
-  var poster: String = ???
+  var poster: String = js.native
 
 
 }
@@ -3957,14 +3957,14 @@ class HTMLProgressElement extends HTMLElement {
    *
    * MDN
    */
-  var value: Double = ???
+  var value: Double = js.native
   /**
    * This property reflect the content attribute of the same name, limited to numbers
    * greater than zero. Its default value is 1.0.
    *
    * MDN
    */
-  var max: Double = ???
+  var max: Double = js.native
   /**
    * If the progress bar is an indeterminate progress bar, then the position property
    * return −1. Otherwise, it returns the result of dividing the current value by the
@@ -3972,8 +3972,8 @@ class HTMLProgressElement extends HTMLElement {
    *
    * MDN
    */
-  var position: Double = ???
-  var form: HTMLFormElement = ???
+  var position: Double = js.native
+  var form: HTMLFormElement = js.native
 }
 
 
@@ -3990,7 +3990,7 @@ class HTMLDataListElement extends HTMLElement {
    *
    * MDN
    */
-  var options: HTMLCollection = ???
+  var options: HTMLCollection = js.native
 }
 
 
@@ -4001,31 +4001,31 @@ class HTMLDataListElement extends HTMLElement {
  * MDN
  */
 class HTMLTrackElement extends HTMLElement {
-  var kind: String = ???
-  var src: String = ???
-  var srclang: String = ???
-  var track: TextTrack = ???
-  var label: String = ???
+  var kind: String = js.native
+  var src: String = js.native
+  var srclang: String = js.native
+  var track: TextTrack = js.native
+  var label: String = js.native
 }
 
 class HTMLMarqueeElement extends HTMLElement {
-  var width: String = ???
-  var onbounce: js.Function1[Event, _] = ???
-  var vspace: Int = ???
-  var trueSpeed: Boolean = ???
-  var scrollAmount: Double = ???
-  var scrollDelay: Double = ???
-  var behavior: String = ???
-  var height: String = ???
-  var loop: Int = ???
-  var direction: String = ???
-  var hspace: Int = ???
-  var onstart: js.Function1[Event, _] = ???
-  var onfinish: js.Function1[Event, _] = ???
+  var width: String = js.native
+  var onbounce: js.Function1[Event, _] = js.native
+  var vspace: Int = js.native
+  var trueSpeed: Boolean = js.native
+  var scrollAmount: Double = js.native
+  var scrollDelay: Double = js.native
+  var behavior: String = js.native
+  var height: String = js.native
+  var loop: Int = js.native
+  var direction: String = js.native
+  var hspace: Int = js.native
+  var onstart: js.Function1[Event, _] = js.native
+  var onfinish: js.Function1[Event, _] = js.native
 
-  def stop(): Unit = ???
+  def stop(): Unit = js.native
 
-  def start(): Unit = ???
+  def start(): Unit = js.native
 
 
 }
@@ -4054,7 +4054,7 @@ class HTMLHeadElement extends HTMLElement {
    *
    * MDN
    */
-  var profile: String = ???
+  var profile: String = js.native
 }
 
 
@@ -4071,7 +4071,7 @@ class HTMLHeadingElement extends HTMLElement {
    *
    * MDN
    */
-  var align: String = ???
+  var align: String = js.native
 }
 
 
@@ -4087,26 +4087,26 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var length: Int = ???
+  var length: Int = js.native
   /**
    * target gets/sets the target of the action (i.e., the frame to render its output in).
    *
    * MDN
    */
-  var target: String = ???
+  var target: String = js.native
   /**
    * acceptCharset returns a list of the supported character encodings for the given
    * FORM element. This list can be comma- or space-separated.
    *
    * MDN
    */
-  var acceptCharset: String = ???
+  var acceptCharset: String = js.native
   /**
    * enctype gets/sets the content type of the FORM element.
    *
    * MDN
    */
-  var enctype: String = ???
+  var enctype: String = js.native
   /**
    * elements returns an HTMLFormControlsCollection (HTML 4 HTMLCollection) of all
    * the form controls contained in the FORM element, with the exception of input
@@ -4114,39 +4114,39 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var elements: HTMLCollection = ???
+  var elements: HTMLCollection = js.native
   /**
    * action gets/sets the action of the <form> element.
    *
    * MDN
    */
-  var action: String = ???
+  var action: String = js.native
   /**
    * name returns the name of the current form element as a string.
    *
    * MDN
    */
-  var name: String = ???
+  var name: String = js.native
   /**
    * method gets/sets the HTTP method used to submit the form.
    *
    * MDN
    */
-  var method: String = ???
+  var method: String = js.native
   /**
    * encoding is an alternative name for the enctype element on the DOM HTMLFormElement
    * object.
    *
    * MDN
    */
-  var encoding: String = ???
+  var encoding: String = js.native
 
   /**
    * reset restores a form element's default values.
    *
    * MDN
    */
-  def reset(): Unit = ???
+  def reset(): Unit = js.native
   /**
    * Gets the item in the elements collection at the specified index, or null if there is
    * no item at that index. You can also specify the index in array-style brackets or
@@ -4154,14 +4154,14 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  def item(name: js.Any = ???, index: js.Any = ???): js.Dynamic = ???
+  def item(name: js.Any = js.native, index: js.Any = js.native): js.Dynamic = js.native
 
   /**
    * This method does something similar to activating a submit button of the form.
    *
    * MDN
    */
-  def submit(): Unit = ???
+  def submit(): Unit = js.native
 
   /**
    * Gets the item or list of items in elements collection whose name or id match the
@@ -4171,13 +4171,13 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  def namedItem(name: String): js.Dynamic = ???
+  def namedItem(name: String): js.Dynamic = js.native
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(name: String): js.Any = ???
+  def apply(name: String): js.Any = js.native
 
   @scala.scalajs.js.annotation.JSBracketAccess
-  def update(name: String, v: js.Any): Unit = ???
+  def update(name: String, v: js.Any): Unit = js.native
 
   /**
    * Reflects the autocomplete HTML attribute, containing a string that indicates
@@ -4186,16 +4186,16 @@ class HTMLFormElement extends HTMLElement {
    *
    * MDN
    */
-  var autocomplete: String = ???
+  var autocomplete: String = js.native
   /**
    * Reflects the novalidate HTML attribute, indicating that the form should not be
    * validated.
    *
    * MDN
    */
-  var noValidate: Boolean = ???
+  var noValidate: Boolean = js.native
 
-  def checkValidity(): Boolean = ???
+  def checkValidity(): Boolean = js.native
 }
 
 
