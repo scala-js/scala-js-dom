@@ -8,6 +8,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import js.annotation._
+import js.typedarray._
 
 /**
  * Contains drawing surface attributes.
