@@ -7,7 +7,7 @@ normalizedName := "scalajs-dom"
 
 version := "0.7.0-SNAPSHOT"
 
-organization := "org.scala-lang.modules.scalajs"
+organization := "org.scala-js"
 
 scalaVersion := "2.11.2"
 
