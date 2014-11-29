@@ -1048,7 +1048,9 @@ class Node extends EventTarget {
    * The Node.isSupported()returns a Boolean flag containing the result of a test
    * whether the DOM implementation implements a specific feature and this feature is
    * supported by the specific node.
-   *
+   * @deprecated
+   * This feature is obsolete. Although it may still work in some browsers, its use
+   * is discouraged since it could be removed at any time. Try to avoid using it.
    * MDN
    */
   def isSupported(feature: String, version: String): Boolean = ???
@@ -1096,6 +1098,15 @@ class Node extends EventTarget {
   /**
    * Tests whether two nodes are the same, that is they reference the same object.
    *
+   * @deprecated
+   * {{{
+   * // Instead of using
+   * node1.isSameNode(node2)
+   *
+   * // use
+   * node1 === node2 // or
+   * node1 == node2
+   * }}}
    * MDN
    */
   def isSameNode(other: Node): Boolean = ???
@@ -1145,6 +1156,13 @@ class Node extends EventTarget {
    * MDN
    */
   def insertBefore(newChild: Node, refChild: Node = ???): Node = ???
+
+  /**
+   * @return a Boolean value indicating whether a node is a descendant of a given node. or not.
+   *
+   * MDN
+   */
+  def contains(otherNode: Node): Boolean = ???
 }
 
 
