@@ -1,15 +1,8 @@
 language: scala
 script:
   - sbt ++$TRAVIS_SCALA_VERSION package
-after_success:
-  - if [[ "${PUBLISH_ENABLED}" == "true" && "${TRAVIS_PULL_REQUEST}" == "false" && "${TRAVIS_BRANCH}" == "master" && "${PUBLISH_USER}" != "" && "${PUBLISH_PASS}" != "" ]]; then sbt ++$TRAVIS_SCALA_VERSION publish; fi
 scala:
   - 2.10.4
   - 2.11.2
 jdk:
   - oraclejdk7
-env:
-  global:
-    - PUBLISH_ENABLED=true
-    - secure: "U4e4bu6oloMIgWfr/9JNufxP1WGkYzUCLmp05gkXKlTbBKOvfRrRoEIvThU3ugzZ0sa0fexbqYcbvtMiL+Zv1CR7YAUac95qv/KhfUsJgew92iHDAPbNHD40J3q1eykMHX0e/q4Ik5FjbVjKN0Zpd/OAoP0zl/mWmK3gN7I+ijU="
-    - secure: "bcERMMbSaQAUeqylmYDWmr30PAVwqlDvLx4w2EZAmABTbd4BKz3BYevWVnytWGUJ5UkSAVfawRFji+QEul7hRzQ/KOb9eaqytRSsTHhaBeKrqqgaTf1O6Utqch0buNMdhhr6jM6wohlaRz2g53Q2RaHogHWscWwu7bFMxBs51U8="
