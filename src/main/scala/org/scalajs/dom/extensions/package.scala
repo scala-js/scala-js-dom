@@ -1,5 +1,7 @@
 package org.scalajs.dom
 
+import scala.language.implicitConversions
+
 import scala.scalajs.js
 import org.scalajs.dom
 import scala.collection.mutable

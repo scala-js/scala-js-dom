@@ -13,14 +13,14 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 trait GetSVGDocument extends js.Object {
-  def getSVGDocument(): Document = ???
+  def getSVGDocument(): Document = js.native
 }
 
 class SVGPathSegCurvetoQuadraticRel extends SVGPathSeg {
-  var y: Double = ???
-  var y1: Double = ???
-  var x: Double = ???
-  var x1: Double = ???
+  var y: Double = js.native
+  var y1: Double = js.native
+  var x: Double = js.native
+  var x1: Double = js.native
 }
 
 /**
@@ -31,31 +31,31 @@ class SVGPathSegCurvetoQuadraticRel extends SVGPathSeg {
  * MDN
  */
 class SVGMarkerElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
-  var orientType: SVGAnimatedEnumeration = ???
-  var markerUnits: SVGAnimatedEnumeration = ???
+  var orientType: SVGAnimatedEnumeration = js.native
+  var markerUnits: SVGAnimatedEnumeration = js.native
 
-  def markerWidth: SVGAnimatedLength = ???
+  def markerWidth: SVGAnimatedLength = js.native
 
-  def markerHeight: SVGAnimatedLength = ???
+  def markerHeight: SVGAnimatedLength = js.native
 
-  def orientAngle: SVGAnimatedAngle = ???
+  def orientAngle: SVGAnimatedAngle = js.native
 
-  def refY: SVGAnimatedLength = ???
+  def refY: SVGAnimatedLength = js.native
 
-  def refX: SVGAnimatedLength = ???
+  def refX: SVGAnimatedLength = js.native
 
-  def setOrientToAngle(angle: SVGAngle): Unit = ???
+  def setOrientToAngle(angle: SVGAngle): Unit = js.native
 
-  def setOrientToAuto(): Unit = ???
+  def setOrientToAuto(): Unit = js.native
 }
 
 object SVGMarkerElement extends js.Object {
-  val SVG_MARKER_ORIENT_UNKNOWN: Int = ???
-  val SVG_MARKER_ORIENT_ANGLE: Int = ???
-  val SVG_MARKERUNITS_UNKNOWN: Int = ???
-  val SVG_MARKERUNITS_STROKEWIDTH: Int = ???
-  val SVG_MARKER_ORIENT_AUTO: Int = ???
-  val SVG_MARKERUNITS_USERSPACEONUSE: Int = ???
+  val SVG_MARKER_ORIENT_UNKNOWN: Int = js.native
+  val SVG_MARKER_ORIENT_ANGLE: Int = js.native
+  val SVG_MARKERUNITS_UNKNOWN: Int = js.native
+  val SVG_MARKERUNITS_STROKEWIDTH: Int = js.native
+  val SVG_MARKER_ORIENT_AUTO: Int = js.native
+  val SVG_MARKERUNITS_USERSPACEONUSE: Int = js.native
 }
 
 /**
@@ -68,41 +68,41 @@ class SVGGElement extends SVGElement with SVGStylable with SVGTransformable with
 
 
 class SVGPathSegCurvetoCubicSmoothAbs extends SVGPathSeg {
-  var y: Double = ???
-  var x2: Double = ???
-  var x: Double = ???
-  var y2: Double = ???
+  var y: Double = js.native
+  var x2: Double = js.native
+  var x: Double = js.native
+  var y2: Double = js.native
 }
 
 
 class SVGZoomEvent extends UIEvent {
-  def zoomRectScreen: SVGRect = ???
+  def zoomRectScreen: SVGRect = js.native
 
-  def previousScale: Double = ???
+  def previousScale: Double = js.native
 
-  def newScale: Double = ???
+  def newScale: Double = js.native
 
-  def previousTranslate: SVGPoint = ???
+  def previousTranslate: SVGPoint = js.native
 
-  def newTranslate: SVGPoint = ???
+  def newTranslate: SVGPoint = js.native
 }
 
 
 trait SVGUnitTypes extends js.Object {
-  val SVG_UNIT_TYPE_UNKNOWN: Int = ???
-  val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Int = ???
-  val SVG_UNIT_TYPE_USERSPACEONUSE: Int = ???
+  val SVG_UNIT_TYPE_UNKNOWN: Int = js.native
+  val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Int = js.native
+  val SVG_UNIT_TYPE_USERSPACEONUSE: Int = js.native
 }
 
 object SVGUnitTypes extends js.Object {
-  val SVG_UNIT_TYPE_UNKNOWN: Int = ???
-  val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Int = ???
-  val SVG_UNIT_TYPE_USERSPACEONUSE: Int = ???
+  val SVG_UNIT_TYPE_UNKNOWN: Int = js.native
+  val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Int = js.native
+  val SVG_UNIT_TYPE_USERSPACEONUSE: Int = js.native
 }
 
 class SVGPathSegMovetoRel extends SVGPathSeg {
-  var y: Double = ???
-  var x: Double = ???
+  var y: Double = js.native
+  var x: Double = js.native
 }
 
 
@@ -118,28 +118,28 @@ class SVGLineElement extends SVGElement with SVGStylable with SVGTransformable w
    *
    * MDN
    */
-  def y1: SVGAnimatedLength = ???
+  def y1: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute x2 on the given <line> element.
    *
    * MDN
    */
-  def x2: SVGAnimatedLength = ???
+  def x2: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute x1 on the given <line> element.
    *
    * MDN
    */
-  def x1: SVGAnimatedLength = ???
+  def x1: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute y2 on the given <line> element.
    *
    * MDN
    */
-  def y2: SVGAnimatedLength = ???
+  def y2: SVGAnimatedLength = js.native
 }
 
 
@@ -153,8 +153,8 @@ class SVGDescElement extends SVGElement with SVGStylable with SVGLangSpace {
 
 
 class SVGPathSegCurvetoQuadraticSmoothRel extends SVGPathSeg {
-  var y: Double = ???
-  var x: Double = ???
+  var y: Double = js.native
+  var x: Double = js.native
 }
 
 
@@ -171,7 +171,7 @@ class SVGClipPathElement extends SVGElement with SVGUnitTypes with SVGStylable w
    *
    * MDN
    */
-  def clipPathUnits: SVGAnimatedEnumeration = ???
+  def clipPathUnits: SVGAnimatedEnumeration = js.native
 }
 
 
@@ -188,40 +188,40 @@ class SVGTextPositioningElement extends SVGTextContentElement {
    *
    * MDN
    */
-  def y: SVGAnimatedLengthList = ???
+  def y: SVGAnimatedLengthList = js.native
 
   /**
    * Corresponds to attribute rotate on the given element.
    *
    * MDN
    */
-  def rotate: SVGAnimatedNumberList = ???
+  def rotate: SVGAnimatedNumberList = js.native
 
   /**
    * Corresponds to attribute dy on the given element.
    *
    * MDN
    */
-  def dy: SVGAnimatedLengthList = ???
+  def dy: SVGAnimatedLengthList = js.native
 
   /**
    * Corresponds to attribute x on the given element.
    *
    * MDN
    */
-  def x: SVGAnimatedLengthList = ???
+  def x: SVGAnimatedLengthList = js.native
 
   /**
    * Corresponds to attribute dx on the given element.
    *
    * MDN
    */
-  def dx: SVGAnimatedLengthList = ???
+  def dx: SVGAnimatedLengthList = js.native
 }
 
 
 class SVGPathSegLinetoVerticalRel extends SVGPathSeg {
-  var y: Double = ???
+  var y: Double = js.native
 }
 
 
@@ -239,14 +239,14 @@ class SVGAnimatedString extends js.Object {
    *
    * MDN
    */
-  def animVal: String = ???
+  def animVal: String = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: String = ???
+  var baseVal: String = js.native
 }
 
 
@@ -262,26 +262,26 @@ trait SVGTests extends js.Object {
    *
    * MDN
    */
-  var requiredFeatures: SVGStringList = ???
+  var requiredFeatures: SVGStringList = js.native
   /**
    * Corresponds to attribute requiredExtensions on the given element.
    *
    * MDN
    */
-  var requiredExtensions: SVGStringList = ???
+  var requiredExtensions: SVGStringList = js.native
   /**
    * Corresponds to attribute systemLanguage on the given element.
    *
    * MDN
    */
-  var systemLanguage: SVGStringList = ???
+  var systemLanguage: SVGStringList = js.native
 
   /**
    * Returns true if the browser supports the given extension, specified by a URI.
    *
    * MDN
    */
-  def hasExtension(extension: String): Boolean = ???
+  def hasExtension(extension: String): Boolean = js.native
 }
 
 /**
@@ -296,28 +296,28 @@ class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGStylable wi
    *
    * MDN
    */
-  def patternUnits: SVGAnimatedEnumeration = ???
+  def patternUnits: SVGAnimatedEnumeration = js.native
 
   /**
    * Corresponds to attribute y on the given <pattern> element.
    *
    * MDN
    */
-  def y: SVGAnimatedLength = ???
+  def y: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute width on the given <pattern> element.
    *
    * MDN
    */
-  def width: SVGAnimatedLength = ???
+  def width: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute x on the given <pattern> element.
    *
    * MDN
    */
-  def x: SVGAnimatedLength = ???
+  def x: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute patternContentUnits on the given <pattern> element.
@@ -325,21 +325,21 @@ class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGStylable wi
    *
    * MDN
    */
-  def patternContentUnits: SVGAnimatedEnumeration = ???
+  def patternContentUnits: SVGAnimatedEnumeration = js.native
 
   /**
    * Corresponds to attribute patternTransform on the given <pattern> element.
    *
    * MDN
    */
-  def patternTransform: SVGAnimatedTransformList = ???
+  def patternTransform: SVGAnimatedTransformList = js.native
 
   /**
    * Corresponds to attribute height on the given <pattern> element.
    *
    * MDN
    */
-  def height: SVGAnimatedLength = ???
+  def height: SVGAnimatedLength = js.native
 }
 
 
@@ -359,14 +359,14 @@ class SVGAnimatedAngle extends js.Object {
    *
    * MDN
    */
-  def animVal: SVGAngle = ???
+  def animVal: SVGAngle = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: SVGAngle = ???
+  var baseVal: SVGAngle = js.native
 }
 
 
@@ -376,7 +376,7 @@ class SVGAnimatedAngle extends js.Object {
  * MDN
  */
 class SVGScriptElement extends SVGElement with SVGExternalResourcesRequired with SVGURIReference {
-  def `type`: String = ???
+  def `type`: String = js.native
 }
 
 
@@ -395,21 +395,21 @@ class SVGViewElement extends SVGElement with SVGZoomAndPan with SVGFitToViewBox 
    *
    * MDN
    */
-  def viewTarget: SVGStringList = ???
+  def viewTarget: SVGStringList = js.native
 }
 
 
 trait SVGLocatable extends js.Object {
-  var farthestViewportElement: SVGElement = ???
-  var nearestViewportElement: SVGElement = ???
+  var farthestViewportElement: SVGElement = js.native
+  var nearestViewportElement: SVGElement = js.native
 
-  def getBBox(): SVGRect = ???
+  def getBBox(): SVGRect = js.native
 
-  def getTransformToElement(element: SVGElement): SVGMatrix = ???
+  def getTransformToElement(element: SVGElement): SVGMatrix = js.native
 
-  def getCTM(): SVGMatrix = ???
+  def getCTM(): SVGMatrix = js.native
 
-  def getScreenCTM(): SVGMatrix = ???
+  def getScreenCTM(): SVGMatrix = js.native
 }
 
 /**
@@ -437,38 +437,38 @@ class SVGAnimatedTransformList extends js.Object {
    *
    * MDN
    */
-  def animVal: SVGTransformList = ???
+  def animVal: SVGTransformList = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: SVGTransformList = ???
+  var baseVal: SVGTransformList = js.native
 }
 
 
 trait SVGFitToViewBox extends js.Object {
-  var viewBox: SVGAnimatedRect = ???
-  var preserveAspectRatio: SVGAnimatedPreserveAspectRatio = ???
+  var viewBox: SVGAnimatedRect = js.native
+  var preserveAspectRatio: SVGAnimatedPreserveAspectRatio = js.native
 }
 
 class SVGPointList extends js.Object {
-  def numberOfItems: Int = ???
+  def numberOfItems: Int = js.native
 
-  def replaceItem(newItem: SVGPoint, index: Int): SVGPoint = ???
+  def replaceItem(newItem: SVGPoint, index: Int): SVGPoint = js.native
 
-  def getItem(index: Int): SVGPoint = ???
+  def getItem(index: Int): SVGPoint = js.native
 
-  def clear(): Unit = ???
+  def clear(): Unit = js.native
 
-  def appendItem(newItem: SVGPoint): SVGPoint = ???
+  def appendItem(newItem: SVGPoint): SVGPoint = js.native
 
-  def initialize(newItem: SVGPoint): SVGPoint = ???
+  def initialize(newItem: SVGPoint): SVGPoint = js.native
 
-  def removeItem(index: Int): SVGPoint = ???
+  def removeItem(index: Int): SVGPoint = js.native
 
-  def insertItemBefore(newItem: SVGPoint, index: Int): SVGPoint = ???
+  def insertItemBefore(newItem: SVGPoint, index: Int): SVGPoint = js.native
 }
 
 
@@ -488,14 +488,14 @@ class SVGAnimatedLengthList extends js.Object {
    *
    * MDN
    */
-  def animVal: SVGLengthList = ???
+  def animVal: SVGLengthList = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: SVGLengthList = ???
+  var baseVal: SVGLengthList = js.native
 }
 
 
@@ -515,19 +515,19 @@ class SVGAnimatedPreserveAspectRatio extends js.Object {
    *
    * MDN
    */
-  def animVal: SVGPreserveAspectRatio = ???
+  def animVal: SVGPreserveAspectRatio = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: SVGPreserveAspectRatio = ???
+  var baseVal: SVGPreserveAspectRatio = js.native
 }
 
 
 trait SVGExternalResourcesRequired extends js.Object {
-  var externalResourcesRequired: SVGAnimatedBoolean = ???
+  var externalResourcesRequired: SVGAnimatedBoolean = js.native
 }
 
 /**
@@ -547,7 +547,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  var valueAsString: String = ???
+  var valueAsString: String = js.native
   /**
    * The value as a floating point value, in the units expressed by unitType. Setting
    * this attribute will cause value and valueAsString to be updated automatically to
@@ -557,7 +557,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  var valueInSpecifiedUnits: Double = ???
+  var valueInSpecifiedUnits: Double = js.native
   /**
    * The value as a floating point value, in user units. Setting this attribute will
    * cause valueInSpecifiedUnits and valueAsString to be updated automatically to
@@ -567,7 +567,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  var value: Double = ???
+  var value: Double = js.native
 
   /**
    * The type of the value as specified by one of the SVG_ANGLETYPE_* constants defined
@@ -575,7 +575,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  def unitType: Int = ???
+  def unitType: Int = js.native
 
   /**
    * Reset the value as a number with an associated unitType, thereby replacing the
@@ -588,7 +588,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  def newValueSpecifiedUnits(unitType: Int, valueInSpecifiedUnits: Double): Unit = ???
+  def newValueSpecifiedUnits(unitType: Int, valueInSpecifiedUnits: Double): Unit = js.native
 
   /**
    * Preserve the same underlying stored value, but reset the stored unit identifier to
@@ -597,7 +597,7 @@ class SVGAngle extends js.Object {
    *
    * MDN
    */
-  def convertToSpecifiedUnits(unitType: Int): Unit = ???
+  def convertToSpecifiedUnits(unitType: Int): Unit = js.native
 
 
 }
@@ -609,22 +609,22 @@ class SVGAngle extends js.Object {
  */
 object SVGAngle extends js.Object {
 
-  val SVG_ANGLETYPE_RAD: Int = ???
+  val SVG_ANGLETYPE_RAD: Int = js.native
   /**
    * The unit type is not one of predefined unit types. It is invalid to attempt to define a
    * new value of this type or to attempt to switch an existing value to this type.
    *
    * MDN
    */
-  val SVG_ANGLETYPE_UNKNOWN: Int = ???
-  val SVG_ANGLETYPE_UNSPECIFIED: Int = ???
+  val SVG_ANGLETYPE_UNKNOWN: Int = js.native
+  val SVG_ANGLETYPE_UNSPECIFIED: Int = js.native
   /**
    * The unit type was explicitly set to degrees.
    *
    * MDN
    */
-  val SVG_ANGLETYPE_DEG: Int = ???
-  val SVG_ANGLETYPE_GRAD: Int = ???
+  val SVG_ANGLETYPE_DEG: Int = js.native
+  val SVG_ANGLETYPE_GRAD: Int = js.native
 }
 
 /**
@@ -634,7 +634,7 @@ object SVGAngle extends js.Object {
  * MDN
  */
 class SVGElement extends Element {
-  var onmouseover: js.Function1[MouseEvent, _] = ???
+  var onmouseover: js.Function1[MouseEvent, _] = js.native
 
   /**
    * The element which established the current viewport. Often, the nearest ancestor
@@ -642,23 +642,23 @@ class SVGElement extends Element {
    *
    * MDN
    */
-  def viewportElement: SVGElement = ???
+  def viewportElement: SVGElement = js.native
 
-  var onmousemove: js.Function1[MouseEvent, _] = ???
-  var onmouseout: js.Function1[MouseEvent, _] = ???
-  var ondblclick: js.Function1[MouseEvent, _] = ???
-  var onfocusout: js.Function1[FocusEvent, _] = ???
-  var onfocusin: js.Function1[FocusEvent, _] = ???
+  var onmousemove: js.Function1[MouseEvent, _] = js.native
+  var onmouseout: js.Function1[MouseEvent, _] = js.native
+  var ondblclick: js.Function1[MouseEvent, _] = js.native
+  var onfocusout: js.Function1[FocusEvent, _] = js.native
+  var onfocusin: js.Function1[FocusEvent, _] = js.native
   /**
    * Corresponds to attribute xml:base on the given element.
    *
    * MDN
    */
-  var xmlbase: String = ???
-  var onmousedown: js.Function1[MouseEvent, _] = ???
-  var onload: js.Function1[Event, _] = ???
-  var onmouseup: js.Function1[MouseEvent, _] = ???
-  var onclick: js.Function1[MouseEvent, _] = ???
+  var xmlbase: String = js.native
+  var onmousedown: js.Function1[MouseEvent, _] = js.native
+  var onload: js.Function1[Event, _] = js.native
+  var onmouseup: js.Function1[MouseEvent, _] = js.native
+  var onclick: js.Function1[MouseEvent, _] = js.native
 
   /**
    * The nearest ancestor <svg> element. Null if the given element is the outermost svg
@@ -666,24 +666,24 @@ class SVGElement extends Element {
    *
    * MDN
    */
-  def ownerSVGElement: SVGSVGElement = ???
+  def ownerSVGElement: SVGSVGElement = js.native
 
 }
 
 
 class SVGPathSegLinetoHorizontalAbs extends SVGPathSeg {
-  var x: Double = ???
+  var x: Double = js.native
 }
 
 
 class SVGPathSegArcAbs extends SVGPathSeg {
-  var y: Double = ???
-  var sweepFlag: Boolean = ???
-  var r2: Double = ???
-  var x: Double = ???
-  var angle: Double = ???
-  var r1: Double = ???
-  var largeArcFlag: Boolean = ???
+  var y: Double = js.native
+  var sweepFlag: Boolean = js.native
+  var r2: Double = js.native
+  var x: Double = js.native
+  var angle: Double = js.native
+  var r1: Double = js.native
+  var largeArcFlag: Boolean = js.native
 }
 
 
@@ -693,7 +693,7 @@ class SVGPathSegArcAbs extends SVGPathSeg {
  * MDN
  */
 class SVGTransformList extends js.Object {
-  def numberOfItems: Int = ???
+  def numberOfItems: Int = js.native
 
   /**
    * Returns the specified item from the list. The returned item is the item itself and
@@ -704,9 +704,9 @@ class SVGTransformList extends js.Object {
    *
    * MDN
    */
-  def getItem(index: Int): SVGTransform = ???
+  def getItem(index: Int): SVGTransform = js.native
 
-  def consolidate(): SVGTransform = ???
+  def consolidate(): SVGTransform = js.native
 
   /**
    * Clears all existing current items from the list, with the result being an empty
@@ -716,7 +716,7 @@ class SVGTransformList extends js.Object {
    *
    * MDN
    */
-  def clear(): Unit = ???
+  def clear(): Unit = js.native
 
   /**
    * Inserts a new item at the end of the list. If newItem is already in a list, it is removed
@@ -727,7 +727,7 @@ class SVGTransformList extends js.Object {
    *
    * MDN
    */
-  def appendItem(newItem: SVGTransform): SVGTransform = ???
+  def appendItem(newItem: SVGTransform): SVGTransform = js.native
 
   /**
    * Clears all existing current items from the list and re-initializes the list to hold
@@ -740,7 +740,7 @@ class SVGTransformList extends js.Object {
    *
    * MDN
    */
-  def initialize(newItem: SVGTransform): SVGTransform = ???
+  def initialize(newItem: SVGTransform): SVGTransform = js.native
 
   /**
    * Removes an existing item from the list. Exceptions: a DOMException with code
@@ -751,7 +751,7 @@ class SVGTransformList extends js.Object {
    *
    * MDN
    */
-  def removeItem(index: Int): SVGTransform = ???
+  def removeItem(index: Int): SVGTransform = js.native
 
   /**
    * Inserts a new item into the list at the specified position. The first item is number
@@ -766,7 +766,7 @@ class SVGTransformList extends js.Object {
    *
    * MDN
    */
-  def insertItemBefore(newItem: SVGTransform, index: Int): SVGTransform = ???
+  def insertItemBefore(newItem: SVGTransform, index: Int): SVGTransform = js.native
 
   /**
    * Replaces an existing item in the list with a new item. If newItem is already in a list,
@@ -780,9 +780,9 @@ class SVGTransformList extends js.Object {
    *
    * MDN
    */
-  def replaceItem(newItem: SVGTransform, index: Int): SVGTransform = ???
+  def replaceItem(newItem: SVGTransform, index: Int): SVGTransform = js.native
 
-  def createSVGTransformFromMatrix(matrix: SVGMatrix): SVGTransform = ???
+  def createSVGTransformFromMatrix(matrix: SVGMatrix): SVGTransform = js.native
 }
 
 
@@ -804,14 +804,14 @@ class SVGAnimatedLength extends js.Object {
    *
    * MDN
    */
-  def animVal: SVGLength = ???
+  def animVal: SVGLength = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: SVGLength = ???
+  var baseVal: SVGLength = js.native
 }
 
 
@@ -828,7 +828,7 @@ trait SVGAnimatedPoints extends js.Object {
    *
    * MDN
    */
-  var points: SVGPointList = ???
+  var points: SVGPointList = js.native
 
   /**
    * Provides access to the current animated contents of the points attribute. If the
@@ -838,7 +838,7 @@ trait SVGAnimatedPoints extends js.Object {
    *
    * MDN
    */
-  def animatedPoints: SVGPointList = ???
+  def animatedPoints: SVGPointList = js.native
 }
 
 /**
@@ -851,7 +851,7 @@ class SVGDefsElement extends SVGElement with SVGStylable with SVGTransformable w
 
 
 class SVGPathSegLinetoHorizontalRel extends SVGPathSeg {
-  var x: Double = ???
+  var x: Double = js.native
 }
 
 
@@ -867,28 +867,28 @@ class SVGEllipseElement extends SVGElement with SVGStylable with SVGTransformabl
    *
    * MDN
    */
-  def ry: SVGAnimatedLength = ???
+  def ry: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute cx on the given <ellipse> element.
    *
    * MDN
    */
-  def cx: SVGAnimatedLength = ???
+  def cx: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute rx on the given <ellipse> element.
    *
    * MDN
    */
-  def rx: SVGAnimatedLength = ???
+  def rx: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute cy on the given <ellipse> element.
    *
    * MDN
    */
-  def cy: SVGAnimatedLength = ???
+  def cy: SVGAnimatedLength = js.native
 }
 
 
@@ -904,7 +904,7 @@ class SVGAElement extends SVGElement with SVGStylable with SVGTransformable with
    *
    * MDN
    */
-  def target: SVGAnimatedString = ???
+  def target: SVGAnimatedString = js.native
 }
 
 
@@ -921,13 +921,13 @@ trait SVGStylable extends js.Object {
    *
    * MDN
    */
-  var className: SVGAnimatedString = ???
+  var className: SVGAnimatedString = js.native
   /**
    * Corresponds to attribute style on the given element.
    *
    * MDN
    */
-  var style: CSSStyleDeclaration = ???
+  var style: CSSStyleDeclaration = js.native
 }
 
 /**
@@ -942,19 +942,19 @@ trait SVGTransformable extends SVGLocatable {
    *
    * MDN
    */
-  var transform: SVGAnimatedTransformList = ???
+  var transform: SVGAnimatedTransformList = js.native
 }
 
 trait SVGLangSpace extends js.Object {
-  var xmllang: String = ???
-  var xmlspace: String = ???
+  var xmllang: String = js.native
+  var xmlspace: String = js.native
 }
 
 class SVGPoint extends js.Object {
-  var y: Double = ???
-  var x: Double = ???
+  var y: Double = js.native
+  var x: Double = js.native
 
-  def matrixTransform(matrix: SVGMatrix): SVGPoint = ???
+  def matrixTransform(matrix: SVGMatrix): SVGPoint = js.native
 }
 
 
@@ -974,14 +974,14 @@ class SVGAnimatedNumberList extends js.Object {
    *
    * MDN
    */
-  def animVal: SVGNumberList = ???
+  def animVal: SVGNumberList = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  def baseVal: SVGNumberList = ???
+  def baseVal: SVGNumberList = js.native
 }
 
 
@@ -999,29 +999,29 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def width: SVGAnimatedLength = ???
+  def width: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute x on the given <svg> element.
    *
    * MDN
    */
-  def x: SVGAnimatedLength = ???
+  def x: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute contentStyleType on the given <svg> element.
    *
    * MDN
    */
-  var contentStyleType: String = ???
-  var onzoom: js.Function1[js.Any, _] = ???
+  var contentStyleType: String = js.native
+  var onzoom: js.Function1[js.Any, _] = js.native
 
   /**
    * Corresponds to attribute y on the given <svg> element.
    *
    * MDN
    */
-  def y: SVGAnimatedLength = ???
+  def y: SVGAnimatedLength = js.native
 
   /**
    * The position and size of the viewport (implicit or explicit) that corresponds to
@@ -1036,40 +1036,40 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def viewport: SVGRect = ???
+  def viewport: SVGRect = js.native
 
-  var onerror: js.Function1[Event, _] = ???
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * Corresponding size of a pixel unit along the y-axis of the viewport.
    *
    * MDN
    */
-  def pixelUnitToMillimeterY: Double = ???
+  def pixelUnitToMillimeterY: Double = js.native
 
-  var onresize: js.Function1[UIEvent, _] = ???
+  var onresize: js.Function1[UIEvent, _] = js.native
 
   /**
    * Corresponding size of a screen pixel along the y-axis of the viewport.
    *
    * MDN
    */
-  def screenPixelToMillimeterY: Double = ???
+  def screenPixelToMillimeterY: Double = js.native
 
   /**
    * Corresponds to attribute height on the given <svg> element.
    *
    * MDN
    */
-  def height: SVGAnimatedLength = ???
+  def height: SVGAnimatedLength = js.native
 
-  var onabort: js.Function1[UIEvent, _] = ???
+  var onabort: js.Function1[UIEvent, _] = js.native
   /**
    * Corresponds to attribute contentScriptType on the given <svg> element.
    *
    * MDN
    */
-  var contentScriptType: String = ???
+  var contentScriptType: String = js.native
 
   /**
    * Size of a pixel units (as defined by CSS2) along the x-axis of the viewport, which
@@ -1080,7 +1080,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def pixelUnitToMillimeterX: Double = ???
+  def pixelUnitToMillimeterX: Double = js.native
 
   /**
    * On an outermost <svg> element, the corresponding translation factor that takes
@@ -1088,9 +1088,9 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def currentTranslate: SVGPoint = ???
+  def currentTranslate: SVGPoint = js.native
 
-  var onunload: js.Function1[Event, _] = ???
+  var onunload: js.Function1[Event, _] = js.native
 
   /**
    * On an outermost <svg> element, this attribute indicates the current scale factor
@@ -1104,9 +1104,9 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def currentScale: Double = ???
+  def currentScale: Double = js.native
 
-  var onscroll: js.Function1[UIEvent, _] = ???
+  var onscroll: js.Function1[UIEvent, _] = js.native
 
   /**
    * User interface (UI) events in DOM Level 2 indicate the screen positions at which the
@@ -1116,7 +1116,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def screenPixelToMillimeterX: Double = ???
+  def screenPixelToMillimeterX: Double = js.native
 
   /**
    * Adjusts the clock for this SVG document fragment, establishing a new current time.
@@ -1127,7 +1127,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def setCurrentTime(seconds: Double): Unit = ???
+  def setCurrentTime(seconds: Double): Unit = js.native
 
   /**
    * Creates an SVGLength object outside of any document trees. The object is
@@ -1135,7 +1135,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def createSVGLength(): SVGLength = ???
+  def createSVGLength(): SVGLength = js.native
 
   /**
    * Returns the list of graphics elements whose rendered content intersects the
@@ -1145,7 +1145,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def getIntersectionList(rect: SVGRect, referenceElement: SVGElement): NodeList = ???
+  def getIntersectionList(rect: SVGRect, referenceElement: SVGElement): NodeList = js.native
 
   /**
    * Unsuspends (i.e., unpauses) currently running animations that are defined
@@ -1154,7 +1154,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def unpauseAnimations(): Unit = ???
+  def unpauseAnimations(): Unit = js.native
 
   /**
    * Creates an SVGRect object outside of any document trees. The object is initialized
@@ -1162,7 +1162,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def createSVGRect(): SVGRect = ???
+  def createSVGRect(): SVGRect = js.native
 
   /**
    * Returns true if the rendered content of the given element intersects the supplied
@@ -1172,7 +1172,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def checkIntersection(element: SVGElement, rect: SVGRect): Boolean = ???
+  def checkIntersection(element: SVGElement, rect: SVGRect): Boolean = js.native
 
   /**
    * Cancels all currently active suspendRedraw() method calls. This method is most
@@ -1181,7 +1181,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def unsuspendRedrawAll(): Unit = ???
+  def unsuspendRedrawAll(): Unit = js.native
 
   /**
    * Suspends (i.e., pauses) all currently running animations that are defined within
@@ -1191,7 +1191,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def pauseAnimations(): Unit = ???
+  def pauseAnimations(): Unit = js.native
 
   /**
    * Takes a time-out value which indicates that redraw shall not occur until: the
@@ -1208,7 +1208,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def suspendRedraw(maxWaitMilliseconds: Int): Int = ???
+  def suspendRedraw(maxWaitMilliseconds: Int): Int = js.native
 
   /**
    * Unselects any selected objects, including any selections of text strings and
@@ -1216,7 +1216,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def deselectAll(): Unit = ???
+  def deselectAll(): Unit = js.native
 
   /**
    * Creates an SVGAngle object outside of any document trees. The object is
@@ -1224,9 +1224,9 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def createSVGAngle(): SVGAngle = ???
+  def createSVGAngle(): SVGAngle = js.native
 
-  def getEnclosureList(rect: SVGRect, referenceElement: SVGElement): NodeList = ???
+  def getEnclosureList(rect: SVGRect, referenceElement: SVGElement): NodeList = js.native
 
   /**
    * Creates an SVGTransform object outside of any document trees. The object is
@@ -1234,7 +1234,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def createSVGTransform(): SVGTransform = ???
+  def createSVGTransform(): SVGTransform = js.native
 
   /**
    * Cancels a specified suspendRedraw() by providing a unique suspend handle ID that
@@ -1242,7 +1242,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def unsuspendRedraw(suspendHandleID: Int): Unit = ???
+  def unsuspendRedraw(suspendHandleID: Int): Unit = js.native
 
   /**
    * In rendering environments supporting interactivity, forces the user agent to
@@ -1250,7 +1250,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def forceRedraw(): Unit = ???
+  def forceRedraw(): Unit = js.native
 
   /**
    * Returns the current time in seconds relative to the start time for the current SVG
@@ -1260,7 +1260,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def getCurrentTime(): Int = ???
+  def getCurrentTime(): Int = js.native
 
   /**
    * Returns true if the rendered content of the given element is entirely contained
@@ -1270,7 +1270,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def checkEnclosure(element: SVGElement, rect: SVGRect): Boolean = ???
+  def checkEnclosure(element: SVGElement, rect: SVGRect): Boolean = js.native
 
   /**
    * Creates an SVGMatrix object outside of any document trees. The object is
@@ -1278,7 +1278,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def createSVGMatrix(): SVGMatrix = ???
+  def createSVGMatrix(): SVGMatrix = js.native
 
   /**
    * Creates an SVGPoint object outside of any document trees. The object is
@@ -1286,7 +1286,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def createSVGPoint(): SVGPoint = ???
+  def createSVGPoint(): SVGPoint = js.native
 
   /**
    * Creates an SVGNumber object outside of any document trees. The object is
@@ -1294,7 +1294,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def createSVGNumber(): SVGNumber = ???
+  def createSVGNumber(): SVGNumber = js.native
 
   /**
    * Creates an SVGTransform object outside of any document trees. The object is
@@ -1304,9 +1304,9 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def createSVGTransformFromMatrix(matrix: SVGMatrix): SVGTransform = ???
+  def createSVGTransformFromMatrix(matrix: SVGMatrix): SVGTransform = js.native
 
-  def getComputedStyle(elt: Element, pseudoElt: String = ???): CSSStyleDeclaration = ???
+  def getComputedStyle(elt: Element, pseudoElt: String = js.native): CSSStyleDeclaration = js.native
 
   /**
    * Searches this SVG document fragment (i.e., the search is restricted to a subset of
@@ -1316,7 +1316,7 @@ class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with 
    *
    * MDN
    */
-  def getElementById(elementId: String): Element = ???
+  def getElementById(elementId: String): Element = js.native
 
 
 }
@@ -1336,14 +1336,14 @@ class SVGAnimatedInteger extends js.Object {
    *
    * MDN
    */
-  def animVal: Int = ???
+  def animVal: Int = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: Int = ???
+  var baseVal: Int = js.native
 }
 
 
@@ -1367,7 +1367,7 @@ class SVGTSpanElement extends SVGTextPositioningElement {
 
 
 class SVGPathSegLinetoVerticalAbs extends SVGPathSeg {
-  var y: Double = ???
+  var y: Double = js.native
 }
 
 
@@ -1384,9 +1384,9 @@ class SVGStyleElement extends SVGElement with SVGLangSpace {
    *
    * MDN
    */
-  var media: String = ???
+  var media: String = js.native
 
-  def `type`: String = ???
+  def `type`: String = js.native
 
   /**
    * Corresponds to attribute title on the given element. A DOMException is raised with
@@ -1395,7 +1395,7 @@ class SVGStyleElement extends SVGElement with SVGLangSpace {
    *
    * MDN
    */
-  var title: String = ???
+  var title: String = js.native
 }
 
 
@@ -1411,35 +1411,35 @@ class SVGRadialGradientElement extends SVGGradientElement {
    *
    * MDN
    */
-  def cx: SVGAnimatedLength = ???
+  def cx: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute r on the given <radialgradient> element.
    *
    * MDN
    */
-  def r: SVGAnimatedLength = ???
+  def r: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute cy on the given <radialgradient> element.
    *
    * MDN
    */
-  def cy: SVGAnimatedLength = ???
+  def cy: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute fx on the given <radialgradient> element.
    *
    * MDN
    */
-  def fx: SVGAnimatedLength = ???
+  def fx: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute fy on the given <radialgradient> element.
    *
    * MDN
    */
-  def fy: SVGAnimatedLength = ???
+  def fy: SVGAnimatedLength = js.native
 }
 
 
@@ -1454,35 +1454,35 @@ class SVGImageElement extends SVGElement with SVGStylable with SVGTransformable 
    *
    * MDN
    */
-  def y: SVGAnimatedLength = ???
+  def y: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute width on the given <image> element.
    *
    * MDN
    */
-  def width: SVGAnimatedLength = ???
+  def width: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute preserveAspectRatio on the given <image> element.
    *
    * MDN
    */
-  def preserveAspectRatio: SVGAnimatedPreserveAspectRatio = ???
+  def preserveAspectRatio: SVGAnimatedPreserveAspectRatio = js.native
 
   /**
    * Corresponds to attribute x on the given <image> element.
    *
    * MDN
    */
-  def x: SVGAnimatedLength = ???
+  def x: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute height on the given <image> element.
    *
    * MDN
    */
-  def height: SVGAnimatedLength = ???
+  def height: SVGAnimatedLength = js.native
 }
 
 
@@ -1500,14 +1500,14 @@ class SVGAnimatedNumber extends js.Object {
    *
    * MDN
    */
-  def animVal: Double = ???
+  def animVal: Double = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: Double = ???
+  var baseVal: Double = js.native
 }
 
 
@@ -1516,19 +1516,19 @@ class SVGMetadataElement extends SVGElement {
 
 
 class SVGPathSegArcRel extends SVGPathSeg {
-  var y: Double = ???
-  var sweepFlag: Boolean = ???
-  var r2: Double = ???
-  var x: Double = ???
-  var angle: Double = ???
-  var r1: Double = ???
-  var largeArcFlag: Boolean = ???
+  var y: Double = js.native
+  var sweepFlag: Boolean = js.native
+  var r2: Double = js.native
+  var x: Double = js.native
+  var angle: Double = js.native
+  var r1: Double = js.native
+  var largeArcFlag: Boolean = js.native
 }
 
 
 class SVGPathSegMovetoAbs extends SVGPathSeg {
-  var y: Double = ???
-  var x: Double = ???
+  var y: Double = js.native
+  var x: Double = js.native
 }
 
 
@@ -1538,7 +1538,7 @@ class SVGPathSegMovetoAbs extends SVGPathSeg {
  * MDN
  */
 class SVGStringList extends js.Object {
-  def numberOfItems: Int = ???
+  def numberOfItems: Int = js.native
 
   /**
    * Replaces an existing item in the list with a new item. If newItem is already in a list,
@@ -1552,7 +1552,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def replaceItem(newItem: String, index: Int): String = ???
+  def replaceItem(newItem: String, index: Int): String = js.native
 
   /**
    * Returns the specified item from the list. The returned item is the item itself and
@@ -1563,7 +1563,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def getItem(index: Int): String = ???
+  def getItem(index: Int): String = js.native
 
   /**
    * Clears all existing current items from the list, with the result being an empty
@@ -1573,7 +1573,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def clear(): Unit = ???
+  def clear(): Unit = js.native
 
   /**
    * Inserts a new item at the end of the list. If newItem is already in a list, it is removed
@@ -1584,7 +1584,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def appendItem(newItem: String): String = ???
+  def appendItem(newItem: String): String = js.native
 
   /**
    * Clears all existing current items from the list and re-initializes the list to hold
@@ -1597,7 +1597,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def initialize(newItem: String): String = ???
+  def initialize(newItem: String): String = js.native
 
   /**
    * Removes an existing item from the list. Exceptions: a DOMException with code
@@ -1608,7 +1608,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def removeItem(index: Int): String = ???
+  def removeItem(index: Int): String = js.native
 
   /**
    * Inserts a new item into the list at the specified position. The first item is number
@@ -1623,7 +1623,7 @@ class SVGStringList extends js.Object {
    *
    * MDN
    */
-  def insertItemBefore(newItem: String, index: Int): String = ???
+  def insertItemBefore(newItem: String, index: Int): String = js.native
 }
 
 
@@ -1644,7 +1644,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  var valueAsString: String = ???
+  var valueAsString: String = js.native
   /**
    * The value as a floating point value, in the units expressed by unitType. Setting
    * this attribute will cause value and valueAsString to be updated automatically to
@@ -1654,7 +1654,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  var valueInSpecifiedUnits: Double = ???
+  var valueInSpecifiedUnits: Double = js.native
   /**
    * The value as a floating point value, in user units. Setting this attribute will
    * cause valueInSpecifiedUnits and valueAsString to be updated automatically to
@@ -1664,7 +1664,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  var value: Double = ???
+  var value: Double = js.native
 
   /**
    * The type of the value as specified by one of the SVG_LENGTHTYPE_* constants defined
@@ -1672,7 +1672,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  def unitType: Int = ???
+  def unitType: Int = js.native
 
   /**
    * Reset the value as a number with an associated unitType, thereby replacing the
@@ -1685,7 +1685,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  def newValueSpecifiedUnits(unitType: Int, valueInSpecifiedUnits: Double): Unit = ???
+  def newValueSpecifiedUnits(unitType: Int, valueInSpecifiedUnits: Double): Unit = js.native
 
   /**
    * Preserve the same underlying stored value, but reset the stored unit identifier to
@@ -1697,7 +1697,7 @@ class SVGLength extends js.Object {
    *
    * MDN
    */
-  def convertToSpecifiedUnits(unitType: Int): Unit = ???
+  def convertToSpecifiedUnits(unitType: Int): Unit = js.native
 }
 
 /**
@@ -1707,23 +1707,23 @@ class SVGLength extends js.Object {
  */
 object SVGLength extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGLength),List())))) */
-  val SVG_LENGTHTYPE_NUMBER: Int = ???
-  val SVG_LENGTHTYPE_CM: Int = ???
-  val SVG_LENGTHTYPE_PC: Int = ???
-  val SVG_LENGTHTYPE_PERCENTAGE: Int = ???
-  val SVG_LENGTHTYPE_MM: Int = ???
-  val SVG_LENGTHTYPE_PT: Int = ???
-  val SVG_LENGTHTYPE_IN: Int = ???
-  val SVG_LENGTHTYPE_EMS: Int = ???
-  val SVG_LENGTHTYPE_PX: Int = ???
+  val SVG_LENGTHTYPE_NUMBER: Int = js.native
+  val SVG_LENGTHTYPE_CM: Int = js.native
+  val SVG_LENGTHTYPE_PC: Int = js.native
+  val SVG_LENGTHTYPE_PERCENTAGE: Int = js.native
+  val SVG_LENGTHTYPE_MM: Int = js.native
+  val SVG_LENGTHTYPE_PT: Int = js.native
+  val SVG_LENGTHTYPE_IN: Int = js.native
+  val SVG_LENGTHTYPE_EMS: Int = js.native
+  val SVG_LENGTHTYPE_PX: Int = js.native
   /**
    * The unit type is not one of predefined unit types. It is invalid to attempt to define a
    * new value of this type or to attempt to switch an existing value to this type.
    *
    * MDN
    */
-  val SVG_LENGTHTYPE_UNKNOWN: Int = ???
-  val SVG_LENGTHTYPE_EXS: Int = ???
+  val SVG_LENGTHTYPE_UNKNOWN: Int = js.native
+  val SVG_LENGTHTYPE_EXS: Int = js.native
 }
 
 /**
@@ -1737,45 +1737,45 @@ class SVGPolygonElement extends SVGElement with SVGStylable with SVGTransformabl
 
 
 class SVGPathSegCurvetoCubicRel extends SVGPathSeg {
-  var y: Double = ???
-  var y1: Double = ???
-  var x2: Double = ???
-  var x: Double = ???
-  var x1: Double = ???
-  var y2: Double = ???
+  var y: Double = js.native
+  var y1: Double = js.native
+  var x2: Double = js.native
+  var x: Double = js.native
+  var x1: Double = js.native
+  var y2: Double = js.native
 }
 
 
 class SVGTextContentElement extends SVGElement with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
-  def textLength: SVGAnimatedLength = ???
+  def textLength: SVGAnimatedLength = js.native
 
-  def lengthAdjust: SVGAnimatedEnumeration = ???
+  def lengthAdjust: SVGAnimatedEnumeration = js.native
 
-  def getCharNumAtPosition(point: SVGPoint): Int = ???
+  def getCharNumAtPosition(point: SVGPoint): Int = js.native
 
-  def getStartPositionOfChar(charnum: Int): SVGPoint = ???
+  def getStartPositionOfChar(charnum: Int): SVGPoint = js.native
 
-  def getExtentOfChar(charnum: Int): SVGRect = ???
+  def getExtentOfChar(charnum: Int): SVGRect = js.native
 
-  def getComputedTextLength(): Int = ???
+  def getComputedTextLength(): Int = js.native
 
-  def getSubStringLength(charnum: Int, nchars: Int): Int = ???
+  def getSubStringLength(charnum: Int, nchars: Int): Int = js.native
 
-  def selectSubString(charnum: Int, nchars: Int): Unit = ???
+  def selectSubString(charnum: Int, nchars: Int): Unit = js.native
 
-  def getNumberOfChars(): Int = ???
+  def getNumberOfChars(): Int = js.native
 
-  def getRotationOfChar(charnum: Int): Int = ???
+  def getRotationOfChar(charnum: Int): Int = js.native
 
-  def getEndPositionOfChar(charnum: Int): SVGPoint = ???
+  def getEndPositionOfChar(charnum: Int): SVGPoint = js.native
 
 }
 
 object SVGTextContentElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGTextContentElement),List())))) */
-  val LENGTHADJUST_SPACING: Int = ???
-  val LENGTHADJUST_SPACINGANDGLYPHS: Int = ???
-  val LENGTHADJUST_UNKNOWN: Int = ???
+  val LENGTHADJUST_SPACING: Int = js.native
+  val LENGTHADJUST_SPACINGANDGLYPHS: Int = js.native
+  val LENGTHADJUST_UNKNOWN: Int = js.native
 }
 
 /**
@@ -1786,7 +1786,7 @@ object SVGTextContentElement extends js.Object {
  * MDN
  */
 class SVGTransform extends js.Object {
-  def `type`: Int = ???
+  def `type`: Int = js.native
 
   /**
    * A convenience attribute for SVG_TRANSFORM_ROTATE, SVG_TRANSFORM_SKEWX and
@@ -1796,7 +1796,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def angle: Double = ???
+  def angle: Double = js.native
 
   /**
    * The matrix that represents this transformation. The matrix object is live,
@@ -1815,7 +1815,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def matrix: SVGMatrix = ???
+  def matrix: SVGMatrix = js.native
 
   /**
    * Sets the transform type to SVG_TRANSFORM_TRANSLATE, with parameters tx and ty
@@ -1825,7 +1825,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setTranslate(tx: Double, ty: Double): Unit = ???
+  def setTranslate(tx: Double, ty: Double): Unit = js.native
 
   /**
    * Sets the transform type to SVG_TRANSFORM_SCALE, with parameters sx and sy
@@ -1835,7 +1835,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setScale(sx: Double, sy: Double): Unit = ???
+  def setScale(sx: Double, sy: Double): Unit = js.native
 
   /**
    * Sets the transform type to SVG_TRANSFORM_MATRIX, with parameter matrix defining
@@ -1846,7 +1846,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setMatrix(matrix: SVGMatrix): Unit = ???
+  def setMatrix(matrix: SVGMatrix): Unit = js.native
 
   /**
    * Sets the transform type to SVG_TRANSFORM_SKEWY, with parameter angle defining
@@ -1856,7 +1856,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setSkewY(angle: Double): Unit = ???
+  def setSkewY(angle: Double): Unit = js.native
 
   /**
    * Sets the transform type to SVG_TRANSFORM_ROTATE, with parameter angle defining
@@ -1867,7 +1867,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setRotate(angle: Double, cx: Double, cy: Double): Unit = ???
+  def setRotate(angle: Double, cx: Double, cy: Double): Unit = js.native
 
   /**
    * Sets the transform type to SVG_TRANSFORM_SKEWX, with parameter angle defining
@@ -1877,7 +1877,7 @@ class SVGTransform extends js.Object {
    *
    * MDN
    */
-  def setSkewX(angle: Double): Unit = ???
+  def setSkewX(angle: Double): Unit = js.native
 
 }
 
@@ -1890,53 +1890,53 @@ class SVGTransform extends js.Object {
  */
 object SVGTransform extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGTransform),List())))) */
-  val SVG_TRANSFORM_SKEWX: Int = ???
+  val SVG_TRANSFORM_SKEWX: Int = js.native
   /**
    * The unit type is not one of predefined unit types. It is invalid to attempt to define a
    * new value of this type or to attempt to switch an existing value to this type.
    *
    * MDN
    */
-  val SVG_TRANSFORM_UNKNOWN: Int = ???
-  val SVG_TRANSFORM_SCALE: Int = ???
-  val SVG_TRANSFORM_TRANSLATE: Int = ???
-  val SVG_TRANSFORM_MATRIX: Int = ???
-  val SVG_TRANSFORM_ROTATE: Int = ???
-  val SVG_TRANSFORM_SKEWY: Int = ???
+  val SVG_TRANSFORM_UNKNOWN: Int = js.native
+  val SVG_TRANSFORM_SCALE: Int = js.native
+  val SVG_TRANSFORM_TRANSLATE: Int = js.native
+  val SVG_TRANSFORM_MATRIX: Int = js.native
+  val SVG_TRANSFORM_ROTATE: Int = js.native
+  val SVG_TRANSFORM_SKEWY: Int = js.native
 }
 
 trait SVGURIReference extends js.Object {
-  var href: SVGAnimatedString = ???
+  var href: SVGAnimatedString = js.native
 }
 
 class SVGPathSeg extends js.Object {
-  def pathSegType: Int = ???
+  def pathSegType: Int = js.native
 
-  def pathSegTypeAsLetter: String = ???
+  def pathSegTypeAsLetter: String = js.native
 }
 
 object SVGPathSeg extends js.Object {
 
-  val PATHSEG_MOVETO_REL: Int = ???
-  val PATHSEG_LINETO_VERTICAL_REL: Int = ???
-  val PATHSEG_CURVETO_CUBIC_SMOOTH_ABS: Int = ???
-  val PATHSEG_CURVETO_QUADRATIC_REL: Int = ???
-  val PATHSEG_CURVETO_CUBIC_ABS: Int = ???
-  val PATHSEG_LINETO_HORIZONTAL_ABS: Int = ???
-  val PATHSEG_CURVETO_QUADRATIC_ABS: Int = ???
-  val PATHSEG_LINETO_ABS: Int = ???
-  val PATHSEG_CLOSEPATH: Int = ???
-  val PATHSEG_LINETO_HORIZONTAL_REL: Int = ???
-  val PATHSEG_CURVETO_CUBIC_SMOOTH_REL: Int = ???
-  val PATHSEG_LINETO_REL: Int = ???
-  val PATHSEG_CURVETO_QUADRATIC_SMOOTH_ABS: Int = ???
-  val PATHSEG_ARC_REL: Int = ???
-  val PATHSEG_CURVETO_CUBIC_REL: Int = ???
-  val PATHSEG_UNKNOWN: Int = ???
-  val PATHSEG_LINETO_VERTICAL_ABS: Int = ???
-  val PATHSEG_ARC_ABS: Int = ???
-  val PATHSEG_MOVETO_ABS: Int = ???
-  val PATHSEG_CURVETO_QUADRATIC_SMOOTH_REL: Int = ???
+  val PATHSEG_MOVETO_REL: Int = js.native
+  val PATHSEG_LINETO_VERTICAL_REL: Int = js.native
+  val PATHSEG_CURVETO_CUBIC_SMOOTH_ABS: Int = js.native
+  val PATHSEG_CURVETO_QUADRATIC_REL: Int = js.native
+  val PATHSEG_CURVETO_CUBIC_ABS: Int = js.native
+  val PATHSEG_LINETO_HORIZONTAL_ABS: Int = js.native
+  val PATHSEG_CURVETO_QUADRATIC_ABS: Int = js.native
+  val PATHSEG_LINETO_ABS: Int = js.native
+  val PATHSEG_CLOSEPATH: Int = js.native
+  val PATHSEG_LINETO_HORIZONTAL_REL: Int = js.native
+  val PATHSEG_CURVETO_CUBIC_SMOOTH_REL: Int = js.native
+  val PATHSEG_LINETO_REL: Int = js.native
+  val PATHSEG_CURVETO_QUADRATIC_SMOOTH_ABS: Int = js.native
+  val PATHSEG_ARC_REL: Int = js.native
+  val PATHSEG_CURVETO_CUBIC_REL: Int = js.native
+  val PATHSEG_UNKNOWN: Int = js.native
+  val PATHSEG_LINETO_VERTICAL_ABS: Int = js.native
+  val PATHSEG_ARC_ABS: Int = js.native
+  val PATHSEG_MOVETO_ABS: Int = js.native
+  val PATHSEG_CURVETO_QUADRATIC_SMOOTH_REL: Int = js.native
 }
 
 /**
@@ -1952,7 +1952,7 @@ class SVGNumber extends js.Object {
    *
    * MDN
    */
-  var value: Double = ???
+  var value: Double = js.native
 }
 
 
@@ -1968,7 +1968,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def getPathSegAtLength(distance: Double): Int = ???
+  def getPathSegAtLength(distance: Double): Int = js.native
 
   /**
    * Returns the (x,y) coordinate in user space which is distance units along the path,
@@ -1976,7 +1976,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def getPointAtLength(distance: Double): SVGPoint = ???
+  def getPointAtLength(distance: Double): SVGPoint = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticAbs object.
@@ -1987,7 +1987,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoQuadraticAbs(x: Double, y: Double, x1: Double, y1: Double): SVGPathSegCurvetoQuadraticAbs = ???
+  def createSVGPathSegCurvetoQuadraticAbs(x: Double, y: Double, x1: Double, y1: Double): SVGPathSegCurvetoQuadraticAbs = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoRel object. Parameters:
@@ -1996,7 +1996,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoRel(x: Double, y: Double): SVGPathSegLinetoRel = ???
+  def createSVGPathSegLinetoRel(x: Double, y: Double): SVGPathSegLinetoRel = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticRel object.
@@ -2007,7 +2007,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoQuadraticRel(x: Double, y: Double, x1: Double, y1: Double): SVGPathSegCurvetoQuadraticRel = ???
+  def createSVGPathSegCurvetoQuadraticRel(x: Double, y: Double, x1: Double, y1: Double): SVGPathSegCurvetoQuadraticRel = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoCubicAbs object.
@@ -2020,7 +2020,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoCubicAbs(x: Double, y: Double, x1: Double, y1: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicAbs = ???
+  def createSVGPathSegCurvetoCubicAbs(x: Double, y: Double, x1: Double, y1: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicAbs = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoAbs object. Parameters:
@@ -2029,14 +2029,14 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoAbs(x: Double, y: Double): SVGPathSegLinetoAbs = ???
+  def createSVGPathSegLinetoAbs(x: Double, y: Double): SVGPathSegLinetoAbs = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegClosePath object.
    *
    * MDN
    */
-  def createSVGPathSegClosePath(): SVGPathSegClosePath = ???
+  def createSVGPathSegClosePath(): SVGPathSegClosePath = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoCubicRel object.
@@ -2049,7 +2049,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoCubicRel(x: Double, y: Double, x1: Double, y1: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicRel = ???
+  def createSVGPathSegCurvetoCubicRel(x: Double, y: Double, x1: Double, y1: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicRel = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticSmoothRel
@@ -2058,7 +2058,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoQuadraticSmoothRel(x: Double, y: Double): SVGPathSegCurvetoQuadraticSmoothRel = ???
+  def createSVGPathSegCurvetoQuadraticSmoothRel(x: Double, y: Double): SVGPathSegCurvetoQuadraticSmoothRel = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegMovetoRel object. Parameters:
@@ -2067,7 +2067,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegMovetoRel(x: Double, y: Double): SVGPathSegMovetoRel = ???
+  def createSVGPathSegMovetoRel(x: Double, y: Double): SVGPathSegMovetoRel = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoCubicSmoothAbs object.
@@ -2078,7 +2078,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoCubicSmoothAbs(x: Double, y: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicSmoothAbs = ???
+  def createSVGPathSegCurvetoCubicSmoothAbs(x: Double, y: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicSmoothAbs = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegMovetoAbs object. Parameters:
@@ -2087,7 +2087,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegMovetoAbs(x: Double, y: Double): SVGPathSegMovetoAbs = ???
+  def createSVGPathSegMovetoAbs(x: Double, y: Double): SVGPathSegMovetoAbs = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoVerticalRel object.
@@ -2096,7 +2096,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoVerticalRel(y: Double): SVGPathSegLinetoVerticalRel = ???
+  def createSVGPathSegLinetoVerticalRel(y: Double): SVGPathSegLinetoVerticalRel = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegArcRel object. Parameters: float x
@@ -2109,7 +2109,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegArcRel(x: Double, y: Double, r1: Double, r2: Double, angle: Double, largeArcFlag: Boolean, sweepFlag: Boolean): SVGPathSegArcRel = ???
+  def createSVGPathSegArcRel(x: Double, y: Double, r1: Double, r2: Double, angle: Double, largeArcFlag: Boolean, sweepFlag: Boolean): SVGPathSegArcRel = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticSmoothAbs
@@ -2118,7 +2118,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoQuadraticSmoothAbs(x: Double, y: Double): SVGPathSegCurvetoQuadraticSmoothAbs = ???
+  def createSVGPathSegCurvetoQuadraticSmoothAbs(x: Double, y: Double): SVGPathSegCurvetoQuadraticSmoothAbs = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoHorizontalRel object.
@@ -2127,9 +2127,9 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoHorizontalRel(x: Double): SVGPathSegLinetoHorizontalRel = ???
+  def createSVGPathSegLinetoHorizontalRel(x: Double): SVGPathSegLinetoHorizontalRel = js.native
 
-  def getTotalLength(): Double = ???
+  def getTotalLength(): Double = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegCurvetoCubicSmoothRel object.
@@ -2140,7 +2140,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegCurvetoCubicSmoothRel(x: Double, y: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicSmoothRel = ???
+  def createSVGPathSegCurvetoCubicSmoothRel(x: Double, y: Double, x2: Double, y2: Double): SVGPathSegCurvetoCubicSmoothRel = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoHorizontalAbs object.
@@ -2149,7 +2149,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoHorizontalAbs(x: Double): SVGPathSegLinetoHorizontalAbs = ???
+  def createSVGPathSegLinetoHorizontalAbs(x: Double): SVGPathSegLinetoHorizontalAbs = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegLinetoVerticalAbs object.
@@ -2158,7 +2158,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegLinetoVerticalAbs(y: Double): SVGPathSegLinetoVerticalAbs = ???
+  def createSVGPathSegLinetoVerticalAbs(y: Double): SVGPathSegLinetoVerticalAbs = js.native
 
   /**
    * Returns a stand-alone, parentless SVGPathSegArcAbs object. Parameters: float x
@@ -2171,7 +2171,7 @@ class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathDat
    *
    * MDN
    */
-  def createSVGPathSegArcAbs(x: Double, y: Double, r1: Double, r2: Double, angle: Double, largeArcFlag: Boolean, sweepFlag: Boolean): SVGPathSegArcAbs = ???
+  def createSVGPathSegArcAbs(x: Double, y: Double, r1: Double, r2: Double, angle: Double, largeArcFlag: Boolean, sweepFlag: Boolean): SVGPathSegArcAbs = js.native
 }
 
 
@@ -2191,52 +2191,52 @@ class SVGAnimatedRect extends js.Object {
    *
    * MDN
    */
-  def animVal: SVGRect = ???
+  def animVal: SVGRect = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  def baseVal: SVGRect = ???
+  def baseVal: SVGRect = js.native
 }
 
 
 class SVGPathSegList extends js.Object {
-  def numberOfItems: Int = ???
+  def numberOfItems: Int = js.native
 
-  def replaceItem(newItem: SVGPathSeg, index: Int): SVGPathSeg = ???
+  def replaceItem(newItem: SVGPathSeg, index: Int): SVGPathSeg = js.native
 
-  def getItem(index: Int): SVGPathSeg = ???
+  def getItem(index: Int): SVGPathSeg = js.native
 
-  def clear(): Unit = ???
+  def clear(): Unit = js.native
 
-  def appendItem(newItem: SVGPathSeg): SVGPathSeg = ???
+  def appendItem(newItem: SVGPathSeg): SVGPathSeg = js.native
 
-  def initialize(newItem: SVGPathSeg): SVGPathSeg = ???
+  def initialize(newItem: SVGPathSeg): SVGPathSeg = js.native
 
-  def removeItem(index: Int): SVGPathSeg = ???
+  def removeItem(index: Int): SVGPathSeg = js.native
 
-  def insertItemBefore(newItem: SVGPathSeg, index: Int): SVGPathSeg = ???
+  def insertItemBefore(newItem: SVGPathSeg, index: Int): SVGPathSeg = js.native
 }
 
 
 class SVGElementInstance extends EventTarget {
-  def previousSibling: SVGElementInstance = ???
+  def previousSibling: SVGElementInstance = js.native
 
-  def parentNode: SVGElementInstance = ???
+  def parentNode: SVGElementInstance = js.native
 
-  def lastChild: SVGElementInstance = ???
+  def lastChild: SVGElementInstance = js.native
 
-  def nextSibling: SVGElementInstance = ???
+  def nextSibling: SVGElementInstance = js.native
 
-  def childNodes: SVGElementInstanceList = ???
+  def childNodes: SVGElementInstanceList = js.native
 
-  def correspondingUseElement: SVGUseElement = ???
+  def correspondingUseElement: SVGUseElement = js.native
 
-  def correspondingElement: SVGElement = ???
+  def correspondingElement: SVGElement = js.native
 
-  def firstChild: SVGElementInstance = ???
+  def firstChild: SVGElementInstance = js.native
 }
 
 
@@ -2252,21 +2252,21 @@ class SVGCircleElement extends SVGElement with SVGStylable with SVGTransformable
    *
    * MDN
    */
-  def cx: SVGAnimatedLength = ???
+  def cx: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute r on the given <circle> element.
    *
    * MDN
    */
-  def r: SVGAnimatedLength = ???
+  def r: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute cy on the given <circle> element.
    *
    * MDN
    */
-  def cy: SVGAnimatedLength = ???
+  def cy: SVGAnimatedLength = js.native
 }
 
 
@@ -2283,49 +2283,49 @@ class SVGRect extends js.Object {
    *
    * MDN
    */
-  var y: Double = ???
+  var y: Double = js.native
   /**
    * The width coordinate of the rectangle, in user units.
    *
    * MDN
    */
-  var width: Double = ???
+  var width: Double = js.native
   /**
    * The x coordinate of the rectangle, in user units.
    *
    * MDN
    */
-  var x: Double = ???
+  var x: Double = js.native
   /**
    * The height coordinate of the rectangle, in user units.
    *
    * MDN
    */
-  var height: Double = ???
+  var height: Double = js.native
 }
 
 
 class SVGPathSegCurvetoCubicAbs extends SVGPathSeg {
-  var y: Double = ???
-  var y1: Double = ???
-  var x2: Double = ???
-  var x: Double = ???
-  var x1: Double = ???
-  var y2: Double = ???
+  var y: Double = js.native
+  var y1: Double = js.native
+  var x2: Double = js.native
+  var x: Double = js.native
+  var x1: Double = js.native
+  var y2: Double = js.native
 }
 
 
 class SVGPathSegCurvetoQuadraticAbs extends SVGPathSeg {
-  var y: Double = ???
-  var y1: Double = ???
-  var x: Double = ???
-  var x1: Double = ???
+  var y: Double = js.native
+  var y1: Double = js.native
+  var x: Double = js.native
+  var x1: Double = js.native
 }
 
 
 class SVGPathSegLinetoAbs extends SVGPathSeg {
-  var y: Double = ???
-  var x: Double = ???
+  var y: Double = js.native
+  var x: Double = js.native
 }
 
 
@@ -2335,12 +2335,12 @@ class SVGPathSegLinetoAbs extends SVGPathSeg {
  * MDN
  */
 class SVGMatrix extends js.Object {
-  var e: Double = ???
-  var c: Double = ???
-  var a: Double = ???
-  var b: Double = ???
-  var d: Double = ???
-  var f: Double = ???
+  var e: Double = js.native
+  var c: Double = js.native
+  var a: Double = js.native
+  var b: Double = js.native
+  var d: Double = js.native
+  var f: Double = js.native
 
   /**
    * Performs matrix multiplication. This matrix is post-multiplied by another
@@ -2348,7 +2348,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def multiply(secondMatrix: SVGMatrix): SVGMatrix = ???
+  def multiply(secondMatrix: SVGMatrix): SVGMatrix = js.native
 
   /**
    * Post-multiplies the transformation [1 0 0 -1 0 0] and returns the resulting
@@ -2356,7 +2356,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def flipY(): SVGMatrix = ???
+  def flipY(): SVGMatrix = js.native
 
   /**
    * Post-multiplies a skewY transformation on the current matrix and returns the
@@ -2364,7 +2364,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def skewY(angle: Double): SVGMatrix = ???
+  def skewY(angle: Double): SVGMatrix = js.native
 
   /**
    * Return the inverse matrix Exceptions: a DOMException with code
@@ -2372,7 +2372,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def inverse(): SVGMatrix = ???
+  def inverse(): SVGMatrix = js.native
 
   /**
    * Post-multiplies a non-uniform scale transformation on the current matrix and
@@ -2380,7 +2380,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def scaleNonUniform(scaleFactorX: Double, scaleFactorY: Double): SVGMatrix = ???
+  def scaleNonUniform(scaleFactorX: Double, scaleFactorY: Double): SVGMatrix = js.native
 
   /**
    * Post-multiplies a rotation transformation on the current matrix and returns the
@@ -2388,7 +2388,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def rotate(angle: Double): SVGMatrix = ???
+  def rotate(angle: Double): SVGMatrix = js.native
 
   /**
    * Post-multiplies the transformation [-1 0 0 1 0 0] and returns the resulting
@@ -2396,7 +2396,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def flipX(): SVGMatrix = ???
+  def flipX(): SVGMatrix = js.native
 
   /**
    * Post-multiplies a translation transformation on the current matrix and returns
@@ -2404,7 +2404,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def translate(x: Double, y: Double): SVGMatrix = ???
+  def translate(x: Double, y: Double): SVGMatrix = js.native
 
   /**
    * Post-multiplies a uniform scale transformation on the current matrix and returns
@@ -2412,7 +2412,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def scale(scaleFactor: Double): SVGMatrix = ???
+  def scale(scaleFactor: Double): SVGMatrix = js.native
 
   /**
    * Post-multiplies a rotation transformation on the current matrix and returns the
@@ -2423,7 +2423,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def rotateFromVector(x: Double, y: Double): SVGMatrix = ???
+  def rotateFromVector(x: Double, y: Double): SVGMatrix = js.native
 
   /**
    * Post-multiplies a skewX transformation on the current matrix and returns the
@@ -2431,7 +2431,7 @@ class SVGMatrix extends js.Object {
    *
    * MDN
    */
-  def skewX(angle: Double): SVGMatrix = ???
+  def skewX(angle: Double): SVGMatrix = js.native
 }
 
 
@@ -2447,14 +2447,14 @@ class SVGUseElement extends SVGElement with SVGStylable with SVGTransformable wi
    *
    * MDN
    */
-  def y: SVGAnimatedLength = ???
+  def y: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute width on the given <use> element.
    *
    * MDN
    */
-  def width: SVGAnimatedLength = ???
+  def width: SVGAnimatedLength = js.native
 
   /**
    * If the xlink:href attribute is being animated, contains the current animated root
@@ -2464,7 +2464,7 @@ class SVGUseElement extends SVGElement with SVGStylable with SVGTransformable wi
    *
    * MDN
    */
-  def animatedInstanceRoot: SVGElementInstance = ???
+  def animatedInstanceRoot: SVGElementInstance = js.native
 
   /**
    * The root of the instance tree. See description of SVGElementInstance to learn more
@@ -2472,36 +2472,36 @@ class SVGUseElement extends SVGElement with SVGStylable with SVGTransformable wi
    *
    * MDN
    */
-  def instanceRoot: SVGElementInstance = ???
+  def instanceRoot: SVGElementInstance = js.native
 
   /**
    * Corresponds to attribute x on the given <use> element.
    *
    * MDN
    */
-  def x: SVGAnimatedLength = ???
+  def x: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute height on the given <use> element.
    *
    * MDN
    */
-  def height: SVGAnimatedLength = ???
+  def height: SVGAnimatedLength = js.native
 }
 
 
 trait SVGException extends js.Object {
-  def code: Int = ???
+  def code: Int = js.native
 
-  def message: String = ???
+  def message: String = js.native
 
-  def name: String = ???
+  def name: String = js.native
 }
 
 object SVGException extends js.Object {
-  val SVG_MATRIX_NOT_INVERTABLE: Int = ???
-  val SVG_WRONG_TYPE_ERR: Int = ???
-  val SVG_INVALID_VALUE_ERR: Int = ???
+  val SVG_MATRIX_NOT_INVERTABLE: Int = js.native
+  val SVG_WRONG_TYPE_ERR: Int = js.native
+  val SVG_INVALID_VALUE_ERR: Int = js.native
 }
 
 /**
@@ -2516,28 +2516,28 @@ class SVGLinearGradientElement extends SVGGradientElement {
    *
    * MDN
    */
-  def y1: SVGAnimatedLength = ???
+  def y1: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute x2 on the given <lineargradient> element.
    *
    * MDN
    */
-  def x2: SVGAnimatedLength = ???
+  def x2: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute x1 on the given <lineargradient> element.
    *
    * MDN
    */
-  def x1: SVGAnimatedLength = ???
+  def x1: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute y2 on the given <lineargradient> element.
    *
    * MDN
    */
-  def y2: SVGAnimatedLength = ???
+  def y2: SVGAnimatedLength = js.native
 }
 
 
@@ -2555,14 +2555,14 @@ class SVGAnimatedEnumeration extends js.Object {
    *
    * MDN
    */
-  def animVal: Int = ???
+  def animVal: Int = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: Int = ???
+  var baseVal: Int = js.native
 }
 
 
@@ -2578,56 +2578,56 @@ class SVGRectElement extends SVGElement with SVGStylable with SVGTransformable w
    *
    * MDN
    */
-  def y: SVGAnimatedLength = ???
+  def y: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute width on the given <rect> element.
    *
    * MDN
    */
-  def width: SVGAnimatedLength = ???
+  def width: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute ry on the given <rect> element.
    *
    * MDN
    */
-  def ry: SVGAnimatedLength = ???
+  def ry: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute rx on the given <rect> element.
    *
    * MDN
    */
-  def rx: SVGAnimatedLength = ???
+  def rx: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute x on the given <rect> element.
    *
    * MDN
    */
-  def x: SVGAnimatedLength = ???
+  def x: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute height on the given <rect> element.
    *
    * MDN
    */
-  def height: SVGAnimatedLength = ???
+  def height: SVGAnimatedLength = js.native
 }
 
 
 class SVGPathSegCurvetoQuadraticSmoothAbs extends SVGPathSeg {
-  var y: Double = ???
-  var x: Double = ???
+  var y: Double = js.native
+  var x: Double = js.native
 }
 
 
 class SVGPathSegCurvetoCubicSmoothRel extends SVGPathSeg {
-  var y: Double = ???
-  var x2: Double = ???
-  var x: Double = ???
-  var y2: Double = ???
+  var y: Double = js.native
+  var x2: Double = js.native
+  var x: Double = js.native
+  var y2: Double = js.native
 }
 
 
@@ -2637,7 +2637,7 @@ class SVGPathSegCurvetoCubicSmoothRel extends SVGPathSeg {
  * MDN
  */
 class SVGLengthList extends js.Object {
-  def numberOfItems: Int = ???
+  def numberOfItems: Int = js.native
 
   /**
    * Replaces an existing item in the list with a new item. If newItem is already in a list,
@@ -2651,7 +2651,7 @@ class SVGLengthList extends js.Object {
    *
    * MDN
    */
-  def replaceItem(newItem: SVGLength, index: Int): SVGLength = ???
+  def replaceItem(newItem: SVGLength, index: Int): SVGLength = js.native
 
   /**
    * Returns the specified item from the list. The returned item is the item itself and
@@ -2662,7 +2662,7 @@ class SVGLengthList extends js.Object {
    *
    * MDN
    */
-  def getItem(index: Int): SVGLength = ???
+  def getItem(index: Int): SVGLength = js.native
 
   /**
    * Clears all existing current items from the list, with the result being an empty
@@ -2672,7 +2672,7 @@ class SVGLengthList extends js.Object {
    *
    * MDN
    */
-  def clear(): Unit = ???
+  def clear(): Unit = js.native
 
   /**
    * Inserts a new item at the end of the list. If newItem is already in a list, it is removed
@@ -2683,7 +2683,7 @@ class SVGLengthList extends js.Object {
    *
    * MDN
    */
-  def appendItem(newItem: SVGLength): SVGLength = ???
+  def appendItem(newItem: SVGLength): SVGLength = js.native
 
   /**
    * Clears all existing current items from the list and re-initializes the list to hold
@@ -2696,7 +2696,7 @@ class SVGLengthList extends js.Object {
    *
    * MDN
    */
-  def initialize(newItem: SVGLength): SVGLength = ???
+  def initialize(newItem: SVGLength): SVGLength = js.native
 
   /**
    * Removes an existing item from the list. Exceptions: a DOMException with code
@@ -2707,7 +2707,7 @@ class SVGLengthList extends js.Object {
    *
    * MDN
    */
-  def removeItem(index: Int): SVGLength = ???
+  def removeItem(index: Int): SVGLength = js.native
 
   /**
    * Inserts a new item into the list at the specified position. The first item is number
@@ -2722,7 +2722,7 @@ class SVGLengthList extends js.Object {
    *
    * MDN
    */
-  def insertItemBefore(newItem: SVGLength, index: Int): SVGLength = ???
+  def insertItemBefore(newItem: SVGLength, index: Int): SVGLength = js.native
 }
 
 
@@ -2737,36 +2737,36 @@ class SVGPolylineElement extends SVGElement with SVGStylable with SVGTransformab
 
 
 trait SVGAnimatedPathData extends js.Object {
-  var pathSegList: SVGPathSegList = ???
+  var pathSegList: SVGPathSegList = js.native
 }
 
 trait SVGZoomAndPan extends js.Object {
-  var zoomAndPan: Int = ???
+  var zoomAndPan: Int = js.native
 }
 
 object SVGZoomAndPan extends js.Object {
-  val SVG_ZOOMANDPAN_MAGNIFY: Int = ???
-  val SVG_ZOOMANDPAN_UNKNOWN: Int = ???
-  val SVG_ZOOMANDPAN_DISABLE: Int = ???
+  val SVG_ZOOMANDPAN_MAGNIFY: Int = js.native
+  val SVG_ZOOMANDPAN_UNKNOWN: Int = js.native
+  val SVG_ZOOMANDPAN_DISABLE: Int = js.native
 }
 
 
 class SVGTextPathElement extends SVGTextContentElement with SVGURIReference {
-  def startOffset: SVGAnimatedLength = ???
+  def startOffset: SVGAnimatedLength = js.native
 
-  def method: SVGAnimatedEnumeration = ???
+  def method: SVGAnimatedEnumeration = js.native
 
-  def spacing: SVGAnimatedEnumeration = ???
+  def spacing: SVGAnimatedEnumeration = js.native
 }
 
 object SVGTextPathElement extends js.Object {
 
-  val TEXTPATH_SPACINGTYPE_EXACT: Int = ???
-  val TEXTPATH_METHODTYPE_STRETCH: Int = ???
-  val TEXTPATH_SPACINGTYPE_AUTO: Int = ???
-  val TEXTPATH_SPACINGTYPE_UNKNOWN: Int = ???
-  val TEXTPATH_METHODTYPE_UNKNOWN: Int = ???
-  val TEXTPATH_METHODTYPE_ALIGN: Int = ???
+  val TEXTPATH_SPACINGTYPE_EXACT: Int = js.native
+  val TEXTPATH_METHODTYPE_STRETCH: Int = js.native
+  val TEXTPATH_SPACINGTYPE_AUTO: Int = js.native
+  val TEXTPATH_SPACINGTYPE_UNKNOWN: Int = js.native
+  val TEXTPATH_METHODTYPE_UNKNOWN: Int = js.native
+  val TEXTPATH_METHODTYPE_ALIGN: Int = js.native
 }
 
 /**
@@ -2782,14 +2782,14 @@ class SVGGradientElement extends SVGElement with SVGUnitTypes with SVGStylable w
    *
    * MDN
    */
-  def spreadMethod: SVGAnimatedEnumeration = ???
+  def spreadMethod: SVGAnimatedEnumeration = js.native
 
   /**
    * Corresponds to attribute gradientTransform on the given element.
    *
    * MDN
    */
-  def gradientTransform: SVGAnimatedTransformList = ???
+  def gradientTransform: SVGAnimatedTransformList = js.native
 
   /**
    * Corresponds to attribute gradientUnits on the given element. Takes one of the
@@ -2797,7 +2797,7 @@ class SVGGradientElement extends SVGElement with SVGUnitTypes with SVGStylable w
    *
    * MDN
    */
-  def gradientUnits: SVGAnimatedEnumeration = ???
+  def gradientUnits: SVGAnimatedEnumeration = js.native
 }
 
 /**
@@ -2807,16 +2807,16 @@ class SVGGradientElement extends SVGElement with SVGUnitTypes with SVGStylable w
  * MDN
  */
 object SVGGradientElement extends js.Object {
-  val SVG_SPREADMETHOD_REFLECT: Int = ???
-  val SVG_SPREADMETHOD_PAD: Int = ???
+  val SVG_SPREADMETHOD_REFLECT: Int = js.native
+  val SVG_SPREADMETHOD_PAD: Int = js.native
   /**
    * The type is not one of predefined types. It is invalid to attempt to define a new value
    * of this type or to attempt to switch an existing value to this type.
    *
    * MDN
    */
-  val SVG_SPREADMETHOD_UNKNOWN: Int = ???
-  val SVG_SPREADMETHOD_REPEAT: Int = ???
+  val SVG_SPREADMETHOD_UNKNOWN: Int = js.native
+  val SVG_SPREADMETHOD_REPEAT: Int = js.native
 }
 
 /**
@@ -2825,7 +2825,7 @@ object SVGGradientElement extends js.Object {
  * MDN
  */
 class SVGNumberList extends js.Object {
-  def numberOfItems: Int = ???
+  def numberOfItems: Int = js.native
 
   /**
    * Replaces an existing item in the list with a new item. If newItem is already in a list,
@@ -2839,7 +2839,7 @@ class SVGNumberList extends js.Object {
    *
    * MDN
    */
-  def replaceItem(newItem: SVGNumber, index: Int): SVGNumber = ???
+  def replaceItem(newItem: SVGNumber, index: Int): SVGNumber = js.native
 
   /**
    * Returns the specified item from the list. The returned item is the item itself and
@@ -2850,7 +2850,7 @@ class SVGNumberList extends js.Object {
    *
    * MDN
    */
-  def getItem(index: Int): SVGNumber = ???
+  def getItem(index: Int): SVGNumber = js.native
 
   /**
    * Clears all existing current items from the list, with the result being an empty
@@ -2860,7 +2860,7 @@ class SVGNumberList extends js.Object {
    *
    * MDN
    */
-  def clear(): Unit = ???
+  def clear(): Unit = js.native
 
   /**
    * Inserts a new item at the end of the list. If newItem is already in a list, it is removed
@@ -2871,7 +2871,7 @@ class SVGNumberList extends js.Object {
    *
    * MDN
    */
-  def appendItem(newItem: SVGNumber): SVGNumber = ???
+  def appendItem(newItem: SVGNumber): SVGNumber = js.native
 
   /**
    * Clears all existing current items from the list and re-initializes the list to hold
@@ -2884,7 +2884,7 @@ class SVGNumberList extends js.Object {
    *
    * MDN
    */
-  def initialize(newItem: SVGNumber): SVGNumber = ???
+  def initialize(newItem: SVGNumber): SVGNumber = js.native
 
   /**
    * Removes an existing item from the list. Exceptions: a DOMException with code
@@ -2895,7 +2895,7 @@ class SVGNumberList extends js.Object {
    *
    * MDN
    */
-  def removeItem(index: Int): SVGNumber = ???
+  def removeItem(index: Int): SVGNumber = js.native
 
   /**
    * Inserts a new item into the list at the specified position. The first item is number
@@ -2910,13 +2910,13 @@ class SVGNumberList extends js.Object {
    *
    * MDN
    */
-  def insertItemBefore(newItem: SVGNumber, index: Int): SVGNumber = ???
+  def insertItemBefore(newItem: SVGNumber, index: Int): SVGNumber = js.native
 }
 
 
 class SVGPathSegLinetoRel extends SVGPathSeg {
-  var y: Double = ???
-  var x: Double = ???
+  var y: Double = js.native
+  var x: Double = js.native
 }
 
 
@@ -2934,14 +2934,14 @@ class SVGAnimatedBoolean extends js.Object {
    *
    * MDN
    */
-  def animVal: Boolean = ???
+  def animVal: Boolean = js.native
 
   /**
    * The base value of the given attribute before applying any animations.
    *
    * MDN
    */
-  var baseVal: Boolean = ???
+  var baseVal: Boolean = js.native
 }
 
 
@@ -2967,14 +2967,14 @@ class SVGPreserveAspectRatio extends js.Object {
    *
    * MDN
    */
-  var align: Int = ???
+  var align: Int = js.native
   /**
    * The type of the meet-or-slice value as specified by one of the SVG_MEETORSLICE_*
    * constants defined on this interface.
    *
    * MDN
    */
-  var meetOrSlice: Int = ???
+  var meetOrSlice: Int = js.native
 }
 
 /**
@@ -2985,11 +2985,11 @@ class SVGPreserveAspectRatio extends js.Object {
  */
 object SVGPreserveAspectRatio extends js.Object {
 
-  val SVG_PRESERVEASPECTRATIO_NONE: Int = ???
-  val SVG_PRESERVEASPECTRATIO_XMINYMID: Int = ???
-  val SVG_PRESERVEASPECTRATIO_XMAXYMIN: Int = ???
-  val SVG_PRESERVEASPECTRATIO_XMINYMAX: Int = ???
-  val SVG_PRESERVEASPECTRATIO_XMAXYMAX: Int = ???
+  val SVG_PRESERVEASPECTRATIO_NONE: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_XMINYMID: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_XMAXYMIN: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_XMINYMAX: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_XMAXYMAX: Int = js.native
   /**
    * The enumeration was set to a value that is not one of predefined types. It is invalid
    * to attempt to define a new value of this type or to attempt to switch an existing value
@@ -2997,25 +2997,25 @@ object SVGPreserveAspectRatio extends js.Object {
    *
    * MDN
    */
-  val SVG_MEETORSLICE_UNKNOWN: Int = ???
-  val SVG_PRESERVEASPECTRATIO_XMAXYMID: Int = ???
-  val SVG_PRESERVEASPECTRATIO_XMIDYMAX: Int = ???
-  val SVG_PRESERVEASPECTRATIO_XMINYMIN: Int = ???
+  val SVG_MEETORSLICE_UNKNOWN: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_XMAXYMID: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_XMIDYMAX: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_XMINYMIN: Int = js.native
   /*
    * Corresponds to value meet for attribute preserveAspectRatio.
    *
    * MDN
    */
-  val SVG_MEETORSLICE_MEET: Int = ???
-  val SVG_PRESERVEASPECTRATIO_XMIDYMID: Int = ???
-  val SVG_PRESERVEASPECTRATIO_XMIDYMIN: Int = ???
+  val SVG_MEETORSLICE_MEET: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_XMIDYMID: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_XMIDYMIN: Int = js.native
   /**
    * Corresponds to value slice for attribute preserveAspectRatio.
    *
    * MDN
    */
-  val SVG_MEETORSLICE_SLICE: Int = ???
-  val SVG_PRESERVEASPECTRATIO_UNKNOWN: Int = ???
+  val SVG_MEETORSLICE_SLICE: Int = js.native
+  val SVG_PRESERVEASPECTRATIO_UNKNOWN: Int = js.native
 }
 
 
@@ -3030,7 +3030,7 @@ class SVGStopElement extends SVGElement with SVGStylable {
    *
    * MDN
    */
-  var offset: SVGAnimatedNumber = ???
+  var offset: SVGAnimatedNumber = js.native
 }
 
 
@@ -3044,9 +3044,9 @@ class SVGSymbolElement extends SVGElement with SVGStylable with SVGLangSpace wit
 
 
 class SVGElementInstanceList extends js.Object {
-  def length: Int = ???
+  def length: Int = js.native
 
-  def item(index: Int): SVGElementInstance = ???
+  def item(index: Int): SVGElementInstance = js.native
 }
 
 
@@ -3062,14 +3062,14 @@ class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with 
    *
    * MDN
    */
-  def y: SVGAnimatedLength = ???
+  def y: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute width on the given <mask> element.
    *
    * MDN
    */
-  def width: SVGAnimatedLength = ???
+  def width: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute maskUnits on the given <mask> element. Takes one of the
@@ -3077,7 +3077,7 @@ class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with 
    *
    * MDN
    */
-  def maskUnits: SVGAnimatedEnumeration = ???
+  def maskUnits: SVGAnimatedEnumeration = js.native
 
   /**
    * Corresponds to attribute maskContentUnits on the given <mask> element. Takes one
@@ -3085,21 +3085,21 @@ class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with 
    *
    * MDN
    */
-  def maskContentUnits: SVGAnimatedEnumeration = ???
+  def maskContentUnits: SVGAnimatedEnumeration = js.native
 
   /**
    * Corresponds to attribute x on the given <mask> element.
    *
    * MDN
    */
-  def x: SVGAnimatedLength = ???
+  def x: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute height on the given <mask> element.
    *
    * MDN
    */
-  def height: SVGAnimatedLength = ???
+  def height: SVGAnimatedLength = js.native
 }
 
 
@@ -3115,21 +3115,21 @@ class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable wit
    *
    * MDN
    */
-  def y: SVGAnimatedLength = ???
+  def y: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute width on the given <filter> element.
    *
    * MDN
    */
-  def width: SVGAnimatedLength = ???
+  def width: SVGAnimatedLength = js.native
 
   /**
    * Contains the X component of attribute filterRes on the given <filter> element.
    *
    * MDN
    */
-  def filterResX: SVGAnimatedInteger = ???
+  def filterResX: SVGAnimatedInteger = js.native
 
   /**
    * Corresponds to attribute filterUnits on the given <filter> element. Takes one of
@@ -3137,7 +3137,7 @@ class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable wit
    *
    * MDN
    */
-  def filterUnits: SVGAnimatedEnumeration = ???
+  def filterUnits: SVGAnimatedEnumeration = js.native
 
   /**
    * Corresponds to attribute primitiveUnits on the given <filter> element. Takes one
@@ -3145,40 +3145,40 @@ class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable wit
    *
    * MDN
    */
-  def primitiveUnits: SVGAnimatedEnumeration = ???
+  def primitiveUnits: SVGAnimatedEnumeration = js.native
 
   /**
    * Corresponds to attribute x on the given <filter> element.
    *
    * MDN
    */
-  def x: SVGAnimatedLength = ???
+  def x: SVGAnimatedLength = js.native
 
   /**
    * Corresponds to attribute height on the given <filter> element.
    *
    * MDN
    */
-  def height: SVGAnimatedLength = ???
+  def height: SVGAnimatedLength = js.native
 
   /**
    * Contains the Y component of attribute filterRes on the given <filter> element.
    *
    * MDN
    */
-  def filterResY: SVGAnimatedInteger = ???
+  def filterResY: SVGAnimatedInteger = js.native
 
   /**
    * Sets the values for attribute filterRes.
    *
    * MDN
    */
-  def setFilterRes(filterResX: Double, filterResY: Double): Unit = ???
+  def setFilterRes(filterResX: Double, filterResY: Double): Unit = js.native
 }
 
 
 class SVGFEMergeNodeElement extends SVGElement {
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 }
 
 
@@ -3191,26 +3191,26 @@ class SVGFEFuncAElement extends SVGComponentTransferFunctionElement {
 
 
 class SVGFETileElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 }
 
 
 class SVGFEBlendElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def in2: SVGAnimatedString = ???
+  def in2: SVGAnimatedString = js.native
 
-  def mode: SVGAnimatedEnumeration = ???
+  def mode: SVGAnimatedEnumeration = js.native
 
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 }
 
 object SVGFEBlendElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEBlendElement),List())))) */
-  val SVG_FEBLEND_MODE_DARKEN: Int = ???
-  val SVG_FEBLEND_MODE_UNKNOWN: Int = ???
-  val SVG_FEBLEND_MODE_MULTIPLY: Int = ???
-  val SVG_FEBLEND_MODE_NORMAL: Int = ???
-  val SVG_FEBLEND_MODE_SCREEN: Int = ???
-  val SVG_FEBLEND_MODE_LIGHTEN: Int = ???
+  val SVG_FEBLEND_MODE_DARKEN: Int = js.native
+  val SVG_FEBLEND_MODE_UNKNOWN: Int = js.native
+  val SVG_FEBLEND_MODE_MULTIPLY: Int = js.native
+  val SVG_FEBLEND_MODE_NORMAL: Int = js.native
+  val SVG_FEBLEND_MODE_SCREEN: Int = js.native
+  val SVG_FEBLEND_MODE_LIGHTEN: Int = js.native
 }
 
 class SVGFEMergeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
@@ -3218,66 +3218,66 @@ class SVGFEMergeElement extends SVGElement with SVGFilterPrimitiveStandardAttrib
 
 
 class SVGFEPointLightElement extends SVGElement {
-  def y: SVGAnimatedNumber = ???
+  def y: SVGAnimatedNumber = js.native
 
-  def x: SVGAnimatedNumber = ???
+  def x: SVGAnimatedNumber = js.native
 
-  def z: SVGAnimatedNumber = ???
+  def z: SVGAnimatedNumber = js.native
 }
 
 
 class SVGFEGaussianBlurElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def stdDeviationX: SVGAnimatedNumber = ???
+  def stdDeviationX: SVGAnimatedNumber = js.native
 
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 
-  def stdDeviationY: SVGAnimatedNumber = ???
+  def stdDeviationY: SVGAnimatedNumber = js.native
 
-  def setStdDeviation(stdDeviationX: Double, stdDeviationY: Double): Unit = ???
+  def setStdDeviation(stdDeviationX: Double, stdDeviationY: Double): Unit = js.native
 }
 
 
 trait SVGFilterPrimitiveStandardAttributes extends SVGStylable {
-  def y: SVGAnimatedLength = ???
+  def y: SVGAnimatedLength = js.native
 
-  def width: SVGAnimatedLength = ???
+  def width: SVGAnimatedLength = js.native
 
-  def x: SVGAnimatedLength = ???
+  def x: SVGAnimatedLength = js.native
 
-  def height: SVGAnimatedLength = ???
+  def height: SVGAnimatedLength = js.native
 
-  def result: SVGAnimatedString = ???
+  def result: SVGAnimatedString = js.native
 }
 
 class SVGFESpecularLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def kernelUnitLengthY: SVGAnimatedNumber = ???
+  def kernelUnitLengthY: SVGAnimatedNumber = js.native
 
-  def surfaceScale: SVGAnimatedNumber = ???
+  def surfaceScale: SVGAnimatedNumber = js.native
 
-  def specularExponent: SVGAnimatedNumber = ???
+  def specularExponent: SVGAnimatedNumber = js.native
 
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 
-  def kernelUnitLengthX: SVGAnimatedNumber = ???
+  def kernelUnitLengthX: SVGAnimatedNumber = js.native
 
-  def specularConstant: SVGAnimatedNumber = ???
+  def specularConstant: SVGAnimatedNumber = js.native
 }
 
 
 class SVGFEMorphologyElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def operator: SVGAnimatedEnumeration = ???
+  def operator: SVGAnimatedEnumeration = js.native
 
-  def radiusX: SVGAnimatedNumber = ???
+  def radiusX: SVGAnimatedNumber = js.native
 
-  def radiusY: SVGAnimatedNumber = ???
+  def radiusY: SVGAnimatedNumber = js.native
 
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 }
 
 object SVGFEMorphologyElement extends js.Object {
-  val SVG_MORPHOLOGY_OPERATOR_UNKNOWN: Int = ???
-  val SVG_MORPHOLOGY_OPERATOR_ERODE: Int = ???
-  val SVG_MORPHOLOGY_OPERATOR_DILATE: Int = ???
+  val SVG_MORPHOLOGY_OPERATOR_UNKNOWN: Int = js.native
+  val SVG_MORPHOLOGY_OPERATOR_ERODE: Int = js.native
+  val SVG_MORPHOLOGY_OPERATOR_DILATE: Int = js.native
 }
 
 class SVGFEFuncRElement extends SVGComponentTransferFunctionElement {
@@ -3285,54 +3285,54 @@ class SVGFEFuncRElement extends SVGComponentTransferFunctionElement {
 
 
 class SVGFEDisplacementMapElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def in2: SVGAnimatedString = ???
+  def in2: SVGAnimatedString = js.native
 
-  def xChannelSelector: SVGAnimatedEnumeration = ???
+  def xChannelSelector: SVGAnimatedEnumeration = js.native
 
-  def yChannelSelector: SVGAnimatedEnumeration = ???
+  def yChannelSelector: SVGAnimatedEnumeration = js.native
 
-  def scale: SVGAnimatedNumber = ???
+  def scale: SVGAnimatedNumber = js.native
 
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 }
 
 object SVGFEDisplacementMapElement extends js.Object {
-  val SVG_CHANNEL_B: Int = ???
-  val SVG_CHANNEL_R: Int = ???
-  val SVG_CHANNEL_G: Int = ???
-  val SVG_CHANNEL_UNKNOWN: Int = ???
-  val SVG_CHANNEL_A: Int = ???
+  val SVG_CHANNEL_B: Int = js.native
+  val SVG_CHANNEL_R: Int = js.native
+  val SVG_CHANNEL_G: Int = js.native
+  val SVG_CHANNEL_UNKNOWN: Int = js.native
+  val SVG_CHANNEL_A: Int = js.native
 }
 
 class SVGComponentTransferFunctionElement extends SVGElement {
-  def tableValues: SVGAnimatedNumberList = ???
+  def tableValues: SVGAnimatedNumberList = js.native
 
-  def slope: SVGAnimatedNumber = ???
+  def slope: SVGAnimatedNumber = js.native
 
-  def `type`: SVGAnimatedEnumeration = ???
+  def `type`: SVGAnimatedEnumeration = js.native
 
-  def exponent: SVGAnimatedNumber = ???
+  def exponent: SVGAnimatedNumber = js.native
 
-  def amplitude: SVGAnimatedNumber = ???
+  def amplitude: SVGAnimatedNumber = js.native
 
-  def intercept: SVGAnimatedNumber = ???
+  def intercept: SVGAnimatedNumber = js.native
 
-  def offset: SVGAnimatedNumber = ???
+  def offset: SVGAnimatedNumber = js.native
 }
 
 object SVGComponentTransferFunctionElement extends js.Object {
-  val SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN: Int = ???
-  val SVG_FECOMPONENTTRANSFER_TYPE_TABLE: Int = ???
-  val SVG_FECOMPONENTTRANSFER_TYPE_IDENTITY: Int = ???
-  val SVG_FECOMPONENTTRANSFER_TYPE_GAMMA: Int = ???
-  val SVG_FECOMPONENTTRANSFER_TYPE_DISCRETE: Int = ???
-  val SVG_FECOMPONENTTRANSFER_TYPE_LINEAR: Int = ???
+  val SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN: Int = js.native
+  val SVG_FECOMPONENTTRANSFER_TYPE_TABLE: Int = js.native
+  val SVG_FECOMPONENTTRANSFER_TYPE_IDENTITY: Int = js.native
+  val SVG_FECOMPONENTTRANSFER_TYPE_GAMMA: Int = js.native
+  val SVG_FECOMPONENTTRANSFER_TYPE_DISCRETE: Int = js.native
+  val SVG_FECOMPONENTTRANSFER_TYPE_LINEAR: Int = js.native
 }
 
 class SVGFEDistantLightElement extends SVGElement {
-  def azimuth: SVGAnimatedNumber = ???
+  def azimuth: SVGAnimatedNumber = js.native
 
-  def elevation: SVGAnimatedNumber = ???
+  def elevation: SVGAnimatedNumber = js.native
 }
 
 
@@ -3341,27 +3341,27 @@ class SVGFEFuncBElement extends SVGComponentTransferFunctionElement {
 
 
 class SVGFETurbulenceElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def baseFrequencyX: SVGAnimatedNumber = ???
+  def baseFrequencyX: SVGAnimatedNumber = js.native
 
-  def numOctaves: SVGAnimatedInteger = ???
+  def numOctaves: SVGAnimatedInteger = js.native
 
-  def `type`: SVGAnimatedEnumeration = ???
+  def `type`: SVGAnimatedEnumeration = js.native
 
-  def baseFrequencyY: SVGAnimatedNumber = ???
+  def baseFrequencyY: SVGAnimatedNumber = js.native
 
-  def stitchTiles: SVGAnimatedEnumeration = ???
+  def stitchTiles: SVGAnimatedEnumeration = js.native
 
-  def seed: SVGAnimatedNumber = ???
+  def seed: SVGAnimatedNumber = js.native
 }
 
 object SVGFETurbulenceElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFETurbulenceElement),List())))) */
-  val SVG_STITCHTYPE_UNKNOWN: Int = ???
-  val SVG_STITCHTYPE_NOSTITCH: Int = ???
-  val SVG_TURBULENCE_TYPE_UNKNOWN: Int = ???
-  val SVG_TURBULENCE_TYPE_TURBULENCE: Int = ???
-  val SVG_TURBULENCE_TYPE_FRACTALNOISE: Int = ???
-  val SVG_STITCHTYPE_STITCH: Int = ???
+  val SVG_STITCHTYPE_UNKNOWN: Int = js.native
+  val SVG_STITCHTYPE_NOSTITCH: Int = js.native
+  val SVG_TURBULENCE_TYPE_UNKNOWN: Int = js.native
+  val SVG_TURBULENCE_TYPE_TURBULENCE: Int = js.native
+  val SVG_TURBULENCE_TYPE_FRACTALNOISE: Int = js.native
+  val SVG_STITCHTYPE_STITCH: Int = js.native
 }
 
 class SVGFEFuncGElement extends SVGComponentTransferFunctionElement {
@@ -3369,130 +3369,130 @@ class SVGFEFuncGElement extends SVGComponentTransferFunctionElement {
 
 
 class SVGFEColorMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 
-  def `type`: SVGAnimatedEnumeration = ???
+  def `type`: SVGAnimatedEnumeration = js.native
 
-  def values: SVGAnimatedNumberList = ???
+  def values: SVGAnimatedNumberList = js.native
 }
 
 object SVGFEColorMatrixElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEColorMatrixElement),List())))) */
-  val SVG_FECOLORMATRIX_TYPE_SATURATE: Int = ???
-  val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Int = ???
-  val SVG_FECOLORMATRIX_TYPE_MATRIX: Int = ???
-  val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Int = ???
-  val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Int = ???
+  val SVG_FECOLORMATRIX_TYPE_SATURATE: Int = js.native
+  val SVG_FECOLORMATRIX_TYPE_UNKNOWN: Int = js.native
+  val SVG_FECOLORMATRIX_TYPE_MATRIX: Int = js.native
+  val SVG_FECOLORMATRIX_TYPE_HUEROTATE: Int = js.native
+  val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Int = js.native
 }
 
 class SVGFESpotLightElement extends SVGElement {
-  def pointsAtY: SVGAnimatedNumber = ???
+  def pointsAtY: SVGAnimatedNumber = js.native
 
-  def y: SVGAnimatedNumber = ???
+  def y: SVGAnimatedNumber = js.native
 
-  def limitingConeAngle: SVGAnimatedNumber = ???
+  def limitingConeAngle: SVGAnimatedNumber = js.native
 
-  def specularExponent: SVGAnimatedNumber = ???
+  def specularExponent: SVGAnimatedNumber = js.native
 
-  def x: SVGAnimatedNumber = ???
+  def x: SVGAnimatedNumber = js.native
 
-  def pointsAtZ: SVGAnimatedNumber = ???
+  def pointsAtZ: SVGAnimatedNumber = js.native
 
-  def z: SVGAnimatedNumber = ???
+  def z: SVGAnimatedNumber = js.native
 
-  def pointsAtX: SVGAnimatedNumber = ???
+  def pointsAtX: SVGAnimatedNumber = js.native
 }
 
 
 class SVGFEOffsetElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def dy: SVGAnimatedNumber = ???
+  def dy: SVGAnimatedNumber = js.native
 
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 
-  def dx: SVGAnimatedNumber = ???
+  def dx: SVGAnimatedNumber = js.native
 }
 
 
 class SVGFEImageElement extends SVGElement with SVGLangSpace with SVGFilterPrimitiveStandardAttributes with SVGURIReference with SVGExternalResourcesRequired {
-  def preserveAspectRatio: SVGAnimatedPreserveAspectRatio = ???
+  def preserveAspectRatio: SVGAnimatedPreserveAspectRatio = js.native
 }
 
 
 class SVGFECompositeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def operator: SVGAnimatedEnumeration = ???
+  def operator: SVGAnimatedEnumeration = js.native
 
-  def in2: SVGAnimatedString = ???
+  def in2: SVGAnimatedString = js.native
 
-  def k2: SVGAnimatedNumber = ???
+  def k2: SVGAnimatedNumber = js.native
 
-  def k1: SVGAnimatedNumber = ???
+  def k1: SVGAnimatedNumber = js.native
 
-  def k3: SVGAnimatedNumber = ???
+  def k3: SVGAnimatedNumber = js.native
 
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 
-  def k4: SVGAnimatedNumber = ???
+  def k4: SVGAnimatedNumber = js.native
 }
 
 object SVGFECompositeElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFECompositeElement),List())))) */
-  val SVG_FECOMPOSITE_OPERATOR_OUT: Int = ???
-  val SVG_FECOMPOSITE_OPERATOR_OVER: Int = ???
-  val SVG_FECOMPOSITE_OPERATOR_XOR: Int = ???
-  val SVG_FECOMPOSITE_OPERATOR_ARITHMETIC: Int = ???
-  val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Int = ???
-  val SVG_FECOMPOSITE_OPERATOR_IN: Int = ???
-  val SVG_FECOMPOSITE_OPERATOR_ATOP: Int = ???
+  val SVG_FECOMPOSITE_OPERATOR_OUT: Int = js.native
+  val SVG_FECOMPOSITE_OPERATOR_OVER: Int = js.native
+  val SVG_FECOMPOSITE_OPERATOR_XOR: Int = js.native
+  val SVG_FECOMPOSITE_OPERATOR_ARITHMETIC: Int = js.native
+  val SVG_FECOMPOSITE_OPERATOR_UNKNOWN: Int = js.native
+  val SVG_FECOMPOSITE_OPERATOR_IN: Int = js.native
+  val SVG_FECOMPOSITE_OPERATOR_ATOP: Int = js.native
 }
 
 class SVGFEComponentTransferElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 }
 
 
 class SVGFEDiffuseLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def kernelUnitLengthY: SVGAnimatedNumber = ???
+  def kernelUnitLengthY: SVGAnimatedNumber = js.native
 
-  def surfaceScale: SVGAnimatedNumber = ???
+  def surfaceScale: SVGAnimatedNumber = js.native
 
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 
-  def kernelUnitLengthX: SVGAnimatedNumber = ???
+  def kernelUnitLengthX: SVGAnimatedNumber = js.native
 
-  def diffuseConstant: SVGAnimatedNumber = ???
+  def diffuseConstant: SVGAnimatedNumber = js.native
 }
 
 
 object SVGFEConvolveMatrixElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEConvolveMatrixElement),List())))) */
-  val SVG_EDGEMODE_WRAP: Int = ???
-  val SVG_EDGEMODE_DUPLICATE: Int = ???
-  val SVG_EDGEMODE_UNKNOWN: Int = ???
-  val SVG_EDGEMODE_NONE: Int = ???
+  val SVG_EDGEMODE_WRAP: Int = js.native
+  val SVG_EDGEMODE_DUPLICATE: Int = js.native
+  val SVG_EDGEMODE_UNKNOWN: Int = js.native
+  val SVG_EDGEMODE_NONE: Int = js.native
 }
 
 class SVGFEConvolveMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
-  def orderY: SVGAnimatedInteger = ???
+  def orderY: SVGAnimatedInteger = js.native
 
-  def kernelUnitLengthY: SVGAnimatedNumber = ???
+  def kernelUnitLengthY: SVGAnimatedNumber = js.native
 
-  def orderX: SVGAnimatedInteger = ???
+  def orderX: SVGAnimatedInteger = js.native
 
-  def preserveAlpha: SVGAnimatedBoolean = ???
+  def preserveAlpha: SVGAnimatedBoolean = js.native
 
-  def kernelMatrix: SVGAnimatedNumberList = ???
+  def kernelMatrix: SVGAnimatedNumberList = js.native
 
-  def edgeMode: SVGAnimatedEnumeration = ???
+  def edgeMode: SVGAnimatedEnumeration = js.native
 
-  def kernelUnitLengthX: SVGAnimatedNumber = ???
+  def kernelUnitLengthX: SVGAnimatedNumber = js.native
 
-  def bias: SVGAnimatedNumber = ???
+  def bias: SVGAnimatedNumber = js.native
 
-  def targetX: SVGAnimatedInteger = ???
+  def targetX: SVGAnimatedInteger = js.native
 
-  def targetY: SVGAnimatedInteger = ???
+  def targetY: SVGAnimatedInteger = js.native
 
-  def divisor: SVGAnimatedNumber = ???
+  def divisor: SVGAnimatedNumber = js.native
 
-  def in1: SVGAnimatedString = ???
+  def in1: SVGAnimatedString = js.native
 }
