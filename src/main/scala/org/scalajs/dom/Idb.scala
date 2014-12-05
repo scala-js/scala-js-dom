@@ -468,7 +468,7 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, _] = js.native
+  var onabort: js.Function1[Event, _] = js.native
 
   /**
    * Returns immediately, and rolls back all the changes to objects in the database
@@ -564,7 +564,7 @@ class IDBDatabase extends EventTarget {
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, _] = js.native
+  var onabort: js.Function1[Event, _] = js.native
   /**
    * The method takes the name of the store as well as a parameter object. The parameter
    * object lets you define important optional properties. You can use the property to
