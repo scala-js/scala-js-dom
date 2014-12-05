@@ -602,7 +602,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  var scrollTop: Int = js.native
+  var scrollTop: Double = js.native
 
   /**
    * The width of the left border of an element in pixels. It includes the width of the
@@ -620,7 +620,7 @@ class Element extends Node with NodeSelector with ParentNode {
    *
    * MDN
    */
-  var scrollLeft: Int = js.native
+  var scrollLeft: Double = js.native
 
   /**
    * In XML (and XML-based languages such as XHTML), tagName preserves case. On
