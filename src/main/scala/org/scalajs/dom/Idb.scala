@@ -380,6 +380,9 @@ class IDBKeyRange extends js.Object {
    * MDN
    */
   def lowerOpen: Boolean = js.native
+}
+
+object IDBKeyRange extends js.Object {
   /**
    * The bounds can be open (that is, the bounds exclude the endpoint values) or closed
    * (that is, the bounds include the endpoint values). By default, the bounds are
