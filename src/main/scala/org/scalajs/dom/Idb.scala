@@ -284,6 +284,16 @@ class IDBCursor extends js.Object {
   def advance(count: Int): Unit = js.native
 
   /**
+   * Sets cursor to key if specified, otherwise advances cursor by one.
+   *
+   * @note calling this method twice from the same onsuccess handler results
+   *       in a InvalidStateError DOMException being thrown on the second call
+   *
+   * W3C
+   */
+  def continue(key: js.Any = ???): Unit = js.native
+
+  /**
    * Returns an IDBRequest object, and, in a separate thread, deletes the record at the
    * cursor's position, without changing the cursor's position.
    *
