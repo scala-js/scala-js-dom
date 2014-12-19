@@ -855,7 +855,7 @@ class HTMLSelectElement extends HTMLElement {
    *
    * MDN
    */
-  val options: HTMLSelectElement = js.native
+  val options: js.Array[HTMLSelectElement] = js.native
   /**
    * The value of this form control, that is, of the first selected option.
    *
