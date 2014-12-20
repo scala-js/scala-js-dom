@@ -4590,16 +4590,6 @@ class Text extends CharacterData {
    * MDN
    */
   def splitText(offset: Int): Text = js.native
-
-  /**
-   * The Text.replaceWholeText() method replaces the text of the node and all of its
-   * logically adjacent text nodes with the specified text. The replaced nodes are
-   * removed, including the current node, unless it was the recipient of the
-   * replacement text.
-   *
-   * MDN
-   */
-  def replaceWholeText(content: String): Text = js.native
 }
 
 
