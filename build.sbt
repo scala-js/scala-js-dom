@@ -55,3 +55,11 @@ pomExtra := (
 )
 
 pomIncludeRepository := { _ => false }
+
+
+
+lazy val example = project.in(file("example"))
+  .dependsOn(root)
+  .enablePlugins(ScalaJSPlugin)
+  .settings(scalaVersion := "2.11.2")
+
