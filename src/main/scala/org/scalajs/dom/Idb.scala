@@ -544,12 +544,13 @@ object IDBTransaction extends js.Object {
  */
 class IDBDatabase extends EventTarget {
   /**
-   * A 64-bit integer that contains the version of the connected database. When a
-   * database is first created, this attribute is the empty string.
-   *
-   * MDN
+   * A 64-bit integer that contains the version of the connected database.
+   * When a database is first created or upgraded you should use
+   * [[org.scalajs.dom.IDBVersionChangeEvent#newVersion]] instead.
+   * Webkit returns always integer and the value is 1 when
+   * database is first created.
    */
-  def version: String = js.native
+  def version: Int = js.native
 
   /**
    * A DOMString that contains the name of the connected database.
