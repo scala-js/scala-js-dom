@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The Scala.js DOM demo</title>
+    <style>
+      #examples {
+        position: absolute;
+        left: 0;
+        right: 50%;
+        top: 0;
+        bottom: 0;
+        border-right: 2px solid blue;
+        margin: 10px;
+      }
+      #output {
+        position: absolute;
+        left: 50%;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: 10px;
+      }
+      #ex-sandbox {
+        border: 2px solid black;
+        min-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="examples">
+      <h2>Samples</h2>
+    </div>
+    <div id="output">
+      <h2 id="ex-title"></h2>
+      <div id="ex-html"></div>
+      <div id="ex-sandbox"></div>
+    </div>
+
+    <!-- Include Scala.js compiled code -->
+    <script type="text/javascript" src="target/scala-2.11/example-fastopt.js"></script>
+    <!-- Run example.DemoApp -->
+    <script type="text/javascript">
+      example.DemoApp().main();
+    </script>
+  </body>
+</html>
