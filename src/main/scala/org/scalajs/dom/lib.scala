@@ -2235,7 +2235,7 @@ class EventTarget extends js.Object {
    *
    * MDN
    */
-  def addEventListener(`type`: String, listener: js.Function1[Event, _], useCapture: Boolean = js.native): Unit = js.native
+  def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean = js.native): Unit = js.native
 
   /**
    * Dispatches an Event at the specified EventTarget, invoking the affected
