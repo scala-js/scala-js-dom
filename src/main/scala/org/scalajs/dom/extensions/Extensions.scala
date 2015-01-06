@@ -198,7 +198,6 @@ object Ajax{
             headers: Map[String, String],
             withCredentials: Boolean, 
             responseType: String): Future[dom.XMLHttpRequest] = {
-    val ajaxReq = Map("X-Requested-With"->"XMLHttpRequest")
     val req = new dom.XMLHttpRequest()
     val promise = Promise[dom.XMLHttpRequest]
 
@@ -214,7 +213,7 @@ object Ajax{
     req.responseType = responseType
     req.timeout = timeout
     req.withCredentials = withCredentials
-    (headers ++ ajaxReq).foreach(x => req.setRequestHeader(x._1, x._2))
+    headers.foreach(x => req.setRequestHeader(x._1, x._2))
     req.send(data)
     promise.future
   }
