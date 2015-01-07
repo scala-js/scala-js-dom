@@ -8,7 +8,7 @@
  * http://opensource.org/licenses/MIT
  */
 
-package org.scalajs.dom
+package org.scalajs.dom.raw
 
 import scala.scalajs.js
 
