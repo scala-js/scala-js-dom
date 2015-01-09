@@ -1,4 +1,4 @@
-package org.scalajs.dom.extensions
+package org.scalajs.dom.ext
 
 /**
  * The KeyboardEvent.key attribute of an event must always contain one of these control key or character values (even if

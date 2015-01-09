@@ -1,9 +1,7 @@
 package example
 
-import scala.scalajs.js.JSApp
-
 import org.scalajs.dom
-
+import dom.html
 import scala.scalajs.js.annotation.JSExport
 
 @JSExport
@@ -18,7 +16,7 @@ object Alert {
 @JSExport
 object NodeAppendChild {
   @JSExport
-  def main(div: dom.HTMLDivElement) = {
+  def main(div: html.Div) = {
     val child = dom.document
                    .createElement("div")
 
@@ -32,7 +30,7 @@ object NodeAppendChild {
 @JSExport
 object ElementStyle {
   @JSExport
-  def main(div: dom.HTMLDivElement) = {
+  def main(div: html.Div) = {
     val colors = Seq(
       "red", "green", "blue"
     )
@@ -47,8 +45,7 @@ object ElementStyle {
 @JSExport
 object LocalStorage {
   @JSExport
-  def main(in: dom.HTMLInputElement,
-           box: dom.HTMLDivElement) = {
+  def main(in: html.Input, box: html.Div) = {
     val key = "my-key"
 
     in.value =
@@ -67,7 +64,7 @@ object LocalStorage {
 @JSExport
 object Canvas {
   @JSExport
-  def main(c: dom.HTMLCanvasElement) = {
+  def main(c: html.Canvas) = {
     type Ctx2D =
       dom.CanvasRenderingContext2D
     val ctx = c.getContext("2d")
@@ -93,8 +90,8 @@ object Canvas {
 @JSExport
 object Base64 {
   @JSExport
-  def main(in: dom.HTMLInputElement,
-           out: dom.HTMLDivElement) = {
+  def main(in: html.Input,
+           out: html.Div) = {
     in.onkeyup = { (e: dom.Event) =>
       out.textContent =
         dom.btoa(in.value)
@@ -105,7 +102,7 @@ object Base64 {
 @JSExport
 object EventHandler{
   @JSExport
-  def main(pre: dom.HTMLPreElement) = {
+  def main(pre: html.Pre) = {
     pre.onmousemove = {
       (e: dom.MouseEvent) =>
         pre.textContent =
@@ -123,7 +120,7 @@ object EventHandler{
 @JSExport
 object XMLHttpRequest{
   @JSExport
-  def main(pre: dom.HTMLPreElement) = {
+  def main(pre: html.Pre) = {
     val xhr = new dom.XMLHttpRequest()
     xhr.open("GET",
       "http://api.openweathermap.org/" +
@@ -142,8 +139,8 @@ object XMLHttpRequest{
 @JSExport
 object Websocket {
   @JSExport
-  def main(in: dom.HTMLInputElement,
-           pre: dom.HTMLPreElement) = {
+  def main(in: html.Input,
+           pre: html.Pre) = {
     val echo = "ws://echo.websocket.org"
     val socket = new dom.WebSocket(echo)
     socket.onmessage = {
@@ -162,8 +159,8 @@ object Websocket {
 @JSExport
 object AjaxExtension {
   @JSExport
-  def main(pre: dom.HTMLPreElement) = {
-    import dom.extensions.Ajax
+  def main(pre: html.Pre) = {
+    import dom.ext.Ajax
     import scalajs.concurrent
                   .JSExecutionContext
                   .Implicits

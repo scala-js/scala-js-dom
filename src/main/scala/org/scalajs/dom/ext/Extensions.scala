@@ -1,4 +1,6 @@
-package org.scalajs.dom.extensions
+package org.scalajs.dom.ext
+
+import org.scalajs.dom.html
 
 import scala.scalajs.js
 import org.scalajs.dom
@@ -80,7 +82,7 @@ object Image {
     val img =
       dom.document
         .createElement("img")
-        .asInstanceOf[dom.HTMLImageElement]
+        .asInstanceOf[html.Image]
 
     img.src = "data:image/svg+xml;base64," + s
     img
@@ -199,7 +201,7 @@ object Ajax{
             withCredentials: Boolean, 
             responseType: String): Future[dom.XMLHttpRequest] = {
     val req = new dom.XMLHttpRequest()
-    val promise = Promise[dom.XMLHttpRequest]
+    val promise = Promise[dom.XMLHttpRequest]()
 
     req.onreadystatechange = {(e: dom.Event) =>
       if (req.readyState.toInt == 4){

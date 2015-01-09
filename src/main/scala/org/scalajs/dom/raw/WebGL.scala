@@ -4,11 +4,10 @@
  * Based on https://www.khronos.org/registry/webgl/specs/1.0/
  */
 
-package org.scalajs.dom
+package org.scalajs.dom.raw
 
 import scala.scalajs.js
-import js.annotation._
-import js.typedarray._
+import scala.scalajs.js.typedarray._
 
 /**
  * Contains drawing surface attributes.

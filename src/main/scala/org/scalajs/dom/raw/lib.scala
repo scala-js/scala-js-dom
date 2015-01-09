@@ -8,10 +8,9 @@
  * http://opensource.org/licenses/MIT
  */
 
-package org.scalajs.dom
+package org.scalajs.dom.raw
 
 import scala.scalajs.js
-import scala.scalajs.js.Dynamic.global
 
 object XPathResult extends js.Object {
 
