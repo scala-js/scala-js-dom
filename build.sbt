@@ -9,9 +9,9 @@ version := "0.7.1-SNAPSHOT"
 
 organization := "org.scala-js"
 
-scalaVersion := "2.11.2"
+scalaVersion := "2.11.5"
 
-crossScalaVersions := Seq("2.10.4", "2.11.2")
+crossScalaVersions := Seq("2.10.4", "2.11.5")
 
 scalacOptions ++= Seq("-deprecation", "-feature")
 

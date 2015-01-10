@@ -4,6 +4,6 @@ script:
   - sbt ++2.11.4 readme/run
 scala:
   - 2.10.4
-  - 2.11.2
+  - 2.11.5
 jdk:
   - oraclejdk7
