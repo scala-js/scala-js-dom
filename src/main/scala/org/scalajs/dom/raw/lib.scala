@@ -443,7 +443,7 @@ trait WindowTimers extends WindowTimersExtension {
    *
    * MDN
    */
-  def setTimeout(handler: js.Function0[Any], timeout: Int): Int = js.native
+  def setTimeout(handler: js.Function0[Any], timeout: Double): Int = js.native
 
   /**
    * Cancels repeated action which was set up using setInterval.
@@ -458,7 +458,7 @@ trait WindowTimers extends WindowTimersExtension {
    *
    * MDN
    */
-  def setInterval(handler: js.Function0[Any], timeout: Int): Int = js.native
+  def setInterval(handler: js.Function0[Any], timeout: Double): Int = js.native
 }
 
 /**
