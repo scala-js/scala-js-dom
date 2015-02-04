@@ -32,22 +32,43 @@
 @sect{scala-js-dom}
 
   @p
-    Scala-js-dom provides a nice statically typed interface to the DOM such that it can be called from Scala code without resorting to @hl.scala{js.Dynamic}. All javascript globals functions, singletons and classes are members of the @hl.scala{org.scalajs.dom} package, e.g.
+    Scala-js-dom provides a nice statically typed interface to the DOM such that it can be called from Scala code without resorting to @hl.scala{js.Dynamic}. All javascript globals functions, singletons and classes are members of the @hl.scala{org.scalajs.dom}, @hl.scala{org.scalajs.dom.html}, @hl.scala{org.scalajs.dom.svg}, etc. packages. For example:
 
   @pair("Alert", Nil)
 
   @p
-    Will cause a javascript alert box saying `HAI` to appear. Other javascript classes and objects can be similarly accessed e.g. @hl.scala{new dom.XMLHttpRequest()} to perform a new Ajax request, @hl.scala{dom.document} to access the global @hl.scala{document} object, or @hl.scala{dom.setInterval(() => ???, 1000)} to schedule a recurring task every second. The names of these functions/singletons/classes match their Javascript equivalents exactly, so if you want to know how to do something (e.g. "how do I open a websocket connection") the syntax is the same as if you were using raw Javascript.
+    Will cause a javascript alert box saying `HAI` to appear. Other javascript classes and objects can be similarly accessed e.g. @hl.scala{new dom.XMLHttpRequest()} to perform a new Ajax request, @hl.scala{dom.document} to access the global @hl.scala{document} object, or @hl.scala{html.Div} to to refer to the type of a @hl.scala{<div>} element.
 
   @sect{Usage}
     @p
       Add the following to your sbt build definition:
 
     @hl.scala
-      libraryDependencies += "org.scala-lang.modules.scalajs" %%% "scalajs-dom" % "0.6"
+      libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.8.0"
 
     @p
-      then enjoy the types available in @hl.scala{org.scalajs.dom}. scalajs-dom 0.6 is built and published for Scala.js 0.5.0 and following in the 0.5.x series, with both Scala 2.10 and 2.11. Here are some examples to get you started:
+      then enjoy the types available in @hl.scala{org.scalajs.dom}. scalajs-dom 0.8.0 is built and published for Scala.js 0.6.x, with both Scala 2.10 and 2.11.
+
+    @p
+      To begin with, @code{scala-js-dom} organizes the full-list of DOM APIs into a number of buckets:
+
+    @ul
+      @li
+        @code{dom.html}: HTML element APIs
+      @li
+        @code{dom.svg}: SVG element APIs
+      @li
+        @code{dom.idb}: IndexedDB APIs
+      @li
+        @code{dom.css}: CSS APIs
+      @li
+        @code{dom}: Miscellanious, unclassified APIs
+
+    @p
+      Most names have been shortened from names of the @a("raw browser APIs", href:="https://developer.mozilla.org/en-US/docs/Web/API"), since the namespacing avoids collisions. By convention these types are imported qualified: e.g. as @hl.scala{html.Canvas} instead of directly as @hl.scala{Canvas}. There is also the @code{dom.raw} namespace which contains everything with their full, un-shortened name.
+
+    @p
+      Here are some examples to get you started:
 
   @sect{Node.appendChild}
     @pair(
