@@ -2224,7 +2224,7 @@ class EventTarget extends js.Object {
    *
    * MDN
    */
-  def removeEventListener(`type`: String, listener: js.Function1[Event, _], useCapture: Boolean = js.native): Unit = js.native
+  def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean = js.native): Unit = js.native
 
   /**
    * The EventTarget.addEventListener() method registers the specified listener on
