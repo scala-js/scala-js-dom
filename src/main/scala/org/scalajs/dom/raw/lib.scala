@@ -109,7 +109,7 @@ class XPathResult extends js.Object {
   def snapshotLength: Int = js.native
   def stringValue: String = js.native
   def iterateNext(): Node = js.native
-  def snapshotItem(): Node = js.native
+  def snapshotItem(index:Int): Node = js.native
 }
 
 class XPathNSResolver extends js.Object {
