@@ -108,9 +108,8 @@ class XPathResult extends js.Object {
   def singleNodeValue: Node = js.native
   def snapshotLength: Int = js.native
   def stringValue: String = js.native
-
-  def iterateNext(): js.Dynamic = js.native
-  def snapshotItem(): js.Dynamic = js.native
+  def iterateNext(): Node = js.native
+  def snapshotItem(): Node = js.native
 }
 
 class XPathNSResolver extends js.Object {
