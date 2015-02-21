@@ -157,7 +157,7 @@ import scala.concurrent.{Promise, Future}
  * Contains the XMLHttpRequest that resulted in that response
  */
 case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
-  def timeout = xhr.status == 0 && xhr.readyState == 4
+  def isTimeout = xhr.status == 0 && xhr.readyState == 4
 }
 
 /**
