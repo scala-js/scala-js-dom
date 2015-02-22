@@ -3539,7 +3539,7 @@ class HTMLElement extends Element {
    *
    * MDN
    */
-  var offsetLeft: Double = js.native
+  def offsetLeft: Double = js.native
 
   var onstalled: js.Function1[Event, _] = js.native
   var onmousemove: js.Function1[MouseEvent, _] = js.native
