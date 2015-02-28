@@ -5120,7 +5120,7 @@ trait Position extends js.Object {
    *
    * MDN
    */
-  def timestamp: Int = js.native
+  def timestamp: Double = js.native
 
   /**
    * The Position.coords read-only property, a Coordinates object, represents a
