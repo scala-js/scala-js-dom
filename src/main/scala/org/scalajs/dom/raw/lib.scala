@@ -389,7 +389,7 @@ class Performance extends js.Object {
    *
    * MDN
    */
-  def now(): Int = js.native
+  def now(): Double = js.native
 }
 
 
