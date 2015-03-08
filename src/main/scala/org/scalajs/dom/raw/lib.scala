@@ -1114,6 +1114,7 @@ class Node extends EventTarget {
    * MDN
    */
   def lookupNamespaceURI(prefix: String): String = js.native
+
   /**
    * Clone a Node, and optionally, all of its contents. By default, it clones the content
    * of the node.
@@ -1136,13 +1137,14 @@ class Node extends EventTarget {
    * MDN
    */
   def replaceChild(newChild: Node, oldChild: Node): Node = js.native
+
   /**
    * Inserts the first Node given in a parameter immediately before the second, child of
    * this element, Node.
    *
    * MDN
    */
-  def insertBefore(newChild: Node, refChild: Node = js.native): Node = js.native
+  def insertBefore(newChild: Node, refChild: Node): Node = js.native
 }
 
 
