@@ -11,6 +11,7 @@
 package org.scalajs.dom.raw
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
 
 object XPathResult extends js.Object {
 
@@ -461,6 +462,202 @@ trait WindowTimers extends WindowTimersExtension {
 }
 
 /**
+ * The Promise object is used for deferred and asynchronous computations. A Promise is in one of these states:
+ * pending: initial state, not fulfilled or rejected.
+ * fulfilled: successful operation
+ * rejected: failed operation.
+ * settled: the Promise is either fulfilled or rejected, but not pending.
+ *
+ * MDN
+ */
+trait Promise[+A] extends js.Object {
+
+  /**
+   * The catch() method returns a Promise and deals with rejected cases only.
+   * It behaves the same as calling Promise.prototype.then(undefined, onRejected).
+   *
+   * MDN
+   */
+  @JSName("catch")
+  def recover[B >: A](onRejected: js.Function1[Any, B]): Promise[Any] = js.native
+
+  /**
+   * The then() method returns a Promise.
+   * It takes two arguments, both are callback functions for the success and failure cases of the Promise.
+   *
+   * MDN
+   */
+  @JSName("then")
+  def andThen[B](onFulfilled: js.Function1[A,B]): Promise[Any] = js.native
+
+  @JSName("then")
+  def andThen[B](onFulfilled: js.Function1[A,B], onRejected: js.Function1[Any,B]): Promise[Any] = js.native
+
+}
+
+object Promise extends js.Object {
+
+  /**
+   * The Promise.all(iterable) method returns a promise that resolves when all of the promises in the iterable argument have resolved.
+   *
+   * MDN
+   */
+  def all[B](iterable: js.Array[Promise[B]]): Promise[Any] = js.native
+
+  /**
+   * The Promise.race(iterable) method returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.
+   *
+   * MDN
+   */
+  def race[B](iterable: js.Array[Promise[B]]): Promise[Any] = js.native
+
+  /**
+   * The Promise.reject(reason) method returns a Promise object that is rejected with the given reason.
+   *
+   * MDN
+   */
+  def reject(reason: String): Promise[Nothing] = js.native
+
+}
+
+/**
+ * The ServiceWorker interface of the ServiceWorker API provides a reference to a service worker.
+ * Multiple browsing contexts (e.g. pages, workers, etc.) can be associated with the same service worker,
+ * each through a unique ServiceWorker object.
+ *
+ *  MDN
+ */
+trait ServiceWorker extends EventTarget {
+  /**
+   * Returns the ServiceWorker serialized script URL defined as part of ServiceWorkerRegistration.
+   * Must be on the same origin as the document that registers the ServiceWorker.
+   *
+   * MDN
+   */
+  def scriptURL: String = js.native
+
+  /**
+   * The state read-only property of the ServiceWorker interface returns a string representing the current state of the service worker.
+   * It can be one of the following values: installing, installed, activating, activated, or redundant.
+   *
+   * MDN
+   */
+  def state: String = js.native
+
+  /**
+   * An EventListener property called whenever an event of type statechange is fired; it is basically fired anytime the ServiceWorker.state changes.
+   *
+   * MDN
+   */
+  var onstatechange: js.Function1[Event, Any] = js.native
+
+}
+
+/**
+ * The ServiceWorkerRegistion interface of the ServiceWorker API represents the service worker registration.
+ * You register a service worker to control one or more pages that share the same origin.
+ *
+ * MDN
+ */
+trait ServiceWorkerRegistration extends EventTarget {
+  /**
+   * The installing property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is installing.
+   * This property is initially set to null.
+   *
+   * MDN
+   */
+  var installing: ServiceWorker = js.native
+
+  /**
+   * The waiting property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is installed.
+   * This property is initially set to null.
+   *
+   * MDN
+   */
+  var waiting: ServiceWorker = js.native
+
+  /**
+   * The active property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is activating or activated.
+   * This property is initially set to null.
+   *
+   * MDN
+   */
+  var active: ServiceWorker = js.native
+
+  /**
+   * The scope read-only property of the ServiceWorkerRegistration interface returns a unique identifier for a service worker registration.
+   * The service worker must be on the same origin as the document that registers the ServiceWorker.
+   *
+   * MDN
+   */
+  var scope: String = js.native
+
+  /**
+   * The update method of the ServiceWorkerRegistration interface allows you to ping the server for an updated service worker script.
+   * If you don't explicitly call this,
+   * the UA will do this automatically once every 24 hours.
+   *
+   * MDN
+   */
+  def update(): Unit = js.native
+
+  /**
+   * The unregister method of the ServiceWorkerRegistration interface unregisters the service worker registration and returns a Promise.
+   * The promise will resolve to false if no registration was found, otherwise it resolves to true irrespective of whether unregistration happened or not (it may not unregister if someone else just called ServiceWorkerContainer.register with the same scope.)
+   * The service worker will finish any ongoing operations before it is unregistered.
+   *
+   * MDN
+   */
+  def unregister(): Promise[Boolean] = js.native
+
+  /**
+   * The onupdatefound property of the ServiceWorkerRegistration interface is an EventListener property called whenever an event of type statechange is fired;
+   * it is fired any time the ServiceWorkerRegistration.
+   * installing property acquires a new service worker.
+   *
+   * MDN
+   */
+  var onupdatefound: js.Function1[Event, Any] = js.native
+}
+
+/**
+ * The ServiceWorkerContainer interface of the ServiceWorker API exposes the ServiceWorkerContainer.
+ * register(scriptURL, scope[, base]) method used to register service workers, and the ServiceWorkerContainer.
+ * controller property used to determine whether or not the current page is actively controlled.
+ *
+ * MDN
+ */
+trait ServiceWorkerContainer extends EventTarget {
+
+  /**
+   * Creates or updates a ServiceWorkerRegistration for the given scriptURL.
+   * If successful, a service worker registration ties the provided script URL to a scope, which is subsequently used for navigation matching.
+   * If the method can't return a ServiceWorkerRegistration, it returns a Promise.
+   * You can call this method unconditionally from the controlled page, i.e.,
+   * you don't need to first check whether there's an active registration.
+   *
+   *  MDN
+   */
+  def register(scriptURL: String, options: js.Object = new js.Object()): Promise[ServiceWorkerRegistration] = js.native
+
+  /**
+   * The ServiceWorkerContainer.controller read-only property of the ServiceWorkerContainer interface returns the ServiceWorker whose state is activated (the same object returned by ServiceWorkerRegistration.active).
+   * This property returns null if the request is a force refresh (Shift + refresh) or if there is no active worker.
+   *
+   * MDN
+   */
+  def controller: ServiceWorker = js.native
+
+  /**
+   * Gets a ServiceWorkerRegistration object whose scope URL matches the document URL.
+   * If the method can't return a ServiceWorkerRegistration, it returns a Promise.
+   *
+   *  MDN
+   */
+  def getRegistration(scope: String = ""): Promise[ServiceWorkerRegistration] = js.native
+}
+
+/**
  * The Navigator interface represents the state and the identity of the user
  * agent. It allows scripts to query it and to register themselves to carry
  * on some activities.
@@ -470,7 +667,11 @@ trait WindowTimers extends WindowTimersExtension {
  *
  * MDN
  */
-class Navigator extends NavigatorID with NavigatorOnLine with NavigatorContentUtils with NavigatorGeolocation with NavigatorStorageUtils
+class Navigator extends NavigatorID with NavigatorOnLine with NavigatorContentUtils with NavigatorGeolocation with NavigatorStorageUtils {
+  
+  val serviceWorker: ServiceWorkerContainer = js.native
+  
+}
 
 trait NodeSelector extends js.Object {
   /**
