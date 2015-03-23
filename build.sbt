@@ -60,7 +60,8 @@ lazy val readme = project
   .settings(scalatex.SbtPlugin.projectSettings:_*)
   .settings(
     scalaVersion := "2.11.4",
-    libraryDependencies += "com.lihaoyi" %% "scalatex-site" % "0.1.0",
+    libraryDependencies += "com.lihaoyi" %% "scalatex-site" % "0.1.5",
+    libraryDependencies += "com.lihaoyi" %% "upickle" % "0.2.7",
     (resources in Compile) += (fullOptJS in (example, Compile)).value.data
   )
 
