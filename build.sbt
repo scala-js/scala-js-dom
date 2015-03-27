@@ -1,3 +1,5 @@
+import scalatex.ScalatexReadme
+
 lazy val root = project.in(file(".")).
   enablePlugins(ScalaJSPlugin)
 
@@ -56,14 +58,15 @@ pomExtra := (
 
 pomIncludeRepository := { _ => false }
 
-lazy val readme = project
-  .settings(scalatex.SbtPlugin.projectSettings:_*)
-  .settings(
-    scalaVersion := "2.11.4",
-    libraryDependencies += "com.lihaoyi" %% "scalatex-site" % "0.1.6",
-    libraryDependencies += "com.lihaoyi" %% "upickle" % "0.2.7",
-    (resources in Compile) += (fullOptJS in (example, Compile)).value.data
-  )
+lazy val readme = ScalatexReadme(
+  folder = "readme",
+  url = "https://github.com/scala-js/scala-js-dom/tree/master",
+  source = "Index",
+  targetFolder = "target/site",
+  autoResources = Seq("example-opt.js")
+).settings(
+  (resources in Compile) += (fullOptJS in (example, Compile)).value.data
+)
 
 lazy val example = project
   .dependsOn(root)
