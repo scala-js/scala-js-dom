@@ -81,63 +81,63 @@
     @p
       Here are some examples to get you started:
 
-  @sect{Node.appendChild}
-    @pair(
-      "NodeAppendChild",
-      Seq(div("div"))
-    )
-
-  @sect{Node.onmousemove}
-    @pair(
-     "EventHandler",
-      Seq(pre("pre")),
-      autorun=true
-    )
-
-  @sect{dom.btoa}
-    @pair(
-      "Base64",
-      Seq(input(width:="100%", placeholder:="Enter text to b64 encode"), div),
-      autorun=true
-    )
-
-  @sect{dom.localStorage}
-    @pair(
-      "LocalStorage",
-      Seq(input(width:="100%"), div),
-      autorun=true
-    )
-
-  @sect{dom.HTMLCanvasElement}
-    @pair(
-      "Canvas",
-      Seq(canvas),
-      autorun=true
-    )
-
-  @sect{dom.XMLHttpRequest}
-    @pair(
-      "XMLHttpRequest",
-      Seq(
-        pre("output")
+    @sect{Node.appendChild}
+      @pair(
+        "NodeAppendChild",
+        Seq(div("div"))
       )
-    )
 
-  @sect{dom.Websocket}
-    @pair(
-      "Websocket",
-      Seq(
-        input(placeholder:="Type something in"),
-        pre("output")
-      ),
-      autorun=true
-    )
+    @sect{Node.onmousemove}
+      @pair(
+       "EventHandler",
+        Seq(pre("pre")),
+        autorun=true
+      )
 
-  @sect{Element.style}
-    @pair(
-      "ElementStyle",
-      Seq(div(b("div"), height:="50px"))
-    )
+    @sect{dom.btoa}
+      @pair(
+        "Base64",
+        Seq(input(width:="100%", placeholder:="Enter text to b64 encode"), div),
+        autorun=true
+      )
+
+    @sect{dom.localStorage}
+      @pair(
+        "LocalStorage",
+        Seq(input(width:="100%"), div),
+        autorun=true
+      )
+
+    @sect{dom.HTMLCanvasElement}
+      @pair(
+        "Canvas",
+        Seq(canvas),
+        autorun=true
+      )
+
+    @sect{dom.XMLHttpRequest}
+      @pair(
+        "XMLHttpRequest",
+        Seq(
+          pre("output")
+        )
+      )
+
+    @sect{dom.Websocket}
+      @pair(
+        "Websocket",
+        Seq(
+          input(placeholder:="Type something in"),
+          pre("output")
+        ),
+        autorun=true
+      )
+
+    @sect{Element.style}
+      @pair(
+        "ElementStyle",
+        Seq(div(b("div"), height:="50px"))
+      )
 
   @p
     The goal of this project is to provide a thin-but-idiomatic-scala interface to modern browser APIs. In particular:
