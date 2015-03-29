@@ -152,6 +152,18 @@ object KeyCode {
   val x = 88
   val y = 89
   val z = 90
+  val f1  = 112
+  val f2  = 113
+  val f3  = 114
+  val f4  = 115
+  val f5  = 116
+  val f6  = 117
+  val f7  = 118
+  val f8  = 119
+  val f9  = 120
+  val f10 = 121
+  val f11 = 122
+  val f12 = 123
 }
 
 
