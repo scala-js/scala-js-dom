@@ -5256,6 +5256,16 @@ class MediaList extends js.Object {
 
 }
 
+/**
+ * The MediaStream interface represents a stream of media content.
+ * A stream consists of several tracks, like video or audio tracks.
+ *
+ * MDN
+ */
+trait MediaStream extends EventTarget {
+  // TODO
+}
+
 
 /**
  * A processing instruction provides an opportunity for application-specific

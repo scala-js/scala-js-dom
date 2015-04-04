@@ -5,14 +5,23 @@ import scala.scalajs.js
 
 package object dom extends Window with scalajs.js.GlobalScope {
   type AbstractWorker = raw.AbstractWorker
+  type AnalyserNode = raw.AnalyserNode
   type AnimationEvent = raw.AnimationEvent
   type ApplicationCache = raw.ApplicationCache
   val ApplicationCache: raw.ApplicationCache.type = js.native
   type Attr = raw.Attr
+  type AudioBuffer = raw.AudioBuffer
+  type AudioBufferSourceNode = raw.AudioBufferSourceNode
+  type AudioContext = raw.AudioContext
+  type AudioDestinationNode = raw.AudioDestinationNode
+  type AudioListener = raw.AudioListener
+  type AudioNode = raw.AudioNode
+  type AudioParam = raw.AudioParam
   type AudioTrack = raw.AudioTrack
   type AudioTrackList = raw.AudioTrackList
 
   type BeforeUnloadEvent = raw.BeforeUnloadEvent
+  type BiquadFilterNode = raw.BiquadFilterNode
   type Blob = raw.Blob
   val Blob: raw.Blob.type = js.native
   type BlobPropertyBag = raw.BlobPropertyBag
@@ -21,6 +30,8 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type CanvasPattern = raw.CanvasPattern
   type CanvasRenderingContext2D = raw.CanvasRenderingContext2D
   type CDATASection = raw.CDATASection
+  type ChannelMergerNode = raw.ChannelMergerNode
+  type ChannelSplitterNode = raw.ChannelSplitterNode
   type CharacterData = raw.CharacterData
   type ClientRect = raw.ClientRect
   type ClientRectList = raw.ClientRectList
@@ -29,9 +40,11 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type Comment = raw.Comment
   type Coordinates = raw.Coordinates
   type Console = raw.Console
+  type ConvolverNode = raw.ConvolverNode
   type CustomEvent = raw.CustomEvent
 
   type DataTransfer = raw.DataTransfer
+  type DelayNode = raw.DelayNode
   type DocumentType = raw.DocumentType
   type DocumentEvent = raw.DocumentEvent
   type Document = raw.Document
@@ -46,6 +59,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type DOMStringList = raw.DOMStringList
   type DOMTokenList = raw.DOMTokenList
   type DragEvent = raw.DragEvent
+  type DynamicsCompressorNode = raw.DynamicsCompressorNode
 
   type Element = raw.Element
   type ErrorEvent = raw.ErrorEvent
@@ -66,6 +80,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type FormData = raw.FormData
   val FormData: raw.FormData.type = js.native
 
+  type GainNode = raw.GainNode
   type Geolocation = raw.Geolocation
 
   type HashChangeEvent = raw.HashChangeEvent
@@ -81,9 +96,13 @@ package object dom extends Window with scalajs.js.GlobalScope {
 
   type MediaError = raw.MediaError
   val MediaError: raw.MediaError.type = js.native
+  type MediaElementAudioSourceNode = raw.MediaElementAudioSourceNode
   type MediaList = raw.MediaList
   type MediaQueryList = raw.MediaQueryList
   type MediaQueryListListener = raw.MediaQueryListListener
+  type MediaStream = raw.MediaStream
+  type MediaStreamAudioDestinationNode = raw.MediaStreamAudioDestinationNode
+  type MediaStreamAudioSourceNode = raw.MediaStreamAudioSourceNode
   type MessageChannel = raw.MessageChannel
   type MessageEvent = raw.MessageEvent
   type MessagePort = raw.MessagePort
@@ -113,7 +132,12 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type NodeListOf[TNode <: Node] = raw.NodeListOf[TNode]
 
   type ObjectURLOptions = raw.ObjectURLOptions
+  type OfflineAudioContext = raw.OfflineAudioContext
+  @deprecated("Use the promise version of OfflineAudioContext.startRendering instead.", "forever")
+  type OfflineAudioCompletionEvent = raw.OfflineAudioCompletionEvent
+  type OscillatorNode = raw.OscillatorNode
 
+  type PannerNode = raw.PannerNode
   type ParentNode = raw.ParentNode
   type Performance = raw.Performance
   type PerformanceEntry = raw.PerformanceEntry
@@ -123,6 +147,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type PerformanceNavigation = raw.PerformanceNavigation
   val PerformanceNavigation: raw.PerformanceNavigation.type = js.native
   type PerformanceResourceTiming = raw.PerformanceResourceTiming
+  type PeriodicWave = raw.PeriodicWave
   type Position = raw.Position
   type PositionOptions = raw.PositionOptions
   type PositionError = raw.PositionError
@@ -136,6 +161,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
 
   type Screen = raw.Screen
   type Selection = raw.Selection
+  type StereoPannerNode = raw.StereoPannerNode
   type Storage = raw.Storage
   type StorageEvent = raw.StorageEvent
   type StyleMedia = raw.StyleMedia
@@ -164,6 +190,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
 
   type ValidityState = raw.ValidityState
 
+  type WaveShaperNode = raw.WaveShaperNode
   type WebSocket = raw.WebSocket
   val WebSocket: raw.WebSocket.type = js.native
   type WheelEvent = raw.WheelEvent
