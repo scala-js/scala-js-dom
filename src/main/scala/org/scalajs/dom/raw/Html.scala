@@ -3632,6 +3632,17 @@ class HTMLElement extends Element {
    * MDN
    */
   var style: CSSStyleDeclaration = js.native
+  
+  /**
+   * Returns the Document that this node belongs to. If no document is associated with
+   * it, returns null.
+   *
+   * MDN
+   *
+   * This is defined on Node; we override it here because we know (from the fact that this
+   * is an HTMLElement) that we are getting an HTMLDocument here.
+   */
+  override def ownerDocument: HTMLDocument = js.native
 }
 
 
