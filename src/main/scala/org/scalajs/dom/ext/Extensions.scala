@@ -152,6 +152,18 @@ object KeyCode {
   final val X = 88
   final val Y = 89
   final val Z = 90
+  final val F1 = 112
+  final val F2 = 113
+  final val F3 = 114
+  final val F4 = 115
+  final val F5 = 116
+  final val F6 = 117
+  final val F7 = 118
+  final val F8 = 119
+  final val F9 = 120
+  final val F10 = 121
+  final val F11 = 122
+  final val F12 = 123
 
   @deprecated("Use KeyCode.Backspace instead", "0.8.1") final val backspace = Backspace
   @deprecated("Use KeyCode.Tab instead", "0.8.1") final val tab = Tab
