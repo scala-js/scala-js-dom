@@ -1,12 +1,18 @@
 package org.scalajs.dom.ext
 
+import java.nio.ByteBuffer
+
 import scala.language.implicitConversions
 import scala.concurrent.{Promise, Future}
 
 import scala.scalajs.js
+import scala.scalajs.js.typedarray._
+import scala.scalajs.js.typedarray.TypedArrayBufferOps._
 
 import org.scalajs.dom
 import org.scalajs.dom.{html, raw}
+import org.scalajs.dom.raw.Blob
+
 
 /**
  * Used to extend out javascript *Collections to make them usable as normal
@@ -167,42 +173,73 @@ case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
  * Wraps an XMLHttpRequest to provide an easy one-line way of making 
  * an Ajax call, returning a Future.
  */
-object Ajax{
+object Ajax {
+  /**
+   * Supported data formats for Ajax are implicitly converted to InputData
+   */
+  sealed trait InputData extends js.Any
+
+  object InputData {
+    implicit def str2ajax(s: String): InputData = s.asInstanceOf[InputData]
+
+    implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData = b.asInstanceOf[InputData]
+
+    implicit def blob2ajax(b: Blob): InputData = b.asInstanceOf[InputData]
+
+    implicit def byteBuffer2ajax(data: ByteBuffer): InputData = {
+      if (data.hasTypedArray()) {
+        // get relevant part of the underlying typed array
+        data.typedArray().subarray(data.position, data.limit)
+      } else {
+        // fall back to copying the data
+        val tempBuffer = ByteBuffer.allocateDirect(data.remaining)
+        val origPosition = data.position
+        tempBuffer.put(data)
+        data.position(origPosition)
+        tempBuffer.typedArray()
+      }
+    }
+  }
+
   def get(url: String,
-          data: String = "",
+          data: InputData = "",
           timeout: Int = 0,
           headers: Map[String, String] = Map.empty,
-          withCredentials: Boolean = false, 
+          withCredentials: Boolean = false,
           responseType: String = "") = {
     apply("GET", url, data, timeout, headers, withCredentials, responseType)
   }
+
   def post(url: String,
-           data: String = "",
+           data: InputData = "",
            timeout: Int = 0,
            headers: Map[String, String] = Map.empty,
-           withCredentials: Boolean = false, 
+           withCredentials: Boolean = false,
            responseType: String = "") = {
     apply("POST", url, data, timeout, headers, withCredentials, responseType)
   }
+
   def put(url: String,
-             data: String = "",
-             timeout: Int = 0,
-             headers: Map[String, String] = Map.empty,
-             withCredentials: Boolean = false,
-             responseType: String = "") = {
+          data: InputData = "",
+          timeout: Int = 0,
+          headers: Map[String, String] = Map.empty,
+          withCredentials: Boolean = false,
+          responseType: String = "") = {
     apply("PUT", url, data, timeout, headers, withCredentials, responseType)
   }
+
   def delete(url: String,
-             data: String = "",
+             data: InputData = "",
              timeout: Int = 0,
              headers: Map[String, String] = Map.empty,
              withCredentials: Boolean = false,
              responseType: String = "") = {
     apply("DELETE", url, data, timeout, headers, withCredentials, responseType)
   }
+
   def apply(method: String,
             url: String,
-            data: String,
+            data: InputData,
             timeout: Int,
             headers: Map[String, String],
             withCredentials: Boolean, 
