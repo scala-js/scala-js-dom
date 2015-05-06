@@ -36,6 +36,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type ClientRect = raw.ClientRect
   type ClientRectList = raw.ClientRectList
   type CloseEvent = raw.CloseEvent
+  type ClipboardEvent = raw.ClipboardEvent
   type CompositionEvent = raw.CompositionEvent
   type Comment = raw.Comment
   type Coordinates = raw.Coordinates
