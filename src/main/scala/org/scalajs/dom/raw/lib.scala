@@ -3763,6 +3763,21 @@ trait DataTransfer extends js.Object {
   def files: FileList = js.native
 }
 
+/**
+ * The ClipboardEvent interface represents events providing information related to
+ * modification of the clipboard, that is cut, copy, and paste events.
+ *
+ * MDN
+ */
+class ClipboardEvent(`type`: String, settings: js.Dynamic) extends Event {
+  /**
+   * Is a DataTransfer object containing the data affected by the user-initialed cut, copy,
+   * or paste operation, along with its MIME type.
+   *
+   * MDN
+   */
+  def clipboardData: DataTransfer = js.native
+}
 
 /**
  * The FocusEvent interface represents focus-related events like focus, blur,
