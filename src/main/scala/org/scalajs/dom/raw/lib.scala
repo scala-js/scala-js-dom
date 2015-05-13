@@ -6773,6 +6773,15 @@ trait BlobPropertyBag extends js.Object {
   def endings: String = js.native
 }
 
+object BlobPropertyBag {
+  @inline
+  def apply(`type`: js.UndefOr[String] = js.undefined): BlobPropertyBag = {
+    val result = js.Dynamic.literal()
+    `type`.foreach(result.`type` = _)
+    result.asInstanceOf[BlobPropertyBag]
+  }
+}
+
 /**
  * A Blob object represents a file-like object of immutable, raw data. Blobs
  * represent data that isn't necessarily in a JavaScript-native format. The File
