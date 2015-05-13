@@ -171,6 +171,7 @@ class CSSStyleDeclaration extends js.Object {
   var overflowX: String = js.native
   var textAlign: String = js.native
   var margin: String = js.native
+  var resize: String = js.native
 
   def getPropertyPriority(propertyName: String): String = js.native
 
