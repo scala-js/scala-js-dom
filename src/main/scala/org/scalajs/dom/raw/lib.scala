@@ -3763,13 +3763,46 @@ trait DataTransfer extends js.Object {
   def files: FileList = js.native
 }
 
+trait ClipboardEventInit extends js.Object {
+  /**
+   * The data for this clipboard event.
+   */
+  val data: String = js.native
+
+  /**
+   * The MIME type of the data.
+   */
+  val dataType: String = js.native
+}
+
+object ClipboardEventInit {
+  /**
+   * Construct a new ClipboardEventInit
+   * 
+   * @param data       The data for this clipboard event
+   * @param dataType   The MIME type of the data.
+   * @return a new ClipBoardEventInit
+   */
+  @inline
+  def apply(data: js.UndefOr[String] = js.undefined,
+    dataType: js.UndefOr[String] = js.undefined): ClipboardEventInit = {
+    val result = js.Dynamic.literal()
+    data.foreach(result.data = _)
+    dataType.foreach(result.dataType = _)
+    result.asInstanceOf[ClipboardEventInit]
+  }
+}
+
 /**
  * The ClipboardEvent interface represents events providing information related to
  * modification of the clipboard, that is cut, copy, and paste events.
  *
  * MDN
  */
-class ClipboardEvent(`type`: String, settings: js.Dynamic) extends Event {
+class ClipboardEvent(`type`: String, settings: ClipboardEventInit) extends Event {
+  @deprecated("Use the overload with a ClipboardEventInit instead.", "0.8.1")
+  def this(`type`: String, settings: js.Dynamic) = this(`type`, settings.asInstanceOf[ClipboardEventInit])
+
   /**
    * Is a DataTransfer object containing the data affected by the user-initialed cut, copy,
    * or paste operation, along with its MIME type.
