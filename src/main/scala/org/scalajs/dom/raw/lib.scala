@@ -5931,7 +5931,7 @@ trait DOMTokenList extends DOMList[String]{
 }
 
 
-trait MessageChannel extends js.Object {
+class MessageChannel extends js.Object {
   def port2: MessagePort = js.native
 
   def port1: MessagePort = js.native
