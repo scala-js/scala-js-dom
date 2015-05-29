@@ -12,6 +12,7 @@ package org.scalajs.dom.raw
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.typedarray.ArrayBuffer
 
 object XPathResult extends js.Object {
 
@@ -3051,11 +3052,11 @@ class MessageEvent extends Event {
   def origin: String = js.native
 
   /**
-   * The data from the server
+   * The data from the server ([[String]], [[Blob]], or [[ArrayBuffer]])
    *
    * MDN
    */
-  def data: js.Any = js.native
+  def data: Any = js.native
 
   def initMessageEvent(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, dataArg: js.Any, originArg: String, lastEventIdArg: String, sourceArg: Window): Unit = js.native
 
@@ -6152,9 +6153,9 @@ class WebSocket(var url: String = js.native, var protocol: String = js.native) e
    *
    * MDN
    */
-  def send(data: js.Any): Unit = js.native
-
-
+  def send(data: String): Unit = js.native
+  def send(data: Blob): Unit = js.native
+  def send(data: ArrayBuffer): Unit = js.native
 }
 
 object WebSocket extends js.Object {
