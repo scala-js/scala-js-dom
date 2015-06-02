@@ -11,9 +11,9 @@ version := "0.8.1-SNAPSHOT"
 
 organization := "org.scala-js"
 
-scalaVersion := "2.11.5"
+scalaVersion := "2.11.6"
 
-crossScalaVersions := Seq("2.10.4", "2.11.5")
+crossScalaVersions := Seq("2.10.5", "2.11.6")
 
 scalacOptions ++= Seq("-deprecation", "-feature")
 
@@ -65,10 +65,11 @@ lazy val readme = ScalatexReadme(
   targetFolder = "target/site",
   autoResources = Seq("example-opt.js")
 ).settings(
+  scalaVersion := "2.11.6",
   (resources in Compile) += (fullOptJS in (example, Compile)).value.data
 )
 
 lazy val example = project
   .dependsOn(root)
   .enablePlugins(ScalaJSPlugin)
-  .settings(scalaVersion := "2.11.2")
+  .settings(scalaVersion := "2.11.6")
