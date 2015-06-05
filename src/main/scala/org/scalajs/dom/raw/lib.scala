@@ -1840,7 +1840,9 @@ trait WindowSessionStorage extends js.Object {
  *
  * MDN
  */
-class Window extends EventTarget with WindowLocalStorage with WindowSessionStorage with WindowTimers with WindowBase64 with IDBEnvironment with WindowConsole {
+class Window extends EventTarget with WindowLocalStorage
+  with WindowSessionStorage with WindowTimers with WindowBase64
+  with IDBEnvironment with WindowConsole {
   var ondragend: js.Function1[DragEvent, _] = js.native
   /**
    * An event handler property for keydown events on the window.
