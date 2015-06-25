@@ -1541,7 +1541,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Specifies the line width.
    */
-  def lineWidth(width: Int): Unit = js.native
+  def lineWidth(width: Double): Unit = js.native
 
   /**
    * Attempts to link the specified [[WebGLProgram]].
@@ -1562,7 +1562,7 @@ class WebGLRenderingContext extends js.Object {
    * to them, calculated as `factor`*DZ + r*`units`, where DZ is the change in z based on the polygon's screen area, and r is the minimum value that
    * is guaranteed produce a measurable offset.
    */
-  def polygonOffset(factor: Int, units: Int): Unit = js.native
+  def polygonOffset(factor: Double, units: Double): Unit = js.native
 
   /**
    * Reads pixels from the framebuffer into `pixels`.
@@ -1757,7 +1757,7 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.TEXTURE_WRAP_S]], or [[WebGLRenderingContext.TEXTURE_WRAP_T]]
    * @param param  the value to set.  See the corresponding parameters for valid values.
    */
-  def texParameterf(target: Int, pname: Int, param: Int): Unit = js.native
+  def texParameterf(target: Int, pname: Int, param: Double): Unit = js.native
 
   /**
    * Sets the texture parameter for the active texture unit.
