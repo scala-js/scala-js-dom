@@ -1054,11 +1054,11 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  the format of the compressed data.
    *  @param xoffset the x texel offset into the texture image.
    *  @param yoffset the y texel offset into the texture image.
    *  @param width  the width of the texture image.
    *  @param height the height of the texture image.
+   *  @param format the format of the compressed image data
    *  @param data  the compressed image data.
    */
   def compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, data: ArrayBufferView): Unit = js.native
@@ -1086,7 +1086,6 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  the format of the data.  May be [[WebGLRenderingContext.ALPHA]], [[WebGLRenderingContext.LUMINANCE]], [[WebGLRenderingContext.LUMINANCE_ALPHA]], [[WebGLRenderingContext.RGB]], or [[WebGLRenderingContext.RGBA]].
    *  @param xoffset the x texel offset into the texture image.
    *  @param yoffset the y texel offset into the texture image.
    *  @param x the window coordinates of the lower left corner of the framebuffer.
@@ -1342,7 +1341,7 @@ class WebGLRenderingContext extends js.Object {
    * Returns the value of the requested parameter for a buffer.
    *
    * @param target  must be [[WebGLRenderingContext.ARRAY_BUFFER]] or [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]
-   * @param value  the buffer parameter to retrieve, may be [[WebGLRenderingContext.BUFFER_SIZE]] or [[WebGLRenderingContext.BUFFER_USAGE]]
+   * @param pname  the buffer parameter to retrieve, may be [[WebGLRenderingContext.BUFFER_SIZE]] or [[WebGLRenderingContext.BUFFER_USAGE]]
    *
    */
   def getBufferParameter(target: Int, pname: Int): Int = js.native
@@ -1455,7 +1454,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Returns the value of the given texture parameter on the target of the active texture.
    *
-   *  @param target  the target to query.  May be either [[WebGLRenderingContext.TEXTURE_2D]] or `TEXTURE_CUBE_MAP'.
+   *  @param target  the target to query.  May be either [[WebGLRenderingContext.TEXTURE_2D]] or `TEXTURE_CUBE_MAP`.
    *  @param pname  the parameter to query.  May be either [[WebGLRenderingContext.TEXTURE_MAG_FILTER]],
    *                [[WebGLRenderingContext.TEXTURE_MIN_FILTER]], [[WebGLRenderingContext.TEXTURE_WRAP_S]],
    *                 or [[WebGLRenderingContext.TEXTURE_WRAP_T]].
@@ -1541,7 +1540,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Specifies the line width.
    */
-  def lineWidth(width: Int): Unit = js.native
+  def lineWidth(width: Double): Unit = js.native
 
   /**
    * Attempts to link the specified [[WebGLProgram]].
@@ -1562,7 +1561,7 @@ class WebGLRenderingContext extends js.Object {
    * to them, calculated as `factor`*DZ + r*`units`, where DZ is the change in z based on the polygon's screen area, and r is the minimum value that
    * is guaranteed produce a measurable offset.
    */
-  def polygonOffset(factor: Int, units: Int): Unit = js.native
+  def polygonOffset(factor: Double, units: Double): Unit = js.native
 
   /**
    * Reads pixels from the framebuffer into `pixels`.
@@ -1681,7 +1680,7 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  the format the image is stored in.
+   *  @param internalformat  the format of the target pixel data.
    *  @param width  the width of the texture image.
    *  @param height the height of the texture image.
    *  @param border the border width.  Must be 0.
@@ -1696,10 +1695,9 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  the format to store the image.
-   *  @param width  the width of the texture image.
-   *  @param height the height of the texture image.
-   *  @param border the border width.  Must be 0.
+   *  @param internalformat  the format of the target pixel data.
+   *  @param format  the format of the incoming pixel data.
+   *  @param type the data type of the pixel data.
    *  @param pixels the source image data.
    */
   def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: ImageData): Unit = js.native
@@ -1711,10 +1709,9 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  the format to store the image.
-   *  @param width  the width of the texture image.
-   *  @param height the height of the texture image.
-   *  @param border the border width.  Must be 0.
+   *  @param internalformat  the format of the target pixel data.
+   *  @param format  the format of the incoming pixel data.
+   *  @param type the data type of the pixel data.
    *  @param pixels the source image data.
    */
   def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: HTMLImageElement): Unit = js.native
@@ -1726,10 +1723,9 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  the format to store the image.
-   *  @param width  the width of the texture image.
-   *  @param height the height of the texture image.
-   *  @param border the border width.  Must be 0.
+   *  @param internalformat  the format of the target pixel data.
+   *  @param format  the format of the incoming pixel data.
+   *  @param type the data type of the pixel data.
    *  @param pixels the source image data.
    */
   def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: HTMLCanvasElement): Unit = js.native
@@ -1741,10 +1737,9 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  the format to store the image.
-   *  @param width  the width of the texture image.
-   *  @param height the height of the texture image.
-   *  @param border the border width.  Must be 0.
+   *  @param internalformat  the format of the target pixel data.
+   *  @param format  the format of the incoming pixel data.
+   *  @param type the data type of the pixel data.
    *  @param pixels the source image data.
    */
   def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: HTMLVideoElement): Unit = js.native
@@ -1757,7 +1752,7 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.TEXTURE_WRAP_S]], or [[WebGLRenderingContext.TEXTURE_WRAP_T]]
    * @param param  the value to set.  See the corresponding parameters for valid values.
    */
-  def texParameterf(target: Int, pname: Int, param: Int): Unit = js.native
+  def texParameterf(target: Int, pname: Int, param: Double): Unit = js.native
 
   /**
    * Sets the texture parameter for the active texture unit.
@@ -1776,11 +1771,12 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  the format of the image data.
    *  @param xoffset the x texel offset into the texture image.
    *  @param yoffset the y texel offset into the texture image.
    *  @param width  the width of the texture image.
    *  @param height the height of the texture image.
+   *  @param format  the format of the incoming pixel data.
+   *  @param type the data type of the pixel data.
    *  @param pixels the image data.
    */
   def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, `type`: Int, pixels: ArrayBufferView): Unit = js.native
@@ -1792,11 +1788,10 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  desired the format of the image data.
    *  @param xoffset the x texel offset into the texture image.
    *  @param yoffset the y texel offset into the texture image.
-   *  @param width  the width of the texture image.
-   *  @param height the height of the texture image.
+   *  @param format  the format of the incoming pixel data.
+   *  @param type the data type of the pixel data.
    *  @param pixels the image data.
    */
   def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: ImageData): Unit = js.native
@@ -1808,11 +1803,10 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  desired the format of the image data.
    *  @param xoffset the x texel offset into the texture image.
    *  @param yoffset the y texel offset into the texture image.
-   *  @param width  the width of the texture image.
-   *  @param height the height of the texture image.
+   *  @param format  the format of the incoming pixel data.
+   *  @param type the data type of the pixel data.
    *  @param pixels the image data.
    */
   def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: HTMLImageElement): Unit = js.native
@@ -1824,12 +1818,11 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  desired the format of the image data.
    *  @param xoffset the x texel offset into the texture image.
    *  @param yoffset the y texel offset into the texture image.
-   *  @param width  the width of the texture image.
-   *  @param height the height of the texture image.
-   *  @param pixels the image data.
+   *  @param format  the format of the incoming pixel data.
+   *  @param type the data type of the pixel data.
+   *  @param pixels the image data..
    */
   def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: HTMLCanvasElement): Unit = js.native
 
@@ -1840,11 +1833,10 @@ class WebGLRenderingContext extends js.Object {
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Z]], or [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Z]]
    *  @param level  the mipmap level of detail.  0 is the base image.
-   *  @param internalformat  desired the format of the image data.
    *  @param xoffset the x texel offset into the texture image.
    *  @param yoffset the y texel offset into the texture image.
-   *  @param width  the width of the texture image.
-   *  @param height the height of the texture image.
+   *  @param format  the format of the incoming pixel data.
+   *  @param type the data type of the pixel data.
    *  @param pixels the image data.
    */
   def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: HTMLVideoElement): Unit = js.native
