@@ -30,7 +30,7 @@ class SVGPathSegCurvetoQuadraticRel extends SVGPathSeg {
  *
  * MDN
  */
-class SVGMarkerElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
+abstract class SVGMarkerElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
   var orientType: SVGAnimatedEnumeration = js.native
   var markerUnits: SVGAnimatedEnumeration = js.native
 
@@ -63,7 +63,7 @@ object SVGMarkerElement extends js.Object {
  *
  * MDN
  */
-class SVGGElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGGElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
 }
 
 
@@ -112,7 +112,7 @@ class SVGPathSegMovetoRel extends SVGPathSeg {
  *
  * MDN
  */
-class SVGLineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGLineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute y1 on the given <line> element.
    *
@@ -148,7 +148,7 @@ class SVGLineElement extends SVGElement with SVGStylable with SVGTransformable w
  *
  * MDN
  */
-class SVGDescElement extends SVGElement with SVGStylable with SVGLangSpace {
+abstract class SVGDescElement extends SVGElement with SVGStylable with SVGLangSpace {
 }
 
 
@@ -164,7 +164,7 @@ class SVGPathSegCurvetoQuadraticSmoothRel extends SVGPathSeg {
  *
  * MDN
  */
-class SVGClipPathElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGClipPathElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute clipPathUnits on the given <clippath> element. Takes
    * one of the constants defined in SVGUnitTypes
@@ -182,7 +182,7 @@ class SVGClipPathElement extends SVGElement with SVGUnitTypes with SVGStylable w
  *
  * MDN
  */
-class SVGTextPositioningElement extends SVGTextContentElement {
+abstract class SVGTextPositioningElement extends SVGTextContentElement {
   /**
    * Corresponds to attribute y on the given element.
    *
@@ -289,7 +289,7 @@ trait SVGTests extends js.Object {
  *
  * MDN
  */
-class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired with SVGURIReference {
+abstract class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute patternUnits on the given <pattern> element. Takes one
    * of the constants defined in SVGUnitTypes.
@@ -375,7 +375,7 @@ class SVGAnimatedAngle extends js.Object {
  *
  * MDN
  */
-class SVGScriptElement extends SVGElement with SVGExternalResourcesRequired with SVGURIReference {
+abstract class SVGScriptElement extends SVGElement with SVGExternalResourcesRequired with SVGURIReference {
   def `type`: String = js.native
 }
 
@@ -386,7 +386,7 @@ class SVGScriptElement extends SVGElement with SVGExternalResourcesRequired with
  *
  * MDN
  */
-class SVGViewElement extends SVGElement with SVGZoomAndPan with SVGFitToViewBox with SVGExternalResourcesRequired {
+abstract class SVGViewElement extends SVGElement with SVGZoomAndPan with SVGFitToViewBox with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute viewTarget on the given <view> element. A list of
    * DOMString values which contain the names listed in the viewTarget attribute. Each
@@ -417,7 +417,7 @@ trait SVGLocatable extends js.Object {
  *
  * MDN
  */
-class SVGTitleElement extends SVGElement with SVGStylable with SVGLangSpace {
+abstract class SVGTitleElement extends SVGElement with SVGStylable with SVGLangSpace {
 }
 
 
@@ -633,7 +633,7 @@ object SVGAngle extends js.Object {
  *
  * MDN
  */
-class SVGElement extends Element {
+abstract class SVGElement extends Element {
   var onmouseover: js.Function1[MouseEvent, _] = js.native
 
   /**
@@ -846,7 +846,7 @@ trait SVGAnimatedPoints extends js.Object {
  *
  * MDN
  */
-class SVGDefsElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGDefsElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
 }
 
 
@@ -861,7 +861,7 @@ class SVGPathSegLinetoHorizontalRel extends SVGPathSeg {
  *
  * MDN
  */
-class SVGEllipseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGEllipseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute ry on the given <ellipse> element.
    *
@@ -898,7 +898,7 @@ class SVGEllipseElement extends SVGElement with SVGStylable with SVGTransformabl
  *
  * MDN
  */
-class SVGAElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
+abstract class SVGAElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute target on the given <a> element.
    *
@@ -993,7 +993,7 @@ class SVGAnimatedNumberList extends js.Object {
  *
  * MDN
  */
-class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with DocumentEvent with SVGLangSpace with SVGLocatable with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired {
+abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with DocumentEvent with SVGLangSpace with SVGLocatable with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute width on the given <svg> element.
    *
@@ -1352,7 +1352,7 @@ class SVGAnimatedInteger extends js.Object {
  *
  * MDN
  */
-class SVGTextElement extends SVGTextPositioningElement with SVGTransformable {
+abstract class SVGTextElement extends SVGTextPositioningElement with SVGTransformable {
 }
 
 
@@ -1362,7 +1362,7 @@ class SVGTextElement extends SVGTextPositioningElement with SVGTransformable {
  *
  * MDN
  */
-class SVGTSpanElement extends SVGTextPositioningElement {
+abstract class SVGTSpanElement extends SVGTextPositioningElement {
 }
 
 
@@ -1376,7 +1376,7 @@ class SVGPathSegLinetoVerticalAbs extends SVGPathSeg {
  *
  * MDN
  */
-class SVGStyleElement extends SVGElement with SVGLangSpace {
+abstract class SVGStyleElement extends SVGElement with SVGLangSpace {
   /**
    * Corresponds to attribute media on the given element. A DOMException is raised with
    * code NO_MODIFICATION_ALLOWED_ERR on an attempt to change the value of a read only
@@ -1448,7 +1448,7 @@ class SVGRadialGradientElement extends SVGGradientElement {
  *
  * MDN
  */
-class SVGImageElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
+abstract class SVGImageElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute y on the given <image> element.
    *
@@ -1511,7 +1511,7 @@ class SVGAnimatedNumber extends js.Object {
 }
 
 
-class SVGMetadataElement extends SVGElement {
+abstract class SVGMetadataElement extends SVGElement {
 }
 
 
@@ -1732,7 +1732,7 @@ object SVGLength extends js.Object {
  *
  * MDN
  */
-class SVGPolygonElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGPolygonElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
 }
 
 
@@ -1746,7 +1746,7 @@ class SVGPathSegCurvetoCubicRel extends SVGPathSeg {
 }
 
 
-class SVGTextContentElement extends SVGElement with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGTextContentElement extends SVGElement with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   def textLength: SVGAnimatedLength = js.native
 
   def lengthAdjust: SVGAnimatedEnumeration = js.native
@@ -1961,7 +1961,7 @@ class SVGNumber extends js.Object {
  *
  * MDN
  */
-class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathData with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathData with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Returns the index into pathSegList which is distance units along the path,
    * utilizing the user agent's distance-along-a-path algorithm.
@@ -2246,7 +2246,7 @@ class SVGElementInstance extends EventTarget {
  *
  * MDN
  */
-class SVGCircleElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGCircleElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute cx on the given <circle> element.
    *
@@ -2441,7 +2441,7 @@ class SVGMatrix extends js.Object {
  *
  * MDN
  */
-class SVGUseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
+abstract class SVGUseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute y on the given <use> element.
    *
@@ -2572,7 +2572,7 @@ class SVGAnimatedEnumeration extends js.Object {
  *
  * MDN
  */
-class SVGRectElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGRectElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute y on the given <rect> element.
    *
@@ -2732,7 +2732,7 @@ class SVGLengthList extends js.Object {
  *
  * MDN
  */
-class SVGPolylineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGPolylineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
 }
 
 
@@ -2751,7 +2751,7 @@ object SVGZoomAndPan extends js.Object {
 }
 
 
-class SVGTextPathElement extends SVGTextContentElement with SVGURIReference {
+abstract class SVGTextPathElement extends SVGTextContentElement with SVGURIReference {
   def startOffset: SVGAnimatedLength = js.native
 
   def method: SVGAnimatedEnumeration = js.native
@@ -2775,7 +2775,7 @@ object SVGTextPathElement extends js.Object {
  *
  * MDN
  */
-class SVGGradientElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGExternalResourcesRequired with SVGURIReference {
+abstract class SVGGradientElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute spreadMethod on the given element. One of the Spread
    * Method Types defined on this interface.
@@ -2950,7 +2950,7 @@ class SVGAnimatedBoolean extends js.Object {
  *
  * MDN
  */
-class SVGSwitchElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGSwitchElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
 }
 
 
@@ -3024,7 +3024,7 @@ object SVGPreserveAspectRatio extends js.Object {
  *
  * MDN
  */
-class SVGStopElement extends SVGElement with SVGStylable {
+abstract class SVGStopElement extends SVGElement with SVGStylable {
   /**
    * Corresponds to attribute offset on the given <stop> element.
    *
@@ -3039,7 +3039,7 @@ class SVGStopElement extends SVGElement with SVGStylable {
  *
  * MDN
  */
-class SVGSymbolElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
+abstract class SVGSymbolElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
 }
 
 
@@ -3056,7 +3056,7 @@ class SVGElementInstanceList extends js.Object {
  *
  * MDN
  */
-class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
+abstract class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute y on the given <mask> element.
    *
@@ -3109,7 +3109,7 @@ class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with 
  *
  * MDN
  */
-class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGURIReference with SVGExternalResourcesRequired {
+abstract class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGURIReference with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute y on the given <filter> element.
    *
@@ -3177,25 +3177,25 @@ class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable wit
 }
 
 
-class SVGFEMergeNodeElement extends SVGElement {
+abstract class SVGFEMergeNodeElement extends SVGElement {
   def in1: SVGAnimatedString = js.native
 }
 
 
-class SVGFEFloodElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEFloodElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
 }
 
 
-class SVGFEFuncAElement extends SVGComponentTransferFunctionElement {
+abstract class SVGFEFuncAElement extends SVGComponentTransferFunctionElement {
 }
 
 
-class SVGFETileElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFETileElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in1: SVGAnimatedString = js.native
 }
 
 
-class SVGFEBlendElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEBlendElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in2: SVGAnimatedString = js.native
 
   def mode: SVGAnimatedEnumeration = js.native
@@ -3213,11 +3213,11 @@ object SVGFEBlendElement extends js.Object {
   val SVG_FEBLEND_MODE_LIGHTEN: Int = js.native
 }
 
-class SVGFEMergeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEMergeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
 }
 
 
-class SVGFEPointLightElement extends SVGElement {
+abstract class SVGFEPointLightElement extends SVGElement {
   def y: SVGAnimatedNumber = js.native
 
   def x: SVGAnimatedNumber = js.native
@@ -3226,7 +3226,7 @@ class SVGFEPointLightElement extends SVGElement {
 }
 
 
-class SVGFEGaussianBlurElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEGaussianBlurElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def stdDeviationX: SVGAnimatedNumber = js.native
 
   def in1: SVGAnimatedString = js.native
@@ -3249,7 +3249,7 @@ trait SVGFilterPrimitiveStandardAttributes extends SVGStylable {
   def result: SVGAnimatedString = js.native
 }
 
-class SVGFESpecularLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFESpecularLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def kernelUnitLengthY: SVGAnimatedNumber = js.native
 
   def surfaceScale: SVGAnimatedNumber = js.native
@@ -3264,7 +3264,7 @@ class SVGFESpecularLightingElement extends SVGElement with SVGFilterPrimitiveSta
 }
 
 
-class SVGFEMorphologyElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEMorphologyElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def operator: SVGAnimatedEnumeration = js.native
 
   def radiusX: SVGAnimatedNumber = js.native
@@ -3280,11 +3280,11 @@ object SVGFEMorphologyElement extends js.Object {
   val SVG_MORPHOLOGY_OPERATOR_DILATE: Int = js.native
 }
 
-class SVGFEFuncRElement extends SVGComponentTransferFunctionElement {
+abstract class SVGFEFuncRElement extends SVGComponentTransferFunctionElement {
 }
 
 
-class SVGFEDisplacementMapElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEDisplacementMapElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in2: SVGAnimatedString = js.native
 
   def xChannelSelector: SVGAnimatedEnumeration = js.native
@@ -3304,7 +3304,7 @@ object SVGFEDisplacementMapElement extends js.Object {
   val SVG_CHANNEL_A: Int = js.native
 }
 
-class SVGComponentTransferFunctionElement extends SVGElement {
+abstract class SVGComponentTransferFunctionElement extends SVGElement {
   def tableValues: SVGAnimatedNumberList = js.native
 
   def slope: SVGAnimatedNumber = js.native
@@ -3329,18 +3329,18 @@ object SVGComponentTransferFunctionElement extends js.Object {
   val SVG_FECOMPONENTTRANSFER_TYPE_LINEAR: Int = js.native
 }
 
-class SVGFEDistantLightElement extends SVGElement {
+abstract class SVGFEDistantLightElement extends SVGElement {
   def azimuth: SVGAnimatedNumber = js.native
 
   def elevation: SVGAnimatedNumber = js.native
 }
 
 
-class SVGFEFuncBElement extends SVGComponentTransferFunctionElement {
+abstract class SVGFEFuncBElement extends SVGComponentTransferFunctionElement {
 }
 
 
-class SVGFETurbulenceElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFETurbulenceElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def baseFrequencyX: SVGAnimatedNumber = js.native
 
   def numOctaves: SVGAnimatedInteger = js.native
@@ -3364,11 +3364,11 @@ object SVGFETurbulenceElement extends js.Object {
   val SVG_STITCHTYPE_STITCH: Int = js.native
 }
 
-class SVGFEFuncGElement extends SVGComponentTransferFunctionElement {
+abstract class SVGFEFuncGElement extends SVGComponentTransferFunctionElement {
 }
 
 
-class SVGFEColorMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEColorMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in1: SVGAnimatedString = js.native
 
   def `type`: SVGAnimatedEnumeration = js.native
@@ -3385,7 +3385,7 @@ object SVGFEColorMatrixElement extends js.Object {
   val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Int = js.native
 }
 
-class SVGFESpotLightElement extends SVGElement {
+abstract class SVGFESpotLightElement extends SVGElement {
   def pointsAtY: SVGAnimatedNumber = js.native
 
   def y: SVGAnimatedNumber = js.native
@@ -3404,7 +3404,7 @@ class SVGFESpotLightElement extends SVGElement {
 }
 
 
-class SVGFEOffsetElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEOffsetElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def dy: SVGAnimatedNumber = js.native
 
   def in1: SVGAnimatedString = js.native
@@ -3413,12 +3413,12 @@ class SVGFEOffsetElement extends SVGElement with SVGFilterPrimitiveStandardAttri
 }
 
 
-class SVGFEImageElement extends SVGElement with SVGLangSpace with SVGFilterPrimitiveStandardAttributes with SVGURIReference with SVGExternalResourcesRequired {
+abstract class SVGFEImageElement extends SVGElement with SVGLangSpace with SVGFilterPrimitiveStandardAttributes with SVGURIReference with SVGExternalResourcesRequired {
   def preserveAspectRatio: SVGAnimatedPreserveAspectRatio = js.native
 }
 
 
-class SVGFECompositeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFECompositeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def operator: SVGAnimatedEnumeration = js.native
 
   def in2: SVGAnimatedString = js.native
@@ -3445,12 +3445,12 @@ object SVGFECompositeElement extends js.Object {
   val SVG_FECOMPOSITE_OPERATOR_ATOP: Int = js.native
 }
 
-class SVGFEComponentTransferElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEComponentTransferElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in1: SVGAnimatedString = js.native
 }
 
 
-class SVGFEDiffuseLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEDiffuseLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def kernelUnitLengthY: SVGAnimatedNumber = js.native
 
   def surfaceScale: SVGAnimatedNumber = js.native
@@ -3471,7 +3471,7 @@ object SVGFEConvolveMatrixElement extends js.Object {
   val SVG_EDGEMODE_NONE: Int = js.native
 }
 
-class SVGFEConvolveMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
+abstract class SVGFEConvolveMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def orderY: SVGAnimatedInteger = js.native
 
   def kernelUnitLengthY: SVGAnimatedNumber = js.native
