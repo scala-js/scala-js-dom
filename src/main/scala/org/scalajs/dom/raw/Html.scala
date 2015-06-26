@@ -153,7 +153,7 @@ abstract class HTMLDocument extends Document {
    *
    * MDN
    */
-  def body: HTMLElement = js.native
+  var body: HTMLElement = js.native
 
   /**
    * Returns the currently focused element, that is, the element that will get
@@ -1596,6 +1596,8 @@ abstract class HTMLScriptElement extends HTMLElement {
    * MDN
    */
   var async: Boolean = js.native
+
+  var onload: js.Function1[Event, _] = js.native
 }
 
 /**
