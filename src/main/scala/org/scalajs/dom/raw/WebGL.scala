@@ -1012,7 +1012,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Sets the clear depth to use with [[WebGLRenderingContext#clear]].
    */
-  def clearDepth(depth: Int): Unit = js.native
+  def clearDepth(depth: Double): Unit = js.native
 
   /**
    * Sets the stencil value to use with [[WebGLRenderingContext#clear]].
