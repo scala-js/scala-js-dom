@@ -793,7 +793,7 @@ trait ParentNode extends js.Object {
  *
  * https://developer.mozilla.org/en-US/docs/Web/API/element
  */
-class Element extends Node with NodeSelector with ParentNode {
+abstract class Element extends Node with NodeSelector with ParentNode {
 
 
   /**
@@ -1084,7 +1084,7 @@ class Element extends Node with NodeSelector with ParentNode {
  *
  * MDN
  */
-class Node extends EventTarget {
+abstract class Node extends EventTarget {
   /**
    * The read-only Node.nodeType property returns an unsigned short integer
    * representing the type of the node.
@@ -1576,7 +1576,7 @@ trait DocumentEvent extends js.Object {
  *
  * MDN
  */
-class CDATASection extends Text {
+abstract class CDATASection extends Text {
 }
 
 
@@ -2756,7 +2756,7 @@ object KeyboardEvent extends js.Object {
  *
  * MDN
  */
-class Document extends Node with NodeSelector with DocumentEvent with ParentNode {
+abstract class Document extends Node with NodeSelector with DocumentEvent with ParentNode {
 
   /**
    * Returns a DOMImplementation object associated with the current document.
@@ -4107,7 +4107,7 @@ class Storage extends js.Object {
  *
  * MDN
  */
-class DocumentType extends Node {
+abstract class DocumentType extends Node {
   def name: String = js.native
 
   def notations: NamedNodeMap = js.native
@@ -5326,7 +5326,7 @@ trait MediaStream extends EventTarget {
  *
  * MDN
  */
-class ProcessingInstruction extends Node {
+abstract class ProcessingInstruction extends Node {
   def target: String = js.native
 
   def data: String = js.native
@@ -5364,7 +5364,7 @@ object TextEvent extends js.Object {
  *
  * MDN
  */
-class DocumentFragment extends Node with NodeSelector {
+abstract class DocumentFragment extends Node with NodeSelector {
 }
 
 
@@ -5687,7 +5687,7 @@ class StorageEvent extends Event {
  *
  * MDN
  */
-class CharacterData extends Node {
+abstract class CharacterData extends Node {
   /**
    * Returns an unsigned long representing the size of the string contained in
    * CharacterData.data.

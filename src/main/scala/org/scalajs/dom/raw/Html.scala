@@ -12,7 +12,7 @@ package org.scalajs.dom.raw
 
 import scala.scalajs.js
 
-class HTMLDocument extends Document {
+abstract class HTMLDocument extends Document {
 
   /**
    * Returns the title of the current document.
@@ -545,7 +545,7 @@ class HTMLDocument extends Document {
  *
  * MDN
  */
-class HTMLTableElement extends HTMLElement {
+abstract class HTMLTableElement extends HTMLElement {
   /**
    * Is a DOMString containing the length in pixels or in percentage of the desired width
    * fo the entire table. It reflects the obsolete width attribute.
@@ -746,7 +746,7 @@ class HTMLTableElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLTableDataCellElement extends HTMLTableCellElement {
+abstract class HTMLTableDataCellElement extends HTMLTableCellElement {
 }
 
 /**
@@ -756,7 +756,7 @@ class HTMLTableDataCellElement extends HTMLTableCellElement {
  *
  * MDN
  */
-class HTMLBaseElement extends HTMLElement {
+abstract class HTMLBaseElement extends HTMLElement {
   /**
    * Is a DOMString that reflects the target HTML attribute, containing a default
    * target browsing context or frame for elements that do not have a target reference
@@ -785,7 +785,7 @@ trait HTMLNextIdElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLParagraphElement extends HTMLElement {
+abstract class HTMLParagraphElement extends HTMLElement {
   /**
    * Enumerated property indicating alignment of the element's contents with respect
    * to the surrounding context. The possible values are "left", "right", "justify",
@@ -803,7 +803,7 @@ trait HTMLAreasCollection extends HTMLCollection {
   def add(element: HTMLElement, before: js.Any = js.native): Unit = js.native
 }
 
-class HTMLAppletElement extends HTMLElement {
+abstract class HTMLAppletElement extends HTMLElement {
   var width: Double = js.native
   var codeType: String = js.native
   var `object`: String = js.native
@@ -832,7 +832,7 @@ class HTMLAppletElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLOListElement extends HTMLElement {
+abstract class HTMLOListElement extends HTMLElement {
   /**
    * Is a long value reflecting the start and defining the value of the first number of the
    * first element of the list.
@@ -849,7 +849,7 @@ class HTMLOListElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLSelectElement extends HTMLElement {
+abstract class HTMLSelectElement extends HTMLElement {
   /**
    * The set of <option> elements contained by this element. Read only.
    *
@@ -985,7 +985,7 @@ trait HTMLBlockElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLMetaElement extends HTMLElement {
+abstract class HTMLMetaElement extends HTMLElement {
   /**
    * Gets or sets the name of an HTTP response header to define for a document.
    *
@@ -1014,7 +1014,7 @@ class HTMLMetaElement extends HTMLElement {
   var charset: String = js.native
 }
 
-class HTMLDDElement extends HTMLElement {
+abstract class HTMLDDElement extends HTMLElement {
   var noWrap: Boolean = js.native
 }
 
@@ -1026,7 +1026,7 @@ class HTMLDDElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLLinkElement extends HTMLElement with LinkStyle {
+abstract class HTMLLinkElement extends HTMLElement with LinkStyle {
   /**
    * Gets or sets the forward relationship of the linked resource from the document to
    * the resource.
@@ -1074,7 +1074,7 @@ class HTMLLinkElement extends HTMLElement with LinkStyle {
   var hreflang: String = js.native
 }
 
-class HTMLFontElement extends HTMLElement {
+abstract class HTMLFontElement extends HTMLElement {
   var face: String = js.native
 }
 
@@ -1085,7 +1085,7 @@ class HTMLFontElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLTableCaptionElement extends HTMLElement {
+abstract class HTMLTableCaptionElement extends HTMLElement {
   /**
    * Enumerated attribute indicating alignment of the caption with respect to the
    * table.
@@ -1102,7 +1102,7 @@ class HTMLTableCaptionElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLOptionElement extends HTMLElement {
+abstract class HTMLOptionElement extends HTMLElement {
   /**
    * The position of the option within the list of options it belongs to, in tree-order.
    * If the option is not part of a list of options, like when it is part of the <datalist>
@@ -1164,7 +1164,7 @@ class HTMLOptionElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLMapElement extends HTMLElement {
+abstract class HTMLMapElement extends HTMLElement {
   /**
    * Is a DOMString representing the <map> element for referencing it other context. If
    * the id attribute is set, this must have the same value; and it cannot be null or empty.
@@ -1181,7 +1181,7 @@ class HTMLMapElement extends HTMLElement {
   var areas: HTMLAreasCollection = js.native
 }
 
-class HTMLMenuElement extends HTMLElement {
+abstract class HTMLMenuElement extends HTMLElement {
   var `type`: String = js.native
 }
 
@@ -1191,7 +1191,7 @@ class HTMLMenuElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLCollection extends DOMList[Element]{
+abstract class HTMLCollection extends DOMList[Element]{
 
   /**
    * Returns the specific node at the given zero-based index into the list. Returns null
@@ -1221,7 +1221,7 @@ class HTMLCollection extends DOMList[Element]{
  *
  * MDN
  */
-class HTMLImageElement extends HTMLElement {
+abstract class HTMLImageElement extends HTMLElement {
   /**
    * Reflects the width HTML attribute, indicating the rendered width of the image in
    * CSS pixels.
@@ -1319,7 +1319,7 @@ class HTMLImageElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLAreaElement extends HTMLElement {
+abstract class HTMLAreaElement extends HTMLElement {
   /**
    * Is a DOMString containing the protocol component (including trailing colon ':'),
    * of the referenced URL.
@@ -1417,7 +1417,7 @@ class HTMLAreaElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLButtonElement extends HTMLElement {
+abstract class HTMLButtonElement extends HTMLElement {
   /**
    * The current form control value of the button.
    *
@@ -1518,7 +1518,7 @@ class HTMLButtonElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLSourceElement extends HTMLElement {
+abstract class HTMLSourceElement extends HTMLElement {
   /**
    * Reflects the src HTML attribute, containing the URL for the media resource.
    *
@@ -1543,7 +1543,7 @@ class HTMLSourceElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLScriptElement extends HTMLElement {
+abstract class HTMLScriptElement extends HTMLElement {
   var defer: Boolean = js.native
   /**
    * The IDL attribute text must return a concatenation of the contents of all the Text
@@ -1605,7 +1605,7 @@ class HTMLScriptElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
+abstract class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
   /**
    * Returns a long value which gives the logical position of the row within the entire
    * table. If the row is not part of a table, returns -1.
@@ -1665,7 +1665,7 @@ class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
  *
  * MDN
  */
-class HTMLHtmlElement extends HTMLElement {
+abstract class HTMLHtmlElement extends HTMLElement {
   /**
    * Version of the HTML Document Type Definition (DTD) that governs this document.
    * This property should not be used any more as it is non-conforming. Simply omit it.
@@ -1675,7 +1675,7 @@ class HTMLHtmlElement extends HTMLElement {
   var version: String = js.native
 }
 
-class HTMLFrameElement extends HTMLElement with GetSVGDocument {
+abstract class HTMLFrameElement extends HTMLElement with GetSVGDocument {
   var width: js.Any = js.native
   var scrolling: String = js.native
   var marginHeight: String = js.native
@@ -1705,7 +1705,7 @@ class HTMLFrameElement extends HTMLElement with GetSVGDocument {
  *
  * MDN
  */
-class HTMLQuoteElement extends HTMLElement {
+abstract class HTMLQuoteElement extends HTMLElement {
   var dateTime: String = js.native
   /**
    * Reflects the cite HTML attribute, containing a URL for the source of the quotation.
@@ -1723,7 +1723,7 @@ class HTMLQuoteElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLTableHeaderCellElement extends HTMLTableCellElement {
+abstract class HTMLTableHeaderCellElement extends HTMLTableCellElement {
 }
 
 /**
@@ -1733,10 +1733,10 @@ class HTMLTableHeaderCellElement extends HTMLTableCellElement {
  *
  * MDN
  */
-class HTMLDListElement extends HTMLElement {
+abstract class HTMLDListElement extends HTMLElement {
 }
 
-class HTMLFrameSetElement extends HTMLElement {
+abstract class HTMLFrameSetElement extends HTMLElement {
   var ononline: js.Function1[Event, _] = js.native
   var borderColor: js.Any = js.native
   var rows: String = js.native
@@ -1766,7 +1766,7 @@ class HTMLFrameSetElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLLabelElement extends HTMLElement {
+abstract class HTMLLabelElement extends HTMLElement {
   /**
    * The ID of the labeled control. Reflects the for attribute.
    *
@@ -1784,13 +1784,13 @@ class HTMLLabelElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLLegendElement extends HTMLElement {
+abstract class HTMLLegendElement extends HTMLElement {
   var align: String = js.native
 
   def form: HTMLFormElement = js.native
 }
 
-class HTMLDirectoryElement extends HTMLElement {
+abstract class HTMLDirectoryElement extends HTMLElement {
 }
 
 /**
@@ -1800,7 +1800,7 @@ class HTMLDirectoryElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLLIElement extends HTMLElement {
+abstract class HTMLLIElement extends HTMLElement {
   /**
    * Indicates the ordinal position of the list element inside a given <ol>. It reflects
    * the value attribute of the HTML <li> element, and can be smaller than 0. If the <li>
@@ -1819,7 +1819,7 @@ class HTMLLIElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
+abstract class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
   /**
    * Reflects the width HTML attribute, indicating the width of the frame.
    *
@@ -1888,7 +1888,7 @@ class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
  *
  * MDN
  */
-class HTMLBodyElement extends HTMLElement {
+abstract class HTMLBodyElement extends HTMLElement {
   var scroll: String = js.native
   /**
    * Reflects the ononline HTML attribute value for a function to call when network
@@ -2005,7 +2005,7 @@ class HTMLBodyElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
+abstract class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
   /**
    * Is a DOMString containing an enumerated value reflecting the align attribute. It
    * indicates the alignment of the element's contents with respect to the surrounding
@@ -2045,7 +2045,7 @@ class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignment {
  *
  * MDN
  */
-class HTMLInputElement extends HTMLElement {
+abstract class HTMLInputElement extends HTMLElement {
   /**
    * Reflects the width HTML attribute, which defines the width of the image displayed
    * for the button, if the value of type is image.
@@ -2409,7 +2409,7 @@ class HTMLInputElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLAnchorElement extends HTMLElement {
+abstract class HTMLAnchorElement extends HTMLElement {
   /**
    * Is a DOMString that reflects the rel HTML attribute, specifying the relationship
    * of the target object to the link object.
@@ -2537,7 +2537,7 @@ class HTMLAnchorElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLParamElement extends HTMLElement {
+abstract class HTMLParamElement extends HTMLElement {
   /**
    * Is a DOMString representing the value associated to the parameter. It reflects the
    * value attribute.
@@ -2575,7 +2575,7 @@ class HTMLParamElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLPreElement extends HTMLElement {
+abstract class HTMLPreElement extends HTMLElement {
   /**
    * Is a long value reflecting the obsolete width attribute, containing a fixed-size
    * length for the <pre> element.
@@ -2586,7 +2586,7 @@ class HTMLPreElement extends HTMLElement {
 }
 
 
-class HTMLPhraseElement extends HTMLElement {
+abstract class HTMLPhraseElement extends HTMLElement {
   var dateTime: String = js.native
 }
 
@@ -2599,7 +2599,7 @@ class HTMLPhraseElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLCanvasElement extends HTMLElement {
+abstract class HTMLCanvasElement extends HTMLElement {
   /**
    * Reflects the width HTML attribute, specifying the width of the coordinate space in
    * CSS pixels.
@@ -2649,7 +2649,7 @@ class HTMLCanvasElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLTitleElement extends HTMLElement {
+abstract class HTMLTitleElement extends HTMLElement {
   /**
    * DOMString representing the text of the document's title.
    *
@@ -2665,7 +2665,7 @@ class HTMLTitleElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLStyleElement extends HTMLElement with LinkStyle {
+abstract class HTMLStyleElement extends HTMLElement with LinkStyle {
   /**
    * Is a DOMString representing the intended destination medium for style
    * information.
@@ -2689,7 +2689,7 @@ class HTMLStyleElement extends HTMLElement with LinkStyle {
  *
  * MDN
  */
-class HTMLUnknownElement extends HTMLElement {
+abstract class HTMLUnknownElement extends HTMLElement {
 }
 
 
@@ -2700,7 +2700,7 @@ class HTMLUnknownElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLAudioElement extends HTMLMediaElement {
+abstract class HTMLAudioElement extends HTMLMediaElement {
 }
 
 
@@ -2712,7 +2712,7 @@ class HTMLAudioElement extends HTMLMediaElement {
  *
  * MDN
  */
-class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
+abstract class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
   /**
    * Is a DOMString containing a length of pixel of the hinted width of the cell. It
    * reflects the obsolete width attribute.
@@ -2792,7 +2792,7 @@ class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment {
  *
  * MDN
  */
-class HTMLBaseFontElement extends HTMLElement {
+abstract class HTMLBaseFontElement extends HTMLElement {
   /**
    * Is a DOMString representing a list of one or more font names. The document text in the
    * default style is rendered in the first font face that the client's browser
@@ -2821,7 +2821,7 @@ class HTMLBaseFontElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLTextAreaElement extends HTMLElement {
+abstract class HTMLTextAreaElement extends HTMLElement {
   /**
    * The raw value contained in the control.
    *
@@ -2997,7 +2997,7 @@ class HTMLTextAreaElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLModElement extends HTMLElement {
+abstract class HTMLModElement extends HTMLElement {
   var dateTime: String = js.native
   /**
    * Reflects the cite HTML attribute, containing a URI of a resource explaining the
@@ -3016,7 +3016,7 @@ class HTMLModElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLTableColElement extends HTMLElement with HTMLTableAlignment {
+abstract class HTMLTableColElement extends HTMLElement with HTMLTableAlignment {
   var width: js.Any = js.native
   /**
    * Indicates the horizontal alignment of the cell data in the column.
@@ -3047,7 +3047,7 @@ trait HTMLTableAlignment extends js.Object {
  *
  * MDN
  */
-class HTMLUListElement extends HTMLElement {
+abstract class HTMLUListElement extends HTMLElement {
 }
 
 
@@ -3058,7 +3058,7 @@ class HTMLUListElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLDivElement extends HTMLElement {
+abstract class HTMLDivElement extends HTMLElement {
   /**
    * Enumerated property indicating alignment of the element's contents with respect
    * to the surrounding context. The possible values are "left", "right", "justify",
@@ -3077,7 +3077,7 @@ class HTMLDivElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLBRElement extends HTMLElement {
+abstract class HTMLBRElement extends HTMLElement {
   /**
    * Indicates flow of text around floating objects.
    *
@@ -3094,7 +3094,7 @@ class HTMLBRElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLMediaElement extends HTMLElement {
+abstract class HTMLMediaElement extends HTMLElement {
   /**
    * The initial playback position in seconds.
    *
@@ -3337,7 +3337,7 @@ object HTMLMediaElement extends js.Object {
   val HAVE_FUTURE_DATA: Int = js.native
 }
 
-class HTMLDTElement extends HTMLElement {
+abstract class HTMLDTElement extends HTMLElement {
   var noWrap: Boolean = js.native
 }
 
@@ -3349,7 +3349,7 @@ class HTMLDTElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLFieldSetElement extends HTMLElement {
+abstract class HTMLFieldSetElement extends HTMLElement {
   var align: String = js.native
 
   /**
@@ -3404,7 +3404,7 @@ class HTMLFieldSetElement extends HTMLElement {
 }
 
 
-class HTMLBGSoundElement extends HTMLElement {
+abstract class HTMLBGSoundElement extends HTMLElement {
   var balance: js.Any = js.native
   var volume: js.Any = js.native
   var src: String = js.native
@@ -3418,7 +3418,7 @@ class HTMLBGSoundElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLElement extends Element {
+abstract class HTMLElement extends Element {
   var onblur: js.Function1[FocusEvent, _] = js.native
   var onfocus: js.Function1[FocusEvent, _] = js.native
   var onmouseleave: js.Function1[MouseEvent, _] = js.native
@@ -3632,7 +3632,7 @@ class HTMLElement extends Element {
    * MDN
    */
   var style: CSSStyleDeclaration = js.native
-  
+
   /**
    * Returns the Document that this node belongs to. If no document is associated with
    * it, returns null.
@@ -3653,7 +3653,7 @@ class HTMLElement extends Element {
  *
  * MDN
  */
-class HTMLHRElement extends HTMLElement {
+abstract class HTMLHRElement extends HTMLElement {
   var width: Double = js.native
   /**
    * Enumerated attribute indicating alignment of the rule with respect to the
@@ -3674,7 +3674,7 @@ class HTMLHRElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLObjectElement extends HTMLElement with GetSVGDocument {
+abstract class HTMLObjectElement extends HTMLElement with GetSVGDocument {
   /**
    * Reflects the width HTML attribute, specifying the displayed width of the resource
    * in CSS pixels.
@@ -3819,7 +3819,7 @@ class HTMLObjectElement extends HTMLElement with GetSVGDocument {
  *
  * MDN
  */
-class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
+abstract class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
   /**
    * Reflects the width HTML attribute, containing the displayed width of the
    * resource.
@@ -3854,7 +3854,7 @@ class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
  *
  * MDN
  */
-class HTMLOptGroupElement extends HTMLElement {
+abstract class HTMLOptGroupElement extends HTMLElement {
 
   /**
    * Set or get the label for the group.
@@ -3873,7 +3873,7 @@ class HTMLOptGroupElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLIsIndexElement extends HTMLElement {
+abstract class HTMLIsIndexElement extends HTMLElement {
   /**
    * Is a HTMLFormElement representing the <form> element it belongs too. It can have
    * the null value, if <isindex> isn't part of any form.
@@ -3898,7 +3898,7 @@ class HTMLIsIndexElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLVideoElement extends HTMLMediaElement {
+abstract class HTMLVideoElement extends HTMLMediaElement {
   /**
    * Is a DOMString that reflects the width HTML attribute, which specifies the width of
    * the display area, in CSS pixels.
@@ -3951,7 +3951,7 @@ class HTMLVideoElement extends HTMLMediaElement {
  *
  * MDN
  */
-class HTMLProgressElement extends HTMLElement {
+abstract class HTMLProgressElement extends HTMLElement {
   /**
    * If the progress bar is an indeterminate progress bar, then this property return 0.
    * Otherwise, it returns the current value.
@@ -3985,7 +3985,7 @@ class HTMLProgressElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLDataListElement extends HTMLElement {
+abstract class HTMLDataListElement extends HTMLElement {
   /**
    * A collection of the contained option elements.
    *
@@ -4001,7 +4001,7 @@ class HTMLDataListElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLTrackElement extends HTMLElement {
+abstract class HTMLTrackElement extends HTMLElement {
   var kind: String = js.native
   var src: String = js.native
   var srclang: String = js.native
@@ -4009,7 +4009,7 @@ class HTMLTrackElement extends HTMLElement {
   var label: String = js.native
 }
 
-class HTMLMarqueeElement extends HTMLElement {
+abstract class HTMLMarqueeElement extends HTMLElement {
   var width: String = js.native
   var onbounce: js.Function1[Event, _] = js.native
   var vspace: Int = js.native
@@ -4038,7 +4038,7 @@ class HTMLMarqueeElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLSpanElement extends HTMLElement {
+abstract class HTMLSpanElement extends HTMLElement {
 }
 
 
@@ -4049,7 +4049,7 @@ class HTMLSpanElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLHeadElement extends HTMLElement {
+abstract class HTMLHeadElement extends HTMLElement {
   /**
    * The URIs of one or more metadata profiles (white space separated).
    *
@@ -4065,7 +4065,7 @@ class HTMLHeadElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLHeadingElement extends HTMLElement {
+abstract class HTMLHeadingElement extends HTMLElement {
   /**
    * Enumerated attribute indicating alignment of the heading with respect to the
    * surrounding context.
@@ -4082,7 +4082,7 @@ class HTMLHeadingElement extends HTMLElement {
  *
  * MDN
  */
-class HTMLFormElement extends HTMLElement {
+abstract class HTMLFormElement extends HTMLElement {
   /**
    * length returns the number of controls in the FORM element.
    *
