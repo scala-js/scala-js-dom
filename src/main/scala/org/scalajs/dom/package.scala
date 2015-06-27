@@ -113,7 +113,6 @@ package object dom extends Window with scalajs.js.GlobalScope {
   val MutationEvent: raw.MutationEvent.type = js.native
   type MutationObserver = raw.MutationObserver
   type MutationObserverInit = raw.MutationObserverInit
-  val MutationObserverInit: raw.MutationObserverInit.type = js.native
   type MutationRecord = raw.MutationRecord
 
   type NamedNodeMap = raw.NamedNodeMap
