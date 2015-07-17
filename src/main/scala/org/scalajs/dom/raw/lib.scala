@@ -1957,6 +1957,14 @@ class Window extends EventTarget with WindowLocalStorage
   var onclick: js.Function1[MouseEvent, _] = js.native
 
   /**
+   * Gets the width of the content area of the browser window including, if rendered, the
+   * vertical scrollbar.
+   *
+   * MDN
+   */
+  def innerWidth: Int = js.native
+
+  /**
    * Gets the height of the content area of the browser window including, if rendered,
    * the horizontal scrollbar.
    *
@@ -2003,13 +2011,7 @@ class Window extends EventTarget with WindowLocalStorage
    * MDN
    */
   var onmousemove: js.Function1[MouseEvent, _] = js.native
-  /**
-   * Gets the width of the content area of the browser window including, if rendered, the
-   * vertical scrollbar.
-   *
-   * MDN
-   */
-  var innerWidth: Int = js.native
+
   var onoffline: js.Function1[Event, _] = js.native
 
   /**
