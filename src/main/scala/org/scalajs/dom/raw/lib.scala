@@ -5078,14 +5078,14 @@ class TimeRanges extends js.Object {
    *
    * MDN
    */
-  def start(index: Int): Int = js.native
+  def start(index: Int): Double = js.native
 
   /**
    * Returns the time offset at which a specified time range ends.
    *
    * MDN
    */
-  def end(index: Int): Int = js.native
+  def end(index: Int): Double = js.native
 }
 
 
