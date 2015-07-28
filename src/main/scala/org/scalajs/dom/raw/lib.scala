@@ -4357,7 +4357,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def redirectStart: Int = js.native
+  def redirectStart: Double = js.native
 
   /**
    * The PerformanceTiming.domainLookupEnd read-only property returns an unsigned
@@ -4368,7 +4368,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domainLookupEnd: Int = js.native
+  def domainLookupEnd: Double = js.native
 
   /**
    * The PerformanceTiming.responseStart read-only property returns an unsigned
@@ -4378,7 +4378,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def responseStart: Int = js.native
+  def responseStart: Double = js.native
 
   /**
    * The PerformanceTiming.domComplete read-only property returns an unsigned long
@@ -4388,7 +4388,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domComplete: Int = js.native
+  def domComplete: Double = js.native
 
   /**
    * The PerformanceTiming.domainLookupStart read-only property returns an
@@ -4399,7 +4399,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domainLookupStart: Int = js.native
+  def domainLookupStart: Double = js.native
 
   /**
    * The PerformanceTiming.loadEventStart read-only property returns an unsigned
@@ -4409,7 +4409,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def loadEventStart: Int = js.native
+  def loadEventStart: Double = js.native
 
   /**
    * The PerformanceTiming.unloadEventEnd read-only property returns an unsigned
@@ -4420,7 +4420,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def unloadEventEnd: Int = js.native
+  def unloadEventEnd: Double = js.native
 
   /**
    * The PerformanceTiming.fetchStart read-only property returns an unsigned long
@@ -4430,7 +4430,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def fetchStart: Int = js.native
+  def fetchStart: Double = js.native
 
   /**
    * The PerformanceTiming.requestStart read-only property returns an unsigned
@@ -4442,7 +4442,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def requestStart: Int = js.native
+  def requestStart: Double = js.native
 
   /**
    * The PerformanceTiming.domInteractive read-only property returns an unsigned
@@ -4453,7 +4453,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domInteractive: Int = js.native
+  def domInteractive: Double = js.native
 
   /**
    * The PerformanceTiming.navigationStart read-only property returns an unsigned
@@ -4464,7 +4464,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def navigationStart: Int = js.native
+  def navigationStart: Double = js.native
 
   /**
    * The PerformanceTiming.connectEnd read-only property returns an unsigned long
@@ -4477,7 +4477,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def connectEnd: Int = js.native
+  def connectEnd: Double = js.native
 
   /**
    * The PerformanceTiming.loadEventEnd read-only property returns an unsigned
@@ -4487,7 +4487,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def loadEventEnd: Int = js.native
+  def loadEventEnd: Double = js.native
 
   /**
    * The PerformanceTiming.connectStart read-only property returns an unsigned
@@ -4499,7 +4499,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def connectStart: Int = js.native
+  def connectStart: Double = js.native
 
   /**
    * The PerformanceTiming.responseEnd read-only property returns an unsigned long
@@ -4509,7 +4509,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def responseEnd: Int = js.native
+  def responseEnd: Double = js.native
 
   /**
    * The PerformanceTiming.domLoading read-only property returns an unsigned long
@@ -4519,7 +4519,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domLoading: Int = js.native
+  def domLoading: Double = js.native
 
   /**
    * The PerformanceTiming.redirectEnd read-only property returns an unsigned long
@@ -4530,7 +4530,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def redirectEnd: Int = js.native
+  def redirectEnd: Double = js.native
 
   /**
    * The PerformanceTiming.unloadEventStart read-only property returns an
@@ -4541,7 +4541,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def unloadEventStart: Int = js.native
+  def unloadEventStart: Double = js.native
 
   /**
    * The PerformanceTiming.domContentLoadedEventStart read-only property
@@ -4552,7 +4552,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domContentLoadedEventStart: Int = js.native
+  def domContentLoadedEventStart: Double = js.native
 
   /**
    * The PerformanceTiming.domContentLoadedEventEnd read-only property returns
@@ -4562,7 +4562,7 @@ class PerformanceTiming extends js.Object {
    *
    * MDN
    */
-  def domContentLoadedEventEnd: Int = js.native
+  def domContentLoadedEventEnd: Double = js.native
 
   /**
    * Is a jsonizer returning a JSON object representing the specific
