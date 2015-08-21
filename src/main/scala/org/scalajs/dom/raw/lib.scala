@@ -786,6 +786,36 @@ trait ParentNode extends js.Object {
 }
 
 /**
+ * The NonDocumentTypeChildNode interface contains methods that are particular to
+ * Node objects that can have a parent, but not suitable for DocumentType.
+ *
+ * NonDocumentTypeChildNode is a raw interface and no object of this type can be
+ * created; it is implemented by Element, and CharacterData objects.
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode
+ */
+trait NonDocumentTypeChildNode extends js.Object {
+
+  /**
+   * The previousElementSibling read-only property returns the Element immediately prior
+   * to the specified one in its parent's children list, or null if the specified element
+   * is the first one in the list.
+   *
+   * MDN
+   */
+  def previousElementSibling: Element = js.native
+
+  /**
+   * The nextElementSibling read-only property returns the element immediately following
+   * the specified one in its parent's children list, or null if the specified element is
+   * the last one in the list.
+   *
+   * MDN
+   */
+  def nextElementSibling: Element = js.native
+}
+
+/**
  * The Element interface represents part of the document. This interface describes
  * methods and properties common to each kind of elements. Specific behaviors are
  * described in the specific interfaces, inheriting from Element: the HTMLElement
@@ -793,7 +823,7 @@ trait ParentNode extends js.Object {
  *
  * https://developer.mozilla.org/en-US/docs/Web/API/element
  */
-abstract class Element extends Node with NodeSelector with ParentNode {
+abstract class Element extends Node with NodeSelector with ParentNode with NonDocumentTypeChildNode {
 
 
   /**
@@ -5689,7 +5719,7 @@ class StorageEvent extends Event {
  *
  * MDN
  */
-abstract class CharacterData extends Node {
+abstract class CharacterData extends Node with NonDocumentTypeChildNode {
   /**
    * Returns an unsigned long representing the size of the string contained in
    * CharacterData.data.
