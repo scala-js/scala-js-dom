@@ -471,7 +471,7 @@ trait WindowTimers extends WindowTimersExtension {
  *
  * MDN
  */
-trait Promise[+A] extends js.Object {
+class Promise[+A](executor: js.Function2[js.Function1[A, Any], js.Function1[Any, Any], Any]) extends js.Object {
 
   /**
    * The catch() method returns a Promise and deals with rejected cases only.
