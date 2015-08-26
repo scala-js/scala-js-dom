@@ -3777,7 +3777,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def setData(format: String, data: String): Boolean = js.native
+  def setData(format: String, data: String): js.UndefOr[Boolean] = js.native
 
   /**
    * Retrieves the data for a given type, or an empty string if data for that type does not
