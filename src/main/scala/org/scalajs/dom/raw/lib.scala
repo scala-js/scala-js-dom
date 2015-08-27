@@ -3759,6 +3759,7 @@ trait DataTransfer extends js.Object {
    * MDN
    */
   var dropEffect: String = js.native
+
   /**
    * Remove the data associated with a given type. The type argument is optional. If the
    * type is empty or not specified, the data associated with all types is removed. If
@@ -3767,7 +3768,7 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def clearData(format: String = js.native): Boolean = js.native
+  def clearData(format: String = js.native): Unit = js.native
 
   /**
    * Set the data for a given type. If data for the type does not exist, it is added at the
@@ -3777,11 +3778,33 @@ trait DataTransfer extends js.Object {
    *
    * MDN
    */
-  def setData(format: String, data: String): Boolean = js.native
+  def setData(format: String, data: String): Unit = js.native
+
+  /**
+   * Set the image to be used for dragging if a custom one is desired. Most of the time, this
+   * would not be set, as a default image is created from the node that was dragged.
+   *
+   * If the node is an HTML img element, an HTML canvas element or a XUL image element, the
+   * image data is used. Otherwise, image should be a visible node and the drag image will be
+   * created from this. If image is null, any custom drag image is cleared and the default is
+   * used instead.
+   *
+   * The coordinates specify the offset into the image where the mouse cursor should be. To
+   * center the image, for instance, use values that are half the width and height of the image.
+   *
+   * @param image An element to use as the drag feedback image.
+   * @param x Horizontal offset within the image.
+   * @param y Vertical offset within the image.
+   */
+  def setDragImage(image: Element, x: Double, y: Double): Unit = js.native
 
   /**
    * Retrieves the data for a given type, or an empty string if data for that type does not
    * exist or the data transfer contains no data.
+   *
+   * A security error will occur if you attempt to retrieve data during a drag that was set
+   * from a different domain, or the caller would otherwise not have access to. This data will
+   * only be available once a drop occurs during the drop event.
    *
    * MDN
    */
