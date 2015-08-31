@@ -130,6 +130,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type NodeIterator = raw.NodeIterator
   type NodeList = raw.NodeList
   type NodeListOf[TNode <: Node] = raw.NodeListOf[TNode]
+  type Notification = raw.Notification
 
   type ObjectURLOptions = raw.ObjectURLOptions
   type OfflineAudioContext = raw.OfflineAudioContext
