@@ -3730,6 +3730,47 @@ trait NavigatorGeolocation extends js.Object {
 trait NavigatorContentUtils extends js.Object {
 }
 
+/**
+ * When dragging, there are several operations that may be performed. The copy
+ * operation is used to indicate that the data being dragged will be copied from
+ * its present location to the drop location. The move operation is used to
+ * indicate that the data being dragged will be moved, and the link operation is
+ * used to indicate that some form of relationship or connection will be created
+ * between the source and drop locations.
+ *
+ * You can specify which of the three operations are allowed for a drag source
+ * by setting the `effectAllowed` property within a `dragstart` event listener.
+ *
+ * Note that these values must be used exactly as defined below.
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_operations#drageffects
+ */
+object DragEffect {
+
+  /** no operation is permitted */
+  final val None = "none"
+
+  /** copy only */
+  final val Copy = "copy"
+
+  /** move only */
+  final val Move = "move"
+
+  /** link only */
+  final val Link = "link"
+
+  /** copy or move only */
+  final val CopyMove = "copyMove"
+
+  /** copy or link only */
+  final val CopyLink = "copyLink"
+
+  /** link or move only */
+  final val LinkMove = "linkMove"
+
+  /** copy, move, or link */
+  final val All = "all"
+}
 
 /**
  * The DataTransfer object is used to hold the data that is being dragged during a drag
@@ -3749,6 +3790,8 @@ trait DataTransfer extends js.Object {
    * for other events.
    *
    * MDN
+   *
+   * See [[DragEffect]] for possible values.
    */
   var effectAllowed: String = js.native
 
@@ -3757,6 +3800,8 @@ trait DataTransfer extends js.Object {
    * of effectAllowed.
    *
    * MDN
+   *
+   * See [[DragEffect]] for possible values.
    */
   var dropEffect: String = js.native
 
