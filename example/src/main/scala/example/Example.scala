@@ -173,3 +173,36 @@ object AjaxExtension {
     }
   }
 }
+
+
+@JSExport
+object Notification {
+  @JSExport
+  def main(in: html.Button) = {
+    import org.scalajs.dom.experimental.Notification
+
+    def notifyMe() {
+      // Let's check whether notification permissions have already been granted
+      if (dom.window.Notification.permission == "granted") {
+        // If it's okay let's create a notification
+        var notification = new dom.Notification("Hi there!")
+      }
+
+      // Otherwise, we need to ask the user for permission
+      else if (dom.window.Notification.permission != "denied") {
+        dom.window.Notification.requestPermission( (permission:String) => {
+          // If the user accepts, let's create a notification
+          if (permission == "granted") {
+            var notification = new dom.Notification("Hi there!")
+          }
+        })
+      }
+      // At last, if the user has denied notifications, and you
+      // want to be respectful there is no need to bother them any more.
+    }
+
+    in.onclick = (e: dom.Event) => {
+      notifyMe
+    }
+  }
+}
