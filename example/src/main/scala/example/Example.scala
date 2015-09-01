@@ -179,6 +179,7 @@ object AjaxExtension {
 object Notification {
   @JSExport
   def main(in: html.Button) = {
+    import org.scalajs.dom.experimental.Notification
 
     def notifyMe() {
       // Let's check whether notification permissions have already been granted
