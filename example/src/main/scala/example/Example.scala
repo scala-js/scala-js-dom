@@ -18,7 +18,7 @@ object NodeAppendChild {
   @JSExport
   def main(div: html.Div) = {
     val child = dom.document
-                   .createElement("div")
+      .createElement("div")
 
     child.textContent =
       "Hi from Scala-js-dom"
@@ -66,9 +66,9 @@ object Canvas {
   @JSExport
   def main(c: html.Canvas) = {
     type Ctx2D =
-      dom.CanvasRenderingContext2D
+    dom.CanvasRenderingContext2D
     val ctx = c.getContext("2d")
-               .asInstanceOf[Ctx2D]
+      .asInstanceOf[Ctx2D]
     val w = 300
     c.width = w
     c.height = w
@@ -107,11 +107,11 @@ object EventHandler{
       (e: dom.MouseEvent) =>
         pre.textContent =
           s"""e.clientX ${e.clientX}
-             |e.clientY ${e.clientY}
-             |e.pageX   ${e.pageX}
-             |e.pageY   ${e.pageY}
-             |e.screenX ${e.screenX}
-             |e.screenY ${e.screenY}
+              |e.clientY ${e.clientY}
+              |e.pageX   ${e.pageX}
+              |e.pageY   ${e.pageY}
+              |e.screenX ${e.screenX}
+              |e.screenY ${e.screenY}
            """.stripMargin
     }
   }
@@ -124,7 +124,7 @@ object XMLHttpRequest{
     val xhr = new dom.XMLHttpRequest()
     xhr.open("GET",
       "http://api.openweathermap.org/" +
-      "data/2.5/weather?q=Singapore"
+        "data/2.5/weather?q=Singapore"
     )
     xhr.onload = (e: dom.Event) => {
       if (xhr.status == 200) {
@@ -162,47 +162,14 @@ object AjaxExtension {
   def main(pre: html.Pre) = {
     import dom.ext.Ajax
     import scalajs.concurrent
-                  .JSExecutionContext
-                  .Implicits
-                  .runNow
+    .JSExecutionContext
+    .Implicits
+    .runNow
     val url =
       "http://api.openweathermap.org/" +
-      "data/2.5/weather?q=Singapore"
+        "data/2.5/weather?q=Singapore"
     Ajax.get(url).onSuccess{ case xhr =>
       pre.textContent = xhr.responseText
-    }
-  }
-}
-
-
-@JSExport
-object Notification {
-  @JSExport
-  def main(in: html.Button) = {
-    import org.scalajs.dom.experimental.Notification._
-
-    def notifyMe() {
-      // Let's check whether notification permissions have already been granted
-      if (dom.window.Notification.permission == "granted") {
-        // If it's okay let's create a notification
-        var notification = new Notification("Hi there!")
-      }
-
-      // Otherwise, we need to ask the user for permission
-      else if (dom.window.Notification.permission != "denied") {
-        dom.window.Notification.requestPermission( (permission:String) => {
-          // If the user accepts, let's create a notification
-          if (permission == "granted") {
-            var notification = new Notification("Hi there!")
-          }
-        })
-      }
-      // At last, if the user has denied notifications, and you
-      // want to be respectful there is no need to bother them any more.
-    }
-
-    in.onclick = (e: dom.Event) => {
-      notifyMe
     }
   }
 }
