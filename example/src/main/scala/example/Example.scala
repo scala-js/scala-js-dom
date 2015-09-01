@@ -179,13 +179,13 @@ object AjaxExtension {
 object Notification {
   @JSExport
   def main(in: html.Button) = {
-    import org.scalajs.dom.experimental.Notification
+    import org.scalajs.dom.experimental.Notification._
 
     def notifyMe() {
       // Let's check whether notification permissions have already been granted
       if (dom.window.Notification.permission == "granted") {
         // If it's okay let's create a notification
-        var notification = new dom.Notification("Hi there!")
+        var notification = new Notification("Hi there!")
       }
 
       // Otherwise, we need to ask the user for permission
@@ -193,7 +193,7 @@ object Notification {
         dom.window.Notification.requestPermission( (permission:String) => {
           // If the user accepts, let's create a notification
           if (permission == "granted") {
-            var notification = new dom.Notification("Hi there!")
+            var notification = new Notification("Hi there!")
           }
         })
       }
