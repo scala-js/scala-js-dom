@@ -1,7 +1,6 @@
 package org.scalajs.dom.experimental
 
 import org.scalajs.dom.raw.EventTarget
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
@@ -136,25 +135,24 @@ object NotificationOptions {
    * @param sticky    Boolean indicating whether the notification should be
    *                  'sticky', i.e. not easily clearable by the user.
    * @param tag       A text identifying tag for the notification.
-   * @param title     The text title of the notification
    * @param vibrate   The vibration pattern for hardware to emit
    * @return a new NotificationOptions
    */
   @inline
   def apply(
-             body: js.UndefOr[String] = js.undefined,
-             dir: js.UndefOr[String] = js.undefined,
-             icon: js.UndefOr[String] = js.undefined,
-             lang: js.UndefOr[String] = js.undefined,
-             noscreen: js.UndefOr[Boolean] = js.undefined,
-             renotify: js.UndefOr[Boolean] = js.undefined,
-             silent: js.UndefOr[Boolean] = js.undefined,
-             sound: js.UndefOr[String] = js.undefined,
-             sticky: js.UndefOr[Boolean] = js.undefined,
-             tag: js.UndefOr[String] = js.undefined,
-             onclick: js.UndefOr[js.Function0[Any]] = js.undefined,
-             onerror: js.UndefOr[js.Function0[Any]] = js.undefined,
-             vibrate: js.UndefOr[js.Array[Double]] = js.undefined): NotificationOptions = {
+      body: js.UndefOr[String] = js.undefined,
+      dir: js.UndefOr[String] = js.undefined,
+      icon: js.UndefOr[String] = js.undefined,
+      lang: js.UndefOr[String] = js.undefined,
+      noscreen: js.UndefOr[Boolean] = js.undefined,
+      renotify: js.UndefOr[Boolean] = js.undefined,
+      silent: js.UndefOr[Boolean] = js.undefined,
+      sound: js.UndefOr[String] = js.undefined,
+      sticky: js.UndefOr[Boolean] = js.undefined,
+      tag: js.UndefOr[String] = js.undefined,
+      onclick: js.UndefOr[js.Function0[Any]] = js.undefined,
+      onerror: js.UndefOr[js.Function0[Any]] = js.undefined,
+      vibrate: js.UndefOr[js.Array[Double]] = js.undefined): NotificationOptions = {
     val result = js.Dynamic.literal()
     body.foreach(result.body = _)
     dir.foreach(result.dir = _)
@@ -178,7 +176,7 @@ object NotificationOptions {
  *
  * https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API
  */
-object Notification extends js.Object{
+object Notification extends js.Object {
   /**
    * The permission read-only property of the Notification interface
    * indicates the current permission granted by the user for the current
@@ -211,7 +209,7 @@ object Notification extends js.Object{
  */
 @JSName("Notification")
 class Notification( title: String,
-                    options: NotificationOptions = ???) extends EventTarget {
+    options: NotificationOptions = ???) extends EventTarget {
 
   /**
    * The body read-only property of the Notification interface indicates the
