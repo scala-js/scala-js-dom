@@ -95,12 +95,23 @@ trait NotificationOptions extends js.Object {
   val tag: String = js.native
 
   /**
-   * The title property of the Notification interface indicates
-   * the title of the notification.
+   * The onclick property of the Notification interface specifies an event
+   * listener to receive click events. These events occur when the user
+   * clicks on a displayed Notification.
    *
    * MDN
    */
-  val title: String = js.native
+  var onclick: js.Function0[Any] = js.native
+
+  /**
+   * The onerror property of the Notification interface specifies an event
+   * listener to receive error events. These events occur when something goes
+   * wrong with a Notification (in many cases an error preventing the
+   * notification from being displayed.)
+   *
+   * MDN
+   */
+  var onerror: js.Function0[Any] = js.native
 
   val vibrate: js.Array[Double] = js.native
 }
@@ -141,7 +152,8 @@ object NotificationOptions {
              sound: js.UndefOr[String] = js.undefined,
              sticky: js.UndefOr[Boolean] = js.undefined,
              tag: js.UndefOr[String] = js.undefined,
-             title: js.UndefOr[String] = js.undefined,
+             onclick: js.UndefOr[js.Function0[Any]] = js.undefined,
+             onerror: js.UndefOr[js.Function0[Any]] = js.undefined,
              vibrate: js.UndefOr[js.Array[Double]] = js.undefined): NotificationOptions = {
     val result = js.Dynamic.literal()
     body.foreach(result.body = _)
@@ -154,7 +166,8 @@ object NotificationOptions {
     sound.foreach(result.sound = _)
     sticky.foreach(result.sticky = _)
     tag.foreach(result.tag = _)
-    title.foreach(result.title = _)
+    onclick.foreach(result.onclick = _)
+    onerror.foreach(result.onerror = _)
     vibrate.foreach(result.vibrate = _)
     result.asInstanceOf[NotificationOptions]
   }
