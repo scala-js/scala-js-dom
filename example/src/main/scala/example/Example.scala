@@ -1,7 +1,9 @@
 package example
 
+import scala.scalajs.js.JSApp
+
 import org.scalajs.dom
-import dom.html
+
 import scala.scalajs.js.annotation.JSExport
 
 @JSExport
@@ -16,9 +18,9 @@ object Alert {
 @JSExport
 object NodeAppendChild {
   @JSExport
-  def main(div: html.Div) = {
+  def main(div: dom.HTMLDivElement) = {
     val child = dom.document
-      .createElement("div")
+                   .createElement("div")
 
     child.textContent =
       "Hi from Scala-js-dom"
@@ -30,7 +32,7 @@ object NodeAppendChild {
 @JSExport
 object ElementStyle {
   @JSExport
-  def main(div: html.Div) = {
+  def main(div: dom.HTMLDivElement) = {
     val colors = Seq(
       "red", "green", "blue"
     )
@@ -45,7 +47,8 @@ object ElementStyle {
 @JSExport
 object LocalStorage {
   @JSExport
-  def main(in: html.Input, box: html.Div) = {
+  def main(in: dom.HTMLInputElement,
+           box: dom.HTMLDivElement) = {
     val key = "my-key"
 
     in.value =
@@ -64,11 +67,11 @@ object LocalStorage {
 @JSExport
 object Canvas {
   @JSExport
-  def main(c: html.Canvas) = {
+  def main(c: dom.HTMLCanvasElement) = {
     type Ctx2D =
-    dom.CanvasRenderingContext2D
+      dom.CanvasRenderingContext2D
     val ctx = c.getContext("2d")
-      .asInstanceOf[Ctx2D]
+               .asInstanceOf[Ctx2D]
     val w = 300
     c.width = w
     c.height = w
@@ -90,8 +93,8 @@ object Canvas {
 @JSExport
 object Base64 {
   @JSExport
-  def main(in: html.Input,
-           out: html.Div) = {
+  def main(in: dom.HTMLInputElement,
+           out: dom.HTMLDivElement) = {
     in.onkeyup = { (e: dom.Event) =>
       out.textContent =
         dom.btoa(in.value)
@@ -102,16 +105,16 @@ object Base64 {
 @JSExport
 object EventHandler{
   @JSExport
-  def main(pre: html.Pre) = {
+  def main(pre: dom.HTMLPreElement) = {
     pre.onmousemove = {
       (e: dom.MouseEvent) =>
         pre.textContent =
           s"""e.clientX ${e.clientX}
-              |e.clientY ${e.clientY}
-              |e.pageX   ${e.pageX}
-              |e.pageY   ${e.pageY}
-              |e.screenX ${e.screenX}
-              |e.screenY ${e.screenY}
+             |e.clientY ${e.clientY}
+             |e.pageX   ${e.pageX}
+             |e.pageY   ${e.pageY}
+             |e.screenX ${e.screenX}
+             |e.screenY ${e.screenY}
            """.stripMargin
     }
   }
@@ -120,11 +123,11 @@ object EventHandler{
 @JSExport
 object XMLHttpRequest{
   @JSExport
-  def main(pre: html.Pre) = {
+  def main(pre: dom.HTMLPreElement) = {
     val xhr = new dom.XMLHttpRequest()
     xhr.open("GET",
       "http://api.openweathermap.org/" +
-        "data/2.5/weather?q=Singapore"
+      "data/2.5/weather?q=Singapore"
     )
     xhr.onload = (e: dom.Event) => {
       if (xhr.status == 200) {
@@ -139,8 +142,8 @@ object XMLHttpRequest{
 @JSExport
 object Websocket {
   @JSExport
-  def main(in: html.Input,
-           pre: html.Pre) = {
+  def main(in: dom.HTMLInputElement,
+           pre: dom.HTMLPreElement) = {
     val echo = "ws://echo.websocket.org"
     val socket = new dom.WebSocket(echo)
     socket.onmessage = {
@@ -159,15 +162,15 @@ object Websocket {
 @JSExport
 object AjaxExtension {
   @JSExport
-  def main(pre: html.Pre) = {
-    import dom.ext.Ajax
+  def main(pre: dom.HTMLPreElement) = {
+    import dom.extensions.Ajax
     import scalajs.concurrent
-    .JSExecutionContext
-    .Implicits
-    .runNow
+                  .JSExecutionContext
+                  .Implicits
+                  .runNow
     val url =
       "http://api.openweathermap.org/" +
-        "data/2.5/weather?q=Singapore"
+      "data/2.5/weather?q=Singapore"
     Ajax.get(url).onSuccess{ case xhr =>
       pre.textContent = xhr.responseText
     }
