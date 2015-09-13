@@ -2586,7 +2586,7 @@ class Touch extends js.Object {
    *
    * MDN
    */
-  def identifier: Int = js.native
+  def identifier: Double = js.native
 
   /**
    * The X coordinate of the touch point relative to the left edge of the screen.
