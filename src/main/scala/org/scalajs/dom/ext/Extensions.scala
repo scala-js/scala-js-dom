@@ -169,7 +169,7 @@ case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
  */
 object Ajax{
   def get(url: String,
-          data: String = "",
+          data: String = null,
           timeout: Int = 0,
           headers: Map[String, String] = Map.empty,
           withCredentials: Boolean = false, 
@@ -177,7 +177,7 @@ object Ajax{
     apply("GET", url, data, timeout, headers, withCredentials, responseType)
   }
   def post(url: String,
-           data: String = "",
+           data: String = null,
            timeout: Int = 0,
            headers: Map[String, String] = Map.empty,
            withCredentials: Boolean = false, 
@@ -185,7 +185,7 @@ object Ajax{
     apply("POST", url, data, timeout, headers, withCredentials, responseType)
   }
   def put(url: String,
-             data: String = "",
+             data: String = null,
              timeout: Int = 0,
              headers: Map[String, String] = Map.empty,
              withCredentials: Boolean = false,
@@ -193,7 +193,7 @@ object Ajax{
     apply("PUT", url, data, timeout, headers, withCredentials, responseType)
   }
   def delete(url: String,
-             data: String = "",
+             data: String = null,
              timeout: Int = 0,
              headers: Map[String, String] = Map.empty,
              withCredentials: Boolean = false,
