@@ -356,9 +356,9 @@ sealed class Storage(domStorage: dom.Storage) {
   def key(index: Int): Option[String] = Option(domStorage.key(index))
 }
 
-object SessionStorage extends Storage(dom.sessionStorage)
+object SessionStorage extends Storage(dom.window.sessionStorage)
 
-object LocalStorage extends Storage(dom.localStorage)
+object LocalStorage extends Storage(dom.window.localStorage)
 
 /**
  * W3C recommendation for touch events

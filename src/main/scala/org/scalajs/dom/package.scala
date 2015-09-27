@@ -1,14 +1,13 @@
 package org.scalajs
 
-import org.scalajs.dom.raw.Window
 import scala.scalajs.js
 
-package object dom extends Window with scalajs.js.GlobalScope {
+package object dom {
   type AbstractWorker = raw.AbstractWorker
   type AnalyserNode = raw.AnalyserNode
   type AnimationEvent = raw.AnimationEvent
   type ApplicationCache = raw.ApplicationCache
-  val ApplicationCache: raw.ApplicationCache.type = js.native
+  lazy val ApplicationCache: raw.ApplicationCache.type = raw.ApplicationCache
   type Attr = raw.Attr
   type AudioBuffer = raw.AudioBuffer
   type AudioBufferSourceNode = raw.AudioBufferSourceNode
@@ -23,7 +22,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type BeforeUnloadEvent = raw.BeforeUnloadEvent
   type BiquadFilterNode = raw.BiquadFilterNode
   type Blob = raw.Blob
-  val Blob: raw.Blob.type = js.native
+  lazy val Blob: raw.Blob.type = raw.Blob
   type BlobPropertyBag = raw.BlobPropertyBag
 
   type CanvasGradient = raw.CanvasGradient
@@ -52,7 +51,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type DocumentFragment = raw.DocumentFragment
   type DOMException = raw.DOMException
   type DOMImplementation = raw.DOMImplementation
-  val DOMException: raw.DOMException.type = js.native
+  lazy val DOMException: raw.DOMException.type = raw.DOMException
   type DOMError = raw.DOMError
   type DOMList[T] = raw.DOMList[T]
   type DOMParser = raw.DOMParser
@@ -65,11 +64,11 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type Element = raw.Element
   type ErrorEvent = raw.ErrorEvent
   type Event = raw.Event
-  val Event: raw.Event.type = js.native
+  lazy val Event: raw.Event.type = raw.Event
   type EventException = raw.EventException
-  val EventException: raw.EventException.type = js.native
+  lazy val EventException: raw.EventException.type = raw.EventException
   type EventSource = raw.EventSource
-  val EventSource: raw.EventSource.type = js.native
+  lazy val EventSource: raw.EventSource.type = raw.EventSource
   type EventTarget = raw.EventTarget
   type External = raw.External
 
@@ -77,9 +76,9 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type File = raw.File
   type FileList = raw.FileList
   type FileReader = raw.FileReader
-  val FileReader: raw.FileReader.type = js.native
+  lazy val FileReader: raw.FileReader.type = raw.FileReader
   type FormData = raw.FormData
-  val FormData: raw.FormData.type = js.native
+  lazy val FormData: raw.FormData.type = raw.FormData
 
   type GainNode = raw.GainNode
   type Geolocation = raw.Geolocation
@@ -90,13 +89,13 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type ImageData = raw.ImageData
 
   type KeyboardEvent = raw.KeyboardEvent
-  val KeyboardEvent: raw.KeyboardEvent.type = js.native
+  lazy val KeyboardEvent: raw.KeyboardEvent.type = raw.KeyboardEvent
 
   type LinkStyle = raw.LinkStyle
   type Location = raw.Location
 
   type MediaError = raw.MediaError
-  val MediaError: raw.MediaError.type = js.native
+  lazy val MediaError: raw.MediaError.type = raw.MediaError
   type MediaElementAudioSourceNode = raw.MediaElementAudioSourceNode
   type MediaList = raw.MediaList
   type MediaQueryList = raw.MediaQueryList
@@ -110,7 +109,7 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type ModifierKeyEvent = raw.ModifierKeyEvent
   type MouseEvent = raw.MouseEvent
   type MutationEvent = raw.MutationEvent
-  val MutationEvent: raw.MutationEvent.type = js.native
+  lazy val MutationEvent: raw.MutationEvent.type = raw.MutationEvent
   type MutationObserver = raw.MutationObserver
   type MutationObserverInit = raw.MutationObserverInit
   type MutationRecord = raw.MutationRecord
@@ -124,9 +123,9 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type NavigatorStorageUtils = raw.NavigatorStorageUtils
   type NodeSelector = raw.NodeSelector
   type Node = raw.Node
-  val Node: raw.Node.type = js.native
+  lazy val Node: raw.Node.type = raw.Node
   type NodeFilter = raw.NodeFilter
-  val NodeFilter: raw.NodeFilter.type = js.native
+  lazy val NodeFilter: raw.NodeFilter.type = raw.NodeFilter
   type NodeIterator = raw.NodeIterator
   type NodeList = raw.NodeList
   type NodeListOf[TNode <: Node] = raw.NodeListOf[TNode]
@@ -145,19 +144,19 @@ package object dom extends Window with scalajs.js.GlobalScope {
   type PerformanceMark = raw.PerformanceMark
   type PerformanceMeasure = raw.PerformanceMeasure
   type PerformanceNavigation = raw.PerformanceNavigation
-  val PerformanceNavigation: raw.PerformanceNavigation.type = js.native
+  lazy val PerformanceNavigation: raw.PerformanceNavigation.type = raw.PerformanceNavigation
   type PerformanceResourceTiming = raw.PerformanceResourceTiming
   type PeriodicWave = raw.PeriodicWave
   type Position = raw.Position
   type PositionOptions = raw.PositionOptions
   type PositionError = raw.PositionError
-  val PositionError: raw.PositionError.type = js.native
+  lazy val PositionError: raw.PositionError.type = raw.PositionError
   type ProcessingInstruction = raw.ProcessingInstruction
   type ProgressEvent = raw.ProgressEvent
   type PopStateEvent = raw.PopStateEvent
 
   type Range = raw.Range
-  val Range: raw.Range.type = js.native
+  lazy val Range: raw.Range.type = raw.Range
 
   type Screen = raw.Screen
   type Selection = raw.Selection
@@ -170,10 +169,10 @@ package object dom extends Window with scalajs.js.GlobalScope {
 
   type Text = raw.Text
   type TextEvent = raw.TextEvent
-  val TextEvent: raw.TextEvent.type = js.native
+  lazy val TextEvent: raw.TextEvent.type = raw.TextEvent
   type TextMetrics = raw.TextMetrics
   type TextTrack = raw.TextTrack
-  val TextTrack: raw.TextTrack.type = js.native
+  lazy val TextTrack: raw.TextTrack.type = raw.TextTrack
   type TextTrackCue = raw.TextTrackCue
   type TextTrackCueList = raw.TextTrackCueList
   type TextTrackList = raw.TextTrackList
@@ -192,9 +191,9 @@ package object dom extends Window with scalajs.js.GlobalScope {
 
   type WaveShaperNode = raw.WaveShaperNode
   type WebSocket = raw.WebSocket
-  val WebSocket: raw.WebSocket.type = js.native
+  lazy val WebSocket: raw.WebSocket.type = raw.WebSocket
   type WheelEvent = raw.WheelEvent
-  val WheelEvent: raw.WheelEvent.type = js.native
+  lazy val WheelEvent: raw.WheelEvent.type = raw.WheelEvent
   type Window = raw.Window
   type WindowConsole = raw.WindowConsole
   type WindowLocalStorage = raw.WindowLocalStorage
@@ -204,13 +203,16 @@ package object dom extends Window with scalajs.js.GlobalScope {
 
   type WindowBase64 = raw.WindowBase64
   type Worker = raw.Worker
-  val Worker: raw.Worker.type = js.native
+  lazy val Worker: raw.Worker.type = raw.Worker
 
   type XMLHttpRequest = raw.XMLHttpRequest
-  val XMLHttpRequest: raw.XMLHttpRequest.type = js.native
+  lazy val XMLHttpRequest: raw.XMLHttpRequest.type = raw.XMLHttpRequest
   type XMLHttpRequestEventTarget = raw.XMLHttpRequestEventTarget
   type XMLSerializer = raw.XMLSerializer
   type XPathResult = raw.XPathResult
-  val XPathResult: raw.XPathResult.type = js.native
+  lazy val XPathResult: raw.XPathResult.type = raw.XPathResult
   type XPathNSResolver = raw.XPathNSResolver
+
+  lazy val window: Window = js.Dynamic.global.asInstanceOf[Window]
+  lazy val document: html.Document = window.document
 }
