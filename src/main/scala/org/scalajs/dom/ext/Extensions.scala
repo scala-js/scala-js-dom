@@ -239,7 +239,7 @@ case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
 }
 
 /**
- * Wraps an XMLHttpRequest to provide an easy one-line way of making 
+ * Wraps an XMLHttpRequest to provide an easy one-line way of making
  * an Ajax call, returning a Future.
  */
 object Ajax {
@@ -273,7 +273,7 @@ object Ajax {
   }
 
   def get(url: String,
-          data: InputData = "",
+          data: InputData = null,
           timeout: Int = 0,
           headers: Map[String, String] = Map.empty,
           withCredentials: Boolean = false,
@@ -282,7 +282,7 @@ object Ajax {
   }
 
   def post(url: String,
-           data: InputData = "",
+           data: InputData = null,
            timeout: Int = 0,
            headers: Map[String, String] = Map.empty,
            withCredentials: Boolean = false,
@@ -291,7 +291,7 @@ object Ajax {
   }
 
   def put(url: String,
-          data: InputData = "",
+          data: InputData = null,
           timeout: Int = 0,
           headers: Map[String, String] = Map.empty,
           withCredentials: Boolean = false,
@@ -300,7 +300,7 @@ object Ajax {
   }
 
   def delete(url: String,
-             data: InputData = "",
+             data: InputData = null,
              timeout: Int = 0,
              headers: Map[String, String] = Map.empty,
              withCredentials: Boolean = false,
@@ -313,7 +313,7 @@ object Ajax {
             data: InputData,
             timeout: Int,
             headers: Map[String, String],
-            withCredentials: Boolean, 
+            withCredentials: Boolean,
             responseType: String): Future[dom.XMLHttpRequest] = {
     val req = new dom.XMLHttpRequest()
     val promise = Promise[dom.XMLHttpRequest]()
@@ -331,7 +331,10 @@ object Ajax {
     req.timeout = timeout
     req.withCredentials = withCredentials
     headers.foreach(x => req.setRequestHeader(x._1, x._2))
-    req.send(data)
+    if (data == null)
+      req.send()
+    else
+      req.send(data)
     promise.future
   }
 }
