@@ -112,6 +112,7 @@ package object dom {
   lazy val MutationEvent: raw.MutationEvent.type = raw.MutationEvent
   type MutationObserver = raw.MutationObserver
   type MutationObserverInit = raw.MutationObserverInit
+  lazy val MutationObserverInit: raw.MutationObserverInit.type = raw.MutationObserverInit
   type MutationRecord = raw.MutationRecord
 
   type NamedNodeMap = raw.NamedNodeMap
