@@ -548,7 +548,7 @@ class IDBDatabase extends EventTarget {
   /**
    * A 64-bit integer that contains the version of the connected database.
    * When a database is first created or upgraded you should use
-   * [[dom.idb.VersionChangeEvent#newVersion]] instead.
+   * [[IDBVersionChangeEvent#newVersion]] instead.
    * Webkit returns always integer and the value is 1 when
    * database is first created.
    */

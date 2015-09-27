@@ -669,9 +669,9 @@ trait ServiceWorkerContainer extends EventTarget {
  * MDN
  */
 class Navigator extends NavigatorID with NavigatorOnLine with NavigatorContentUtils with NavigatorGeolocation with NavigatorStorageUtils {
-  
+
   val serviceWorker: ServiceWorkerContainer = js.native
-  
+
 }
 
 trait NodeSelector extends js.Object {
@@ -3086,7 +3086,7 @@ class MessageEvent extends Event {
   def origin: String = js.native
 
   /**
-   * The data from the server ([[String]], [[Blob]], or [[ArrayBuffer]])
+   * The data from the server (`String`, [[Blob]], or `ArrayBuffer`)
    *
    * MDN
    */
@@ -3881,7 +3881,7 @@ trait ClipboardEventInit extends js.Object {
 object ClipboardEventInit {
   /**
    * Construct a new ClipboardEventInit
-   * 
+   *
    * @param data       The data for this clipboard event
    * @param dataType   The MIME type of the data.
    * @return a new ClipBoardEventInit

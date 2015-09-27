@@ -1765,7 +1765,7 @@ class WebGLRenderingContext extends js.Object {
   def texParameteri(target: Int, pname: Int, param: Int): Unit = js.native
 
   /**
-   * Loads a 2-dimensional texture subimage into a texture unit from an [[ArrayBufferView]].
+   * Loads a 2-dimensional texture subimage into a texture unit from an `ArrayBufferView`.
    *
    *  @param target  the target on the active texture unit.  May be [[WebGLRenderingContext.TEXTURE_2D]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_X]],
    *                 [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_X]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_POSITIVE_Y]], [[WebGLRenderingContext.TEXTURE_CUBE_MAP_NEGATIVE_Y]],
@@ -1853,7 +1853,7 @@ class WebGLRenderingContext extends js.Object {
    * Loads a a scalar float into a [[WebGLUniformLocation]].
    *
    * @param location  the location to bind.
-   * @param v  a [[Float32Array]] to bind to
+   * @param v  a `Float32Array` to bind to
    */
   def uniform1fv(location: WebGLUniformLocation, v: Float32Array): Unit = js.native
 
@@ -1877,7 +1877,7 @@ class WebGLRenderingContext extends js.Object {
    * Loads a a scalar integer into a [[WebGLUniformLocation]].
    *
    * @param location  the location to bind.
-   * @param v  an [[Int32Array]] to bind to
+   * @param v  an `Int32Array` to bind to
    */
   def uniform1iv(location: WebGLUniformLocation, v: Int32Array): Unit = js.native
 
@@ -1902,7 +1902,7 @@ class WebGLRenderingContext extends js.Object {
    * Loads a a 2-vector of floats into a [[WebGLUniformLocation]].
    *
    * @param location  the location to bind.
-   * @param v  a [[Float32Array]] to bind to
+   * @param v  a `Float32Array` to bind to
    */
   def uniform2fv(location: WebGLUniformLocation, v: Float32Array): Unit = js.native
 
@@ -1927,7 +1927,7 @@ class WebGLRenderingContext extends js.Object {
    * Loads a a 2-vector of integers into a [[WebGLUniformLocation]].
    *
    * @param location  the location to bind.
-   * @param v  an [[Int32Array]] to bind to
+   * @param v  an `Int32Array` to bind to
    */
   def uniform2iv(location: WebGLUniformLocation, v: Int32Array): Unit = js.native
 
@@ -1953,7 +1953,7 @@ class WebGLRenderingContext extends js.Object {
    * Loads a a 3-vector of floats into a [[WebGLUniformLocation]].
    *
    * @param location  the location to bind.
-   * @param v  a [[Float32Array]] to bind to
+   * @param v  a `Float32Array` to bind to
    */
   def uniform3fv(location: WebGLUniformLocation, v: Float32Array): Unit = js.native
 
@@ -1979,7 +1979,7 @@ class WebGLRenderingContext extends js.Object {
    * Loads a a 3-vector of integers into a [[WebGLUniformLocation]].
    *
    * @param location  the location to bind.
-   * @param v  an [[Int32Array]] to bind to
+   * @param v  an `Int32Array` to bind to
    */
   def uniform3iv(location: WebGLUniformLocation, v: Int32Array): Unit = js.native
 
@@ -2006,7 +2006,7 @@ class WebGLRenderingContext extends js.Object {
    * Loads a a 4-vector of floats into a [[WebGLUniformLocation]].
    *
    * @param location  the location to bind.
-   * @param v  a [[Float32Array]] to bind to
+   * @param v  a `Float32Array` to bind to
    */
   def uniform4fv(location: WebGLUniformLocation, v: Float32Array): Unit = js.native
 
@@ -2033,7 +2033,7 @@ class WebGLRenderingContext extends js.Object {
    * Loads a a 4-vector of integers into a [[WebGLUniformLocation]].
    *
    * @param location  the location to bind.
-   * @param v  an [[Int32Array]] to bind to
+   * @param v  an `Int32Array` to bind to
    */
   def uniform4iv(location: WebGLUniformLocation, v: Int32Array): Unit = js.native
 
@@ -2050,7 +2050,7 @@ class WebGLRenderingContext extends js.Object {
    *
    * @param location  the location to bind.
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
-   * @param value  the source [[Float32Array]] containing the matrix data.
+   * @param value  the source `Float32Array` containing the matrix data.
    */
   def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit = js.native
 
@@ -2068,7 +2068,7 @@ class WebGLRenderingContext extends js.Object {
    *
    * @param location  the location to bind.
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
-   * @param value  the source [[Float32Array]] containing the matrix data.
+   * @param value  the source `Float32Array` containing the matrix data.
    */
   def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit = js.native
 
@@ -2086,7 +2086,7 @@ class WebGLRenderingContext extends js.Object {
    *
    * @param location  the location to bind.
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
-   * @param value  the source [[Float32Array]] containing the matrix data.
+   * @param value  the source `Float32Array` containing the matrix data.
    */
   def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit = js.native
 

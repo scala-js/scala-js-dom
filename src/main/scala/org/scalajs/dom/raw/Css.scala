@@ -318,7 +318,7 @@ class CSSStyleSheet extends StyleSheet {
   var readOnly: Boolean = js.native
   var cssText: String = js.native
   /**
-   * If this style sheet is imported into the document using an @import rule, the
+   * If this style sheet is imported into the document using an `@import` rule, the
    * ownerRule property will return that CSSImportRule, otherwise it returns null.
    *
    * MDN
@@ -376,7 +376,7 @@ class CSSStyleRule extends CSSRule {
 }
 
 /**
- * CSSMediaRule is an object representing a single CSS @media rule. It implements the
+ * CSSMediaRule is an object representing a single CSS `@media` rule. It implements the
  * CSSConditionRule interface, and therefore the CSSGroupingRule and the CSSRule
  * interface with a type value of 4 (CSSRule.MEDIA_RULE).
  *
@@ -400,7 +400,7 @@ class CSSMediaRule extends CSSRule {
 
 /**
  * The CSSNamespaceRule interface describes an object representing a single CSS
- * @@namespace at-rule. It implements the CSSRule interface, with a type value of 10
+ * `@@namespace` at-rule. It implements the CSSRule interface, with a type value of 10
  * (CSSRule.NAMESPACE_RULE).
  *
  * MDN
@@ -451,7 +451,7 @@ class CSSRule extends js.Object {
   var parentStyleSheet: CSSStyleSheet = js.native
   /**
    * Returns the containing rule, otherwise null. E.g. if this rule is a style rule
-   * inside an @media block, the parent rule would be that CSSMediaRule.
+   * inside an `@media` block, the parent rule would be that CSSMediaRule.
    *
    * MDN
    */
@@ -487,7 +487,7 @@ class CSSFontFaceRule extends CSSRule {
 
 
 /**
- * CSSPageRule is an object representing a single CSS @page rule. It implements the
+ * CSSPageRule is an object representing a single CSS `@page` rule. It implements the
  * CSSRule interface with a type value of 6 (CSSRule.PAGE_RULE).
  *
  * MDN
@@ -521,7 +521,7 @@ class CSSRuleList extends DOMList[CSSRule]
 /**
  * The CSSKeyframesRule interface describes an object representing a complete set
  * of keyframes for a CSS animation. It corresponds to the contains of a whole
- * @@keyframes at-rule. It implements the CSSRule interface with a type value of 7
+ * `@@keyframes` at-rule. It implements the CSSRule interface with a type value of 7
  * (CSSRule.KEYFRAMES_RULE).
  *
  * MDN
@@ -560,7 +560,7 @@ class CSSKeyframesRule extends CSSRule {
 
   /**
    * Inserts a new keyframe rule into the current CSSKeyframesRule. The parameter is a
-   * DOMString containing a keyframe in the same format as an entry of a @keyframes
+   * DOMString containing a keyframe in the same format as an entry of a `@keyframes`
    * at-rule. If it contains more than one keyframe rule, a DOMException with a
    * SYNTAX_ERR is thrown.
    *
@@ -573,7 +573,7 @@ class CSSKeyframesRule extends CSSRule {
 /**
  * The CSSKeyframeRule interface describes an object representing a set of style for
  * a given keyframe. It corresponds to the contains of a single keyframe of a
- * @@keyframes at-rule. It implements the CSSRule interface with a type value of 8
+ * `@@keyframes` at-rule. It implements the CSSRule interface with a type value of 8
  * (CSSRule.KEYFRAME_RULE).
  *
  * MDN
