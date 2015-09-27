@@ -10,7 +10,7 @@ import scala.scalajs.js.typedarray._
 import scala.scalajs.js.typedarray.TypedArrayBufferOps._
 
 import org.scalajs.dom
-import org.scalajs.dom.{html, raw}
+import org.scalajs.dom.{FormData, html, raw}
 import org.scalajs.dom.raw.Blob
 
 
@@ -254,6 +254,8 @@ object Ajax {
     implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData = b.asInstanceOf[InputData]
 
     implicit def blob2ajax(b: Blob): InputData = b.asInstanceOf[InputData]
+
+    implicit def formdata2ajax(b: FormData): InputData = b.asInstanceOf[InputData]
 
     implicit def byteBuffer2ajax(data: ByteBuffer): InputData = {
       if (data.hasTypedArray()) {
