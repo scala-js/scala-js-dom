@@ -230,6 +230,7 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) exte
   /** Is an EventHandler called when the processing is terminated, that is
    *  when the complete event (of type OfflineAudioCompletionEvent) is raised.
    */
+  @deprecated("Use the promise version of OfflineAudioContext.startRendering instead.", "forever")
   var oncomplete: js.Function1[OfflineAudioCompletionEvent, _] = js.native
 }
 
@@ -1250,7 +1251,6 @@ trait AudioBuffer extends js.Object {
  *  that occur when the processing of an OfflineAudioContext is terminated.
  *  The complete event implements this interface.
  */
-@deprecated("Use the promise version of OfflineAudioContext.startRendering instead.", "forever")
 trait OfflineAudioCompletionEvent extends Event {
   /** The buffer containing the result of the processing of an
    *  OfflineAudioContext.
