@@ -6062,6 +6062,8 @@ trait DOMTokenList extends DOMList[String]{
 
   def toggle(token: String): Boolean = js.native
 
+  def toggle(token: String, force: Boolean): Boolean = js.native
+
   def add(token: String): Unit = js.native
 
 }
