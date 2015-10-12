@@ -9,7 +9,7 @@ object Alert {
   @JSExport
   def main() = {
     import org.scalajs.dom
-    dom.alert("Hi from Scala-js-dom")
+    dom.window.alert("Hi from Scala-js-dom")
   }
 }
 
@@ -49,10 +49,10 @@ object LocalStorage {
     val key = "my-key"
 
     in.value =
-      dom.localStorage.getItem(key)
+      dom.window.localStorage.getItem(key)
 
     in.onkeyup = (e: dom.Event) => {
-      dom.localStorage.setItem(
+      dom.window.localStorage.setItem(
         key, in.value
       )
       box.textContent =
@@ -94,7 +94,7 @@ object Base64 {
            out: html.Div) = {
     in.onkeyup = { (e: dom.Event) =>
       out.textContent =
-        dom.btoa(in.value)
+        dom.window.btoa(in.value)
     }
   }
 }
