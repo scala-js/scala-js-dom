@@ -23,6 +23,7 @@ package object dom {
   type BiquadFilterNode = raw.BiquadFilterNode
   type Blob = raw.Blob
   lazy val Blob: raw.Blob.type = raw.Blob
+  lazy val BlobPropertyBag: raw.BlobPropertyBag.type = raw.BlobPropertyBag
   type BlobPropertyBag = raw.BlobPropertyBag
 
   type CanvasGradient = raw.CanvasGradient
@@ -34,8 +35,10 @@ package object dom {
   type CharacterData = raw.CharacterData
   type ClientRect = raw.ClientRect
   type ClientRectList = raw.ClientRectList
-  type CloseEvent = raw.CloseEvent
   type ClipboardEvent = raw.ClipboardEvent
+  lazy val ClipboardEventInit: raw.ClipboardEventInit.type = raw.ClipboardEventInit
+  type ClipboardEventInit = raw.ClipboardEventInit
+  type CloseEvent = raw.CloseEvent
   type CompositionEvent = raw.CompositionEvent
   type Comment = raw.Comment
   type Coordinates = raw.Coordinates
