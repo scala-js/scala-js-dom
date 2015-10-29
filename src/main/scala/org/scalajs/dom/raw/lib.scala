@@ -1931,7 +1931,7 @@ class Window extends EventTarget with WindowLocalStorage
    *
    * MDN
    */
-  def pageXOffset: Int = js.native
+  def pageXOffset: Double = js.native
 
   /**
    * The name of the window is used primarily for setting targets for hyperlinks and
@@ -2108,7 +2108,7 @@ class Window extends EventTarget with WindowLocalStorage
    *
    * MDN
    */
-  def pageYOffset: Int = js.native
+  def pageYOffset: Double = js.native
 
   /**
    * An event handler property for right-click events on the window.
