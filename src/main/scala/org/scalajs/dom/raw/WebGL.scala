@@ -12,6 +12,7 @@ import scala.scalajs.js.typedarray._
 /**
  * Contains drawing surface attributes.
  */
+@js.native
 class WebGLContextAttributes extends js.Object {
   /**
    * When `true`, the drawing buffer has an alpha channel.
@@ -44,41 +45,49 @@ class WebGLContextAttributes extends js.Object {
 /**
  * An opaque type representing a WebGL buffer.
  */
+@js.native
 class WebGLBuffer private () extends js.Object
 
 /**
  * An opaque type representing a WebGL framebuffer.
  */
+@js.native
 class WebGLFramebuffer private () extends js.Object
 
 /**
  * An opaque type representing a WebGL program.
  */
+@js.native
 class WebGLProgram private () extends js.Object
 
 /**
  * An opaque type representing a WebGL renderbuffer.
  */
+@js.native
 class WebGLRenderbuffer private () extends js.Object
 
 /**
  * An opaque type representing a WebGL shader.
  */
+@js.native
 class WebGLShader private () extends js.Object
 
 /**
  * An opaque type representing a WebGL texture.
  */
+@js.native
 class WebGLTexture private () extends js.Object
 
 /**
  * An opaque type representing a WebGL uniform location.
  */
+@js.native
 class WebGLUniformLocation private () extends js.Object
 
 /**
  * Holds information returned by [[WebGLRenderingContext#getActiveAttrib]] and [[WebGLRenderingContext#getActiveUniform]].
  */
+@js.native
 class WebGLActiveInfo private () extends js.Object {
   /**
    * The size of the requested variable.
@@ -97,6 +106,7 @@ class WebGLActiveInfo private () extends js.Object {
 /**
  * Represents information about the implementation's precision for given parameters.  See [[WebGLRenderingContext#getShaderPrecisionFormat]].
  */
+@js.native
 class WebGLShaderPrecisionFormat private () extends js.Object {
   /**
    * The base 2 log of the absolute value of the minimum value that can be represented.
@@ -120,6 +130,7 @@ class WebGLShaderPrecisionFormat private () extends js.Object {
  *
  * MDN
  */
+@js.native
 object WebGLRenderingContext extends js.Object {
   /**
    * Specifies the depth buffer should be cleared.
@@ -808,6 +819,7 @@ object WebGLRenderingContext extends js.Object {
   val BROWSER_DEFAULT_WEBGL: Int = js.native
 }
 
+@js.native
 class WebGLRenderingContext extends js.Object {
   /**
    * The canvas object this WebGLRenderingContext is associated with.

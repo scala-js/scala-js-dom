@@ -21,6 +21,7 @@ import scala.scalajs.js
  *
  * MDN
  */
+@js.native
 class IDBObjectStore extends js.Object {
   /**
    * A list of the names of indexes on objects in this object store.
@@ -124,6 +125,7 @@ class IDBObjectStore extends js.Object {
  *
  * MDN
  */
+@js.native
 class IDBVersionChangeEvent extends Event {
   /**
    * Returns the new version of the database.
@@ -163,6 +165,7 @@ class IDBVersionChangeEvent extends Event {
  *
  * MDN
  */
+@js.native
 class IDBIndex extends js.Object {
   /**
    * If true, this index does not allow duplicate values for a key.
@@ -242,6 +245,7 @@ class IDBIndex extends js.Object {
  *
  * MDN
  */
+@js.native
 class IDBCursor extends js.Object {
   /**
    * On getting, this object returns the IDBObjectStore or IDBIndex that the cursor is
@@ -313,6 +317,7 @@ class IDBCursor extends js.Object {
 
 }
 
+@js.native
 object IDBCursor extends js.Object {
 
   val PREV: String = js.native
@@ -326,6 +331,7 @@ object IDBCursor extends js.Object {
  *
  * MDN
  */
+@js.native
 class IDBCursorWithValue extends IDBCursor {
   def value: js.Any = js.native
 }
@@ -337,6 +343,7 @@ class IDBCursorWithValue extends IDBCursor {
  *
  * MDN
  */
+@js.native
 trait IDBEnvironment extends js.Object {
 
   /**
@@ -364,6 +371,7 @@ trait IDBEnvironment extends js.Object {
  *
  * MDN
  */
+@js.native
 class IDBKeyRange extends js.Object {
   /**
    * The upper bound of the key range (can be any type.)
@@ -394,6 +402,7 @@ class IDBKeyRange extends js.Object {
   def lowerOpen: Boolean = js.native
 }
 
+@js.native
 object IDBKeyRange extends js.Object {
   /**
    * The bounds can be open (that is, the bounds exclude the endpoint values) or closed
@@ -437,6 +446,7 @@ object IDBKeyRange extends js.Object {
  *
  * MDN
  */
+@js.native
 class IDBTransaction extends EventTarget {
   /**
    * The event handler for the oncomplete event.
@@ -506,6 +516,7 @@ class IDBTransaction extends EventTarget {
 
 }
 
+@js.native
 object IDBTransaction extends js.Object {
   /**
    * Allows data to be read but not changed.
@@ -544,6 +555,7 @@ object IDBTransaction extends js.Object {
  *
  * MDN
  */
+@js.native
 class IDBDatabase extends EventTarget {
   /**
    * A 64-bit integer that contains the version of the connected database.
@@ -632,6 +644,7 @@ class IDBDatabase extends EventTarget {
  *
  * MDN
  */
+@js.native
 class IDBOpenDBRequest extends IDBRequest {
   /**
    * The event handler for the upgradeneeded event, fired when a database of a bigger
@@ -662,6 +675,7 @@ class IDBOpenDBRequest extends IDBRequest {
  *
  * MDN
  */
+@js.native
 class IDBFactory extends js.Object {
   def open(name: String, version: Int): IDBOpenDBRequest = js.native
 
@@ -704,6 +718,7 @@ class IDBFactory extends js.Object {
  *
  * MDN
  */
+@js.native
 class IDBRequest extends EventTarget {
   /**
    * The source of the request, such as an Index or a ObjectStore. If no source exists
@@ -762,4 +777,3 @@ class IDBRequest extends EventTarget {
 
 
 }
-

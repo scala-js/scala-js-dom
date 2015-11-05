@@ -9,6 +9,7 @@ package object crypto {
 
   type BigInteger = Uint8Array
 
+  @js.native
   sealed trait BufferSource extends js.Any
 
   implicit def arrayBuffer2BufferSource(b: ArrayBuffer): BufferSource =

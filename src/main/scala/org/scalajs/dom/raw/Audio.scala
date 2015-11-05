@@ -22,6 +22,7 @@ import scala.scalajs.js
  *  An AudioContext can be a target of events, therefore it implements the
  *  EventTarget interface.
  */
+@js.native
 class AudioContext extends EventTarget {
   /** Returns a double representing an ever-increasing hardware time in
    *  seconds used for scheduling.
@@ -216,6 +217,7 @@ class AudioContext extends EventTarget {
  *                       least the range 22050 to 96000, with 44100 being the
  *                       most commonly used.
  */
+@js.native
 class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) extends AudioContext {
   /** The promise-based startRendering() method of the OfflineAudioContext
    *  Interface starts rendering the audio graph, taking into account the
@@ -256,6 +258,7 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) exte
  *  define their own functionality on top. See the individual node pages for
  *  more details, as listed on the Web Audio API homepage.
  */
+@js.native
 trait AudioNode extends EventTarget {
   /** Returns the associated AudioContext, that is the object representing
    *  the processing graph the node is participating in.
@@ -325,6 +328,7 @@ trait AudioNode extends EventTarget {
  *  - Channel count:          1
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait AnalyserNode extends AudioNode {
   /** Is an unsigned long value representing the size of the FFT (Fast Fourier
    *  Transform) to be used to determine the frequency domain.
@@ -426,6 +430,7 @@ trait AnalyserNode extends AudioNode {
  *  - Number of outputs: 1
  *  - Channel count:     defined by the associated AudioBuffer
  */
+@js.native
 trait AudioBufferSourceNode extends AudioNode {
   /** Is an AudioBuffer that defines the audio asset to be played, or when
    *  set to the value null, defines a single channel of silence.
@@ -507,6 +512,7 @@ trait AudioBufferSourceNode extends AudioNode {
  *  - Channel count:          2
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait AudioDestinationNode extends AudioNode {
   /** Is an unsigned long defining the maximum amount of channels that the
    *  physical device can handle.
@@ -522,6 +528,7 @@ trait AudioDestinationNode extends AudioNode {
  *  It is important to note that there is only one listener per context and
  *  that it isn't an AudioNode.
  */
+@js.native
 trait AudioListener extends AudioNode {
   /** Is a double value representing the amount of pitch shift to use when
    *  rendering a doppler effect.
@@ -595,6 +602,7 @@ trait AudioListener extends AudioNode {
  *  timelime-based automation curves.
  *  The time used is the one defined in AudioContext.currentTime.
  */
+@js.native
 trait AudioParam extends AudioNode {
   /** Represents the parameter's current floating point value; initially set
    *  to the value of AudioParam.defaultValue.
@@ -701,6 +709,7 @@ trait AudioParam extends AudioNode {
  *  - Channel count:          2 (not used in the default count mode)
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait BiquadFilterNode extends AudioNode {
   /** Is a k-rate AudioParam, a double representing a frequency in the
    *  current filtering algorithm measured in hertz (Hz).
@@ -767,6 +776,7 @@ trait BiquadFilterNode extends AudioNode {
  *  - Channel count:          2 (not used in the default count mode)
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait ChannelMergerNode extends AudioNode
 
 /** The ChannelSplitterNode interface, often used in conjunction with its
@@ -787,6 +797,7 @@ trait ChannelMergerNode extends AudioNode
  *  - Channel count:          2 (not used in the default count mode)
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait ChannelSplitterNode extends AudioNode
 
 /** The ConvolverNode interface is an AudioNode that performs a Linear
@@ -803,6 +814,7 @@ trait ChannelSplitterNode extends AudioNode
  *  - Channel count:          2
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait ConvolverNode extends AudioNode {
   /** A mono, stereo, or 4-channel AudioBuffer containing the (possibly
    *  multichannel) impulse response used by the ConvolverNode to create the
@@ -832,6 +844,7 @@ trait ConvolverNode extends AudioNode {
  *  - Channel count:          2 (not used in the default count mode)
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait DelayNode extends AudioNode {
   /** Is an a-rate AudioParam representing the amount of delay to apply. */
   val delayTime: AudioParam = js.native
@@ -851,6 +864,7 @@ trait DelayNode extends AudioNode {
  *  - Channel count:          2
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait DynamicsCompressorNode extends AudioNode {
   /** Is a k-rate AudioParam representing the decibel value above which the
    *  compression will start taking effect.
@@ -903,6 +917,7 @@ trait DynamicsCompressorNode extends AudioNode {
  *  - Channel count:          2 (not used in the default count mode)
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait GainNode extends AudioNode {
   /** Is an a-rate AudioParam representing the amount of gain to apply. */
   val gain: AudioParam = js.native
@@ -924,6 +939,7 @@ trait GainNode extends AudioNode {
  *                       to the AudioContext.createMediaElementSource method
  *                       that created it.
  */
+@js.native
 trait MediaElementAudioSourceNode extends AudioNode
 
 /** The MediaElementAudioSourceNode interface represents an audio destination
@@ -940,6 +956,7 @@ trait MediaElementAudioSourceNode extends AudioNode
  *  - Channel count mode:           "explicit"
  *  - Channel count interpretation: "speakers"
  */
+@js.native
 trait MediaStreamAudioDestinationNode extends AudioNode {
   /** Is a MediaStream containing a single AudioMediaStreamTrack with the
    *  same number of channels as the node itself.
@@ -965,6 +982,7 @@ trait MediaStreamAudioDestinationNode extends AudioNode {
  *                       AudioContext.createMediaStreamSource method that
  *                       created it.
  */
+@js.native
 trait MediaStreamAudioSourceNode extends AudioNode
 
 /** The OscillatorNode interface represents a periodic waveform, like a sine
@@ -982,6 +1000,7 @@ trait MediaStreamAudioSourceNode extends AudioNode
  *  - Channel count:          2 (not used in the default count mode)
  *  - Channel interpretation: speakers
  */
+@js.native
 trait OscillatorNode extends AudioNode {
   /** An a-rate AudioParam representing the frequency of oscillation in hertz
    *  (though the AudioParam returned is read-only, the value it represents is
@@ -1035,6 +1054,7 @@ trait OscillatorNode extends AudioNode {
  *  - Channel count:          2
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait PannerNode extends AudioNode {
   /** Is an enumerated value determining which spatialisation algorithm to
    *  use to position the audio in 3D space. */
@@ -1139,6 +1159,7 @@ trait PannerNode extends AudioNode {
  *  This interface was introduced as a much simpler way to apply a simple
  *  panning effect than having to use a full PannerNode.
  */
+@js.native
 trait StereoPannerNode extends AudioNode {
   /** Is an a-rate AudioParam representing the amount of panning to apply. */
   val pan: AudioParam = js.native
@@ -1157,6 +1178,7 @@ trait StereoPannerNode extends AudioNode {
  *  - Channel count:          2 (not used in the default count mode)
  *  - Channel interpretation: "speakers"
  */
+@js.native
 trait WaveShaperNode extends AudioNode {
   /** Is a Float32Array of numbers describing the distortion to apply. */
   var curve: js.typedarray.Float32Array = js.native
@@ -1182,6 +1204,7 @@ trait WaveShaperNode extends AudioNode {
  *  floating point buffer, with each samples between -1.0 and 1.0. If the
  *  AudioBuffer has multiple channels, they are stored in separate buffer.
  */
+@js.native
 trait AudioBuffer extends js.Object {
   /** Returns a float representing the sample rate, in samples per second, of
    *  the PCM data stored in the buffer.
@@ -1251,6 +1274,7 @@ trait AudioBuffer extends js.Object {
  *  that occur when the processing of an OfflineAudioContext is terminated.
  *  The complete event implements this interface.
  */
+@js.native
 trait OfflineAudioCompletionEvent extends Event {
   /** The buffer containing the result of the processing of an
    *  OfflineAudioContext.
@@ -1265,4 +1289,5 @@ trait OfflineAudioCompletionEvent extends Event {
  *  oscillators via OscillatorNode.setPeriodicWave. The PeriodicWave itself is
  *  created/returned by AudioContext.createPeriodicWave.
  */
+@js.native
 trait PeriodicWave extends js.Object

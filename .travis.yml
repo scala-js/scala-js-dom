@@ -1,9 +1,9 @@
 language: scala
 script:
   - sbt ++$TRAVIS_SCALA_VERSION package doc
-  - sbt ++2.11.6 readme/run
+  - sbt ++2.11.7 readme/run
 scala:
-  - 2.10.5
-  - 2.11.6
+  - 2.10.6
+  - 2.11.7
 jdk:
   - oraclejdk7
