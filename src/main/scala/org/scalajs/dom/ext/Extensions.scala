@@ -246,6 +246,7 @@ object Ajax {
   /**
    * Supported data formats for Ajax are implicitly converted to InputData
    */
+  @js.native
   sealed trait InputData extends js.Any
 
   object InputData {
@@ -365,6 +366,7 @@ object LocalStorage extends Storage(dom.window.localStorage)
  *
  * @see http://www.w3.org/TR/touch-events/
  */
+@js.native
 trait TouchEvents extends js.Object {
   /**
    * The touchstart event is fired when a touch point is placed on the touch

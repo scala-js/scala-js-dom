@@ -12,10 +12,12 @@ package org.scalajs.dom.raw
 
 import scala.scalajs.js
 
+@js.native
 trait GetSVGDocument extends js.Object {
   def getSVGDocument(): Document = js.native
 }
 
+@js.native
 class SVGPathSegCurvetoQuadraticRel extends SVGPathSeg {
   var y: Double = js.native
   var y1: Double = js.native
@@ -30,6 +32,7 @@ class SVGPathSegCurvetoQuadraticRel extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 abstract class SVGMarkerElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
   var orientType: SVGAnimatedEnumeration = js.native
   var markerUnits: SVGAnimatedEnumeration = js.native
@@ -49,6 +52,7 @@ abstract class SVGMarkerElement extends SVGElement with SVGStylable with SVGLang
   def setOrientToAuto(): Unit = js.native
 }
 
+@js.native
 object SVGMarkerElement extends js.Object {
   val SVG_MARKER_ORIENT_UNKNOWN: Int = js.native
   val SVG_MARKER_ORIENT_ANGLE: Int = js.native
@@ -63,10 +67,12 @@ object SVGMarkerElement extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGGElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
 }
 
 
+@js.native
 class SVGPathSegCurvetoCubicSmoothAbs extends SVGPathSeg {
   var y: Double = js.native
   var x2: Double = js.native
@@ -75,6 +81,7 @@ class SVGPathSegCurvetoCubicSmoothAbs extends SVGPathSeg {
 }
 
 
+@js.native
 class SVGZoomEvent extends UIEvent {
   def zoomRectScreen: SVGRect = js.native
 
@@ -88,18 +95,21 @@ class SVGZoomEvent extends UIEvent {
 }
 
 
+@js.native
 trait SVGUnitTypes extends js.Object {
   val SVG_UNIT_TYPE_UNKNOWN: Int = js.native
   val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Int = js.native
   val SVG_UNIT_TYPE_USERSPACEONUSE: Int = js.native
 }
 
+@js.native
 object SVGUnitTypes extends js.Object {
   val SVG_UNIT_TYPE_UNKNOWN: Int = js.native
   val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Int = js.native
   val SVG_UNIT_TYPE_USERSPACEONUSE: Int = js.native
 }
 
+@js.native
 class SVGPathSegMovetoRel extends SVGPathSeg {
   var y: Double = js.native
   var x: Double = js.native
@@ -112,6 +122,7 @@ class SVGPathSegMovetoRel extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 abstract class SVGLineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute y1 on the given <line> element.
@@ -148,10 +159,12 @@ abstract class SVGLineElement extends SVGElement with SVGStylable with SVGTransf
  *
  * MDN
  */
+@js.native
 abstract class SVGDescElement extends SVGElement with SVGStylable with SVGLangSpace {
 }
 
 
+@js.native
 class SVGPathSegCurvetoQuadraticSmoothRel extends SVGPathSeg {
   var y: Double = js.native
   var x: Double = js.native
@@ -164,6 +177,7 @@ class SVGPathSegCurvetoQuadraticSmoothRel extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 abstract class SVGClipPathElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute clipPathUnits on the given <clippath> element. Takes
@@ -182,6 +196,7 @@ abstract class SVGClipPathElement extends SVGElement with SVGUnitTypes with SVGS
  *
  * MDN
  */
+@js.native
 abstract class SVGTextPositioningElement extends SVGTextContentElement {
   /**
    * Corresponds to attribute y on the given element.
@@ -220,6 +235,7 @@ abstract class SVGTextPositioningElement extends SVGTextContentElement {
 }
 
 
+@js.native
 class SVGPathSegLinetoVerticalRel extends SVGPathSeg {
   var y: Double = js.native
 }
@@ -231,6 +247,7 @@ class SVGPathSegLinetoVerticalRel extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 class SVGAnimatedString extends js.Object {
   /**
    * If the given attribute or property is being animated, contains the current
@@ -256,6 +273,7 @@ class SVGAnimatedString extends js.Object {
  *
  * MDN
  */
+@js.native
 trait SVGTests extends js.Object {
   /**
    * Corresponds to attribute requiredFeatures on the given element.
@@ -289,6 +307,7 @@ trait SVGTests extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute patternUnits on the given <pattern> element. Takes one
@@ -349,6 +368,7 @@ abstract class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGSt
  *
  * MDN
  */
+@js.native
 class SVGAnimatedAngle extends js.Object {
   /**
    * A read only SVGAngle representing the current animated value of the given
@@ -375,6 +395,7 @@ class SVGAnimatedAngle extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGScriptElement extends SVGElement with SVGExternalResourcesRequired with SVGURIReference {
   def `type`: String = js.native
 }
@@ -386,6 +407,7 @@ abstract class SVGScriptElement extends SVGElement with SVGExternalResourcesRequ
  *
  * MDN
  */
+@js.native
 abstract class SVGViewElement extends SVGElement with SVGZoomAndPan with SVGFitToViewBox with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute viewTarget on the given <view> element. A list of
@@ -399,6 +421,7 @@ abstract class SVGViewElement extends SVGElement with SVGZoomAndPan with SVGFitT
 }
 
 
+@js.native
 trait SVGLocatable extends js.Object {
   var farthestViewportElement: SVGElement = js.native
   var nearestViewportElement: SVGElement = js.native
@@ -417,6 +440,7 @@ trait SVGLocatable extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGTitleElement extends SVGElement with SVGStylable with SVGLangSpace {
 }
 
@@ -427,6 +451,7 @@ abstract class SVGTitleElement extends SVGElement with SVGStylable with SVGLangS
  *
  * MDN
  */
+@js.native
 class SVGAnimatedTransformList extends js.Object {
   /**
    * A read only SVGTransformList representing the current animated value of the given
@@ -448,11 +473,13 @@ class SVGAnimatedTransformList extends js.Object {
 }
 
 
+@js.native
 trait SVGFitToViewBox extends js.Object {
   var viewBox: SVGAnimatedRect = js.native
   var preserveAspectRatio: SVGAnimatedPreserveAspectRatio = js.native
 }
 
+@js.native
 class SVGPointList extends js.Object {
   def numberOfItems: Int = js.native
 
@@ -478,6 +505,7 @@ class SVGPointList extends js.Object {
  *
  * MDN
  */
+@js.native
 class SVGAnimatedLengthList extends js.Object {
   /**
    * A read only SVGLengthList representing the current animated value of the given
@@ -505,6 +533,7 @@ class SVGAnimatedLengthList extends js.Object {
  *
  * MDN
  */
+@js.native
 class SVGAnimatedPreserveAspectRatio extends js.Object {
   /**
    * A read only SVGPreserveAspectRatio representing the current animated value of
@@ -526,6 +555,7 @@ class SVGAnimatedPreserveAspectRatio extends js.Object {
 }
 
 
+@js.native
 trait SVGExternalResourcesRequired extends js.Object {
   var externalResourcesRequired: SVGAnimatedBoolean = js.native
 }
@@ -535,6 +565,7 @@ trait SVGExternalResourcesRequired extends js.Object {
  *
  * MDN
  */
+@js.native
 class SVGAngle extends js.Object {
   /**
    * The value as a string value, in the units expressed by unitType. Setting this
@@ -607,6 +638,7 @@ class SVGAngle extends js.Object {
  *
  * MDN
  */
+@js.native
 object SVGAngle extends js.Object {
 
   val SVG_ANGLETYPE_RAD: Int = js.native
@@ -633,6 +665,7 @@ object SVGAngle extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGElement extends Element {
   var onmouseover: js.Function1[MouseEvent, _] = js.native
 
@@ -671,11 +704,13 @@ abstract class SVGElement extends Element {
 }
 
 
+@js.native
 class SVGPathSegLinetoHorizontalAbs extends SVGPathSeg {
   var x: Double = js.native
 }
 
 
+@js.native
 class SVGPathSegArcAbs extends SVGPathSeg {
   var y: Double = js.native
   var sweepFlag: Boolean = js.native
@@ -692,6 +727,7 @@ class SVGPathSegArcAbs extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 class SVGTransformList extends js.Object {
   def numberOfItems: Int = js.native
 
@@ -786,6 +822,7 @@ class SVGTransformList extends js.Object {
 }
 
 
+@js.native
 class SVGPathSegClosePath extends SVGPathSeg {
 }
 
@@ -796,6 +833,7 @@ class SVGPathSegClosePath extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 class SVGAnimatedLength extends js.Object {
   /**
    * If the given attribute or property is being animated, contains the current
@@ -822,6 +860,7 @@ class SVGAnimatedLength extends js.Object {
  *
  * MDN
  */
+@js.native
 trait SVGAnimatedPoints extends js.Object {
   /**
    * Provides access to the base (i.e., static) contents of the points attribute.
@@ -846,10 +885,12 @@ trait SVGAnimatedPoints extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGDefsElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
 }
 
 
+@js.native
 class SVGPathSegLinetoHorizontalRel extends SVGPathSeg {
   var x: Double = js.native
 }
@@ -861,6 +902,7 @@ class SVGPathSegLinetoHorizontalRel extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 abstract class SVGEllipseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute ry on the given <ellipse> element.
@@ -898,6 +940,7 @@ abstract class SVGEllipseElement extends SVGElement with SVGStylable with SVGTra
  *
  * MDN
  */
+@js.native
 abstract class SVGAElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute target on the given <a> element.
@@ -915,6 +958,7 @@ abstract class SVGAElement extends SVGElement with SVGStylable with SVGTransform
  *
  * MDN
  */
+@js.native
 trait SVGStylable extends js.Object {
   /**
    * Corresponds to attribute class on the given element.
@@ -936,6 +980,7 @@ trait SVGStylable extends js.Object {
  *
  * MDN
  */
+@js.native
 trait SVGTransformable extends SVGLocatable {
   /**
    * Corresponds to attribute transform on the given element.
@@ -945,11 +990,13 @@ trait SVGTransformable extends SVGLocatable {
   var transform: SVGAnimatedTransformList = js.native
 }
 
+@js.native
 trait SVGLangSpace extends js.Object {
   var xmllang: String = js.native
   var xmlspace: String = js.native
 }
 
+@js.native
 class SVGPoint extends js.Object {
   var y: Double = js.native
   var x: Double = js.native
@@ -964,6 +1011,7 @@ class SVGPoint extends js.Object {
  *
  * MDN
  */
+@js.native
 class SVGAnimatedNumberList extends js.Object {
   /**
    * A read only SVGNumberList representing the current animated value of the given
@@ -993,6 +1041,7 @@ class SVGAnimatedNumberList extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with DocumentEvent with SVGLangSpace with SVGLocatable with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute width on the given <svg> element.
@@ -1328,6 +1377,7 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
  *
  * MDN
  */
+@js.native
 class SVGAnimatedInteger extends js.Object {
   /**
    * If the given attribute or property is being animated, contains the current
@@ -1352,6 +1402,7 @@ class SVGAnimatedInteger extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGTextElement extends SVGTextPositioningElement with SVGTransformable {
 }
 
@@ -1362,10 +1413,12 @@ abstract class SVGTextElement extends SVGTextPositioningElement with SVGTransfor
  *
  * MDN
  */
+@js.native
 abstract class SVGTSpanElement extends SVGTextPositioningElement {
 }
 
 
+@js.native
 class SVGPathSegLinetoVerticalAbs extends SVGPathSeg {
   var y: Double = js.native
 }
@@ -1376,6 +1429,7 @@ class SVGPathSegLinetoVerticalAbs extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 abstract class SVGStyleElement extends SVGElement with SVGLangSpace {
   /**
    * Corresponds to attribute media on the given element. A DOMException is raised with
@@ -1405,6 +1459,7 @@ abstract class SVGStyleElement extends SVGElement with SVGLangSpace {
  *
  * MDN
  */
+@js.native
 class SVGRadialGradientElement extends SVGGradientElement {
   /**
    * Corresponds to attribute cx on the given <radialgradient> element.
@@ -1448,6 +1503,7 @@ class SVGRadialGradientElement extends SVGGradientElement {
  *
  * MDN
  */
+@js.native
 abstract class SVGImageElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute y on the given <image> element.
@@ -1492,6 +1548,7 @@ abstract class SVGImageElement extends SVGElement with SVGStylable with SVGTrans
  *
  * MDN
  */
+@js.native
 class SVGAnimatedNumber extends js.Object {
   /**
    * If the given attribute or property is being animated, contains the current
@@ -1511,10 +1568,12 @@ class SVGAnimatedNumber extends js.Object {
 }
 
 
+@js.native
 abstract class SVGMetadataElement extends SVGElement {
 }
 
 
+@js.native
 class SVGPathSegArcRel extends SVGPathSeg {
   var y: Double = js.native
   var sweepFlag: Boolean = js.native
@@ -1526,6 +1585,7 @@ class SVGPathSegArcRel extends SVGPathSeg {
 }
 
 
+@js.native
 class SVGPathSegMovetoAbs extends SVGPathSeg {
   var y: Double = js.native
   var x: Double = js.native
@@ -1537,6 +1597,7 @@ class SVGPathSegMovetoAbs extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 class SVGStringList extends js.Object {
   def numberOfItems: Int = js.native
 
@@ -1632,6 +1693,7 @@ class SVGStringList extends js.Object {
  *
  * MDN
  */
+@js.native
 class SVGLength extends js.Object {
   /**
    * The value as a string value, in the units expressed by unitType. Setting this
@@ -1705,6 +1767,7 @@ class SVGLength extends js.Object {
  *
  * MDN
  */
+@js.native
 object SVGLength extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGLength),List())))) */
   val SVG_LENGTHTYPE_NUMBER: Int = js.native
@@ -1732,10 +1795,12 @@ object SVGLength extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGPolygonElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
 }
 
 
+@js.native
 class SVGPathSegCurvetoCubicRel extends SVGPathSeg {
   var y: Double = js.native
   var y1: Double = js.native
@@ -1746,6 +1811,7 @@ class SVGPathSegCurvetoCubicRel extends SVGPathSeg {
 }
 
 
+@js.native
 abstract class SVGTextContentElement extends SVGElement with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   def textLength: SVGAnimatedLength = js.native
 
@@ -1771,6 +1837,7 @@ abstract class SVGTextContentElement extends SVGElement with SVGStylable with SV
 
 }
 
+@js.native
 object SVGTextContentElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGTextContentElement),List())))) */
   val LENGTHADJUST_SPACING: Int = js.native
@@ -1785,6 +1852,7 @@ object SVGTextContentElement extends js.Object {
  *
  * MDN
  */
+@js.native
 class SVGTransform extends js.Object {
   def `type`: Int = js.native
 
@@ -1888,6 +1956,7 @@ class SVGTransform extends js.Object {
  *
  * MDN
  */
+@js.native
 object SVGTransform extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGTransform),List())))) */
   val SVG_TRANSFORM_SKEWX: Int = js.native
@@ -1905,16 +1974,19 @@ object SVGTransform extends js.Object {
   val SVG_TRANSFORM_SKEWY: Int = js.native
 }
 
+@js.native
 trait SVGURIReference extends js.Object {
   var href: SVGAnimatedString = js.native
 }
 
+@js.native
 class SVGPathSeg extends js.Object {
   def pathSegType: Int = js.native
 
   def pathSegTypeAsLetter: String = js.native
 }
 
+@js.native
 object SVGPathSeg extends js.Object {
 
   val PATHSEG_MOVETO_REL: Int = js.native
@@ -1944,6 +2016,7 @@ object SVGPathSeg extends js.Object {
  *
  * MDN
  */
+@js.native
 class SVGNumber extends js.Object {
   /**
    * The value of the given attribute. Exceptions on setting: a DOMException with code
@@ -1961,6 +2034,7 @@ class SVGNumber extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGPathElement extends SVGElement with SVGStylable with SVGAnimatedPathData with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Returns the index into pathSegList which is distance units along the path,
@@ -2181,6 +2255,7 @@ abstract class SVGPathElement extends SVGElement with SVGStylable with SVGAnimat
  *
  * MDN
  */
+@js.native
 class SVGAnimatedRect extends js.Object {
   /**
    * A read only SVGRect representing the current animated value of the given
@@ -2202,6 +2277,7 @@ class SVGAnimatedRect extends js.Object {
 }
 
 
+@js.native
 class SVGPathSegList extends js.Object {
   def numberOfItems: Int = js.native
 
@@ -2221,6 +2297,7 @@ class SVGPathSegList extends js.Object {
 }
 
 
+@js.native
 class SVGElementInstance extends EventTarget {
   def previousSibling: SVGElementInstance = js.native
 
@@ -2246,6 +2323,7 @@ class SVGElementInstance extends EventTarget {
  *
  * MDN
  */
+@js.native
 abstract class SVGCircleElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute cx on the given <circle> element.
@@ -2277,6 +2355,7 @@ abstract class SVGCircleElement extends SVGElement with SVGStylable with SVGTran
  *
  * MDN
  */
+@js.native
 class SVGRect extends js.Object {
   /**
    * The y coordinate of the rectangle, in user units.
@@ -2305,6 +2384,7 @@ class SVGRect extends js.Object {
 }
 
 
+@js.native
 class SVGPathSegCurvetoCubicAbs extends SVGPathSeg {
   var y: Double = js.native
   var y1: Double = js.native
@@ -2315,6 +2395,7 @@ class SVGPathSegCurvetoCubicAbs extends SVGPathSeg {
 }
 
 
+@js.native
 class SVGPathSegCurvetoQuadraticAbs extends SVGPathSeg {
   var y: Double = js.native
   var y1: Double = js.native
@@ -2323,6 +2404,7 @@ class SVGPathSegCurvetoQuadraticAbs extends SVGPathSeg {
 }
 
 
+@js.native
 class SVGPathSegLinetoAbs extends SVGPathSeg {
   var y: Double = js.native
   var x: Double = js.native
@@ -2334,6 +2416,7 @@ class SVGPathSegLinetoAbs extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 class SVGMatrix extends js.Object {
   var e: Double = js.native
   var c: Double = js.native
@@ -2441,6 +2524,7 @@ class SVGMatrix extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGUseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute y on the given <use> element.
@@ -2490,6 +2574,7 @@ abstract class SVGUseElement extends SVGElement with SVGStylable with SVGTransfo
 }
 
 
+@js.native
 trait SVGException extends js.Object {
   def code: Int = js.native
 
@@ -2498,6 +2583,7 @@ trait SVGException extends js.Object {
   def name: String = js.native
 }
 
+@js.native
 object SVGException extends js.Object {
   val SVG_MATRIX_NOT_INVERTABLE: Int = js.native
   val SVG_WRONG_TYPE_ERR: Int = js.native
@@ -2510,6 +2596,7 @@ object SVGException extends js.Object {
  *
  * MDN
  */
+@js.native
 class SVGLinearGradientElement extends SVGGradientElement {
   /**
    * Corresponds to attribute y1 on the given <lineargradient> element.
@@ -2547,6 +2634,7 @@ class SVGLinearGradientElement extends SVGGradientElement {
  *
  * MDN
  */
+@js.native
 class SVGAnimatedEnumeration extends js.Object {
   /**
    * If the given attribute or property is being animated, contains the current
@@ -2572,6 +2660,7 @@ class SVGAnimatedEnumeration extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGRectElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute y on the given <rect> element.
@@ -2617,12 +2706,14 @@ abstract class SVGRectElement extends SVGElement with SVGStylable with SVGTransf
 }
 
 
+@js.native
 class SVGPathSegCurvetoQuadraticSmoothAbs extends SVGPathSeg {
   var y: Double = js.native
   var x: Double = js.native
 }
 
 
+@js.native
 class SVGPathSegCurvetoCubicSmoothRel extends SVGPathSeg {
   var y: Double = js.native
   var x2: Double = js.native
@@ -2636,6 +2727,7 @@ class SVGPathSegCurvetoCubicSmoothRel extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 class SVGLengthList extends js.Object {
   def numberOfItems: Int = js.native
 
@@ -2732,18 +2824,22 @@ class SVGLengthList extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGPolylineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGAnimatedPoints with SVGTests with SVGExternalResourcesRequired {
 }
 
 
+@js.native
 trait SVGAnimatedPathData extends js.Object {
   var pathSegList: SVGPathSegList = js.native
 }
 
+@js.native
 trait SVGZoomAndPan extends js.Object {
   var zoomAndPan: Int = js.native
 }
 
+@js.native
 object SVGZoomAndPan extends js.Object {
   val SVG_ZOOMANDPAN_MAGNIFY: Int = js.native
   val SVG_ZOOMANDPAN_UNKNOWN: Int = js.native
@@ -2751,6 +2847,7 @@ object SVGZoomAndPan extends js.Object {
 }
 
 
+@js.native
 abstract class SVGTextPathElement extends SVGTextContentElement with SVGURIReference {
   def startOffset: SVGAnimatedLength = js.native
 
@@ -2759,6 +2856,7 @@ abstract class SVGTextPathElement extends SVGTextContentElement with SVGURIRefer
   def spacing: SVGAnimatedEnumeration = js.native
 }
 
+@js.native
 object SVGTextPathElement extends js.Object {
 
   val TEXTPATH_SPACINGTYPE_EXACT: Int = js.native
@@ -2775,6 +2873,7 @@ object SVGTextPathElement extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGGradientElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGExternalResourcesRequired with SVGURIReference {
   /**
    * Corresponds to attribute spreadMethod on the given element. One of the Spread
@@ -2806,6 +2905,7 @@ abstract class SVGGradientElement extends SVGElement with SVGUnitTypes with SVGS
  *
  * MDN
  */
+@js.native
 object SVGGradientElement extends js.Object {
   val SVG_SPREADMETHOD_REFLECT: Int = js.native
   val SVG_SPREADMETHOD_PAD: Int = js.native
@@ -2824,6 +2924,7 @@ object SVGGradientElement extends js.Object {
  *
  * MDN
  */
+@js.native
 class SVGNumberList extends js.Object {
   def numberOfItems: Int = js.native
 
@@ -2914,6 +3015,7 @@ class SVGNumberList extends js.Object {
 }
 
 
+@js.native
 class SVGPathSegLinetoRel extends SVGPathSeg {
   var y: Double = js.native
   var x: Double = js.native
@@ -2926,6 +3028,7 @@ class SVGPathSegLinetoRel extends SVGPathSeg {
  *
  * MDN
  */
+@js.native
 class SVGAnimatedBoolean extends js.Object {
   /**
    * If the given attribute or property is being animated, contains the current
@@ -2950,6 +3053,7 @@ class SVGAnimatedBoolean extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGSwitchElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
 }
 
@@ -2960,6 +3064,7 @@ abstract class SVGSwitchElement extends SVGElement with SVGStylable with SVGTran
  *
  * MDN
  */
+@js.native
 class SVGPreserveAspectRatio extends js.Object {
   /**
    * The type of the alignment value as specified by one of the
@@ -2983,6 +3088,7 @@ class SVGPreserveAspectRatio extends js.Object {
  *
  * MDN
  */
+@js.native
 object SVGPreserveAspectRatio extends js.Object {
 
   val SVG_PRESERVEASPECTRATIO_NONE: Int = js.native
@@ -3024,6 +3130,7 @@ object SVGPreserveAspectRatio extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGStopElement extends SVGElement with SVGStylable {
   /**
    * Corresponds to attribute offset on the given <stop> element.
@@ -3039,10 +3146,12 @@ abstract class SVGStopElement extends SVGElement with SVGStylable {
  *
  * MDN
  */
+@js.native
 abstract class SVGSymbolElement extends SVGElement with SVGStylable with SVGLangSpace with SVGFitToViewBox with SVGExternalResourcesRequired {
 }
 
 
+@js.native
 class SVGElementInstanceList extends js.Object {
   def length: Int = js.native
 
@@ -3056,6 +3165,7 @@ class SVGElementInstanceList extends js.Object {
  *
  * MDN
  */
+@js.native
 abstract class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute y on the given <mask> element.
@@ -3109,6 +3219,7 @@ abstract class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStyla
  *
  * MDN
  */
+@js.native
 abstract class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGURIReference with SVGExternalResourcesRequired {
   /**
    * Corresponds to attribute y on the given <filter> element.
@@ -3177,24 +3288,29 @@ abstract class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGSty
 }
 
 
+@js.native
 abstract class SVGFEMergeNodeElement extends SVGElement {
   def in1: SVGAnimatedString = js.native
 }
 
 
+@js.native
 abstract class SVGFEFloodElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
 }
 
 
+@js.native
 abstract class SVGFEFuncAElement extends SVGComponentTransferFunctionElement {
 }
 
 
+@js.native
 abstract class SVGFETileElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in1: SVGAnimatedString = js.native
 }
 
 
+@js.native
 abstract class SVGFEBlendElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in2: SVGAnimatedString = js.native
 
@@ -3203,6 +3319,7 @@ abstract class SVGFEBlendElement extends SVGElement with SVGFilterPrimitiveStand
   def in1: SVGAnimatedString = js.native
 }
 
+@js.native
 object SVGFEBlendElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEBlendElement),List())))) */
   val SVG_FEBLEND_MODE_DARKEN: Int = js.native
@@ -3213,10 +3330,12 @@ object SVGFEBlendElement extends js.Object {
   val SVG_FEBLEND_MODE_LIGHTEN: Int = js.native
 }
 
+@js.native
 abstract class SVGFEMergeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
 }
 
 
+@js.native
 abstract class SVGFEPointLightElement extends SVGElement {
   def y: SVGAnimatedNumber = js.native
 
@@ -3226,6 +3345,7 @@ abstract class SVGFEPointLightElement extends SVGElement {
 }
 
 
+@js.native
 abstract class SVGFEGaussianBlurElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def stdDeviationX: SVGAnimatedNumber = js.native
 
@@ -3237,6 +3357,7 @@ abstract class SVGFEGaussianBlurElement extends SVGElement with SVGFilterPrimiti
 }
 
 
+@js.native
 trait SVGFilterPrimitiveStandardAttributes extends SVGStylable {
   def y: SVGAnimatedLength = js.native
 
@@ -3249,6 +3370,7 @@ trait SVGFilterPrimitiveStandardAttributes extends SVGStylable {
   def result: SVGAnimatedString = js.native
 }
 
+@js.native
 abstract class SVGFESpecularLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def kernelUnitLengthY: SVGAnimatedNumber = js.native
 
@@ -3264,6 +3386,7 @@ abstract class SVGFESpecularLightingElement extends SVGElement with SVGFilterPri
 }
 
 
+@js.native
 abstract class SVGFEMorphologyElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def operator: SVGAnimatedEnumeration = js.native
 
@@ -3274,16 +3397,19 @@ abstract class SVGFEMorphologyElement extends SVGElement with SVGFilterPrimitive
   def in1: SVGAnimatedString = js.native
 }
 
+@js.native
 object SVGFEMorphologyElement extends js.Object {
   val SVG_MORPHOLOGY_OPERATOR_UNKNOWN: Int = js.native
   val SVG_MORPHOLOGY_OPERATOR_ERODE: Int = js.native
   val SVG_MORPHOLOGY_OPERATOR_DILATE: Int = js.native
 }
 
+@js.native
 abstract class SVGFEFuncRElement extends SVGComponentTransferFunctionElement {
 }
 
 
+@js.native
 abstract class SVGFEDisplacementMapElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in2: SVGAnimatedString = js.native
 
@@ -3296,6 +3422,7 @@ abstract class SVGFEDisplacementMapElement extends SVGElement with SVGFilterPrim
   def in1: SVGAnimatedString = js.native
 }
 
+@js.native
 object SVGFEDisplacementMapElement extends js.Object {
   val SVG_CHANNEL_B: Int = js.native
   val SVG_CHANNEL_R: Int = js.native
@@ -3304,6 +3431,7 @@ object SVGFEDisplacementMapElement extends js.Object {
   val SVG_CHANNEL_A: Int = js.native
 }
 
+@js.native
 abstract class SVGComponentTransferFunctionElement extends SVGElement {
   def tableValues: SVGAnimatedNumberList = js.native
 
@@ -3320,6 +3448,7 @@ abstract class SVGComponentTransferFunctionElement extends SVGElement {
   def offset: SVGAnimatedNumber = js.native
 }
 
+@js.native
 object SVGComponentTransferFunctionElement extends js.Object {
   val SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN: Int = js.native
   val SVG_FECOMPONENTTRANSFER_TYPE_TABLE: Int = js.native
@@ -3329,6 +3458,7 @@ object SVGComponentTransferFunctionElement extends js.Object {
   val SVG_FECOMPONENTTRANSFER_TYPE_LINEAR: Int = js.native
 }
 
+@js.native
 abstract class SVGFEDistantLightElement extends SVGElement {
   def azimuth: SVGAnimatedNumber = js.native
 
@@ -3336,10 +3466,12 @@ abstract class SVGFEDistantLightElement extends SVGElement {
 }
 
 
+@js.native
 abstract class SVGFEFuncBElement extends SVGComponentTransferFunctionElement {
 }
 
 
+@js.native
 abstract class SVGFETurbulenceElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def baseFrequencyX: SVGAnimatedNumber = js.native
 
@@ -3354,6 +3486,7 @@ abstract class SVGFETurbulenceElement extends SVGElement with SVGFilterPrimitive
   def seed: SVGAnimatedNumber = js.native
 }
 
+@js.native
 object SVGFETurbulenceElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFETurbulenceElement),List())))) */
   val SVG_STITCHTYPE_UNKNOWN: Int = js.native
@@ -3364,10 +3497,12 @@ object SVGFETurbulenceElement extends js.Object {
   val SVG_STITCHTYPE_STITCH: Int = js.native
 }
 
+@js.native
 abstract class SVGFEFuncGElement extends SVGComponentTransferFunctionElement {
 }
 
 
+@js.native
 abstract class SVGFEColorMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in1: SVGAnimatedString = js.native
 
@@ -3376,6 +3511,7 @@ abstract class SVGFEColorMatrixElement extends SVGElement with SVGFilterPrimitiv
   def values: SVGAnimatedNumberList = js.native
 }
 
+@js.native
 object SVGFEColorMatrixElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEColorMatrixElement),List())))) */
   val SVG_FECOLORMATRIX_TYPE_SATURATE: Int = js.native
@@ -3385,6 +3521,7 @@ object SVGFEColorMatrixElement extends js.Object {
   val SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA: Int = js.native
 }
 
+@js.native
 abstract class SVGFESpotLightElement extends SVGElement {
   def pointsAtY: SVGAnimatedNumber = js.native
 
@@ -3404,6 +3541,7 @@ abstract class SVGFESpotLightElement extends SVGElement {
 }
 
 
+@js.native
 abstract class SVGFEOffsetElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def dy: SVGAnimatedNumber = js.native
 
@@ -3413,11 +3551,13 @@ abstract class SVGFEOffsetElement extends SVGElement with SVGFilterPrimitiveStan
 }
 
 
+@js.native
 abstract class SVGFEImageElement extends SVGElement with SVGLangSpace with SVGFilterPrimitiveStandardAttributes with SVGURIReference with SVGExternalResourcesRequired {
   def preserveAspectRatio: SVGAnimatedPreserveAspectRatio = js.native
 }
 
 
+@js.native
 abstract class SVGFECompositeElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def operator: SVGAnimatedEnumeration = js.native
 
@@ -3434,6 +3574,7 @@ abstract class SVGFECompositeElement extends SVGElement with SVGFilterPrimitiveS
   def k4: SVGAnimatedNumber = js.native
 }
 
+@js.native
 object SVGFECompositeElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFECompositeElement),List())))) */
   val SVG_FECOMPOSITE_OPERATOR_OUT: Int = js.native
@@ -3445,11 +3586,13 @@ object SVGFECompositeElement extends js.Object {
   val SVG_FECOMPOSITE_OPERATOR_ATOP: Int = js.native
 }
 
+@js.native
 abstract class SVGFEComponentTransferElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def in1: SVGAnimatedString = js.native
 }
 
 
+@js.native
 abstract class SVGFEDiffuseLightingElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def kernelUnitLengthY: SVGAnimatedNumber = js.native
 
@@ -3463,6 +3606,7 @@ abstract class SVGFEDiffuseLightingElement extends SVGElement with SVGFilterPrim
 }
 
 
+@js.native
 object SVGFEConvolveMatrixElement extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(SVGFEConvolveMatrixElement),List())))) */
   val SVG_EDGEMODE_WRAP: Int = js.native
@@ -3471,6 +3615,7 @@ object SVGFEConvolveMatrixElement extends js.Object {
   val SVG_EDGEMODE_NONE: Int = js.native
 }
 
+@js.native
 abstract class SVGFEConvolveMatrixElement extends SVGElement with SVGFilterPrimitiveStandardAttributes {
   def orderY: SVGAnimatedInteger = js.native
 

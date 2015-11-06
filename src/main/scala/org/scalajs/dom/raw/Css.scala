@@ -18,6 +18,7 @@ import scala.scalajs.js
  *
  * MDN
  */
+@js.native
 class CSSStyleDeclaration extends js.Object {
   var backgroundAttachment: String = js.native
   var visibility: String = js.native
@@ -310,6 +311,7 @@ class CSSStyleDeclaration extends js.Object {
  *
  * MDN
  */
+@js.native
 class CSSStyleSheet extends StyleSheet {
   var owningElement: Element = js.native
   var imports: StyleSheetList = js.native
@@ -365,6 +367,7 @@ class CSSStyleSheet extends StyleSheet {
  *
  * MDN
  */
+@js.native
 class CSSStyleRule extends CSSRule {
   /**
    * Gets/sets the textual representation of the selector for this rule, e.g. "h1,h2".
@@ -382,6 +385,7 @@ class CSSStyleRule extends CSSRule {
  *
  * MDN
  */
+@js.native
 class CSSMediaRule extends CSSRule {
   /**
    * Specifies a MediaList representing the intended destination medium for style
@@ -405,6 +409,7 @@ class CSSMediaRule extends CSSRule {
  *
  * MDN
  */
+@js.native
 class CSSNamespaceRule extends CSSRule {
   /**
    * Returns a DOMString containing the text of the URI of the given namespace.
@@ -421,6 +426,7 @@ class CSSNamespaceRule extends CSSRule {
   var prefix: String = js.native
 }
 
+@js.native
 class CSSImportRule extends CSSRule {
   var styleSheet: CSSStyleSheet = js.native
   var href: String = js.native
@@ -434,6 +440,7 @@ class CSSImportRule extends CSSRule {
  *
  * MDN
  */
+@js.native
 class CSSRule extends js.Object {
   /**
    * cssText returns the actual text of the style rule. To be able to set a stylesheet rule
@@ -470,6 +477,7 @@ class CSSRule extends js.Object {
   var VIEWPORT_RULE: Int = js.native
 }
 
+@js.native
 object CSSRule extends js.Object {
   var IMPORT_RULE: Int = js.native
   var MEDIA_RULE: Int = js.native
@@ -481,6 +489,7 @@ object CSSRule extends js.Object {
   var CHARSET_RULE: Int = js.native
 }
 
+@js.native
 class CSSFontFaceRule extends CSSRule {
   var style: CSSStyleDeclaration = js.native
 }
@@ -492,6 +501,7 @@ class CSSFontFaceRule extends CSSRule {
  *
  * MDN
  */
+@js.native
 class CSSPageRule extends CSSRule {
   var pseudoClass: String = js.native
   /**
@@ -516,6 +526,7 @@ class CSSPageRule extends CSSRule {
  *
  * MDN
  */
+@js.native
 class CSSRuleList extends DOMList[CSSRule]
 
 /**
@@ -526,6 +537,7 @@ class CSSRuleList extends DOMList[CSSRule]
  *
  * MDN
  */
+@js.native
 class CSSKeyframesRule extends CSSRule {
   /**
    * Represents the name of the animation, used by the animation-name property.
@@ -578,6 +590,7 @@ class CSSKeyframesRule extends CSSRule {
  *
  * MDN
  */
+@js.native
 class CSSKeyframeRule extends CSSRule {
   /**
    * Represents the key of the keyframe, like '10%', '75%'. The from keyword maps to '0%'
