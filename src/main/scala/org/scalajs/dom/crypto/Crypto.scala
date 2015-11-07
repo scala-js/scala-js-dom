@@ -263,7 +263,7 @@ trait SubtleCrypto extends js.Object {
 // RSASSA-PKCS1-v1_5
 
 @js.native
-trait RsaKeyGenParams extends Algorithm {
+trait RsaKeyGenParams extends KeyAlgorithm {
   var modulusLength: Double = js.native
 
   var publicExponent: BigInteger = js.native

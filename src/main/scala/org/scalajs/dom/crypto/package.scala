@@ -10,8 +10,8 @@ package object crypto {
   val crypto = GlobalCrypto.crypto
 
   type BigInteger = Uint8Array
-  type AlgorithmIdentifier = String|KeyAlgorithm
-  type HashAlgorithmIdentifier = String|HashAlgorithm
+  type AlgorithmIdentifier = KeyAlgorithm | String
+  type HashAlgorithmIdentifier = HashAlgorithm | String
 
   @js.native
   sealed trait BufferSource extends js.Any
