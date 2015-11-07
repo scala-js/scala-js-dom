@@ -2,12 +2,16 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.typedarray.{ArrayBufferView, ArrayBuffer, Uint8Array}
+import scala.scalajs.js.`|`
+
 import scala.language.implicitConversions
 
 package object crypto {
   val crypto = GlobalCrypto.crypto
 
   type BigInteger = Uint8Array
+  type AlgorithmIdentifier = String|KeyAlgorithm
+  type HashAlgorithmIdentifier = String|HashAlgorithm
 
   @js.native
   sealed trait BufferSource extends js.Any
