@@ -120,8 +120,8 @@ class AudioContext extends EventTarget {
   def createGain(): GainNode = js.native
 
   /** Creates a MediaElementAudioSourceNode associated with an HTMLMediaElement.
-   *  This can be used to play and manipulate audio from {{{<video>}}} or
-   *  {{{<audio>}}} elements.
+   *  This can be used to play and manipulate audio from &lt;video&gt; or
+   *  &lt;audio&gt; elements.
    *
    *  @param myMediaElement An HTMLMediaElement object that you want to feed
    *                        into an audio processing graph to manipulate.
@@ -238,8 +238,8 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) exte
 
 
 /** The AudioNode interface is a generic interface for representing an audio
- *  processing module like an audio source (e.g. an HTML {{{<audio>}}} or
- *  {{{<video>}}} element, an OscillatorNode, etc.), the audio destination,
+ *  processing module like an audio source (e.g. an HTML &lt;audio&gt; or
+ *  &lt;video&gt; element, an OscillatorNode, etc.), the audio destination,
  *  intermediate processing module (e.g. a filter like BiquadFilterNode or
  *  ConvolverNode), or volume control (like GainNode).
  *
@@ -924,7 +924,7 @@ trait GainNode extends AudioNode {
 }
 
 /** The MediaElementAudioSourceNode interface represents an audio source
- *  consisting of an HTML5 {{{<audio>}}} or {{{<video>}}} element.
+ *  consisting of an HTML5 &lt;audio&gt; or &lt;video&gt; element.
  *  It is an AudioNode that acts as an audio source.
  *
  *  A MediaElementSourceNode has no inputs and exactly one output, and is
