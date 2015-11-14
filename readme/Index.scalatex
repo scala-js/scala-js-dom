@@ -145,7 +145,7 @@
     @li
       Deprecated properties/methods/types will not be present.
     @li
-      IE-only, Chrome-only, FF-only, and in general browser-specific attributes will not be present.
+      IE-only, Chrome-only, FF-only, and in general browser-specific attributes will only be found under the @hl.scala{experimental} package.
     @li
       The name of a Scala type should map directly to the name of the corresponding Javascript type.
     @li
