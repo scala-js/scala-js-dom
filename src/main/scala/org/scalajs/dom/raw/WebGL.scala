@@ -1213,7 +1213,7 @@ class WebGLRenderingContext extends js.Object {
    * Sets the mapping from normalized device coordinates to window coordinates.
    * "normalized device coordinates" in this context really means "normalized depth map values".
    *
-   * ''note'' there is no requirement that zNear < zFar.
+   * ''note'' there is no requirement that zNear &lt; zFar.
    *
    * Both parameters are clamped to -1 .. 1
    * @param zNear the near clipping plane, initially 0.

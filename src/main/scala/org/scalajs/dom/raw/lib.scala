@@ -932,15 +932,15 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
    * Gets the markup of the element including its content. When used as a
    * setter, replaces the element with nodes parsed from the given string.
    *
-   * Supported by FF>10, any Opera, any Chrome, any IE, any Safari
+   * Supported by FF&gt;10, any Opera, any Chrome, any IE, any Safari
    */
   var outerHTML: String = js.native
 
   /**
    * innerHTML sets or gets the HTML syntax describing the element's descendants.
    *
-   * Note: If a <div>, <span>, or <noembed> node has a child text node that includes
-   * the characters (&), (<), or (>), innerHTML returns these characters as &amp,
+   * Note: If a &lt;div&gt;, &lt;span&gt;, or &lt;noembed&gt; node has a child text node that includes
+   * the characters (&), (&lt;), or (&gt;), innerHTML returns these characters as &amp,
    * &lt and &gt respectively. Use Node.textContent to get a correct copy of these
    * text nodes' contents.
    */
@@ -955,14 +955,14 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
   var accessKey: String = js.native
 
   /**
-   * Supported by FF>3.6, any Opera, any Chrome, any IE, any Safari
+   * Supported by FF&gt;3.6, any Opera, any Chrome, any IE, any Safari
    */
   var classList: DOMTokenList = js.native
 
   def scrollIntoView(top: Boolean = js.native): Unit = js.native
 
   /**
-   * Supported by FF>8, Opera>7, Chrome>1, IE>4, Safari>4
+   * Supported by FF&gt;8, Opera&gt;7, Chrome&gt;1, IE&gt;4, Safari&gt;4
    */
   def insertAdjacentHTML(where: String, html: String): Unit = js.native
 
@@ -1625,7 +1625,7 @@ trait DocumentEvent extends js.Object {
 
 /**
  * A CDATA Section can be used within XML to include extended portions of
- * unescaped text, such that the symbols < and & do not need escaping as they
+ * unescaped text, such that the symbols &lt; and & do not need escaping as they
  * normally do within XML when used as text.
  *
  * As a CDATASection has no properties or methods unique to itself and only
@@ -2206,7 +2206,7 @@ class Window extends EventTarget with WindowLocalStorage
   var onkeypress: js.Function1[KeyboardEvent, _] = js.native
 
   /**
-   * Returns the element (such as <iframe> or <object>) in which the window is embedded,
+   * Returns the element (such as &lt;iframe&gt; or &lt;object&gt;) in which the window is embedded,
    * or null if the window is top-level.
    *
    * MDN
@@ -2531,7 +2531,7 @@ class CanvasGradient extends js.Object {
   /**
    * Add a new stop, defined by an offset and a color, to the gradient. If the offset is not
    * between 0 and 1 an INDEX_SIZE_ERR is raised, if the color can't be parsed as a CSS
-   * <color>, a SYNTAX_ERR is raised.
+   * &lt;color&gt;, a SYNTAX_ERR is raised.
    *
    * MDN
    */
@@ -2823,7 +2823,7 @@ object KeyboardEvent extends js.Object {
 /**
  * Each web page loaded in the browser has its own document object. The Document
  * interface serves as an entry point to the web page's content (the DOM tree,
- * including elements such as <body> and <table>) and provides functionality global
+ * including elements such as &lt;body&gt; and &lt;table&gt;) and provides functionality global
  * to the document (such as obtaining the page's URL and creating new elements in the
  * document).
  *
@@ -2866,7 +2866,7 @@ abstract class Document extends Node with NodeSelector with DocumentEvent with P
 
   /**
    * Returns the Element that is the root element of the document (for example, the
-   * <html> element for HTML documents).
+   * &lt;html&gt; element for HTML documents).
    *
    * MDN
    */
@@ -3142,8 +3142,8 @@ class MessageEvent extends Event {
 
 
 /**
- * The 2D rendering context for the drawing surface of a <canvas> element. To get this
- * object, call getContext() on a <canvas>, supplying "2d" as the argument:
+ * The 2D rendering context for the drawing surface of a &lt;canvas&gt; element. To get this
+ * object, call getContext() on a &lt;canvas&gt;, supplying "2d" as the argument:
  *
  * MDN
  */
@@ -5243,7 +5243,7 @@ class History extends js.Object {
 /**
  * The TimeRanges interface is used to represent a set of time ranges, primarily for
  * the purpose of tracking which portions of media have been buffered when loading it
- * for use by the <audio> and <video> elements.
+ * for use by the &lt;audio&gt; and &lt;video&gt; elements.
  *
  * MDN
  */
@@ -5410,7 +5410,7 @@ object Event extends js.Object {
 
 /**
  * The ImageData interface represents the underlying pixel data of an area of a
- * <canvas> element. It is created using creators on the CanvasRenderingContext2D
+ * &lt;canvas&gt; element. It is created using creators on the CanvasRenderingContext2D
  * object associated with the canvas createImageData() and getImageData()). It can
  * also be used to set a part of the canvas (like with putImageData()).
  *
@@ -5787,7 +5787,7 @@ object MediaError extends js.Object {
 /**
  * The Comment interface represents textual notations within markup; although it is
  * generally not visually shown, such comments are available to be read in the source
- * view. Comments are represented in HTML and XML as content between '<!--' and '-->'.
+ * view. Comments are represented in HTML and XML as content between '&lt;!--' and '--&gt;'.
  * In XML, the character sequence '--' cannot be used within a comment.
  *
  * MDN
@@ -6524,7 +6524,7 @@ object EventSource extends js.Object {
 /**
  * The ProgressEvent interface represents events measuring progress of an
  * underlying process, like an HTTP request (for an XMLHttpRequest, or the loading of
- * the underlying resource of an <img>, <audio>, <video>, <style> or <link>).
+ * the underlying resource of an &lt;img&gt;, &lt;audio&gt;, &lt;video&gt;, &lt;style&gt; or &lt;link&gt;).
  *
  * MDN
  */
@@ -6572,7 +6572,7 @@ trait ProgressEvent extends Event {
 
 /**
  * An object of this type is returned by the files property of the HTML input element;
- * this lets you access the list of files selected with the <input type="file">
+ * this lets you access the list of files selected with the &lt;input type="file"&gt;
  * element. It's also used for a list of files dropped into web content when using the
  * drag and drop API; see the DataTransfer object for details on this usage.
  *

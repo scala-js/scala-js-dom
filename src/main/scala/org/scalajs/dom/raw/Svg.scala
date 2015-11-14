@@ -27,8 +27,8 @@ class SVGPathSegCurvetoQuadraticRel extends SVGPathSeg {
 
 /**
  * The marker element defines the graphics that is to be used for drawing
- * arrowheads or polymarkers on a given <path> , <line> , <polyline> or
- * <polygon> element.
+ * arrowheads or polymarkers on a given &lt;path&gt; , &lt;line&gt; , &lt;polyline&gt; or
+ * &lt;polygon&gt; element.
  *
  * MDN
  */
@@ -63,7 +63,7 @@ object SVGMarkerElement extends js.Object {
 }
 
 /**
- * The SVGGElement interface corresponds to the <g> element.
+ * The SVGGElement interface corresponds to the &lt;g&gt; element.
  *
  * MDN
  */
@@ -117,7 +117,7 @@ class SVGPathSegMovetoRel extends SVGPathSeg {
 
 
 /**
- * The SVGLineElement interface provides access to the properties of <line>
+ * The SVGLineElement interface provides access to the properties of &lt;line&gt;
  * elements, as well as methods to manipulate them.
  *
  * MDN
@@ -125,28 +125,28 @@ class SVGPathSegMovetoRel extends SVGPathSeg {
 @js.native
 abstract class SVGLineElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
-   * Corresponds to attribute y1 on the given <line> element.
+   * Corresponds to attribute y1 on the given &lt;line&gt; element.
    *
    * MDN
    */
   def y1: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute x2 on the given <line> element.
+   * Corresponds to attribute x2 on the given &lt;line&gt; element.
    *
    * MDN
    */
   def x2: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute x1 on the given <line> element.
+   * Corresponds to attribute x1 on the given &lt;line&gt; element.
    *
    * MDN
    */
   def x1: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute y2 on the given <line> element.
+   * Corresponds to attribute y2 on the given &lt;line&gt; element.
    *
    * MDN
    */
@@ -155,7 +155,7 @@ abstract class SVGLineElement extends SVGElement with SVGStylable with SVGTransf
 
 
 /**
- * The SVGDescElement interface corresponds to the <desc> element.
+ * The SVGDescElement interface corresponds to the &lt;desc&gt; element.
  *
  * MDN
  */
@@ -173,14 +173,14 @@ class SVGPathSegCurvetoQuadraticSmoothRel extends SVGPathSeg {
 
 /**
  * The SVGClipPathElement interface provides access to the properties of
- * <clippath> elements, as well as methods to manipulate them.
+ * &lt;clippath&gt; elements, as well as methods to manipulate them.
  *
  * MDN
  */
 @js.native
 abstract class SVGClipPathElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
-   * Corresponds to attribute clipPathUnits on the given <clippath> element. Takes
+   * Corresponds to attribute clipPathUnits on the given &lt;clippath&gt; element. Takes
    * one of the constants defined in SVGUnitTypes
    *
    * MDN
@@ -303,14 +303,14 @@ trait SVGTests extends js.Object {
 }
 
 /**
- * The SVGPatternElement interface corresponds to the <pattern> element.
+ * The SVGPatternElement interface corresponds to the &lt;pattern&gt; element.
  *
  * MDN
  */
 @js.native
 abstract class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired with SVGURIReference {
   /**
-   * Corresponds to attribute patternUnits on the given <pattern> element. Takes one
+   * Corresponds to attribute patternUnits on the given &lt;pattern&gt; element. Takes one
    * of the constants defined in SVGUnitTypes.
    *
    * MDN
@@ -318,28 +318,28 @@ abstract class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGSt
   def patternUnits: SVGAnimatedEnumeration = js.native
 
   /**
-   * Corresponds to attribute y on the given <pattern> element.
+   * Corresponds to attribute y on the given &lt;pattern&gt; element.
    *
    * MDN
    */
   def y: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute width on the given <pattern> element.
+   * Corresponds to attribute width on the given &lt;pattern&gt; element.
    *
    * MDN
    */
   def width: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute x on the given <pattern> element.
+   * Corresponds to attribute x on the given &lt;pattern&gt; element.
    *
    * MDN
    */
   def x: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute patternContentUnits on the given <pattern> element.
+   * Corresponds to attribute patternContentUnits on the given &lt;pattern&gt; element.
    * Takes one of the constants defined in SVGUnitTypes.
    *
    * MDN
@@ -347,14 +347,14 @@ abstract class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGSt
   def patternContentUnits: SVGAnimatedEnumeration = js.native
 
   /**
-   * Corresponds to attribute patternTransform on the given <pattern> element.
+   * Corresponds to attribute patternTransform on the given &lt;pattern&gt; element.
    *
    * MDN
    */
   def patternTransform: SVGAnimatedTransformList = js.native
 
   /**
-   * Corresponds to attribute height on the given <pattern> element.
+   * Corresponds to attribute height on the given &lt;pattern&gt; element.
    *
    * MDN
    */
@@ -363,7 +363,7 @@ abstract class SVGPatternElement extends SVGElement with SVGUnitTypes with SVGSt
 
 
 /**
- * The SVGAnimatedAngle interface is used for attributes of basic type <angle> which
+ * The SVGAnimatedAngle interface is used for attributes of basic type &lt;angle&gt; which
  * can be animated.
  *
  * MDN
@@ -391,7 +391,7 @@ class SVGAnimatedAngle extends js.Object {
 
 
 /**
- * The SVGScriptElement interface corresponds to the SVG <script> element.
+ * The SVGScriptElement interface corresponds to the SVG &lt;script&gt; element.
  *
  * MDN
  */
@@ -402,7 +402,7 @@ abstract class SVGScriptElement extends SVGElement with SVGExternalResourcesRequ
 
 
 /**
- * The SVGViewElement interface provides access to the properties of <view>
+ * The SVGViewElement interface provides access to the properties of &lt;view&gt;
  * elements, as well as methods to manipulate them.
  *
  * MDN
@@ -410,7 +410,7 @@ abstract class SVGScriptElement extends SVGElement with SVGExternalResourcesRequ
 @js.native
 abstract class SVGViewElement extends SVGElement with SVGZoomAndPan with SVGFitToViewBox with SVGExternalResourcesRequired {
   /**
-   * Corresponds to attribute viewTarget on the given <view> element. A list of
+   * Corresponds to attribute viewTarget on the given &lt;view&gt; element. A list of
    * DOMString values which contain the names listed in the viewTarget attribute. Each
    * of the DOMString values can be associated with the corresponding element using the
    * getElementById() method call.
@@ -436,7 +436,7 @@ trait SVGLocatable extends js.Object {
 }
 
 /**
- * The SVGTitleElement interface corresponds to the <title> element.
+ * The SVGTitleElement interface corresponds to the &lt;title&gt; element.
  *
  * MDN
  */
@@ -561,7 +561,7 @@ trait SVGExternalResourcesRequired extends js.Object {
 }
 
 /**
- * The SVGAngle interface correspond to the <angle> basic data type.
+ * The SVGAngle interface correspond to the &lt;angle&gt; basic data type.
  *
  * MDN
  */
@@ -572,7 +572,7 @@ class SVGAngle extends js.Object {
    * attribute will cause value, valueInSpecifiedUnits and unitType to be updated
    * automatically to reflect this setting. Exceptions on setting: a DOMException
    * with code SYNTAX_ERR is raised if the assigned string cannot be parsed as a valid
-   * <angle>. a DOMException with code NO_MODIFICATION_ALLOWED_ERR is raised when
+   * &lt;angle&gt;. a DOMException with code NO_MODIFICATION_ALLOWED_ERR is raised when
    * the length corresponds to a read only attribute or when the object itself is read
    * only.
    *
@@ -634,7 +634,7 @@ class SVGAngle extends js.Object {
 }
 
 /**
- * The SVGAngle interface correspond to the <angle> basic data type.
+ * The SVGAngle interface correspond to the &lt;angle&gt; basic data type.
  *
  * MDN
  */
@@ -671,7 +671,7 @@ abstract class SVGElement extends Element {
 
   /**
    * The element which established the current viewport. Often, the nearest ancestor
-   * <svg> element. Null if the given element is the outermost svg element.
+   * &lt;svg&gt; element. Null if the given element is the outermost svg element.
    *
    * MDN
    */
@@ -694,7 +694,7 @@ abstract class SVGElement extends Element {
   var onclick: js.Function1[MouseEvent, _] = js.native
 
   /**
-   * The nearest ancestor <svg> element. Null if the given element is the outermost svg
+   * The nearest ancestor &lt;svg&gt; element. Null if the given element is the outermost svg
    * element.
    *
    * MDN
@@ -828,7 +828,7 @@ class SVGPathSegClosePath extends SVGPathSeg {
 
 
 /**
- * The SVGAnimatedLength interface is used for attributes of basic type <length>
+ * The SVGAnimatedLength interface is used for attributes of basic type &lt;length&gt;
  * which can be animated.
  *
  * MDN
@@ -881,7 +881,7 @@ trait SVGAnimatedPoints extends js.Object {
 }
 
 /**
- * The SVGDefsElement interface corresponds to the <defs> element.
+ * The SVGDefsElement interface corresponds to the &lt;defs&gt; element.
  *
  * MDN
  */
@@ -897,7 +897,7 @@ class SVGPathSegLinetoHorizontalRel extends SVGPathSeg {
 
 
 /**
- * The SVGEllipseElement interface provides access to the properties of <ellipse>
+ * The SVGEllipseElement interface provides access to the properties of &lt;ellipse&gt;
  * elements, as well as methods to manipulate them.
  *
  * MDN
@@ -905,28 +905,28 @@ class SVGPathSegLinetoHorizontalRel extends SVGPathSeg {
 @js.native
 abstract class SVGEllipseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
-   * Corresponds to attribute ry on the given <ellipse> element.
+   * Corresponds to attribute ry on the given &lt;ellipse&gt; element.
    *
    * MDN
    */
   def ry: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute cx on the given <ellipse> element.
+   * Corresponds to attribute cx on the given &lt;ellipse&gt; element.
    *
    * MDN
    */
   def cx: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute rx on the given <ellipse> element.
+   * Corresponds to attribute rx on the given &lt;ellipse&gt; element.
    *
    * MDN
    */
   def rx: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute cy on the given <ellipse> element.
+   * Corresponds to attribute cy on the given &lt;ellipse&gt; element.
    *
    * MDN
    */
@@ -935,7 +935,7 @@ abstract class SVGEllipseElement extends SVGElement with SVGStylable with SVGTra
 
 
 /**
- * The SVGAElement interface provides access to the properties of <a> elements, as
+ * The SVGAElement interface provides access to the properties of &lt;a&gt; elements, as
  * well as methods to manipulate them.
  *
  * MDN
@@ -943,7 +943,7 @@ abstract class SVGEllipseElement extends SVGElement with SVGStylable with SVGTra
 @js.native
 abstract class SVGAElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   /**
-   * Corresponds to attribute target on the given <a> element.
+   * Corresponds to attribute target on the given &lt;a&gt; element.
    *
    * MDN
    */
@@ -1034,7 +1034,7 @@ class SVGAnimatedNumberList extends js.Object {
 
 
 /**
- * The SVGSVGElement interface provides access to the properties of <svg> elements,
+ * The SVGSVGElement interface provides access to the properties of &lt;svg&gt; elements,
  * as well as methods to manipulate them. This interface contains also various
  * miscellaneous commonly-used utility methods, such as matrix operations and the
  * ability to control the time of redraw on visual rendering devices.
@@ -1044,21 +1044,21 @@ class SVGAnimatedNumberList extends js.Object {
 @js.native
 abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAndPan with DocumentEvent with SVGLangSpace with SVGLocatable with SVGTests with SVGFitToViewBox with SVGExternalResourcesRequired {
   /**
-   * Corresponds to attribute width on the given <svg> element.
+   * Corresponds to attribute width on the given &lt;svg&gt; element.
    *
    * MDN
    */
   def width: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute x on the given <svg> element.
+   * Corresponds to attribute x on the given &lt;svg&gt; element.
    *
    * MDN
    */
   def x: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute contentStyleType on the given <svg> element.
+   * Corresponds to attribute contentStyleType on the given &lt;svg&gt; element.
    *
    * MDN
    */
@@ -1066,7 +1066,7 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
   var onzoom: js.Function1[js.Any, _] = js.native
 
   /**
-   * Corresponds to attribute y on the given <svg> element.
+   * Corresponds to attribute y on the given &lt;svg&gt; element.
    *
    * MDN
    */
@@ -1074,12 +1074,12 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
 
   /**
    * The position and size of the viewport (implicit or explicit) that corresponds to
-   * this <svg> element. When the browser is actually rendering the content, then the
+   * this &lt;svg&gt; element. When the browser is actually rendering the content, then the
    * position and size values represent the actual values when rendering. The position
    * and size values are unitless values in the coordinate system of the parent element.
-   * If no parent element exists (i.e., <svg> element represents the root of the
+   * If no parent element exists (i.e., &lt;svg&gt; element represents the root of the
    * document tree), if this SVG document is embedded as part of another document (e.g.,
-   * via the HTML <object> element), then the position and size are unitless values in
+   * via the HTML &lt;object&gt; element), then the position and size are unitless values in
    * the coordinate system of the parent document. (If the parent uses CSS or XSL layout,
    * then unitless values represent pixel units for the current CSS or XSL viewport.)
    *
@@ -1106,7 +1106,7 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
   def screenPixelToMillimeterY: Double = js.native
 
   /**
-   * Corresponds to attribute height on the given <svg> element.
+   * Corresponds to attribute height on the given &lt;svg&gt; element.
    *
    * MDN
    */
@@ -1114,7 +1114,7 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
 
   var onabort: js.Function1[UIEvent, _] = js.native
   /**
-   * Corresponds to attribute contentScriptType on the given <svg> element.
+   * Corresponds to attribute contentScriptType on the given &lt;svg&gt; element.
    *
    * MDN
    */
@@ -1132,7 +1132,7 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
   def pixelUnitToMillimeterX: Double = js.native
 
   /**
-   * On an outermost <svg> element, the corresponding translation factor that takes
+   * On an outermost &lt;svg&gt; element, the corresponding translation factor that takes
    * into account user "magnification".
    *
    * MDN
@@ -1142,14 +1142,14 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
   var onunload: js.Function1[Event, _] = js.native
 
   /**
-   * On an outermost <svg> element, this attribute indicates the current scale factor
+   * On an outermost &lt;svg&gt; element, this attribute indicates the current scale factor
    * relative to the initial view to take into account user magnification and panning
    * operations. DOM attributes currentScale and currentTranslate are equivalent to
    * the 2x3 matrix [a b c d e f] = [currentScale 0 0 currentScale currentTranslate.x
    * currentTranslate.y]. If "magnification" is enabled (i.e.,
    * zoomAndPan="magnify"), then the effect is as if an extra transformation were
    * placed at the outermost level on the SVG document fragment (i.e., outside the
-   * outermost <svg> element).
+   * outermost &lt;svg&gt; element).
    *
    * MDN
    */
@@ -1170,7 +1170,7 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
   /**
    * Adjusts the clock for this SVG document fragment, establishing a new current time.
    * If setCurrentTime is called before the document timeline has begun (for example,
-   * by script running in a <script> element before the document's SVGLoad event is
+   * by script running in a &lt;script&gt; element before the document's SVGLoad event is
    * dispatched), then the value of seconds in the last invocation of the method gives
    * the time that the document will seek to once the document timeline has begun.
    *
@@ -1234,7 +1234,7 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
 
   /**
    * Suspends (i.e., pauses) all currently running animations that are defined within
-   * the SVG document fragment corresponding to this <svg> element, causing the
+   * the SVG document fragment corresponding to this &lt;svg&gt; element, causing the
    * animation clock corresponding to this document fragment to stand still until it is
    * unpaused.
    *
@@ -1304,7 +1304,7 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
   /**
    * Returns the current time in seconds relative to the start time for the current SVG
    * document fragment. If getCurrentTime is called before the document timeline has
-   * begun (for example, by script running in a <script> element before the document's
+   * begun (for example, by script running in a &lt;script&gt; element before the document's
    * SVGLoad event is dispatched), then 0 is returned.
    *
    * MDN
@@ -1372,7 +1372,7 @@ abstract class SVGSVGElement extends SVGElement with SVGStylable with SVGZoomAnd
 
 
 /**
- * The SVGAnimatedInteger interface is used for attributes of basic type <integer>
+ * The SVGAnimatedInteger interface is used for attributes of basic type &lt;integer&gt;
  * which can be animated.
  *
  * MDN
@@ -1398,7 +1398,7 @@ class SVGAnimatedInteger extends js.Object {
 
 
 /**
- * The SVGTextElement interface corresponds to the <text> elements.
+ * The SVGTextElement interface corresponds to the &lt;text&gt; elements.
  *
  * MDN
  */
@@ -1408,7 +1408,7 @@ abstract class SVGTextElement extends SVGTextPositioningElement with SVGTransfor
 
 
 /**
- * The SVGTSpanElement interface provides access to the properties of <tspan>
+ * The SVGTSpanElement interface provides access to the properties of &lt;tspan&gt;
  * elements, as well as methods to manipulate them.
  *
  * MDN
@@ -1425,7 +1425,7 @@ class SVGPathSegLinetoVerticalAbs extends SVGPathSeg {
 
 
 /**
- * The SVGStyleElement interface corresponds to the SVG <style> element.
+ * The SVGStyleElement interface corresponds to the SVG &lt;style&gt; element.
  *
  * MDN
  */
@@ -1454,7 +1454,7 @@ abstract class SVGStyleElement extends SVGElement with SVGLangSpace {
 
 
 /**
- * The SVGRadialGradientElement interface corresponds to the <radialgradient>
+ * The SVGRadialGradientElement interface corresponds to the &lt;radialgradient&gt;
  * element.
  *
  * MDN
@@ -1462,35 +1462,35 @@ abstract class SVGStyleElement extends SVGElement with SVGLangSpace {
 @js.native
 class SVGRadialGradientElement extends SVGGradientElement {
   /**
-   * Corresponds to attribute cx on the given <radialgradient> element.
+   * Corresponds to attribute cx on the given &lt;radialgradient&gt; element.
    *
    * MDN
    */
   def cx: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute r on the given <radialgradient> element.
+   * Corresponds to attribute r on the given &lt;radialgradient&gt; element.
    *
    * MDN
    */
   def r: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute cy on the given <radialgradient> element.
+   * Corresponds to attribute cy on the given &lt;radialgradient&gt; element.
    *
    * MDN
    */
   def cy: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute fx on the given <radialgradient> element.
+   * Corresponds to attribute fx on the given &lt;radialgradient&gt; element.
    *
    * MDN
    */
   def fx: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute fy on the given <radialgradient> element.
+   * Corresponds to attribute fy on the given &lt;radialgradient&gt; element.
    *
    * MDN
    */
@@ -1499,42 +1499,42 @@ class SVGRadialGradientElement extends SVGGradientElement {
 
 
 /**
- * The SVGImageElement interface corresponds to the <image> element.
+ * The SVGImageElement interface corresponds to the &lt;image&gt; element.
  *
  * MDN
  */
 @js.native
 abstract class SVGImageElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   /**
-   * Corresponds to attribute y on the given <image> element.
+   * Corresponds to attribute y on the given &lt;image&gt; element.
    *
    * MDN
    */
   def y: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute width on the given <image> element.
+   * Corresponds to attribute width on the given &lt;image&gt; element.
    *
    * MDN
    */
   def width: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute preserveAspectRatio on the given <image> element.
+   * Corresponds to attribute preserveAspectRatio on the given &lt;image&gt; element.
    *
    * MDN
    */
   def preserveAspectRatio: SVGAnimatedPreserveAspectRatio = js.native
 
   /**
-   * Corresponds to attribute x on the given <image> element.
+   * Corresponds to attribute x on the given &lt;image&gt; element.
    *
    * MDN
    */
   def x: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute height on the given <image> element.
+   * Corresponds to attribute height on the given &lt;image&gt; element.
    *
    * MDN
    */
@@ -1543,7 +1543,7 @@ abstract class SVGImageElement extends SVGElement with SVGStylable with SVGTrans
 
 
 /**
- * The SVGAnimatedNumber interface is used for attributes of basic type <Number>
+ * The SVGAnimatedNumber interface is used for attributes of basic type &lt;Number&gt;
  * which can be animated.
  *
  * MDN
@@ -1689,7 +1689,7 @@ class SVGStringList extends js.Object {
 
 
 /**
- * The SVGLength interface correspond to the <length> basic data type.
+ * The SVGLength interface correspond to the &lt;length&gt; basic data type.
  *
  * MDN
  */
@@ -1700,7 +1700,7 @@ class SVGLength extends js.Object {
    * attribute will cause value, valueInSpecifiedUnits and unitType to be updated
    * automatically to reflect this setting. Exceptions on setting: a DOMException
    * with code SYNTAX_ERR is raised if the assigned string cannot be parsed as a valid
-   * <length>. a DOMException with code NO_MODIFICATION_ALLOWED_ERR is raised when
+   * &lt;length&gt;. a DOMException with code NO_MODIFICATION_ALLOWED_ERR is raised when
    * the length corresponds to a read only attribute or when the object itself is read
    * only.
    *
@@ -1763,7 +1763,7 @@ class SVGLength extends js.Object {
 }
 
 /**
- * The SVGLength interface correspond to the <length> basic data type.
+ * The SVGLength interface correspond to the &lt;length&gt; basic data type.
  *
  * MDN
  */
@@ -1790,7 +1790,7 @@ object SVGLength extends js.Object {
 }
 
 /**
- * The SVGPolygonElement interface provides access to the properties of <polygon>
+ * The SVGPolygonElement interface provides access to the properties of &lt;polygon&gt;
  * elements, as well as methods to manipulate them.
  *
  * MDN
@@ -2012,7 +2012,7 @@ object SVGPathSeg extends js.Object {
 }
 
 /**
- * The SVGNumber interface correspond to the <number> basic data type.
+ * The SVGNumber interface correspond to the &lt;number&gt; basic data type.
  *
  * MDN
  */
@@ -2030,7 +2030,7 @@ class SVGNumber extends js.Object {
 
 
 /**
- * The SVGPathElement interface corresponds to the <path> element.
+ * The SVGPathElement interface corresponds to the &lt;path&gt; element.
  *
  * MDN
  */
@@ -2318,7 +2318,7 @@ class SVGElementInstance extends EventTarget {
 
 
 /**
- * The SVGCircleElement interface provides access to the properties of <circle>
+ * The SVGCircleElement interface provides access to the properties of &lt;circle&gt;
  * elements, as well as methods to manipulate them.
  *
  * MDN
@@ -2326,21 +2326,21 @@ class SVGElementInstance extends EventTarget {
 @js.native
 abstract class SVGCircleElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
-   * Corresponds to attribute cx on the given <circle> element.
+   * Corresponds to attribute cx on the given &lt;circle&gt; element.
    *
    * MDN
    */
   def cx: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute r on the given <circle> element.
+   * Corresponds to attribute r on the given &lt;circle&gt; element.
    *
    * MDN
    */
   def r: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute cy on the given <circle> element.
+   * Corresponds to attribute cy on the given &lt;circle&gt; element.
    *
    * MDN
    */
@@ -2519,7 +2519,7 @@ class SVGMatrix extends js.Object {
 
 
 /**
- * The SVGUseElement interface provides access to the properties of <use> elements,
+ * The SVGUseElement interface provides access to the properties of &lt;use&gt; elements,
  * as well as methods to manipulate them.
  *
  * MDN
@@ -2527,14 +2527,14 @@ class SVGMatrix extends js.Object {
 @js.native
 abstract class SVGUseElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired with SVGURIReference {
   /**
-   * Corresponds to attribute y on the given <use> element.
+   * Corresponds to attribute y on the given &lt;use&gt; element.
    *
    * MDN
    */
   def y: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute width on the given <use> element.
+   * Corresponds to attribute width on the given &lt;use&gt; element.
    *
    * MDN
    */
@@ -2559,14 +2559,14 @@ abstract class SVGUseElement extends SVGElement with SVGStylable with SVGTransfo
   def instanceRoot: SVGElementInstance = js.native
 
   /**
-   * Corresponds to attribute x on the given <use> element.
+   * Corresponds to attribute x on the given &lt;use&gt; element.
    *
    * MDN
    */
   def x: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute height on the given <use> element.
+   * Corresponds to attribute height on the given &lt;use&gt; element.
    *
    * MDN
    */
@@ -2591,7 +2591,7 @@ object SVGException extends js.Object {
 }
 
 /**
- * The SVGLinearGradientElement interface corresponds to the <lineargradient>
+ * The SVGLinearGradientElement interface corresponds to the &lt;lineargradient&gt;
  * element.
  *
  * MDN
@@ -2599,28 +2599,28 @@ object SVGException extends js.Object {
 @js.native
 class SVGLinearGradientElement extends SVGGradientElement {
   /**
-   * Corresponds to attribute y1 on the given <lineargradient> element.
+   * Corresponds to attribute y1 on the given &lt;lineargradient&gt; element.
    *
    * MDN
    */
   def y1: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute x2 on the given <lineargradient> element.
+   * Corresponds to attribute x2 on the given &lt;lineargradient&gt; element.
    *
    * MDN
    */
   def x2: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute x1 on the given <lineargradient> element.
+   * Corresponds to attribute x1 on the given &lt;lineargradient&gt; element.
    *
    * MDN
    */
   def x1: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute y2 on the given <lineargradient> element.
+   * Corresponds to attribute y2 on the given &lt;lineargradient&gt; element.
    *
    * MDN
    */
@@ -2655,7 +2655,7 @@ class SVGAnimatedEnumeration extends js.Object {
 
 
 /**
- * The SVGRectElement interface provides access to the properties of <rect>
+ * The SVGRectElement interface provides access to the properties of &lt;rect&gt;
  * elements, as well as methods to manipulate them.
  *
  * MDN
@@ -2663,42 +2663,42 @@ class SVGAnimatedEnumeration extends js.Object {
 @js.native
 abstract class SVGRectElement extends SVGElement with SVGStylable with SVGTransformable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
-   * Corresponds to attribute y on the given <rect> element.
+   * Corresponds to attribute y on the given &lt;rect&gt; element.
    *
    * MDN
    */
   def y: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute width on the given <rect> element.
+   * Corresponds to attribute width on the given &lt;rect&gt; element.
    *
    * MDN
    */
   def width: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute ry on the given <rect> element.
+   * Corresponds to attribute ry on the given &lt;rect&gt; element.
    *
    * MDN
    */
   def ry: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute rx on the given <rect> element.
+   * Corresponds to attribute rx on the given &lt;rect&gt; element.
    *
    * MDN
    */
   def rx: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute x on the given <rect> element.
+   * Corresponds to attribute x on the given &lt;rect&gt; element.
    *
    * MDN
    */
   def x: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute height on the given <rect> element.
+   * Corresponds to attribute height on the given &lt;rect&gt; element.
    *
    * MDN
    */
@@ -2820,7 +2820,7 @@ class SVGLengthList extends js.Object {
 
 /**
  * The SVGPolylineElement interface provides access to the properties of
- * <polyline> elements, as well as methods to manipulate them.
+ * &lt;polyline&gt; elements, as well as methods to manipulate them.
  *
  * MDN
  */
@@ -3049,7 +3049,7 @@ class SVGAnimatedBoolean extends js.Object {
 
 
 /**
- * The SVGSwitchElement interface corresponds to the <switch> element.
+ * The SVGSwitchElement interface corresponds to the &lt;switch&gt; element.
  *
  * MDN
  */
@@ -3126,14 +3126,14 @@ object SVGPreserveAspectRatio extends js.Object {
 
 
 /**
- * The SVGStopElement interface corresponds to the <stop> element.
+ * The SVGStopElement interface corresponds to the &lt;stop&gt; element.
  *
  * MDN
  */
 @js.native
 abstract class SVGStopElement extends SVGElement with SVGStylable {
   /**
-   * Corresponds to attribute offset on the given <stop> element.
+   * Corresponds to attribute offset on the given &lt;stop&gt; element.
    *
    * MDN
    */
@@ -3142,7 +3142,7 @@ abstract class SVGStopElement extends SVGElement with SVGStylable {
 
 
 /**
- * The SVGSymbolElement interface corresponds to the <symbol> element.
+ * The SVGSymbolElement interface corresponds to the &lt;symbol&gt; element.
  *
  * MDN
  */
@@ -3160,7 +3160,7 @@ class SVGElementInstanceList extends js.Object {
 
 
 /**
- * The SVGMaskElement interface provides access to the properties of <mask>
+ * The SVGMaskElement interface provides access to the properties of &lt;mask&gt;
  * elements, as well as methods to manipulate them.
  *
  * MDN
@@ -3168,21 +3168,21 @@ class SVGElementInstanceList extends js.Object {
 @js.native
 abstract class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGTests with SVGExternalResourcesRequired {
   /**
-   * Corresponds to attribute y on the given <mask> element.
+   * Corresponds to attribute y on the given &lt;mask&gt; element.
    *
    * MDN
    */
   def y: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute width on the given <mask> element.
+   * Corresponds to attribute width on the given &lt;mask&gt; element.
    *
    * MDN
    */
   def width: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute maskUnits on the given <mask> element. Takes one of the
+   * Corresponds to attribute maskUnits on the given &lt;mask&gt; element. Takes one of the
    * constants defined in SVGUnitTypes
    *
    * MDN
@@ -3190,7 +3190,7 @@ abstract class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStyla
   def maskUnits: SVGAnimatedEnumeration = js.native
 
   /**
-   * Corresponds to attribute maskContentUnits on the given <mask> element. Takes one
+   * Corresponds to attribute maskContentUnits on the given &lt;mask&gt; element. Takes one
    * of the constants defined in SVGUnitTypes
    *
    * MDN
@@ -3198,14 +3198,14 @@ abstract class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStyla
   def maskContentUnits: SVGAnimatedEnumeration = js.native
 
   /**
-   * Corresponds to attribute x on the given <mask> element.
+   * Corresponds to attribute x on the given &lt;mask&gt; element.
    *
    * MDN
    */
   def x: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute height on the given <mask> element.
+   * Corresponds to attribute height on the given &lt;mask&gt; element.
    *
    * MDN
    */
@@ -3214,7 +3214,7 @@ abstract class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStyla
 
 
 /**
- * The SVGFilterElement interface provides access to the properties of <filter>
+ * The SVGFilterElement interface provides access to the properties of &lt;filter&gt;
  * elements, as well as methods to manipulate them.
  *
  * MDN
@@ -3222,28 +3222,28 @@ abstract class SVGMaskElement extends SVGElement with SVGUnitTypes with SVGStyla
 @js.native
 abstract class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGStylable with SVGLangSpace with SVGURIReference with SVGExternalResourcesRequired {
   /**
-   * Corresponds to attribute y on the given <filter> element.
+   * Corresponds to attribute y on the given &lt;filter&gt; element.
    *
    * MDN
    */
   def y: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute width on the given <filter> element.
+   * Corresponds to attribute width on the given &lt;filter&gt; element.
    *
    * MDN
    */
   def width: SVGAnimatedLength = js.native
 
   /**
-   * Contains the X component of attribute filterRes on the given <filter> element.
+   * Contains the X component of attribute filterRes on the given &lt;filter&gt; element.
    *
    * MDN
    */
   def filterResX: SVGAnimatedInteger = js.native
 
   /**
-   * Corresponds to attribute filterUnits on the given <filter> element. Takes one of
+   * Corresponds to attribute filterUnits on the given &lt;filter&gt; element. Takes one of
    * the constants defined in SVGUnitTypes.
    *
    * MDN
@@ -3251,7 +3251,7 @@ abstract class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGSty
   def filterUnits: SVGAnimatedEnumeration = js.native
 
   /**
-   * Corresponds to attribute primitiveUnits on the given <filter> element. Takes one
+   * Corresponds to attribute primitiveUnits on the given &lt;filter&gt; element. Takes one
    * of the constants defined in SVGUnitTypes.
    *
    * MDN
@@ -3259,21 +3259,21 @@ abstract class SVGFilterElement extends SVGElement with SVGUnitTypes with SVGSty
   def primitiveUnits: SVGAnimatedEnumeration = js.native
 
   /**
-   * Corresponds to attribute x on the given <filter> element.
+   * Corresponds to attribute x on the given &lt;filter&gt; element.
    *
    * MDN
    */
   def x: SVGAnimatedLength = js.native
 
   /**
-   * Corresponds to attribute height on the given <filter> element.
+   * Corresponds to attribute height on the given &lt;filter&gt; element.
    *
    * MDN
    */
   def height: SVGAnimatedLength = js.native
 
   /**
-   * Contains the Y component of attribute filterRes on the given <filter> element.
+   * Contains the Y component of attribute filterRes on the given &lt;filter&gt; element.
    *
    * MDN
    */
