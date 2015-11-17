@@ -672,18 +672,20 @@ class IDBOpenDBRequest extends IDBRequest {
  * access the indexed databases. The object that implements the interface is
  * window.indexedDB. You open — that is, create and access — and delete a
  * database with the object and not directly with IDBFactory.
+ * see [[https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory IDBFactory on MDN]]
  *
- * MDN
+ * official documentation [[http://www.w3.org/TR/IndexedDB/#idl-def-IDBFactory IDBFactory]] in w3c spec
+ *
  */
 @js.native
 class IDBFactory extends js.Object {
   def open(name: String, version: Int): IDBOpenDBRequest = js.native
 
   /**
-   * An obsolete method to request opening a connection to a database, still
-   * implemented by some browsers.
+   * The open() method of the IDBFactory interface requests opening a connection to a database.
+   * see [[https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/open IDBFactory.open() on MDN]]
    *
-   * MDN
+   * w3c spec [[http://www.w3.org/TR/IndexedDB/#requests ¶3.2.3 Opening a database]]
    */
   def open(name: String): IDBOpenDBRequest = js.native
 
