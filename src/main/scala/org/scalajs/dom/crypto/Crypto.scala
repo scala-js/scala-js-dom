@@ -403,11 +403,34 @@ object RsaHashedKeyAlgorithm {
         hash = hash.asInstanceOf[js.Any]).asInstanceOf[RsaHashedKeyAlgorithm]
   }
 
+  /**
+   * see [[http://www.w3.org/TR/WebCryptoAPI/#rsassa-pkcs1 ¶20. RSASSA-PKCS1-v1_5]] of w3c spec
+   */
   def `RSASSA-PKCS1-v1_5`(
-    modulusLength: Long,
-    publicExponent: BigInteger,
-    hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
-    apply("RSASSA-PKCS1-v1_5",modulusLength,publicExponent,hash)
+      modulusLength: Long,
+      publicExponent: BigInteger,
+      hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
+    apply("RSASSA-PKCS1-v1_5", modulusLength, publicExponent, hash)
+  }
+
+  /**
+   * see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-PSS]] of w3c spec
+   */
+  def `RSA-PSS`(
+      modulusLength: Long,
+      publicExponent: BigInteger,
+      hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
+    apply("RSA-PSS", modulusLength, publicExponent, hash)
+  }
+
+  /**
+   * see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-OAEP]] of w3c spec
+   */
+  def `RSA-OAEP`(
+      modulusLength: Long,
+      publicExponent: BigInteger,
+      hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
+    apply("RSA-OAEP", modulusLength, publicExponent, hash)
   }
 }
 
@@ -893,7 +916,22 @@ object KeyFormat {
 }
 
 //
-// types defined in JSON Web Key (JWK) RFC
+// Todo: fill in the full list of types defined in JSON Web Key (JWK) RFC
 // http://tools.ietf.org/html/rfc7517
 //
 
+/**
+ * see example http://tools.ietf.org/html/rfc7517#appendix-A.1
+ * //todo: where is the specification of n and e?
+ */
+@js.native
+trait RSAPublicKey extends js.Object {
+
+  /* modulus, as a base64 URL encoded String */
+  @js.native
+  def n: String = js.native
+
+  /* exponent, as a base64 URL encoded String */
+  @js.native
+  def e: String = js.native
+}
