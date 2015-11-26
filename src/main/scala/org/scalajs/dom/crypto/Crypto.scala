@@ -71,15 +71,33 @@ object HashAlgorithm {
   val `SHA-512` = named("SHA-512")
 }
 
+/**
+ * The CryptoKey object represents an opaque reference to keying material that
+ * is managed by the user agent.
+ *
+ * defined at [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶13 The CryptoKey Interface]]
+ */
 @js.native
 trait CryptoKey extends js.Object {
   val `type`: String = js.native
 
   val extractable: Boolean = js.native
 
-  val algorithm: js.Object = js.native
+  val algorithm: KeyAlgorithm = js.native
 
-  val usages: js.Object = js.native
+  val usages: js.Array[KeyUsage] = js.native
+}
+
+/**
+ * The CryptoKeyPair dictionary represents an asymmetric key pair that is comprised
+ * of both public and private keys.
+ * defined at [[http://www.w3.org/TR/WebCryptoAPI/#keypair ¶17 CryptoKeyPair dictionary]]
+ * of spec
+ */
+@js.native
+trait CryptoKeyPair extends js.Object {
+  val publicKey: CryptoKey = js.native
+  val privateKey: CryptoKey = js.native
 }
 
 @js.native
@@ -337,9 +355,9 @@ trait RsaHashedKeyGenParams extends RsaKeyGenParams {
 @js.native
 object RsaHashedKeyGenParams {
   @inline
-  def apply(modulusLength: Long,
+  def apply(name: String, modulusLength: Long,
       publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyGenParams = {
-    js.Dynamic.literal(name = "RSASSA-PKCS1-v1_5", modulusLength = modulusLength.toDouble,
+    js.Dynamic.literal(name = name, modulusLength = modulusLength.toDouble,
         publicExponent = publicExponent,
         hash = hash.asInstanceOf[js.Any]).asInstanceOf[RsaHashedKeyGenParams]
   }
@@ -383,6 +401,36 @@ object RsaHashedKeyAlgorithm {
     js.Dynamic.literal(name = name, modulusLength = modulusLength.toDouble,
         publicExponent = publicExponent,
         hash = hash.asInstanceOf[js.Any]).asInstanceOf[RsaHashedKeyAlgorithm]
+  }
+
+  /**
+   * see [[http://www.w3.org/TR/WebCryptoAPI/#rsassa-pkcs1 ¶20. RSASSA-PKCS1-v1_5]] of w3c spec
+   */
+  def `RSASSA-PKCS1-v1_5`(
+      modulusLength: Long,
+      publicExponent: BigInteger,
+      hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
+    apply("RSASSA-PKCS1-v1_5", modulusLength, publicExponent, hash)
+  }
+
+  /**
+   * see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-PSS]] of w3c spec
+   */
+  def `RSA-PSS`(
+      modulusLength: Long,
+      publicExponent: BigInteger,
+      hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
+    apply("RSA-PSS", modulusLength, publicExponent, hash)
+  }
+
+  /**
+   * see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-OAEP]] of w3c spec
+   */
+  def `RSA-OAEP`(
+      modulusLength: Long,
+      publicExponent: BigInteger,
+      hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
+    apply("RSA-OAEP", modulusLength, publicExponent, hash)
   }
 }
 
@@ -865,4 +913,25 @@ object KeyFormat {
   val spki = "spki".asInstanceOf[KeyFormat]
   /** The key is a JsonWebKey dictionary encoded as a JavaScript object */
   val jwk = "jwk".asInstanceOf[KeyFormat]
+}
+
+//
+// Todo: fill in the full list of types defined in JSON Web Key (JWK) RFC
+// http://tools.ietf.org/html/rfc7517
+//
+
+/**
+ * see example http://tools.ietf.org/html/rfc7517#appendix-A.1
+ * //todo: where is the specification of n and e?
+ */
+@js.native
+trait RSAPublicKey extends js.Object {
+
+  /* modulus, as a base64 URL encoded String */
+  @js.native
+  def n: String = js.native
+
+  /* exponent, as a base64 URL encoded String */
+  @js.native
+  def e: String = js.native
 }
