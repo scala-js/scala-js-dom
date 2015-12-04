@@ -2472,6 +2472,15 @@ class Window extends EventTarget with WindowLocalStorage
    * MDN
    */
   def requestAnimationFrame(callback: js.Function1[Double, _]): Int = js.native
+
+  /**
+   * The Window.devicePixelRatio read-only property returns the ratio of the
+   * (vertical) size of one physical pixel on the current display device to the
+   * size of one device independent pixel (dips).
+   *
+   * MDN
+   */
+  def devicePixelRatio: Double = js.native
 }
 
 
