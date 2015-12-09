@@ -5693,7 +5693,7 @@ trait DOMList[T] extends js.Object{
  * MDN
  */
 @js.native
-class NodeList extends DOMList[Node]
+class NodeList extends DOMList[Element]
 
 
 @js.native
