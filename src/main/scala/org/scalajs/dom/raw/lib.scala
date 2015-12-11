@@ -670,6 +670,16 @@ trait ServiceWorkerContainer extends EventTarget {
    *  MDN
    */
   def getRegistration(scope: String = ""): Promise[ServiceWorkerRegistration] = js.native
+
+  /**
+   * The ready read-only property of the ServiceWorkerContainer interface defines
+   * whether a service worker is ready to control a page or not. It returns a
+   * Promise that will never reject, which resolves to a ServiceWorkerRegistration
+   * with an ServiceWorkerRegistration.active worker.
+   *
+   * MDN
+   */
+  def ready: Promise[ServiceWorkerRegistration] = js.native
 }
 
 /**
