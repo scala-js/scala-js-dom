@@ -3,7 +3,9 @@ package org.scalajs
 import scala.scalajs.js
 
 package object dom {
-  type AbstractWorker = raw.AbstractWorker
+
+  @deprecated(message = "Import from org.scalajs.dom.webworkers instead.", since = "0.9.0")
+  type AbstractWorker = webworkers.AbstractWorker
   type AnalyserNode = raw.AnalyserNode
   type AnimationEvent = raw.AnimationEvent
   type ApplicationCache = raw.ApplicationCache
@@ -121,8 +123,9 @@ package object dom {
   type NamedNodeMap = raw.NamedNodeMap
   type NavigatorID = raw.NavigatorID
   type Navigator = raw.Navigator
-  type NavigatorGeolocation = raw.NavigatorGeolocation
   type NavigatorContentUtils = raw.NavigatorContentUtils
+  type NavigatorGeolocation = raw.NavigatorGeolocation
+  type NavigatorLanguage = raw.NavigatorLanguage
   type NavigatorOnLine = raw.NavigatorOnLine
   type NavigatorStorageUtils = raw.NavigatorStorageUtils
   type NodeSelector = raw.NodeSelector
@@ -184,6 +187,7 @@ package object dom {
   type Touch = raw.Touch
   type TouchEvent = raw.TouchEvent
   type TouchList = raw.TouchList
+  type Transferable = raw.Transferable
   type TrackEvent = raw.TrackEvent
   type TransitionEvent = raw.TransitionEvent
   type TreeWalker = raw.TreeWalker
@@ -206,8 +210,8 @@ package object dom {
   type WindowTimersExtension = raw.WindowTimersExtension
 
   type WindowBase64 = raw.WindowBase64
+  @deprecated(message = "Import from org.scalajs.dom.webworkers instead.", since = "0.9.0")
   type Worker = raw.Worker
-  lazy val Worker: raw.Worker.type = raw.Worker
 
   type XMLHttpRequest = raw.XMLHttpRequest
   lazy val XMLHttpRequest: raw.XMLHttpRequest.type = raw.XMLHttpRequest
