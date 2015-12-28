@@ -3665,7 +3665,7 @@ abstract class HTMLElement extends Element {
   var onloadeddata: js.Function1[Event, _] = js.native
   var onbeforedeactivate: js.Function1[UIEvent, _] = js.native
 
-  var disabled: Boolean = js.native
+  var disabled: js.UndefOr[Boolean] = js.native
   var onactivate: js.Function1[UIEvent, _] = js.native
   var onselectstart: js.Function1[Event, _] = js.native
   var ontimeupdate: js.Function1[Event, _] = js.native
