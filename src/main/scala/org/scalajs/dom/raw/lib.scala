@@ -6615,7 +6615,7 @@ trait FileList extends DOMList[File]
  * MDN
  */
 @js.native
-trait File extends Blob {
+abstract class File extends Blob {
   /**
    * Returns the last modified date of the file. Files without a known last modified date
    * use the current date instead.
