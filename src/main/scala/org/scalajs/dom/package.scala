@@ -219,4 +219,6 @@ package object dom {
 
   lazy val window: Window = js.Dynamic.global.asInstanceOf[Window]
   lazy val document: html.Document = window.document
+
+  lazy val console: Console = window.console
 }
