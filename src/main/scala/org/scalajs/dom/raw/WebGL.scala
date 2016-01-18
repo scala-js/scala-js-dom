@@ -130,25 +130,31 @@ class WebGLShaderPrecisionFormat private () extends js.Object {
  *
  * MDN
  */
-@js.native
-object WebGLRenderingContext extends js.Object {
+object WebGLRenderingContext {
+  /* Note:
+   *   Normally we'd make this object @js.native extends js.Object
+   *   and declare all these vals as js.native, however Safari does
+   *   not store these constants on WebGLRenderingContext, thus we
+   *   have to explicitly define them as final vals instead.
+   */
+
   /**
    * Specifies the depth buffer should be cleared.
    * @see [[WebGLRenderingContext#clear]]
    */
-  val DEPTH_BUFFER_BIT: Int = js.native
+  final val DEPTH_BUFFER_BIT = 0x00000100
 
   /**
    * Specifies the stencil buffer should be cleared.
    * @see [[WebGLRenderingContext#clear]]
    */
-  val STENCIL_BUFFER_BIT: Int = js.native
+  final val STENCIL_BUFFER_BIT = 0x00000400
 
   /**
    * Specifies the color buffer should be cleared.
    * @see [[WebGLRenderingContext#clear]]
    */
-  val COLOR_BUFFER_BIT: Int = js.native
+  final val COLOR_BUFFER_BIT = 0x00004000
 
   /* BeginMode */
   /**
@@ -157,7 +163,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val POINTS: Int = js.native
+  final val POINTS = 0x0000
 
   /**
    * Specifies the elements should be drawn as lines.
@@ -165,7 +171,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val LINES: Int = js.native
+  final val LINES = 0x0001
 
   /**
    * Specifies the elements should be drawn as a line loop.
@@ -173,7 +179,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val LINE_LOOP: Int = js.native
+  final val LINE_LOOP = 0x0002
 
   /**
    * Specifies the elements should be drawn as a line strip.
@@ -181,7 +187,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val LINE_STRIP: Int = js.native
+  final val LINE_STRIP = 0x0003
 
   /**
    * Specifies the elements should be drawn as triangles.
@@ -189,7 +195,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val TRIANGLES: Int = js.native
+  final val TRIANGLES = 0x0004
 
   /**
    * Specifies the elements should be drawn as a triangle strip.
@@ -197,7 +203,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val TRIANGLE_STRIP: Int = js.native
+  final val TRIANGLE_STRIP = 0x0005
 
 
   /**
@@ -206,7 +212,7 @@ object WebGLRenderingContext extends js.Object {
    * @see [[WebGLRenderingContext#drawArrays]]
    * @see [[WebGLRenderingContext#drawElements]]
    */
-  val TRIANGLE_FAN: Int = js.native
+  final val TRIANGLE_FAN = 0x0006
 
   /* AlphaFunction (not supported in ES20) */
   /*    NEVER */
@@ -219,77 +225,77 @@ object WebGLRenderingContext extends js.Object {
   /*    ALWAYS */
 
   /* BlendingFactorDest */
-  val ZERO: Int = js.native
-  val ONE: Int = js.native
-  val SRC_COLOR: Int = js.native
-  val ONE_MINUS_SRC_COLOR: Int = js.native
-  val SRC_ALPHA: Int = js.native
-  val ONE_MINUS_SRC_ALPHA: Int = js.native
-  val DST_ALPHA: Int = js.native
-  val ONE_MINUS_DST_ALPHA: Int = js.native
+  final val ZERO = 0
+  final val ONE = 1
+  final val SRC_COLOR = 0x0300
+  final val ONE_MINUS_SRC_COLOR = 0x0301
+  final val SRC_ALPHA = 0x0302
+  final val ONE_MINUS_SRC_ALPHA = 0x0303
+  final val DST_ALPHA = 0x0304
+  final val ONE_MINUS_DST_ALPHA = 0x0305
 
   /* BlendingFactorSrc */
   /*    ZERO */
   /*    ONE */
-  val DST_COLOR: Int = js.native
-  val ONE_MINUS_DST_COLOR: Int = js.native
-  val SRC_ALPHA_SATURATE: Int = js.native
+  final val DST_COLOR = 0x0306
+  final val ONE_MINUS_DST_COLOR = 0x0307
+  final val SRC_ALPHA_SATURATE = 0x0308
   /*    SRC_ALPHA */
   /*    ONE_MINUS_SRC_ALPHA */
   /*    DST_ALPHA */
   /*    ONE_MINUS_DST_ALPHA */
 
   /* BlendEquationSeparate */
-  val FUNC_ADD: Int = js.native
-  val BLEND_EQUATION: Int = js.native
-  val BLEND_EQUATION_RGB: Int = js.native   /* same as BLEND_EQUATION */
-  val BLEND_EQUATION_ALPHA: Int = js.native
+  final val FUNC_ADD = 0x8006
+  final val BLEND_EQUATION = 0x8009
+  final val BLEND_EQUATION_RGB = 0x8009   /* same as BLEND_EQUATION */
+  final val BLEND_EQUATION_ALPHA = 0x883D
 
   /* BlendSubtract */
-  val FUNC_SUBTRACT: Int = js.native
-  val FUNC_REVERSE_SUBTRACT: Int = js.native
+  final val FUNC_SUBTRACT = 0x800A
+  final val FUNC_REVERSE_SUBTRACT = 0x800B
 
   /* Separate Blend Functions */
-  val BLEND_DST_RGB: Int = js.native
-  val BLEND_SRC_RGB: Int = js.native
-  val BLEND_DST_ALPHA: Int = js.native
-  val BLEND_SRC_ALPHA: Int = js.native
-  val CONSTANT_COLOR: Int = js.native
-  val ONE_MINUS_CONSTANT_COLOR: Int = js.native
-  val CONSTANT_ALPHA: Int = js.native
-  val ONE_MINUS_CONSTANT_ALPHA: Int = js.native
-  val BLEND_COLOR: Int = js.native
+  final val BLEND_DST_RGB = 0x80C8
+  final val BLEND_SRC_RGB = 0x80C9
+  final val BLEND_DST_ALPHA = 0x80CA
+  final val BLEND_SRC_ALPHA = 0x80CB
+  final val CONSTANT_COLOR = 0x8001
+  final val ONE_MINUS_CONSTANT_COLOR = 0x8002
+  final val CONSTANT_ALPHA = 0x8003
+  final val ONE_MINUS_CONSTANT_ALPHA = 0x8004
+  final val BLEND_COLOR = 0x8005
 
   /* Buffer Objects */
-  val ARRAY_BUFFER: Int = js.native
-  val ELEMENT_ARRAY_BUFFER: Int = js.native
-  val ARRAY_BUFFER_BINDING: Int = js.native
-  val ELEMENT_ARRAY_BUFFER_BINDING: Int = js.native
+  final val ARRAY_BUFFER = 0x8892
+  final val ELEMENT_ARRAY_BUFFER = 0x8893
+  final val ARRAY_BUFFER_BINDING = 0x8894
+  final val ELEMENT_ARRAY_BUFFER_BINDING = 0x8895
 
-  val STREAM_DRAW: Int = js.native
-  val STATIC_DRAW: Int = js.native
-  val DYNAMIC_DRAW: Int = js.native
+  final val STREAM_DRAW = 0x88E0
+  final val STATIC_DRAW = 0x88E4
+  final val DYNAMIC_DRAW = 0x88E8
 
-  val BUFFER_SIZE: Int = js.native
-  val BUFFER_USAGE: Int = js.native
+  final val BUFFER_SIZE = 0x8764
+  final val BUFFER_USAGE = 0x8765
 
-  val CURRENT_VERTEX_ATTRIB: Int = js.native
+  final val CURRENT_VERTEX_ATTRIB = 0x8626
 
   /* CullFaceMode */
   /**
    * Specifies front faces.
    */
-  val FRONT: Int = js.native
+  final val FRONT = 0x0404
 
   /**
    * Specifies back faces.
    */
-  val BACK: Int = js.native
+  final val BACK = 0x0405
 
   /**
    * Specifies both front and back faces.
    */
-  val FRONT_AND_BACK: Int = js.native
+  final val FRONT_AND_BACK = 0x0408
 
   /* DepthFunction */
   /*    NEVER */
@@ -306,124 +312,124 @@ object WebGLRenderingContext extends js.Object {
   /**
    * Capability to enable/disable backface culling.
    */
-  val CULL_FACE: Int = js.native
+  final val CULL_FACE = 0x0B44
   /**
    * Capability to enable/disable blending.
    */
-  val BLEND: Int = js.native
+  final val BLEND = 0x0BE2
 
   /**
    * Capability to enable/disable dithering.
    */
-  val DITHER: Int = js.native
+  final val DITHER = 0x0BD0
 
   /**
    * Capability to enable/disable the stencil test.
    */
-  val STENCIL_TEST: Int = js.native
+  final val STENCIL_TEST = 0x0B90
 
   /**
    * Capability to enable/disable the depth test.
    */
-  val DEPTH_TEST: Int = js.native
+  final val DEPTH_TEST = 0x0B71
 
   /**
    * Capability to enable/disable the scissor test.
    */
-  val SCISSOR_TEST: Int = js.native
+  final val SCISSOR_TEST = 0x0C11
 
   /**
    * Capability to enable/disable polygon offset.
    */
-  val POLYGON_OFFSET_FILL: Int = js.native
-  val SAMPLE_ALPHA_TO_COVERAGE: Int = js.native
-  val SAMPLE_COVERAGE: Int = js.native
+  final val POLYGON_OFFSET_FILL = 0x8037
+  final val SAMPLE_ALPHA_TO_COVERAGE = 0x809E
+  final val SAMPLE_COVERAGE = 0x80A0
 
   /* ErrorCode */
   /**
    * No error has occurred.
    */
-  val NO_ERROR: Int = js.native
+  final val NO_ERROR = 0
 
   /**
    * An invalid enumerated name has been passed to an API function.
    */
-  val INVALID_ENUM: Int = js.native
+  final val INVALID_ENUM = 0x0500
 
   /**
    * An invalid value has been passed to an API function.
    */
-  val INVALID_VALUE: Int = js.native
+  final val INVALID_VALUE = 0x0501
 
   /**
    * The requested operation is not valid.
    */
-  val INVALID_OPERATION: Int = js.native
+  final val INVALID_OPERATION = 0x0502
 
   /**
    * The operation requested could not be completed because it ran out of memory.
    */
-  val OUT_OF_MEMORY: Int = js.native
+  final val OUT_OF_MEMORY = 0x0505
 
   /* FrontFaceDirection */
   /**
    * Clockwise wound triangles are front-facing.
    */
-  val CW: Int = js.native
+  final val CW = 0x0900
   /**
    * Counter-Clockwise wound triangles are front-facing.
    */
-  val CCW: Int = js.native
+  final val CCW = 0x0901
 
   /* GetPName */
-  val LINE_WIDTH: Int = js.native
-  val ALIASED_POINT_SIZE_RANGE: Int = js.native
-  val ALIASED_LINE_WIDTH_RANGE: Int = js.native
-  val CULL_FACE_MODE: Int = js.native
-  val FRONT_FACE: Int = js.native
-  val DEPTH_RANGE: Int = js.native
-  val DEPTH_WRITEMASK: Int = js.native
-  val DEPTH_CLEAR_VALUE: Int = js.native
-  val DEPTH_FUNC: Int = js.native
-  val STENCIL_CLEAR_VALUE: Int = js.native
-  val STENCIL_FUNC: Int = js.native
-  val STENCIL_FAIL: Int = js.native
-  val STENCIL_PASS_DEPTH_FAIL: Int = js.native
-  val STENCIL_PASS_DEPTH_PASS: Int = js.native
-  val STENCIL_REF: Int = js.native
-  val STENCIL_VALUE_MASK: Int = js.native
-  val STENCIL_WRITEMASK: Int = js.native
-  val STENCIL_BACK_FUNC: Int = js.native
-  val STENCIL_BACK_FAIL: Int = js.native
-  val STENCIL_BACK_PASS_DEPTH_FAIL: Int = js.native
-  val STENCIL_BACK_PASS_DEPTH_PASS: Int = js.native
-  val STENCIL_BACK_REF: Int = js.native
-  val STENCIL_BACK_VALUE_MASK: Int = js.native
-  val STENCIL_BACK_WRITEMASK: Int = js.native
-  val VIEWPORT: Int = js.native
-  val SCISSOR_BOX: Int = js.native
+  final val LINE_WIDTH = 0x0B21
+  final val ALIASED_POINT_SIZE_RANGE = 0x846D
+  final val ALIASED_LINE_WIDTH_RANGE = 0x846E
+  final val CULL_FACE_MODE = 0x0B45
+  final val FRONT_FACE = 0x0B46
+  final val DEPTH_RANGE = 0x0B70
+  final val DEPTH_WRITEMASK = 0x0B72
+  final val DEPTH_CLEAR_VALUE = 0x0B73
+  final val DEPTH_FUNC = 0x0B74
+  final val STENCIL_CLEAR_VALUE = 0x0B91
+  final val STENCIL_FUNC = 0x0B92
+  final val STENCIL_FAIL = 0x0B94
+  final val STENCIL_PASS_DEPTH_FAIL = 0x0B95
+  final val STENCIL_PASS_DEPTH_PASS = 0x0B96
+  final val STENCIL_REF = 0x0B97
+  final val STENCIL_VALUE_MASK = 0x0B93
+  final val STENCIL_WRITEMASK = 0x0B98
+  final val STENCIL_BACK_FUNC = 0x8800
+  final val STENCIL_BACK_FAIL = 0x8801
+  final val STENCIL_BACK_PASS_DEPTH_FAIL = 0x8802
+  final val STENCIL_BACK_PASS_DEPTH_PASS = 0x8803
+  final val STENCIL_BACK_REF = 0x8CA3
+  final val STENCIL_BACK_VALUE_MASK = 0x8CA4
+  final val STENCIL_BACK_WRITEMASK = 0x8CA5
+  final val VIEWPORT = 0x0BA2
+  final val SCISSOR_BOX = 0x0C10
   /*    SCISSOR_TEST */
-  val COLOR_CLEAR_VALUE: Int = js.native
-  val COLOR_WRITEMASK: Int = js.native
-  val UNPACK_ALIGNMENT: Int = js.native
-  val PACK_ALIGNMENT: Int = js.native
-  val MAX_TEXTURE_SIZE: Int = js.native
-  val MAX_VIEWPORT_DIMS: Int = js.native
-  val SUBPIXEL_BITS: Int = js.native
-  val RED_BITS: Int = js.native
-  val GREEN_BITS: Int = js.native
-  val BLUE_BITS: Int = js.native
-  val ALPHA_BITS: Int = js.native
-  val DEPTH_BITS: Int = js.native
-  val STENCIL_BITS: Int = js.native
-  val POLYGON_OFFSET_UNITS: Int = js.native
+  final val COLOR_CLEAR_VALUE = 0x0C22
+  final val COLOR_WRITEMASK = 0x0C23
+  final val UNPACK_ALIGNMENT = 0x0CF5
+  final val PACK_ALIGNMENT = 0x0D05
+  final val MAX_TEXTURE_SIZE = 0x0D33
+  final val MAX_VIEWPORT_DIMS = 0x0D3A
+  final val SUBPIXEL_BITS = 0x0D50
+  final val RED_BITS = 0x0D52
+  final val GREEN_BITS = 0x0D53
+  final val BLUE_BITS = 0x0D54
+  final val ALPHA_BITS = 0x0D55
+  final val DEPTH_BITS = 0x0D56
+  final val STENCIL_BITS = 0x0D57
+  final val POLYGON_OFFSET_UNITS = 0x2A00
   /*    POLYGON_OFFSET_FILL */
-  val POLYGON_OFFSET_FACTOR: Int = js.native
-  val TEXTURE_BINDING_2D: Int = js.native
-  val SAMPLE_BUFFERS: Int = js.native
-  val SAMPLES: Int = js.native
-  val SAMPLE_COVERAGE_VALUE: Int = js.native
-  val SAMPLE_COVERAGE_INVERT: Int = js.native
+  final val POLYGON_OFFSET_FACTOR = 0x8038
+  final val TEXTURE_BINDING_2D = 0x8069
+  final val SAMPLE_BUFFERS = 0x80A8
+  final val SAMPLES = 0x80A9
+  final val SAMPLE_COVERAGE_VALUE = 0x80AA
+  final val SAMPLE_COVERAGE_INVERT = 0x80AB
 
   /* GetTextureParameter */
   /*    TEXTURE_MAG_FILTER */
@@ -431,89 +437,89 @@ object WebGLRenderingContext extends js.Object {
   /*    TEXTURE_WRAP_S */
   /*    TEXTURE_WRAP_T */
 
-  val COMPRESSED_TEXTURE_FORMATS: Int = js.native
+  final val COMPRESSED_TEXTURE_FORMATS = 0x86A3
 
   /* HintMode */
-  val DONT_CARE: Int = js.native
-  val FASTEST: Int = js.native
-  val NICEST: Int = js.native
+  final val DONT_CARE = 0x1100
+  final val FASTEST = 0x1101
+  final val NICEST = 0x1102
 
   /* HintTarget */
-  val GENERATE_MIPMAP_HINT: Int = js.native
+  final val GENERATE_MIPMAP_HINT = 0x8192
 
   /* DataType */
-  val BYTE: Int = js.native
-  val UNSIGNED_BYTE: Int = js.native
-  val SHORT: Int = js.native
-  val UNSIGNED_SHORT: Int = js.native
-  val INT: Int = js.native
-  val UNSIGNED_INT: Int = js.native
-  val FLOAT: Int = js.native
+  final val BYTE = 0x1400
+  final val UNSIGNED_BYTE = 0x1401
+  final val SHORT = 0x1402
+  final val UNSIGNED_SHORT = 0x1403
+  final val INT = 0x1404
+  final val UNSIGNED_INT = 0x1405
+  final val FLOAT = 0x1406
 
   /* PixelFormat */
-  val DEPTH_COMPONENT: Int = js.native
-  val ALPHA: Int = js.native
-  val RGB: Int = js.native
-  val RGBA: Int = js.native
-  val LUMINANCE: Int = js.native
-  val LUMINANCE_ALPHA: Int = js.native
+  final val DEPTH_COMPONENT = 0x1902
+  final val ALPHA = 0x1906
+  final val RGB = 0x1907
+  final val RGBA = 0x1908
+  final val LUMINANCE = 0x1909
+  final val LUMINANCE_ALPHA = 0x190A
 
   /* PixelType */
   /*    UNSIGNED_BYTE */
-  val UNSIGNED_SHORT_4_4_4_4: Int = js.native
-  val UNSIGNED_SHORT_5_5_5_1: Int = js.native
-  val UNSIGNED_SHORT_5_6_5: Int = js.native
+  final val UNSIGNED_SHORT_4_4_4_4 = 0x8033
+  final val UNSIGNED_SHORT_5_5_5_1 = 0x8034
+  final val UNSIGNED_SHORT_5_6_5 = 0x8363
 
   /* Shaders */
-  val FRAGMENT_SHADER: Int = js.native
-  val VERTEX_SHADER: Int = js.native
-  val MAX_VERTEX_ATTRIBS: Int = js.native
-  val MAX_VERTEX_UNIFORM_VECTORS: Int = js.native
-  val MAX_VARYING_VECTORS: Int = js.native
-  val MAX_COMBINED_TEXTURE_IMAGE_UNITS: Int = js.native
-  val MAX_VERTEX_TEXTURE_IMAGE_UNITS: Int = js.native
-  val MAX_TEXTURE_IMAGE_UNITS: Int = js.native
-  val MAX_FRAGMENT_UNIFORM_VECTORS: Int = js.native
-  val SHADER_TYPE: Int = js.native
-  val DELETE_STATUS: Int = js.native
-  val LINK_STATUS: Int = js.native
-  val VALIDATE_STATUS: Int = js.native
-  val ATTACHED_SHADERS: Int = js.native
-  val ACTIVE_UNIFORMS: Int = js.native
-  val ACTIVE_ATTRIBUTES: Int = js.native
-  val SHADING_LANGUAGE_VERSION: Int = js.native
-  val CURRENT_PROGRAM: Int = js.native
+  final val FRAGMENT_SHADER = 0x8B30
+  final val VERTEX_SHADER = 0x8B31
+  final val MAX_VERTEX_ATTRIBS = 0x8869
+  final val MAX_VERTEX_UNIFORM_VECTORS = 0x8DFB
+  final val MAX_VARYING_VECTORS = 0x8DFC
+  final val MAX_COMBINED_TEXTURE_IMAGE_UNITS = 0x8B4D
+  final val MAX_VERTEX_TEXTURE_IMAGE_UNITS = 0x8B4C
+  final val MAX_TEXTURE_IMAGE_UNITS = 0x8872
+  final val MAX_FRAGMENT_UNIFORM_VECTORS = 0x8DFD
+  final val SHADER_TYPE = 0x8B4F
+  final val DELETE_STATUS = 0x8B80
+  final val LINK_STATUS = 0x8B82
+  final val VALIDATE_STATUS = 0x8B83
+  final val ATTACHED_SHADERS = 0x8B85
+  final val ACTIVE_UNIFORMS = 0x8B86
+  final val ACTIVE_ATTRIBUTES = 0x8B89
+  final val SHADING_LANGUAGE_VERSION = 0x8B8C
+  final val CURRENT_PROGRAM = 0x8B8D
 
   /* StencilFunction */
-  val NEVER: Int = js.native
-  val LESS: Int = js.native
-  val EQUAL: Int = js.native
-  val LEQUAL: Int = js.native
-  val GREATER: Int = js.native
-  val NOTEQUAL: Int = js.native
-  val GEQUAL: Int = js.native
-  val ALWAYS: Int = js.native
+  final val NEVER = 0x0200
+  final val LESS = 0x0201
+  final val EQUAL = 0x0202
+  final val LEQUAL = 0x0203
+  final val GREATER = 0x0204
+  final val NOTEQUAL = 0x0205
+  final val GEQUAL = 0x0206
+  final val ALWAYS = 0x0207
 
   /* StencilOp */
   /*    ZERO */
-  val KEEP: Int = js.native
-  val REPLACE: Int = js.native
-  val INCR: Int = js.native
-  val DECR: Int = js.native
-  val INVERT: Int = js.native
-  val INCR_WRAP: Int = js.native
-  val DECR_WRAP: Int = js.native
+  final val KEEP = 0x1E00
+  final val REPLACE = 0x1E01
+  final val INCR = 0x1E02
+  final val DECR = 0x1E03
+  final val INVERT = 0x150A
+  final val INCR_WRAP = 0x8507
+  final val DECR_WRAP = 0x8508
 
   /* StringName */
-  val VENDOR: Int = js.native
-  val RENDERER: Int = js.native
-  val VERSION: Int = js.native
+  final val VENDOR = 0x1F00
+  final val RENDERER = 0x1F01
+  final val VERSION = 0x1F02
 
   /* TextureMagFilter */
   /** Specifies nearest neighbour interpolation. */
-  val NEAREST: Int = js.native
+  final val NEAREST = 0x2600
   /** Specifies linear interpolation. */
-  val LINEAR: Int = js.native
+  final val LINEAR = 0x2601
 
   /* TextureMinFilter */
   /*    NEAREST */
@@ -521,22 +527,22 @@ object WebGLRenderingContext extends js.Object {
   /**
    * Specifies nearest neighbour interpolation on the nearest mipmap level.
    */
-  val NEAREST_MIPMAP_NEAREST: Int = js.native
+  final val NEAREST_MIPMAP_NEAREST = 0x2700
 
   /**
    * Specifies linear interpolation on the nearest mipmap level.
    */
-  val LINEAR_MIPMAP_NEAREST: Int = js.native
+  final val LINEAR_MIPMAP_NEAREST = 0x2701
 
   /**
    * Specifies nearest neighbour interpolation, linearly blending between mipmap levels.
    */
-  val NEAREST_MIPMAP_LINEAR: Int = js.native
+  final val NEAREST_MIPMAP_LINEAR = 0x2702
 
   /**
    * Specifies linear interpolation linearly blending between mipmap levels.
    */
-  val LINEAR_MIPMAP_LINEAR: Int = js.native
+  final val LINEAR_MIPMAP_LINEAR = 0x2703
 
   /* TextureParameterName */
   /**
@@ -544,7 +550,7 @@ object WebGLRenderingContext extends js.Object {
    *
    * Can be one of [[NEAREST]] or [[LINEAR]].
    */
-  val TEXTURE_MAG_FILTER: Int = js.native
+  final val TEXTURE_MAG_FILTER = 0x2800
 
   /**
    * The texture minification filter.
@@ -553,270 +559,274 @@ object WebGLRenderingContext extends js.Object {
    * [[NEAREST_MIPMAP_LINEAR]], [[LINEAR_MIPMAP_LINEAR]].
    */
 
-  val TEXTURE_MIN_FILTER: Int = js.native
+  final val TEXTURE_MIN_FILTER = 0x2801
 
   /**
    * The horizontal texture wrap mode.
    *
    * Can be one of [[REPEAT]], [[CLAMP_TO_EDGE]], [[MIRRORED_REPEAT]].
    */
-  val TEXTURE_WRAP_S: Int = js.native
+  final val TEXTURE_WRAP_S = 0x2802
 
   /**
    * The vertical texture wrap.
    *
    * Can be one of [[REPEAT]], [[CLAMP_TO_EDGE]], [[MIRRORED_REPEAT]].
    */
-  val TEXTURE_WRAP_T: Int = js.native
+  final val TEXTURE_WRAP_T = 0x2803
 
   /* TextureTarget */
   /**
    * The target for a simple 2 dimensional texture.
    */
-  val TEXTURE_2D: Int = js.native
-  val TEXTURE: Int = js.native
+  final val TEXTURE_2D = 0x0DE1
+  final val TEXTURE = 0x1702
 
   /**
    * The target for a cube mapped texture.
    */
-  val TEXTURE_CUBE_MAP: Int = js.native
-  val TEXTURE_BINDING_CUBE_MAP: Int = js.native
-  val TEXTURE_CUBE_MAP_POSITIVE_X: Int = js.native
-  val TEXTURE_CUBE_MAP_NEGATIVE_X: Int = js.native
-  val TEXTURE_CUBE_MAP_POSITIVE_Y: Int = js.native
-  val TEXTURE_CUBE_MAP_NEGATIVE_Y: Int = js.native
-  val TEXTURE_CUBE_MAP_POSITIVE_Z: Int = js.native
-  val TEXTURE_CUBE_MAP_NEGATIVE_Z: Int = js.native
-  val MAX_CUBE_MAP_TEXTURE_SIZE: Int = js.native
+  final val TEXTURE_CUBE_MAP = 0x8513
+  final val TEXTURE_BINDING_CUBE_MAP = 0x8514
+  final val TEXTURE_CUBE_MAP_POSITIVE_X = 0x8515
+  final val TEXTURE_CUBE_MAP_NEGATIVE_X = 0x8516
+  final val TEXTURE_CUBE_MAP_POSITIVE_Y = 0x8517
+  final val TEXTURE_CUBE_MAP_NEGATIVE_Y = 0x8518
+  final val TEXTURE_CUBE_MAP_POSITIVE_Z = 0x8519
+  final val TEXTURE_CUBE_MAP_NEGATIVE_Z = 0x851A
+  final val MAX_CUBE_MAP_TEXTURE_SIZE = 0x851C
 
   /* TextureUnit */
   /** Identifies texture unit 0. This texture unit is guaranteed to exist. */
-  val TEXTURE0: Int = js.native
+  final val TEXTURE0 = 0x84C0
 
   /** Identifies texture unit 1. This texture unit is guaranteed to exist. */
-  val TEXTURE1: Int = js.native
+  final val TEXTURE1 = 0x84C1
 
   /** Identifies texture unit 2. This texture unit is guaranteed to exist. */
-  val TEXTURE2: Int = js.native
+  final val TEXTURE2 = 0x84C2
 
   /** Identifies texture unit 3. This texture unit is guaranteed to exist. */
-  val TEXTURE3: Int = js.native
+  final val TEXTURE3 = 0x84C3
 
   /** Identifies texture unit 4. This texture unit is guaranteed to exist. */
-  val TEXTURE4: Int = js.native
+  final val TEXTURE4 = 0x84C4
 
   /** Identifies texture unit 5. This texture unit is guaranteed to exist. */
-  val TEXTURE5: Int = js.native
+  final val TEXTURE5 = 0x84C5
 
   /** Identifies texture unit 6. This texture unit is guaranteed to exist. */
-  val TEXTURE6: Int = js.native
+  final val TEXTURE6 = 0x84C6
 
   /** Identifies texture unit 7. This texture unit is guaranteed to exist. */
-  val TEXTURE7: Int = js.native
+  final val TEXTURE7 = 0x84C7
 
   /** Identifies texture unit 8. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE8: Int = js.native
+  final val TEXTURE8 = 0x84C8
 
   /** Identifies texture unit 9. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE9: Int = js.native
+  final val TEXTURE9 = 0x84C9
 
   /** Identifies texture unit 10. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE10: Int = js.native
+  final val TEXTURE10 = 0x84CA
 
   /** Identifies texture unit 11. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE11: Int = js.native
+  final val TEXTURE11 = 0x84CB
 
   /** Identifies texture unit 12. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE12: Int = js.native
+  final val TEXTURE12 = 0x84CC
 
   /** Identifies texture unit 13. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE13: Int = js.native
+  final val TEXTURE13 = 0x84CD
 
   /** Identifies texture unit 14. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE14: Int = js.native
+  final val TEXTURE14 = 0x84CE
 
   /** Identifies texture unit 15. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE15: Int = js.native
+  final val TEXTURE15 = 0x84CF
 
   /** Identifies texture unit 16. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE16: Int = js.native
+  final val TEXTURE16 = 0x84D0
 
   /** Identifies texture unit 17. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE17: Int = js.native
+  final val TEXTURE17 = 0x84D1
 
   /** Identifies texture unit 18. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE18: Int = js.native
+  final val TEXTURE18 = 0x84D2
 
   /** Identifies texture unit 19. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE19: Int = js.native
+  final val TEXTURE19 = 0x84D3
 
   /** Identifies texture unit 20. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE20: Int = js.native
+  final val TEXTURE20 = 0x84D4
 
   /** Identifies texture unit 21. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE21: Int = js.native
+  final val TEXTURE21 = 0x84D5
 
   /** Identifies texture unit 22. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE22: Int = js.native
+  final val TEXTURE22 = 0x84D6
 
   /** Identifies texture unit 23. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE23: Int = js.native
+  final val TEXTURE23 = 0x84D7
 
   /** Identifies texture unit 24. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE24: Int = js.native
+  final val TEXTURE24 = 0x84D8
 
   /** Identifies texture unit 25. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE25: Int = js.native
+  final val TEXTURE25 = 0x84D9
 
   /** Identifies texture unit 26. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE26: Int = js.native
+  final val TEXTURE26 = 0x84DA
 
   /** Identifies texture unit 27. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE27: Int = js.native
+  final val TEXTURE27 = 0x84DB
 
   /** Identifies texture unit 28. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE28: Int = js.native
+  final val TEXTURE28 = 0x84DC
 
   /** Identifies texture unit 29. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE29: Int = js.native
+  final val TEXTURE29 = 0x84DD
 
   /** Identifies texture unit 30. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE30: Int = js.native
+  final val TEXTURE30 = 0x84DE
 
   /** Identifies texture unit 31. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_UNITS before using it. */
-  val TEXTURE31: Int = js.native
+  final val TEXTURE31 = 0x84DF
 
   /** The currently active texture unit. */
-  val ACTIVE_TEXTURE: Int = js.native
+  final val ACTIVE_TEXTURE = 0x84E0
 
   /* TextureWrapMode */
   /**
    * Repeat the texture along this axis.
    */
-  val REPEAT: Int = js.native
+  final val REPEAT = 0x2901
   /**
    * Clamp the texture along this axis.  The colour of the edge pixels will be replicated to infinity.
    */
-  val CLAMP_TO_EDGE: Int = js.native
+  final val CLAMP_TO_EDGE = 0x812F
   /**
    * Repeat the texture along this axis, mirroring it each step.
    */
-  val MIRRORED_REPEAT: Int = js.native
+  final val MIRRORED_REPEAT = 0x8370
 
   /* Uniform Types */
-  val FLOAT_VEC2: Int = js.native
-  val FLOAT_VEC3: Int = js.native
-  val FLOAT_VEC4: Int = js.native
-  val INT_VEC2: Int = js.native
-  val INT_VEC3: Int = js.native
-  val INT_VEC4: Int = js.native
-  val BOOL: Int = js.native
-  val BOOL_VEC2: Int = js.native
-  val BOOL_VEC3: Int = js.native
-  val BOOL_VEC4: Int = js.native
-  val FLOAT_MAT2: Int = js.native
-  val FLOAT_MAT3: Int = js.native
-  val FLOAT_MAT4: Int = js.native
-  val SAMPLER_2D: Int = js.native
-  val SAMPLER_CUBE: Int = js.native
+  final val FLOAT_VEC2 = 0x8B50
+  final val FLOAT_VEC3 = 0x8B51
+  final val FLOAT_VEC4 = 0x8B52
+  final val INT_VEC2 = 0x8B53
+  final val INT_VEC3 = 0x8B54
+  final val INT_VEC4 = 0x8B55
+  final val BOOL = 0x8B56
+  final val BOOL_VEC2 = 0x8B57
+  final val BOOL_VEC3 = 0x8B58
+  final val BOOL_VEC4 = 0x8B59
+  final val FLOAT_MAT2 = 0x8B5A
+  final val FLOAT_MAT3 = 0x8B5B
+  final val FLOAT_MAT4 = 0x8B5C
+  final val SAMPLER_2D = 0x8B5E
+  final val SAMPLER_CUBE = 0x8B60
 
   /* Vertex Arrays */
-  val VERTEX_ATTRIB_ARRAY_ENABLED: Int = js.native
-  val VERTEX_ATTRIB_ARRAY_SIZE: Int = js.native
-  val VERTEX_ATTRIB_ARRAY_STRIDE: Int = js.native
-  val VERTEX_ATTRIB_ARRAY_TYPE: Int = js.native
-  val VERTEX_ATTRIB_ARRAY_NORMALIZED: Int = js.native
-  val VERTEX_ATTRIB_ARRAY_POINTER: Int = js.native
-  val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING: Int = js.native
+  final val VERTEX_ATTRIB_ARRAY_ENABLED = 0x8622
+  final val VERTEX_ATTRIB_ARRAY_SIZE = 0x8623
+  final val VERTEX_ATTRIB_ARRAY_STRIDE = 0x8624
+  final val VERTEX_ATTRIB_ARRAY_TYPE = 0x8625
+  final val VERTEX_ATTRIB_ARRAY_NORMALIZED = 0x886A
+  final val VERTEX_ATTRIB_ARRAY_POINTER = 0x8645
+  final val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING = 0x889F
+
+  /* Read Format */
+  final val IMPLEMENTATION_COLOR_READ_TYPE = 0x8B9A
+  final val IMPLEMENTATION_COLOR_READ_FORMAT = 0x8B9B
 
   /* Shader Source */
-  val COMPILE_STATUS: Int = js.native
+  final val COMPILE_STATUS = 0x8B81
 
   /* Shader Precision-Specified Types */
   /**
    * Specifies a low precision float.
    */
-  val LOW_FLOAT: Int = js.native
+  final val LOW_FLOAT = 0x8DF0
   /**
    * Specifies a medium precision float.
    */
-  val MEDIUM_FLOAT: Int = js.native
+  final val MEDIUM_FLOAT = 0x8DF1
   /**
    * Specifies a high precision float.
    */
-  val HIGH_FLOAT: Int = js.native
+  final val HIGH_FLOAT = 0x8DF2
   /**
    * Specifies a low precision integer.
    */
-  val LOW_INT: Int = js.native
+  final val LOW_INT = 0x8DF3
   /**
    * Specifies a medium precision float.
    */
-  val MEDIUM_INT: Int = js.native
+  final val MEDIUM_INT = 0x8DF4
   /**
    * Specifies a high precision float.
    */
-  val HIGH_INT: Int = js.native
+  final val HIGH_INT = 0x8DF5
 
   /* Framebuffer Object. */
   /**
    * The framebuffer target.
    */
-  val FRAMEBUFFER: Int = js.native
+  final val FRAMEBUFFER = 0x8D40
 
   /**
    * The renderbuffer target.
    */
-  val RENDERBUFFER: Int = js.native
+  final val RENDERBUFFER = 0x8D41
 
-  val RGBA4: Int = js.native
-  val RGB5_A1: Int = js.native
-  val RGB565: Int = js.native
-  val DEPTH_COMPONENT16: Int = js.native
-  val STENCIL_INDEX: Int = js.native
-  val STENCIL_INDEX8: Int = js.native
-  val DEPTH_STENCIL: Int = js.native
+  final val RGBA4 = 0x8056
+  final val RGB5_A1 = 0x8057
+  final val RGB565 = 0x8D62
+  final val DEPTH_COMPONENT16 = 0x81A5
+  final val STENCIL_INDEX = 0x1901
+  final val STENCIL_INDEX8 = 0x8D48
+  final val DEPTH_STENCIL = 0x84F9
 
-  val RENDERBUFFER_WIDTH: Int = js.native
-  val RENDERBUFFER_HEIGHT: Int = js.native
-  val RENDERBUFFER_INTERNAL_FORMAT: Int = js.native
-  val RENDERBUFFER_RED_SIZE: Int = js.native
-  val RENDERBUFFER_GREEN_SIZE: Int = js.native
-  val RENDERBUFFER_BLUE_SIZE: Int = js.native
-  val RENDERBUFFER_ALPHA_SIZE: Int = js.native
-  val RENDERBUFFER_DEPTH_SIZE: Int = js.native
-  val RENDERBUFFER_STENCIL_SIZE: Int = js.native
+  final val RENDERBUFFER_WIDTH = 0x8D42
+  final val RENDERBUFFER_HEIGHT = 0x8D43
+  final val RENDERBUFFER_INTERNAL_FORMAT = 0x8D44
+  final val RENDERBUFFER_RED_SIZE = 0x8D50
+  final val RENDERBUFFER_GREEN_SIZE = 0x8D51
+  final val RENDERBUFFER_BLUE_SIZE = 0x8D52
+  final val RENDERBUFFER_ALPHA_SIZE = 0x8D53
+  final val RENDERBUFFER_DEPTH_SIZE = 0x8D54
+  final val RENDERBUFFER_STENCIL_SIZE = 0x8D55
 
-  val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE: Int = js.native
-  val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME: Int = js.native
-  val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL: Int = js.native
-  val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE: Int = js.native
+  final val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE = 0x8CD0
+  final val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME = 0x8CD1
+  final val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL = 0x8CD2
+  final val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE = 0x8CD3
 
-  val COLOR_ATTACHMENT0: Int = js.native
-  val DEPTH_ATTACHMENT: Int = js.native
-  val STENCIL_ATTACHMENT: Int = js.native
-  val DEPTH_STENCIL_ATTACHMENT: Int = js.native
+  final val COLOR_ATTACHMENT0 = 0x8CE0
+  final val DEPTH_ATTACHMENT = 0x8D00
+  final val STENCIL_ATTACHMENT = 0x8D20
+  final val DEPTH_STENCIL_ATTACHMENT = 0x821A
 
-  val NONE: Int = js.native
+  final val NONE = 0
 
-  val FRAMEBUFFER_COMPLETE: Int = js.native
-  val FRAMEBUFFER_INCOMPLETE_ATTACHMENT: Int = js.native
-  val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT: Int = js.native
-  val FRAMEBUFFER_INCOMPLETE_DIMENSIONS: Int = js.native
-  val FRAMEBUFFER_UNSUPPORTED: Int = js.native
+  final val FRAMEBUFFER_COMPLETE = 0x8CD5
+  final val FRAMEBUFFER_INCOMPLETE_ATTACHMENT = 0x8CD6
+  final val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT = 0x8CD7
+  final val FRAMEBUFFER_INCOMPLETE_DIMENSIONS = 0x8CD9
+  final val FRAMEBUFFER_UNSUPPORTED = 0x8CDD
 
-  val FRAMEBUFFER_BINDING: Int = js.native
-  val RENDERBUFFER_BINDING: Int = js.native
-  val MAX_RENDERBUFFER_SIZE: Int = js.native
+  final val FRAMEBUFFER_BINDING = 0x8CA6
+  final val RENDERBUFFER_BINDING = 0x8CA7
+  final val MAX_RENDERBUFFER_SIZE = 0x84E8
 
-  val INVALID_FRAMEBUFFER_OPERATION: Int = js.native
+  final val INVALID_FRAMEBUFFER_OPERATION = 0x0506
 
   /* WebGL-specific enums */
-  val UNPACK_FLIP_Y_WEBGL: Int = js.native
-  val UNPACK_PREMULTIPLY_ALPHA_WEBGL: Int = js.native
-  val CONTEXT_LOST_WEBGL: Int = js.native
-  val UNPACK_COLORSPACE_CONVERSION_WEBGL: Int = js.native
-  val BROWSER_DEFAULT_WEBGL: Int = js.native
+  final val UNPACK_FLIP_Y_WEBGL = 0x9240
+  final val UNPACK_PREMULTIPLY_ALPHA_WEBGL = 0x9241
+  final val CONTEXT_LOST_WEBGL = 0x9242
+  final val UNPACK_COLORSPACE_CONVERSION_WEBGL = 0x9243
+  final val BROWSER_DEFAULT_WEBGL = 0x9244
 }
 
 @js.native
