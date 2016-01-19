@@ -4866,15 +4866,18 @@ trait Location extends js.Object {
    */
   var host: String = js.native
   /**
-   * Theorigin read-only property is a String containing the Unicode serialization of the
+   * The origin read-only property is a String containing the Unicode serialization of the
    * origin of the represented URL, that is, for http and https, the scheme followed by
    * '://', followed by the domain, followed by ':', followed by the port (the default
    * port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme,
    * the value is browser dependant.
    *
+   * This property also does not exist consistently on IE, even as new as IE11, hence it must
+   * be UndefOr.
+   *
    * MDN
    */
-  def origin: String = js.native
+  def origin: js.UndefOr[String] = js.native
   /**
    * The Location.reload()method Reloads the resource from the current URL. Its
    * optional unique parameter is a Boolean, which, when it is true, causes the page to
