@@ -532,155 +532,7 @@ object Promise extends js.Object {
 
 }
 
-/**
- * The ServiceWorker interface of the ServiceWorker API provides a reference to a service worker.
- * Multiple browsing contexts (e.g. pages, workers, etc.) can be associated with the same service worker,
- * each through a unique ServiceWorker object.
- *
- *  MDN
- */
-@js.native
-trait ServiceWorker extends EventTarget {
-  /**
-   * Returns the ServiceWorker serialized script URL defined as part of ServiceWorkerRegistration.
-   * Must be on the same origin as the document that registers the ServiceWorker.
-   *
-   * MDN
-   */
-  def scriptURL: String = js.native
 
-  /**
-   * The state read-only property of the ServiceWorker interface returns a string representing the current state of the service worker.
-   * It can be one of the following values: installing, installed, activating, activated, or redundant.
-   *
-   * MDN
-   */
-  def state: String = js.native
-
-  /**
-   * An EventListener property called whenever an event of type statechange is fired; it is basically fired anytime the ServiceWorker.state changes.
-   *
-   * MDN
-   */
-  var onstatechange: js.Function1[Event, Any] = js.native
-
-}
-
-/**
- * The ServiceWorkerRegistion interface of the ServiceWorker API represents the service worker registration.
- * You register a service worker to control one or more pages that share the same origin.
- *
- * MDN
- */
-@js.native
-trait ServiceWorkerRegistration extends EventTarget {
-  /**
-   * The installing property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is installing.
-   * This property is initially set to null.
-   *
-   * MDN
-   */
-  var installing: ServiceWorker = js.native
-
-  /**
-   * The waiting property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is installed.
-   * This property is initially set to null.
-   *
-   * MDN
-   */
-  var waiting: ServiceWorker = js.native
-
-  /**
-   * The active property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is activating or activated.
-   * This property is initially set to null.
-   *
-   * MDN
-   */
-  var active: ServiceWorker = js.native
-
-  /**
-   * The scope read-only property of the ServiceWorkerRegistration interface returns a unique identifier for a service worker registration.
-   * The service worker must be on the same origin as the document that registers the ServiceWorker.
-   *
-   * MDN
-   */
-  var scope: String = js.native
-
-  /**
-   * The update method of the ServiceWorkerRegistration interface allows you to ping the server for an updated service worker script.
-   * If you don't explicitly call this,
-   * the UA will do this automatically once every 24 hours.
-   *
-   * MDN
-   */
-  def update(): Unit = js.native
-
-  /**
-   * The unregister method of the ServiceWorkerRegistration interface unregisters the service worker registration and returns a Promise.
-   * The promise will resolve to false if no registration was found, otherwise it resolves to true irrespective of whether unregistration happened or not (it may not unregister if someone else just called ServiceWorkerContainer.register with the same scope.)
-   * The service worker will finish any ongoing operations before it is unregistered.
-   *
-   * MDN
-   */
-  def unregister(): Promise[Boolean] = js.native
-
-  /**
-   * The onupdatefound property of the ServiceWorkerRegistration interface is an EventListener property called whenever an event of type statechange is fired;
-   * it is fired any time the ServiceWorkerRegistration.
-   * installing property acquires a new service worker.
-   *
-   * MDN
-   */
-  var onupdatefound: js.Function1[Event, Any] = js.native
-}
-
-/**
- * The ServiceWorkerContainer interface of the ServiceWorker API exposes the ServiceWorkerContainer.
- * register(scriptURL, scope[, base]) method used to register service workers, and the ServiceWorkerContainer.
- * controller property used to determine whether or not the current page is actively controlled.
- *
- * MDN
- */
-@js.native
-trait ServiceWorkerContainer extends EventTarget {
-
-  /**
-   * Creates or updates a ServiceWorkerRegistration for the given scriptURL.
-   * If successful, a service worker registration ties the provided script URL to a scope, which is subsequently used for navigation matching.
-   * If the method can't return a ServiceWorkerRegistration, it returns a Promise.
-   * You can call this method unconditionally from the controlled page, i.e.,
-   * you don't need to first check whether there's an active registration.
-   *
-   *  MDN
-   */
-  def register(scriptURL: String, options: js.Object = new js.Object()): Promise[ServiceWorkerRegistration] = js.native
-
-  /**
-   * The ServiceWorkerContainer.controller read-only property of the ServiceWorkerContainer interface returns the ServiceWorker whose state is activated (the same object returned by ServiceWorkerRegistration.active).
-   * This property returns null if the request is a force refresh (Shift + refresh) or if there is no active worker.
-   *
-   * MDN
-   */
-  def controller: ServiceWorker = js.native
-
-  /**
-   * Gets a ServiceWorkerRegistration object whose scope URL matches the document URL.
-   * If the method can't return a ServiceWorkerRegistration, it returns a Promise.
-   *
-   *  MDN
-   */
-  def getRegistration(scope: String = ""): Promise[ServiceWorkerRegistration] = js.native
-
-  /**
-   * The ready read-only property of the ServiceWorkerContainer interface defines
-   * whether a service worker is ready to control a page or not. It returns a
-   * Promise that will never reject, which resolves to a ServiceWorkerRegistration
-   * with an ServiceWorkerRegistration.active worker.
-   *
-   * MDN
-   */
-  def ready: Promise[ServiceWorkerRegistration] = js.native
-}
 
 /**
  * The Navigator interface represents the state and the identity of the user
@@ -693,11 +545,8 @@ trait ServiceWorkerContainer extends EventTarget {
  * MDN
  */
 @js.native
-class Navigator extends NavigatorID with NavigatorOnLine with NavigatorContentUtils with NavigatorGeolocation with NavigatorStorageUtils {
-
-  val serviceWorker: ServiceWorkerContainer = js.native
-
-}
+class Navigator extends NavigatorID with NavigatorOnLine with NavigatorContentUtils
+    with NavigatorGeolocation with NavigatorStorageUtils with NavigatorLanguage
 
 @js.native
 trait NodeSelector extends js.Object {
@@ -4795,6 +4644,24 @@ trait NavigatorOnLine extends js.Object {
   def onLine: Boolean = js.native
 }
 
+/**
+ * NavigatorLanguage contains methods and properties related to the language
+ * of the navigator.
+ *
+ * MDN
+ */
+@js.native
+trait NavigatorLanguage extends js.Object {
+  /**
+   * Returns a DOMString representing the preferred language of the user,
+   * usually the language of the browser UI. The null value is returned when
+   * this is unknown.
+   *
+   * MDN
+   */
+  def language: String = js.native
+}
+
 @js.native
 trait WindowLocalStorage extends js.Object {
   def localStorage: Storage = js.native
@@ -6938,13 +6805,38 @@ trait MediaQueryListListener extends js.Object {
   def apply(mql: MediaQueryList): Unit = js.native
 }
 
-
+/**
+  * The MessagePort interface of the Channel Messaging API represents one of the two
+  * ports of a MessageChannel, allowing sending of messages from one port and
+  * listening out for them arriving at the other.
+  *
+  * MDN
+  */
 @js.native
 trait MessagePort extends EventTarget {
-  var onmessage: js.Function1[js.Any, _] = js.native
-
+  /**
+    * An EventListener, called whenever an MessageEvent of type message is
+    * fired on the port — that is, when the port receives a message.
+    *
+    * MDN
+    */
+  var onmessage: js.Function1[MessageEvent, _] = js.native
+  /**
+    * Disconnects the port,so it is no longer active. This stops the flow of
+    * messages to that port.
+    *
+    * MDN
+    */
   def close(): Unit = js.native
 
+  /**
+    * Sends a message from the port, and optionally, transfers ownership of
+    * objects to other browsing contexts.
+    * @param message The message you want to send through the channel.
+    *                This can be of any basic data type. Multiple data
+    *                items can be sent as an array.
+    * @param ports
+    */
   def postMessage(message: js.Any, ports: js.Any = js.native): Unit = js.native
 
   def start(): Unit = js.native
@@ -7211,25 +7103,6 @@ object FormData extends js.Object {
 }
 
 
-/**
- * The AbstractWorker interface abstracts properties and methods common to all kind
- * of workers, being Worker or SharedWorker.
- *
- * MDN
- */
-@js.native
-trait AbstractWorker extends EventTarget {
-  /**
-   * The AbstractWorker.onerror property represents an EventHandler, that is a
-   * function to be called when the error event occurs and bubbles through the Worker.
-   *
-   * MDN
-   */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
-
-
-}
-
 
 /**
  * The DOM ValidityState interface represents the validity states that an element
@@ -7307,57 +7180,4 @@ trait ValidityState extends js.Object {
    * MDN
    */
   def valid: Boolean = js.native
-}
-
-
-/**
- * The Worker interface represents a background task that can be easily created and
- * can send messages back to their creators. Creating a worker is as simple as calling
- * the Worker() constructor, specifying a script to be run in the worker thread.
- *
- * Of note is the fact that workers may in turn spawn new workers as long as
- * those workers are hosted within the same origin as the parent page.  In
- * addition, workers may use XMLHttpRequest for network I/O, with the exception
- * that the responseXML and channel attributes on XMLHttpRequest always return
- * null.
- *
- * MDN
- */
-@js.native
-class Worker (stringUrl: String) extends AbstractWorker {
-
-  /**
-   * The Worker.onmessage property represents an EventHandler, that is a function to
-   * be called when the message event occurs. These events are of type MessageEvent and
-   * will be called when the worker calls its own postMessage() method: it is the way that
-   * a Worker has to give back information to the thread that created it.
-   *
-   * MDN
-   */
-  var onmessage: js.Function1[js.Any, _] = js.native
-
-  /**
-   * The Worker.postMessage() method sends a message to the worker's inner scope. This
-   * accepts a single parameter, which is the data to send to the worker. The data may be
-   * any value or JavaScript object handled by the structured clone algorithm, which
-   * includes cyclical references.
-   *
-   * MDN
-   */
-  def postMessage(message: js.Any, ports: js.Any = js.native): Unit = js.native
-
-  /**
-   * The Worker.terminate() method immediately terminates the Worker. This does not
-   * offer the worker an opportunity to finish its operations; it is simply stopped at
-   * once.
-   *
-   * MDN
-   */
-  def terminate(): Unit = js.native
-
-
-}
-
-@js.native
-object Worker extends js.Object {
 }

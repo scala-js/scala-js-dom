@@ -47,9 +47,4 @@ package object experimental {
    */
   type OpenEndedDictionary[T] = js.Dictionary[T]
 
-  /**
-   * [[https://html.spec.whatwg.org/multipage/infrastructure.html#transferable ¶2.7.4 Transferable Objects]]
-   * in whatwg html spec.
-   */
-  type Transferable = js.typedarray.ArrayBuffer | CanvasProxy | MessagePort
 }
