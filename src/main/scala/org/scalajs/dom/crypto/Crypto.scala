@@ -165,11 +165,8 @@ trait SubtleCrypto extends js.Object {
    *
    * Defined at
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-encrypt ¶14.3.1 The encrypt method]]
-   *
-   * We are being a bit more precise than the official definition by requiring a KeyAlgorithmIdentifier
-   * rather than an AlgorithmIdentifier for the algorithm field.
    */
-  def encrypt(algorithm: KeyAlgorithmIdentifier, key: CryptoKey,
+  def encrypt(algorithm: AlgorithmIdentifier, key: CryptoKey,
       data: BufferSource): Promise[js.Any] = js.native
 
   /**
@@ -178,11 +175,8 @@ trait SubtleCrypto extends js.Object {
    *
    * Defined at
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-decrypt ¶14.3.2 The decrypt method]]
-   *
-   * We are being a bit more precise than the official definition by requiring a KeyAlgorithmIdentifier
-   * rather than an AlgorithmIdentifier for the algorithm field.
    */
-  def decrypt(algorithm: KeyAlgorithmIdentifier, key: CryptoKey,
+  def decrypt(algorithm: AlgorithmIdentifier, key: CryptoKey,
       data: BufferSource): Promise[js.Any] = js.native
 
   /**
@@ -191,11 +185,8 @@ trait SubtleCrypto extends js.Object {
    *
    * Defined at
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-sign ¶14.3.3 The sign method]]
-   *
-   * We are being a bit more precise than the official definition by requiring a KeyAlgorithmIdentifier
-   * rather than an AlgorithmIdentifier for the algorithm field.
    */
-  def sign(algorithm: KeyAlgorithmIdentifier, key: CryptoKey,
+  def sign(algorithm: AlgorithmIdentifier, key: CryptoKey,
       data: BufferSource): Promise[js.Any] = js.native
 
   /**
@@ -204,11 +195,8 @@ trait SubtleCrypto extends js.Object {
    *
    * Defined at
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-verify ¶14.3.4 The verify method]]
-   *
-   * We are being a bit more precise than the official definition by requiring a KeyAlgorithmIdentifier
-   * rather than an AlgorithmIdentifier.
    */
-  def verify(algorithm: KeyAlgorithmIdentifier, key: CryptoKey,
+  def verify(algorithm: AlgorithmIdentifier, key: CryptoKey,
       signature: BufferSource, data: BufferSource): Promise[js.Any] = js.native
 
   /**
@@ -216,8 +204,10 @@ trait SubtleCrypto extends js.Object {
    * as parameters. MDN
    *
    * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-digest ¶14.3.5 The digest method]]
+   * We are a bit more precise than the official definition by requiring a HashAlgorithmIdentifier
+   * rather than an AlgorithmIdentifier for the algorithm parameter.
    */
-  def digest(algorithm: AlgorithmIdentifier, data: BufferSource): Promise[js.Any] = js.native
+  def digest(algorithm: HashAlgorithmIdentifier, data: BufferSource): Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a newly generated CryptoKey, for symmetrical
@@ -242,10 +232,9 @@ trait SubtleCrypto extends js.Object {
    * Defined at
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-deriveKey ¶14.3.7 The deriveKey method]]
    *
-   * We are being a bit more precise than the official definition by requiring a KeyAlgorithmIdentifier
-   * rather than an AlgorithmIdentifier for the algorithm and derivedKeyType field
+   * We are being a bit more precise than the official definition by requiring KeyAlgorithmIdentifier for derivedKeyType
    */
-  def deriveKey(algorithm: KeyAlgorithmIdentifier, baseKey: CryptoKey,
+  def deriveKey(algorithm: AlgorithmIdentifier, baseKey: CryptoKey,
       derivedKeyType: KeyAlgorithmIdentifier, extractable: Boolean,
       keyUsages: js.Array[KeyUsage]): Promise[js.Any] = js.native
 
@@ -255,11 +244,8 @@ trait SubtleCrypto extends js.Object {
    *
    * Defined at
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-deriveBits ¶14.3.8 The deriveBits method]]
-   *
-   * We are being a bit more precise than the official definition by requiring a KeyAlgorithmIdentifier
-   * rather than an AlgorithmIdentifier.
    */
-  def deriveBits(algorithm: KeyAlgorithmIdentifier, baseKey: CryptoKey,
+  def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey,
       length: Double): Promise[js.Any] = js.native
 
   /**
@@ -435,15 +421,15 @@ object RsaHashedKeyAlgorithm {
 }
 
 @js.native
-trait RsaHashedImportParams extends HashAlgorithm {
+trait RsaHashedImportParams extends KeyAlgorithm {
   var hash: HashAlgorithmIdentifier = js.native
 }
 
 @js.native
 object RsaHashedImportParams {
   @inline
-  def apply(hash: HashAlgorithmIdentifier): RsaHashedImportParams =
-    js.Dynamic.literal(hash = hash.asInstanceOf[js.Any]).asInstanceOf[RsaHashedImportParams]
+  def apply(name: String, hash: HashAlgorithmIdentifier): RsaHashedImportParams =
+    js.Dynamic.literal(name = name, hash = hash.asInstanceOf[js.Any]).asInstanceOf[RsaHashedImportParams]
 }
 
 // RSA-PSS
@@ -850,7 +836,7 @@ object HkdfCtrParams {
 // PBKDF2
 
 @js.native
-trait Pbkdf2Params extends Algorithm {
+trait Pbkdf2Params extends HashAlgorithm {
   var salt: BufferSource = js.native
 
   var iterations: Double = js.native
