@@ -10,6 +10,8 @@
 
 package org.scalajs.dom.raw
 
+import org.scalajs.dom.experimental.mediastream.MediaStream
+
 import scala.scalajs.js
 
 /** The AudioContext interface represents an audio-processing graph built

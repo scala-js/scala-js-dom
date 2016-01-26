@@ -105,7 +105,6 @@ package object dom {
   type MediaList = raw.MediaList
   type MediaQueryList = raw.MediaQueryList
   type MediaQueryListListener = raw.MediaQueryListListener
-  type MediaStream = raw.MediaStream
   type MediaStreamAudioDestinationNode = raw.MediaStreamAudioDestinationNode
   type MediaStreamAudioSourceNode = raw.MediaStreamAudioSourceNode
   type MessageChannel = raw.MessageChannel

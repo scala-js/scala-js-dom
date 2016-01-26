@@ -5388,18 +5388,6 @@ class MediaList extends js.Object {
 }
 
 /**
- * The MediaStream interface represents a stream of media content.
- * A stream consists of several tracks, like video or audio tracks.
- *
- * MDN
- */
-@js.native
-trait MediaStream extends EventTarget {
-  // TODO
-}
-
-
-/**
  * A processing instruction provides an opportunity for application-specific
  * instructions to be embedded within XML and which can be ignored by XML processors
  * which do not support processing their instructions (outside of their having a
