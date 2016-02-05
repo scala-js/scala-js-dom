@@ -195,6 +195,8 @@ package object dom {
   type URL = raw.URL
 
   type ValidityState = raw.ValidityState
+  type VisibilityState = raw.VisibilityState
+  lazy val VisibilityState: raw.VisibilityState.type = raw.VisibilityState
 
   type WaveShaperNode = raw.WaveShaperNode
   type WebSocket = raw.WebSocket
