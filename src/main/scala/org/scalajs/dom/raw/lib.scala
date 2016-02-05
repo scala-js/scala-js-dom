@@ -13,6 +13,7 @@ package org.scalajs.dom.raw
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.typedarray.ArrayBuffer
+import scala.scalajs.js.|
 
 @js.native
 object XPathResult extends js.Object {
@@ -2698,7 +2699,8 @@ object KeyboardEvent extends js.Object {
  * MDN
  */
 @js.native
-abstract class Document extends Node with NodeSelector with DocumentEvent with ParentNode {
+abstract class Document extends Node with NodeSelector with DocumentEvent
+    with ParentNode with PageVisibility {
 
   /**
    * Returns a DOMImplementation object associated with the current document.
@@ -7168,4 +7170,86 @@ trait ValidityState extends js.Object {
    * MDN
    */
   def valid: Boolean = js.native
+}
+
+/**
+ * The Page Visibility API lets you know when a webpage is visible or in focus.
+ * With tabbed browsing, there is a reasonable chance that any given webpage is
+ * in the background and thus not visible to the user. When the user minimizes
+ * the webpage or moves to another tab, the API sends a visibilitychange event
+ * regarding the visibility of the page. You can detect the event and perform
+ * some actions or behave differently. For example, if your web app is playing
+ * a video, it would pause the moment the user looks at another browser, and
+ * plays again when the user returns to the tab. The user does not lose their
+ * place in the video and can continue watching.
+ *
+ * MDN
+ * @see [[https://www.w3.org/TR/2013/REC-page-visibility-20131029/ Page Visibility (Second Edition) W3C Recommendation 29 October 2013]]
+ */
+@js.native
+trait PageVisibility extends js.Object {
+  /**
+   * Returns true if the page is in a state considered to be hidden to the user,
+   * and false otherwise.
+   *
+   * MDN
+   */
+  def hidden: Boolean = js.native
+
+  /**
+   * Is a string denoting the visibility state of the document.
+   *
+   * Note: or a vendor prefixed DOMString as defined in
+   * [[https://www.w3.org/TR/2013/REC-page-visibility-20131029/#sec-vendor-prefix 4.5 Vendor Prefixes]]
+   *
+   * MDN
+   */
+  def visibilityState: VisibilityState | String = js.native
+
+  /**
+   * The visibilitychange event is fired when the content of a tab has become
+   * visible or has been hidden.
+   *
+   * MDN
+   */
+  var visibilitychange: js.Function1[Event, _] = js.native
+}
+
+@js.native
+sealed trait VisibilityState extends js.Any
+
+object VisibilityState {
+  /**
+   * The page content may be at least partially visible. In practice this means
+   * that the page is the foreground tab of a non-minimized window.
+   *
+   * MDN
+   */
+  val visible = "visible".asInstanceOf[VisibilityState]
+
+  /**
+   * The page content is not visible to the user. In practice this means that
+   * the document is either a background tab or part of a minimized window,
+   * or the OS screen lock is active.
+   *
+   * MDN
+   */
+  val hidden = "hidden".asInstanceOf[VisibilityState]
+
+  /**
+   * the page content is being prerendered and is not visible to the user
+   * (considered hidden for purposes of document.hidden). The document may start
+   * in this state, but will never transition to it from another value.
+   * Note: browser support is optional.
+   *
+   * MDN
+   */
+  val prerender = "prerender".asInstanceOf[VisibilityState]
+
+  /**
+   * The page is being unloaded from memory. Note: browser support is optional.
+   *
+   * MDN
+   */
+  val unloaded = "unloaded".asInstanceOf[VisibilityState]
 }
