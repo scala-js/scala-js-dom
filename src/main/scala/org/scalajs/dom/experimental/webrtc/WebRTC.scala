@@ -4,10 +4,9 @@
 package org.scalajs.dom.experimental.webrtc
 
 import org.scalajs.dom.Blob
-import org.scalajs.dom.raw.{Promise, DOMError, Event, EventTarget}
+import org.scalajs.dom.raw.{Promise, DOMError, Event, EventTarget, MessageEvent}
 import scala.scalajs.js
 import org.scalajs.dom.experimental.mediastream._
-import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.typedarray.{ArrayBufferView, ArrayBuffer}
 import scala.scalajs.js.|
 
@@ -293,10 +292,40 @@ object RTCIceCandidateInit {
   }
 }
 
+/**
+ * The RTCIceCandidate interface of the the WebRTC API represents a candidate
+ * internet connectivity establishment (ICE) server for establishing an
+ * RTCPeerConnection.
+ *
+ * MDN
+ */
 @js.native
 class RTCIceCandidate(candidateInitDict: RTCIceCandidateInit) extends js.Object {
+  /**
+   * Returns a transport address for the candidate that can be used for
+   * connectivity checks. The format of this address is a candidate-attribute
+   * as defined in RFC 5245.
+   *
+   * MDN
+   */
   var candidate: String = js.native
+
+  /**
+   * If not null, this contains the identifier of the
+   * "media stream identification" (as defined in RFC 5888) for the media
+   * component this candidate is associated with.
+   *
+   * MDN
+   */
   var sdpMid: String = js.native
+
+  /**
+   * If not null, this indicates the index (starting at zero) of the media
+   * description (as defined in RFC 4566) in the SDP this candidate is
+   * associated with.
+   *
+   * MDN
+   */
   var sdpMLineIndex: Double = js.native
 }
 
@@ -325,28 +354,106 @@ object RTCDataChannelState {
   val closed = "closed".asInstanceOf[RTCDataChannelState]
 }
 
+/**
+ * The RTCDataChannel interface represents a bi-directional data channel between
+ * two peers of a connection.
+ *
+ * MDN
+ */
 @js.native
 trait RTCDataChannel extends EventTarget{
+  /**
+   * Returns a DOMString containing a name describing the data channel.
+   * There is no constraint of uniqueness about it.
+   *
+   * MDN
+   */
   val label: String = js.native
+
+  /**
+   * The read-only property RTCDataChannel.ordered returns a Boolean indicating
+   * if the order of delivery of the messages is guaranteed or not.
+   *
+   * MDN
+   */
   val ordered: Boolean = js.native
   val maxPacketLifeTime: Double = js.native
   val maxRetransmits: Double = js.native
+  /**
+   * Returns a DOMString containing the name of the subprotocol in use.
+   * If none, it returns "".
+   *
+   * MDN
+   */
   val protocol: String = js.native
   val negotiated: Boolean = js.native
-  val id: Double = js.native
-  val readyState: RTCDataChannelState = js.native
-  val bufferedAmount: Double = js.native
 
+  /**
+   * Returns an unsigned short being a unique id for the channel.
+   * It is set at the creation of the RTCDataChannel object.
+   *
+   * MDN
+   */
+  val id: Double = js.native
+
+  /**
+   * Returns an enum of the type RTCDataChannelState representing the state of
+   * the underlying data connection.
+   *
+   * MDN
+   */
+  def readyState: RTCDataChannelState = js.native
+
+  /**
+   * Returns an unsigned long containing the amount of bytes that have been
+   * queued for sending: that is the amount of data requested to be transmitted
+   * via RTCDataChannel.send() that has not been sent yet. Note that if the
+   * channel state, as given by RTCDataChannel.readyState is "closed",
+   * the buffering continues.
+   *
+   * MDN
+   */
+  def bufferedAmount: Double = js.native
   var onopen: js.Function1[Event, Any] = js.native
   var onerror: js.Function1[Event, Any] = js.native
+
+  /**
+   * Is the event handler called when the close event is received.
+   * Such an event is sent when the underlying data transport has been closed.
+   *
+   * MDN
+   */
   var onclose: js.Function1[Event, Any] = js.native
   def close(): Unit = js.native
-  var onmessage: js.Function1[Event, Any] = js.native
+
+  /**
+   * Is the event handler called when the message event is received.
+   * Such an event is sent when a message is available on the data connection.
+   *
+   * MDN
+   */
+  var onmessage: js.Function1[MessageEvent, Any] = js.native
+
+  /**
+   * Returns a DOMString indicating the type of binary data transmitted by the
+   * connection. This should be either "blob" if Blob objects are being used or
+   * "arraybuffer" if ArrayBuffer objects are being used.
+   * Initially it is set to "blob".
+   *
+   * It controls the type of the MessageEvent.data property passed in the
+   * parameter of message targetting this RTCDataChannel.
+   *
+   * MDN
+   */
   var binaryType: String = js.native
-  def send(data: String): Unit = js.native
-  def send(data: Blob): Unit = js.native
-  def send(data: ArrayBuffer): Unit = js.native
-  def send(data: ArrayBufferView): Unit = js.native
+
+  /**
+   * Sends the data in parameter over the channel. The data can be a DOMString,
+   * a Blob, an ArrayBuffer or an ArrayBufferView.
+   *
+   * MDN
+   */
+  def send(data: String | Blob | ArrayBuffer | ArrayBufferView): Unit = js.native
 }
 
 //https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCDataChannelInit
@@ -358,6 +465,31 @@ trait RTCDataChannelInit extends js.Object{
   var protocol: String = js.native
   var negotiated: Boolean = js.native
   var id: Double = js.native
+}
+
+/**
+ * The RTCDataChannelEvent interface represents events that occur while
+ * attaching a RTCDataChannel to a RTCPeerConnection. The only event sent with
+ * this interface is datachannel.
+ *
+ * MDN
+ */
+@js.native
+class RTCDataChannelEvent protected () extends Event {
+  def this(eventInitDict: RTCDataChannelEventInit) = this()
+
+  /**
+   * Contains the RTCDataChannel containing the data channel associated with
+   * the event.
+   *
+   * MDN
+   */
+  val channel: RTCDataChannel = js.native
+}
+
+@js.native
+trait RTCDataChannelEventInit extends js.Object {
+  val channel: RTCDataChannel = js.native
 }
 
 object RTCDataChannelInit {
@@ -490,10 +622,23 @@ object RTCPeerConnectionIceEventInit {
   }
 }
 
+/**
+ * The RTCPeerConnectionIceEvent interface represents events that occurs in
+ * relation to ICE candidates with the target, usually an RTCPeerConnection.
+ * Only one event is of this type: icecandidate.
+ *
+ * MDN
+ */
 @js.native
 class RTCPeerConnectionIceEvent(`type`: String,
     eventInitDict: RTCPeerConnectionIceEventInit) extends Event {
-  val candidate: RTCIceCandidate = js.native
+  /**
+   * Contains the RTCIceCandidate containing the candidate associated with
+   * the event.
+   *
+   * MDN
+   */
+  var candidate: RTCIceCandidate = js.native
 }
 
 /**
@@ -581,11 +726,25 @@ object RTCIceGatheringState {
   val complete = "complete".asInstanceOf[RTCIceGatheringState]
 }
 
+/**
+ * The MediaStreamEvent interface represents events that occurs in relation to a
+ * MediaStream. Two events of this type can be thrown:
+ * addstream and removestream.
+ *
+ * MDN
+ */
 @js.native
 class MediaStreamEvent(`type`: String, ms: js.Dictionary[js.Any]) extends Event {
   val stream: MediaStream = js.native
 }
 
+/**
+ * The RTCPeerConnection interface represents a WebRTC connection between the
+ * local computer and a remote peer. It is used to handle efficient streaming of
+ * data between the two peers.
+ *
+ * MDN
+ */
 @js.native
 class RTCPeerConnection(
     configuration: js.UndefOr[RTCConfiguration] = js.undefined) extends EventTarget {
@@ -620,7 +779,7 @@ class RTCPeerConnection(
    *
    * MDN
    */
-  val iceConnectionState: RTCIceConnectionState = js.native
+  def iceConnectionState: RTCIceConnectionState = js.native
 
   /**
    * Returns an enum of type RTCIceGatheringState that describes the
@@ -636,7 +795,7 @@ class RTCPeerConnection(
    *
    * MDN
    */
-  val iceGatheringState: RTCIceGatheringState = js.native
+  def iceGatheringState: RTCIceGatheringState = js.native
 
   /**
    * This attribute indicates whether the remote peer is able to accept trickled
@@ -653,7 +812,7 @@ class RTCPeerConnection(
    *
    * MDN
    */
-  val localDescription: RTCSessionDescription = js.native
+  def localDescription: RTCSessionDescription = js.native
 
   /**
    * Returns a RTCIdentityAssertion, that is a couple of a domain name (idp)
@@ -672,7 +831,7 @@ class RTCPeerConnection(
    *
    * MDN
    */
-  val remoteDescription: RTCSessionDescription = js.native
+  def remoteDescription: RTCSessionDescription = js.native
 
   /**
    * Returns an enum of type RTCSignalingState that describes the
@@ -702,7 +861,7 @@ class RTCPeerConnection(
    *
    * MDN
    */
-  val signalingState: RTCSignalingState = js.native
+  def signalingState: RTCSignalingState = js.native
 
   /**
    * Is the event handler called when the addstream event is received. Such an
@@ -721,7 +880,7 @@ class RTCPeerConnection(
    *
    * MDN
    */
-  var ondatachannel: js.Function1[Event, Any] = js.native
+  var ondatachannel: js.Function1[RTCDataChannelEvent, Any] = js.native
 
   /**
    * Is the event handler called when the icecandidate event is received. Such
@@ -1006,7 +1165,7 @@ class RTCPeerConnection(
    */
   def createDataChannel(
       label: String,
-      options: js.native): RTCDataChannel = js.native
+      dataChannelDict: RTCDataChannelInit): RTCDataChannel = js.native
 
   /**
    * Creates a new RTCDTMFSender, associated to a specific MediaStreamTrack,
