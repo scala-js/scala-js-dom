@@ -1,7 +1,7 @@
 package org.scalajs.dom.experimental.push
 
 import org.scalajs.dom.experimental.serviceworkers.ExtendableEvent
-import org.scalajs.dom.raw.{Blob, Promise}
+import org.scalajs.dom.raw.Blob
 
 import scala.scalajs.js
 import scala.scalajs.js.typedarray.ArrayBuffer
@@ -25,7 +25,7 @@ trait PushManager extends js.Object {
    *
    * MDN
    */
-  def getSubscription(): Promise[PushSubscription] = js.native
+  def getSubscription(): js.Promise[PushSubscription] = js.native
 
   /**
    * The permissionState() method of the PushManager interface returns a Promise that
@@ -39,7 +39,7 @@ trait PushManager extends js.Object {
    *
    * MDN
    */
-  def permissionState(options: PushSubscriptionOptions = js.native): Promise[PushPermissionState] = js.native
+  def permissionState(options: PushSubscriptionOptions = js.native): js.Promise[PushPermissionState] = js.native
 
   /**
    * The subscribe() method of the PushManager interface subscribes to a push service.
@@ -50,7 +50,7 @@ trait PushManager extends js.Object {
    *
    * MDN
    */
-  def subscribe(options: PushSubscriptionOptions = js.native): Promise[PushSubscription] = js.native
+  def subscribe(options: PushSubscriptionOptions = js.native): js.Promise[PushSubscription] = js.native
 }
 
 /**
@@ -86,7 +86,7 @@ trait PushSubscription extends js.Object {
    *
    * MDN
    */
-  def unsubscribe(): Promise[Boolean] = js.native
+  def unsubscribe(): js.Promise[Boolean] = js.native
 
   /**
     * The toJSON() method of the PushSubscription interface is a standard serializer: it returns

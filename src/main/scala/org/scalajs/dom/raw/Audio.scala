@@ -187,7 +187,7 @@ class AudioContext extends EventTarget {
    */
   def decodeAudioData(audioData: js.typedarray.ArrayBuffer,
                       successCallback: js.Function1[AudioBuffer, _] = js.native,
-                      errorCallback: js.Function0[_] = js.native): Promise[AudioBuffer] = js.native
+                      errorCallback: js.Function0[_] = js.native): js.Promise[AudioBuffer] = js.native
 }
 
 /** The OfflineAudioContext interface is an AudioContext interface
@@ -229,7 +229,7 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) exte
    *  raised. When the rendering is completed, the promise resolves with an
    *  AudioBuffer containing the rendered audio.
    */
-  def startRendering(): Promise[AudioBuffer] = js.native
+  def startRendering(): js.Promise[AudioBuffer] = js.native
 
   /** Is an EventHandler called when the processing is terminated, that is
    *  when the complete event (of type OfflineAudioCompletionEvent) is raised.

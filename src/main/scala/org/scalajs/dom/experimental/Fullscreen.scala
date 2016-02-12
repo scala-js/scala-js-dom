@@ -1,6 +1,6 @@
 package org.scalajs.dom.experimental
 
-import org.scalajs.dom.raw.{Event, Element, Document, Promise}
+import org.scalajs.dom.raw.{Event, Element, Document}
 
 import scala.language.implicitConversions
 import scala.scalajs.js
@@ -35,7 +35,7 @@ object Fullscreen {
      *
      * MDN
      */
-    def requestFullscreen(): js.UndefOr[Promise[Unit]] = js.native
+    def requestFullscreen(): js.UndefOr[js.Promise[Unit]] = js.native
   }
 
   @js.native
@@ -65,7 +65,7 @@ object Fullscreen {
      *
      * MDN
      */
-    def exitFullscreen(): js.UndefOr[Promise[Unit]] = js.native
+    def exitFullscreen(): js.UndefOr[js.Promise[Unit]] = js.native
 
     /**
      * Note: May not be available in implementations of older versions of

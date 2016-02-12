@@ -4,8 +4,7 @@
 package org.scalajs.dom.experimental.mediastream
 
 import scala.scalajs.js
-import org.scalajs.dom.raw.{Promise, DOMError, Event, EventTarget}
-import scala.scalajs.js.annotation.JSName
+import org.scalajs.dom.raw.{DOMError, Event, EventTarget}
 import scala.scalajs.js.|
 
 /**
@@ -294,7 +293,7 @@ trait MediaStreamTrack extends EventTarget {
 
   override def clone(): MediaStreamTrack = js.native
 
-  def applyConstraints(constraints: MediaTrackConstraints): Promise[Unit] = js.native
+  def applyConstraints(constraints: MediaTrackConstraints): js.Promise[Unit] = js.native
 
   def getSettings(): js.Any = js.native
 

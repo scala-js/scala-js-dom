@@ -1,7 +1,5 @@
 package org.scalajs.dom.crypto
 
-import org.scalajs.dom.raw._
-
 import scala.scalajs.js
 import scala.scalajs.js.typedarray.ArrayBufferView
 
@@ -167,7 +165,7 @@ trait SubtleCrypto extends js.Object {
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-encrypt ¶14.3.1 The encrypt method]]
    */
   def encrypt(algorithm: AlgorithmIdentifier, key: CryptoKey,
-      data: BufferSource): Promise[js.Any] = js.native
+      data: BufferSource): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of the clear data corresponding to the encrypted text,
@@ -177,7 +175,7 @@ trait SubtleCrypto extends js.Object {
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-decrypt ¶14.3.2 The decrypt method]]
    */
   def decrypt(algorithm: AlgorithmIdentifier, key: CryptoKey,
-      data: BufferSource): Promise[js.Any] = js.native
+      data: BufferSource): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of the signature corresponding to the text, algorithm
@@ -187,7 +185,7 @@ trait SubtleCrypto extends js.Object {
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-sign ¶14.3.3 The sign method]]
    */
   def sign(algorithm: AlgorithmIdentifier, key: CryptoKey,
-      data: BufferSource): Promise[js.Any] = js.native
+      data: BufferSource): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a Boolean value indicating if the signature given as
@@ -197,7 +195,7 @@ trait SubtleCrypto extends js.Object {
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-verify ¶14.3.4 The verify method]]
    */
   def verify(algorithm: AlgorithmIdentifier, key: CryptoKey,
-      signature: BufferSource, data: BufferSource): Promise[js.Any] = js.native
+      signature: BufferSource, data: BufferSource): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a digest generated from the algorithm and text given
@@ -207,7 +205,7 @@ trait SubtleCrypto extends js.Object {
    * We are a bit more precise than the official definition by requiring a HashAlgorithmIdentifier
    * rather than an AlgorithmIdentifier for the algorithm parameter.
    */
-  def digest(algorithm: HashAlgorithmIdentifier, data: BufferSource): Promise[js.Any] = js.native
+  def digest(algorithm: HashAlgorithmIdentifier, data: BufferSource): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a newly generated CryptoKey, for symmetrical
@@ -223,7 +221,7 @@ trait SubtleCrypto extends js.Object {
    *
    */
   def generateKey(algorithm: KeyAlgorithmIdentifier, extractable: Boolean,
-      keyUsages: js.Array[KeyUsage]): Promise[js.Any] = js.native
+      keyUsages: js.Array[KeyUsage]): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a newly generated CryptoKey derivated from a master
@@ -236,7 +234,7 @@ trait SubtleCrypto extends js.Object {
    */
   def deriveKey(algorithm: AlgorithmIdentifier, baseKey: CryptoKey,
       derivedKeyType: KeyAlgorithmIdentifier, extractable: Boolean,
-      keyUsages: js.Array[KeyUsage]): Promise[js.Any] = js.native
+      keyUsages: js.Array[KeyUsage]): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a newly generated buffer of pseudo-random bits
@@ -246,7 +244,7 @@ trait SubtleCrypto extends js.Object {
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-deriveBits ¶14.3.8 The deriveBits method]]
    */
   def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey,
-      length: Double): Promise[js.Any] = js.native
+      length: Double): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a CryptoKey corresponding to the format, the
@@ -261,7 +259,7 @@ trait SubtleCrypto extends js.Object {
    */
   def importKey(format: KeyFormat, keyData: BufferSource,
       algorithm: KeyAlgorithmIdentifier, extractable: Boolean,
-      keyUsages: js.Array[KeyUsage]): Promise[js.Any] = js.native
+      keyUsages: js.Array[KeyUsage]): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a CryptoKey corresponding to the format, the
@@ -276,7 +274,7 @@ trait SubtleCrypto extends js.Object {
    */
   def importKey(format: KeyFormat, keyData: JsonWebKey,
       algorithm: KeyAlgorithmIdentifier, extractable: Boolean,
-      keyUsages: js.Array[KeyUsage]): Promise[js.Any] = js.native
+      keyUsages: js.Array[KeyUsage]): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a buffer containing the key in the format requested.
@@ -284,7 +282,7 @@ trait SubtleCrypto extends js.Object {
    * Defined at
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-exportKey ¶14.3.10 The exportKey method]]
    */
-  def exportKey(format: KeyFormat, key: CryptoKey): Promise[js.Any] = js.native
+  def exportKey(format: KeyFormat, key: CryptoKey): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a wrapped symmetric key for usage (transfer, storage)
@@ -296,7 +294,7 @@ trait SubtleCrypto extends js.Object {
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-wrapKey ¶14.3.11 The wrapKey method]]
    */
   def wrapKey(format: KeyFormat, key: CryptoKey, wrappingKey: CryptoKey,
-      wrapAlgorithm: AlgorithmIdentifier): Promise[js.Any] = js.native
+      wrapAlgorithm: AlgorithmIdentifier): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a CryptoKey corresponding to the wrapped key given in
@@ -311,7 +309,7 @@ trait SubtleCrypto extends js.Object {
   def unwrapKey(format: String, wrappedKey: BufferSource,
       unwrappingKey: CryptoKey, unwrapAlgorithm: AlgorithmIdentifier,
       unwrappedKeyAlgorithm: AlgorithmIdentifier, extractable: Boolean,
-      keyUsages: js.Array[KeyUsage]): Promise[js.Any] = js.native
+      keyUsages: js.Array[KeyUsage]): js.Promise[js.Any] = js.native
 }
 
 // RSASSA-PKCS1-v1_5

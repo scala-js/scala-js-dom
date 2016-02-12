@@ -10,10 +10,15 @@
 
 package org.scalajs.dom
 
+import scala.scalajs.js
 import scala.scalajs.js.|
 import scala.scalajs.js.typedarray.ArrayBuffer
 
 package object raw {
+
+  @deprecated(message = "Import from scala.scalajs.js instead.", since = "0.9.0")
+  type Promise[+A] = js.Promise[A]
+
   /**
    * The Transferable interface represents an object that can be transfered
    * between different execution contexts, like the main thread and Web workers.

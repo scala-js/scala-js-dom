@@ -1,7 +1,7 @@
 package org.scalajs.dom.experimental
 
 import org.scalajs.dom.Blob
-import org.scalajs.dom.raw.{FormData, Promise}
+import org.scalajs.dom.raw.FormData
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
@@ -18,7 +18,7 @@ object Fetch extends js.GlobalScope {
    * @param init
    * @return
    */
-  def fetch(info: RequestInfo, init: RequestInit = null): Promise[Response] = js.native
+  def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response] = js.native
 }
 
 /**
@@ -254,32 +254,32 @@ trait Body extends js.Object {
    * MDN: Takes a Response stream and reads it to completion. It returns a
    * promise that resolves with an ArrayBuffer.
    */
-  def arrayBuffer(): Promise[ArrayBuffer] = js.native
+  def arrayBuffer(): js.Promise[ArrayBuffer] = js.native
 
   /**
    * Takes a Response stream and reads it to completion. It returns a
    * promise that resolves with a Blob.
    */
-  def blob(): Promise[Blob] = js.native
+  def blob(): js.Promise[Blob] = js.native
 
   /**
    * Takes a Response stream and reads it to completion. It returns a
    * promise that resolves with a FormData object.
    */
-  def formData(): Promise[FormData] = js.native
+  def formData(): js.Promise[FormData] = js.native
 
   /**
    * Takes a Response stream and reads it to completion. It returns a
    * promise that resolves with a JSON object.
    * //todo: define the JSON type, and return a Promise[JSON] as per spec
    */
-  def json(): Promise[js.Any] = js.native
+  def json(): js.Promise[js.Any] = js.native
 
   /**
    * Takes a Response stream and reads it to completion. It returns a
    * promise that resolves with a USVString (text).
    */
-  def text(): Promise[String] = js.native
+  def text(): js.Promise[String] = js.native
 }
 
 /**
