@@ -580,7 +580,6 @@ class ClientRect extends js.Object {
   var height: Double = js.native
 }
 
-
 /**
  * The DOMImplementation interface represent an object providing methods which are
  * not dependent on any particular document. Such an object is returned by the
@@ -3665,7 +3664,6 @@ trait NavigatorContentUtils extends js.Object {
  *
  * https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_operations#drageffects
  */
-@js.native
 object DragEffect {
 
   /** no operation is permitted */
@@ -3801,7 +3799,6 @@ trait ClipboardEventInit extends js.Object {
   val dataType: String = js.native
 }
 
-@js.native
 object ClipboardEventInit {
   /**
    * Construct a new ClipboardEventInit
@@ -6973,7 +6970,6 @@ trait BlobPropertyBag extends js.Object {
   def endings: String = js.native
 }
 
-@js.native
 object BlobPropertyBag {
   @inline
   def apply(`type`: js.UndefOr[String] = js.undefined): BlobPropertyBag = {

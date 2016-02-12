@@ -10,8 +10,6 @@
 
 package org.scalajs.dom.raw
 
-import org.scalajs.dom
-
 import scala.scalajs.js
 
 /**
