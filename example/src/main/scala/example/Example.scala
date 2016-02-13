@@ -51,7 +51,7 @@ object LocalStorage {
     in.value =
       dom.window.localStorage.getItem(key)
 
-    in.onkeyup = (e: dom.Event) => {
+    in.onkeyup = { (e: dom.Event) =>
       dom.window.localStorage.setItem(
         key, in.value
       )
@@ -126,7 +126,7 @@ object XMLHttpRequest{
       "http://api.openweathermap.org/" +
       "data/2.5/weather?q=Singapore"
     )
-    xhr.onload = (e: dom.Event) => {
+    xhr.onload = { (e: dom.Event) =>
       if (xhr.status == 200) {
         pre.textContent =
           xhr.responseText
@@ -148,8 +148,8 @@ object Websocket {
         pre.textContent +=
           e.data.toString
     }
-    socket.onopen = (e: dom.Event) => {
-      in.onkeyup = (e: dom.Event) => {
+    socket.onopen = { (e: dom.Event) =>
+      in.onkeyup = { (e: dom.Event) =>
         socket.send(in.value)
       }
     }
@@ -161,14 +161,14 @@ object AjaxExtension {
   @JSExport
   def main(pre: html.Pre) = {
     import dom.ext.Ajax
-    import scalajs.concurrent
-                  .JSExecutionContext
-                  .Implicits
-                  .runNow
+    import scala.concurrent
+                .ExecutionContext
+                .Implicits
+                .global
     val url =
       "http://api.openweathermap.org/" +
       "data/2.5/weather?q=Singapore"
-    Ajax.get(url).onSuccess{ case xhr =>
+    Ajax.get(url).onSuccess { case xhr =>
       pre.textContent = xhr.responseText
     }
   }
