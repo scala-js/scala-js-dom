@@ -161,10 +161,10 @@ object AjaxExtension {
   @JSExport
   def main(pre: html.Pre) = {
     import dom.ext.Ajax
-    import scalajs.concurrent
-                  .JSExecutionContext
-                  .Implicits
-                  .runNow
+    import scala.concurrent
+                .ExecutionContext
+                .Implicits
+                .global
     val url =
       "http://api.openweathermap.org/" +
       "data/2.5/weather?q=Singapore"
