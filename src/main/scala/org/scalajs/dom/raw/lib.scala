@@ -11,7 +11,6 @@
 package org.scalajs.dom.raw
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
 import scala.scalajs.js.typedarray.ArrayBuffer
 import scala.scalajs.js.|
 
@@ -473,69 +472,6 @@ trait WindowTimers extends WindowTimersExtension {
 }
 
 /**
- * The Promise object is used for deferred and asynchronous computations. A Promise is in one of these states:
- * pending: initial state, not fulfilled or rejected.
- * fulfilled: successful operation
- * rejected: failed operation.
- * settled: the Promise is either fulfilled or rejected, but not pending.
- *
- * MDN
- */
-@js.native
-class Promise[+A](executor: js.Function2[js.Function1[A, Any], js.Function1[Any, Any], Any]) extends js.Object {
-
-  /**
-   * The catch() method returns a Promise and deals with rejected cases only.
-   * It behaves the same as calling Promise.prototype.then(undefined, onRejected).
-   *
-   * MDN
-   */
-  @JSName("catch")
-  def recover[B >: A](onRejected: js.Function1[Any, B]): Promise[Any] = js.native
-
-  /**
-   * The then() method returns a Promise.
-   * It takes two arguments, both are callback functions for the success and failure cases of the Promise.
-   *
-   * MDN
-   */
-  @JSName("then")
-  def andThen[B](onFulfilled: js.Function1[A,B]): Promise[Any] = js.native
-
-  @JSName("then")
-  def andThen[B](onFulfilled: js.Function1[A,B], onRejected: js.Function1[Any,B]): Promise[Any] = js.native
-
-}
-
-@js.native
-object Promise extends js.Object {
-
-  /**
-   * The Promise.all(iterable) method returns a promise that resolves when all of the promises in the iterable argument have resolved.
-   *
-   * MDN
-   */
-  def all[B](iterable: js.Array[Promise[B]]): Promise[Any] = js.native
-
-  /**
-   * The Promise.race(iterable) method returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.
-   *
-   * MDN
-   */
-  def race[B](iterable: js.Array[Promise[B]]): Promise[Any] = js.native
-
-  /**
-   * The Promise.reject(reason) method returns a Promise object that is rejected with the given reason.
-   *
-   * MDN
-   */
-  def reject(reason: String): Promise[Nothing] = js.native
-
-}
-
-
-
-/**
  * The Navigator interface represents the state and the identity of the user
  * agent. It allows scripts to query it and to register themselves to carry
  * on some activities.
@@ -579,7 +515,6 @@ class ClientRect extends js.Object {
   var bottom: Double = js.native
   var height: Double = js.native
 }
-
 
 /**
  * The DOMImplementation interface represent an object providing methods which are
@@ -3665,7 +3600,6 @@ trait NavigatorContentUtils extends js.Object {
  *
  * https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Drag_operations#drageffects
  */
-@js.native
 object DragEffect {
 
   /** no operation is permitted */
@@ -3801,7 +3735,6 @@ trait ClipboardEventInit extends js.Object {
   val dataType: String = js.native
 }
 
-@js.native
 object ClipboardEventInit {
   /**
    * Construct a new ClipboardEventInit
@@ -6973,7 +6906,6 @@ trait BlobPropertyBag extends js.Object {
   def endings: String = js.native
 }
 
-@js.native
 object BlobPropertyBag {
   @inline
   def apply(`type`: js.UndefOr[String] = js.undefined): BlobPropertyBag = {

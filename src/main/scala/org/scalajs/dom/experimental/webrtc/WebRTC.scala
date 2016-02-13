@@ -4,7 +4,7 @@
 package org.scalajs.dom.experimental.webrtc
 
 import org.scalajs.dom.Blob
-import org.scalajs.dom.raw.{Promise, DOMError, Event, EventTarget, MessageEvent}
+import org.scalajs.dom.raw.{DOMError, Event, EventTarget, MessageEvent}
 import scala.scalajs.js
 import org.scalajs.dom.experimental.mediastream._
 import scala.scalajs.js.typedarray.{ArrayBufferView, ArrayBuffer}
@@ -1009,7 +1009,7 @@ class RTCPeerConnection(
    * view - it's probably around as bad as access to a canvas :-)
    *
    */
-  def createOffer(options: RTCOfferOptions = js.native): Promise[RTCSessionDescription] = js.native
+  def createOffer(options: RTCOfferOptions = js.native): js.Promise[RTCSessionDescription] = js.native
 
   /**
    * The createAnswer method generates an [SDP] answer with the supported
@@ -1052,7 +1052,7 @@ class RTCPeerConnection(
    * reject the returned promise with a DOMError object of type TBD.
    *
    */
-  def createAnswer(): Promise[RTCSessionDescription] = js.native
+  def createAnswer(): js.Promise[RTCSessionDescription] = js.native
 
   /**
    * Changes the local description associated with the connection. The
@@ -1064,7 +1064,7 @@ class RTCPeerConnection(
    * MDN
    */
   def setLocalDescription(
-      description: RTCSessionDescription): Promise[Unit] = js.native
+      description: RTCSessionDescription): js.Promise[Unit] = js.native
 
   /**
    * Changes the remote description associated with the connection. The
@@ -1076,7 +1076,7 @@ class RTCPeerConnection(
    * MDN
    */
   def setRemoteDescription(
-      description: RTCSessionDescription): Promise[Unit] = js.native
+      description: RTCSessionDescription): js.Promise[Unit] = js.native
 
   /**
    * The updateIce method updates the ICE Agent process of gathering local
@@ -1103,7 +1103,7 @@ class RTCPeerConnection(
    * MDN
    */
   def addIceCandidate(
-      candidate: RTCIceCandidate): Promise[Unit] = js.native
+      candidate: RTCIceCandidate): js.Promise[Unit] = js.native
 
   def getConfiguration(): RTCConfiguration = js.native
 
@@ -1230,6 +1230,6 @@ class RTCPeerConnection(
    * -  Request an identity assertion from the IdP.
    *
    */
-  def getIdentityAssertion(): Promise[Unit] = js.native
+  def getIdentityAssertion(): js.Promise[Unit] = js.native
 }
 

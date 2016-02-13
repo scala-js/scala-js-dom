@@ -1,7 +1,5 @@
 package org.scalajs.dom.experimental
 
-import org.scalajs.dom.raw.Promise
-
 import scala.scalajs.js
 
 // the stream API is defined in https://streams.spec.whatwg.org/
@@ -58,7 +56,7 @@ trait WriteableStream[-T] extends js.Object {
    * stream becomes closed, or rejected if it ever errors.
    * see [[https://streams.spec.whatwg.org/#ws-closed ¶4.2.4.1. get closed]]
    */
-  val closed: Promise[WriteableStream[T]] = js.native
+  val closed: js.Promise[WriteableStream[T]] = js.native
 
   /**
    * The ready getter returns a promise that will be fulfilled when the
@@ -72,7 +70,7 @@ trait WriteableStream[-T] extends js.Object {
    * see [[https://streams.spec.whatwg.org/#ws-ready ¶4.2.4.2. get ready]]
    * of whatwg streams spec.
    */
-  val ready: Promise[WriteableStream[T]] = js.native
+  val ready: js.Promise[WriteableStream[T]] = js.native
 
   /**
    * The state getter returns the state of the stream
@@ -104,7 +102,7 @@ trait WriteableStream[-T] extends js.Object {
    *
    * @return a promise of this stream being closed
    */
-  def close(): Promise[WriteableStream[T]] = js.native
+  def close(): js.Promise[WriteableStream[T]] = js.native
 
   /**
    * The write method adds a write to the stream’s internal queue,
@@ -123,7 +121,7 @@ trait WriteableStream[-T] extends js.Object {
    * @param chunk
    * @return bblfish: not sure what the type of the promise returned is
    */
-  def write(chunk: Chunk[T]): Promise[Any] = js.native
+  def write(chunk: Chunk[T]): js.Promise[Any] = js.native
 }
 
 /**
@@ -151,7 +149,7 @@ trait ReadableStream[+T] extends js.Object {
    * @param reason the reason <- actually not what type this is
    * @return a Promise, but not quite sure what it can contain
    */
-  def cancel(reason: String): Promise[Any] = js.native
+  def cancel(reason: String): js.Promise[Any] = js.native
 
   /**
    * See [[https://streams.spec.whatwg.org/#rs-get-reader ¶3.2.4.3. getReader()]]
@@ -263,7 +261,7 @@ class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
    * becomes closed or the reader’s lock is released, or rejected if the
    * stream ever errors.
    */
-  def closed: Promise[ReadableStreamReader[T]] = js.native
+  def closed: js.Promise[ReadableStreamReader[T]] = js.native
 
   /**
    * See [[https://streams.spec.whatwg.org/#reader-cancel §3.4.4.2. cancel(reason)]]
@@ -274,7 +272,7 @@ class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
    *
    * //todo determine type of reason
    */
-  def cancel(reason: Any): Promise[Any] = js.native //not actually sure what the return type is here
+  def cancel(reason: Any): js.Promise[Any] = js.native //not actually sure what the return type is here
 
   /**
    * See [[https://streams.spec.whatwg.org/#reader-read 3.4.4.3. read()]] of
@@ -289,7 +287,7 @@ class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
    * rejected with the relevant error. If reading a chunk causes the queue to
    * become empty, more data will be pulled from the underlying source.
    */
-  def read(): Promise[Chunk[T]] = js.native
+  def read(): js.Promise[Chunk[T]] = js.native
 
   /**
    * The releaseLock method releases the reader’s lock on the corresponding

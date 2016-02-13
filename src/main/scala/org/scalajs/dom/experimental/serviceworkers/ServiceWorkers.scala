@@ -1,7 +1,7 @@
 package org.scalajs.dom.experimental.serviceworkers
 
 import org.scalajs.dom.experimental.{Request, RequestInfo, Response, Sequence}
-import org.scalajs.dom.raw._
+import org.scalajs.dom.raw.{WorkerGlobalScope, ErrorEvent}
 import org.scalajs.dom.webgl.RenderingContext
 import org.scalajs.dom.{Event, EventTarget, MessagePort}
 import scala.scalajs.js
@@ -111,7 +111,7 @@ class FetchEvent extends Event {
    * error is returned to Fetch. The final URL of all successful (non
    * network-error) responses is the requested URL.
    */
-  def respondWith(promisedResponse: Response | Promise[Response]): Unit = js.native
+  def respondWith(promisedResponse: Response | js.Promise[Response]): Unit = js.native
 }
 
 /**
@@ -213,7 +213,7 @@ trait ServiceWorkerRegistration extends EventTarget {
    *
    * MDN
    */
-  def update(): Promise[Unit] = js.native
+  def update(): js.Promise[Unit] = js.native
 
   /**
    * The unregister method of the ServiceWorkerRegistration interface
@@ -226,7 +226,7 @@ trait ServiceWorkerRegistration extends EventTarget {
    *
    * MDN
    */
-  def unregister(): Promise[Boolean] = js.native
+  def unregister(): js.Promise[Boolean] = js.native
 
   /**
    * The onupdatefound property of the ServiceWorkerRegistration interface is
@@ -261,7 +261,7 @@ trait ServiceWorkerContainer extends EventTarget {
    *
    *  MDN
    */
-  def register(scriptURL: String, options: js.Object = new js.Object()): Promise[ServiceWorkerRegistration] = js.native
+  def register(scriptURL: String, options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration] = js.native
 
   /**
    * The ServiceWorkerContainer.controller read-only property of the
@@ -281,7 +281,7 @@ trait ServiceWorkerContainer extends EventTarget {
    *
    *  MDN
    */
-  def getRegistration(scope: String = ""): Promise[js.UndefOr[ServiceWorkerRegistration]] = js.native
+  def getRegistration(scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]] = js.native
 
   /**
    * The getRegistrations() method of the ServiceWorkerContainer interface
@@ -291,7 +291,7 @@ trait ServiceWorkerContainer extends EventTarget {
    *
    * MDN
    */
-  def getRegistrations(): Promise[js.Array[ServiceWorkerRegistration]] = js.native
+  def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]] = js.native
 
   /**
    * The ready read-only property of the ServiceWorkerContainer interface
@@ -301,7 +301,7 @@ trait ServiceWorkerContainer extends EventTarget {
    *
    * MDN
    */
-  def ready: Promise[ServiceWorkerRegistration] = js.native
+  def ready: js.Promise[ServiceWorkerRegistration] = js.native
 
   /**
    * The oncontrollerchange property of the ServiceWorkerContainer interface
@@ -342,7 +342,7 @@ trait ServiceWorkerContainer extends EventTarget {
  */
 @js.native
 class ExtendableEvent extends Event {
-  def waitUntil(promise: Promise[Any]): Unit = js.native
+  def waitUntil(promise: js.Promise[Any]): Unit = js.native
 }
 
 @js.native
@@ -553,7 +553,7 @@ trait WindowClient extends Client {
    *
    * MDN
    */
-  def focus(): Promise[WindowClient]
+  def focus(): js.Promise[WindowClient]
 
   /**
     * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#client-navigate-method ¶4.2.8 navigate(url)]]
@@ -561,7 +561,7 @@ trait WindowClient extends Client {
     *
     * @return Promse[WindowClient] or `null`
     */
-  def navigate(url: String): Promise[WindowClient] = js.native
+  def navigate(url: String): js.Promise[WindowClient] = js.native
 }
 
 /**
@@ -570,13 +570,13 @@ trait WindowClient extends Client {
   */
 @js.native
 trait Clients extends js.Object {
-  def get(id: String): Promise[js.UndefOr[Client]] = js.native
+  def get(id: String): js.Promise[js.UndefOr[Client]] = js.native
 
-  def matchAll(options: js.UndefOr[ClientQueryOptions] = js.native): Promise[js.Array[Client]] = js.native
+  def matchAll(options: js.UndefOr[ClientQueryOptions] = js.native): js.Promise[js.Array[Client]] = js.native
 
-  def openWindow(url: String): Promise[WindowClient] = js.native
+  def openWindow(url: String): js.Promise[WindowClient] = js.native
 
-  def claim(): Promise[Unit] = js.native
+  def claim(): js.Promise[Unit] = js.native
 }
 
 /**
@@ -585,19 +585,19 @@ trait Clients extends js.Object {
   */
 @js.native
 abstract class Cache extends js.Object {
-  def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions] = js.native): Promise[js.UndefOr[Response]] = js.native
+  def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.UndefOr[Response]] = js.native
 
-  def matchAll(request: RequestInfo = js.native, options: js.UndefOr[CacheQueryOptions] = js.native): Promise[js.Array[Response]] = js.native
+  def matchAll(request: RequestInfo = js.native, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.Array[Response]] = js.native
 
-  def add(request: RequestInfo): Promise[Unit] = js.native
+  def add(request: RequestInfo): js.Promise[Unit] = js.native
 
-  def addAll(requests: js.Array[RequestInfo]): Promise[Unit] = js.native
+  def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit] = js.native
 
-  def put(request: RequestInfo, response: Response): Promise[Unit] = js.native
+  def put(request: RequestInfo, response: Response): js.Promise[Unit] = js.native
 
-  def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions] = js.native): Promise[Boolean] = js.native
+  def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[Boolean] = js.native
 
-  def keys(request: js.UndefOr[RequestInfo] = js.native, options: js.UndefOr[CacheQueryOptions] = js.native): Promise[js.Array[Request]]
+  def keys(request: js.UndefOr[RequestInfo] = js.native, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.Array[Request]]
 }
 
 /**
@@ -621,15 +621,15 @@ trait CacheQueryOptions extends js.Object {
   */
 @js.native
 trait CacheStorage extends js.Object {
-  def `match`(request: RequestInfo, options: CacheQueryOptions = js.native): Promise[js.Any] = js.native
+  def `match`(request: RequestInfo, options: CacheQueryOptions = js.native): js.Promise[js.Any] = js.native
 
-  def has(cacheName: String): Promise[Boolean] = js.native
+  def has(cacheName: String): js.Promise[Boolean] = js.native
 
-  def open(cacheName: String): Promise[Cache] = js.native
+  def open(cacheName: String): js.Promise[Cache] = js.native
 
-  def delete(cacheName: String): Promise[Boolean] = js.native
+  def delete(cacheName: String): js.Promise[Boolean] = js.native
 
-  def keys(): Promise[js.Array[String]] = js.native
+  def keys(): js.Promise[js.Array[String]] = js.native
 }
 
 /**
@@ -723,7 +723,7 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
    *
    * MDN
    */
-  def skipWaiting(): Promise[Unit] = js.native
+  def skipWaiting(): js.Promise[Unit] = js.native
 
 }
 
