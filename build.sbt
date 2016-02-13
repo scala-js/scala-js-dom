@@ -5,17 +5,18 @@ lazy val root = project.in(file(".")).
 
 name := "Scala.js DOM"
 
+crossScalaVersions in ThisBuild := Seq("2.11.7", "2.10.6")
+scalaVersion in ThisBuild := crossScalaVersions.value.head
+
+val commonSettings = Seq(
+  version := "0.9.0-SNAPSHOT",
+  organization := "org.scala-js",
+  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
+)
+
 normalizedName := "scalajs-dom"
 
-version := "0.9.0-SNAPSHOT"
-
-organization := "org.scala-js"
-
-scalaVersion := "2.11.7"
-
-crossScalaVersions := Seq("2.10.6", "2.11.7")
-
-scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
+commonSettings
 
 homepage := Some(url("http://scala-js.org/"))
 
@@ -69,7 +70,7 @@ lazy val readme = ScalatexReadme(
   (resources in Compile) += (fullOptJS in (example, Compile)).value.data
 )
 
-lazy val example = project
-  .dependsOn(root)
-  .enablePlugins(ScalaJSPlugin)
-  .settings(scalaVersion := "2.11.6")
+lazy val example = project.
+  enablePlugins(ScalaJSPlugin).
+  settings(commonSettings: _*).
+  dependsOn(root)
