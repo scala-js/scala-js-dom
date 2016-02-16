@@ -1821,7 +1821,7 @@ class Window extends EventTarget with WindowLocalStorage
    *
    * MDN
    */
-  def innerWidth: Int = js.native
+  def innerWidth: Double = js.native
 
   /**
    * Gets the height of the content area of the browser window including, if rendered,
@@ -1829,7 +1829,7 @@ class Window extends EventTarget with WindowLocalStorage
    *
    * MDN
    */
-  def innerHeight: Int = js.native
+  def innerHeight: Double = js.native
 
   var onwaiting: js.Function1[Event, _] = js.native
   var ononline: js.Function1[Event, _] = js.native
