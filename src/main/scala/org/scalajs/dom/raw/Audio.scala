@@ -437,7 +437,6 @@ trait AudioBufferSourceNode extends AudioNode {
   /** Is an AudioBuffer that defines the audio asset to be played, or when
    *  set to the value null, defines a single channel of silence.
    */
-  @deprecated("Should no longer be used, but will probably still work.", "forever")
   var buffer: AudioBuffer = js.native
 
   /** Is an a-rate AudioParam that defines the speed factor at which the
