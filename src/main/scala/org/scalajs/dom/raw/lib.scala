@@ -743,9 +743,9 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
 
   var id: String = js.native
 
-  var oncut: js.Function1[DragEvent, _] = js.native
-  var oncopy: js.Function1[DragEvent, _] = js.native
-  var onpaste: js.Function1[DragEvent, _] = js.native
+  var oncut: js.Function1[ClipboardEvent, _] = js.native
+  var oncopy: js.Function1[ClipboardEvent, _] = js.native
+  var onpaste: js.Function1[ClipboardEvent, _] = js.native
 
   var accessKey: String = js.native
 
