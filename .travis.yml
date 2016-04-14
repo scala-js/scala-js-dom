@@ -2,9 +2,10 @@ sudo: false
 language: scala
 script:
   - sbt ++$TRAVIS_SCALA_VERSION package doc
-  - sbt ++2.11.7 readme/run
+  - sbt ++2.11.8 readme/run
 scala:
   - 2.10.6
-  - 2.11.7
+  - 2.11.8
+  - 2.12.0-M4
 jdk:
-  - oraclejdk7
+  - oraclejdk8
