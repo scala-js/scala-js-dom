@@ -45,17 +45,37 @@ class Worker(stringUrl: String) extends AbstractWorker {
    *
    * MDN
    */
-  var onmessage: js.Function1[js.Any, _] = js.native
+  var onmessage: js.Function1[MessageEvent, _] = js.native
 
   /**
-   * The Worker.postMessage() method sends a message to the worker's inner scope.
-   * This accepts a single parameter, which is the data to send to the worker.
-   * The data may be any value or JavaScript object handled by the structured
-   * clone algorithm, which includes cyclical references.
+   * The postMessage() method of the Worker interface sends a message to the
+   * worker's inner scope. This accepts a single parameter, which is the data to
+   * send to the worker. The data may be any value or JavaScript object handled
+   * by the structured clone algorithm, which includes cyclical references.
+   *
+   * The Worker can send back information to the thread that spawned it using
+   * the DedicatedWorkerGlobalScope.postMessage method.
    *
    * MDN
+   *
+   * @param aMessage The object to deliver to the worker; this will be in the
+   *                 data field in the event delivered to the
+   *                 DedicatedWorkerGlobalScope.onmessage handler. This may be
+   *                 any value or JavaScript object handled by the structured
+   *                 clone algorithm, which includes cyclical references.
+   *
+   * @param transferList An optional array of Transferable objects to transfer
+   *                     ownership of. If the ownership of an object is
+   *                     transferred, it becomes unusable (neutered) in the
+   *                     context it was sent from and it becomes available only
+   *                     to the main thread it was sent to.
+   *
+   *                     Only MessagePort and ArrayBuffer objects can be
+   *                     transferred. null is not an acceptable value for the
+   *                     transferList.
    */
-  def postMessage(message: js.Any, ports: js.Any = js.native): Unit = js.native
+  def postMessage(aMessage: js.Any,
+      transferList: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
 
   /**
    * The Worker.terminate() method immediately terminates the Worker. This does
