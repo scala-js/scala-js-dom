@@ -45,7 +45,7 @@ class Worker(stringUrl: String) extends AbstractWorker {
    *
    * MDN
    */
-  var onmessage: js.Function1[js.Any, _] = js.native
+  var onmessage: js.Function1[MessageEvent, _] = js.native
 
   /**
    * The postMessage() method of the Worker interface sends a message to the
