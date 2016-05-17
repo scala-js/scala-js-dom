@@ -47,6 +47,14 @@ class AudioContext extends EventTarget {
    */
   val sampleRate: Double = js.native
 
+  /** Returns the current state of the AudioContext. */
+  def state: String = js.native
+
+  /** Closes the audio context, releasing any system audio resources
+   *  that it uses.
+   */
+  def close(): js.Promise[Unit] = js.native
+
   /** Creates an AnalyserNode, which can be used to expose audio time and
    *  frequency data and for example to create data visualisations.
    */
@@ -188,6 +196,17 @@ class AudioContext extends EventTarget {
   def decodeAudioData(audioData: js.typedarray.ArrayBuffer,
                       successCallback: js.Function1[AudioBuffer, _] = js.native,
                       errorCallback: js.Function0[_] = js.native): js.Promise[AudioBuffer] = js.native
+
+  /** Resumes the progression of time in an audio context that has previously
+   *  been suspended.
+   */
+  def resume(): js.Promise[Unit] = js.native
+
+  /** Suspends the progression of time in the audio context,
+   *  temporarily halting audio hardware access and reducing CPU/battery
+   *  usage in the process.
+   */
+  def suspend(): js.Promise[Unit] = js.native
 }
 
 /** The OfflineAudioContext interface is an AudioContext interface
