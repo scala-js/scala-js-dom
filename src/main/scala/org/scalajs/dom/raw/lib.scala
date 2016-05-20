@@ -641,7 +641,43 @@ trait NonDocumentTypeChildNode extends js.Object {
 @js.native
 abstract class Element extends Node with NodeSelector with ParentNode with NonDocumentTypeChildNode {
 
-
+  protected type Event = org.scalajs.dom.raw.Event {def currentTarget: this.type}
+  protected type AnimationEvent = org.scalajs.dom.raw.AnimationEvent {def currentTarget: this.type}
+  protected type BeforeUnloadEvent = org.scalajs.dom.raw.BeforeUnloadEvent {def currentTarget: this.type}
+  protected type ClipboardEvent = org.scalajs.dom.raw.ClipboardEvent {def currentTarget: this.type}
+  protected type CloseEvent = org.scalajs.dom.raw.CloseEvent {def currentTarget: this.type}
+  protected type CompositionEvent = org.scalajs.dom.raw.CompositionEvent {def currentTarget: this.type}
+  protected type CustomEvent = org.scalajs.dom.raw.CustomEvent {def currentTarget: this.type}
+  protected type DragEvent = org.scalajs.dom.raw.DragEvent {def currentTarget: this.type}
+  protected type ErrorEvent = org.scalajs.dom.raw.ErrorEvent {def currentTarget: this.type}
+  protected type ExtendableEvent = org.scalajs.dom.experimental.serviceworkers.ExtendableEvent {def currentTarget: this.type}
+  protected type ExtendableMessageEvent = org.scalajs.dom.experimental.serviceworkers.ExtendableMessageEvent {def currentTarget: this.type}
+  protected type FetchEvent = org.scalajs.dom.experimental.serviceworkers.FetchEvent {def currentTarget: this.type}
+  protected type FocusEvent = org.scalajs.dom.raw.FocusEvent {def currentTarget: this.type}
+  protected type HashChangeEvent = org.scalajs.dom.raw.HashChangeEvent {def currentTarget: this.type}
+  protected type IDBVersionChangeEvent = org.scalajs.dom.raw.IDBVersionChangeEvent {def currentTarget: this.type}
+  protected type KeyboardEvent = org.scalajs.dom.raw.KeyboardEvent {def currentTarget: this.type}
+  protected type MediaStreamEvent = org.scalajs.dom.experimental.webrtc.MediaStreamEvent {def currentTarget: this.type}
+  protected type MediaStreamTrackEvent = org.scalajs.dom.experimental.mediastream.MediaStreamTrackEvent {def currentTarget: this.type}
+  protected type MessageEvent = org.scalajs.dom.raw.MessageEvent {def currentTarget: this.type}
+  protected type MouseEvent = org.scalajs.dom.raw.MouseEvent {def currentTarget: this.type}
+  protected type MutationEvent = org.scalajs.dom.raw.MutationEvent {def currentTarget: this.type}
+  protected type OfflineAudioCompletionEvent = org.scalajs.dom.raw.OfflineAudioCompletionEvent {def currentTarget: this.type}
+  protected type PopStateEvent = org.scalajs.dom.raw.PopStateEvent {def currentTarget: this.type}
+  protected type ProgressEvent = org.scalajs.dom.raw.ProgressEvent {def currentTarget: this.type}
+  protected type PushEvent = org.scalajs.dom.experimental.push.PushEvent {def currentTarget: this.type}
+  protected type RTCDataChannelEvent = org.scalajs.dom.experimental.webrtc.RTCDataChannelEvent {def currentTarget: this.type}
+  protected type RTCPeerConnectionIceEvent = org.scalajs.dom.experimental.webrtc.RTCPeerConnectionIceEvent {def currentTarget: this.type}
+  protected type SVGZoomEvent = org.scalajs.dom.raw.SVGZoomEvent {def currentTarget: this.type}
+  protected type ServiceWorkerMessageEvent = org.scalajs.dom.experimental.serviceworkers.ServiceWorkerMessageEvent {def currentTarget: this.type}
+  protected type StorageEvent = org.scalajs.dom.raw.StorageEvent {def currentTarget: this.type}
+  protected type TextEvent = org.scalajs.dom.raw.TextEvent {def currentTarget: this.type}
+  protected type TouchEvent = org.scalajs.dom.raw.TouchEvent {def currentTarget: this.type}
+  protected type TrackEvent = org.scalajs.dom.raw.TrackEvent {def currentTarget: this.type}
+  protected type TransitionEvent = org.scalajs.dom.raw.TransitionEvent {def currentTarget: this.type}
+  protected type UIEvent = org.scalajs.dom.raw.UIEvent {def currentTarget: this.type}
+  protected type WheelEvent = org.scalajs.dom.raw.WheelEvent {def currentTarget: this.type}
+  
   /**
    * scrollTop gets or sets the number of pixels that the content of an element is
    * scrolled upward.
