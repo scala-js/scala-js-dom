@@ -3,15 +3,15 @@ package org.scalajs.dom.ext
 import java.nio.ByteBuffer
 
 import scala.language.implicitConversions
-import scala.concurrent.{Promise, Future}
-
+import scala.concurrent.{Future, Promise}
 import scala.scalajs.js
 import scala.scalajs.js.typedarray._
 import scala.scalajs.js.typedarray.TypedArrayBufferOps._
-
 import org.scalajs.dom
 import org.scalajs.dom.{FormData, html, raw}
 import org.scalajs.dom.raw.Blob
+
+import scala.scalajs.js.annotation.{JSExport, JSExportAll}
 
 
 /**
@@ -234,6 +234,8 @@ object KeyCode {
  * Thrown when `Ajax.get` or `Ajax.post` receives a non-20X response code.
  * Contains the XMLHttpRequest that resulted in that response
  */
+@JSExport
+@JSExportAll
 case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
   def isTimeout = xhr.status == 0 && xhr.readyState == 4
 }
