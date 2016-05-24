@@ -1928,6 +1928,13 @@ class Window extends EventTarget with WindowLocalStorage
    */
   def document: HTMLDocument = js.native
 
+  /**
+   * Returns an object that provides static methods used for creating and managing object URLs.
+   *
+   * MDN
+   */
+  def URL: URL = js.native
+
   var onprogress: js.Function1[js.Any, _] = js.native
   var ondblclick: js.Function1[MouseEvent, _] = js.native
 
