@@ -67,6 +67,7 @@ object PointerLock {
 
   @js.native
   trait PointerLockElement extends js.Object {
+
     /**
      * The Element.requestPointerLock() method allows to asynchronously ask for
      * the pointer to be locked on the given element.
@@ -106,5 +107,4 @@ object PointerLock {
     def movementX: Double = js.native
     def movementY: Double = js.native
   }
-
 }

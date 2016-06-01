@@ -50,7 +50,10 @@ object JSIterator {
   }
 
   implicit class IterableW[+A](it: JSIterable[A]) {
-    def iterator(): Iterator[A] =
-      toIterator(it.asInstanceOf[IteratorMethodAccess].bracketCall[JSIterator[A]](iteratorSymbol)())
+    def iterator(): Iterator[A] = {
+      toIterator(
+          it.asInstanceOf[IteratorMethodAccess]
+            .bracketCall[JSIterator[A]](iteratorSymbol)())
+    }
   }
 }

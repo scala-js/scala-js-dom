@@ -10,17 +10,22 @@ import scala.scalajs.js
  * The Push API is currently specified here: [[http://www.w3.org/TR/2015/WD-push-api-20151215/]]
  */
 package object push {
+
   /**
    * Implicit function for patching Push API support onto ServiceWorkerRegistration.
    */
-  implicit def pushServiceWorkerRegistration(swr: ServiceWorkerRegistration): PushServiceWorkerRegistration =
+  implicit def pushServiceWorkerRegistration(
+      swr: ServiceWorkerRegistration): PushServiceWorkerRegistration = {
     swr.asInstanceOf[PushServiceWorkerRegistration]
+  }
 
   /**
    * Implicit function for patching Push API support onto ServiceWorkerGlobalScope
    */
-  implicit def pushServiceWorkerGlobalScope(swgs: ServiceWorkerGlobalScope): PushServiceWorkerGlobalScope =
+  implicit def pushServiceWorkerGlobalScope(
+      swgs: ServiceWorkerGlobalScope): PushServiceWorkerGlobalScope = {
     swgs.asInstanceOf[PushServiceWorkerGlobalScope]
+  }
 
   /**
    * A trait used for patching Push API support onto ServiceWorkerRegistration.

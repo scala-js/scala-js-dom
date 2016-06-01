@@ -52,11 +52,11 @@ class MediaStream() extends EventTarget {
   var onremovetrack: js.Function1[Event, Any] = js.native
 
   /**
-    * Is an EventHandler containing the action to perform when a end
-    * event is fired.
-    *
-    * MDN
-    */
+   * Is an EventHandler containing the action to perform when a end
+   * event is fired.
+   *
+   * MDN
+   */
   var onended: js.Function1[Event, Any] = js.native
 
   /**
@@ -132,16 +132,19 @@ class MediaStream() extends EventTarget {
 trait MediaStreamTrackState extends js.Any
 
 object MediaStreamTrackState {
+
   /** The track type is new and has not been initialized (connected to a source
    * of any kind). This state implies that the track's label will be the empty string.
    */
   val `new` = "new".asInstanceOf[MediaStreamTrackState]
+
   /** The track is active (the track's underlying media source is making a best-effort
    * attempt to provide data in real time).
    * The output of a track in the live state can be switched on and off with the
    * enabled attribute.
    */
   val live = "live".asInstanceOf[MediaStreamTrackState]
+
   /** The track has ended (the track's underlying media source is no longer providing
    * data, and will never provide more data for this track). Once a track enters this
    * state, it never exits it.
@@ -293,7 +296,8 @@ trait MediaStreamTrack extends EventTarget {
 
   override def clone(): MediaStreamTrack = js.native
 
-  def applyConstraints(constraints: MediaTrackConstraints): js.Promise[Unit] = js.native
+  def applyConstraints(
+      constraints: MediaTrackConstraints): js.Promise[Unit] = js.native
 
   def getSettings(): js.Any = js.native
 
@@ -331,7 +335,7 @@ trait MediaTrackConstraintSet extends js.Object {
   var groupId: String = js.native
 }
 
-object MediaTrackConstraintSet{
+object MediaTrackConstraintSet {
   @inline
   def apply(
       width: js.UndefOr[Double] = js.undefined,
@@ -366,10 +370,11 @@ trait MediaTrackConstraints extends MediaTrackConstraintSet {
   var advanced: js.Array[MediaTrackConstraintSet] = js.native
 }
 
-object MediaTrackConstraints{
+object MediaTrackConstraints {
   @inline
   def apply(
-      advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]] = js.undefined): MediaTrackConstraints = {
+      advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]] =
+        js.undefined): MediaTrackConstraints = {
     val result = js.Dynamic.literal()
     advanced.foreach(result.advanced = _)
     result.asInstanceOf[MediaTrackConstraints]
@@ -383,7 +388,7 @@ trait SourceInfo extends js.Object {
   var label: String = js.native
 }
 
-object SourceInfo{
+object SourceInfo {
   @inline
   def apply(
       sourceId: js.UndefOr[Boolean] = js.undefined,
@@ -454,14 +459,15 @@ object MediaStreamConstraints {
 }
 
 @js.native
-trait MediaStreamTrackEventInit extends js.Object{
+trait MediaStreamTrackEventInit extends js.Object {
   var track: MediaStreamTrack = js.native
 }
 
-object MediaStreamTrackEventInit{
+object MediaStreamTrackEventInit {
   @inline
   def apply(
-      track: js.UndefOr[MediaStreamTrack] = js.undefined): MediaStreamTrackEventInit = {
+      track: js.UndefOr[MediaStreamTrack] =
+        js.undefined): MediaStreamTrackEventInit = {
     val result = js.Dynamic.literal()
     track.foreach(result.track = _)
     result.asInstanceOf[MediaStreamTrackEventInit]
@@ -469,7 +475,9 @@ object MediaStreamTrackEventInit{
 }
 
 @js.native
-class MediaStreamTrackEvent(`type`: String, eventInitDict: MediaStreamTrackEventInit) extends Event{
+class MediaStreamTrackEvent(`type`: String,
+    eventInitDict: MediaStreamTrackEventInit)
+    extends Event {
   val track: MediaStreamTrack = js.native
 }
 
@@ -480,12 +488,15 @@ class MediaStreamTrackEvent(`type`: String, eventInitDict: MediaStreamTrackEvent
 trait MediaDeviceKind extends js.Any
 
 object MediaDeviceKind {
+
   /** Represents an audio input device; for example a microphone.
    */
   val audioinput = "audioinput".asInstanceOf[MediaDeviceKind]
+
   /** Represents an audio output device; for example a pair of headphones.
    */
   val audiooutput = "audiooutput".asInstanceOf[MediaDeviceKind]
+
   /** Represents a video input device; for example a webcam.
    */
   val videoinput = "videoinput".asInstanceOf[MediaDeviceKind]
@@ -554,5 +565,5 @@ trait NavigatorMediaStream extends js.Object {
 
   def getUserMedia(constraints: MediaStreamConstraints,
       success: js.Function1[MediaStream, Any],
-      error: js.Function1[DOMError, Any] ): Unit = js.native
+      error: js.Function1[DOMError, Any]): Unit = js.native
 }

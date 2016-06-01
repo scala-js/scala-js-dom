@@ -6,15 +6,16 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 
 /**
-  * Service Workers
-  *
-  * @see [[https://www.w3.org/TR/2015/WD-service-workers-20150625/ Service Workers W3C Working Draft]]
-  */
+ * Service Workers
+ *
+ * @see [[https://www.w3.org/TR/2015/WD-service-workers-20150625/ Service Workers W3C Working Draft]]
+ */
 package object serviceworkers {
+
   /**
-    * [[https://html.spec.whatwg.org/multipage/infrastructure.html#transferable ¶2.7.4 Transferable Objects]]
-    * in whatwg html spec.
-    */
+   * [[https://html.spec.whatwg.org/multipage/infrastructure.html#transferable ¶2.7.4 Transferable Objects]]
+   * in whatwg html spec.
+   */
   type Transferable = org.scalajs.dom.raw.Transferable | CanvasProxy
 
   implicit def toServiceWorkerNavigator(n: Navigator): ServiceWorkerNavigator =

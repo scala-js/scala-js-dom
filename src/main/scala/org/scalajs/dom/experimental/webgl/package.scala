@@ -4,8 +4,9 @@ import org.scalajs.dom.raw.WebGLRenderingContext
 import scala.scalajs.js
 
 package object webgl {
-  implicit class WebGLRenderingContextOps(
-      val webGL: WebGLRenderingContext) extends AnyVal {
+  implicit class WebGLRenderingContextOps(val webGL: WebGLRenderingContext)
+      extends AnyVal {
+
     /**
      * Returns the WebGL extension for the given identifier, if present on this browser.
      *

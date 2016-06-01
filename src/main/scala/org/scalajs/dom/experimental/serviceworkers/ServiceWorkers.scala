@@ -7,7 +7,6 @@ import org.scalajs.dom.{Event, EventTarget, MessagePort}
 import scala.scalajs.js
 import scala.scalajs.js.|
 
-
 @js.native
 sealed trait FrameType extends js.Any
 
@@ -17,6 +16,7 @@ sealed trait FrameType extends js.Any
  * of serviceWorker spec
  */
 object FrameType {
+
   /**
    * The window client's global object's browsing context is an auxiliary
    * browsing context.
@@ -43,6 +43,7 @@ object FrameType {
  */
 @js.native
 trait Client extends js.Object {
+
   /**
    * The url attribute must return the context object's associated service worker
    * client's serialized creation url.
@@ -62,7 +63,8 @@ trait Client extends js.Object {
    * @param transfer https://html.spec.whatwg.org/multipage/infrastructure.html#transferable-objects
    *
    */
-  def postMessage(message: Any, transfer: Sequence[Transferable] = null): Unit = js.native
+  def postMessage(message: Any,
+      transfer: Sequence[Transferable] = null): Unit = js.native
 }
 
 /**
@@ -82,6 +84,7 @@ trait CanvasProxy extends js.Any {
  */
 @js.native
 class FetchEvent extends Event {
+
   /**
    * Boolean that is true if the event was dispatched with the user's
    *         intention for the page to reload, and false otherwise. Typically,
@@ -111,7 +114,8 @@ class FetchEvent extends Event {
    * error is returned to Fetch. The final URL of all successful (non
    * network-error) responses is the requested URL.
    */
-  def respondWith(promisedResponse: Response | js.Promise[Response]): Unit = js.native
+  def respondWith(
+      promisedResponse: Response | js.Promise[Response]): Unit = js.native
 }
 
 /**
@@ -124,6 +128,7 @@ class FetchEvent extends Event {
  */
 @js.native
 trait ServiceWorker extends EventTarget {
+
   /**
    * Returns the ServiceWorker serialized script URL defined as part of
    * ServiceWorkerRegistration. Must be on the same origin as the document that
@@ -155,8 +160,8 @@ trait ServiceWorker extends EventTarget {
    * [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#service-worker-postmessage ¶3.1.3 postMessage]]
    * on whatwg ServiceWorker spec.
    */
-  def postMessage(message: js.Any, transfer: js.Array[Transferable] = js.native): Unit = js.native
-
+  def postMessage(message: js.Any,
+      transfer: js.Array[Transferable] = js.native): Unit = js.native
 }
 
 /**
@@ -168,6 +173,7 @@ trait ServiceWorker extends EventTarget {
  */
 @js.native
 trait ServiceWorkerRegistration extends EventTarget {
+
   /**
    * The installing property of the ServiceWorkerRegistration interface returns
    * a service worker whose ServiceWorker.state is installing.
@@ -261,7 +267,9 @@ trait ServiceWorkerContainer extends EventTarget {
    *
    *  MDN
    */
-  def register(scriptURL: String, options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration] = js.native
+  def register(scriptURL: String,
+      options: js.Object =
+        new js.Object()): js.Promise[ServiceWorkerRegistration] = js.native
 
   /**
    * The ServiceWorkerContainer.controller read-only property of the
@@ -291,7 +299,8 @@ trait ServiceWorkerContainer extends EventTarget {
    *
    * MDN
    */
-  def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]] = js.native
+  def getRegistrations(): js.Promise[
+      js.Array[ServiceWorkerRegistration]] = js.native
 
   /**
    * The ready read-only property of the ServiceWorkerContainer interface
@@ -366,7 +375,8 @@ trait ExtendableMessageEventInit extends js.Object {
  */
 @js.native
 class ExtendableMessageEvent(`type`: String,
-    eventInitDict: ExtendableMessageEventInit) extends ExtendableEvent {
+    eventInitDict: ExtendableMessageEventInit)
+    extends ExtendableEvent {
 
   /**
    * Returns the event's data. It can be any data type.
@@ -407,7 +417,6 @@ trait ServiceWorkerMessageEventInit extends js.Object {
   var ports: js.Array[MessagePort] = js.native
 }
 
-
 /**
  * The ServiceWorkerMessageEvent interface of the ServiceWorker API contains
  * information about an event sent to a ServiceWorkerContainer target.
@@ -420,34 +429,34 @@ trait ServiceWorkerMessageEventInit extends js.Object {
  */
 @js.native
 class ServiceWorkerMessageEvent(`type`: String,
-    eventInitDict: ServiceWorkerMessageEventInit = js.native) extends Event {
+    eventInitDict: ServiceWorkerMessageEventInit = js.native)
+    extends Event {
 
   /**
-    * Returns the event's data. It can be any data type.
-    */
+   * Returns the event's data. It can be any data type.
+   */
   val data: Any = js.native
 
   /**
-    * Returns the origin of the service worker's environment settings object.
-    */
+   * Returns the origin of the service worker's environment settings object.
+   */
   val origin: String = js.native
 
   /**
-    * Represents, in server-sent events, the last event ID of the event source.
-    */
+   * Represents, in server-sent events, the last event ID of the event source.
+   */
   val lastEventId: String = js.native
 
   /**
-    * @return a reference to the service worker that sent the message or `null`.
-    */
+   * @return a reference to the service worker that sent the message or `null`.
+   */
   def source: ServiceWorker | MessagePort = js.native
 
   /**
-    *  It represents the MessagePort array being sent, if any.
-    */
+   *  It represents the MessagePort array being sent, if any.
+   */
   def ports: js.Array[MessagePort] = js.native
 }
-
 
 /**
  * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#service-worker-obj ¶3.1 ServiceWorker]]
@@ -457,6 +466,7 @@ class ServiceWorkerMessageEvent(`type`: String,
 sealed trait ServiceWorkerState extends js.Any
 
 object ServiceWorkerState {
+
   /**
    * The service worker in this state is considered an installing worker.
    * During this state, event.waitUntil(f) can be called inside the oninstall
@@ -508,9 +518,9 @@ object ClientType {
 }
 
 /**
-  * [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#client ¶4.2 Client]]
-  * of Service Workers 1 spec.
-  */
+ * [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#client ¶4.2 Client]]
+ * of Service Workers 1 spec.
+ */
 @js.native
 trait ClientQueryOptions extends js.Object {
   var includeUncontrolled: Boolean = js.native
@@ -556,18 +566,18 @@ trait WindowClient extends Client {
   def focus(): js.Promise[WindowClient]
 
   /**
-    * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#client-navigate-method ¶4.2.8 navigate(url)]]
-    * of ServiceWorker whatwg spec.
-    *
-    * @return Promse[WindowClient] or `null`
-    */
+   * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#client-navigate-method ¶4.2.8 navigate(url)]]
+   * of ServiceWorker whatwg spec.
+   *
+   * @return Promse[WindowClient] or `null`
+   */
   def navigate(url: String): js.Promise[WindowClient] = js.native
 }
 
 /**
-  * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#clients ¶4.3 clients]]
-  * of ServiceWorker whatwg spec.
-  */
+ * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#clients ¶4.3 clients]]
+ * of ServiceWorker whatwg spec.
+ */
 @js.native
 trait Clients extends js.Object {
   def get(id: String): js.Promise[js.UndefOr[Client]] = js.native
@@ -580,9 +590,9 @@ trait Clients extends js.Object {
 }
 
 /**
-  * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]]
-  * of ServiceWorker whatwg spec.
-  */
+ * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]]
+ * of ServiceWorker whatwg spec.
+ */
 @js.native
 abstract class Cache extends js.Object {
   def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.UndefOr[Response]] = js.native
@@ -593,7 +603,8 @@ abstract class Cache extends js.Object {
 
   def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit] = js.native
 
-  def put(request: RequestInfo, response: Response): js.Promise[Unit] = js.native
+  def put(request: RequestInfo,
+      response: Response): js.Promise[Unit] = js.native
 
   def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[Boolean] = js.native
 
@@ -601,9 +612,9 @@ abstract class Cache extends js.Object {
 }
 
 /**
-  * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]]
-  * of ServiceWorker whatwg spec.
-  */
+ * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]]
+ * of ServiceWorker whatwg spec.
+ */
 @js.native
 trait CacheQueryOptions extends js.Object {
   var ignoreSearch: Boolean = js.native // false
@@ -616,12 +627,13 @@ trait CacheQueryOptions extends js.Object {
 }
 
 /**
-  * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache-storage ¶5.5 cache]]
-  * of ServiceWorker whatwg spec.
-  */
+ * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache-storage ¶5.5 cache]]
+ * of ServiceWorker whatwg spec.
+ */
 @js.native
 trait CacheStorage extends js.Object {
-  def `match`(request: RequestInfo, options: CacheQueryOptions = js.native): js.Promise[js.Any] = js.native
+  def `match`(request: RequestInfo,
+      options: CacheQueryOptions = js.native): js.Promise[js.Any] = js.native
 
   def has(cacheName: String): js.Promise[Boolean] = js.native
 
@@ -685,7 +697,6 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
    */
   var onactivate: js.Function1[ExtendableEvent, _] = js.native
 
-
   /**
    * An event handler fired whenever a fetch event occurs — when a fetch() is
    * called.
@@ -693,7 +704,6 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
    * MDN
    */
   var onfetch: js.Function1[FetchEvent, _] = js.native
-
 
   /**
    * An event handler fired whenever an install event occurs — when a
@@ -724,7 +734,6 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
    * MDN
    */
   def skipWaiting(): js.Promise[Unit] = js.native
-
 }
 
 @js.native

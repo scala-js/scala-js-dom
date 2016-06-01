@@ -28,8 +28,8 @@ import scala.scalajs.js
  *             shared worker.
  */
 @js.native
-class SharedWorker(stringUrl: String,
-    name: js.UndefOr[String] = js.native) extends webworkers.AbstractWorker {
+class SharedWorker(stringUrl: String, name: js.UndefOr[String] = js.native)
+    extends webworkers.AbstractWorker {
 
   /**
    * The port property of the SharedWorker interface returns a [[MessagePort]]

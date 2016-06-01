@@ -7,7 +7,6 @@
  * Everything else is under the MIT License
  * http://opensource.org/licenses/MIT
  */
-
 package org.scalajs.dom.raw
 
 import org.scalajs.dom.experimental.mediastream.MediaStream
@@ -26,6 +25,7 @@ import scala.scalajs.js
  */
 @js.native
 class AudioContext extends EventTarget {
+
   /** Returns a double representing an ever-increasing hardware time in
    *  seconds used for scheduling.
    *  It starts at 0 and cannot be stopped, paused or reset.
@@ -79,7 +79,8 @@ class AudioContext extends EventTarget {
    *                      support sample-rates in at least the range 22050 to
    *                      96000.
    */
-  def createBuffer(numOfChannels: Int, length: Int, sampleRate: Int): AudioBuffer = js.native
+  def createBuffer(numOfChannels: Int, length: Int,
+      sampleRate: Int): AudioBuffer = js.native
 
   /** Creates an AudioBufferSourceNode, which can be used to play and
    *  manipulate audio data contained within an AudioBuffer object.
@@ -95,7 +96,8 @@ class AudioContext extends EventTarget {
    *                        which the output stream will contain; the default is
    *                        6 is this parameter is not specified.
    */
-  def createChannelMerger(numberOfInputs: Int = 6): ChannelMergerNode = js.native
+  def createChannelMerger(
+      numberOfInputs: Int = 6): ChannelMergerNode = js.native
 
   /** Creates a ChannelSplitterNode, which is used to access the individual
    *  channels of an audio stream and process them separately.
@@ -104,7 +106,8 @@ class AudioContext extends EventTarget {
    *                         that you want to output separately; the default is
    *                         6 is this parameter is not specified.
    */
-  def createChannelSplitter(numberOfOutputs: Int = 6): ChannelSplitterNode = js.native
+  def createChannelSplitter(
+      numberOfOutputs: Int = 6): ChannelSplitterNode = js.native
 
   /** Creates a ConvolverNode, which can be used to apply convolution effects
    *  to your audio graph, for example a reverberation effect.
@@ -136,7 +139,8 @@ class AudioContext extends EventTarget {
    *  @param myMediaElement An HTMLMediaElement object that you want to feed
    *                        into an audio processing graph to manipulate.
    */
-  def createMediaElementSource(myMediaElement: HTMLMediaElement): MediaElementAudioSourceNode = js.native
+  def createMediaElementSource(
+      myMediaElement: HTMLMediaElement): MediaElementAudioSourceNode = js.native
 
   /** Creates a MediaStreamAudioSourceNode associated with a MediaStream
    *  representing an audio stream which may come from the local computer
@@ -145,7 +149,8 @@ class AudioContext extends EventTarget {
    *  @param stream A MediaStream object that you want to feed into an audio
    *                processing graph to manipulate.
    */
-  def createMediaStreamSource(stream: MediaStream): MediaStreamAudioSourceNode = js.native
+  def createMediaStreamSource(
+      stream: MediaStream): MediaStreamAudioSourceNode = js.native
 
   /** Creates a MediaStreamAudioDestinationNode associated with a MediaStream
    *  representing an audio stream which may be stored in a local file or sent
@@ -164,7 +169,8 @@ class AudioContext extends EventTarget {
   /** Creates a PeriodicWave, used to define a periodic waveform that can be
    *  used to determine the output of an OscillatorNode.
    */
-  def createPeriodicWave(real: js.typedarray.Float32Array, imag: js.typedarray.Float32Array): PeriodicWave = js.native
+  def createPeriodicWave(real: js.typedarray.Float32Array,
+      imag: js.typedarray.Float32Array): PeriodicWave = js.native
 
   /** Creates a StereoPannerNode, which can be used to apply stereo panning
    *  to an audio source. */
@@ -194,8 +200,8 @@ class AudioContext extends EventTarget {
    *                         error occurs when the audio data is being decoded.
    */
   def decodeAudioData(audioData: js.typedarray.ArrayBuffer,
-                      successCallback: js.Function1[AudioBuffer, _] = js.native,
-                      errorCallback: js.Function0[_] = js.native): js.Promise[AudioBuffer] = js.native
+      successCallback: js.Function1[AudioBuffer, _] = js.native,
+      errorCallback: js.Function0[_] = js.native): js.Promise[AudioBuffer] = js.native
 
   /** Resumes the progression of time in an audio context that has previously
    *  been suspended.
@@ -239,7 +245,9 @@ class AudioContext extends EventTarget {
  *                       most commonly used.
  */
 @js.native
-class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) extends AudioContext {
+class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int)
+    extends AudioContext {
+
   /** The promise-based startRendering() method of the OfflineAudioContext
    *  Interface starts rendering the audio graph, taking into account the
    *  current connections and the current scheduled changes.
@@ -253,10 +261,11 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) exte
   /** Is an EventHandler called when the processing is terminated, that is
    *  when the complete event (of type OfflineAudioCompletionEvent) is raised.
    */
-  @deprecated("Use the promise version of OfflineAudioContext.startRendering instead.", "forever")
+  @deprecated(
+      "Use the promise version of OfflineAudioContext.startRendering instead.",
+      "forever")
   var oncomplete: js.Function1[OfflineAudioCompletionEvent, _] = js.native
 }
-
 
 /** The AudioNode interface is a generic interface for representing an audio
  *  processing module like an audio source (e.g. an HTML &lt;audio&gt; or
@@ -281,6 +290,7 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) exte
  */
 @js.native
 trait AudioNode extends EventTarget {
+
   /** Returns the associated AudioContext, that is the object representing
    *  the processing graph the node is participating in.
    */
@@ -351,6 +361,7 @@ trait AudioNode extends EventTarget {
  */
 @js.native
 trait AnalyserNode extends AudioNode {
+
   /** Is an unsigned long value representing the size of the FFT (Fast Fourier
    *  Transform) to be used to determine the frequency domain.
    */
@@ -392,7 +403,8 @@ trait AnalyserNode extends AudioNode {
    *  @param array The Float32Array that the frequency domain data will be
    *               copied to.
    */
-  def getFloatFrequencyData(array: js.typedarray.Float32Array): Unit = js.native
+  def getFloatFrequencyData(
+      array: js.typedarray.Float32Array): Unit = js.native
 
   /** Copies the current frequency data into a Uint8Array (unsigned byte
    *  array) passed into it.
@@ -415,7 +427,8 @@ trait AnalyserNode extends AudioNode {
    *
    *  @param array The Float32Array that the time domain data will be copied to.
    */
-  def getFloatTimeDomainData(array: js.typedarray.Float32Array): Unit = js.native
+  def getFloatTimeDomainData(
+      array: js.typedarray.Float32Array): Unit = js.native
 
   /** Copies the current waveform, or time-domain, data into a Uint8Array
    *  (unsigned byte array) passed into it.
@@ -453,6 +466,7 @@ trait AnalyserNode extends AudioNode {
  */
 @js.native
 trait AudioBufferSourceNode extends AudioNode {
+
   /** Is an AudioBuffer that defines the audio asset to be played, or when
    *  set to the value null, defines a single channel of silence.
    */
@@ -496,7 +510,8 @@ trait AudioBufferSourceNode extends AudioNode {
    *                  the asset minus the value of offset, defines the length of
    *                  the portion of the asset to be played.
    */
-  def start(when: Double = 0.0, offset: Double = 0.0, duration: Double = js.native): Unit = js.native
+  def start(when: Double = 0.0, offset: Double = 0.0,
+      duration: Double = js.native): Unit = js.native
 
   /** Schedules the end of the playback of an audio asset.
    *
@@ -534,6 +549,7 @@ trait AudioBufferSourceNode extends AudioNode {
  */
 @js.native
 trait AudioDestinationNode extends AudioNode {
+
   /** Is an unsigned long defining the maximum amount of channels that the
    *  physical device can handle.
    */
@@ -550,6 +566,7 @@ trait AudioDestinationNode extends AudioNode {
  */
 @js.native
 trait AudioListener extends AudioNode {
+
   /** Is a double value representing the amount of pitch shift to use when
    *  rendering a doppler effect.
    */
@@ -572,7 +589,8 @@ trait AudioListener extends AudioNode {
    *  @param y The y position of the listener in 3D space.
    *  @param z The z position of the listener in 3D space.
    */
-  def setPosition(x: Double = 0.0, y: Double = 0.0, z: Double = 0.0): Unit = js.native
+  def setPosition(x: Double = 0.0, y: Double = 0.0,
+      z: Double = 0.0): Unit = js.native
 
   /** Defines the orientation of the listener.
    *
@@ -597,7 +615,8 @@ trait AudioListener extends AudioNode {
    *  @param zUp The z value of the up vector of the listener.
    */
   def setOrientation(x: Double = 0.0, y: Double = 0.0, z: Double = -1.0,
-                     xUp: Double = 0.0, yUp: Double = 1.0, zUp: Double = 0.0): Unit = js.native
+      xUp: Double = 0.0, yUp: Double = 1.0,
+      zUp: Double = 0.0): Unit = js.native
 }
 
 /** The AudioParam interface represents an audio-related parameter, usually a
@@ -624,6 +643,7 @@ trait AudioListener extends AudioNode {
  */
 @js.native
 trait AudioParam extends AudioNode {
+
   /** Represents the parameter's current floating point value; initially set
    *  to the value of AudioParam.defaultValue.
    *  Though it can be set, any modifications happening while there are
@@ -674,7 +694,8 @@ trait AudioParam extends AudioNode {
    *                   after the ramping starts that the changing of
    *                   the value will stop.
    */
-  def exponentialRampToValueAtTime(value: Double, endTime: Double): Unit = js.native
+  def exponentialRampToValueAtTime(value: Double,
+      endTime: Double): Unit = js.native
 
   /** Schedules the start of a change to the value of the AudioParam. The
    *  change starts at the time specified in startTime and exponentially moves
@@ -690,7 +711,8 @@ trait AudioParam extends AudioNode {
    *                      (exponential) approach to the target value. The larger
    *                      this value is, the slower the transition will be.
    */
-  def setTargetAtTime(target: Double, startTime: Double, timeConstant: Double): Unit = js.native
+  def setTargetAtTime(target: Double, startTime: Double,
+      timeConstant: Double): Unit = js.native
 
   /** Schedules the values of the AudioParam to follow a set of values,
    *  defined by the values Float32Array scaled to fit into the given interval,
@@ -705,8 +727,8 @@ trait AudioParam extends AudioNode {
    *                   during which the values will be changed between.
    *                   The values are spaced equally along this duration.
    */
-  def setValueCurveAtTime(values: js.typedarray.Float32Array, startTime:
-  Double, duration: Double): Unit = js.native
+  def setValueCurveAtTime(values: js.typedarray.Float32Array,
+      startTime: Double, duration: Double): Unit = js.native
 
   /** Cancels all scheduled future changes to the AudioParam.
    *
@@ -731,6 +753,7 @@ trait AudioParam extends AudioNode {
  */
 @js.native
 trait BiquadFilterNode extends AudioNode {
+
   /** Is a k-rate AudioParam, a double representing a frequency in the
    *  current filtering algorithm measured in hertz (Hz).
    */
@@ -770,8 +793,8 @@ trait BiquadFilterNode extends AudioNode {
    *                       frequency (hertz) value, measured in radians.
    */
   def getFrequencyResponse(frequencyHz: js.typedarray.Float32Array,
-                           magResponse: js.typedarray.Float32Array,
-                           phaseResponse: js.typedarray.Float32Array): Unit = js.native
+      magResponse: js.typedarray.Float32Array,
+      phaseResponse: js.typedarray.Float32Array): Unit = js.native
 }
 
 /** The ChannelMergerNode interface, often used in conjunction with its
@@ -836,6 +859,7 @@ trait ChannelSplitterNode extends AudioNode
  */
 @js.native
 trait ConvolverNode extends AudioNode {
+
   /** A mono, stereo, or 4-channel AudioBuffer containing the (possibly
    *  multichannel) impulse response used by the ConvolverNode to create the
    *  reverb effect.
@@ -866,6 +890,7 @@ trait ConvolverNode extends AudioNode {
  */
 @js.native
 trait DelayNode extends AudioNode {
+
   /** Is an a-rate AudioParam representing the amount of delay to apply. */
   val delayTime: AudioParam = js.native
 }
@@ -886,6 +911,7 @@ trait DelayNode extends AudioNode {
  */
 @js.native
 trait DynamicsCompressorNode extends AudioNode {
+
   /** Is a k-rate AudioParam representing the decibel value above which the
    *  compression will start taking effect.
    */
@@ -939,6 +965,7 @@ trait DynamicsCompressorNode extends AudioNode {
  */
 @js.native
 trait GainNode extends AudioNode {
+
   /** Is an a-rate AudioParam representing the amount of gain to apply. */
   val gain: AudioParam = js.native
 }
@@ -978,6 +1005,7 @@ trait MediaElementAudioSourceNode extends AudioNode
  */
 @js.native
 trait MediaStreamAudioDestinationNode extends AudioNode {
+
   /** Is a MediaStream containing a single AudioMediaStreamTrack with the
    *  same number of channels as the node itself.
    *  You can use this property to get a stream out of the audio graph and
@@ -1022,6 +1050,7 @@ trait MediaStreamAudioSourceNode extends AudioNode
  */
 @js.native
 trait OscillatorNode extends AudioNode {
+
   /** An a-rate AudioParam representing the frequency of oscillation in hertz
    *  (though the AudioParam returned is read-only, the value it represents is
    *  not.)
@@ -1076,6 +1105,7 @@ trait OscillatorNode extends AudioNode {
  */
 @js.native
 trait PannerNode extends AudioNode {
+
   /** Is an enumerated value determining which spatialisation algorithm to
    *  use to position the audio in 3D space. */
   var panningModel: String = js.native
@@ -1131,7 +1161,8 @@ trait PannerNode extends AudioNode {
    *  @param y The y position of the panner in 3D space.
    *  @param z The z position of the panner in 3D space.
    */
-  def setPosition(x: Double = 0.0, y: Double = 0.0, z: Double = 0.0): Unit = js.native
+  def setPosition(x: Double = 0.0, y: Double = 0.0,
+      z: Double = 0.0): Unit = js.native
 
   /** Defines the direction the audio source is playing in.
    *  This can have a big effect if the sound is very directional —
@@ -1148,7 +1179,8 @@ trait PannerNode extends AudioNode {
    *  @param y The y value of the panner's direction vector in 3D space.
    *  @param z The z value of the panner's direction vector in 3D space.
    */
-  def setOrientation(x: Double = 1.0, y: Double = 0.0, z: Double = 0.0): Unit = js.native
+  def setOrientation(x: Double = 1.0, y: Double = 0.0,
+      z: Double = 0.0): Unit = js.native
 
   /** Defines the velocity vector of the audio source — how fast it is moving
    *  and in what direction.
@@ -1165,7 +1197,8 @@ trait PannerNode extends AudioNode {
    *  @param y The y value of the panner's velocity vector.
    *  @param z The z value of the panner's velocity vector.
    */
-  def setVelocity(x: Double = 0.0, y: Double = 0.0, z: Double = 0.0): Unit = js.native
+  def setVelocity(x: Double = 0.0, y: Double = 0.0,
+      z: Double = 0.0): Unit = js.native
 }
 
 /** The StereoPannerNode interface of the Web Audio API represents a simple
@@ -1181,6 +1214,7 @@ trait PannerNode extends AudioNode {
  */
 @js.native
 trait StereoPannerNode extends AudioNode {
+
   /** Is an a-rate AudioParam representing the amount of panning to apply. */
   val pan: AudioParam = js.native
 }
@@ -1200,6 +1234,7 @@ trait StereoPannerNode extends AudioNode {
  */
 @js.native
 trait WaveShaperNode extends AudioNode {
+
   /** Is a Float32Array of numbers describing the distortion to apply. */
   var curve: js.typedarray.Float32Array = js.native
 
@@ -1226,6 +1261,7 @@ trait WaveShaperNode extends AudioNode {
  */
 @js.native
 trait AudioBuffer extends js.Object {
+
   /** Returns a float representing the sample rate, in samples per second, of
    *  the PCM data stored in the buffer.
    */
@@ -1271,8 +1307,7 @@ trait AudioBuffer extends js.Object {
    *                        an INDEX_SIZE_ERR will be thrown.
    */
   def copyFromChannel(destination: js.typedarray.Float32Array,
-                      channelNumber: Int,
-                      startInChannel: Int): Unit = js.native
+      channelNumber: Int, startInChannel: Int): Unit = js.native
 
   /** Copies the samples to the specified channel of the AudioBuffer, from
    *  the source array.
@@ -1287,7 +1322,8 @@ trait AudioBuffer extends js.Object {
    *                        startInChannel is greater than AudioBuffer.length,
    *                        an INDEX_SIZE_ERR will be thrown.
    */
-  def copyToChannel(source: js.typedarray.Float32Array, channelNumber: Int, startInChannel: Int): Unit = js.native
+  def copyToChannel(source: js.typedarray.Float32Array, channelNumber: Int,
+      startInChannel: Int): Unit = js.native
 }
 
 /** The Web Audio API OfflineAudioCompletionEvent interface represents events
@@ -1296,6 +1332,7 @@ trait AudioBuffer extends js.Object {
  */
 @js.native
 trait OfflineAudioCompletionEvent extends Event {
+
   /** The buffer containing the result of the processing of an
    *  OfflineAudioContext.
    */

@@ -4,7 +4,8 @@ import scala.scalajs.js
 
 package object dom {
 
-  @deprecated(message = "Import from org.scalajs.dom.webworkers instead.", since = "0.9.0")
+  @deprecated(message = "Import from org.scalajs.dom.webworkers instead.",
+      since = "0.9.0")
   type AbstractWorker = webworkers.AbstractWorker
   type AnalyserNode = raw.AnalyserNode
   type AnimationEvent = raw.AnimationEvent
@@ -38,7 +39,8 @@ package object dom {
   type ClientRect = raw.ClientRect
   type ClientRectList = raw.ClientRectList
   type ClipboardEvent = raw.ClipboardEvent
-  lazy val ClipboardEventInit: raw.ClipboardEventInit.type = raw.ClipboardEventInit
+  lazy val ClipboardEventInit: raw.ClipboardEventInit.type =
+    raw.ClipboardEventInit
   type ClipboardEventInit = raw.ClipboardEventInit
   type CloseEvent = raw.CloseEvent
   type CompositionEvent = raw.CompositionEvent
@@ -116,7 +118,8 @@ package object dom {
   lazy val MutationEvent: raw.MutationEvent.type = raw.MutationEvent
   type MutationObserver = raw.MutationObserver
   type MutationObserverInit = raw.MutationObserverInit
-  lazy val MutationObserverInit: raw.MutationObserverInit.type = raw.MutationObserverInit
+  lazy val MutationObserverInit: raw.MutationObserverInit.type =
+    raw.MutationObserverInit
   type MutationRecord = raw.MutationRecord
 
   type NamedNodeMap = raw.NamedNodeMap
@@ -138,7 +141,9 @@ package object dom {
 
   type ObjectURLOptions = raw.ObjectURLOptions
   type OfflineAudioContext = raw.OfflineAudioContext
-  @deprecated("Use the promise version of OfflineAudioContext.startRendering instead.", "forever")
+  @deprecated(
+      "Use the promise version of OfflineAudioContext.startRendering instead.",
+      "forever")
   type OfflineAudioCompletionEvent = raw.OfflineAudioCompletionEvent
   type OscillatorNode = raw.OscillatorNode
 
@@ -150,7 +155,8 @@ package object dom {
   type PerformanceMark = raw.PerformanceMark
   type PerformanceMeasure = raw.PerformanceMeasure
   type PerformanceNavigation = raw.PerformanceNavigation
-  lazy val PerformanceNavigation: raw.PerformanceNavigation.type = raw.PerformanceNavigation
+  lazy val PerformanceNavigation: raw.PerformanceNavigation.type =
+    raw.PerformanceNavigation
   type PerformanceResourceTiming = raw.PerformanceResourceTiming
   type PeriodicWave = raw.PeriodicWave
   type Position = raw.Position
@@ -211,7 +217,8 @@ package object dom {
   type WindowTimersExtension = raw.WindowTimersExtension
 
   type WindowBase64 = raw.WindowBase64
-  @deprecated(message = "Import from org.scalajs.dom.webworkers instead.", since = "0.9.0")
+  @deprecated(message = "Import from org.scalajs.dom.webworkers instead.",
+      since = "0.9.0")
   type Worker = raw.Worker
 
   type XMLHttpRequest = raw.XMLHttpRequest

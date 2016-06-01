@@ -18,13 +18,12 @@ import scala.scalajs.js.annotation.JSName
  */
 @js.native
 @JSName("Intl.Collator")
-class Collator(
-    locales: js.UndefOr[String | js.Array[String]] = js.undefined,
-    options: js.UndefOr[CollatorOptions] = js.undefined) extends js.Object {
+class Collator(locales: js.UndefOr[String | js.Array[String]] = js.undefined,
+    options: js.UndefOr[CollatorOptions] = js.undefined)
+    extends js.Object {
   def compare(string1: String, string2: String): Double = js.native
   def resolvedOptions(): CollatorOptions = js.native
-  def supportedLocalesOf(
-      locales: String | js.Array[String],
+  def supportedLocalesOf(locales: String | js.Array[String],
       options: js.Any): js.Array[String] = js.native
 }
 
@@ -36,13 +35,12 @@ class Collator(
  */
 @js.native
 @JSName("Intl.DateTimeFormat")
-class DateTimeFormat(
-    locales: String | js.Array[String],
-    options: js.UndefOr[DateTimeFormatOptions] = js.undefined) extends js.Object {
+class DateTimeFormat(locales: String | js.Array[String],
+    options: js.UndefOr[DateTimeFormatOptions] = js.undefined)
+    extends js.Object {
   def format(date: js.Date): String = js.native
   def resolvedOptions(): DateTimeFormatOptions = js.native
-  def supportedLocalesOf(
-      locales: String | js.Array[String],
+  def supportedLocalesOf(locales: String | js.Array[String],
       options: js.Any): js.Array[String] = js.native
 }
 
@@ -54,13 +52,12 @@ class DateTimeFormat(
  */
 @js.native
 @JSName("Intl.NumberFormat")
-class NumberFormat(
-    locales: String | js.Array[String],
-    options: js.UndefOr[NumberFormatOptions]) extends js.Object {
+class NumberFormat(locales: String | js.Array[String],
+    options: js.UndefOr[NumberFormatOptions])
+    extends js.Object {
   def format(number: Double): String = js.native
   def resolvedOptions(): NumberFormatOptions = js.native
-  def supportedLocalesOf(
-      locales: String | js.Array[String],
+  def supportedLocalesOf(locales: String | js.Array[String],
       options: js.Any): js.Array[String] = js.native
 }
 
@@ -75,6 +72,7 @@ trait CollatorOptions extends js.Object {
 }
 
 object CollatorOptions {
+
   /**
    * @param localeMatcher     The locale matching algorithm to use. Possible values are "lookup"
    *                          and "best fit"; the default is "best fit". For information about
@@ -146,10 +144,11 @@ trait DateTimeFormatOptions extends js.Object {
   val hour: js.UndefOr[String]
   val minute: js.UndefOr[String]
   val second: js.UndefOr[String]
-  val timeZoneName:  js.UndefOr[String]
+  val timeZoneName: js.UndefOr[String]
 }
 
 object DateTimeFormatOptions {
+
   /** 
    * @param localeMatcher The locale matching algorithm to use. Possible values are "lookup" and
    *                      "best fit"; the default is "best fit".
@@ -228,6 +227,7 @@ trait NumberFormatOptions extends js.Object {
 }
 
 object NumberFormatOptions {
+
   /**
    * The following properties fall into two groups:
    *  - minimumIntegerDigits, minimumFractionDigits, and maximumFractionDigits in one group,

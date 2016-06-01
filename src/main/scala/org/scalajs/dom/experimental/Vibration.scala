@@ -14,6 +14,7 @@ object Vibration {
 
   @js.native
   trait VibrationNavigator extends js.Any {
+
     /** Vibrate the device for the specified number of milliseconds. */
     def vibrate(duration: Double): Boolean = js.native
 

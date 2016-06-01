@@ -16,7 +16,7 @@ abstract class WebGLExtensionIdentifier[T](val value: String)
  */
 object OES_texture_float
     extends WebGLExtensionIdentifier[extensions.OESTextureFloat](
-    "OES_texture_float")
+        "OES_texture_float")
 
 /**
  * Provides 16-bit floating point texture support.
@@ -26,7 +26,7 @@ object OES_texture_float
  */
 object OES_texture_half_float
     extends WebGLExtensionIdentifier[extensions.OESTextureHalfFloat](
-    "OES_texture_half_float")
+        "OES_texture_half_float")
 
 /**
  * Allows simulation of losing the WebGL context to aid debugging.
@@ -36,7 +36,7 @@ object OES_texture_half_float
  */
 object WEBGL_lose_context
     extends WebGLExtensionIdentifier[extensions.WebGLLoseContext](
-    "WEBGL_lose_context")
+        "WEBGL_lose_context")
 
 /**
  * Provides additional first derivative information in fragment shaders.
@@ -46,7 +46,7 @@ object WEBGL_lose_context
  */
 object OES_standard_derivatives
     extends WebGLExtensionIdentifier[extensions.OESStandardDerivatives](
-    "OES_standard_derivatives")
+        "OES_standard_derivatives")
 
 /**
  * Provides Vertex Array Objects (VAOs).
@@ -56,7 +56,7 @@ object OES_standard_derivatives
  */
 object OES_vertex_array_object
     extends WebGLExtensionIdentifier[extensions.OESVertexArrayObject](
-    "OES_vertex_array_object")
+        "OES_vertex_array_object")
 
 /**
  * Provides additional driver and renderer information.
@@ -66,7 +66,7 @@ object OES_vertex_array_object
  */
 object WEBGL_debug_renderer_info
     extends WebGLExtensionIdentifier[extensions.WebGLDebugRendererInfo](
-    "WEBGL_debug_renderer_info")
+        "WEBGL_debug_renderer_info")
 
 /**
  * Inspect the transpilation output of GLSL onto the underlying shader language.
@@ -76,7 +76,7 @@ object WEBGL_debug_renderer_info
  */
 object WEBGL_debug_shaders
     extends WebGLExtensionIdentifier[extensions.WebGLDebugShaders](
-    "WEBGL_debug_shaders")
+        "WEBGL_debug_shaders")
 
 /**
  * Provides S3TC texture compression support.
@@ -86,7 +86,7 @@ object WEBGL_debug_shaders
  */
 object WEBGL_compressed_texture_s3tc
     extends WebGLExtensionIdentifier[extensions.WebGLCompressedTextureS3TC](
-    "WEBGL_compressed_texture_s3tc")
+        "WEBGL_compressed_texture_s3tc")
 
 /**
  * Provides depth and stencil texture support.
@@ -96,7 +96,7 @@ object WEBGL_compressed_texture_s3tc
  */
 object WEBGL_depth_texture
     extends WebGLExtensionIdentifier[extensions.WebGLDepthTexture](
-    "WEBGL_depth_texture")
+        "WEBGL_depth_texture")
 
 /**
  * Extends `drawElements` to support the type `UNSIGNED_INT`.
@@ -106,7 +106,7 @@ object WEBGL_depth_texture
  */
 object OES_element_index_uint
     extends WebGLExtensionIdentifier[extensions.OESElementIndexUint](
-    "OES_element_index_uint")
+        "OES_element_index_uint")
 
 /**
  * Adds anisotropic texture filtering support.
@@ -116,7 +116,7 @@ object OES_element_index_uint
  */
 object EXT_texture_filter_anisotropic
     extends WebGLExtensionIdentifier[extensions.EXTTextureFilterAnisotropic](
-    "EXT_texture_filter_anisotropic")
+        "EXT_texture_filter_anisotropic")
 
 /**
  * Extends GLSL to support assigning the fragments depth via `gl_FragDepthEXT`.
@@ -125,8 +125,7 @@ object EXT_texture_filter_anisotropic
  * @see https://www.khronos.org/registry/webgl/extensions/EXT_frag_depth/
  */
 object EXT_frag_depth
-    extends WebGLExtensionIdentifier[extensions.EXTFragDepth](
-    "EXT_frag_depth")
+    extends WebGLExtensionIdentifier[extensions.EXTFragDepth]("EXT_frag_depth")
 
 /**
  * Enables multiple draw buffer support.
@@ -136,7 +135,7 @@ object EXT_frag_depth
  */
 object WEBGL_draw_buffers
     extends WebGLExtensionIdentifier[extensions.WEBGLDrawBuffers](
-    "WEBGL_draw_buffers")
+        "WEBGL_draw_buffers")
 
 /**
  * Enables array instancing
@@ -146,7 +145,7 @@ object WEBGL_draw_buffers
  */
 object ANGLE_instanced_arrays
     extends WebGLExtensionIdentifier[extensions.ANGLEInstancedArrays](
-    "ANGLE_instanced_arrays")
+        "ANGLE_instanced_arrays")
 
 /**
  * Extends OES_texture_float to support linear and mipmap minification filters.
@@ -156,7 +155,7 @@ object ANGLE_instanced_arrays
  */
 object OES_texture_float_linear
     extends WebGLExtensionIdentifier[extensions.OESTextureFloatLinear](
-    "OES_texture_float_linear")
+        "OES_texture_float_linear")
 
 /**
  * Extends OES_texture_half_float to support linear and mipmap minification filters.
@@ -166,7 +165,7 @@ object OES_texture_float_linear
  */
 object OES_texture_half_float_linear
     extends WebGLExtensionIdentifier[extensions.OESTextureHalfFloatLinear](
-    "OES_texture_half_float_linear")
+        "OES_texture_half_float_linear")
 
 /**
  * Extends `blendEquation` to support `MIN_EXT` and `MAX_EXT`.
@@ -176,7 +175,7 @@ object OES_texture_half_float_linear
  */
 object EXT_blend_minmax
     extends WebGLExtensionIdentifier[extensions.EXTBlendMinmax](
-    "EXT_blend_minmax")
+        "EXT_blend_minmax")
 
 /**
  * Provides fragment shaders with explicit LOD control for texture reads.
@@ -186,7 +185,7 @@ object EXT_blend_minmax
  */
 object EXT_shader_texture_lod
     extends WebGLExtensionIdentifier[extensions.EXTShaderTextureLOD](
-    "EXT_shader_texture_lod")
+        "EXT_shader_texture_lod")
 
 /**
  * Provides ATC texture compression support.
@@ -196,7 +195,7 @@ object EXT_shader_texture_lod
  */
 object WEBGL_compressed_texture_atc
     extends WebGLExtensionIdentifier[extensions.WebGLCompressedTextureATC](
-    "WEBGL_compressed_texture_atc")
+        "WEBGL_compressed_texture_atc")
 
 /**
  * Provides PVRTC texture compression support.
@@ -206,7 +205,7 @@ object WEBGL_compressed_texture_atc
  */
 object WEBGL_compressed_texture_pvrtc
     extends WebGLExtensionIdentifier[extensions.WebGLCompressedTexturePVRTC](
-    "WEBGL_compressed_texture_pvrtc")
+        "WEBGL_compressed_texture_pvrtc")
 
 /**
  * Enables 16-bit float colour buffer support.
@@ -216,8 +215,7 @@ object WEBGL_compressed_texture_pvrtc
  */
 object EXT_color_buffer_half_float
     extends WebGLExtensionIdentifier[extensions.EXTColorBufferHalfFloat](
-    "EXT_color_buffer_half_float")
-
+        "EXT_color_buffer_half_float")
 
 /**
  * Enables 32-bit float colour buffer support.
@@ -227,7 +225,7 @@ object EXT_color_buffer_half_float
  */
 object WEBGL_color_buffer_float
     extends WebGLExtensionIdentifier[extensions.WEBGLColorBufferFloat](
-    "WEBGL_color_buffer_float")
+        "WEBGL_color_buffer_float")
 
 /**
  * Enables nonlinear sRGB blending over framebuffers.
@@ -236,8 +234,7 @@ object WEBGL_color_buffer_float
  * @see https://www.khronos.org/registry/webgl/extensions/EXT_sRGB/
  */
 object EXT_sRGB
-    extends WebGLExtensionIdentifier[extensions.EXTsRGB](
-    "EXT_sRGB")
+    extends WebGLExtensionIdentifier[extensions.EXTsRGB]("EXT_sRGB")
 
 /**
  * Provides ETC1 texture compression support.
@@ -247,7 +244,7 @@ object EXT_sRGB
  */
 object WEBGL_compressed_texture_etc1
     extends WebGLExtensionIdentifier[extensions.WEBGLCompressedTextureETC1](
-    "WEBGL_compressed_texture_etc1")
+        "WEBGL_compressed_texture_etc1")
 
 /**
  * Provides timing support to enable profiling of GL calls.
@@ -257,4 +254,4 @@ object WEBGL_compressed_texture_etc1
  */
 object EXT_disjoint_timer_query
     extends WebGLExtensionIdentifier[extensions.EXTDisjointTimerQuery](
-    "EXT_disjoint_timer_query")
+        "EXT_disjoint_timer_query")

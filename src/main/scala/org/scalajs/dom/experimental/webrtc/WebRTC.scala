@@ -18,8 +18,7 @@ trait RTCIdentityAssertion extends js.Object {
 
 object RTCIdentityAssertion {
   @inline
-  def apply(
-      idp: js.UndefOr[String] = js.undefined,
+  def apply(idp: js.UndefOr[String] = js.undefined,
       name: js.UndefOr[String] = js.undefined): RTCIdentityAssertion = {
     val result = js.Dynamic.literal()
     idp.foreach(result.idp = _)
@@ -29,7 +28,7 @@ object RTCIdentityAssertion {
 }
 
 @js.native
-trait RTCOfferOptions  extends js.Object {
+trait RTCOfferOptions extends js.Object {
 
   /**
    * When the value of this dictionary member is true, the generated
@@ -78,7 +77,7 @@ trait RTCOfferOptions  extends js.Object {
   var voiceActivityDetection: Boolean = js.native
 }
 
-object RTCOfferOptions  {
+object RTCOfferOptions {
   @inline
   def apply(
       iceRestart: js.UndefOr[Boolean] = js.undefined,
@@ -90,7 +89,7 @@ object RTCOfferOptions  {
     offerToReceiveAudio.foreach(result.offerToReceiveAudio = _)
     offerToReceiveVideo.foreach(result.offerToReceiveVideo = _)
     voiceActivityDetection.foreach(result.voiceActivityDetection = _)
-    result.asInstanceOf[RTCOfferOptions ]
+    result.asInstanceOf[RTCOfferOptions]
   }
 }
 
@@ -103,8 +102,7 @@ trait RTCIceServer extends js.Object {
 
 object RTCIceServer {
   @inline
-  def apply(
-      urls: js.UndefOr[String | js.Array[String]] = js.undefined,
+  def apply(urls: js.UndefOr[String | js.Array[String]] = js.undefined,
       username: js.UndefOr[String] = js.undefined,
       credential: js.UndefOr[String] = js.undefined): RTCIceServer = {
     val result = js.Dynamic.literal()
@@ -122,14 +120,17 @@ object RTCIceServer {
 trait RTCIceTransportPolicy extends js.Any
 
 object RTCIceTransportPolicy {
+
   /** The ICE engine must not send or receive any packets at this point.
-    */
+   */
   val none = "none".asInstanceOf[RTCIceTransportPolicy]
+
   /** The ICE engine must only use media relay candidates such as candidates
    * passing through a TURN server. This can be used to reduce leakage of IP
    * addresses in certain use cases.
    */
   val relay = "relay".asInstanceOf[RTCIceTransportPolicy]
+
   /** The ICE engine may use any type of candidates when this value is
    * specified.
    */
@@ -137,21 +138,24 @@ object RTCIceTransportPolicy {
 }
 
 /**
-  * see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCBundlePolicy]] in W3C spec
-  */
+ * see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCBundlePolicy]] in W3C spec
+ */
 @js.native
 trait RTCBundlePolicy extends js.Any
 
 object RTCBundlePolicy {
+
   /** Gather ICE candidates for each media type in use (audio, video, and
    * data). If the remote endpoint is not BUNDLE-aware, negotiate only
    * one audio and video track on separate transports.
    */
   val balanced = "balanced".asInstanceOf[RTCBundlePolicy]
+
   /** Gather ICE candidates for each track. If the remote endpoint is not
    * BUNDLE-aware, negotiate all media tracks on separate transports.
    */
   val `max-compat` = "max-compat".asInstanceOf[RTCBundlePolicy]
+
   /** Gather ICE candidates for only one track. If the remote endpoint is
    * not BUNDLE-aware, negotiate only one media track.
    */
@@ -193,8 +197,7 @@ trait RTCConfiguration extends js.Object {
 
 object RTCConfiguration {
   @inline
-  def apply(
-      iceServers: js.UndefOr[js.Array[RTCIceServer]] = js.undefined,
+  def apply(iceServers: js.UndefOr[js.Array[RTCIceServer]] = js.undefined,
       iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy] = js.undefined,
       bundlePolicy: js.UndefOr[RTCBundlePolicy] = js.undefined,
       peerIdentity: js.UndefOr[String] = js.undefined): RTCConfiguration = {
@@ -214,16 +217,19 @@ object RTCConfiguration {
 trait RTCSdpType extends js.Any
 
 object RTCSdpType {
+
   /** An RTCSdpType of "offer" indicates that a description should be treated
    * as an [SDP] offer.
    */
   val offer = "offer".asInstanceOf[RTCSdpType]
+
   /** An RTCSdpType of "pranswer" indicates that a description should be
    * treated as an [SDP] answer, but not a final answer. A description used
    * as an SDP "pranswer" may be applied as a response to a SDP offer, or an
    * update to a previously sent SDP "pranswer".
    */
   val pranswer = "pranswer".asInstanceOf[RTCSdpType]
+
   /** An RTCSdpType of "answer" indicates that a description should be treated
    * as an [SDP] final answer, and the offer-answer exchange should be
    * considered complete. A description used as an SDP answer may be applied
@@ -233,7 +239,6 @@ object RTCSdpType {
   val answer = "answer".asInstanceOf[RTCSdpType]
 }
 
-
 @js.native
 trait RTCSessionDescriptionInit extends js.Object {
   var `type`: RTCSdpType = js.native
@@ -242,8 +247,7 @@ trait RTCSessionDescriptionInit extends js.Object {
 
 object RTCSessionDescriptionInit {
   @inline
-  def apply(
-      `type`: js.UndefOr[RTCSdpType] = js.undefined,
+  def apply(`type`: js.UndefOr[RTCSdpType] = js.undefined,
       sdp: js.UndefOr[String] = js.undefined): RTCSessionDescriptionInit = {
     val result = js.Dynamic.literal()
     `type`.foreach(result.`type` = _)
@@ -253,7 +257,9 @@ object RTCSessionDescriptionInit {
 }
 
 @js.native
-class RTCSessionDescription(descriptionInitDict: js.UndefOr[RTCSessionDescriptionInit] = js.undefined) extends js.Object {
+class RTCSessionDescription(
+    descriptionInitDict: js.UndefOr[RTCSessionDescriptionInit] = js.undefined)
+    extends js.Object {
 
   /**
    * An enum of type RTCSdpType describing the session description's type.
@@ -269,7 +275,6 @@ class RTCSessionDescription(descriptionInitDict: js.UndefOr[RTCSessionDescriptio
    */
   var sdp: String = js.native
 }
-
 
 @js.native
 trait RTCIceCandidateInit extends js.Object {
@@ -300,7 +305,9 @@ object RTCIceCandidateInit {
  * MDN
  */
 @js.native
-class RTCIceCandidate(candidateInitDict: RTCIceCandidateInit) extends js.Object {
+class RTCIceCandidate(candidateInitDict: RTCIceCandidateInit)
+    extends js.Object {
+
   /**
    * Returns a transport address for the candidate that can be used for
    * connectivity checks. The format of this address is a candidate-attribute
@@ -336,19 +343,23 @@ class RTCIceCandidate(candidateInitDict: RTCIceCandidateInit) extends js.Object 
 trait RTCDataChannelState extends js.Any
 
 object RTCDataChannelState {
+
   /** The user agent is attempting to establish the underlying data transport.
    * This is the initial state of a RTCDataChannel object created with
    * createDataChannel().
    */
   val connecting = "connecting".asInstanceOf[RTCDataChannelState]
+
   /** The underlying data transport is established and communication is possible.
    * This is the initial state of a RTCDataChannel object dispatched as a part of
    * a RTCDataChannelEvent.
    */
   val open = "open".asInstanceOf[RTCDataChannelState]
+
   /** The procedure to close down the underlying data transport has started.
    */
   val closing = "closing".asInstanceOf[RTCDataChannelState]
+
   /** The underlying data transport has been closed or could not be established.
    */
   val closed = "closed".asInstanceOf[RTCDataChannelState]
@@ -361,7 +372,8 @@ object RTCDataChannelState {
  * MDN
  */
 @js.native
-trait RTCDataChannel extends EventTarget{
+trait RTCDataChannel extends EventTarget {
+
   /**
    * Returns a DOMString containing a name describing the data channel.
    * There is no constraint of uniqueness about it.
@@ -379,6 +391,7 @@ trait RTCDataChannel extends EventTarget{
   val ordered: Boolean = js.native
   val maxPacketLifeTime: Double = js.native
   val maxRetransmits: Double = js.native
+
   /**
    * Returns a DOMString containing the name of the subprotocol in use.
    * If none, it returns "".
@@ -453,12 +466,13 @@ trait RTCDataChannel extends EventTarget{
    *
    * MDN
    */
-  def send(data: String | Blob | ArrayBuffer | ArrayBufferView): Unit = js.native
+  def send(
+      data: String | Blob | ArrayBuffer | ArrayBufferView): Unit = js.native
 }
 
 //https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCDataChannelInit
 @js.native
-trait RTCDataChannelInit extends js.Object{
+trait RTCDataChannelInit extends js.Object {
   var ordered: Boolean = js.native
   var maxPacketLifeTime: Double = js.native
   var maxRetransmits: Double = js.native
@@ -514,7 +528,8 @@ object RTCDataChannelInit {
 
 //https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection
 @js.native
-trait RTCDTMFSender extends js.Object{
+trait RTCDTMFSender extends js.Object {
+
   /**
    * The canInsertDTMF attribute must indicate if the RTCDTMFSender is capable
    * of sending DTMF.
@@ -542,7 +557,8 @@ trait RTCDTMFSender extends js.Object{
    * but it must not increase either of them by more than the duration of a
    * single RTP audio packet.
    */
-  def insertDTMF (tones: String = js.native, duration: Double = js.native, interToneGap: Double = js.native): Unit = js.native
+  def insertDTMF(tones: String = js.native, duration: Double = js.native,
+      interToneGap: Double = js.native): Unit = js.native
 
   /**
    * The track attribute must return the MediaStreamTrack given as argument to
@@ -587,14 +603,16 @@ trait RTCDTMFSender extends js.Object{
 trait RTCStatsType extends js.Any
 
 object RTCStatsType {
+
   /** Inbound RTP. */
   val `inbound-rtp` = "inbound-rtp".asInstanceOf[RTCStatsType]
+
   /** Outbound RTP. */
   val `outbound-rtp` = "outbound-rtp".asInstanceOf[RTCStatsType]
 }
 
 @js.native
-trait RTCStats extends js.Object{
+trait RTCStats extends js.Object {
   var timestamp: Double = js.native
   var `type`: RTCStatsType = js.native
   var id: String = js.native
@@ -606,7 +624,6 @@ trait RTCStatsReport extends js.Object {
   def apply(id: String): RTCStats = js.native
 }
 
-
 @js.native
 trait RTCPeerConnectionIceEventInit extends js.Object {
   var candidate: RTCIceCandidate = js.native
@@ -615,7 +632,8 @@ trait RTCPeerConnectionIceEventInit extends js.Object {
 object RTCPeerConnectionIceEventInit {
   @inline
   def apply(
-      candidate: js.UndefOr[RTCIceCandidate] = js.undefined): RTCPeerConnectionIceEventInit = {
+      candidate: js.UndefOr[RTCIceCandidate] =
+        js.undefined): RTCPeerConnectionIceEventInit = {
     val result = js.Dynamic.literal()
     candidate.foreach(result.candidate = _)
     result.asInstanceOf[RTCPeerConnectionIceEventInit]
@@ -631,7 +649,9 @@ object RTCPeerConnectionIceEventInit {
  */
 @js.native
 class RTCPeerConnectionIceEvent(`type`: String,
-    eventInitDict: RTCPeerConnectionIceEventInit) extends Event {
+    eventInitDict: RTCPeerConnectionIceEventInit)
+    extends Event {
+
   /**
    * Contains the RTCIceCandidate containing the candidate associated with
    * the event.
@@ -648,35 +668,42 @@ class RTCPeerConnectionIceEvent(`type`: String,
 trait RTCIceConnectionState extends js.Any
 
 object RTCIceConnectionState {
+
   /** The ICE Agent is gathering addresses and/or waiting for remote candidates
    *  to be supplied.
    */
   val `new` = "new".asInstanceOf[RTCIceConnectionState]
+
   /** The ICE Agent has received remote candidates on at least one component,
    * and is checking candidate pairs but has not yet found a connection. In
    * addition to checking, it may also still be gathering.
    */
   val checking = "checking".asInstanceOf[RTCIceConnectionState]
+
   /** The ICE Agent has found a usable connection for all components but is
    * still checking other candidate pairs to see if there is a better
    * connection. It may also still be gathering.
    */
   val connected = "connected".asInstanceOf[RTCIceConnectionState]
+
   /** The ICE Agent has finished gathering and checking and found a connection
    * for all components. Open issue: it is not clear how the non controlling
    * ICE side knows it is in the state.
    */
   val completed = "completed".asInstanceOf[RTCIceConnectionState]
+
   /** The ICE Agent is finished checking all candidate pairs and failed to find
    * a connection for at least one component. Connections may have been found
    * for some components.
    */
   val failed = "failed".asInstanceOf[RTCIceConnectionState]
+
   /** Liveness checks have failed for one or more components. This is more
    * aggressive than failed, and may trigger intermittently (and resolve itself
    * without action) on a flaky network.
    */
   val disconnected = "disconnected".asInstanceOf[RTCIceConnectionState]
+
   /** The ICE Agent has shut down and is no longer responding to STUN requests.
    */
   val closed = "closed".asInstanceOf[RTCIceConnectionState]
@@ -686,24 +713,32 @@ object RTCIceConnectionState {
 trait RTCSignalingState extends js.Any
 
 object RTCSignalingState {
+
   /** There is no offer­answer exchange in progress. This is also the initial
    * state in which case the local and remote descriptions are empty.
    */
   val stable = "stable".asInstanceOf[RTCSignalingState]
+
   /** A local description, of type "offer", has been successfully applied.
    */
   val `have-local-offer` = "have-local-offer".asInstanceOf[RTCSignalingState]
+
   /** A remote description, of type "offer", has been successfully applied.
    */
   val `have-remote-offer` = "have-remote-offer".asInstanceOf[RTCSignalingState]
+
   /** A remote description of type "offer" has been successfully applied and
    * a local description of type "pranswer" has been successfully applied.
    */
-  val `have-local-pranswer` = "have-local-pranswer".asInstanceOf[RTCSignalingState]
+  val `have-local-pranswer` =
+    "have-local-pranswer".asInstanceOf[RTCSignalingState]
+
   /** A local description of type "offer" has been successfully applied and a
    * remote description of type "pranswer" has been successfully applied.
    */
-  val `have-remote-pranswer` = "have-remote-pranswer".asInstanceOf[RTCSignalingState]
+  val `have-remote-pranswer` =
+    "have-remote-pranswer".asInstanceOf[RTCSignalingState]
+
   /** The connection is closed.
    */
   val closed = "closed".asInstanceOf[RTCSignalingState]
@@ -713,13 +748,16 @@ object RTCSignalingState {
 trait RTCIceGatheringState extends js.Any
 
 object RTCIceGatheringState {
+
   /** The object was just created, and no networking has occurred yet.
    */
   val `new` = "new".asInstanceOf[RTCIceGatheringState]
+
   /** The ICE engine is in the process of gathering candidates for this
    * RTCPeerConnection.
    */
   val gathering = "gathering".asInstanceOf[RTCIceGatheringState]
+
   /** The ICE engine has completed gathering. Events such as adding a new
    * interface or a new TURN server will cause the state to go back to gathering.
    */
@@ -734,7 +772,8 @@ object RTCIceGatheringState {
  * MDN
  */
 @js.native
-class MediaStreamEvent(`type`: String, ms: js.Dictionary[js.Any]) extends Event {
+class MediaStreamEvent(`type`: String, ms: js.Dictionary[js.Any])
+    extends Event {
   val stream: MediaStream = js.native
 }
 
@@ -747,7 +786,9 @@ class MediaStreamEvent(`type`: String, ms: js.Dictionary[js.Any]) extends Event 
  */
 @js.native
 class RTCPeerConnection(
-    configuration: js.UndefOr[RTCConfiguration] = js.undefined) extends EventTarget {
+    configuration: js.UndefOr[RTCConfiguration] = js.undefined)
+    extends EventTarget {
+
   /**
    * Returns an enum of type RTCIceConnectionState that describes the
    * ICE connection state for the connection. When this value changes, a
@@ -1009,7 +1050,8 @@ class RTCPeerConnection(
    * view - it's probably around as bad as access to a canvas :-)
    *
    */
-  def createOffer(options: RTCOfferOptions = js.native): js.Promise[RTCSessionDescription] = js.native
+  def createOffer(options: RTCOfferOptions = js.native): js.Promise[
+      RTCSessionDescription] = js.native
 
   /**
    * The createAnswer method generates an [SDP] answer with the supported
@@ -1102,8 +1144,7 @@ class RTCPeerConnection(
    *
    * MDN
    */
-  def addIceCandidate(
-      candidate: RTCIceCandidate): js.Promise[Unit] = js.native
+  def addIceCandidate(candidate: RTCIceCandidate): js.Promise[Unit] = js.native
 
   def getConfiguration(): RTCConfiguration = js.native
 
@@ -1163,8 +1204,7 @@ class RTCPeerConnection(
    *
    * MDN
    */
-  def createDataChannel(
-      label: String,
+  def createDataChannel(label: String,
       dataChannelDict: RTCDataChannelInit): RTCDataChannel = js.native
 
   /**
@@ -1181,8 +1221,7 @@ class RTCPeerConnection(
    *
    * MDN
    */
-  def getStats(
-      selector: MediaStreamTrack,
+  def getStats(selector: MediaStreamTrack,
       callback: js.Function1[RTCStatsReport, Any],
       error: js.Function1[DOMError, Any]): RTCStatsReport = js.native
 
@@ -1207,9 +1246,7 @@ class RTCPeerConnection(
    *    session description is requested with a call to either createOffer or
    *    createAnswer.
    */
-  def setIdentityProvider(
-      provider: String,
-      protocol: String = js.native,
+  def setIdentityProvider(provider: String, protocol: String = js.native,
       usernameHint: String = js.native): Unit = js.native
 
   /**
@@ -1232,4 +1269,3 @@ class RTCPeerConnection(
    */
   def getIdentityAssertion(): js.Promise[Unit] = js.native
 }
-
