@@ -25,7 +25,8 @@ object svg {
   type Circle = raw.SVGCircleElement
   type ClipPath = raw.SVGClipPathElement
   type ComponentTransferFunction = raw.SVGComponentTransferFunctionElement
-  @inline def ComponentTransferFunction = raw.SVGComponentTransferFunctionElement
+  @inline def ComponentTransferFunction =
+    raw.SVGComponentTransferFunctionElement
 
   type Defs = raw.SVGDefsElement
   type Desc = raw.SVGDescElement
@@ -70,7 +71,8 @@ object svg {
   type FETurbulence = raw.SVGFETurbulenceElement
   @inline def FETurbulence = raw.SVGFETurbulenceElement
   type Filter = raw.SVGFilterElement
-  type FilterPrimitiveStandardAttributes = raw.SVGFilterPrimitiveStandardAttributes
+  type FilterPrimitiveStandardAttributes =
+    raw.SVGFilterPrimitiveStandardAttributes
   type FitToViewBox = raw.SVGFitToViewBox
 
   type G = raw.SVGGElement
@@ -105,12 +107,14 @@ object svg {
   type PathSegClosePath = raw.SVGPathSegClosePath
   type PathSegCurvetoCubicSmoothAbs = raw.SVGPathSegCurvetoCubicSmoothAbs
   type PathSegCurvetoQuadraticRel = raw.SVGPathSegCurvetoQuadraticRel
-  type PathSegCurvetoQuadraticSmoothRel = raw.SVGPathSegCurvetoQuadraticSmoothRel
+  type PathSegCurvetoQuadraticSmoothRel =
+    raw.SVGPathSegCurvetoQuadraticSmoothRel
   type PathSegCurvetoCubicAbs = raw.SVGPathSegCurvetoCubicAbs
   type PathSegCurvetoCubicRel = raw.SVGPathSegCurvetoCubicRel
   type PathSegCurvetoQuadraticAbs = raw.SVGPathSegCurvetoQuadraticAbs
   type PathSegCurvetoCubicSmoothRel = raw.SVGPathSegCurvetoCubicSmoothRel
-  type PathSegCurvetoQuadraticSmoothAbs = raw.SVGPathSegCurvetoQuadraticSmoothAbs
+  type PathSegCurvetoQuadraticSmoothAbs =
+    raw.SVGPathSegCurvetoQuadraticSmoothAbs
   type PathSegLinetoAbs = raw.SVGPathSegLinetoAbs
   type PathSegLinetoRel = raw.SVGPathSegLinetoRel
   type PathSegLinetoHorizontalAbs = raw.SVGPathSegLinetoHorizontalAbs

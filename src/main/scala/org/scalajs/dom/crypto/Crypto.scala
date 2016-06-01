@@ -17,6 +17,7 @@ object GlobalCrypto extends js.GlobalScope {
  */
 @js.native
 trait Crypto extends js.Object {
+
   /**
    * Returns a SubtleCrypto object providing access to common cryptographic
    * primitives, like hashing, signing, encryption or decryption.
@@ -157,6 +158,7 @@ trait JsonWebKey extends js.Object {
  */
 @js.native
 trait SubtleCrypto extends js.Object {
+
   /**
    * Returns a Promise of the encrypted data corresponding to the clear text,
    * algorithm and key given as parameters. MDN
@@ -195,7 +197,8 @@ trait SubtleCrypto extends js.Object {
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-verify ¶14.3.4 The verify method]]
    */
   def verify(algorithm: AlgorithmIdentifier, key: CryptoKey,
-      signature: BufferSource, data: BufferSource): js.Promise[js.Any] = js.native
+      signature: BufferSource,
+      data: BufferSource): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a digest generated from the algorithm and text given
@@ -205,7 +208,8 @@ trait SubtleCrypto extends js.Object {
    * We are a bit more precise than the official definition by requiring a HashAlgorithmIdentifier
    * rather than an AlgorithmIdentifier for the algorithm parameter.
    */
-  def digest(algorithm: HashAlgorithmIdentifier, data: BufferSource): js.Promise[js.Any] = js.native
+  def digest(algorithm: HashAlgorithmIdentifier,
+      data: BufferSource): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a newly generated CryptoKey, for symmetrical
@@ -282,7 +286,8 @@ trait SubtleCrypto extends js.Object {
    * Defined at
    * [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-exportKey ¶14.3.10 The exportKey method]]
    */
-  def exportKey(format: KeyFormat, key: CryptoKey): js.Promise[js.Any] = js.native
+  def exportKey(format: KeyFormat,
+      key: CryptoKey): js.Promise[js.Any] = js.native
 
   /**
    * Returns a Promise of a wrapped symmetric key for usage (transfer, storage)
@@ -325,8 +330,10 @@ object RsaKeyGenParams {
   @inline
   def apply(name: String, modulusLength: Long,
       publicExponent: BigInteger): RsaKeyGenParams = {
-    js.Dynamic.literal(name = name, modulusLength = modulusLength.toDouble,
-        publicExponent = publicExponent).asInstanceOf[RsaKeyGenParams]
+    js.Dynamic
+      .literal(name = name, modulusLength = modulusLength.toDouble,
+          publicExponent = publicExponent)
+      .asInstanceOf[RsaKeyGenParams]
   }
 }
 
@@ -337,11 +344,12 @@ trait RsaHashedKeyGenParams extends RsaKeyGenParams {
 
 object RsaHashedKeyGenParams {
   @inline
-  def apply(name: String, modulusLength: Long,
-      publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyGenParams = {
-    js.Dynamic.literal(name = name, modulusLength = modulusLength.toDouble,
-        publicExponent = publicExponent,
-        hash = hash.asInstanceOf[js.Any]).asInstanceOf[RsaHashedKeyGenParams]
+  def apply(name: String, modulusLength: Long, publicExponent: BigInteger,
+      hash: HashAlgorithmIdentifier): RsaHashedKeyGenParams = {
+    js.Dynamic
+      .literal(name = name, modulusLength = modulusLength.toDouble,
+          publicExponent = publicExponent, hash = hash.asInstanceOf[js.Any])
+      .asInstanceOf[RsaHashedKeyGenParams]
   }
 }
 
@@ -356,8 +364,10 @@ object RsaKeyAlgorithm {
   @inline
   def apply(name: String, modulusLength: Long,
       publicExponent: BigInteger): RsaKeyAlgorithm = {
-    js.Dynamic.literal(name = name, modulusLength = modulusLength.toDouble,
-        publicExponent = publicExponent).asInstanceOf[RsaKeyAlgorithm]
+    js.Dynamic
+      .literal(name = name, modulusLength = modulusLength.toDouble,
+          publicExponent = publicExponent)
+      .asInstanceOf[RsaKeyAlgorithm]
   }
 }
 
@@ -366,6 +376,7 @@ object RsaKeyAlgorithm {
  */
 @js.native
 trait RsaHashedKeyAlgorithm extends RsaKeyAlgorithm {
+
   /**
    * Note that section [[http://www.w3.org/TR/WebCryptoAPI/#RsaHashedKeyAlgorithm-dictionary 20.6. RsaHashedKeyAlgorithm dictionary]]
    * of the W3C documentation uses a KeyAlgorithm here, and not what seems more correct a
@@ -376,19 +387,18 @@ trait RsaHashedKeyAlgorithm extends RsaKeyAlgorithm {
 
 object RsaHashedKeyAlgorithm {
   @inline
-  def apply(name: String, modulusLength: Long,
-      publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
-    js.Dynamic.literal(name = name, modulusLength = modulusLength.toDouble,
-        publicExponent = publicExponent,
-        hash = hash.asInstanceOf[js.Any]).asInstanceOf[RsaHashedKeyAlgorithm]
+  def apply(name: String, modulusLength: Long, publicExponent: BigInteger,
+      hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
+    js.Dynamic
+      .literal(name = name, modulusLength = modulusLength.toDouble,
+          publicExponent = publicExponent, hash = hash.asInstanceOf[js.Any])
+      .asInstanceOf[RsaHashedKeyAlgorithm]
   }
 
   /**
    * see [[http://www.w3.org/TR/WebCryptoAPI/#rsassa-pkcs1 ¶20. RSASSA-PKCS1-v1_5]] of w3c spec
    */
-  def `RSASSA-PKCS1-v1_5`(
-      modulusLength: Long,
-      publicExponent: BigInteger,
+  def `RSASSA-PKCS1-v1_5`(modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
     apply("RSASSA-PKCS1-v1_5", modulusLength, publicExponent, hash)
   }
@@ -396,9 +406,7 @@ object RsaHashedKeyAlgorithm {
   /**
    * see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-PSS]] of w3c spec
    */
-  def `RSA-PSS`(
-      modulusLength: Long,
-      publicExponent: BigInteger,
+  def `RSA-PSS`(modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
     apply("RSA-PSS", modulusLength, publicExponent, hash)
   }
@@ -406,9 +414,7 @@ object RsaHashedKeyAlgorithm {
   /**
    * see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-OAEP]] of w3c spec
    */
-  def `RSA-OAEP`(
-      modulusLength: Long,
-      publicExponent: BigInteger,
+  def `RSA-OAEP`(modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
     apply("RSA-OAEP", modulusLength, publicExponent, hash)
   }
@@ -421,8 +427,12 @@ trait RsaHashedImportParams extends KeyAlgorithm {
 
 object RsaHashedImportParams {
   @inline
-  def apply(name: String, hash: HashAlgorithmIdentifier): RsaHashedImportParams =
-    js.Dynamic.literal(name = name, hash = hash.asInstanceOf[js.Any]).asInstanceOf[RsaHashedImportParams]
+  def apply(name: String,
+      hash: HashAlgorithmIdentifier): RsaHashedImportParams = {
+    js.Dynamic
+      .literal(name = name, hash = hash.asInstanceOf[js.Any])
+      .asInstanceOf[RsaHashedImportParams]
+  }
 }
 
 // RSA-PSS
@@ -435,8 +445,9 @@ trait RsaPssParams extends Algorithm {
 object RsaPssParams {
   @inline
   def apply(name: String, saltLength: Long): RsaPssParams = {
-    js.Dynamic.literal(name = name,
-       saltLength = saltLength.toDouble).asInstanceOf[RsaPssParams]
+    js.Dynamic
+      .literal(name = name, saltLength = saltLength.toDouble)
+      .asInstanceOf[RsaPssParams]
   }
 }
 
@@ -450,8 +461,7 @@ trait RsaOaepParams extends Algorithm {
 object RsaOaepParams {
   @inline
   def apply(name: String, label: BufferSource): RsaOaepParams = {
-    js.Dynamic.literal(name = name,
-       label = label).asInstanceOf[RsaOaepParams]
+    js.Dynamic.literal(name = name, label = label).asInstanceOf[RsaOaepParams]
   }
 }
 
@@ -464,8 +474,11 @@ trait EcdsaParams extends Algorithm {
 
 object EcdsaParams {
   @inline
-  def apply(name: String, hash: HashAlgorithmIdentifier): EcdsaParams =
-    js.Dynamic.literal(name = name, hash = hash.asInstanceOf[js.Any]).asInstanceOf[EcdsaParams]
+  def apply(name: String, hash: HashAlgorithmIdentifier): EcdsaParams = {
+    js.Dynamic
+      .literal(name = name, hash = hash.asInstanceOf[js.Any])
+      .asInstanceOf[EcdsaParams]
+  }
 }
 
 @js.native
@@ -476,8 +489,9 @@ trait EcKeyGenParams extends Algorithm {
 object EcKeyGenParams {
   @inline
   def apply(name: String, namedCurve: String): EcKeyGenParams = {
-    js.Dynamic.literal(name = name,
-       namedCurve = namedCurve).asInstanceOf[EcKeyGenParams]
+    js.Dynamic
+      .literal(name = name, namedCurve = namedCurve)
+      .asInstanceOf[EcKeyGenParams]
   }
 }
 
@@ -489,8 +503,9 @@ trait EcKeyAlgorithm extends KeyAlgorithm {
 object EcKeyAlgorithm {
   @inline
   def apply(name: String, namedCurve: String): EcKeyAlgorithm = {
-    js.Dynamic.literal(name = name,
-        namedCurve = namedCurve).asInstanceOf[EcKeyAlgorithm]
+    js.Dynamic
+      .literal(name = name, namedCurve = namedCurve)
+      .asInstanceOf[EcKeyAlgorithm]
   }
 }
 
@@ -502,8 +517,9 @@ trait EcKeyImportParams extends KeyAlgorithm {
 object EcKeyImportParams {
   @inline
   def apply(name: String, namedCurve: String): EcKeyImportParams = {
-    js.Dynamic.literal(name = name,
-       namedCurve = namedCurve).asInstanceOf[EcKeyImportParams]
+    js.Dynamic
+      .literal(name = name, namedCurve = namedCurve)
+      .asInstanceOf[EcKeyImportParams]
   }
 }
 
@@ -517,8 +533,9 @@ trait EcdhKeyDeriveParams extends KeyAlgorithm {
 object EcdhKeyDeriveParams {
   @inline
   def apply(name: String, `public`: CryptoKey): EcdhKeyDeriveParams = {
-    js.Dynamic.literal(name = name,
-       `public` = `public`).asInstanceOf[EcdhKeyDeriveParams]
+    js.Dynamic
+      .literal(name = name, `public` = `public`)
+      .asInstanceOf[EcdhKeyDeriveParams]
   }
 }
 
@@ -548,8 +565,9 @@ trait AesKeyAlgorithm extends KeyAlgorithm {
 object AesKeyAlgorithm {
   @inline
   def apply(name: String, length: Short): AesKeyAlgorithm = {
-    js.Dynamic.literal(name = name,
-        length = length).asInstanceOf[AesKeyAlgorithm]
+    js.Dynamic
+      .literal(name = name, length = length)
+      .asInstanceOf[AesKeyAlgorithm]
   }
 }
 
@@ -561,8 +579,9 @@ trait AesKeyGenParams extends KeyAlgorithm {
 object AesKeyGenParams {
   @inline
   def apply(name: String, length: Short): AesKeyGenParams = {
-    js.Dynamic.literal(name = name,
-        length = length).asInstanceOf[AesKeyGenParams]
+    js.Dynamic
+      .literal(name = name, length = length)
+      .asInstanceOf[AesKeyGenParams]
   }
 }
 
@@ -574,8 +593,9 @@ trait AesDerivedKeyParams extends KeyAlgorithm {
 object AesDerivedKeyParams {
   @inline
   def apply(name: String, length: Short): AesDerivedKeyParams = {
-    js.Dynamic.literal(name = name,
-        length = length).asInstanceOf[AesDerivedKeyParams]
+    js.Dynamic
+      .literal(name = name, length = length)
+      .asInstanceOf[AesDerivedKeyParams]
   }
 }
 
@@ -602,8 +622,9 @@ trait AesCmacParams extends Algorithm {
 object AesCmacParams {
   @inline
   def apply(name: String, length: Int): AesCmacParams = {
-    js.Dynamic.literal(name = name,
-        length = length).asInstanceOf[AesCmacParams]
+    js.Dynamic
+      .literal(name = name, length = length)
+      .asInstanceOf[AesCmacParams]
   }
 }
 
@@ -620,11 +641,12 @@ trait AesGcmParams extends Algorithm {
 
 object AesGcmParams {
   @inline
-  def apply(name: String, iv: BufferSource,
-      additionalData: BufferSource, tagLength: Short): AesGcmParams = {
-    js.Dynamic.literal(name = name, iv = iv,
-        additionalData = additionalData,
-        tagLength = tagLength).asInstanceOf[AesGcmParams]
+  def apply(name: String, iv: BufferSource, additionalData: BufferSource,
+      tagLength: Short): AesGcmParams = {
+    js.Dynamic
+      .literal(name = name, iv = iv, additionalData = additionalData,
+          tagLength = tagLength)
+      .asInstanceOf[AesGcmParams]
   }
 }
 
@@ -654,9 +676,12 @@ trait HmacImportParams extends Algorithm {
 
 object HmacImportParams {
   @inline
-  def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacImportParams = {
-    js.Dynamic.literal(name = name, hash = hash.asInstanceOf[js.Any],
-        length = length.toDouble).asInstanceOf[HmacImportParams]
+  def apply(name: String, hash: HashAlgorithmIdentifier,
+      length: Long): HmacImportParams = {
+    js.Dynamic
+      .literal(name = name, hash = hash.asInstanceOf[js.Any],
+          length = length.toDouble)
+      .asInstanceOf[HmacImportParams]
   }
 }
 
@@ -669,9 +694,12 @@ trait HmacKeyAlgorithm extends KeyAlgorithm {
 
 object HmacKeyAlgorithm {
   @inline
-  def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyAlgorithm = {
-    js.Dynamic.literal(name = name, hash = hash.asInstanceOf[js.Any],
-        length = length.toDouble).asInstanceOf[HmacKeyAlgorithm]
+  def apply(name: String, hash: HashAlgorithmIdentifier,
+      length: Long): HmacKeyAlgorithm = {
+    js.Dynamic
+      .literal(name = name, hash = hash.asInstanceOf[js.Any],
+          length = length.toDouble)
+      .asInstanceOf[HmacKeyAlgorithm]
   }
 }
 
@@ -684,9 +712,12 @@ trait HmacKeyGenParams extends KeyAlgorithm {
 
 object HmacKeyGenParams {
   @inline
-  def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyGenParams = {
-    js.Dynamic.literal(name = name, hash = hash.asInstanceOf[js.Any],
-        length = length.toDouble).asInstanceOf[HmacKeyGenParams]
+  def apply(name: String, hash: HashAlgorithmIdentifier,
+      length: Long): HmacKeyGenParams = {
+    js.Dynamic
+      .literal(name = name, hash = hash.asInstanceOf[js.Any],
+          length = length.toDouble)
+      .asInstanceOf[HmacKeyGenParams]
   }
 }
 
@@ -732,8 +763,9 @@ trait DhKeyDeriveParams extends Algorithm {
 object DhKeyDeriveParams {
   @inline
   def apply(name: String, public: CryptoKey): DhKeyDeriveParams = {
-    js.Dynamic.literal(name = name,
-        public = public).asInstanceOf[DhKeyDeriveParams]
+    js.Dynamic
+      .literal(name = name, public = public)
+      .asInstanceOf[DhKeyDeriveParams]
   }
 }
 
@@ -748,8 +780,9 @@ object DhImportKeyParams {
   @inline
   def apply(name: String, prime: BigInteger,
       generator: BigInteger): DhImportKeyParams = {
-    js.Dynamic.literal(name = name, prime = prime,
-        generator = generator).asInstanceOf[DhImportKeyParams]
+    js.Dynamic
+      .literal(name = name, prime = prime, generator = generator)
+      .asInstanceOf[DhImportKeyParams]
   }
 }
 
@@ -772,13 +805,16 @@ trait ConcatParams extends Algorithm {
 
 object ConcatParams {
   @inline
-  def apply(name: String, hash: HashAlgorithmIdentifier, algorithmId: BufferSource,
-      partyUInfo: BufferSource, partyVInfo: BufferSource,
-      publicInfo: BufferSource, privateInfo: BufferSource): ConcatParams = {
-    js.Dynamic.literal(name = name, hash = hash.asInstanceOf[js.Any],
-        algorithmId = algorithmId, partyUInfo = partyUInfo,
-        partyVInfo = partyVInfo, publicInfo = publicInfo,
-        privateInfo = privateInfo).asInstanceOf[ConcatParams]
+  def apply(name: String, hash: HashAlgorithmIdentifier,
+      algorithmId: BufferSource, partyUInfo: BufferSource,
+      partyVInfo: BufferSource, publicInfo: BufferSource,
+      privateInfo: BufferSource): ConcatParams = {
+    js.Dynamic
+      .literal(name = name, hash = hash.asInstanceOf[js.Any],
+          algorithmId = algorithmId, partyUInfo = partyUInfo,
+          partyVInfo = partyVInfo, publicInfo = publicInfo,
+          privateInfo = privateInfo)
+      .asInstanceOf[ConcatParams]
   }
 }
 
@@ -797,8 +833,10 @@ object HkdfCtrParams {
   @inline
   def apply(name: String, hash: HashAlgorithmIdentifier, label: BufferSource,
       context: BufferSource): HkdfCtrParams = {
-    js.Dynamic.literal(name = name, hash = hash.asInstanceOf[js.Any], label = label,
-        context = context).asInstanceOf[HkdfCtrParams]
+    js.Dynamic
+      .literal(name = name, hash = hash.asInstanceOf[js.Any], label = label,
+          context = context)
+      .asInstanceOf[HkdfCtrParams]
   }
 }
 
@@ -817,9 +855,10 @@ object Pbkdf2Params {
   @inline
   def apply(name: String, salt: BufferSource, iterations: Long,
       hash: HashAlgorithmIdentifier): Pbkdf2Params = {
-    js.Dynamic.literal(name = name, salt = salt,
-        iterations = iterations.toDouble,
-        hash = hash.asInstanceOf[js.Any]).asInstanceOf[Pbkdf2Params]
+    js.Dynamic
+      .literal(name = name, salt = salt, iterations = iterations.toDouble,
+          hash = hash.asInstanceOf[js.Any])
+      .asInstanceOf[Pbkdf2Params]
   }
 }
 
@@ -859,12 +898,16 @@ object KeyType {
 trait KeyFormat extends js.Any
 
 object KeyFormat {
+
   /** An unformatted sequence of bytes. Intended for secret keys. */
   val raw = "raw".asInstanceOf[KeyFormat]
+
   /** The DER encoding of the PrivateKeyInfo structure from RFC 5208. */
   val pkcs8 = "pkcs8".asInstanceOf[KeyFormat]
+
   /** The DER encoding of the SubjectPublicKeyInfo structure from RFC 5280. */
   val spki = "spki".asInstanceOf[KeyFormat]
+
   /** The key is a JsonWebKey dictionary encoded as a JavaScript object */
   val jwk = "jwk".asInstanceOf[KeyFormat]
 }

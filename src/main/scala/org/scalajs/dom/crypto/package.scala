@@ -25,6 +25,7 @@ package object crypto {
    * here and distinguish the non overlapping classes of Key and Hash Algorithms.
    */
   type KeyAlgorithmIdentifier = KeyAlgorithm | String
+
   /**
    * According to [[http://www.w3.org/TR/WebCryptoAPI/#algorithm-dictionary ¶11 Algorithm Identifier]]
    * a HashAlgorithmIdentifier is an AlgorithmIdentifier. Here we distinguish between Hash and Key

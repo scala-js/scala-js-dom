@@ -14,27 +14,33 @@ import scala.scalajs.js.typedarray._
  */
 @js.native
 class WebGLContextAttributes extends js.Object {
+
   /**
    * When `true`, the drawing buffer has an alpha channel.
    */
   var alpha: Boolean = js.native
+
   /**
    * When `true`, the drawing buffer has a depth buffer of at least 16 bits.
    */
   var depth: Boolean = js.native
+
   /**
    * When `true`, the drawing buffer has a stencil buffer of at least 8 bits.
    */
   var stencil: Boolean = js.native
+
   /**
    * When `true` and antialiasing is supported, the drawing buffer will use an antialiasing method if it's choice.
    */
   var antialias: Boolean = js.native
+
   /**
    * When `true` the page compositor assumes the buffer's contents is premultiplied.  Used for sensible transparency when using
    * WebGL canvases for overlays.
    */
   var premultipliedAlpha: Boolean = js.native
+
   /**
    * When `true`, the drawing buffer is preserved after rendering, otherwise it is cleared.  On some implementations preserving the drawing buffer
    * can dramatically impact performance.
@@ -89,14 +95,17 @@ class WebGLUniformLocation private () extends js.Object
  */
 @js.native
 class WebGLActiveInfo private () extends js.Object {
+
   /**
    * The size of the requested variable.
    */
   val size: Int = js.native
+
   /**
    * The type of the requested variable.
    */
   val `type`: Int = js.native
+
   /**
    * The name of the requested variable.
    */
@@ -108,6 +117,7 @@ class WebGLActiveInfo private () extends js.Object {
  */
 @js.native
 class WebGLShaderPrecisionFormat private () extends js.Object {
+
   /**
    * The base 2 log of the absolute value of the minimum value that can be represented.
    */
@@ -205,7 +215,6 @@ object WebGLRenderingContext {
    */
   final val TRIANGLE_STRIP = 0x0005
 
-
   /**
    * Specifies the elements should be drawn as a triangle fan.
    *
@@ -248,7 +257,7 @@ object WebGLRenderingContext {
   /* BlendEquationSeparate */
   final val FUNC_ADD = 0x8006
   final val BLEND_EQUATION = 0x8009
-  final val BLEND_EQUATION_RGB = 0x8009   /* same as BLEND_EQUATION */
+  final val BLEND_EQUATION_RGB = 0x8009 /* same as BLEND_EQUATION */
   final val BLEND_EQUATION_ALPHA = 0x883D
 
   /* BlendSubtract */
@@ -313,6 +322,7 @@ object WebGLRenderingContext {
    * Capability to enable/disable backface culling.
    */
   final val CULL_FACE = 0x0B44
+
   /**
    * Capability to enable/disable blending.
    */
@@ -376,6 +386,7 @@ object WebGLRenderingContext {
    * Clockwise wound triangles are front-facing.
    */
   final val CW = 0x0900
+
   /**
    * Counter-Clockwise wound triangles are front-facing.
    */
@@ -518,6 +529,7 @@ object WebGLRenderingContext {
   /* TextureMagFilter */
   /** Specifies nearest neighbour interpolation. */
   final val NEAREST = 0x2600
+
   /** Specifies linear interpolation. */
   final val LINEAR = 0x2601
 
@@ -558,7 +570,6 @@ object WebGLRenderingContext {
    * Can be one of [[NEAREST]], [[LINEAR]], [[NEAREST_MIPMAP_NEAREST]], [[LINEAR_MIPMAP_NEAREST]],
    * [[NEAREST_MIPMAP_LINEAR]], [[LINEAR_MIPMAP_LINEAR]].
    */
-
   final val TEXTURE_MIN_FILTER = 0x2801
 
   /**
@@ -700,10 +711,12 @@ object WebGLRenderingContext {
    * Repeat the texture along this axis.
    */
   final val REPEAT = 0x2901
+
   /**
    * Clamp the texture along this axis.  The colour of the edge pixels will be replicated to infinity.
    */
   final val CLAMP_TO_EDGE = 0x812F
+
   /**
    * Repeat the texture along this axis, mirroring it each step.
    */
@@ -747,22 +760,27 @@ object WebGLRenderingContext {
    * Specifies a low precision float.
    */
   final val LOW_FLOAT = 0x8DF0
+
   /**
    * Specifies a medium precision float.
    */
   final val MEDIUM_FLOAT = 0x8DF1
+
   /**
    * Specifies a high precision float.
    */
   final val HIGH_FLOAT = 0x8DF2
+
   /**
    * Specifies a low precision integer.
    */
   final val LOW_INT = 0x8DF3
+
   /**
    * Specifies a medium precision float.
    */
   final val MEDIUM_INT = 0x8DF4
+
   /**
    * Specifies a high precision float.
    */
@@ -831,6 +849,7 @@ object WebGLRenderingContext {
 
 @js.native
 class WebGLRenderingContext extends js.Object {
+
   /**
    * The canvas object this WebGLRenderingContext is associated with.
    */
@@ -880,12 +899,14 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Attaches a shader (fragment or vertex) to a [[WebGLProgram]].
    */
-  def attachShader(program: WebGLProgram, shader: WebGLShader): Unit = js.native
+  def attachShader(program: WebGLProgram,
+      shader: WebGLShader): Unit = js.native
 
   /**
    * Associates a vertex attribute index with a named attribute variable.
    */
-  def bindAttribLocation(program: WebGLProgram, index: Int, name: String): Unit = js.native
+  def bindAttribLocation(program: WebGLProgram, index: Int,
+      name: String): Unit = js.native
 
   /**
    * Loads a a target into a [[WebGLBuffer]].
@@ -900,7 +921,8 @@ class WebGLRenderingContext extends js.Object {
    * @param target  the target to bind the framebuffer to.  Must be [[WebGLRenderingContext.FRAMEBUFFER]].
    * @param framebuffer  a framebuffer object, or null to bind the default framebuffer.
    */
-  def bindFramebuffer(target: Int, framebuffer: WebGLFramebuffer): Unit = js.native
+  def bindFramebuffer(target: Int,
+      framebuffer: WebGLFramebuffer): Unit = js.native
 
   /**
    * Loads a a target into a [[WebGLRenderbuffer]].
@@ -908,7 +930,8 @@ class WebGLRenderingContext extends js.Object {
    * @param target  target to bind to, must be [[WebGLRenderingContext.RENDERBUFFER]]
    * @param renderbuffer the renderbuffer to bind.  If `null`, any object bound to `target` us unbound.
    */
-  def bindRenderbuffer(target: Int, renderbuffer: WebGLRenderbuffer): Unit = js.native
+  def bindRenderbuffer(target: Int,
+      renderbuffer: WebGLRenderbuffer): Unit = js.native
 
   /**
    * Loads a the active texture unit into a [[WebGLTexture]].
@@ -921,7 +944,8 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Sets the blend color used in [[WebGLRenderingContext.BLEND_COLOR]].
    */
-  def blendColor(red: Double, green: Double, blue: Double, alpha: Double): Unit = js.native
+  def blendColor(red: Double, green: Double, blue: Double,
+      alpha: Double): Unit = js.native
 
   /**
    * Specifies the equation used for RGB and Alpha blending.
@@ -972,7 +996,8 @@ class WebGLRenderingContext extends js.Object {
    * @param dstAlpha The destination blending factor for Alpha.  Accepted values are the same as srcRGB.
    *                 The initial value is [[WebGLRenderingContext.ZERO]].
    */
-  def blendFuncSeparate(srcRGB: Int, dstRGB: Int, srcAlpha: Int, dstAlpha: Int): Unit = js.native
+  def blendFuncSeparate(srcRGB: Int, dstRGB: Int, srcAlpha: Int,
+      dstAlpha: Int): Unit = js.native
 
   /**
    * Sets the size of the bound [[WebGLBuffer]] for the given `target`.  The contents of the buffer are cleared to 0.
@@ -988,7 +1013,8 @@ class WebGLRenderingContext extends js.Object {
    * @param data the source data for the new buffer.
    * @param usage  The specified usage for this buffer.  May be [[WebGLRenderingContext.STREAM_DRAW]], [[WebGLRenderingContext.STATIC_DRAW]] or [[WebGLRenderingContext.DYNAMIC_DRAW]].
    */
-  def bufferData(target: Int, data: ArrayBufferView, usage: Int): Unit = js.native
+  def bufferData(target: Int, data: ArrayBufferView,
+      usage: Int): Unit = js.native
 
   /**
    * Resizes the bound [[WebGLBuffer]] for the given `target` to the size of the passed buffer, and replaces its contents with the contents of the buffer.
@@ -999,9 +1025,11 @@ class WebGLRenderingContext extends js.Object {
    */
   def bufferData(target: Int, data: ArrayBuffer, usage: Int): Unit = js.native
 
-  def bufferSubData(target: Int, offset: Int, data: ArrayBufferView): Unit = js.native
+  def bufferSubData(target: Int, offset: Int,
+      data: ArrayBufferView): Unit = js.native
 
-  def bufferSubData(target: Int, offset: Int, data: ArrayBuffer): Unit = js.native
+  def bufferSubData(target: Int, offset: Int,
+      data: ArrayBuffer): Unit = js.native
 
   /**
    * Returns the completeness status for the framebuffer.
@@ -1029,7 +1057,8 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Sets the clear color to use with [[WebGLRenderingContext#clear]].
    */
-  def clearColor(red: Double, green: Double, blue: Double, alpha: Double): Unit = js.native
+  def clearColor(red: Double, green: Double, blue: Double,
+      alpha: Double): Unit = js.native
 
   /**
    * Sets the clear depth to use with [[WebGLRenderingContext#clear]].
@@ -1044,7 +1073,8 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Enable and disable writing to the given channels.  For each channel, `true` will allow writing, `false` will prevent it.
    */
-  def colorMask(red: Boolean, green: Boolean, blue: Boolean, alpha: Boolean): Unit = js.native
+  def colorMask(red: Boolean, green: Boolean, blue: Boolean,
+      alpha: Boolean): Unit = js.native
 
   /**
    * Compiles the provided shader.
@@ -1052,7 +1082,6 @@ class WebGLRenderingContext extends js.Object {
    * The [[WebGLRenderingContext#getShaderParameter]] can be used to determine if this operation succeeded.
    */
   def compileShader(shader: WebGLShader): Unit = js.native
-
 
   /**
    * Loads a 2-dimensional texture into a texture unit, compressed with the specified algorithm.
@@ -1067,7 +1096,9 @@ class WebGLRenderingContext extends js.Object {
    *  @param border the border width.  Must be 0.
    *  @param data  the compressed image data.
    */
-  def compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, data: ArrayBufferView): Unit = js.native
+  def compressedTexImage2D(target: Int, level: Int, internalformat: Int,
+      width: Int, height: Int, border: Int,
+      data: ArrayBufferView): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit, compressed with the specified algorithm.
@@ -1083,7 +1114,9 @@ class WebGLRenderingContext extends js.Object {
    *  @param format the format of the compressed image data
    *  @param data  the compressed image data.
    */
-  def compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, data: ArrayBufferView): Unit = js.native
+  def compressedTexSubImage2D(target: Int, level: Int, xoffset: Int,
+      yoffset: Int, width: Int, height: Int, format: Int,
+      data: ArrayBufferView): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture into a texture unit from the current framebuffer.
@@ -1099,7 +1132,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param height the height of the texture image.
    *  @param border the border width.  Must be 0.
    */
-  def copyTexImage2D(target: Int, level: Int, internalformat: Int, x: Int, y: Int, width: Int, height: Int, border: Int): Unit = js.native
+  def copyTexImage2D(target: Int, level: Int, internalformat: Int, x: Int,
+      y: Int, width: Int, height: Int, border: Int): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from the current framebuffer.
@@ -1115,7 +1149,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param width  the width of the texture image.
    *  @param height the height of the texture image.
    */
-  def copyTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, x: Int, y: Int, width: Int, height: Int): Unit = js.native
+  def copyTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int,
+      x: Int, y: Int, width: Int, height: Int): Unit = js.native
 
   /**
    * Creates a new [[WebGLBuffer]].
@@ -1236,7 +1271,8 @@ class WebGLRenderingContext extends js.Object {
    *
    * If the shader has been flagged as deleted by a call to [[WebGLRenderingContext#deleteShader]], it will be deleted.
    */
-  def detachShader(program: WebGLProgram, shader: WebGLShader): Unit = js.native
+  def detachShader(program: WebGLProgram,
+      shader: WebGLShader): Unit = js.native
 
   /**
    * Disables a GL capability.
@@ -1274,7 +1310,8 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.UNSIGNED_BYTE]] or [[WebGLRenderingContext.UNSIGNED_SHORT]]
    * @param offset the offset into the [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]] to begin drawing from.
    */
-  def drawElements(mode: Int, count: Int, `type`: Int, offset: Int): Unit = js.native
+  def drawElements(mode: Int, count: Int, `type`: Int,
+      offset: Int): Unit = js.native
 
   /**
    * Enables a GL capability.
@@ -1311,7 +1348,9 @@ class WebGLRenderingContext extends js.Object {
    * @param renderbuffertarget  must be [[WebGLRenderingContext.RENDERBUFFER]]
    * @param renderbuffer  the renderbuffer to attach.
    */
-  def framebufferRenderbuffer(target: Int, attachment: Int, renderbuffertarget: Int, renderbuffer: WebGLRenderbuffer): Unit = js.native
+  def framebufferRenderbuffer(target: Int, attachment: Int,
+      renderbuffertarget: Int,
+      renderbuffer: WebGLRenderbuffer): Unit = js.native
 
   /**
    * Attach a [[WebGLTexture]] to a [[WebGLFramebuffer]].
@@ -1323,7 +1362,8 @@ class WebGLRenderingContext extends js.Object {
    * @param texture  the texture to be attached
    * @param level  the miplevel to be attached
    */
-  def framebufferTexture2D(target: Int, attachment: Int, textarget: Int, texture: WebGLTexture, level: Int): Unit = js.native
+  def framebufferTexture2D(target: Int, attachment: Int, textarget: Int,
+      texture: WebGLTexture, level: Int): Unit = js.native
 
   /**
    * Specifies the winding that is considered front-facing for the purposes of CULL_FACE.
@@ -1342,17 +1382,20 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Returns a new [[WebGLActiveInfo]] object describing the given attribute at `index`.
    */
-  def getActiveAttrib(program: WebGLProgram, index: Int): WebGLActiveInfo = js.native
+  def getActiveAttrib(program: WebGLProgram,
+      index: Int): WebGLActiveInfo = js.native
 
   /**
    * Returns a new [[WebGLActiveInfo]] object describing the given uniform at `index`.
    */
-  def getActiveUniform(program: WebGLProgram, index: Int): WebGLActiveInfo = js.native
+  def getActiveUniform(program: WebGLProgram,
+      index: Int): WebGLActiveInfo = js.native
 
   /**
    * Returns a new array containing the shaders attached to the given program.
    */
-  def getAttachedShaders(program: WebGLProgram): js.Array[WebGLShader] = js.native
+  def getAttachedShaders(
+      program: WebGLProgram): js.Array[WebGLShader] = js.native
 
   /**
    * Returns the index of the named attribute, or -1 on error.
@@ -1411,7 +1454,8 @@ class WebGLRenderingContext extends js.Object {
    *              [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_OBJECT_NAME]], [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL]], or
    *              [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE]]
    */
-  def getFramebufferAttachmentParameter(target: Int, attachment: Int, pname: Int): js.Any = js.native
+  def getFramebufferAttachmentParameter(target: Int, attachment: Int,
+      pname: Int): js.Any = js.native
 
   /**
    * Returns the value for the given parameter name for the program.
@@ -1422,7 +1466,8 @@ class WebGLRenderingContext extends js.Object {
    *               [[WebGLRenderingContext.VALIDATE_STATUS]], [[WebGLRenderingContext.ATTACHED_SHADERS]],
    *               [[WebGLRenderingContext.ACTIVE_ATTRIBUTES]], or [[WebGLRenderingContext.ACTIVE_UNIFORMS]].
    */
-  def getProgramParameter(program: WebGLProgram, pname: Int): js.Any = js.native
+  def getProgramParameter(program: WebGLProgram,
+      pname: Int): js.Any = js.native
 
   /**
    * Returns a string containing information about the last link or validation operation for a program.
@@ -1461,7 +1506,8 @@ class WebGLRenderingContext extends js.Object {
    *                      [[WebGLRenderingContext.MEDIUM_FLOAT]], [[WebGLRenderingContext.HIGH_FLOAT]], [[WebGLRenderingContext.LOW_INT]],
    *                      [[WebGLRenderingContext.MEDIUM_INT]], or [[WebGLRenderingContext.HIGH_INT]].
    */
-  def getShaderPrecisionFormat(shadertype: Int, precisiontype: Int): WebGLShaderPrecisionFormat = js.native
+  def getShaderPrecisionFormat(shadertype: Int,
+      precisiontype: Int): WebGLShaderPrecisionFormat = js.native
 
   /**
    * Returns the information log from the last compile of the shader.
@@ -1487,13 +1533,15 @@ class WebGLRenderingContext extends js.Object {
    * Returns the value of the uniform in the given program and location.  The return type is dependent
    * on the uniform type.
    */
-  def getUniform(program: WebGLProgram, location: WebGLUniformLocation): js.Any = js.native
+  def getUniform(program: WebGLProgram,
+      location: WebGLUniformLocation): js.Any = js.native
 
   /**
    * Returns a new [[WebGLUniformLocation]] that represents the location of the given uniform in the specified program.
    * If the uniform does not exist, or another error occurs, returns `null`.
    */
-  def getUniformLocation(program: WebGLProgram, name: String): WebGLUniformLocation = js.native
+  def getUniformLocation(program: WebGLProgram,
+      name: String): WebGLUniformLocation = js.native
 
   /**
    * Returns the value of the named parameter for a given vertex attribute index.
@@ -1506,6 +1554,7 @@ class WebGLRenderingContext extends js.Object {
    *
    */
   def getVertexAttrib(index: Int, pname: Int): js.Any = js.native
+
   /**
    * Returns the offset of the vertex attribute.
    *
@@ -1596,7 +1645,8 @@ class WebGLRenderingContext extends js.Object {
    *             [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]],
    *             [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]]
    */
-  def readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, `type`: Int, pixels: ArrayBufferView): Unit = js.native
+  def readPixels(x: Int, y: Int, width: Int, height: Int, format: Int,
+      `type`: Int, pixels: ArrayBufferView): Unit = js.native
 
   /**
    * Create renderbuffer image storage.
@@ -1608,7 +1658,8 @@ class WebGLRenderingContext extends js.Object {
    *                        [[WebGLRenderingContext.RGB5_A1]], [[WebGLRenderingContext.DEPTH_COMPONENT16]], [[WebGLRenderingContext.STENCIL_INDEX8]] or
    *                        [[WebGLRenderingContext.DEPTH_STENCIL]].
    */
-  def renderbufferStorage(target: Int, internalformat: Int, width: Int, height: Int): Unit = js.native
+  def renderbufferStorage(target: Int, internalformat: Int, width: Int,
+      height: Int): Unit = js.native
 
   /**
    * Sets the sampling coverage parameters for primitive antialiasing.
@@ -1651,7 +1702,8 @@ class WebGLRenderingContext extends js.Object {
    * @param ref  the reference value to test against in the stencil buffer
    * @param mask mask that is ANDed with `ref` and the tested value and stored in the stencil buffer.
    */
-  def stencilFuncSeparate(face: Int, func: Int, ref: Int, mask: Int): Unit = js.native
+  def stencilFuncSeparate(face: Int, func: Int, ref: Int,
+      mask: Int): Unit = js.native
 
   /**
    * Configure which bits in the stencil buffer may be written to by front or back faces.
@@ -1693,7 +1745,8 @@ class WebGLRenderingContext extends js.Object {
    * @param zfail  the effect of the stencil test passing but the depth test failing.  Parameters are as fail.
    * @param zpass  the effect of the stencil test failing but the depth test passing.  Parameters are as fail.
    */
-  def stencilOpSeparate(face: Int, fail: Int, zfail: Int, zpass: Int): Unit = js.native
+  def stencilOpSeparate(face: Int, fail: Int, zfail: Int,
+      zpass: Int): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture into a texture unit from source data.
@@ -1708,7 +1761,9 @@ class WebGLRenderingContext extends js.Object {
    *  @param border the border width.  Must be 0.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, `type`: Int, pixels: ArrayBufferView): Unit = js.native
+  def texImage2D(target: Int, level: Int, internalformat: Int, width: Int,
+      height: Int, border: Int, format: Int, `type`: Int,
+      pixels: ArrayBufferView): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture into a texture unit from an ImageData object.
@@ -1722,7 +1777,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param type the data type of the pixel data.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: ImageData): Unit = js.native
+  def texImage2D(target: Int, level: Int, internalformat: Int, format: Int,
+      `type`: Int, pixels: ImageData): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture into a texture unit from an HTMLImageElement object.
@@ -1736,7 +1792,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param type the data type of the pixel data.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: HTMLImageElement): Unit = js.native
+  def texImage2D(target: Int, level: Int, internalformat: Int, format: Int,
+      `type`: Int, pixels: HTMLImageElement): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture into a texture unit from an HTMLCanvasElement object.
@@ -1750,7 +1807,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param type the data type of the pixel data.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: HTMLCanvasElement): Unit = js.native
+  def texImage2D(target: Int, level: Int, internalformat: Int, format: Int,
+      `type`: Int, pixels: HTMLCanvasElement): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture into a texture unit from an HTMLVideoElement object.
@@ -1764,7 +1822,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param type the data type of the pixel data.
    *  @param pixels the source image data.
    */
-  def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: HTMLVideoElement): Unit = js.native
+  def texImage2D(target: Int, level: Int, internalformat: Int, format: Int,
+      `type`: Int, pixels: HTMLVideoElement): Unit = js.native
 
   /**
    * Sets the texture parameter for the active texture unit.
@@ -1801,7 +1860,9 @@ class WebGLRenderingContext extends js.Object {
    *  @param type the data type of the pixel data.
    *  @param pixels the image data.
    */
-  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, `type`: Int, pixels: ArrayBufferView): Unit = js.native
+  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int,
+      width: Int, height: Int, format: Int, `type`: Int,
+      pixels: ArrayBufferView): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from an `ImageData` object.
@@ -1816,7 +1877,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param type the data type of the pixel data.
    *  @param pixels the image data.
    */
-  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: ImageData): Unit = js.native
+  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int,
+      format: Int, `type`: Int, pixels: ImageData): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from an `HTMLImageElement`.
@@ -1831,7 +1893,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param type the data type of the pixel data.
    *  @param pixels the image data.
    */
-  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: HTMLImageElement): Unit = js.native
+  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int,
+      format: Int, `type`: Int, pixels: HTMLImageElement): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from an `HTMLCanvasElement`.
@@ -1846,7 +1909,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param type the data type of the pixel data.
    *  @param pixels the image data..
    */
-  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: HTMLCanvasElement): Unit = js.native
+  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int,
+      format: Int, `type`: Int, pixels: HTMLCanvasElement): Unit = js.native
 
   /**
    * Loads a 2-dimensional texture subimage into a texture unit from an `HTMLVideoElement`.
@@ -1861,7 +1925,8 @@ class WebGLRenderingContext extends js.Object {
    *  @param type the data type of the pixel data.
    *  @param pixels the image data.
    */
-  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: HTMLVideoElement): Unit = js.native
+  def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int,
+      format: Int, `type`: Int, pixels: HTMLVideoElement): Unit = js.native
 
   /**
    * Loads a a scalar float into a [[WebGLUniformLocation]].
@@ -1877,7 +1942,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a `Float32Array` to bind to
    */
-  def uniform1fv(location: WebGLUniformLocation, v: Float32Array): Unit = js.native
+  def uniform1fv(location: WebGLUniformLocation,
+      v: Float32Array): Unit = js.native
 
   /**
    * Loads a a scalar float into a [[WebGLUniformLocation]].
@@ -1885,7 +1951,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to.
    */
-  def uniform1fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit = js.native
+  def uniform1fv(location: WebGLUniformLocation,
+      v: js.Array[Double]): Unit = js.native
 
   /**
    * Loads a a scalar integer into a [[WebGLUniformLocation]].
@@ -1901,7 +1968,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  an `Int32Array` to bind to
    */
-  def uniform1iv(location: WebGLUniformLocation, v: Int32Array): Unit = js.native
+  def uniform1iv(location: WebGLUniformLocation,
+      v: Int32Array): Unit = js.native
 
   /**
    * Loads a a scalar integer into a [[WebGLUniformLocation]].
@@ -1909,7 +1977,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to
    */
-  def uniform1iv(location: WebGLUniformLocation, v: js.Array[ Int]): Unit = js.native
+  def uniform1iv(location: WebGLUniformLocation,
+      v: js.Array[Int]): Unit = js.native
 
   /**
    * Loads a a 2-vector of floats into a [[WebGLUniformLocation]].
@@ -1918,7 +1987,8 @@ class WebGLRenderingContext extends js.Object {
    * @param x  the first float component
    * @param y  the second float component
    */
-  def uniform2f(location: WebGLUniformLocation, x: Double, y: Double): Unit = js.native
+  def uniform2f(location: WebGLUniformLocation, x: Double,
+      y: Double): Unit = js.native
 
   /**
    * Loads a a 2-vector of floats into a [[WebGLUniformLocation]].
@@ -1926,7 +1996,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a `Float32Array` to bind to
    */
-  def uniform2fv(location: WebGLUniformLocation, v: Float32Array): Unit = js.native
+  def uniform2fv(location: WebGLUniformLocation,
+      v: Float32Array): Unit = js.native
 
   /**
    * Loads a a 2-vector of floats
@@ -1934,7 +2005,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind into a [[WebGLUniformLocation]].
    * @param v  a js.Array to bind to.
    */
-  def uniform2fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit = js.native
+  def uniform2fv(location: WebGLUniformLocation,
+      v: js.Array[Double]): Unit = js.native
 
   /**
    * Loads a a 2-vector of integers into a [[WebGLUniformLocation]].
@@ -1943,7 +2015,8 @@ class WebGLRenderingContext extends js.Object {
    * @param x  the first integer component
    * @param y  the second integer component
    */
-  def uniform2i(location: WebGLUniformLocation, x: Int, y: Int): Unit = js.native
+  def uniform2i(location: WebGLUniformLocation, x: Int,
+      y: Int): Unit = js.native
 
   /**
    * Loads a a 2-vector of integers into a [[WebGLUniformLocation]].
@@ -1951,7 +2024,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  an `Int32Array` to bind to
    */
-  def uniform2iv(location: WebGLUniformLocation, v: Int32Array): Unit = js.native
+  def uniform2iv(location: WebGLUniformLocation,
+      v: Int32Array): Unit = js.native
 
   /**
    * Loads a a 2-vector of integers into a [[WebGLUniformLocation]].
@@ -1959,7 +2033,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to
    */
-  def uniform2iv(location: WebGLUniformLocation, v: js.Array[ Int]): Unit = js.native
+  def uniform2iv(location: WebGLUniformLocation,
+      v: js.Array[Int]): Unit = js.native
 
   /**
    * Loads a a 3-vector of floats into a [[WebGLUniformLocation]].
@@ -1969,7 +2044,8 @@ class WebGLRenderingContext extends js.Object {
    * @param y  the second float component.
    * @param z  the third float component.
    */
-  def uniform3f(location: WebGLUniformLocation, x: Double, y: Double, z: Double): Unit = js.native
+  def uniform3f(location: WebGLUniformLocation, x: Double, y: Double,
+      z: Double): Unit = js.native
 
   /**
    * Loads a a 3-vector of floats into a [[WebGLUniformLocation]].
@@ -1977,7 +2053,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a `Float32Array` to bind to
    */
-  def uniform3fv(location: WebGLUniformLocation, v: Float32Array): Unit = js.native
+  def uniform3fv(location: WebGLUniformLocation,
+      v: Float32Array): Unit = js.native
 
   /**
    * Loads a a 3-vector of floats into a [[WebGLUniformLocation]].
@@ -1985,7 +2062,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to.
    */
-  def uniform3fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit = js.native
+  def uniform3fv(location: WebGLUniformLocation,
+      v: js.Array[Double]): Unit = js.native
 
   /**
    * Loads a a 3-vector of integers into a [[WebGLUniformLocation]].
@@ -1995,7 +2073,8 @@ class WebGLRenderingContext extends js.Object {
    * @param y  the second integer component
    * @param z  the third integer component
    */
-  def uniform3i(location: WebGLUniformLocation, x: Int, y: Int, z: Int): Unit = js.native
+  def uniform3i(location: WebGLUniformLocation, x: Int, y: Int,
+      z: Int): Unit = js.native
 
   /**
    * Loads a a 3-vector of integers into a [[WebGLUniformLocation]].
@@ -2003,7 +2082,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  an `Int32Array` to bind to
    */
-  def uniform3iv(location: WebGLUniformLocation, v: Int32Array): Unit = js.native
+  def uniform3iv(location: WebGLUniformLocation,
+      v: Int32Array): Unit = js.native
 
   /**
    * Loads a a 3-vector of integers into a [[WebGLUniformLocation]].
@@ -2011,7 +2091,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to
    */
-  def uniform3iv(location: WebGLUniformLocation, v: js.Array[ Int]): Unit = js.native
+  def uniform3iv(location: WebGLUniformLocation,
+      v: js.Array[Int]): Unit = js.native
 
   /**
    * Loads a a 4-vector of floats into a [[WebGLUniformLocation]].
@@ -2022,7 +2103,8 @@ class WebGLRenderingContext extends js.Object {
    * @param z  the third float component.
    * @param w  the fourth float component.
    */
-  def uniform4f(location: WebGLUniformLocation, x: Double, y: Double, z: Double, w: Double): Unit = js.native
+  def uniform4f(location: WebGLUniformLocation, x: Double, y: Double,
+      z: Double, w: Double): Unit = js.native
 
   /**
    * Loads a a 4-vector of floats into a [[WebGLUniformLocation]].
@@ -2030,7 +2112,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a `Float32Array` to bind to
    */
-  def uniform4fv(location: WebGLUniformLocation, v: Float32Array): Unit = js.native
+  def uniform4fv(location: WebGLUniformLocation,
+      v: Float32Array): Unit = js.native
 
   /**
    * Loads a a 4-vector of floats into a [[WebGLUniformLocation]].
@@ -2038,7 +2121,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to.
    */
-  def uniform4fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit = js.native
+  def uniform4fv(location: WebGLUniformLocation,
+      v: js.Array[Double]): Unit = js.native
 
   /**
    * Loads a a 4-vector of integers into a [[WebGLUniformLocation]].
@@ -2049,7 +2133,8 @@ class WebGLRenderingContext extends js.Object {
    * @param z  the third integer component
    * @param w  the third integer component
    */
-  def uniform4i(location: WebGLUniformLocation, x: Int, y: Int, z: Int, w: Int): Unit = js.native
+  def uniform4i(location: WebGLUniformLocation, x: Int, y: Int, z: Int,
+      w: Int): Unit = js.native
 
   /**
    * Loads a a 4-vector of integers into a [[WebGLUniformLocation]].
@@ -2057,7 +2142,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  an `Int32Array` to bind to
    */
-  def uniform4iv(location: WebGLUniformLocation, v: Int32Array): Unit = js.native
+  def uniform4iv(location: WebGLUniformLocation,
+      v: Int32Array): Unit = js.native
 
   /**
    * Loads a a 4-vector of integers into a [[WebGLUniformLocation]].
@@ -2065,7 +2151,8 @@ class WebGLRenderingContext extends js.Object {
    * @param location  the location to bind.
    * @param v  a js.Array to bind to
    */
-  def uniform4iv(location: WebGLUniformLocation, v: js.Array[Int]): Unit = js.native
+  def uniform4iv(location: WebGLUniformLocation,
+      v: js.Array[Int]): Unit = js.native
 
   /**
    * Loads a a 4x2 matrix into a [[WebGLUniformLocation]].
@@ -2074,7 +2161,8 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source `Float32Array` containing the matrix data.
    */
-  def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit = js.native
+  def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean,
+      value: Float32Array): Unit = js.native
 
   /**
    * Loads a a 4x2 matrix into a [[WebGLUniformLocation]].
@@ -2083,7 +2171,8 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source `js.Array` containing the matrix data.
    */
-  def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit = js.native
+  def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean,
+      value: js.Array[Double]): Unit = js.native
 
   /**
    * Loads a a 4x3 matrix into a [[WebGLUniformLocation]].
@@ -2092,7 +2181,8 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source `Float32Array` containing the matrix data.
    */
-  def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit = js.native
+  def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean,
+      value: Float32Array): Unit = js.native
 
   /**
    * Loads a a 4x3 matrix into a [[WebGLUniformLocation]].
@@ -2101,7 +2191,8 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source `js.Array` containing the matrix data.
    */
-  def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit = js.native
+  def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean,
+      value: js.Array[Double]): Unit = js.native
 
   /**
    * Loads a a 4x4 matrix into a [[WebGLUniformLocation]].
@@ -2110,7 +2201,8 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source `Float32Array` containing the matrix data.
    */
-  def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit = js.native
+  def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean,
+      value: Float32Array): Unit = js.native
 
   /**
    * Loads a a 4x4 matrix into a [[WebGLUniformLocation]].
@@ -2119,7 +2211,8 @@ class WebGLRenderingContext extends js.Object {
    * @param transpose  if `true`, the matrix will loaded into the uniform transposed.
    * @param value  the source `js.Array` containing the matrix data.
    */
-  def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit = js.native
+  def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean,
+      value: js.Array[Double]): Unit = js.native
 
   /**
    * Makes a [[WebGLProgram]] become the active program.
@@ -2188,7 +2281,8 @@ class WebGLRenderingContext extends js.Object {
    * @param y  the second component.
    * @param z  the third component.
    */
-  def vertexAttrib3f(indx: Int, x: Double, y: Double, z: Double): Unit = js.native
+  def vertexAttrib3f(indx: Int, x: Double, y: Double,
+      z: Double): Unit = js.native
 
   /**
    * Loads a 3-vector into a vertex attribute.
@@ -2215,7 +2309,8 @@ class WebGLRenderingContext extends js.Object {
    * @param z  the third component.
    * @param w  the fourth component.
    */
-  def vertexAttrib4f(indx: Int, x: Double, y: Double, z: Double, w: Double): Unit = js.native
+  def vertexAttrib4f(indx: Int, x: Double, y: Double, z: Double,
+      w: Double): Unit = js.native
 
   /**
    * Loads a 4-vector into a vertex attribute.
@@ -2245,10 +2340,12 @@ class WebGLRenderingContext extends js.Object {
    * @param stride the gap between attributes.  0 would be packed together.
    * @param offset the offset to the first component in the array.
    */
-  def vertexAttribPointer(indx: Int, size: Int, `type`: Int, normalized: Boolean, stride: Int, offset: Int): Unit = js.native
+  def vertexAttribPointer(indx: Int, size: Int, `type`: Int,
+      normalized: Boolean, stride: Int, offset: Int): Unit = js.native
 
   /**
    * Sets the OpenGL viewport to render within.
    */
-  def viewport(x: Double, y: Double, width: Double, height: Double): Unit = js.native
+  def viewport(x: Double, y: Double, width: Double,
+      height: Double): Unit = js.native
 }

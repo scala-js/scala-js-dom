@@ -20,6 +20,7 @@ object Fullscreen {
 
   @js.native
   trait FullscreenElement extends js.Object {
+
     /**
      * The Element.requestFullscreen() method issues an asynchronous request to
      * make the element be displayed full-screen.
@@ -40,6 +41,7 @@ object Fullscreen {
 
   @js.native
   trait FullscreenDocument extends js.Object {
+
     /**
      * The fullscreenEnabled attribute tells you whether or not the document is
      * currently in a state that would allow fullscreen mode to be requested.
@@ -79,5 +81,4 @@ object Fullscreen {
      **/
     var onfullscreenerror: js.Function1[Event, _] = js.native
   }
-
 }

@@ -18,7 +18,8 @@ object Fetch extends js.GlobalScope {
    * @param init
    * @return
    */
-  def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response] = js.native
+  def fetch(info: RequestInfo,
+      init: RequestInit = null): js.Promise[Response] = js.native
 }
 
 /**
@@ -97,8 +98,7 @@ object RequestInit {
       requestRedirect: js.UndefOr[RequestRedirect] = js.undefined,
       integrity: js.UndefOr[String] = js.undefined, //see [[https://w3c
       // .github.io/webappsec-subresource-integrity/ integrity spec]]
-      window: js.UndefOr[Null] = js.undefined
-  ): RequestInit = {
+      window: js.UndefOr[Null] = js.undefined): RequestInit = {
     val result = js.Dynamic.literal()
 
     @inline
@@ -160,11 +160,11 @@ trait RequestInit extends js.Object {
 }
 
 /**
-  * [[https://fetch.spec.whatwg.org/#response ¶6.4 Response class]] in whatwg spec
-  *
-  * @param content optional content
-  * @param init optional response initialisiton
-  */
+ * [[https://fetch.spec.whatwg.org/#response ¶6.4 Response class]] in whatwg spec
+ *
+ * @param content optional content
+ * @param init optional response initialisiton
+ */
 @js.native
 class Response(content: BodyInit = null, init: ResponseInit = null)
     extends Body {
@@ -202,6 +202,7 @@ class Response(content: BodyInit = null, init: ResponseInit = null)
  */
 @js.native
 object Response extends js.Object {
+
   /**
    * @return a new Response object associated with a network error.
    */
@@ -222,18 +223,19 @@ object Response extends js.Object {
  */
 @ScalaJSDefined
 trait ResponseInit extends js.Object {
-    var status: Int
-    var statusText: ByteString
-    var headers: HeadersInit
+  var status: Int
+  var statusText: ByteString
+  var headers: HeadersInit
 }
 
 object ResponseInit {
-  def apply(_status: Int = 200,
-      _statusText: ByteString = "OK",
-      _headers: HeadersInit = js.Dictionary[String]()): ResponseInit = new ResponseInit {
-    var status = _status
-    var statusText = _statusText
-    var headers = _headers
+  def apply(_status: Int = 200, _statusText: ByteString = "OK",
+      _headers: HeadersInit = js.Dictionary[String]()): ResponseInit = {
+    new ResponseInit {
+      var status = _status
+      var statusText = _statusText
+      var headers = _headers
+    }
   }
 }
 
@@ -367,16 +369,17 @@ class Headers(map: HeadersInit = js.Array[js.Array[String]]())
   def has(name: ByteString): Boolean = js.native
 }
 
-
 @js.native
 sealed trait ReferrerPolicy extends js.Any
 
 object ReferrerPolicy {
   val empty = "".asInstanceOf[ReferrerPolicy]
   val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
-  val `no-referrer-when-downgrade` = "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
+  val `no-referrer-when-downgrade` =
+    "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
   val `origin-only` = "origin-only".asInstanceOf[ReferrerPolicy]
-  val `origin-when-cross-origin` = "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
+  val `origin-when-cross-origin` =
+    "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
   val `unsafe-url` = "unsafe-url".asInstanceOf[ReferrerPolicy]
 }
 

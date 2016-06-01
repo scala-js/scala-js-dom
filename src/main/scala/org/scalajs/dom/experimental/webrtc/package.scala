@@ -11,7 +11,9 @@ package object webrtc {
 
   @js.native
   trait NavigatorMediaStream extends js.Object {
-    
-    def getUserMedia(constraints: MediaStreamConstraints, success: js.Function1[MediaStream,Any], error: js.Function1[DOMError, Any] ): Unit = js.native
+
+    def getUserMedia(constraints: MediaStreamConstraints,
+        success: js.Function1[MediaStream, Any],
+        error: js.Function1[DOMError, Any]): Unit = js.native
   }
 }

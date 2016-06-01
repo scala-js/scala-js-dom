@@ -14,10 +14,11 @@ import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
 trait GamepadMappingType extends js.Any
 
 /**
-  * Represents the state of a button.
-  */
+ * Represents the state of a button.
+ */
 @ScalaJSDefined
 trait GamepadButton extends js.Any {
+
   /**
    * True if the button is pressed, false otherwise.
    */
@@ -35,6 +36,7 @@ trait GamepadButton extends js.Any {
  */
 @ScalaJSDefined
 trait Gamepad extends js.Any {
+
   /** The identification string for the gamepad. */
   val id: String
 
@@ -81,6 +83,6 @@ class GamepadEvent(init: GamepadEventInit) extends dom.Event {
 }
 
 @js.native
-trait GamepadNavigator extends js.Any  {
+trait GamepadNavigator extends js.Any {
   def getGamepads(): js.Array[Gamepad] = js.native
 }

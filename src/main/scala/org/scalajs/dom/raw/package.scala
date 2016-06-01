@@ -1,13 +1,12 @@
 /**
-  * Documentation marked "MDN" is thanks to Mozilla Contributors
-  * at https://developer.mozilla.org/en-US/docs/Web/API and available
-  * under the Creative Commons Attribution-ShareAlike v2.5 or later.
-  * http://creativecommons.org/licenses/by-sa/2.5/
-  *
-  * Everything else is under the MIT License
-  * http://opensource.org/licenses/MIT
-  */
-
+ * Documentation marked "MDN" is thanks to Mozilla Contributors
+ * at https://developer.mozilla.org/en-US/docs/Web/API and available
+ * under the Creative Commons Attribution-ShareAlike v2.5 or later.
+ * http://creativecommons.org/licenses/by-sa/2.5/
+ *
+ * Everything else is under the MIT License
+ * http://opensource.org/licenses/MIT
+ */
 package org.scalajs.dom
 
 import scala.scalajs.js
@@ -16,7 +15,8 @@ import scala.scalajs.js.typedarray.ArrayBuffer
 
 package object raw {
 
-  @deprecated(message = "Import from scala.scalajs.js instead.", since = "0.9.0")
+  @deprecated(message = "Import from scala.scalajs.js instead.",
+      since = "0.9.0")
   type Promise[+A] = js.Promise[A]
 
   /**
@@ -33,10 +33,23 @@ package object raw {
    */
   type Transferable = ArrayBuffer | MessagePort
 
-  @deprecated(message = "Import from org.scalajs.dom.experimental.serviceworkers instead.", since = "0.9.0")
+  @deprecated(
+      message =
+        "Import from org.scalajs.dom.experimental.serviceworkers instead.",
+      since = "0.9.0")
   type ServiceWorker = experimental.serviceworkers.ServiceWorker
-  @deprecated(message = "Import from org.scalajs.dom.experimental.serviceworkers instead.", since = "0.9.0")
-  type ServiceWorkerRegistration = experimental.serviceworkers.ServiceWorkerRegistration
-  @deprecated(message = "Import from org.scalajs.dom.experimental.serviceworkers instead.", since = "0.9.0")
-  type ServiceWorkerContainer = experimental.serviceworkers.ServiceWorkerContainer
+
+  @deprecated(
+      message =
+        "Import from org.scalajs.dom.experimental.serviceworkers instead.",
+      since = "0.9.0")
+  type ServiceWorkerRegistration =
+    experimental.serviceworkers.ServiceWorkerRegistration
+
+  @deprecated(
+      message =
+        "Import from org.scalajs.dom.experimental.serviceworkers instead.",
+      since = "0.9.0")
+  type ServiceWorkerContainer =
+    experimental.serviceworkers.ServiceWorkerContainer
 }

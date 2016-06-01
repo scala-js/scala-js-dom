@@ -6,5 +6,4 @@ package org.scalajs.dom.experimental
  *
  * [[http://w3c.github.io/deviceorientation/spec-source-orientation.html]]
  */
-package object deviceorientation {
-}
+package object deviceorientation

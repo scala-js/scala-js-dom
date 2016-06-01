@@ -64,9 +64,12 @@ trait WebGLVertexArrayObjectOES extends js.Object
 trait OESVertexArrayObject extends js.Object {
   val VERTEX_ARRAY_BINDING_OES: Int = js.native
   def createVertexArrayOES(): WebGLVertexArrayObjectOES = js.native
-  def deleteVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES): Unit = js.native
-  def isVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES): Boolean = js.native
-  def bindVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES): Unit = js.native
+  def deleteVertexArrayOES(
+      arrayObject: WebGLVertexArrayObjectOES): Unit = js.native
+  def isVertexArrayOES(
+      arrayObject: WebGLVertexArrayObjectOES): Boolean = js.native
+  def bindVertexArrayOES(
+      arrayObject: WebGLVertexArrayObjectOES): Unit = js.native
 }
 
 /**
@@ -205,22 +208,13 @@ trait WEBGLDrawBuffers extends js.Object {
 trait ANGLEInstancedArrays extends js.Object {
   val VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE: Int = js.native
 
-  def drawArraysInstancedANGLE(
-      mode: Int,
-      first: Int,
-      count: Int,
+  def drawArraysInstancedANGLE(mode: Int, first: Int, count: Int,
       primcount: Int): Unit = js.native
 
-  def drawElementsInstancedANGLE(
-      mode: Int,
-      count: Int,
-      `type`: Int,
-      offset: Int,
-      primcount: Int): Unit = js.native
+  def drawElementsInstancedANGLE(mode: Int, count: Int, `type`: Int,
+      offset: Int, primcount: Int): Unit = js.native
 
-  def vertexAttribDivisorANGLE(
-      index: Int,
-      divisor: Int): Unit = js.native
+  def vertexAttribDivisorANGLE(index: Int, divisor: Int): Unit = js.native
 }
 
 /**

@@ -18,7 +18,8 @@ package object experimental {
    * in whatwg Fetch spec
    * todo: it should be OpenEndedDictionary[ByteString]
    */
-  type HeadersInit = Headers | Sequence[Sequence[ByteString]] | OpenEndedDictionary[ByteString]
+  type HeadersInit =
+    Headers | Sequence[Sequence[ByteString]] | OpenEndedDictionary[ByteString]
 
   /**
    * This type should capture strings consisting only of ASCII chars
@@ -30,7 +31,8 @@ package object experimental {
    * defined at [[https://fetch.spec.whatwg.org/#body-mixin ¶6.2 Body mixin]]
    * in whatwg Fetch spec
    */
-  type BodyInit = Blob | BufferSource | FormData | String //todo: add URLSearchParams
+  type BodyInit =
+    Blob | BufferSource | FormData | String //todo: add URLSearchParams
 
   /**
    * WebIDL sequence<T> is js.Array[T] | JSIterable[T]. However @mseddon knows
@@ -46,5 +48,4 @@ package object experimental {
    * API git repo, as this is not clearly defined
    */
   type OpenEndedDictionary[T] = js.Dictionary[T]
-
 }

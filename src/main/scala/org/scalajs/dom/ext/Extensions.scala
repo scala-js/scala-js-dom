@@ -13,7 +13,6 @@ import org.scalajs.dom
 import org.scalajs.dom.{FormData, html, raw}
 import org.scalajs.dom.raw.Blob
 
-
 /**
  * Used to extend out javascript *Collections to make them usable as normal
  * Scala Seq[*]s
@@ -33,7 +32,6 @@ class EasySeq[T](jsLength: Int, jsApply: Int => T) extends Seq[T] {
       index += 1
       res
     }
-
   }
 }
 
@@ -60,9 +58,9 @@ object Color {
 
   def apply(s: String): Color = {
     s match {
-      case RGB(r, g, b) => Color(r.toInt, g.toInt, b.toInt)
+      case RGB(r, g, b)      => Color(r.toInt, g.toInt, b.toInt)
       case ShortHex(r, g, b) => Color(hex(r) * 16, hex(g) * 16, hex(b) * 16)
-      case LongHex(r, g, b) => Color(hex(r), hex(g), hex(b))
+      case LongHex(r, g, b)  => Color(hex(r), hex(g), hex(b))
     }
   }
 
@@ -75,23 +73,20 @@ object Color {
   val Yellow = Color(255, 255, 0)
   val Black = Color(0, 0, 0)
   val all = Seq(
-    White,
-    Red,
-    Green,
-    Blue,
-    Cyan,
-    Magenta,
-    Yellow,
-    Black
+      White,
+      Red,
+      Green,
+      Blue,
+      Cyan,
+      Magenta,
+      Yellow,
+      Black
   )
 }
 
 object Image {
   def createBase64Svg(s: String) = {
-    val img =
-      dom.document
-        .createElement("img")
-        .asInstanceOf[html.Image]
+    val img = dom.document.createElement("img").asInstanceOf[html.Image]
 
     img.src = "data:image/svg+xml;base64," + s
     img
@@ -229,7 +224,6 @@ object KeyCode {
   @deprecated("Use KeyCode.Z instead", "0.8.1") final val z = Z
 }
 
-
 /**
  * Thrown when `Ajax.get` or `Ajax.post` receives a non-20X response code.
  * Contains the XMLHttpRequest that resulted in that response
@@ -243,6 +237,7 @@ case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
  * an Ajax call, returning a Future.
  */
 object Ajax {
+
   /**
    * Supported data formats for Ajax are implicitly converted to InputData
    */
@@ -252,11 +247,13 @@ object Ajax {
   object InputData {
     implicit def str2ajax(s: String): InputData = s.asInstanceOf[InputData]
 
-    implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData = b.asInstanceOf[InputData]
+    implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData =
+      b.asInstanceOf[InputData]
 
     implicit def blob2ajax(b: Blob): InputData = b.asInstanceOf[InputData]
 
-    implicit def formdata2ajax(b: FormData): InputData = b.asInstanceOf[InputData]
+    implicit def formdata2ajax(b: FormData): InputData =
+      b.asInstanceOf[InputData]
 
     implicit def byteBuffer2ajax(data: ByteBuffer): InputData = {
       if (data.hasTypedArray()) {
@@ -273,54 +270,38 @@ object Ajax {
     }
   }
 
-  def get(url: String,
-          data: InputData = null,
-          timeout: Int = 0,
-          headers: Map[String, String] = Map.empty,
-          withCredentials: Boolean = false,
-          responseType: String = "") = {
+  def get(url: String, data: InputData = null, timeout: Int = 0,
+      headers: Map[String, String] = Map.empty,
+      withCredentials: Boolean = false, responseType: String = "") = {
     apply("GET", url, data, timeout, headers, withCredentials, responseType)
   }
 
-  def post(url: String,
-           data: InputData = null,
-           timeout: Int = 0,
-           headers: Map[String, String] = Map.empty,
-           withCredentials: Boolean = false,
-           responseType: String = "") = {
+  def post(url: String, data: InputData = null, timeout: Int = 0,
+      headers: Map[String, String] = Map.empty,
+      withCredentials: Boolean = false, responseType: String = "") = {
     apply("POST", url, data, timeout, headers, withCredentials, responseType)
   }
 
-  def put(url: String,
-          data: InputData = null,
-          timeout: Int = 0,
-          headers: Map[String, String] = Map.empty,
-          withCredentials: Boolean = false,
-          responseType: String = "") = {
+  def put(url: String, data: InputData = null, timeout: Int = 0,
+      headers: Map[String, String] = Map.empty,
+      withCredentials: Boolean = false, responseType: String = "") = {
     apply("PUT", url, data, timeout, headers, withCredentials, responseType)
   }
 
-  def delete(url: String,
-             data: InputData = null,
-             timeout: Int = 0,
-             headers: Map[String, String] = Map.empty,
-             withCredentials: Boolean = false,
-             responseType: String = "") = {
+  def delete(url: String, data: InputData = null, timeout: Int = 0,
+      headers: Map[String, String] = Map.empty,
+      withCredentials: Boolean = false, responseType: String = "") = {
     apply("DELETE", url, data, timeout, headers, withCredentials, responseType)
   }
 
-  def apply(method: String,
-            url: String,
-            data: InputData,
-            timeout: Int,
-            headers: Map[String, String],
-            withCredentials: Boolean,
-            responseType: String): Future[dom.XMLHttpRequest] = {
+  def apply(method: String, url: String, data: InputData, timeout: Int,
+      headers: Map[String, String], withCredentials: Boolean,
+      responseType: String): Future[dom.XMLHttpRequest] = {
     val req = new dom.XMLHttpRequest()
     val promise = Promise[dom.XMLHttpRequest]()
 
-    req.onreadystatechange = {(e: dom.Event) =>
-      if (req.readyState.toInt == 4){
+    req.onreadystatechange = { (e: dom.Event) =>
+      if (req.readyState.toInt == 4) {
         if ((req.status >= 200 && req.status < 300) || req.status == 304)
           promise.success(req)
         else
@@ -368,6 +349,7 @@ object LocalStorage extends Storage(dom.window.localStorage)
  */
 @js.native
 trait TouchEvents extends js.Object {
+
   /**
    * The touchstart event is fired when a touch point is placed on the touch
    * surface.

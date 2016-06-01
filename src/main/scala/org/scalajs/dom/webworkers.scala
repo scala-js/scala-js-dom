@@ -1,6 +1,5 @@
 package org.scalajs.dom
 
-
 object webworkers {
   type AbstractWorker = raw.AbstractWorker
   type DedicatedWorkerGlobalScope = raw.DedicatedWorkerGlobalScope

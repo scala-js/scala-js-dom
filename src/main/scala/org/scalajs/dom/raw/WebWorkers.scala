@@ -10,6 +10,7 @@ import scala.scalajs.js
  */
 @js.native
 trait AbstractWorker extends EventTarget {
+
   /**
    * The AbstractWorker.onerror property represents an EventHandler, that is a
    * function to be called when the error event occurs and bubbles through the
@@ -36,6 +37,7 @@ trait AbstractWorker extends EventTarget {
  */
 @js.native
 class Worker(stringUrl: String) extends AbstractWorker {
+
   /**
    * The Worker.onmessage property represents an EventHandler, that is a
    * function to be called when the message event occurs. These events are of
@@ -75,7 +77,8 @@ class Worker(stringUrl: String) extends AbstractWorker {
    *                     transferList.
    */
   def postMessage(aMessage: js.Any,
-      transferList: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
+      transferList: js.UndefOr[
+          js.Array[Transferable]] = js.native): Unit = js.native
 
   /**
    * The Worker.terminate() method immediately terminates the Worker. This does
@@ -103,6 +106,7 @@ class Worker(stringUrl: String) extends AbstractWorker {
  */
 @js.native
 trait WorkerGlobalScope extends EventTarget {
+
   /**
    * The caches read-only property of the WorkerGlobalScope interface returns
    * the CacheStorage object associated with the current worker context.
@@ -168,6 +172,7 @@ trait WorkerGlobalScope extends EventTarget {
    * MDN
    */
   var onError: js.Function1[ErrorEvent, _] = js.native
+
   /**
    * The onlanguagechange property of the WorkerGlobalScope interface represents
    * an EventHandler to be called when the languagechange event occurs and
@@ -185,6 +190,7 @@ trait WorkerGlobalScope extends EventTarget {
    * MDN
    */
   var onoffline: js.Function1[Event, _] = js.native
+
   /**
    * The ononline property of the WorkerGlobalScope interface represents an
    * EventHandler to be called when the online event occurs and bubbles through
@@ -206,6 +212,7 @@ trait WorkerGlobalScope extends EventTarget {
  */
 @js.native
 trait DedicatedWorkerGlobalScope extends WorkerGlobalScope {
+
   /**
    * The onmessage property of the DedicatedWorkerGlobalScope interface
    * represents an EventHandler to be called when the message event occurs and
@@ -241,7 +248,8 @@ trait DedicatedWorkerGlobalScope extends WorkerGlobalScope {
    *
    */
   def postMessage(aMessage: js.Any,
-      transferList: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
+      transferList: js.UndefOr[
+          js.Array[Transferable]] = js.native): Unit = js.native
 }
 
 @js.native
@@ -265,7 +273,8 @@ object DedicatedWorkerGlobalScope extends js.GlobalScope {
  * MDN
  */
 @js.native
-trait WorkerNavigator extends NavigatorID with NavigatorOnLine with NavigatorLanguage
+trait WorkerNavigator
+    extends NavigatorID with NavigatorOnLine with NavigatorLanguage
 
 /**
  * The WorkerLocation interface defines the absolute location of the script
@@ -277,6 +286,7 @@ trait WorkerNavigator extends NavigatorID with NavigatorOnLine with NavigatorLan
  */
 @js.native
 trait WorkerLocation extends js.Object {
+
   /**
    * Is a DOMString containing a '#' followed by the fragment identifier of the
    * URL.

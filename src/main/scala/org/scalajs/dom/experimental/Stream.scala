@@ -133,6 +133,7 @@ trait WriteableStream[-T] extends js.Object {
  */
 @js.native
 trait ReadableStream[+T] extends js.Object {
+
   /**
    * The locked getter returns whether or not the readable stream is locked
    * to a reader.
@@ -214,7 +215,8 @@ trait ReadableStream[+T] extends js.Object {
    *
    * //todo: determine the type of options
    */
-  def pipeTo(dest: WriteableStream[T], options: Any = js.undefined): Unit = js.native
+  def pipeTo(dest: WriteableStream[T],
+      options: Any = js.undefined): Unit = js.native
 
   /**
    * See [[https://streams.spec.whatwg.org/#rs-tee ¶3.2.4.6. tee()]] of whatwg
@@ -233,7 +235,7 @@ trait ReadableStream[+T] extends js.Object {
    * branches. (Let us know if you think we should add an option to tee that
    * creates structured clones of the chunks for each branch.)
    */
-  def tee(): js.Array[_ <: ReadableStream[T]] = js.native  //TODO js.Tuple2[ReadableStream[T], ReadableStream[T]]
+  def tee(): js.Array[_ <: ReadableStream[T]] = js.native //TODO js.Tuple2[ReadableStream[T], ReadableStream[T]]
 }
 
 /**
@@ -318,7 +320,8 @@ class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
 
  */
 @js.native
-class ReadableStreamController[-T](stream: ReadableStream[T] = null) extends js.Object {
+class ReadableStreamController[-T](stream: ReadableStream[T] = null)
+    extends js.Object {
 
   /**
    *
@@ -368,10 +371,11 @@ class ReadableStreamController[-T](stream: ReadableStream[T] = null) extends js.
  */
 @js.native
 trait Chunk[+T] extends js.Object {
+
   /**
    * The value of the chunk.
    */
-  def value: T  = js.native
+  def value: T = js.native
 
   def done: Boolean = js.native
 }

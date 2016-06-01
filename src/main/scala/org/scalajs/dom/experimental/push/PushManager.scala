@@ -18,6 +18,7 @@ import scala.scalajs.js.typedarray.ArrayBuffer
  */
 @js.native
 trait PushManager extends js.Object {
+
   /**
    * Retrieves an existing push subscription. It returns a Promise that resolves to a
    * PushSubscription object containing details of an existing subscription. If no
@@ -63,6 +64,7 @@ trait PushManager extends js.Object {
  */
 @js.native
 trait PushSubscription extends js.Object {
+
   /**
    * The endpoint read-only property of the PushSubscription interface returns a USVString
    * containing the endpoint associated with the push subscription. The endpoint takes the
@@ -89,11 +91,11 @@ trait PushSubscription extends js.Object {
   def unsubscribe(): js.Promise[Boolean] = js.native
 
   /**
-    * The toJSON() method of the PushSubscription interface is a standard serializer: it returns
-    * a JSON representation of the subscription properties, providing a useful shortcut.
-    *
-    * MDN
-    */
+   * The toJSON() method of the PushSubscription interface is a standard serializer: it returns
+   * a JSON representation of the subscription properties, providing a useful shortcut.
+   *
+   * MDN
+   */
   def toJSON(): String = js.native
 }
 
@@ -127,6 +129,7 @@ trait PushEvent extends ExtendableEvent {
  */
 @js.native
 trait PushMessageData extends js.Object {
+
   /**
    * Extracts the data as an ArrayBuffer object.
    *
@@ -157,11 +160,11 @@ trait PushMessageData extends js.Object {
 }
 
 /**
-  * A PushSubscriptionOptions object represents additional options associated with a push subscription.
-  *
-  * The userVisibleOnly option, when set to true, indicates that the push subscription will only be used
-  * for push messages whose effect is made visible to the user, for example by displaying a Web Notification.
-  */
+ * A PushSubscriptionOptions object represents additional options associated with a push subscription.
+ *
+ * The userVisibleOnly option, when set to true, indicates that the push subscription will only be used
+ * for push messages whose effect is made visible to the user, for example by displaying a Web Notification.
+ */
 @js.native
 trait PushSubscriptionOptions extends js.Object {
   var userVisibleOnly: js.UndefOr[Boolean] = js.native
@@ -171,10 +174,12 @@ trait PushSubscriptionOptions extends js.Object {
 object PushSubscriptionOptions {
 
   /**
-    * Creates a new [[PushSubscriptionOptions]] object.  Default value for userVisibleOnly is false.
-    */
+   * Creates a new [[PushSubscriptionOptions]] object.  Default value for userVisibleOnly is false.
+   */
   def apply(userVisibleOnly: Boolean = false): PushSubscriptionOptions = {
-    js.Dynamic.literal("userVisibleOnly" -> userVisibleOnly).asInstanceOf[PushSubscriptionOptions]
+    js.Dynamic
+      .literal("userVisibleOnly" -> userVisibleOnly)
+      .asInstanceOf[PushSubscriptionOptions]
   }
 }
 
@@ -187,6 +192,7 @@ sealed trait PushPermissionState extends js.Any
 
 /** Static definitions for [[PushPermissionState]] */
 object PushPermissionState {
+
   /**
    * The webapp has permission to use the Push API.
    */
@@ -212,11 +218,13 @@ sealed trait PushEncryptionKeyName extends js.Any
 
 /** Static definitions for [[PushEncryptionKeyName]] */
 object PushEncryptionKeyName {
+
   /**
    * used to retrieve the P-256 ECDH Diffie-Hellman public key described here:
    * [[https://tools.ietf.org/html/draft-ietf-webpush-encryption-01]]
    */
   val p256dh = "p256dh".asInstanceOf[PushEncryptionKeyName]
+
   /**
    * used to retrieve the authentication secret described here:
    * [[https://tools.ietf.org/html/draft-ietf-webpush-encryption-01]]

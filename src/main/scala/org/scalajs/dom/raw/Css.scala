@@ -7,7 +7,6 @@
  * Everything else is under the MIT License
  * http://opensource.org/licenses/MIT
  */
-
 package org.scalajs.dom.raw
 
 import scala.scalajs.js
@@ -185,7 +184,8 @@ class CSSStyleDeclaration extends js.Object {
   @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: Int, v: String): Unit = js.native
 
-  def setProperty(propertyName: String, value: String, priority: String = js.native): Unit = js.native
+  def setProperty(propertyName: String, value: String,
+      priority: String = js.native): Unit = js.native
 
   var animationFillMode: String = js.native
   var floodColor: String = js.native
@@ -243,6 +243,7 @@ class CSSStyleSheet extends StyleSheet {
   var isPrefAlternate: Boolean = js.native
   var readOnly: Boolean = js.native
   var cssText: String = js.native
+
   /**
    * If this style sheet is imported into the document using an `@import` rule, the
    * ownerRule property will return that CSSImportRule, otherwise it returns null.
@@ -251,6 +252,7 @@ class CSSStyleSheet extends StyleSheet {
    */
   var ownerRule: CSSRule = js.native
   var href: String = js.native
+
   /**
    * Returns a CSSRuleList of the CSS rules in the style sheet.
    *
@@ -261,7 +263,9 @@ class CSSStyleSheet extends StyleSheet {
 
   def addImport(bstrURL: String, lIndex: Int = js.native): Int = js.native
 
-  def addPageRule(bstrSelector: String, bstrStyle: String, lIndex: Int = js.native): Int = js.native
+  def addPageRule(bstrSelector: String, bstrStyle: String,
+      lIndex: Int = js.native): Int = js.native
+
   /**
    * The CSSStyleSheet.insertRule() method inserts a new style rule into the current
    * style sheet.
@@ -270,8 +274,8 @@ class CSSStyleSheet extends StyleSheet {
    */
   def insertRule(rule: String, index: Int = js.native): Int = js.native
 
-
   def removeRule(lIndex: Int): Unit = js.native
+
   /**
    * Deletes a rule from the style sheet.
    *
@@ -279,8 +283,8 @@ class CSSStyleSheet extends StyleSheet {
    */
   def deleteRule(index: Int = js.native): Unit = js.native
 
-
-  def addRule(bstrSelector: String, bstrStyle: String = js.native, lIndex: Int = js.native): Int = js.native
+  def addRule(bstrSelector: String, bstrStyle: String = js.native,
+      lIndex: Int = js.native): Int = js.native
 
   def removeImport(lIndex: Int): Unit = js.native
 }
@@ -293,6 +297,7 @@ class CSSStyleSheet extends StyleSheet {
  */
 @js.native
 class CSSStyleRule extends CSSRule {
+
   /**
    * Gets/sets the textual representation of the selector for this rule, e.g. "h1,h2".
    *
@@ -311,6 +316,7 @@ class CSSStyleRule extends CSSRule {
  */
 @js.native
 class CSSMediaRule extends CSSRule {
+
   /**
    * Specifies a MediaList representing the intended destination medium for style
    * information.
@@ -321,7 +327,6 @@ class CSSMediaRule extends CSSRule {
   var cssRules: CSSRuleList = js.native
 
   def insertRule(rule: String, index: Int = js.native): Int = js.native
-
 
   def deleteRule(index: Int = js.native): Unit = js.native
 }
@@ -335,12 +340,14 @@ class CSSMediaRule extends CSSRule {
  */
 @js.native
 class CSSNamespaceRule extends CSSRule {
+
   /**
    * Returns a DOMString containing the text of the URI of the given namespace.
    *
    * MDN
    */
   var namespaceURI: String = js.native
+
   /**
    * Returns a DOMString with the name of the prefix associated to this namespace. If
    * there is no such prefix, returns  null.
@@ -366,6 +373,7 @@ class CSSImportRule extends CSSRule {
  */
 @js.native
 class CSSRule extends js.Object {
+
   /**
    * cssText returns the actual text of the style rule. To be able to set a stylesheet rule
    * dynamically, see Using dynamic styling information.
@@ -373,6 +381,7 @@ class CSSRule extends js.Object {
    * MDN
    */
   var cssText: String = js.native
+
   /**
    * parentStyleSheet returns the stylesheet object in which the current rule is
    * defined.
@@ -380,6 +389,7 @@ class CSSRule extends js.Object {
    * MDN
    */
   var parentStyleSheet: CSSStyleSheet = js.native
+
   /**
    * Returns the containing rule, otherwise null. E.g. if this rule is a style rule
    * inside an `@media` block, the parent rule would be that CSSMediaRule.
@@ -418,7 +428,6 @@ class CSSFontFaceRule extends CSSRule {
   var style: CSSStyleDeclaration = js.native
 }
 
-
 /**
  * CSSPageRule is an object representing a single CSS `@page` rule. It implements the
  * CSSRule interface with a type value of 6 (CSSRule.PAGE_RULE).
@@ -428,6 +437,7 @@ class CSSFontFaceRule extends CSSRule {
 @js.native
 class CSSPageRule extends CSSRule {
   var pseudoClass: String = js.native
+
   /**
    * Represents the text of the page selector associated with the at-rule.
    *
@@ -435,6 +445,7 @@ class CSSPageRule extends CSSRule {
    */
   var selectorText: String = js.native
   var selector: String = js.native
+
   /**
    * Returns the declaration block associated with the at-rule.
    *
@@ -442,7 +453,6 @@ class CSSPageRule extends CSSRule {
    */
   var style: CSSStyleDeclaration = js.native
 }
-
 
 /**
  * A CSSRuleList is an array-like object containing an ordered collection of CSSRule
@@ -463,12 +473,14 @@ class CSSRuleList extends DOMList[CSSRule]
  */
 @js.native
 class CSSKeyframesRule extends CSSRule {
+
   /**
    * Represents the name of the animation, used by the animation-name property.
    *
    * MDN
    */
   var name: String = js.native
+
   /**
    * Returns a CSSRuleList of the CSS rules in the media rule.
    *
@@ -505,7 +517,6 @@ class CSSKeyframesRule extends CSSRule {
   def appendRule(rule: String): Unit = js.native
 }
 
-
 /**
  * The CSSKeyframeRule interface describes an object representing a set of style for
  * a given keyframe. It corresponds to the contains of a single keyframe of a
@@ -516,6 +527,7 @@ class CSSKeyframesRule extends CSSRule {
  */
 @js.native
 class CSSKeyframeRule extends CSSRule {
+
   /**
    * Represents the key of the keyframe, like '10%', '75%'. The from keyword maps to '0%'
    * and the to keyword maps to '100%'.
@@ -523,6 +535,7 @@ class CSSKeyframeRule extends CSSRule {
    * MDN
    */
   var keyText: String = js.native
+
   /**
    * Returns a CSSStyleDeclaration of the CSS style associated with the keyfrom.
    *
