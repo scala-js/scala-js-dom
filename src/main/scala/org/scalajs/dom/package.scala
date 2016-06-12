@@ -139,7 +139,6 @@ package object dom {
   type NodeList = raw.NodeList
   type NodeListOf[TNode <: Node] = raw.NodeListOf[TNode]
 
-  type ObjectURLOptions = raw.ObjectURLOptions
   type OfflineAudioContext = raw.OfflineAudioContext
   @deprecated(
       "Use the promise version of OfflineAudioContext.startRendering instead.",
@@ -198,7 +197,7 @@ package object dom {
   type TreeWalker = raw.TreeWalker
 
   type UIEvent = raw.UIEvent
-  type URL = raw.URL
+  lazy val URL: raw.URL.type = raw.URL
 
   type ValidityState = raw.ValidityState
   type VisibilityState = raw.VisibilityState
