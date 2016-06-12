@@ -6067,11 +6067,6 @@ class ClientRectList extends DOMList[ClientRect]
 @js.native
 trait External extends js.Object
 
-@js.native
-trait ObjectURLOptions extends js.Object {
-  def oneTimeOnly: Boolean = js.native
-}
-
 /**
  * The ErrorEvent interface represents events providing information related to
  * errors in scripts or in files.
@@ -6584,13 +6579,12 @@ abstract class File extends Blob {
 }
 
 /**
- * The URL interface represent an object providing static methods used for creating
- * object URLs.
+ * The URL object provides static methods used for creating object URLs.
  *
  * MDN
  */
 @js.native
-trait URL extends js.Object {
+object URL extends js.Object {
 
   /**
    * The URL.revokeObjectURL() static method releases an existing object URL which
@@ -6610,8 +6604,7 @@ trait URL extends js.Object {
    *
    * MDN
    */
-  def createObjectURL(`object`: js.Any,
-      options: ObjectURLOptions = js.native): String = js.native
+  def createObjectURL(blob: Blob): String = js.native
 }
 
 /**
