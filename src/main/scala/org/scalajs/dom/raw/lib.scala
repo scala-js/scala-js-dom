@@ -9,6 +9,8 @@
  */
 package org.scalajs.dom.raw
 
+import org.scalajs.dom.experimental.webvr.{NavigatorWebVR, WindowWebVR}
+
 import scala.scalajs.js
 import scala.scalajs.js.typedarray.ArrayBuffer
 import scala.scalajs.js.|
@@ -490,7 +492,7 @@ trait WindowTimers extends WindowTimersExtension {
 @js.native
 class Navigator
     extends NavigatorID with NavigatorOnLine with NavigatorContentUtils
-    with NavigatorGeolocation with NavigatorStorageUtils with NavigatorLanguage
+    with NavigatorGeolocation with NavigatorStorageUtils with NavigatorLanguage with NavigatorWebVR
 
 @js.native
 trait NodeSelector extends js.Object {
@@ -1720,7 +1722,7 @@ trait WindowSessionStorage extends js.Object {
 class Window
     extends EventTarget with WindowLocalStorage with WindowSessionStorage
     with WindowTimers with WindowBase64 with IDBEnvironment
-    with WindowConsole {
+    with WindowConsole with WindowWebVR {
   var ondragend: js.Function1[DragEvent, _] = js.native
 
   /**

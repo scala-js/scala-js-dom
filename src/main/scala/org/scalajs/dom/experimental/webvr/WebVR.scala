@@ -11,9 +11,8 @@ import org.scalajs.dom._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.{Promise => _, _}
+import scala.scalajs.js.Promise
 import scala.scalajs.js.typedarray.Float32Array
-import scala.concurrent._
 import scala.language.implicitConversions
 
 
@@ -281,39 +280,39 @@ trait VRStageParameters extends js.Object {
 /**
   * Navigator Interface extension
   */
-@ScalaJSDefined
-trait Navigator extends js.Object {
+@js.native
+trait NavigatorWebVR extends js.Object {
   /** Return a Promise which resolves to a list of available VRDisplays. */
-  def getVRDisplays(): Promise[js.Array[VRDisplay]]
+  def getVRDisplays(): Promise[js.Array[VRDisplay]] = js.native
 
   /** activeVRDisplays includes every VRDisplay that is currently presenting. */
-  val activeVRDisplays: js.Array[VRDisplay] // FrozenArray
+  val activeVRDisplays: js.Array[VRDisplay] = js.native
 }
 
 /**
   * Window Interface extension
   */
-@ScalaJSDefined
-trait Window extends js.Object {
+@js.native
+trait WindowWebVR extends js.Object {
   /** A user agent MAY dispatch this event type to indicate that a VRDisplay has been connected. */
-  var onvrdisplayconnected: EventHandler
+  var onvrdisplayconnected: EventHandler = js.native
   /** A user agent MAY dispatch this event type to indicate that a VRDisplay has been disconnected. */
-  var onvrdisplaydisconnected: EventHandler
+  var onvrdisplaydisconnected: EventHandler = js.native
   /** A user agent MAY dispatch this event type to indicate that something has occured which suggests the VRDisplay should be presented to. For example, if the VRDisplay is capable of detecting when the user has put it on, this event SHOULD fire when they do so with the reason "mounted". */
-  var onvrdisplayactivate: EventHandler
+  var onvrdisplayactivate: EventHandler = js.native
   /** A user agent MAY dispatch this event type to indicate that something has occured which suggests the VRDisplay should exit presentation. For example, if the VRDisplay is capable of detecting when the user has taken it off, this event SHOULD fire when they do so with the reason "unmounted". */
-  var onvrdisplaydeactivate: EventHandler
+  var onvrdisplaydeactivate: EventHandler = js.native
   /** A user agent MUST dispatch this event type to indicate that a VRDisplay has begun or ended VR presentation. This event should not fire on subsequent calls to requestPresent() after the VRDisplay has already begun VR presentation. */
-  var onvrdisplaypresentchange: EventHandler
+  var onvrdisplaypresentchange: EventHandler = js.native
 }
 
 /**
   * Gamepad Interface extension
   */
-@ScalaJSDefined
-trait Gamepad extends js.Object {
+@js.native
+trait GamepadWebVR extends js.Object {
   /** Return the displayId for the associated VRDisplay. */
-  val displayId: Int
+  val displayId: Int = js.native
 }
 
 /**
