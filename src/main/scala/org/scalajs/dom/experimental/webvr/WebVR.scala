@@ -307,15 +307,6 @@ trait WindowWebVR extends js.Object {
 }
 
 /**
-  * Gamepad Interface extension
-  */
-@js.native
-trait GamepadWebVR extends js.Object {
-  /** Return the displayId for the associated VRDisplay. */
-  val displayId: Int = js.native
-}
-
-/**
   * the VREye types, "left" ot "right"
   */
 object VREye extends Enumeration {

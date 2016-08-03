@@ -7,6 +7,7 @@
 package org.scalajs.dom.experimental.gamepad
 
 import org.scalajs.dom
+import org.scalajs.dom.experimental.webvr.GamepadWebVR
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
@@ -36,7 +37,7 @@ trait GamepadButton extends js.Any {
  * Represents the state of a connected gamepad device.
  */
 @ScalaJSDefined
-trait Gamepad extends js.Any {
+trait Gamepad extends js.Any  {
 
   /** The identification string for the gamepad. */
   val id: String
@@ -65,6 +66,9 @@ trait Gamepad extends js.Any {
    * The layout of the gamepad.  Either "standard" or unknown ("").
    */
   val mapping: GamepadMappingType
+
+  /** the displayId for the associated VRDisplay. */
+  val displayId: Int = js.native
 }
 
 @ScalaJSDefined
