@@ -3588,6 +3588,22 @@ class Screen extends js.Object {
    * MDN
    */
   def pixelDepth: Int = js.native
+
+  /** The lockOrientation method locks the screen into the specified orientation.
+    * see [[https://developer.mozilla.org/en-US/docs/Web/API/Screen/lockOrientation]]
+    * @param orientation The orientation into which to lock the screen. This is either a string or an array of strings.
+    *                    Passing several strings lets the screen rotate only in the selected orientations.
+    * @return Returns true if the orientation was authorized to be locked or false if the orientation locking was denied.
+    *         Note that the returns value doesn't indicate that the screen orientation is indeed locked: there may be a delay.
+    */
+  def lockOrientation(orientation: String | Array[String]): Boolean = js.native
+
+  /**
+    * The Screen.unlockOrientation method removes all the previous screen locks set by the page/app.
+    * see [[https://developer.mozilla.org/en-US/docs/Web/API/Screen/unlockOrientation]]
+    * @return Returns true if the orientation was successfully unlocked or false if the orientation couldn't be unlocked
+    */
+  def unlockOrientation(): Boolean = js.native
 }
 
 /**
