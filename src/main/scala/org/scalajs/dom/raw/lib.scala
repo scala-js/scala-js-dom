@@ -9,6 +9,7 @@
  */
 package org.scalajs.dom.raw
 
+import org.scalajs.dom.experimental.screenorientation.ScreenOrientation
 import org.scalajs.dom.experimental.webvr.{NavigatorWebVR, WindowWebVR}
 
 import scala.scalajs.js
