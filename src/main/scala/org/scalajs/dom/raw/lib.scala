@@ -3589,6 +3589,17 @@ class Screen extends js.Object {
    */
   def pixelDepth: Int = js.native
 
+  /**
+    * The Screen.orientation property give the current orientation of the screen.
+    *
+    * [[https://developer.mozilla.org/en-US/docs/Web/API/Screen/orientation]]
+    *
+    * The return value is a string representing the orientation of the screen.
+    * It can be portrait-primary, portrait-secondary, landscape-primary,
+    * landscape-secondary (See lockOrientation for more info about those values).
+    */
+  def orientation: String = js.native
+
   /** The lockOrientation method locks the screen into the specified orientation.
     * see [[https://developer.mozilla.org/en-US/docs/Web/API/Screen/lockOrientation]]
     * @param orientation The orientation into which to lock the screen. This is either a string or an array of strings.

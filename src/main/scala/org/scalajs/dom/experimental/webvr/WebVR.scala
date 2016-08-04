@@ -211,7 +211,12 @@ trait VRPose extends js.Object {
     * Positive X is to the user’s right.
     * Positive Y is up.
     * Positive Z is behind the user.
-    * All positions are given relative to the identity orientation in sitting space. Transforming this point with VRStageParameters.sittingToStandingTransform converts this to standing space. MAY be NULL if the sensor is incapable of providing positional data. User agents MAY provide emulated position values through techniques such as neck modeling, but when doing so SHOULD report VRDisplayCapabilities.hasPosition as false. When not NULL MUST be a three-element array.
+    * All positions are given relative to the identity orientation in sitting space.
+    * Transforming this point with VRStageParameters.sittingToStandingTransform converts
+    * this to standing space. MAY be NULL if the sensor is incapable of providing positional data.
+    * User agents MAY provide emulated position values through techniques such as neck modeling,
+    * but when doing so SHOULD report VRDisplayCapabilities.hasPosition as false.
+    * When not NULL MUST be a three-element array.
     */
   val position: Float32Array
   /** Linear velocity of the sensor at timestamp meters per second. MAY be NULL if the sensor is incapable of providing linear velocity. When not NULL MUST be a three-element array.
@@ -222,7 +227,13 @@ trait VRPose extends js.Object {
     */
   val linearAcceleration: Float32Array
   /**
-    * Orientation of the sensor at timestamp as a quaternion. The orientation yaw (rotation around the Y axis) is relative to the initial yaw of the sensor when it was first read or the yaw of the sensor at the point that resetPose() was last called. An orientation of [0, 0, 0, 1] is considered to be "forward". MAY be NULL if the sensor is incapable of providing orientation data. When not NULL MUST be a four-element array.
+    * Orientation of the sensor at timestamp as a quaternion.
+    * The orientation yaw (rotation around the Y axis) is relative to the initial yaw of
+    * the sensor when it was first read or the yaw of the sensor at the point that
+    * resetPose() was last called.
+    * An orientation of [0, 0, 0, 1] is considered to be "forward".
+    * MAY be NULL if the sensor is incapable of providing orientation data.
+    * When not NULL MUST be a four-element array.
     */
   val orientation: Float32Array
   /**
