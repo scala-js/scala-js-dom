@@ -945,6 +945,14 @@ abstract class HTMLSelectElement extends HTMLElement {
   var `type`: String = js.native
 
   /**
+   * Reflects the disabled HTML attribute, which indicates whether the control is
+   * disabled. If it is disabled, it does not accept clicks.
+   *
+   * MDN
+   */
+  var disabled: Boolean = js.native
+
+  /**
    * Removes the element at the specified index from the options collection for this
    * select element.
    *
@@ -1224,6 +1232,15 @@ abstract class HTMLOptionElement extends HTMLElement {
    * MDN
    */
   var selected: Boolean = js.native
+
+  /**
+   * Reflects the value of the disabled HTML attribute, which indicates that the option
+   * is unavailable to be selected. An option can also be disabled if it is a child of
+   * an &lt;optgroup&gt; element that is disabled.
+   *
+   * MDN
+   */
+  var disabled: Boolean = js.native
 
   def create(): HTMLOptionElement = js.native
 }
@@ -1549,6 +1566,13 @@ abstract class HTMLButtonElement extends HTMLElement {
    */
   var name: String = js.native
   var `type`: String = js.native
+
+  /**
+   * The control is disabled, meaning that it does not accept any clicks.
+   *
+   * MDN
+   */
+  var disabled: Boolean = js.native
 
   /**
    * A localized message that describes the validation constraints that the control
@@ -2327,6 +2351,14 @@ abstract class HTMLInputElement extends HTMLElement {
   var checked: Boolean = js.native
 
   /**
+   * Reflects the disabled HTML attribute, indicating that the control is not available
+   * for interaction. The input values will not be submitted with the form.
+   *
+   * MDN
+   */
+  var disabled: Boolean = js.native
+
+  /**
    * Reflects the maxlength HTML attribute, containing the maximum length of text (in
    * Unicode code points) that the value can be changed to. The constraint is evaluated
    * only when the value is changed Note: If you set maxLength to a negative value
@@ -3065,6 +3097,14 @@ abstract class HTMLTextAreaElement extends HTMLElement {
   var name: String = js.native
 
   /**
+   * Reflects the disabled HTML attribute, indicating that the control is not available
+   * for interaction.
+   *
+   * MDN
+   */
+  var disabled: Boolean = js.native
+
+  /**
    * The index of the beginning of selected text. If no text is selected, contains the
    * index of the character that follows the input cursor. On being set, the control
    * behaves as if setSelectionRange() had been called with this as the first argument,
@@ -3628,6 +3668,14 @@ abstract class HTMLFieldSetElement extends HTMLElement {
   def form: HTMLFormElement = js.native
 
   /**
+   * Reflects the disabled HTML attribute, indicating whether the user can interact with
+   * the control.
+   *
+   * MDN
+   */
+  var disabled: Boolean = js.native
+
+  /**
    * A localized message that describes the validation constraints that the element
    * does not satisfy (if any). This is the empty string if the element is not a candidate
    * for constraint validation (willValidate is false), or it satisfies its
@@ -3870,7 +3918,6 @@ abstract class HTMLElement extends Element {
   var onloadeddata: js.Function1[Event, _] = js.native
   var onbeforedeactivate: js.Function1[UIEvent, _] = js.native
 
-  var disabled: js.UndefOr[Boolean] = js.native
   var onactivate: js.Function1[UIEvent, _] = js.native
   var onselectstart: js.Function1[Event, _] = js.native
   var ontimeupdate: js.Function1[Event, _] = js.native
@@ -4166,6 +4213,13 @@ abstract class HTMLOptGroupElement extends HTMLElement {
    * MDN
    */
   var label: String = js.native
+
+  /**
+   * If true, the whole list of children &lt;option&gt; is disabled
+   *
+   * MDN
+   */
+  var disabled: Boolean = js.native
 }
 
 /**
