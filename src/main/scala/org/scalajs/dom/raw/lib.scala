@@ -6501,7 +6501,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def loaded: Int = js.native
+  def loaded: Double = js.native
 
   /**
    * The ProgressEvent.lengthComputable read-only property is a Boolean flag
@@ -6520,7 +6520,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
-  def total: Int = js.native
+  def total: Double = js.native
 
   /**
    * The ProgressEvent.initProgressEvent() method Initializes an animation event
@@ -6529,8 +6529,8 @@ trait ProgressEvent extends Event {
    * MDN
    */
   def initProgressEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, lengthComputableArg: Boolean, loadedArg: Int,
-      totalArg: Int): Unit = js.native
+      cancelableArg: Boolean, lengthComputableArg: Boolean, loadedArg: Double,
+      totalArg: Double): Unit = js.native
 }
 
 /**
@@ -7088,7 +7088,7 @@ class Blob(blobParts: js.Array[js.Any] = js.native,
    *
    * MDN
    */
-  def size: Int = js.native
+  def size: Double = js.native
 
   /**
    * The slice is used to create a new Blob object containing the data in the specified
@@ -7096,7 +7096,7 @@ class Blob(blobParts: js.Array[js.Any] = js.native,
    *
    * MDN
    */
-  def slice(start: Int = js.native, end: Int = js.native,
+  def slice(start: Double = js.native, end: Double = js.native,
       contentType: String = js.native): Blob = js.native
 
   def close(): Unit = js.native
