@@ -70,7 +70,7 @@ trait VRDisplay extends EventTarget {
   def stageParameters: VRStageParameters = js.native
 
   /* Return the current VREyeParameters for the given eye. */
-  def getEyeParameters(whichEye: String): VREyeParameters = js.native
+  def getEyeParameters(whichEye: VREye): VREyeParameters = js.native
 
   /**
     * An identifier for this distinct VRDisplay. Used as an
@@ -318,12 +318,12 @@ trait WindowWebVR extends js.Object {
 }
 
 /**
-  * the VREye types, "left" ot "right"
+  * the VREye types, "left" or "right"
   */
-object VREye extends Enumeration {
-  type VREye = Value
-  val Left = Value("left")
-  val Right = Value("right")
+sealed class VREye(val whichEye: String)
+object VREye {
+  case object Left extends VREye("left")
+  case object Right extends VREye("right")
 }
 
 /**
