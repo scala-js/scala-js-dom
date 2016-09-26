@@ -1,13 +1,14 @@
 package org.scalajs.dom.experimental.webvr
 
 /*
- * Façade to the WebVR API, Editor’s Draft, 27 July 2016.
+ * Façade to the WebVR API, Editor’s Draft, 21 September 2016
  *
  * [[https://w3c.github.io/webvr/]]
  *
  */
 
 import org.scalajs.dom._
+import org.scalajs.dom.html.IFrame
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
@@ -50,6 +51,22 @@ object VRLayer {
   }
 }
 
+@ScalaJSDefined
+trait VRFrameData extends js.Object {
+  /** Monotonically increasing value that allows the author to determine if position state data been updated from the hardware. Since values are monotonically increasing, they can be compared to determine the ordering of updates, as newer values will always be greater than or equal to older values. The timestamp starts at 0 the first time getFrameData() is invoked for a given VRDisplay. */
+  def timestamp: Double // DOMHighResTimeStamp
+  /** A 4x4 matrix describing the projection to be used for the left eye’s rendering, given as a 16 element array in column major order. This value may be passed directly to WebGL’s uniformMatrix4fv function. It is highly recommended that applications use this matrix without modification. Failure to use this projection matrix when rendering may cause the presented frame to be distorted or badly aligned, resulting in varying degrees of user discomfort. */
+  def leftProjectionMatrix: Float32Array
+  /** A 4x4 matrix describing the view transform to be used for the left eye’s rendering, given as a 16 element array in column major order. Represents the inverse of the model matrix of the left eye in sitting space. This value may be passed directly to WebGL’s uniformMatrix4fv function. It is highly recommended that applications use this matrix when rendering. */
+  def leftViewMatrix: Float32Array
+  /** A 4x4 matrix describing the projection to be used for the right eye’s rendering, given as a 16 element array in column major order. This value may be passed directly to WebGL’s uniformMatrix4fv function. It is highly recommended that applications use this matrix without modification. Failure to use this projection matrix when rendering may cause the presented frame to be distorted or badly aligned, resulting in varying degrees of user discomfort. */
+  def rightProjectionMatrix: Float32Array
+  /** A 4x4 matrix describing the view transform to be used for the right eye’s rendering, given as a 16 element array in column major order. Represents the inverse of the model matrix of the right eye in sitting space. This value may be passed directly to WebGL’s uniformMatrix4fv function. It is highly recommended that applications use this matrix when rendering. */
+  def rightViewMatrix: Float32Array
+  /** The VRPose of the VRDisplay at timestamp. */
+  def pose: VRPose
+}
+
 /**
   * The VRDisplay interface forms the base of all VR devices supported by this API.
   * It includes generic information such as device IDs and descriptions.
@@ -66,6 +83,11 @@ trait VRDisplay extends EventTarget {
   /**
     * If this VRDisplay supports room-scale experiences, the optional
     * stage attribute contains details on the room-scale parameters.
+    * The stageParameters attribute can not change between null
+    * and non-null once the VRDisplay is enumerated; however,
+    * the values within VRStageParameters may change after
+    * any call to VRDisplay.submitFrame as the user may re-configure
+    * their environment at any time.
     */
   def stageParameters: VRStageParameters = js.native
 
@@ -81,6 +103,12 @@ trait VRDisplay extends EventTarget {
   val displayName: String = js.native
 
   /**
+    * Populates the passed VRFrameData with the information required to render
+    * the current frame.
+    */
+  def getFrameData(frameData: VRFrameData): Boolean = js.native
+
+  /**
     * Return a VRPose containing the future predicted pose of the VRDisplay
     * when the current frame will be presented. The value returned will not
     * change until JavaScript has returned control to the browser.
@@ -89,12 +117,6 @@ trait VRDisplay extends EventTarget {
     * and acceleration of each of these properties.
     */
   def getPose(): VRPose = js.native
-
-  /**
-    * Return the current instantaneous pose of the VRDisplay, with no
-    * prediction applied.
-    */
-  def getImmediatePose(): VRPose = js.native
 
   /**
     * Reset the pose for this display, treating its current position and
@@ -138,6 +160,8 @@ trait VRDisplay extends EventTarget {
   /**
     * Begin presenting to the VRDisplay. Must be called in response to a user gesture.
     * Repeat calls while already presenting will update the VRLayers being displayed.
+    * If the number of values in the leftBounds/rightBounds arrays is not 0 or 4 for any of the passed layers the promise is rejected
+    * If the source of any of the layers is not present (null), the promise is rejected.
     */
   def requestPresent(layers: js.Array[VRLayer]): Promise[Unit] = js.native
 
@@ -186,7 +210,7 @@ trait VRDisplayCapabilities extends js.Object {
 }
 
 /**
-  * The VRFieldOfView interface represents a field of view, as given by 4 degrees describing the view from a center point.
+  * (Deprecated) The VRFieldOfView interface represents a field of view, as given by 4 degrees describing the view from a center point.
   */
 @ScalaJSDefined
 trait VRFieldOfView extends js.Object {
@@ -201,10 +225,6 @@ trait VRFieldOfView extends js.Object {
   */
 @ScalaJSDefined
 trait VRPose extends js.Object {
-  /**
-    * Monotonically increasing value that allows the author to determine if position state data been updated from the hardware. Since values are monotonically increasing, they can be compared to determine the ordering of updates, as newer values will always be greater than or equal to older values.
-    */
-  val timestamp: Double // DOMHighResTimeStamp
   /**
     * Position of the VRDisplay at timestamp as a 3D vector. Position is given in meters from an origin point, which is either the position the sensor was first read at or the position of the sensor at the point that resetPose() was last called. The coordinate system uses these axis definitions:
     *
@@ -298,6 +318,9 @@ trait NavigatorWebVR extends js.Object {
 
   /** activeVRDisplays includes every VRDisplay that is currently presenting. */
   val activeVRDisplays: js.Array[VRDisplay] = js.native
+
+  /** The vrEnabled attribute’s getter must return true if the context object is allowed to use the feature indicated by attribute name allowvr and VR is supported, and false otherwise. */
+  def vrEnabled: Boolean = js.native
 }
 
 /**
@@ -313,6 +336,10 @@ trait WindowWebVR extends js.Object {
   var onvrdisplayactivate: EventHandler = js.native
   /** A user agent MAY dispatch this event type to indicate that something has occured which suggests the VRDisplay should exit presentation. For example, if the VRDisplay is capable of detecting when the user has taken it off, this event SHOULD fire when they do so with the reason "unmounted". */
   var onvrdisplaydeactivate: EventHandler = js.native
+  /**  A user agent MAY dispatch this event type to indicate that presentation to the display by the page is paused by the user agent, OS, or VR hardware. While a VRDisplay is blurred it does not lose it’s presenting status (isPresenting continues to report true) but getFrameData() returns false without updating the provided VRFrameData and getPose() returns null. This is to prevent tracking while the user interacts with potentially sensitive UI. For example: A user agent SHOULD blur the presenting application when the user is typing a URL into the browser with a virtual keyboard, otherwise the presenting page may be able to guess the URL the user is entering by tracking their head motions. */
+  var onvrdisplayblur: EventHandler = js.native
+  /**  A user agent MAY dispatch this event type to indicate that presentation to the display by the page has resumed after being blurred. */
+  var onvrdisplayfocus: EventHandler = js.native
   /** A user agent MUST dispatch this event type to indicate that a VRDisplay has begun or ended VR presentation. This event should not fire on subsequent calls to requestPresent() after the VRDisplay has already begun VR presentation. */
   var onvrdisplaypresentchange: EventHandler = js.native
 }
@@ -327,16 +354,16 @@ object VREye {
 }
 
 /**
-  * the VRDisplayEventReason types
+  * the VRDisplayEventReason
   */
-object VRDisplayEventReason extends Enumeration {
-  type VRDisplayEventReason = Value
+class VRDisplayEventReason(val event: String)
+object VRDisplayEventReason {
   /** The page has been navigated to from a context that allows this page to begin presenting immediately, such as from another site that was already in VR presentation mode. */
-  val Navigation = Value("navigation")
+  case object Navigation extends VRDisplayEventReason("navigation")
   /** The VRDisplay has detected that the user has put it on. */
-  val Mounted = Value("mounted")
+  case object Mounted extends VRDisplayEventReason("mounted")
   /** The VRDisplay has detected that the user has taken it off. */
-  val Unmounted = Value("unmounted")
+  case object Unmounted extends VRDisplayEventReason("unmounted")
 }
 
 /**
@@ -366,4 +393,12 @@ object VRDisplayEventInit {
   }
 }
 
-
+@js.native
+trait IFrameWebVR extends IFrame {
+  /** The allowvr attribute is a boolean attribute. When specified, it indicates that Document objects
+    * in the iframe element’s browsing context are to be allowed to access VR devices
+    * (if it’s not blocked for other reasons, e.g. there is another ancestor iframe
+    * without this attribute set). Document objects in an iframe element without
+    * this attribute should reject calls to getVRDisplays() and should not fire any VRDisplayEvent.*/
+ var allowvr: Boolean
+}
