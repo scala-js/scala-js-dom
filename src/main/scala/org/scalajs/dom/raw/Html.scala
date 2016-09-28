@@ -3968,7 +3968,9 @@ abstract class HTMLElement extends Element {
    *
    * MDN
    */
-  var style: CSSStyleDeclaration = js.native
+  def style: CSSStyleDeclaration = js.native
+  def style_=(value: CSSStyleDeclaration): Unit = js.native
+  def style_=(value: String): Unit = js.native
 
   /**
    * Returns the Document that this node belongs to. If no document is associated with
