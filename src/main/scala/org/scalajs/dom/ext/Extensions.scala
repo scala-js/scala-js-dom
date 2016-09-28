@@ -42,6 +42,8 @@ class EasySeq[T](jsLength: Int, jsApply: Int => T) extends Seq[T] {
 case class Color(r: Int, g: Int, b: Int) {
   override def toString() = s"rgb($r, $g, $b)"
 
+  def toHex: String = f"#$r%02x$g%02x$b%02x"
+
   def *(c: Color) = Color(r * c.r, g * c.g, b * c.b)
 
   def +(c: Color) = Color(r + c.r, g + c.g, b + c.b)
