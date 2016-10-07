@@ -3887,15 +3887,15 @@ abstract class HTMLElement extends Element {
    *
    *  - a ''negative value'' means that the element should be focusable, but should not be
    *    reachable via sequential keyboard navigation;
-   *    
+   *
    *  - '''0''' means that the element should be focusable and reachable via sequential keyboard
    *    navigation, but its relative order is defined by the platform convention;
-   *    
+   *
    *  - a ''positive value'' which means should be focusable and reachable via sequential keyboard
    *    navigation; its relative order is defined by the value of the attribute: the sequential
    *    follow the increasing number of the '''tabindex'''. If several elements share the same
    *    tabindex, their relative order follows their relative position in the document).
-   * 
+   *
    * An element with a '''0''' value, an invalid value, or no '''tabindex''' value should be placed
    * after elements with a positive '''tabindex''' in the sequential keyboard navigation order.
    *

@@ -168,6 +168,7 @@ object KeyCode {
   final val F11 = 122
   final val F12 = 123
 
+  // format: off
   @deprecated("Use KeyCode.Backspace instead", "0.8.1") final val backspace = Backspace
   @deprecated("Use KeyCode.Tab instead", "0.8.1") final val tab = Tab
   @deprecated("Use KeyCode.Enter instead", "0.8.1") final val enter = Enter
@@ -224,6 +225,7 @@ object KeyCode {
   @deprecated("Use KeyCode.X instead", "0.8.1") final val x = X
   @deprecated("Use KeyCode.Y instead", "0.8.1") final val y = Y
   @deprecated("Use KeyCode.Z instead", "0.8.1") final val z = Z
+  // format: on
 }
 
 /**
