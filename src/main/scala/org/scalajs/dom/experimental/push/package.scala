@@ -2,7 +2,9 @@ package org.scalajs.dom.experimental
 
 import scala.language.implicitConversions
 
-import org.scalajs.dom.experimental.serviceworkers.{ServiceWorkerGlobalScope, ServiceWorkerRegistration}
+import org.scalajs.dom.experimental.serviceworkers.{
+  ServiceWorkerGlobalScope, ServiceWorkerRegistration
+}
 
 import scala.scalajs.js
 

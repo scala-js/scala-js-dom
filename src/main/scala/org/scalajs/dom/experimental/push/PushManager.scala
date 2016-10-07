@@ -40,7 +40,8 @@ trait PushManager extends js.Object {
    *
    * MDN
    */
-  def permissionState(options: PushSubscriptionOptions = js.native): js.Promise[PushPermissionState] = js.native
+  def permissionState(
+      options: PushSubscriptionOptions = js.native): js.Promise[PushPermissionState] = js.native
 
   /**
    * The subscribe() method of the PushManager interface subscribes to a push service.
@@ -51,7 +52,8 @@ trait PushManager extends js.Object {
    *
    * MDN
    */
-  def subscribe(options: PushSubscriptionOptions = js.native): js.Promise[PushSubscription] = js.native
+  def subscribe(
+      options: PushSubscriptionOptions = js.native): js.Promise[PushSubscription] = js.native
 }
 
 /**

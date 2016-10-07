@@ -199,9 +199,11 @@ class AudioContext extends EventTarget {
    *  @param errorCallback   An optional error callback, to be invoked if an
    *                         error occurs when the audio data is being decoded.
    */
-  def decodeAudioData(audioData: js.typedarray.ArrayBuffer,
+  def decodeAudioData(
+      audioData: js.typedarray.ArrayBuffer,
       successCallback: js.Function1[AudioBuffer, _] = js.native,
-      errorCallback: js.Function0[_] = js.native): js.Promise[AudioBuffer] = js.native
+      errorCallback: js.Function0[_] = js.native
+  ): js.Promise[AudioBuffer] = js.native
 
   /** Resumes the progression of time in an audio context that has previously
    *  been suspended.

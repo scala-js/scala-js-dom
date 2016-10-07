@@ -4325,6 +4325,7 @@ trait MutationObserverInit extends js.Object {
 
 /** Factory for [[MutationObserverInit]] objects. */
 object MutationObserverInit {
+
   /**
    * Creates a new [[MutationObserverInit]] object with the given values.
    * Default values for the `Boolean` parameters are `false`.
@@ -4332,21 +4333,22 @@ object MutationObserverInit {
    * have `attributeFilter` property.
    */
   def apply(
-    childList: Boolean = false,
-    attributes: Boolean = false,
-    characterData: Boolean = false,
-    subtree: Boolean = false,
-    attributeOldValue: Boolean = false,
-    characterDataOldValue: Boolean = false,
-    attributeFilter: js.UndefOr[js.Array[String]] = js.undefined): MutationObserverInit = {
+      childList: Boolean = false,
+      attributes: Boolean = false,
+      characterData: Boolean = false,
+      subtree: Boolean = false,
+      attributeOldValue: Boolean = false,
+      characterDataOldValue: Boolean = false,
+      attributeFilter: js.UndefOr[js.Array[String]] = js.undefined
+  ): MutationObserverInit = {
     val res = js.Dynamic.literal(
-      "childList" -> childList,
-      "attributes" -> attributes,
-      "characterData" -> characterData,
-      "subtree" -> subtree,
-      "attributeOldValue" -> attributeOldValue,
-      "characterDataOldValue" -> characterDataOldValue)
-      .asInstanceOf[MutationObserverInit]
+        "childList" -> childList,
+        "attributes" -> attributes,
+        "characterData" -> characterData,
+        "subtree" -> subtree,
+        "attributeOldValue" -> attributeOldValue,
+        "characterDataOldValue" -> characterDataOldValue
+    ).asInstanceOf[MutationObserverInit]
     attributeFilter.foreach(res.attributeFilter = _)
     res
   }

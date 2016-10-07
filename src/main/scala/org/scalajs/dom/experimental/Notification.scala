@@ -155,7 +155,8 @@ object NotificationOptions {
       tag: js.UndefOr[String] = js.undefined,
       onclick: js.UndefOr[js.Function0[Any]] = js.undefined,
       onerror: js.UndefOr[js.Function0[Any]] = js.undefined,
-      vibrate: js.UndefOr[js.Array[Double]] = js.undefined): NotificationOptions = {
+      vibrate: js.UndefOr[js.Array[Double]] = js.undefined
+  ): NotificationOptions = {
     val result = js.Dynamic.literal()
     body.foreach(result.body = _)
     dir.foreach(result.dir = _)

@@ -18,8 +18,10 @@ trait RTCIdentityAssertion extends js.Object {
 
 object RTCIdentityAssertion {
   @inline
-  def apply(idp: js.UndefOr[String] = js.undefined,
-      name: js.UndefOr[String] = js.undefined): RTCIdentityAssertion = {
+  def apply(
+      idp: js.UndefOr[String] = js.undefined,
+      name: js.UndefOr[String] = js.undefined
+  ): RTCIdentityAssertion = {
     val result = js.Dynamic.literal()
     idp.foreach(result.idp = _)
     name.foreach(result.name = _)
@@ -83,7 +85,8 @@ object RTCOfferOptions {
       iceRestart: js.UndefOr[Boolean] = js.undefined,
       offerToReceiveAudio: js.UndefOr[Double] = js.undefined,
       offerToReceiveVideo: js.UndefOr[Double] = js.undefined,
-      voiceActivityDetection: js.UndefOr[Boolean] = js.undefined): RTCOfferOptions  = {
+      voiceActivityDetection: js.UndefOr[Boolean] = js.undefined
+  ): RTCOfferOptions = {
     val result = js.Dynamic.literal()
     iceRestart.foreach(result.iceRestart = _)
     offerToReceiveAudio.foreach(result.offerToReceiveAudio = _)
@@ -288,7 +291,8 @@ object RTCIceCandidateInit {
   def apply(
       candidate: js.UndefOr[String] = js.undefined,
       sdpMid: js.UndefOr[String] = js.undefined,
-      sdpMLineIndex: js.UndefOr[Double] = js.undefined): RTCIceCandidateInit = {
+      sdpMLineIndex: js.UndefOr[Double] = js.undefined
+  ): RTCIceCandidateInit = {
     val result = js.Dynamic.literal()
     candidate.foreach(result.candidate = _)
     sdpMid.foreach(result.sdpMid = _)
@@ -514,7 +518,8 @@ object RTCDataChannelInit {
       maxRetransmits: js.UndefOr[Double] = js.undefined,
       protocol: js.UndefOr[String] = js.undefined,
       negotiated: js.UndefOr[Boolean] = js.undefined,
-      id: js.UndefOr[Double] = js.undefined): RTCDataChannelInit = {
+      id: js.UndefOr[Double] = js.undefined
+  ): RTCDataChannelInit = {
     val result = js.Dynamic.literal()
     ordered.foreach(result.ordered = _)
     maxPacketLifeTime.foreach(result.maxPacketLifeTime = _)
@@ -632,8 +637,8 @@ trait RTCPeerConnectionIceEventInit extends js.Object {
 object RTCPeerConnectionIceEventInit {
   @inline
   def apply(
-      candidate: js.UndefOr[RTCIceCandidate] =
-        js.undefined): RTCPeerConnectionIceEventInit = {
+      candidate: js.UndefOr[RTCIceCandidate] = js.undefined
+  ): RTCPeerConnectionIceEventInit = {
     val result = js.Dynamic.literal()
     candidate.foreach(result.candidate = _)
     result.asInstanceOf[RTCPeerConnectionIceEventInit]

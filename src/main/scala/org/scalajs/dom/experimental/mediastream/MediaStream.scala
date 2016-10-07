@@ -348,7 +348,8 @@ object MediaTrackConstraintSet {
       sampleSize: js.UndefOr[Double] = js.undefined,
       echoCancellation: js.UndefOr[Boolean] = js.undefined,
       deviceId: js.UndefOr[String] = js.undefined,
-      groupId: js.UndefOr[String] = js.undefined): MediaTrackConstraintSet = {
+      groupId: js.UndefOr[String] = js.undefined
+  ): MediaTrackConstraintSet = {
     val result = js.Dynamic.literal()
     width.foreach(result.width = _)
     height.foreach(result.height = _)
@@ -373,8 +374,8 @@ trait MediaTrackConstraints extends MediaTrackConstraintSet {
 object MediaTrackConstraints {
   @inline
   def apply(
-      advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]] =
-        js.undefined): MediaTrackConstraints = {
+      advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]] = js.undefined
+  ): MediaTrackConstraints = {
     val result = js.Dynamic.literal()
     advanced.foreach(result.advanced = _)
     result.asInstanceOf[MediaTrackConstraints]
@@ -393,7 +394,8 @@ object SourceInfo {
   def apply(
       sourceId: js.UndefOr[Boolean] = js.undefined,
       kind: js.UndefOr[String] = js.undefined,
-      label: js.UndefOr[String] = js.undefined): SourceInfo = {
+      label: js.UndefOr[String] = js.undefined
+  ): SourceInfo = {
     val result = js.Dynamic.literal()
     sourceId.foreach(result.sourceId = _)
     kind.foreach(result.kind = _)
@@ -418,7 +420,8 @@ object MediaStreamTrack {
       onmute: js.UndefOr[js.Function0[Any]] = js.undefined,
       onunmute: js.UndefOr[js.Function0[Any]] = js.undefined,
       onoverconstrained: js.UndefOr[js.Function0[Any]] = js.undefined,
-      oneended: js.UndefOr[js.Function0[Any]] = js.undefined): MediaStreamTrack = {
+      oneended: js.UndefOr[js.Function0[Any]] = js.undefined
+  ): MediaStreamTrack = {
     val result = js.Dynamic.literal()
     enabled.foreach(result.enabled = _)
     id.foreach(result.id = _)
@@ -449,7 +452,8 @@ object MediaStreamConstraints {
   def apply(
       video: js.UndefOr[Boolean | MediaTrackConstraints] = js.undefined,
       audio: js.UndefOr[Boolean | MediaTrackConstraints] = js.undefined,
-      peerIdentity: js.UndefOr[String] = js.undefined): MediaStreamConstraints = {
+      peerIdentity: js.UndefOr[String] = js.undefined
+  ): MediaStreamConstraints = {
     val result = js.Dynamic.literal()
     video.foreach(v => result.video = v.asInstanceOf[js.Any])
     audio.foreach(a => result.audio = a.asInstanceOf[js.Any])
@@ -466,8 +470,8 @@ trait MediaStreamTrackEventInit extends js.Object {
 object MediaStreamTrackEventInit {
   @inline
   def apply(
-      track: js.UndefOr[MediaStreamTrack] =
-        js.undefined): MediaStreamTrackEventInit = {
+      track: js.UndefOr[MediaStreamTrack] = js.undefined
+  ): MediaStreamTrackEventInit = {
     val result = js.Dynamic.literal()
     track.foreach(result.track = _)
     result.asInstanceOf[MediaStreamTrackEventInit]
@@ -550,7 +554,8 @@ object MediaDevicesInfo {
       deviceId: js.UndefOr[String] = js.undefined,
       groupId: js.UndefOr[String] = js.undefined,
       kind: js.UndefOr[String] = js.undefined,
-      label: js.UndefOr[String] = js.undefined): MediaDevicesInfo = {
+      label: js.UndefOr[String] = js.undefined
+  ): MediaDevicesInfo = {
     val result = js.Dynamic.literal()
     deviceId.foreach(result.deviceId = _)
     groupId.foreach(result.groupId = _)

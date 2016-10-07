@@ -274,7 +274,8 @@ class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
    *
    * //todo determine type of reason
    */
-  def cancel(reason: Any): js.Promise[Any] = js.native //not actually sure what the return type is here
+  // not actually sure what the return type is here
+  def cancel(reason: Any): js.Promise[Any] = js.native
 
   /**
    * See [[https://streams.spec.whatwg.org/#reader-read 3.4.4.3. read()]] of

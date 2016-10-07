@@ -268,8 +268,7 @@ trait ServiceWorkerContainer extends EventTarget {
    *  MDN
    */
   def register(scriptURL: String,
-      options: js.Object =
-        new js.Object()): js.Promise[ServiceWorkerRegistration] = js.native
+      options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration] = js.native
 
   /**
    * The ServiceWorkerContainer.controller read-only property of the
@@ -289,7 +288,8 @@ trait ServiceWorkerContainer extends EventTarget {
    *
    *  MDN
    */
-  def getRegistration(scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]] = js.native
+  def getRegistration(
+      scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]] = js.native
 
   /**
    * The getRegistrations() method of the ServiceWorkerContainer interface
@@ -299,8 +299,7 @@ trait ServiceWorkerContainer extends EventTarget {
    *
    * MDN
    */
-  def getRegistrations(): js.Promise[
-      js.Array[ServiceWorkerRegistration]] = js.native
+  def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]] = js.native
 
   /**
    * The ready read-only property of the ServiceWorkerContainer interface
@@ -582,7 +581,8 @@ trait WindowClient extends Client {
 trait Clients extends js.Object {
   def get(id: String): js.Promise[js.UndefOr[Client]] = js.native
 
-  def matchAll(options: js.UndefOr[ClientQueryOptions] = js.native): js.Promise[js.Array[Client]] = js.native
+  def matchAll(
+      options: js.UndefOr[ClientQueryOptions] = js.native): js.Promise[js.Array[Client]] = js.native
 
   def openWindow(url: String): js.Promise[WindowClient] = js.native
 
@@ -595,9 +595,11 @@ trait Clients extends js.Object {
  */
 @js.native
 abstract class Cache extends js.Object {
-  def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.UndefOr[Response]] = js.native
+  def `match`(request: RequestInfo,
+      options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.UndefOr[Response]] = js.native
 
-  def matchAll(request: RequestInfo = js.native, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.Array[Response]] = js.native
+  def matchAll(request: RequestInfo = js.native,
+      options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.Array[Response]] = js.native
 
   def add(request: RequestInfo): js.Promise[Unit] = js.native
 
@@ -606,9 +608,11 @@ abstract class Cache extends js.Object {
   def put(request: RequestInfo,
       response: Response): js.Promise[Unit] = js.native
 
-  def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[Boolean] = js.native
+  def delete(request: RequestInfo,
+      options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[Boolean] = js.native
 
-  def keys(request: js.UndefOr[RequestInfo] = js.native, options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.Array[Request]]
+  def keys(request: js.UndefOr[RequestInfo] = js.native,
+      options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.Array[Request]]
 }
 
 /**

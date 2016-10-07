@@ -552,8 +552,9 @@ object AesCtrParams {
   @inline
   def apply(name: String, counter: BufferSource,
       length: Short): AesCtrParams = {
-    js.Dynamic.literal(name = name, counter = counter,
-        length = length).asInstanceOf[AesCtrParams]
+    js.Dynamic
+      .literal(name = name, counter = counter, length = length)
+      .asInstanceOf[AesCtrParams]
   }
 }
 
@@ -734,8 +735,9 @@ object DhKeyGenParams {
   @inline
   def apply(name: String, prime: BigInteger,
       generator: BigInteger): DhKeyGenParams = {
-    js.Dynamic.literal(name = name, prime = prime,
-        generator = generator).asInstanceOf[DhKeyGenParams]
+    js.Dynamic
+      .literal(name = name, prime = prime, generator = generator)
+      .asInstanceOf[DhKeyGenParams]
   }
 }
 
@@ -750,8 +752,9 @@ object DhKeyAlgorithm {
   @inline
   def apply(name: String, prime: BigInteger,
       generator: BigInteger): DhKeyAlgorithm = {
-    js.Dynamic.literal(name = name, prime = prime,
-        generator = generator).asInstanceOf[DhKeyAlgorithm]
+    js.Dynamic
+      .literal(name = name, prime = prime, generator = generator)
+      .asInstanceOf[DhKeyAlgorithm]
   }
 }
 

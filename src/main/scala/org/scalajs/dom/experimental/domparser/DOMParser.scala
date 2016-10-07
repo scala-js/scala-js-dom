@@ -12,6 +12,7 @@ import org.scalajs.dom.raw.{Document, HTMLDocument}
  */
 @js.native
 class DOMParser extends js.Object {
+
   /**
    * The DOMParser can also be used to parse a SVG document or a HTML document.
    * There are three different results possible, selected by the MIME type given.
@@ -21,7 +22,8 @@ class DOMParser extends js.Object {
    *
    * MDN
    */
-  def parseFromString(string: String, supportedType: SupportedType): Document = js.native
+  def parseFromString(string: String,
+      supportedType: SupportedType): Document = js.native
 }
 
 @js.native
@@ -31,6 +33,7 @@ object SupportedType {
   val `text/html` = "text/html".asInstanceOf[SupportedType]
   val `text/xml` = "text/xml".asInstanceOf[SupportedType]
   val `application/xml` = "application/xml".asInstanceOf[SupportedType]
-  val `application/xhtml+xml` = "application/xhtml+xml".asInstanceOf[SupportedType]
+  val `application/xhtml+xml` =
+    "application/xhtml+xml".asInstanceOf[SupportedType]
   val `image/svg+xml` = "image/svg+xml".asInstanceOf[SupportedType]
 }
