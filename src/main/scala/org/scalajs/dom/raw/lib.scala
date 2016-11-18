@@ -3817,12 +3817,17 @@ trait DataTransfer extends js.Object {
   def getData(format: String): String = js.native
 
   /**
-   * Holds a list of the format types of the data that is stored for the first item, in the
-   * same order the data was added. An empty list will be returned if no data was added.
+   * An array of the drag data formats (as strings) that were set in the dragstart event.
+   *
+   * The order of the formats is the same order as the data included in the drag operation.
+   *
+   * The formats are Unicode strings giving the type or format of the data, generally given by a
+   * MIME type. Some values that are not MIME types are special-cased for legacy reasons
+   * (for example "text").
    *
    * MDN
    */
-  def types: DOMStringList = js.native
+  def types: js.Array[String] = js.native
 
   def files: FileList = js.native
 }
