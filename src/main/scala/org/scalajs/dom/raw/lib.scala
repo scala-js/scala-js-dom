@@ -1256,7 +1256,7 @@ trait ModifierKeyEvent extends js.Object {
 
   /**
    * The metaKey property indicates if the meta key was pressed (true) or not (false)
-   * when the event occured.
+   * when the event occurred.
    *
    * MDN
    */
@@ -1264,7 +1264,7 @@ trait ModifierKeyEvent extends js.Object {
 
   /**
    * The altKey property indicates if the alt key was pressed (true) or not (false) when
-   * the event occured.
+   * the event occurred.
    *
    * MDN
    */

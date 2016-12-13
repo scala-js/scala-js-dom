@@ -1,7 +1,7 @@
 package org.scalajs.dom
 
 /**
- * Short aliasas of all the dom.CSSThing classes
+ * Short aliases of all the dom.CSSThing classes
  */
 object css {
   type FontFaceRule = raw.CSSFontFaceRule

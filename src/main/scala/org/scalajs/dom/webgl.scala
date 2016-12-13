@@ -1,7 +1,7 @@
 package org.scalajs.dom
 
 /**
- * Short aliasas of all the dom.WebGLThing classes
+ * Short aliases of all the dom.WebGLThing classes
  */
 object webgl {
   type ActiveInfo = raw.WebGLActiveInfo
