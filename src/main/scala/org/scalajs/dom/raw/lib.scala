@@ -262,6 +262,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
+  @deprecated("Obsolete.", "WHATWG DOM")
   def expandEntityReferences: Boolean = js.native
 
   /**
@@ -1657,6 +1658,7 @@ class NodeIterator extends js.Object {
    *
    * MDN
    */
+  @deprecated("Obsolete.", "WHATWG DOM")
   def expandEntityReferences: Boolean = js.native
 
   /**
@@ -5344,6 +5346,7 @@ class Event extends js.Object {
 
   def `type`: String = js.native
 
+  @deprecated("Non standard.", "forever")
   def srcElement: Element = js.native
 
   /**
@@ -6688,8 +6691,10 @@ trait AudioTrackList extends EventTarget with DOMList[AudioTrack] {
 
 @js.native
 trait WindowTimersExtension extends js.Object {
+  @deprecated("Non standard.", "forever")
   def clearImmediate(handle: Int): Unit = js.native
 
+  @deprecated("Non standard.", "forever")
   def setImmediate(handler: js.Function0[Any]): Int = js.native
 }
 
@@ -6728,6 +6733,7 @@ trait AnimationEvent extends Event {
    *
    * MDN
    */
+  @deprecated("Non-standard", "forever")
   def initAnimationEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, animationNameArg: String,
       elapsedTimeArg: Int): Unit = js.native
