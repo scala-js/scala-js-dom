@@ -1,5 +1,5 @@
 /**
- * https://www.w3.org/TR/2015/WD-mediacapture-streams-20150212/
+ * https://www.w3.org/TR/2016/CR-mediacapture-streams-20160519/
  */
 package org.scalajs.dom.experimental.mediastream
 
@@ -518,7 +518,7 @@ class MediaStreamTrackEvent(`type`: String,
 }
 
 /**
- * see [[https://www.w3.org/TR/2015/WD-mediacapture-streams-20150212/#idl-def-MediaDeviceKind]] in W3C spec
+ * see [[https://www.w3.org/TR/2016/CR-mediacapture-streams-20160519/#idl-def-MediaDeviceKind]] in W3C spec
  */
 @js.native
 trait MediaDeviceKind extends js.Any
@@ -659,6 +659,8 @@ trait MediaDevices extends EventTarget {
   * recognized by the user agent or browser in its implementation of the MediaStreamTrack object.
   * An object conforming to MediaTrackSupportedConstraints is returned by
   * MediaDevices.getSupportedConstraints().
+  *
+  * MDN
   */
 @js.native
 trait MediaTrackSupportedConstraints extends js.Object {
