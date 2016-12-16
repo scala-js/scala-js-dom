@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 /**
  * The MediaStream
  *
- * https://www.w3.org/TR/2015/WD-mediacapture-streams-20150212/
+ * https://www.w3.org/TR/2016/CR-mediacapture-streams-20160519/
  *
  * MDN
  *
@@ -19,13 +19,11 @@ import scala.scalajs.js.|
 class MediaStream() extends EventTarget {
 
   /**
-   * Is a Boolean value set to true if the ended event has been
-   * fired on the object, meaning that the stream has been completely read,
-   * or false if the end of the stream has not been reached.
-   *
-   * MDN
-   */
-  val ended: Boolean = js.native
+    * A Boolean value that returns true if the MediaStream is active, or false otherwise.
+    *
+    * MDN
+    */
+  val active: Boolean = js.native
 
   /**
    * Is a DOMString containing 36 characters denoting a universally
@@ -50,14 +48,6 @@ class MediaStream() extends EventTarget {
    * MDN
    */
   var onremovetrack: js.Function1[Event, Any] = js.native
-
-  /**
-   * Is an EventHandler containing the action to perform when a end
-   * event is fired.
-   *
-   * MDN
-   */
-  var onended: js.Function1[Event, Any] = js.native
 
   /**
    * Stores a copy of the MediaStreamTrack given as argument. If the track has
@@ -88,6 +78,15 @@ class MediaStream() extends EventTarget {
    * MDN
    */
   def getTrackById(trackId: String): MediaStreamTrack = js.native
+
+  /**
+    * Returns a list of all MediaStreamTrack objects stored in the MediaStream object,
+    * regardless of the value of the kind attribute. The order is not defined, and may
+    * not only vary from one browser to another, but also from one call to another.
+    *
+    * MDN
+    */
+  def getTracks(): js.Array[MediaStreamTrack] = js.native
 
   /**
    * Returns a list of the MediaStreamTrack objects stored in the MediaStream
@@ -132,11 +131,6 @@ class MediaStream() extends EventTarget {
 trait MediaStreamTrackState extends js.Any
 
 object MediaStreamTrackState {
-
-  /** The track type is new and has not been initialized (connected to a source
-   * of any kind). This state implies that the track's label will be the empty string.
-   */
-  val `new` = "new".asInstanceOf[MediaStreamTrackState]
 
   /** The track is active (the track's underlying media source is making a best-effort
    * attempt to provide data in real time).
@@ -279,27 +273,45 @@ trait MediaStreamTrack extends EventTarget {
    *
    * MDN
    */
-  var oneended: js.Function1[Event, Any] = js.native
+  var onended: js.Function1[Event, Any] = js.native
 
   /**
-   * getSourceInfos, static
-   * Returns authorized information for all available sources.
-   * No parameters.
-   */
-  def getSourceInfos(): js.Array[SourceInfo] = js.native
-
+    * Returns a MediaTrackConstraints object containing the currently
+    * set constraints for the track; the returned value matches the
+    * constraints last set using applyConstraints().
+    *
+    * MDN
+    */
   def getConstraints(): MediaTrackConstraints = js.native
 
-  def states(): AllVideoCapabilities | AllAudioCapabilities = js.native
-
+  /**
+    * Returns the a list of constrainable properties available for the
+    * MediaStreamTrack.
+    *
+    * MDN
+    */
   def getCapabilities(): js.Any = js.native
 
+  /**
+    * Returns a duplicate of the MediaStreamTrack.
+    *
+    * MDN
+    */
   override def clone(): MediaStreamTrack = js.native
 
-  def applyConstraints(
-      constraints: MediaTrackConstraints): js.Promise[Unit] = js.native
+  /**
+    * Lets the application specify the ideal and/or ranges of acceptable values
+    * for any number of the available constrainable properties of the MediaStreamTrack.
+    */
+  def applyConstraints(constraints: MediaTrackConstraints): js.Promise[Unit] = js.native
 
-  def getSettings(): js.Any = js.native
+  /**
+    * Returns a MediaTrackSettings object containing the current values of
+    * each of the MediaStreamTrack's constrainable properties.
+    *
+    * MDN
+    */
+  def getSettings(): MediaTrackSettings = js.native
 
   /**
    * Stops playing the source associated to the track, both the source and the
@@ -311,13 +323,55 @@ trait MediaStreamTrack extends EventTarget {
 }
 
 @js.native
-trait AllVideoCapabilities extends js.Object {
-  // TODO:...
+trait MediaTrackSettings extends js.Object {
+  var width: Double = js.native
+  var height: Double = js.native
+  var aspectRatio: Double = js.native
+  var frameRate: Double = js.native
+  var facingMode: String = js.native
+  var volume: Double = js.native
+  var sampleRate: Double = js.native
+  var sampleSize: Double = js.native
+  var echoCancellation: Boolean = js.native
+  var latency: Double = js.native
+  var channelCount: Double = js.native
+  var deviceId: String = js.native
+  var groupId: String = js.native
 }
 
-@js.native
-trait AllAudioCapabilities extends js.Object {
-  // TODO:...
+object MediaTrackSettings {
+  @inline
+  def apply(
+             width: js.UndefOr[Double] = js.undefined,
+             height: js.UndefOr[Double] = js.undefined,
+             aspectRatio: js.UndefOr[Double] = js.undefined,
+             frameRate: js.UndefOr[Double] = js.undefined,
+             facingMode: js.UndefOr[String] = js.undefined,
+             volume: js.UndefOr[Double] = js.undefined,
+             sampleRate: js.UndefOr[Double] = js.undefined,
+             sampleSize: js.UndefOr[Double] = js.undefined,
+             echoCancellation: js.UndefOr[Boolean] = js.undefined,
+             latency: js.UndefOr[Double] = js.undefined,
+             channelCount: js.UndefOr[Double] = js.undefined,
+             deviceId: js.UndefOr[String] = js.undefined,
+             groupId: js.UndefOr[String] = js.undefined
+           ): MediaTrackConstraintSet = {
+    val result = js.Dynamic.literal()
+    width.foreach(result.width = _)
+    height.foreach(result.height = _)
+    aspectRatio.foreach(result.aspectRatio = _)
+    frameRate.foreach(result.frameRate = _)
+    facingMode.foreach(result.facingMode = _)
+    volume.foreach(result.volume = _)
+    sampleRate.foreach(result.sampleRate = _)
+    sampleSize.foreach(result.sampleSize = _)
+    echoCancellation.foreach(result.echoCancellation = _)
+    latency.foreach(result.latency = _)
+    channelCount.foreach(result.channelCount = _)
+    deviceId.foreach(result.deviceId = _)
+    groupId.foreach(result.groupId = _)
+    result.asInstanceOf[MediaTrackConstraintSet]
+  }
 }
 
 @js.native
@@ -379,28 +433,6 @@ object MediaTrackConstraints {
     val result = js.Dynamic.literal()
     advanced.foreach(result.advanced = _)
     result.asInstanceOf[MediaTrackConstraints]
-  }
-}
-
-@js.native
-trait SourceInfo extends js.Object {
-  var sourceId: String = js.native
-  var kind: String = js.native
-  var label: String = js.native
-}
-
-object SourceInfo {
-  @inline
-  def apply(
-      sourceId: js.UndefOr[Boolean] = js.undefined,
-      kind: js.UndefOr[String] = js.undefined,
-      label: js.UndefOr[String] = js.undefined
-  ): SourceInfo = {
-    val result = js.Dynamic.literal()
-    sourceId.foreach(result.sourceId = _)
-    kind.foreach(result.kind = _)
-    label.foreach(result.label = _)
-    result.asInstanceOf[SourceInfo]
   }
 }
 
@@ -507,7 +539,7 @@ object MediaDeviceKind {
 }
 
 @js.native
-trait MediaDevicesInfo extends js.Object {
+trait MediaDeviceInfo extends js.Object {
 
   /**
    * Returns a DOMString that is an identifier for the represented device
@@ -548,27 +580,78 @@ trait MediaDevicesInfo extends js.Object {
   val label: String = js.native
 }
 
-object MediaDevicesInfo {
+object MediaDeviceInfo {
   @inline
   def apply(
       deviceId: js.UndefOr[String] = js.undefined,
       groupId: js.UndefOr[String] = js.undefined,
       kind: js.UndefOr[String] = js.undefined,
       label: js.UndefOr[String] = js.undefined
-  ): MediaDevicesInfo = {
+  ): MediaDeviceInfo = {
     val result = js.Dynamic.literal()
     deviceId.foreach(result.deviceId = _)
     groupId.foreach(result.groupId = _)
     kind.foreach(result.kind = _)
     label.foreach(result.label = _)
-    result.asInstanceOf[MediaDevicesInfo]
+    result.asInstanceOf[MediaDeviceInfo]
   }
 }
 
 @js.native
-trait NavigatorMediaStream extends js.Object {
+trait MediaDevices extends EventTarget {
 
-  def getUserMedia(constraints: MediaStreamConstraints,
-      success: js.Function1[MediaStream, Any],
-      error: js.Function1[DOMError, Any]): Unit = js.native
+  /**
+    * The event handler for the devicechange event. This event is
+    * delivered to the MediaDevices object when a media input or
+    * output device is attached to or removed from the user's computer.
+    *
+    * MDN
+    */
+  var ondevicechange: js.Function1[Event, Any] = js.native
+
+  /**
+    * Obtains an array of information about the media input and output devices
+    * available on the system.
+    *
+    * MDN
+    */
+  def enumerateDevices(): js.Promise[js.Array[MediaDeviceInfo]] = js.native
+
+  /**
+    * Returns an object conforming to MediaTrackSupportedConstraints indicating
+    * which constrainable properties are supported on the MediaStreamTrack
+    * interface. See "Capabilities and constraints" in Media Capture and
+    * Streams API (Media Streams) to learn more about constraints and how to use them.
+    *
+    * MDN
+    */
+  def getSupportedConstraints(): MediaTrackSupportedConstraints = js.native
+
+  /**
+    * With the user's permission through a prompt, turns on a camera or
+    * screensharing and/or a microphone on the system and provides a
+    * MediaStream containing a video track and/or an audio track with
+    * the input.
+    *
+    * MDN
+    */
+  def getUserMedia(constraints: MediaStreamConstraints): js.Promise[MediaStream] = js.native
+
+}
+
+@js.native
+trait MediaTrackSupportedConstraints extends js.Object {
+  var width: Boolean = js.native
+  var height: Boolean = js.native
+  var aspectRatio: Boolean = js.native
+  var frameRate: Boolean = js.native
+  var facingMode: Boolean = js.native
+  var volume: Boolean = js.native
+  var sampleRate: Boolean = js.native
+  var sampleSize: Boolean = js.native
+  var echoCancellation: Boolean = js.native
+  var latency: Boolean = js.native
+  var channelCount: Boolean = js.native
+  var deviceId: Boolean = js.native
+  var groupId: Boolean = js.native
 }
