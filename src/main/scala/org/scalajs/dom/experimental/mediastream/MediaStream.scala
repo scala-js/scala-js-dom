@@ -605,6 +605,13 @@ trait NavigatorMediaStream extends js.Object {
                    error: js.Function1[DOMError, Any]): Unit = js.native
 }
 
+/**
+  * The MediaDevices interface provides access to connected media input devices
+  * like cameras and microphones, as well as screen sharing. In essence, it
+  * lets you obtain access to any hardware source of media data.
+  *
+  * MDN
+  */
 @js.native
 trait MediaDevices extends EventTarget {
 
@@ -647,6 +654,12 @@ trait MediaDevices extends EventTarget {
 
 }
 
+/**
+  * The MediaTrackSupportedConstraints dictionary establishes the list of constrainable properties
+  * recognized by the user agent or browser in its implementation of the MediaStreamTrack object.
+  * An object conforming to MediaTrackSupportedConstraints is returned by
+  * MediaDevices.getSupportedConstraints().
+  */
 @js.native
 trait MediaTrackSupportedConstraints extends js.Object {
   var width: Boolean = js.native
