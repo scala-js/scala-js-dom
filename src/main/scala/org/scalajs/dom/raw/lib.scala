@@ -4346,14 +4346,16 @@ object MutationObserverInit {
       characterDataOldValue: Boolean = false,
       attributeFilter: js.UndefOr[js.Array[String]] = js.undefined
   ): MutationObserverInit = {
-    val res = js.Dynamic.literal(
-        "childList" -> childList,
-        "attributes" -> attributes,
-        "characterData" -> characterData,
-        "subtree" -> subtree,
-        "attributeOldValue" -> attributeOldValue,
-        "characterDataOldValue" -> characterDataOldValue
-    ).asInstanceOf[MutationObserverInit]
+    val res = js.Dynamic
+      .literal(
+          "childList" -> childList,
+          "attributes" -> attributes,
+          "characterData" -> characterData,
+          "subtree" -> subtree,
+          "attributeOldValue" -> attributeOldValue,
+          "characterDataOldValue" -> characterDataOldValue
+      )
+      .asInstanceOf[MutationObserverInit]
     attributeFilter.foreach(res.attributeFilter = _)
     res
   }

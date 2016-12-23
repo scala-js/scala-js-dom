@@ -584,7 +584,8 @@ trait Clients extends js.Object {
   def get(id: String): js.Promise[js.UndefOr[Client]] = js.native
 
   def matchAll(
-      options: js.UndefOr[ClientQueryOptions] = js.native): js.Promise[js.Array[Client]] = js.native
+      options: js.UndefOr[
+          ClientQueryOptions] = js.native): js.Promise[js.Array[Client]] = js.native
 
   def openWindow(url: String): js.Promise[WindowClient] = js.native
 
@@ -598,10 +599,12 @@ trait Clients extends js.Object {
 @js.native
 abstract class Cache extends js.Object {
   def `match`(request: RequestInfo,
-      options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.UndefOr[Response]] = js.native
+      options: js.UndefOr[
+          CacheQueryOptions] = js.native): js.Promise[js.UndefOr[Response]] = js.native
 
   def matchAll(request: RequestInfo = js.native,
-      options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.Array[Response]] = js.native
+      options: js.UndefOr[
+          CacheQueryOptions] = js.native): js.Promise[js.Array[Response]] = js.native
 
   def add(request: RequestInfo): js.Promise[Unit] = js.native
 
@@ -611,10 +614,12 @@ abstract class Cache extends js.Object {
       response: Response): js.Promise[Unit] = js.native
 
   def delete(request: RequestInfo,
-      options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[Boolean] = js.native
+      options: js.UndefOr[
+          CacheQueryOptions] = js.native): js.Promise[Boolean] = js.native
 
   def keys(request: js.UndefOr[RequestInfo] = js.native,
-      options: js.UndefOr[CacheQueryOptions] = js.native): js.Promise[js.Array[Request]]
+      options: js.UndefOr[
+          CacheQueryOptions] = js.native): js.Promise[js.Array[Request]]
 }
 
 /**

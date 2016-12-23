@@ -1055,8 +1055,8 @@ class RTCPeerConnection(
    * view - it's probably around as bad as access to a canvas :-)
    *
    */
-  def createOffer(options: RTCOfferOptions = js.native): js.Promise[
-      RTCSessionDescription] = js.native
+  def createOffer(
+      options: RTCOfferOptions = js.native): js.Promise[RTCSessionDescription] = js.native
 
   /**
    * The createAnswer method generates an [SDP] answer with the supported
