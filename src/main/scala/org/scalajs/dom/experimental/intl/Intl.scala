@@ -107,25 +107,28 @@ object CollatorOptions {
    *                          default is "false". This option can be set through an options
    *                          property or through a Unicode extension key; if both are provided,
    *                          the options property takes precedence. Implementations are not
-   *                          required to support this property. 
+   *                          required to support this property.
    *
    * MDN
    */
   def apply(
-      localeMatcher: js.UndefOr[String]  = js.undefined,
-      usage: js.UndefOr[String]  = js.undefined,
-      sensivity: js.UndefOr[String]  = js.undefined,
+      localeMatcher: js.UndefOr[String] = js.undefined,
+      usage: js.UndefOr[String] = js.undefined,
+      sensivity: js.UndefOr[String] = js.undefined,
       ignore­Punctua­tion: js.UndefOr[Boolean] = js.undefined,
       numeric: js.UndefOr[Boolean] = js.undefined,
-      caseFirst: js.UndefOr[String]  = js.undefined): CollatorOptions = {
-    js.Dynamic.literal(
-      localeMatcher = localeMatcher,
-      usage = usage,
-      sensivity = sensivity,
-      ignore­Punctua­tion = ignore­Punctua­tion,
-      numeric = numeric,
-      caseFirst = caseFirst
-    ).asInstanceOf[CollatorOptions]
+      caseFirst: js.UndefOr[String] = js.undefined
+  ): CollatorOptions = {
+    js.Dynamic
+      .literal(
+          localeMatcher = localeMatcher,
+          usage = usage,
+          sensivity = sensivity,
+          ignore­Punctua­tion = ignore­Punctua­tion,
+          numeric = numeric,
+          caseFirst = caseFirst
+      )
+      .asInstanceOf[CollatorOptions]
   }
 }
 
@@ -149,7 +152,7 @@ trait DateTimeFormatOptions extends js.Object {
 
 object DateTimeFormatOptions {
 
-  /** 
+  /**
    * @param localeMatcher The locale matching algorithm to use. Possible values are "lookup" and
    *                      "best fit"; the default is "best fit".
    *                      For information about this option, see the Intl page.
@@ -178,35 +181,37 @@ object DateTimeFormatOptions {
    * MDN
    */
   def apply(
-      localeMatcher: js.UndefOr[String]  = js.undefined,
-      timeZone: js.UndefOr[String]  = js.undefined,
+      localeMatcher: js.UndefOr[String] = js.undefined,
+      timeZone: js.UndefOr[String] = js.undefined,
       hour12: js.UndefOr[Boolean] = js.undefined,
-      formatMatcher: js.UndefOr[String]  = js.undefined,
-
-      weekday: js.UndefOr[String]  = js.undefined,
-      era: js.UndefOr[String]  = js.undefined,
-      year: js.UndefOr[String]  = js.undefined,
-      month: js.UndefOr[String]  = js.undefined,
-      day: js.UndefOr[String]  = js.undefined,
-      hour: js.UndefOr[String]  = js.undefined,
-      minute: js.UndefOr[String]  = js.undefined,
-      second: js.UndefOr[String]  = js.undefined,
-      timeZoneName:  js.UndefOr[String]  = js.undefined): DateTimeFormatOptions = {
-    js.Dynamic.literal(
-      localeMatcher = localeMatcher,
-      timeZone = timeZone,
-      hour12 = hour12,
-      formatMatcher = formatMatcher,
-      weekday = weekday,
-      era = era,
-      year = year,
-      month = month,
-      day = day,
-      hour = hour,
-      minute = minute,
-      second = second,
-      timeZoneName  = timeZoneName
-    ).asInstanceOf[DateTimeFormatOptions]
+      formatMatcher: js.UndefOr[String] = js.undefined,
+      weekday: js.UndefOr[String] = js.undefined,
+      era: js.UndefOr[String] = js.undefined,
+      year: js.UndefOr[String] = js.undefined,
+      month: js.UndefOr[String] = js.undefined,
+      day: js.UndefOr[String] = js.undefined,
+      hour: js.UndefOr[String] = js.undefined,
+      minute: js.UndefOr[String] = js.undefined,
+      second: js.UndefOr[String] = js.undefined,
+      timeZoneName: js.UndefOr[String] = js.undefined
+  ): DateTimeFormatOptions = {
+    js.Dynamic
+      .literal(
+          localeMatcher = localeMatcher,
+          timeZone = timeZone,
+          hour12 = hour12,
+          formatMatcher = formatMatcher,
+          weekday = weekday,
+          era = era,
+          year = year,
+          month = month,
+          day = day,
+          hour = hour,
+          minute = minute,
+          second = second,
+          timeZoneName = timeZoneName
+      )
+      .asInstanceOf[DateTimeFormatOptions]
   }
 }
 
@@ -273,34 +278,35 @@ object NumberFormatOptions {
    * @param minimumSignificantDigits The minimum number of significant digits to use. Possible
    *                                 values are from 1 to 21; the default is 1.
    * @param maximumSignificantDigits The maximum number of significant digits to use. Possible
-   *                                 values are from 1 to 21; the default is minimumSignificantDigits. 
+   *                                 values are from 1 to 21; the default is minimumSignificantDigits.
    *
    * MDN
    */
   def apply(
-      localeMatcher: js.UndefOr[String]  = js.undefined,
-      style: js.UndefOr[String]  = js.undefined,
-      currency: js.UndefOr[String]  = js.undefined,
-      currencyDisplay: js.UndefOr[String]  = js.undefined,
+      localeMatcher: js.UndefOr[String] = js.undefined,
+      style: js.UndefOr[String] = js.undefined,
+      currency: js.UndefOr[String] = js.undefined,
+      currencyDisplay: js.UndefOr[String] = js.undefined,
       useGrouping: js.UndefOr[Boolean] = js.undefined,
-
-      minimumIntegerDigits: js.UndefOr[Double]  = js.undefined,
-      minimumFractionDigits: js.UndefOr[Double]  = js.undefined,
-      maximumFractionDigits: js.UndefOr[Double]  = js.undefined,
-
-      minimumSignificantDigits: js.UndefOr[Double]  = js.undefined,
-      maximumSignificantDigits: js.UndefOr[Double]  = js.undefined): NumberFormatOptions = {
-    js.Dynamic.literal(
-      localeMatcher = localeMatcher,
-      style = style,
-      currency = currency,
-      currencyDisplay  = currencyDisplay,
-      useGrouping = useGrouping,
-      minimumIntegerDigits = minimumIntegerDigits,
-      minimumFractionDigits = minimumFractionDigits,
-      maximumFractionDigits = maximumFractionDigits,
-      minimumSignificantDigits = minimumSignificantDigits,
-      maximumSignificantDigits = maximumSignificantDigits
-    ).asInstanceOf[NumberFormatOptions]
+      minimumIntegerDigits: js.UndefOr[Double] = js.undefined,
+      minimumFractionDigits: js.UndefOr[Double] = js.undefined,
+      maximumFractionDigits: js.UndefOr[Double] = js.undefined,
+      minimumSignificantDigits: js.UndefOr[Double] = js.undefined,
+      maximumSignificantDigits: js.UndefOr[Double] = js.undefined
+  ): NumberFormatOptions = {
+    js.Dynamic
+      .literal(
+          localeMatcher = localeMatcher,
+          style = style,
+          currency = currency,
+          currencyDisplay = currencyDisplay,
+          useGrouping = useGrouping,
+          minimumIntegerDigits = minimumIntegerDigits,
+          minimumFractionDigits = minimumFractionDigits,
+          maximumFractionDigits = maximumFractionDigits,
+          minimumSignificantDigits = minimumSignificantDigits,
+          maximumSignificantDigits = maximumSignificantDigits
+      )
+      .asInstanceOf[NumberFormatOptions]
   }
 }
