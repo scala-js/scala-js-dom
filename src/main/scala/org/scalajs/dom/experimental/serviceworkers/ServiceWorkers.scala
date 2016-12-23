@@ -1,11 +1,13 @@
 package org.scalajs.dom.experimental.serviceworkers
 
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
+
 import org.scalajs.dom.experimental.{Request, RequestInfo, Response, Sequence}
 import org.scalajs.dom.raw.{WorkerGlobalScope, ErrorEvent}
 import org.scalajs.dom.webgl.RenderingContext
 import org.scalajs.dom.{Event, EventTarget, MessagePort}
-import scala.scalajs.js
-import scala.scalajs.js.|
 
 @js.native
 sealed trait FrameType extends js.Any
@@ -741,6 +743,7 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
 }
 
 @js.native
-object ServiceWorkerGlobalScope extends js.GlobalScope {
+@JSGlobalScope
+object ServiceWorkerGlobalScope extends js.Object {
   def self: ServiceWorkerGlobalScope = js.native
 }

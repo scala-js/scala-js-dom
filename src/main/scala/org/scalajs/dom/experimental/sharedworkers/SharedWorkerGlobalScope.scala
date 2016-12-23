@@ -5,6 +5,7 @@ import org.scalajs.dom.raw.ApplicationCache
 import org.scalajs.dom.raw.WorkerGlobalScope
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /**
  * The SharedWorkerGlobalScope object (the SharedWorker global scope) is
@@ -47,6 +48,7 @@ trait SharedWorkerGlobalScope extends WorkerGlobalScope {
 }
 
 @js.native
-object SharedWorkerGlobalScope extends js.GlobalScope {
+@JSGlobalScope
+object SharedWorkerGlobalScope extends js.Object {
   def self: SharedWorkerGlobalScope = js.native
 }

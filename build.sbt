@@ -5,7 +5,7 @@ lazy val root = project.in(file(".")).
 
 name := "Scala.js DOM"
 
-crossScalaVersions in ThisBuild := Seq("2.11.8", "2.10.6", "2.12.0-M4")
+crossScalaVersions in ThisBuild := Seq("2.11.8", "2.10.6", "2.12.1")
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
 val commonSettings = Seq(

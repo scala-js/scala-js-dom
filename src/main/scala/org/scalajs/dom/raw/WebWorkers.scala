@@ -1,6 +1,7 @@
 package org.scalajs.dom.raw
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /**
  * The AbstractWorker interface abstracts properties and methods common to all
@@ -253,7 +254,8 @@ trait DedicatedWorkerGlobalScope extends WorkerGlobalScope {
 }
 
 @js.native
-object DedicatedWorkerGlobalScope extends js.GlobalScope {
+@JSGlobalScope
+object DedicatedWorkerGlobalScope extends js.Object {
 
   /**
    * Returns an object reference to the DedicatedWorkerGlobalScope object itself.

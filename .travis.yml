@@ -6,6 +6,6 @@ script:
 scala:
   - 2.10.6
   - 2.11.8
-  - 2.12.0-M4
+  - 2.12.1
 jdk:
   - oraclejdk8

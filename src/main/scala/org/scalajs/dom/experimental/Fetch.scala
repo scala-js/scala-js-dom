@@ -4,12 +4,13 @@ import org.scalajs.dom.Blob
 import org.scalajs.dom.raw.FormData
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSName, ScalaJSDefined}
+import scala.scalajs.js.annotation._
 import scala.scalajs.js.dom.experimental.JSIterable
 import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 
 @js.native
-object Fetch extends js.GlobalScope {
+@JSGlobalScope
+object Fetch extends js.Object {
 
   /**
    * [[https://fetch.spec.whatwg.org/#fetch-method ¶6.0 Fetch method]] defined in WhatWG spec
