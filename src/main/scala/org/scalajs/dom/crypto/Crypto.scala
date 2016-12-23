@@ -1,10 +1,12 @@
 package org.scalajs.dom.crypto
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBufferView
 
 @js.native
-object GlobalCrypto extends js.GlobalScope {
+@JSGlobalScope
+object GlobalCrypto extends js.Object {
   val crypto: Crypto = js.native
 }
 
