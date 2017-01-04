@@ -5146,8 +5146,6 @@ class History extends js.Object {
    */
   def length: Int = js.native
 
-  def back(distance: js.Any): Unit = js.native
-
   /**
    * Goes to the previous page in session history, the same action as when the user clicks
    * the browser's Back button. Equivalent to history.go(-1). Note: Calling this
@@ -5157,8 +5155,6 @@ class History extends js.Object {
    * MDN
    */
   def back(): Unit = js.native
-
-  def forward(distance: js.Any): Unit = js.native
 
   /**
    * Goes to the next page in session history, the same action as when the user clicks the
@@ -5170,7 +5166,7 @@ class History extends js.Object {
    */
   def forward(): Unit = js.native
 
-  def go(delta: js.Any): Unit = js.native
+  def go(delta: Int): Unit = js.native
 
   /**
    * Loads a page from the session history, identified by its relative location to the
