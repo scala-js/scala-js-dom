@@ -1,7 +1,7 @@
 package org.scalajs.dom
 
 /**
- * Short aliasas of all the dom.SVGThing classes
+ * Short aliases of all the dom.SVGThing classes
  */
 object svg {
   type A = raw.SVGAElement

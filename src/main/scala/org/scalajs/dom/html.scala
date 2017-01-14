@@ -1,7 +1,7 @@
 package org.scalajs.dom
 
 /**
- * Short aliasas of all the dom.HTMLThing classes
+ * Short aliases of all the dom.HTMLThing classes
  */
 object html {
   type Anchor = raw.HTMLAnchorElement

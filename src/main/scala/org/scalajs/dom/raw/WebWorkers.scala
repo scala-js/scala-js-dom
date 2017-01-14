@@ -353,7 +353,7 @@ trait WorkerLocation extends js.Object {
    * serialization of the origin of the represented URL, that is, for http and
    * https, the scheme followed by '://', followed by the domain, followed by
    * ':', followed by the port (the default port, 80 and 443 respectively,
-   * if explicitely specified). For URL using file: scheme, the value is browser
+   * if explicitly specified). For URL using file: scheme, the value is browser
    * dependant.
    *
    * MDN
