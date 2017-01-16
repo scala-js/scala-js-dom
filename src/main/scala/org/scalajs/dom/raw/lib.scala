@@ -783,15 +783,6 @@ abstract class Element
   def getAttribute(name: String): String = js.native
 
   /**
-   * getAttribute() returns the value of the named attribute on the specified element.
-   * If the named attribute does not exist, the value returned will either be null or ""
-   * (the empty string); see Notes for details.
-   *
-   * MDN
-   */
-  def getAttribute(): String = js.native
-
-  /**
    * Returns a list of elements with the given tag name belonging to the given namespace.
    *
    * MDN
@@ -856,13 +847,6 @@ abstract class Element
    * MDN
    */
   def removeAttribute(name: String): Unit = js.native
-
-  /**
-   * removeAttribute removes an attribute from the specified element.
-   *
-   * MDN
-   */
-  def removeAttribute(): Unit = js.native
 
   /**
    * setAttributeNS adds a new attribute or changes the value of an attribute with the
