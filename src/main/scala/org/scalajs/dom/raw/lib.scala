@@ -253,7 +253,7 @@ class TreeWalker extends js.Object {
    *
    * MDN
    */
-  def currentNode: Node = js.native
+  var currentNode: Node = js.native
 
   /**
    * The TreeWalker.expandEntityReferences read-only property returns a Boolean
