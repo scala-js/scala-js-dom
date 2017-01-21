@@ -5036,7 +5036,7 @@ object PositionError extends js.Object {
 class StyleSheetList extends js.Object {
   def length: Int = js.native
 
-  def item(index: Int = js.native): StyleSheet = js.native
+  def item(index: Int): StyleSheet = js.native
 
   @scala.scalajs.js.annotation.JSBracketAccess
   def apply(index: Int): StyleSheet = js.native
