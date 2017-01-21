@@ -251,7 +251,6 @@ class CSSStyleSheet extends StyleSheet {
    * MDN
    */
   var ownerRule: CSSRule = js.native
-  var href: String = js.native
 
   /**
    * Returns a CSSRuleList of the CSS rules in the style sheet.
