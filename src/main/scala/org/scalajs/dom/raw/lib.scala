@@ -440,6 +440,7 @@ class CompositionEvent extends UIEvent {
    *
    * MDN
    */
+  @deprecated("Non-standard", "forever")
   def initCompositionEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, viewArg: Window, dataArg: String,
       locale: String): Unit = js.native
@@ -1385,6 +1386,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
    */
   def clientX: Double = js.native
 
+  @deprecated("Non-standard", "forever")
   def initMouseEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int,
       screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean,
@@ -2643,6 +2645,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    */
   def getModifierState(keyArg: String): Boolean = js.native
 
+  @deprecated("Non-standard", "forever")
   def initKeyboardEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, viewArg: Window, keyArg: String,
       locationArg: Int, modifiersListArg: String, repeat: Boolean,
@@ -2988,6 +2991,7 @@ class MessageEvent extends Event {
    */
   def data: Any = js.native
 
+  @deprecated("Non-standard", "forever")
   def initMessageEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, dataArg: js.Any, originArg: String,
       lastEventIdArg: String, sourceArg: Window): Unit = js.native
@@ -3891,6 +3895,7 @@ class FocusEvent extends UIEvent {
    */
   def relatedTarget: EventTarget = js.native
 
+  @deprecated("Non-standard", "forever")
   def initFocusEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, viewArg: Window, detailArg: Int,
       relatedTargetArg: EventTarget): Unit = js.native
@@ -4175,17 +4180,21 @@ class Storage extends js.Object {
 abstract class DocumentType extends Node {
   def name: String = js.native
 
+  @deprecated("Obsolete.", "WHATWG DOM")
   def notations: NamedNodeMap = js.native
 
   def systemId: String = js.native
 
+  @deprecated("Obsolete.", "WHATWG DOM")
   def internalSubset: String = js.native
 
+  @deprecated("Obsolete.", "WHATWG DOM")
   def entities: NamedNodeMap = js.native
 
   def publicId: String = js.native
 }
 
+@deprecated("Obsolete.", "WHATWG DOM")
 @js.native
 class MutationEvent extends Event {
   def newValue: String = js.native
@@ -4204,6 +4213,7 @@ class MutationEvent extends Event {
       attrChangeArg: Int): Unit = js.native
 }
 
+@deprecated("Obsolete.", "WHATWG DOM")
 @js.native
 object MutationEvent extends js.Object {
   val MODIFICATION: Int = js.native
@@ -4431,6 +4441,7 @@ trait MutationRecord extends js.Object {
 trait DragEvent extends MouseEvent {
   def dataTransfer: DataTransfer = js.native
 
+  @deprecated("Non-standard", "forever")
   def initDragEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int,
       screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean,
@@ -4923,6 +4934,7 @@ class WheelEvent extends MouseEvent {
    */
   def deltaY: Double = js.native
 
+  @deprecated("Non-standard", "forever")
   def initWheelEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int,
       screenYArg: Int, clientXArg: Int, clientYArg: Int, buttonArg: Int,
@@ -4930,6 +4942,7 @@ class WheelEvent extends MouseEvent {
       deltaXArg: Double, deltaYArg: Double, deltaZArg: Double,
       deltaMode: Int): Unit = js.native
 
+  @deprecated("Non-standard", "forever")
   def getCurrentPoint(element: Element): Unit = js.native
 }
 
@@ -5344,6 +5357,7 @@ class Event extends js.Object {
    *
    * MDN
    */
+  @deprecated("Non-standard", "forever")
   def initEvent(eventTypeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean): Unit = js.native
 
@@ -5849,6 +5863,7 @@ class StorageEvent extends Event {
    *
    * MDN
    */
+  @deprecated("Non-standard", "forever")
   def initStorageEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, keyArg: String, oldValueArg: js.Any,
       newValueArg: js.Any, urlArg: String,
@@ -5940,6 +5955,7 @@ class DOMException extends js.Object {
    *
    * MDN
    */
+  @deprecated("Obsolete.", "DOM4")
   def code: Int = js.native
 
   def message: String = js.native
@@ -6098,6 +6114,7 @@ trait ErrorEvent extends Event {
    */
   def message: String = js.native
 
+  @deprecated("Non-standard", "forever")
   def initErrorEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, messageArg: String, filenameArg: String,
       linenoArg: Int): Unit = js.native
@@ -6178,6 +6195,7 @@ trait TransitionEvent extends Event {
    *
    * MDN
    */
+  @deprecated("Non-standard", "forever")
   def initTransitionEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, propertyNameArg: String,
       elapsedTimeArg: Int): Unit = js.native
@@ -6274,6 +6292,7 @@ trait CloseEvent extends Event {
    */
   def code: Int = js.native
 
+  @deprecated("Non-standard", "forever")
   def initCloseEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, wasCleanArg: Boolean, codeArg: Int,
       reasonArg: String): Unit = js.native
@@ -6527,6 +6546,7 @@ trait ProgressEvent extends Event {
    *
    * MDN
    */
+  @deprecated("Non-standard", "forever")
   def initProgressEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, lengthComputableArg: Boolean, loadedArg: Double,
       totalArg: Double): Unit = js.native
@@ -6566,6 +6586,7 @@ abstract class File extends Blob {
    *
    * MDN
    */
+  @deprecated("Non-standard", "forever")
   def lastModifiedDate: js.Any = js.native
 
   /**
@@ -7142,6 +7163,7 @@ object ApplicationCache extends js.Object {
 trait PopStateEvent extends Event {
   def state: js.Any = js.native
 
+  @deprecated("Non-standard", "forever")
   def initPopStateEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, stateArg: js.Any): Unit = js.native
 }
