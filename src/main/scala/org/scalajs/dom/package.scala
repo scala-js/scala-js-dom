@@ -114,7 +114,9 @@ package object dom {
   type MessagePort = raw.MessagePort
   type ModifierKeyEvent = raw.ModifierKeyEvent
   type MouseEvent = raw.MouseEvent
+  @deprecated("Obsolete.", "WHATWG DOM")
   type MutationEvent = raw.MutationEvent
+  @deprecated("Obsolete.", "WHATWG DOM")
   lazy val MutationEvent: raw.MutationEvent.type = raw.MutationEvent
   type MutationObserver = raw.MutationObserver
   type MutationObserverInit = raw.MutationObserverInit
