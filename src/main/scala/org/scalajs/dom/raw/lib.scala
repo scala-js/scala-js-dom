@@ -5581,6 +5581,13 @@ class DOMParser extends js.Object {
 class StyleSheet extends js.Object {
 
   /**
+   * Returns a DOMString representing the location of the stylesheet.
+   *
+   * MDN
+   */
+  def href: String = js.native
+
+  /**
    * Is a Boolean representing whether the current stylesheet has been applied or not.
    *
    * MDN
