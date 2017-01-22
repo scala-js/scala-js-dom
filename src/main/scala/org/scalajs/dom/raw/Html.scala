@@ -698,7 +698,7 @@ abstract class HTMLTableElement extends HTMLElement {
    *
    * MDN
    */
-  def deleteRow(index: Int = js.native): Unit = js.native
+  def deleteRow(index: Int): Unit = js.native
 
   def createTBody(): HTMLElement = js.native
 
