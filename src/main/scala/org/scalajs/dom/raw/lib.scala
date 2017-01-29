@@ -657,6 +657,14 @@ abstract class Element
     with NonDocumentTypeChildNode {
 
   /**
+   * A DOMString representing the namespace prefix of the element, or null if no
+   * prefix is specified.
+   *
+   * MDN
+   */
+  override def prefix: String = js.native
+
+  /**
    * scrollTop gets or sets the number of pixels that the content of an element is
    * scrolled upward.
    *
@@ -1068,13 +1076,13 @@ abstract class Node extends EventTarget {
   def firstChild: Node = js.native
 
   /**
-   * Is a DOMString representing the namespace prefix of the node, or null if no prefix is
-   * specified. Though the specification requires localName to be defined on the Node
-   * interface, Gecko-based browsers implement it on the Element interface.
+   * Is a DOMString representing the namespace prefix of the node, or null if no
+   * prefix is specified.
    *
    * MDN
    */
-  var prefix: String = js.native
+  @deprecated("Obsolete.", "DOM4")
+  def prefix: String = js.native
 
   /**
    * Removes a child node from the current element, which must be a child of the current
@@ -6009,16 +6017,39 @@ class Attr extends Node {
   def specified: Boolean = js.native
 
   /**
-   * Since you get an Attr object from an Element, you should already know the associated
-   * element.
+   * The element holding the attribute.
+   *
+   * Note: DOM Level 4 removed this property. The assumption was that since you get an Attr
+   * object from an Element, you should already know the associated element.
+   *
+   * As that doesn't hold true in cases like Attr objects being returned by Document.evaluate,
+   * the DOM Living Standard reintroduced the property.
    *
    * MDN
    */
   def ownerElement: Element = js.native
 
+  /**
+   * The attribute's value.
+   *
+   * MDN
+   */
   var value: String = js.native
 
+  /**
+   * The attribute's name.
+   *
+   * MDN
+   */
   def name: String = js.native
+
+  /**
+   * A DOMString representing the namespace prefix of the attribute, or null if no prefix
+   * is specified.
+   *
+   * MDN
+   */
+  override def prefix: String = js.native
 }
 
 /**
