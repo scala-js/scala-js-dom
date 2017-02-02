@@ -3404,6 +3404,18 @@ class XMLHttpRequest extends EventTarget {
    */
   def responseXML: Document = js.native
 
+  /**
+   * Returns the serialized URL of the response or the empty string if the URL is null. If
+   * the URL is returned, URL fragment if present in the URL will be stripped away. The
+   * value of responseURL will be the final URL obtained after any redirects.
+   *
+   * This property should be a String, but it isn't implemented by IE, even as new as IE11,
+   * hence it must be UndefOr.
+   *
+   * MDN
+   */
+  def responseURL: js.UndefOr[String] = js.native
+
   var ontimeout: js.Function1[Event, _] = js.native
 
   /**
