@@ -2641,7 +2641,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
    * 
    * NOT supported in Safari
    */
-  @deprecated("Not yet supported in Safari")
+  @deprecated("Compatibility", "Not yet supported in Safari")
   def key: String = js.native
 
   /**
