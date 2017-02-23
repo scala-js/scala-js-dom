@@ -1155,6 +1155,14 @@ abstract class Node extends EventTarget {
   def compareDocumentPosition(other: Node): Int = js.native
 
   /**
+   * Returns a Boolean value indicating whether a node is a descendant of a given node
+   * or not.
+   *
+   * MDN
+   */
+  def contains(other: Node): Boolean = js.native
+
+  /**
    * Puts the specified node and all of its subtree into a "normalized" form. In a
    * normalized subtree, no text nodes in the subtree are empty and there are no adjacent
    * text nodes.
