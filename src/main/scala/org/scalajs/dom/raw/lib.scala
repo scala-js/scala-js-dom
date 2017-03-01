@@ -5091,7 +5091,7 @@ class CustomEvent extends Event {
    *
    * MDN
    */
-  def detail: Object = js.native
+  def detail: Any = js.native
 
   /**
    * Initializes the event in a manner analogous to the similarly-named method in the
@@ -5100,7 +5100,7 @@ class CustomEvent extends Event {
    * MDN
    */
   def initCustomEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, detailArg: Object): Unit = js.native
+      cancelableArg: Boolean, detailArg: Any): Unit = js.native
 }
 
 /**
