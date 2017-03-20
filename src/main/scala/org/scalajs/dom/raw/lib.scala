@@ -9,6 +9,9 @@
  */
 package org.scalajs.dom.raw
 
+import org.scalajs.dom.experimental.screenorientation.ScreenOrientation
+import org.scalajs.dom.experimental.webvr.{NavigatorWebVR, WindowWebVR}
+
 import scala.scalajs.js
 import scala.scalajs.js.typedarray.ArrayBuffer
 import scala.scalajs.js.|
@@ -492,7 +495,7 @@ trait WindowTimers extends WindowTimersExtension {
 @js.native
 class Navigator
     extends NavigatorID with NavigatorOnLine with NavigatorContentUtils
-    with NavigatorGeolocation with NavigatorStorageUtils with NavigatorLanguage
+    with NavigatorGeolocation with NavigatorStorageUtils with NavigatorLanguage with NavigatorWebVR
 
 @js.native
 trait NodeSelector extends js.Object {
@@ -1716,7 +1719,7 @@ trait WindowSessionStorage extends js.Object {
 class Window
     extends EventTarget with WindowLocalStorage with WindowSessionStorage
     with WindowTimers with WindowBase64 with IDBEnvironment
-    with WindowConsole {
+    with WindowConsole with WindowWebVR {
   var ondragend: js.Function1[DragEvent, _] = js.native
 
   /**
@@ -3596,6 +3599,33 @@ class Screen extends js.Object {
    * MDN
    */
   def pixelDepth: Int = js.native
+
+  /**
+    * The Screen.orientation property give the current orientation of the screen.
+    *
+    * [[https://developer.mozilla.org/en-US/docs/Web/API/Screen/orientation]]
+    *
+    * The return value is a string representing the orientation of the screen.
+    * It can be portrait-primary, portrait-secondary, landscape-primary,
+    * landscape-secondary (See lockOrientation for more info about those values).
+    */
+  def orientation: String = js.native
+
+  /** The lockOrientation method locks the screen into the specified orientation.
+    * see [[https://developer.mozilla.org/en-US/docs/Web/API/Screen/lockOrientation]]
+    * @param orientation The orientation into which to lock the screen. This is either a string or an array of strings.
+    *                    Passing several strings lets the screen rotate only in the selected orientations.
+    * @return Returns true if the orientation was authorized to be locked or false if the orientation locking was denied.
+    *         Note that the returns value doesn't indicate that the screen orientation is indeed locked: there may be a delay.
+    */
+  def lockOrientation(orientation: String | Array[String]): Boolean = js.native
+
+  /**
+    * The Screen.unlockOrientation method removes all the previous screen locks set by the page/app.
+    * see [[https://developer.mozilla.org/en-US/docs/Web/API/Screen/unlockOrientation]]
+    * @return Returns true if the orientation was successfully unlocked or false if the orientation couldn't be unlocked
+    */
+  def unlockOrientation(): Boolean = js.native
 }
 
 /**
@@ -5413,6 +5443,23 @@ object Event extends js.Object {
   def AT_TARGET: Int = js.native
 
   def BUBBLING_PHASE: Int = js.native
+}
+
+/**
+  * The ImageBitmap interface represents a bitmap image which can be drawn to a <canvas> without undue latency.
+  * It can be created from a variety of source objects using the createImageBitmap() factory method.
+  * ImageBitmap provides an asynchronous and resource efficient pathway to prepare textures for rendering in WebGL.
+  *
+  * [[https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap]]
+  */
+@js.native
+trait ImageBitmap extends js.Object {
+  /** Is an unsigned long representing the height, in CSS pixels, of the ImageData. */
+  def width: Int = js.native
+  /** Is an unsigned long representing the width, in CSS pixels, of the ImageData. */
+  def height: Int = js.native
+  /** Disposes of all graphical resources associated with an ImageBitmap. */
+  def close(): Unit = js.native
 }
 
 /**
