@@ -22,6 +22,16 @@ homepage := Some(url("http://scala-js.org/"))
 
 licenses += ("MIT", url("http://opensource.org/licenses/mit-license.php"))
 
+scalacOptions ++= {
+  if (isSnapshot.value)
+    Seq.empty
+  else {
+    val a = baseDirectory.value.toURI
+    val g = "https://raw.githubusercontent.com/scala-js/scala-js-dom"
+    Seq(s"-P:scalajs:mapSourceURI:$a->$g/v${version.value}/")
+  }
+}
+
 scmInfo := Some(ScmInfo(
     url("https://github.com/scala-js/scala-js-dom"),
     "scm:git:git@github.com:scala-js/scala-js-dom.git",
