@@ -10,10 +10,12 @@
 package org.scalajs.dom.raw
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBuffer
 import scala.scalajs.js.|
 
 @js.native
+@JSGlobal
 object XPathResult extends js.Object {
 
   /**
@@ -103,6 +105,7 @@ object XPathResult extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class XPathResult extends js.Object {
   def booleanValue: Boolean = js.native
   def invalidIteratorState: Boolean = js.native
@@ -116,6 +119,7 @@ class XPathResult extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class XPathNSResolver extends js.Object {
   def lookupNamespaceURI(prefix: String): String = js.native
 }
@@ -129,6 +133,7 @@ class XPathNSResolver extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class PositionOptions extends js.Object {
 
   /**
@@ -220,6 +225,7 @@ trait NavigatorID extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class TreeWalker extends js.Object {
 
   /**
@@ -345,6 +351,7 @@ class TreeWalker extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class Performance extends js.Object {
 
   /**
@@ -413,6 +420,7 @@ class Performance extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class CompositionEvent extends UIEvent {
 
   /**
@@ -490,6 +498,7 @@ trait WindowTimers extends WindowTimersExtension {
  * MDN
  */
 @js.native
+@JSGlobal
 class Navigator
     extends NavigatorID with NavigatorOnLine with NavigatorContentUtils
     with NavigatorGeolocation with NavigatorStorageUtils with NavigatorLanguage
@@ -517,6 +526,7 @@ trait NodeSelector extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class ClientRect extends js.Object {
   var left: Double = js.native
   var width: Double = js.native
@@ -534,6 +544,7 @@ class ClientRect extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class DOMImplementation extends js.Object {
 
   /**
@@ -652,6 +663,7 @@ trait NonDocumentTypeChildNode extends js.Object {
  * https://developer.mozilla.org/en-US/docs/Web/API/element
  */
 @js.native
+@JSGlobal
 abstract class Element
     extends Node with NodeSelector with ParentNode
     with NonDocumentTypeChildNode {
@@ -940,6 +952,7 @@ abstract class Element
  * MDN
  */
 @js.native
+@JSGlobal
 abstract class Node extends EventTarget {
 
   /**
@@ -1207,6 +1220,7 @@ abstract class Node extends EventTarget {
 }
 
 @js.native
+@JSGlobal
 object Node extends js.Object {
   def ENTITY_REFERENCE_NODE: Int = js.native
 
@@ -1319,6 +1333,7 @@ trait HashChangeEvent extends Event {
  * MDN
  */
 @js.native
+@JSGlobal
 class MouseEvent extends UIEvent with ModifierKeyEvent {
 
   /**
@@ -1417,6 +1432,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
  * MDN
  */
 @js.native
+@JSGlobal
 class TextMetrics extends js.Object {
 
   /**
@@ -1445,6 +1461,7 @@ trait DocumentEvent extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 abstract class CDATASection extends Text
 
 @js.native
@@ -1465,6 +1482,7 @@ trait StyleMedia extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class Selection extends js.Object {
 
   /**
@@ -1595,6 +1613,7 @@ class Selection extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class NodeIterator extends js.Object {
 
   /**
@@ -1713,6 +1732,7 @@ trait WindowSessionStorage extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class Window
     extends EventTarget with WindowLocalStorage with WindowSessionStorage
     with WindowTimers with WindowBase64 with IDBEnvironment
@@ -2335,6 +2355,7 @@ class Window
  * MDN
  */
 @js.native
+@JSGlobal
 class EventTarget extends js.Object {
 
   /**
@@ -2378,6 +2399,7 @@ class EventTarget extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class CanvasGradient extends js.Object {
 
   /**
@@ -2404,6 +2426,7 @@ class CanvasGradient extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class TouchEvent extends UIEvent with ModifierKeyEvent {
 
   /**
@@ -2452,6 +2475,7 @@ class TouchEvent extends UIEvent with ModifierKeyEvent {
  * MDN
  */
 @js.native
+@JSGlobal
 class TouchList extends DOMList[Touch]
 
 /**
@@ -2466,6 +2490,7 @@ class TouchList extends DOMList[Touch]
  * MDN
  */
 @js.native
+@JSGlobal
 class Touch extends js.Object {
 
   /**
@@ -2593,6 +2618,7 @@ class Touch extends js.Object {
  * W3C
  */
 @js.native
+@JSGlobal
 class KeyboardEvent extends UIEvent with ModifierKeyEvent {
 
   /**
@@ -2661,6 +2687,7 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
 }
 
 @js.native
+@JSGlobal
 object KeyboardEvent extends js.Object {
   def DOM_KEY_LOCATION_RIGHT: Int = js.native
 
@@ -2685,6 +2712,7 @@ object KeyboardEvent extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 abstract class Document
     extends Node with NodeSelector with DocumentEvent with ParentNode
     with PageVisibility {
@@ -2987,6 +3015,7 @@ abstract class Document
  * MDN
  */
 @js.native
+@JSGlobal
 class MessageEvent extends Event {
   def source: Window = js.native
 
@@ -3014,6 +3043,7 @@ class MessageEvent extends Event {
  * MDN
  */
 @js.native
+@JSGlobal
 class CanvasRenderingContext2D extends js.Object {
 
   /**
@@ -3364,6 +3394,7 @@ class CanvasRenderingContext2D extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class XMLHttpRequest extends EventTarget {
 
   /**
@@ -3540,6 +3571,7 @@ class XMLHttpRequest extends EventTarget {
 }
 
 @js.native
+@JSGlobal
 object XMLHttpRequest extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(XMLHttpRequest),List())))) */
   var LOADING: Int = js.native
@@ -3550,6 +3582,7 @@ object XMLHttpRequest extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class Screen extends js.Object {
 
   /**
@@ -3882,6 +3915,7 @@ object ClipboardEventInit {
  * MDN
  */
 @js.native
+@JSGlobal
 class ClipboardEvent(`type`: String, settings: ClipboardEventInit)
     extends Event {
   @deprecated("Use the overload with a ClipboardEventInit instead.", "0.8.1")
@@ -3904,6 +3938,7 @@ class ClipboardEvent(`type`: String, settings: ClipboardEventInit)
  * MDN
  */
 @js.native
+@JSGlobal
 class FocusEvent extends UIEvent {
 
   /**
@@ -3932,6 +3967,7 @@ class FocusEvent extends UIEvent {
  * MDN
  */
 @js.native
+@JSGlobal
 class Range extends js.Object {
 
   /**
@@ -4159,6 +4195,7 @@ class Range extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object Range extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Range),List())))) */
   val END_TO_END: Int = js.native
@@ -4177,6 +4214,7 @@ object Range extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class Storage extends js.Object {
   var length: Int = js.native
 
@@ -4197,6 +4235,7 @@ class Storage extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 abstract class DocumentType extends Node {
   def name: String = js.native
 
@@ -4216,6 +4255,7 @@ abstract class DocumentType extends Node {
 
 @deprecated("Obsolete.", "WHATWG DOM")
 @js.native
+@JSGlobal
 class MutationEvent extends Event {
   def newValue: String = js.native
 
@@ -4235,6 +4275,7 @@ class MutationEvent extends Event {
 
 @deprecated("Obsolete.", "WHATWG DOM")
 @js.native
+@JSGlobal
 object MutationEvent extends js.Object {
   val MODIFICATION: Int = js.native
   val REMOVAL: Int = js.native
@@ -4249,6 +4290,7 @@ object MutationEvent extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class MutationObserver(
     callback: js.Function2[js.Array[MutationRecord], MutationObserver, _])
     extends js.Object {
@@ -4477,6 +4519,7 @@ trait DragEvent extends MouseEvent {
  * MDN
  */
 @js.native
+@JSGlobal
 class PerformanceTiming extends js.Object {
 
   /**
@@ -4713,6 +4756,7 @@ trait EventException extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object EventException extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(EventException),List())))) */
   val DISPATCH_REQUEST_ERR: Int = js.native
@@ -4880,6 +4924,7 @@ trait Location extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class PerformanceEntry extends js.Object {
   def name: String = js.native
 
@@ -4896,6 +4941,7 @@ class PerformanceEntry extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class UIEvent extends Event {
 
   /**
@@ -4924,6 +4970,7 @@ class UIEvent extends Event {
  * MDN
  */
 @js.native
+@JSGlobal
 class WheelEvent extends MouseEvent {
 
   /**
@@ -4967,6 +5014,7 @@ class WheelEvent extends MouseEvent {
 }
 
 @js.native
+@JSGlobal
 object WheelEvent extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(WheelEvent),List())))) */
   /**
@@ -5005,6 +5053,7 @@ object WheelEvent extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class Text extends CharacterData {
 
   /**
@@ -5058,6 +5107,7 @@ trait PositionError extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object PositionError extends js.Object {
 
   val POSITION_UNAVAILABLE: Int = js.native
@@ -5066,6 +5116,7 @@ object PositionError extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class StyleSheetList extends js.Object {
   def length: Int = js.native
 
@@ -5084,6 +5135,7 @@ class StyleSheetList extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class CustomEvent extends Event {
 
   /**
@@ -5154,6 +5206,7 @@ trait Geolocation extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class History extends js.Object {
 
   /**
@@ -5252,6 +5305,7 @@ class History extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class TimeRanges extends js.Object {
 
   /**
@@ -5277,6 +5331,7 @@ class TimeRanges extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class BeforeUnloadEvent extends Event {
   def returnValue: String = js.native
 }
@@ -5294,6 +5349,7 @@ class BeforeUnloadEvent extends Event {
  * MDN
  */
 @js.native
+@JSGlobal
 class Event extends js.Object {
 
   /**
@@ -5407,6 +5463,7 @@ class Event extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object Event extends js.Object {
   def CAPTURING_PHASE: Int = js.native
 
@@ -5424,6 +5481,7 @@ object Event extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class ImageData extends js.Object {
 
   /**
@@ -5460,6 +5518,7 @@ class ImageData extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class NamedNodeMap extends js.Object {
   def length: Int = js.native
 
@@ -5486,6 +5545,7 @@ class NamedNodeMap extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class MediaList extends js.Object {
   def length: Int = js.native
 
@@ -5513,6 +5573,7 @@ class MediaList extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 abstract class ProcessingInstruction extends Node {
   def target: String = js.native
 
@@ -5520,6 +5581,7 @@ abstract class ProcessingInstruction extends Node {
 }
 
 @js.native
+@JSGlobal
 class TextEvent extends UIEvent {
   def inputMethod: Int = js.native
 
@@ -5533,6 +5595,7 @@ class TextEvent extends UIEvent {
 }
 
 @js.native
+@JSGlobal
 object TextEvent extends js.Object {
   val DOM_INPUT_METHOD_KEYBOARD: Int = js.native
   val DOM_INPUT_METHOD_DROP: Int = js.native
@@ -5554,6 +5617,7 @@ object TextEvent extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 abstract class DocumentFragment extends Node with NodeSelector
 
 /**
@@ -5588,6 +5652,7 @@ trait Position extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class PerformanceMark extends PerformanceEntry
 
 /**
@@ -5600,6 +5665,7 @@ class PerformanceMark extends PerformanceEntry
  * MDN
  */
 @js.native
+@JSGlobal
 class DOMParser extends js.Object {
   def parseFromString(source: String, mimeType: String): Document = js.native
 }
@@ -5612,6 +5678,7 @@ class DOMParser extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class StyleSheet extends js.Object {
 
   /**
@@ -5683,17 +5750,20 @@ trait DOMList[T] extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class NodeList extends DOMList[Node]
 
 @js.native
 trait NodeListOf[TNode <: Node] extends DOMList[TNode]
 
 @js.native
+@JSGlobal
 class XMLSerializer extends js.Object {
   def serializeToString(target: Node): String = js.native
 }
 
 @js.native
+@JSGlobal
 class PerformanceMeasure extends PerformanceEntry
 
 /**
@@ -5705,6 +5775,7 @@ class PerformanceMeasure extends PerformanceEntry
  * MDN
  */
 @js.native
+@JSGlobal
 class NodeFilter extends js.Object {
 
   /**
@@ -5726,6 +5797,7 @@ class NodeFilter extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object NodeFilter extends js.Object {
 
   val SHOW_ENTITY_REFERENCE: Int = js.native
@@ -5770,11 +5842,13 @@ object NodeFilter extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class MediaError extends js.Object {
   def code: Int = js.native
 }
 
 @js.native
+@JSGlobal
 object MediaError extends js.Object {
   val MEDIA_ERR_ABORTED: Int = js.native
   val MEDIA_ERR_NETWORK: Int = js.native
@@ -5791,11 +5865,13 @@ object MediaError extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class Comment extends CharacterData {
   var text: String = js.native
 }
 
 @js.native
+@JSGlobal
 class PerformanceResourceTiming extends PerformanceEntry {
   def redirectStart: Int = js.native
 
@@ -5828,6 +5904,7 @@ class PerformanceResourceTiming extends PerformanceEntry {
  * MDN
  */
 @js.native
+@JSGlobal
 class CanvasPattern extends js.Object
 
 /**
@@ -5836,6 +5913,7 @@ class CanvasPattern extends js.Object
  * MDN
  */
 @js.native
+@JSGlobal
 class StorageEvent extends Event {
 
   /**
@@ -5899,6 +5977,7 @@ class StorageEvent extends Event {
  * MDN
  */
 @js.native
+@JSGlobal
 abstract class CharacterData extends Node with NonDocumentTypeChildNode {
 
   /**
@@ -5967,6 +6046,7 @@ abstract class CharacterData extends Node with NonDocumentTypeChildNode {
  * MDN
  */
 @js.native
+@JSGlobal
 class DOMException extends js.Object {
 
   /**
@@ -5982,6 +6062,7 @@ class DOMException extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object DOMException extends js.Object {
 
   val HIERARCHY_REQUEST_ERR: Int = js.native
@@ -6019,6 +6100,7 @@ object DOMException extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class Attr extends Node {
 
   /**
@@ -6071,6 +6153,7 @@ class Attr extends Node {
  * MDN
  */
 @js.native
+@JSGlobal
 class PerformanceNavigation extends js.Object {
 
   /**
@@ -6094,6 +6177,7 @@ class PerformanceNavigation extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object PerformanceNavigation extends js.Object {
 
   val TYPE_RELOAD: Int = js.native
@@ -6120,6 +6204,7 @@ trait LinkStyle extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class ClientRectList extends DOMList[ClientRect]
 
 @js.native
@@ -6206,6 +6291,7 @@ trait DOMTokenList extends DOMList[String] {
 }
 
 @js.native
+@JSGlobal
 class MessageChannel extends js.Object {
   def port2: MessagePort = js.native
 
@@ -6354,6 +6440,7 @@ trait CloseEvent extends Event {
  *                 WebSocket object.
  */
 @js.native
+@JSGlobal
 class WebSocket(var url: String = js.native, var protocol: String = js.native)
     extends EventTarget {
   def this(url: String, protocol: js.Array[String]) = this("", "")
@@ -6445,6 +6532,7 @@ class WebSocket(var url: String = js.native, var protocol: String = js.native)
 }
 
 @js.native
+@JSGlobal
 object WebSocket extends js.Object {
 
   /**
@@ -6480,6 +6568,7 @@ object WebSocket extends js.Object {
  * @param settings
  */
 @js.native
+@JSGlobal
 class EventSource(URL: String, settings: js.Dynamic = null)
     extends EventTarget {
 
@@ -6521,6 +6610,7 @@ class EventSource(URL: String, settings: js.Dynamic = null)
 }
 
 @js.native
+@JSGlobal
 object EventSource extends js.Object {
 
   /**
@@ -6621,6 +6711,7 @@ trait FileList extends DOMList[File]
  * MDN
  */
 @js.native
+@JSGlobal
 abstract class File extends Blob {
 
   /**
@@ -6647,6 +6738,7 @@ abstract class File extends Blob {
  * MDN
  */
 @js.native
+@JSGlobal
 object URL extends js.Object {
 
   /**
@@ -6923,6 +7015,7 @@ trait TextTrack extends EventTarget {
 }
 
 @js.native
+@JSGlobal
 object TextTrack extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(TextTrack),List())))) */
   var ERROR: Int = js.native
@@ -6993,6 +7086,7 @@ trait MessagePort extends EventTarget {
  * MDN
  */
 @js.native
+@JSGlobal
 class FileReader() extends EventTarget {
 
   /**
@@ -7107,6 +7201,7 @@ class FileReader() extends EventTarget {
 }
 
 @js.native
+@JSGlobal
 object FileReader extends js.Object {
   //states
   val EMPTY: Short = js.native
@@ -7143,6 +7238,7 @@ object BlobPropertyBag {
  * MDN
  */
 @js.native
+@JSGlobal
 class Blob(blobParts: js.Array[js.Any] = js.native,
     options: BlobPropertyBag = js.native)
     extends js.Object {
@@ -7169,6 +7265,7 @@ class Blob(blobParts: js.Array[js.Any] = js.native,
 }
 
 @js.native
+@JSGlobal
 object Blob extends js.Object
 
 @js.native
@@ -7192,6 +7289,7 @@ trait ApplicationCache extends EventTarget {
 }
 
 @js.native
+@JSGlobal
 object ApplicationCache extends js.Object {
   /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(ApplicationCache),List())))) */
   val CHECKING: Int = js.native
@@ -7225,6 +7323,7 @@ trait DOMSettableTokenList extends DOMTokenList {
  * MDN
  */
 @js.native
+@JSGlobal
 class FormData(form: HTMLFormElement = js.native) extends js.Object {
 
   /**
@@ -7237,6 +7336,7 @@ class FormData(form: HTMLFormElement = js.native) extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object FormData extends js.Object
 
 /**

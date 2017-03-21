@@ -10,6 +10,7 @@
 package org.scalajs.dom.raw
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /**
  * The IDBObjectStore interface of the IndexedDB API represents an object store in
@@ -19,6 +20,7 @@ import scala.scalajs.js
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBObjectStore extends js.Object {
 
   /**
@@ -127,6 +129,7 @@ class IDBObjectStore extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBVersionChangeEvent extends Event {
 
   /**
@@ -167,6 +170,7 @@ class IDBVersionChangeEvent extends Event {
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBIndex extends js.Object {
 
   /**
@@ -250,6 +254,7 @@ class IDBIndex extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBCursor extends js.Object {
 
   /**
@@ -322,6 +327,7 @@ class IDBCursor extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object IDBCursor extends js.Object {
 
   val PREV: String = js.native
@@ -336,6 +342,7 @@ object IDBCursor extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBCursorWithValue extends IDBCursor {
   def value: js.Any = js.native
 }
@@ -375,6 +382,7 @@ trait IDBEnvironment extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBKeyRange extends js.Object {
 
   /**
@@ -407,6 +415,7 @@ class IDBKeyRange extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object IDBKeyRange extends js.Object {
 
   /**
@@ -454,6 +463,7 @@ object IDBKeyRange extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBTransaction extends EventTarget {
 
   /**
@@ -524,6 +534,7 @@ class IDBTransaction extends EventTarget {
 }
 
 @js.native
+@JSGlobal
 object IDBTransaction extends js.Object {
 
   /**
@@ -566,6 +577,7 @@ object IDBTransaction extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBDatabase extends EventTarget {
 
   /**
@@ -656,6 +668,7 @@ class IDBDatabase extends EventTarget {
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBOpenDBRequest extends IDBRequest {
 
   /**
@@ -688,6 +701,7 @@ class IDBOpenDBRequest extends IDBRequest {
  *
  */
 @js.native
+@JSGlobal
 class IDBFactory extends js.Object {
   def open(name: String, version: Int): IDBOpenDBRequest = js.native
 
@@ -730,6 +744,7 @@ class IDBFactory extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class IDBRequest extends EventTarget {
 
   /**

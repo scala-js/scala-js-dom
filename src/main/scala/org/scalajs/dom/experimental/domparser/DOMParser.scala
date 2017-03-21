@@ -1,6 +1,7 @@
 package org.scalajs.dom.experimental.domparser
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 import scala.scalajs.js.|
 
 import org.scalajs.dom.raw.{Document, HTMLDocument}
@@ -11,6 +12,7 @@ import org.scalajs.dom.raw.{Document, HTMLDocument}
  * MDN
  */
 @js.native
+@JSGlobal
 class DOMParser extends js.Object {
 
   /**

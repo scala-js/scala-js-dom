@@ -33,6 +33,7 @@ object Fetch extends js.Object {
  * @param init initialisation information
  */
 @js.native
+@JSGlobal
 class Request(input: RequestInfo, init: RequestInit = null) extends js.Object {
 
   /**
@@ -167,6 +168,7 @@ trait RequestInit extends js.Object {
  * @param init optional response initialisiton
  */
 @js.native
+@JSGlobal
 class Response(content: BodyInit = null, init: ResponseInit = null)
     extends Body {
 
@@ -202,6 +204,7 @@ class Response(content: BodyInit = null, init: ResponseInit = null)
  * whatwg Fetch spec.
  */
 @js.native
+@JSGlobal
 object Response extends js.Object {
 
   /**
@@ -310,6 +313,7 @@ trait Body extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class Headers(map: HeadersInit = js.Array[js.Array[String]]())
     extends JSIterable[js.Array[ByteString]] {
 

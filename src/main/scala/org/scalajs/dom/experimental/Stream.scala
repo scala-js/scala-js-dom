@@ -1,6 +1,7 @@
 package org.scalajs.dom.experimental
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 // the stream API is defined in https://streams.spec.whatwg.org/
 
@@ -253,6 +254,7 @@ trait ReadableStream[+T] extends js.Object {
  * @tparam T Type of the Chunks returned by the Stream
  */
 @js.native
+@JSGlobal
 class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
 
   /**
@@ -321,6 +323,7 @@ class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
 
  */
 @js.native
+@JSGlobal
 class ReadableStreamController[-T](stream: ReadableStream[T] = null)
     extends js.Object {
 

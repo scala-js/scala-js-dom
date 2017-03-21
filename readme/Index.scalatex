@@ -23,12 +23,12 @@
     ),
     div(width:="50%", float.left, padding:="8px", boxSizing.`border-box`)(
       if (!autorun)
-        a(cls:="pure-button", onclick:=s"example.$example().main($queries)", "Run"),
+        a(cls:="pure-button", onclick:=s"example.$example.main($queries)", "Run"),
       div(
         frags.zip(ids).map{case (f, i) => f(id:=i, backgroundColor:="#fafafa")}
       ),
       if (autorun)
-        script(s"example.$example().main($queries)")
+        script(s"example.$example.main($queries)")
     ),
     div(clear.both)
   )

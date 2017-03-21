@@ -12,6 +12,7 @@ package org.scalajs.dom.raw
 import org.scalajs.dom.experimental.mediastream.MediaStream
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /** The AudioContext interface represents an audio-processing graph built
  *  from audio modules linked together, each represented by an AudioNode.
@@ -24,6 +25,7 @@ import scala.scalajs.js
  *  EventTarget interface.
  */
 @js.native
+@JSGlobal
 class AudioContext extends EventTarget {
 
   /** Returns a double representing an ever-increasing hardware time in
@@ -247,6 +249,7 @@ class AudioContext extends EventTarget {
  *                       most commonly used.
  */
 @js.native
+@JSGlobal
 class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int)
     extends AudioContext {
 

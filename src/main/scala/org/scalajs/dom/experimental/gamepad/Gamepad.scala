@@ -6,9 +6,10 @@
 
 package org.scalajs.dom.experimental.gamepad
 
-import org.scalajs.dom
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{ScalaJSDefined, JSName}
+import scala.scalajs.js.annotation._
+
+import org.scalajs.dom
 
 @js.native
 trait GamepadMappingType extends js.Any
@@ -76,7 +77,7 @@ object GamepadEventInit {
     js.Dynamic.literal("gamepad" -> gamepad).asInstanceOf[GamepadEventInit]
 }
 
-@JSName("GamepadEvent")
+@JSGlobal("GamepadEvent")
 @js.native
 class GamepadEvent(init: GamepadEventInit) extends dom.Event {
   val gamepad: Gamepad = js.native

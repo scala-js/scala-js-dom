@@ -3,12 +3,14 @@
  */
 package org.scalajs.dom.experimental.webrtc
 
-import org.scalajs.dom.Blob
-import org.scalajs.dom.raw.{DOMError, Event, EventTarget, MessageEvent}
 import scala.scalajs.js
-import org.scalajs.dom.experimental.mediastream._
+import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.{ArrayBufferView, ArrayBuffer}
 import scala.scalajs.js.|
+
+import org.scalajs.dom.Blob
+import org.scalajs.dom.raw.{DOMError, Event, EventTarget, MessageEvent}
+import org.scalajs.dom.experimental.mediastream._
 
 @js.native
 trait RTCIdentityAssertion extends js.Object {
@@ -260,6 +262,7 @@ object RTCSessionDescriptionInit {
 }
 
 @js.native
+@JSGlobal
 class RTCSessionDescription(
     descriptionInitDict: js.UndefOr[RTCSessionDescriptionInit] = js.undefined)
     extends js.Object {
@@ -309,6 +312,7 @@ object RTCIceCandidateInit {
  * MDN
  */
 @js.native
+@JSGlobal
 class RTCIceCandidate(candidateInitDict: RTCIceCandidateInit)
     extends js.Object {
 
@@ -493,6 +497,7 @@ trait RTCDataChannelInit extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class RTCDataChannelEvent protected () extends Event {
   def this(eventInitDict: RTCDataChannelEventInit) = this()
 
@@ -653,6 +658,7 @@ object RTCPeerConnectionIceEventInit {
  * MDN
  */
 @js.native
+@JSGlobal
 class RTCPeerConnectionIceEvent(`type`: String,
     eventInitDict: RTCPeerConnectionIceEventInit)
     extends Event {
@@ -777,6 +783,7 @@ object RTCIceGatheringState {
  * MDN
  */
 @js.native
+@JSGlobal
 class MediaStreamEvent(`type`: String, ms: js.Dictionary[js.Any])
     extends Event {
   val stream: MediaStream = js.native
@@ -790,6 +797,7 @@ class MediaStreamEvent(`type`: String, ms: js.Dictionary[js.Any])
  * MDN
  */
 @js.native
+@JSGlobal
 class RTCPeerConnection(
     configuration: js.UndefOr[RTCConfiguration] = js.undefined)
     extends EventTarget {

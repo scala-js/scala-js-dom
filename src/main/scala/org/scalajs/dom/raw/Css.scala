@@ -10,6 +10,7 @@
 package org.scalajs.dom.raw
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /**
  * A CSSStyleDeclaration is an interface to the declaration block returned by the
@@ -18,6 +19,7 @@ import scala.scalajs.js
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSStyleDeclaration extends js.Object {
   var backgroundAttachment: String = js.native
   var visibility: String = js.native
@@ -236,6 +238,7 @@ class CSSStyleDeclaration extends js.Object {
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSStyleSheet extends StyleSheet {
   var owningElement: Element = js.native
   var imports: StyleSheetList = js.native
@@ -295,6 +298,7 @@ class CSSStyleSheet extends StyleSheet {
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSStyleRule extends CSSRule {
 
   /**
@@ -314,6 +318,7 @@ class CSSStyleRule extends CSSRule {
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSMediaRule extends CSSRule {
 
   /**
@@ -338,6 +343,7 @@ class CSSMediaRule extends CSSRule {
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSNamespaceRule extends CSSRule {
 
   /**
@@ -357,6 +363,7 @@ class CSSNamespaceRule extends CSSRule {
 }
 
 @js.native
+@JSGlobal
 class CSSImportRule extends CSSRule {
   var styleSheet: CSSStyleSheet = js.native
   var href: String = js.native
@@ -371,6 +378,7 @@ class CSSImportRule extends CSSRule {
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSRule extends js.Object {
 
   /**
@@ -411,6 +419,7 @@ class CSSRule extends js.Object {
 }
 
 @js.native
+@JSGlobal
 object CSSRule extends js.Object {
   var IMPORT_RULE: Int = js.native
   var MEDIA_RULE: Int = js.native
@@ -423,6 +432,7 @@ object CSSRule extends js.Object {
 }
 
 @js.native
+@JSGlobal
 class CSSFontFaceRule extends CSSRule {
   var style: CSSStyleDeclaration = js.native
 }
@@ -434,6 +444,7 @@ class CSSFontFaceRule extends CSSRule {
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSPageRule extends CSSRule {
   var pseudoClass: String = js.native
 
@@ -460,6 +471,7 @@ class CSSPageRule extends CSSRule {
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSRuleList extends DOMList[CSSRule]
 
 /**
@@ -471,6 +483,7 @@ class CSSRuleList extends DOMList[CSSRule]
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSKeyframesRule extends CSSRule {
 
   /**
@@ -525,6 +538,7 @@ class CSSKeyframesRule extends CSSRule {
  * MDN
  */
 @js.native
+@JSGlobal
 class CSSKeyframeRule extends CSSRule {
 
   /**
