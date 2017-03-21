@@ -83,8 +83,4 @@ lazy val readme = ScalatexReadme(
 lazy val example = project.
   enablePlugins(ScalaJSPlugin).
   settings(commonSettings: _*).
-  settings(
-    // Temporarily disregard @JSExport-on-object warnings of Scala.js 0.6.15
-    scalacOptions += "-P:scalajs:suppressExportDeprecations"
-  ).
   dependsOn(root)
