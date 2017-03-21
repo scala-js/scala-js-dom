@@ -1,8 +1,9 @@
 package org.scalajs.dom.experimental
 
-import org.scalajs.dom.raw.EventTarget
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation._
+
+import org.scalajs.dom.raw.EventTarget
 
 @js.native
 trait NotificationOptions extends js.Object {
@@ -181,6 +182,7 @@ object NotificationOptions {
  * https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API
  */
 @js.native
+@JSGlobal
 object Notification extends js.Object {
 
   /**
@@ -215,7 +217,7 @@ object Notification extends js.Object {
  * @param options   The options to configure this notification
  * @return a new Notification
  */
-@JSName("Notification")
+@JSGlobal("Notification")
 @js.native
 class Notification(title: String, options: NotificationOptions = ???)
     extends EventTarget {

@@ -8,7 +8,7 @@ package org.scalajs.dom.experimental.intl
 
 import scala.scalajs.js
 import scala.scalajs.js.|
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation._
 
 /**
  * The Intl.Collator object is a constructor for collators, objects that enable language
@@ -17,7 +17,7 @@ import scala.scalajs.js.annotation.JSName
  * MDN
  */
 @js.native
-@JSName("Intl.Collator")
+@JSGlobal("Intl.Collator")
 class Collator(locales: js.UndefOr[String | js.Array[String]] = js.undefined,
     options: js.UndefOr[CollatorOptions] = js.undefined)
     extends js.Object {
@@ -34,7 +34,7 @@ class Collator(locales: js.UndefOr[String | js.Array[String]] = js.undefined,
  * MDN
  */
 @js.native
-@JSName("Intl.DateTimeFormat")
+@JSGlobal("Intl.DateTimeFormat")
 class DateTimeFormat(locales: String | js.Array[String],
     options: js.UndefOr[DateTimeFormatOptions] = js.undefined)
     extends js.Object {
@@ -51,7 +51,7 @@ class DateTimeFormat(locales: String | js.Array[String],
  * MDN
  */
 @js.native
-@JSName("Intl.NumberFormat")
+@JSGlobal("Intl.NumberFormat")
 class NumberFormat(locales: String | js.Array[String],
     options: js.UndefOr[NumberFormatOptions])
     extends js.Object {

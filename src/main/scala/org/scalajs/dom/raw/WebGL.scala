@@ -7,12 +7,14 @@
 package org.scalajs.dom.raw
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray._
 
 /**
  * Contains drawing surface attributes.
  */
 @js.native
+@JSGlobal
 class WebGLContextAttributes extends js.Object {
 
   /**
@@ -52,48 +54,56 @@ class WebGLContextAttributes extends js.Object {
  * An opaque type representing a WebGL buffer.
  */
 @js.native
+@JSGlobal
 class WebGLBuffer private[this] () extends js.Object
 
 /**
  * An opaque type representing a WebGL framebuffer.
  */
 @js.native
+@JSGlobal
 class WebGLFramebuffer private[this] () extends js.Object
 
 /**
  * An opaque type representing a WebGL program.
  */
 @js.native
+@JSGlobal
 class WebGLProgram private[this] () extends js.Object
 
 /**
  * An opaque type representing a WebGL renderbuffer.
  */
 @js.native
+@JSGlobal
 class WebGLRenderbuffer private[this] () extends js.Object
 
 /**
  * An opaque type representing a WebGL shader.
  */
 @js.native
+@JSGlobal
 class WebGLShader private[this] () extends js.Object
 
 /**
  * An opaque type representing a WebGL texture.
  */
 @js.native
+@JSGlobal
 class WebGLTexture private[this] () extends js.Object
 
 /**
  * An opaque type representing a WebGL uniform location.
  */
 @js.native
+@JSGlobal
 class WebGLUniformLocation private[this] () extends js.Object
 
 /**
  * Holds information returned by [[WebGLRenderingContext#getActiveAttrib]] and [[WebGLRenderingContext#getActiveUniform]].
  */
 @js.native
+@JSGlobal
 class WebGLActiveInfo private[this] () extends js.Object {
 
   /**
@@ -116,6 +126,7 @@ class WebGLActiveInfo private[this] () extends js.Object {
  * Represents information about the implementation's precision for given parameters.  See [[WebGLRenderingContext#getShaderPrecisionFormat]].
  */
 @js.native
+@JSGlobal
 class WebGLShaderPrecisionFormat private[this] () extends js.Object {
 
   /**
@@ -848,6 +859,7 @@ object WebGLRenderingContext {
 }
 
 @js.native
+@JSGlobal
 class WebGLRenderingContext extends js.Object {
 
   /**

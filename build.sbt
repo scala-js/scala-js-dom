@@ -32,9 +32,6 @@ scalacOptions ++= {
   }
 }
 
-// Temporarily disregard @JSGlobal warnings of Scala.js 0.6.15
-scalacOptions += "-P:scalajs:suppressMissingJSGlobalDeprecations"
-
 scmInfo := Some(ScmInfo(
     url("https://github.com/scala-js/scala-js-dom"),
     "scm:git:git@github.com:scala-js/scala-js-dom.git",

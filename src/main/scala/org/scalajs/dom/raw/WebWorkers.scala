@@ -37,6 +37,7 @@ trait AbstractWorker extends EventTarget {
  * MDN
  */
 @js.native
+@JSGlobal
 class Worker(stringUrl: String) extends AbstractWorker {
 
   /**

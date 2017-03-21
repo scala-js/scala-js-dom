@@ -1,6 +1,7 @@
 package org.scalajs.dom.experimental
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /**
  * The URL() constructor returns a newly created URL object representing the URL
@@ -9,6 +10,7 @@ import scala.scalajs.js
  * MDN
  */
 @js.native
+@JSGlobal
 class URL(url: String, base: String = js.native) extends js.Object {
 
   /**

@@ -4,8 +4,10 @@
 package org.scalajs.dom.experimental.mediastream
 
 import scala.scalajs.js
-import org.scalajs.dom.raw.{DOMError, Event, EventTarget}
 import scala.scalajs.js.|
+import scala.scalajs.js.annotation._
+
+import org.scalajs.dom.raw.{DOMError, Event, EventTarget}
 
 /**
  * The MediaStream
@@ -16,6 +18,7 @@ import scala.scalajs.js.|
  *
  */
 @js.native
+@JSGlobal
 class MediaStream() extends EventTarget {
 
   /**
@@ -479,6 +482,7 @@ object MediaStreamTrackEventInit {
 }
 
 @js.native
+@JSGlobal
 class MediaStreamTrackEvent(`type`: String,
     eventInitDict: MediaStreamTrackEventInit)
     extends Event {
