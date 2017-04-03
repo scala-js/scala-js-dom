@@ -18,7 +18,7 @@ import org.scalajs.dom.raw.Blob
  * Scala Seq[*]s
  */
 class EasySeq[T](jsLength: Int, jsApply: Int => T) extends Seq[T] {
-  def length = jsLength.toInt
+  def length = jsLength
 
   def apply(x: Int) = jsApply(x)
 
@@ -305,7 +305,7 @@ object Ajax {
     val promise = Promise[dom.XMLHttpRequest]()
 
     req.onreadystatechange = { (e: dom.Event) =>
-      if (req.readyState.toInt == 4) {
+      if (req.readyState == 4) {
         if ((req.status >= 200 && req.status < 300) || req.status == 304)
           promise.success(req)
         else
