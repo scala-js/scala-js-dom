@@ -4742,19 +4742,19 @@ abstract class HTMLFormElement extends HTMLElement {
 }
 
 /**
-  * The HTMLTemplateElement interface enables access to the contents of an HTML
-  * &lt;template&gt; element; it inherits from properties and methods of the
-  * HTMLElement interface.
-  *
-  * MDN
-  */
+ * The HTMLTemplateElement interface enables access to the contents of an HTML
+ * &lt;template&gt; element; it inherits from properties and methods of the
+ * HTMLElement interface.
+ *
+ * MDN
+ */
 @js.native
 @JSGlobal
 abstract class HTMLTemplateElement extends HTMLElement {
   /**
-    * Returns the &lt;template&gt; element's template contents.
-    *
-    * MDN
-    */
+   * Returns the &lt;template&gt; element's template contents.
+   *
+   * MDN
+   */
   def content: DocumentFragment = js.native
 }
