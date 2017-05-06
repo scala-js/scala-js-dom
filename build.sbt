@@ -5,7 +5,7 @@ lazy val root = project.in(file(".")).
 
 name := "Scala.js DOM"
 
-crossScalaVersions in ThisBuild := Seq("2.11.8", "2.10.6", "2.12.1")
+crossScalaVersions in ThisBuild := Seq("2.11.11", "2.10.6", "2.12.2", "2.13.0-M1")
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
 val commonSettings = Seq(
@@ -76,7 +76,7 @@ lazy val readme = ScalatexReadme(
   targetFolder = "target/site",
   autoResources = Seq("example-opt.js")
 ).settings(
-  scalaVersion := "2.11.8",
+  scalaVersion := "2.11.11",
   (resources in Compile) += (fullOptJS in (example, Compile)).value.data
 )
 
