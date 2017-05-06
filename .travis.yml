@@ -3,10 +3,11 @@ language: scala
 script:
   - sbt ++$TRAVIS_SCALA_VERSION package doc
   - sbt scalafmtTest
-  - sbt ++2.11.8 readme/run
+  - sbt ++2.11.11 readme/run
 scala:
   - 2.10.6
-  - 2.11.8
-  - 2.12.1
+  - 2.11.11
+  - 2.12.2
+  - 2.13.0-M1
 jdk:
   - oraclejdk8
