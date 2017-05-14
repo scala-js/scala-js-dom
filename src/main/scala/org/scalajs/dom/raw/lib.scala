@@ -2619,7 +2619,10 @@ class Touch extends js.Object {
  */
 @js.native
 @JSGlobal
-class KeyboardEvent extends UIEvent with ModifierKeyEvent {
+class KeyboardEvent(typeArg: String, keyboardEventInit: KeyboardEventInit)
+    extends UIEvent with ModifierKeyEvent {
+
+  def this(typeArg: String) = this(typeArg, js.native)
 
   /**
    * Returns the Unicode value of a character key pressed during a keypress event.
@@ -2684,6 +2687,40 @@ class KeyboardEvent extends UIEvent with ModifierKeyEvent {
       cancelableArg: Boolean, viewArg: Window, keyArg: String,
       locationArg: Int, modifiersListArg: String, repeat: Boolean,
       locale: String): Unit = js.native
+}
+
+@ScalaJSDefined
+trait KeyboardEventInit extends js.Object {
+
+  /**
+   * Sets value of KeyboardEvent.charCode. Defaults to 0.
+   */
+  var charCode: js.UndefOr[Int] = js.undefined
+
+  /**
+   * Sets value of KeyboardEvent.keyCode. Defaults to 0.
+   */
+  var keyCode: js.UndefOr[Int] = js.undefined
+
+  /**
+   * Sets value of KeyboardEvent.location. Defaults to 0.
+   */
+  var location: js.UndefOr[Int] = js.undefined
+
+  /**
+   * Sets value of KeyboardEvent.locale. Defaults to empty string.
+   */
+  var locale: js.UndefOr[String] = js.undefined
+
+  /**
+   * Sets value of KeyboardEvent.key. Defaults to empty string.
+   */
+  var key: js.UndefOr[String] = js.undefined
+
+  /**
+   * Sets value of KeyboardEvent.repeat. Defaults to false.
+   */
+  var repeat: js.UndefOr[Boolean] = js.undefined
 }
 
 @js.native

@@ -98,6 +98,8 @@ package object dom {
   type KeyboardEvent = raw.KeyboardEvent
   lazy val KeyboardEvent: raw.KeyboardEvent.type = raw.KeyboardEvent
 
+  type KeyboardEventInit = raw.KeyboardEventInit
+
   type LinkStyle = raw.LinkStyle
   type Location = raw.Location
 
