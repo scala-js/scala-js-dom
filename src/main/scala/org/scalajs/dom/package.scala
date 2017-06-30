@@ -232,7 +232,7 @@ package object dom {
   lazy val XPathResult: raw.XPathResult.type = raw.XPathResult
   type XPathNSResolver = raw.XPathNSResolver
 
-  lazy val window: Window = js.Dynamic.global.asInstanceOf[Window]
+  lazy val window: Window = js.Dynamic.global.window.asInstanceOf[Window]
   lazy val document: html.Document = window.document
 
   lazy val console: Console = window.console
