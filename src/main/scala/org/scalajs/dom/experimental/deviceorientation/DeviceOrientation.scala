@@ -29,7 +29,6 @@ class DeviceOrientationEvent(
   val absolute: Boolean = js.native
 }
 
-@ScalaJSDefined
 trait DeviceOrientationEventInit extends js.Object {
 
   /** Z-Axis rotation in degrees. */
@@ -58,7 +57,6 @@ object DeviceOrientationEventInit {
   }
 }
 
-@ScalaJSDefined
 trait DeviceAcceleration extends js.Any {
 
   /** The acceleration in x. In m/s<sup>2</sup>. */
@@ -71,7 +69,6 @@ trait DeviceAcceleration extends js.Any {
   val z: Double
 }
 
-@ScalaJSDefined
 trait DeviceRotationRate extends js.Any {
 
   /** The z axis rotation in degrees per second. */
@@ -101,7 +98,6 @@ class DeviceMotionEvent extends dom.Event {
   val interval: Double = js.native
 }
 
-@ScalaJSDefined
 trait DeviceMotionEventInit extends js.Any {
 
   /** Device acceleration with gravity removed. */

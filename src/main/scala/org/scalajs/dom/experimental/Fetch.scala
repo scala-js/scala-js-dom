@@ -128,7 +128,6 @@ object RequestInit {
  * The underlying object is a dictionary. This trait is here to help encode
  * the types.
  */
-@ScalaJSDefined
 trait RequestInit extends js.Object {
   var method: js.UndefOr[HttpMethod]
 
@@ -224,7 +223,6 @@ object Response extends js.Object {
  * definition in whatwg Fetch spec.
  *
  */
-@ScalaJSDefined
 trait ResponseInit extends js.Object {
   var status: Int
   var statusText: ByteString

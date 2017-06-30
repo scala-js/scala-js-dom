@@ -32,6 +32,8 @@ scalacOptions ++= {
   }
 }
 
+scalacOptions += "-P:scalajs:sjsDefinedByDefault"
+
 scmInfo := Some(ScmInfo(
     url("https://github.com/scala-js/scala-js-dom"),
     "scm:git:git@github.com:scala-js/scala-js-dom.git",
