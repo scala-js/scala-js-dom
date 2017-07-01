@@ -32,6 +32,11 @@ scalacOptions ++= {
   }
 }
 
+scalacOptions ++= {
+  if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault")
+  else Nil
+}
+
 scmInfo := Some(ScmInfo(
     url("https://github.com/scala-js/scala-js-dom"),
     "scm:git:git@github.com:scala-js/scala-js-dom.git",

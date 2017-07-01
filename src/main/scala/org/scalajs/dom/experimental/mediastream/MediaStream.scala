@@ -326,7 +326,6 @@ trait MediaStreamTrack extends EventTarget {
   def stop(): Unit = js.native
 }
 
-@ScalaJSDefined
 trait MediaTrackSettings extends js.Object {
   var width: js.UndefOr[Double] = js.undefined
   var height: js.UndefOr[Double] = js.undefined
@@ -633,7 +632,6 @@ trait MediaDevices extends EventTarget {
  *
  * MDN
  */
-@ScalaJSDefined
 trait MediaTrackSupportedConstraints extends js.Object {
   var width: js.UndefOr[Boolean] = js.undefined
   var height: js.UndefOr[Boolean] = js.undefined

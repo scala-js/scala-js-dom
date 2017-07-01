@@ -5,7 +5,6 @@ import org.scalajs.dom.raw.FormData
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.dom.experimental.JSIterable
 import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 
 @js.native
@@ -129,7 +128,6 @@ object RequestInit {
  * The underlying object is a dictionary. This trait is here to help encode
  * the types.
  */
-@ScalaJSDefined
 trait RequestInit extends js.Object {
   var method: js.UndefOr[HttpMethod]
 
@@ -225,7 +223,6 @@ object Response extends js.Object {
  * definition in whatwg Fetch spec.
  *
  */
-@ScalaJSDefined
 trait ResponseInit extends js.Object {
   var status: Int
   var statusText: ByteString
@@ -315,7 +312,10 @@ trait Body extends js.Object {
 @js.native
 @JSGlobal
 class Headers(map: HeadersInit = js.Array[js.Array[String]]())
-    extends JSIterable[js.Array[ByteString]] {
+    extends js.Iterable[js.Array[ByteString]] {
+
+  @JSName(js.Symbol.iterator)
+  def jsIterator(): js.Iterator[js.Array[ByteString]] = js.native
 
   /**
    * The append() method of the Headers interface appends a new value onto an

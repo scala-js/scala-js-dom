@@ -17,7 +17,6 @@ trait GamepadMappingType extends js.Any
 /**
  * Represents the state of a button.
  */
-@ScalaJSDefined
 trait GamepadButton extends js.Any {
 
   /**
@@ -35,7 +34,6 @@ trait GamepadButton extends js.Any {
 /**
  * Represents the state of a connected gamepad device.
  */
-@ScalaJSDefined
 trait Gamepad extends js.Any {
 
   /** The identification string for the gamepad. */
@@ -67,7 +65,6 @@ trait Gamepad extends js.Any {
   val mapping: GamepadMappingType
 }
 
-@ScalaJSDefined
 trait GamepadEventInit extends js.Any {
   val gamepad: Gamepad
 }

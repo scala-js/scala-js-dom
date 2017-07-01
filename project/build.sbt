@@ -1,4 +1,7 @@
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.16")
+val scalaJSVersion =
+  Option(System.getenv("SCALAJS_VERSION")).getOrElse("0.6.18")
+
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % scalaJSVersion)
 
 addSbtPlugin("com.lihaoyi" % "scalatex-sbt-plugin" % "0.2.1")
 

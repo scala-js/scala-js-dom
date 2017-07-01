@@ -2689,7 +2689,6 @@ class KeyboardEvent(typeArg: String, keyboardEventInit: KeyboardEventInit)
       locale: String): Unit = js.native
 }
 
-@ScalaJSDefined
 trait KeyboardEventInit extends js.Object {
 
   /**
