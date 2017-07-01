@@ -55,10 +55,10 @@
       Add the following to your sbt build definition:
 
     @hl.scala
-      libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.2"
+      libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.3"
 
     @p
-      then enjoy the types available in @hl.scala{org.scalajs.dom}. scalajs-dom 0.9.2 is built and published for Scala.js 0.6.15 and later, with Scala 2.10, 2.11, 2.12, and 2.13.0-M1.
+      then enjoy the types available in @hl.scala{org.scalajs.dom}. scalajs-dom 0.9.3 is built and published for Scala.js 0.6.17 and later and Scala.js 1.0.0-M1, with Scala 2.10, 2.11, 2.12, and 2.13.0-M1.
 
     @p
       To begin with, @code{scala-js-dom} organizes the full-list of DOM APIs into a number of buckets:
