@@ -1797,11 +1797,19 @@ class Window
 
   /**
    * Returns the number of pixels that the document has already been scrolled
-   * horizontally.
+   * horizontally. An alias for window.scrollX.
    *
    * MDN
    */
   def pageXOffset: Double = js.native
+
+  /**
+    * Returns the number of pixels that the document has already been scrolled
+    * horizontally.
+    *
+    * MDN
+    */
+  def scrollX: Double = js.native
 
   /**
    * The name of the window is used primarily for setting targets for hyperlinks and
@@ -1981,11 +1989,19 @@ class Window
 
   /**
    * Returns the number of pixels that the document has already been scrolled
-   * vertically.
+   * vertically. An alias for window.scrollY
    *
    * MDN
    */
   def pageYOffset: Double = js.native
+
+  /**
+    * Returns the number of pixels that the document has already been scrolled
+    * vertically.
+    *
+    * MDN
+    */
+  def scrollY: Double = js.native
 
   /**
    * An event handler property for right-click events on the window.
