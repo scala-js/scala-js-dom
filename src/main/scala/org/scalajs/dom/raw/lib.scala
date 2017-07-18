@@ -1989,7 +1989,7 @@ class Window
 
   /**
    * Returns the number of pixels that the document has already been scrolled
-   * vertically. An alias for window.scrollY
+   * vertically. An alias for window.scrollY.
    *
    * MDN
    */
