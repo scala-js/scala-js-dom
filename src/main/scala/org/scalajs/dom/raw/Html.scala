@@ -1153,6 +1153,11 @@ abstract class HTMLLinkElement extends HTMLElement with LinkStyle {
   var `type`: String = js.native
 
   /**
+   * https://w3c.github.io/preload/#link-element-extensions
+   */
+  var as: String = js.native
+  
+  /**
    * Gets or sets the character encoding for the target resource.
    *
    * MDN
