@@ -1166,6 +1166,28 @@ abstract class HTMLLinkElement extends HTMLElement with LinkStyle {
    * MDN
    */
   var hreflang: String = js.native
+
+  /**
+   * This attribute is only used when rel="preload" has been sent on the
+   * &lt;link&gt; element. It specifies the type of content being loaded by the
+   * &lt;link&gt;,  which is necessary for content prioritization, request
+   * matching, application of correct content security policy, and setting of
+   * correct Accept request header.
+   *
+   * MDN
+   */
+  var as: String = js.native
+
+  /**
+   * This enumerated attribute indicates whether CORS must be used when fetching
+   * the related resource.
+   *
+   * When not present, the resource is fetched without a CORS request (i.e.
+   * without sending the Origin: HTTP header).
+   *
+   * MDN
+   */
+  var crossOrigin: String = js.native
 }
 
 @js.native
