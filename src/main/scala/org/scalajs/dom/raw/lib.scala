@@ -3064,6 +3064,13 @@ class MessageEvent extends Event {
    */
   def data: Any = js.native
 
+  /**
+   * A DOMString representing a unique ID for the event.
+   *
+   * MDN
+   */
+  def lastEventId :String = js.native
+
   @deprecated("Non-standard", "forever")
   def initMessageEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, dataArg: js.Any, originArg: String,
