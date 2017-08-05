@@ -5,7 +5,7 @@ lazy val root = project.in(file(".")).
 
 name := "Scala.js DOM"
 
-crossScalaVersions in ThisBuild := Seq("2.11.11", "2.10.6", "2.12.2", "2.13.0-M1")
+crossScalaVersions in ThisBuild := Seq("2.12.3", "2.11.11", "2.10.6", "2.13.0-M1")
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
 val commonSettings = Seq(
@@ -44,13 +44,24 @@ scmInfo := Some(ScmInfo(
 
 publishMavenStyle := true
 
-publishTo := {
+/*publishTo := {
   val nexus = "https://oss.sonatype.org/"
   if (isSnapshot.value)
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
     Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}*/
+
+////////////////// My Publish Uandrew1965//////////////////////////////////////////////////////////
+publishTo := {
+    val corporateRepo = "http://toucan.simplesys.lan/"
+    if (isSnapshot.value)
+        Some("snapshots" at corporateRepo + "artifactory/libs-snapshot-local")
+    else
+        Some("releases" at corporateRepo + "artifactory/libs-release-local")
 }
+credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+////////////////// End My Publish Uandrew1965//////////////////////////////////////////////////////////
 
 pomExtra := (
     <developers>
@@ -81,7 +92,7 @@ lazy val readme = ScalatexReadme(
   targetFolder = "target/site",
   autoResources = Seq("example-opt.js")
 ).settings(
-  scalaVersion := "2.11.11",
+  scalaVersion := "2.12.3",
   (resources in Compile) += (fullOptJS in (example, Compile)).value.data
 )
 

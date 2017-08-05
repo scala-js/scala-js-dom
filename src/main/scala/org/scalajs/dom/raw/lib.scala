@@ -2342,6 +2342,47 @@ class Window
 }
 
 /**
+  * An options object that specifies characteristics about the event listener. The available options are:
+  *
+  * capture: A Boolean that indicates that events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
+  *
+  * passive: A Boolean indicating that the listener will never call preventDefault(). If it does, the user agent should ignore it and generate a console warning.
+  *
+  *  mozSystemGroup: Available only in code running in XBL or in Firefox' chrome, it is a Boolean defining if the listener is added to the system group.
+  *
+  *  MDN
+  */
+
+trait RemoveListenerOptions extends js.Object {
+  val capture: js.UndefOr[Boolean] = js.undefined
+  val passive: js.UndefOr[Boolean] = js.undefined
+  val mozSystemGroup: js.UndefOr[Boolean] = js.undefined
+}
+
+/**
+  * An options object that specifies characteristics about the event listener. The available options are:
+  *
+  * capture: A Boolean indicating that events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
+  *
+  * once: A Boolean indicating that the listener should be invoked at most once after being added. If true, the listener would be automatically removed when invoked.
+  *
+  * passive: A Boolean indicating that the listener will never call preventDefault(). If it does, the user agent should ignore it and generate a console warning.
+             See Improving scrolling performance with passive listeners to learn more.
+
+  * mozSystemGroup: A Boolean indicating that the listener should be added to the system group. Available only in code running in XBL or in Firefox's chrome.
+  *
+  *
+  * MDN
+*/
+
+trait AddListenerOptions extends js.Object {
+  val capture: js.UndefOr[Boolean] = js.undefined
+  val once: js.UndefOr[Boolean] = js.undefined
+  val passive: js.UndefOr[Boolean] = js.undefined
+  val mozSystemGroup: js.UndefOr[Boolean] = js.undefined
+}
+
+/**
  * EventTarget is a DOM interface implemented by objects that can receive DOM events
  * and have listeners for them.
  *
@@ -2368,6 +2409,11 @@ class EventTarget extends js.Object {
       listener: js.Function1[T, _],
       useCapture: Boolean = js.native): Unit = js.native
 
+  def removeEventListener[T <: Event](`type`: String,
+      listener: js.Function1[T, _],
+      option: RemoveListenerOptions): Unit = js.native
+
+
   /**
    * The EventTarget.addEventListener() method registers the specified listener on
    * the EventTarget it's called on. The event target may be an Element in a document, the
@@ -2379,6 +2425,10 @@ class EventTarget extends js.Object {
   def addEventListener[T <: Event](`type`: String,
       listener: js.Function1[T, _],
       useCapture: Boolean = js.native): Unit = js.native
+
+  def addEventListener[T <: Event](`type`: String,
+        listener: js.Function1[T, _],
+        option: AddListenerOptions): Unit = js.native
 
   /**
    * Dispatches an Event at the specified EventTarget, invoking the affected
@@ -3063,6 +3113,13 @@ class MessageEvent extends Event {
    * MDN
    */
   def data: Any = js.native
+
+  /**
+   * A DOMString representing a unique ID for the event.
+   *
+   * MDN
+   */
+  def lastEventId :String = js.native
 
   @deprecated("Non-standard", "forever")
   def initMessageEvent(typeArg: String, canBubbleArg: Boolean,
