@@ -2341,7 +2341,7 @@ class Window
     def devicePixelRatio: Double = js.native
 
     /**
-      * The EventSource interface is used to receive server-sent events. It connects to a server over HTTP and receives events in text/event-stream format without closing the connection.
+      * The Window.EventSource interface is used to receive server-sent events. It connects to a server over HTTP and receives events in text/event-stream format without closing the connection.
       *
       * MDN
       */
