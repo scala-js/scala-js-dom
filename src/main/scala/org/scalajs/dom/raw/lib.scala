@@ -6537,7 +6537,7 @@ class WebSocket(var url: String = js.native, var protocol: String = js.native)
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * A string indicating the type of binary data being transmitted by the connection.
