@@ -17,9 +17,9 @@ package object permissions {
   sealed trait PermissionState extends js.Any
 
   object PermissionState {
-    final val granted = "granted".asInstanceOf[PermissionState]
-    final val denied = "denied".asInstanceOf[PermissionState]
-    final val prompt = "prompt".asInstanceOf[PermissionState]
+    val granted = "granted".asInstanceOf[PermissionState]
+    val denied = "denied".asInstanceOf[PermissionState]
+    val prompt = "prompt".asInstanceOf[PermissionState]
   }
 
   trait PermissionStatus extends dom.raw.EventTarget {
@@ -28,7 +28,7 @@ package object permissions {
   }
 
   @js.native
-  trait PermissionName extends js.Any
+  sealed trait PermissionName extends js.Any
 
   object PermissionName {
     val geolocation = "geolocation".asInstanceOf[PermissionName]
