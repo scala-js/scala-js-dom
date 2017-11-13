@@ -7,10 +7,10 @@ import org.scalajs.dom
 import scala.scalajs.js
 
 /**
-  * Implements the Permissions API.
-  *
-  * [[https://www.w3.org/TR/permissions/ W3C Working Draft]]
-  */
+ * Implements the Permissions API.
+ *
+ * [[https://www.w3.org/TR/permissions/ W3C Working Draft]]
+ */
 package object permissions {
 
   @js.native
@@ -27,11 +27,39 @@ package object permissions {
     val onchange: js.Function1[PermissionState, _]
   }
 
-  trait Permissions extends js.Any {
-    def query(permissionDescriptor: js.Object): js.Promise[PermissionStatus]
+  @js.native
+  trait PermissionName extends js.Any
+
+  object PermissionName {
+    val geolocation = "geolocation".asInstanceOf[PermissionName]
+    val midi = "midi".asInstanceOf[PermissionName]
+    val notifications = "notifications".asInstanceOf[PermissionName]
+    val push = "push".asInstanceOf[PermissionName]
+    val `persistent-storage` =
+      "persistent-storage".asInstanceOf[PermissionName]
   }
 
-  trait PermissionsNavigator extends js.Any {
+  trait PermissionDescriptor extends js.Object {
+    val name: PermissionName
+  }
+
+  object PermissionDescriptor {
+    @inline
+    def apply(permissionName: PermissionName): PermissionDescriptor = {
+      js.Dynamic
+        .literal(
+            name = permissionName
+        )
+        .asInstanceOf[PermissionDescriptor]
+    }
+  }
+
+  trait Permissions extends js.Object {
+    def query(
+        permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
+  }
+
+  trait PermissionsNavigator extends js.Object {
     val permissions: Permissions
   }
 
