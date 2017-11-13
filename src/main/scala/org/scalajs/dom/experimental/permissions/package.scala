@@ -14,7 +14,7 @@ import scala.scalajs.js
 package object permissions {
 
   @js.native
-  trait PermissionState extends js.Any
+  sealed trait PermissionState extends js.Any
 
   object PermissionState {
     final val granted = "granted".asInstanceOf[PermissionState]
@@ -46,11 +46,9 @@ package object permissions {
   object PermissionDescriptor {
     @inline
     def apply(permissionName: PermissionName): PermissionDescriptor = {
-      js.Dynamic
-        .literal(
-            name = permissionName
-        )
-        .asInstanceOf[PermissionDescriptor]
+      new PermissionDescriptor {
+        val name = permissionName
+      }
     }
   }
 
