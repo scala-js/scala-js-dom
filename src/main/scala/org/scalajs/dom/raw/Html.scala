@@ -2569,7 +2569,7 @@ abstract class HTMLInputElement extends HTMLElement {
    *
    * MDN
    */
-  var valueAsNumber: Int = js.native
+  var valueAsNumber: Double = js.native
 
   /**
    * Reflects the placeholder HTML attribute, containing a hint to the user of what can
