@@ -1602,6 +1602,23 @@ class Selection extends js.Object {
    * MDN
    */
   def removeRange(range: Range): Unit = js.native
+
+  /**
+   * Indicates if the node is part of the selection
+   *
+   * MDN
+   */
+  def containsNode(node: Node,
+      partialContainment: Boolean = false): Boolean = js.native
+
+  /**
+   * Moves the focus of the selection to a specified point. The anchor of the selection
+   * does not move. The selection will be from the anchor to the new focus regardless
+   * of direction.
+   *
+   * MDN
+   */
+  def extend(node: Node, offset: Int = 0): Unit = js.native
 }
 
 /**
