@@ -1608,7 +1608,8 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def containsNode(node: Node, partialContainment: Boolean): Boolean = js.native
+  def containsNode(node: Node,
+      partialContainment: Boolean = false): Boolean = js.native
 
   /**
    * Moves the focus of the selection to a specified point. The anchor of the selection
@@ -1617,7 +1618,7 @@ class Selection extends js.Object {
    *
    * MDN
    */
-  def extend(node: Node, offset: Int): Unit = js.native
+  def extend(node: Node, offset: Int = 0): Unit = js.native
 }
 
 /**
