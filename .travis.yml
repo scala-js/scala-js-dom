@@ -5,15 +5,16 @@ script:
   - sbt scalafmtTest
   - sbt ++2.11.11 readme/run
 scala:
-  - 2.10.6
-  - 2.11.11
-  - 2.12.2
-  - 2.13.0-M1
+  - 2.10.7
+  - 2.11.12
+  - 2.12.4
+  - 2.13.0-M2
 jdk:
   - oraclejdk8
 env:
-  - SCALAJS_VERSION=0.6.18
+  - SCALAJS_VERSION=0.6.21
   - SCALAJS_VERSION=1.0.0-M1
+  - SCALAJS_VERSION=1.0.0-M2
 
 cache:
   directories:
