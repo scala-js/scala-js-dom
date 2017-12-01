@@ -624,6 +624,49 @@ trait ParentNode extends js.Object {
 }
 
 /**
+ * The ChildNode interface contains methods that are particular to Node objects that can have a parent.
+ *
+ * ChildNode is a raw interface and no object of this type can be created; it is implemented
+ * by Element, DocumentType, and CharacterData objects
+ *
+ * MDN
+ */
+@js.native
+trait ChildNode extends js.Object {
+
+  /**
+   * Removes this ChildNode from the children list of its parent.
+   *
+   * MDN
+   */
+  def remove(): Unit = js.native
+
+  /**
+   * Inserts a set of Node or DOMString objects in the children list of this ChildNode's parent,
+   * just before this ChildNode. DOMString objects are inserted as equivalent Text nodes.
+   *
+   * MDN
+   */
+  def before(nodes: Node | String*): Unit = js.native
+
+  /**
+   * Inserts a set of Node or DOMString objects in the children list of this ChildNode's parent,
+   * just after this ChildNode. DOMString objects are inserted as equivalent Text nodes.
+   *
+   * MDN
+   */
+  def after(nodes: Node | String*): Unit = js.native
+
+  /**
+   * Replaces this ChildNode in the children list of its parent with a set of Node or DOMString objects.
+   * DOMString objects are inserted as equivalent Text nodes.
+   *
+   * MDN
+   */
+  def replaceWith(nodes: Node | String*): Int = js.native
+}
+
+/**
  * The NonDocumentTypeChildNode interface contains methods that are particular to
  * Node objects that can have a parent, but not suitable for DocumentType.
  *
@@ -665,7 +708,7 @@ trait NonDocumentTypeChildNode extends js.Object {
 @js.native
 @JSGlobal
 abstract class Element
-    extends Node with NodeSelector with ParentNode
+    extends Node with NodeSelector with ParentNode with ChildNode
     with NonDocumentTypeChildNode {
 
   /**
@@ -4289,7 +4332,7 @@ class Storage extends js.Object {
  */
 @js.native
 @JSGlobal
-abstract class DocumentType extends Node {
+abstract class DocumentType extends Node with ChildNode {
   def name: String = js.native
 
   @deprecated("Obsolete.", "WHATWG DOM")
@@ -5671,7 +5714,7 @@ object TextEvent extends js.Object {
  */
 @js.native
 @JSGlobal
-abstract class DocumentFragment extends Node with NodeSelector
+abstract class DocumentFragment extends Node with NodeSelector with ParentNode
 
 /**
  * The Position interface represents the position of the concerned device at a given
@@ -6031,7 +6074,8 @@ class StorageEvent extends Event {
  */
 @js.native
 @JSGlobal
-abstract class CharacterData extends Node with NonDocumentTypeChildNode {
+abstract class CharacterData
+    extends Node with NonDocumentTypeChildNode with ChildNode {
 
   /**
    * Returns an unsigned long representing the size of the string contained in
