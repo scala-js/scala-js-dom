@@ -5976,7 +5976,7 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  def oldValue: js.Any = js.native
+  def oldValue: String = js.native
 
   /**
    * The new value of the key. The newValue is null when the change has been invoked by
@@ -5984,7 +5984,7 @@ class StorageEvent extends Event {
    *
    * MDN
    */
-  def newValue: js.Any = js.native
+  def newValue: String = js.native
 
   /**
    * The URL of the document whose key changed. Read only.
@@ -6016,8 +6016,8 @@ class StorageEvent extends Event {
    */
   @deprecated("Non-standard", "forever")
   def initStorageEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, keyArg: String, oldValueArg: js.Any,
-      newValueArg: js.Any, urlArg: String,
+      cancelableArg: Boolean, keyArg: String, oldValueArg: String,
+      newValueArg: String, urlArg: String,
       storageAreaArg: Storage): Unit = js.native
 }
 
