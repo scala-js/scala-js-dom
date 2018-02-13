@@ -2684,7 +2684,10 @@ class KeyboardEvent(typeArg: String, keyboardEventInit: KeyboardEventInit)
    * the detail.
    *
    * MDN
+   * 
+   * NOT supported in Safari
    */
+  @deprecated("Compatibility", "Not yet supported in Safari")
   def key: String = js.native
 
   /**
