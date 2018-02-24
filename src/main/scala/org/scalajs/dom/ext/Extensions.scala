@@ -11,7 +11,7 @@ import scala.scalajs.js.typedarray.TypedArrayBufferOps._
 
 import org.scalajs.dom
 import org.scalajs.dom.{FormData, html, raw}
-import org.scalajs.dom.raw.Blob
+import org.scalajs.dom.raw.{Blob, KeyboardEvent}
 
 /**
  * Used to extend out javascript *Collections to make them usable as normal
@@ -226,6 +226,14 @@ object KeyCode {
   @deprecated("Use KeyCode.Y instead", "0.8.1") final val y = Y
   @deprecated("Use KeyCode.Z instead", "0.8.1") final val z = Z
   // format: on
+}
+
+/** Aliases for DOM_KEY_LOCATION_* constants from [[KeyboardEvent]] */
+object KeyLocation {
+  final val Standard = KeyboardEvent.DOM_KEY_LOCATION_STANDARD
+  final val Left = KeyboardEvent.DOM_KEY_LOCATION_LEFT
+  final val Right = KeyboardEvent.DOM_KEY_LOCATION_RIGHT
+  final val NumPad = KeyboardEvent.DOM_KEY_LOCATION_NUMPAD
 }
 
 /**
