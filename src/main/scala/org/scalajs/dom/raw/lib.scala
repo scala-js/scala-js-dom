@@ -2749,10 +2749,6 @@ object KeyboardEvent extends js.Object {
   def DOM_KEY_LOCATION_LEFT: Int = js.native
 
   def DOM_KEY_LOCATION_NUMPAD: Int = js.native
-
-  def DOM_KEY_LOCATION_JOYSTICK: Int = js.native
-
-  def DOM_KEY_LOCATION_MOBILE: Int = js.native
 }
 
 /**
