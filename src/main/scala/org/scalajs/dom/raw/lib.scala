@@ -2659,7 +2659,7 @@ class KeyboardEvent(typeArg: String, keyboardEventInit: KeyboardEventInit)
 
   /**
    * The location of the key on the keyboard or other input device.
-   * See the constants in the KeyboardEvent object.
+   * See the constants in the [[KeyboardEvent]] object.
    *
    * MDN
    */
@@ -2742,12 +2742,54 @@ trait KeyboardEventInit extends js.Object {
 @js.native
 @JSGlobal
 object KeyboardEvent extends js.Object {
-  def DOM_KEY_LOCATION_RIGHT: Int = js.native
 
+  /**
+   * The key has only one version, or can't be distinguished between the left
+   * and right versions of the key, and was not pressed on the numeric keypad
+   * or a key that is considered to be part of the keypad.
+   *
+   * MDN
+   */
   def DOM_KEY_LOCATION_STANDARD: Int = js.native
 
+  /**
+   * The key was the left-hand version of the key; for example, the left-hand
+   * Control key was pressed on a standard 101 key US keyboard. This value is
+   * only used for keys that have more that one possible location on the
+   * keyboard.
+   *
+   * MDN
+   */
   def DOM_KEY_LOCATION_LEFT: Int = js.native
 
+  /**
+   * The key was the right-hand version of the key; for example, the right-hand
+   * Control key is pressed on a standard 101 key US keyboard. This value is
+   * only used for keys that have more that one possible location on the
+   * keyboard.
+   *
+   * MDN
+   */
+  def DOM_KEY_LOCATION_RIGHT: Int = js.native
+
+  /**
+   * The key was on the numeric keypad, or has a virtual key code that
+   * corresponds to the numeric keypad.
+   *
+   * @note When NumLock is locked, Gecko always returns
+   *       [[DOM_KEY_LOCATION_NUMPAD]] for the keys on the numeric pad.
+   *       Otherwise, when NumLock is unlocked and the keyboard actually has
+   *       a numeric keypad, Gecko always returns [[DOM_KEY_LOCATION_NUMPAD]]
+   *       too. On the other hand, if the keyboard doesn't have a keypad, such
+   *       as on a notebook computer, some keys become Numpad only when NumLock
+   *       is locked. When such keys fires key events, the location attribute
+   *       value depends on the key. That is, it must not be
+   *       [[DOM_KEY_LOCATION_NUMPAD]].
+   * @note NumLock key's key events indicate [[DOM_KEY_LOCATION_STANDARD]] both
+   *       on Gecko and Internet Explorer.
+   *
+   * MDN
+   */
   def DOM_KEY_LOCATION_NUMPAD: Int = js.native
 }
 
