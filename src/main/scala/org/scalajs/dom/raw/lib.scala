@@ -805,14 +805,34 @@ abstract class Element
   def getAttribute(name: String): String = js.native
 
   /**
+   * Returns a list of elements with the given tag name. The subtree underneath the
+   * specified element is searched, excluding the element itself. The returned list is
+   * live, meaning that it updates itself with the DOM tree automatically.
+   * Consequently, there is no need to call several times
+   * element.getElementsByTagName with the same element and arguments.
+   *
+   * MDN
+   */
+  def getElementsByTagName(name: String): HTMLCollection = js.native
+
+  /**
    * Returns a list of elements with the given tag name belonging to the given namespace.
    *
    * MDN
    */
   def getElementsByTagNameNS(namespaceURI: String,
-      localName: String): NodeList = js.native
+      localName: String): HTMLCollection = js.native
 
-  def getElementsByClassName(classNames: String): NodeList = js.native
+  /**
+   * Returns an array-like object of all child elements which have all of the
+   * given class names. When called on the document object, the complete document
+   * is searched, including the root node. You may also call getElementsByClassName()
+   * on any element; it will return only elements which are descendants of the
+   * specified root element with the given class names.
+   *
+   * MDN
+   */
+  def getElementsByClassName(classNames: String): HTMLCollection = js.native
 
   /**
    * hasAttributeNS returns a boolean value indicating whether the current element
@@ -885,17 +905,6 @@ abstract class Element
    * MDN
    */
   def getAttributeNode(name: String): Attr = js.native
-
-  /**
-   * Returns a list of elements with the given tag name. The subtree underneath the
-   * specified element is searched, excluding the element itself. The returned list is
-   * live, meaning that it updates itself with the DOM tree automatically.
-   * Consequently, there is no need to call several times
-   * element.getElementsByTagName with the same element and arguments.
-   *
-   * MDN
-   */
-  def getElementsByTagName(name: String): NodeList = js.native
 
   /**
    * Returns a collection of rectangles that indicate the bounding rectangles for each
@@ -2850,7 +2859,7 @@ abstract class Document
    *
    * MDN
    */
-  def getElementsByTagName(tagname: String): NodeList = js.native
+  def getElementsByTagName(name: String): HTMLCollection = js.native
 
   /**
    * Returns a list of elements with the given tag name belonging to the given namespace.
@@ -2859,7 +2868,7 @@ abstract class Document
    * MDN
    */
   def getElementsByTagNameNS(namespaceURI: String,
-      localName: String): NodeList = js.native
+      localName: String): HTMLCollection = js.native
 
   /**
    * Returns a set of elements which have all the given class names. When called on the
@@ -2869,7 +2878,7 @@ abstract class Document
    *
    * MDN
    */
-  def getElementsByClassName(classNames: String): NodeList = js.native
+  def getElementsByClassName(classNames: String): HTMLCollection = js.native
 
   /**
    * Returns the element from the document whose elementFromPoint method is being
