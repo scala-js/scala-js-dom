@@ -1171,6 +1171,15 @@ abstract class Node extends EventTarget {
   def isSameNode(other: Node): Boolean = js.native
 
   /**
+   * Returns a Boolean value indicating whether a node is a descendant of a
+   * given node, i.e. the node itself, one of its direct children (childNodes),
+   * one of the children's direct children, and so on.
+   *
+   * MDN
+   */
+  def contains(otherNode: Node): Boolean = js.native
+
+  /**
    * hasAttributes returns a boolean value of true or false, indicating if the current
    * element has any attributes or not.
    *
