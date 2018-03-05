@@ -2666,17 +2666,6 @@ class KeyboardEvent(typeArg: String, keyboardEventInit: KeyboardEventInit)
   def location: Int = js.native
 
   /**
-   * A locale string indicating the locale the keyboard is configured for. This may
-   * be the empty string if the browser or device doesn't know the keyboard's locale.
-   *
-   * Note: This does not describe the locale of the data being entered. A user may
-   * be using one keyboard layout while typing text in a different language.
-   *
-   * MDN
-   */
-  def locale: String = js.native
-
-  /**
    * The key value of the key represented by the event. If the value has a printed
    * representation, this attribute's value is the same as the char attribute.
    * Otherwise, it's one of the key value strings specified in Key values. If the
