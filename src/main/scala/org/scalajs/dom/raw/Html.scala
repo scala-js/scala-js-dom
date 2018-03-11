@@ -548,81 +548,81 @@ abstract class HTMLDocument extends Document {
   var onstoragecommit: js.Function1[StorageEvent, _] = js.native
 
   /**
-    * fired when a pointing device is moved into an element's hit test boundaries.
-    *
-    * MDN
-    */
+   * fired when a pointing device is moved into an element's hit test boundaries.
+   *
+   * MDN
+   */
   var onpointerover: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointing device is moved into the hit test boundaries of an element
-    * or one of its descendants, including as a result of a pointerdown event
-    * from a device that does not support hover (see pointerdown).
-    *
-    * MDN
-    */
+   * fired when a pointing device is moved into the hit test boundaries of an element
+   * or one of its descendants, including as a result of a pointerdown event
+   * from a device that does not support hover (see pointerdown).
+   *
+   * MDN
+   */
   var onpointerenter: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointer becomes active.
-    *
-    * MDN
-    */
+   * fired when a pointer becomes active.
+   *
+   * MDN
+   */
   var onpointerdown: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointer changes coordinates.
-    *
-    * MDN
-    */
+   * fired when a pointer changes coordinates.
+   *
+   * MDN
+   */
   var onpointermove: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointer is no longer active.
-    *
-    * MDN
-    */
+   * fired when a pointer is no longer active.
+   *
+   * MDN
+   */
   var onpointerup: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * a browser fires this event if it concludes the pointer will no longer be able
-    * to generate events (for example the related device is deactived).
-    *
-    * MDN
-    */
+   * a browser fires this event if it concludes the pointer will no longer be able
+   * to generate events (for example the related device is deactived).
+   *
+   * MDN
+   */
   var onpointercancel: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired for several reasons including: pointing device is moved out of
-    * the hit test boundaries of an element;
-    * firing the pointerup event for a device that does not support hover (see pointerup);
-    * after firing the pointercancel event (see pointercancel);
-    * when a pen stylus leaves the hover range detectable by the digitizer.
-    *
-    * MDN
-    */
+   * fired for several reasons including: pointing device is moved out of
+   * the hit test boundaries of an element;
+   * firing the pointerup event for a device that does not support hover (see pointerup);
+   * after firing the pointercancel event (see pointercancel);
+   * when a pen stylus leaves the hover range detectable by the digitizer.
+   *
+   * MDN
+   */
   var onpointerout: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointing device is moved out of the hit test boundaries of an element.
-    * For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer.
-    *
-    * MDN
-    */
+   * fired when a pointing device is moved out of the hit test boundaries of an element.
+   * For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer.
+   *
+   * MDN
+   */
   var onpointerleave: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when an element receives pointer capture.
-    *
-    * MDN
-    */
+   * fired when an element receives pointer capture.
+   *
+   * MDN
+   */
   var gotpointercapture: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * Fired after pointer capture is released for a pointer.
-    *
-    * MDN
-    */
+   * Fired after pointer capture is released for a pointer.
+   *
+   * MDN
+   */
   var lostpointercapture: js.Function1[PointerEvent, _] = js.native
 }
 
@@ -4197,81 +4197,81 @@ abstract class HTMLElement extends Element {
   override def ownerDocument: HTMLDocument = js.native
 
   /**
-    * fired when a pointing device is moved into an element's hit test boundaries.
-    *
-    * MDN
-    */
+   * fired when a pointing device is moved into an element's hit test boundaries.
+   *
+   * MDN
+   */
   var onpointerover: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointing device is moved into the hit test boundaries of an element
-    * or one of its descendants, including as a result of a pointerdown event
-    * from a device that does not support hover (see pointerdown).
-    *
-    * MDN
-    */
+   * fired when a pointing device is moved into the hit test boundaries of an element
+   * or one of its descendants, including as a result of a pointerdown event
+   * from a device that does not support hover (see pointerdown).
+   *
+   * MDN
+   */
   var onpointerenter: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointer becomes active.
-    *
-    * MDN
-    */
+   * fired when a pointer becomes active.
+   *
+   * MDN
+   */
   var onpointerdown: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointer changes coordinates.
-    *
-    * MDN
-    */
+   * fired when a pointer changes coordinates.
+   *
+   * MDN
+   */
   var onpointermove: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointer is no longer active.
-    *
-    * MDN
-    */
+   * fired when a pointer is no longer active.
+   *
+   * MDN
+   */
   var onpointerup: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * a browser fires this event if it concludes the pointer will no longer be able
-    * to generate events (for example the related device is deactived).
-    *
-    * MDN
-    */
+   * a browser fires this event if it concludes the pointer will no longer be able
+   * to generate events (for example the related device is deactived).
+   *
+   * MDN
+   */
   var onpointercancel: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired for several reasons including: pointing device is moved out of
-    * the hit test boundaries of an element;
-    * firing the pointerup event for a device that does not support hover (see pointerup);
-    * after firing the pointercancel event (see pointercancel);
-    * when a pen stylus leaves the hover range detectable by the digitizer.
-    *
-    * MDN
-    */
+   * fired for several reasons including: pointing device is moved out of
+   * the hit test boundaries of an element;
+   * firing the pointerup event for a device that does not support hover (see pointerup);
+   * after firing the pointercancel event (see pointercancel);
+   * when a pen stylus leaves the hover range detectable by the digitizer.
+   *
+   * MDN
+   */
   var onpointerout: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when a pointing device is moved out of the hit test boundaries of an element.
-    * For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer.
-    *
-    * MDN
-    */
+   * fired when a pointing device is moved out of the hit test boundaries of an element.
+   * For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer.
+   *
+   * MDN
+   */
   var onpointerleave: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * fired when an element receives pointer capture.
-    *
-    * MDN
-    */
+   * fired when an element receives pointer capture.
+   *
+   * MDN
+   */
   var gotpointercapture: js.Function1[PointerEvent, _] = js.native
 
   /**
-    * Fired after pointer capture is released for a pointer.
-    *
-    * MDN
-    */
+   * Fired after pointer capture is released for a pointer.
+   *
+   * MDN
+   */
   var lostpointercapture: js.Function1[PointerEvent, _] = js.native
 }
 
