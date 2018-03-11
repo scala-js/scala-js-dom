@@ -777,9 +777,31 @@ abstract class Element
 
   var id: String = js.native
 
-  var oncut: js.Function1[DragEvent, _] = js.native
-  var oncopy: js.Function1[DragEvent, _] = js.native
-  var onpaste: js.Function1[DragEvent, _] = js.native
+  /**
+   * The copy event is fired when the user initiates a copy action through the
+   * browser UI (for example, using the CTRL/Cmd+C keyboard shortcut or
+   * selecting the "Copy" from the menu) and in response to an allowed
+   * `document.execCommand("copy")` call.
+   *
+   * MDN
+   */
+  var oncopy: js.Function1[ClipboardEvent, _] = js.native
+
+  /**
+   * The cut event is fired when a selection has been removed from the document
+   * and added to the clipboard.
+   *
+   * MDN
+   */
+  var oncut: js.Function1[ClipboardEvent, _] = js.native
+
+  /**
+   * The paste event is fired when a selection has been pasted from the
+   * clipboard to the document.
+   *
+   * MDN
+   */
+  var onpaste: js.Function1[ClipboardEvent, _] = js.native
 
   var accessKey: String = js.native
 
