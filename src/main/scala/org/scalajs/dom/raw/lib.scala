@@ -1470,6 +1470,7 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
 @js.native
 @JSGlobal
 class PointerEvent extends MouseEvent {
+
   /**
    * A unique identifier for the pointer causing the event.
    *
