@@ -1602,7 +1602,7 @@ trait PointerEventInit extends js.Object {
   /**
    * Sets value of MouseEvent.pointerId. Defaults to 0.
    */
-  var pointerId: js.undefOr[Double] = js.undefined
+  var pointerId: js.UndefOr[Double] = js.undefined
 
   /**
    * Sets value of MouseEvent.width. Defaults to 1.
