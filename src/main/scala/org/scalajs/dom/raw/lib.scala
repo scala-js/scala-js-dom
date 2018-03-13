@@ -1471,7 +1471,10 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
  */
 @js.native
 @JSGlobal
-class PointerEvent extends MouseEvent {
+class PointerEvent(typeArg: String, pointerEventInit: PointerEventInit)
+    extends MouseEvent {
+
+  def this(typeArg: String) = this(typeArg, js.native)
 
   /**
    * A unique identifier for the pointer causing the event.
@@ -1544,6 +1547,44 @@ class PointerEvent extends MouseEvent {
    * MDN
    */
   def isPrimary: Boolean = js.native
+}
+
+trait PointerEventInit extends js.Object {
+
+  /**
+   * Sets value of MouseEvent.pointerId. Defaults to 0.
+   */
+  var pointerId: js.undefOr[Double] = js.undefined
+
+  /**
+   * Sets value of MouseEvent.width. Defaults to 1.
+   */
+  var width: js.UndefOr[Double] = js.undefined
+
+  /**
+   * Sets value of MouseEvent.height. Defaults to 0.
+   */
+  var height: js.UndefOr[Double] = js.undefined
+
+  /**
+   * Sets value of MouseEvent.pressure. Defaults to 0.
+   */
+  var pressure: js.UndefOr[Double] = js.undefined
+
+  /**
+   * Sets value of MouseEvent.tiltX. Defaults to 0.
+   */
+  var tiltX: js.UndefOr[Double] = js.undefined
+
+  /**
+   * Sets value of MouseEvent.tiltY. Defaults to 0.
+   */
+  var tiltY: js.UndefOr[Double] = js.undefined
+
+  /**
+   * Sets value of MouseEvent.pointerType. Defaults to 0.
+   */
+  var pointerType: js.UndefOr[String] = js.undefined
 }
 
 /**
