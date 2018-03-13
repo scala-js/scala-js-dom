@@ -1478,7 +1478,7 @@ class PointerEvent extends MouseEvent {
    *
    * MDN
    */
-  def pointerId: Int = js.native
+  def pointerId: Double = js.native
 
   /**
    * The width (magnitude on the X axis), in CSS pixels, of the contact geometry of the pointer.
