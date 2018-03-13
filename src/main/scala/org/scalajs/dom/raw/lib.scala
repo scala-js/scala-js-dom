@@ -1506,6 +1506,19 @@ class PointerEvent(typeArg: String, pointerEventInit: PointerEventInit)
   def pressure: Double = js.native
 
   /**
+   * The tangentialPressure read-only property of the PointerEvent interface
+   * represents the normalized tangential pressure of the pointer input
+   * (also known as barrel pressure or cylinder stress)
+   * in the range -1 to 1, where 0 is the neutral position of the control.
+   *
+   * Note that some hardware may only support positive values in the range 0 to 1.
+   * For hardware that does not support tangential pressure, the value will be 0.
+   *
+   * MDN
+   */
+  def tangentialPressure: Double = js.native
+
+  /**
    * The plane angle (in degrees, in the range of -90 to 90) between the Y-Z plane and the
    * plane containing both the transducer (e.g. pen stylus) axis and the Y axis.
    *
@@ -1570,6 +1583,11 @@ trait PointerEventInit extends js.Object {
    * Sets value of MouseEvent.pressure. Defaults to 0.
    */
   var pressure: js.UndefOr[Double] = js.undefined
+
+  /**
+   * Sets value of MouseEvent.tangentialPressure. Defaults to 0.
+   */
+  var tangentialPressure: js.UndefOr[Double] = js.undefined
 
   /**
    * Sets value of MouseEvent.tiltX. Defaults to 0.
