@@ -1466,6 +1466,8 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
  * in addition to new properties for other forms of input: pressure, contact geometry, tilt, etc.
  * In fact, the PointerEvent interface inherits all of the MouseEvent's properties thus facilitating
  * migrating content from mouse events to pointer events.
+ *
+ * MDN
  */
 @js.native
 @JSGlobal
