@@ -116,6 +116,8 @@ package object dom {
   type MessagePort = raw.MessagePort
   type ModifierKeyEvent = raw.ModifierKeyEvent
   type MouseEvent = raw.MouseEvent
+  type PointerEvent = raw.PointerEvent
+  type PointerEventInit = raw.PointerEventInit
   @deprecated("Obsolete.", "WHATWG DOM")
   type MutationEvent = raw.MutationEvent
   @deprecated("Obsolete.", "WHATWG DOM")
