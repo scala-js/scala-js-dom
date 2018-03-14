@@ -86,6 +86,7 @@ object html {
   type TableHeaderCell = raw.HTMLTableHeaderCellElement
   type TableRow = raw.HTMLTableRowElement
   type TableSection = raw.HTMLTableSectionElement
+  type Template = raw.HTMLTemplateElement
   type Title = raw.HTMLTitleElement
   type TextArea = raw.HTMLTextAreaElement
   type Track = raw.HTMLTrackElement
