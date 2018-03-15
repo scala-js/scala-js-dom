@@ -12,9 +12,12 @@ scala:
 jdk:
   - oraclejdk8
 env:
-  - SCALAJS_VERSION=0.6.21
-  - SCALAJS_VERSION=1.0.0-M1
-  - SCALAJS_VERSION=1.0.0-M2
+  - SCALAJS_VERSION=0.6.22
+  - SCALAJS_VERSION=1.0.0-M3
+matrix:
+  exclude:
+    - scala: 2.10.7
+      env: SCALAJS_VERSION=1.0.0-M3
 
 cache:
   directories:
