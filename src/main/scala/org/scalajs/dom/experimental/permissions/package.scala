@@ -24,7 +24,7 @@ package object permissions {
 
   trait PermissionStatus extends dom.raw.EventTarget {
     val state: PermissionState
-    var onchange: js.Function1[PermissionState, _]
+    var onchange: js.Function1[dom.Event, _]
   }
 
   @js.native
@@ -48,6 +48,20 @@ package object permissions {
     def apply(permissionName: PermissionName): PermissionDescriptor = {
       new PermissionDescriptor {
         val name = permissionName
+      }
+    }
+  }
+
+  trait PushPermissionDescriptor extends PermissionDescriptor {
+    val userVisibleOnly: Boolean
+  }
+
+  object PushPermissionDescriptor {
+    @inline
+    def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor = {
+      new PushPermissionDescriptor {
+        val name = PermissionName.push
+        val userVisibleOnly = permissionUserVisibleOnly
       }
     }
   }
