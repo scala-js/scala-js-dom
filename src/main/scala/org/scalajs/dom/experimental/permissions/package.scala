@@ -52,6 +52,20 @@ package object permissions {
     }
   }
 
+  trait PushPermissionDescriptor extends PermissionDescriptor {
+    val userVisibleOnly: Boolean
+  }
+
+  object PushPermissionDescriptor {
+    @inline
+    def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor = {
+      new PushPermissionDescriptor {
+        val name = PermissionName.push
+        val userVisibleOnly = permissionUserVisibleOnly
+      }
+    }
+  }
+
   trait Permissions extends js.Object {
     def query(
         permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
