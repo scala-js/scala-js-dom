@@ -4,7 +4,9 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.|
 
-import org.scalajs.dom.experimental.{Request, RequestInfo, Response, Sequence}
+import org.scalajs.dom.experimental.{
+  Notification, NotificationOptions, Request, RequestInfo, Response, Sequence
+}
 import org.scalajs.dom.raw.{WorkerGlobalScope, ErrorEvent}
 import org.scalajs.dom.webgl.RenderingContext
 import org.scalajs.dom.{Event, EventTarget, MessagePort}
@@ -246,6 +248,45 @@ trait ServiceWorkerRegistration extends EventTarget {
    * MDN
    */
   var onupdatefound: js.Function1[Event, _] = js.native
+
+  /**
+   * The getNotifications() method of the ServiceWorkerRegistration interface
+   * returns a list of the notifications in the order that they were created
+   * from the current origin via the current service worker registration.
+   * Origins can have many active but differently-scoped service worker
+   * registrations. Notifications created by one service worker on the same
+   * origin will not be available to other active services workers on that same
+   * origin.
+   *
+   * MDN
+   */
+  def getNotifications(
+      options: GetNotificationOptions = ???): js.Promise[Sequence[Notification]] = js.native
+
+  /**
+   * The showNotification() method of the ServiceWorkerRegistration interface
+   * creates a notification on an active service worker.
+   *
+   * MDN
+   */
+  def showNotification(title: String,
+      options: NotificationOptions = ???): js.Promise[Unit] = js.native
+}
+
+/**
+ * An object containing options to filter the notifications returned.
+ *
+ * MDN
+ */
+trait GetNotificationOptions extends js.Object {
+
+  /**
+   * A DOMString representing a notification tag. If specified, only
+   * notifications that have this tag will be returned.
+   *
+   * MDN
+   */
+  var tag: js.UndefOr[String] = js.undefined
 }
 
 /**
