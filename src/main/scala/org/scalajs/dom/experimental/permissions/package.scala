@@ -24,7 +24,7 @@ package object permissions {
 
   trait PermissionStatus extends dom.raw.EventTarget {
     val state: PermissionState
-    var onchange: js.Function1[PermissionState, _]
+    var onchange: js.Function1[dom.Event, _]
   }
 
   @js.native
