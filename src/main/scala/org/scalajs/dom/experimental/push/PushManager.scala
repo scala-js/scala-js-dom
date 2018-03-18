@@ -4,7 +4,7 @@ import org.scalajs.dom.experimental.serviceworkers.ExtendableEvent
 import org.scalajs.dom.raw.Blob
 
 import scala.scalajs.js
-import scala.scalajs.js.typedarray.ArrayBuffer
+import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 
 /**
  * The PushManager interface of the Push API provides a way to receive notifications
@@ -166,10 +166,12 @@ trait PushMessageData extends js.Object {
  *
  * The userVisibleOnly option, when set to true, indicates that the push subscription will only be used
  * for push messages whose effect is made visible to the user, for example by displaying a Web Notification.
+ *
+ * The applicationServerKey option defines the public key your application server uses for sending messages to clients via a push server endpoint.
  */
-@js.native
 trait PushSubscriptionOptions extends js.Object {
-  var userVisibleOnly: js.UndefOr[Boolean] = js.native
+  var userVisibleOnly: js.UndefOr[Boolean] = js.undefined
+  var applicationServerKey: js.UndefOr[Uint8Array] = js.undefined
 }
 
 /** Factory for [[PushSubscriptionOptions]] objects. */
@@ -178,10 +180,14 @@ object PushSubscriptionOptions {
   /**
    * Creates a new [[PushSubscriptionOptions]] object.  Default value for userVisibleOnly is false.
    */
-  def apply(userVisibleOnly: Boolean = false): PushSubscriptionOptions = {
-    js.Dynamic
-      .literal("userVisibleOnly" -> userVisibleOnly)
-      .asInstanceOf[PushSubscriptionOptions]
+  @deprecated(
+      "Use new PushSubscriptionOptions { userVisibleOnly = ??? } instead",
+      "0.9.6")
+  def apply(
+      permissionUserVisibleOnly: Boolean = false): PushSubscriptionOptions = {
+    new PushSubscriptionOptions {
+      userVisibleOnly = permissionUserVisibleOnly
+    }
   }
 }
 
