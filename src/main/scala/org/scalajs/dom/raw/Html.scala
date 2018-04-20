@@ -3000,6 +3000,18 @@ abstract class HTMLPreElement extends HTMLElement {
   var width: Int = js.native
 }
 
+/**
+ * The HTMLCodeElement element displays its contents styled in a
+ * fashion intended to indicate that the text is a short fragment
+ * of computer code. By default, the content text is displayed
+ * using the user agent's default monospace font.
+ *
+ * MDN
+ */
+@js.native
+@JSGlobal
+abstract class HTMLCodeElement extends HTMLElement
+
 @js.native
 @JSGlobal
 abstract class HTMLPhraseElement extends HTMLElement {
