@@ -20,6 +20,7 @@ object html {
   type Button = raw.HTMLButtonElement
   type BR = raw.HTMLBRElement
   type Canvas = raw.HTMLCanvasElement
+  type Code = raw.HTMLCodeElement
   type Collection = raw.HTMLCollection
   type DataList = raw.HTMLDataListElement
   type DD = raw.HTMLDDElement
