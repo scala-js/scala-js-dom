@@ -68,6 +68,10 @@ class Request(input: RequestInfo, init: RequestInit = null) extends js.Object {
   def redirect: RequestRedirect = js.native
 
   def integrity: String = js.native //should be DOMString
+
+  val keepalive: Boolean = js.native
+
+  val signal: js.UndefOr[AbortSignal] = js.native
 }
 
 object RequestInit {
@@ -95,10 +99,12 @@ object RequestInit {
       referrerPolicy: js.UndefOr[ReferrerPolicy] = js.undefined,
       mode: js.UndefOr[RequestMode] = js.undefined,
       credentials: js.UndefOr[RequestCredentials] = js.undefined,
-      requestCache: js.UndefOr[RequestCache] = js.undefined,
-      requestRedirect: js.UndefOr[RequestRedirect] = js.undefined,
+      cache: js.UndefOr[RequestCache] = js.undefined,
+      redirect: js.UndefOr[RequestRedirect] = js.undefined,
       integrity: js.UndefOr[String] = js.undefined, //see [[https://w3c
       // .github.io/webappsec-subresource-integrity/ integrity spec]]
+      keepalive: js.UndefOr[Boolean] = js.undefined,
+      signal: js.UndefOr[AbortSignal] = js.undefined,
       window: js.UndefOr[Null] = js.undefined): RequestInit = {
     val result = js.Dynamic.literal()
 
@@ -114,9 +120,11 @@ object RequestInit {
     set("referrerPolicy", referrerPolicy)
     set("mode", mode)
     set("credentials", credentials)
-    set("requestCache", requestCache)
-    set("requestRedirect", requestRedirect)
+    set("cache", cache)
+    set("redirect", redirect)
     set("integrity", integrity)
+    set("keepalive", keepalive)
+    set("signal", signal)
     set("window", window)
 
     result.asInstanceOf[RequestInit]
@@ -143,11 +151,15 @@ trait RequestInit extends js.Object {
 
   var credentials: js.UndefOr[RequestCredentials]
 
-  var requestCache: js.UndefOr[RequestCache]
+  var cache: js.UndefOr[RequestCache]
 
-  var requestRedirect: js.UndefOr[RequestRedirect]
+  var redirect: js.UndefOr[RequestRedirect]
 
   var integrity: js.UndefOr[String]
+
+  var keepalive: js.UndefOr[Boolean]
+
+  var signal: js.UndefOr[AbortSignal]
 
   /**
    * The whatwg spec section on [[https://fetch.spec.whatwg.org/#requestinit RequestInit dictionary]]
