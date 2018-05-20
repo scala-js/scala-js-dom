@@ -7,7 +7,7 @@ name := "Scala.js DOM"
 
 crossScalaVersions in ThisBuild := {
   if (scalaJSVersion.startsWith("1.")) Seq("2.12.6", "2.11.12", "2.13.0-M3")
-  else Seq("2.12.6", "2.11.12", "2.10.7", "2.13.0-M3")
+  else Seq("2.12.6", "2.11.12", "2.10.7", "2.13.0-M3", "2.13.0-M4")
 }
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
@@ -34,6 +34,25 @@ scalacOptions ++= {
     Seq(s"-P:scalajs:mapSourceURI:$a->$g/v${version.value}/")
   }
 }
+
+def hasNewCollections(version: String): Boolean = {
+  !version.startsWith("2.10.") &&
+  !version.startsWith("2.11.") &&
+  !version.startsWith("2.12.") &&
+  version != "2.13.0-M3"
+}
+
+/** Returns the appropriate subdirectory of `sourceDir` depending on whether
+ *  the `scalaV` uses the new collections (introduced in 2.13.0-M4) or not.
+ */
+def collectionsEraDependentDirectory(scalaV: String, sourceDir: File): File =
+  if (hasNewCollections(scalaV)) sourceDir / "scala-new-collections"
+  else sourceDir / "scala-old-collections"
+
+inConfig(Compile)(Def.settings(
+  unmanagedSourceDirectories +=
+    collectionsEraDependentDirectory(scalaVersion.value, sourceDirectory.value)
+))
 
 scalacOptions ++= {
   if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault")

@@ -169,7 +169,7 @@ object AjaxExtension {
     val url =
       "http://api.openweathermap.org/" +
       "data/2.5/weather?q=Singapore"
-    Ajax.get(url).onSuccess { case xhr =>
+    Ajax.get(url).foreach { case xhr =>
       pre.textContent = xhr.responseText
     }
   }

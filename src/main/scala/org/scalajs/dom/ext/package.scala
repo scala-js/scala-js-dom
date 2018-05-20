@@ -73,44 +73,18 @@ package object ext {
     }
   }
 
+  implicit def pimpNamedNodeMap(namedNodeMap: NamedNodeMap): NamedNodeMapMap =
+    new NamedNodeMapMap(namedNodeMap)
+
   /**
    * Implicit class to deal with attributes as with normal mutable Map
    * @param attributes
    */
-  implicit class Attributes(attributes: NamedNodeMap)
-      extends mutable.Map[String, Attr] { self =>
+  @deprecated("Use NamedNodeMapMap instead.", "0.9.6")
+  class Attributes(attributes: NamedNodeMap)
+      extends NamedNodeMapMap(attributes)
 
-    override def iterator: Iterator[(String, Attr)] = {
-      new Iterator[(String, Attr)] {
-        var index = 0
-
-        override def next(): (String, Attr) = {
-          val n: Attr = attributes.item(index)
-          this.index = this.index + 1
-          (n.name, n)
-        }
-
-        override def hasNext: Boolean = index < self.length
-      }
-    }
-
-    override def get(key: String): Option[Attr] = {
-      attributes.getNamedItem(key) match {
-        case null => None
-        case attr => Some(attr)
-      }
-    }
-
-    def length: Int = attributes.length.toInt
-
-    override def -=(key: String) = {
-      attributes.removeNamedItem(key)
-      this
-    }
-
-    override def +=(kv: (String, Attr)) = {
-      attributes.setNamedItem(kv._2)
-      this
-    }
-  }
+  @deprecated("Use pimpNamedNodeMap instead.", "0.9.6")
+  def Attributes(attributes: NamedNodeMap): Attributes =
+    new Attributes(attributes)
 }

@@ -1,7 +1,7 @@
 sudo: false
 language: scala
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION package doc
+  - sbt ++$TRAVIS_SCALA_VERSION package doc example/compile
   - sbt scalafmtTest
   - sbt ++2.11.11 readme/run
 scala:
@@ -9,6 +9,7 @@ scala:
   - 2.11.12
   - 2.12.6
   - 2.13.0-M3
+  - 2.13.0-M4
 jdk:
   - oraclejdk8
 env:
@@ -17,6 +18,8 @@ env:
 matrix:
   exclude:
     - scala: 2.10.7
+      env: SCALAJS_VERSION=1.0.0-M3
+    - scala: 2.13.0-M4
       env: SCALAJS_VERSION=1.0.0-M3
 
 cache:
