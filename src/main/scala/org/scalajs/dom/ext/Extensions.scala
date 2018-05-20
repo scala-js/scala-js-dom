@@ -17,7 +17,9 @@ import org.scalajs.dom.raw.{Blob, KeyboardEvent}
  * Used to extend out javascript *Collections to make them usable as normal
  * Scala Seq[*]s
  */
-class EasySeq[T](jsLength: Int, jsApply: Int => T) extends Seq[T] {
+class EasySeq[T](jsLength: Int, jsApply: Int => T)
+    extends scala.collection.Seq[T] {
+
   def length = jsLength
 
   def apply(x: Int) = jsApply(x)
