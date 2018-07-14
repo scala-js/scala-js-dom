@@ -1257,6 +1257,15 @@ abstract class Node extends EventTarget {
    * MDN
    */
   def insertBefore(newChild: Node, refChild: Node): Node = js.native
+
+  /**
+   * Represents the "rendered" text content of a node and its descendants.
+   * As a getter, it approximates the text the user would get if they highlighted the
+   * contents of the element with the cursor and then copied to the clipboard.
+   *
+   * MDN
+   */
+  var innerText: String = js.native
 }
 
 @js.native
