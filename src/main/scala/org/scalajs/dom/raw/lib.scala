@@ -2762,6 +2762,20 @@ class Window
    * MDN
    */
   var lostpointercapture: js.Function1[PointerEvent, _] = js.native
+
+  /**
+   * Moves the window to the specified coordinates.
+   *
+   * MDN
+   */
+  def moveTo(x: Int, y: Int): Unit = js.native
+
+  /**
+   * Moves the current window by a specified amount.
+   *
+   * MDN
+   */
+  def moveBy(deltaX: Int, deltaY: Int): Unit = js.native
 }
 
 /**
@@ -3900,13 +3914,6 @@ class CanvasRenderingContext2D extends js.Object {
    * MDN
    */
   def moveTo(x: Double, y: Double): Unit = js.native
-
-  /**
-   * Moves the current window by a specified amount.
-   *
-   * MDN
-   */
-  def moveBy(deltaX: Double, deltaY: Double): Unit = js.native
 
   /**
    * Returns an ImageData object representing the underlying pixel data for the area of
