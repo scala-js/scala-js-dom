@@ -3719,6 +3719,13 @@ class CanvasRenderingContext2D extends js.Object {
   def moveTo(x: Double, y: Double): Unit = js.native
 
   /**
+   * Moves the current window by a specified amount.
+   *
+   * MDN
+   */
+  def moveBy(deltaX: Double, deltaY: Double): Unit = js.native
+
+  /**
    * Returns an ImageData object representing the underlying pixel data for the area of
    * the canvas denoted by the rectangle which starts at (sx, sy) and has an sw width and sh
    * height.
