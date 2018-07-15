@@ -2776,6 +2776,20 @@ class Window
    * MDN
    */
   def moveBy(deltaX: Int, deltaY: Int): Unit = js.native
+
+  /**
+   * Dynamically resizes window.
+   *
+   * MDN
+   */
+  def resizeTo(width: Int, height: Int): Unit = js.native
+
+  /**
+   * Resizes the current window by a certain amount.
+   *
+   * MDN
+   */
+  def resizeBy(deltaX: Int, deltaY: Int): Unit = js.native
 }
 
 /**
