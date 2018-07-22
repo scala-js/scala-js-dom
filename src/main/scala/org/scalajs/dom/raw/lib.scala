@@ -2790,6 +2790,26 @@ class Window
    * MDN
    */
   def resizeBy(deltaX: Int, deltaY: Int): Unit = js.native
+
+  /**
+   * The read-only scrollX property of the Window interface returns the number
+   * of pixels that the document is currently scrolled horizontally. This value
+   * is subpixel precise in modern browsers, meaning that it isn't necessarily
+   * a whole number. You can get the number of pixels the document is scrolled
+   * vertically from the scrollY property.
+   *
+   * MDN
+   */
+  def scrollX: Double = js.native
+
+  /**
+   * The read-only scrollY property of the Window interface returns the number
+   * of pixels that the document is currently scrolled vertically. This value
+   * is subpixel precise in modern browsers, meaning that it isn't necessarily
+   * a whole number. You can get the number of pixels the document is scrolled
+   * horizontally from the scrollX property.
+   */
+  def scrollY: Double = js.native
 }
 
 /**
