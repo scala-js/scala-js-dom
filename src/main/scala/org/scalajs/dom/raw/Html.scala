@@ -4197,6 +4197,20 @@ abstract class HTMLElement extends Element {
   override def ownerDocument: HTMLDocument = js.native
 
   /**
+   * The dataset property on the HTMLElement interface provides
+   * read/write access to all the custom data attributes (data-*) set
+   * on the element. This access is available both in HTML and within
+   * the DOM.  It is a map of DOMString, one entry for each custom
+   * data attribute.  Note that the dataset property itself can be
+   * read, but not directly written.  Instead, all writes must be to
+   * the individual properties within the dataset, which in turn
+   * represent the data attributes.
+   *
+   * MDN
+   */
+  def dataset: js.Dictionary[String] = js.native
+
+  /**
    * fired when a pointing device is moved into an element's hit test boundaries.
    *
    * MDN
