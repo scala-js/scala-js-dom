@@ -1895,7 +1895,7 @@ abstract class SVGTextContentElement
 
   def getExtentOfChar(charnum: Int): SVGRect = js.native
 
-  def getComputedTextLength(): Int = js.native
+  def getComputedTextLength(): Double = js.native
 
   def getSubStringLength(charnum: Int, nchars: Int): Int = js.native
 
