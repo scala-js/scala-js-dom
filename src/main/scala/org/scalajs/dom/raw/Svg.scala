@@ -1903,7 +1903,7 @@ abstract class SVGTextContentElement
 
   def getNumberOfChars(): Int = js.native
 
-  def getRotationOfChar(charnum: Int): Int = js.native
+  def getRotationOfChar(charnum: Int): Double = js.native
 
   def getEndPositionOfChar(charnum: Int): SVGPoint = js.native
 }
