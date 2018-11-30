@@ -13,18 +13,14 @@ package object webrtc {
   trait NavigatorMediaStream extends js.Object {
 
     /**
-     * The MediaDevices getUserMedia() method prompts the user for permission to use a media input
-     * which produces a MediaStream with tracks containing the requested types of media. That stream
-     * can include, for example, a video track (produced by either a hardware or virtual video source
-     * such as a camera, video recording device, screen sharing service, and so forth), an audio track
-     * (similarly, produced by a physical or virtual audio source like a microphone, A/D converter, or
-     * the like), and possibly other track types.
+     * The Navigator.mediaDevices read-only property returns a MediaDevices object, which provides access to connected
+     * media input devices like cameras and microphones, as well as screen sharing.
      *
      * MDN
      *
-     * @see [[https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia]]
+     * @see [[https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices]]
      */
-    def mediaDevices: MediaDevices
+    def mediaDevices: MediaDevices = js.native
 
     @deprecated(
         "Navigator.getUserMedia() is deprecated, use Navigator.mediaDevices.getUserMedia() instead.",
