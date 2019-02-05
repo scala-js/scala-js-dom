@@ -2693,8 +2693,46 @@ class Window
 }
 
 /**
- * EventTarget is a DOM interface implemented by objects that can receive DOM events
- * and have listeners for them.
+ * An options object that specifies characteristics about the event listener.
+ *
+ * MDN
+ */
+trait EventListenerOptions extends js.Object {
+
+  /**
+   * A Boolean indicating that events of this type
+   * will be dispatched to the registered listener
+   * before being dispatched to any EventTarget
+   * beneath it in the DOM tree.
+   *
+   * MDN
+   */
+  var capture: js.UndefOr[Boolean] = js.undefined
+
+  /**
+   * A Boolean indicating that the listener
+   * should be invoked at most once after being added.
+   * If true, the listener would be automatically removed when invoked.
+   */
+  var once: js.UndefOr[Boolean] = js.undefined
+
+  /**
+   * A Boolean which, if true, indicates
+   * that the function specified by listener
+   * will never call preventDefault().
+   * If a passive listener does call preventDefault(),
+   * the user agent will do nothing other
+   * than generate a console warning.
+   * See Improving scrolling performance with passive listeners to learn more.
+   *
+   * MDN
+   */
+  var passive: js.UndefOr[Boolean] = js.undefined
+}
+
+/**
+ * EventTarget is a DOM interface implemented by objects
+ * that can receive DOM events and have listeners for them.
  *
  * Element, document, and window are the most common event targets, but other
  * objects can be event targets too, for example XMLHttpRequest, AudioNode,
@@ -2730,6 +2768,34 @@ class EventTarget extends js.Object {
   def addEventListener[T <: Event](`type`: String,
       listener: js.Function1[T, _],
       useCapture: Boolean = js.native): Unit = js.native
+
+  /**
+   * Removes the event listener previously registered with
+   * EventTarget.addEventListener.
+   *
+   * This implementation accepts a settings object of type EventListenerOptions.
+   *
+   * MDN
+   */
+  def removeEventListener[T <: Event](`type`: String,
+      listener: js.Function1[T, _],
+      options: EventListenerOptions): Unit = js.native
+
+  /**
+   * The EventTarget.addEventListener() method
+   * registers the specified listener
+   * on the EventTarget it's called on.
+   * The event target may be an Element in a document,
+   * the Document itself, a Window, or any other object that supports events
+   * (such as XMLHttpRequest).
+   *
+   * This implementation accepts a settings object of type EventListenerOptions.
+   *
+   * MDN
+   */
+  def addEventListener[T <: Event](`type`: String,
+      listener: js.Function1[T, _],
+      options: EventListenerOptions): Unit = js.native
 
   /**
    * Dispatches an Event at the specified EventTarget, invoking the affected
