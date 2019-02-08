@@ -1895,15 +1895,15 @@ abstract class SVGTextContentElement
 
   def getExtentOfChar(charnum: Int): SVGRect = js.native
 
-  def getComputedTextLength(): Int = js.native
+  def getComputedTextLength(): Double = js.native
 
-  def getSubStringLength(charnum: Int, nchars: Int): Int = js.native
+  def getSubStringLength(charnum: Int, nchars: Int): Double = js.native
 
   def selectSubString(charnum: Int, nchars: Int): Unit = js.native
 
   def getNumberOfChars(): Int = js.native
 
-  def getRotationOfChar(charnum: Int): Int = js.native
+  def getRotationOfChar(charnum: Int): Double = js.native
 
   def getEndPositionOfChar(charnum: Int): SVGPoint = js.native
 }
