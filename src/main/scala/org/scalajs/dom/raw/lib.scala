@@ -818,6 +818,15 @@ abstract class Element
   def insertAdjacentHTML(where: String, html: String): Unit = js.native
 
   /**
+   * The `matches()` method of the `Element` interface returns `true` if the
+   * element would be selected by the specified selector string; otherwise, it
+   * returns `false`.
+   *
+   * MDN
+   */
+  def matches(selector: String): Boolean = js.native
+
+  /**
    * getAttribute() returns the value of the named attribute on the specified element.
    * If the named attribute does not exist, the value returned will either be null or ""
    * (the empty string); see Notes for details.
