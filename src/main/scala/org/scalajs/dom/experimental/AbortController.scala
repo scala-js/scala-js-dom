@@ -48,7 +48,7 @@ trait AbortSignal extends EventTarget {
    *
    * MDN
    */
-  val aborted: Boolean = js.native
+  def aborted: Boolean = js.native
 
   /**
    * Invoked when an abort event fires, i.e. when the DOM request(s) the signal

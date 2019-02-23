@@ -69,9 +69,9 @@ class Request(input: RequestInfo, init: RequestInit = null) extends js.Object {
 
   def integrity: String = js.native //should be DOMString
 
-  val keepalive: Boolean = js.native
+  def keepalive: Boolean = js.native
 
-  val signal: js.UndefOr[AbortSignal] = js.native
+  def signal: AbortSignal = js.native
 }
 
 object RequestInit {
@@ -92,6 +92,7 @@ object RequestInit {
    * //todo: it would help a lot if there were a way to make this fully type safe
    */
   @inline
+  @deprecated("use `new RequestInit {}` instead", "0.9.7")
   def apply(method: js.UndefOr[HttpMethod] = js.undefined,
       headers: js.UndefOr[HeadersInit] = js.undefined,
       body: js.UndefOr[BodyInit] = js.undefined,
@@ -99,12 +100,10 @@ object RequestInit {
       referrerPolicy: js.UndefOr[ReferrerPolicy] = js.undefined,
       mode: js.UndefOr[RequestMode] = js.undefined,
       credentials: js.UndefOr[RequestCredentials] = js.undefined,
-      cache: js.UndefOr[RequestCache] = js.undefined,
-      redirect: js.UndefOr[RequestRedirect] = js.undefined,
+      requestCache: js.UndefOr[RequestCache] = js.undefined,
+      requestRedirect: js.UndefOr[RequestRedirect] = js.undefined,
       integrity: js.UndefOr[String] = js.undefined, //see [[https://w3c
       // .github.io/webappsec-subresource-integrity/ integrity spec]]
-      keepalive: js.UndefOr[Boolean] = js.undefined,
-      signal: js.UndefOr[AbortSignal] = js.undefined,
       window: js.UndefOr[Null] = js.undefined): RequestInit = {
     val result = js.Dynamic.literal()
 
@@ -120,11 +119,9 @@ object RequestInit {
     set("referrerPolicy", referrerPolicy)
     set("mode", mode)
     set("credentials", credentials)
-    set("cache", cache)
-    set("redirect", redirect)
+    set("cache", requestCache)
+    set("redirect", requestRedirect)
     set("integrity", integrity)
-    set("keepalive", keepalive)
-    set("signal", signal)
     set("window", window)
 
     result.asInstanceOf[RequestInit]
