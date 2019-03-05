@@ -86,7 +86,7 @@ trait PushSubscription extends js.Object {
    *
    * MDN
    */
-  val expirationTime: Double = js.native
+  val expirationTime: java.lang.Double = js.native
 
   /**
    * The options read-only property of the PushSubscription interface is an object containing
@@ -115,7 +115,39 @@ trait PushSubscription extends js.Object {
    *
    * MDN
    */
-  def toJSON(): js.Dictionary[js.Any] = js.native
+  def toJSON(): PushSubscriptionJSON = js.native
+}
+
+/**
+ * A PushSubscriptionJSON dictionary represents the JSON type of a PushSubscription. In ECMAScript this can
+ * be converted into a JSON string through the JSON.stringify function.
+ *
+ * MDN
+ */
+@js.native
+trait PushSubscriptionJSON extends js.Object {
+
+  /**
+   * The endpoint contains the underlying value of the endpoint attribute.
+   *
+   * MDN
+   */
+  val endpoint: String = js.native
+
+  /**
+   * The endpoint contains the underlying value of the endpoint attribute.
+   *
+   * MDN
+   */
+  val expirationTime: java.lang.Double = js.native
+
+  /**
+   * The keys record contains an entry for each of the supported PushEncryptionKeyName entries to the URL-safe
+   * base64 encoded representation [RFC4648] of its value.
+   *
+   * MDN
+   */
+  val keys: js.Dictionary[String] = js.native
 }
 
 /**
