@@ -14,7 +14,7 @@ import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
  *
  * MDN
  *
- * The Push API is currently specified here: [[http://www.w3.org/TR/2015/WD-push-api-20151215/]]
+ * The Push API is currently specified here: [[https://www.w3.org/TR/2018/WD-push-api-20181026/]]
  */
 @js.native
 trait PushManager extends js.Object {
@@ -80,6 +80,23 @@ trait PushSubscription extends js.Object {
   val endpoint: String = js.native
 
   /**
+   * The expirationTime read-only property of the PushSubscription interface returns a
+   * DOMHighResTimeStamp of the subscription expiration time associated with the push
+   * subscription, if there is one, or null otherwise.
+   *
+   * MDN
+   */
+  val expirationTime: java.lang.Double = js.native
+
+  /**
+   * The options read-only property of the PushSubscription interface is an object containing
+   * containing the options used to create the subscription.
+   *
+   * MDN
+   */
+  val options: PushSubscriptionOptions = js.native
+
+  /**
    * The getKey method retrieves keying material that can be used for encrypting and authenticating messages.
    */
   def getKey(name: PushEncryptionKeyName): ArrayBuffer = js.native
@@ -98,7 +115,39 @@ trait PushSubscription extends js.Object {
    *
    * MDN
    */
-  def toJSON(): String = js.native
+  def toJSON(): PushSubscriptionJSON = js.native
+}
+
+/**
+ * A PushSubscriptionJSON dictionary represents the JSON type of a PushSubscription. In ECMAScript this can
+ * be converted into a JSON string through the JSON.stringify function.
+ *
+ * MDN
+ */
+@js.native
+trait PushSubscriptionJSON extends js.Object {
+
+  /**
+   * The endpoint contains the underlying value of the endpoint attribute.
+   *
+   * MDN
+   */
+  val endpoint: String = js.native
+
+  /**
+   * The endpoint contains the underlying value of the endpoint attribute.
+   *
+   * MDN
+   */
+  val expirationTime: java.lang.Double = js.native
+
+  /**
+   * The keys record contains an entry for each of the supported PushEncryptionKeyName entries to the URL-safe
+   * base64 encoded representation [RFC4648] of its value.
+   *
+   * MDN
+   */
+  val keys: js.Dictionary[String] = js.native
 }
 
 /**
