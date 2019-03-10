@@ -17,6 +17,5 @@ object idb {
   type OpenDBRequest = raw.IDBOpenDBRequest
   type Request = raw.IDBRequest
   type Transaction = raw.IDBTransaction
-  @inline def Transaction = raw.IDBTransaction
   type VersionChangeEvent = raw.IDBVersionChangeEvent
 }

@@ -9,6 +9,8 @@
  */
 package org.scalajs.dom.raw
 
+import org.scalajs.dom.ext.IDBTransactionModes.IDBTransactionMode
+
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
@@ -533,34 +535,6 @@ class IDBTransaction extends EventTarget {
   def objectStore(name: String): IDBObjectStore = js.native
 }
 
-@js.native
-@JSGlobal
-object IDBTransaction extends js.Object {
-
-  /**
-   * Allows data to be read but not changed.
-   *
-   * MDN
-   */
-  val READ_ONLY: String = js.native
-
-  /**
-   * Allows any operation to be performed, including ones that delete and create object
-   * stores and indexes. This mode is for updating the version number of transactions
-   * that were started using the setVersion() method of IDBDatabase objects.
-   * Transactions of this mode cannot run concurrently with other transactions.
-   *
-   * MDN
-   */
-  val VERSION_CHANGE: String = js.native
-
-  /**
-   * Allows reading and writing of data in existing data stores to be changed.
-   *
-   * MDN
-   */
-  val READ_WRITE: String = js.native
-}
 
 /**
  * The IDBDatabase interface of the IndexedDB API provides asynchronous access
@@ -648,7 +622,7 @@ class IDBDatabase extends EventTarget {
    * MDN
    */
   def transaction(storeNames: js.Any,
-      mode: String = js.native): IDBTransaction = js.native
+      mode: IDBTransactionMode = js.native): IDBTransaction = js.native
 
   /**
    * As with createObjectStore, this method can be called only within a versionchange

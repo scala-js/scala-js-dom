@@ -412,3 +412,39 @@ object TouchEvents {
   implicit def WindowToTouchEvents(window: raw.Window): TouchEvents =
     window.asInstanceOf[TouchEvents]
 }
+
+/**
+ * Provides constants for IDB Transaction modes
+ * These constants have been removed from browser support
+ * and replaced by String values
+ */
+object IDBTransactionModes {
+
+  type IDBTransactionMode = String
+
+  /**
+    * Allows data to be read but not changed.
+    * It is the default transaction mode.
+    *
+    * MDN
+    */
+  val READ_ONLY: IDBTransactionMode = "readonly"
+
+  /**
+    * Allows any operation to be performed, including ones that delete and create object
+    * stores and indexes. This mode is for updating the version number of transactions
+    * that were started using the setVersion() method of IDBDatabase objects.
+    * Transactions of this mode cannot run concurrently with other transactions.
+    *
+    * MDN
+    */
+  val VERSION_CHANGE: IDBTransactionMode = "versionchange"
+
+  /**
+    * Allows reading and writing of data in existing data stores to be changed.
+    *
+    * MDN
+    */
+  val READ_WRITE: IDBTransactionMode = "readwrite"
+
+}
