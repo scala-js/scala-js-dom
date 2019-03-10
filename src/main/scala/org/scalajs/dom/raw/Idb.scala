@@ -535,7 +535,6 @@ class IDBTransaction extends EventTarget {
   def objectStore(name: String): IDBObjectStore = js.native
 }
 
-
 /**
  * The IDBDatabase interface of the IndexedDB API provides asynchronous access
  * to a connection to a database. Use it to create, manipulate, and delete

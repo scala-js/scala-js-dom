@@ -2,16 +2,19 @@ package org.scalajs.dom.ext
 
 import java.nio.ByteBuffer
 
-import scala.language.implicitConversions
-import scala.concurrent.{Promise, Future}
+import org.scalajs.dom
+import org.scalajs.dom.FormData
+import org.scalajs.dom.html
+import org.scalajs.dom.raw
+import org.scalajs.dom.raw.Blob
+import org.scalajs.dom.raw.KeyboardEvent
 
+import scala.concurrent.Future
+import scala.concurrent.Promise
+import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.typedarray._
 import scala.scalajs.js.typedarray.TypedArrayBufferOps._
-
-import org.scalajs.dom
-import org.scalajs.dom.{FormData, html, raw}
-import org.scalajs.dom.raw.{Blob, KeyboardEvent}
 
 /**
  * Used to extend out javascript *Collections to make them usable as normal
@@ -76,16 +79,7 @@ object Color {
   val Magenta = Color(255, 0, 255)
   val Yellow = Color(255, 255, 0)
   val Black = Color(0, 0, 0)
-  val all = Seq(
-      White,
-      Red,
-      Green,
-      Blue,
-      Cyan,
-      Magenta,
-      Yellow,
-      Black
-  )
+  val all = Seq(White, Red, Green, Blue, Cyan, Magenta, Yellow, Black)
 }
 
 object Image {
@@ -423,28 +417,28 @@ object IDBTransactionModes {
   type IDBTransactionMode = String
 
   /**
-    * Allows data to be read but not changed.
-    * It is the default transaction mode.
-    *
-    * MDN
-    */
+   * Allows data to be read but not changed.
+   * It is the default transaction mode.
+   *
+   * MDN
+   */
   val READ_ONLY: IDBTransactionMode = "readonly"
 
   /**
-    * Allows any operation to be performed, including ones that delete and create object
-    * stores and indexes. This mode is for updating the version number of transactions
-    * that were started using the setVersion() method of IDBDatabase objects.
-    * Transactions of this mode cannot run concurrently with other transactions.
-    *
-    * MDN
-    */
+   * Allows any operation to be performed, including ones that delete and create object
+   * stores and indexes. This mode is for updating the version number of transactions
+   * that were started using the setVersion() method of IDBDatabase objects.
+   * Transactions of this mode cannot run concurrently with other transactions.
+   *
+   * MDN
+   */
   val VERSION_CHANGE: IDBTransactionMode = "versionchange"
 
   /**
-    * Allows reading and writing of data in existing data stores to be changed.
-    *
-    * MDN
-    */
+   * Allows reading and writing of data in existing data stores to be changed.
+   *
+   * MDN
+   */
   val READ_WRITE: IDBTransactionMode = "readwrite"
 
 }
