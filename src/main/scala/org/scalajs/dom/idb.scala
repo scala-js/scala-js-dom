@@ -5,7 +5,7 @@ package org.scalajs.dom
  */
 object idb {
   type Cursor = IDBCursor
-  @inline def Cursor = IDBCursor
+  @inline def CursorDirection = raw.IDBCursorDirection
   type CursorWithValue = IDBCursorWithValue
   type Database = IDBDatabase
   type Factory = IDBFactory
@@ -16,7 +16,7 @@ object idb {
   type OpenDBRequest = IDBOpenDBRequest
   type Request = IDBRequest
   type Transaction = IDBTransaction
-  @inline def Transaction = IDBTransaction
+  @inline def TransactionMode = raw.IDBTransactionMode
   type VersionChangeEvent = IDBVersionChangeEvent
   @deprecated(
       "Removed. This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible. See https://developer.mozilla.org/en-US/docs/Web/API/IDBEnvironment",
