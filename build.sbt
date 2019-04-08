@@ -6,15 +6,24 @@ lazy val root = project.in(file(".")).
 name := "Scala.js DOM"
 
 crossScalaVersions in ThisBuild := {
-  if (scalaJSVersion.startsWith("1.")) Seq("2.12.6", "2.11.12", "2.13.0-M3")
-  else Seq("2.12.6", "2.11.12", "2.10.7", "2.13.0-M3", "2.13.0-M4")
+  if (scalaJSVersion.startsWith("1.")) Seq("2.12.8", "2.11.12", "2.13.0-RC1")
+  else Seq("2.12.8", "2.11.12", "2.10.7", "2.13.0-RC1")
 }
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
 val commonSettings = Seq(
   version := "0.9.7-SNAPSHOT",
   organization := "org.scala-js",
-  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
+  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
+
+  // Work around https://github.com/scala-js/scala-js/issues/3612
+  scalacOptions in (Compile, doc) := {
+    val prev = (scalacOptions in (Compile, doc)).value
+    if (scalaJSVersion.startsWith("0.6.") && scalaVersion.value.startsWith("2.13."))
+      prev.filter(_ != "-Xfatal-warnings")
+    else
+      prev
+  }
 )
 
 normalizedName := "scalajs-dom"
@@ -38,8 +47,7 @@ scalacOptions ++= {
 def hasNewCollections(version: String): Boolean = {
   !version.startsWith("2.10.") &&
   !version.startsWith("2.11.") &&
-  !version.startsWith("2.12.") &&
-  version != "2.13.0-M3"
+  !version.startsWith("2.12.")
 }
 
 /** Returns the appropriate subdirectory of `sourceDir` depending on whether

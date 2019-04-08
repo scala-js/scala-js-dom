@@ -3,24 +3,21 @@ language: scala
 script:
   - sbt ++$TRAVIS_SCALA_VERSION package doc example/compile
   - sbt scalafmtTest
-  - sbt ++2.11.11 readme/run
+  - sbt ++2.11.12 readme/run
 scala:
   - 2.10.7
   - 2.11.12
-  - 2.12.6
-  - 2.13.0-M3
-  - 2.13.0-M4
+  - 2.12.8
+  - 2.13.0-RC1
 jdk:
   - oraclejdk8
 env:
-  - SCALAJS_VERSION=0.6.23
-  - SCALAJS_VERSION=1.0.0-M3
+  - SCALAJS_VERSION=0.6.27
+  - SCALAJS_VERSION=1.0.0-M7
 matrix:
   exclude:
     - scala: 2.10.7
-      env: SCALAJS_VERSION=1.0.0-M3
-    - scala: 2.13.0-M4
-      env: SCALAJS_VERSION=1.0.0-M3
+      env: SCALAJS_VERSION=1.0.0-M7
 
 cache:
   directories:

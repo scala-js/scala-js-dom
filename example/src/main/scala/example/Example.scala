@@ -5,7 +5,7 @@ import scala.scalajs.js.annotation._
 import org.scalajs.dom
 import dom.html
 
-@JSExportTopLevel("example.Alert")
+@JSExportTopLevel("ExampleAlert")
 object Alert {
   @JSExport
   def main() = {
@@ -14,7 +14,7 @@ object Alert {
   }
 }
 
-@JSExportTopLevel("example.NodeAppendChild")
+@JSExportTopLevel("ExampleNodeAppendChild")
 object NodeAppendChild {
   @JSExport
   def main(div: html.Div) = {
@@ -28,7 +28,7 @@ object NodeAppendChild {
   }
 }
 
-@JSExportTopLevel("example.ElementStyle")
+@JSExportTopLevel("ExampleElementStyle")
 object ElementStyle {
   @JSExport
   def main(div: html.Div) = {
@@ -43,7 +43,7 @@ object ElementStyle {
   }
 }
 
-@JSExportTopLevel("example.LocalStorage")
+@JSExportTopLevel("ExampleLocalStorage")
 object LocalStorage {
   @JSExport
   def main(in: html.Input, box: html.Div) = {
@@ -62,7 +62,7 @@ object LocalStorage {
   }
 }
 
-@JSExportTopLevel("example.Canvas")
+@JSExportTopLevel("ExampleCanvas")
 object Canvas {
   @JSExport
   def main(c: html.Canvas) = {
@@ -88,7 +88,7 @@ object Canvas {
   }
 }
 
-@JSExportTopLevel("example.Base64")
+@JSExportTopLevel("ExampleBase64")
 object Base64 {
   @JSExport
   def main(in: html.Input,
@@ -100,7 +100,7 @@ object Base64 {
   }
 }
 
-@JSExportTopLevel("example.EventHandler")
+@JSExportTopLevel("ExampleEventHandler")
 object EventHandler{
   @JSExport
   def main(pre: html.Pre) = {
@@ -118,7 +118,7 @@ object EventHandler{
   }
 }
 
-@JSExportTopLevel("example.XMLHttpRequest")
+@JSExportTopLevel("ExampleXMLHttpRequest")
 object XMLHttpRequest{
   @JSExport
   def main(pre: html.Pre) = {
@@ -137,7 +137,7 @@ object XMLHttpRequest{
   }
 }
 
-@JSExportTopLevel("example.Websocket")
+@JSExportTopLevel("ExampleWebsocket")
 object Websocket {
   @JSExport
   def main(in: html.Input,
@@ -157,7 +157,7 @@ object Websocket {
   }
 }
 
-@JSExportTopLevel("example.AjaxExtension")
+@JSExportTopLevel("ExampleAjaxExtension")
 object AjaxExtension {
   @JSExport
   def main(pre: html.Pre) = {
