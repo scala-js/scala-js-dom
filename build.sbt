@@ -111,7 +111,7 @@ lazy val readme = ScalatexReadme(
   source = "Index",
   autoResources = Seq("example-opt.js")
 ).settings(
-  scalaVersion := "2.11.12",
+  scalaVersion := "2.12.8",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
   (resources in Compile) += (fullOptJS in (example, Compile)).value.data
 )
