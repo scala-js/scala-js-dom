@@ -195,6 +195,7 @@ object DateTimeFormatOptions {
       second: js.UndefOr[String] = js.undefined,
       timeZoneName: js.UndefOr[String] = js.undefined
   ): DateTimeFormatOptions = {
+    // format: off
     js.Dynamic
       .literal(
           localeMatcher = localeMatcher,
@@ -212,6 +213,7 @@ object DateTimeFormatOptions {
           timeZoneName = timeZoneName
       )
       .asInstanceOf[DateTimeFormatOptions]
+    // format: on
   }
 }
 

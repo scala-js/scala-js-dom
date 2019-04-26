@@ -17,7 +17,7 @@
   div(
     div(width:="50%", float.left)(
       hl.ref(
-        cwd/'example/'src/'main/'scala/'example/"Example.scala",
+        pwd/'example/'src/'main/'scala/'example/"Example.scala",
         Seq(s"object $example", "main")
       )
     ),

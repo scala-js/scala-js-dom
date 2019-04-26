@@ -105,13 +105,14 @@ pomExtra := (
 pomIncludeRepository := { _ => false }
 
 lazy val readme = ScalatexReadme(
-  folder = "readme",
+  projectId = "readme",
+  wd = file(""),
   url = "https://github.com/scala-js/scala-js-dom/tree/master",
   source = "Index",
-  targetFolder = "target/site",
   autoResources = Seq("example-opt.js")
 ).settings(
-  scalaVersion := "2.11.12",
+  scalaVersion := "2.12.8",
+  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
   (resources in Compile) += (fullOptJS in (example, Compile)).value.data
 )
 
