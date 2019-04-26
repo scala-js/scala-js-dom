@@ -2,7 +2,7 @@ sudo: false
 language: scala
 script:
   - sbt ++$TRAVIS_SCALA_VERSION package doc example/compile
-  - sbt scalafmtCheck
+  - sbt ++$TRAVIS_SCALA_VERSION scalafmtCheck
 scala:
   - 2.10.7
   - 2.11.12
