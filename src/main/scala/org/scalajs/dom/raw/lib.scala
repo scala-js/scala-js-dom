@@ -7437,6 +7437,16 @@ trait Console extends js.Object {
   def dir(value: js.Any, optionalParams: js.Any*): Unit = js.native
 
   /**
+   * Displays an interactive tree of the descendant elements of the specified XML/HTML element.
+   * If it is not possible to display as an element the JavaScript Object view is shown instead.
+   * The output is presented as a hierarchical listing of expandable nodes that let you see the
+   * contents of child nodes.
+   *
+   * MDN
+   */
+  def dirxml(value: js.Any): Unit = js.native
+
+  /**
    * Outputs a warning message. You may use string substitution and additional
    * arguments with this method. See Using string substitutions.
    *
@@ -7460,7 +7470,100 @@ trait Console extends js.Object {
    */
   def log(message: js.Any, optionalParams: js.Any*): Unit = js.native
 
+  /**
+   * Outputs a debug message. You may use string substitution and additional
+   * arguments with this method. See Using string substitutions.
+   *
+   * MDN
+   */
+  def debug(message: js.Any, optionalParams: js.Any*): Unit = js.native
+
+  /**
+   * Displays tabular data as a table.
+   *
+   * This function takes one mandatory argument data, which must be an array or an object,
+   * and one additional optional parameter columns.
+   *
+   * It logs data as a table. Each element in the array (or enumerable property if data
+   * is an object) will be a row in the table.
+   *
+   * The first column in the table will be labeled (index). If data is an array,
+   * then its values will be the array indices. If data is an object, then its values
+   * will be the property names. Note that (in Firefox) console.table is limited to
+   * displaying 1000 rows (first row is the labeled index).
+   *
+   * MDN
+   */
+  def table(data: js.Object | js.Array[_],
+      columns: js.UndefOr[Int] = js.undefined): Unit = js.native
+
+  /**
+   * Outputs a stack trace to the Web Console.
+   *
+   * MDN
+   */
+  def trace(): Unit = js.native
+
   def profileEnd(): Unit = js.native
+
+  /**
+   * Starts a timer you can use to track how long an operation takes.
+   * You give each timer a unique name, and may have up to 10,000 timers running on a given page.
+   * When you call console.timeEnd() with the same name, the browser will output the time,
+   * in milliseconds, that elapsed since the timer was started.
+   *
+   * MDN
+   */
+  def time(label: String): Unit = js.native
+
+  /**
+   * Stops a timer that was previously started by calling console.time().
+   *
+   * MDN
+   */
+  def timeEnd(label: String): Unit = js.native
+
+  /**
+   * Logs the number of times that this particular call to count() has been called.
+   * This function takes an optional argument label.
+   *
+   * MDN
+   */
+  def count(label: String = "default"): Unit = js.native
+
+  /**
+   * Resets the counter. This function takes an optional argument label.
+   *
+   * MDN
+   */
+  def countReset(label: String = "default"): Unit = js.native
+
+  /**
+   * Creates a new inline group in the Web Console log. This indents following
+   * console messages by an additional level, until console.groupEnd() is called.
+   *
+   * MDN
+   */
+  def group(label: js.UndefOr[String] = js.undefined): Unit = js.native
+
+  /**
+   * Creates a new inline group in the Web Console. Unlike console.group(), however,
+   * the new group is created collapsed. The user will need to use the disclosure
+   * button next to it to expand it, revealing the entries created in the group.
+   *
+   * Call console.groupEnd() to back out to the parent group.
+   *
+   * MDN
+   */
+  def groupCollapsed(
+      label: js.UndefOr[String] = js.undefined): Unit = js.native
+
+  /**
+   * Exits the current inline group in the Web Console.
+   *
+   * MDN
+   */
+  def groupEnd(): Unit = js.native
 }
 
 @js.native
