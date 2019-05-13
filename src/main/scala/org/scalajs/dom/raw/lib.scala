@@ -7441,12 +7441,12 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def info(message: js.Any, optionalParams: js.Any*): Unit = js.native
+  def info(message: Any, optionalParams: Any*): Unit = js.native
 
   def profile(reportName: String = js.native): Unit = js.native
 
   def assert(test: Boolean, message: String,
-      optionalParams: js.Any*): Unit = js.native
+      optionalParams: Any*): Unit = js.native
 
   def clear(): Unit = js.native
 
@@ -7457,7 +7457,7 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def dir(value: js.Any, optionalParams: js.Any*): Unit = js.native
+  def dir(value: Any, optionalParams: Any*): Unit = js.native
 
   /**
    * Displays an interactive tree of the descendant elements of the specified XML/HTML element.
@@ -7467,7 +7467,7 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def dirxml(value: js.Any): Unit = js.native
+  def dirxml(value: Any): Unit = js.native
 
   /**
    * Outputs a warning message. You may use string substitution and additional
@@ -7475,7 +7475,7 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def warn(message: js.Any, optionalParams: js.Any*): Unit = js.native
+  def warn(message: Any, optionalParams: Any*): Unit = js.native
 
   /**
    * Outputs an error message. You may use string substitution and additional
@@ -7483,7 +7483,7 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def error(message: js.Any, optionalParams: js.Any*): Unit = js.native
+  def error(message: Any, optionalParams: Any*): Unit = js.native
 
   /**
    * For general output of logging information. You may use string substitution and
@@ -7491,7 +7491,7 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def log(message: js.Any, optionalParams: js.Any*): Unit = js.native
+  def log(message: Any, optionalParams: Any*): Unit = js.native
 
   /**
    * Outputs a debug message. You may use string substitution and additional
@@ -7499,7 +7499,7 @@ trait Console extends js.Object {
    *
    * MDN
    */
-  def debug(message: js.Any, optionalParams: js.Any*): Unit = js.native
+  def debug(message: Any, optionalParams: Any*): Unit = js.native
 
   /**
    * Displays tabular data as a table.
