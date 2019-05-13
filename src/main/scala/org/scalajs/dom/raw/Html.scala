@@ -3188,6 +3188,11 @@ abstract class HTMLMediaElement extends HTMLElement {
    * MDN
    */
   def audioTracks: AudioTrackList = js.native
+
+  /**
+   * Sets or returns the object which serves as the source of the media associated with the HTMLMediaElement.
+   */
+  var srcObject: org.scalajs.dom.experimental.mediastream.MediaStream
 }
 
 @js.native
