@@ -276,7 +276,7 @@ object Ajax {
       } else {
         // fall back to copying the data
         val tempBuffer = ByteBuffer.allocateDirect(data.remaining)
-        val origPosition = data.position
+        val origPosition = data.position()
         tempBuffer.put(data)
         data.position(origPosition)
         tempBuffer.typedArray()
