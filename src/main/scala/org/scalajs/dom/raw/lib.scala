@@ -2588,6 +2588,29 @@ class Window
   var onpopstate: js.Function1[PopStateEvent, _] = js.native
 
   /**
+   * An event handler property for pagehide events, which are fired when the browser hides
+   * the current page in the process of presenting a different page from the session's history.
+   *
+   * For example, when the user clicks the browser's Back button, the current page receives a
+   * pagehide event before the previous page is shown.
+   *
+   * MDN
+   */
+  var onpagehide: js.Function1[PageTransitionEvent, _] = js.native
+
+  /**
+   * An event handler property for pageshow events, which are fired when the browser makes the
+   * window's document visible due to navigation tasks. This includes the process of initially
+   * loading the page, navigating to the page from another page within the same window or tab,
+   * or returning to the page using the browser's forward or back buttons.
+   *
+   * When this event is sent during the page load process, it's sent after the load event.
+   *
+   * MDN
+   */
+  var onpageshow: js.Function1[PageTransitionEvent, _] = js.native
+
+  /**
    * Returns a new MediaQueryList object representing the parsed results of the
    * specified media query string.
    *
@@ -7803,6 +7826,24 @@ trait PopStateEvent extends Event {
   @deprecated("Non-standard", "forever")
   def initPopStateEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, stateArg: js.Any): Unit = js.native
+}
+
+/**
+ * The PageTransitionEvent is fired when a document is being loaded or unloaded.
+ *
+ * This interface also inherits properties from its parent, Event.
+ *
+ * MDN
+ */
+@js.native
+trait PageTransitionEvent extends Event {
+
+  /**
+   * Indicates if the document is loading from a cache.
+   *
+   * MDN
+   */
+  def persisted: Boolean = js.native
 }
 
 @js.native
