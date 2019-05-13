@@ -858,6 +858,9 @@ abstract class HTMLTableElement extends HTMLElement {
  */
 @js.native
 @JSGlobal
+@deprecated(
+    "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableDataCellElement",
+    "0.9.8")
 abstract class HTMLTableDataCellElement extends HTMLTableCellElement
 
 /**
@@ -918,6 +921,7 @@ abstract class HTMLParagraphElement extends HTMLElement {
 }
 
 @js.native
+@deprecated("Non-standard", "0.9.8")
 trait HTMLAreasCollection extends HTMLCollection {
   def remove(index: Int = js.native): Unit = js.native
 
@@ -1126,6 +1130,7 @@ abstract class HTMLSelectElement extends HTMLElement {
 }
 
 @js.native
+@deprecated("Non-standard.", "0.9.8")
 trait HTMLBlockElement extends HTMLElement {
   var width: Double = js.native
   var cite: String = js.native
@@ -1176,6 +1181,7 @@ abstract class HTMLMetaElement extends HTMLElement {
 
 @js.native
 @JSGlobal
+@deprecated("Non-standard.", "0.9.8")
 abstract class HTMLDDElement extends HTMLElement {
   var noWrap: Boolean = js.native
 }
@@ -1381,6 +1387,7 @@ abstract class HTMLMapElement extends HTMLElement {
    *
    * MDN
    */
+  @deprecated("Non-standard", "0.9.8")
   def areas: HTMLAreasCollection = js.native
 }
 
@@ -2024,6 +2031,9 @@ abstract class HTMLQuoteElement extends HTMLElement {
  */
 @js.native
 @JSGlobal
+@deprecated(
+    "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableHeaderCellElement",
+    "0.9.8")
 abstract class HTMLTableHeaderCellElement extends HTMLTableCellElement
 
 /**
@@ -3002,6 +3012,7 @@ abstract class HTMLPreElement extends HTMLElement {
 
 @js.native
 @JSGlobal
+@deprecated("Non-standard.", "0.9.8")
 abstract class HTMLPhraseElement extends HTMLElement {
   var dateTime: String = js.native
 }
@@ -3850,6 +3861,7 @@ object HTMLMediaElement extends js.Object {
 
 @js.native
 @JSGlobal
+@deprecated("Non-standard.", "0.9.8")
 abstract class HTMLDTElement extends HTMLElement {
   var noWrap: Boolean = js.native
 }
