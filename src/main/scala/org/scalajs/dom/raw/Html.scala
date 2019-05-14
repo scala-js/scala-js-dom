@@ -11,6 +11,8 @@ package org.scalajs.dom.raw
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
+import org.scalajs.dom
 
 @js.native
 @JSGlobal
@@ -3192,7 +3194,8 @@ abstract class HTMLMediaElement extends HTMLElement {
   /**
    * Sets or returns the object which serves as the source of the media associated with the HTMLMediaElement.
    */
-  var srcObject: org.scalajs.dom.experimental.mediastream.MediaStream
+  var srcObject: js.UndefOr[
+      dom.experimental.mediastream.MediaStream | dom.experimental.mediastream.MediaSource | Blob]
 }
 
 @js.native
