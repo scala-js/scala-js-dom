@@ -9,12 +9,14 @@ object html {
   type Applet = raw.HTMLAppletElement
   type Audio = raw.HTMLAudioElement
   type Area = raw.HTMLAreaElement
+  @deprecated("Non-standard", "0.9.8")
   type AreasCollection = raw.HTMLAreasCollection
   type Base = raw.HTMLBaseElement
   @deprecated("Obsolete.", "DOM Level 2")
   type BaseFont = raw.HTMLBaseFontElement
   @deprecated("Non standard.", "forever")
   type BGSound = raw.HTMLBGSoundElement
+  @deprecated("Non-standard", "0.9.8")
   type BlockElement = raw.HTMLBlockElement
   type Body = raw.HTMLBodyElement
   type Button = raw.HTMLButtonElement
@@ -22,11 +24,13 @@ object html {
   type Canvas = raw.HTMLCanvasElement
   type Collection = raw.HTMLCollection
   type DataList = raw.HTMLDataListElement
+  @deprecated("Non-standard.", "0.9.8")
   type DD = raw.HTMLDDElement
   @deprecated("Obsolete.", "HTML 4")
   type Directory = raw.HTMLDirectoryElement
   type Div = raw.HTMLDivElement
   type DList = raw.HTMLDListElement
+  @deprecated("Non-standard.", "0.9.8")
   type DT = raw.HTMLDTElement
   type Document = raw.HTMLDocument
   type Element = raw.HTMLElement
@@ -69,6 +73,7 @@ object html {
   type Paragraph = raw.HTMLParagraphElement
   type Param = raw.HTMLParamElement
   type Pre = raw.HTMLPreElement
+  @deprecated("Non-standard", "0.9.8")
   type Phrase = raw.HTMLPhraseElement
   type Progress = raw.HTMLProgressElement
   type Quote = raw.HTMLQuoteElement
@@ -82,7 +87,13 @@ object html {
   type TableCaption = raw.HTMLTableCaptionElement
   type TableCell = raw.HTMLTableCellElement
   type TableCol = raw.HTMLTableColElement
+  @deprecated(
+      "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableDataCellElement",
+      "0.9.8")
   type TableDataCell = raw.HTMLTableDataCellElement
+  @deprecated(
+      "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableHeaderCellElement",
+      "0.9.8")
   type TableHeaderCell = raw.HTMLTableHeaderCellElement
   type TableRow = raw.HTMLTableRowElement
   type TableSection = raw.HTMLTableSectionElement
