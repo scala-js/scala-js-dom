@@ -1546,8 +1546,6 @@ abstract class HTMLImageElement extends HTMLElement {
    */
   def complete: Boolean = js.native
 
-  def create(): HTMLImageElement = js.native
-
   var onload: js.Function1[Event, _] = js.native
 }
 
