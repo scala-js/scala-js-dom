@@ -1068,7 +1068,7 @@ abstract class Node extends EventTarget {
    *
    * MDN
    */
-  def nodeValue: String = js.native
+  var nodeValue: String = js.native
 
   /**
    * Returns a Node representing the last direct child node of the node, or null if the
