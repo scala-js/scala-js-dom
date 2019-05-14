@@ -92,4 +92,52 @@ class URL(url: String, base: String = js.native) extends js.Object {
    * MDN
    */
   var hash: String = js.native
+
+  var searchParams: URLSearchParams = js.native
+}
+
+/**
+ * The URLSearchParams defines utility methods to work with the query string of a URL.
+ *
+ * MDN
+ */
+@js.native
+@JSGlobal
+class URLSearchParams
+    extends js.Iterable[js.Tuple2[String, String]] {
+
+  /**
+   * Leading '?' characters are ignored.
+   *
+   * MDN
+   */
+  def this(init: String) = this()
+  def this(init: Sequence[String]) = this()
+  def this(init: js.Dictionary[String]) = this()
+
+  def append(name: String, value: String): Unit = js.native
+
+  def delete(name: String): Unit = js.native
+
+  def get(name: String): js.UndefOr[String] = js.native
+
+  def getAll(name: String): Sequence[String] = js.native
+
+  def has(name: String): Boolean = js.native
+
+  def set(name: String, value: String): Unit = js.native
+
+  def sort(): Unit = js.native
+
+  @JSName(js.Symbol.iterator)
+  override def jsIterator(): js.Iterator[js.Tuple2[String, String]] = js.native
+
+  def entries(): js.Iterator[js.Tuple2[String, String]] = js.native
+
+  def keys(): js.Iterator[String] = js.native
+
+  def values(): js.Iterator[String] = js.native
+
+  def forEach(callback: js.Function2[String, String, Unit]): Unit = js.native
+
 }
