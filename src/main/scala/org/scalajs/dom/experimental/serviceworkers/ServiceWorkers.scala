@@ -80,11 +80,11 @@ trait Client extends js.Object {
 trait CanvasProxy extends js.Any {
   def setContext(context: RenderingContext): Unit = js.native
 }
+
 trait FetchEventInit extends EventInit {
   var isReload: js.UndefOr[Boolean] = js.undefined
   var request: js.UndefOr[Request] = js.undefined
   var clientId: js.UndefOr[String] = js.undefined
-
 }
 
 /**
@@ -400,6 +400,7 @@ trait ServiceWorkerContainer extends EventTarget {
    */
   var onmessage: js.Function1[MessageEvent, _] = js.native
 }
+
 trait ExtendableEventInit extends EventInit {}
 
 /**
