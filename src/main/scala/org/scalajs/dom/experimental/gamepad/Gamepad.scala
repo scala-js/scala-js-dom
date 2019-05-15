@@ -65,8 +65,8 @@ trait Gamepad extends js.Any {
   val mapping: GamepadMappingType
 }
 
-trait GamepadEventInit extends js.Any {
-  val gamepad: Gamepad
+trait GamepadEventInit extends dom.raw.EventInit {
+  var gamepad: js.UndefOr[Gamepad]
 }
 
 object GamepadEventInit {
@@ -76,7 +76,9 @@ object GamepadEventInit {
 
 @JSGlobal("GamepadEvent")
 @js.native
-class GamepadEvent(init: GamepadEventInit) extends dom.Event {
+class GamepadEvent(typeArg: String,
+    init: js.UndefOr[GamepadEventInit] = js.undefined)
+    extends dom.Event(typeArg, init) {
   val gamepad: Gamepad = js.native
 }
 

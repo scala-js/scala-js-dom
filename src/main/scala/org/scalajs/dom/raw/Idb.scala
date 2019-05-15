@@ -122,6 +122,11 @@ class IDBObjectStore extends js.Object {
   def delete(key: js.Any): IDBRequest = js.native
 }
 
+trait IDBVersionChangeEventInit extends EventInit {
+  var newVersion: js.UndefOr[Int] = js.undefined
+  var oldVersion: js.UndefOr[Int] = js.undefined
+}
+
 /**
  * The specification has changed and some not up-to-date browsers only support the
  * deprecated unique attribute, version, from an early draft version.
@@ -130,7 +135,9 @@ class IDBObjectStore extends js.Object {
  */
 @js.native
 @JSGlobal
-class IDBVersionChangeEvent extends Event {
+class IDBVersionChangeEvent(typeArg: String,
+    init: js.UndefOr[IDBVersionChangeEventInit])
+    extends Event(typeArg, init) {
 
   /**
    * Returns the new version of the database.

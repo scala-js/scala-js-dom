@@ -9,7 +9,8 @@ import org.scalajs.dom.experimental.{
 }
 import org.scalajs.dom.raw.{WorkerGlobalScope, ErrorEvent}
 import org.scalajs.dom.webgl.RenderingContext
-import org.scalajs.dom.{Event, EventTarget, MessagePort}
+import org.scalajs.dom.{Event, EventTarget, MessageEvent, MessagePort}
+import org.scalajs.dom.raw.EventInit
 
 @js.native
 sealed trait FrameType extends js.Any
@@ -79,6 +80,12 @@ trait Client extends js.Object {
 trait CanvasProxy extends js.Any {
   def setContext(context: RenderingContext): Unit = js.native
 }
+trait FetchEventInit extends EventInit {
+  var isReload: js.UndefOr[Boolean] = js.undefined
+  var request: js.UndefOr[Request] = js.undefined
+  var clientId: js.UndefOr[String] = js.undefined
+
+}
 
 /**
  * See [[https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent FetchEvent]] on MDN
@@ -88,7 +95,8 @@ trait CanvasProxy extends js.Any {
  */
 @js.native
 @JSGlobal
-class FetchEvent extends Event {
+class FetchEvent(typeArg: String, init: js.UndefOr[FetchEventInit])
+    extends Event(typeArg, init) {
 
   /**
    * Boolean that is true if the event was dispatched with the user's
@@ -102,6 +110,14 @@ class FetchEvent extends Event {
    * The Request that triggered the event handler.
    */
   def request: Request = js.native
+
+  def preloadResponse: js.Promise[Response] = js.native
+
+  def clientId: String = js.native
+
+  def replacesClientId: String = js.native
+
+  def resultingClientId: String = js.native
 
   /**
    * See [[https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith respondWith]]
@@ -382,8 +398,9 @@ trait ServiceWorkerContainer extends EventTarget {
    *
    * MDN
    */
-  var onmessage: js.Function1[ServiceWorkerMessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent, _] = js.native
 }
+trait ExtendableEventInit extends EventInit {}
 
 /**
  * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#extendable-event-interface ¶4.4 ExtendableEvent]]
@@ -394,21 +411,21 @@ trait ServiceWorkerContainer extends EventTarget {
  */
 @js.native
 @JSGlobal
-class ExtendableEvent extends Event {
+class ExtendableEvent(typeArg: String, init: js.UndefOr[ExtendableEventInit])
+    extends Event(typeArg, init) {
   def waitUntil(promise: js.Promise[Any]): Unit = js.native
 }
 
-@js.native
-trait ExtendableMessageEventInit extends js.Object {
-  var data: js.Any = js.native
+trait ExtendableMessageEventInit extends ExtendableEventInit {
+  var data: js.UndefOr[js.Any] = js.undefined
 
-  var origin: String = js.native
+  var origin: js.UndefOr[String] = js.undefined
 
-  var lastEventId: String = js.native
+  var lastEventId: js.UndefOr[String] = js.undefined
 
-  var source: Client | ServiceWorker | MessagePort = js.native
+  var source: js.UndefOr[Client | ServiceWorker | MessagePort] = js.undefined
 
-  var ports: js.Array[MessagePort] = js.native
+  var ports: js.UndefOr[js.Array[MessagePort]] = js.undefined
 }
 
 /**
@@ -419,14 +436,14 @@ trait ExtendableMessageEventInit extends js.Object {
  */
 @js.native
 @JSGlobal
-class ExtendableMessageEvent(`type`: String,
-    eventInitDict: ExtendableMessageEventInit)
-    extends ExtendableEvent {
+class ExtendableMessageEvent(typeArg: String,
+    init: js.UndefOr[ExtendableMessageEventInit])
+    extends ExtendableEvent(typeArg, init) {
 
   /**
    * Returns the event's data. It can be any data type.
    */
-  val data: Any = js.native
+  val data: js.Any = js.native
 
   /**
    * Returns the origin of the service worker's environment settings object.
@@ -449,17 +466,12 @@ class ExtendableMessageEvent(`type`: String,
   def ports: js.Array[MessagePort] = js.native
 }
 
-@js.native
-trait ServiceWorkerMessageEventInit extends js.Object {
-  var data: js.Any = js.native
-
-  var origin: String = js.native
-
-  var lastEventId: String = js.native
-
-  var source: ServiceWorker | MessagePort = js.native
-
-  var ports: js.Array[MessagePort] = js.native
+trait ServiceWorkerMessageEventInit extends EventInit {
+  var data: js.UndefOr[js.Any] = js.undefined
+  var origin: js.UndefOr[String] = js.undefined
+  var lastEventId: js.UndefOr[String] = js.undefined
+  var source: js.UndefOr[ServiceWorker | MessagePort] = js.undefined
+  var ports: js.UndefOr[js.Array[MessagePort]] = js.undefined
 }
 
 /**
@@ -474,9 +486,10 @@ trait ServiceWorkerMessageEventInit extends js.Object {
  */
 @js.native
 @JSGlobal
-class ServiceWorkerMessageEvent(`type`: String,
-    eventInitDict: ServiceWorkerMessageEventInit = js.native)
-    extends Event {
+@deprecated("Instead use MessageEvent", "0.9.8")
+class ServiceWorkerMessageEvent(typeArg: String,
+    init: js.UndefOr[ServiceWorkerMessageEventInit] = js.undefined)
+    extends Event(typeArg, init) {
 
   /**
    * Returns the event's data. It can be any data type.
@@ -780,7 +793,7 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
    *
    * MDN
    */
-  var onmessage: js.Function1[ServiceWorkerMessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent, _] = js.native
 
   /**
    * Forces the waiting service worker to become the active service worker.

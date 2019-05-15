@@ -9,7 +9,9 @@ import scala.scalajs.js.typedarray.{ArrayBufferView, ArrayBuffer}
 import scala.scalajs.js.|
 
 import org.scalajs.dom.Blob
-import org.scalajs.dom.raw.{DOMError, Event, EventTarget, MessageEvent}
+import org.scalajs.dom.raw.{
+  DOMError, Event, EventInit, EventTarget, MessageEvent
+}
 import org.scalajs.dom.experimental.mediastream._
 
 @js.native
@@ -498,8 +500,10 @@ trait RTCDataChannelInit extends js.Object {
  */
 @js.native
 @JSGlobal
-class RTCDataChannelEvent protected () extends Event {
-  def this(eventInitDict: RTCDataChannelEventInit) = this()
+class RTCDataChannelEvent(typeArg: String,
+    init: js.UndefOr[RTCDataChannelEventInit])
+    extends Event(typeArg, init) {
+  def this(init: RTCDataChannelEventInit) = this("datachannel", init)
 
   /**
    * Contains the RTCDataChannel containing the data channel associated with
@@ -510,9 +514,8 @@ class RTCDataChannelEvent protected () extends Event {
   val channel: RTCDataChannel = js.native
 }
 
-@js.native
-trait RTCDataChannelEventInit extends js.Object {
-  val channel: RTCDataChannel = js.native
+trait RTCDataChannelEventInit extends EventInit {
+  var channel: js.UndefOr[RTCDataChannel] = js.undefined
 }
 
 object RTCDataChannelInit {
@@ -635,8 +638,8 @@ trait RTCStatsReport extends js.Object {
 }
 
 @js.native
-trait RTCPeerConnectionIceEventInit extends js.Object {
-  var candidate: RTCIceCandidate = js.native
+trait RTCPeerConnectionIceEventInit extends EventInit {
+  var candidate: js.UndefOr[RTCIceCandidate] = js.undefined
 }
 
 object RTCPeerConnectionIceEventInit {
@@ -659,9 +662,9 @@ object RTCPeerConnectionIceEventInit {
  */
 @js.native
 @JSGlobal
-class RTCPeerConnectionIceEvent(`type`: String,
-    eventInitDict: RTCPeerConnectionIceEventInit)
-    extends Event {
+class RTCPeerConnectionIceEvent(typeArg: String,
+    init: js.UndefOr[RTCPeerConnectionIceEventInit])
+    extends Event(typeArg, init) {
 
   /**
    * Contains the RTCIceCandidate containing the candidate associated with
@@ -775,6 +778,10 @@ object RTCIceGatheringState {
   val complete = "complete".asInstanceOf[RTCIceGatheringState]
 }
 
+trait MediaStreamEventInit extends EventInit {
+  var stream: js.UndefOr[MediaStream] = js.undefined
+}
+
 /**
  * The MediaStreamEvent interface represents events that occurs in relation to a
  * MediaStream. Two events of this type can be thrown:
@@ -784,8 +791,9 @@ object RTCIceGatheringState {
  */
 @js.native
 @JSGlobal
-class MediaStreamEvent(`type`: String, ms: js.Dictionary[js.Any])
-    extends Event {
+@deprecated("Obsolte.", "0.9.8")
+class MediaStreamEvent(typeArg: String, init: js.UndefOr[MediaStreamEventInit])
+    extends Event(typeArg, init) {
   val stream: MediaStream = js.native
 }
 
@@ -917,16 +925,20 @@ class RTCPeerConnection(
    */
   def signalingState: RTCSignalingState = js.native
 
-  /**
-   * Is the event handler called when the addstream event is received. Such an
-   * event is sent when a MediaStream is added to this connection by the
-   * remote peer. The event is sent immediately after the call
-   * RTCPeerConnection.setRemoteDescription() and doesn't wait for the result
-   * of the SDP negotiation.
-   *
-   * MDN
-   */
-  var onaddstream: js.Function1[MediaStreamEvent, Any] = js.native
+//  /**
+//   * Is the event handler called when the addstream event is received. Such an
+//   * event is sent when a MediaStream is added to this connection by the
+//   * remote peer. The event is sent immediately after the call
+//   * RTCPeerConnection.setRemoteDescription() and doesn't wait for the result
+//   * of the SDP negotiation.
+//   *
+//   * MDN
+//   */
+// TODO: Delete or giving up fatal-warning?
+//  @deprecated("Deprecated in favor of ontrack", "0.9.8")
+//  var onaddstream: js.Function1[MediaStreamEvent, Any] = js.native
+
+  var ontrack: js.Function1[MediaStreamTrackEvent, Any] = js.native
 
   /**
    * Is the event handler called when the datachannel event is received. Such
@@ -997,13 +1009,16 @@ class RTCPeerConnection(
    */
   var onpeeridentity: js.Function1[Event, Any] = js.native
 
-  /**
-   * Is the event handler called when the removestream event, sent when a
-   * MediaStream is removed from this connection, is received.
-   *
-   * MDN
-   */
-  var onremovestream: js.Function1[MediaStreamEvent, Any] = js.native
+//  /**
+//   * Is the event handler called when the removestream event, sent when a
+//   * MediaStream is removed from this connection, is received.
+//   *
+//   * MDN
+//   */
+  // TODO: Delete or giving up fatal-warning?
+  //  @deprecated("Deprecated in favor of onremovetrack", "0.9.8")
+  //  var onremovestream: js.Function1[MediaStreamEvent, Any] = js.native
+  var onremovetrack: js.Function1[MediaStreamTrackEvent, Any] = js.native
 
   /**
    * Is the event handler called when the signalingstatechange event, sent when

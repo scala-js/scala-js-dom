@@ -7,10 +7,9 @@ import scala.scalajs.js.annotation._
 
 @js.native
 @JSGlobal
-class DeviceOrientationEvent(
-    `type`: String,
-    eventInitDict: DeviceOrientationEventInit
-) extends dom.Event {
+class DeviceOrientationEvent(typeArg: String,
+    init: js.UndefOr[DeviceOrientationEventInit])
+    extends dom.Event(typeArg, init) {
 
   /** Z-Axis rotation in degrees. */
   val alpha: Double = js.native
@@ -29,23 +28,23 @@ class DeviceOrientationEvent(
   val absolute: Boolean = js.native
 }
 
-trait DeviceOrientationEventInit extends js.Object {
+trait DeviceOrientationEventInit extends dom.raw.EventInit {
 
   /** Z-Axis rotation in degrees. */
-  val alpha: Double
+  var alpha: js.UndefOr[Double] = js.undefined
 
   /** X-Axis rotation in degrees. */
-  val beta: Double
+  var beta: js.UndefOr[Double] = js.undefined
 
   /** Y-Axis rotation in degrees. */
-  val gamma: Double
+  var gamma: js.UndefOr[Double] = js.undefined
 
   /**
    * If true, this event data is has been produced using sensor fusion from
    * the magnometer and other sensors.  When false- only the gyroscope has
    * been used.
    */
-  val absolute: Boolean
+  var absolute: js.UndefOr[Boolean] = js.undefined
 }
 
 object DeviceOrientationEventInit {
@@ -83,7 +82,9 @@ trait DeviceRotationRate extends js.Any {
 
 @js.native
 @JSGlobal
-class DeviceMotionEvent extends dom.Event {
+class DeviceMotionEvent(typeArg: String,
+    init: js.UndefOr[DeviceMotionEventInit] = js.undefined)
+    extends dom.Event(typeArg, init) {
 
   /** Device acceleration with gravity removed. */
   val acceleration: DeviceAcceleration = js.native
@@ -98,17 +99,18 @@ class DeviceMotionEvent extends dom.Event {
   val interval: Double = js.native
 }
 
-trait DeviceMotionEventInit extends js.Any {
+trait DeviceMotionEventInit extends dom.raw.EventInit {
 
   /** Device acceleration with gravity removed. */
-  val acceleration: DeviceAcceleration
+  val acceleration: js.UndefOr[DeviceAcceleration] = js.undefined
 
   /** Device acceleration including the force of gravity. */
-  val accelerationIncludingGravity: DeviceAcceleration
+  val accelerationIncludingGravity: js.UndefOr[DeviceAcceleration] =
+    js.undefined
 
   /** The rate of rotation. */
-  val rotationRate: DeviceRotationRate
+  val rotationRate: js.UndefOr[DeviceRotationRate] = js.undefined
 
   /** The sampling rate in seconds that data is received from the hardware. */
-  val interval: Double
+  val interval: js.UndefOr[Double] = js.undefined
 }

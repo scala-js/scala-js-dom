@@ -87,9 +87,19 @@ class SVGPathSegCurvetoCubicSmoothAbs extends SVGPathSeg {
   var y2: Double = js.native
 }
 
+trait SVGZoomEventInit extends UIEventInit {
+  var zoomRectScreen: js.UndefOr[SVGRect] = js.undefined
+  var previousScale: js.UndefOr[Double] = js.undefined
+  var newScale: js.UndefOr[Double] = js.undefined
+  var previousTranslate: js.UndefOr[SVGPoint] = js.undefined
+  var newTranslate: js.UndefOr[SVGPoint] = js.undefined
+}
+
 @js.native
 @JSGlobal
-class SVGZoomEvent extends UIEvent {
+@deprecated("Removed from SVG 2.0", "0.9.8")
+class SVGZoomEvent(typeArg: String, init: js.UndefOr[SVGZoomEventInit])
+    extends UIEvent(typeArg, init) {
   def zoomRectScreen: SVGRect = js.native
 
   def previousScale: Double = js.native
