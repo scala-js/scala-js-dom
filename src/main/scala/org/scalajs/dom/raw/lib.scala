@@ -4436,18 +4436,17 @@ trait DataTransfer extends js.Object {
   def files: FileList = js.native
 }
 
-@js.native
 trait ClipboardEventInit extends EventInit {
 
   /**
    * The data for this clipboard event.
    */
-  val data: js.UndefOr[String] = js.native
+  var data: js.UndefOr[String] = js.undefined
 
   /**
    * The MIME type of the data.
    */
-  val dataType: js.UndefOr[String] = js.native
+  var dataType: js.UndefOr[String] = js.undefined
 }
 
 object ClipboardEventInit {
@@ -4459,6 +4458,7 @@ object ClipboardEventInit {
    * @param dataType   The MIME type of the data.
    * @return a new ClipBoardEventInit
    */
+  @deprecated("Create new ClipboardEventInit instead", "0.9.8")
   @inline
   def apply(data: js.UndefOr[String] = js.undefined,
       dataType: js.UndefOr[String] = js.undefined): ClipboardEventInit = {
@@ -5932,10 +5932,10 @@ class BeforeUnloadEvent extends Event("") {
 }
 
 trait EventInit extends js.Object {
-  val bubbles: js.UndefOr[Boolean] = js.undefined
-  val cancelable: js.UndefOr[Boolean] = js.undefined
-  val scoped: js.UndefOr[Boolean] = js.undefined
-  val composed: js.UndefOr[Boolean] = js.undefined
+  var bubbles: js.UndefOr[Boolean] = js.undefined
+  var cancelable: js.UndefOr[Boolean] = js.undefined
+  var scoped: js.UndefOr[Boolean] = js.undefined
+  var composed: js.UndefOr[Boolean] = js.undefined
 }
 
 /**

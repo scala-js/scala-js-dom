@@ -48,6 +48,7 @@ trait DeviceOrientationEventInit extends dom.raw.EventInit {
 }
 
 object DeviceOrientationEventInit {
+  @deprecated("Create new DeviceOrientationEventInit instead", "0.9.8")
   def apply(alpha: Double, beta: Double, gamma: Double,
       absolute: Boolean): DeviceOrientationEventInit = {
     js.Dynamic

@@ -467,6 +467,7 @@ trait MediaStreamTrackEventInit extends EventInit {
 }
 
 object MediaStreamTrackEventInit {
+  @deprecated("Create new MediaStreamTrackEventInit instead", "0.9.8")
   @inline
   def apply(
       track: js.UndefOr[MediaStreamTrack] = js.undefined

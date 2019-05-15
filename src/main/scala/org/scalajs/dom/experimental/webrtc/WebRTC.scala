@@ -637,12 +637,12 @@ trait RTCStatsReport extends js.Object {
   def apply(id: String): RTCStats = js.native
 }
 
-@js.native
 trait RTCPeerConnectionIceEventInit extends EventInit {
   var candidate: js.UndefOr[RTCIceCandidate] = js.undefined
 }
 
 object RTCPeerConnectionIceEventInit {
+  @deprecated("Create new RTCPeerConnectionIceEventInit instead", "0.9.8")
   @inline
   def apply(
       candidate: js.UndefOr[RTCIceCandidate] = js.undefined

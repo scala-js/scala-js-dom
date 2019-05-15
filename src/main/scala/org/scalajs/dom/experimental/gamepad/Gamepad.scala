@@ -70,6 +70,7 @@ trait GamepadEventInit extends dom.raw.EventInit {
 }
 
 object GamepadEventInit {
+  @deprecated("Create new ClipboardEventInit instead", "0.9.8")
   def apply(gamepad: Gamepad): GamepadEventInit =
     js.Dynamic.literal("gamepad" -> gamepad).asInstanceOf[GamepadEventInit]
 }
