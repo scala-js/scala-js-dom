@@ -468,7 +468,7 @@ class ExtendableMessageEvent(typeArg: String,
 }
 
 trait ServiceWorkerMessageEventInit extends EventInit {
-  var data: js.UndefOr[js.Any] = js.undefined
+  var data: js.UndefOr[Any] = js.undefined
   var origin: js.UndefOr[String] = js.undefined
   var lastEventId: js.UndefOr[String] = js.undefined
   var source: js.UndefOr[ServiceWorker | MessagePort] = js.undefined
