@@ -4829,8 +4829,7 @@ trait MutationEventInit extends EventInit {
     "WHATWG DOM")
 @js.native
 @JSGlobal
-class MutationEvent(typeArg: String, init: js.UndefOr[MutationEventInit])
-    extends Event(typeArg, init) {
+class MutationEvent extends Event("", js.undefined) {
   def newValue: String = js.native
 
   def attrChange: Int = js.native
