@@ -5927,7 +5927,7 @@ class TimeRanges extends js.Object {
 
 @js.native
 @JSGlobal
-class BeforeUnloadEvent extends Event("") {
+class BeforeUnloadEvent extends Event(js.native) {
   var returnValue: String = js.native
 }
 
