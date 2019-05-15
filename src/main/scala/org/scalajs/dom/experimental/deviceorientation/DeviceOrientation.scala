@@ -1,6 +1,7 @@
 package org.scalajs.dom.experimental.deviceorientation
 
 import org.scalajs.dom
+import org.scalajs.dom.raw.EventInit
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
@@ -28,7 +29,7 @@ class DeviceOrientationEvent(typeArg: String,
   val absolute: Boolean = js.native
 }
 
-trait DeviceOrientationEventInit extends dom.raw.EventInit {
+trait DeviceOrientationEventInit extends EventInit {
 
   /** Z-Axis rotation in degrees. */
   var alpha: js.UndefOr[Double] = js.undefined
@@ -100,7 +101,7 @@ class DeviceMotionEvent(typeArg: String,
   val interval: Double = js.native
 }
 
-trait DeviceMotionEventInit extends dom.raw.EventInit {
+trait DeviceMotionEventInit extends EventInit {
 
   /** Device acceleration with gravity removed. */
   val acceleration: js.UndefOr[DeviceAcceleration] = js.undefined

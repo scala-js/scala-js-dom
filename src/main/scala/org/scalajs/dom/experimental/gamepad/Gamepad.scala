@@ -10,6 +10,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 import org.scalajs.dom
+import org.scalajs.dom.raw.EventInit
 
 @js.native
 trait GamepadMappingType extends js.Any
@@ -65,7 +66,7 @@ trait Gamepad extends js.Any {
   val mapping: GamepadMappingType
 }
 
-trait GamepadEventInit extends dom.raw.EventInit {
+trait GamepadEventInit extends EventInit {
   var gamepad: js.UndefOr[Gamepad]
 }
 
