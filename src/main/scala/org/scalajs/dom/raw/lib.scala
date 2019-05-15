@@ -3556,7 +3556,7 @@ abstract class Document
 trait MessageEventInit extends EventInit {
   var source: js.UndefOr[Window] = js.undefined
   var origin: js.UndefOr[String] = js.undefined
-  var data: js.UndefOr[String | Blob | ArrayBuffer] = js.undefined
+  var data: js.UndefOr[Any] = js.undefined
 }
 
 /**
@@ -3575,17 +3575,18 @@ class MessageEvent(typeArg: String, init: js.UndefOr[MessageEventInit])
   def origin: String = js.native
 
   /**
-   * The data from the server (`String`, [[Blob]], or `ArrayBuffer`)
+   * The data you want contained in the MessageEvent.
+   *
+   * This can be of any data type, and will default to null if not specified.
    *
    * MDN
    */
-  def data: String | Blob | ArrayBuffer = js.native
+  def data: Any = js.native
 
   @deprecated("Non-standard", "forever")
   def initMessageEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, dataArg: String | Blob | ArrayBuffer,
-      originArg: String, lastEventIdArg: String,
-      sourceArg: Window): Unit = js.native
+      cancelableArg: Boolean, dataArg: Any, originArg: String,
+      lastEventIdArg: String, sourceArg: Window): Unit = js.native
 
   def ports: js.Any = js.native
 }
@@ -5718,7 +5719,7 @@ class StyleSheetList extends js.Object {
 }
 
 trait CustomEventInit extends EventInit {
-  var detailArg: js.UndefOr[js.Any] = js.undefined
+  var detailArg: js.UndefOr[Any] = js.undefined
 }
 
 /**

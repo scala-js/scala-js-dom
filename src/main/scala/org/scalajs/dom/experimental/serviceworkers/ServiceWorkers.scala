@@ -418,7 +418,7 @@ class ExtendableEvent(typeArg: String, init: js.UndefOr[ExtendableEventInit])
 }
 
 trait ExtendableMessageEventInit extends ExtendableEventInit {
-  var data: js.UndefOr[js.Any] = js.undefined
+  var data: js.UndefOr[Any] = js.undefined
 
   var origin: js.UndefOr[String] = js.undefined
 
@@ -444,7 +444,7 @@ class ExtendableMessageEvent(typeArg: String,
   /**
    * Returns the event's data. It can be any data type.
    */
-  val data: js.Any = js.native
+  val data: Any = js.native
 
   /**
    * Returns the origin of the service worker's environment settings object.
