@@ -4822,10 +4822,6 @@ abstract class DocumentType extends Node {
   def publicId: String = js.native
 }
 
-trait MutationEventInit extends EventInit {
-  // TODO
-}
-
 @deprecated("Deprecated in favor of Mutation Observers (W3C DOM4)",
     "WHATWG DOM")
 @js.native
