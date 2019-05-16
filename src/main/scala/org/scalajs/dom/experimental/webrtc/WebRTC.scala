@@ -925,18 +925,21 @@ class RTCPeerConnection(
    */
   def signalingState: RTCSignalingState = js.native
 
-//  /**
-//   * Is the event handler called when the addstream event is received. Such an
-//   * event is sent when a MediaStream is added to this connection by the
-//   * remote peer. The event is sent immediately after the call
-//   * RTCPeerConnection.setRemoteDescription() and doesn't wait for the result
-//   * of the SDP negotiation.
-//   *
-//   * MDN
-//   */
-// TODO: Delete or giving up fatal-warning?
-//  @deprecated("Deprecated in favor of ontrack", "0.9.8")
-//  var onaddstream: js.Function1[MediaStreamEvent, Any] = js.native
+  /**
+   * Is the event handler called when the addstream event is received. Such an
+   * event is sent when a MediaStream is added to this connection by the
+   * remote peer. The event is sent immediately after the call
+   * RTCPeerConnection.setRemoteDescription() and doesn't wait for the result
+   * of the SDP negotiation.
+   *
+   * MDN
+   */
+  @deprecated("Deprecated in favor of ontrack", "0.9.8")
+  def onaddstream: js.Function1[MediaStreamEvent, Any] = js.native
+
+  @deprecated("Deprecated in favor of ontrack", "0.9.8")
+  def onaddstream_=(
+      handler: js.Function1[MediaStreamEvent, Any]): Unit = js.native
 
   var ontrack: js.Function1[MediaStreamTrackEvent, Any] = js.native
 
@@ -1009,15 +1012,19 @@ class RTCPeerConnection(
    */
   var onpeeridentity: js.Function1[Event, Any] = js.native
 
-//  /**
-//   * Is the event handler called when the removestream event, sent when a
-//   * MediaStream is removed from this connection, is received.
-//   *
-//   * MDN
-//   */
-  // TODO: Delete or giving up fatal-warning?
-  //  @deprecated("Deprecated in favor of onremovetrack", "0.9.8")
-  //  var onremovestream: js.Function1[MediaStreamEvent, Any] = js.native
+  /**
+   * Is the event handler called when the removestream event, sent when a
+   * MediaStream is removed from this connection, is received.
+   *
+   * MDN
+   */
+  @deprecated("Deprecated in favor of onremovetrack", "0.9.8")
+  def onremovestream: js.Function1[MediaStreamEvent, Any] = js.native
+
+  @deprecated("Deprecated in favor of onremovetrack", "0.9.8")
+  def onremovestream_=(
+      handler: js.Function1[MediaStreamEvent, Any]): Unit = js.native
+
   var onremovetrack: js.Function1[MediaStreamTrackEvent, Any] = js.native
 
   /**
