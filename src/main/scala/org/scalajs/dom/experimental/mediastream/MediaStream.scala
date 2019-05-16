@@ -7,7 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.|
 import scala.scalajs.js.annotation._
 
-import org.scalajs.dom.raw.{DOMError, Event, EventTarget}
+import org.scalajs.dom.raw.{DOMError, Event, EventInit, EventTarget}
 
 /**
  * The MediaStream
@@ -462,12 +462,12 @@ object MediaStreamConstraints {
   }
 }
 
-@js.native
-trait MediaStreamTrackEventInit extends js.Object {
-  var track: MediaStreamTrack = js.native
+trait MediaStreamTrackEventInit extends EventInit {
+  var track: js.UndefOr[MediaStreamTrack] = js.undefined
 }
 
 object MediaStreamTrackEventInit {
+  @deprecated("Create new MediaStreamTrackEventInit instead", "0.9.8")
   @inline
   def apply(
       track: js.UndefOr[MediaStreamTrack] = js.undefined
@@ -480,9 +480,9 @@ object MediaStreamTrackEventInit {
 
 @js.native
 @JSGlobal
-class MediaStreamTrackEvent(`type`: String,
-    eventInitDict: MediaStreamTrackEventInit)
-    extends Event {
+class MediaStreamTrackEvent(typeArg: String,
+    init: js.UndefOr[MediaStreamTrackEventInit])
+    extends Event(typeArg, init) {
   val track: MediaStreamTrack = js.native
 }
 

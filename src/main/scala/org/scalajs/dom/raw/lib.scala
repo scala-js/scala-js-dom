@@ -413,6 +413,11 @@ class Performance extends js.Object {
   def now(): Double = js.native
 }
 
+trait CompositionEventInit extends UIEventInit {
+  var data: js.UndefOr[String] = js.undefined
+  var locale: js.UndefOr[String] = js.undefined
+}
+
 /**
  * The DOM CompositionEvent represents events that occur due to the user indirectly
  * entering text.
@@ -421,7 +426,8 @@ class Performance extends js.Object {
  */
 @js.native
 @JSGlobal
-class CompositionEvent extends UIEvent {
+class CompositionEvent(typeArg: String, init: js.UndefOr[CompositionEventInit])
+    extends UIEvent(typeArg, init) {
 
   /**
    * For compositionstart events, this is the currently selected text that will be
@@ -1317,6 +1323,13 @@ object Node extends js.Object {
   def DOCUMENT_POSITION_PRECEDING: Int = js.native
 }
 
+trait ModifierKeyEventInit extends js.Object {
+  var metaKey: js.UndefOr[Boolean] = js.undefined
+  var altKey: js.UndefOr[Boolean] = js.undefined
+  var ctrlKey: js.UndefOr[Boolean] = js.undefined
+  var shiftKey: js.UndefOr[Boolean] = js.undefined
+}
+
 @js.native
 trait ModifierKeyEvent extends js.Object {
 
@@ -1378,6 +1391,18 @@ trait HashChangeEvent extends Event {
   def oldURL: String = js.native
 }
 
+trait MouseEventInit extends UIEventInit with ModifierKeyEventInit {
+  var screenX: js.UndefOr[Double] = js.undefined
+  var pageX: js.UndefOr[Double] = js.undefined
+  var pageY: js.UndefOr[Double] = js.undefined
+  var clientY: js.UndefOr[Double] = js.undefined
+  var screenY: js.UndefOr[Double] = js.undefined
+  var relatedTarget: js.UndefOr[EventTarget] = js.undefined
+  var button: js.UndefOr[Int] = js.undefined
+  var buttons: js.UndefOr[Int] = js.undefined
+  var clientX: js.UndefOr[Double] = js.undefined
+}
+
 /**
  * The DOM MouseEvent interface represents events that occur due to the user
  * interacting with a pointing device (such as a mouse).
@@ -1392,7 +1417,8 @@ trait HashChangeEvent extends Event {
  */
 @js.native
 @JSGlobal
-class MouseEvent extends UIEvent with ModifierKeyEvent {
+class MouseEvent(typeArg: String, init: js.UndefOr[MouseEventInit])
+    extends UIEvent(typeArg, init) with ModifierKeyEvent {
 
   /**
    * The screenX property provides the X coordinate of the mouse pointer in global
@@ -1511,8 +1537,9 @@ class MouseEvent extends UIEvent with ModifierKeyEvent {
  */
 @js.native
 @JSGlobal
-class PointerEvent(typeArg: String, pointerEventInit: PointerEventInit)
-    extends MouseEvent {
+class PointerEvent(typeArg: String,
+    pointerEventInit: js.UndefOr[PointerEventInit] = js.undefined)
+    extends MouseEvent(typeArg, pointerEventInit) {
 
   def this(typeArg: String) = this(typeArg, js.native)
 
@@ -1637,7 +1664,7 @@ class PointerEvent(typeArg: String, pointerEventInit: PointerEventInit)
   def isPrimary: Boolean = js.native
 }
 
-trait PointerEventInit extends js.Object {
+trait PointerEventInit extends MouseEventInit {
 
   /**
    * Sets value of MouseEvent.pointerId. Defaults to 0.
@@ -2861,6 +2888,12 @@ class CanvasGradient extends js.Object {
   def addColorStop(offset: Double, color: String): Unit = js.native
 }
 
+trait TouchEventInit extends UIEventInit with ModifierKeyEventInit {
+  var changedTouches: js.UndefOr[TouchList] = js.undefined
+  var targetTouches: js.UndefOr[TouchList] = js.undefined
+  var touches: js.UndefOr[TouchList] = js.undefined
+}
+
 /**
  * A TouchEvent represents an event sent when the state of contacts with a
  * touch-sensitive surface changes. This surface can be a touch screen or trackpad,
@@ -2876,7 +2909,8 @@ class CanvasGradient extends js.Object {
  */
 @js.native
 @JSGlobal
-class TouchEvent extends UIEvent with ModifierKeyEvent {
+class TouchEvent(typeArg: String, init: js.UndefOr[TouchEventInit])
+    extends UIEvent(typeArg, init) with ModifierKeyEvent {
 
   /**
    * A TouchList of all the Touch objects representing individual points of contact
@@ -3068,8 +3102,8 @@ class Touch extends js.Object {
  */
 @js.native
 @JSGlobal
-class KeyboardEvent(typeArg: String, keyboardEventInit: KeyboardEventInit)
-    extends UIEvent with ModifierKeyEvent {
+class KeyboardEvent(typeArg: String, init: js.UndefOr[KeyboardEventInit])
+    extends UIEvent(typeArg, init) with ModifierKeyEvent {
 
   def this(typeArg: String) = this(typeArg, js.native)
 
@@ -3127,7 +3161,7 @@ class KeyboardEvent(typeArg: String, keyboardEventInit: KeyboardEventInit)
       locale: String): Unit = js.native
 }
 
-trait KeyboardEventInit extends js.Object {
+trait KeyboardEventInit extends UIEventInit with ModifierKeyEventInit {
 
   /**
    * Sets value of KeyboardEvent.charCode. Defaults to 0.
@@ -3519,6 +3553,12 @@ abstract class Document
   def releaseCapture(): Unit = js.native
 }
 
+trait MessageEventInit extends EventInit {
+  var source: js.UndefOr[Window] = js.undefined
+  var origin: js.UndefOr[String] = js.undefined
+  var data: js.UndefOr[Any] = js.undefined
+}
+
 /**
  * A MessageEvent is sent to clients using WebSockets when data is received from the
  * server. This is delivered to the listener indicated by the WebSocket object's
@@ -3528,13 +3568,16 @@ abstract class Document
  */
 @js.native
 @JSGlobal
-class MessageEvent extends Event {
+class MessageEvent(typeArg: String, init: js.UndefOr[MessageEventInit])
+    extends Event(typeArg, init) {
   def source: Window = js.native
 
   def origin: String = js.native
 
   /**
-   * The data from the server (`String`, [[Blob]], or `ArrayBuffer`)
+   * The data you want contained in the MessageEvent.
+   *
+   * This can be of any data type, and will default to null if not specified.
    *
    * MDN
    */
@@ -3542,7 +3585,7 @@ class MessageEvent extends Event {
 
   @deprecated("Non-standard", "forever")
   def initMessageEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, dataArg: js.Any, originArg: String,
+      cancelableArg: Boolean, dataArg: Any, originArg: String,
       lastEventIdArg: String, sourceArg: Window): Unit = js.native
 
   def ports: js.Any = js.native
@@ -4394,18 +4437,17 @@ trait DataTransfer extends js.Object {
   def files: FileList = js.native
 }
 
-@js.native
-trait ClipboardEventInit extends js.Object {
+trait ClipboardEventInit extends EventInit {
 
   /**
    * The data for this clipboard event.
    */
-  val data: String = js.native
+  var data: js.UndefOr[String] = js.undefined
 
   /**
    * The MIME type of the data.
    */
-  val dataType: String = js.native
+  var dataType: js.UndefOr[String] = js.undefined
 }
 
 object ClipboardEventInit {
@@ -4417,6 +4459,7 @@ object ClipboardEventInit {
    * @param dataType   The MIME type of the data.
    * @return a new ClipBoardEventInit
    */
+  @deprecated("Create new ClipboardEventInit instead", "0.9.8")
   @inline
   def apply(data: js.UndefOr[String] = js.undefined,
       dataType: js.UndefOr[String] = js.undefined): ClipboardEventInit = {
@@ -4435,8 +4478,9 @@ object ClipboardEventInit {
  */
 @js.native
 @JSGlobal
-class ClipboardEvent(`type`: String, settings: ClipboardEventInit)
-    extends Event {
+class ClipboardEvent(typeArg: String,
+    init: js.UndefOr[ClipboardEventInit] = js.undefined)
+    extends Event(typeArg, init) {
   @deprecated("Use the overload with a ClipboardEventInit instead.", "0.8.1")
   def this(`type`: String, settings: js.Dynamic) =
     this(`type`, settings.asInstanceOf[ClipboardEventInit])
@@ -4450,6 +4494,10 @@ class ClipboardEvent(`type`: String, settings: ClipboardEventInit)
   def clipboardData: DataTransfer = js.native
 }
 
+trait FocusEventInit extends UIEventInit {
+  val relatedTarget: js.UndefOr[EventTarget] = js.undefined
+}
+
 /**
  * The FocusEvent interface represents focus-related events like focus, blur,
  * focusin, or focusout.
@@ -4458,7 +4506,9 @@ class ClipboardEvent(`type`: String, settings: ClipboardEventInit)
  */
 @js.native
 @JSGlobal
-class FocusEvent extends UIEvent {
+class FocusEvent(typeArg: String,
+    init: js.UndefOr[FocusEventInit] = js.undefined)
+    extends UIEvent(typeArg, init) {
 
   /**
    * The FocusEvent.relatedTarget read-only property represents a secondary target
@@ -4469,7 +4519,7 @@ class FocusEvent extends UIEvent {
    */
   def relatedTarget: EventTarget = js.native
 
-  @deprecated("Non-standard", "forever")
+  @deprecated("Nonstandard. Instead use constructor to initialize", "forever")
   def initFocusEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, viewArg: Window, detailArg: Int,
       relatedTargetArg: EventTarget): Unit = js.native
@@ -4772,10 +4822,11 @@ abstract class DocumentType extends Node {
   def publicId: String = js.native
 }
 
-@deprecated("Obsolete.", "WHATWG DOM")
+@deprecated("Deprecated in favor of Mutation Observers (W3C DOM4)",
+    "WHATWG DOM")
 @js.native
 @JSGlobal
-class MutationEvent extends Event {
+class MutationEvent private[this] extends Event(js.native, js.native) {
   def newValue: String = js.native
 
   def attrChange: Int = js.native
@@ -5454,6 +5505,11 @@ class PerformanceEntry extends js.Object {
   def entryType: String = js.native
 }
 
+trait UIEventInit extends EventInit {
+  val detail: js.UndefOr[Int] = js.undefined
+  val view: js.UndefOr[Window] = js.undefined
+}
+
 /**
  * The DOM UIEvent represents simple user interface events.
  *
@@ -5461,7 +5517,8 @@ class PerformanceEntry extends js.Object {
  */
 @js.native
 @JSGlobal
-class UIEvent extends Event {
+class UIEvent(typeArg: String, init: js.UndefOr[UIEventInit] = js.undefined)
+    extends Event(typeArg, init) {
 
   /**
    * Detail about the event, depending on the type of event. Read only.
@@ -5477,9 +5534,17 @@ class UIEvent extends Event {
    */
   def view: Window = js.native
 
+  @deprecated("Instead use constructor to initialize", "0.9.8")
   def initUIEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, viewArg: Window,
       detailArg: Int): Unit = js.native
+}
+
+trait WheelEventInit extends MouseEventInit {
+  var deltaZ: js.UndefOr[Double] = js.undefined
+  var deltaX: js.UndefOr[Double] = js.undefined
+  var deltaY: js.UndefOr[Double] = js.undefined
+  var deltaMode: js.UndefOr[Int] = js.undefined
 }
 
 /**
@@ -5490,7 +5555,8 @@ class UIEvent extends Event {
  */
 @js.native
 @JSGlobal
-class WheelEvent extends MouseEvent {
+class WheelEvent(typeArg: String, init: js.UndefOr[WheelEventInit])
+    extends MouseEvent(typeArg, init) {
 
   /**
    * Scroll amount for the z-axis. Read only.
@@ -5648,6 +5714,10 @@ class StyleSheetList extends js.Object {
   def update(index: Int, v: StyleSheet): Unit = js.native
 }
 
+trait CustomEventInit extends EventInit {
+  var detailArg: js.UndefOr[Any] = js.undefined
+}
+
 /**
  * The DOM CustomEvent are events initialized by an application for any purpose.
  *
@@ -5655,7 +5725,8 @@ class StyleSheetList extends js.Object {
  */
 @js.native
 @JSGlobal
-class CustomEvent extends Event {
+class CustomEvent(typeArg: String, init: js.UndefOr[CustomEventInit])
+    extends Event(typeArg, init) {
 
   /**
    * The data passed when initializing the event.
@@ -5670,6 +5741,7 @@ class CustomEvent extends Event {
    *
    * MDN
    */
+  @deprecated("Instead use constructor", "0.9.8")
   def initCustomEvent(typeArg: String, canBubbleArg: Boolean,
       cancelableArg: Boolean, detailArg: Any): Unit = js.native
 }
@@ -5851,8 +5923,15 @@ class TimeRanges extends js.Object {
 
 @js.native
 @JSGlobal
-class BeforeUnloadEvent extends Event {
+class BeforeUnloadEvent extends Event(js.native) {
   var returnValue: String = js.native
+}
+
+trait EventInit extends js.Object {
+  var bubbles: js.UndefOr[Boolean] = js.undefined
+  var cancelable: js.UndefOr[Boolean] = js.undefined
+  var scoped: js.UndefOr[Boolean] = js.undefined
+  var composed: js.UndefOr[Boolean] = js.undefined
 }
 
 /**
@@ -5869,7 +5948,8 @@ class BeforeUnloadEvent extends Event {
  */
 @js.native
 @JSGlobal
-class Event extends js.Object {
+class Event(typeArg: String, init: js.UndefOr[EventInit] = js.undefined)
+    extends js.Object {
 
   /**
    * Returns the time (in milliseconds since the epoch) at which the event was created.
@@ -6099,9 +6179,16 @@ abstract class ProcessingInstruction extends Node {
   def data: String = js.native
 }
 
+trait TextEventInit extends UIEventInit {
+  var inputMethod: js.UndefOr[Int] = js.undefined
+  var data: js.UndefOr[String] = js.undefined
+  var locale: js.UndefOr[String] = js.undefined
+}
+
 @js.native
 @JSGlobal
-class TextEvent extends UIEvent {
+class TextEvent(typeArg: String, init: js.UndefOr[TextEventInit])
+    extends UIEvent(typeArg, init) {
   def inputMethod: Int = js.native
 
   def data: String = js.native
@@ -6426,6 +6513,14 @@ class PerformanceResourceTiming extends PerformanceEntry {
 @JSGlobal
 class CanvasPattern extends js.Object
 
+trait StorageEventInit extends EventInit {
+  var oldValue: js.UndefOr[String] = js.undefined
+  var newValue: js.UndefOr[String] = js.undefined
+  var url: js.UndefOr[String] = js.undefined
+  var storageArea: js.UndefOr[Storage] = js.undefined
+  var key: js.UndefOr[String] = js.undefined
+}
+
 /**
  * A StorageEvent is sent to a window when a storage area changes.
  *
@@ -6433,7 +6528,8 @@ class CanvasPattern extends js.Object
  */
 @js.native
 @JSGlobal
-class StorageEvent extends Event {
+class StorageEvent(typeArg: String, init: js.UndefOr[StorageEventInit])
+    extends Event(typeArg, init) {
 
   /**
    * The original value of the key. The oldValue is null when the change has been invoked

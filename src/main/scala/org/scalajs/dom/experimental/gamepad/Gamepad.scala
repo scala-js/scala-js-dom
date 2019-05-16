@@ -10,6 +10,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 import org.scalajs.dom
+import org.scalajs.dom.raw.EventInit
 
 @js.native
 trait GamepadMappingType extends js.Any
@@ -65,18 +66,21 @@ trait Gamepad extends js.Any {
   val mapping: GamepadMappingType
 }
 
-trait GamepadEventInit extends js.Any {
-  val gamepad: Gamepad
+trait GamepadEventInit extends EventInit {
+  var gamepad: js.UndefOr[Gamepad]
 }
 
 object GamepadEventInit {
+  @deprecated("Create new ClipboardEventInit instead", "0.9.8")
   def apply(gamepad: Gamepad): GamepadEventInit =
     js.Dynamic.literal("gamepad" -> gamepad).asInstanceOf[GamepadEventInit]
 }
 
 @JSGlobal("GamepadEvent")
 @js.native
-class GamepadEvent(init: GamepadEventInit) extends dom.Event {
+class GamepadEvent(typeArg: String,
+    init: js.UndefOr[GamepadEventInit] = js.undefined)
+    extends dom.Event(typeArg, init) {
   val gamepad: Gamepad = js.native
 }
 
