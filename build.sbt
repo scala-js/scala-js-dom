@@ -14,16 +14,7 @@ scalaVersion in ThisBuild := crossScalaVersions.value.head
 val commonSettings = Seq(
   version := "0.9.8-SNAPSHOT",
   organization := "org.scala-js",
-  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
-
-  // Work around https://github.com/scala-js/scala-js/issues/3612
-  scalacOptions in (Compile, doc) := {
-    val prev = (scalacOptions in (Compile, doc)).value
-    if (scalaJSVersion.startsWith("0.6.") && scalaVersion.value.startsWith("2.13."))
-      prev.filter(_ != "-Xfatal-warnings")
-    else
-      prev
-  }
+  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 )
 
 normalizedName := "scalajs-dom"
