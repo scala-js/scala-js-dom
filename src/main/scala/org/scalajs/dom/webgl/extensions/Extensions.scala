@@ -1,4 +1,4 @@
-package org.scalajs.dom.experimental.webgl.extensions
+package org.scalajs.dom.webgl.extensions
 
 import org.scalajs.dom.raw.WebGLShader
 

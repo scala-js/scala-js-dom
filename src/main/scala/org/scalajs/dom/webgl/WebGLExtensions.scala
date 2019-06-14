@@ -1,4 +1,4 @@
-package org.scalajs.dom.experimental.webgl
+package org.scalajs.dom.webgl
 
 /**
  * Abstract class that maps a string enum onto a WebGL extension type
