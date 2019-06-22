@@ -9,6 +9,9 @@ package object ext {
   implicit class PimpedNodeList(nodes: NodeList)
       extends EasySeq[Node](nodes.length, nodes.apply)
 
+  implicit class PimpedDOMTokenList(nodes: DOMTokenList)
+	  extends EasySeq[String](nodes.length, nodes.apply)
+
   implicit class PimpedTouchList(nodes: TouchList)
       extends EasySeq[Touch](nodes.length, nodes.apply)
 
