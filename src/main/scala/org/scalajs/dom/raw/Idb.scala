@@ -99,7 +99,7 @@ class IDBObjectStore extends js.Object {
   def deleteIndex(indexName: String): Unit = js.native
 
   /**
-   * This method may raise a DOMException with a DOMError of the following types:
+   * This method may raise a DOMException of one of the following types:
    *
    * MDN
    */
@@ -300,7 +300,7 @@ class IDBCursor extends js.Object {
   def primaryKey: js.Any = js.native
 
   /**
-   * This method may raise a DOMException with a DOMError of the following types:
+   * This method may raise a DOMException of one of the following types:
    *
    * MDN
    */
@@ -436,7 +436,7 @@ object IDBKeyRange extends js.Object {
       upperOpen: Boolean = js.native): IDBKeyRange = js.native
 
   /**
-   * This method may raise a DOMException with a DOMError of the following types:
+   * This method may raise a DOMException of the following types:
    *
    * MDN
    */
@@ -496,16 +496,13 @@ class IDBTransaction extends EventTarget {
   def mode: String = js.native
 
   /**
-   * The error returned in the event of an unsuccessful transaction. Null if the
-   * transaction is not finished, is finished and successfully committed, or was
-   * aborted with IDBTransaction.abort function. Returns the same DOMError as the
-   * request object which caused the transaction to be aborted due to a failed request,
-   * or a DOMError for the transaction failure not due to a failed request (such as
-   * QuotaExceededError or UnknownError).
+   * Returns a DOMException indicating the type of error that occured when there is an
+   * unsuccessful transaction. This property is null if the transaction is not finished,
+   * is finished and successfully committed, or was aborted with IDBTransaction.abort function.
    *
    * MDN
    */
-  def error: DOMError = js.native
+  def error: DOMException = js.native
 
   /**
    * The event handler for the onerror event.
@@ -770,12 +767,12 @@ class IDBRequest extends EventTarget {
   var onsuccess: js.Function1[Event, _] = js.native
 
   /**
-   * A DOMError containing the relevant error. The following error codes are returned
-   * under certain conditions:
+   * Returns a DOMException in the event of an unsuccessful request, indicating what
+   * went wrong.
    *
    * MDN
    */
-  def error: DOMError = js.native
+  def error: DOMException = js.native
 
   /**
    * The transaction for the request. This property can be null for certain requests,

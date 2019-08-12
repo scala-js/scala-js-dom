@@ -6665,45 +6665,62 @@ abstract class CharacterData extends Node with NonDocumentTypeChildNode {
 class DOMException extends js.Object {
 
   /**
-   * Readonly short. Returns one of the exception code constants (see below).
-   * Deprecated use DOMError.name instead.
+   * Returns a short that contains one of the error code constants one of the
+   * exception code constants (see below) or 0 if none match. This field is used
+   * for historical reasons. New DOM exceptions don't use this anymore: they put
+   * this info in the name attribute.
    *
    * MDN
    */
   @deprecated("Obsolete.", "DOM4")
   def code: Int = js.native
 
+  /**
+   * Returns a DOMString representing a message or description associated with
+   * the given error name.
+   *
+   * MDN
+   */
   def message: String = js.native
+
+  /**
+   * Returns a DOMString that contains one of the strings associated with an
+   * error name.
+   *
+   * MDN
+   */
+  def name: String = js.native
 }
 
 @js.native
 @JSGlobal
 object DOMException extends js.Object {
 
-  val HIERARCHY_REQUEST_ERR: Int = js.native
-  val NO_MODIFICATION_ALLOWED_ERR: Int = js.native
-  val INVALID_MODIFICATION_ERR: Int = js.native
-  val NAMESPACE_ERR: Int = js.native
-  val INVALID_CHARACTER_ERR: Int = js.native
-  val TYPE_MISMATCH_ERR: Int = js.native
-  val ABORT_ERR: Int = js.native
-  val INVALID_STATE_ERR: Int = js.native
-  val SECURITY_ERR: Int = js.native
-  val NETWORK_ERR: Int = js.native
-  val WRONG_DOCUMENT_ERR: Int = js.native
-  val QUOTA_EXCEEDED_ERR: Int = js.native
   val INDEX_SIZE_ERR: Int = js.native
   val DOMSTRING_SIZE_ERR: Int = js.native
-  val SYNTAX_ERR: Int = js.native
-  val SERIALIZE_ERR: Int = js.native
-  val VALIDATION_ERR: Int = js.native
-  val NOT_FOUND_ERR: Int = js.native
-  val URL_MISMATCH_ERR: Int = js.native
-  val PARSE_ERR: Int = js.native
+  val HIERARCHY_REQUEST_ERR: Int = js.native
+  val WRONG_DOCUMENT_ERR: Int = js.native
+  val INVALID_CHARACTER_ERR: Int = js.native
   val NO_DATA_ALLOWED_ERR: Int = js.native
+  val NO_MODIFICATION_ALLOWED_ERR: Int = js.native
+  val NOT_FOUND_ERR: Int = js.native
   val NOT_SUPPORTED_ERR: Int = js.native
-  val INVALID_ACCESS_ERR: Int = js.native
   val INUSE_ATTRIBUTE_ERR: Int = js.native
+  val INVALID_STATE_ERR: Int = js.native
+  val SYNTAX_ERR: Int = js.native
+  val INVALID_MODIFICATION_ERR: Int = js.native
+  val NAMESPACE_ERR: Int = js.native
+  val INVALID_ACCESS_ERR: Int = js.native
+  val VALIDATION_ERR: Int = js.native
+  val TYPE_MISMATCH_ERR: Int = js.native
+  val SECURITY_ERR: Int = js.native
+  val NETWORK_ERR: Int = js.native
+  val ABORT_ERR: Int = js.native
+  val URL_MISMATCH_ERR: Int = js.native
+  val QUOTA_EXCEEDED_ERR: Int = js.native
+  val TIMEOUT_ERR: Int = js.native
+  val INVALID_NODE_TYPE_ERR: Int = js.native
+  val DATA_CLONE_ERR: Int = js.native
 }
 
 /**
@@ -6992,6 +7009,7 @@ trait MediaQueryList extends js.Object {
  *
  * MDN
  */
+@deprecated("Use DOMException instead", "DOM Level 3 Core")
 @js.native
 trait DOMError extends js.Object {
 
@@ -7001,6 +7019,14 @@ trait DOMError extends js.Object {
    * MDN
    */
   def name: String = js.native
+
+  /**
+   * Readonly DOMString. Returns a message or description associated with the given
+   * error type name.
+   *
+   * MDN
+   */
+  def message: String = js.native
 }
 
 /**
@@ -7808,11 +7834,11 @@ trait MessagePort extends EventTarget {
 class FileReader() extends EventTarget {
 
   /**
-   * A DOMError representing the error that occurred while reading the file.
+   * A DOMException representing the error that occurred while reading the file.
    *
    * MDN
    */
-  def error: DOMError = js.native
+  def error: DOMException = js.native
 
   /**
    * A number indicating the state of the FileReader. This will be one of the State constants.
