@@ -1,7 +1,8 @@
 package org.scalajs.dom.experimental
 
-import org.scalajs.dom.DOMError
 import org.scalajs.dom.experimental.mediastream._
+import org.scalajs.dom.raw.DOMException
+
 import scala.scalajs.js
 import scala.language.implicitConversions
 
@@ -26,7 +27,7 @@ package object webrtc {
         "Navigator.getUserMedia() is deprecated, use Navigator.mediaDevices.getUserMedia() instead.",
         "2014-05-28")
     def getUserMedia(constraints: MediaStreamConstraints,
-        success: js.Function1[MediaStream, Any],
-        error: js.Function1[DOMError, Any]): Unit = js.native
+        successCallback: js.Function1[MediaStream, Any],
+        errorCallback: js.Function1[DOMException, Any]): Unit = js.native
   }
 }

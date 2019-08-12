@@ -7009,6 +7009,7 @@ trait MediaQueryList extends js.Object {
  *
  * MDN
  */
+@deprecated("Use DOMException instead", "DOM Level 3 Core")
 @js.native
 trait DOMError extends js.Object {
 
@@ -7018,6 +7019,14 @@ trait DOMError extends js.Object {
    * MDN
    */
   def name: String = js.native
+
+  /**
+   * Readonly DOMString. Returns a message or description associated with the given
+   * error type name.
+   *
+   * MDN
+   */
+  def message: String = js.native
 }
 
 /**
@@ -7825,11 +7834,11 @@ trait MessagePort extends EventTarget {
 class FileReader() extends EventTarget {
 
   /**
-   * A DOMError representing the error that occurred while reading the file.
+   * A DOMException representing the error that occurred while reading the file.
    *
    * MDN
    */
-  def error: DOMError = js.native
+  def error: DOMException = js.native
 
   /**
    * A number indicating the state of the FileReader. This will be one of the State constants.

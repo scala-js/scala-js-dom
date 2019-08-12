@@ -59,6 +59,7 @@ package object dom {
   type DOMException = raw.DOMException
   type DOMImplementation = raw.DOMImplementation
   lazy val DOMException: raw.DOMException.type = raw.DOMException
+  @deprecated("Use DOMException instead", "DOM Level 3 Core")
   type DOMError = raw.DOMError
   type DOMList[T] = raw.DOMList[T]
   type DOMParser = raw.DOMParser
