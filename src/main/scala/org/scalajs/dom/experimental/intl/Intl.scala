@@ -35,7 +35,8 @@ class Collator(locales: js.UndefOr[String | js.Array[String]] = js.undefined,
  */
 @js.native
 @JSGlobal("Intl.DateTimeFormat")
-class DateTimeFormat(locales: String | js.Array[String],
+class DateTimeFormat(
+    locales: js.UndefOr[String | js.Array[String]] = js.undefined,
     options: js.UndefOr[DateTimeFormatOptions] = js.undefined)
     extends js.Object {
   def format(date: js.Date): String = js.native
@@ -52,8 +53,9 @@ class DateTimeFormat(locales: String | js.Array[String],
  */
 @js.native
 @JSGlobal("Intl.NumberFormat")
-class NumberFormat(locales: String | js.Array[String],
-    options: js.UndefOr[NumberFormatOptions])
+class NumberFormat(
+    locales: js.UndefOr[String | js.Array[String]] = js.undefined,
+    options: js.UndefOr[NumberFormatOptions] = js.undefined)
     extends js.Object {
   def format(number: Double): String = js.native
   def resolvedOptions(): NumberFormatOptions = js.native
