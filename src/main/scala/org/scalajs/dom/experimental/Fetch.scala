@@ -133,13 +133,12 @@ object RequestInit {
  * The underlying object is a dictionary. This trait is here to help encode
  * the types.
  */
-@js.native
 trait RequestInit extends js.Object {
   var method: js.UndefOr[HttpMethod]
 
   var headers: js.UndefOr[HeadersInit] = js.undefined
 
-  var body: js.UndefOr[BodyInit]
+  var body: js.UndefOr[BodyInit] = js.undefined
 
   var referrer: js.UndefOr[String] = js.undefined
 
@@ -165,9 +164,10 @@ trait RequestInit extends js.Object {
    * In the detailed steps section for [[https://fetch.spec.whatwg.org/#dom-request the Request(input,init) constructor]]
    * it says even more clearly:
    * "If init's window member is present and it is not null, throw a TypeError."
-   * Therefore, this field is set to null and cannot be changed.
    */
-  final var window: Null = null
+  var window: Null
+
+  window = null
 }
 
 /**
