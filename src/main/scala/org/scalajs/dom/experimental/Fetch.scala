@@ -165,9 +165,7 @@ trait RequestInit extends js.Object {
    * it says even more clearly:
    * "If init's window member is present and it is not null, throw a TypeError."
    */
-  var window: Null
-
-  window = null
+  var window: js.UndefOr[Null] = js.undefined
 }
 
 /**
