@@ -6,8 +6,8 @@ lazy val root = project.in(file(".")).
 name := "Scala.js DOM"
 
 crossScalaVersions in ThisBuild := {
-  if (scalaJSVersion.startsWith("1.")) Seq("2.12.8", "2.11.12", "2.13.0")
-  else Seq("2.12.8", "2.11.12", "2.10.7", "2.13.0")
+  if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1")
+  else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
 }
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
@@ -42,7 +42,7 @@ def hasNewCollections(version: String): Boolean = {
 }
 
 /** Returns the appropriate subdirectory of `sourceDir` depending on whether
- *  the `scalaV` uses the new collections (introduced in 2.13.0-M4) or not.
+ *  the `scalaV` uses the new collections (introduced in 2.13) or not.
  */
 def collectionsEraDependentDirectory(scalaV: String, sourceDir: File): File =
   if (hasNewCollections(scalaV)) sourceDir / "scala-new-collections"
@@ -102,7 +102,7 @@ lazy val readme = ScalatexReadme(
   source = "Index",
   autoResources = Seq("example-opt.js")
 ).settings(
-  scalaVersion := "2.12.8",
+  scalaVersion := "2.12.10",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
   (resources in Compile) += (fullOptJS in (example, Compile)).value.data
 )
