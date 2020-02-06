@@ -19,7 +19,7 @@ matrix:
       env: SCALAJS_VERSION=1.0.0
   include:
     - scala: 2.12.10
-      env: SCALAJS_VERSION=0.6.28
+      env: SCALAJS_VERSION=1.0.0
       script:
         - sbt readme/run
 
