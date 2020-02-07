@@ -169,6 +169,4 @@ object svg {
 
   type ZoomAndPan = raw.SVGZoomAndPan
   @inline def ZoomAndPan = raw.SVGZoomAndPan
-  @deprecated("Removed from SVG 2.0", "0.9.8")
-  type ZoomEvent = raw.SVGZoomEvent
 }

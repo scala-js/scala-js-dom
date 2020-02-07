@@ -262,16 +262,6 @@ class TreeWalker extends js.Object {
   var currentNode: Node = js.native
 
   /**
-   * The TreeWalker.expandEntityReferences read-only property returns a Boolean
-   * flag indicating whether or not the children of entity reference nodes are visible
-   * to the TreeWalker.
-   *
-   * MDN
-   */
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def expandEntityReferences: Boolean = js.native
-
-  /**
    * The TreeWalker.previousSibling() method moves the current Node to its previous
    * sibling, if any, and returns the found sibling. I there is no such node, return null
    * and the current node is not changed.
@@ -448,20 +438,10 @@ class CompositionEvent(typeArg: String, init: js.UndefOr[CompositionEventInit])
    * MDN
    */
   def locale: String = js.native
-
-  /**
-   * Initializes the attributes of a composition event.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initCompositionEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, dataArg: String,
-      locale: String): Unit = js.native
 }
 
 @js.native
-trait WindowTimers extends WindowTimersExtension {
+trait WindowTimers extends js.Object {
 
   /**
    * Clears the delay set by window.setTimeout().
@@ -680,7 +660,7 @@ abstract class Element
    *
    * MDN
    */
-  override def prefix: String = js.native
+  def prefix: String = js.native
 
   /**
    * scrollTop gets or sets the number of pixels that the content of an element is
@@ -1135,15 +1115,6 @@ abstract class Node extends EventTarget {
   def firstChild: Node = js.native
 
   /**
-   * Is a DOMString representing the namespace prefix of the node, or null if no
-   * prefix is specified.
-   *
-   * MDN
-   */
-  @deprecated("Obsolete.", "DOM4")
-  def prefix: String = js.native
-
-  /**
    * Removes a child node from the current element, which must be a child of the current
    * node.
    *
@@ -1492,13 +1463,6 @@ class MouseEvent(typeArg: String, init: js.UndefOr[MouseEventInit])
    * MDN
    */
   def clientX: Double = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initMouseEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int,
-      screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean,
-      altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean,
-      buttonArg: Int, relatedTargetArg: EventTarget): Unit = js.native
 
   /**
    * Returns the current state of the specified modifier key. See the
@@ -1972,16 +1936,6 @@ class NodeIterator extends js.Object {
    * MDN
    */
   def root: Node = js.native
-
-  /**
-   * The NodeIterator.expandEntityReferences read-only property returns a Boolean
-   * flag indicating whether or not the children of entity reference nodes are visible
-   * to the NodeIterator.
-   *
-   * MDN
-   */
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def expandEntityReferences: Boolean = js.native
 
   /**
    * The NodeIterator.nextNode() method returns the next node in the set represented
@@ -3153,12 +3107,6 @@ class KeyboardEvent(typeArg: String, init: js.UndefOr[KeyboardEventInit])
    * Returns the current state of the specified modifier key.
    */
   def getModifierState(keyArg: String): Boolean = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initKeyboardEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, keyArg: String,
-      locationArg: Int, modifiersListArg: String, repeat: Boolean,
-      locale: String): Unit = js.native
 }
 
 trait KeyboardEventInit extends UIEventInit with ModifierKeyEventInit {
@@ -3269,15 +3217,6 @@ abstract class Document
    * MDN
    */
   def implementation: DOMImplementation = js.native
-
-  /**
-   * Returns true if the XML declaration specifies the document is standalone (e.g., An
-   * external part of the DTD affects the document's content), else false.
-   *
-   * MDN
-   */
-  @deprecated("Not supported by all browsers", "forever")
-  def xmlStandalone: Boolean = js.native
 
   /**
    * Returns the character encoding of the current document.
@@ -3541,16 +3480,6 @@ abstract class Document
    */
   def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter,
       entityReferenceExpansion: Boolean): TreeWalker = js.native
-
-  /**
-   * Releases mouse capture if it's currently enabled on an element within this
-   * document. Enabling mouse capture on an element is done by calling
-   * element.setCapture().
-   *
-   * MDN
-   */
-  @deprecated("Non standard.", "forever")
-  def releaseCapture(): Unit = js.native
 }
 
 trait MessageEventInit extends EventInit {
@@ -3582,11 +3511,6 @@ class MessageEvent(typeArg: String, init: js.UndefOr[MessageEventInit])
    * MDN
    */
   def data: Any = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initMessageEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, dataArg: Any, originArg: String,
-      lastEventIdArg: String, sourceArg: Window): Unit = js.native
 
   def ports: js.Any = js.native
 }
@@ -4450,26 +4374,6 @@ trait ClipboardEventInit extends EventInit {
   var dataType: js.UndefOr[String] = js.undefined
 }
 
-object ClipboardEventInit {
-
-  /**
-   * Construct a new ClipboardEventInit
-   *
-   * @param data       The data for this clipboard event
-   * @param dataType   The MIME type of the data.
-   * @return a new ClipBoardEventInit
-   */
-  @deprecated("Create new ClipboardEventInit instead", "0.9.8")
-  @inline
-  def apply(data: js.UndefOr[String] = js.undefined,
-      dataType: js.UndefOr[String] = js.undefined): ClipboardEventInit = {
-    val result = js.Dynamic.literal()
-    data.foreach(result.data = _)
-    dataType.foreach(result.dataType = _)
-    result.asInstanceOf[ClipboardEventInit]
-  }
-}
-
 /**
  * The ClipboardEvent interface represents events providing information related to
  * modification of the clipboard, that is cut, copy, and paste events.
@@ -4481,9 +4385,6 @@ object ClipboardEventInit {
 class ClipboardEvent(typeArg: String,
     init: js.UndefOr[ClipboardEventInit] = js.undefined)
     extends Event(typeArg, init) {
-  @deprecated("Use the overload with a ClipboardEventInit instead.", "0.8.1")
-  def this(`type`: String, settings: js.Dynamic) =
-    this(`type`, settings.asInstanceOf[ClipboardEventInit])
 
   /**
    * Is a DataTransfer object containing the data affected by the user-initialed cut, copy,
@@ -4518,11 +4419,6 @@ class FocusEvent(typeArg: String,
    * MDN
    */
   def relatedTarget: EventTarget = js.native
-
-  @deprecated("Nonstandard. Instead use constructor to initialize", "forever")
-  def initFocusEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, detailArg: Int,
-      relatedTargetArg: EventTarget): Unit = js.native
 }
 
 /**
@@ -4808,48 +4704,9 @@ class Storage extends js.Object {
 abstract class DocumentType extends Node {
   def name: String = js.native
 
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def notations: NamedNodeMap = js.native
-
   def systemId: String = js.native
 
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def internalSubset: String = js.native
-
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def entities: NamedNodeMap = js.native
-
   def publicId: String = js.native
-}
-
-@deprecated("Deprecated in favor of Mutation Observers (W3C DOM4)",
-    "WHATWG DOM")
-@js.native
-@JSGlobal
-class MutationEvent private[this] extends Event(js.native, js.native) {
-  def newValue: String = js.native
-
-  def attrChange: Int = js.native
-
-  def attrName: String = js.native
-
-  def prevValue: String = js.native
-
-  def relatedNode: Node = js.native
-
-  def initMutationEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, relatedNodeArg: Node, prevValueArg: String,
-      newValueArg: String, attrNameArg: String,
-      attrChangeArg: Int): Unit = js.native
-}
-
-@deprecated("Obsolete.", "WHATWG DOM")
-@js.native
-@JSGlobal
-object MutationEvent extends js.Object {
-  val MODIFICATION: Int = js.native
-  val REMOVAL: Int = js.native
-  val ADDITION: Int = js.native
 }
 
 /**
@@ -5072,14 +4929,6 @@ trait MutationRecord extends js.Object {
 @js.native
 trait DragEvent extends MouseEvent {
   def dataTransfer: DataTransfer = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initDragEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int,
-      screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean,
-      altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean,
-      buttonArg: Int, relatedTargetArg: EventTarget,
-      dataTransferArg: DataTransfer): Unit = js.native
 }
 
 /**
@@ -5533,11 +5382,6 @@ class UIEvent(typeArg: String, init: js.UndefOr[UIEventInit] = js.undefined)
    * MDN
    */
   def view: Window = js.native
-
-  @deprecated("Instead use constructor to initialize", "0.9.8")
-  def initUIEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window,
-      detailArg: Int): Unit = js.native
 }
 
 trait WheelEventInit extends MouseEventInit {
@@ -5585,17 +5429,6 @@ class WheelEvent(typeArg: String, init: js.UndefOr[WheelEventInit])
    * MDN
    */
   def deltaY: Double = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initWheelEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int,
-      screenYArg: Int, clientXArg: Int, clientYArg: Int, buttonArg: Int,
-      relatedTargetArg: EventTarget, modifiersListArg: String,
-      deltaXArg: Double, deltaYArg: Double, deltaZArg: Double,
-      deltaMode: Int): Unit = js.native
-
-  @deprecated("Non-standard", "forever")
-  def getCurrentPoint(element: Element): Unit = js.native
 }
 
 @js.native
@@ -5734,16 +5567,6 @@ class CustomEvent(typeArg: String, init: js.UndefOr[CustomEventInit])
    * MDN
    */
   def detail: Any = js.native
-
-  /**
-   * Initializes the event in a manner analogous to the similarly-named method in the
-   * DOM Events interfaces.
-   *
-   * MDN
-   */
-  @deprecated("Instead use constructor", "0.9.8")
-  def initCustomEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, detailArg: Any): Unit = js.native
 }
 
 /**
@@ -6016,25 +5839,12 @@ class Event(typeArg: String, init: js.UndefOr[EventInit] = js.undefined)
 
   def `type`: String = js.native
 
-  @deprecated("Non standard.", "forever")
-  def srcElement: Element = js.native
-
   /**
    * A boolean indicating whether the event bubbles up through the DOM or not.
    *
    * MDN
    */
   def bubbles: Boolean = js.native
-
-  /**
-   * The initEvent method is used to initialize the value of an event created using
-   * document.createEvent.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initEvent(eventTypeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean): Unit = js.native
 
   /**
    * Stops the propagation of events further along in the DOM.
@@ -6569,18 +6379,6 @@ class StorageEvent(typeArg: String, init: js.UndefOr[StorageEventInit])
    * MDN
    */
   def key: String = js.native
-
-  /**
-   * Initializes the event in a manner analogous to the similarly-named method in the
-   * DOM Events interfaces.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initStorageEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, keyArg: String, oldValueArg: String,
-      newValueArg: String, urlArg: String,
-      storageAreaArg: Storage): Unit = js.native
 }
 
 /**
@@ -6663,17 +6461,6 @@ abstract class CharacterData extends Node with NonDocumentTypeChildNode {
 @js.native
 @JSGlobal
 class DOMException extends js.Object {
-
-  /**
-   * Returns a short that contains one of the error code constants one of the
-   * exception code constants (see below) or 0 if none match. This field is used
-   * for historical reasons. New DOM exceptions don't use this anymore: they put
-   * this info in the name attribute.
-   *
-   * MDN
-   */
-  @deprecated("Obsolete.", "DOM4")
-  def code: Int = js.native
 
   /**
    * Returns a DOMString representing a message or description associated with
@@ -6775,7 +6562,7 @@ class Attr extends Node {
    *
    * MDN
    */
-  override def prefix: String = js.native
+  def prefix: String = js.native
 }
 
 /**
@@ -6873,11 +6660,6 @@ trait ErrorEvent extends Event {
    * MDN
    */
   def message: String = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initErrorEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, messageArg: String, filenameArg: String,
-      linenoArg: Int): Unit = js.native
 }
 
 @js.native
@@ -6948,18 +6730,6 @@ trait TransitionEvent extends Event {
    * MDN
    */
   def elapsedTime: Double = js.native
-
-  /**
-   * The TransitionEvent.initTransitionEvent() method Initializes a transition
-   * event created using the deprecated Document.createEvent("TransitionEvent")
-   * method.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initTransitionEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, propertyNameArg: String,
-      elapsedTimeArg: Int): Unit = js.native
 }
 
 /**
@@ -7005,31 +6775,6 @@ trait MediaQueryList extends js.Object {
 }
 
 /**
- * This interface describes an error object that contains an error name.
- *
- * MDN
- */
-@deprecated("Use DOMException instead", "DOM Level 3 Core")
-@js.native
-trait DOMError extends js.Object {
-
-  /**
-   * Readonly DOMString. Returns one of the error type names (see below).
-   *
-   * MDN
-   */
-  def name: String = js.native
-
-  /**
-   * Readonly DOMString. Returns a message or description associated with the given
-   * error type name.
-   *
-   * MDN
-   */
-  def message: String = js.native
-}
-
-/**
  * A CloseEvent is sent to clients using WebSockets when the connection is closed.
  * This is delivered to the listener indicated by the WebSocket object's onclose
  * attribute.
@@ -7061,11 +6806,6 @@ trait CloseEvent extends Event {
    * MDN
    */
   def code: Int = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initCloseEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, wasCleanArg: Boolean, codeArg: Int,
-      reasonArg: String): Unit = js.native
 }
 
 /**
@@ -7313,17 +7053,6 @@ trait ProgressEvent extends Event {
    * MDN
    */
   def total: Double = js.native
-
-  /**
-   * The ProgressEvent.initProgressEvent() method Initializes an animation event
-   * created using the deprecated Document.createEvent("ProgressEvent") method.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initProgressEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, lengthComputableArg: Boolean, loadedArg: Double,
-      totalArg: Double): Unit = js.native
 }
 
 /**
@@ -7354,15 +7083,6 @@ trait FileList extends DOMList[File]
 @js.native
 @JSGlobal
 abstract class File extends Blob {
-
-  /**
-   * Returns the last modified date of the file. Files without a known last modified date
-   * use the current date instead.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def lastModifiedDate: js.Any = js.native
 
   /**
    * Returns the name of the file. For security reasons, the path is excluded from this
@@ -7475,15 +7195,6 @@ trait AudioTrackList extends EventTarget with DOMList[AudioTrack] {
   def getTrackById(id: String): AudioTrack = js.native
 }
 
-@js.native
-trait WindowTimersExtension extends js.Object {
-  @deprecated("Non standard.", "forever")
-  def clearImmediate(handle: Int): Unit = js.native
-
-  @deprecated("Non standard.", "forever")
-  def setImmediate(handler: js.Function0[Any]): Int = js.native
-}
-
 /**
  * The AnimationEvent interface represents events providing information related
  * to animations.
@@ -7511,18 +7222,6 @@ trait AnimationEvent extends Event {
    * MDN
    */
   def elapsedTime: Double = js.native
-
-  /**
-   * The AnimationEvent.initAnimationEvent() method Initializes an animation
-   * event created using the deprecated Document.createEvent("AnimationEvent")
-   * method.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initAnimationEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, animationNameArg: String,
-      elapsedTimeArg: Int): Unit = js.native
 }
 
 @js.native
@@ -8047,10 +7746,6 @@ object ApplicationCache extends js.Object {
 @js.native
 trait PopStateEvent extends Event {
   def state: js.Any = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initPopStateEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, stateArg: js.Any): Unit = js.native
 }
 
 /**

@@ -15,10 +15,6 @@ import scala.scalajs.js.typedarray.ArrayBuffer
 
 package object raw {
 
-  @deprecated(message = "Import from scala.scalajs.js instead.",
-      since = "0.9.0")
-  type Promise[+A] = js.Promise[A]
-
   /**
    * The Transferable interface represents an object that can be transfered
    * between different execution contexts, like the main thread and Web workers.
@@ -32,24 +28,4 @@ package object raw {
    * MDN
    */
   type Transferable = ArrayBuffer | MessagePort
-
-  @deprecated(
-      message =
-        "Import from org.scalajs.dom.experimental.serviceworkers instead.",
-      since = "0.9.0")
-  type ServiceWorker = experimental.serviceworkers.ServiceWorker
-
-  @deprecated(
-      message =
-        "Import from org.scalajs.dom.experimental.serviceworkers instead.",
-      since = "0.9.0")
-  type ServiceWorkerRegistration =
-    experimental.serviceworkers.ServiceWorkerRegistration
-
-  @deprecated(
-      message =
-        "Import from org.scalajs.dom.experimental.serviceworkers instead.",
-      since = "0.9.0")
-  type ServiceWorkerContainer =
-    experimental.serviceworkers.ServiceWorkerContainer
 }

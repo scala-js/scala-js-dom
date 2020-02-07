@@ -641,18 +641,6 @@ trait RTCPeerConnectionIceEventInit extends EventInit {
   var candidate: js.UndefOr[RTCIceCandidate] = js.undefined
 }
 
-object RTCPeerConnectionIceEventInit {
-  @deprecated("Create new RTCPeerConnectionIceEventInit instead", "0.9.8")
-  @inline
-  def apply(
-      candidate: js.UndefOr[RTCIceCandidate] = js.undefined
-  ): RTCPeerConnectionIceEventInit = {
-    val result = js.Dynamic.literal()
-    candidate.foreach(result.candidate = _)
-    result.asInstanceOf[RTCPeerConnectionIceEventInit]
-  }
-}
-
 /**
  * The RTCPeerConnectionIceEvent interface represents events that occurs in
  * relation to ICE candidates with the target, usually an RTCPeerConnection.
@@ -783,21 +771,6 @@ trait MediaStreamEventInit extends EventInit {
 }
 
 /**
- * The MediaStreamEvent interface represents events that occurs in relation to a
- * MediaStream. Two events of this type can be thrown:
- * addstream and removestream.
- *
- * MDN
- */
-@js.native
-@JSGlobal
-@deprecated("Obsolte.", "0.9.8")
-class MediaStreamEvent(typeArg: String, init: js.UndefOr[MediaStreamEventInit])
-    extends Event(typeArg, init) {
-  val stream: MediaStream = js.native
-}
-
-/**
  * The RTCPeerConnection interface represents a WebRTC connection between the
  * local computer and a remote peer. It is used to handle efficient streaming of
  * data between the two peers.
@@ -925,22 +898,6 @@ class RTCPeerConnection(
    */
   def signalingState: RTCSignalingState = js.native
 
-  /**
-   * Is the event handler called when the addstream event is received. Such an
-   * event is sent when a MediaStream is added to this connection by the
-   * remote peer. The event is sent immediately after the call
-   * RTCPeerConnection.setRemoteDescription() and doesn't wait for the result
-   * of the SDP negotiation.
-   *
-   * MDN
-   */
-  @deprecated("Deprecated in favor of ontrack", "0.9.8")
-  def onaddstream: js.Function1[MediaStreamEvent, Any] = js.native
-
-  @deprecated("Deprecated in favor of ontrack", "0.9.8")
-  def onaddstream_=(
-      handler: js.Function1[MediaStreamEvent, Any]): Unit = js.native
-
   var ontrack: js.Function1[MediaStreamTrackEvent, Any] = js.native
 
   /**
@@ -1011,19 +968,6 @@ class RTCPeerConnection(
    * MDN
    */
   var onpeeridentity: js.Function1[Event, Any] = js.native
-
-  /**
-   * Is the event handler called when the removestream event, sent when a
-   * MediaStream is removed from this connection, is received.
-   *
-   * MDN
-   */
-  @deprecated("Deprecated in favor of onremovetrack", "0.9.8")
-  def onremovestream: js.Function1[MediaStreamEvent, Any] = js.native
-
-  @deprecated("Deprecated in favor of onremovetrack", "0.9.8")
-  def onremovestream_=(
-      handler: js.Function1[MediaStreamEvent, Any]): Unit = js.native
 
   var onremovetrack: js.Function1[MediaStreamTrackEvent, Any] = js.native
 
