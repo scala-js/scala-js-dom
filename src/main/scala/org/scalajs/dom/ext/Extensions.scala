@@ -169,65 +169,6 @@ object KeyCode {
   final val F10 = 121
   final val F11 = 122
   final val F12 = 123
-
-  // format: off
-  @deprecated("Use KeyCode.Backspace instead", "0.8.1") final val backspace = Backspace
-  @deprecated("Use KeyCode.Tab instead", "0.8.1") final val tab = Tab
-  @deprecated("Use KeyCode.Enter instead", "0.8.1") final val enter = Enter
-  @deprecated("Use KeyCode.Shift instead", "0.8.1") final val shift = Shift
-  @deprecated("Use KeyCode.Ctrl instead", "0.8.1") final val ctrl = Ctrl
-  @deprecated("Use KeyCode.Alt instead", "0.8.1") final val alt = Alt
-  @deprecated("Use KeyCode.Pause instead", "0.8.1") final val pause = Pause
-  @deprecated("Use KeyCode.CapsLock instead", "0.8.1") final val capsLock = CapsLock
-  @deprecated("Use KeyCode.Escape instead", "0.8.1") final val escape = Escape
-  @deprecated("Use KeyCode.Space instead", "0.8.1") final val space = Space
-  @deprecated("Use KeyCode.PageUp instead", "0.8.1") final val pageUp = PageUp
-  @deprecated("Use KeyCode.PageDown instead", "0.8.1") final val pageDown = PageDown
-  @deprecated("Use KeyCode.End instead", "0.8.1") final val end = End
-  @deprecated("Use KeyCode.Home instead", "0.8.1") final val home = Home
-  @deprecated("Use KeyCode.Left instead", "0.8.1") final val left = Left
-  @deprecated("Use KeyCode.Up instead", "0.8.1") final val up = Up
-  @deprecated("Use KeyCode.Right instead", "0.8.1") final val right = Right
-  @deprecated("Use KeyCode.Down instead", "0.8.1") final val down = Down
-  @deprecated("Use KeyCode.Insert instead", "0.8.1") final val insert = Insert
-  @deprecated("Use KeyCode.Delete instead", "0.8.1") final val delete = Delete
-  @deprecated("Use KeyCode.Num0 instead", "0.8.1") final val num0 = Num0
-  @deprecated("Use KeyCode.Num1 instead", "0.8.1") final val num1 = Num1
-  @deprecated("Use KeyCode.Num2 instead", "0.8.1") final val num2 = Num2
-  @deprecated("Use KeyCode.Num3 instead", "0.8.1") final val num3 = Num3
-  @deprecated("Use KeyCode.Num4 instead", "0.8.1") final val num4 = Num4
-  @deprecated("Use KeyCode.Num5 instead", "0.8.1") final val num5 = Num5
-  @deprecated("Use KeyCode.Num6 instead", "0.8.1") final val num6 = Num6
-  @deprecated("Use KeyCode.Num7 instead", "0.8.1") final val num7 = Num7
-  @deprecated("Use KeyCode.Num8 instead", "0.8.1") final val num8 = Num8
-  @deprecated("Use KeyCode.Num9 instead", "0.8.1") final val num9 = Num9
-  @deprecated("Use KeyCode.A instead", "0.8.1") final val a = A
-  @deprecated("Use KeyCode.B instead", "0.8.1") final val b = B
-  @deprecated("Use KeyCode.C instead", "0.8.1") final val c = C
-  @deprecated("Use KeyCode.D instead", "0.8.1") final val d = D
-  @deprecated("Use KeyCode.E instead", "0.8.1") final val e = E
-  @deprecated("Use KeyCode.F instead", "0.8.1") final val f = F
-  @deprecated("Use KeyCode.G instead", "0.8.1") final val g = G
-  @deprecated("Use KeyCode.H instead", "0.8.1") final val h = H
-  @deprecated("Use KeyCode.I instead", "0.8.1") final val i = I
-  @deprecated("Use KeyCode.J instead", "0.8.1") final val j = J
-  @deprecated("Use KeyCode.K instead", "0.8.1") final val k = K
-  @deprecated("Use KeyCode.L instead", "0.8.1") final val l = L
-  @deprecated("Use KeyCode.M instead", "0.8.1") final val m = M
-  @deprecated("Use KeyCode.N instead", "0.8.1") final val n = N
-  @deprecated("Use KeyCode.O instead", "0.8.1") final val o = O
-  @deprecated("Use KeyCode.P instead", "0.8.1") final val p = P
-  @deprecated("Use KeyCode.Q instead", "0.8.1") final val q = Q
-  @deprecated("Use KeyCode.R instead", "0.8.1") final val r = R
-  @deprecated("Use KeyCode.S instead", "0.8.1") final val s = S
-  @deprecated("Use KeyCode.T instead", "0.8.1") final val t = T
-  @deprecated("Use KeyCode.U instead", "0.8.1") final val u = U
-  @deprecated("Use KeyCode.V instead", "0.8.1") final val v = V
-  @deprecated("Use KeyCode.W instead", "0.8.1") final val w = W
-  @deprecated("Use KeyCode.X instead", "0.8.1") final val x = X
-  @deprecated("Use KeyCode.Y instead", "0.8.1") final val y = Y
-  @deprecated("Use KeyCode.Z instead", "0.8.1") final val z = Z
-  // format: on
 }
 
 /** Aliases for DOM_KEY_LOCATION_* constants from [[KeyboardEvent]] */

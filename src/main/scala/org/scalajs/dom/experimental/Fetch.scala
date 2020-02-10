@@ -74,60 +74,6 @@ class Request(input: RequestInfo, init: RequestInit = null) extends js.Object {
   def signal: AbortSignal = js.native
 }
 
-object RequestInit {
-
-  /**
-   * Create a RequestInit with some minimal typesafety on attributes.
-   *
-   * This method creates as light weight a RequestInit literal as possible
-   * from the provided parameters, so as to allow the browser to work through
-   * its default setting strategy.
-   *
-   * It is actually quite difficult to work out the defaults, which parameters
-   * work together and which don't. Check the rules here in case of doubt:
-   * - [[https://fetch.spec.whatwg.org/#requests ¶3.1.5 Requests]]
-   * - [[https://fetch.spec.whatwg.org/#request-class ¶6.3 Request class]], especially the constructor function
-   * of the whatwg Fetch spec.
-   *
-   * //todo: it would help a lot if there were a way to make this fully type safe
-   */
-  @inline
-  @deprecated("use `new RequestInit {}` instead", "0.9.7")
-  def apply(method: js.UndefOr[HttpMethod] = js.undefined,
-      headers: js.UndefOr[HeadersInit] = js.undefined,
-      body: js.UndefOr[BodyInit] = js.undefined,
-      referrer: js.UndefOr[String] = js.undefined, //should be USVString
-      referrerPolicy: js.UndefOr[ReferrerPolicy] = js.undefined,
-      mode: js.UndefOr[RequestMode] = js.undefined,
-      credentials: js.UndefOr[RequestCredentials] = js.undefined,
-      requestCache: js.UndefOr[RequestCache] = js.undefined,
-      requestRedirect: js.UndefOr[RequestRedirect] = js.undefined,
-      integrity: js.UndefOr[String] = js.undefined, //see [[https://w3c
-      // .github.io/webappsec-subresource-integrity/ integrity spec]]
-      window: js.UndefOr[Null] = js.undefined): RequestInit = {
-    val result = js.Dynamic.literal()
-
-    @inline
-    def set[T](attribute: String, value: js.UndefOr[T]) = value.foreach { x =>
-      result.updateDynamic(attribute)(x.asInstanceOf[js.Any])
-    }
-
-    set("method", method)
-    set("headers", headers)
-    set("body", body)
-    set("referrer", referrer)
-    set("referrerPolicy", referrerPolicy)
-    set("mode", mode)
-    set("credentials", credentials)
-    set("cache", requestCache)
-    set("redirect", requestRedirect)
-    set("integrity", integrity)
-    set("window", window)
-
-    result.asInstanceOf[RequestInit]
-  }
-}
-
 /**
  * See [[https://fetch.spec.whatwg.org/#requestinit RequestInit]] in Fetch API
  * The underlying object is a dictionary. This trait is here to help encode

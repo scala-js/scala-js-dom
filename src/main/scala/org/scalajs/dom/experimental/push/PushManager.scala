@@ -223,23 +223,6 @@ trait PushSubscriptionOptions extends js.Object {
   var applicationServerKey: js.UndefOr[Uint8Array] = js.undefined
 }
 
-/** Factory for [[PushSubscriptionOptions]] objects. */
-object PushSubscriptionOptions {
-
-  /**
-   * Creates a new [[PushSubscriptionOptions]] object.  Default value for userVisibleOnly is false.
-   */
-  @deprecated(
-      "Use new PushSubscriptionOptions { userVisibleOnly = ??? } instead",
-      "0.9.6")
-  def apply(
-      permissionUserVisibleOnly: Boolean = false): PushSubscriptionOptions = {
-    new PushSubscriptionOptions {
-      userVisibleOnly = permissionUserVisibleOnly
-    }
-  }
-}
-
 /**
  * This represents a JavaScript enumeration describing the state of permissions for
  * pushing described here: [[http://www.w3.org/TR/push-api/#idl-def-PushPermissionState]]
