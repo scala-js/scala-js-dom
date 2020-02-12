@@ -84,10 +84,10 @@ span.hljs-tag, span.hljs-symbol{
     <p>
       Add the following to your sbt build definition:
 </p>
-    <pre><code class="scala scalatex-site-Styles-highlightMe">libraryDependencies += &quot;org.scala-js&quot; %%% &quot;scalajs-dom&quot; % &quot;0.9.8&quot;
+    <pre><code class="scala scalatex-site-Styles-highlightMe">libraryDependencies += &quot;org.scala-js&quot; %%% &quot;scalajs-dom&quot; % &quot;1.0.0&quot;
 </code></pre>
     <p>
-      then enjoy the types available in <code class="scala scalatex-site-Styles-highlightMe" style="display: inline;padding: 0px;margin: 0px;">org.scalajs.dom</code>. scalajs-dom 0.9.8 is built and published for Scala.js 0.6.17+ and Scala.js 1.0.0+, with Scala 2.10, 2.11, 2.12 and 2.13.
+      then enjoy the types available in <code class="scala scalatex-site-Styles-highlightMe" style="display: inline;padding: 0px;margin: 0px;">org.scalajs.dom</code>. scalajs-dom 1.0.0 is built and published for Scala.js 0.6.17+ and Scala.js 1.0.0+, with Scala 2.10, 2.11, 2.12 and 2.13.
 </p>
     <p>
       To begin with, <code>scala-js-dom</code> organizes the full-list of DOM APIs into a number of buckets:
@@ -119,7 +119,7 @@ span.hljs-tag, span.hljs-symbol{
     &quot;Hi from Scala-js-dom&quot;
 
   div.appendChild(child)
-}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L19-L28" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><a class="pure-button" onclick="ExampleNodeAppendChild.main(document.getElementById('752353'))">Run</a><div><div id="752353" style="background-color: #fafafa;">div</div></div></div><div style="clear: both;"></div></div>
+}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L19-L28" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><a class="pure-button" onclick="ExampleNodeAppendChild.main(document.getElementById('488445'))">Run</a><div><div id="488445" style="background-color: #fafafa;">div</div></div></div><div style="clear: both;"></div></div>
 
     <h1 id="Node.onmousemove" style="display: block;" class=" scalatex-site-Styles-hoverContainer scalatex-site-Styles-headerTag"><a class=" scalatex-site-Styles-headerLink" href="#Node.onmousemove" style="position: absolute;right: 0px;"><i class="fa fa-link"></i></a>Node.onmousemove</h1>
       <div><div style="width: 50%;float: left;"><pre class=" scalatex-site-Styles-hoverContainer"><code class="scala scalatex-site-Styles-highlightMe">def main(pre: html.Pre) = {
@@ -134,7 +134,7 @@ span.hljs-tag, span.hljs-symbol{
            |e.screenY ${e.screenY}
          &quot;&quot;&quot;.stripMargin
   }
-}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L105-L118" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><pre id="531552" style="background-color: #fafafa;">pre</pre></div><script>ExampleEventHandler.main(document.getElementById('531552'))</script></div><div style="clear: both;"></div></div>
+}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L105-L118" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><pre id="701047" style="background-color: #fafafa;">pre</pre></div><script>ExampleEventHandler.main(document.getElementById('701047'))</script></div><div style="clear: both;"></div></div>
 
     <h1 id="dom.btoa" style="display: block;" class=" scalatex-site-Styles-hoverContainer scalatex-site-Styles-headerTag"><a class=" scalatex-site-Styles-headerLink" href="#dom.btoa" style="position: absolute;right: 0px;"><i class="fa fa-link"></i></a>dom.btoa</h1>
       <div><div style="width: 50%;float: left;"><pre class=" scalatex-site-Styles-hoverContainer"><code class="scala scalatex-site-Styles-highlightMe">def main(in: html.Input,
@@ -143,7 +143,7 @@ span.hljs-tag, span.hljs-symbol{
     out.textContent =
       dom.window.btoa(in.value)
   }
-}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L93-L100" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><input style="width: 100%;background-color: #fafafa;" placeholder="Enter text to b64 encode" id="864964" /><div id="793486" style="background-color: #fafafa;"></div></div><script>ExampleBase64.main(document.getElementById('864964'), document.getElementById('793486'))</script></div><div style="clear: both;"></div></div>
+}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L93-L100" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><input style="width: 100%;background-color: #fafafa;" placeholder="Enter text to b64 encode" id="442074" /><div id="847379" style="background-color: #fafafa;"></div></div><script>ExampleBase64.main(document.getElementById('442074'), document.getElementById('847379'))</script></div><div style="clear: both;"></div></div>
 
     <h1 id="dom.localStorage" style="display: block;" class=" scalatex-site-Styles-hoverContainer scalatex-site-Styles-headerTag"><a class=" scalatex-site-Styles-headerLink" href="#dom.localStorage" style="position: absolute;right: 0px;"><i class="fa fa-link"></i></a>dom.localStorage</h1>
       <div><div style="width: 50%;float: left;"><pre class=" scalatex-site-Styles-hoverContainer"><code class="scala scalatex-site-Styles-highlightMe">def main(in: html.Input, box: html.Div) = {
@@ -159,7 +159,7 @@ span.hljs-tag, span.hljs-symbol{
     box.textContent =
       &quot;Saved! &quot; + in.value
   }
-}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L48-L62" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><input style="width: 100%;background-color: #fafafa;" id="791719" /><div id="110191" style="background-color: #fafafa;"></div></div><script>ExampleLocalStorage.main(document.getElementById('791719'), document.getElementById('110191'))</script></div><div style="clear: both;"></div></div>
+}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L48-L62" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><input style="width: 100%;background-color: #fafafa;" id="948975" /><div id="979388" style="background-color: #fafafa;"></div></div><script>ExampleLocalStorage.main(document.getElementById('948975'), document.getElementById('979388'))</script></div><div style="clear: both;"></div></div>
 
     <h1 id="dom.HTMLCanvasElement" style="display: block;" class=" scalatex-site-Styles-hoverContainer scalatex-site-Styles-headerTag"><a class=" scalatex-site-Styles-headerLink" href="#dom.HTMLCanvasElement" style="position: absolute;right: 0px;"><i class="fa fa-link"></i></a>dom.HTMLCanvasElement</h1>
       <div><div style="width: 50%;float: left;"><pre class=" scalatex-site-Styles-hoverContainer"><code class="scala scalatex-site-Styles-highlightMe">def main(c: html.Canvas) = {
@@ -182,7 +182,7 @@ span.hljs-tag, span.hljs-symbol{
   ctx.arc(w/2, w/2, w/2, 0, 3.14)
 
   ctx.stroke()
-}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L67-L88" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><canvas id="439211" style="background-color: #fafafa;"></canvas></div><script>ExampleCanvas.main(document.getElementById('439211'))</script></div><div style="clear: both;"></div></div>
+}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L67-L88" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><canvas id="348437" style="background-color: #fafafa;"></canvas></div><script>ExampleCanvas.main(document.getElementById('348437'))</script></div><div style="clear: both;"></div></div>
 
     <h1 id="dom.XMLHttpRequest" style="display: block;" class=" scalatex-site-Styles-hoverContainer scalatex-site-Styles-headerTag"><a class=" scalatex-site-Styles-headerLink" href="#dom.XMLHttpRequest" style="position: absolute;right: 0px;"><i class="fa fa-link"></i></a>dom.XMLHttpRequest</h1>
       <div><div style="width: 50%;float: left;"><pre class=" scalatex-site-Styles-hoverContainer"><code class="scala scalatex-site-Styles-highlightMe">def main(pre: html.Pre) = {
@@ -198,7 +198,7 @@ span.hljs-tag, span.hljs-symbol{
     }
   }
   xhr.send()
-}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L123-L137" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><a class="pure-button" onclick="ExampleXMLHttpRequest.main(document.getElementById('832679'))">Run</a><div><pre id="832679" style="background-color: #fafafa;">output</pre></div></div><div style="clear: both;"></div></div>
+}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L123-L137" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><a class="pure-button" onclick="ExampleXMLHttpRequest.main(document.getElementById('455257'))">Run</a><div><pre id="455257" style="background-color: #fafafa;">output</pre></div></div><div style="clear: both;"></div></div>
 
     <h1 id="dom.Websocket" style="display: block;" class=" scalatex-site-Styles-hoverContainer scalatex-site-Styles-headerTag"><a class=" scalatex-site-Styles-headerLink" href="#dom.Websocket" style="position: absolute;right: 0px;"><i class="fa fa-link"></i></a>dom.Websocket</h1>
       <div><div style="width: 50%;float: left;"><pre class=" scalatex-site-Styles-hoverContainer"><code class="scala scalatex-site-Styles-highlightMe">def main(in: html.Input,
@@ -215,7 +215,7 @@ span.hljs-tag, span.hljs-symbol{
       socket.send(in.value)
     }
   }
-}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L142-L157" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><input placeholder="Type something in" id="437490" style="background-color: #fafafa;" /><pre id="77020" style="background-color: #fafafa;">output</pre></div><script>ExampleWebsocket.main(document.getElementById('437490'), document.getElementById('77020'))</script></div><div style="clear: both;"></div></div>
+}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L142-L157" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><div><input placeholder="Type something in" id="131509" style="background-color: #fafafa;" /><pre id="727565" style="background-color: #fafafa;">output</pre></div><script>ExampleWebsocket.main(document.getElementById('131509'), document.getElementById('727565'))</script></div><div style="clear: both;"></div></div>
 
     <h1 id="Element.style" style="display: block;" class=" scalatex-site-Styles-hoverContainer scalatex-site-Styles-headerTag"><a class=" scalatex-site-Styles-headerLink" href="#Element.style" style="position: absolute;right: 0px;"><i class="fa fa-link"></i></a>Element.style</h1>
       <div><div style="width: 50%;float: left;"><pre class=" scalatex-site-Styles-hoverContainer"><code class="scala scalatex-site-Styles-highlightMe">def main(div: html.Div) = {
@@ -227,7 +227,7 @@ span.hljs-tag, span.hljs-symbol{
     util.Random.nextInt(colors.length)
 
   div.style.color = colors(index)
-}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L33-L43" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><a class="pure-button" onclick="ExampleElementStyle.main(document.getElementById('907774'))">Run</a><div><div style="height: 50px;background-color: #fafafa;" id="907774"><b>div</b></div></div></div><div style="clear: both;"></div></div>
+}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L33-L43" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><a class="pure-button" onclick="ExampleElementStyle.main(document.getElementById('368580'))">Run</a><div><div style="height: 50px;background-color: #fafafa;" id="368580"><b>div</b></div></div></div><div style="clear: both;"></div></div>
 
   <p>
     The goal of this project is to provide a thin-but-idiomatic-scala interface to modern browser APIs. In particular:</p>
@@ -262,7 +262,7 @@ span.hljs-tag, span.hljs-symbol{
   Ajax.get(url).foreach { case xhr =&gt;
     pre.textContent = xhr.responseText
   }
-}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L162-L175" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><a class="pure-button" onclick="ExampleAjaxExtension.main(document.getElementById('82439'))">Run</a><div><pre id="82439" style="background-color: #fafafa;">output</pre></div></div><div style="clear: both;"></div></div>
+}</code><a class=" scalatex-site-Styles-headerLink" style="position: absolute;right: 0.5em;top: 0.5em;display: block;font-size: 24px;" href="https://github.com/scala-js/scala-js-dom/tree/master/example/src/main/scala/example/Example.scala#L162-L175" target="_blank"><i class="fa fa-link "></i></a></pre></div><div style="width: 50%;float: left;padding: 8px;box-sizing: border-box;"><a class="pure-button" onclick="ExampleAjaxExtension.main(document.getElementById('896505'))">Run</a><div><pre id="896505" style="background-color: #fafafa;">output</pre></div></div><div style="clear: both;"></div></div>
 
     <p>
       See also <a href="https://github.com/lihaoyi/roll">roll</a> (<a href="http://lihaoyi.github.io/roll/">live demo</a>) and <a href="https://github.com/lihaoyi/scala-js-games">scala-js-games</a> for an example of its use. <a href="http://www.scala-js-fiddle.com/">Scala-js-fiddle</a> also contains a pile of <a href="(http://www.scala-js-fiddle.com/gist/9405209/Oscilloscope.scala">fun examples</a> that demonstrate its usage. Pull requests/forks are welcome!
