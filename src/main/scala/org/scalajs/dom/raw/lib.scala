@@ -975,7 +975,51 @@ abstract class Element
    */
   def removeAttributeNS(namespaceURI: String,
       localName: String): Unit = js.native
+
+  /**
+   * The Element.requestFullscreen() method issues an asynchronous request to
+   * make the element be displayed in full-screen mode.
+   *
+   * It's not guaranteed that the element will be put into full screen mode.
+   * If permission to enter full screen mode is granted, the returned Promise
+   * will resolve and the element will receive a fullscreenchange event to let
+   * it know that it's now in full screen mode. If permission is denied, the
+   * promise is rejected and the element receives a fullscreenerror event
+   * instead. If the element has been detached from the original document, then
+   * the document receives these events instead.
+   *
+   * Earlier implementations of the Fullscreen API would always send these
+   * events to the document rather than the element, and you may need to be
+   * able to handle that situation. Check Browser compatibility in fullscreen
+   * for specifics on when each browser made this change.
+   *
+   * MDN
+   */
+  def requestFullscreen(
+      options: FullscreenOptions = ???): js.Promise[Unit] = js.native
+
+  /**
+   * The Element interface's onfullscreenchange property is an event handler
+   * for the fullscreenchange event that is fired when the element has
+   * transitioned into or out of full-screen mode.
+   *
+   * MDN
+   */
+  var onfullscreenchange: js.Function1[Event, _] = js.native
+
+  /**
+   * The Element interface's onfullscreenerror property is an event handler
+   * for the fullscreenerror event which is sent to the element when an error
+   * occurs while attempting to transition into or out of full-screen mode.
+   *
+   * MDN
+   */
+  var onfullscreenerror: js.Function1[Event, _] = js.native
 }
+
+class FullscreenOptions(
+    navigationUI: js.UndefOr[String] = js.undefined
+) extends js.Object
 
 /**
  * A Node is an interface from which a number of DOM types inherit, and allows these
@@ -3495,6 +3539,65 @@ abstract class Document
    */
   def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter,
       entityReferenceExpansion: Boolean): TreeWalker = js.native
+
+  /**
+   * The Document method exitFullscreen() requests that the element on this
+   * document which is currently being presented in full-screen mode be
+   * taken out of full-screen mode, restoring the previous state of the
+   * screen. This usually reverses the effects of a previous call to
+   * Element.requestFullscreen().
+   *
+   * The exception is if another element was already in full-screen mode
+   * when the current element was placed into full-screen mode using
+   * requestFullscreen(). In that case, the previous full-screen element is
+   * restored to full-screen status instead. In essence, a stack of
+   * full-screen elements is maintained.
+   *
+   * MDN
+   */
+  def exitFullscreen(): js.Promise[Unit] = js.native
+
+  /**
+   * The DocumentOrShadowRoot.fullscreenElement read-only property returns the
+   * Element that is currently being presented in full-screen mode in this
+   * document, or null if full-screen mode is not currently in use.
+   *
+   * Although this property is read-only, it will not throw if it is modified
+   * (even in strict mode); the setter is a no-operation and it will be ignored.
+   *
+   * MDN
+   */
+  def fullscreenElement: Element = js.native
+
+  /**
+   * The read-only fullscreenEnabled property on the Document interface
+   * indicates whether or not full-screen mode is available. Full-screen mode
+   * is available only for a page that has no windowed plug-ins in any of its
+   * documents, and if all <iframe> elements which contain the document have
+   * their allowfullscreen attribute set.
+   *
+   * MDN
+   */
+  def fullscreenEnabled: Boolean = js.native
+
+  /**
+   * The Document interface's onfullscreenchange property is an event handler
+   * for the fullscreenchange event that is fired immediately before a document
+   * transitions into or out of full-screen mode.
+   *
+   * MDN
+   */
+  var onfullscreenchange: js.Function1[Event, _] = js.native
+
+  /**
+   * The Document.onfullscreenerror property is an event handler for the
+   * fullscreenerror event that is sent to the  document when it fails to
+   * transition into full-screen mode after a prior call to
+   * Element.requestFullscreen().
+   *
+   * MDN
+   */
+  var onfullscreenerror: js.Function1[Event, _] = js.native
 }
 
 trait MessageEventInit extends EventInit {
