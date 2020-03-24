@@ -1017,9 +1017,9 @@ abstract class Element
   var onfullscreenerror: js.Function1[Event, _] = js.native
 }
 
-class FullscreenOptions(
-    navigationUI: js.UndefOr[String] = js.undefined
-) extends js.Object
+trait FullscreenOptions extends js.Object {
+  var navigationUI: js.UndefOr[String] = js.undefined
+}
 
 /**
  * A Node is an interface from which a number of DOM types inherit, and allows these
