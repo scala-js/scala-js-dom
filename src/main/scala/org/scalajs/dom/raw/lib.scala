@@ -996,7 +996,7 @@ abstract class Element
    * MDN
    */
   def requestFullscreen(
-      options: FullscreenOptions = ???): js.Promise[Unit] = js.native
+      options: FullscreenOptions = js.native): js.Promise[Unit] = js.native
 
   /**
    * The Element interface's onfullscreenchange property is an event handler
