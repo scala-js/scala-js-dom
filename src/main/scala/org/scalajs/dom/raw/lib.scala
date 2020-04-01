@@ -3983,6 +3983,17 @@ class CanvasRenderingContext2D extends js.Object {
 
   def createLinearGradient(x0: Double, y0: Double, x1: Double,
       y1: Double): CanvasGradient = js.native
+
+  /**
+   * The ellipse() method creates an elliptical arc centered at (x, y) with the radii radiusX
+   * and radiusY. The path starts at startAngle and ends at endAngle, and travels in the direction
+   * given by anticlockwise (defaulting to clockwise).
+   *
+   * MDN
+   */
+  def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double,
+      rotation: Double, startAngle: Double, endAngle: Double,
+      anticlockwise: Boolean = false): Unit = js.native
 }
 
 /**
