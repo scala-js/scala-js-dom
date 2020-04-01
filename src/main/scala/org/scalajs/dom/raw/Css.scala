@@ -308,6 +308,14 @@ class CSSStyleRule extends CSSRule {
    */
   var selectorText: String = js.native
   var readOnly: Boolean = js.native
+
+  /**
+   * Returns the CSSStyleDeclaration object for the rule. (Read only)
+   *
+   * MDN
+   */
+  var style: CSSStyleDeclaration = js.native
+
 }
 
 /**
