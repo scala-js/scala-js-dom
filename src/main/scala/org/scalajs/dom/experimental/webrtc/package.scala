@@ -22,12 +22,5 @@ package object webrtc {
      * @see [[https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices]]
      */
     def mediaDevices: MediaDevices = js.native
-
-    @deprecated(
-        "Navigator.getUserMedia() is deprecated, use Navigator.mediaDevices.getUserMedia() instead.",
-        "2014-05-28")
-    def getUserMedia(constraints: MediaStreamConstraints,
-        successCallback: js.Function1[MediaStream, Any],
-        errorCallback: js.Function1[DOMException, Any]): Unit = js.native
   }
 }

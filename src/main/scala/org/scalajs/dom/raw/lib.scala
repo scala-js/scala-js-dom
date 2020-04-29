@@ -262,16 +262,6 @@ class TreeWalker extends js.Object {
   var currentNode: Node = js.native
 
   /**
-   * The TreeWalker.expandEntityReferences read-only property returns a Boolean
-   * flag indicating whether or not the children of entity reference nodes are visible
-   * to the TreeWalker.
-   *
-   * MDN
-   */
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def expandEntityReferences: Boolean = js.native
-
-  /**
    * The TreeWalker.previousSibling() method moves the current Node to its previous
    * sibling, if any, and returns the found sibling. I there is no such node, return null
    * and the current node is not changed.
@@ -448,20 +438,10 @@ class CompositionEvent(typeArg: String, init: js.UndefOr[CompositionEventInit])
    * MDN
    */
   def locale: String = js.native
-
-  /**
-   * Initializes the attributes of a composition event.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initCompositionEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, dataArg: String,
-      locale: String): Unit = js.native
 }
 
 @js.native
-trait WindowTimers extends WindowTimersExtension {
+trait WindowTimers extends js.Object {
 
   /**
    * Clears the delay set by window.setTimeout().
@@ -507,7 +487,22 @@ trait WindowTimers extends WindowTimersExtension {
 @JSGlobal
 class Navigator
     extends NavigatorID with NavigatorOnLine with NavigatorContentUtils
-    with NavigatorGeolocation with NavigatorStorageUtils with NavigatorLanguage
+    with NavigatorGeolocation with NavigatorStorageUtils
+    with NavigatorLanguage {
+
+  /**
+   * The Clipboard API adds to the Navigator interface the read-only
+   * clipboard property, which returns the Clipboard object used to read
+   * and write the clipboard's contents. The Clipboard API can be used
+   * to implement cut, copy, and paste features within a web application.
+   *
+   * Use of the asynchronous clipboard read and write methods requires
+   * that the user grant the web site or app permission to access the
+   * clipboard. This permission must be obtained from the Permissions API
+   * using the "clipboard-read" and/or "clipboard-write" permissions.
+   */
+  def clipboard: Clipboard = js.native
+}
 
 @js.native
 trait NodeSelector extends js.Object {
@@ -680,7 +675,7 @@ abstract class Element
    *
    * MDN
    */
-  override def prefix: String = js.native
+  def prefix: String = js.native
 
   /**
    * scrollTop gets or sets the number of pixels that the content of an element is
@@ -980,6 +975,50 @@ abstract class Element
    */
   def removeAttributeNS(namespaceURI: String,
       localName: String): Unit = js.native
+
+  /**
+   * The Element.requestFullscreen() method issues an asynchronous request to
+   * make the element be displayed in full-screen mode.
+   *
+   * It's not guaranteed that the element will be put into full screen mode.
+   * If permission to enter full screen mode is granted, the returned Promise
+   * will resolve and the element will receive a fullscreenchange event to let
+   * it know that it's now in full screen mode. If permission is denied, the
+   * promise is rejected and the element receives a fullscreenerror event
+   * instead. If the element has been detached from the original document, then
+   * the document receives these events instead.
+   *
+   * Earlier implementations of the Fullscreen API would always send these
+   * events to the document rather than the element, and you may need to be
+   * able to handle that situation. Check Browser compatibility in fullscreen
+   * for specifics on when each browser made this change.
+   *
+   * MDN
+   */
+  def requestFullscreen(
+      options: FullscreenOptions = js.native): js.Promise[Unit] = js.native
+
+  /**
+   * The Element interface's onfullscreenchange property is an event handler
+   * for the fullscreenchange event that is fired when the element has
+   * transitioned into or out of full-screen mode.
+   *
+   * MDN
+   */
+  var onfullscreenchange: js.Function1[Event, _] = js.native
+
+  /**
+   * The Element interface's onfullscreenerror property is an event handler
+   * for the fullscreenerror event which is sent to the element when an error
+   * occurs while attempting to transition into or out of full-screen mode.
+   *
+   * MDN
+   */
+  var onfullscreenerror: js.Function1[Event, _] = js.native
+}
+
+trait FullscreenOptions extends js.Object {
+  var navigationUI: js.UndefOr[String] = js.undefined
 }
 
 /**
@@ -1133,15 +1172,6 @@ abstract class Node extends EventTarget {
    * MDN
    */
   def firstChild: Node = js.native
-
-  /**
-   * Is a DOMString representing the namespace prefix of the node, or null if no
-   * prefix is specified.
-   *
-   * MDN
-   */
-  @deprecated("Obsolete.", "DOM4")
-  def prefix: String = js.native
 
   /**
    * Removes a child node from the current element, which must be a child of the current
@@ -1492,13 +1522,6 @@ class MouseEvent(typeArg: String, init: js.UndefOr[MouseEventInit])
    * MDN
    */
   def clientX: Double = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initMouseEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int,
-      screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean,
-      altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean,
-      buttonArg: Int, relatedTargetArg: EventTarget): Unit = js.native
 
   /**
    * Returns the current state of the specified modifier key. See the
@@ -1972,16 +1995,6 @@ class NodeIterator extends js.Object {
    * MDN
    */
   def root: Node = js.native
-
-  /**
-   * The NodeIterator.expandEntityReferences read-only property returns a Boolean
-   * flag indicating whether or not the children of entity reference nodes are visible
-   * to the NodeIterator.
-   *
-   * MDN
-   */
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def expandEntityReferences: Boolean = js.native
 
   /**
    * The NodeIterator.nextNode() method returns the next node in the set represented
@@ -3153,12 +3166,6 @@ class KeyboardEvent(typeArg: String, init: js.UndefOr[KeyboardEventInit])
    * Returns the current state of the specified modifier key.
    */
   def getModifierState(keyArg: String): Boolean = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initKeyboardEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, keyArg: String,
-      locationArg: Int, modifiersListArg: String, repeat: Boolean,
-      locale: String): Unit = js.native
 }
 
 trait KeyboardEventInit extends UIEventInit with ModifierKeyEventInit {
@@ -3269,15 +3276,6 @@ abstract class Document
    * MDN
    */
   def implementation: DOMImplementation = js.native
-
-  /**
-   * Returns true if the XML declaration specifies the document is standalone (e.g., An
-   * external part of the DTD affects the document's content), else false.
-   *
-   * MDN
-   */
-  @deprecated("Not supported by all browsers", "forever")
-  def xmlStandalone: Boolean = js.native
 
   /**
    * Returns the character encoding of the current document.
@@ -3543,14 +3541,63 @@ abstract class Document
       entityReferenceExpansion: Boolean): TreeWalker = js.native
 
   /**
-   * Releases mouse capture if it's currently enabled on an element within this
-   * document. Enabling mouse capture on an element is done by calling
-   * element.setCapture().
+   * The Document method exitFullscreen() requests that the element on this
+   * document which is currently being presented in full-screen mode be
+   * taken out of full-screen mode, restoring the previous state of the
+   * screen. This usually reverses the effects of a previous call to
+   * Element.requestFullscreen().
+   *
+   * The exception is if another element was already in full-screen mode
+   * when the current element was placed into full-screen mode using
+   * requestFullscreen(). In that case, the previous full-screen element is
+   * restored to full-screen status instead. In essence, a stack of
+   * full-screen elements is maintained.
    *
    * MDN
    */
-  @deprecated("Non standard.", "forever")
-  def releaseCapture(): Unit = js.native
+  def exitFullscreen(): js.Promise[Unit] = js.native
+
+  /**
+   * The DocumentOrShadowRoot.fullscreenElement read-only property returns the
+   * Element that is currently being presented in full-screen mode in this
+   * document, or null if full-screen mode is not currently in use.
+   *
+   * Although this property is read-only, it will not throw if it is modified
+   * (even in strict mode); the setter is a no-operation and it will be ignored.
+   *
+   * MDN
+   */
+  def fullscreenElement: Element = js.native
+
+  /**
+   * The read-only fullscreenEnabled property on the Document interface
+   * indicates whether or not full-screen mode is available. Full-screen mode
+   * is available only for a page that has no windowed plug-ins in any of its
+   * documents, and if all <iframe> elements which contain the document have
+   * their allowfullscreen attribute set.
+   *
+   * MDN
+   */
+  def fullscreenEnabled: Boolean = js.native
+
+  /**
+   * The Document interface's onfullscreenchange property is an event handler
+   * for the fullscreenchange event that is fired immediately before a document
+   * transitions into or out of full-screen mode.
+   *
+   * MDN
+   */
+  var onfullscreenchange: js.Function1[Event, _] = js.native
+
+  /**
+   * The Document.onfullscreenerror property is an event handler for the
+   * fullscreenerror event that is sent to the  document when it fails to
+   * transition into full-screen mode after a prior call to
+   * Element.requestFullscreen().
+   *
+   * MDN
+   */
+  var onfullscreenerror: js.Function1[Event, _] = js.native
 }
 
 trait MessageEventInit extends EventInit {
@@ -3582,11 +3629,6 @@ class MessageEvent(typeArg: String, init: js.UndefOr[MessageEventInit])
    * MDN
    */
   def data: Any = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initMessageEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, dataArg: Any, originArg: String,
-      lastEventIdArg: String, sourceArg: Window): Unit = js.native
 
   def ports: js.Any = js.native
 }
@@ -3941,6 +3983,17 @@ class CanvasRenderingContext2D extends js.Object {
 
   def createLinearGradient(x0: Double, y0: Double, x1: Double,
       y1: Double): CanvasGradient = js.native
+
+  /**
+   * The ellipse() method creates an elliptical arc centered at (x, y) with the radii radiusX
+   * and radiusY. The path starts at startAngle and ends at endAngle, and travels in the direction
+   * given by anticlockwise (defaulting to clockwise).
+   *
+   * MDN
+   */
+  def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double,
+      rotation: Double, startAngle: Double, endAngle: Double,
+      anticlockwise: Boolean = false): Unit = js.native
 }
 
 /**
@@ -4450,26 +4503,6 @@ trait ClipboardEventInit extends EventInit {
   var dataType: js.UndefOr[String] = js.undefined
 }
 
-object ClipboardEventInit {
-
-  /**
-   * Construct a new ClipboardEventInit
-   *
-   * @param data       The data for this clipboard event
-   * @param dataType   The MIME type of the data.
-   * @return a new ClipBoardEventInit
-   */
-  @deprecated("Create new ClipboardEventInit instead", "0.9.8")
-  @inline
-  def apply(data: js.UndefOr[String] = js.undefined,
-      dataType: js.UndefOr[String] = js.undefined): ClipboardEventInit = {
-    val result = js.Dynamic.literal()
-    data.foreach(result.data = _)
-    dataType.foreach(result.dataType = _)
-    result.asInstanceOf[ClipboardEventInit]
-  }
-}
-
 /**
  * The ClipboardEvent interface represents events providing information related to
  * modification of the clipboard, that is cut, copy, and paste events.
@@ -4481,9 +4514,6 @@ object ClipboardEventInit {
 class ClipboardEvent(typeArg: String,
     init: js.UndefOr[ClipboardEventInit] = js.undefined)
     extends Event(typeArg, init) {
-  @deprecated("Use the overload with a ClipboardEventInit instead.", "0.8.1")
-  def this(`type`: String, settings: js.Dynamic) =
-    this(`type`, settings.asInstanceOf[ClipboardEventInit])
 
   /**
    * Is a DataTransfer object containing the data affected by the user-initialed cut, copy,
@@ -4518,11 +4548,6 @@ class FocusEvent(typeArg: String,
    * MDN
    */
   def relatedTarget: EventTarget = js.native
-
-  @deprecated("Nonstandard. Instead use constructor to initialize", "forever")
-  def initFocusEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, detailArg: Int,
-      relatedTargetArg: EventTarget): Unit = js.native
 }
 
 /**
@@ -4808,48 +4833,9 @@ class Storage extends js.Object {
 abstract class DocumentType extends Node {
   def name: String = js.native
 
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def notations: NamedNodeMap = js.native
-
   def systemId: String = js.native
 
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def internalSubset: String = js.native
-
-  @deprecated("Obsolete.", "WHATWG DOM")
-  def entities: NamedNodeMap = js.native
-
   def publicId: String = js.native
-}
-
-@deprecated("Deprecated in favor of Mutation Observers (W3C DOM4)",
-    "WHATWG DOM")
-@js.native
-@JSGlobal
-class MutationEvent private[this] extends Event(js.native, js.native) {
-  def newValue: String = js.native
-
-  def attrChange: Int = js.native
-
-  def attrName: String = js.native
-
-  def prevValue: String = js.native
-
-  def relatedNode: Node = js.native
-
-  def initMutationEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, relatedNodeArg: Node, prevValueArg: String,
-      newValueArg: String, attrNameArg: String,
-      attrChangeArg: Int): Unit = js.native
-}
-
-@deprecated("Obsolete.", "WHATWG DOM")
-@js.native
-@JSGlobal
-object MutationEvent extends js.Object {
-  val MODIFICATION: Int = js.native
-  val REMOVAL: Int = js.native
-  val ADDITION: Int = js.native
 }
 
 /**
@@ -5072,14 +5058,6 @@ trait MutationRecord extends js.Object {
 @js.native
 trait DragEvent extends MouseEvent {
   def dataTransfer: DataTransfer = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initDragEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int,
-      screenYArg: Int, clientXArg: Int, clientYArg: Int, ctrlKeyArg: Boolean,
-      altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean,
-      buttonArg: Int, relatedTargetArg: EventTarget,
-      dataTransferArg: DataTransfer): Unit = js.native
 }
 
 /**
@@ -5533,11 +5511,6 @@ class UIEvent(typeArg: String, init: js.UndefOr[UIEventInit] = js.undefined)
    * MDN
    */
   def view: Window = js.native
-
-  @deprecated("Instead use constructor to initialize", "0.9.8")
-  def initUIEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window,
-      detailArg: Int): Unit = js.native
 }
 
 trait WheelEventInit extends MouseEventInit {
@@ -5585,17 +5558,6 @@ class WheelEvent(typeArg: String, init: js.UndefOr[WheelEventInit])
    * MDN
    */
   def deltaY: Double = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initWheelEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, viewArg: Window, detailArg: Int, screenXArg: Int,
-      screenYArg: Int, clientXArg: Int, clientYArg: Int, buttonArg: Int,
-      relatedTargetArg: EventTarget, modifiersListArg: String,
-      deltaXArg: Double, deltaYArg: Double, deltaZArg: Double,
-      deltaMode: Int): Unit = js.native
-
-  @deprecated("Non-standard", "forever")
-  def getCurrentPoint(element: Element): Unit = js.native
 }
 
 @js.native
@@ -5734,16 +5696,6 @@ class CustomEvent(typeArg: String, init: js.UndefOr[CustomEventInit])
    * MDN
    */
   def detail: Any = js.native
-
-  /**
-   * Initializes the event in a manner analogous to the similarly-named method in the
-   * DOM Events interfaces.
-   *
-   * MDN
-   */
-  @deprecated("Instead use constructor", "0.9.8")
-  def initCustomEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, detailArg: Any): Unit = js.native
 }
 
 /**
@@ -6016,25 +5968,12 @@ class Event(typeArg: String, init: js.UndefOr[EventInit] = js.undefined)
 
   def `type`: String = js.native
 
-  @deprecated("Non standard.", "forever")
-  def srcElement: Element = js.native
-
   /**
    * A boolean indicating whether the event bubbles up through the DOM or not.
    *
    * MDN
    */
   def bubbles: Boolean = js.native
-
-  /**
-   * The initEvent method is used to initialize the value of an event created using
-   * document.createEvent.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initEvent(eventTypeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean): Unit = js.native
 
   /**
    * Stops the propagation of events further along in the DOM.
@@ -6569,18 +6508,6 @@ class StorageEvent(typeArg: String, init: js.UndefOr[StorageEventInit])
    * MDN
    */
   def key: String = js.native
-
-  /**
-   * Initializes the event in a manner analogous to the similarly-named method in the
-   * DOM Events interfaces.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initStorageEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, keyArg: String, oldValueArg: String,
-      newValueArg: String, urlArg: String,
-      storageAreaArg: Storage): Unit = js.native
 }
 
 /**
@@ -6663,17 +6590,6 @@ abstract class CharacterData extends Node with NonDocumentTypeChildNode {
 @js.native
 @JSGlobal
 class DOMException extends js.Object {
-
-  /**
-   * Returns a short that contains one of the error code constants one of the
-   * exception code constants (see below) or 0 if none match. This field is used
-   * for historical reasons. New DOM exceptions don't use this anymore: they put
-   * this info in the name attribute.
-   *
-   * MDN
-   */
-  @deprecated("Obsolete.", "DOM4")
-  def code: Int = js.native
 
   /**
    * Returns a DOMString representing a message or description associated with
@@ -6775,7 +6691,7 @@ class Attr extends Node {
    *
    * MDN
    */
-  override def prefix: String = js.native
+  def prefix: String = js.native
 }
 
 /**
@@ -6873,11 +6789,6 @@ trait ErrorEvent extends Event {
    * MDN
    */
   def message: String = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initErrorEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, messageArg: String, filenameArg: String,
-      linenoArg: Int): Unit = js.native
 }
 
 @js.native
@@ -6948,18 +6859,6 @@ trait TransitionEvent extends Event {
    * MDN
    */
   def elapsedTime: Double = js.native
-
-  /**
-   * The TransitionEvent.initTransitionEvent() method Initializes a transition
-   * event created using the deprecated Document.createEvent("TransitionEvent")
-   * method.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initTransitionEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, propertyNameArg: String,
-      elapsedTimeArg: Int): Unit = js.native
 }
 
 /**
@@ -7005,31 +6904,6 @@ trait MediaQueryList extends js.Object {
 }
 
 /**
- * This interface describes an error object that contains an error name.
- *
- * MDN
- */
-@deprecated("Use DOMException instead", "DOM Level 3 Core")
-@js.native
-trait DOMError extends js.Object {
-
-  /**
-   * Readonly DOMString. Returns one of the error type names (see below).
-   *
-   * MDN
-   */
-  def name: String = js.native
-
-  /**
-   * Readonly DOMString. Returns a message or description associated with the given
-   * error type name.
-   *
-   * MDN
-   */
-  def message: String = js.native
-}
-
-/**
  * A CloseEvent is sent to clients using WebSockets when the connection is closed.
  * This is delivered to the listener indicated by the WebSocket object's onclose
  * attribute.
@@ -7061,11 +6935,6 @@ trait CloseEvent extends Event {
    * MDN
    */
   def code: Int = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initCloseEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, wasCleanArg: Boolean, codeArg: Int,
-      reasonArg: String): Unit = js.native
 }
 
 /**
@@ -7313,17 +7182,6 @@ trait ProgressEvent extends Event {
    * MDN
    */
   def total: Double = js.native
-
-  /**
-   * The ProgressEvent.initProgressEvent() method Initializes an animation event
-   * created using the deprecated Document.createEvent("ProgressEvent") method.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initProgressEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, lengthComputableArg: Boolean, loadedArg: Double,
-      totalArg: Double): Unit = js.native
 }
 
 /**
@@ -7354,15 +7212,6 @@ trait FileList extends DOMList[File]
 @js.native
 @JSGlobal
 abstract class File extends Blob {
-
-  /**
-   * Returns the last modified date of the file. Files without a known last modified date
-   * use the current date instead.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def lastModifiedDate: js.Any = js.native
 
   /**
    * Returns the name of the file. For security reasons, the path is excluded from this
@@ -7475,15 +7324,6 @@ trait AudioTrackList extends EventTarget with DOMList[AudioTrack] {
   def getTrackById(id: String): AudioTrack = js.native
 }
 
-@js.native
-trait WindowTimersExtension extends js.Object {
-  @deprecated("Non standard.", "forever")
-  def clearImmediate(handle: Int): Unit = js.native
-
-  @deprecated("Non standard.", "forever")
-  def setImmediate(handler: js.Function0[Any]): Int = js.native
-}
-
 /**
  * The AnimationEvent interface represents events providing information related
  * to animations.
@@ -7511,18 +7351,6 @@ trait AnimationEvent extends Event {
    * MDN
    */
   def elapsedTime: Double = js.native
-
-  /**
-   * The AnimationEvent.initAnimationEvent() method Initializes an animation
-   * event created using the deprecated Document.createEvent("AnimationEvent")
-   * method.
-   *
-   * MDN
-   */
-  @deprecated("Non-standard", "forever")
-  def initAnimationEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, animationNameArg: String,
-      elapsedTimeArg: Int): Unit = js.native
 }
 
 @js.native
@@ -8047,10 +7875,6 @@ object ApplicationCache extends js.Object {
 @js.native
 trait PopStateEvent extends Event {
   def state: js.Any = js.native
-
-  @deprecated("Non-standard", "forever")
-  def initPopStateEvent(typeArg: String, canBubbleArg: Boolean,
-      cancelableArg: Boolean, stateArg: js.Any): Unit = js.native
 }
 
 /**
@@ -8262,4 +8086,51 @@ object VisibilityState {
    * MDN
    */
   val unloaded = "unloaded".asInstanceOf[VisibilityState]
+}
+
+/**
+ * The Clipboard interface implements the Clipboard API, providing—if the user grants
+ * permission—both read and write access to the contents of the system clipboard.
+ * The Clipboard API can be used to implement cut, copy, and paste features within
+ * a web application.
+ *
+ * The system clipboard is exposed through the global Navigator.clipboard property
+ *
+ * Clipboard is based on the EventTarget interface, and includes its methods.
+ *
+ * MDN
+ */
+@js.native
+trait Clipboard extends EventTarget {
+
+  /**
+   * The read() method of the Clipboard interface requests a copy of the clipboard's
+   * contents, delivering the data to the returned Promise when the promise is
+   * resolved. Unlike readText(), the read() method can return arbitrary data,
+   * such as images.
+   *
+   * To read from the clipboard, you must first have the "clipboard-read" permission.
+   */
+  def read(): js.Promise[DataTransfer] = js.native
+
+  /**
+   * The readText() method returns a Promise which resolves with a copy of the
+   * textual contents of the system clipboard.
+   */
+  def readText(): js.Promise[String] = js.native
+
+  /**
+   * The write() method writes arbitrary data, such as images, to the clipboard.
+   * This can be used to implement cut and copy functionality.
+   *
+   * Before you can write to the clipboard, you need to use the Permissions API
+   * to get the "clipboard-write" permission.
+   */
+  def write(data: DataTransfer): js.Promise[Unit] = js.native
+
+  /**
+   * The writeText() method writes the specified text string to the system
+   * clipboard.
+   */
+  def writeText(newClipText: String): js.Promise[Unit] = js.native
 }
