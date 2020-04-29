@@ -134,7 +134,7 @@ object RequestInit {
  * the types.
  */
 trait RequestInit extends js.Object {
-  var method: js.UndefOr[HttpMethod]
+  var method: js.UndefOr[HttpMethod] = js.undefined
 
   var headers: js.UndefOr[HeadersInit] = js.undefined
 
