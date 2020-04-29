@@ -80,29 +80,29 @@ class Request(input: RequestInfo, init: RequestInit = null) extends js.Object {
  * the types.
  */
 trait RequestInit extends js.Object {
-  var method: js.UndefOr[HttpMethod]
+  var method: js.UndefOr[HttpMethod] = js.undefined
 
-  var headers: js.UndefOr[HeadersInit]
+  var headers: js.UndefOr[HeadersInit] = js.undefined
 
-  var body: js.UndefOr[BodyInit]
+  var body: js.UndefOr[BodyInit] = js.undefined
 
-  var referrer: js.UndefOr[String]
+  var referrer: js.UndefOr[String] = js.undefined
 
-  var referrerPolicy: js.UndefOr[ReferrerPolicy]
+  var referrerPolicy: js.UndefOr[ReferrerPolicy] = js.undefined
 
-  var mode: js.UndefOr[RequestMode]
+  var mode: js.UndefOr[RequestMode] = js.undefined
 
-  var credentials: js.UndefOr[RequestCredentials]
+  var credentials: js.UndefOr[RequestCredentials] = js.undefined
 
-  var cache: js.UndefOr[RequestCache]
+  var cache: js.UndefOr[RequestCache] = js.undefined
 
-  var redirect: js.UndefOr[RequestRedirect]
+  var redirect: js.UndefOr[RequestRedirect] = js.undefined
 
-  var integrity: js.UndefOr[String]
+  var integrity: js.UndefOr[String] = js.undefined
 
-  var keepalive: js.UndefOr[Boolean]
+  var keepalive: js.UndefOr[Boolean] = js.undefined
 
-  var signal: js.UndefOr[AbortSignal]
+  var signal: js.UndefOr[AbortSignal] = js.undefined
 
   /**
    * The whatwg spec section on [[https://fetch.spec.whatwg.org/#requestinit RequestInit dictionary]]
@@ -111,7 +111,7 @@ trait RequestInit extends js.Object {
    * it says even more clearly:
    * "If init's window member is present and it is not null, throw a TypeError."
    */
-  var window: js.UndefOr[Null]
+  var window: js.UndefOr[Null] = js.undefined
 }
 
 /**
