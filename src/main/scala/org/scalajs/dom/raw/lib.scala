@@ -6062,14 +6062,14 @@ class ImageBitmap extends js.Object {
    *
    * MDN
    */
-  def height: Long = js.native
+  def height: Int = js.native
 
   /**
    * Is an unsigned long representing the width, in CSS pixels, of the ImageBitmap.
    *
    * MDN
    */
-  def width: Long = js.native
+  def width: Int = js.native
 
   /**
    * Dispose of all graphical resources associated with an ImageBitmap.
