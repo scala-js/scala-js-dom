@@ -6046,6 +6046,41 @@ class ImageData extends js.Object {
 }
 
 /**
+ * The ImageBitmap interface represents a bitmap image which can be drawn to a &lt;canvas&gt;
+ * without undue latency. It can be created from a variety of source objects using the
+ * createImageBitmap() factory method. ImageBitmap provides an asynchronous and resource
+ * efficient pathway to prepare textures for rendering in WebGL.
+ *
+ * MDN
+ */
+@js.native
+@JSGlobal
+class ImageBitmap extends js.Object {
+
+  /**
+   * Is an unsigned long representing the height, in CSS pixels, of the ImageBitmap.
+   *
+   * MDN
+   */
+  def height: Long = js.native
+
+  /**
+   * Is an unsigned long representing the width, in CSS pixels, of the ImageBitmap.
+   *
+   * MDN
+   */
+  def width: Long = js.native
+
+  /**
+   * Dispose of all graphical resources associated with an ImageBitmap.
+   *
+   * MDN
+   */
+  def close(): Unit = js.native
+
+}
+
+/**
  * A collection of nodes returned by Node.attributes (also potentially for
  * DocumentType.entities, DocumentType.notations). NamedNodeMaps are not in any
  * particular order (unlike NodeList, although they may be accessed by an index as in
