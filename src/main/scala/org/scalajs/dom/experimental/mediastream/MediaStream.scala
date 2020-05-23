@@ -637,7 +637,7 @@ trait MediaTrackSupportedConstraints extends js.Object {
 @js.native
 @JSGlobal
 class ImageCapture(
-  init: js.UndefOr[MediaStreamTrack]
+  init: MediaStreamTrack
 ) extends js.Object {
 
   /**
