@@ -3,10 +3,11 @@
  */
 package org.scalajs.dom.experimental.mediastream
 
+import org.scalajs.dom.raw._
+
 import scala.scalajs.js
-import scala.scalajs.js.|
 import scala.scalajs.js.annotation._
-import org.scalajs.dom.raw.{Blob, DOMException, Event, EventInit, EventTarget, ImageBitmap}
+import scala.scalajs.js.|
 
 /**
  * The MediaStream
@@ -637,7 +638,7 @@ trait MediaTrackSupportedConstraints extends js.Object {
 @js.native
 @JSGlobal
 class ImageCapture(
-  init: MediaStreamTrack
+    init: MediaStreamTrack
 ) extends js.Object {
 
   /**
