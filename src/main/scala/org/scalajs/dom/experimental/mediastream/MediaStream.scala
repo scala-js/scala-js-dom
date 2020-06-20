@@ -738,6 +738,7 @@ trait VideoTrackList extends EventTarget {
   var onaddtrack: js.Function1[Event, Any] = js.native
   var onremovetrack: js.Function1[Event, Any] = js.native
 }
+
 @js.native
 trait VideoTrack extends js.Object {
   val id: String = js.native
@@ -746,6 +747,7 @@ trait VideoTrack extends js.Object {
   val language: String = js.native
   var selected: Boolean = js.native
 }
+
 @js.native
 trait TextTrackList extends EventTarget {
 
@@ -760,6 +762,7 @@ trait TextTrackList extends EventTarget {
   var onaddtrack: js.Function1[Event, Any] = js.native
   var onremovetrack: js.Function1[Event, Any] = js.native
 }
+
 @js.native
 trait TextTrack extends EventTarget {
   val id: String = js.native
