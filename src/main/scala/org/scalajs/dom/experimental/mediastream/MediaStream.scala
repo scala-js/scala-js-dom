@@ -635,7 +635,7 @@ trait MediaTrackSupportedConstraints extends js.Object {
 @js.native
 @JSGlobal
 class MediaSource extends EventTarget {
-  def sourceBueffers: SourceBufferList = js.native
+  def sourceBuffers: SourceBufferList = js.native
   def activeSourceBuffers: SourceBufferList = js.native
   def readyState: ReadyState = js.native
 
