@@ -652,7 +652,7 @@ class MediaSource extends EventTarget {
 
   def addSourceBuffer(bufferType: String): SourceBuffer = js.native
   def removeSourceBuffer(sourceBuffer: SourceBuffer): Unit = js.native
-  def endOfStream(error: js.UndefOr[EndOfStreamError] = ???): Unit = js.native
+  def endOfStream(error: EndOfStreamError = js.native): Unit = js.native
   def setLiveSeekableRange(start: Double, end: Double): Unit = js.native
   def clearLiveSeekableRange(): Unit = js.native
 }
