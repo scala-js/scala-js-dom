@@ -107,7 +107,7 @@ class Worker(stringUrl: String) extends AbstractWorker {
  * MDN
  */
 @js.native
-trait WorkerGlobalScope extends EventTarget {
+trait WorkerGlobalScope extends EventTarget with WindowOrWorkerGlobalScope {
 
   /**
    * The caches read-only property of the WorkerGlobalScope interface returns
@@ -117,7 +117,7 @@ trait WorkerGlobalScope extends EventTarget {
    *
    * MDN
    */
-  def caches: js.Any = js.native
+  override def caches: js.Any = js.native
 
   /**
    * The self read-only property of the WorkerGlobalScope interface returns a

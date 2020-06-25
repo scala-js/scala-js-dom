@@ -2057,8 +2057,8 @@ trait WindowSessionStorage extends js.Object {
 @JSGlobal
 class Window
     extends EventTarget with WindowLocalStorage with WindowSessionStorage
-    with WindowTimers with WindowBase64 with IDBEnvironment
-    with WindowConsole {
+    with WindowTimers with WindowBase64 with IDBEnvironment with WindowConsole
+    with WindowOrWorkerGlobalScope {
   var ondragend: js.Function1[DragEvent, _] = js.native
 
   /**
@@ -2762,6 +2762,15 @@ class Window
    * MDN
    */
   var lostpointercapture: js.Function1[PointerEvent, _] = js.native
+
+  override def btoa(rawString: String): String = js.native
+  override def atob(encodedString: String): String = js.native
+  override def clearTimeout(handle: Int): Unit = js.native
+  override def setTimeout(handler: js.Function0[Any],
+      timeout: Double): Int = js.native
+  override def clearInterval(handle: Int): Unit = js.native
+  override def setInterval(handler: js.Function0[Any],
+      timeout: Double): Int = js.native
 }
 
 /**
