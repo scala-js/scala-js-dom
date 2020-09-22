@@ -243,6 +243,12 @@ object Ajax {
     apply("PUT", url, data, timeout, headers, withCredentials, responseType)
   }
 
+  def patch(url: String, data: InputData = null, timeout: Int = 0,
+    headers: Map[String, String] = Map.empty,
+    withCredentials: Boolean = false, responseType: String = "") = {
+    apply("PATCH", url, data, timeout, headers, withCredentials, responseType)
+  }
+
   def delete(url: String, data: InputData = null, timeout: Int = 0,
       headers: Map[String, String] = Map.empty,
       withCredentials: Boolean = false, responseType: String = "") = {
