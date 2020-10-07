@@ -48,7 +48,7 @@
   @pair("Alert", Nil)
 
   @p
-    Will cause a javascript alert box saying `HAI` to appear. Other javascript classes and objects can be similarly accessed e.g. @hl.scala{new dom.XMLHttpRequest()} to perform a new Ajax request, @hl.scala{dom.document} to access the global @hl.scala{document} object, or @hl.scala{html.Div} to to refer to the type of a @hl.scala{<div>} element.
+    Will cause a javascript alert box saying `Hi from Scala-js-dom` to appear. Other javascript classes and objects can be similarly accessed e.g. @hl.scala{new dom.XMLHttpRequest()} to perform a new Ajax request, @hl.scala{dom.document} to access the global @hl.scala{document} object, or @hl.scala{html.Div} to to refer to the type of a @hl.scala{<div>} element.
 
   @sect{Usage}
     @p
@@ -90,7 +90,7 @@
     @sect{Node.onmousemove}
       @pair(
        "EventHandler",
-        Seq(pre("pre")),
+        Seq(pre("Hover this box!")),
         autorun=true
       )
 
