@@ -123,9 +123,7 @@ object XMLHttpRequest{
   @JSExport
   def main(pre: html.Pre) = {
     val xhr = new dom.XMLHttpRequest()
-    xhr.open("GET",
-      "https://www.boredapi.com/api/activity?type=recreational"
-    )
+    xhr.open("GET", "https://www.boredapi.com/api/activity")
     xhr.onload = { (e: dom.Event) =>
       if (xhr.status == 200) {
         pre.textContent = xhr.responseText
@@ -164,8 +162,7 @@ object AjaxExtension {
                 .ExecutionContext
                 .Implicits
                 .global
-    val url =
-      "https://www.boredapi.com/api/activity?type=recreational"
+    val url = "https://www.boredapi.com/api/activity"
     Ajax.get(url).foreach { case xhr =>
       pre.textContent = xhr.responseText
     }
