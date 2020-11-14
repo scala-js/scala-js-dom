@@ -357,25 +357,6 @@ class IDBCursorWithValue extends IDBCursor {
 }
 
 /**
- * The IDBEvironment interface of the IndexedDB API provides asynchronous access
- * to a client-side database. It is implemented by window and Worker objects.
- *
- * MDN
- */
-@js.native
-trait IDBEnvironment extends js.Object {
-
-  /**
-   * an IDBRequest object that communicates back to the requesting application
-   * through events. This design means that any number of requests can be active on any
-   * database at a time.
-   *
-   * MDN
-   */
-  def indexedDB: IDBFactory = js.native
-}
-
-/**
  * The IDBKeyRange interface of the IndexedDB API represents a continuous interval
  * over some data type that is used for keys. Records can be retrieved from object
  * stores and indexes using keys or a range of keys. You can limit the range using

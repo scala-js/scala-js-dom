@@ -8,7 +8,6 @@ object idb {
   @inline def Cursor = raw.IDBCursor
   type CursorWithValue = raw.IDBCursorWithValue
   type Database = raw.IDBDatabase
-  type Environment = raw.IDBEnvironment
   type Factory = raw.IDBFactory
   type Index = raw.IDBIndex
   type KeyRange = raw.IDBKeyRange

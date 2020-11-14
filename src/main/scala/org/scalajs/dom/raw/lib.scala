@@ -2083,7 +2083,7 @@ trait WindowSessionStorage extends js.Object {
 @JSGlobal
 class Window
     extends EventTarget with WindowLocalStorage with WindowSessionStorage
-    with WindowTimers with WindowBase64 with IDBEnvironment
+    with WindowTimers with WindowBase64 with WindowOrWorkerGlobalScope
     with WindowConsole {
   var ondragend: js.Function1[DragEvent, _] = js.native
 
