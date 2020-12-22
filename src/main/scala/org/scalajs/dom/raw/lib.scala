@@ -2468,6 +2468,8 @@ class Window
 
   var onmousewheel: js.Function1[WheelEvent, _] = js.native
 
+  var onwheel: js.Function1[WheelEvent, _] = js.native
+
   /**
    * An event handler property for window loading.
    *
