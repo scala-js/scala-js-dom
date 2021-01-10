@@ -930,10 +930,10 @@ object KeyFormat {
 trait RSAPublicKey extends js.Object {
 
   /* modulus, as a base64 URL encoded String */
-  @js.native
+  // @js.native
   def n: String = js.native
 
   /* exponent, as a base64 URL encoded String */
-  @js.native
+  // @js.native
   def e: String = js.native
 }
