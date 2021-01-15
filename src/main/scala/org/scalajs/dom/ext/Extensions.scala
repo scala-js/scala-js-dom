@@ -213,15 +213,17 @@ object Ajax {
     implicit def byteBuffer2ajax(data: ByteBuffer): InputData = {
       if (data.hasTypedArray()) {
         // get relevant part of the underlying typed array
-        val typedArray = data.typedArray()
-        typedArray.subarray(data.position, data.limit)
+        // val typedArray = data.typedArray()
+        // typedArray.subarray(data.position, data.limit)
+        js.Object().asInstanceOf[InputData]
       } else {
         // fall back to copying the data
-        val tempBuffer = ByteBuffer.allocateDirect(data.remaining)
-        val origPosition = data.position()
-        tempBuffer.put(data)
-        data.position(origPosition)
-        tempBuffer.typedArray()
+        // val tempBuffer = ByteBuffer.allocateDirect(data.remaining)
+        // val origPosition = data.position()
+        // tempBuffer.put(data)
+        // data.position(origPosition)
+        // tempBuffer.typedArray()
+        js.Object().asInstanceOf[InputData]
       }
     }
   }

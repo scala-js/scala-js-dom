@@ -6,8 +6,9 @@ lazy val root = project.in(file(".")).
 name := "Scala.js DOM"
 
 crossScalaVersions in ThisBuild := {
-  if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1", "3.0.0-M3")
-  else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
+  if (scalaJSVersion.startsWith("1.3.")) Seq("3.0.0-M3", "2.12.12", "2.11.12", "2.13.4")
+  else if (scalaJSVersion.startsWith("1.")) Seq("2.12.12", "2.11.12", "2.13.4")
+  else Seq("2.12.12", "2.11.12", "2.10.7", "2.13.4")
 }
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
@@ -102,7 +103,7 @@ lazy val readme = ScalatexReadme(
   source = "Index",
   autoResources = Seq("example-opt.js")
 ).settings(
-  scalaVersion := "2.12.10",
+  scalaVersion := "2.12.12",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
   (resources in Compile) += (fullOptJS in (example, Compile)).value.data
 )

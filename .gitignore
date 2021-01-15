@@ -5,3 +5,8 @@ target/
 .settings/
 .idea
 .idea_modules
+.bloop
+.bsp
+.metals
+.vscode
+metals.sbt
