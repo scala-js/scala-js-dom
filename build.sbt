@@ -5,18 +5,29 @@ lazy val root = project.in(file(".")).
 
 name := "Scala.js DOM"
 
+val scala210Version = "2.10.7"
+val scala211Version = "2.11.12"
+val scala212Version = "2.12.12"
+val scala213Version = "2.13.4"
+val scala3Version = "3.0.0-RC1-bin-20210113-8345078-NIGHTLY"
+
 crossScalaVersions in ThisBuild := {
-  if (scalaJSVersion.startsWith("1.4.")) Seq("3.0.0-M3", "2.12.12", "2.11.12", "2.13.4")
-  else if (scalaJSVersion.startsWith("1.3.")) Seq("3.0.0-M3", "2.12.12", "2.11.12", "2.13.4")
-  else if (scalaJSVersion.startsWith("1.")) Seq("2.12.12", "2.11.12", "2.13.4")
-  else Seq("2.12.12", "2.11.12", "2.10.7", "2.13.4")
+  if (scalaJSVersion.startsWith("1.4.")) Seq(scala3Version, scala211Version, scala212Version, scala213Version)
+  else if (scalaJSVersion.startsWith("1.3.")) Seq(scala3Version, scala211Version, scala212Version, scala213Version)
+  else if (scalaJSVersion.startsWith("1.2.")) Seq(scala3Version, scala211Version, scala212Version, scala213Version)
+  else if (scalaJSVersion.startsWith("1.")) Seq(scala211Version, scala212Version, scala213Version)
+  else Seq(scala210Version, scala211Version, scala212Version, scala213Version)
 }
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
 val commonSettings = Seq(
-  version := "1.2.0-SNAPSHOT",
+  version := "1.2.0.3M3-SNAPSHOT",
   organization := "org.scala-js",
-  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
+  scalacOptions ++= (CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, _)) => Seq("-deprecation", "-feature", "-Xfatal-warnings")
+    case Some((3, _)) => Seq()
+    case _            => Seq()
+  })
 )
 
 normalizedName := "scalajs-dom"
