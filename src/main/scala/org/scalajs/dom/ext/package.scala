@@ -27,7 +27,8 @@ package object ext {
   implicit def pimpRichAnimatedNumber(x: svg.AnimatedNumber): RichDouble =
     x.baseVal: runtime.RichDouble
 
-  implicit def pimpAnimatedLength(x: svg.AnimatedLength): Double = x.baseVal.value
+  implicit def pimpAnimatedLength(x: svg.AnimatedLength): Double =
+    x.baseVal.value
 
   implicit def pimpRichAnimatedLength(x: svg.AnimatedLength): RichDouble =
     x.baseVal.value: runtime.RichDouble
