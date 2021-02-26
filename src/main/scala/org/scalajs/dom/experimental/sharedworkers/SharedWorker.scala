@@ -30,7 +30,7 @@ import org.scalajs.dom.webworkers
  */
 @js.native
 @JSGlobal
-class SharedWorker(stringUrl: String, name: js.UndefOr[String] = js.native)
+class SharedWorker(stringUrl: String, name: js.UndefOr[String])
     extends webworkers.AbstractWorker {
 
   /**
