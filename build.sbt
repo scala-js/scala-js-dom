@@ -7,7 +7,7 @@ name := "Scala.js DOM"
 
 crossScalaVersions in ThisBuild := {
   if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.5", "3.0.0-RC1")
-  else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
+  else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.5")
 }
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
