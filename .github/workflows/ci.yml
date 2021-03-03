@@ -18,8 +18,6 @@ jobs:
           - scalaversion: "2.10.7"
             scalajsversion: "0.6.x"
         Exclude:
-          - scalaversion: "2.13.5"
-            scalajsversion: "0.6.x"
           - scalaversion: "3.0.0-RC1"
             scalajsversion: "0.6.x"
     env:
