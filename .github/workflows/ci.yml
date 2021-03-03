@@ -28,7 +28,7 @@ jobs:
           java-version: "adopt@1.8"
       - uses: coursier/cache-action@v5
       - name: Build
-        run: sbt "++${{ matrix.scalaversion }}" package
+        run: sbt "++${{ matrix.scalaversion }}" clean;package
       - name: Test generate documentation
         run: sbt "++${{ matrix.scalaversion }}" doc
       - name: Build examples
