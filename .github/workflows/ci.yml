@@ -1,0 +1,45 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scalaversion: ["2.11.12", "2.12.10", "2.13.1"]
+        scalajsversion: ["1.x", "0.6.x"]
+        include:
+          - scalaversion: "2.10.7"
+            scalajsversion: "0.6.x"
+    env:
+      SCALAJS_VERSION: "${{ matrix.scalajsversion == '0.6.x' && '0.6.28' || '' }}"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: olafurpg/setup-scala@v10
+        with:
+          java-version: "adopt@1.8"
+      - uses: coursier/cache-action@v5
+      - name: Build
+        run: sbt "++${{ matrix.scalaversion }}" package
+      - name: Test generate documentation
+        run: sbt "++${{ matrix.scalaversion }}" doc
+      - name: Build examples
+        run: sbt "++${{ matrix.scalaversion }}" example/compile
+      - name: scalafmt
+        run: sbt "++${{ matrix.scalaversion }}" scalafmtCheck
+  readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: olafurpg/setup-scala@v10
+        with:
+          java-version: "adopt@1.8"
+      - uses: coursier/cache-action@v5
+      - name: Readme generation
+        run: sbt readme/run
