@@ -28,11 +28,11 @@ jobs:
           java-version: "adopt@1.8"
       - uses: coursier/cache-action@v5
       - name: Build
-        run: sbt "++${{ matrix.scalaversion }} clean;package"
+        run: sbt "++${{ matrix.scalaversion }} package"
       - name: Test generate documentation
         run: sbt "++${{ matrix.scalaversion }}" doc
       - name: Build examples
-        run: sbt "++${{ matrix.scalaversion }}" example/compile
+        run: sbt "++${{ matrix.scalaversion }} clean;example/compile"
       - name: scalafmt
         run: sbt "++${{ matrix.scalaversion }}" scalafmtCheck
   readme:
