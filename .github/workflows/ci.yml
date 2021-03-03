@@ -12,10 +12,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scalaversion: ["2.11.12", "2.12.10", "2.13.1"]
+        scalaversion: ["2.11.12", "2.12.10", "2.13.1", "2.13.5", "3.0.0-RC1"]
         scalajsversion: ["1.x", "0.6.x"]
         include:
           - scalaversion: "2.10.7"
+            scalajsversion: "0.6.x"
+        Exclude:
+          - scalaversion: "2.13.5"
+            scalajsversion: "0.6.x"
+          - scalaversion: "3.0.0-RC1"
             scalajsversion: "0.6.x"
     env:
       SCALAJS_VERSION: "${{ matrix.scalajsversion == '0.6.x' && '0.6.28' || '' }}"
