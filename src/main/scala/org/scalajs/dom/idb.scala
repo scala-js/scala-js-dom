@@ -5,7 +5,7 @@ package org.scalajs.dom
  */
 object idb {
   type Cursor = raw.IDBCursor
-  @inline def Cursor = raw.IDBCursor
+  @inline def CursorDirection = raw.IDBCursorDirection
   type CursorWithValue = raw.IDBCursorWithValue
   type Database = raw.IDBDatabase
   type Environment = raw.IDBEnvironment
@@ -17,6 +17,6 @@ object idb {
   type OpenDBRequest = raw.IDBOpenDBRequest
   type Request = raw.IDBRequest
   type Transaction = raw.IDBTransaction
-  @inline def Transaction = raw.IDBTransaction
+  @inline def TransactionMode = raw.IDBTransactionMode
   type VersionChangeEvent = raw.IDBVersionChangeEvent
 }
