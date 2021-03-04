@@ -5350,6 +5350,15 @@ trait NavigatorLanguage extends js.Object {
    * MDN
    */
   def language: String = js.native
+
+  /**
+   * Returns a Array of DOMStrings representing the the user's preferred languages.
+   * The language is described using BCP 47 language tags.
+   * The null value is returned when this is unknown.
+   *
+   * MDN
+   */
+  def languages: js.Array[String] = js.native
 }
 
 @js.native
