@@ -7,7 +7,7 @@ import scala.scalajs.js.|
 import scala.language.implicitConversions
 
 package object crypto {
-  val crypto = GlobalCrypto.crypto
+  @inline def crypto = GlobalCrypto.crypto
 
   type BigInteger = Uint8Array
 
