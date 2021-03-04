@@ -265,7 +265,7 @@ trait SubtleCrypto extends js.Object {
    */
   def importKey(format: KeyFormat, keyData: BufferSource,
       algorithm: KeyAlgorithmIdentifier, extractable: Boolean,
-      keyUsages: js.Array[KeyUsage]): js.Promise[js.Any] = js.native
+      keyUsages: js.Array[KeyUsage]): js.Promise[CryptoKey] = js.native
 
   /**
    * Returns a Promise of a CryptoKey corresponding to the format, the
@@ -280,7 +280,7 @@ trait SubtleCrypto extends js.Object {
    */
   def importKey(format: KeyFormat, keyData: JsonWebKey,
       algorithm: KeyAlgorithmIdentifier, extractable: Boolean,
-      keyUsages: js.Array[KeyUsage]): js.Promise[js.Any] = js.native
+      keyUsages: js.Array[KeyUsage]): js.Promise[CryptoKey] = js.native
 
   /**
    * Returns a Promise of a buffer containing the key in the format requested.
