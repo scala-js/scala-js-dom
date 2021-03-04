@@ -4181,7 +4181,7 @@ class XMLHttpRequest extends EventTarget {
    * MDN
    */
   var upload: XMLHttpRequestEventTarget = js.native
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[ProgressEvent, _] = js.native
   var onloadstart: js.Function1[js.Any, _] = js.native
 }
 
