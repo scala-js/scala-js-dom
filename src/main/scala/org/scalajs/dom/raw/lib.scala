@@ -2762,6 +2762,54 @@ class Window
    * MDN
    */
   var lostpointercapture: js.Function1[PointerEvent, _] = js.native
+
+  /**
+   * Moves the window to the specified coordinates.
+   *
+   * MDN
+   */
+  def moveTo(x: Int, y: Int): Unit = js.native
+
+  /**
+   * Moves the current window by a specified amount.
+   *
+   * MDN
+   */
+  def moveBy(deltaX: Int, deltaY: Int): Unit = js.native
+
+  /**
+   * Dynamically resizes window.
+   *
+   * MDN
+   */
+  def resizeTo(width: Int, height: Int): Unit = js.native
+
+  /**
+   * Resizes the current window by a certain amount.
+   *
+   * MDN
+   */
+  def resizeBy(deltaX: Int, deltaY: Int): Unit = js.native
+
+  /**
+   * The read-only scrollX property of the Window interface returns the number
+   * of pixels that the document is currently scrolled horizontally. This value
+   * is subpixel precise in modern browsers, meaning that it isn't necessarily
+   * a whole number. You can get the number of pixels the document is scrolled
+   * vertically from the scrollY property.
+   *
+   * MDN
+   */
+  def scrollX: Double = js.native
+
+  /**
+   * The read-only scrollY property of the Window interface returns the number
+   * of pixels that the document is currently scrolled vertically. This value
+   * is subpixel precise in modern browsers, meaning that it isn't necessarily
+   * a whole number. You can get the number of pixels the document is scrolled
+   * horizontally from the scrollX property.
+   */
+  def scrollY: Double = js.native
 }
 
 /**
@@ -3900,13 +3948,6 @@ class CanvasRenderingContext2D extends js.Object {
    * MDN
    */
   def moveTo(x: Double, y: Double): Unit = js.native
-
-  /**
-   * Moves the current window by a specified amount.
-   *
-   * MDN
-   */
-  def moveBy(deltaX: Double, deltaY: Double): Unit = js.native
 
   /**
    * Returns an ImageData object representing the underlying pixel data for the area of
