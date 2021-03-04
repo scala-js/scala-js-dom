@@ -4044,7 +4044,7 @@ class XMLHttpRequest extends EventTarget {
    * is parsed as if it were a text/xml stream. When the responseType is set to "document"
    * and the request has been made asynchronously, the response is parsed as a text/html
    * stream. Note: If the server doesn't apply the text/xml Content-Type header, you
-   * can use overrideMimeType()to force XMLHttpRequest to parse it as XML anyway.
+   * can use overrideMimeType() to force XMLHttpRequest to parse it as XML anyway.
    *
    * MDN
    */
@@ -4110,6 +4110,17 @@ class XMLHttpRequest extends EventTarget {
    * MDN
    */
   def abort(): Unit = js.native
+
+  /**
+   * The XMLHttpRequest method overrideMimeType() specifies a MIME type other than the
+   * one provided by the server to be used instead when interpreting the data being
+   * transferred in a request. This may be used, for example, to force a stream to be
+   * treated and parsed as "text/xml", even if the server does not report it as such.
+   * This method must be called before calling send().
+   *
+   * MDN
+   */
+  def overrideMimeType(mimeType: String): Unit = js.native
 
   def getAllResponseHeaders(): String = js.native
 
