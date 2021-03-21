@@ -75,16 +75,4 @@ package object ext {
 
   implicit def pimpNamedNodeMap(namedNodeMap: NamedNodeMap): NamedNodeMapMap =
     new NamedNodeMapMap(namedNodeMap)
-
-  /**
-   * Implicit class to deal with attributes as with normal mutable Map
-   * @param attributes
-   */
-  @deprecated("Use NamedNodeMapMap instead.", "0.9.6")
-  class Attributes(attributes: NamedNodeMap)
-      extends NamedNodeMapMap(attributes)
-
-  @deprecated("Use pimpNamedNodeMap instead.", "0.9.6")
-  def Attributes(attributes: NamedNodeMap): Attributes =
-    new Attributes(attributes)
 }

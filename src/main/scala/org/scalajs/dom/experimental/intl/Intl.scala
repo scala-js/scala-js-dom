@@ -35,7 +35,8 @@ class Collator(locales: js.UndefOr[String | js.Array[String]] = js.undefined,
  */
 @js.native
 @JSGlobal("Intl.DateTimeFormat")
-class DateTimeFormat(locales: String | js.Array[String],
+class DateTimeFormat(
+    locales: js.UndefOr[String | js.Array[String]] = js.undefined,
     options: js.UndefOr[DateTimeFormatOptions] = js.undefined)
     extends js.Object {
   def format(date: js.Date): String = js.native
@@ -52,8 +53,9 @@ class DateTimeFormat(locales: String | js.Array[String],
  */
 @js.native
 @JSGlobal("Intl.NumberFormat")
-class NumberFormat(locales: String | js.Array[String],
-    options: js.UndefOr[NumberFormatOptions])
+class NumberFormat(
+    locales: js.UndefOr[String | js.Array[String]] = js.undefined,
+    options: js.UndefOr[NumberFormatOptions] = js.undefined)
     extends js.Object {
   def format(number: Double): String = js.native
   def resolvedOptions(): NumberFormatOptions = js.native
@@ -65,8 +67,8 @@ class NumberFormat(locales: String | js.Array[String],
 trait CollatorOptions extends js.Object {
   val localeMatcher: js.UndefOr[String]
   val usage: js.UndefOr[String]
-  val sensivity: js.UndefOr[String]
-  val ignore­Punctua­tion: js.UndefOr[Boolean]
+  val sensitivity: js.UndefOr[String]
+  val ignorePunctuation: js.UndefOr[Boolean]
   val numeric: js.UndefOr[Boolean]
   val caseFirst: js.UndefOr[String]
 }
@@ -94,7 +96,7 @@ object CollatorOptions {
    *                              Examples: a ≠ b, a ≠ á, a ≠ A.
    *                          The default is "variant" for usage "sort"; it's locale dependent for
    *                          usage "search".
-   * @param ignore­Punctua­tion Whether punctuation should be ignored. Possible values are true
+   * @param ignorePunctuation Whether punctuation should be ignored. Possible values are true
    *                          and false; the default is false.
    * @param numeric           Whether numeric collation should be used, such that "1" < "2" < "10".
    *                          Possible values are true and false; the default is false.
@@ -114,8 +116,8 @@ object CollatorOptions {
   def apply(
       localeMatcher: js.UndefOr[String] = js.undefined,
       usage: js.UndefOr[String] = js.undefined,
-      sensivity: js.UndefOr[String] = js.undefined,
-      ignore­Punctua­tion: js.UndefOr[Boolean] = js.undefined,
+      sensitivity: js.UndefOr[String] = js.undefined,
+      ignorePunctuation: js.UndefOr[Boolean] = js.undefined,
       numeric: js.UndefOr[Boolean] = js.undefined,
       caseFirst: js.UndefOr[String] = js.undefined
   ): CollatorOptions = {
@@ -123,8 +125,8 @@ object CollatorOptions {
       .literal(
           localeMatcher = localeMatcher,
           usage = usage,
-          sensivity = sensivity,
-          ignore­Punctua­tion = ignore­Punctua­tion,
+          sensitivity = sensitivity,
+          ignorePunctuation = ignorePunctuation,
           numeric = numeric,
           caseFirst = caseFirst
       )

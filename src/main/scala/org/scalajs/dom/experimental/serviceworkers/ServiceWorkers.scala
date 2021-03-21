@@ -476,49 +476,6 @@ trait ServiceWorkerMessageEventInit extends EventInit {
 }
 
 /**
- * The ServiceWorkerMessageEvent interface of the ServiceWorker API contains
- * information about an event sent to a ServiceWorkerContainer target.
- * This extends the default message event to allow setting a ServiceWorker
- * object as the source of a message.
- * The event object is accessed via the handler function of a message event,
- * when fired by a message received from a service worker.
- *
- * MDN
- */
-@js.native
-@JSGlobal
-@deprecated("Instead use MessageEvent", "0.9.8")
-class ServiceWorkerMessageEvent(typeArg: String,
-    init: js.UndefOr[ServiceWorkerMessageEventInit] = js.undefined)
-    extends Event(typeArg, init) {
-
-  /**
-   * Returns the event's data. It can be any data type.
-   */
-  val data: Any = js.native
-
-  /**
-   * Returns the origin of the service worker's environment settings object.
-   */
-  val origin: String = js.native
-
-  /**
-   * Represents, in server-sent events, the last event ID of the event source.
-   */
-  val lastEventId: String = js.native
-
-  /**
-   * @return a reference to the service worker that sent the message or `null`.
-   */
-  def source: ServiceWorker | MessagePort = js.native
-
-  /**
-   *  It represents the MessagePort array being sent, if any.
-   */
-  def ports: js.Array[MessagePort] = js.native
-}
-
-/**
  * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#service-worker-obj ¶3.1 ServiceWorker]]
  * of ServiceWorker whatwg spec.
  */

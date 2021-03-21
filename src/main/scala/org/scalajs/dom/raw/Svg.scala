@@ -96,22 +96,6 @@ trait SVGZoomEventInit extends UIEventInit {
 }
 
 @js.native
-@JSGlobal
-@deprecated("Removed from SVG 2.0", "0.9.8")
-class SVGZoomEvent(typeArg: String, init: js.UndefOr[SVGZoomEventInit])
-    extends UIEvent(typeArg, init) {
-  def zoomRectScreen: SVGRect = js.native
-
-  def previousScale: Double = js.native
-
-  def newScale: Double = js.native
-
-  def previousTranslate: SVGPoint = js.native
-
-  def newTranslate: SVGPoint = js.native
-}
-
-@js.native
 trait SVGUnitTypes extends js.Object {
   val SVG_UNIT_TYPE_UNKNOWN: Int = js.native
   val SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: Int = js.native

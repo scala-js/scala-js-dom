@@ -119,7 +119,7 @@ class URLSearchParams
 
   def delete(name: String): Unit = js.native
 
-  def get(name: String): js.UndefOr[String] = js.native
+  def get(name: String): String = js.native
 
   def getAll(name: String): Sequence[String] = js.native
 

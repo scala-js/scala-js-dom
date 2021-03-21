@@ -6,8 +6,7 @@ package org.scalajs.dom.experimental.mediastream
 import scala.scalajs.js
 import scala.scalajs.js.|
 import scala.scalajs.js.annotation._
-
-import org.scalajs.dom.raw.{DOMError, Event, EventInit, EventTarget}
+import org.scalajs.dom.raw.{DOMException, Event, EventInit, EventTarget}
 
 /**
  * The MediaStream
@@ -466,18 +465,6 @@ trait MediaStreamTrackEventInit extends EventInit {
   var track: js.UndefOr[MediaStreamTrack] = js.undefined
 }
 
-object MediaStreamTrackEventInit {
-  @deprecated("Create new MediaStreamTrackEventInit instead", "0.9.8")
-  @inline
-  def apply(
-      track: js.UndefOr[MediaStreamTrack] = js.undefined
-  ): MediaStreamTrackEventInit = {
-    val result = js.Dynamic.literal()
-    track.foreach(result.track = _)
-    result.asInstanceOf[MediaStreamTrackEventInit]
-  }
-}
-
 @js.native
 @JSGlobal
 class MediaStreamTrackEvent(typeArg: String,
@@ -564,14 +551,6 @@ object MediaDeviceInfo {
     label.foreach(result.label = _)
     result.asInstanceOf[MediaDeviceInfo]
   }
-}
-
-@js.native
-trait NavigatorMediaStream extends js.Object {
-
-  def getUserMedia(constraints: MediaStreamConstraints,
-      success: js.Function1[MediaStream, Any],
-      error: js.Function1[DOMError, Any]): Unit = js.native
 }
 
 /**

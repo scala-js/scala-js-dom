@@ -123,9 +123,8 @@ object XMLHttpRequest{
   @JSExport
   def main(pre: html.Pre) = {
     val xhr = new dom.XMLHttpRequest()
-    xhr.open("GET",
-      "http://api.openweathermap.org/" +
-      "data/2.5/weather?q=Singapore"
+    xhr.open("GET", 
+      "https://www.boredapi.com/api/activity"
     )
     xhr.onload = { (e: dom.Event) =>
       if (xhr.status == 200) {
@@ -142,7 +141,7 @@ object Websocket {
   @JSExport
   def main(in: html.Input,
            pre: html.Pre) = {
-    val echo = "ws://echo.websocket.org"
+    val echo = "wss://echo.websocket.org"
     val socket = new dom.WebSocket(echo)
     socket.onmessage = {
       (e: dom.MessageEvent) =>
@@ -167,8 +166,7 @@ object AjaxExtension {
                 .Implicits
                 .global
     val url =
-      "http://api.openweathermap.org/" +
-      "data/2.5/weather?q=Singapore"
+      "https://www.boredapi.com/api/activity"
     Ajax.get(url).foreach { case xhr =>
       pre.textContent = xhr.responseText
     }

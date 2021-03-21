@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 import org.scalajs.dom.Blob
 import org.scalajs.dom.raw.{
-  DOMError, Event, EventInit, EventTarget, MessageEvent
+  DOMException, Event, EventInit, EventTarget, MessageEvent
 }
 import org.scalajs.dom.experimental.mediastream._
 
@@ -641,18 +641,6 @@ trait RTCPeerConnectionIceEventInit extends EventInit {
   var candidate: js.UndefOr[RTCIceCandidate] = js.undefined
 }
 
-object RTCPeerConnectionIceEventInit {
-  @deprecated("Create new RTCPeerConnectionIceEventInit instead", "0.9.8")
-  @inline
-  def apply(
-      candidate: js.UndefOr[RTCIceCandidate] = js.undefined
-  ): RTCPeerConnectionIceEventInit = {
-    val result = js.Dynamic.literal()
-    candidate.foreach(result.candidate = _)
-    result.asInstanceOf[RTCPeerConnectionIceEventInit]
-  }
-}
-
 /**
  * The RTCPeerConnectionIceEvent interface represents events that occurs in
  * relation to ICE candidates with the target, usually an RTCPeerConnection.
@@ -783,21 +771,6 @@ trait MediaStreamEventInit extends EventInit {
 }
 
 /**
- * The MediaStreamEvent interface represents events that occurs in relation to a
- * MediaStream. Two events of this type can be thrown:
- * addstream and removestream.
- *
- * MDN
- */
-@js.native
-@JSGlobal
-@deprecated("Obsolte.", "0.9.8")
-class MediaStreamEvent(typeArg: String, init: js.UndefOr[MediaStreamEventInit])
-    extends Event(typeArg, init) {
-  val stream: MediaStream = js.native
-}
-
-/**
  * The RTCPeerConnection interface represents a WebRTC connection between the
  * local computer and a remote peer. It is used to handle efficient streaming of
  * data between the two peers.
@@ -925,22 +898,6 @@ class RTCPeerConnection(
    */
   def signalingState: RTCSignalingState = js.native
 
-  /**
-   * Is the event handler called when the addstream event is received. Such an
-   * event is sent when a MediaStream is added to this connection by the
-   * remote peer. The event is sent immediately after the call
-   * RTCPeerConnection.setRemoteDescription() and doesn't wait for the result
-   * of the SDP negotiation.
-   *
-   * MDN
-   */
-  @deprecated("Deprecated in favor of ontrack", "0.9.8")
-  def onaddstream: js.Function1[MediaStreamEvent, Any] = js.native
-
-  @deprecated("Deprecated in favor of ontrack", "0.9.8")
-  def onaddstream_=(
-      handler: js.Function1[MediaStreamEvent, Any]): Unit = js.native
-
   var ontrack: js.Function1[MediaStreamTrackEvent, Any] = js.native
 
   /**
@@ -1012,19 +969,6 @@ class RTCPeerConnection(
    */
   var onpeeridentity: js.Function1[Event, Any] = js.native
 
-  /**
-   * Is the event handler called when the removestream event, sent when a
-   * MediaStream is removed from this connection, is received.
-   *
-   * MDN
-   */
-  @deprecated("Deprecated in favor of onremovetrack", "0.9.8")
-  def onremovestream: js.Function1[MediaStreamEvent, Any] = js.native
-
-  @deprecated("Deprecated in favor of onremovetrack", "0.9.8")
-  def onremovestream_=(
-      handler: js.Function1[MediaStreamEvent, Any]): Unit = js.native
-
   var onremovetrack: js.Function1[MediaStreamTrackEvent, Any] = js.native
 
   /**
@@ -1036,98 +980,31 @@ class RTCPeerConnection(
   var onsignalingstatechange: js.Function1[Event, Any] = js.native
 
   /**
-   * The createOffer method generates a blob of SDP that contains an RFC 3264
-   * offer with the supported configurations for the session, including
-   * descriptions of the local MediaStreams attached to this RTCPeerConnection,
-   * the codec/RTP/RTCP options supported by this implementation, and any
-   * candidates that have been gathered by the ICE Agent. The options parameter
-   * may be supplied to provide additional control over the offer generated.
+   * The createOffer() method of the RTCPeerConnection interface initiates the
+   * creation of an SDP offer for the purpose of starting a new WebRTC connection
+   * to a remote peer. The SDP offer includes information about any MediaStreamTracks
+   * already attached to the WebRTC session, codec, and options supported by the
+   * browser, and any candidates already gathered by the ICE agent, for the purpose
+   * of being sent over the signaling channel to a potential peer to request a connection
+   * or to update the configuration of an existing connection.
    *
-   * As an offer, the generated SDP will contain the full set of capabilities
-   * supported by the session (as opposed to an answer, which will include only
-   * a specific negotiated subset to use); for each SDP line, the generation
-   * of the SDP must follow the appropriate process for generating an offer.
-   * In the event createOffer is called after the session is established,
-   * createOffer will generate an offer that is compatible with the current
-   * session, incorporating any changes that have been made to the session
-   * since the last complete offer-answer exchange, such as addition or removal
-   * of streams. If no changes have been made, the offer will include the
-   * capabilities of the current local description as well as any additional
-   * capabilities that could be negotiated in an updated offer.
+   * The return value is a Promise which, when the offer has been created, is resolved
+   * with a RTCSessionDescription object containing the newly-created offer.
    *
-   * Session descriptions generated by createOffer must be immediately usable
-   * by setLocalDescription without causing an error as long as
-   * setLocalDescription is called reasonably soon. If a system has limited
-   * resources (e.g. a finite number of decoders), createOffer needs to return
-   * an offer that reflects the current state of the system, so that
-   * setLocalDescription will succeed when it attempts to acquire those
-   * resources. The session descriptions must remain usable by
-   * setLocalDescription without causing an error until at least the end of
-   * the fulfillment callback of the returned promise. Calling this method
-   * is needed to get the ICE user name fragment and password.
-   *
-   * If the RTCPeerConnection is configured to generate Identity assertions,
-   * then the session description shall contain an appropriate assertion.
-   *
-   * If this RTCPeerConnection object is closed before the SDP generation
-   * process completes, the USER agent must suppress the result and not resolve
-   * or reject the returned promise.
-   *
-   * If the SDP generation process completed successfully, the user agent must
-   * resolve the returned promise with a newly created RTCSessionDescription
-   * object, representing the generated offer.
-   *
-   * If the SDP generation process failed for any reason, the user agent must
-   * reject the returned promise with an DOMError object of type TBD as its
-   * argument.
-   *
-   * To Do: Discuss privacy aspects of this from a fingerprinting point of
-   * view - it's probably around as bad as access to a canvas :-)
-   *
+   * MDN
    */
   def createOffer(
       options: RTCOfferOptions = js.native): js.Promise[RTCSessionDescription] = js.native
 
   /**
-   * The createAnswer method generates an [SDP] answer with the supported
-   * configuration for the session that is compatible with the parameters in
-   * the remote configuration. Like createOffer, the returned blob contains
-   * descriptions of the local MediaStreams attached to this RTCPeerConnection,
-   * the codec/RTP/RTCP options negotiated for this session, and any candidates
-   * that have been gathered by the ICE Agent. The options parameter may be
-   * supplied to provide additional control over the generated answer.
+   * The createAnswer() method on the RTCPeerConnection interface creates an SDP answer to
+   * an offer received from a remote peer during the offer/answer negotiation of a WebRTC
+   * connection. The answer contains information about any media already attached to the
+   * session, codecs and options supported by the browser, and any ICE candidates already
+   * gathered. The answer is delivered to the returned Promise, and should then be sent to
+   * the source of the offer to continue the negotiation process.
    *
-   * As an answer, the generated SDP will contain a specific configuration
-   * that, along with the corresponding offer, specifies how the media plane
-   * should be established. The generation of the SDP must follow the
-   * appropriate process for generating an answer.
-   *
-   * Session descriptions generated by createAnswer must be immediately usable
-   * by setLocalDescription without causing an error as long as
-   * setLocalDescription is called reasonably soon. Like createOffer, the
-   * returned description should reflect the current state of the system. The
-   * session descriptions must remain usable by setLocalDescription without
-   * causing an error until at least the end of the fulfillment callback of
-   * the returned promise. Calling this method is needed to get the ICE user
-   * name fragment and password.
-   *
-   * An answer can be marked as provisional, as described in [RTCWEB-JSEP], by
-   * setting the type to "pranswer".
-   *
-   * If the RTCPeerConnection is configured to generate Identity assertions,
-   * then the session description shall contain an appropriate assertion.
-   *
-   * If this RTCPeerConnection object is closed before the SDP generation process
-   * completes, the USER agent must suppress the result and not resolve or reject
-   * the returned promise.
-   *
-   * If the SDP generation process completed successfully, the user agent must
-   * resolve the returned promise with a newly created RTCSessionDescription
-   * object, representing the generated answer.
-   *
-   * If the SDP generation process failed for any reason, the user agent must
-   * reject the returned promise with a DOMError object of type TBD.
-   *
+   * MDN
    */
   def createAnswer(): js.Promise[RTCSessionDescription] = js.native
 
@@ -1258,7 +1135,7 @@ class RTCPeerConnection(
    */
   def getStats(selector: MediaStreamTrack,
       callback: js.Function1[RTCStatsReport, Any],
-      error: js.Function1[DOMError, Any]): RTCStatsReport = js.native
+      error: js.Function1[DOMException, Any]): RTCStatsReport = js.native
 
   /**
    * Sets the identity provider to be used for a given RTCPeerConnection object.
