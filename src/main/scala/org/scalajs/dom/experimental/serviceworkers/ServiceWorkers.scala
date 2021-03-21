@@ -7,7 +7,7 @@ import scala.scalajs.js.|
 import org.scalajs.dom.experimental.{
   Notification, NotificationOptions, Request, RequestInfo, Response, Sequence
 }
-import org.scalajs.dom.raw.{WorkerGlobalScope, ErrorEvent}
+import org.scalajs.dom.raw.WorkerGlobalScope
 import org.scalajs.dom.webgl.RenderingContext
 import org.scalajs.dom.{Event, EventTarget, MessageEvent, MessagePort}
 import org.scalajs.dom.raw.EventInit
@@ -380,15 +380,6 @@ trait ServiceWorkerContainer extends EventTarget {
    * MDN
    */
   var oncontrollerchange: js.Function1[Event, _] = js.native
-
-  /**
-   * The onerror property of the ServiceWorkerContainer interface is an event
-   * handler fired whenever an error event occurs in the associated service
-   * workers.
-   *
-   * MDN
-   */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
 
   /**
    * The onmessage property of the ServiceWorkerContainer interface is an event
