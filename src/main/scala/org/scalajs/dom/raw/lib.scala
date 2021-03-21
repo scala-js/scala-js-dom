@@ -819,6 +819,15 @@ abstract class Element
   def insertAdjacentHTML(where: String, html: String): Unit = js.native
 
   /**
+   * The insertAdjacentElement() method of the Element interface inserts a given
+   * element node at a given position relative to the element it is invoked upon.
+   *
+   * MDN
+   */
+  def insertAdjacentElement(where: String,
+      element: Element): Element = js.native
+
+  /**
    * The `matches()` method of the `Element` interface returns `true` if the
    * element would be selected by the specified selector string; otherwise, it
    * returns `false`.
