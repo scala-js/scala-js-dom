@@ -4062,7 +4062,7 @@ class XMLHttpRequest extends EventTarget {
    */
   def responseURL: js.UndefOr[String] = js.native
 
-  var ontimeout: js.Function1[Event, _] = js.native
+  var ontimeout: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * The response string returned by the HTTP server. Unlike status, this includes the
@@ -4082,7 +4082,7 @@ class XMLHttpRequest extends EventTarget {
    * MDN
    */
   var timeout: Double = js.native
-  var onload: js.Function1[Event, _] = js.native
+  var onload: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * Initializes a request. This method is to be used from JavaScript code; to
@@ -4145,7 +4145,7 @@ class XMLHttpRequest extends EventTarget {
    */
   var withCredentials: Boolean = js.native
   var onprogress: js.Function1[ProgressEvent, _] = js.native
-  var onabort: js.Function1[js.Any, _] = js.native
+  var onabort: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * Can be set to change the response type. Value Data type of response property ""
@@ -4181,8 +4181,8 @@ class XMLHttpRequest extends EventTarget {
    * MDN
    */
   var upload: XMLHttpRequestEventTarget = js.native
-  var onerror: js.Function1[ErrorEvent, _] = js.native
-  var onloadstart: js.Function1[js.Any, _] = js.native
+  var onerror: js.Function1[ProgressEvent, _] = js.native
+  var onloadstart: js.Function1[ProgressEvent, _] = js.native
 }
 
 @js.native
@@ -7274,7 +7274,7 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * The function to call when an HTTP request returns after successfully loading
@@ -7282,7 +7282,7 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var onload: js.Function1[js.Any, _] = js.native
+  var onload: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A function that is called if the event times out; this only happens if a timeout has
@@ -7291,21 +7291,21 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var ontimeout: js.Function1[js.Any, _] = js.native
+  var ontimeout: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * The function to call when a request is aborted.
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, _] = js.native
+  var onabort: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A function that gets called when the HTTP request first begins loading data.
    *
    * MDN
    */
-  var onloadstart: js.Function1[js.Any, _] = js.native
+  var onloadstart: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A function that is called when the load is completed, even if the request failed.
