@@ -5686,7 +5686,7 @@ class StyleSheetList extends js.Object {
 }
 
 trait CustomEventInit extends EventInit {
-  var detailArg: js.UndefOr[Any] = js.undefined
+  var detail: js.UndefOr[Any] = js.undefined
 }
 
 /**
