@@ -32,6 +32,7 @@ import org.scalajs.dom.webworkers
 @JSGlobal
 class SharedWorker(stringUrl: String, name: js.UndefOr[String] = js.native)
     extends webworkers.AbstractWorker {
+
   /**
    * The port property of the SharedWorker interface returns a [[MessagePort]]
    * object used to communicate and control the shared worker.
