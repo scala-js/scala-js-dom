@@ -7,8 +7,8 @@
 package org.scalajs.dom.experimental.intl
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.{UndefOr, |}
 
 /**
  * The Intl.Collator object is a constructor for collators, objects that enable language
@@ -63,6 +63,7 @@ class NumberFormat(
       options: js.Any): js.Array[String] = js.native
 }
 
+@js.native
 trait CollatorOptions extends js.Object {
   val localeMatcher: js.UndefOr[String]
   val usage: js.UndefOr[String]
@@ -119,16 +120,21 @@ object CollatorOptions {
       ignorePunctuation: js.UndefOr[Boolean] = js.undefined,
       numeric: js.UndefOr[Boolean] = js.undefined,
       caseFirst: js.UndefOr[String] = js.undefined
-  ): CollatorOptions = new CollatorOptions {
-    override val localeMatcher: UndefOr[String] = localeMatcher
-    override val usage: UndefOr[String] = usage
-    override val sensitivity: UndefOr[String] = sensitivity
-    override val ignorePunctuation: UndefOr[Boolean] = ignorePunctuation
-    override val numeric: UndefOr[Boolean] = numeric
-    override val caseFirst: UndefOr[String] = caseFirst
+  ): CollatorOptions = {
+    js.Dynamic
+      .literal(
+          localeMatcher = localeMatcher.asInstanceOf[js.Any],
+          usage = usage.asInstanceOf[js.Any],
+          sensitivity = sensitivity.asInstanceOf[js.Any],
+          ignorePunctuation = ignorePunctuation.asInstanceOf[js.Any],
+          numeric = numeric.asInstanceOf[js.Any],
+          caseFirst = caseFirst.asInstanceOf[js.Any]
+      )
+      .asInstanceOf[CollatorOptions]
   }
 }
 
+@js.native
 trait DateTimeFormatOptions extends js.Object {
   val localeMatcher: js.UndefOr[String]
   val timeZone: js.UndefOr[String]
@@ -191,25 +197,29 @@ object DateTimeFormatOptions {
       second: js.UndefOr[String] = js.undefined,
       timeZoneName: js.UndefOr[String] = js.undefined
   ): DateTimeFormatOptions = {
-    new DateTimeFormatOptions {
-      override val localeMatcher: UndefOr[String] = localeMatcher
-      override val timeZone: UndefOr[String] = timeZone
-      override val hour12: UndefOr[Boolean] = hour12
-      override val formatMatcher: UndefOr[String] = formatMatcher
-      override val weekday: UndefOr[String] = weekday
-      override val era: UndefOr[String] = era
-      override val year: UndefOr[String] = year
-      override val month: UndefOr[String] = month
-      override val day: UndefOr[String] = day
-      override val hour: UndefOr[String] = hour
-      override val minute: UndefOr[String] = minute
-      override val second: UndefOr[String] = second
-      override val timeZoneName: UndefOr[String] = timeZoneName
-    }
+    // format: off
+    js.Dynamic
+      .literal(
+          localeMatcher = localeMatcher.asInstanceOf[js.Any],
+          timeZone = timeZone.asInstanceOf[js.Any],
+          hour12 = hour12.asInstanceOf[js.Any],
+          formatMatcher = formatMatcher.asInstanceOf[js.Any],
+          weekday = weekday.asInstanceOf[js.Any],
+          era = era.asInstanceOf[js.Any],
+          year = year.asInstanceOf[js.Any],
+          month = month.asInstanceOf[js.Any],
+          day = day.asInstanceOf[js.Any],
+          hour = hour.asInstanceOf[js.Any],
+          minute = minute.asInstanceOf[js.Any],
+          second = second.asInstanceOf[js.Any],
+          timeZoneName = timeZoneName.asInstanceOf[js.Any]
+      )
+      .asInstanceOf[DateTimeFormatOptions]
     // format: on
   }
 }
 
+@js.native
 trait NumberFormatOptions extends js.Object {
   val localeMatcher: js.UndefOr[String]
   val style: js.UndefOr[String]
@@ -287,18 +297,20 @@ object NumberFormatOptions {
       maximumFractionDigits: js.UndefOr[Double] = js.undefined,
       minimumSignificantDigits: js.UndefOr[Double] = js.undefined,
       maximumSignificantDigits: js.UndefOr[Double] = js.undefined
-  ): NumberFormatOptions = new NumberFormatOptions {
-    override val localeMatcher: UndefOr[String] = localeMatcher
-    override val style: UndefOr[String] = style
-    override val currency: UndefOr[String] = currency
-    override val currencyDisplay: UndefOr[String] = currencyDisplay
-    override val useGrouping: UndefOr[Boolean] = useGrouping
-    override val minimumIntegerDigits: UndefOr[Double] = minimumIntegerDigits
-    override val minimumFractionDigits: UndefOr[Double] = minimumFractionDigits
-    override val maximumFractionDigits: UndefOr[Double] = maximumFractionDigits
-    override val minimumSignificantDigits: UndefOr[Double] =
-      minimumSignificantDigits
-    override val maximumSignificantDigits: UndefOr[Double] =
-      maximumSignificantDigits
+  ): NumberFormatOptions = {
+    js.Dynamic
+      .literal(
+          localeMatcher = localeMatcher.asInstanceOf[js.Any],
+          style = style.asInstanceOf[js.Any],
+          currency = currency.asInstanceOf[js.Any],
+          currencyDisplay = currencyDisplay.asInstanceOf[js.Any],
+          useGrouping = useGrouping.asInstanceOf[js.Any],
+          minimumIntegerDigits = minimumIntegerDigits.asInstanceOf[js.Any],
+          minimumFractionDigits = minimumFractionDigits.asInstanceOf[js.Any],
+          maximumFractionDigits = maximumFractionDigits.asInstanceOf[js.Any],
+          minimumSignificantDigits = minimumSignificantDigits.asInstanceOf[js.Any],
+          maximumSignificantDigits = maximumSignificantDigits.asInstanceOf[js.Any]
+      )
+      .asInstanceOf[NumberFormatOptions]
   }
 }
