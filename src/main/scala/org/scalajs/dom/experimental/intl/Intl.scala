@@ -7,8 +7,8 @@
 package org.scalajs.dom.experimental.intl
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 import scala.scalajs.js.annotation._
+import scala.scalajs.js.{UndefOr, |}
 
 /**
  * The Intl.Collator object is a constructor for collators, objects that enable language
@@ -63,7 +63,6 @@ class NumberFormat(
       options: js.Any): js.Array[String] = js.native
 }
 
-@js.native
 trait CollatorOptions extends js.Object {
   val localeMatcher: js.UndefOr[String]
   val usage: js.UndefOr[String]
@@ -120,21 +119,16 @@ object CollatorOptions {
       ignorePunctuation: js.UndefOr[Boolean] = js.undefined,
       numeric: js.UndefOr[Boolean] = js.undefined,
       caseFirst: js.UndefOr[String] = js.undefined
-  ): CollatorOptions = {
-    js.Dynamic
-      .literal(
-          localeMatcher = localeMatcher,
-          usage = usage,
-          sensitivity = sensitivity,
-          ignorePunctuation = ignorePunctuation,
-          numeric = numeric,
-          caseFirst = caseFirst
-      )
-      .asInstanceOf[CollatorOptions]
+  ): CollatorOptions = new CollatorOptions {
+    override val localeMatcher: UndefOr[String] = localeMatcher
+    override val usage: UndefOr[String] = usage
+    override val sensitivity: UndefOr[String] = sensitivity
+    override val ignorePunctuation: UndefOr[Boolean] = ignorePunctuation
+    override val numeric: UndefOr[Boolean] = numeric
+    override val caseFirst: UndefOr[String] = caseFirst
   }
 }
 
-@js.native
 trait DateTimeFormatOptions extends js.Object {
   val localeMatcher: js.UndefOr[String]
   val timeZone: js.UndefOr[String]
@@ -197,29 +191,25 @@ object DateTimeFormatOptions {
       second: js.UndefOr[String] = js.undefined,
       timeZoneName: js.UndefOr[String] = js.undefined
   ): DateTimeFormatOptions = {
-    // format: off
-    js.Dynamic
-      .literal(
-          localeMatcher = localeMatcher,
-          timeZone = timeZone,
-          hour12 = hour12,
-          formatMatcher = formatMatcher,
-          weekday = weekday,
-          era = era,
-          year = year,
-          month = month,
-          day = day,
-          hour = hour,
-          minute = minute,
-          second = second,
-          timeZoneName = timeZoneName
-      )
-      .asInstanceOf[DateTimeFormatOptions]
+    new DateTimeFormatOptions {
+      override val localeMatcher: UndefOr[String] = localeMatcher
+      override val timeZone: UndefOr[String] = timeZone
+      override val hour12: UndefOr[Boolean] = hour12
+      override val formatMatcher: UndefOr[String] = formatMatcher
+      override val weekday: UndefOr[String] = weekday
+      override val era: UndefOr[String] = era
+      override val year: UndefOr[String] = year
+      override val month: UndefOr[String] = month
+      override val day: UndefOr[String] = day
+      override val hour: UndefOr[String] = hour
+      override val minute: UndefOr[String] = minute
+      override val second: UndefOr[String] = second
+      override val timeZoneName: UndefOr[String] = timeZoneName
+    }
     // format: on
   }
 }
 
-@js.native
 trait NumberFormatOptions extends js.Object {
   val localeMatcher: js.UndefOr[String]
   val style: js.UndefOr[String]
@@ -297,20 +287,18 @@ object NumberFormatOptions {
       maximumFractionDigits: js.UndefOr[Double] = js.undefined,
       minimumSignificantDigits: js.UndefOr[Double] = js.undefined,
       maximumSignificantDigits: js.UndefOr[Double] = js.undefined
-  ): NumberFormatOptions = {
-    js.Dynamic
-      .literal(
-          localeMatcher = localeMatcher,
-          style = style,
-          currency = currency,
-          currencyDisplay = currencyDisplay,
-          useGrouping = useGrouping,
-          minimumIntegerDigits = minimumIntegerDigits,
-          minimumFractionDigits = minimumFractionDigits,
-          maximumFractionDigits = maximumFractionDigits,
-          minimumSignificantDigits = minimumSignificantDigits,
-          maximumSignificantDigits = maximumSignificantDigits
-      )
-      .asInstanceOf[NumberFormatOptions]
+  ): NumberFormatOptions = new NumberFormatOptions {
+    override val localeMatcher: UndefOr[String] = localeMatcher
+    override val style: UndefOr[String] = style
+    override val currency: UndefOr[String] = currency
+    override val currencyDisplay: UndefOr[String] = currencyDisplay
+    override val useGrouping: UndefOr[Boolean] = useGrouping
+    override val minimumIntegerDigits: UndefOr[Double] = minimumIntegerDigits
+    override val minimumFractionDigits: UndefOr[Double] = minimumFractionDigits
+    override val maximumFractionDigits: UndefOr[Double] = maximumFractionDigits
+    override val minimumSignificantDigits: UndefOr[Double] =
+      minimumSignificantDigits
+    override val maximumSignificantDigits: UndefOr[Double] =
+      maximumSignificantDigits
   }
 }

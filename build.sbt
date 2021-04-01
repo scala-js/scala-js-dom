@@ -5,11 +5,11 @@ lazy val root = project.in(file(".")).
 
 name := "Scala.js DOM"
 
-crossScalaVersions in ThisBuild := {
-  if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1", "3.0.0-RC1")
+ThisBuild / crossScalaVersions := {
+  if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1", "3.0.0-RC2")
   else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
 }
-scalaVersion in ThisBuild := crossScalaVersions.value.head
+ThisBuild / scalaVersion := crossScalaVersions.value.head
 
 val commonSettings = Seq(
   resolvers += Resolver.JCenterRepository,
@@ -105,7 +105,7 @@ lazy val readme = ScalatexReadme(
 ).settings(
   scalaVersion := "2.12.10",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
-  (resources in Compile) += (fullOptJS in (example, Compile)).value.data
+  (Compile / resources) += (example / Compile / fullOptJS).value.data,
 )
 
 lazy val example = project.
