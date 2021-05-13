@@ -1561,10 +1561,8 @@ class MouseEvent(typeArg: String, init: js.UndefOr[MouseEventInit])
 @js.native
 @JSGlobal
 class PointerEvent(typeArg: String,
-    pointerEventInit: js.UndefOr[PointerEventInit] = js.undefined)
+    pointerEventInit: js.UndefOr[PointerEventInit] = js.native)
     extends MouseEvent(typeArg, pointerEventInit) {
-
-  def this(typeArg: String) = this(typeArg, js.native)
 
   /**
    * An identifier assigned to a pointer event that is unique from the identifiers
@@ -3115,10 +3113,10 @@ class Touch extends js.Object {
  */
 @js.native
 @JSGlobal
-class KeyboardEvent(typeArg: String, init: js.UndefOr[KeyboardEventInit])
+class KeyboardEvent(typeArg: String, init: js.UndefOr[KeyboardEventInit] = js.native)
     extends UIEvent(typeArg, init) with ModifierKeyEvent {
 
-  def this(typeArg: String) = this(typeArg, js.native)
+//  def this(typeArg: String) = this(typeArg, js.native)
 
   /**
    * Returns the Unicode value of a character key pressed during a keypress event.
