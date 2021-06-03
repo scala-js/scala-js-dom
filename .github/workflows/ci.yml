@@ -17,7 +17,7 @@ jobs:
         include:
           - scalaversion: "2.10.7"
             scalajsversion: "0.6.x"
-          - scalaversion: "3.0.0"
+          - scalaversion: "3.0.1-RC1"
             scalajsversion: "1.x"
     env:
       SCALAJS_VERSION: "${{ matrix.scalajsversion == '0.6.x' && '0.6.28' || '' }}"
