@@ -22,17 +22,17 @@ package object ext {
     def cast[T] = x.asInstanceOf[T]
   }
 
-  implicit def pimpAnimatedNumber(x: svg.AnimatedNumber) = x.baseVal
+  implicit def pimpAnimatedNumber(x: svg.AnimatedNumber): Double = x.baseVal
 
-  implicit def pimpRichAnimatedNumber(x: svg.AnimatedNumber) =
+  implicit def pimpRichAnimatedNumber(x: svg.AnimatedNumber): runtime.RichDouble =
     x.baseVal: runtime.RichDouble
 
-  implicit def pimpAnimatedLength(x: svg.AnimatedLength) = x.baseVal.value
+  implicit def pimpAnimatedLength(x: svg.AnimatedLength): Double = x.baseVal.value
 
-  implicit def pimpRichAnimatedLength(x: svg.AnimatedLength) =
+  implicit def pimpRichAnimatedLength(x: svg.AnimatedLength): runtime.RichDouble =
     x.baseVal.value: runtime.RichDouble
 
-  implicit def color2String(c: Color) = c.toString
+  implicit def color2String(c: Color): String = c.toString
   implicit class pimpedContext(val ctx: CanvasRenderingContext2D) {
     def prepCircle(x: Double, y: Double, r: Double) = {
       ctx.beginPath()
