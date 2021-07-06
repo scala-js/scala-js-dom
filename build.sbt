@@ -6,7 +6,7 @@ lazy val root = project.in(file(".")).
 name := "Scala.js DOM"
 
 ThisBuild / crossScalaVersions := {
-  if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1", "3.0.1-RC1")
+  if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1", "3.0.1-RC2")
   else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
 }
 ThisBuild / scalaVersion := crossScalaVersions.value.head

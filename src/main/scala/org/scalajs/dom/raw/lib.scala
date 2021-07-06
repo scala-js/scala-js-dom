@@ -3113,7 +3113,8 @@ class Touch extends js.Object {
  */
 @js.native
 @JSGlobal
-class KeyboardEvent(typeArg: String, init: js.UndefOr[KeyboardEventInit] = js.native)
+class KeyboardEvent(typeArg: String,
+    init: js.UndefOr[KeyboardEventInit] = js.native)
     extends UIEvent(typeArg, init) with ModifierKeyEvent {
 
 //  def this(typeArg: String) = this(typeArg, js.native)

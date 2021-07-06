@@ -8,7 +8,9 @@ import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.{ArrayBuffer, ArrayBufferView}
 import scala.scalajs.js.{undefined, |}
 import org.scalajs.dom.Blob
-import org.scalajs.dom.raw.{DOMException, Event, EventInit, EventTarget, MessageEvent}
+import org.scalajs.dom.raw.{
+  DOMException, Event, EventInit, EventTarget, MessageEvent
+}
 import org.scalajs.dom.experimental.mediastream._
 
 @js.native
@@ -500,7 +502,8 @@ trait RTCDataChannelInit extends js.Object {
 class RTCDataChannelEvent(typeArg: String,
     init: js.UndefOr[RTCDataChannelEventInit])
     extends Event(typeArg, init) {
-  def this(init: js.UndefOr[RTCDataChannelEventInit]) = this(typeArg = "datachannel", init = init)
+  def this(init: js.UndefOr[RTCDataChannelEventInit]) =
+    this(typeArg = "datachannel", init = init)
 
   /**
    * Contains the RTCDataChannel containing the data channel associated with
