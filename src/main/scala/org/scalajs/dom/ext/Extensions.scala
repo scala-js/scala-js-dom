@@ -13,14 +13,20 @@ import scala.scalajs.js.typedarray.TypedArrayBufferOps._
  * Thrown when `Ajax.get` or `Ajax.post` receives a non-20X response code.
  * Contains the XMLHttpRequest that resulted in that response
  */
+@deprecated("use the dom.fetch API instead", "2.0.0")
 case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
   def isTimeout = xhr.status == 0 && xhr.readyState == 4
 }
+
+// This is just there to work around some weird warnings in Scala 3.x
+@deprecated("use the dom.fetch API instead", "2.0.0")
+object AjaxException extends (dom.XMLHttpRequest => AjaxException)
 
 /**
  * Wraps an XMLHttpRequest to provide an easy one-line way of making
  * an Ajax call, returning a Future.
  */
+@deprecated("use the dom.fetch API instead", "2.0.0")
 object Ajax {
 
   /**

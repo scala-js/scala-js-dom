@@ -24606,24 +24606,25 @@ experimental/webrtc/RTCStatsType[SO] val `outbound-rtp` = "outbound-rtp".asInsta
 experimental/webrtc/package[SO] def mediaDevices: MediaDevices
 experimental/webrtc/package[SO] implicit def toWebRTC(n: org.scalajs.dom.Navigator): NavigatorMediaStream
 experimental/webrtc/package.NavigatorMediaStream[JT] def mediaDevices: MediaDevices
-ext/Ajax[SO] def apply(method: String, url: String, data: InputData, timeout: Int, headers: Map[String, String], withCredentials: Boolean, responseType: String): Future[dom.XMLHttpRequest]
-ext/Ajax[SO] implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData
-ext/Ajax[SO] implicit def blob2ajax(b: Blob): InputData
-ext/Ajax[SO] implicit def byteBuffer2ajax(data: ByteBuffer): InputData
-ext/Ajax[SO] def delete(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("DELETE", url, data, timeout, headers, withCredentials, responseType) }
-ext/Ajax[SO] implicit def formdata2ajax(b: FormData): InputData
-ext/Ajax[SO] def get(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("GET", url, data, timeout, headers, withCredentials, responseType) }
-ext/Ajax[SO] def patch(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("PATCH", url, data, timeout, headers, withCredentials, responseType) }
-ext/Ajax[SO] def post(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("POST", url, data, timeout, headers, withCredentials, responseType) }
-ext/Ajax[SO] def put(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("PUT", url, data, timeout, headers, withCredentials, responseType) }
-ext/Ajax[SO] implicit def str2ajax(s: String): InputData
+ext/Ajax[SO] def apply(method: String, url: String, data: InputData, timeout: Int, headers: Map[String, String], withCredentials: Boolean, responseType: String): Future[dom.XMLHttpRequest]  (@deprecated in 2.0.0)
+ext/Ajax[SO] implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData  (@deprecated in 2.0.0)
+ext/Ajax[SO] implicit def blob2ajax(b: Blob): InputData  (@deprecated in 2.0.0)
+ext/Ajax[SO] implicit def byteBuffer2ajax(data: ByteBuffer): InputData  (@deprecated in 2.0.0)
+ext/Ajax[SO] def delete(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("DELETE", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
+ext/Ajax[SO] implicit def formdata2ajax(b: FormData): InputData  (@deprecated in 2.0.0)
+ext/Ajax[SO] def get(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("GET", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
+ext/Ajax[SO] def patch(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("PATCH", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
+ext/Ajax[SO] def post(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("POST", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
+ext/Ajax[SO] def put(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("PUT", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
+ext/Ajax[SO] implicit def str2ajax(s: String): InputData  (@deprecated in 2.0.0)
 ext/Ajax.InputData[JT]
 ext/Ajax.InputData[SO] implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData
 ext/Ajax.InputData[SO] implicit def blob2ajax(b: Blob): InputData
 ext/Ajax.InputData[SO] implicit def byteBuffer2ajax(data: ByteBuffer): InputData
 ext/Ajax.InputData[SO] implicit def formdata2ajax(b: FormData): InputData
 ext/Ajax.InputData[SO] implicit def str2ajax(s: String): InputData
-ext/AjaxException[SC] def isTimeout = xhr.status = = 0 && xhr.readyState = = 4
+ext/AjaxException[SC] def isTimeout = xhr.status = = 0 && xhr.readyState = = 4  (@deprecated in 2.0.0)
+ext/AjaxException[SO]  (@deprecated in 2.0.0)
 ext/package[SO] val KeyCode: dom.KeyCode.type  (@deprecated in 2.0.0)
 ext/package[SO] val KeyLocation: dom.KeyLocation.type  (@deprecated in 2.0.0)
 ext/package[SO] val KeyValue: dom.KeyValue.type  (@deprecated in 2.0.0)
