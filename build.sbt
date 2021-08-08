@@ -54,6 +54,13 @@ scalacOptions ++= {
   else Nil
 }
 
+import com.typesafe.tools.mima.core._
+mimaPreviousArtifacts := Set("org.scala-js" %%% "scalajs-dom" % "1.1.0")
+mimaBinaryIssueFilters ++= Seq(
+  // #427 SharedWorker onconnect has wrong type
+  ProblemFilters.exclude[Problem]("org.scalajs.dom.experimental.sharedworkers.SharedWorkerGlobalScope.onconnect*")
+)
+
 scmInfo := Some(ScmInfo(
     url("https://github.com/scala-js/scala-js-dom"),
     "scm:git:git@github.com:scala-js/scala-js-dom.git",

@@ -27,6 +27,8 @@ jobs:
         run: sbt "++${{ matrix.scalaversion }}" example/compile
       - name: scalafmt
         run: sbt "++${{ matrix.scalaversion }}" scalafmtCheck
+      - name: mima
+        run: sbt "++${{ matrix.scalaversion }}" mimaReportBinaryIssues
   readme:
     runs-on: ubuntu-latest
     steps:
