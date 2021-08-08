@@ -55,7 +55,12 @@ scalacOptions ++= {
 }
 
 import com.typesafe.tools.mima.core._
-mimaPreviousArtifacts := Set("org.scala-js" %%% "scalajs-dom" % "1.1.0")
+mimaPreviousArtifacts := {
+  if (scalaVersion.value.startsWith("3"))
+    Set.empty
+  else
+    Set("org.scala-js" %%% "scalajs-dom" % "1.1.0")
+}
 mimaBinaryIssueFilters ++= Seq(
   // #427 SharedWorker onconnect has wrong type
   ProblemFilters.exclude[Problem]("org.scalajs.dom.experimental.sharedworkers.SharedWorkerGlobalScope.onconnect*")
