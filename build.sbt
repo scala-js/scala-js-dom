@@ -5,14 +5,11 @@ lazy val root = project.in(file(".")).
 
 name := "Scala.js DOM"
 
-crossScalaVersions in ThisBuild := {
-  if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1")
-  else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
-}
-scalaVersion in ThisBuild := crossScalaVersions.value.head
+ThisBuild / crossScalaVersions := Seq("2.12.12", "2.11.12", "2.13.4", "3.0.1")
+ThisBuild / scalaVersion := crossScalaVersions.value.head
 
 val commonSettings = Seq(
-  version := "1.2.0-SNAPSHOT",
+  version := "2.0.0-SNAPSHOT",
   organization := "org.scala-js",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 )
@@ -36,7 +33,6 @@ scalacOptions ++= {
 }
 
 def hasNewCollections(version: String): Boolean = {
-  !version.startsWith("2.10.") &&
   !version.startsWith("2.11.") &&
   !version.startsWith("2.12.")
 }
@@ -104,7 +100,7 @@ lazy val readme = ScalatexReadme(
 ).settings(
   scalaVersion := "2.12.10",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
-  (resources in Compile) += (fullOptJS in (example, Compile)).value.data
+  (Compile / resources) += (example / Compile / fullOptJS).value.data
 )
 
 lazy val example = project.

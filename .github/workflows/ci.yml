@@ -12,13 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scalaversion: ["2.11.12", "2.12.10", "2.13.1"]
-        scalajsversion: ["1.x", "0.6.x"]
-        include:
-          - scalaversion: "2.10.7"
-            scalajsversion: "0.6.x"
-    env:
-      SCALAJS_VERSION: "${{ matrix.scalajsversion == '0.6.x' && '0.6.28' || '' }}"
+        scalaversion: ["2.11.12", "2.12.12", "2.13.4", "3.0.1"]
     steps:
       - uses: actions/checkout@v2
       - uses: olafurpg/setup-scala@v10

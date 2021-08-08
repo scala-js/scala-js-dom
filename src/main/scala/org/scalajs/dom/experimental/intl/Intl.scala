@@ -123,12 +123,12 @@ object CollatorOptions {
   ): CollatorOptions = {
     js.Dynamic
       .literal(
-          localeMatcher = localeMatcher,
-          usage = usage,
-          sensitivity = sensitivity,
-          ignorePunctuation = ignorePunctuation,
-          numeric = numeric,
-          caseFirst = caseFirst
+          localeMatcher = localeMatcher.asInstanceOf[js.Any],
+          usage = usage.asInstanceOf[js.Any],
+          sensitivity = sensitivity.asInstanceOf[js.Any],
+          ignorePunctuation = ignorePunctuation.asInstanceOf[js.Any],
+          numeric = numeric.asInstanceOf[js.Any],
+          caseFirst = caseFirst.asInstanceOf[js.Any]
       )
       .asInstanceOf[CollatorOptions]
   }
@@ -200,19 +200,19 @@ object DateTimeFormatOptions {
     // format: off
     js.Dynamic
       .literal(
-          localeMatcher = localeMatcher,
-          timeZone = timeZone,
-          hour12 = hour12,
-          formatMatcher = formatMatcher,
-          weekday = weekday,
-          era = era,
-          year = year,
-          month = month,
-          day = day,
-          hour = hour,
-          minute = minute,
-          second = second,
-          timeZoneName = timeZoneName
+          localeMatcher = localeMatcher.asInstanceOf[js.Any],
+          timeZone = timeZone.asInstanceOf[js.Any],
+          hour12 = hour12.asInstanceOf[js.Any],
+          formatMatcher = formatMatcher.asInstanceOf[js.Any],
+          weekday = weekday.asInstanceOf[js.Any],
+          era = era.asInstanceOf[js.Any],
+          year = year.asInstanceOf[js.Any],
+          month = month.asInstanceOf[js.Any],
+          day = day.asInstanceOf[js.Any],
+          hour = hour.asInstanceOf[js.Any],
+          minute = minute.asInstanceOf[js.Any],
+          second = second.asInstanceOf[js.Any],
+          timeZoneName = timeZoneName.asInstanceOf[js.Any]
       )
       .asInstanceOf[DateTimeFormatOptions]
     // format: on
@@ -300,16 +300,16 @@ object NumberFormatOptions {
   ): NumberFormatOptions = {
     js.Dynamic
       .literal(
-          localeMatcher = localeMatcher,
-          style = style,
-          currency = currency,
-          currencyDisplay = currencyDisplay,
-          useGrouping = useGrouping,
-          minimumIntegerDigits = minimumIntegerDigits,
-          minimumFractionDigits = minimumFractionDigits,
-          maximumFractionDigits = maximumFractionDigits,
-          minimumSignificantDigits = minimumSignificantDigits,
-          maximumSignificantDigits = maximumSignificantDigits
+          localeMatcher = localeMatcher.asInstanceOf[js.Any],
+          style = style.asInstanceOf[js.Any],
+          currency = currency.asInstanceOf[js.Any],
+          currencyDisplay = currencyDisplay.asInstanceOf[js.Any],
+          useGrouping = useGrouping.asInstanceOf[js.Any],
+          minimumIntegerDigits = minimumIntegerDigits.asInstanceOf[js.Any],
+          minimumFractionDigits = minimumFractionDigits.asInstanceOf[js.Any],
+          maximumFractionDigits = maximumFractionDigits.asInstanceOf[js.Any],
+          minimumSignificantDigits = minimumSignificantDigits.asInstanceOf[js.Any],
+          maximumSignificantDigits = maximumSignificantDigits.asInstanceOf[js.Any]
       )
       .asInstanceOf[NumberFormatOptions]
   }
