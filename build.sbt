@@ -1,12 +1,12 @@
 import scalatex.ScalatexReadme
 
-ThisBuild / shellPrompt  := ((s: State) => Project.extract(s).currentRef.project + "> ")
+ThisBuild / shellPrompt := ((s: State) => Project.extract(s).currentRef.project + "> ")
 
 lazy val root = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin)
   .enablePlugins(ScalafixPlugin)
-  .dependsOn(mima % ScalafixConfig)
+  .dependsOn(scalafixRules % ScalafixConfig)
   .settings(scalafixOnCompile := true)
 
 name := "Scala.js DOM"
@@ -121,8 +121,8 @@ lazy val example = project.
 
 import _root_.scalafix.sbt.BuildInfo.scalafixVersion
 
-lazy val mima = project
-  .in(file("mima"))
+lazy val scalafixRules = project
+  .in(file("scalafix"))
   .enablePlugins(ScalaJSPlugin)
   .settings(
     libraryDependencies += "ch.epfl.scala" %% "scalafix-core" % scalafixVersion,
