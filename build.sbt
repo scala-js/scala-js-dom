@@ -1,7 +1,13 @@
 import scalatex.ScalatexReadme
 
-lazy val root = project.in(file(".")).
-  enablePlugins(ScalaJSPlugin)
+ThisBuild / shellPrompt  := ((s: State) => Project.extract(s).currentRef.project + "> ")
+
+lazy val root = project
+  .in(file("."))
+  .enablePlugins(ScalaJSPlugin)
+  .enablePlugins(ScalafixPlugin)
+  .dependsOn(mima % ScalafixConfig)
+  .settings(scalafixOnCompile := true)
 
 name := "Scala.js DOM"
 
@@ -9,7 +15,8 @@ ThisBuild / crossScalaVersions := {
   if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1")
   else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
 }
-ThisBuild / scalaVersion := crossScalaVersions.value.head
+// ThisBuild / scalaVersion := crossScalaVersions.value.head
+ThisBuild / scalaVersion := "2.13.1"
 
 val commonSettings = Seq(
   organization := "org.scala-js",
@@ -110,3 +117,13 @@ lazy val example = project.
   settings(commonSettings: _*).
   settings(noPublishSettings: _*).
   dependsOn(root)
+
+
+import _root_.scalafix.sbt.BuildInfo.scalafixVersion
+
+lazy val mima = project
+  .in(file("mima"))
+  .enablePlugins(ScalaJSPlugin)
+  .settings(
+    libraryDependencies += "ch.epfl.scala" %% "scalafix-core" % scalafixVersion,
+  )
