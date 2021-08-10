@@ -75,6 +75,9 @@ jobs:
         if: matrix.scalajs == '1.0.0' && matrix.scala == '2.12.10'
         run: sbt --client '++${{ matrix.scala }}; readme/run'
 
+      - name: Create readme/target directory (if necessary)
+        run: mkdir -p readme/target
+
       - name: Compress target directories
         run: tar cf targets.tar target readme/target example/target project/target
 

@@ -30,6 +30,7 @@ ThisBuild / githubWorkflowBuild := Seq(
   WorkflowStep.Sbt(List("example/compile"), name = Some("Build examples")),
   WorkflowStep.Sbt(List("scalafmtCheck"), name = Some("scalafmt")),
   WorkflowStep.Sbt(List("readme/run"), name = Some("Readme generation"), cond = Some(s"matrix.scalajs == '${scalaJS1}' && matrix.scala == '${scala212}'")),
+  WorkflowStep.Run(List("mkdir -p readme/target"), name = Some("Create readme/target directory (if necessary)")) // Keeps upload step happy
 )
 
 ThisBuild / githubWorkflowGeneratedUploadSteps ~= {
