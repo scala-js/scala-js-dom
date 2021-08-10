@@ -1,7 +1,24 @@
 import scalatex.ScalatexReadme
 
-lazy val root = project.in(file(".")).
-  enablePlugins(ScalaJSPlugin)
+def sourceMapsToGithub: Project => Project =
+  p => p.settings(
+    scalacOptions ++= {
+      val isDotty = scalaVersion.value startsWith "3"
+      val ver     = version.value
+      if (isSnapshot.value)
+        Nil
+      else {
+        val a = p.base.toURI.toString.replaceFirst("[^/]+/?$", "")
+        val g = s"https://raw.githubusercontent.com/scala-js/scala-js-dom"
+        val flag = if (isDotty) "-scalajs-mapSourceURI" else "-P:scalajs:mapSourceURI"
+        s"$flag:$a->$g/v$ver/" :: Nil
+      }
+    }
+  )
+
+lazy val root = project.in(file("."))
+  .enablePlugins(ScalaJSPlugin)
+  .configure(sourceMapsToGithub)
 
 name := "Scala.js DOM"
 
@@ -21,16 +38,6 @@ commonSettings
 homepage := Some(url("http://scala-js.org/"))
 
 licenses += ("MIT", url("http://opensource.org/licenses/mit-license.php"))
-
-scalacOptions ++= {
-  if (isSnapshot.value)
-    Seq.empty
-  else {
-    val a = baseDirectory.value.toURI
-    val g = "https://raw.githubusercontent.com/scala-js/scala-js-dom"
-    Seq(s"-P:scalajs:mapSourceURI:$a->$g/v${version.value}/")
-  }
-}
 
 def hasNewCollections(version: String): Boolean = {
   !version.startsWith("2.11.") &&
