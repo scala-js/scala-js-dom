@@ -76,9 +76,19 @@ publishTo := {
 pomExtra := (
     <developers>
       <developer>
+        <id>japgolly</id>
+        <name>David Barri</name>
+        <url>https://github.com/japgolly</url>
+      </developer>
+      <developer>
         <id>lihaoyi</id>
         <name>Li Haoyi</name>
         <url>https://github.com/lihaoyi/</url>
+      </developer>
+      <developer>
+        <id>armanbilge</id>
+        <name>Arman Bilge</name>
+        <url>https://github.com/armanbilge</url>
       </developer>
       <developer>
         <id>sjrd</id>
