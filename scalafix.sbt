@@ -1,5 +1,5 @@
 ThisBuild / semanticdbEnabled          := true
-ThisBuild / semanticdbVersion          := "4.4.26"
+ThisBuild / semanticdbVersion          := "4.4.27"
 ThisBuild / scalafixScalaBinaryVersion := CrossVersion.binaryScalaVersion(scalaVersion.value)
 
 ThisBuild / scalacOptions ++= {

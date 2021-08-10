@@ -15,8 +15,6 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
   override def fix(implicit doc: SemanticDocument): Patch = {
 
     doc.tree.traverse {
-      // case a: Defn.Object if a.name.value.contains("AesCbcParams") => process(a.symbol, a.templ, ScopeType.Object)
-
       case a: Defn.Class  => process(a.symbol, a.templ, ScopeType.Class)
       case a: Defn.Object => process(a.symbol, a.templ, ScopeType.Object)
       case a: Defn.Trait  => process(a.symbol, a.templ, ScopeType.Trait)
@@ -28,7 +26,7 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
   }
 
   private def process(sym: Symbol, body: Template, typ: ScopeType)(implicit doc: SemanticDocument): Unit = {
-    // Skip non-public API
+    // Skip non-public scopes
     if (!sym.info.get.isPublic)
       return
 
@@ -38,8 +36,7 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
     val s          = state.register(sym, isJsType, typ, domParents)
 
     def letsSeeHowLazyWeCanBeLol(t: Tree): Unit = {
-
-      // Skip non-public API
+      // Skip non-public members
       if (!t.symbol.info.get.isPublic)
         return
 
