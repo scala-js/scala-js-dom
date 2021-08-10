@@ -72,6 +72,7 @@ jobs:
         run: sbt --client '++${{ matrix.scala }}; scalafmtCheck'
 
       - name: Readme generation
+        if: matrix.scalajs == '1.0.0' && matrix.scala == '2.12.10'
         run: sbt --client '++${{ matrix.scala }}; readme/run'
 
       - name: Compress target directories

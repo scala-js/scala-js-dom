@@ -29,7 +29,7 @@ ThisBuild / githubWorkflowBuild := Seq(
   WorkflowStep.Sbt(List("doc"), name = Some("Test generate documentation")),
   WorkflowStep.Sbt(List("example/compile"), name = Some("Build examples")),
   WorkflowStep.Sbt(List("scalafmtCheck"), name = Some("scalafmt")),
-  WorkflowStep.Sbt(List("readme/run"), name = Some("Readme generation")),
+  WorkflowStep.Sbt(List("readme/run"), name = Some("Readme generation"), cond = Some(s"matrix.scalajs == '${scalaJS1}' && matrix.scala == '${scala212}'")),
 )
 
 ThisBuild / githubWorkflowGeneratedUploadSteps ~= {
@@ -159,7 +159,6 @@ lazy val readme = ScalatexReadme(
   source = "Index",
   autoResources = Seq("example-opt.js")
 ).settings(
-  scalaVersion := scala210,
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
   (Compile / resources) += (example / Compile / fullOptJS).value.data
 )
