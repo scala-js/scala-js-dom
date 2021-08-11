@@ -41,6 +41,7 @@ jobs:
         run: sbt "++${{ matrix.scalaversion }}" scalafmtCheck
 
       - name: Validate api report
+        if: matrix.scalajsversion == '1.x' && matrix.scalaversion != '2.11.12'
         run: ./api-reports/validate "${{ matrix.scalaversion }}"
 
   readme:
