@@ -198,6 +198,13 @@ crypto/SubtleCrypto[JT] def sign(algorithm: AlgorithmIdentifier, key: CryptoKey,
 crypto/SubtleCrypto[JT] def unwrapKey(format: String, wrappedKey: BufferSource, unwrappingKey: CryptoKey, unwrapAlgorithm: AlgorithmIdentifier, unwrappedKeyAlgorithm: AlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
 crypto/SubtleCrypto[JT] def verify(algorithm: AlgorithmIdentifier, key: CryptoKey, signature: BufferSource, data: BufferSource): js.Promise[js.Any]
 crypto/SubtleCrypto[JT] def wrapKey(format: KeyFormat, key: CryptoKey, wrappingKey: CryptoKey, wrapAlgorithm: AlgorithmIdentifier): js.Promise[js.Any]
+crypto/package[SO] implicit def arrayBuffer2BufferSource(b: ArrayBuffer): BufferSource
+crypto/package[SO] implicit def arrayBufferView2BufferSource(b: ArrayBufferView): BufferSource
+crypto/package[SO] type AlgorithmIdentifier = Algorithm | String
+crypto/package[SO] type BigInteger = Uint8Array
+crypto/package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
+crypto/package[SO] type KeyAlgorithmIdentifier = KeyAlgorithm | String
+crypto/package[SO] val crypto = GlobalCrypto.crypto
 crypto/package.BufferSource[JT]
 css[SO] def Rule = raw.CSSRule
 css[SO] type FontFaceRule = raw.CSSFontFaceRule
@@ -467,6 +474,9 @@ experimental/WriteableStream[JT] def state: WriteableState
 experimental/WriteableStream[JT] def write(chunk: Chunk[T]): js.Promise[Any]
 experimental/WriteableStream[JT] val closed: js.Promise[WriteableStream[T]]
 experimental/WriteableStream[JT] val ready: js.Promise[WriteableStream[T]]
+experimental/beacon/package[SO] def sendBeacon(url: String, data: BodyInit = null): Boolean
+experimental/beacon/package[SO] implicit def toBeaconNavigator(n: Navigator): BeaconNavigator
+experimental/beacon/package[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator
 experimental/beacon/package.BeaconNavigator[JT] def sendBeacon(url: String, data: BodyInit = null): Boolean
 experimental/beacon/package.BeaconWorkerNavigator[JT] def sendBeacon(url: String, data: BodyInit = null): Boolean
 experimental/deviceorientation/DeviceAcceleration[JT] val x: Double
@@ -523,6 +533,9 @@ experimental/gamepad/GamepadEventInit[JT] var gamepad: js.UndefOr[Gamepad]
 experimental/gamepad/GamepadEventInit[JT] var scoped: js.UndefOr[Boolean]
 experimental/gamepad/GamepadMappingType[JT]
 experimental/gamepad/GamepadNavigator[JT] def getGamepads(): js.Array[Gamepad]
+experimental/gamepad/package[SO] final val `standard` = "standard".asInstanceOf[GamepadMappingType]
+experimental/gamepad/package[SO] final val `unknown` = "".asInstanceOf[GamepadMappingType]
+experimental/gamepad/package[SO] implicit def toGamepad(navigator: dom.raw.Navigator): GamepadNavigator
 experimental/intl/Collator[JC] def compare(string1: String, string2: String): Double
 experimental/intl/Collator[JC] def resolvedOptions(): CollatorOptions
 experimental/intl/Collator[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
@@ -700,6 +713,32 @@ experimental/mediastream/MediaTrackSupportedConstraints[JT] var sampleRate: js.U
 experimental/mediastream/MediaTrackSupportedConstraints[JT] var sampleSize: js.UndefOr[Boolean]
 experimental/mediastream/MediaTrackSupportedConstraints[JT] var volume: js.UndefOr[Boolean]
 experimental/mediastream/MediaTrackSupportedConstraints[JT] var width: js.UndefOr[Boolean]
+experimental/package[SO] type BodyInit = Blob | BufferSource | FormData | String
+experimental/package[SO] type ByteString = String
+experimental/package[SO] type HeadersInit = Headers | Sequence[Sequence[ByteString]] | OpenEndedDictionary[ByteString]
+experimental/package[SO] type OpenEndedDictionary[T] = js.Dictionary[T]
+experimental/package[SO] type RequestInfo = String | Request
+experimental/package[SO] type Sequence[T] = js.Array[T]
+experimental/permissions/package[SO] def apply(permissionName: PermissionName): PermissionDescriptor
+experimental/permissions/package[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor
+experimental/permissions/package[SO] def query( permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
+experimental/permissions/package[SO] implicit def toPermissions(navigator: dom.raw.Navigator): PermissionsNavigator
+experimental/permissions/package[SO] val `persistent-storage` = "persistent-storage".asInstanceOf[PermissionName]
+experimental/permissions/package[SO] val denied = "denied".asInstanceOf[PermissionState]
+experimental/permissions/package[SO] val geolocation = "geolocation".asInstanceOf[PermissionName]
+experimental/permissions/package[SO] val granted = "granted".asInstanceOf[PermissionState]
+experimental/permissions/package[SO] val midi = "midi".asInstanceOf[PermissionName]
+experimental/permissions/package[SO] val name = PermissionName.push
+experimental/permissions/package[SO] val name = permissionName
+experimental/permissions/package[SO] val name: PermissionName
+experimental/permissions/package[SO] val notifications = "notifications".asInstanceOf[PermissionName]
+experimental/permissions/package[SO] val permissions: Permissions
+experimental/permissions/package[SO] val prompt = "prompt".asInstanceOf[PermissionState]
+experimental/permissions/package[SO] val push = "push".asInstanceOf[PermissionName]
+experimental/permissions/package[SO] val state: PermissionState
+experimental/permissions/package[SO] val userVisibleOnly = permissionUserVisibleOnly
+experimental/permissions/package[SO] val userVisibleOnly: Boolean
+experimental/permissions/package[SO] var onchange: js.Function1[dom.Event, _]
 experimental/permissions/package.PermissionDescriptor[JT] val name: PermissionName
 experimental/permissions/package.PermissionDescriptor[SO] def apply(permissionName: PermissionName): PermissionDescriptor
 experimental/permissions/package.PermissionDescriptor[SO] val name = permissionName
@@ -754,6 +793,11 @@ experimental/push/PushSubscriptionJSON[JT] val expirationTime: java.lang.Double
 experimental/push/PushSubscriptionJSON[JT] val keys: js.Dictionary[String]
 experimental/push/PushSubscriptionOptions[JT] var applicationServerKey: js.UndefOr[Uint8Array]
 experimental/push/PushSubscriptionOptions[JT] var userVisibleOnly: js.UndefOr[Boolean]
+experimental/push/package[SO] implicit def pushServiceWorkerGlobalScope(swgs: ServiceWorkerGlobalScope): PushServiceWorkerGlobalScope
+experimental/push/package[SO] implicit def pushServiceWorkerRegistration(swr: ServiceWorkerRegistration): PushServiceWorkerRegistration
+experimental/push/package[SO] val pushManager: PushManager
+experimental/push/package[SO] var onpush: js.Function1[PushEvent, _]
+experimental/push/package[SO] var onpushsubscriptionchange: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpush: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpushsubscriptionchange: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerRegistration[JT] val pushManager: PushManager
@@ -897,6 +941,9 @@ experimental/serviceworkers/WindowClient[JT] def navigate(url: String): js.Promi
 experimental/serviceworkers/WindowClient[JT] def postMessage(message: Any, transfer: Sequence[Transferable] = null): Unit
 experimental/serviceworkers/WindowClient[JT] def url: String
 experimental/serviceworkers/WindowClient[JT] def visibilityState: String
+experimental/serviceworkers/package[SO] implicit def toServiceWorkerNavigator(n: Navigator): ServiceWorkerNavigator
+experimental/serviceworkers/package[SO] type Transferable = org.scalajs.dom.raw.Transferable | CanvasProxy
+experimental/serviceworkers/package[SO] val serviceWorker: ServiceWorkerContainer
 experimental/serviceworkers/package.ServiceWorkerNavigator[JT] val serviceWorker: ServiceWorkerContainer
 experimental/sharedworkers/SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/sharedworkers/SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -923,6 +970,13 @@ experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onconnect: js.Functio
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
+experimental/storage/package[SO] def estimate(): js.Promise[StorageEstimate]
+experimental/storage/package[SO] def persist(): js.Promise[Boolean]
+experimental/storage/package[SO] def persisted(): js.Promise[Boolean]
+experimental/storage/package[SO] implicit def toNavigatorStorage(navigator: dom.Navigator): NavigatorStorage
+experimental/storage/package[SO] val quota: Double
+experimental/storage/package[SO] val storage: StorageManager
+experimental/storage/package[SO] val usage: Double
 experimental/storage/package.NavigatorStorage[JT] val storage: StorageManager
 experimental/storage/package.StorageEstimate[JT] val quota: Double
 experimental/storage/package.StorageEstimate[JT] val usage: Double
@@ -1057,6 +1111,7 @@ experimental/webgl/extensions/WebGLLoseContext[JT] def loseContext(): Unit
 experimental/webgl/extensions/WebGLLoseContext[JT] def restoreContext(): Unit
 experimental/webgl/extensions/WebGLTimerQueryEXT[JT]
 experimental/webgl/extensions/WebGLVertexArrayObjectOES[JT]
+experimental/webgl/package[SO] def getExtension[T](id: WebGLExtensionIdentifier[T]): js.UndefOr[T]
 experimental/webgl/package.WebGLRenderingContextOps[SC] def getExtension[T](id: WebGLExtensionIdentifier[T]): js.UndefOr[T]
 experimental/webrtc/MediaStreamEventInit[JT] var bubbles: js.UndefOr[Boolean]
 experimental/webrtc/MediaStreamEventInit[JT] var cancelable: js.UndefOr[Boolean]
@@ -1249,6 +1304,8 @@ experimental/webrtc/RTCStatsReport[JT] def apply(id: String): RTCStats
 experimental/webrtc/RTCStatsType[JT]
 experimental/webrtc/RTCStatsType[SO] val `inbound-rtp` = "inbound-rtp".asInstanceOf[RTCStatsType]
 experimental/webrtc/RTCStatsType[SO] val `outbound-rtp` = "outbound-rtp".asInstanceOf[RTCStatsType]
+experimental/webrtc/package[SO] def mediaDevices: MediaDevices
+experimental/webrtc/package[SO] implicit def toWebRTC(n: org.scalajs.dom.Navigator): NavigatorMediaStream
 experimental/webrtc/package.NavigatorMediaStream[JT] def mediaDevices: MediaDevices
 ext/Ajax[SO] def apply(method: String, url: String, data: InputData, timeout: Int, headers: Map[String, String], withCredentials: Boolean, responseType: String): Future[dom.XMLHttpRequest]
 ext/Ajax[SO] def delete(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("DELETE", url, data, timeout, headers, withCredentials, responseType) }
@@ -1752,6 +1809,20 @@ ext/TouchEvents[JT] var ontouchmove: js.Function1[raw.TouchEvent, _]
 ext/TouchEvents[JT] var ontouchstart: js.Function1[raw.TouchEvent, _]
 ext/TouchEvents[SO] implicit def HTMLDocumentToTouchEvents(html: raw.HTMLDocument): TouchEvents
 ext/TouchEvents[SO] implicit def WindowToTouchEvents(window: raw.Window): TouchEvents
+ext/package[SO] def cast[T] = x.asInstanceOf[T]
+ext/package[SO] def fillCircle(x: Double, y: Double, r: Double) = { prepCircle(x, y, r) ctx.fill() }
+ext/package[SO] def fillPath(points: (Double, Double)*) = { prepPath(points) ctx.fill() }
+ext/package[SO] def prepCircle(x: Double, y: Double, r: Double) = { ctx.beginPath() ctx.arc(x, y, r, 0, math.Pi * 2) }
+ext/package[SO] def prepPath(points: Seq[(Double, Double)], closed: Boolean = true) = { ctx.beginPath() if (closed) ctx.moveTo(points.last._1, points.last._2) for (p <- points) { ctx.lineTo(p._1, p._2) } }
+ext/package[SO] def strokeCircle(x: Double, y: Double, r: Double) = { prepCircle(x, y, r) ctx.stroke() }
+ext/package[SO] def strokePath(points: (Double, Double)*) = { prepPath(points) ctx.stroke() }
+ext/package[SO] def strokePathOpen(points: (Double, Double)*) = { prepPath(points, closed = false) ctx.stroke() }
+ext/package[SO] implicit def color2String(c: Color) = c.toString
+ext/package[SO] implicit def pimpAnimatedLength(x: svg.AnimatedLength) = x.baseVal.value
+ext/package[SO] implicit def pimpAnimatedNumber(x: svg.AnimatedNumber) = x.baseVal
+ext/package[SO] implicit def pimpNamedNodeMap(namedNodeMap: NamedNodeMap): NamedNodeMapMap
+ext/package[SO] implicit def pimpRichAnimatedLength(x: svg.AnimatedLength) = x.baseVal.value: runtime.RichDouble
+ext/package[SO] implicit def pimpRichAnimatedNumber(x: svg.AnimatedNumber) = x.baseVal: runtime.RichDouble
 ext/package.Castable[SC] def cast[T] = x.asInstanceOf[T]
 ext/package.PimpedHtmlCollection[SC] def apply(x: Int) = jsApply(x)
 ext/package.PimpedHtmlCollection[SC] def hasNext: scala.Boolean
@@ -1856,6 +1927,195 @@ idb[SO] type OpenDBRequest = raw.IDBOpenDBRequest
 idb[SO] type Request = raw.IDBRequest
 idb[SO] type Transaction = raw.IDBTransaction
 idb[SO] type VersionChangeEvent = raw.IDBVersionChangeEvent
+package[SO] lazy val ApplicationCache: raw.ApplicationCache.type
+package[SO] lazy val Blob: raw.Blob.type
+package[SO] lazy val BlobPropertyBag: raw.BlobPropertyBag.type
+package[SO] lazy val DOMException: raw.DOMException.type
+package[SO] lazy val Event: raw.Event.type
+package[SO] lazy val EventException: raw.EventException.type
+package[SO] lazy val EventSource: raw.EventSource.type
+package[SO] lazy val FileReader: raw.FileReader.type
+package[SO] lazy val FormData: raw.FormData.type
+package[SO] lazy val KeyboardEvent: raw.KeyboardEvent.type
+package[SO] lazy val MediaError: raw.MediaError.type
+package[SO] lazy val MutationObserverInit: raw.MutationObserverInit.type
+package[SO] lazy val Node: raw.Node.type
+package[SO] lazy val NodeFilter: raw.NodeFilter.type
+package[SO] lazy val PerformanceNavigation: raw.PerformanceNavigation.type
+package[SO] lazy val PositionError: raw.PositionError.type
+package[SO] lazy val Range: raw.Range.type
+package[SO] lazy val TextEvent: raw.TextEvent.type
+package[SO] lazy val TextTrack: raw.TextTrack.type
+package[SO] lazy val URL: raw.URL.type
+package[SO] lazy val VisibilityState: raw.VisibilityState.type
+package[SO] lazy val WebSocket: raw.WebSocket.type
+package[SO] lazy val WheelEvent: raw.WheelEvent.type
+package[SO] lazy val XMLHttpRequest: raw.XMLHttpRequest.type
+package[SO] lazy val XPathResult: raw.XPathResult.type
+package[SO] lazy val console: Console
+package[SO] lazy val document: html.Document
+package[SO] lazy val window: Window
+package[SO] type AnalyserNode = raw.AnalyserNode
+package[SO] type AnimationEvent = raw.AnimationEvent
+package[SO] type ApplicationCache = raw.ApplicationCache
+package[SO] type Attr = raw.Attr
+package[SO] type AudioBuffer = raw.AudioBuffer
+package[SO] type AudioBufferSourceNode = raw.AudioBufferSourceNode
+package[SO] type AudioContext = raw.AudioContext
+package[SO] type AudioDestinationNode = raw.AudioDestinationNode
+package[SO] type AudioListener = raw.AudioListener
+package[SO] type AudioNode = raw.AudioNode
+package[SO] type AudioParam = raw.AudioParam
+package[SO] type AudioTrack = raw.AudioTrack
+package[SO] type AudioTrackList = raw.AudioTrackList
+package[SO] type BeforeUnloadEvent = raw.BeforeUnloadEvent
+package[SO] type BiquadFilterNode = raw.BiquadFilterNode
+package[SO] type Blob = raw.Blob
+package[SO] type BlobPropertyBag = raw.BlobPropertyBag
+package[SO] type CDATASection = raw.CDATASection
+package[SO] type CanvasGradient = raw.CanvasGradient
+package[SO] type CanvasPattern = raw.CanvasPattern
+package[SO] type CanvasRenderingContext2D = raw.CanvasRenderingContext2D
+package[SO] type ChannelMergerNode = raw.ChannelMergerNode
+package[SO] type ChannelSplitterNode = raw.ChannelSplitterNode
+package[SO] type CharacterData = raw.CharacterData
+package[SO] type ClientRect = raw.ClientRect
+package[SO] type ClientRectList = raw.ClientRectList
+package[SO] type ClipboardEvent = raw.ClipboardEvent
+package[SO] type ClipboardEventInit = raw.ClipboardEventInit
+package[SO] type CloseEvent = raw.CloseEvent
+package[SO] type Comment = raw.Comment
+package[SO] type CompositionEvent = raw.CompositionEvent
+package[SO] type Console = raw.Console
+package[SO] type ConvolverNode = raw.ConvolverNode
+package[SO] type Coordinates = raw.Coordinates
+package[SO] type CustomEvent = raw.CustomEvent
+package[SO] type DOMException = raw.DOMException
+package[SO] type DOMImplementation = raw.DOMImplementation
+package[SO] type DOMList[T] = raw.DOMList[T]
+package[SO] type DOMParser = raw.DOMParser
+package[SO] type DOMSettableTokenList = raw.DOMSettableTokenList
+package[SO] type DOMStringList = raw.DOMStringList
+package[SO] type DOMTokenList = raw.DOMTokenList
+package[SO] type DataTransfer = raw.DataTransfer
+package[SO] type DelayNode = raw.DelayNode
+package[SO] type Document = raw.Document
+package[SO] type DocumentEvent = raw.DocumentEvent
+package[SO] type DocumentFragment = raw.DocumentFragment
+package[SO] type DocumentType = raw.DocumentType
+package[SO] type DragEvent = raw.DragEvent
+package[SO] type DynamicsCompressorNode = raw.DynamicsCompressorNode
+package[SO] type Element = raw.Element
+package[SO] type ErrorEvent = raw.ErrorEvent
+package[SO] type Event = raw.Event
+package[SO] type EventException = raw.EventException
+package[SO] type EventSource = raw.EventSource
+package[SO] type EventTarget = raw.EventTarget
+package[SO] type External = raw.External
+package[SO] type File = raw.File
+package[SO] type FileList = raw.FileList
+package[SO] type FileReader = raw.FileReader
+package[SO] type FocusEvent = raw.FocusEvent
+package[SO] type FormData = raw.FormData
+package[SO] type GainNode = raw.GainNode
+package[SO] type Geolocation = raw.Geolocation
+package[SO] type HashChangeEvent = raw.HashChangeEvent
+package[SO] type History = raw.History
+package[SO] type ImageData = raw.ImageData
+package[SO] type KeyboardEvent = raw.KeyboardEvent
+package[SO] type KeyboardEventInit = raw.KeyboardEventInit
+package[SO] type LinkStyle = raw.LinkStyle
+package[SO] type Location = raw.Location
+package[SO] type MediaElementAudioSourceNode = raw.MediaElementAudioSourceNode
+package[SO] type MediaError = raw.MediaError
+package[SO] type MediaList = raw.MediaList
+package[SO] type MediaQueryList = raw.MediaQueryList
+package[SO] type MediaQueryListListener = raw.MediaQueryListListener
+package[SO] type MediaStreamAudioDestinationNode = raw.MediaStreamAudioDestinationNode
+package[SO] type MediaStreamAudioSourceNode = raw.MediaStreamAudioSourceNode
+package[SO] type MessageChannel = raw.MessageChannel
+package[SO] type MessageEvent = raw.MessageEvent
+package[SO] type MessagePort = raw.MessagePort
+package[SO] type ModifierKeyEvent = raw.ModifierKeyEvent
+package[SO] type MouseEvent = raw.MouseEvent
+package[SO] type MutationObserver = raw.MutationObserver
+package[SO] type MutationObserverInit = raw.MutationObserverInit
+package[SO] type MutationRecord = raw.MutationRecord
+package[SO] type NamedNodeMap = raw.NamedNodeMap
+package[SO] type Navigator = raw.Navigator
+package[SO] type NavigatorContentUtils = raw.NavigatorContentUtils
+package[SO] type NavigatorGeolocation = raw.NavigatorGeolocation
+package[SO] type NavigatorID = raw.NavigatorID
+package[SO] type NavigatorLanguage = raw.NavigatorLanguage
+package[SO] type NavigatorOnLine = raw.NavigatorOnLine
+package[SO] type NavigatorStorageUtils = raw.NavigatorStorageUtils
+package[SO] type Node = raw.Node
+package[SO] type NodeFilter = raw.NodeFilter
+package[SO] type NodeIterator = raw.NodeIterator
+package[SO] type NodeList = raw.NodeList
+package[SO] type NodeListOf[TNode <: Node] = raw.NodeListOf[TNode]
+package[SO] type NodeSelector = raw.NodeSelector
+package[SO] type OfflineAudioContext = raw.OfflineAudioContext
+package[SO] type OscillatorNode = raw.OscillatorNode
+package[SO] type PannerNode = raw.PannerNode
+package[SO] type ParentNode = raw.ParentNode
+package[SO] type Performance = raw.Performance
+package[SO] type PerformanceEntry = raw.PerformanceEntry
+package[SO] type PerformanceMark = raw.PerformanceMark
+package[SO] type PerformanceMeasure = raw.PerformanceMeasure
+package[SO] type PerformanceNavigation = raw.PerformanceNavigation
+package[SO] type PerformanceResourceTiming = raw.PerformanceResourceTiming
+package[SO] type PerformanceTiming = raw.PerformanceTiming
+package[SO] type PeriodicWave = raw.PeriodicWave
+package[SO] type PointerEvent = raw.PointerEvent
+package[SO] type PointerEventInit = raw.PointerEventInit
+package[SO] type PopStateEvent = raw.PopStateEvent
+package[SO] type Position = raw.Position
+package[SO] type PositionError = raw.PositionError
+package[SO] type PositionOptions = raw.PositionOptions
+package[SO] type ProcessingInstruction = raw.ProcessingInstruction
+package[SO] type ProgressEvent = raw.ProgressEvent
+package[SO] type Range = raw.Range
+package[SO] type Screen = raw.Screen
+package[SO] type Selection = raw.Selection
+package[SO] type StereoPannerNode = raw.StereoPannerNode
+package[SO] type Storage = raw.Storage
+package[SO] type StorageEvent = raw.StorageEvent
+package[SO] type StyleMedia = raw.StyleMedia
+package[SO] type StyleSheet = raw.StyleSheet
+package[SO] type StyleSheetList = raw.StyleSheetList
+package[SO] type Text = raw.Text
+package[SO] type TextEvent = raw.TextEvent
+package[SO] type TextMetrics = raw.TextMetrics
+package[SO] type TextTrack = raw.TextTrack
+package[SO] type TextTrackCue = raw.TextTrackCue
+package[SO] type TextTrackCueList = raw.TextTrackCueList
+package[SO] type TextTrackList = raw.TextTrackList
+package[SO] type TimeRanges = raw.TimeRanges
+package[SO] type Touch = raw.Touch
+package[SO] type TouchEvent = raw.TouchEvent
+package[SO] type TouchList = raw.TouchList
+package[SO] type TrackEvent = raw.TrackEvent
+package[SO] type Transferable = raw.Transferable
+package[SO] type TransitionEvent = raw.TransitionEvent
+package[SO] type TreeWalker = raw.TreeWalker
+package[SO] type UIEvent = raw.UIEvent
+package[SO] type ValidityState = raw.ValidityState
+package[SO] type VisibilityState = raw.VisibilityState
+package[SO] type WaveShaperNode = raw.WaveShaperNode
+package[SO] type WebSocket = raw.WebSocket
+package[SO] type WheelEvent = raw.WheelEvent
+package[SO] type Window = raw.Window
+package[SO] type WindowBase64 = raw.WindowBase64
+package[SO] type WindowConsole = raw.WindowConsole
+package[SO] type WindowLocalStorage = raw.WindowLocalStorage
+package[SO] type WindowSessionStorage = raw.WindowSessionStorage
+package[SO] type WindowTimers = raw.WindowTimers
+package[SO] type XMLHttpRequest = raw.XMLHttpRequest
+package[SO] type XMLHttpRequestEventTarget = raw.XMLHttpRequestEventTarget
+package[SO] type XMLSerializer = raw.XMLSerializer
+package[SO] type XPathNSResolver = raw.XPathNSResolver
+package[SO] type XPathResult = raw.XPathResult
 raw/AbstractWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/AbstractWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/AbstractWorker[JT] def dispatchEvent(evt: Event): Boolean
@@ -24026,6 +24286,7 @@ raw/XPathResult[JO] val ORDERED_NODE_SNAPSHOT_TYPE: Int
 raw/XPathResult[JO] val STRING_TYPE: Int
 raw/XPathResult[JO] val UNORDERED_NODE_ITERATOR_TYPE: Int
 raw/XPathResult[JO] val UNORDERED_NODE_SNAPSHOT_TYPE: Int
+raw/package[SO] type Transferable = ArrayBuffer | MessagePort
 svg[SO] def Angle = raw.SVGAngle
 svg[SO] def ComponentTransferFunction = raw.SVGComponentTransferFunctionElement
 svg[SO] def Exception = raw.SVGException

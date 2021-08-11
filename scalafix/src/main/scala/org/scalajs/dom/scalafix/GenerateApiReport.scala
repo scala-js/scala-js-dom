@@ -33,7 +33,8 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
 
   private def process(sym: Symbol, body: Template, typ: ScopeType)(implicit doc: SemanticDocument): Unit = {
     // Skip non-public scopes
-    if (!sym.info.get.isPublic)
+    val info = sym.info.get
+    if (!info.isPublic && !info.isPackageObject)
       return
 
     val parents    = Util.parents(sym).iterator.map(Util.typeSymbol).toList

@@ -55,8 +55,8 @@ final class MutableState {
 
     // Pass 2
     for (root <- scopes.valuesIterator) {
+      val name = root.symbol.value.stripSuffix("#").stripSuffix(".")
       val prefix = {
-        val name = root.symbol.value.stripSuffix("#").stripSuffix(".")
         val lang = if (root.isJsType) "J" else "S"
         val typ  = root.scopeType.id
         s"$name$sortHack[$lang$typ] "
@@ -71,7 +71,7 @@ final class MutableState {
         b += prefix + v
       }
 
-      if (!membersFound)
+      if (!membersFound && !name.endsWith("/package"))
         b += prefix.trim
     }
 
