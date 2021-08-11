@@ -100,7 +100,7 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
   private def saveReport(): Unit = {
     val scalaVer    = Util.scalaSeriesVer.replace('.', '_')
     val projectRoot = System.getProperty("user.dir")
-    val reportFile  = Paths.get(s"$projectRoot/api-$scalaVer.txt")
+    val reportFile  = Paths.get(s"$projectRoot/api-reports/$scalaVer.txt")
     val api         = state.result().iterator.map(_.stripPrefix("org/scalajs/dom/")).mkString("\n")
 
     val content =
