@@ -19,8 +19,27 @@ object Util {
 
   // ===================================================================================================================
 
-  def termName(pats: Iterable[Pat]): Option[Term.Name] =
-    pats.iterator.flatMap(termName(_)).nextOption()
+  lazy val scalaVer: String = {
+    val props = new java.util.Properties
+    props.load(getClass.getResourceAsStream("/library.properties"))
+    val line = props.getProperty("version.number")
+    val Version = """(\d\.\d+\.\d+).*""".r
+    val Version(versionStr) = line
+    versionStr
+  }
+
+  lazy val scalaSeriesVer: String = {
+    val Version = """(\d\.\d+).*""".r
+    val Version(versionStr) = scalaVer
+    versionStr
+  }
+
+  // ===================================================================================================================
+
+  def termName(pats: Iterable[Pat]): Option[Term.Name] = {
+    val it = pats.iterator.flatMap(termName(_))
+    if (it.isEmpty) None else Some(it.next())
+  }
 
   def termName(pat: Pat): Option[Term.Name] =
     pat match {

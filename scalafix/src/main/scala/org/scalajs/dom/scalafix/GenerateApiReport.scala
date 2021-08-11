@@ -8,19 +8,25 @@ import scalafix.v1._
 class GenerateApiReport extends SemanticRule("GenerateApiReport") {
   import MutableState.{global => state, ScopeType}
 
+  private[this] def enabled = state ne null
+
   override def beforeStart(): Unit = {
-    state = new MutableState
+    Util.scalaSeriesVer match {
+      case "2.11" => // disabled - can't read classfiles
+      case _      => MutableState.global = new MutableState // can't set state= in early Scala versions
+    }
   }
 
   override def fix(implicit doc: SemanticDocument): Patch = {
 
-    doc.tree.traverse {
-      case a: Defn.Class  => process(a.symbol, a.templ, ScopeType.Class)
-      case a: Defn.Object => process(a.symbol, a.templ, ScopeType.Object)
-      case a: Defn.Trait  => process(a.symbol, a.templ, ScopeType.Trait)
-      case a: Pkg.Object  => process(a.symbol, a.templ, ScopeType.Object)
-      case _ =>
-    }
+    if (enabled)
+      doc.tree.traverse {
+        case a: Defn.Class  => process(a.symbol, a.templ, ScopeType.Class)
+        case a: Defn.Object => process(a.symbol, a.templ, ScopeType.Object)
+        case a: Defn.Trait  => process(a.symbol, a.templ, ScopeType.Trait)
+        case a: Pkg.Object  => process(a.symbol, a.templ, ScopeType.Object)
+        case _ =>
+      }
 
     Patch.empty
   }
@@ -85,14 +91,16 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
   private def isScalaJsDom(sym: Symbol): Boolean =
     sym.toString startsWith "org/scalajs/dom/"
 
-  override def afterComplete(): Unit = {
-    saveReport()
-    state = null
-  }
+  override def afterComplete(): Unit =
+    if (enabled) {
+      saveReport()
+      MutableState.global = null // can't set state= in early Scala versions
+    }
 
   private def saveReport(): Unit = {
+    val scalaVer    = Util.scalaSeriesVer.replace('.', '_')
     val projectRoot = System.getProperty("user.dir")
-    val reportFile  = Paths.get(s"$projectRoot/api.txt")
+    val reportFile  = Paths.get(s"$projectRoot/api-$scalaVer.txt")
     val api         = state.result().iterator.map(_.stripPrefix("org/scalajs/dom/")).mkString("\n")
 
     val content =
