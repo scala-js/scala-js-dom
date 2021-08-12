@@ -17,11 +17,7 @@ val commonSettings = Seq(
 )
 
 val noPublishSettings = Seq(
-  skip in publish := true,
-  publish := (()),
-  publishLocal := (()),
-  publishArtifact := false,
-  publishTo := None
+  publish / skip := true
 )
 
 normalizedName := "scalajs-dom"
