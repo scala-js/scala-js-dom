@@ -2876,7 +2876,6 @@ raw/CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double): Boolea
 raw/CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double, fillRule: String): Boolean
 raw/CanvasRenderingContext2D[JC] def lineTo(x: Double, y: Double): Unit
 raw/CanvasRenderingContext2D[JC] def measureText(text: String): TextMetrics
-raw/CanvasRenderingContext2D[JC] def moveBy(deltaX: Double, deltaY: Double): Unit
 raw/CanvasRenderingContext2D[JC] def moveTo(x: Double, y: Double): Unit
 raw/CanvasRenderingContext2D[JC] def putImageData(imagedata: ImageData, dx: Double, dy: Double, dirtyX: Double?, dirtyY: Double?, dirtyWidth: Double?, dirtyHeight: Double?): Unit
 raw/CanvasRenderingContext2D[JC] def quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double): Unit
@@ -24062,6 +24061,8 @@ raw/Window[JC] def innerWidth: Double
 raw/Window[JC] def length: Int
 raw/Window[JC] def localStorage: Storage
 raw/Window[JC] def matchMedia(mediaQuery: String): MediaQueryList
+raw/Window[JC] def moveBy(deltaX: Int, deltaY: Int): Unit
+raw/Window[JC] def moveTo(x: Int, y: Int): Unit
 raw/Window[JC] def navigator: Navigator
 raw/Window[JC] def open(url: String?, target: String?, features: String?, replace: Boolean?): Window
 raw/Window[JC] def outerHeight: Int
@@ -24077,11 +24078,15 @@ raw/Window[JC] def prompt(message: String, default: String?): String
 raw/Window[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/Window[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/Window[JC] def requestAnimationFrame(callback: js.Function1[Double, _]): Int
+raw/Window[JC] def resizeBy(deltaX: Int, deltaY: Int): Unit
+raw/Window[JC] def resizeTo(width: Int, height: Int): Unit
 raw/Window[JC] def screen: Screen
 raw/Window[JC] def screenY: Int
 raw/Window[JC] def scroll(x: Int, y: Int): Unit
 raw/Window[JC] def scrollBy(x: Int, y: Int): Unit
 raw/Window[JC] def scrollTo(x: Int, y: Int): Unit
+raw/Window[JC] def scrollX: Double
+raw/Window[JC] def scrollY: Double
 raw/Window[JC] def self: Window
 raw/Window[JC] def sessionStorage: Storage
 raw/Window[JC] def setInterval(handler: js.Function0[Any], timeout: Double): Int
