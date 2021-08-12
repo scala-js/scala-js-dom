@@ -1,10 +1,11 @@
 name: Release
 on:
   push:
+    branches: ["master", "series/1.x"]
     tags: ["v*"]
 jobs:
   publish:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         scalajsversion: ["1.x", "0.6.x"]
