@@ -17,6 +17,14 @@ val commonSettings = Seq(
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 )
 
+val noPublishSettings = Seq(
+  skip in publish := true,
+  publish := (()),
+  publishLocal := (()),
+  publishArtifact := false,
+  publishTo := None
+)
+
 normalizedName := "scalajs-dom"
 
 commonSettings
@@ -115,9 +123,10 @@ lazy val readme = ScalatexReadme(
   scalaVersion := "2.12.10",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
   (Compile / resources) += (example / Compile / fullOptJS).value.data
-)
+).settings(noPublishSettings: _*)
 
 lazy val example = project.
   enablePlugins(ScalaJSPlugin).
   settings(commonSettings: _*).
+  settings(noPublishSettings: _*).
   dependsOn(root)
