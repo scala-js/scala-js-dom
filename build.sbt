@@ -1,7 +1,19 @@
+import _root_.scalafix.sbt.BuildInfo.scalafixVersion // delete if Scala 2.10
 import scalatex.ScalatexReadme
 
-lazy val root = project.in(file(".")).
-  enablePlugins(ScalaJSPlugin)
+ThisBuild / shellPrompt := ((s: State) => Project.extract(s).currentRef.project + "> ")
+
+lazy val scalafixRules = project
+  .in(file("scalafix"))
+  .settings(
+    libraryDependencies += "ch.epfl.scala" %% "scalafix-core" % scalafixVersion, // delete if Scala 2.10
+  )
+
+lazy val root = project
+  .in(file("."))
+  .enablePlugins(ScalaJSPlugin)
+  .enablePlugins(ScalafixPlugin) // delete if Scala 2.10
+  .dependsOn(scalafixRules % ScalafixConfig) // delete if Scala 2.10
 
 name := "Scala.js DOM"
 
@@ -110,3 +122,15 @@ lazy val example = project.
   settings(commonSettings: _*).
   settings(noPublishSettings: _*).
   dependsOn(root)
+
+addCommandAlias("prePR", "+prePR_nonCross")
+
+val prePR_nonCross = taskKey[Unit]("Performs all necessary work required before submitting a PR, for a single version of Scala.")
+
+ThisBuild / prePR_nonCross := Def.sequential(
+  root / clean,
+  root / Compile / scalafmt,
+  root / Compile / compile,
+  (root / Compile / scalafix).toTask(""), // delete if Scala 2.10
+  example / Compile / compile,
+).value

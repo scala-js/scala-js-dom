@@ -6,6 +6,7 @@
 .idea_modules
 .metals
 .project
+.sbtboot
 .settings/
 .vscode
 metals.sbt
