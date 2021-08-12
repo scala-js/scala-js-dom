@@ -12,7 +12,6 @@ ThisBuild / crossScalaVersions := {
 ThisBuild / scalaVersion := crossScalaVersions.value.head
 
 val commonSettings = Seq(
-  version := "1.2.0-SNAPSHOT",
   organization := "org.scala-js",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 )
@@ -64,21 +63,6 @@ inConfig(Compile)(Def.settings(
 scalacOptions ++= {
   if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault")
   else Nil
-}
-
-scmInfo := Some(ScmInfo(
-    url("https://github.com/scala-js/scala-js-dom"),
-    "scm:git:git@github.com:scala-js/scala-js-dom.git",
-    Some("scm:git:git@github.com:scala-js/scala-js-dom.git")))
-
-publishMavenStyle := true
-
-publishTo := {
-  val nexus = "https://oss.sonatype.org/"
-  if (isSnapshot.value)
-    Some("snapshots" at nexus + "content/repositories/snapshots")
-  else
-    Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
 pomExtra := (
