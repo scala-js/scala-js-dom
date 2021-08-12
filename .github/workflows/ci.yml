@@ -28,6 +28,10 @@ jobs:
           java-version: "adopt@1.8"
       - uses: coursier/cache-action@v6
 
+      - name: Hacks for Scala 2.10
+        if: matrix.scalaversion == '2.10.7'
+        run: ./prepareForScala210.sh
+
       - name: Build
         run: sbt "++${{ matrix.scalaversion }}" package
 
