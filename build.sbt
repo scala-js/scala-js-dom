@@ -14,7 +14,6 @@ lazy val root = project
   .enablePlugins(ScalaJSPlugin)
   .enablePlugins(ScalafixPlugin)
   .dependsOn(scalafixRules % ScalafixConfig)
-  .settings(scalafixOnCompile := true)
 
 name := "Scala.js DOM"
 
@@ -123,3 +122,15 @@ lazy val example = project.
   settings(commonSettings: _*).
   settings(noPublishSettings: _*).
   dependsOn(root)
+
+addCommandAlias("prePR", "+prePR_nonCross")
+
+val prePR_nonCross = taskKey[Unit]("Performs all necessary work required before submitting a PR, for a single version of Scala.")
+
+ThisBuild / prePR_nonCross := Def.sequential(
+  root / clean,
+  root / Compile / scalafmt,
+  root / Compile / compile,
+  (root / Compile / scalafix).toTask(""),
+  example / Compile / compile,
+).value

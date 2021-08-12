@@ -121,6 +121,7 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
           |$api
           |""".stripMargin
 
+    println(s"[info] Generating $reportFile")
     Files.write(reportFile, content.getBytes(StandardCharsets.UTF_8))
   }
 }
