@@ -45,7 +45,7 @@ final class MutableState {
     // Because - comes before . in ASCII this little hack affects the ordering so that A[X] comes before A.B[X]
     val sortHack = "-OMG-"
 
-    val b = SortedSet.newBuilder[String]
+    val b = SortedSet.newBuilder[(String, String)](Ordering.by(_._1))
 
     // Pass 1
     for (root <- scopes.valuesIterator) {
@@ -68,14 +68,14 @@ final class MutableState {
         v <- s.directMembers
       } {
         membersFound = true
-        b += prefix + v
+        b += ((name, prefix + v))
       }
 
       if (!membersFound && !name.endsWith("/package"))
-        b += prefix.trim
+        b += ((name, prefix.trim))
     }
 
-    val array = b.result().toArray
+    val array = b.result().toArray.map(_._2)
     for (i <- array.indices)
       array(i) = array(i).replace(sortHack, "")
     array
