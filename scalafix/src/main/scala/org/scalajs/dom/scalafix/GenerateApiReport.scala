@@ -68,7 +68,10 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
           .stripSuffix(" = js.native")
           .replaceAll(" = js.native(?=[^\n])", "?")
 
-      s.add(desc)
+      // "?" means that type aliases come before everything else
+      val name = Util.termName(t2).fold("?")(_.value)
+
+      s.add(MutableState.Member(name, desc))
     }
 
     body.traverse {
