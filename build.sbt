@@ -73,6 +73,8 @@ scalacOptions ++= {
   else Nil
 }
 
+versionScheme := Some("semver")
+
 pomExtra := (
     <developers>
       <developer>
