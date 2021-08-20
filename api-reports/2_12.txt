@@ -15174,7 +15174,7 @@ raw/IDBOpenDBRequest[JC] def addEventListener[T <: Event](`type`: String, listen
 raw/IDBOpenDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/IDBOpenDBRequest[JC] def dispatchEvent(evt: Event): Boolean
 raw/IDBOpenDBRequest[JC] def error: DOMException
-raw/IDBOpenDBRequest[JC] var onblocked: js.Function1[Event, _]
+raw/IDBOpenDBRequest[JC] var onblocked: js.Function1[IDBVersionChangeEvent, _]
 raw/IDBOpenDBRequest[JC] var onerror: js.Function1[Event, _]
 raw/IDBOpenDBRequest[JC] var onsuccess: js.Function1[Event, _]
 raw/IDBOpenDBRequest[JC] var onupgradeneeded: js.Function1[IDBVersionChangeEvent, _]
