@@ -15480,6 +15480,7 @@ raw/Navigator[JC] def appVersion: String
 raw/Navigator[JC] def clipboard: Clipboard
 raw/Navigator[JC] def geolocation: Geolocation
 raw/Navigator[JC] def language: String
+raw/Navigator[JC] def languages: js.Array[String]
 raw/Navigator[JC] def onLine: Boolean
 raw/Navigator[JC] def platform: String
 raw/Navigator[JC] def userAgent: String
@@ -15490,6 +15491,7 @@ raw/NavigatorID[JT] def appVersion: String
 raw/NavigatorID[JT] def platform: String
 raw/NavigatorID[JT] def userAgent: String
 raw/NavigatorLanguage[JT] def language: String
+raw/NavigatorLanguage[JT] def languages: js.Array[String]
 raw/NavigatorOnLine[JT] def onLine: Boolean
 raw/NavigatorStorageUtils[JT]
 raw/Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -24357,6 +24359,7 @@ raw/WorkerLocation[JT] def search: String
 raw/WorkerNavigator[JT] def appName: String
 raw/WorkerNavigator[JT] def appVersion: String
 raw/WorkerNavigator[JT] def language: String
+raw/WorkerNavigator[JT] def languages: js.Array[String]
 raw/WorkerNavigator[JT] def onLine: Boolean
 raw/WorkerNavigator[JT] def platform: String
 raw/WorkerNavigator[JT] def userAgent: String
