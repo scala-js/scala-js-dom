@@ -824,8 +824,17 @@ abstract class Element
    * element node at a given position relative to the element it is invoked upon.
    *
    * MDN
+   *
+   * @param position A DOMString representing the position relative to the
+   *   targetElement; must match (case-insensitively) one of the following strings:
+   *     - `"beforebegin"`: Before the targetElement itself.
+   *     - `"afterbegin"`: Just inside the targetElement, before its first child.
+   *     - `"beforeend"`: Just inside the targetElement, after its last child.
+   *     - `"afterend"`: After the targetElement itself.
+   *
+   * @return The element that was inserted, or null, if the insertion failed.
    */
-  def insertAdjacentElement(where: String,
+  def insertAdjacentElement(position: String,
       element: Element): Element = js.native
 
   /**
