@@ -10,7 +10,6 @@
 package org.scalajs.dom.raw
 
 import org.scalajs.dom.experimental.ReadableStream
-
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBuffer
@@ -7862,6 +7861,11 @@ class Blob(blobParts: js.Array[js.Any] = js.native,
     options: BlobPropertyBag = js.native)
     extends js.Object {
 
+  @deprecated(
+      "This method seems to have been added in error and not actually exist.",
+      "1.2.0")
+  def close(): Unit = js.native
+
   /**
    * The size, in bytes, of the data contained in the Blob object.
    *
@@ -7901,13 +7905,13 @@ class Blob(blobParts: js.Array[js.Any] = js.native,
    *
    * @see https://developer.mozilla.org/en-US/docs/Web/API/USVString
    */
-  def text(): scala.scalajs.js.Promise[String] = js.native
+  def text(): js.Promise[String] = js.native
 
   /**
    * Returns a promise that resolves with an ArrayBuffer containing the entire
    * contents of the blob as binary data.
    */
-  def arrayBuffer(): scala.scalajs.js.Promise[ArrayBuffer] = js.native
+  def arrayBuffer(): js.Promise[ArrayBuffer] = js.native
 }
 
 @js.native
