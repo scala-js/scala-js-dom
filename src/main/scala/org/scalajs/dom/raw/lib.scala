@@ -9,6 +9,7 @@
  */
 package org.scalajs.dom.raw
 
+import org.scalajs.dom.experimental.ReadableStream
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBuffer
@@ -824,6 +825,24 @@ abstract class Element
    * Supported by FF&gt;8, Opera&gt;7, Chrome&gt;1, IE&gt;4, Safari&gt;4
    */
   def insertAdjacentHTML(where: String, html: String): Unit = js.native
+
+  /**
+   * The insertAdjacentElement() method of the Element interface inserts a given
+   * element node at a given position relative to the element it is invoked upon.
+   *
+   * MDN
+   *
+   * @param position A DOMString representing the position relative to the
+   *   targetElement; must match (case-insensitively) one of the following strings:
+   *     - `"beforebegin"`: Before the targetElement itself.
+   *     - `"afterbegin"`: Just inside the targetElement, before its first child.
+   *     - `"beforeend"`: Just inside the targetElement, after its last child.
+   *     - `"afterend"`: After the targetElement itself.
+   *
+   * @return The element that was inserted, or null, if the insertion failed.
+   */
+  def insertAdjacentElement(position: String,
+      element: Element): Element = js.native
 
   /**
    * The `matches()` method of the `Element` interface returns `true` if the
@@ -2475,6 +2494,8 @@ class Window
 
   var onmousewheel: js.Function1[WheelEvent, _] = js.native
 
+  var onwheel: js.Function1[WheelEvent, _] = js.native
+
   /**
    * An event handler property for window loading.
    *
@@ -2769,6 +2790,54 @@ class Window
    * MDN
    */
   var lostpointercapture: js.Function1[PointerEvent, _] = js.native
+
+  /**
+   * Moves the window to the specified coordinates.
+   *
+   * MDN
+   */
+  def moveTo(x: Int, y: Int): Unit = js.native
+
+  /**
+   * Moves the current window by a specified amount.
+   *
+   * MDN
+   */
+  def moveBy(deltaX: Int, deltaY: Int): Unit = js.native
+
+  /**
+   * Dynamically resizes window.
+   *
+   * MDN
+   */
+  def resizeTo(width: Int, height: Int): Unit = js.native
+
+  /**
+   * Resizes the current window by a certain amount.
+   *
+   * MDN
+   */
+  def resizeBy(deltaX: Int, deltaY: Int): Unit = js.native
+
+  /**
+   * The read-only scrollX property of the Window interface returns the number
+   * of pixels that the document is currently scrolled horizontally. This value
+   * is subpixel precise in modern browsers, meaning that it isn't necessarily
+   * a whole number. You can get the number of pixels the document is scrolled
+   * vertically from the scrollY property.
+   *
+   * MDN
+   */
+  def scrollX: Double = js.native
+
+  /**
+   * The read-only scrollY property of the Window interface returns the number
+   * of pixels that the document is currently scrolled vertically. This value
+   * is subpixel precise in modern browsers, meaning that it isn't necessarily
+   * a whole number. You can get the number of pixels the document is scrolled
+   * horizontally from the scrollX property.
+   */
+  def scrollY: Double = js.native
 }
 
 /**
@@ -3909,13 +3978,6 @@ class CanvasRenderingContext2D extends js.Object {
   def moveTo(x: Double, y: Double): Unit = js.native
 
   /**
-   * Moves the current window by a specified amount.
-   *
-   * MDN
-   */
-  def moveBy(deltaX: Double, deltaY: Double): Unit = js.native
-
-  /**
    * Returns an ImageData object representing the underlying pixel data for the area of
    * the canvas denoted by the rectangle which starts at (sx, sy) and has an sw width and sh
    * height.
@@ -4051,7 +4113,7 @@ class XMLHttpRequest extends EventTarget {
    * is parsed as if it were a text/xml stream. When the responseType is set to "document"
    * and the request has been made asynchronously, the response is parsed as a text/html
    * stream. Note: If the server doesn't apply the text/xml Content-Type header, you
-   * can use overrideMimeType()to force XMLHttpRequest to parse it as XML anyway.
+   * can use overrideMimeType() to force XMLHttpRequest to parse it as XML anyway.
    *
    * MDN
    */
@@ -4069,7 +4131,7 @@ class XMLHttpRequest extends EventTarget {
    */
   def responseURL: js.UndefOr[String] = js.native
 
-  var ontimeout: js.Function1[Event, _] = js.native
+  var ontimeout: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * The response string returned by the HTTP server. Unlike status, this includes the
@@ -4089,7 +4151,7 @@ class XMLHttpRequest extends EventTarget {
    * MDN
    */
   var timeout: Double = js.native
-  var onload: js.Function1[Event, _] = js.native
+  var onload: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * Initializes a request. This method is to be used from JavaScript code; to
@@ -4117,6 +4179,17 @@ class XMLHttpRequest extends EventTarget {
    * MDN
    */
   def abort(): Unit = js.native
+
+  /**
+   * The XMLHttpRequest method overrideMimeType() specifies a MIME type other than the
+   * one provided by the server to be used instead when interpreting the data being
+   * transferred in a request. This may be used, for example, to force a stream to be
+   * treated and parsed as "text/xml", even if the server does not report it as such.
+   * This method must be called before calling send().
+   *
+   * MDN
+   */
+  def overrideMimeType(mimeType: String): Unit = js.native
 
   def getAllResponseHeaders(): String = js.native
 
@@ -4152,7 +4225,7 @@ class XMLHttpRequest extends EventTarget {
    */
   var withCredentials: Boolean = js.native
   var onprogress: js.Function1[ProgressEvent, _] = js.native
-  var onabort: js.Function1[js.Any, _] = js.native
+  var onabort: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * Can be set to change the response type. Value Data type of response property ""
@@ -4188,8 +4261,8 @@ class XMLHttpRequest extends EventTarget {
    * MDN
    */
   var upload: XMLHttpRequestEventTarget = js.native
-  var onerror: js.Function1[ErrorEvent, _] = js.native
-  var onloadstart: js.Function1[js.Any, _] = js.native
+  var onerror: js.Function1[ProgressEvent, _] = js.native
+  var onloadstart: js.Function1[ProgressEvent, _] = js.native
 }
 
 @js.native
@@ -5357,6 +5430,15 @@ trait NavigatorLanguage extends js.Object {
    * MDN
    */
   def language: String = js.native
+
+  /**
+   * Returns a Array of DOMStrings representing the the user's preferred languages.
+   * The language is described using BCP 47 language tags.
+   * The null value is returned when this is unknown.
+   *
+   * MDN
+   */
+  def languages: js.Array[String] = js.native
 }
 
 @js.native
@@ -7281,7 +7363,7 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * The function to call when an HTTP request returns after successfully loading
@@ -7289,7 +7371,7 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var onload: js.Function1[js.Any, _] = js.native
+  var onload: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A function that is called if the event times out; this only happens if a timeout has
@@ -7298,21 +7380,21 @@ trait XMLHttpRequestEventTarget extends EventTarget {
    *
    * MDN
    */
-  var ontimeout: js.Function1[js.Any, _] = js.native
+  var ontimeout: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * The function to call when a request is aborted.
    *
    * MDN
    */
-  var onabort: js.Function1[js.Any, _] = js.native
+  var onabort: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A function that gets called when the HTTP request first begins loading data.
    *
    * MDN
    */
-  var onloadstart: js.Function1[js.Any, _] = js.native
+  var onloadstart: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A function that is called when the load is completed, even if the request failed.
@@ -7367,10 +7449,10 @@ trait WindowConsole extends js.Object {
 
 @js.native
 trait AudioTrack extends js.Object {
-  var kind: String = js.native
-  var language: String = js.native
-  var id: String = js.native
-  var label: String = js.native
+  val id: String = js.native
+  val kind: String = js.native
+  val label: String = js.native
+  val language: String = js.native
   var enabled: Boolean = js.native
 }
 
@@ -7805,14 +7887,18 @@ object BlobPropertyBag {
 }
 
 /**
- * A Blob object represents a file-like object of immutable, raw data. Blobs
- * represent data that isn't necessarily in a JavaScript-native format. The File
- * interface is based on Blob, inheriting blob functionality and expanding it to
- * support files on the user's system.
+ * A Blob object represents a file-like object of immutable, raw data; they can be
+ * read as text or binary data, or converted into a ReadableStream so its methods
+ * can be used for processing the data. Blobs can represent data that isn't
+ * necessarily in a JavaScript-native format. The File interface is based on Blob,
+ * inheriting blob functionality and expanding it to support files on the user's system.
  *
- * An easy way to construct a Blob is by invoking the Blob constuctor. Another
- * way is to use the slice() method to create a blob that contains a subset of
- * another blob's data.
+ * To construct a Blob from other non-blob objects and data, use the Blob()
+ * constructor. To create a blob that contains a subset of another blob's data, use the
+ * slice() method. To obtain a Blob object for a file on the user's file system, see
+ * the File documentation.
+ *
+ * The APIs accepting Blob objects are also listed in the File documentation.
  *
  * MDN
  */
@@ -7822,7 +7908,10 @@ class Blob(blobParts: js.Array[js.Any] = js.native,
     options: BlobPropertyBag = js.native)
     extends js.Object {
 
-  def `type`: String = js.native
+  @deprecated(
+      "This method seems to have been added in error and not actually exist.",
+      "1.2.0")
+  def close(): Unit = js.native
 
   /**
    * The size, in bytes, of the data contained in the Blob object.
@@ -7832,15 +7921,44 @@ class Blob(blobParts: js.Array[js.Any] = js.native,
   def size: Double = js.native
 
   /**
-   * The slice is used to create a new Blob object containing the data in the specified
-   * range of bytes of the source Blob.
+   * A string indicating the MIME type of the data contained in the Blob. If the type
+   * is unknown, this string is empty.
+   *
+   * MDN
+   */
+  def `type`: String = js.native
+
+  /**
+   * A string indicating the MIME type of the data contained in the Blob. If the type
+   * is unknown, this string is empty.
    *
    * MDN
    */
   def slice(start: Double = js.native, end: Double = js.native,
       contentType: String = js.native): Blob = js.native
 
-  def close(): Unit = js.native
+  /**
+   * Returns a ReadableStream that can be used to read the contents of the blob.
+   *
+   * MDN
+   */
+  def stream(): ReadableStream[Byte] = js.native
+
+  /**
+   * Returns a promise that resolves with a USVString containing the entire
+   * contents of the blob interpreted as UTF-8 text.
+   *
+   * MDN
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/API/USVString
+   */
+  def text(): js.Promise[String] = js.native
+
+  /**
+   * Returns a promise that resolves with an ArrayBuffer containing the entire
+   * contents of the blob as binary data.
+   */
+  def arrayBuffer(): js.Promise[ArrayBuffer] = js.native
 }
 
 @js.native
