@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: olafurpg/setup-scala@v10
+      - uses: olafurpg/setup-scala@v13
         with:
           java-version: "adopt@1.8"
-      - uses: coursier/cache-action@v5
+      - uses: coursier/cache-action@v6
 
       - name: Build
         run: sbt readme/run

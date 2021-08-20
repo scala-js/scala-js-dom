@@ -1,20 +1,35 @@
+import _root_.scalafix.sbt.BuildInfo.scalafixVersion // delete if Scala 2.10
 import scalatex.ScalatexReadme
 
-lazy val root = project.in(file(".")).
-  enablePlugins(ScalaJSPlugin)
+ThisBuild / shellPrompt := ((s: State) => Project.extract(s).currentRef.project + "> ")
+
+lazy val scalafixRules = project
+  .in(file("scalafix"))
+  .settings(
+    libraryDependencies += "ch.epfl.scala" %% "scalafix-core" % scalafixVersion, // delete if Scala 2.10
+  )
+
+lazy val root = project
+  .in(file("."))
+  .enablePlugins(ScalaJSPlugin)
+  .enablePlugins(ScalafixPlugin) // delete if Scala 2.10
+  .dependsOn(scalafixRules % ScalafixConfig) // delete if Scala 2.10
 
 name := "Scala.js DOM"
 
-crossScalaVersions in ThisBuild := {
+ThisBuild / crossScalaVersions := {
   if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1")
   else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
 }
-scalaVersion in ThisBuild := crossScalaVersions.value.head
+ThisBuild / scalaVersion := crossScalaVersions.value.head
 
 val commonSettings = Seq(
-  version := "1.2.0-SNAPSHOT",
   organization := "org.scala-js",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
+)
+
+val noPublishSettings = Seq(
+  publish / skip := true
 )
 
 normalizedName := "scalajs-dom"
@@ -58,27 +73,22 @@ scalacOptions ++= {
   else Nil
 }
 
-scmInfo := Some(ScmInfo(
-    url("https://github.com/scala-js/scala-js-dom"),
-    "scm:git:git@github.com:scala-js/scala-js-dom.git",
-    Some("scm:git:git@github.com:scala-js/scala-js-dom.git")))
-
-publishMavenStyle := true
-
-publishTo := {
-  val nexus = "https://oss.sonatype.org/"
-  if (isSnapshot.value)
-    Some("snapshots" at nexus + "content/repositories/snapshots")
-  else
-    Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}
-
 pomExtra := (
     <developers>
+      <developer>
+        <id>japgolly</id>
+        <name>David Barri</name>
+        <url>https://github.com/japgolly</url>
+      </developer>
       <developer>
         <id>lihaoyi</id>
         <name>Li Haoyi</name>
         <url>https://github.com/lihaoyi/</url>
+      </developer>
+      <developer>
+        <id>armanbilge</id>
+        <name>Arman Bilge</name>
+        <url>https://github.com/armanbilge</url>
       </developer>
       <developer>
         <id>sjrd</id>
@@ -104,10 +114,23 @@ lazy val readme = ScalatexReadme(
 ).settings(
   scalaVersion := "2.12.10",
   scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
-  (resources in Compile) += (fullOptJS in (example, Compile)).value.data
-)
+  (Compile / resources) += (example / Compile / fullOptJS).value.data
+).settings(noPublishSettings: _*)
 
 lazy val example = project.
   enablePlugins(ScalaJSPlugin).
   settings(commonSettings: _*).
+  settings(noPublishSettings: _*).
   dependsOn(root)
+
+addCommandAlias("prePR", "+prePR_nonCross")
+
+val prePR_nonCross = taskKey[Unit]("Performs all necessary work required before submitting a PR, for a single version of Scala.")
+
+ThisBuild / prePR_nonCross := Def.sequential(
+  root / clean,
+  root / Compile / scalafmt,
+  root / Compile / compile,
+  (root / Compile / scalafix).toTask(""), // delete if Scala 2.10
+  example / Compile / compile,
+).value
