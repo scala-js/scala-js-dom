@@ -7401,10 +7401,10 @@ trait WindowConsole extends js.Object {
 
 @js.native
 trait AudioTrack extends js.Object {
-  var kind: String = js.native
-  var language: String = js.native
-  var id: String = js.native
-  var label: String = js.native
+  val id: String = js.native
+  val kind: String = js.native
+  val label: String = js.native
+  val language: String = js.native
   var enabled: Boolean = js.native
 }
 
