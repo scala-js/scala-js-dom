@@ -204,7 +204,7 @@ crypto/package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
 crypto/package[SO] type KeyAlgorithmIdentifier = KeyAlgorithm | String
 crypto/package[SO] implicit def arrayBuffer2BufferSource(b: ArrayBuffer): BufferSource
 crypto/package[SO] implicit def arrayBufferView2BufferSource(b: ArrayBufferView): BufferSource
-crypto/package[SO] val crypto = GlobalCrypto.crypto
+crypto/package[SO] def crypto = GlobalCrypto.crypto
 crypto/package.BufferSource[JT]
 css[SO] type FontFaceRule = raw.CSSFontFaceRule
 css[SO] type ImportRule = raw.CSSImportRule
