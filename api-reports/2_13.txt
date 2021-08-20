@@ -15128,7 +15128,7 @@ raw/IDBDatabase[JC] def dispatchEvent(evt: Event): Boolean
 raw/IDBDatabase[JC] def name: String
 raw/IDBDatabase[JC] def objectStoreNames: DOMStringList
 raw/IDBDatabase[JC] var onabort: js.Function1[Event, _]
-raw/IDBDatabase[JC] var onerror: js.Function1[ErrorEvent, _]
+raw/IDBDatabase[JC] var onerror: js.Function1[Event, _]
 raw/IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/IDBDatabase[JC] def transaction(storeNames: js.Any, mode: String?): IDBTransaction
@@ -15175,7 +15175,7 @@ raw/IDBOpenDBRequest[JC] def addEventListener[T <: Event](`type`: String, listen
 raw/IDBOpenDBRequest[JC] def dispatchEvent(evt: Event): Boolean
 raw/IDBOpenDBRequest[JC] def error: DOMException
 raw/IDBOpenDBRequest[JC] var onblocked: js.Function1[Event, _]
-raw/IDBOpenDBRequest[JC] var onerror: js.Function1[ErrorEvent, _]
+raw/IDBOpenDBRequest[JC] var onerror: js.Function1[Event, _]
 raw/IDBOpenDBRequest[JC] var onsuccess: js.Function1[Event, _]
 raw/IDBOpenDBRequest[JC] var onupgradeneeded: js.Function1[IDBVersionChangeEvent, _]
 raw/IDBOpenDBRequest[JC] def readyState: String
@@ -15188,7 +15188,7 @@ raw/IDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js
 raw/IDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/IDBRequest[JC] def dispatchEvent(evt: Event): Boolean
 raw/IDBRequest[JC] def error: DOMException
-raw/IDBRequest[JC] var onerror: js.Function1[ErrorEvent, _]
+raw/IDBRequest[JC] var onerror: js.Function1[Event, _]
 raw/IDBRequest[JC] var onsuccess: js.Function1[Event, _]
 raw/IDBRequest[JC] def readyState: String
 raw/IDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -15206,7 +15206,7 @@ raw/IDBTransaction[JC] def mode: String
 raw/IDBTransaction[JC] def objectStore(name: String): IDBObjectStore
 raw/IDBTransaction[JC] var onabort: js.Function1[Event, _]
 raw/IDBTransaction[JC] var oncomplete: js.Function1[Event, _]
-raw/IDBTransaction[JC] var onerror: js.Function1[ErrorEvent, _]
+raw/IDBTransaction[JC] var onerror: js.Function1[Event, _]
 raw/IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/IDBTransaction[JO] val READ_ONLY: String
@@ -24370,14 +24370,14 @@ raw/XMLHttpRequest[JC] def create(): XMLHttpRequest
 raw/XMLHttpRequest[JC] def dispatchEvent(evt: Event): Boolean
 raw/XMLHttpRequest[JC] def getAllResponseHeaders(): String
 raw/XMLHttpRequest[JC] def getResponseHeader(header: String): String
-raw/XMLHttpRequest[JC] var onabort: js.Function1[js.Any, _]
-raw/XMLHttpRequest[JC] var onerror: js.Function1[ErrorEvent, _]
-raw/XMLHttpRequest[JC] var onload: js.Function1[Event, _]
+raw/XMLHttpRequest[JC] var onabort: js.Function1[ProgressEvent, _]
+raw/XMLHttpRequest[JC] var onerror: js.Function1[ProgressEvent, _]
+raw/XMLHttpRequest[JC] var onload: js.Function1[ProgressEvent, _]
 raw/XMLHttpRequest[JC] var onloadend: js.Function1[ProgressEvent, _]
-raw/XMLHttpRequest[JC] var onloadstart: js.Function1[js.Any, _]
+raw/XMLHttpRequest[JC] var onloadstart: js.Function1[ProgressEvent, _]
 raw/XMLHttpRequest[JC] var onprogress: js.Function1[ProgressEvent, _]
 raw/XMLHttpRequest[JC] var onreadystatechange: js.Function1[Event, _]
-raw/XMLHttpRequest[JC] var ontimeout: js.Function1[Event, _]
+raw/XMLHttpRequest[JC] var ontimeout: js.Function1[ProgressEvent, _]
 raw/XMLHttpRequest[JC] def open(method: String, url: String, async: Boolean?, user: String?, password: String?): Unit
 raw/XMLHttpRequest[JC] def readyState: Int
 raw/XMLHttpRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -24402,13 +24402,13 @@ raw/XMLHttpRequest[JO] var UNSENT: Int
 raw/XMLHttpRequestEventTarget[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/XMLHttpRequestEventTarget[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/XMLHttpRequestEventTarget[JT] def dispatchEvent(evt: Event): Boolean
-raw/XMLHttpRequestEventTarget[JT] var onabort: js.Function1[js.Any, _]
-raw/XMLHttpRequestEventTarget[JT] var onerror: js.Function1[ErrorEvent, _]
-raw/XMLHttpRequestEventTarget[JT] var onload: js.Function1[js.Any, _]
+raw/XMLHttpRequestEventTarget[JT] var onabort: js.Function1[ProgressEvent, _]
+raw/XMLHttpRequestEventTarget[JT] var onerror: js.Function1[ProgressEvent, _]
+raw/XMLHttpRequestEventTarget[JT] var onload: js.Function1[ProgressEvent, _]
 raw/XMLHttpRequestEventTarget[JT] var onloadend: js.Function1[ProgressEvent, _]
-raw/XMLHttpRequestEventTarget[JT] var onloadstart: js.Function1[js.Any, _]
+raw/XMLHttpRequestEventTarget[JT] var onloadstart: js.Function1[ProgressEvent, _]
 raw/XMLHttpRequestEventTarget[JT] var onprogress: js.Function1[ProgressEvent, _]
-raw/XMLHttpRequestEventTarget[JT] var ontimeout: js.Function1[js.Any, _]
+raw/XMLHttpRequestEventTarget[JT] var ontimeout: js.Function1[ProgressEvent, _]
 raw/XMLHttpRequestEventTarget[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/XMLHttpRequestEventTarget[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/XMLSerializer[JC] def serializeToString(target: Node): String
