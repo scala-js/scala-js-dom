@@ -11,6 +11,9 @@ package org.scalajs.dom.raw
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
+import org.scalajs.dom
+import dom.experimental.mediastream.{MediaStream, MediaSource}
 
 @js.native
 @JSGlobal
@@ -397,6 +400,8 @@ abstract class HTMLDocument extends Document {
   var onmouseout: js.Function1[MouseEvent, _] = js.native
 
   var onmousewheel: js.Function1[WheelEvent, _] = js.native
+
+  var onwheel: js.Function1[WheelEvent, _] = js.native
 
   var onscroll: js.Function1[UIEvent, _] = js.native
 
@@ -3188,6 +3193,11 @@ abstract class HTMLMediaElement extends HTMLElement {
    * MDN
    */
   def audioTracks: AudioTrackList = js.native
+
+  /**
+   * Sets or returns the object which serves as the source of the media associated with the HTMLMediaElement.
+   */
+  var srcObject: js.UndefOr[MediaStream | MediaSource | Blob]
 }
 
 @js.native
@@ -3396,6 +3406,7 @@ abstract class HTMLElement extends Element {
   var onmouseout: js.Function1[MouseEvent, _] = js.native
   var parentElement: HTMLElement = js.native
   var onmousewheel: js.Function1[WheelEvent, _] = js.native
+  var onwheel: js.Function1[WheelEvent, _] = js.native
   var onvolumechange: js.Function1[Event, _] = js.native
   var filters: Object = js.native
 
