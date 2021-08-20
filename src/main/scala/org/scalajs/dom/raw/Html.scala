@@ -401,6 +401,8 @@ abstract class HTMLDocument extends Document {
 
   var onmousewheel: js.Function1[WheelEvent, _] = js.native
 
+  var onwheel: js.Function1[WheelEvent, _] = js.native
+
   var onscroll: js.Function1[UIEvent, _] = js.native
 
   /**
@@ -3404,6 +3406,7 @@ abstract class HTMLElement extends Element {
   var onmouseout: js.Function1[MouseEvent, _] = js.native
   var parentElement: HTMLElement = js.native
   var onmousewheel: js.Function1[WheelEvent, _] = js.native
+  var onwheel: js.Function1[WheelEvent, _] = js.native
   var onvolumechange: js.Function1[Event, _] = js.native
   var filters: Object = js.native
 

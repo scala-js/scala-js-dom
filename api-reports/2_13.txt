@@ -4010,6 +4010,7 @@ raw/HTMLAnchorElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLAnchorElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLAnchorElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLAnchorElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLAnchorElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLAnchorElement[JC] var outerHTML: String
 raw/HTMLAnchorElement[JC] def ownerDocument: Document
 raw/HTMLAnchorElement[JC] override def ownerDocument: HTMLDocument
@@ -4211,6 +4212,7 @@ raw/HTMLAreaElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLAreaElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLAreaElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLAreaElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLAreaElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLAreaElement[JC] var outerHTML: String
 raw/HTMLAreaElement[JC] def ownerDocument: Document
 raw/HTMLAreaElement[JC] override def ownerDocument: HTMLDocument
@@ -4420,6 +4422,7 @@ raw/HTMLAudioElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLAudioElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLAudioElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLAudioElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLAudioElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLAudioElement[JC] var outerHTML: String
 raw/HTMLAudioElement[JC] def ownerDocument: Document
 raw/HTMLAudioElement[JC] override def ownerDocument: HTMLDocument
@@ -4619,6 +4622,7 @@ raw/HTMLBRElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLBRElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLBRElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLBRElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLBRElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLBRElement[JC] var outerHTML: String
 raw/HTMLBRElement[JC] def ownerDocument: Document
 raw/HTMLBRElement[JC] override def ownerDocument: HTMLDocument
@@ -4807,6 +4811,7 @@ raw/HTMLBaseElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLBaseElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLBaseElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLBaseElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLBaseElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLBaseElement[JC] var outerHTML: String
 raw/HTMLBaseElement[JC] def ownerDocument: Document
 raw/HTMLBaseElement[JC] override def ownerDocument: HTMLDocument
@@ -5008,6 +5013,7 @@ raw/HTMLBodyElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLBodyElement[JC] var onunload: js.Function1[Event, _]
 raw/HTMLBodyElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLBodyElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLBodyElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLBodyElement[JC] var outerHTML: String
 raw/HTMLBodyElement[JC] def ownerDocument: Document
 raw/HTMLBodyElement[JC] override def ownerDocument: HTMLDocument
@@ -5206,6 +5212,7 @@ raw/HTMLButtonElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLButtonElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLButtonElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLButtonElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLButtonElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLButtonElement[JC] var outerHTML: String
 raw/HTMLButtonElement[JC] def ownerDocument: Document
 raw/HTMLButtonElement[JC] override def ownerDocument: HTMLDocument
@@ -5402,6 +5409,7 @@ raw/HTMLCanvasElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLCanvasElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLCanvasElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLCanvasElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLCanvasElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLCanvasElement[JC] var outerHTML: String
 raw/HTMLCanvasElement[JC] def ownerDocument: Document
 raw/HTMLCanvasElement[JC] override def ownerDocument: HTMLDocument
@@ -5596,6 +5604,7 @@ raw/HTMLDListElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLDListElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLDListElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLDListElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLDListElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLDListElement[JC] var outerHTML: String
 raw/HTMLDListElement[JC] def ownerDocument: Document
 raw/HTMLDListElement[JC] override def ownerDocument: HTMLDocument
@@ -5783,6 +5792,7 @@ raw/HTMLDataListElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLDataListElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLDataListElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLDataListElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLDataListElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLDataListElement[JC] def options: HTMLCollection
 raw/HTMLDataListElement[JC] var outerHTML: String
 raw/HTMLDataListElement[JC] def ownerDocument: Document
@@ -5971,6 +5981,7 @@ raw/HTMLDivElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLDivElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLDivElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLDivElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLDivElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLDivElement[JC] var outerHTML: String
 raw/HTMLDivElement[JC] def ownerDocument: Document
 raw/HTMLDivElement[JC] override def ownerDocument: HTMLDocument
@@ -6172,6 +6183,7 @@ raw/HTMLDocument[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLDocument[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLDocument[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLDocument[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLDocument[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLDocument[JC] def open(url: String?, name: String?, features: String?, replace: Boolean?): js.Dynamic
 raw/HTMLDocument[JC] def ownerDocument: Document
 raw/HTMLDocument[JC] def parentNode: Node
@@ -6350,6 +6362,7 @@ raw/HTMLElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLElement[JC] var outerHTML: String
 raw/HTMLElement[JC] def ownerDocument: Document
 raw/HTMLElement[JC] override def ownerDocument: HTMLDocument
@@ -6539,6 +6552,7 @@ raw/HTMLEmbedElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLEmbedElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLEmbedElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLEmbedElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLEmbedElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLEmbedElement[JC] var outerHTML: String
 raw/HTMLEmbedElement[JC] def ownerDocument: Document
 raw/HTMLEmbedElement[JC] override def ownerDocument: HTMLDocument
@@ -6731,6 +6745,7 @@ raw/HTMLFieldSetElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLFieldSetElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLFieldSetElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLFieldSetElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLFieldSetElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLFieldSetElement[JC] var outerHTML: String
 raw/HTMLFieldSetElement[JC] def ownerDocument: Document
 raw/HTMLFieldSetElement[JC] override def ownerDocument: HTMLDocument
@@ -6936,6 +6951,7 @@ raw/HTMLFormElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLFormElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLFormElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLFormElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLFormElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLFormElement[JC] var outerHTML: String
 raw/HTMLFormElement[JC] def ownerDocument: Document
 raw/HTMLFormElement[JC] override def ownerDocument: HTMLDocument
@@ -7127,6 +7143,7 @@ raw/HTMLHRElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLHRElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLHRElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLHRElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLHRElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLHRElement[JC] var outerHTML: String
 raw/HTMLHRElement[JC] def ownerDocument: Document
 raw/HTMLHRElement[JC] override def ownerDocument: HTMLDocument
@@ -7314,6 +7331,7 @@ raw/HTMLHeadElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLHeadElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLHeadElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLHeadElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLHeadElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLHeadElement[JC] var outerHTML: String
 raw/HTMLHeadElement[JC] def ownerDocument: Document
 raw/HTMLHeadElement[JC] override def ownerDocument: HTMLDocument
@@ -7501,6 +7519,7 @@ raw/HTMLHeadingElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLHeadingElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLHeadingElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLHeadingElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLHeadingElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLHeadingElement[JC] var outerHTML: String
 raw/HTMLHeadingElement[JC] def ownerDocument: Document
 raw/HTMLHeadingElement[JC] override def ownerDocument: HTMLDocument
@@ -7688,6 +7707,7 @@ raw/HTMLHtmlElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLHtmlElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLHtmlElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLHtmlElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLHtmlElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLHtmlElement[JC] var outerHTML: String
 raw/HTMLHtmlElement[JC] def ownerDocument: Document
 raw/HTMLHtmlElement[JC] override def ownerDocument: HTMLDocument
@@ -7882,6 +7902,7 @@ raw/HTMLIFrameElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLIFrameElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLIFrameElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLIFrameElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLIFrameElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLIFrameElement[JC] var outerHTML: String
 raw/HTMLIFrameElement[JC] def ownerDocument: Document
 raw/HTMLIFrameElement[JC] override def ownerDocument: HTMLDocument
@@ -8081,6 +8102,7 @@ raw/HTMLImageElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLImageElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLImageElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLImageElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLImageElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLImageElement[JC] var outerHTML: String
 raw/HTMLImageElement[JC] def ownerDocument: Document
 raw/HTMLImageElement[JC] override def ownerDocument: HTMLDocument
@@ -8295,6 +8317,7 @@ raw/HTMLInputElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLInputElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLInputElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLInputElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLInputElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLInputElement[JC] var outerHTML: String
 raw/HTMLInputElement[JC] def ownerDocument: Document
 raw/HTMLInputElement[JC] override def ownerDocument: HTMLDocument
@@ -8504,6 +8527,7 @@ raw/HTMLLIElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLLIElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLLIElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLLIElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLLIElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLLIElement[JC] var outerHTML: String
 raw/HTMLLIElement[JC] def ownerDocument: Document
 raw/HTMLLIElement[JC] override def ownerDocument: HTMLDocument
@@ -8694,6 +8718,7 @@ raw/HTMLLabelElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLLabelElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLLabelElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLLabelElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLLabelElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLLabelElement[JC] var outerHTML: String
 raw/HTMLLabelElement[JC] def ownerDocument: Document
 raw/HTMLLabelElement[JC] override def ownerDocument: HTMLDocument
@@ -8883,6 +8908,7 @@ raw/HTMLLegendElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLLegendElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLLegendElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLLegendElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLLegendElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLLegendElement[JC] var outerHTML: String
 raw/HTMLLegendElement[JC] def ownerDocument: Document
 raw/HTMLLegendElement[JC] override def ownerDocument: HTMLDocument
@@ -9073,6 +9099,7 @@ raw/HTMLLinkElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLLinkElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLLinkElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLLinkElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLLinkElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLLinkElement[JC] var outerHTML: String
 raw/HTMLLinkElement[JC] def ownerDocument: Document
 raw/HTMLLinkElement[JC] override def ownerDocument: HTMLDocument
@@ -9266,6 +9293,7 @@ raw/HTMLMapElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLMapElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLMapElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLMapElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLMapElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLMapElement[JC] var outerHTML: String
 raw/HTMLMapElement[JC] def ownerDocument: Document
 raw/HTMLMapElement[JC] override def ownerDocument: HTMLDocument
@@ -9469,6 +9497,7 @@ raw/HTMLMediaElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLMediaElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLMediaElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLMediaElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLMediaElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLMediaElement[JC] var outerHTML: String
 raw/HTMLMediaElement[JC] def ownerDocument: Document
 raw/HTMLMediaElement[JC] override def ownerDocument: HTMLDocument
@@ -9677,6 +9706,7 @@ raw/HTMLMenuElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLMenuElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLMenuElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLMenuElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLMenuElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLMenuElement[JC] var outerHTML: String
 raw/HTMLMenuElement[JC] def ownerDocument: Document
 raw/HTMLMenuElement[JC] override def ownerDocument: HTMLDocument
@@ -9869,6 +9899,7 @@ raw/HTMLMetaElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLMetaElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLMetaElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLMetaElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLMetaElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLMetaElement[JC] var outerHTML: String
 raw/HTMLMetaElement[JC] def ownerDocument: Document
 raw/HTMLMetaElement[JC] override def ownerDocument: HTMLDocument
@@ -10059,6 +10090,7 @@ raw/HTMLModElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLModElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLModElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLModElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLModElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLModElement[JC] var outerHTML: String
 raw/HTMLModElement[JC] def ownerDocument: Document
 raw/HTMLModElement[JC] override def ownerDocument: HTMLDocument
@@ -10246,6 +10278,7 @@ raw/HTMLOListElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLOListElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLOListElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLOListElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLOListElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLOListElement[JC] var outerHTML: String
 raw/HTMLOListElement[JC] def ownerDocument: Document
 raw/HTMLOListElement[JC] override def ownerDocument: HTMLDocument
@@ -10446,6 +10479,7 @@ raw/HTMLObjectElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLObjectElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLObjectElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLObjectElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLObjectElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLObjectElement[JC] var outerHTML: String
 raw/HTMLObjectElement[JC] def ownerDocument: Document
 raw/HTMLObjectElement[JC] override def ownerDocument: HTMLDocument
@@ -10642,6 +10676,7 @@ raw/HTMLOptGroupElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLOptGroupElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLOptGroupElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLOptGroupElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLOptGroupElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLOptGroupElement[JC] var outerHTML: String
 raw/HTMLOptGroupElement[JC] def ownerDocument: Document
 raw/HTMLOptGroupElement[JC] override def ownerDocument: HTMLDocument
@@ -10835,6 +10870,7 @@ raw/HTMLOptionElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLOptionElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLOptionElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLOptionElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLOptionElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLOptionElement[JC] var outerHTML: String
 raw/HTMLOptionElement[JC] def ownerDocument: Document
 raw/HTMLOptionElement[JC] override def ownerDocument: HTMLDocument
@@ -11025,6 +11061,7 @@ raw/HTMLParagraphElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLParagraphElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLParagraphElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLParagraphElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLParagraphElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLParagraphElement[JC] var outerHTML: String
 raw/HTMLParagraphElement[JC] def ownerDocument: Document
 raw/HTMLParagraphElement[JC] override def ownerDocument: HTMLDocument
@@ -11213,6 +11250,7 @@ raw/HTMLParamElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLParamElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLParamElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLParamElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLParamElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLParamElement[JC] var outerHTML: String
 raw/HTMLParamElement[JC] def ownerDocument: Document
 raw/HTMLParamElement[JC] override def ownerDocument: HTMLDocument
@@ -11401,6 +11439,7 @@ raw/HTMLPreElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLPreElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLPreElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLPreElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLPreElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLPreElement[JC] var outerHTML: String
 raw/HTMLPreElement[JC] def ownerDocument: Document
 raw/HTMLPreElement[JC] override def ownerDocument: HTMLDocument
@@ -11590,6 +11629,7 @@ raw/HTMLProgressElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLProgressElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLProgressElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLProgressElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLProgressElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLProgressElement[JC] var outerHTML: String
 raw/HTMLProgressElement[JC] def ownerDocument: Document
 raw/HTMLProgressElement[JC] override def ownerDocument: HTMLDocument
@@ -11781,6 +11821,7 @@ raw/HTMLQuoteElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLQuoteElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLQuoteElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLQuoteElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLQuoteElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLQuoteElement[JC] var outerHTML: String
 raw/HTMLQuoteElement[JC] def ownerDocument: Document
 raw/HTMLQuoteElement[JC] override def ownerDocument: HTMLDocument
@@ -11973,6 +12014,7 @@ raw/HTMLScriptElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLScriptElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLScriptElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLScriptElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLScriptElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLScriptElement[JC] var outerHTML: String
 raw/HTMLScriptElement[JC] def ownerDocument: Document
 raw/HTMLScriptElement[JC] override def ownerDocument: HTMLDocument
@@ -12174,6 +12216,7 @@ raw/HTMLSelectElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLSelectElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLSelectElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLSelectElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLSelectElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLSelectElement[JC] val options: js.Array[HTMLOptionElement]
 raw/HTMLSelectElement[JC] var outerHTML: String
 raw/HTMLSelectElement[JC] def ownerDocument: Document
@@ -12374,6 +12417,7 @@ raw/HTMLSourceElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLSourceElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLSourceElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLSourceElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLSourceElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLSourceElement[JC] var outerHTML: String
 raw/HTMLSourceElement[JC] def ownerDocument: Document
 raw/HTMLSourceElement[JC] override def ownerDocument: HTMLDocument
@@ -12563,6 +12607,7 @@ raw/HTMLSpanElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLSpanElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLSpanElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLSpanElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLSpanElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLSpanElement[JC] var outerHTML: String
 raw/HTMLSpanElement[JC] def ownerDocument: Document
 raw/HTMLSpanElement[JC] override def ownerDocument: HTMLDocument
@@ -12751,6 +12796,7 @@ raw/HTMLStyleElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLStyleElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLStyleElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLStyleElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLStyleElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLStyleElement[JC] var outerHTML: String
 raw/HTMLStyleElement[JC] def ownerDocument: Document
 raw/HTMLStyleElement[JC] override def ownerDocument: HTMLDocument
@@ -12941,6 +12987,7 @@ raw/HTMLTableCaptionElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLTableCaptionElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLTableCaptionElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLTableCaptionElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLTableCaptionElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLTableCaptionElement[JC] var outerHTML: String
 raw/HTMLTableCaptionElement[JC] def ownerDocument: Document
 raw/HTMLTableCaptionElement[JC] override def ownerDocument: HTMLDocument
@@ -13131,6 +13178,7 @@ raw/HTMLTableCellElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLTableCellElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLTableCellElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLTableCellElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLTableCellElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLTableCellElement[JC] var outerHTML: String
 raw/HTMLTableCellElement[JC] def ownerDocument: Document
 raw/HTMLTableCellElement[JC] override def ownerDocument: HTMLDocument
@@ -13319,6 +13367,7 @@ raw/HTMLTableColElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLTableColElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLTableColElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLTableColElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLTableColElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLTableColElement[JC] var outerHTML: String
 raw/HTMLTableColElement[JC] def ownerDocument: Document
 raw/HTMLTableColElement[JC] override def ownerDocument: HTMLDocument
@@ -13518,6 +13567,7 @@ raw/HTMLTableElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLTableElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLTableElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLTableElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLTableElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLTableElement[JC] var outerHTML: String
 raw/HTMLTableElement[JC] def ownerDocument: Document
 raw/HTMLTableElement[JC] override def ownerDocument: HTMLDocument
@@ -13716,6 +13766,7 @@ raw/HTMLTableRowElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLTableRowElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLTableRowElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLTableRowElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLTableRowElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLTableRowElement[JC] var outerHTML: String
 raw/HTMLTableRowElement[JC] def ownerDocument: Document
 raw/HTMLTableRowElement[JC] override def ownerDocument: HTMLDocument
@@ -13908,6 +13959,7 @@ raw/HTMLTableSectionElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLTableSectionElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLTableSectionElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLTableSectionElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLTableSectionElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLTableSectionElement[JC] var outerHTML: String
 raw/HTMLTableSectionElement[JC] def ownerDocument: Document
 raw/HTMLTableSectionElement[JC] override def ownerDocument: HTMLDocument
@@ -14104,6 +14156,7 @@ raw/HTMLTextAreaElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLTextAreaElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLTextAreaElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLTextAreaElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLTextAreaElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLTextAreaElement[JC] var outerHTML: String
 raw/HTMLTextAreaElement[JC] def ownerDocument: Document
 raw/HTMLTextAreaElement[JC] override def ownerDocument: HTMLDocument
@@ -14307,6 +14360,7 @@ raw/HTMLTitleElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLTitleElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLTitleElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLTitleElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLTitleElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLTitleElement[JC] var outerHTML: String
 raw/HTMLTitleElement[JC] def ownerDocument: Document
 raw/HTMLTitleElement[JC] override def ownerDocument: HTMLDocument
@@ -14497,6 +14551,7 @@ raw/HTMLTrackElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLTrackElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLTrackElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLTrackElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLTrackElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLTrackElement[JC] var outerHTML: String
 raw/HTMLTrackElement[JC] def ownerDocument: Document
 raw/HTMLTrackElement[JC] override def ownerDocument: HTMLDocument
@@ -14687,6 +14742,7 @@ raw/HTMLUListElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLUListElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLUListElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLUListElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLUListElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLUListElement[JC] var outerHTML: String
 raw/HTMLUListElement[JC] def ownerDocument: Document
 raw/HTMLUListElement[JC] override def ownerDocument: HTMLDocument
@@ -14874,6 +14930,7 @@ raw/HTMLUnknownElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLUnknownElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLUnknownElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLUnknownElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLUnknownElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLUnknownElement[JC] var outerHTML: String
 raw/HTMLUnknownElement[JC] def ownerDocument: Document
 raw/HTMLUnknownElement[JC] override def ownerDocument: HTMLDocument
@@ -15078,6 +15135,7 @@ raw/HTMLVideoElement[JC] var onsuspend: js.Function1[Event, _]
 raw/HTMLVideoElement[JC] var ontimeupdate: js.Function1[Event, _]
 raw/HTMLVideoElement[JC] var onvolumechange: js.Function1[Event, _]
 raw/HTMLVideoElement[JC] var onwaiting: js.Function1[Event, _]
+raw/HTMLVideoElement[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/HTMLVideoElement[JC] var outerHTML: String
 raw/HTMLVideoElement[JC] def ownerDocument: Document
 raw/HTMLVideoElement[JC] override def ownerDocument: HTMLDocument
@@ -24401,6 +24459,7 @@ raw/Window[JC] var ontimeupdate: js.Function1[Event, _]
 raw/Window[JC] var onunload: js.Function1[Event, _]
 raw/Window[JC] var onvolumechange: js.Function1[Event, _]
 raw/Window[JC] var onwaiting: js.Function1[Event, _]
+raw/Window[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/Window[JC] def open(url: String?, target: String?, features: String?, replace: Boolean?): Window
 raw/Window[JC] var opener: Window
 raw/Window[JC] def outerHeight: Int
