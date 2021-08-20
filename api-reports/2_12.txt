@@ -2534,9 +2534,11 @@ raw/BiquadFilterNode[JT] val numberOfOutputs: Int
 raw/BiquadFilterNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/BiquadFilterNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/BiquadFilterNode[JT] var `type`: String
-raw/Blob[JC] def close(): Unit
+raw/Blob[JC] def arrayBuffer(): scala.scalajs.js.Promise[ArrayBuffer]
 raw/Blob[JC] def size: Double
 raw/Blob[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
+raw/Blob[JC] def stream(): ReadableStream[Byte]
+raw/Blob[JC] def text(): scala.scalajs.js.Promise[String]
 raw/Blob[JC] def `type`: String
 raw/Blob[JO]
 raw/BlobPropertyBag[JT] def endings: String
@@ -3770,10 +3772,12 @@ raw/EventTarget[JC] def dispatchEvent(evt: Event): Boolean
 raw/EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/External[JT]
-raw/File[JC] def close(): Unit
+raw/File[JC] def arrayBuffer(): scala.scalajs.js.Promise[ArrayBuffer]
 raw/File[JC] def name: String
 raw/File[JC] def size: Double
 raw/File[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
+raw/File[JC] def stream(): ReadableStream[Byte]
+raw/File[JC] def text(): scala.scalajs.js.Promise[String]
 raw/File[JC] def `type`: String
 raw/FileList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
 raw/FileList[JT] def item(index: Int): T
