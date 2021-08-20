@@ -701,7 +701,7 @@ class IDBOpenDBRequest extends IDBRequest {
    *
    * MDN
    */
-  var onblocked: js.Function1[Event, _] = js.native
+  var onblocked: js.Function1[IDBVersionChangeEvent, _] = js.native
 }
 
 /**
