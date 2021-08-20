@@ -3656,6 +3656,7 @@ raw/Element[JC] def hasChildNodes(): Boolean
 raw/Element[JC] var id: String
 raw/Element[JC] var innerHTML: String
 raw/Element[JC] var innerText: String
+raw/Element[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/Element[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/Element[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/Element[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -3904,6 +3905,7 @@ raw/HTMLAnchorElement[JC] var hreflang: String
 raw/HTMLAnchorElement[JC] var id: String
 raw/HTMLAnchorElement[JC] var innerHTML: String
 raw/HTMLAnchorElement[JC] var innerText: String
+raw/HTMLAnchorElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLAnchorElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLAnchorElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLAnchorElement[JC] def isContentEditable: Boolean
@@ -4105,6 +4107,7 @@ raw/HTMLAreaElement[JC] var href: String
 raw/HTMLAreaElement[JC] var id: String
 raw/HTMLAreaElement[JC] var innerHTML: String
 raw/HTMLAreaElement[JC] var innerText: String
+raw/HTMLAreaElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLAreaElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLAreaElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLAreaElement[JC] def isContentEditable: Boolean
@@ -4309,6 +4312,7 @@ raw/HTMLAudioElement[JC] var id: String
 raw/HTMLAudioElement[JC] def initialTime: Double
 raw/HTMLAudioElement[JC] var innerHTML: String
 raw/HTMLAudioElement[JC] var innerText: String
+raw/HTMLAudioElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLAudioElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLAudioElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLAudioElement[JC] def isContentEditable: Boolean
@@ -4511,6 +4515,7 @@ raw/HTMLBRElement[JC] def hasChildNodes(): Boolean
 raw/HTMLBRElement[JC] var id: String
 raw/HTMLBRElement[JC] var innerHTML: String
 raw/HTMLBRElement[JC] var innerText: String
+raw/HTMLBRElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLBRElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLBRElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLBRElement[JC] def isContentEditable: Boolean
@@ -4698,6 +4703,7 @@ raw/HTMLBaseElement[JC] var href: String
 raw/HTMLBaseElement[JC] var id: String
 raw/HTMLBaseElement[JC] var innerHTML: String
 raw/HTMLBaseElement[JC] var innerText: String
+raw/HTMLBaseElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLBaseElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLBaseElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLBaseElement[JC] def isContentEditable: Boolean
@@ -4885,6 +4891,7 @@ raw/HTMLBodyElement[JC] def hasChildNodes(): Boolean
 raw/HTMLBodyElement[JC] var id: String
 raw/HTMLBodyElement[JC] var innerHTML: String
 raw/HTMLBodyElement[JC] var innerText: String
+raw/HTMLBodyElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLBodyElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLBodyElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLBodyElement[JC] def isContentEditable: Boolean
@@ -5094,6 +5101,7 @@ raw/HTMLButtonElement[JC] def hasChildNodes(): Boolean
 raw/HTMLButtonElement[JC] var id: String
 raw/HTMLButtonElement[JC] var innerHTML: String
 raw/HTMLButtonElement[JC] var innerText: String
+raw/HTMLButtonElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLButtonElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLButtonElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLButtonElement[JC] def isContentEditable: Boolean
@@ -5290,6 +5298,7 @@ raw/HTMLCanvasElement[JC] var height: Int
 raw/HTMLCanvasElement[JC] var id: String
 raw/HTMLCanvasElement[JC] var innerHTML: String
 raw/HTMLCanvasElement[JC] var innerText: String
+raw/HTMLCanvasElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLCanvasElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLCanvasElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLCanvasElement[JC] def isContentEditable: Boolean
@@ -5483,6 +5492,7 @@ raw/HTMLDListElement[JC] def hasChildNodes(): Boolean
 raw/HTMLDListElement[JC] var id: String
 raw/HTMLDListElement[JC] var innerHTML: String
 raw/HTMLDListElement[JC] var innerText: String
+raw/HTMLDListElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLDListElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLDListElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLDListElement[JC] def isContentEditable: Boolean
@@ -5669,6 +5679,7 @@ raw/HTMLDataListElement[JC] def hasChildNodes(): Boolean
 raw/HTMLDataListElement[JC] var id: String
 raw/HTMLDataListElement[JC] var innerHTML: String
 raw/HTMLDataListElement[JC] var innerText: String
+raw/HTMLDataListElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLDataListElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLDataListElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLDataListElement[JC] def isContentEditable: Boolean
@@ -5856,6 +5867,7 @@ raw/HTMLDivElement[JC] def hasChildNodes(): Boolean
 raw/HTMLDivElement[JC] var id: String
 raw/HTMLDivElement[JC] var innerHTML: String
 raw/HTMLDivElement[JC] var innerText: String
+raw/HTMLDivElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLDivElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLDivElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLDivElement[JC] def isContentEditable: Boolean
@@ -6234,6 +6246,7 @@ raw/HTMLElement[JC] def hasChildNodes(): Boolean
 raw/HTMLElement[JC] var id: String
 raw/HTMLElement[JC] var innerHTML: String
 raw/HTMLElement[JC] var innerText: String
+raw/HTMLElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLElement[JC] def isContentEditable: Boolean
@@ -6422,6 +6435,7 @@ raw/HTMLEmbedElement[JC] var height: String
 raw/HTMLEmbedElement[JC] var id: String
 raw/HTMLEmbedElement[JC] var innerHTML: String
 raw/HTMLEmbedElement[JC] var innerText: String
+raw/HTMLEmbedElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLEmbedElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLEmbedElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLEmbedElement[JC] def isContentEditable: Boolean
@@ -6613,6 +6627,7 @@ raw/HTMLFieldSetElement[JC] def hasChildNodes(): Boolean
 raw/HTMLFieldSetElement[JC] var id: String
 raw/HTMLFieldSetElement[JC] var innerHTML: String
 raw/HTMLFieldSetElement[JC] var innerText: String
+raw/HTMLFieldSetElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLFieldSetElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLFieldSetElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLFieldSetElement[JC] def isContentEditable: Boolean
@@ -6811,6 +6826,7 @@ raw/HTMLFormElement[JC] def hasChildNodes(): Boolean
 raw/HTMLFormElement[JC] var id: String
 raw/HTMLFormElement[JC] var innerHTML: String
 raw/HTMLFormElement[JC] var innerText: String
+raw/HTMLFormElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLFormElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLFormElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLFormElement[JC] def isContentEditable: Boolean
@@ -7007,6 +7023,7 @@ raw/HTMLHRElement[JC] def hasChildNodes(): Boolean
 raw/HTMLHRElement[JC] var id: String
 raw/HTMLHRElement[JC] var innerHTML: String
 raw/HTMLHRElement[JC] var innerText: String
+raw/HTMLHRElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLHRElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLHRElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLHRElement[JC] def isContentEditable: Boolean
@@ -7193,6 +7210,7 @@ raw/HTMLHeadElement[JC] def hasChildNodes(): Boolean
 raw/HTMLHeadElement[JC] var id: String
 raw/HTMLHeadElement[JC] var innerHTML: String
 raw/HTMLHeadElement[JC] var innerText: String
+raw/HTMLHeadElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLHeadElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLHeadElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLHeadElement[JC] def isContentEditable: Boolean
@@ -7379,6 +7397,7 @@ raw/HTMLHeadingElement[JC] def hasChildNodes(): Boolean
 raw/HTMLHeadingElement[JC] var id: String
 raw/HTMLHeadingElement[JC] var innerHTML: String
 raw/HTMLHeadingElement[JC] var innerText: String
+raw/HTMLHeadingElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLHeadingElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLHeadingElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLHeadingElement[JC] def isContentEditable: Boolean
@@ -7565,6 +7584,7 @@ raw/HTMLHtmlElement[JC] def hasChildNodes(): Boolean
 raw/HTMLHtmlElement[JC] var id: String
 raw/HTMLHtmlElement[JC] var innerHTML: String
 raw/HTMLHtmlElement[JC] var innerText: String
+raw/HTMLHtmlElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLHtmlElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLHtmlElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLHtmlElement[JC] def isContentEditable: Boolean
@@ -7756,6 +7776,7 @@ raw/HTMLIFrameElement[JC] var height: String
 raw/HTMLIFrameElement[JC] var id: String
 raw/HTMLIFrameElement[JC] var innerHTML: String
 raw/HTMLIFrameElement[JC] var innerText: String
+raw/HTMLIFrameElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLIFrameElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLIFrameElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLIFrameElement[JC] def isContentEditable: Boolean
@@ -7952,6 +7973,7 @@ raw/HTMLImageElement[JC] var href: String
 raw/HTMLImageElement[JC] var id: String
 raw/HTMLImageElement[JC] var innerHTML: String
 raw/HTMLImageElement[JC] var innerText: String
+raw/HTMLImageElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLImageElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLImageElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLImageElement[JC] def isContentEditable: Boolean
@@ -8163,6 +8185,7 @@ raw/HTMLInputElement[JC] var id: String
 raw/HTMLInputElement[JC] var indeterminate: Boolean
 raw/HTMLInputElement[JC] var innerHTML: String
 raw/HTMLInputElement[JC] var innerText: String
+raw/HTMLInputElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLInputElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLInputElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLInputElement[JC] def isContentEditable: Boolean
@@ -8377,6 +8400,7 @@ raw/HTMLLIElement[JC] def hasChildNodes(): Boolean
 raw/HTMLLIElement[JC] var id: String
 raw/HTMLLIElement[JC] var innerHTML: String
 raw/HTMLLIElement[JC] var innerText: String
+raw/HTMLLIElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLLIElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLLIElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLLIElement[JC] def isContentEditable: Boolean
@@ -8566,6 +8590,7 @@ raw/HTMLLabelElement[JC] var htmlFor: String
 raw/HTMLLabelElement[JC] var id: String
 raw/HTMLLabelElement[JC] var innerHTML: String
 raw/HTMLLabelElement[JC] var innerText: String
+raw/HTMLLabelElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLLabelElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLLabelElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLLabelElement[JC] def isContentEditable: Boolean
@@ -8754,6 +8779,7 @@ raw/HTMLLegendElement[JC] def hasChildNodes(): Boolean
 raw/HTMLLegendElement[JC] var id: String
 raw/HTMLLegendElement[JC] var innerHTML: String
 raw/HTMLLegendElement[JC] var innerText: String
+raw/HTMLLegendElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLLegendElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLLegendElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLLegendElement[JC] def isContentEditable: Boolean
@@ -8942,6 +8968,7 @@ raw/HTMLLinkElement[JC] var hreflang: String
 raw/HTMLLinkElement[JC] var id: String
 raw/HTMLLinkElement[JC] var innerHTML: String
 raw/HTMLLinkElement[JC] var innerText: String
+raw/HTMLLinkElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLLinkElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLLinkElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLLinkElement[JC] def isContentEditable: Boolean
@@ -9134,6 +9161,7 @@ raw/HTMLMapElement[JC] def hasChildNodes(): Boolean
 raw/HTMLMapElement[JC] var id: String
 raw/HTMLMapElement[JC] var innerHTML: String
 raw/HTMLMapElement[JC] var innerText: String
+raw/HTMLMapElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLMapElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLMapElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLMapElement[JC] def isContentEditable: Boolean
@@ -9333,6 +9361,7 @@ raw/HTMLMediaElement[JC] var id: String
 raw/HTMLMediaElement[JC] def initialTime: Double
 raw/HTMLMediaElement[JC] var innerHTML: String
 raw/HTMLMediaElement[JC] var innerText: String
+raw/HTMLMediaElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLMediaElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLMediaElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLMediaElement[JC] def isContentEditable: Boolean
@@ -9544,6 +9573,7 @@ raw/HTMLMenuElement[JC] def hasChildNodes(): Boolean
 raw/HTMLMenuElement[JC] var id: String
 raw/HTMLMenuElement[JC] var innerHTML: String
 raw/HTMLMenuElement[JC] var innerText: String
+raw/HTMLMenuElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLMenuElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLMenuElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLMenuElement[JC] def isContentEditable: Boolean
@@ -9734,6 +9764,7 @@ raw/HTMLMetaElement[JC] var httpEquiv: String
 raw/HTMLMetaElement[JC] var id: String
 raw/HTMLMetaElement[JC] var innerHTML: String
 raw/HTMLMetaElement[JC] var innerText: String
+raw/HTMLMetaElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLMetaElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLMetaElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLMetaElement[JC] def isContentEditable: Boolean
@@ -9924,6 +9955,7 @@ raw/HTMLModElement[JC] def hasChildNodes(): Boolean
 raw/HTMLModElement[JC] var id: String
 raw/HTMLModElement[JC] var innerHTML: String
 raw/HTMLModElement[JC] var innerText: String
+raw/HTMLModElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLModElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLModElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLModElement[JC] def isContentEditable: Boolean
@@ -10110,6 +10142,7 @@ raw/HTMLOListElement[JC] def hasChildNodes(): Boolean
 raw/HTMLOListElement[JC] var id: String
 raw/HTMLOListElement[JC] var innerHTML: String
 raw/HTMLOListElement[JC] var innerText: String
+raw/HTMLOListElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLOListElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLOListElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLOListElement[JC] def isContentEditable: Boolean
@@ -10307,6 +10340,7 @@ raw/HTMLObjectElement[JC] var height: String
 raw/HTMLObjectElement[JC] var id: String
 raw/HTMLObjectElement[JC] var innerHTML: String
 raw/HTMLObjectElement[JC] var innerText: String
+raw/HTMLObjectElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLObjectElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLObjectElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLObjectElement[JC] def isContentEditable: Boolean
@@ -10503,6 +10537,7 @@ raw/HTMLOptGroupElement[JC] def hasChildNodes(): Boolean
 raw/HTMLOptGroupElement[JC] var id: String
 raw/HTMLOptGroupElement[JC] var innerHTML: String
 raw/HTMLOptGroupElement[JC] var innerText: String
+raw/HTMLOptGroupElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLOptGroupElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLOptGroupElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLOptGroupElement[JC] def isContentEditable: Boolean
@@ -10695,6 +10730,7 @@ raw/HTMLOptionElement[JC] var id: String
 raw/HTMLOptionElement[JC] def index: Int
 raw/HTMLOptionElement[JC] var innerHTML: String
 raw/HTMLOptionElement[JC] var innerText: String
+raw/HTMLOptionElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLOptionElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLOptionElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLOptionElement[JC] def isContentEditable: Boolean
@@ -10885,6 +10921,7 @@ raw/HTMLParagraphElement[JC] def hasChildNodes(): Boolean
 raw/HTMLParagraphElement[JC] var id: String
 raw/HTMLParagraphElement[JC] var innerHTML: String
 raw/HTMLParagraphElement[JC] var innerText: String
+raw/HTMLParagraphElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLParagraphElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLParagraphElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLParagraphElement[JC] def isContentEditable: Boolean
@@ -11071,6 +11108,7 @@ raw/HTMLParamElement[JC] def hasChildNodes(): Boolean
 raw/HTMLParamElement[JC] var id: String
 raw/HTMLParamElement[JC] var innerHTML: String
 raw/HTMLParamElement[JC] var innerText: String
+raw/HTMLParamElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLParamElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLParamElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLParamElement[JC] def isContentEditable: Boolean
@@ -11259,6 +11297,7 @@ raw/HTMLPreElement[JC] def hasChildNodes(): Boolean
 raw/HTMLPreElement[JC] var id: String
 raw/HTMLPreElement[JC] var innerHTML: String
 raw/HTMLPreElement[JC] var innerText: String
+raw/HTMLPreElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLPreElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLPreElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLPreElement[JC] def isContentEditable: Boolean
@@ -11446,6 +11485,7 @@ raw/HTMLProgressElement[JC] def hasChildNodes(): Boolean
 raw/HTMLProgressElement[JC] var id: String
 raw/HTMLProgressElement[JC] var innerHTML: String
 raw/HTMLProgressElement[JC] var innerText: String
+raw/HTMLProgressElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLProgressElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLProgressElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLProgressElement[JC] def isContentEditable: Boolean
@@ -11637,6 +11677,7 @@ raw/HTMLQuoteElement[JC] def hasChildNodes(): Boolean
 raw/HTMLQuoteElement[JC] var id: String
 raw/HTMLQuoteElement[JC] var innerHTML: String
 raw/HTMLQuoteElement[JC] var innerText: String
+raw/HTMLQuoteElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLQuoteElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLQuoteElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLQuoteElement[JC] def isContentEditable: Boolean
@@ -11827,6 +11868,7 @@ raw/HTMLScriptElement[JC] def hasChildNodes(): Boolean
 raw/HTMLScriptElement[JC] var id: String
 raw/HTMLScriptElement[JC] var innerHTML: String
 raw/HTMLScriptElement[JC] var innerText: String
+raw/HTMLScriptElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLScriptElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLScriptElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLScriptElement[JC] def isContentEditable: Boolean
@@ -12023,6 +12065,7 @@ raw/HTMLSelectElement[JC] def hasChildNodes(): Boolean
 raw/HTMLSelectElement[JC] var id: String
 raw/HTMLSelectElement[JC] var innerHTML: String
 raw/HTMLSelectElement[JC] var innerText: String
+raw/HTMLSelectElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLSelectElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLSelectElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLSelectElement[JC] def isContentEditable: Boolean
@@ -12226,6 +12269,7 @@ raw/HTMLSourceElement[JC] def hasChildNodes(): Boolean
 raw/HTMLSourceElement[JC] var id: String
 raw/HTMLSourceElement[JC] var innerHTML: String
 raw/HTMLSourceElement[JC] var innerText: String
+raw/HTMLSourceElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLSourceElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLSourceElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLSourceElement[JC] def isContentEditable: Boolean
@@ -12415,6 +12459,7 @@ raw/HTMLSpanElement[JC] def hasChildNodes(): Boolean
 raw/HTMLSpanElement[JC] var id: String
 raw/HTMLSpanElement[JC] var innerHTML: String
 raw/HTMLSpanElement[JC] var innerText: String
+raw/HTMLSpanElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLSpanElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLSpanElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLSpanElement[JC] def isContentEditable: Boolean
@@ -12601,6 +12646,7 @@ raw/HTMLStyleElement[JC] def hasChildNodes(): Boolean
 raw/HTMLStyleElement[JC] var id: String
 raw/HTMLStyleElement[JC] var innerHTML: String
 raw/HTMLStyleElement[JC] var innerText: String
+raw/HTMLStyleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLStyleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLStyleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLStyleElement[JC] def isContentEditable: Boolean
@@ -12791,6 +12837,7 @@ raw/HTMLTableCaptionElement[JC] def hasChildNodes(): Boolean
 raw/HTMLTableCaptionElement[JC] var id: String
 raw/HTMLTableCaptionElement[JC] var innerHTML: String
 raw/HTMLTableCaptionElement[JC] var innerText: String
+raw/HTMLTableCaptionElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLTableCaptionElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLTableCaptionElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLTableCaptionElement[JC] def isContentEditable: Boolean
@@ -12980,6 +13027,7 @@ raw/HTMLTableCellElement[JC] def headers: String
 raw/HTMLTableCellElement[JC] var id: String
 raw/HTMLTableCellElement[JC] var innerHTML: String
 raw/HTMLTableCellElement[JC] var innerText: String
+raw/HTMLTableCellElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLTableCellElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLTableCellElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLTableCellElement[JC] def isContentEditable: Boolean
@@ -13167,6 +13215,7 @@ raw/HTMLTableColElement[JC] def hasChildNodes(): Boolean
 raw/HTMLTableColElement[JC] var id: String
 raw/HTMLTableColElement[JC] var innerHTML: String
 raw/HTMLTableColElement[JC] var innerText: String
+raw/HTMLTableColElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLTableColElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLTableColElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLTableColElement[JC] def isContentEditable: Boolean
@@ -13363,6 +13412,7 @@ raw/HTMLTableElement[JC] def hasChildNodes(): Boolean
 raw/HTMLTableElement[JC] var id: String
 raw/HTMLTableElement[JC] var innerHTML: String
 raw/HTMLTableElement[JC] var innerText: String
+raw/HTMLTableElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLTableElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLTableElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLTableElement[JC] def insertRow(index: Int?): HTMLElement
@@ -13561,6 +13611,7 @@ raw/HTMLTableRowElement[JC] var height: js.Any
 raw/HTMLTableRowElement[JC] var id: String
 raw/HTMLTableRowElement[JC] var innerHTML: String
 raw/HTMLTableRowElement[JC] var innerText: String
+raw/HTMLTableRowElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLTableRowElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLTableRowElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLTableRowElement[JC] def insertCell(index: Int?): HTMLElement
@@ -13751,6 +13802,7 @@ raw/HTMLTableSectionElement[JC] def hasChildNodes(): Boolean
 raw/HTMLTableSectionElement[JC] var id: String
 raw/HTMLTableSectionElement[JC] var innerHTML: String
 raw/HTMLTableSectionElement[JC] var innerText: String
+raw/HTMLTableSectionElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLTableSectionElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLTableSectionElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLTableSectionElement[JC] def insertRow(index: Int?): HTMLElement
@@ -13946,6 +13998,7 @@ raw/HTMLTextAreaElement[JC] def hasChildNodes(): Boolean
 raw/HTMLTextAreaElement[JC] var id: String
 raw/HTMLTextAreaElement[JC] var innerHTML: String
 raw/HTMLTextAreaElement[JC] var innerText: String
+raw/HTMLTextAreaElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLTextAreaElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLTextAreaElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLTextAreaElement[JC] def isContentEditable: Boolean
@@ -14150,6 +14203,7 @@ raw/HTMLTitleElement[JC] def hasChildNodes(): Boolean
 raw/HTMLTitleElement[JC] var id: String
 raw/HTMLTitleElement[JC] var innerHTML: String
 raw/HTMLTitleElement[JC] var innerText: String
+raw/HTMLTitleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLTitleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLTitleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLTitleElement[JC] def isContentEditable: Boolean
@@ -14337,6 +14391,7 @@ raw/HTMLTrackElement[JC] def hasChildNodes(): Boolean
 raw/HTMLTrackElement[JC] var id: String
 raw/HTMLTrackElement[JC] var innerHTML: String
 raw/HTMLTrackElement[JC] var innerText: String
+raw/HTMLTrackElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLTrackElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLTrackElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLTrackElement[JC] def isContentEditable: Boolean
@@ -14528,6 +14583,7 @@ raw/HTMLUListElement[JC] def hasChildNodes(): Boolean
 raw/HTMLUListElement[JC] var id: String
 raw/HTMLUListElement[JC] var innerHTML: String
 raw/HTMLUListElement[JC] var innerText: String
+raw/HTMLUListElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLUListElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLUListElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLUListElement[JC] def isContentEditable: Boolean
@@ -14714,6 +14770,7 @@ raw/HTMLUnknownElement[JC] def hasChildNodes(): Boolean
 raw/HTMLUnknownElement[JC] var id: String
 raw/HTMLUnknownElement[JC] var innerHTML: String
 raw/HTMLUnknownElement[JC] var innerText: String
+raw/HTMLUnknownElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLUnknownElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLUnknownElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLUnknownElement[JC] def isContentEditable: Boolean
@@ -14913,6 +14970,7 @@ raw/HTMLVideoElement[JC] var id: String
 raw/HTMLVideoElement[JC] def initialTime: Double
 raw/HTMLVideoElement[JC] var innerHTML: String
 raw/HTMLVideoElement[JC] var innerText: String
+raw/HTMLVideoElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/HTMLVideoElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/HTMLVideoElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/HTMLVideoElement[JC] def isContentEditable: Boolean
@@ -15989,6 +16047,7 @@ raw/SVGAElement[JC] var href: SVGAnimatedString
 raw/SVGAElement[JC] var id: String
 raw/SVGAElement[JC] var innerHTML: String
 raw/SVGAElement[JC] var innerText: String
+raw/SVGAElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGAElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGAElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGAElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -16145,6 +16204,7 @@ raw/SVGCircleElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGCircleElement[JC] var id: String
 raw/SVGCircleElement[JC] var innerHTML: String
 raw/SVGCircleElement[JC] var innerText: String
+raw/SVGCircleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGCircleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGCircleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGCircleElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -16265,6 +16325,7 @@ raw/SVGClipPathElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGClipPathElement[JC] var id: String
 raw/SVGClipPathElement[JC] var innerHTML: String
 raw/SVGClipPathElement[JC] var innerText: String
+raw/SVGClipPathElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGClipPathElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGClipPathElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGClipPathElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -16374,6 +16435,7 @@ raw/SVGComponentTransferFunctionElement[JC] def hasChildNodes(): Boolean
 raw/SVGComponentTransferFunctionElement[JC] var id: String
 raw/SVGComponentTransferFunctionElement[JC] var innerHTML: String
 raw/SVGComponentTransferFunctionElement[JC] var innerText: String
+raw/SVGComponentTransferFunctionElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGComponentTransferFunctionElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGComponentTransferFunctionElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGComponentTransferFunctionElement[JC] def intercept: SVGAnimatedNumber
@@ -16492,6 +16554,7 @@ raw/SVGDefsElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGDefsElement[JC] var id: String
 raw/SVGDefsElement[JC] var innerHTML: String
 raw/SVGDefsElement[JC] var innerText: String
+raw/SVGDefsElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGDefsElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGDefsElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGDefsElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -16600,6 +16663,7 @@ raw/SVGDescElement[JC] def hasChildNodes(): Boolean
 raw/SVGDescElement[JC] var id: String
 raw/SVGDescElement[JC] var innerHTML: String
 raw/SVGDescElement[JC] var innerText: String
+raw/SVGDescElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGDescElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGDescElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGDescElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -16702,6 +16766,7 @@ raw/SVGElement[JC] def hasChildNodes(): Boolean
 raw/SVGElement[JC] var id: String
 raw/SVGElement[JC] var innerHTML: String
 raw/SVGElement[JC] var innerText: String
+raw/SVGElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -16826,6 +16891,7 @@ raw/SVGEllipseElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGEllipseElement[JC] var id: String
 raw/SVGEllipseElement[JC] var innerHTML: String
 raw/SVGEllipseElement[JC] var innerText: String
+raw/SVGEllipseElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGEllipseElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGEllipseElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGEllipseElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -16946,6 +17012,7 @@ raw/SVGFEBlendElement[JC] def in1: SVGAnimatedString
 raw/SVGFEBlendElement[JC] def in2: SVGAnimatedString
 raw/SVGFEBlendElement[JC] var innerHTML: String
 raw/SVGFEBlendElement[JC] var innerText: String
+raw/SVGFEBlendElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEBlendElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEBlendElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEBlendElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -17060,6 +17127,7 @@ raw/SVGFEColorMatrixElement[JC] var id: String
 raw/SVGFEColorMatrixElement[JC] def in1: SVGAnimatedString
 raw/SVGFEColorMatrixElement[JC] var innerHTML: String
 raw/SVGFEColorMatrixElement[JC] var innerText: String
+raw/SVGFEColorMatrixElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEColorMatrixElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEColorMatrixElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEColorMatrixElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -17174,6 +17242,7 @@ raw/SVGFEComponentTransferElement[JC] var id: String
 raw/SVGFEComponentTransferElement[JC] def in1: SVGAnimatedString
 raw/SVGFEComponentTransferElement[JC] var innerHTML: String
 raw/SVGFEComponentTransferElement[JC] var innerText: String
+raw/SVGFEComponentTransferElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEComponentTransferElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEComponentTransferElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEComponentTransferElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -17282,6 +17351,7 @@ raw/SVGFECompositeElement[JC] def in1: SVGAnimatedString
 raw/SVGFECompositeElement[JC] def in2: SVGAnimatedString
 raw/SVGFECompositeElement[JC] var innerHTML: String
 raw/SVGFECompositeElement[JC] var innerText: String
+raw/SVGFECompositeElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFECompositeElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFECompositeElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFECompositeElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -17404,6 +17474,7 @@ raw/SVGFEConvolveMatrixElement[JC] var id: String
 raw/SVGFEConvolveMatrixElement[JC] def in1: SVGAnimatedString
 raw/SVGFEConvolveMatrixElement[JC] var innerHTML: String
 raw/SVGFEConvolveMatrixElement[JC] var innerText: String
+raw/SVGFEConvolveMatrixElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEConvolveMatrixElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEConvolveMatrixElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEConvolveMatrixElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -17524,6 +17595,7 @@ raw/SVGFEDiffuseLightingElement[JC] var id: String
 raw/SVGFEDiffuseLightingElement[JC] def in1: SVGAnimatedString
 raw/SVGFEDiffuseLightingElement[JC] var innerHTML: String
 raw/SVGFEDiffuseLightingElement[JC] var innerText: String
+raw/SVGFEDiffuseLightingElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEDiffuseLightingElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEDiffuseLightingElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEDiffuseLightingElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -17635,6 +17707,7 @@ raw/SVGFEDisplacementMapElement[JC] def in1: SVGAnimatedString
 raw/SVGFEDisplacementMapElement[JC] def in2: SVGAnimatedString
 raw/SVGFEDisplacementMapElement[JC] var innerHTML: String
 raw/SVGFEDisplacementMapElement[JC] var innerText: String
+raw/SVGFEDisplacementMapElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEDisplacementMapElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEDisplacementMapElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEDisplacementMapElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -17749,6 +17822,7 @@ raw/SVGFEDistantLightElement[JC] def hasChildNodes(): Boolean
 raw/SVGFEDistantLightElement[JC] var id: String
 raw/SVGFEDistantLightElement[JC] var innerHTML: String
 raw/SVGFEDistantLightElement[JC] var innerText: String
+raw/SVGFEDistantLightElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEDistantLightElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEDistantLightElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEDistantLightElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -17850,6 +17924,7 @@ raw/SVGFEFloodElement[JC] def height: SVGAnimatedLength
 raw/SVGFEFloodElement[JC] var id: String
 raw/SVGFEFloodElement[JC] var innerHTML: String
 raw/SVGFEFloodElement[JC] var innerText: String
+raw/SVGFEFloodElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEFloodElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEFloodElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEFloodElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -17956,6 +18031,7 @@ raw/SVGFEFuncAElement[JC] def hasChildNodes(): Boolean
 raw/SVGFEFuncAElement[JC] var id: String
 raw/SVGFEFuncAElement[JC] var innerHTML: String
 raw/SVGFEFuncAElement[JC] var innerText: String
+raw/SVGFEFuncAElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEFuncAElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEFuncAElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEFuncAElement[JC] def intercept: SVGAnimatedNumber
@@ -18062,6 +18138,7 @@ raw/SVGFEFuncBElement[JC] def hasChildNodes(): Boolean
 raw/SVGFEFuncBElement[JC] var id: String
 raw/SVGFEFuncBElement[JC] var innerHTML: String
 raw/SVGFEFuncBElement[JC] var innerText: String
+raw/SVGFEFuncBElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEFuncBElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEFuncBElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEFuncBElement[JC] def intercept: SVGAnimatedNumber
@@ -18168,6 +18245,7 @@ raw/SVGFEFuncGElement[JC] def hasChildNodes(): Boolean
 raw/SVGFEFuncGElement[JC] var id: String
 raw/SVGFEFuncGElement[JC] var innerHTML: String
 raw/SVGFEFuncGElement[JC] var innerText: String
+raw/SVGFEFuncGElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEFuncGElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEFuncGElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEFuncGElement[JC] def intercept: SVGAnimatedNumber
@@ -18274,6 +18352,7 @@ raw/SVGFEFuncRElement[JC] def hasChildNodes(): Boolean
 raw/SVGFEFuncRElement[JC] var id: String
 raw/SVGFEFuncRElement[JC] var innerHTML: String
 raw/SVGFEFuncRElement[JC] var innerText: String
+raw/SVGFEFuncRElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEFuncRElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEFuncRElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEFuncRElement[JC] def intercept: SVGAnimatedNumber
@@ -18381,6 +18460,7 @@ raw/SVGFEGaussianBlurElement[JC] var id: String
 raw/SVGFEGaussianBlurElement[JC] def in1: SVGAnimatedString
 raw/SVGFEGaussianBlurElement[JC] var innerHTML: String
 raw/SVGFEGaussianBlurElement[JC] var innerText: String
+raw/SVGFEGaussianBlurElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEGaussianBlurElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEGaussianBlurElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEGaussianBlurElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -18492,6 +18572,7 @@ raw/SVGFEImageElement[JC] var href: SVGAnimatedString
 raw/SVGFEImageElement[JC] var id: String
 raw/SVGFEImageElement[JC] var innerHTML: String
 raw/SVGFEImageElement[JC] var innerText: String
+raw/SVGFEImageElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEImageElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEImageElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEImageElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -18601,6 +18682,7 @@ raw/SVGFEMergeElement[JC] def height: SVGAnimatedLength
 raw/SVGFEMergeElement[JC] var id: String
 raw/SVGFEMergeElement[JC] var innerHTML: String
 raw/SVGFEMergeElement[JC] var innerText: String
+raw/SVGFEMergeElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEMergeElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEMergeElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEMergeElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -18706,6 +18788,7 @@ raw/SVGFEMergeNodeElement[JC] var id: String
 raw/SVGFEMergeNodeElement[JC] def in1: SVGAnimatedString
 raw/SVGFEMergeNodeElement[JC] var innerHTML: String
 raw/SVGFEMergeNodeElement[JC] var innerText: String
+raw/SVGFEMergeNodeElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEMergeNodeElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEMergeNodeElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEMergeNodeElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -18808,6 +18891,7 @@ raw/SVGFEMorphologyElement[JC] var id: String
 raw/SVGFEMorphologyElement[JC] def in1: SVGAnimatedString
 raw/SVGFEMorphologyElement[JC] var innerHTML: String
 raw/SVGFEMorphologyElement[JC] var innerText: String
+raw/SVGFEMorphologyElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEMorphologyElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEMorphologyElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEMorphologyElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -18923,6 +19007,7 @@ raw/SVGFEOffsetElement[JC] var id: String
 raw/SVGFEOffsetElement[JC] def in1: SVGAnimatedString
 raw/SVGFEOffsetElement[JC] var innerHTML: String
 raw/SVGFEOffsetElement[JC] var innerText: String
+raw/SVGFEOffsetElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEOffsetElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEOffsetElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEOffsetElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -19027,6 +19112,7 @@ raw/SVGFEPointLightElement[JC] def hasChildNodes(): Boolean
 raw/SVGFEPointLightElement[JC] var id: String
 raw/SVGFEPointLightElement[JC] var innerHTML: String
 raw/SVGFEPointLightElement[JC] var innerText: String
+raw/SVGFEPointLightElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFEPointLightElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFEPointLightElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFEPointLightElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -19132,6 +19218,7 @@ raw/SVGFESpecularLightingElement[JC] var id: String
 raw/SVGFESpecularLightingElement[JC] def in1: SVGAnimatedString
 raw/SVGFESpecularLightingElement[JC] var innerHTML: String
 raw/SVGFESpecularLightingElement[JC] var innerText: String
+raw/SVGFESpecularLightingElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFESpecularLightingElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFESpecularLightingElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFESpecularLightingElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -19241,6 +19328,7 @@ raw/SVGFESpotLightElement[JC] def hasChildNodes(): Boolean
 raw/SVGFESpotLightElement[JC] var id: String
 raw/SVGFESpotLightElement[JC] var innerHTML: String
 raw/SVGFESpotLightElement[JC] var innerText: String
+raw/SVGFESpotLightElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFESpotLightElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFESpotLightElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFESpotLightElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -19351,6 +19439,7 @@ raw/SVGFETileElement[JC] var id: String
 raw/SVGFETileElement[JC] def in1: SVGAnimatedString
 raw/SVGFETileElement[JC] var innerHTML: String
 raw/SVGFETileElement[JC] var innerText: String
+raw/SVGFETileElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFETileElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFETileElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFETileElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -19459,6 +19548,7 @@ raw/SVGFETurbulenceElement[JC] def height: SVGAnimatedLength
 raw/SVGFETurbulenceElement[JC] var id: String
 raw/SVGFETurbulenceElement[JC] var innerHTML: String
 raw/SVGFETurbulenceElement[JC] var innerText: String
+raw/SVGFETurbulenceElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFETurbulenceElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFETurbulenceElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFETurbulenceElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -19583,6 +19673,7 @@ raw/SVGFilterElement[JC] var href: SVGAnimatedString
 raw/SVGFilterElement[JC] var id: String
 raw/SVGFilterElement[JC] var innerHTML: String
 raw/SVGFilterElement[JC] var innerText: String
+raw/SVGFilterElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGFilterElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGFilterElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGFilterElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -19707,6 +19798,7 @@ raw/SVGGElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGGElement[JC] var id: String
 raw/SVGGElement[JC] var innerHTML: String
 raw/SVGGElement[JC] var innerText: String
+raw/SVGGElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGGElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGGElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGGElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -19822,6 +19914,7 @@ raw/SVGGradientElement[JC] var href: SVGAnimatedString
 raw/SVGGradientElement[JC] var id: String
 raw/SVGGradientElement[JC] var innerHTML: String
 raw/SVGGradientElement[JC] var innerText: String
+raw/SVGGradientElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGGradientElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGGradientElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGGradientElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -19937,6 +20030,7 @@ raw/SVGImageElement[JC] var href: SVGAnimatedString
 raw/SVGImageElement[JC] var id: String
 raw/SVGImageElement[JC] var innerHTML: String
 raw/SVGImageElement[JC] var innerText: String
+raw/SVGImageElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGImageElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGImageElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGImageElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -20083,6 +20177,7 @@ raw/SVGLineElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGLineElement[JC] var id: String
 raw/SVGLineElement[JC] var innerHTML: String
 raw/SVGLineElement[JC] var innerText: String
+raw/SVGLineElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGLineElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGLineElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGLineElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -20202,6 +20297,7 @@ raw/SVGLinearGradientElement[JC] var href: SVGAnimatedString
 raw/SVGLinearGradientElement[JC] var id: String
 raw/SVGLinearGradientElement[JC] var innerHTML: String
 raw/SVGLinearGradientElement[JC] var innerText: String
+raw/SVGLinearGradientElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGLinearGradientElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGLinearGradientElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGLinearGradientElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -20315,6 +20411,7 @@ raw/SVGMarkerElement[JC] def hasChildNodes(): Boolean
 raw/SVGMarkerElement[JC] var id: String
 raw/SVGMarkerElement[JC] var innerHTML: String
 raw/SVGMarkerElement[JC] var innerText: String
+raw/SVGMarkerElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGMarkerElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGMarkerElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGMarkerElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -20441,6 +20538,7 @@ raw/SVGMaskElement[JC] def height: SVGAnimatedLength
 raw/SVGMaskElement[JC] var id: String
 raw/SVGMaskElement[JC] var innerHTML: String
 raw/SVGMaskElement[JC] var innerText: String
+raw/SVGMaskElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGMaskElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGMaskElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGMaskElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -20568,6 +20666,7 @@ raw/SVGMetadataElement[JC] def hasChildNodes(): Boolean
 raw/SVGMetadataElement[JC] var id: String
 raw/SVGMetadataElement[JC] var innerHTML: String
 raw/SVGMetadataElement[JC] var innerText: String
+raw/SVGMetadataElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGMetadataElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGMetadataElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGMetadataElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -20706,6 +20805,7 @@ raw/SVGPathElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGPathElement[JC] var id: String
 raw/SVGPathElement[JC] var innerHTML: String
 raw/SVGPathElement[JC] var innerText: String
+raw/SVGPathElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGPathElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGPathElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGPathElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -20948,6 +21048,7 @@ raw/SVGPatternElement[JC] var href: SVGAnimatedString
 raw/SVGPatternElement[JC] var id: String
 raw/SVGPatternElement[JC] var innerHTML: String
 raw/SVGPatternElement[JC] var innerText: String
+raw/SVGPatternElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGPatternElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGPatternElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGPatternElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -21081,6 +21182,7 @@ raw/SVGPolygonElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGPolygonElement[JC] var id: String
 raw/SVGPolygonElement[JC] var innerHTML: String
 raw/SVGPolygonElement[JC] var innerText: String
+raw/SVGPolygonElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGPolygonElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGPolygonElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGPolygonElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -21198,6 +21300,7 @@ raw/SVGPolylineElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGPolylineElement[JC] var id: String
 raw/SVGPolylineElement[JC] var innerHTML: String
 raw/SVGPolylineElement[JC] var innerText: String
+raw/SVGPolylineElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGPolylineElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGPolylineElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGPolylineElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -21334,6 +21437,7 @@ raw/SVGRadialGradientElement[JC] var href: SVGAnimatedString
 raw/SVGRadialGradientElement[JC] var id: String
 raw/SVGRadialGradientElement[JC] var innerHTML: String
 raw/SVGRadialGradientElement[JC] var innerText: String
+raw/SVGRadialGradientElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGRadialGradientElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGRadialGradientElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGRadialGradientElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -21449,6 +21553,7 @@ raw/SVGRectElement[JC] def height: SVGAnimatedLength
 raw/SVGRectElement[JC] var id: String
 raw/SVGRectElement[JC] var innerHTML: String
 raw/SVGRectElement[JC] var innerText: String
+raw/SVGRectElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGRectElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGRectElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGRectElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -21592,6 +21697,7 @@ raw/SVGSVGElement[JC] def height: SVGAnimatedLength
 raw/SVGSVGElement[JC] var id: String
 raw/SVGSVGElement[JC] var innerHTML: String
 raw/SVGSVGElement[JC] var innerText: String
+raw/SVGSVGElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGSVGElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGSVGElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGSVGElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -21723,6 +21829,7 @@ raw/SVGScriptElement[JC] var href: SVGAnimatedString
 raw/SVGScriptElement[JC] var id: String
 raw/SVGScriptElement[JC] var innerHTML: String
 raw/SVGScriptElement[JC] var innerText: String
+raw/SVGScriptElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGScriptElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGScriptElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGScriptElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -21824,6 +21931,7 @@ raw/SVGStopElement[JC] def hasChildNodes(): Boolean
 raw/SVGStopElement[JC] var id: String
 raw/SVGStopElement[JC] var innerHTML: String
 raw/SVGStopElement[JC] var innerText: String
+raw/SVGStopElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGStopElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGStopElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGStopElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -21935,6 +22043,7 @@ raw/SVGStyleElement[JC] def hasChildNodes(): Boolean
 raw/SVGStyleElement[JC] var id: String
 raw/SVGStyleElement[JC] var innerHTML: String
 raw/SVGStyleElement[JC] var innerText: String
+raw/SVGStyleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGStyleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGStyleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGStyleElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -22047,6 +22156,7 @@ raw/SVGSwitchElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGSwitchElement[JC] var id: String
 raw/SVGSwitchElement[JC] var innerHTML: String
 raw/SVGSwitchElement[JC] var innerText: String
+raw/SVGSwitchElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGSwitchElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGSwitchElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGSwitchElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -22156,6 +22266,7 @@ raw/SVGSymbolElement[JC] def hasChildNodes(): Boolean
 raw/SVGSymbolElement[JC] var id: String
 raw/SVGSymbolElement[JC] var innerHTML: String
 raw/SVGSymbolElement[JC] var innerText: String
+raw/SVGSymbolElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGSymbolElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGSymbolElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGSymbolElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -22273,6 +22384,7 @@ raw/SVGTSpanElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGTSpanElement[JC] var id: String
 raw/SVGTSpanElement[JC] var innerHTML: String
 raw/SVGTSpanElement[JC] var innerText: String
+raw/SVGTSpanElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGTSpanElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGTSpanElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGTSpanElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -22399,6 +22511,7 @@ raw/SVGTextContentElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGTextContentElement[JC] var id: String
 raw/SVGTextContentElement[JC] var innerHTML: String
 raw/SVGTextContentElement[JC] var innerText: String
+raw/SVGTextContentElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGTextContentElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGTextContentElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGTextContentElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -22528,6 +22641,7 @@ raw/SVGTextElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGTextElement[JC] var id: String
 raw/SVGTextElement[JC] var innerHTML: String
 raw/SVGTextElement[JC] var innerText: String
+raw/SVGTextElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGTextElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGTextElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGTextElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -22653,6 +22767,7 @@ raw/SVGTextPathElement[JC] var href: SVGAnimatedString
 raw/SVGTextPathElement[JC] var id: String
 raw/SVGTextPathElement[JC] var innerHTML: String
 raw/SVGTextPathElement[JC] var innerText: String
+raw/SVGTextPathElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGTextPathElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGTextPathElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGTextPathElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -22783,6 +22898,7 @@ raw/SVGTextPositioningElement[JC] def hasExtension(extension: String): Boolean
 raw/SVGTextPositioningElement[JC] var id: String
 raw/SVGTextPositioningElement[JC] var innerHTML: String
 raw/SVGTextPositioningElement[JC] var innerText: String
+raw/SVGTextPositioningElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGTextPositioningElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGTextPositioningElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGTextPositioningElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -22895,6 +23011,7 @@ raw/SVGTitleElement[JC] def hasChildNodes(): Boolean
 raw/SVGTitleElement[JC] var id: String
 raw/SVGTitleElement[JC] var innerHTML: String
 raw/SVGTitleElement[JC] var innerText: String
+raw/SVGTitleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGTitleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGTitleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGTitleElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
@@ -23048,6 +23165,7 @@ raw/SVGUseElement[JC] var href: SVGAnimatedString
 raw/SVGUseElement[JC] var id: String
 raw/SVGUseElement[JC] var innerHTML: String
 raw/SVGUseElement[JC] var innerText: String
+raw/SVGUseElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGUseElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGUseElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGUseElement[JC] def instanceRoot: SVGElementInstance
@@ -23160,6 +23278,7 @@ raw/SVGViewElement[JC] def hasChildNodes(): Boolean
 raw/SVGViewElement[JC] var id: String
 raw/SVGViewElement[JC] var innerHTML: String
 raw/SVGViewElement[JC] var innerText: String
+raw/SVGViewElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 raw/SVGViewElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 raw/SVGViewElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 raw/SVGViewElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
