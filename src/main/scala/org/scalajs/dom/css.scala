@@ -4,6 +4,7 @@ package org.scalajs.dom
  * Short aliases of all the dom.CSSThing classes
  */
 object css {
+  @inline def CSS = raw.CSS
   type FontFaceRule = raw.CSSFontFaceRule
   type ImportRule = raw.CSSImportRule
   type KeyframeRule = raw.CSSKeyframeRule

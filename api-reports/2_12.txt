@@ -217,6 +217,7 @@ css[SO] type RuleList = raw.CSSRuleList
 css[SO] type StyleDeclaration = raw.CSSStyleDeclaration
 css[SO] type StyleRule = raw.CSSStyleRule
 css[SO] type StyleSheet = raw.CSSStyleSheet
+css[SO] def CSS = raw.CSS
 css[SO] def Rule = raw.CSSRule
 experimental/AbortController[JC] def abort(): Unit
 experimental/AbortController[JC] val signal: AbortSignal
@@ -2592,6 +2593,8 @@ raw/CDATASection[JC] def splitText(offset: Int): Text
 raw/CDATASection[JC] def substringData(offset: Int, count: Int): String
 raw/CDATASection[JC] var textContent: String
 raw/CDATASection[JC] def wholeText: String
+raw/CSS[JO] def supports(propertyName: String, value: String): Boolean
+raw/CSS[JO] def supports(supportCondition: String): Boolean
 raw/CSSFontFaceRule[JC] var CHARSET_RULE: Int
 raw/CSSFontFaceRule[JC] var FONT_FACE_RULE: Int
 raw/CSSFontFaceRule[JC] var IMPORT_RULE: Int
