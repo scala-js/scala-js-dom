@@ -1,7 +1,13 @@
-target/
+.bloop
+.bsp
 .cache
 .classpath
-.project
-.settings/
 .idea
 .idea_modules
+.metals
+.project
+.sbtboot
+.settings/
+.vscode
+metals.sbt
+target/
