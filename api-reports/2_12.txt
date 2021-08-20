@@ -15219,7 +15219,7 @@ raw/IDBVersionChangeEvent[JC] def currentTarget: EventTarget
 raw/IDBVersionChangeEvent[JC] def defaultPrevented: Boolean
 raw/IDBVersionChangeEvent[JC] def eventPhase: Int
 raw/IDBVersionChangeEvent[JC] def isTrusted: Boolean
-raw/IDBVersionChangeEvent[JC] def newVersion: Int
+raw/IDBVersionChangeEvent[JC] def newVersion: Integer
 raw/IDBVersionChangeEvent[JC] def oldVersion: Int
 raw/IDBVersionChangeEvent[JC] def preventDefault(): Unit
 raw/IDBVersionChangeEvent[JC] def stopImmediatePropagation(): Unit
@@ -15230,7 +15230,7 @@ raw/IDBVersionChangeEvent[JC] def `type`: String
 raw/IDBVersionChangeEventInit[JT] var bubbles: js.UndefOr[Boolean]
 raw/IDBVersionChangeEventInit[JT] var cancelable: js.UndefOr[Boolean]
 raw/IDBVersionChangeEventInit[JT] var composed: js.UndefOr[Boolean]
-raw/IDBVersionChangeEventInit[JT] var newVersion: js.UndefOr[Int]
+raw/IDBVersionChangeEventInit[JT] var newVersion: js.UndefOr[Integer]
 raw/IDBVersionChangeEventInit[JT] var oldVersion: js.UndefOr[Int]
 raw/IDBVersionChangeEventInit[JT] var scoped: js.UndefOr[Boolean]
 raw/ImageData[JC] def data: js.Array[Int]
