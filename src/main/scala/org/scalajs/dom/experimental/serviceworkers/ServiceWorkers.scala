@@ -111,7 +111,7 @@ class FetchEvent(typeArg: String, init: js.UndefOr[FetchEventInit])
    */
   def request: Request = js.native
 
-  def preloadResponse: js.Promise[Response] = js.native
+  def preloadResponse: js.Promise[js.UndefOr[Response]] = js.native
 
   def clientId: String = js.native
 

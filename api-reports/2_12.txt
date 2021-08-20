@@ -984,7 +984,7 @@ experimental/serviceworkers/ExtendableMessageEventInit[JT] var scoped: js.UndefO
 experimental/serviceworkers/ExtendableMessageEventInit[JT] var source: js.UndefOr[Client | ServiceWorker | MessagePort]
 experimental/serviceworkers/FetchEvent[SC] def clientId: String
 experimental/serviceworkers/FetchEvent[SC] def isReload: Boolean
-experimental/serviceworkers/FetchEvent[SC] def preloadResponse: js.Promise[Response]
+experimental/serviceworkers/FetchEvent[SC] def preloadResponse: js.Promise[js.UndefOr[Response]]
 experimental/serviceworkers/FetchEvent[SC] def replacesClientId: String
 experimental/serviceworkers/FetchEvent[SC] def request: Request
 experimental/serviceworkers/FetchEvent[SC] def respondWith(promisedResponse: Response | js.Promise[Response]): Unit
