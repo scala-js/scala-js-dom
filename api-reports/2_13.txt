@@ -24558,6 +24558,7 @@ raw/XMLHttpRequest[JC] var onprogress: js.Function1[ProgressEvent, _]
 raw/XMLHttpRequest[JC] var onreadystatechange: js.Function1[Event, _]
 raw/XMLHttpRequest[JC] var ontimeout: js.Function1[ProgressEvent, _]
 raw/XMLHttpRequest[JC] def open(method: String, url: String, async: Boolean?, user: String?, password: String?): Unit
+raw/XMLHttpRequest[JC] def overrideMimeType(mimeType: String): Unit
 raw/XMLHttpRequest[JC] def readyState: Int
 raw/XMLHttpRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/XMLHttpRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
