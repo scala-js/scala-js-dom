@@ -1,0 +1,27 @@
+
+name: Build and Deploy GhPages docs
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: olafurpg/setup-scala@v13
+        with:
+          java-version: "adopt@1.8"
+      - uses: coursier/cache-action@v6
+
+      - name: Build
+        run: sbt readme/run
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: readme/target/scalatex

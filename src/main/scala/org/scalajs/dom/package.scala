@@ -4,9 +4,6 @@ import scala.scalajs.js
 
 package object dom {
 
-  @deprecated(message = "Import from org.scalajs.dom.webworkers instead.",
-      since = "0.9.0")
-  type AbstractWorker = webworkers.AbstractWorker
   type AnalyserNode = raw.AnalyserNode
   type AnimationEvent = raw.AnimationEvent
   type ApplicationCache = raw.ApplicationCache
@@ -39,8 +36,6 @@ package object dom {
   type ClientRect = raw.ClientRect
   type ClientRectList = raw.ClientRectList
   type ClipboardEvent = raw.ClipboardEvent
-  lazy val ClipboardEventInit: raw.ClipboardEventInit.type =
-    raw.ClipboardEventInit
   type ClipboardEventInit = raw.ClipboardEventInit
   type CloseEvent = raw.CloseEvent
   type CompositionEvent = raw.CompositionEvent
@@ -59,8 +54,6 @@ package object dom {
   type DOMException = raw.DOMException
   type DOMImplementation = raw.DOMImplementation
   lazy val DOMException: raw.DOMException.type = raw.DOMException
-  @deprecated("Use DOMException instead", "DOM Level 3 Core")
-  type DOMError = raw.DOMError
   type DOMList[T] = raw.DOMList[T]
   type DOMParser = raw.DOMParser
   type DOMSettableTokenList = raw.DOMSettableTokenList
@@ -119,10 +112,6 @@ package object dom {
   type MouseEvent = raw.MouseEvent
   type PointerEvent = raw.PointerEvent
   type PointerEventInit = raw.PointerEventInit
-  @deprecated("Obsolete.", "WHATWG DOM")
-  type MutationEvent = raw.MutationEvent
-  @deprecated("Obsolete.", "WHATWG DOM")
-  lazy val MutationEvent: raw.MutationEvent.type = raw.MutationEvent
   type MutationObserver = raw.MutationObserver
   type MutationObserverInit = raw.MutationObserverInit
   lazy val MutationObserverInit: raw.MutationObserverInit.type =
@@ -147,10 +136,6 @@ package object dom {
   type NodeListOf[TNode <: Node] = raw.NodeListOf[TNode]
 
   type OfflineAudioContext = raw.OfflineAudioContext
-  @deprecated(
-      "Use the promise version of OfflineAudioContext.startRendering instead.",
-      "forever")
-  type OfflineAudioCompletionEvent = raw.OfflineAudioCompletionEvent
   type OscillatorNode = raw.OscillatorNode
 
   type PannerNode = raw.PannerNode
@@ -220,12 +205,8 @@ package object dom {
   type WindowLocalStorage = raw.WindowLocalStorage
   type WindowSessionStorage = raw.WindowSessionStorage
   type WindowTimers = raw.WindowTimers
-  type WindowTimersExtension = raw.WindowTimersExtension
 
   type WindowBase64 = raw.WindowBase64
-  @deprecated(message = "Import from org.scalajs.dom.webworkers instead.",
-      since = "0.9.0")
-  type Worker = raw.Worker
 
   type XMLHttpRequest = raw.XMLHttpRequest
   lazy val XMLHttpRequest: raw.XMLHttpRequest.type = raw.XMLHttpRequest
@@ -238,5 +219,5 @@ package object dom {
   lazy val window: Window = js.Dynamic.global.window.asInstanceOf[Window]
   lazy val document: html.Document = window.document
 
-  lazy val console: Console = window.console
+  lazy val console: Console = js.Dynamic.global.console.asInstanceOf[Console] // #411
 }

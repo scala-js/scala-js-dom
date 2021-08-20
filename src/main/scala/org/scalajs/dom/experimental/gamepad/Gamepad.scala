@@ -70,12 +70,6 @@ trait GamepadEventInit extends EventInit {
   var gamepad: js.UndefOr[Gamepad]
 }
 
-object GamepadEventInit {
-  @deprecated("Create new ClipboardEventInit instead", "0.9.8")
-  def apply(gamepad: Gamepad): GamepadEventInit =
-    js.Dynamic.literal("gamepad" -> gamepad).asInstanceOf[GamepadEventInit]
-}
-
 @JSGlobal("GamepadEvent")
 @js.native
 class GamepadEvent(typeArg: String,
