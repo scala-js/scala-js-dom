@@ -623,6 +623,13 @@ trait ParentNode extends js.Object {
    * MDN
    */
   def childElementCount: Int = js.native
+
+  /**
+   * Replaces the existing children of a Node with a specified new set of children.
+   *
+   * MDN
+   */
+  def replaceChildren(nodes: (Node | String)*): Unit = js.native
 }
 
 /**
