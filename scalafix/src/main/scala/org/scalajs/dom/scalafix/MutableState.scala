@@ -43,9 +43,9 @@ final class MutableState {
 
   def result(): Array[String] = synchronized {
     // Because - comes before . in ASCII this little hack affects the ordering so that A[X] comes before A.B[X]
-    val sortHack = "-OMG-"
+    val sortHack = "-"
 
-    val b = SortedSet.newBuilder[String]
+    val b = SortedSet.newBuilder[Result]
 
     // Pass 1
     for (root <- scopes.valuesIterator) {
@@ -55,12 +55,12 @@ final class MutableState {
 
     // Pass 2
     for (root <- scopes.valuesIterator) {
-      val name = root.symbol.value.stripSuffix("#").stripSuffix(".")
-      val prefix = {
-        val lang = if (root.isJsType) "J" else "S"
-        val typ  = root.scopeType.id
-        s"$name$sortHack[$lang$typ] "
-      }
+      val scopeName = root.symbol.value.stripSuffix("#").stripSuffix(".")
+      val flagLang  = if (root.isJsType) "J" else "S"
+      val flagTyp   = root.scopeType.id
+      val flags     = flagLang + flagTyp
+      val prefix    = s"$scopeName[$flags] "
+      val scopeKey  = s"$scopeName$sortHack[$flags"
 
       var membersFound = false
       for {
@@ -68,17 +68,17 @@ final class MutableState {
         v <- s.directMembers
       } {
         membersFound = true
-        b += prefix + v
+        val key = (scopeKey, v.name, v.desc)
+        b += Result(key, prefix + v.desc)
       }
 
-      if (!membersFound && !name.endsWith("/package"))
-        b += prefix.trim
+      if (!membersFound && !scopeName.endsWith("/package")) {
+        val key = (scopeKey, " ", "")
+        b += Result(key, prefix.trim)
+      }
     }
 
-    val array = b.result().toArray
-    for (i <- array.indices)
-      array(i) = array(i).replace(sortHack, "")
-    array
+    b.result().iterator.map(_.value).toArray
   }
 }
 
@@ -96,13 +96,19 @@ object MutableState {
                         (val scopeType: ScopeType,
                          val parents: Set[Symbol]) {
 
-    private[MutableState] val directMembers = mutable.Set.empty[String]
+    private[MutableState] val directMembers = mutable.Set.empty[Member]
     private[MutableState] var isJsType = false
 
-    def add(ov: Option[String]): Unit =
-      ov.foreach(add(_))
-
-    def add(v: String): Unit =
+    def add(v: Member): Unit =
       synchronized(directMembers += v)
+  }
+
+  final case class Member(name: String, desc: String)
+
+  private[MutableState] final case class Result(sortKey: Result.SortKey, value: String)
+
+  private[MutableState] object Result {
+    type SortKey = (String, String, String) // prefix, name, desc
+    implicit val ordering: Ordering[Result] = Ordering.by(_.sortKey)
   }
 }

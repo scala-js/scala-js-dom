@@ -16,6 +16,8 @@ jobs:
         with:
           fetch-depth: 0
       - uses: olafurpg/setup-scala@v13
+      - name: Hacks for Scala 2.10
+        run: ./prepareForScala210.sh
       - run: sbt ci-release
         env:
           PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
