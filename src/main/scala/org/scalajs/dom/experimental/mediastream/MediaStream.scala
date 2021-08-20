@@ -650,7 +650,7 @@ class MediaSource extends EventTarget {
   var onsourceended: js.Function1[Event, Any] = js.native
   var onsourceclose: js.Function1[Event, Any] = js.native
 
-  def addSourceBuffer(bufferType: String): SourceBuffer = js.native
+  def addSourceBuffer(mimeType: String): SourceBuffer = js.native
   def removeSourceBuffer(sourceBuffer: SourceBuffer): Unit = js.native
   def endOfStream(error: EndOfStreamError = js.native): Unit = js.native
   def setLiveSeekableRange(start: Double, end: Double): Unit = js.native
@@ -707,7 +707,7 @@ trait AudioTrackList extends EventTarget {
   @JSBracketAccess
   def apply(index: Double): AudioTrack = js.native
 
-  def getTrackById(id: String): js.UndefOr[AudioTrack] = js.native
+  def getTrackById(id: String): AudioTrack = js.native
 
   var onchange: js.Function1[Event, Any] = js.native
   var onaddtrack: js.Function1[Event, Any] = js.native
@@ -730,7 +730,7 @@ trait VideoTrackList extends EventTarget {
   @JSBracketAccess
   def apply(index: Double): VideoTrack = js.native
 
-  def getTrackById(id: String): js.UndefOr[VideoTrack] = js.native
+  def getTrackById(id: String): VideoTrack = js.native
 
   def selectedIndex: Double = js.native
 
@@ -756,7 +756,7 @@ trait TextTrackList extends EventTarget {
   @JSBracketAccess
   def apply(index: Double): VideoTrack = js.native
 
-  def getTrackById(id: String): js.UndefOr[TextTrack] = js.native;
+  def getTrackById(id: String): TextTrack = js.native
 
   var onchange: js.Function1[Event, Any] = js.native
   var onaddtrack: js.Function1[Event, Any] = js.native
@@ -773,8 +773,8 @@ trait TextTrack extends EventTarget {
 
   var mode: TextTrackMode = js.native
 
-  def cues: js.UndefOr[TextTrackCueList] = js.native
-  def activeCues: js.UndefOr[TextTrackCueList] = js.native
+  def cues: TextTrackCueList = js.native
+  def activeCues: TextTrackCueList = js.native
 
   def addCue(cue: TextTrackCue): Unit = js.native
   def removeCue(cue: TextTrackCue): Unit = js.native
@@ -789,12 +789,12 @@ trait TextTrackCueList extends js.Object {
   @JSBracketAccess
   def apply(index: Double): TextTrackCue = js.native
 
-  def getCueById(id: String): js.UndefOr[TextTrackCue] = js.native;
+  def getCueById(id: String): TextTrackCue = js.native
 }
 
 @js.native
 trait TextTrackCue extends EventTarget {
-  def track: js.UndefOr[TextTrack] = js.native
+  def track: TextTrack = js.native
 
   var id: String = js.native
   var startTime: Double = js.native

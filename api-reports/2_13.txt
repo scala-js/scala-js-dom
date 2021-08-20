@@ -586,7 +586,7 @@ experimental/mediastream/AudioTrackList[JT] def addEventListener[T <: Event](`ty
 experimental/mediastream/AudioTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/AudioTrackList[JT] @JSBracketAccess def apply(index: Double): AudioTrack
 experimental/mediastream/AudioTrackList[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/AudioTrackList[JT] def getTrackById(id: String): js.UndefOr[AudioTrack]
+experimental/mediastream/AudioTrackList[JT] def getTrackById(id: String): AudioTrack
 experimental/mediastream/AudioTrackList[JT] def length: Double
 experimental/mediastream/AudioTrackList[JT] var onaddtrack: js.Function1[Event, Any]
 experimental/mediastream/AudioTrackList[JT] var onchange: js.Function1[Event, Any]
@@ -614,7 +614,7 @@ experimental/mediastream/MediaDevices[JT] def removeEventListener[T <: Event](`t
 experimental/mediastream/MediaSource[JC] def activeSourceBuffers: SourceBufferList
 experimental/mediastream/MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/MediaSource[JC] def addSourceBuffer(bufferType: String): SourceBuffer
+experimental/mediastream/MediaSource[JC] def addSourceBuffer(mimeType: String): SourceBuffer
 experimental/mediastream/MediaSource[JC] def clearLiveSeekableRange(): Unit
 experimental/mediastream/MediaSource[JC] def dispatchEvent(evt: Event): Boolean
 experimental/mediastream/MediaSource[JC] var duration: Double
@@ -778,11 +778,11 @@ experimental/mediastream/SourceBufferList[JT] var onaddsourcebuffer: js.Function
 experimental/mediastream/SourceBufferList[JT] var onremovesourcebuffer: js.Function1[Event, Any]
 experimental/mediastream/SourceBufferList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/SourceBufferList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/TextTrack[JT] def activeCues: js.UndefOr[TextTrackCueList]
+experimental/mediastream/TextTrack[JT] def activeCues: TextTrackCueList
 experimental/mediastream/TextTrack[JT] def addCue(cue: TextTrackCue): Unit
 experimental/mediastream/TextTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/TextTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/TextTrack[JT] def cues: js.UndefOr[TextTrackCueList]
+experimental/mediastream/TextTrack[JT] def cues: TextTrackCueList
 experimental/mediastream/TextTrack[JT] def dispatchEvent(evt: Event): Boolean
 experimental/mediastream/TextTrack[JT] val id: String
 experimental/mediastream/TextTrack[JT] val inBandMetadataTrackDispatchType: String
@@ -805,15 +805,15 @@ experimental/mediastream/TextTrackCue[JT] var pauseOnExit: Boolean
 experimental/mediastream/TextTrackCue[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/TextTrackCue[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/TextTrackCue[JT] var startTime: Double
-experimental/mediastream/TextTrackCue[JT] def track: js.UndefOr[TextTrack]
+experimental/mediastream/TextTrackCue[JT] def track: TextTrack
 experimental/mediastream/TextTrackCueList[JT] @JSBracketAccess def apply(index: Double): TextTrackCue
-experimental/mediastream/TextTrackCueList[JT] def getCueById(id: String): js.UndefOr[TextTrackCue]
+experimental/mediastream/TextTrackCueList[JT] def getCueById(id: String): TextTrackCue
 experimental/mediastream/TextTrackCueList[JT] def length: Double
 experimental/mediastream/TextTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/TextTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/TextTrackList[JT] @JSBracketAccess def apply(index: Double): VideoTrack
 experimental/mediastream/TextTrackList[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/TextTrackList[JT] def getTrackById(id: String): js.UndefOr[TextTrack]
+experimental/mediastream/TextTrackList[JT] def getTrackById(id: String): TextTrack
 experimental/mediastream/TextTrackList[JT] def length: Double
 experimental/mediastream/TextTrackList[JT] var onaddtrack: js.Function1[Event, Any]
 experimental/mediastream/TextTrackList[JT] var onchange: js.Function1[Event, Any]
@@ -829,7 +829,7 @@ experimental/mediastream/VideoTrackList[JT] def addEventListener[T <: Event](`ty
 experimental/mediastream/VideoTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/VideoTrackList[JT] @JSBracketAccess def apply(index: Double): VideoTrack
 experimental/mediastream/VideoTrackList[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/VideoTrackList[JT] def getTrackById(id: String): js.UndefOr[VideoTrack]
+experimental/mediastream/VideoTrackList[JT] def getTrackById(id: String): VideoTrack
 experimental/mediastream/VideoTrackList[JT] def length: Double
 experimental/mediastream/VideoTrackList[JT] var onaddtrack: js.Function1[Event, Any]
 experimental/mediastream/VideoTrackList[JT] var onchange: js.Function1[Event, Any]
@@ -2484,10 +2484,10 @@ raw/AudioParam[JT] def setValueAtTime(value: Double, startTime: Double): Unit
 raw/AudioParam[JT] def setValueCurveAtTime(values: js.typedarray.Float32Array, startTime: Double, duration: Double): Unit
 raw/AudioParam[JT] var value: Double
 raw/AudioTrack[JT] var enabled: Boolean
-raw/AudioTrack[JT] var id: String
-raw/AudioTrack[JT] var kind: String
-raw/AudioTrack[JT] var label: String
-raw/AudioTrack[JT] var language: String
+raw/AudioTrack[JT] val id: String
+raw/AudioTrack[JT] val kind: String
+raw/AudioTrack[JT] val label: String
+raw/AudioTrack[JT] val language: String
 raw/AudioTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/AudioTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/AudioTrackList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
