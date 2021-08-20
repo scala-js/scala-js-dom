@@ -18,13 +18,20 @@ object Alert {
 object NodeAppendChild {
   @JSExport
   def main(div: html.Div) = {
-    val child = dom.document
-                   .createElement("div")
-
-    child.textContent =
-      "Hi from Scala-js-dom"
-
+    val child = dom.document.createElement("div")
+    child.textContent = "Hi from Scala-js-dom"
     div.appendChild(child)
+  }
+}
+
+@JSExportTopLevel("ExampleNodeReplaceChildren")
+object NodeReplaceChildren {
+  @JSExport
+  def main(div: html.Div): Unit = {
+    dom.document.replaceChildren()
+    dom.document.replaceChildren("")
+    dom.document.replaceChildren(div)
+    dom.document.replaceChildren("", div)
   }
 }
 
@@ -123,7 +130,7 @@ object XMLHttpRequest{
   @JSExport
   def main(pre: html.Pre) = {
     val xhr = new dom.XMLHttpRequest()
-    xhr.open("GET", 
+    xhr.open("GET",
       "https://www.boredapi.com/api/activity"
     )
     xhr.onload = { (e: dom.Event) =>
