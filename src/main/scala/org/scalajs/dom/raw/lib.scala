@@ -9,6 +9,7 @@
  */
 package org.scalajs.dom.raw
 
+import org.scalajs.dom.experimental.ReadableStream
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBuffer
@@ -7839,14 +7840,18 @@ object BlobPropertyBag {
 }
 
 /**
- * A Blob object represents a file-like object of immutable, raw data. Blobs
- * represent data that isn't necessarily in a JavaScript-native format. The File
- * interface is based on Blob, inheriting blob functionality and expanding it to
- * support files on the user's system.
+ * A Blob object represents a file-like object of immutable, raw data; they can be
+ * read as text or binary data, or converted into a ReadableStream so its methods
+ * can be used for processing the data. Blobs can represent data that isn't
+ * necessarily in a JavaScript-native format. The File interface is based on Blob,
+ * inheriting blob functionality and expanding it to support files on the user's system.
  *
- * An easy way to construct a Blob is by invoking the Blob constuctor. Another
- * way is to use the slice() method to create a blob that contains a subset of
- * another blob's data.
+ * To construct a Blob from other non-blob objects and data, use the Blob()
+ * constructor. To create a blob that contains a subset of another blob's data, use the
+ * slice() method. To obtain a Blob object for a file on the user's file system, see
+ * the File documentation.
+ *
+ * The APIs accepting Blob objects are also listed in the File documentation.
  *
  * MDN
  */
@@ -7856,7 +7861,10 @@ class Blob(blobParts: js.Array[js.Any] = js.native,
     options: BlobPropertyBag = js.native)
     extends js.Object {
 
-  def `type`: String = js.native
+  @deprecated(
+      "This method seems to have been added in error and not actually exist.",
+      "1.2.0")
+  def close(): Unit = js.native
 
   /**
    * The size, in bytes, of the data contained in the Blob object.
@@ -7866,15 +7874,44 @@ class Blob(blobParts: js.Array[js.Any] = js.native,
   def size: Double = js.native
 
   /**
-   * The slice is used to create a new Blob object containing the data in the specified
-   * range of bytes of the source Blob.
+   * A string indicating the MIME type of the data contained in the Blob. If the type
+   * is unknown, this string is empty.
+   *
+   * MDN
+   */
+  def `type`: String = js.native
+
+  /**
+   * A string indicating the MIME type of the data contained in the Blob. If the type
+   * is unknown, this string is empty.
    *
    * MDN
    */
   def slice(start: Double = js.native, end: Double = js.native,
       contentType: String = js.native): Blob = js.native
 
-  def close(): Unit = js.native
+  /**
+   * Returns a ReadableStream that can be used to read the contents of the blob.
+   *
+   * MDN
+   */
+  def stream(): ReadableStream[Byte] = js.native
+
+  /**
+   * Returns a promise that resolves with a USVString containing the entire
+   * contents of the blob interpreted as UTF-8 text.
+   *
+   * MDN
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/API/USVString
+   */
+  def text(): js.Promise[String] = js.native
+
+  /**
+   * Returns a promise that resolves with an ArrayBuffer containing the entire
+   * contents of the blob as binary data.
+   */
+  def arrayBuffer(): js.Promise[ArrayBuffer] = js.native
 }
 
 @js.native
