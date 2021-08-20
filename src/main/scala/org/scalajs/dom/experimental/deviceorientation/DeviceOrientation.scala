@@ -48,16 +48,6 @@ trait DeviceOrientationEventInit extends EventInit {
   var absolute: js.UndefOr[Boolean] = js.undefined
 }
 
-object DeviceOrientationEventInit {
-  @deprecated("Create new DeviceOrientationEventInit instead", "0.9.8")
-  def apply(alpha: Double, beta: Double, gamma: Double,
-      absolute: Boolean): DeviceOrientationEventInit = {
-    js.Dynamic
-      .literal(alpha = alpha, beta = beta, gamma = gamma, absolute = absolute)
-      .asInstanceOf[DeviceOrientationEventInit]
-  }
-}
-
 trait DeviceAcceleration extends js.Any {
 
   /** The acceleration in x. In m/s<sup>2</sup>. */

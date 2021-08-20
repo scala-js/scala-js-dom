@@ -262,14 +262,6 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int)
    *  AudioBuffer containing the rendered audio.
    */
   def startRendering(): js.Promise[AudioBuffer] = js.native
-
-  /** Is an EventHandler called when the processing is terminated, that is
-   *  when the complete event (of type OfflineAudioCompletionEvent) is raised.
-   */
-  @deprecated(
-      "Use the promise version of OfflineAudioContext.startRendering instead.",
-      "forever")
-  var oncomplete: js.Function1[OfflineAudioCompletionEvent, _] = js.native
 }
 
 /** The AudioNode interface is a generic interface for representing an audio
