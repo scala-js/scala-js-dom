@@ -4437,7 +4437,7 @@ raw/HTMLAudioElement[JC] var parentElement: HTMLElement
 raw/HTMLAudioElement[JC] def parentNode: Node
 raw/HTMLAudioElement[JC] def pause(): Unit
 raw/HTMLAudioElement[JC] def paused: Boolean
-raw/HTMLAudioElement[JC] def play(): Unit
+raw/HTMLAudioElement[JC] def play(): js.UndefOr[js.Promise[Unit]]
 raw/HTMLAudioElement[JC] var playbackRate: Double
 raw/HTMLAudioElement[JC] def played: TimeRanges
 raw/HTMLAudioElement[JC] def prefix: String
@@ -9538,7 +9538,7 @@ raw/HTMLMediaElement[JC] var parentElement: HTMLElement
 raw/HTMLMediaElement[JC] def parentNode: Node
 raw/HTMLMediaElement[JC] def pause(): Unit
 raw/HTMLMediaElement[JC] def paused: Boolean
-raw/HTMLMediaElement[JC] def play(): Unit
+raw/HTMLMediaElement[JC] def play(): js.UndefOr[js.Promise[Unit]]
 raw/HTMLMediaElement[JC] var playbackRate: Double
 raw/HTMLMediaElement[JC] def played: TimeRanges
 raw/HTMLMediaElement[JC] def prefix: String
@@ -15205,7 +15205,7 @@ raw/HTMLVideoElement[JC] var parentElement: HTMLElement
 raw/HTMLVideoElement[JC] def parentNode: Node
 raw/HTMLVideoElement[JC] def pause(): Unit
 raw/HTMLVideoElement[JC] def paused: Boolean
-raw/HTMLVideoElement[JC] def play(): Unit
+raw/HTMLVideoElement[JC] def play(): js.UndefOr[js.Promise[Unit]]
 raw/HTMLVideoElement[JC] var playbackRate: Double
 raw/HTMLVideoElement[JC] def played: TimeRanges
 raw/HTMLVideoElement[JC] var poster: String

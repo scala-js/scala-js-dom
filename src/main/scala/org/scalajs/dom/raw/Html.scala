@@ -3164,7 +3164,7 @@ abstract class HTMLMediaElement extends HTMLElement {
    *
    * MDN
    */
-  def play(): Unit = js.native
+  def play(): js.UndefOr[js.Promise[Unit]] = js.native
 
   /**
    * Begins loading the media content from the server.
