@@ -123,7 +123,7 @@ class IDBObjectStore extends js.Object {
 }
 
 trait IDBVersionChangeEventInit extends EventInit {
-  var newVersion: js.UndefOr[Int] = js.undefined
+  var newVersion: js.UndefOr[Integer] = js.undefined
   var oldVersion: js.UndefOr[Int] = js.undefined
 }
 
@@ -142,9 +142,11 @@ class IDBVersionChangeEvent(typeArg: String,
   /**
    * Returns the new version of the database.
    *
+   * This is null when the database is being deleted.
+   *
    * MDN
    */
-  def newVersion: Int = js.native
+  def newVersion: Integer = js.native
 
   /**
    * Returns the old version of the database.
@@ -509,7 +511,7 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * The event handler for the onabort event.
@@ -613,7 +615,7 @@ class IDBDatabase extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * Fires when access of the database is aborted.
@@ -796,7 +798,7 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * The state of the request. Every request starts in the pending state. The state
