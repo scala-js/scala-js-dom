@@ -6,7 +6,7 @@ package org.scalajs.dom.experimental.mediastream
 import scala.scalajs.js
 import scala.scalajs.js.|
 import scala.scalajs.js.annotation._
-import org.scalajs.dom.raw.{DOMException, Event, EventInit, EventTarget}
+import org.scalajs.dom.raw.{Event, EventInit, EventTarget, TimeRanges}
 
 /**
  * The MediaStream
@@ -625,4 +625,182 @@ trait MediaTrackSupportedConstraints extends js.Object {
   var channelCount: js.UndefOr[Boolean] = js.undefined
   var deviceId: js.UndefOr[Boolean] = js.undefined
   var groupId: js.UndefOr[Boolean] = js.undefined
+}
+
+/**
+ * Represents a source of media data for an HTMLMediaElement object.
+ *
+ * A MediaSource object can be attached to a HTMLMediaElement to be played in the user agent.
+ */
+@js.native
+@JSGlobal
+class MediaSource extends EventTarget {
+  def sourceBuffers: SourceBufferList = js.native
+  def activeSourceBuffers: SourceBufferList = js.native
+  def readyState: ReadyState = js.native
+
+  /**
+   * Allows the web application to set the presentation duration.
+   *
+   * The duration is initially set to NaN when the MediaSource object is created.
+   */
+  var duration: Double = js.native
+
+  var onsourceopen: js.Function1[Event, Any] = js.native
+  var onsourceended: js.Function1[Event, Any] = js.native
+  var onsourceclose: js.Function1[Event, Any] = js.native
+
+  def addSourceBuffer(mimeType: String): SourceBuffer = js.native
+  def removeSourceBuffer(sourceBuffer: SourceBuffer): Unit = js.native
+  def endOfStream(error: EndOfStreamError = js.native): Unit = js.native
+  def setLiveSeekableRange(start: Double, end: Double): Unit = js.native
+  def clearLiveSeekableRange(): Unit = js.native
+}
+
+@js.native
+@JSGlobalScope
+object MediaSource extends js.Object {
+  def isTypeSupported(mediaType: String): Boolean = js.native
+}
+
+@js.native
+trait SourceBufferList extends EventTarget {
+  def length: Double = js.native
+
+  @JSBracketAccess
+  def apply(index: Double): SourceBuffer = js.native
+
+  var onaddsourcebuffer: js.Function1[Event, Any] = js.native
+  var onremovesourcebuffer: js.Function1[Event, Any] = js.native
+}
+
+@js.native
+trait SourceBuffer extends EventTarget {
+  var mode: AppendMode = js.native
+  var timestampOffset: Double = js.native
+
+  def updating: Boolean = js.native
+  def buffered: TimeRanges = js.native
+
+  def audioTracks: AudioTrackList = js.native
+  def videoTracks: VideoTrackList = js.native
+  def textTracks: TextTrackList = js.native
+
+  var appendWindowStart: Double = js.native
+  var appendWindowEnd: Double = js.native
+
+  var onupdatestart: js.Function1[Event, Any] = js.native
+  var onupdate: js.Function1[Event, Any] = js.native
+  var onupdateend: js.Function1[Event, Any] = js.native
+  var onerror: js.Function1[Event, Any] = js.native
+  var onabort: js.Function1[Event, Any] = js.native
+
+  def appendBuffer(data: BufferSource): Unit = js.native
+  def abort(): Unit = js.native
+  def remove(start: Double, end: Double): Unit = js.native
+}
+
+@js.native
+trait AudioTrackList extends EventTarget {
+  def length: Double = js.native
+
+  @JSBracketAccess
+  def apply(index: Double): AudioTrack = js.native
+
+  def getTrackById(id: String): AudioTrack = js.native
+
+  var onchange: js.Function1[Event, Any] = js.native
+  var onaddtrack: js.Function1[Event, Any] = js.native
+  var onremovetrack: js.Function1[Event, Any] = js.native
+}
+
+@js.native
+trait AudioTrack extends js.Object {
+  val id: String = js.native
+  val kind: String = js.native
+  val label: String = js.native
+  val language: String = js.native
+  var enabled: Boolean = js.native
+}
+
+@js.native
+trait VideoTrackList extends EventTarget {
+  def length: Double = js.native
+
+  @JSBracketAccess
+  def apply(index: Double): VideoTrack = js.native
+
+  def getTrackById(id: String): VideoTrack = js.native
+
+  def selectedIndex: Double = js.native
+
+  var onchange: js.Function1[Event, Any] = js.native
+  var onaddtrack: js.Function1[Event, Any] = js.native
+  var onremovetrack: js.Function1[Event, Any] = js.native
+}
+
+@js.native
+trait VideoTrack extends js.Object {
+  val id: String = js.native
+  val kind: String = js.native
+  val label: String = js.native
+  val language: String = js.native
+  var selected: Boolean = js.native
+}
+
+@js.native
+trait TextTrackList extends EventTarget {
+
+  def length: Double = js.native
+
+  @JSBracketAccess
+  def apply(index: Double): VideoTrack = js.native
+
+  def getTrackById(id: String): TextTrack = js.native
+
+  var onchange: js.Function1[Event, Any] = js.native
+  var onaddtrack: js.Function1[Event, Any] = js.native
+  var onremovetrack: js.Function1[Event, Any] = js.native
+}
+
+@js.native
+trait TextTrack extends EventTarget {
+  val id: String = js.native
+  val kind: String = js.native
+  val label: String = js.native
+  val language: String = js.native
+  val inBandMetadataTrackDispatchType: String = js.native
+
+  var mode: TextTrackMode = js.native
+
+  def cues: TextTrackCueList = js.native
+  def activeCues: TextTrackCueList = js.native
+
+  def addCue(cue: TextTrackCue): Unit = js.native
+  def removeCue(cue: TextTrackCue): Unit = js.native
+
+  var oncuechange: js.Function1[Event, Any] = js.native
+}
+
+@js.native
+trait TextTrackCueList extends js.Object {
+  def length: Double = js.native
+
+  @JSBracketAccess
+  def apply(index: Double): TextTrackCue = js.native
+
+  def getCueById(id: String): TextTrackCue = js.native
+}
+
+@js.native
+trait TextTrackCue extends EventTarget {
+  def track: TextTrack = js.native
+
+  var id: String = js.native
+  var startTime: Double = js.native
+  var endTime: Double = js.native
+  var pauseOnExit: Boolean = js.native
+
+  var onenter: js.Function1[Event, Any] = js.native
+  var onexit: js.Function1[Event, Any] = js.native
 }

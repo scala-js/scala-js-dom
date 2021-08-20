@@ -11,6 +11,9 @@ package org.scalajs.dom.raw
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
+import org.scalajs.dom
+import dom.experimental.mediastream.{MediaStream, MediaSource}
 
 @js.native
 @JSGlobal
@@ -3190,6 +3193,11 @@ abstract class HTMLMediaElement extends HTMLElement {
    * MDN
    */
   def audioTracks: AudioTrackList = js.native
+
+  /**
+   * Sets or returns the object which serves as the source of the media associated with the HTMLMediaElement.
+   */
+  var srcObject: js.UndefOr[MediaStream | MediaSource | Blob]
 }
 
 @js.native
