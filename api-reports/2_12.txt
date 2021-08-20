@@ -252,7 +252,7 @@ experimental/Fullscreen.FullscreenDocument[JT] var onfullscreenerror: js.Functio
 experimental/Fullscreen.FullscreenElement[JT] def requestFullscreen(): js.UndefOr[js.Promise[Unit]]
 experimental/Headers[JC] def append(name: ByteString, value: ByteString): Unit
 experimental/Headers[JC] def delete(name: ByteString): Unit
-experimental/Headers[JC] def get(name: ByteString): js.UndefOr[ByteString]
+experimental/Headers[JC] def get(name: ByteString): ByteString
 experimental/Headers[JC] def getAll(name: ByteString): Sequence[ByteString]
 experimental/Headers[JC] def has(name: ByteString): Boolean
 experimental/Headers[JC] @JSName(js.Symbol.iterator) def jsIterator(): js.Iterator[js.Array[ByteString]]
