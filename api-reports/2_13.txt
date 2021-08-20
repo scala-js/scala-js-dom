@@ -15129,6 +15129,7 @@ raw/IDBDatabase[JC] def name: String
 raw/IDBDatabase[JC] def objectStoreNames: DOMStringList
 raw/IDBDatabase[JC] var onabort: js.Function1[Event, _]
 raw/IDBDatabase[JC] var onerror: js.Function1[Event, _]
+raw/IDBDatabase[JC] var onversionchange: js.Function1[IDBVersionChangeEvent, _]
 raw/IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/IDBDatabase[JC] def transaction(storeNames: js.Any, mode: String?): IDBTransaction

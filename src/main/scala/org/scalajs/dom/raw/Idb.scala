@@ -625,6 +625,14 @@ class IDBDatabase extends EventTarget {
   var onabort: js.Function1[Event, _] = js.native
 
   /**
+   * The onversionchange event handler of the IDBDatabase interface handles the versionchange
+   * event, fired when a database structure change (IDBOpenDBRequest.onupgradeneeded event or
+   * IDBFactory.deleteDatabase) was requested elsewhere (most probably in another window/tab
+   * on the same computer).
+   */
+  var onversionchange: js.Function1[IDBVersionChangeEvent, _] = js.native
+
+  /**
    * The method takes the name of the store as well as a parameter object. The parameter
    * object lets you define important optional properties. You can use the property to
    * uniquely identify individual objects in the store. As the property is an
