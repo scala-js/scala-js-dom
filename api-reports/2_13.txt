@@ -480,6 +480,22 @@ experimental/beacon/package[SO] implicit def toBeaconNavigator(n: Navigator): Be
 experimental/beacon/package[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator
 experimental/beacon/package.BeaconNavigator[JT] def sendBeacon(url: String, data: BodyInit = null): Boolean
 experimental/beacon/package.BeaconWorkerNavigator[JT] def sendBeacon(url: String, data: BodyInit = null): Boolean
+experimental/cachestorage/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]
+experimental/cachestorage/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]
+experimental/cachestorage/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]
+experimental/cachestorage/Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Request]]
+experimental/cachestorage/Cache[JC] def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.UndefOr[Response]]
+experimental/cachestorage/Cache[JC] def matchAll(request: RequestInfo?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Response]]
+experimental/cachestorage/Cache[JC] def put(request: RequestInfo, response: Response): js.Promise[Unit]
+experimental/cachestorage/CacheQueryOptions[JT] var cacheName: String
+experimental/cachestorage/CacheQueryOptions[JT] var ignoreMethod: Boolean
+experimental/cachestorage/CacheQueryOptions[JT] var ignoreSearch: Boolean
+experimental/cachestorage/CacheQueryOptions[JT] var ignoreVary: Boolean
+experimental/cachestorage/CacheStorage[JT] def delete(cacheName: String): js.Promise[Boolean]
+experimental/cachestorage/CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]
+experimental/cachestorage/CacheStorage[JT] def keys(): js.Promise[js.Array[String]]
+experimental/cachestorage/CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]
+experimental/cachestorage/CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]
 experimental/deviceorientation/DeviceAcceleration[JT] val x: Double
 experimental/deviceorientation/DeviceAcceleration[JT] val y: Double
 experimental/deviceorientation/DeviceAcceleration[JT] val z: Double
@@ -931,22 +947,6 @@ experimental/push/package[SO] implicit def pushServiceWorkerRegistration(swr: Se
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpush: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpushsubscriptionchange: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerRegistration[JT] val pushManager: PushManager
-experimental/serviceworkers/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]
-experimental/serviceworkers/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]
-experimental/serviceworkers/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]
-experimental/serviceworkers/Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Request]]
-experimental/serviceworkers/Cache[JC] def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.UndefOr[Response]]
-experimental/serviceworkers/Cache[JC] def matchAll(request: RequestInfo?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Response]]
-experimental/serviceworkers/Cache[JC] def put(request: RequestInfo, response: Response): js.Promise[Unit]
-experimental/serviceworkers/CacheQueryOptions[JT] var cacheName: String
-experimental/serviceworkers/CacheQueryOptions[JT] var ignoreMethod: Boolean
-experimental/serviceworkers/CacheQueryOptions[JT] var ignoreSearch: Boolean
-experimental/serviceworkers/CacheQueryOptions[JT] var ignoreVary: Boolean
-experimental/serviceworkers/CacheStorage[JT] def delete(cacheName: String): js.Promise[Boolean]
-experimental/serviceworkers/CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]
-experimental/serviceworkers/CacheStorage[JT] def keys(): js.Promise[js.Array[String]]
-experimental/serviceworkers/CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]
-experimental/serviceworkers/CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]
 experimental/serviceworkers/CanvasProxy[JT] def setContext(context: RenderingContext): Unit
 experimental/serviceworkers/Client[JT] def frameType: FrameType
 experimental/serviceworkers/Client[JT] def id: String
@@ -1018,12 +1018,23 @@ experimental/serviceworkers/ServiceWorkerContainer[ST] def register(scriptURL: S
 experimental/serviceworkers/ServiceWorkerGlobalScope[JO] def self: ServiceWorkerGlobalScope
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def caches: js.Any
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] override def caches: CacheStorage
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def atob(encodedString: String): String
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def btoa(rawString: String): String
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def caches: js.UndefOr[CacheStorage]
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def clearInterval(handle: Int): Unit
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def clearTimeout(handle: Int): Unit
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def clients: Clients
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def close(): Unit
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def isSecureContext: Boolean
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def location: WorkerLocation
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def navigator: WorkerNavigator
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onError: js.Function1[ErrorEvent, _]
@@ -1034,10 +1045,14 @@ experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onlanguagechange: j
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent, _]
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def origin: String
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def registration: ServiceWorkerRegistration
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def self: this.type
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def skipWaiting(): js.Promise[Unit]
 experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var bubbles: js.UndefOr[Boolean]
 experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var cancelable: js.UndefOr[Boolean]
@@ -1085,10 +1100,22 @@ experimental/sharedworkers/SharedWorkerGlobalScope[JO] def self: SharedWorkerGlo
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def applicationCache: ApplicationCache
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def caches: js.Any
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def atob(encodedString: String): String
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def btoa(rawString: String): String
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def caches: js.UndefOr[CacheStorage]
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def clearInterval(handle: Int): Unit
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def clearTimeout(handle: Int): Unit
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def close(): Unit
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def isSecureContext: Boolean
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def location: WorkerLocation
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def name: String
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def navigator: WorkerNavigator
@@ -1097,9 +1124,13 @@ experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onconnect: js.Functio
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def origin: String
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def self: this.type
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
 experimental/storage/package[SO] def estimate(): js.Promise[StorageEstimate]
 experimental/storage/package[SO] def persist(): js.Promise[Boolean]
 experimental/storage/package[SO] def persisted(): js.Promise[Boolean]
@@ -2045,7 +2076,6 @@ html[SO] def Media = raw.HTMLMediaElement
 idb[SO] type Cursor = raw.IDBCursor
 idb[SO] type CursorWithValue = raw.IDBCursorWithValue
 idb[SO] type Database = raw.IDBDatabase
-idb[SO] type Environment = raw.IDBEnvironment
 idb[SO] type Factory = raw.IDBFactory
 idb[SO] type Index = raw.IDBIndex
 idb[SO] type KeyRange = raw.IDBKeyRange
@@ -3262,6 +3292,8 @@ raw/Console[JT] def time(label: String): Unit
 raw/Console[JT] def timeEnd(label: String): Unit
 raw/Console[JT] def trace(): Unit
 raw/Console[JT] def warn(message: Any, optionalParams: Any*): Unit
+raw/ConvertToBlobOptions[JT] var quality: js.UndefOr[Double]
+raw/ConvertToBlobOptions[JT] var `type`: js.UndefOr[String]
 raw/ConvolverNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/ConvolverNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/ConvolverNode[JT] var buffer: AudioBuffer
@@ -3285,6 +3317,12 @@ raw/Coordinates[JT] def heading: Double
 raw/Coordinates[JT] def latitude: Double
 raw/Coordinates[JT] def longitude: Double
 raw/Coordinates[JT] def speed: Double
+raw/CreateImageBitmapOptions[JT] var colorSpaceConversion: js.UndefOr[String]
+raw/CreateImageBitmapOptions[JT] var imageOrientation: js.UndefOr[String]
+raw/CreateImageBitmapOptions[JT] var premultiplyAlpha: js.UndefOr[String]
+raw/CreateImageBitmapOptions[JT] var resizeHeight: js.UndefOr[Double]
+raw/CreateImageBitmapOptions[JT] var resizeQuality: js.UndefOr[String]
+raw/CreateImageBitmapOptions[JT] var resizeWidth: js.UndefOr[Double]
 raw/CustomEvent[JC] def bubbles: Boolean
 raw/CustomEvent[JC] def cancelBubble: Boolean
 raw/CustomEvent[JC] def cancelable: Boolean
@@ -3376,10 +3414,22 @@ raw/DataTransfer[JT] def types: js.Array[String]
 raw/DedicatedWorkerGlobalScope[JO] def self: DedicatedWorkerGlobalScope
 raw/DedicatedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/DedicatedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-raw/DedicatedWorkerGlobalScope[JT] def caches: js.Any
+raw/DedicatedWorkerGlobalScope[JT] def atob(encodedString: String): String
+raw/DedicatedWorkerGlobalScope[JT] def btoa(rawString: String): String
+raw/DedicatedWorkerGlobalScope[JT] def caches: js.UndefOr[CacheStorage]
+raw/DedicatedWorkerGlobalScope[JT] def clearInterval(handle: Int): Unit
+raw/DedicatedWorkerGlobalScope[JT] def clearTimeout(handle: Int): Unit
 raw/DedicatedWorkerGlobalScope[JT] def close(): Unit
+raw/DedicatedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
+raw/DedicatedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+raw/DedicatedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
+raw/DedicatedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+raw/DedicatedWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
 raw/DedicatedWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
+raw/DedicatedWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
 raw/DedicatedWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
+raw/DedicatedWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
+raw/DedicatedWorkerGlobalScope[JT] def isSecureContext: Boolean
 raw/DedicatedWorkerGlobalScope[JT] def location: WorkerLocation
 raw/DedicatedWorkerGlobalScope[JT] def navigator: WorkerNavigator
 raw/DedicatedWorkerGlobalScope[JT] var onError: js.Function1[ErrorEvent, _]
@@ -3387,10 +3437,14 @@ raw/DedicatedWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
 raw/DedicatedWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent, _]
 raw/DedicatedWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
 raw/DedicatedWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
+raw/DedicatedWorkerGlobalScope[JT] def origin: String
 raw/DedicatedWorkerGlobalScope[JT] def postMessage(aMessage: js.Any, transferList: js.UndefOr[js.Array[Transferable]]?): Unit
+raw/DedicatedWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
 raw/DedicatedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/DedicatedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/DedicatedWorkerGlobalScope[JT] def self: this.type
+raw/DedicatedWorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
+raw/DedicatedWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
 raw/DelayNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/DelayNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/DelayNode[JT] var channelCount: Int
@@ -15313,7 +15367,6 @@ raw/IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener
 raw/IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/IDBDatabase[JC] def transaction(storeNames: js.Any, mode: String?): IDBTransaction
 raw/IDBDatabase[JC] def version: Int
-raw/IDBEnvironment[JT] def indexedDB: IDBFactory
 raw/IDBFactory[JC] def cmp(first: js.Any, second: js.Any): Int
 raw/IDBFactory[JC] def deleteDatabase(name: String): IDBOpenDBRequest
 raw/IDBFactory[JC] def open(name: String): IDBOpenDBRequest
@@ -15413,6 +15466,8 @@ raw/IDBVersionChangeEventInit[JT] var composed: js.UndefOr[Boolean]
 raw/IDBVersionChangeEventInit[JT] var newVersion: js.UndefOr[Integer]
 raw/IDBVersionChangeEventInit[JT] var oldVersion: js.UndefOr[Int]
 raw/IDBVersionChangeEventInit[JT] var scoped: js.UndefOr[Boolean]
+raw/ImageBitmap[JT] def height: Double
+raw/ImageBitmap[JT] def width: Double
 raw/ImageData[JC] def data: js.Array[Int]
 raw/ImageData[JC] def height: Int
 raw/ImageData[JC] def width: Int
@@ -15810,6 +15865,11 @@ raw/OfflineAudioContext[JC] val sampleRate: Double
 raw/OfflineAudioContext[JC] def startRendering(): js.Promise[AudioBuffer]
 raw/OfflineAudioContext[JC] def state: String
 raw/OfflineAudioContext[JC] def suspend(): js.Promise[Unit]
+raw/OffscreenCanvas[JC] def convertToBlob(options: ConvertToBlobOptions = ???): js.Promise[Blob]
+raw/OffscreenCanvas[JC] def getContext(contextType: String): js.Dynamic
+raw/OffscreenCanvas[JC] def getContext(contextType: String, contextAttributes: TwoDContextAttributes): js.Dynamic
+raw/OffscreenCanvas[JC] def getContext(contextType: String, contextAttributes: WebGLContextAttributes): js.Dynamic
+raw/OffscreenCanvas[JC] def transferToImageBitmap(): ImageBitmap
 raw/OscillatorNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/OscillatorNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/OscillatorNode[JT] var channelCount: Int
@@ -23862,6 +23922,9 @@ raw/TreeWalker[JC] def previousNode(): Node
 raw/TreeWalker[JC] def previousSibling(): Node
 raw/TreeWalker[JC] def root: Node
 raw/TreeWalker[JC] def whatToShow: Int
+raw/TwoDContextAttributes[JT] var alpha: js.UndefOr[Boolean]
+raw/TwoDContextAttributes[JT] var storage: js.UndefOr[String]
+raw/TwoDContextAttributes[JT] var willReadFrequently: js.UndefOr[Boolean]
 raw/UIEvent[JC] def bubbles: Boolean
 raw/UIEvent[JC] def cancelBubble: Boolean
 raw/UIEvent[JC] def cancelable: Boolean
@@ -24484,15 +24547,22 @@ raw/Window[JC] def applicationCache: ApplicationCache
 raw/Window[JC] def atob(encodedString: String): String
 raw/Window[JC] def blur(): Unit
 raw/Window[JC] def btoa(rawString: String): String
+raw/Window[JC] def caches: js.UndefOr[CacheStorage]
 raw/Window[JC] def cancelAnimationFrame(handle: Int): Unit
 raw/Window[JC] def clearInterval(handle: Int): Unit
 raw/Window[JC] def clearTimeout(handle: Int): Unit
 raw/Window[JC] def close(): Unit
 raw/Window[JC] def confirm(message: String?): Boolean
 raw/Window[JC] var console: Console
+raw/Window[JC] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
+raw/Window[JC] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+raw/Window[JC] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
+raw/Window[JC] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+raw/Window[JC] def crossOriginIsolated: Boolean
 raw/Window[JC] def devicePixelRatio: Double
 raw/Window[JC] def dispatchEvent(evt: Event): Boolean
 raw/Window[JC] def document: HTMLDocument
+raw/Window[JC] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
 raw/Window[JC] def focus(): Unit
 raw/Window[JC] def frameElement: Element
 raw/Window[JC] def frames: Window
@@ -24500,9 +24570,10 @@ raw/Window[JC] def getComputedStyle(elt: Element, pseudoElt: String?): CSSStyleD
 raw/Window[JC] def getSelection(): Selection
 raw/Window[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 raw/Window[JC] def history: History
-raw/Window[JC] def indexedDB: IDBFactory
+raw/Window[JC] def indexedDB: js.UndefOr[IDBFactory]
 raw/Window[JC] def innerHeight: Double
 raw/Window[JC] def innerWidth: Double
+raw/Window[JC] def isSecureContext: Boolean
 raw/Window[JC] def length: Int
 raw/Window[JC] def localStorage: Storage
 raw/Window[JC] var location: Location
@@ -24587,6 +24658,7 @@ raw/Window[JC] var onwaiting: js.Function1[Event, _]
 raw/Window[JC] var onwheel: js.Function1[WheelEvent, _]
 raw/Window[JC] def open(url: String?, target: String?, features: String?, replace: Boolean?): Window
 raw/Window[JC] var opener: Window
+raw/Window[JC] def origin: String
 raw/Window[JC] def outerHeight: Int
 raw/Window[JC] def outerWidth: Int
 raw/Window[JC] def pageXOffset: Double
@@ -24597,6 +24669,7 @@ raw/Window[JC] def postMessage(message: js.Any, targetOrigin: String, transfer: 
 raw/Window[JC] def print(): Unit
 raw/Window[JC] def prompt(): String
 raw/Window[JC] def prompt(message: String, default: String?): String
+raw/Window[JC] def queueMicrotask(function: js.Function0[Any]): Unit
 raw/Window[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/Window[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/Window[JC] def requestAnimationFrame(callback: js.Function1[Double, _]): Int
@@ -24622,6 +24695,24 @@ raw/WindowBase64[JT] def atob(encodedString: String): String
 raw/WindowBase64[JT] def btoa(rawString: String): String
 raw/WindowConsole[JT] var console: Console
 raw/WindowLocalStorage[JT] def localStorage: Storage
+raw/WindowOrWorkerGlobalScope[JT] def atob(encodedString: String): String
+raw/WindowOrWorkerGlobalScope[JT] def btoa(rawString: String): String
+raw/WindowOrWorkerGlobalScope[JT] def caches: js.UndefOr[CacheStorage]
+raw/WindowOrWorkerGlobalScope[JT] def clearInterval(handle: Int): Unit
+raw/WindowOrWorkerGlobalScope[JT] def clearTimeout(handle: Int): Unit
+raw/WindowOrWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
+raw/WindowOrWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+raw/WindowOrWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
+raw/WindowOrWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+raw/WindowOrWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
+raw/WindowOrWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+raw/WindowOrWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
+raw/WindowOrWorkerGlobalScope[JT] def isSecureContext: Boolean
+raw/WindowOrWorkerGlobalScope[JT] def origin: String
+raw/WindowOrWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
+raw/WindowOrWorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
+raw/WindowOrWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
+raw/WindowOrWorkerGlobalScope[SO] type CreateImageBitmapInput = HTMLImageElement | SVGImageElement | HTMLVideoElement | HTMLCanvasElement | HTMLCanvasElement | Blob | ImageData | ImageBitmap | OffscreenCanvas
 raw/WindowSessionStorage[JT] def sessionStorage: Storage
 raw/WindowTimers[JT] def clearInterval(handle: Int): Unit
 raw/WindowTimers[JT] def clearTimeout(handle: Int): Unit
@@ -24638,19 +24729,35 @@ raw/Worker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.
 raw/Worker[JC] def terminate(): Unit
 raw/WorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/WorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-raw/WorkerGlobalScope[JT] def caches: js.Any
+raw/WorkerGlobalScope[JT] def atob(encodedString: String): String
+raw/WorkerGlobalScope[JT] def btoa(rawString: String): String
+raw/WorkerGlobalScope[JT] def caches: js.UndefOr[CacheStorage]
+raw/WorkerGlobalScope[JT] def clearInterval(handle: Int): Unit
+raw/WorkerGlobalScope[JT] def clearTimeout(handle: Int): Unit
 raw/WorkerGlobalScope[JT] def close(): Unit
+raw/WorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
+raw/WorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+raw/WorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
+raw/WorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+raw/WorkerGlobalScope[JT] def crossOriginIsolated: Boolean
 raw/WorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
+raw/WorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
 raw/WorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
+raw/WorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
+raw/WorkerGlobalScope[JT] def isSecureContext: Boolean
 raw/WorkerGlobalScope[JT] def location: WorkerLocation
 raw/WorkerGlobalScope[JT] def navigator: WorkerNavigator
 raw/WorkerGlobalScope[JT] var onError: js.Function1[ErrorEvent, _]
 raw/WorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
 raw/WorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
 raw/WorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
+raw/WorkerGlobalScope[JT] def origin: String
+raw/WorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
 raw/WorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 raw/WorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/WorkerGlobalScope[JT] def self: this.type
+raw/WorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
+raw/WorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
 raw/WorkerLocation[JT] def hash: String
 raw/WorkerLocation[JT] def host: String
 raw/WorkerLocation[JT] def hostname: String
