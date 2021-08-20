@@ -48,7 +48,7 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
         return
 
       // Remove definition bodies
-      val t2: Tree =
+      var t2: Tree =
         t match {
           case Defn.Def(mods, name, tparams, paramss, Some(tpe), _) => Decl.Def(mods, name, tparams, paramss, tpe)
           case Defn.Val(mods, pats, Some(tpe), _)                   => Decl.Val(mods, pats, tpe)
@@ -56,6 +56,30 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
           case _                                                    => t
         }
 
+      // Inspect annotations
+      var deprecatedVer = Option.empty[String]
+
+      def inspectAnnotations(mods: List[Mod]): List[Mod] =
+        mods.filter {
+          case Mod.Annot(Init(tpe, _, List(List(_, ver)))) if tpe.toString == "deprecated" =>
+            deprecatedVer = Some {
+              ver match {
+                case Lit.String(s) => s
+                case term          => term.toString
+              }
+            }
+            false
+          case _ => true
+        }
+
+      t2 match {
+        case Decl.Def(mods, name, tparams, paramss, tpe) => t2 = Decl.Def(inspectAnnotations(mods), name, tparams, paramss, tpe)
+        case Decl.Val(mods, pats, tpe)                   => t2 = Decl.Val(inspectAnnotations(mods), pats, tpe)
+        case Decl.Var(mods, pats, tpe)                   => t2 = Decl.Var(inspectAnnotations(mods), pats, tpe)
+        case _ =>
+      }
+
+      // Generate member desc
       val desc =
         t2
           .toString
@@ -71,7 +95,7 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
       // "?" means that type aliases come before everything else
       val name = Util.termName(t2).fold("?")(_.value)
 
-      s.add(MutableState.Member(name, desc))
+      s.add(MutableState.Member(name, desc, deprecatedVer))
     }
 
     body.traverse {

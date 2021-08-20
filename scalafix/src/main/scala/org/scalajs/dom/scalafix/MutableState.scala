@@ -69,7 +69,10 @@ final class MutableState {
       } {
         membersFound = true
         val key = (scopeKey, v.name, v.desc)
-        b += Result(key, prefix + v.desc)
+        var result = prefix + v.desc
+        for (ver <- v.deprecatedVer)
+          result = s"$result  (@deprecated in $ver)"
+        b += Result(key, result)
       }
 
       if (!membersFound && !scopeName.endsWith("/package")) {
@@ -103,7 +106,7 @@ object MutableState {
       synchronized(directMembers += v)
   }
 
-  final case class Member(name: String, desc: String)
+  final case class Member(name: String, desc: String, deprecatedVer: Option[String])
 
   private[MutableState] final case class Result(sortKey: Result.SortKey, value: String)
 

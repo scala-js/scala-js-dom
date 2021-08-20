@@ -863,7 +863,7 @@ experimental/permissions/package[SO] val permissions: Permissions
 experimental/permissions/package[SO] val `persistent-storage` = "persistent-storage".asInstanceOf[PermissionName]
 experimental/permissions/package[SO] val prompt = "prompt".asInstanceOf[PermissionState]
 experimental/permissions/package[SO] val push = "push".asInstanceOf[PermissionName]
-experimental/permissions/package[SO] def query( permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
+experimental/permissions/package[SO] def query(permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
 experimental/permissions/package[SO] val state: PermissionState
 experimental/permissions/package[SO] implicit def toPermissions(navigator: dom.raw.Navigator): PermissionsNavigator
 experimental/permissions/package[SO] val userVisibleOnly = permissionUserVisibleOnly
@@ -888,7 +888,7 @@ experimental/permissions/package.PermissionStatus[JT] var onchange: js.Function1
 experimental/permissions/package.PermissionStatus[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/permissions/package.PermissionStatus[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/permissions/package.PermissionStatus[JT] val state: PermissionState
-experimental/permissions/package.Permissions[JT] def query( permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
+experimental/permissions/package.Permissions[JT] def query(permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
 experimental/permissions/package.PermissionsNavigator[JT] val permissions: Permissions
 experimental/permissions/package.PushPermissionDescriptor[JT] val name: PermissionName
 experimental/permissions/package.PushPermissionDescriptor[JT] val userVisibleOnly: Boolean
@@ -933,7 +933,7 @@ experimental/push/package.PushServiceWorkerRegistration[JT] val pushManager: Pus
 experimental/serviceworkers/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]
 experimental/serviceworkers/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]
 experimental/serviceworkers/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]
-experimental/serviceworkers/Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[ CacheQueryOptions]?): js.Promise[js.Array[Request]]
+experimental/serviceworkers/Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Request]]
 experimental/serviceworkers/Cache[JC] def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.UndefOr[Response]]
 experimental/serviceworkers/Cache[JC] def matchAll(request: RequestInfo?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Response]]
 experimental/serviceworkers/Cache[JC] def put(request: RequestInfo, response: Response): js.Promise[Unit]
@@ -2535,7 +2535,7 @@ raw/BiquadFilterNode[JT] def removeEventListener[T <: Event](`type`: String, lis
 raw/BiquadFilterNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/BiquadFilterNode[JT] var `type`: String
 raw/Blob[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
-raw/Blob[JC] @deprecated("This method seems to have been added in error and not actually exist.", "1.2.0") def close(): Unit
+raw/Blob[JC] def close(): Unit  (@deprecated in 1.2.0)
 raw/Blob[JC] def size: Double
 raw/Blob[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
 raw/Blob[JC] def stream(): ReadableStream[Byte]
@@ -3774,7 +3774,7 @@ raw/EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener
 raw/EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/External[JT]
 raw/File[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
-raw/File[JC] @deprecated("This method seems to have been added in error and not actually exist.", "1.2.0") def close(): Unit
+raw/File[JC] def close(): Unit  (@deprecated in 1.2.0)
 raw/File[JC] def name: String
 raw/File[JC] def size: Double
 raw/File[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
