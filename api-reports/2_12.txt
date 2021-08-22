@@ -947,22 +947,22 @@ experimental/push/package[SO] implicit def pushServiceWorkerRegistration(swr: Se
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpush: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpushsubscriptionchange: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerRegistration[JT] val pushManager: PushManager
-experimental/serviceworkers/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]
-experimental/serviceworkers/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]
-experimental/serviceworkers/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]
-experimental/serviceworkers/Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Request]]
-experimental/serviceworkers/Cache[JC] def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.UndefOr[Response]]
-experimental/serviceworkers/Cache[JC] def matchAll(request: RequestInfo?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Response]]
-experimental/serviceworkers/Cache[JC] def put(request: RequestInfo, response: Response): js.Promise[Unit]
-experimental/serviceworkers/CacheQueryOptions[JT] var cacheName: String
-experimental/serviceworkers/CacheQueryOptions[JT] var ignoreMethod: Boolean
-experimental/serviceworkers/CacheQueryOptions[JT] var ignoreSearch: Boolean
-experimental/serviceworkers/CacheQueryOptions[JT] var ignoreVary: Boolean
-experimental/serviceworkers/CacheStorage[JT] def delete(cacheName: String): js.Promise[Boolean]
-experimental/serviceworkers/CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]
-experimental/serviceworkers/CacheStorage[JT] def keys(): js.Promise[js.Array[String]]
-experimental/serviceworkers/CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]
-experimental/serviceworkers/CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]
+experimental/serviceworkers/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]  (@deprecated in 1.2.0)
+experimental/serviceworkers/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]  (@deprecated in 1.2.0)
+experimental/serviceworkers/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]  (@deprecated in 1.2.0)
+experimental/serviceworkers/Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Request]]  (@deprecated in 1.2.0)
+experimental/serviceworkers/Cache[JC] def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.UndefOr[Response]]  (@deprecated in 1.2.0)
+experimental/serviceworkers/Cache[JC] def matchAll(request: RequestInfo?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Response]]  (@deprecated in 1.2.0)
+experimental/serviceworkers/Cache[JC] def put(request: RequestInfo, response: Response): js.Promise[Unit]  (@deprecated in 1.2.0)
+experimental/serviceworkers/CacheQueryOptions[JT] var cacheName: String  (@deprecated in 1.2.0)
+experimental/serviceworkers/CacheQueryOptions[JT] var ignoreMethod: Boolean  (@deprecated in 1.2.0)
+experimental/serviceworkers/CacheQueryOptions[JT] var ignoreSearch: Boolean  (@deprecated in 1.2.0)
+experimental/serviceworkers/CacheQueryOptions[JT] var ignoreVary: Boolean  (@deprecated in 1.2.0)
+experimental/serviceworkers/CacheStorage[JT] def delete(cacheName: String): js.Promise[Boolean]  (@deprecated in 1.2.0)
+experimental/serviceworkers/CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]  (@deprecated in 1.2.0)
+experimental/serviceworkers/CacheStorage[JT] def keys(): js.Promise[js.Array[String]]  (@deprecated in 1.2.0)
+experimental/serviceworkers/CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]  (@deprecated in 1.2.0)
+experimental/serviceworkers/CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]  (@deprecated in 1.2.0)
 experimental/serviceworkers/CanvasProxy[JT] def setContext(context: RenderingContext): Unit
 experimental/serviceworkers/Client[JT] def frameType: FrameType
 experimental/serviceworkers/Client[JT] def id: String

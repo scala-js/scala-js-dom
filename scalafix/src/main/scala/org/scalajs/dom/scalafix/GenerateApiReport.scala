@@ -21,26 +21,43 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
 
     if (enabled)
       doc.tree.traverse {
-        case a: Defn.Class  => process(a.symbol, a.templ, ScopeType.Class)
-        case a: Defn.Object => process(a.symbol, a.templ, ScopeType.Object)
-        case a: Defn.Trait  => process(a.symbol, a.templ, ScopeType.Trait)
-        case a: Pkg.Object  => process(a.symbol, a.templ, ScopeType.Object)
+        case a: Defn.Class  => process(a.mods, a.symbol, a.templ, ScopeType.Class)
+        case a: Defn.Object => process(a.mods, a.symbol, a.templ, ScopeType.Object)
+        case a: Defn.Trait  => process(a.mods, a.symbol, a.templ, ScopeType.Trait)
+        case a: Pkg.Object  => process(a.mods, a.symbol, a.templ, ScopeType.Object)
         case _ =>
       }
 
     Patch.empty
   }
 
-  private def process(sym: Symbol, body: Template, typ: ScopeType)(implicit doc: SemanticDocument): Unit = {
+  private def process(parentMods: List[Mod], sym: Symbol, body: Template, typ: ScopeType)(implicit doc: SemanticDocument): Unit = {
     // Skip non-public scopes
     val info = sym.info.get
     if (!info.isPublic && !info.isPackageObject)
       return
 
+    def inspectAnnotationsFn(set: String => Unit): List[Mod] => List[Mod] =
+      _.filter {
+        case Mod.Annot(Init(tpe, _, List(List(_, ver)))) if tpe.toString == "deprecated" =>
+          set(
+            ver match {
+              case Lit.String(s) => s
+              case term          => term.toString
+            }
+          )
+          false
+        case _ => true
+      }
+
+    // Inspect scope's annotations
+    var scopeDeprecatedVer = Option.empty[String]
+    inspectAnnotationsFn(v => scopeDeprecatedVer = Some(v))(parentMods)
+
     val parents    = Util.parents(sym).iterator.map(Util.typeSymbol).toList
     val domParents = parents.iterator.filter(isScalaJsDom).toSet
     val isJsType   = parents.exists(isScalaJs)
-    val s          = state.register(sym, isJsType, typ, domParents)
+    val s          = state.register(sym, isJsType, typ, domParents, scopeDeprecatedVer)
 
     def letsSeeHowLazyWeCanBeLol(t: Tree): Unit = {
       // Skip non-public members
@@ -58,20 +75,7 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
 
       // Inspect annotations
       var deprecatedVer = Option.empty[String]
-
-      def inspectAnnotations(mods: List[Mod]): List[Mod] =
-        mods.filter {
-          case Mod.Annot(Init(tpe, _, List(List(_, ver)))) if tpe.toString == "deprecated" =>
-            deprecatedVer = Some {
-              ver match {
-                case Lit.String(s) => s
-                case term          => term.toString
-              }
-            }
-            false
-          case _ => true
-        }
-
+      val inspectAnnotations = inspectAnnotationsFn(v => deprecatedVer = Some(v))
       t2 match {
         case Decl.Def(mods, name, tparams, paramss, tpe) => t2 = Decl.Def(inspectAnnotations(mods), name, tparams, paramss, tpe)
         case Decl.Val(mods, pats, tpe)                   => t2 = Decl.Val(inspectAnnotations(mods), pats, tpe)
