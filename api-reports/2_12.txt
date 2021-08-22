@@ -3797,9 +3797,9 @@ raw/FileReader[JC] def addEventListener[T <: Event](`type`: String, listener: js
 raw/FileReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/FileReader[JC] def dispatchEvent(evt: Event): Boolean
 raw/FileReader[JC] def error: DOMException
-raw/FileReader[JC] var onabort: js.Function1[Event, _]
-raw/FileReader[JC] var onerror: js.Function1[Event, _]
-raw/FileReader[JC] var onload: js.Function1[UIEvent, _]
+raw/FileReader[JC] var onabort: js.Function1[ProgressEvent, _]
+raw/FileReader[JC] var onerror: js.Function1[ProgressEvent, _]
+raw/FileReader[JC] var onload: js.Function1[ProgressEvent, _]
 raw/FileReader[JC] var onloadend: js.Function1[ProgressEvent, _]
 raw/FileReader[JC] var onloadstart: js.Function1[ProgressEvent, _]
 raw/FileReader[JC] var onprogress: js.Function1[ProgressEvent, _]
