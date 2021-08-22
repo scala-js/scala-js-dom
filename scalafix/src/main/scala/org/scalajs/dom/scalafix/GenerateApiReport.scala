@@ -76,6 +76,7 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
         case Decl.Def(mods, name, tparams, paramss, tpe) => t2 = Decl.Def(inspectAnnotations(mods), name, tparams, paramss, tpe)
         case Decl.Val(mods, pats, tpe)                   => t2 = Decl.Val(inspectAnnotations(mods), pats, tpe)
         case Decl.Var(mods, pats, tpe)                   => t2 = Decl.Var(inspectAnnotations(mods), pats, tpe)
+        case Defn.Type(mods, names, params, tpe)         => t2 = Defn.Type(inspectAnnotations(mods), names, params, tpe)
         case _ =>
       }
 
