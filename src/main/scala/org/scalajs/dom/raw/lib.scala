@@ -7782,7 +7782,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  var onabort: js.Function1[Event, _] = js.native
+  var onabort: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A handler for the error event. This event is triggered each time the reading
@@ -7790,7 +7790,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[Event, _] = js.native
+  var onerror: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A handler for the load event. This event is triggered each time the reading
@@ -7798,7 +7798,7 @@ class FileReader() extends EventTarget {
    *
    * MDN
    */
-  var onload: js.Function1[UIEvent, _] = js.native
+  var onload: js.Function1[ProgressEvent, _] = js.native
 
   /**
    * A handler for the loadstart event. This event is triggered each time the reading
