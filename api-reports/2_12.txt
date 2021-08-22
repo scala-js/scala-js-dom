@@ -947,6 +947,22 @@ experimental/push/package[SO] implicit def pushServiceWorkerRegistration(swr: Se
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpush: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpushsubscriptionchange: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerRegistration[JT] val pushManager: PushManager
+experimental/serviceworkers/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]
+experimental/serviceworkers/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]
+experimental/serviceworkers/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]
+experimental/serviceworkers/Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Request]]
+experimental/serviceworkers/Cache[JC] def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.UndefOr[Response]]
+experimental/serviceworkers/Cache[JC] def matchAll(request: RequestInfo?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Response]]
+experimental/serviceworkers/Cache[JC] def put(request: RequestInfo, response: Response): js.Promise[Unit]
+experimental/serviceworkers/CacheQueryOptions[JT] var cacheName: String
+experimental/serviceworkers/CacheQueryOptions[JT] var ignoreMethod: Boolean
+experimental/serviceworkers/CacheQueryOptions[JT] var ignoreSearch: Boolean
+experimental/serviceworkers/CacheQueryOptions[JT] var ignoreVary: Boolean
+experimental/serviceworkers/CacheStorage[JT] def delete(cacheName: String): js.Promise[Boolean]
+experimental/serviceworkers/CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]
+experimental/serviceworkers/CacheStorage[JT] def keys(): js.Promise[js.Array[String]]
+experimental/serviceworkers/CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]
+experimental/serviceworkers/CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]
 experimental/serviceworkers/CanvasProxy[JT] def setContext(context: RenderingContext): Unit
 experimental/serviceworkers/Client[JT] def frameType: FrameType
 experimental/serviceworkers/Client[JT] def id: String
@@ -2074,6 +2090,7 @@ html[SO] type UList = raw.HTMLUListElement
 html[SO] type Unknown = raw.HTMLUnknownElement
 html[SO] type Video = raw.HTMLVideoElement
 html[SO] def Media = raw.HTMLMediaElement
+idb[SO] @deprecated( "Removed. This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible. See https://developer.mozilla.org/en-US/docs/Web/API/IDBEnvironment", "1.2.0") type Environment = raw.IDBEnvironment
 idb[SO] type Cursor = raw.IDBCursor
 idb[SO] type CursorWithValue = raw.IDBCursorWithValue
 idb[SO] type Database = raw.IDBDatabase
@@ -15368,6 +15385,7 @@ raw/IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener
 raw/IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 raw/IDBDatabase[JC] def transaction(storeNames: js.Any, mode: String?): IDBTransaction
 raw/IDBDatabase[JC] def version: Int
+raw/IDBEnvironment[JT] def indexedDB: IDBFactory  (@deprecated in 1.2.0)
 raw/IDBFactory[JC] def cmp(first: js.Any, second: js.Any): Int
 raw/IDBFactory[JC] def deleteDatabase(name: String): IDBOpenDBRequest
 raw/IDBFactory[JC] def open(name: String): IDBOpenDBRequest
