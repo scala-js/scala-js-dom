@@ -7,10 +7,10 @@ import scala.scalajs.js.|
 import org.scalajs.dom.experimental.{
   Notification, NotificationOptions, Request, RequestInfo, Response, Sequence
 }
-import org.scalajs.dom.raw.{WorkerGlobalScope, ErrorEvent}
+import org.scalajs.dom.experimental.cachestorage._
+import org.scalajs.dom.raw.{ErrorEvent, EventInit, WorkerGlobalScope}
 import org.scalajs.dom.webgl.RenderingContext
 import org.scalajs.dom.{Event, EventTarget, MessageEvent, MessagePort}
-import org.scalajs.dom.raw.EventInit
 
 @js.native
 sealed trait FrameType extends js.Any
@@ -609,70 +609,6 @@ trait Clients extends js.Object {
 }
 
 /**
- * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]]
- * of ServiceWorker whatwg spec.
- */
-@js.native
-@JSGlobal
-abstract class Cache extends js.Object {
-  def `match`(request: RequestInfo,
-      options: js.UndefOr[
-          CacheQueryOptions] = js.native): js.Promise[js.UndefOr[Response]] = js.native
-
-  def matchAll(request: RequestInfo = js.native,
-      options: js.UndefOr[
-          CacheQueryOptions] = js.native): js.Promise[js.Array[Response]] = js.native
-
-  def add(request: RequestInfo): js.Promise[Unit] = js.native
-
-  def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit] = js.native
-
-  def put(request: RequestInfo,
-      response: Response): js.Promise[Unit] = js.native
-
-  def delete(request: RequestInfo,
-      options: js.UndefOr[
-          CacheQueryOptions] = js.native): js.Promise[Boolean] = js.native
-
-  def keys(request: js.UndefOr[RequestInfo] = js.native,
-      options: js.UndefOr[
-          CacheQueryOptions] = js.native): js.Promise[js.Array[Request]]
-}
-
-/**
- * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]]
- * of ServiceWorker whatwg spec.
- */
-@js.native
-trait CacheQueryOptions extends js.Object {
-  var ignoreSearch: Boolean = js.native // false
-
-  var ignoreMethod: Boolean = js.native // false
-
-  var ignoreVary: Boolean = js.native //false
-
-  var cacheName: String = js.native
-}
-
-/**
- * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache-storage ¶5.5 cache]]
- * of ServiceWorker whatwg spec.
- */
-@js.native
-trait CacheStorage extends js.Object {
-  def `match`(request: RequestInfo,
-      options: CacheQueryOptions = js.native): js.Promise[js.Any] = js.native
-
-  def has(cacheName: String): js.Promise[Boolean] = js.native
-
-  def open(cacheName: String): js.Promise[Cache] = js.native
-
-  def delete(cacheName: String): js.Promise[Boolean] = js.native
-
-  def keys(): js.Promise[js.Array[String]] = js.native
-}
-
-/**
  * The ServiceWorkerGlobalScope interface of the ServiceWorker API represents
  * the global execution context of a service worker.
  *
@@ -693,13 +629,6 @@ trait CacheStorage extends js.Object {
  */
 @js.native
 trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
-
-  /**
-   * Returns the CacheStorage object associated with the service worker.
-   *
-   * MDN
-   */
-  override def caches: CacheStorage = js.native
 
   /**
    * Returns the Clients object associated with the service worker.
@@ -769,3 +698,32 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
 object ServiceWorkerGlobalScope extends js.Object {
   def self: ServiceWorkerGlobalScope = js.native
 }
+
+/**
+ * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]]
+ * of ServiceWorker whatwg spec.
+ */
+@deprecated("Use org.scalajs.dom.experimental.cachestorage.Cache", "1.2.0")
+@js.native
+@JSGlobal
+abstract class Cache extends org.scalajs.dom.experimental.cachestorage.Cache
+
+/**
+ * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]]
+ * of ServiceWorker whatwg spec.
+ */
+@deprecated("Use org.scalajs.dom.experimental.cachestorage.CacheQueryOptions",
+    "1.2.0")
+@js.native
+trait CacheQueryOptions
+    extends org.scalajs.dom.experimental.cachestorage.CacheQueryOptions
+
+/**
+ * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache-storage ¶5.5 cache]]
+ * of ServiceWorker whatwg spec.
+ */
+@deprecated("Use org.scalajs.dom.experimental.cachestorage.CacheStorage",
+    "1.2.0")
+@js.native
+trait CacheStorage
+    extends org.scalajs.dom.experimental.cachestorage.CacheStorage

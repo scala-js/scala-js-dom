@@ -11,12 +11,17 @@ final class MutableState {
 
   private[this] val scopes = mutable.Map.empty[Symbol, Scope]
 
-  def register(sym: Symbol, isJsType: Boolean, scopeType: ScopeType, parents: Set[Symbol]): Scope = synchronized {
+  def register(sym          : Symbol,
+               isJsType     : Boolean,
+               scopeType    : ScopeType,
+               parents      : Set[Symbol],
+               deprecatedVer: Option[String]): Scope = synchronized {
     scopes.get(sym) match {
       case None =>
         val s = Scope(sym)(scopeType, parents)
         scopes.update(sym, s)
         s.isJsType = isJsType
+        s.deprecatedVer = deprecatedVer
         s
       case Some(s) =>
         s
@@ -47,10 +52,20 @@ final class MutableState {
 
     val b = SortedSet.newBuilder[Result]
 
+    def deprecationSuffix(ver: Option[String]): String =
+      ver match {
+        case None    => ""
+        case Some(v) => s"  (@deprecated in $v)"
+      }
+
     // Pass 1
     for (root <- scopes.valuesIterator) {
-      if (!root.isJsType && scopeParents(root).exists(_.isJsType))
+      val parents = scopeParents(root)
+      if (!root.isJsType && parents.exists(_.isJsType))
         root.isJsType = true
+      if (root.deprecatedVer.isEmpty)
+        for (p <- parents.find(_.deprecatedVer.isDefined))
+          root.deprecatedVer = p.deprecatedVer
     }
 
     // Pass 2
@@ -65,19 +80,18 @@ final class MutableState {
       var membersFound = false
       for {
         s <- root :: scopeParents(root)
-        v <- s.directMembers
+        m <- s.directMembers
       } {
         membersFound = true
-        val key = (scopeKey, v.name, v.desc)
-        var result = prefix + v.desc
-        for (ver <- v.deprecatedVer)
-          result = s"$result  (@deprecated in $ver)"
+        val key = (scopeKey, m.name, m.desc)
+        val result = prefix + m.desc + deprecationSuffix(m.deprecatedVer.orElse(root.deprecatedVer))
         b += Result(key, result)
       }
 
       if (!membersFound && !scopeName.endsWith("/package")) {
         val key = (scopeKey, " ", "")
-        b += Result(key, prefix.trim)
+        val result = prefix.trim + deprecationSuffix(root.deprecatedVer)
+        b += Result(key, result)
       }
     }
 
@@ -101,6 +115,7 @@ object MutableState {
 
     private[MutableState] val directMembers = mutable.Set.empty[Member]
     private[MutableState] var isJsType = false
+    private[MutableState] var deprecatedVer = Option.empty[String]
 
     def add(v: Member): Unit =
       synchronized(directMembers += v)
