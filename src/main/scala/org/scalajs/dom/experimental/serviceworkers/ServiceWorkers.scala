@@ -81,7 +81,7 @@ trait CanvasProxy extends js.Any {
   def setContext(context: RenderingContext): Unit = js.native
 }
 
-trait FetchEventInit extends EventInit {
+trait FetchEventInit extends ExtendableEventInit {
   var isReload: js.UndefOr[Boolean] = js.undefined
   var request: js.UndefOr[Request] = js.undefined
   var clientId: js.UndefOr[String] = js.undefined
@@ -96,7 +96,7 @@ trait FetchEventInit extends EventInit {
 @js.native
 @JSGlobal
 class FetchEvent(typeArg: String, init: js.UndefOr[FetchEventInit])
-    extends Event(typeArg, init) {
+    extends ExtendableEvent(typeArg, init) {
 
   /**
    * Boolean that is true if the event was dispatched with the user's
