@@ -320,7 +320,7 @@ experimental/PointerLock.PointerLockDocument[JT] def pointerLockElement: Element
 experimental/PointerLock.PointerLockElement[JT] def requestPointerLock(): Unit
 experimental/PointerLock.PointerLockMouseEvent[JT] def movementX: Double
 experimental/PointerLock.PointerLockMouseEvent[JT] def movementY: Double
-experimental/ReadableStream[JT] def cancel(reason: String): js.Promise[Any]
+experimental/ReadableStream[JT] def cancel(reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit]
 experimental/ReadableStream[JT] def getReader(): ReadableStreamReader[T]
 experimental/ReadableStream[JT] def locked: Boolean
 experimental/ReadableStream[JT] def pipeThrough[U](pair: Any, options: Any = js.undefined): ReadableStream[U]
@@ -469,7 +469,7 @@ experimental/WriteableState[SO] val closing = "closing".asInstanceOf[WriteableSt
 experimental/WriteableState[SO] val errored = "errored".asInstanceOf[WriteableState]
 experimental/WriteableState[SO] val waiting = "waiting".asInstanceOf[WriteableState]
 experimental/WriteableState[SO] val writable = "writable".asInstanceOf[WriteableState]
-experimental/WriteableStream[JT] def abort(reason: Any): Unit
+experimental/WriteableStream[JT] def abort(reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit]
 experimental/WriteableStream[JT] def close(): js.Promise[WriteableStream[T]]
 experimental/WriteableStream[JT] val closed: js.Promise[WriteableStream[T]]
 experimental/WriteableStream[JT] val ready: js.Promise[WriteableStream[T]]
