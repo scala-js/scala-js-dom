@@ -990,6 +990,7 @@ experimental/serviceworkers/FetchEvent[SC] def replacesClientId: String
 experimental/serviceworkers/FetchEvent[SC] def request: Request
 experimental/serviceworkers/FetchEvent[SC] def respondWith(promisedResponse: Response | js.Promise[Response]): Unit
 experimental/serviceworkers/FetchEvent[SC] def resultingClientId: String
+experimental/serviceworkers/FetchEvent[SC] def waitUntil(promise: js.Promise[Any]): Unit
 experimental/serviceworkers/FetchEventInit[JT] var bubbles: js.UndefOr[Boolean]
 experimental/serviceworkers/FetchEventInit[JT] var cancelable: js.UndefOr[Boolean]
 experimental/serviceworkers/FetchEventInit[JT] var clientId: js.UndefOr[String]
