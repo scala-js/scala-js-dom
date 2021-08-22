@@ -12,13 +12,19 @@ jobs:
     env:
       SCALAJS_VERSION: "${{ matrix.scalajsversion == '0.6.x' && '0.6.28' || '' }}"
     steps:
+
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: olafurpg/setup-scala@v13
+
+      - name: Setup Scala
+        uses: japgolly/setup-everything-scala@v1.0
+
       - name: Hacks for Scala 2.10
         run: ./prepareForScala210.sh
-      - run: sbt ci-release
+
+      - name: Release
+        run: sbt ci-release
         env:
           PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
           PGP_SECRET: ${{ secrets.PGP_SECRET }}

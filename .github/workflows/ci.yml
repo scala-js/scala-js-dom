@@ -23,10 +23,9 @@ jobs:
     steps:
 
       - uses: actions/checkout@v2
-      - uses: olafurpg/setup-scala@v13
-        with:
-          java-version: "adopt@1.8"
-      - uses: coursier/cache-action@v6
+
+      - name: Setup Scala
+        uses: japgolly/setup-everything-scala@v1.0
 
       - name: Hacks for Scala 2.10
         if: matrix.scalaversion == '2.10.7'
@@ -52,9 +51,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: olafurpg/setup-scala@v13
-        with:
-          java-version: "adopt@1.8"
-      - uses: coursier/cache-action@v6
+      - uses: japgolly/setup-everything-scala@v1.0
       - name: Readme generation
         run: sbt readme/run
