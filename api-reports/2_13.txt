@@ -237,6 +237,9 @@ experimental/Body[JT] def text(): js.Promise[String]
 experimental/Chunk[JT] def done: Boolean
 experimental/Chunk[JT] def value: T
 experimental/Fetch[JO] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+experimental/FileReaderSync[JC] def readAsArrayBuffer(blob: Blob): ArrayBuffer
+experimental/FileReaderSync[JC] def readAsDataURL(blob: Blob): URL
+experimental/FileReaderSync[JC] def readAsText(blob: Blob, encoding: String = "UTF-8"): String
 experimental/Fullscreen[SO] def exitFullscreen(): js.UndefOr[js.Promise[Unit]]
 experimental/Fullscreen[SO] def fullscreenElement: Element
 experimental/Fullscreen[SO] def fullscreenEnabled: Boolean
