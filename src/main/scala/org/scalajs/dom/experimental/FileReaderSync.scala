@@ -44,5 +44,5 @@ class FileReaderSync() extends js.Object {
    *
    * MDN
    */
-  def readAsText(blob: Blob, encoding: String = "UTF-8"): String = js.native
+  def readAsText(blob: Blob, encoding: String = js.native): String = js.native
 }
