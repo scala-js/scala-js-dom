@@ -3841,6 +3841,13 @@ class CanvasRenderingContext2D extends js.Object {
   var textBaseline: String = js.native
 
   /**
+   * A boolean value indicating whether to smooth scaled images or not. The default value is true.
+   *
+   * MDN
+   */
+  var imageSmoothingEnabled: Boolean = js.native
+
+  /**
    * Restores the drawing style state to the last element on the 'state stack' saved by
    * save().
    *
