@@ -18,13 +18,20 @@ object Alert {
 object NodeAppendChild {
   @JSExport
   def main(div: html.Div) = {
-    val child = dom.document
-                   .createElement("div")
-
-    child.textContent =
-      "Hi from Scala-js-dom"
-
+    val child = dom.document.createElement("div")
+    child.textContent = "Hi from Scala-js-dom"
     div.appendChild(child)
+  }
+}
+
+@JSExportTopLevel("ExampleNodeReplaceChildren")
+object NodeReplaceChildren {
+  @JSExport
+  def main(div: html.Div): Unit = {
+    dom.document.replaceChildren()
+    dom.document.replaceChildren("")
+    dom.document.replaceChildren(div)
+    dom.document.replaceChildren("", div)
   }
 }
 
@@ -124,8 +131,7 @@ object XMLHttpRequest{
   def main(pre: html.Pre) = {
     val xhr = new dom.XMLHttpRequest()
     xhr.open("GET",
-      "http://api.openweathermap.org/" +
-      "data/2.5/weather?q=Singapore"
+      "https://www.boredapi.com/api/activity"
     )
     xhr.onload = { (e: dom.Event) =>
       if (xhr.status == 200) {
@@ -142,7 +148,7 @@ object Websocket {
   @JSExport
   def main(in: html.Input,
            pre: html.Pre) = {
-    val echo = "ws://echo.websocket.org"
+    val echo = "wss://echo.websocket.org"
     val socket = new dom.WebSocket(echo)
     socket.onmessage = {
       (e: dom.MessageEvent) =>
@@ -167,8 +173,7 @@ object AjaxExtension {
                 .Implicits
                 .global
     val url =
-      "http://api.openweathermap.org/" +
-      "data/2.5/weather?q=Singapore"
+      "https://www.boredapi.com/api/activity"
     Ajax.get(url).foreach { case xhr =>
       pre.textContent = xhr.responseText
     }

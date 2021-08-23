@@ -123,7 +123,7 @@ class IDBObjectStore extends js.Object {
 }
 
 trait IDBVersionChangeEventInit extends EventInit {
-  var newVersion: js.UndefOr[Int] = js.undefined
+  var newVersion: js.UndefOr[Integer] = js.undefined
   var oldVersion: js.UndefOr[Int] = js.undefined
 }
 
@@ -142,9 +142,11 @@ class IDBVersionChangeEvent(typeArg: String,
   /**
    * Returns the new version of the database.
    *
+   * This is null when the database is being deleted.
+   *
    * MDN
    */
-  def newVersion: Int = js.native
+  def newVersion: Integer = js.native
 
   /**
    * Returns the old version of the database.
@@ -355,25 +357,6 @@ class IDBCursorWithValue extends IDBCursor {
 }
 
 /**
- * The IDBEvironment interface of the IndexedDB API provides asynchronous access
- * to a client-side database. It is implemented by window and Worker objects.
- *
- * MDN
- */
-@js.native
-trait IDBEnvironment extends js.Object {
-
-  /**
-   * an IDBRequest object that communicates back to the requesting application
-   * through events. This design means that any number of requests can be active on any
-   * database at a time.
-   *
-   * MDN
-   */
-  def indexedDB: IDBFactory = js.native
-}
-
-/**
  * The IDBKeyRange interface of the IndexedDB API represents a continuous interval
  * over some data type that is used for keys. Records can be retrieved from object
  * stores and indexes using keys or a range of keys. You can limit the range using
@@ -509,7 +492,7 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * The event handler for the onabort event.
@@ -613,7 +596,7 @@ class IDBDatabase extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * Fires when access of the database is aborted.
@@ -621,6 +604,14 @@ class IDBDatabase extends EventTarget {
    * MDN
    */
   var onabort: js.Function1[Event, _] = js.native
+
+  /**
+   * The onversionchange event handler of the IDBDatabase interface handles the versionchange
+   * event, fired when a database structure change (IDBOpenDBRequest.onupgradeneeded event or
+   * IDBFactory.deleteDatabase) was requested elsewhere (most probably in another window/tab
+   * on the same computer).
+   */
+  var onversionchange: js.Function1[IDBVersionChangeEvent, _] = js.native
 
   /**
    * The method takes the name of the store as well as a parameter object. The parameter
@@ -691,7 +682,7 @@ class IDBOpenDBRequest extends IDBRequest {
    *
    * MDN
    */
-  var onblocked: js.Function1[Event, _] = js.native
+  var onblocked: js.Function1[IDBVersionChangeEvent, _] = js.native
 }
 
 /**
@@ -788,7 +779,7 @@ class IDBRequest extends EventTarget {
    *
    * MDN
    */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
 
   /**
    * The state of the request. Every request starts in the pending state. The state
@@ -805,4 +796,27 @@ class IDBRequest extends EventTarget {
    * MDN
    */
   def result: js.Any = js.native
+}
+
+/**
+ * The IDBEvironment interface of the IndexedDB API provides asynchronous access
+ * to a client-side database. It is implemented by window and Worker objects.
+ *
+ * MDN
+ */
+@deprecated(
+    "Removed. This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible. See https://developer.mozilla.org/en-US/docs/Web/API/IDBEnvironment",
+    "1.2.0")
+@js.native
+trait IDBEnvironment extends js.Object {
+
+  /**
+   * an IDBRequest object that communicates back to the requesting application
+   * through events. This design means that any number of requests can be active on any
+   * database at a time.
+   *
+   * MDN
+   */
+  @deprecated("Use window.indexedDB", "1.2.0")
+  def indexedDB: IDBFactory = js.native
 }

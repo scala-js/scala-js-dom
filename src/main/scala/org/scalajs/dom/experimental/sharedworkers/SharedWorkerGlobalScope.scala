@@ -44,7 +44,7 @@ trait SharedWorkerGlobalScope extends WorkerGlobalScope {
    *
    * MDN
    */
-  var onconnect: Function1[ExtendableMessageEvent, _] = js.native
+  var onconnect: js.Function1[ExtendableMessageEvent, _] = js.native
 }
 
 @js.native
