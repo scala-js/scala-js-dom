@@ -3060,6 +3060,7 @@ raw/CanvasRenderingContext2D[JC] def getImageData(sx: Double, sy: Double, sw: Do
 raw/CanvasRenderingContext2D[JC] def getLineDash(): js.Array[Double]
 raw/CanvasRenderingContext2D[JC] var globalAlpha: Double
 raw/CanvasRenderingContext2D[JC] var globalCompositeOperation: String
+raw/CanvasRenderingContext2D[JC] var imageSmoothingEnabled: Boolean
 raw/CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double): Boolean
 raw/CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double, fillRule: String): Boolean
 raw/CanvasRenderingContext2D[JC] var lineCap: String
