@@ -107,17 +107,7 @@ class Worker(stringUrl: String) extends AbstractWorker {
  * MDN
  */
 @js.native
-trait WorkerGlobalScope extends EventTarget {
-
-  /**
-   * The caches read-only property of the WorkerGlobalScope interface returns
-   * the CacheStorage object associated with the current worker context.
-   * This object enables service worker functionality such as storing assets
-   * for offline use, and generating custom responses to requests.
-   *
-   * MDN
-   */
-  def caches: js.Any = js.native
+trait WorkerGlobalScope extends EventTarget with WindowOrWorkerGlobalScope {
 
   /**
    * The self read-only property of the WorkerGlobalScope interface returns a

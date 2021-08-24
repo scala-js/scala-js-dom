@@ -87,9 +87,10 @@ trait WriteableStream[-T] extends js.Object {
    * abort mechanism of the underlying sink.
    * see [[https://streams.spec.whatwg.org/#ws-abort ¶4.2.4.4. abort(reason)]]
    *
-   * @param reason spec specifies Any (!?)
+   * @param reason
    */
-  def abort(reason: Any): Unit = js.native
+  def abort(
+      reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit] = js.native
 
   /**
    * The close method signals that the producer is done writing chunks to the
@@ -148,10 +149,11 @@ trait ReadableStream[+T] extends js.Object {
    * the stream by a consumer. The supplied reason argument will be given to
    * the underlying source, which may or may not use it.
    *
-   * @param reason the reason <- actually not what type this is
-   * @return a Promise, but not quite sure what it can contain
+   * @param reason the reason
+   * @return a Promise
    */
-  def cancel(reason: String): js.Promise[Any] = js.native
+  def cancel(
+      reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit] = js.native
 
   /**
    * See [[https://streams.spec.whatwg.org/#rs-get-reader ¶3.2.4.3. getReader()]]
