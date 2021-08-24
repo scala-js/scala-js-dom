@@ -1028,7 +1028,6 @@ experimental/serviceworkers/ServiceWorkerContainer[ST] def controller: ServiceWo
 experimental/serviceworkers/ServiceWorkerContainer[ST] def getRegistration(scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]]
 experimental/serviceworkers/ServiceWorkerContainer[ST] def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]]
 experimental/serviceworkers/ServiceWorkerContainer[ST] var oncontrollerchange: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorkerContainer[ST] var onerror: js.Function1[ErrorEvent, _]
 experimental/serviceworkers/ServiceWorkerContainer[ST] var onmessage: js.Function1[MessageEvent, _]
 experimental/serviceworkers/ServiceWorkerContainer[ST] def ready: js.Promise[ServiceWorkerRegistration]
 experimental/serviceworkers/ServiceWorkerContainer[ST] def register(scriptURL: String, options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration]
