@@ -502,10 +502,23 @@ experimental/cachestorage/CacheStorage[JT] def open(cacheName: String): js.Promi
 experimental/deviceorientation/DeviceAcceleration[JT] val x: Double
 experimental/deviceorientation/DeviceAcceleration[JT] val y: Double
 experimental/deviceorientation/DeviceAcceleration[JT] val z: Double
-experimental/deviceorientation/DeviceMotionEvent[SC] val acceleration: DeviceAcceleration
-experimental/deviceorientation/DeviceMotionEvent[SC] val accelerationIncludingGravity: DeviceAcceleration
-experimental/deviceorientation/DeviceMotionEvent[SC] val interval: Double
-experimental/deviceorientation/DeviceMotionEvent[SC] val rotationRate: DeviceRotationRate
+experimental/deviceorientation/DeviceMotionEvent[JC] val acceleration: DeviceAcceleration
+experimental/deviceorientation/DeviceMotionEvent[JC] val accelerationIncludingGravity: DeviceAcceleration
+experimental/deviceorientation/DeviceMotionEvent[JC] def bubbles: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def cancelBubble: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def cancelable: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def currentTarget: EventTarget
+experimental/deviceorientation/DeviceMotionEvent[JC] def defaultPrevented: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def eventPhase: Int
+experimental/deviceorientation/DeviceMotionEvent[JC] val interval: Double
+experimental/deviceorientation/DeviceMotionEvent[JC] def isTrusted: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def preventDefault(): Unit
+experimental/deviceorientation/DeviceMotionEvent[JC] val rotationRate: DeviceRotationRate
+experimental/deviceorientation/DeviceMotionEvent[JC] def stopImmediatePropagation(): Unit
+experimental/deviceorientation/DeviceMotionEvent[JC] def stopPropagation(): Unit
+experimental/deviceorientation/DeviceMotionEvent[JC] def target: EventTarget
+experimental/deviceorientation/DeviceMotionEvent[JC] def timeStamp: Double
+experimental/deviceorientation/DeviceMotionEvent[JC] def `type`: String
 experimental/deviceorientation/DeviceMotionEventInit[JT] val acceleration: js.UndefOr[DeviceAcceleration]
 experimental/deviceorientation/DeviceMotionEventInit[JT] val accelerationIncludingGravity: js.UndefOr[DeviceAcceleration]
 experimental/deviceorientation/DeviceMotionEventInit[JT] var bubbles: js.UndefOr[Boolean]
@@ -514,10 +527,23 @@ experimental/deviceorientation/DeviceMotionEventInit[JT] var composed: js.UndefO
 experimental/deviceorientation/DeviceMotionEventInit[JT] val interval: js.UndefOr[Double]
 experimental/deviceorientation/DeviceMotionEventInit[JT] val rotationRate: js.UndefOr[DeviceRotationRate]
 experimental/deviceorientation/DeviceMotionEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/deviceorientation/DeviceOrientationEvent[SC] val absolute: Boolean
-experimental/deviceorientation/DeviceOrientationEvent[SC] val alpha: Double
-experimental/deviceorientation/DeviceOrientationEvent[SC] val beta: Double
-experimental/deviceorientation/DeviceOrientationEvent[SC] val gamma: Double
+experimental/deviceorientation/DeviceOrientationEvent[JC] val absolute: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] val alpha: Double
+experimental/deviceorientation/DeviceOrientationEvent[JC] val beta: Double
+experimental/deviceorientation/DeviceOrientationEvent[JC] def bubbles: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def cancelBubble: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def cancelable: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def currentTarget: EventTarget
+experimental/deviceorientation/DeviceOrientationEvent[JC] def defaultPrevented: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def eventPhase: Int
+experimental/deviceorientation/DeviceOrientationEvent[JC] val gamma: Double
+experimental/deviceorientation/DeviceOrientationEvent[JC] def isTrusted: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def preventDefault(): Unit
+experimental/deviceorientation/DeviceOrientationEvent[JC] def stopImmediatePropagation(): Unit
+experimental/deviceorientation/DeviceOrientationEvent[JC] def stopPropagation(): Unit
+experimental/deviceorientation/DeviceOrientationEvent[JC] def target: EventTarget
+experimental/deviceorientation/DeviceOrientationEvent[JC] def timeStamp: Double
+experimental/deviceorientation/DeviceOrientationEvent[JC] def `type`: String
 experimental/deviceorientation/DeviceOrientationEventInit[JT] var absolute: js.UndefOr[Boolean]
 experimental/deviceorientation/DeviceOrientationEventInit[JT] var alpha: js.UndefOr[Double]
 experimental/deviceorientation/DeviceOrientationEventInit[JT] var beta: js.UndefOr[Double]
@@ -545,7 +571,20 @@ experimental/gamepad/Gamepad[JT] val mapping: GamepadMappingType
 experimental/gamepad/Gamepad[JT] val timestamp: Double
 experimental/gamepad/GamepadButton[JT] val pressed: Boolean
 experimental/gamepad/GamepadButton[JT] val value: Double
-experimental/gamepad/GamepadEvent[SC] val gamepad: Gamepad
+experimental/gamepad/GamepadEvent[JC] def bubbles: Boolean
+experimental/gamepad/GamepadEvent[JC] def cancelBubble: Boolean
+experimental/gamepad/GamepadEvent[JC] def cancelable: Boolean
+experimental/gamepad/GamepadEvent[JC] def currentTarget: EventTarget
+experimental/gamepad/GamepadEvent[JC] def defaultPrevented: Boolean
+experimental/gamepad/GamepadEvent[JC] def eventPhase: Int
+experimental/gamepad/GamepadEvent[JC] val gamepad: Gamepad
+experimental/gamepad/GamepadEvent[JC] def isTrusted: Boolean
+experimental/gamepad/GamepadEvent[JC] def preventDefault(): Unit
+experimental/gamepad/GamepadEvent[JC] def stopImmediatePropagation(): Unit
+experimental/gamepad/GamepadEvent[JC] def stopPropagation(): Unit
+experimental/gamepad/GamepadEvent[JC] def target: EventTarget
+experimental/gamepad/GamepadEvent[JC] def timeStamp: Double
+experimental/gamepad/GamepadEvent[JC] def `type`: String
 experimental/gamepad/GamepadEventInit[JT] var bubbles: js.UndefOr[Boolean]
 experimental/gamepad/GamepadEventInit[JT] var cancelable: js.UndefOr[Boolean]
 experimental/gamepad/GamepadEventInit[JT] var composed: js.UndefOr[Boolean]
@@ -918,8 +957,21 @@ experimental/permissions/package.PushPermissionDescriptor[SO] val userVisibleOnl
 experimental/push/PushEncryptionKeyName[JT]
 experimental/push/PushEncryptionKeyName[SO] val auth = "auth".asInstanceOf[PushEncryptionKeyName]
 experimental/push/PushEncryptionKeyName[SO] val p256dh = "p256dh".asInstanceOf[PushEncryptionKeyName]
-experimental/push/PushEvent[ST] val data: PushMessageData
-experimental/push/PushEvent[ST] def waitUntil(promise: js.Promise[Any]): Unit
+experimental/push/PushEvent[JT] def bubbles: Boolean
+experimental/push/PushEvent[JT] def cancelBubble: Boolean
+experimental/push/PushEvent[JT] def cancelable: Boolean
+experimental/push/PushEvent[JT] def currentTarget: EventTarget
+experimental/push/PushEvent[JT] val data: PushMessageData
+experimental/push/PushEvent[JT] def defaultPrevented: Boolean
+experimental/push/PushEvent[JT] def eventPhase: Int
+experimental/push/PushEvent[JT] def isTrusted: Boolean
+experimental/push/PushEvent[JT] def preventDefault(): Unit
+experimental/push/PushEvent[JT] def stopImmediatePropagation(): Unit
+experimental/push/PushEvent[JT] def stopPropagation(): Unit
+experimental/push/PushEvent[JT] def target: EventTarget
+experimental/push/PushEvent[JT] def timeStamp: Double
+experimental/push/PushEvent[JT] def `type`: String
+experimental/push/PushEvent[JT] def waitUntil(promise: js.Promise[Any]): Unit
 experimental/push/PushManager[JT] def getSubscription(): js.Promise[PushSubscription]
 experimental/push/PushManager[JT] def permissionState(options: PushSubscriptionOptions?): js.Promise[PushPermissionState]
 experimental/push/PushManager[JT] def subscribe(options: PushSubscriptionOptions?): js.Promise[PushSubscription]
@@ -982,17 +1034,43 @@ experimental/serviceworkers/Clients[JT] def claim(): js.Promise[Unit]
 experimental/serviceworkers/Clients[JT] def get(id: String): js.Promise[js.UndefOr[Client]]
 experimental/serviceworkers/Clients[JT] def matchAll(options: js.UndefOr[ClientQueryOptions]?): js.Promise[js.Array[Client]]
 experimental/serviceworkers/Clients[JT] def openWindow(url: String): js.Promise[WindowClient]
-experimental/serviceworkers/ExtendableEvent[SC] def waitUntil(promise: js.Promise[Any]): Unit
+experimental/serviceworkers/ExtendableEvent[JC] def bubbles: Boolean
+experimental/serviceworkers/ExtendableEvent[JC] def cancelBubble: Boolean
+experimental/serviceworkers/ExtendableEvent[JC] def cancelable: Boolean
+experimental/serviceworkers/ExtendableEvent[JC] def currentTarget: EventTarget
+experimental/serviceworkers/ExtendableEvent[JC] def defaultPrevented: Boolean
+experimental/serviceworkers/ExtendableEvent[JC] def eventPhase: Int
+experimental/serviceworkers/ExtendableEvent[JC] def isTrusted: Boolean
+experimental/serviceworkers/ExtendableEvent[JC] def preventDefault(): Unit
+experimental/serviceworkers/ExtendableEvent[JC] def stopImmediatePropagation(): Unit
+experimental/serviceworkers/ExtendableEvent[JC] def stopPropagation(): Unit
+experimental/serviceworkers/ExtendableEvent[JC] def target: EventTarget
+experimental/serviceworkers/ExtendableEvent[JC] def timeStamp: Double
+experimental/serviceworkers/ExtendableEvent[JC] def `type`: String
+experimental/serviceworkers/ExtendableEvent[JC] def waitUntil(promise: js.Promise[Any]): Unit
 experimental/serviceworkers/ExtendableEventInit[JT] var bubbles: js.UndefOr[Boolean]
 experimental/serviceworkers/ExtendableEventInit[JT] var cancelable: js.UndefOr[Boolean]
 experimental/serviceworkers/ExtendableEventInit[JT] var composed: js.UndefOr[Boolean]
 experimental/serviceworkers/ExtendableEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/serviceworkers/ExtendableMessageEvent[SC] val data: Any
-experimental/serviceworkers/ExtendableMessageEvent[SC] val lastEventId: String
-experimental/serviceworkers/ExtendableMessageEvent[SC] val origin: String
-experimental/serviceworkers/ExtendableMessageEvent[SC] def ports: js.Array[MessagePort]
-experimental/serviceworkers/ExtendableMessageEvent[SC] def source: ServiceWorker | MessagePort
-experimental/serviceworkers/ExtendableMessageEvent[SC] def waitUntil(promise: js.Promise[Any]): Unit
+experimental/serviceworkers/ExtendableMessageEvent[JC] def bubbles: Boolean
+experimental/serviceworkers/ExtendableMessageEvent[JC] def cancelBubble: Boolean
+experimental/serviceworkers/ExtendableMessageEvent[JC] def cancelable: Boolean
+experimental/serviceworkers/ExtendableMessageEvent[JC] def currentTarget: EventTarget
+experimental/serviceworkers/ExtendableMessageEvent[JC] val data: Any
+experimental/serviceworkers/ExtendableMessageEvent[JC] def defaultPrevented: Boolean
+experimental/serviceworkers/ExtendableMessageEvent[JC] def eventPhase: Int
+experimental/serviceworkers/ExtendableMessageEvent[JC] def isTrusted: Boolean
+experimental/serviceworkers/ExtendableMessageEvent[JC] val lastEventId: String
+experimental/serviceworkers/ExtendableMessageEvent[JC] val origin: String
+experimental/serviceworkers/ExtendableMessageEvent[JC] def ports: js.Array[MessagePort]
+experimental/serviceworkers/ExtendableMessageEvent[JC] def preventDefault(): Unit
+experimental/serviceworkers/ExtendableMessageEvent[JC] def source: ServiceWorker | MessagePort
+experimental/serviceworkers/ExtendableMessageEvent[JC] def stopImmediatePropagation(): Unit
+experimental/serviceworkers/ExtendableMessageEvent[JC] def stopPropagation(): Unit
+experimental/serviceworkers/ExtendableMessageEvent[JC] def target: EventTarget
+experimental/serviceworkers/ExtendableMessageEvent[JC] def timeStamp: Double
+experimental/serviceworkers/ExtendableMessageEvent[JC] def `type`: String
+experimental/serviceworkers/ExtendableMessageEvent[JC] def waitUntil(promise: js.Promise[Any]): Unit
 experimental/serviceworkers/ExtendableMessageEventInit[JT] var bubbles: js.UndefOr[Boolean]
 experimental/serviceworkers/ExtendableMessageEventInit[JT] var cancelable: js.UndefOr[Boolean]
 experimental/serviceworkers/ExtendableMessageEventInit[JT] var composed: js.UndefOr[Boolean]
@@ -1002,14 +1080,27 @@ experimental/serviceworkers/ExtendableMessageEventInit[JT] var origin: js.UndefO
 experimental/serviceworkers/ExtendableMessageEventInit[JT] var ports: js.UndefOr[js.Array[MessagePort]]
 experimental/serviceworkers/ExtendableMessageEventInit[JT] var scoped: js.UndefOr[Boolean]
 experimental/serviceworkers/ExtendableMessageEventInit[JT] var source: js.UndefOr[Client | ServiceWorker | MessagePort]
-experimental/serviceworkers/FetchEvent[SC] def clientId: String
-experimental/serviceworkers/FetchEvent[SC] def isReload: Boolean
-experimental/serviceworkers/FetchEvent[SC] def preloadResponse: js.Promise[js.UndefOr[Response]]
-experimental/serviceworkers/FetchEvent[SC] def replacesClientId: String
-experimental/serviceworkers/FetchEvent[SC] def request: Request
-experimental/serviceworkers/FetchEvent[SC] def respondWith(promisedResponse: Response | js.Promise[Response]): Unit
-experimental/serviceworkers/FetchEvent[SC] def resultingClientId: String
-experimental/serviceworkers/FetchEvent[SC] def waitUntil(promise: js.Promise[Any]): Unit
+experimental/serviceworkers/FetchEvent[JC] def bubbles: Boolean
+experimental/serviceworkers/FetchEvent[JC] def cancelBubble: Boolean
+experimental/serviceworkers/FetchEvent[JC] def cancelable: Boolean
+experimental/serviceworkers/FetchEvent[JC] def clientId: String
+experimental/serviceworkers/FetchEvent[JC] def currentTarget: EventTarget
+experimental/serviceworkers/FetchEvent[JC] def defaultPrevented: Boolean
+experimental/serviceworkers/FetchEvent[JC] def eventPhase: Int
+experimental/serviceworkers/FetchEvent[JC] def isReload: Boolean
+experimental/serviceworkers/FetchEvent[JC] def isTrusted: Boolean
+experimental/serviceworkers/FetchEvent[JC] def preloadResponse: js.Promise[js.UndefOr[Response]]
+experimental/serviceworkers/FetchEvent[JC] def preventDefault(): Unit
+experimental/serviceworkers/FetchEvent[JC] def replacesClientId: String
+experimental/serviceworkers/FetchEvent[JC] def request: Request
+experimental/serviceworkers/FetchEvent[JC] def respondWith(promisedResponse: Response | js.Promise[Response]): Unit
+experimental/serviceworkers/FetchEvent[JC] def resultingClientId: String
+experimental/serviceworkers/FetchEvent[JC] def stopImmediatePropagation(): Unit
+experimental/serviceworkers/FetchEvent[JC] def stopPropagation(): Unit
+experimental/serviceworkers/FetchEvent[JC] def target: EventTarget
+experimental/serviceworkers/FetchEvent[JC] def timeStamp: Double
+experimental/serviceworkers/FetchEvent[JC] def `type`: String
+experimental/serviceworkers/FetchEvent[JC] def waitUntil(promise: js.Promise[Any]): Unit
 experimental/serviceworkers/FetchEventInit[JT] var bubbles: js.UndefOr[Boolean]
 experimental/serviceworkers/FetchEventInit[JT] var cancelable: js.UndefOr[Boolean]
 experimental/serviceworkers/FetchEventInit[JT] var clientId: js.UndefOr[String]
@@ -1023,17 +1114,27 @@ experimental/serviceworkers/FrameType[SO] val nested = "nested".asInstanceOf[Fra
 experimental/serviceworkers/FrameType[SO] val none = "none".asInstanceOf[FrameType]
 experimental/serviceworkers/FrameType[SO] val `top-level` = "top-level".asInstanceOf[FrameType]
 experimental/serviceworkers/GetNotificationOptions[JT] var tag: js.UndefOr[String]
-experimental/serviceworkers/ServiceWorker[ST] var onstatechange: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorker[ST] def postMessage(message: js.Any, transfer: js.Array[Transferable]?): Unit
-experimental/serviceworkers/ServiceWorker[ST] def scriptURL: String
-experimental/serviceworkers/ServiceWorker[ST] def state: String
-experimental/serviceworkers/ServiceWorkerContainer[ST] def controller: ServiceWorker
-experimental/serviceworkers/ServiceWorkerContainer[ST] def getRegistration(scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]]
-experimental/serviceworkers/ServiceWorkerContainer[ST] def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]]
-experimental/serviceworkers/ServiceWorkerContainer[ST] var oncontrollerchange: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorkerContainer[ST] var onmessage: js.Function1[MessageEvent, _]
-experimental/serviceworkers/ServiceWorkerContainer[ST] def ready: js.Promise[ServiceWorkerRegistration]
-experimental/serviceworkers/ServiceWorkerContainer[ST] def register(scriptURL: String, options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration]
+experimental/serviceworkers/ServiceWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+experimental/serviceworkers/ServiceWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+experimental/serviceworkers/ServiceWorker[JT] def dispatchEvent(evt: Event): Boolean
+experimental/serviceworkers/ServiceWorker[JT] var onstatechange: js.Function1[Event, _]
+experimental/serviceworkers/ServiceWorker[JT] def postMessage(message: js.Any, transfer: js.Array[Transferable]?): Unit
+experimental/serviceworkers/ServiceWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+experimental/serviceworkers/ServiceWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+experimental/serviceworkers/ServiceWorker[JT] def scriptURL: String
+experimental/serviceworkers/ServiceWorker[JT] def state: String
+experimental/serviceworkers/ServiceWorkerContainer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+experimental/serviceworkers/ServiceWorkerContainer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+experimental/serviceworkers/ServiceWorkerContainer[JT] def controller: ServiceWorker
+experimental/serviceworkers/ServiceWorkerContainer[JT] def dispatchEvent(evt: Event): Boolean
+experimental/serviceworkers/ServiceWorkerContainer[JT] def getRegistration(scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]]
+experimental/serviceworkers/ServiceWorkerContainer[JT] def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]]
+experimental/serviceworkers/ServiceWorkerContainer[JT] var oncontrollerchange: js.Function1[Event, _]
+experimental/serviceworkers/ServiceWorkerContainer[JT] var onmessage: js.Function1[MessageEvent, _]
+experimental/serviceworkers/ServiceWorkerContainer[JT] def ready: js.Promise[ServiceWorkerRegistration]
+experimental/serviceworkers/ServiceWorkerContainer[JT] def register(scriptURL: String, options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration]
+experimental/serviceworkers/ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+experimental/serviceworkers/ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/serviceworkers/ServiceWorkerGlobalScope[JO] def self: ServiceWorkerGlobalScope
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -1082,15 +1183,20 @@ experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var origin: js.Und
 experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var ports: js.UndefOr[js.Array[MessagePort]]
 experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var scoped: js.UndefOr[Boolean]
 experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var source: js.UndefOr[ServiceWorker | MessagePort]
-experimental/serviceworkers/ServiceWorkerRegistration[ST] var active: ServiceWorker
-experimental/serviceworkers/ServiceWorkerRegistration[ST] def getNotifications(options: GetNotificationOptions = ???): js.Promise[Sequence[Notification]]
-experimental/serviceworkers/ServiceWorkerRegistration[ST] var installing: ServiceWorker
-experimental/serviceworkers/ServiceWorkerRegistration[ST] var onupdatefound: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorkerRegistration[ST] var scope: String
-experimental/serviceworkers/ServiceWorkerRegistration[ST] def showNotification(title: String, options: NotificationOptions = ???): js.Promise[Unit]
-experimental/serviceworkers/ServiceWorkerRegistration[ST] def unregister(): js.Promise[Boolean]
-experimental/serviceworkers/ServiceWorkerRegistration[ST] def update(): js.Promise[Unit]
-experimental/serviceworkers/ServiceWorkerRegistration[ST] var waiting: ServiceWorker
+experimental/serviceworkers/ServiceWorkerRegistration[JT] var active: ServiceWorker
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def dispatchEvent(evt: Event): Boolean
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def getNotifications(options: GetNotificationOptions = ???): js.Promise[Sequence[Notification]]
+experimental/serviceworkers/ServiceWorkerRegistration[JT] var installing: ServiceWorker
+experimental/serviceworkers/ServiceWorkerRegistration[JT] var onupdatefound: js.Function1[Event, _]
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+experimental/serviceworkers/ServiceWorkerRegistration[JT] var scope: String
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def showNotification(title: String, options: NotificationOptions = ???): js.Promise[Unit]
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def unregister(): js.Promise[Boolean]
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def update(): js.Promise[Unit]
+experimental/serviceworkers/ServiceWorkerRegistration[JT] var waiting: ServiceWorker
 experimental/serviceworkers/ServiceWorkerState[JT]
 experimental/serviceworkers/ServiceWorkerState[SO] val activated = "activated".asInstanceOf[ServiceWorkerState]
 experimental/serviceworkers/ServiceWorkerState[SO] val activating = "activating".asInstanceOf[ServiceWorkerState]
@@ -1112,6 +1218,7 @@ experimental/serviceworkers/package.ServiceWorkerNavigator[JT] val serviceWorker
 experimental/sharedworkers/SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/sharedworkers/SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/sharedworkers/SharedWorker[JC] def dispatchEvent(evt: Event): Boolean
+experimental/sharedworkers/SharedWorker[JC] var onerror: js.Function1[ErrorEvent, _]
 experimental/sharedworkers/SharedWorker[JC] def port: MessagePort
 experimental/sharedworkers/SharedWorker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/sharedworkers/SharedWorker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
