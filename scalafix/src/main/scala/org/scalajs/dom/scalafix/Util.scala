@@ -5,15 +5,34 @@ import scalafix.v1._
 
 object Util {
 
+  // Taken from https://scalacenter.github.io/scalafix/docs/developers/semantic-type.html#dealias-types
+  def dealias(tpe: SemanticType)(implicit doc: SemanticDocument): SemanticType =
+    tpe match {
+      case TypeRef(prefix, symbol, typeArguments) =>
+        TypeRef(prefix, dealias(symbol), typeArguments.map(dealias(_)))
+      case _ =>
+        tpe
+    }
+
+  def dealias(symbol: Symbol)(implicit doc: SemanticDocument): Symbol =
+    symbol.info.get.signature match {
+      case TypeSignature(_, lowerBound @ TypeRef(_, dealiased, _), upperBound) if lowerBound == upperBound =>
+        dealiased
+      case _ =>
+        symbol
+    }
+
+  // ===================================================================================================================
+
   def parents(sym: Symbol)(implicit doc: SemanticDocument): List[SemanticType] =
-    sym.info match {
+    dealias(sym).info match {
       case Some(i) => parents(i.signature)
       case None    => Nil
     }
 
   def parents(sig: Signature)(implicit doc: SemanticDocument): List[SemanticType] =
     sig match {
-      case x: ClassSignature => x.parents
+      case x: ClassSignature => x.parents.map(dealias(_))
       case _                 => Nil
     }
 
