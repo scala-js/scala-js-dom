@@ -382,15 +382,6 @@ trait ServiceWorkerContainer extends EventTarget {
   var oncontrollerchange: js.Function1[Event, _] = js.native
 
   /**
-   * The onerror property of the ServiceWorkerContainer interface is an event
-   * handler fired whenever an error event occurs in the associated service
-   * workers.
-   *
-   * MDN
-   */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
-
-  /**
    * The onmessage property of the ServiceWorkerContainer interface is an event
    * handler fired whenever a message event occurs — when incoming messages are
    * received to the ServiceWorkerContainer object (e.g., via a
