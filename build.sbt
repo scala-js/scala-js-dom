@@ -3,6 +3,11 @@ import scalatex.ScalatexReadme
 
 ThisBuild / shellPrompt := ((s: State) => Project.extract(s).currentRef.project + "> ")
 
+// Issue #504 - remove on 2.x branch
+// Our release GitHub Actions job performs the release for SJS 0.6 and 1.0 in parallel.
+// This prevents each parallel processes from removing each other's deployment.
+sonatypeSessionName := s"${name.value} v${version.value} (SJS $scalaJSVersion)"
+
 lazy val scalafixRules = project
   .in(file("scalafix"))
   .settings(
