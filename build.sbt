@@ -23,6 +23,7 @@ lazy val root = project
 name := "Scala.js DOM"
 
 ThisBuild / version := "1.2.0"
+ThisBuild / isSnapshot := false
 ThisBuild / crossScalaVersions := {
   if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1")
   else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
