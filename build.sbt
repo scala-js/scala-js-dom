@@ -2,6 +2,7 @@ import _root_.scalafix.sbt.BuildInfo.scalafixVersion // delete if Scala 2.10
 import scalatex.ScalatexReadme
 
 ThisBuild / shellPrompt := ((s: State) => Project.extract(s).currentRef.project + "> ")
+ThisBuild / version := "1.2.0" // Workaround for #504
 
 lazy val scalafixRules = project
   .in(file("scalafix"))
