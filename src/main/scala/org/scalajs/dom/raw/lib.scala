@@ -2593,6 +2593,8 @@ class Window
    */
   def close(): Unit = js.native
 
+  def closed: Boolean = js.native
+
   /**
    * The window.postMessage method safely enables cross-origin communication.
    * Normally, scripts on different pages are allowed to access each other if and only if
