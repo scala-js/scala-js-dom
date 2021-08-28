@@ -1,31 +1,23 @@
-import _root_.scalafix.sbt.BuildInfo.scalafixVersion // delete if Scala 2.10
+import _root_.scalafix.sbt.BuildInfo.scalafixVersion
 import scalatex.ScalatexReadme
 
 ThisBuild / shellPrompt := ((s: State) => Project.extract(s).currentRef.project + "> ")
 
-// Issue #504 - remove on 2.x branch
-// Our release GitHub Actions job performs the release for SJS 0.6 and 1.0 in parallel.
-// This prevents each parallel processes from removing each other's deployment.
-sonatypeSessionName := s"${name.value} v${version.value} (SJS $scalaJSVersion)"
-
 lazy val scalafixRules = project
   .in(file("scalafix"))
   .settings(
-    libraryDependencies += "ch.epfl.scala" %% "scalafix-core" % scalafixVersion, // delete if Scala 2.10
+    libraryDependencies += "ch.epfl.scala" %% "scalafix-core" % scalafixVersion,
   )
 
 lazy val root = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin)
-  .enablePlugins(ScalafixPlugin) // delete if Scala 2.10
-  .dependsOn(scalafixRules % ScalafixConfig) // delete if Scala 2.10
+  .enablePlugins(ScalafixPlugin)
+  .dependsOn(scalafixRules % ScalafixConfig)
 
 name := "Scala.js DOM"
 
-ThisBuild / crossScalaVersions := {
-  if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1")
-  else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
-}
+ThisBuild / crossScalaVersions := Seq("2.12.10", "2.11.12", "2.13.1", "3.0.1")
 ThisBuild / scalaVersion := crossScalaVersions.value.head
 
 val commonSettings = Seq(
@@ -56,7 +48,6 @@ scalacOptions ++= {
 }
 
 def hasNewCollections(version: String): Boolean = {
-  !version.startsWith("2.10.") &&
   !version.startsWith("2.11.") &&
   !version.startsWith("2.12.")
 }
@@ -72,11 +63,6 @@ inConfig(Compile)(Def.settings(
   unmanagedSourceDirectories +=
     collectionsEraDependentDirectory(scalaVersion.value, sourceDirectory.value)
 ))
-
-scalacOptions ++= {
-  if (scalaJSVersion.startsWith("0.6.")) Seq("-P:scalajs:sjsDefinedByDefault")
-  else Nil
-}
 
 versionScheme := Some("early-semver")
 
@@ -138,6 +124,5 @@ ThisBuild / prePR_nonCross := Def.sequential(
   root / clean,
   root / Compile / scalafmt,
   root / Compile / compile,
-  (root / Compile / scalafix).toTask(""), // delete if Scala 2.10
   example / Compile / compile,
 ).value
