@@ -6,7 +6,7 @@ ThisBuild / shellPrompt := ((s: State) => Project.extract(s).currentRef.project 
 lazy val scalafixRules = project
   .in(file("scalafix"))
   .settings(
-    libraryDependencies += "ch.epfl.scala" %% "scalafix-core" % scalafixVersion,
+    libraryDependencies += ("ch.epfl.scala" %% "scalafix-core" % scalafixVersion).cross(CrossVersion.for3Use2_13),
   )
 
 def sourceMapsToGithub: Project => Project =
