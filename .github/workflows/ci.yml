@@ -1,12 +1,13 @@
 name: CI
+
 on:
-  push:
-    branches:
-      - master
   pull_request:
-    branches:
-      - master
+  push:
+    tags-ignore:
+      - v*
+
 jobs:
+
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -14,26 +15,32 @@ jobs:
       matrix:
         scalaversion: ["2.11.12", "2.12.12", "2.13.4", "3.0.1"]
     steps:
+
       - uses: actions/checkout@v2
-      - uses: olafurpg/setup-scala@v10
-        with:
-          java-version: "adopt@1.8"
-      - uses: coursier/cache-action@v5
+
+      - name: Setup Scala
+        uses: japgolly/setup-everything-scala@v1.0
+
       - name: Build
         run: sbt "++${{ matrix.scalaversion }}" package
+
       - name: Test generate documentation
         run: sbt "++${{ matrix.scalaversion }}" doc
+
       - name: Build examples
         run: sbt "++${{ matrix.scalaversion }}" example/compile
-      - name: scalafmt
+
+      - name: Validate formatting
         run: sbt "++${{ matrix.scalaversion }}" scalafmtCheck
+
+      - name: Validate api report
+        if: matrix.scalaversion != '2.11.12' && matrix.scalaversion != '3.0.1'
+        run: ./api-reports/validate "${{ matrix.scalaversion }}"
+
   readme:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: olafurpg/setup-scala@v10
-        with:
-          java-version: "adopt@1.8"
-      - uses: coursier/cache-action@v5
+      - uses: japgolly/setup-everything-scala@v1.0
       - name: Readme generation
         run: sbt readme/run

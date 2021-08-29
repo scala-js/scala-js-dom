@@ -309,7 +309,7 @@ class Headers(map: HeadersInit = js.Array[js.Array[String]]())
    *
    * @param name a ByteString, ie. only ASCII chars
    */
-  def get(name: ByteString): js.UndefOr[ByteString] = js.native
+  def get(name: ByteString): ByteString = js.native
 
   /**
    * The getAll() method of the Headers interface returns an array of all the

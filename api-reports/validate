@@ -1,0 +1,21 @@
+#!/bin/bash
+set -euo pipefail
+cd "$(dirname "$0")"
+
+[ $# -ne 1 ] && echo "Usage: $0 <scala version>" && exit 1
+
+series="${1%.*}"
+file="${series/./_}.txt"
+echo -n "Validating $file ... "
+
+help='Run `sbt +compile` and check in the differences to the '"$(basename "$0") directory"
+
+if [ ! -e "$file" ]; then
+  echo "file not found. $help"
+  exit 2
+elif [ -n "$(git status --porcelain -- "$file")" ]; then
+  echo "out-of-date. $help"
+  exit 3
+else
+  echo "ok"
+fi

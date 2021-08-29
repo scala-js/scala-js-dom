@@ -11,17 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: olafurpg/setup-scala@v10
-        with:
-          java-version: "adopt@1.8"
-      - uses: coursier/cache-action@v5
+
+      - name: Setup Scala
+        uses: japgolly/setup-everything-scala@v1.0
 
       - name: Build
         run: sbt readme/run
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: readme/target/scalatex
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: readme/target/scalatex

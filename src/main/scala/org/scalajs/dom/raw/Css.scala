@@ -12,6 +12,28 @@ package org.scalajs.dom.raw
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
+@js.native
+@JSGlobal
+object CSS extends js.Object {
+
+  /**
+   * The CSS.supports() method returns a boolean value indicating if the browser supports a given CSS feature, or not.
+   * Allows to test the support of a pair property-value.
+   *
+   * MDN
+   */
+  def supports(propertyName: String, value: String): Boolean = js.native
+
+  /**
+   * The CSS.supports() method returns a boolean value indicating if the browser supports a given CSS feature, or not.
+   * Takes one parameter matching the condition of @supports.
+   *
+   * MDN
+   */
+  def supports(supportCondition: String): Boolean = js.native
+
+}
+
 /**
  * A CSSStyleDeclaration is an interface to the declaration block returned by the
  * style property of a cssRule in a stylesheet, when the rule is a CSSStyleRule.
