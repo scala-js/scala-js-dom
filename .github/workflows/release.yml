@@ -1,16 +1,11 @@
 name: Release
 on:
   push:
-    branches: ["master", "series/1.x"]
+    branches: ["master"]
     tags: ["v*"]
 jobs:
   publish:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        scalajsversion: ["1.x", "0.6.x"]
-    env:
-      SCALAJS_VERSION: "${{ matrix.scalajsversion == '0.6.x' && '0.6.28' || '' }}"
     steps:
 
       - uses: actions/checkout@v2
@@ -19,9 +14,6 @@ jobs:
 
       - name: Setup Scala
         uses: japgolly/setup-everything-scala@v1.0
-
-      - name: Hacks for Scala 2.10
-        run: ./prepareForScala210.sh
 
       - name: Release
         run: sbt ci-release
