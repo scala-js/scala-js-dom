@@ -1,10 +1,9 @@
 package org.scalajs.dom.experimental.sharedworkers
 
-import scala.scalajs.js
-import scala.scalajs.js.annotation._
-
 import org.scalajs.dom.raw.MessagePort
 import org.scalajs.dom.webworkers
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /**
  * The SharedWorker interface represents a specific kind of worker that can be

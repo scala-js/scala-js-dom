@@ -10,7 +10,6 @@
 package org.scalajs.dom.raw
 
 import org.scalajs.dom.experimental.mediastream.MediaStream
-
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 

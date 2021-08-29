@@ -1,17 +1,14 @@
 package org.scalajs.dom.ext
 
 import java.nio.ByteBuffer
-
-import scala.language.implicitConversions
-import scala.concurrent.{Promise, Future}
-
-import scala.scalajs.js
-import scala.scalajs.js.typedarray._
-import scala.scalajs.js.typedarray.TypedArrayBufferOps._
-
 import org.scalajs.dom
-import org.scalajs.dom.{FormData, html, raw}
 import org.scalajs.dom.raw.{Blob, KeyboardEvent}
+import org.scalajs.dom.{FormData, html, raw}
+import scala.concurrent.{Future, Promise}
+import scala.language.implicitConversions
+import scala.scalajs.js
+import scala.scalajs.js.typedarray.TypedArrayBufferOps._
+import scala.scalajs.js.typedarray._
 
 /**
  * Used to extend out javascript *Collections to make them usable as normal

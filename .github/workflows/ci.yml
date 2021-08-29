@@ -32,16 +32,16 @@ jobs:
         run: ./prepareForScala210.sh
 
       - name: Build
-        run: sbt "++${{ matrix.scalaversion }}" package
+        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" package
 
       - name: Test generate documentation
-        run: sbt "++${{ matrix.scalaversion }}" doc
+        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" doc
 
       - name: Build examples
-        run: sbt "++${{ matrix.scalaversion }}" example/compile
+        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" example/compile
 
       - name: Validate formatting
-        run: sbt "++${{ matrix.scalaversion }}" scalafmtCheck
+        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" scalafmtCheck
 
       - name: Validate api report
         if: matrix.scalajsversion == '1.x' && matrix.scalaversion != '2.11.12'

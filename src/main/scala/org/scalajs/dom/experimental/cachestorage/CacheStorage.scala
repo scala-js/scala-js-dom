@@ -1,8 +1,8 @@
 package org.scalajs.dom.experimental.cachestorage
 
+import org.scalajs.dom.experimental._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import org.scalajs.dom.experimental._
 
 /**
  * See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]]
