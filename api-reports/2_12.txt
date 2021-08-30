@@ -24183,31 +24183,11 @@ ext/Ajax.InputData[SO] implicit def byteBuffer2ajax(data: ByteBuffer): InputData
 ext/Ajax.InputData[SO] implicit def formdata2ajax(b: FormData): InputData
 ext/Ajax.InputData[SO] implicit def str2ajax(s: String): InputData
 ext/AjaxException[SC] def isTimeout = xhr.status = = 0 && xhr.readyState = = 4
-ext/Color[SC] def *(c: Color) = Color(r * c.r, g * c.g, b * c.b)
-ext/Color[SC] def +(c: Color) = Color(r + c.r, g + c.g, b + c.b)
-ext/Color[SC] def toHex: String
-ext/Color[SC] override def toString() = s"rgb($r, $g, $b)"
-ext/Color[SO] val Black = Color(0, 0, 0)
-ext/Color[SO] val Blue = Color(0, 0, 255)
-ext/Color[SO] val Cyan = Color(0, 255, 255)
-ext/Color[SO] val Green = Color(0, 255, 0)
-ext/Color[SO] val LongHex = s"#($d$d)($d$d)($d$d)".r
-ext/Color[SO] val Magenta = Color(255, 0, 255)
-ext/Color[SO] val RGB = "rgb\\((\\d+), (\\d+), (\\d+)\\)".r
-ext/Color[SO] val Red = Color(255, 0, 0)
-ext/Color[SO] val ShortHex = s"#($d)($d)($d)".r
-ext/Color[SO] val White = Color(255, 255, 255)
-ext/Color[SO] val Yellow = Color(255, 255, 0)
-ext/Color[SO] val all = Seq( White, Red, Green, Blue, Cyan, Magenta, Yellow, Black )
-ext/Color[SO] def apply(s: String): Color
-ext/Color[SO] val d = "[0-9a-zA-Z]"
-ext/Color[SO] def hex(x: String) = Integer.parseInt(x, 16)
 ext/EasySeq[SC] def apply(x: Int) = jsApply(x)
 ext/EasySeq[SC] def hasNext: scala.Boolean
 ext/EasySeq[SC] def iterator = new Iterator[T] { var index = 0 def hasNext: scala.Boolean = index < jsLength def next() = { val res = jsApply(index) index + = 1 res } }
 ext/EasySeq[SC] def length = jsLength
 ext/EasySeq[SC] def next() = { val res = jsApply(index) index + = 1 res }
-ext/Image[SO] def createBase64Svg(s: String) = { val img = dom.document.createElement("img").asInstanceOf[html.Image] img.src = "data:image/svg+xml;base64, " + s img }
 ext/KeyCode[SO] final val A = 65
 ext/KeyCode[SO] final val Alt = 18
 ext/KeyCode[SO] final val B = 66
@@ -24635,12 +24615,6 @@ ext/KeyValue.Multimedia[SO] final val SpellCheck = "SpellCheck"
 ext/KeyValue.Multimedia[SO] final val VolumeDown = "VolumeDown"
 ext/KeyValue.Multimedia[SO] final val VolumeMute = "VolumeMute"
 ext/KeyValue.Multimedia[SO] final val VolumeUp = "VolumeUp"
-ext/LocalStorage[SO] def apply(key: String): Option[String]
-ext/LocalStorage[SO] def clear(): Unit
-ext/LocalStorage[SO] def key(index: Int): Option[String]
-ext/LocalStorage[SO] def length: Int
-ext/LocalStorage[SO] def remove(key: String): Unit
-ext/LocalStorage[SO] def update(key: String, data: String): Unit
 ext/NamedNodeMapMap[SC] override def + = (kv: (String, Attr)): this.type
 ext/NamedNodeMapMap[SC] override def - = (key: String): this.type
 ext/NamedNodeMapMap[SC] override def clear(): Unit
@@ -24649,39 +24623,7 @@ ext/NamedNodeMapMap[SC] override def hasNext: Boolean
 ext/NamedNodeMapMap[SC] override def iterator: Iterator[(String, Attr)]
 ext/NamedNodeMapMap[SC] def length: Int
 ext/NamedNodeMapMap[SC] override def next(): (String, Attr)
-ext/SessionStorage[SO] def apply(key: String): Option[String]
-ext/SessionStorage[SO] def clear(): Unit
-ext/SessionStorage[SO] def key(index: Int): Option[String]
-ext/SessionStorage[SO] def length: Int
-ext/SessionStorage[SO] def remove(key: String): Unit
-ext/SessionStorage[SO] def update(key: String, data: String): Unit
-ext/Storage[SC] def apply(key: String): Option[String]
-ext/Storage[SC] def clear(): Unit
-ext/Storage[SC] def key(index: Int): Option[String]
-ext/Storage[SC] def length: Int
-ext/Storage[SC] def remove(key: String): Unit
-ext/Storage[SC] def update(key: String, data: String): Unit
-ext/TouchEvents[JT] var ontouchcancel: js.Function1[dom.TouchEvent, _]
-ext/TouchEvents[JT] var ontouchend: js.Function1[dom.TouchEvent, _]
-ext/TouchEvents[JT] var ontouchmove: js.Function1[dom.TouchEvent, _]
-ext/TouchEvents[JT] var ontouchstart: js.Function1[dom.TouchEvent, _]
-ext/TouchEvents[SO] implicit def HTMLDocumentToTouchEvents(html: dom.HTMLDocument): TouchEvents
-ext/TouchEvents[SO] implicit def WindowToTouchEvents(window: dom.Window): TouchEvents
-ext/package[SO] def cast[T] = x.asInstanceOf[T]
-ext/package[SO] implicit def color2String(c: Color): String
-ext/package[SO] def fillCircle(x: Double, y: Double, r: Double) = { prepCircle(x, y, r) ctx.fill() }
-ext/package[SO] def fillPath(points: (Double, Double)*) = { prepPath(points) ctx.fill() }
-ext/package[SO] implicit def pimpAnimatedLength(x: svg.AnimatedLength): Double
-ext/package[SO] implicit def pimpAnimatedNumber(x: svg.AnimatedNumber): Double
 ext/package[SO] implicit def pimpNamedNodeMap(namedNodeMap: NamedNodeMap): NamedNodeMapMap
-ext/package[SO] implicit def pimpRichAnimatedLength(x: svg.AnimatedLength): runtime.RichDouble
-ext/package[SO] implicit def pimpRichAnimatedNumber(x: svg.AnimatedNumber): runtime.RichDouble
-ext/package[SO] def prepCircle(x: Double, y: Double, r: Double) = { ctx.beginPath() ctx.arc(x, y, r, 0, math.Pi * 2) }
-ext/package[SO] def prepPath(points: Seq[(Double, Double)], closed: Boolean = true) = { ctx.beginPath() if (closed) ctx.moveTo(points.last._1, points.last._2) for (p <- points) { ctx.lineTo(p._1, p._2) } }
-ext/package[SO] def strokeCircle(x: Double, y: Double, r: Double) = { prepCircle(x, y, r) ctx.stroke() }
-ext/package[SO] def strokePath(points: (Double, Double)*) = { prepPath(points) ctx.stroke() }
-ext/package[SO] def strokePathOpen(points: (Double, Double)*) = { prepPath(points, closed = false) ctx.stroke() }
-ext/package.Castable[SC] def cast[T] = x.asInstanceOf[T]
 ext/package.PimpedHtmlCollection[SC] def apply(x: Int) = jsApply(x)
 ext/package.PimpedHtmlCollection[SC] def hasNext: scala.Boolean
 ext/package.PimpedHtmlCollection[SC] def iterator = new Iterator[T] { var index = 0 def hasNext: scala.Boolean = index < jsLength def next() = { val res = jsApply(index) index + = 1 res } }
@@ -24702,13 +24644,6 @@ ext/package.PimpedTouchList[SC] def hasNext: scala.Boolean
 ext/package.PimpedTouchList[SC] def iterator = new Iterator[T] { var index = 0 def hasNext: scala.Boolean = index < jsLength def next() = { val res = jsApply(index) index + = 1 res } }
 ext/package.PimpedTouchList[SC] def length = jsLength
 ext/package.PimpedTouchList[SC] def next() = { val res = jsApply(index) index + = 1 res }
-ext/package.pimpedContext[SC] def fillCircle(x: Double, y: Double, r: Double) = { prepCircle(x, y, r) ctx.fill() }
-ext/package.pimpedContext[SC] def fillPath(points: (Double, Double)*) = { prepPath(points) ctx.fill() }
-ext/package.pimpedContext[SC] def prepCircle(x: Double, y: Double, r: Double) = { ctx.beginPath() ctx.arc(x, y, r, 0, math.Pi * 2) }
-ext/package.pimpedContext[SC] def prepPath(points: Seq[(Double, Double)], closed: Boolean = true) = { ctx.beginPath() if (closed) ctx.moveTo(points.last._1, points.last._2) for (p <- points) { ctx.lineTo(p._1, p._2) } }
-ext/package.pimpedContext[SC] def strokeCircle(x: Double, y: Double, r: Double) = { prepCircle(x, y, r) ctx.stroke() }
-ext/package.pimpedContext[SC] def strokePath(points: (Double, Double)*) = { prepPath(points) ctx.stroke() }
-ext/package.pimpedContext[SC] def strokePathOpen(points: (Double, Double)*) = { prepPath(points, closed = false) ctx.stroke() }
 html[SO] type Anchor = HTMLAnchorElement
 html[SO] type Area = HTMLAreaElement
 html[SO] type Audio = HTMLAudioElement

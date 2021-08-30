@@ -2,7 +2,7 @@ package org.scalajs.dom.ext
 
 import java.nio.ByteBuffer
 import org.scalajs.dom
-import org.scalajs.dom.{Blob, FormData, KeyboardEvent, html}
+import org.scalajs.dom.{Blob, FormData, KeyboardEvent}
 import scala.concurrent.{Future, Promise}
 import scala.language.implicitConversions
 import scala.scalajs.js
@@ -30,66 +30,6 @@ class EasySeq[T](jsLength: Int, jsApply: Int => T)
       index += 1
       res
     }
-  }
-}
-
-/**
- * Encapsulates a Color, allowing you to do useful work with it
- * before serializing it to a String
- */
-case class Color(r: Int, g: Int, b: Int) {
-  override def toString() = s"rgb($r, $g, $b)"
-
-  def toHex: String = f"#$r%02x$g%02x$b%02x"
-
-  def *(c: Color) = Color(r * c.r, g * c.g, b * c.b)
-
-  def +(c: Color) = Color(r + c.r, g + c.g, b + c.b)
-}
-
-object Color {
-
-  val d = "[0-9a-zA-Z]"
-  val RGB = "rgb\\((\\d+), (\\d+), (\\d+)\\)".r
-  val ShortHex = s"#($d)($d)($d)".r
-  val LongHex = s"#($d$d)($d$d)($d$d)".r
-
-  def hex(x: String) = Integer.parseInt(x, 16)
-
-  def apply(s: String): Color = {
-    s match {
-      case RGB(r, g, b)      => Color(r.toInt, g.toInt, b.toInt)
-      case ShortHex(r, g, b) => Color(hex(r) * 16, hex(g) * 16, hex(b) * 16)
-      case LongHex(r, g, b)  => Color(hex(r), hex(g), hex(b))
-    }
-  }
-
-  val White = Color(255, 255, 255)
-  val Red = Color(255, 0, 0)
-  val Green = Color(0, 255, 0)
-  val Blue = Color(0, 0, 255)
-  val Cyan = Color(0, 255, 255)
-  val Magenta = Color(255, 0, 255)
-  val Yellow = Color(255, 255, 0)
-  val Black = Color(0, 0, 0)
-  val all = Seq(
-      White,
-      Red,
-      Green,
-      Blue,
-      Cyan,
-      Magenta,
-      Yellow,
-      Black
-  )
-}
-
-object Image {
-  def createBase64Svg(s: String) = {
-    val img = dom.document.createElement("img").asInstanceOf[html.Image]
-
-    img.src = "data:image/svg+xml;base64," + s
-    img
   }
 }
 
@@ -276,82 +216,4 @@ object Ajax {
       req.send(data)
     promise.future
   }
-}
-
-/**
- * Wraps [[dom.Storage]] replacing null-returning methods with option-returning ones
- */
-sealed class Storage(domStorage: dom.Storage) {
-  def length: Int = domStorage.length
-
-  def apply(key: String): Option[String] = Option(domStorage.getItem(key))
-
-  def update(key: String, data: String): Unit = domStorage.setItem(key, data)
-
-  def clear(): Unit = domStorage.clear()
-
-  def remove(key: String): Unit = domStorage.removeItem(key)
-
-  def key(index: Int): Option[String] = Option(domStorage.key(index))
-}
-
-object SessionStorage extends Storage(dom.window.sessionStorage)
-
-object LocalStorage extends Storage(dom.window.localStorage)
-
-/**
- * W3C recommendation for touch events
- *
- * @see http://www.w3.org/TR/touch-events/
- */
-@js.native
-trait TouchEvents extends js.Object {
-
-  /**
-   * The touchstart event is fired when a touch point is placed on the touch
-   * surface.
-   *
-   * MDN
-   */
-  var ontouchstart: js.Function1[dom.TouchEvent, _] = js.native
-
-  /**
-   * The touchmove event is fired when a touch point is moved along the touch
-   * surface.
-   *
-   * MDN
-   */
-  var ontouchmove: js.Function1[dom.TouchEvent, _] = js.native
-
-  /**
-   * The touchend event is fired when a touch point is removed from the touch
-   * surface.
-   *
-   * MDN
-   */
-  var ontouchend: js.Function1[dom.TouchEvent, _] = js.native
-
-  /**
-   * The touchcancel event is fired when a touch point has been disrupted in an
-   * implementation-specific manner (too many touch points for example).
-   *
-   * MDN
-   */
-  var ontouchcancel: js.Function1[dom.TouchEvent, _] = js.native
-}
-
-/**
- * Implicits to add touch event handlers to [[dom.HTMLDocument]] and
- * [[dom.Window]].
- *
- * @note Touch events may not be available on all modern browsers. See
- *       http://www.quirksmode.org/mobile/tableTouch.html#t00 for a compatibility
- *       table.
- */
-object TouchEvents {
-  implicit def HTMLDocumentToTouchEvents(html: dom.HTMLDocument): TouchEvents =
-    html.asInstanceOf[TouchEvents]
-
-  implicit def WindowToTouchEvents(window: dom.Window): TouchEvents =
-    window.asInstanceOf[TouchEvents]
 }
