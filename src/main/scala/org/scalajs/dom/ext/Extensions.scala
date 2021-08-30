@@ -2,94 +2,12 @@ package org.scalajs.dom.ext
 
 import java.nio.ByteBuffer
 import org.scalajs.dom
-import org.scalajs.dom.{Blob, FormData, KeyboardEvent}
+import org.scalajs.dom.{Blob, FormData}
 import scala.concurrent.{Future, Promise}
 import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.typedarray.ArrayBufferView
 import scala.scalajs.js.typedarray.TypedArrayBufferOps._
-
-/**
- * A list of the codes returned by KeyEvents.
- */
-object KeyCode {
-  final val Backspace = 8
-  final val Tab = 9
-  final val Enter = 13
-  final val Shift = 16
-  final val Ctrl = 17
-  final val Alt = 18
-  final val Pause = 19
-  final val CapsLock = 20
-  final val Escape = 27
-  final val Space = 32
-  final val PageUp = 33
-  final val PageDown = 34
-  final val End = 35
-  final val Home = 36
-  final val Left = 37
-  final val Up = 38
-  final val Right = 39
-  final val Down = 40
-  final val Insert = 45
-  final val Delete = 46
-  final val Num0 = 48
-  final val Num1 = 49
-  final val Num2 = 50
-  final val Num3 = 51
-  final val Num4 = 52
-  final val Num5 = 53
-  final val Num6 = 54
-  final val Num7 = 55
-  final val Num8 = 56
-  final val Num9 = 57
-  final val A = 65
-  final val B = 66
-  final val C = 67
-  final val D = 68
-  final val E = 69
-  final val F = 70
-  final val G = 71
-  final val H = 72
-  final val I = 73
-  final val J = 74
-  final val K = 75
-  final val L = 76
-  final val M = 77
-  final val N = 78
-  final val O = 79
-  final val P = 80
-  final val Q = 81
-  final val R = 82
-  final val S = 83
-  final val T = 84
-  final val U = 85
-  final val V = 86
-  final val W = 87
-  final val X = 88
-  final val Y = 89
-  final val Z = 90
-  final val F1 = 112
-  final val F2 = 113
-  final val F3 = 114
-  final val F4 = 115
-  final val F5 = 116
-  final val F6 = 117
-  final val F7 = 118
-  final val F8 = 119
-  final val F9 = 120
-  final val F10 = 121
-  final val F11 = 122
-  final val F12 = 123
-}
-
-/** Aliases for DOM_KEY_LOCATION_* constants from [[KeyboardEvent]] */
-object KeyLocation {
-  final val Standard = KeyboardEvent.DOM_KEY_LOCATION_STANDARD
-  final val Left = KeyboardEvent.DOM_KEY_LOCATION_LEFT
-  final val Right = KeyboardEvent.DOM_KEY_LOCATION_RIGHT
-  final val NumPad = KeyboardEvent.DOM_KEY_LOCATION_NUMPAD
-}
 
 /**
  * Thrown when `Ajax.get` or `Ajax.post` receives a non-20X response code.
