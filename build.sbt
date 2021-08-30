@@ -23,14 +23,28 @@ lazy val root = project
 name := "Scala.js DOM"
 
 ThisBuild / crossScalaVersions := {
-  if (scalaJSVersion.startsWith("1.")) Seq("2.12.10", "2.11.12", "2.13.1")
-  else Seq("2.12.10", "2.11.12", "2.10.7", "2.13.1")
+  if (scalaJSVersion.startsWith("1.")) Seq("2.11.12", "2.12.10","2.13.1")
+  else Seq("2.10.7", "2.11.12", "2.12.10", "2.13.1")
 }
-ThisBuild / scalaVersion := crossScalaVersions.value.head
+ThisBuild / scalaVersion := crossScalaVersions.value.find(_.startsWith("2.13.")).get
+
+val inCI = Option(System.getenv("CI")).exists(_.contains("1"))
 
 val commonSettings = Seq(
   organization := "org.scala-js",
-  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
+  scalacOptions ++= Seq(
+    "-deprecation",
+    "-feature",
+  ),
+  scalacOptions ++= (if (!inCI) Seq.empty else Seq(
+    "-Xfatal-warnings",
+  )),
+  scalacOptions ++= (CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, 11)) => "-Ywarn-unused-import" :: Nil
+    case Some((2, 12)) => "-Ywarn-unused:imports,patvars,locals,implicits" :: Nil
+    case Some((2, 13)) => "-Wunused:imports,patvars,locals,implicits" :: Nil
+    case _             => Nil
+  }),
 )
 
 val noPublishSettings = Seq(

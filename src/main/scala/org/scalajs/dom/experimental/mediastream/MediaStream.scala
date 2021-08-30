@@ -3,10 +3,10 @@
  */
 package org.scalajs.dom.experimental.mediastream
 
-import scala.scalajs.js
-import scala.scalajs.js.|
-import scala.scalajs.js.annotation._
 import org.scalajs.dom.raw.{Event, EventInit, EventTarget, TimeRanges}
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
 /**
  * The MediaStream

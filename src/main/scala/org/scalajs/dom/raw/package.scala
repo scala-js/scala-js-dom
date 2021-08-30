@@ -9,9 +9,8 @@
  */
 package org.scalajs.dom
 
-import scala.scalajs.js
-import scala.scalajs.js.|
 import scala.scalajs.js.typedarray.ArrayBuffer
+import scala.scalajs.js.|
 
 package object raw {
 

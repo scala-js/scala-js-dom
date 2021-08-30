@@ -3,16 +3,15 @@
  */
 package org.scalajs.dom.experimental.webrtc
 
-import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBufferView, ArrayBuffer}
-import scala.scalajs.js.|
-
 import org.scalajs.dom.Blob
+import org.scalajs.dom.experimental.mediastream._
 import org.scalajs.dom.raw.{
   DOMException, Event, EventInit, EventTarget, MessageEvent
 }
-import org.scalajs.dom.experimental.mediastream._
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.typedarray.{ArrayBuffer, ArrayBufferView}
+import scala.scalajs.js.|
 
 @js.native
 trait RTCIdentityAssertion extends js.Object {

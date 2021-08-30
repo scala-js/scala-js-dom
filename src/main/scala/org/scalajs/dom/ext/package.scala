@@ -2,8 +2,6 @@ package org.scalajs.dom
 
 import scala.language.implicitConversions
 
-import scala.collection.mutable
-
 package object ext {
 
   implicit class PimpedNodeList(nodes: NodeList)

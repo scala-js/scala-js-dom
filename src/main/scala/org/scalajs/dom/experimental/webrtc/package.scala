@@ -1,10 +1,8 @@
 package org.scalajs.dom.experimental
 
 import org.scalajs.dom.experimental.mediastream._
-import org.scalajs.dom.raw.DOMException
-
-import scala.scalajs.js
 import scala.language.implicitConversions
+import scala.scalajs.js
 
 package object webrtc {
   implicit def toWebRTC(n: org.scalajs.dom.Navigator): NavigatorMediaStream =

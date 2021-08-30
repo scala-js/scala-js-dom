@@ -1,10 +1,9 @@
 package org.scalajs.dom.raw
 
-import scala.scalajs.js
-import scala.scalajs.js.|
-import scala.scalajs.js.annotation._
 import org.scalajs.dom.experimental.cachestorage.CacheStorage
 import org.scalajs.dom.experimental.{RequestInfo, RequestInit, Response}
+import scala.scalajs.js
+import scala.scalajs.js.|
 
 /**
  * The WindowOrWorkerGlobalScope mixin describes several features common to the
