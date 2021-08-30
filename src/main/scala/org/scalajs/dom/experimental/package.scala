@@ -1,5 +1,6 @@
 package org.scalajs.dom
 
+import org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.|
 
@@ -46,4 +47,15 @@ package object experimental {
    * API git repo, as this is not clearly defined
    */
   type OpenEndedDictionary[T] = js.Dictionary[T]
+
+  // old Notification.scala
+
+  @deprecated("use dom.Notification instead", "2.0.0")
+  type Notification = dom.Notification
+
+  @deprecated("use dom.Notification instead", "2.0.0")
+  lazy val Notification: dom.Notification.type = dom.Notification
+
+  @deprecated("use dom.NotificationOptions instead", "2.0.0")
+  type NotificationOptions = dom.NotificationOptions
 }
