@@ -145,5 +145,6 @@ ThisBuild / prePR_nonCross := Def.sequential(
   root / clean,
   root / Compile / scalafmt,
   root / Compile / compile,
+  (root / Compile / scalafix).toTask(""),
   example / Compile / compile,
 ).value
