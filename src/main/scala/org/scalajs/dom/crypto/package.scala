@@ -2,11 +2,14 @@ package org.scalajs.dom
 
 import scala.language.implicitConversions
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.{ArrayBuffer, ArrayBufferView, Uint8Array}
 import scala.scalajs.js.|
 
 package object crypto {
-  @inline def crypto = GlobalCrypto.crypto
+  @js.native
+  @JSGlobal("crypto")
+  val crypto: Crypto = js.native
 
   type BigInteger = Uint8Array
 

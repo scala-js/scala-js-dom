@@ -23081,7 +23081,7 @@ crypto/EcdhKeyDeriveParams[SO] def apply(name: String, public: CryptoKey): EcdhK
 crypto/EcdsaParams[JT] var hash: HashAlgorithmIdentifier
 crypto/EcdsaParams[JT] var name: String
 crypto/EcdsaParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): EcdsaParams
-crypto/GlobalCrypto[JO] val crypto: Crypto
+crypto/GlobalCrypto[JO] val crypto: Crypto  (@deprecated in 2.0.0)
 crypto/HashAlgorithm[JT] var name: String
 crypto/HashAlgorithm[SO] val `SHA-1` = named("SHA-1")
 crypto/HashAlgorithm[SO] val `SHA-256` = named("SHA-256")
@@ -23200,7 +23200,7 @@ crypto/package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
 crypto/package[SO] type KeyAlgorithmIdentifier = KeyAlgorithm | String
 crypto/package[SO] implicit def arrayBuffer2BufferSource(b: ArrayBuffer): BufferSource
 crypto/package[SO] implicit def arrayBufferView2BufferSource(b: ArrayBufferView): BufferSource
-crypto/package[SO] def crypto = GlobalCrypto.crypto
+crypto/package[SO] @js.native @JSGlobal("crypto") val crypto: Crypto
 crypto/package.BufferSource[JT]
 experimental/AbortController[JC] def abort(): Unit
 experimental/AbortController[JC] val signal: AbortSignal
