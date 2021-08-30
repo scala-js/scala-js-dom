@@ -13460,6 +13460,7 @@ NamedNodeMap[JC] def removeNamedItemNS(namespaceURI: String, localName: String):
 NamedNodeMap[JC] def setNamedItem(arg: Attr): Attr
 NamedNodeMap[JC] def setNamedItemNS(arg: Attr): Attr
 NamedNodeMap[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: Attr): Unit
+NamedNodeMap[SO] implicit def namedNodeMapAsMap(namedNodeMap: NamedNodeMap): mutable.Map[String, Attr]
 Navigator[JC] def appName: String
 Navigator[JC] def appVersion: String
 Navigator[JC] def clipboard: Clipboard
@@ -24615,15 +24616,6 @@ ext/KeyValue.Multimedia[SO] final val SpellCheck = "SpellCheck"
 ext/KeyValue.Multimedia[SO] final val VolumeDown = "VolumeDown"
 ext/KeyValue.Multimedia[SO] final val VolumeMute = "VolumeMute"
 ext/KeyValue.Multimedia[SO] final val VolumeUp = "VolumeUp"
-ext/NamedNodeMapMap[SC] override def + = (kv: (String, Attr)): this.type
-ext/NamedNodeMapMap[SC] override def - = (key: String): this.type
-ext/NamedNodeMapMap[SC] override def clear(): Unit
-ext/NamedNodeMapMap[SC] override def get(key: String): Option[Attr]
-ext/NamedNodeMapMap[SC] override def hasNext: Boolean
-ext/NamedNodeMapMap[SC] override def iterator: Iterator[(String, Attr)]
-ext/NamedNodeMapMap[SC] def length: Int
-ext/NamedNodeMapMap[SC] override def next(): (String, Attr)
-ext/package[SO] implicit def pimpNamedNodeMap(namedNodeMap: NamedNodeMap): NamedNodeMapMap
 ext/package.PimpedHtmlCollection[SC] def apply(x: Int) = jsApply(x)
 ext/package.PimpedHtmlCollection[SC] def hasNext: scala.Boolean
 ext/package.PimpedHtmlCollection[SC] def iterator = new Iterator[T] { var index = 0 def hasNext: scala.Boolean = index < jsLength def next() = { val res = jsApply(index) index + = 1 res } }

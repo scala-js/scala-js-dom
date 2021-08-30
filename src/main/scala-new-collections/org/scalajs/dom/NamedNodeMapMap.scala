@@ -1,9 +1,8 @@
-package org.scalajs.dom.ext
+package org.scalajs.dom
 
-import org.scalajs.dom._
 import scala.collection.mutable
 
-class NamedNodeMapMap private[ext] (namedNodeMap: NamedNodeMap)
+private[dom] class NamedNodeMapMap(namedNodeMap: NamedNodeMap)
     extends mutable.Map[String, Attr] {
   self =>
 

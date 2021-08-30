@@ -1,7 +1,5 @@
 package org.scalajs.dom
 
-import scala.language.implicitConversions
-
 package object ext {
 
   implicit class PimpedNodeList(nodes: NodeList)
@@ -16,6 +14,4 @@ package object ext {
   implicit class PimpedSVGTransformList(coll: svg.TransformList)
       extends EasySeq[svg.Transform](coll.numberOfItems, coll.getItem)
 
-  implicit def pimpNamedNodeMap(namedNodeMap: NamedNodeMap): NamedNodeMapMap =
-    new NamedNodeMapMap(namedNodeMap)
 }
