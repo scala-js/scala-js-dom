@@ -23220,20 +23220,7 @@ experimental/Fetch[JO] def fetch(info: RequestInfo, init: RequestInit = null): j
 experimental/FileReaderSync[JC] def readAsArrayBuffer(blob: Blob): ArrayBuffer
 experimental/FileReaderSync[JC] def readAsDataURL(blob: Blob): URL
 experimental/FileReaderSync[JC] def readAsText(blob: Blob, encoding: String?): String
-experimental/Fullscreen[SO] def exitFullscreen(): js.UndefOr[js.Promise[Unit]]
-experimental/Fullscreen[SO] def fullscreenElement: Element
-experimental/Fullscreen[SO] def fullscreenEnabled: Boolean
-experimental/Fullscreen[SO] var onfullscreenchange: js.Function1[Event, _]
-experimental/Fullscreen[SO] var onfullscreenerror: js.Function1[Event, _]
-experimental/Fullscreen[SO] def requestFullscreen(): js.UndefOr[js.Promise[Unit]]
-experimental/Fullscreen[SO] implicit def toFullscreenDocument(d: Document): FullscreenDocument
-experimental/Fullscreen[SO] implicit def toFullscreenElement(e: Element): FullscreenElement
-experimental/Fullscreen.FullscreenDocument[JT] def exitFullscreen(): js.UndefOr[js.Promise[Unit]]
-experimental/Fullscreen.FullscreenDocument[JT] def fullscreenElement: Element
-experimental/Fullscreen.FullscreenDocument[JT] def fullscreenEnabled: Boolean
-experimental/Fullscreen.FullscreenDocument[JT] var onfullscreenchange: js.Function1[Event, _]
-experimental/Fullscreen.FullscreenDocument[JT] var onfullscreenerror: js.Function1[Event, _]
-experimental/Fullscreen.FullscreenElement[JT] def requestFullscreen(): js.UndefOr[js.Promise[Unit]]
+experimental/Fullscreen[SO]  (@deprecated in 2.0.0)
 experimental/Headers[JC] def append(name: ByteString, value: ByteString): Unit
 experimental/Headers[JC] def delete(name: ByteString): Unit
 experimental/Headers[JC] def get(name: ByteString): ByteString
