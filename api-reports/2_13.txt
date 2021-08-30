@@ -23198,10 +23198,7 @@ crypto/package[SO] type AlgorithmIdentifier = Algorithm | String
 crypto/package[SO] type BigInteger = Uint8Array
 crypto/package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
 crypto/package[SO] type KeyAlgorithmIdentifier = KeyAlgorithm | String
-crypto/package[SO] implicit def arrayBuffer2BufferSource(b: ArrayBuffer): BufferSource
-crypto/package[SO] implicit def arrayBufferView2BufferSource(b: ArrayBufferView): BufferSource
 crypto/package[SO] @js.native @JSGlobal("crypto") val crypto: Crypto
-crypto/package.BufferSource[JT]
 experimental/AbortController[JC] def abort(): Unit
 experimental/AbortController[JC] val signal: AbortSignal
 experimental/AbortSignal[JT] def aborted: Boolean
@@ -24674,6 +24671,7 @@ idb[SO] type VersionChangeEvent = IDBVersionChangeEvent
 idb[SO] def Cursor = IDBCursor
 idb[SO] def KeyRange = IDBKeyRange
 idb[SO] def Transaction = IDBTransaction
+package[SO] type BufferSource = ArrayBufferView | ArrayBuffer
 package[SO] type ClientRect = DOMRect  (@deprecated in 2.0.0)
 package[SO] type ClientRectList = DOMRectList  (@deprecated in 2.0.0)
 package[SO] type NodeListOf[+T <: Node] = NodeList[T]  (@deprecated in 2.0.0)

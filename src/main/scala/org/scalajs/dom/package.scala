@@ -2,7 +2,7 @@ package org.scalajs
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.ArrayBuffer
+import scala.scalajs.js.typedarray.{ArrayBuffer, ArrayBufferView}
 import scala.scalajs.js.|
 
 package object dom {
@@ -20,6 +20,8 @@ package object dom {
    * MDN
    */
   type Transferable = ArrayBuffer | MessagePort
+
+  type BufferSource = ArrayBufferView | ArrayBuffer
 
   @js.native
   @JSGlobal("window")
