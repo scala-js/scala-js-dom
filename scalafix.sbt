@@ -8,3 +8,7 @@ ThisBuild / scalacOptions ++= {
   else
     Nil
 }
+
+ThisBuild / scalafixDependencies ++= Seq(
+  "com.github.liancheng" %% "organize-imports" % "0.5.0"
+)

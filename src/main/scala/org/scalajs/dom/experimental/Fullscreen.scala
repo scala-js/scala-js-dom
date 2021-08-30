@@ -1,7 +1,6 @@
 package org.scalajs.dom.experimental
 
-import org.scalajs.dom.raw.{Event, Element, Document}
-
+import org.scalajs.dom.raw.{Document, Element, Event}
 import scala.language.implicitConversions
 import scala.scalajs.js
 

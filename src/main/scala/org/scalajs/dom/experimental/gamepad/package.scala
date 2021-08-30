@@ -1,8 +1,7 @@
 package org.scalajs.dom.experimental
 
-import language.implicitConversions
-
 import org.scalajs.dom
+import scala.language.implicitConversions
 
 /**
  * Implements the Gamepad API.

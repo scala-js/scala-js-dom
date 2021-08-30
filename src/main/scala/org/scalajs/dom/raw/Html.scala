@@ -9,11 +9,10 @@
  */
 package org.scalajs.dom.raw
 
+import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.|
-import org.scalajs.dom
-import dom.experimental.mediastream.{MediaStream, MediaSource}
 
 @js.native
 @JSGlobal

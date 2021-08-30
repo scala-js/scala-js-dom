@@ -6,11 +6,10 @@
 
 package org.scalajs.dom.experimental.gamepad
 
-import scala.scalajs.js
-import scala.scalajs.js.annotation._
-
 import org.scalajs.dom
 import org.scalajs.dom.raw.EventInit
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 @js.native
 trait GamepadMappingType extends js.Any
