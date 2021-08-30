@@ -13891,6 +13891,8 @@ Navigator[JC] def languages: js.Array[String]
 Navigator[JC] def onLine: Boolean
 Navigator[JC] def platform: String
 Navigator[JC] def userAgent: String
+Navigator[JC] def vibrate(duration: Double): Boolean
+Navigator[JC] def vibrate(pattern: js.Array[Double]): Boolean
 NavigatorContentUtils[JT]
 NavigatorGeolocation[JT] def geolocation: Geolocation
 NavigatorID[JT] def appName: String
@@ -13901,6 +13903,8 @@ NavigatorLanguage[JT] def language: String
 NavigatorLanguage[JT] def languages: js.Array[String]
 NavigatorOnLine[JT] def onLine: Boolean
 NavigatorStorageUtils[JT]
+NavigatorVibration[JT] def vibrate(duration: Double): Boolean
+NavigatorVibration[JT] def vibrate(pattern: js.Array[Double]): Boolean
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Node[JC] def appendChild(newChild: Node): Node
@@ -23428,11 +23432,7 @@ experimental/URLSearchParams[JC] def keys(): js.Iterator[String]
 experimental/URLSearchParams[JC] def set(name: String, value: String): Unit
 experimental/URLSearchParams[JC] def sort(): Unit
 experimental/URLSearchParams[JC] def values(): js.Iterator[String]
-experimental/Vibration[SO] implicit def toVibration(n: org.scalajs.dom.Navigator): VibrationNavigator
-experimental/Vibration[SO] def vibrate(duration: Double): Boolean
-experimental/Vibration[SO] def vibrate(pattern: js.Array[Double]): Boolean
-experimental/Vibration.VibrationNavigator[JT] def vibrate(duration: Double): Boolean
-experimental/Vibration.VibrationNavigator[JT] def vibrate(pattern: js.Array[Double]): Boolean
+experimental/Vibration[SO]  (@deprecated in 2.0.0)
 experimental/WriteableState[JT]
 experimental/WriteableState[SO] val closed = "closed".asInstanceOf[WriteableState]
 experimental/WriteableState[SO] val closing = "closing".asInstanceOf[WriteableState]

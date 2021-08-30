@@ -490,8 +490,8 @@ trait WindowTimers extends js.Object {
 @JSGlobal
 class Navigator
     extends NavigatorID with NavigatorOnLine with NavigatorContentUtils
-    with NavigatorGeolocation with NavigatorStorageUtils
-    with NavigatorLanguage {
+    with NavigatorGeolocation with NavigatorStorageUtils with NavigatorLanguage
+    with NavigatorVibration {
 
   /**
    * The Clipboard API adds to the Navigator interface the read-only
@@ -5459,6 +5459,21 @@ trait WindowLocalStorage extends js.Object {
 
 @js.native
 trait NavigatorStorageUtils extends js.Object
+
+@js.native
+trait NavigatorVibration extends js.Object {
+
+  /** Vibrate the device for the specified number of milliseconds. */
+  def vibrate(duration: Double): Boolean = js.native
+
+  /**
+   * Vibrate the device in the given pattern.
+   *
+   * @param pattern the pattern to vibrate.  The first number is the initial
+   *                duration, the subsequent a delay of silence, and so on.
+   */
+  def vibrate(pattern: js.Array[Double]): Boolean = js.native
+}
 
 /**
  * The Location interface represents the location of the object it is linked to.
