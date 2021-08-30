@@ -2,7 +2,6 @@ package org.scalajs.dom.experimental
 
 import org.scalajs.dom.Blob
 import org.scalajs.dom.raw.FormData
-
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}

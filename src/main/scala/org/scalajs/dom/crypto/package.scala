@@ -1,10 +1,9 @@
 package org.scalajs.dom
 
-import scala.scalajs.js
-import scala.scalajs.js.typedarray.{ArrayBufferView, ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
-
 import scala.language.implicitConversions
+import scala.scalajs.js
+import scala.scalajs.js.typedarray.{ArrayBuffer, ArrayBufferView, Uint8Array}
+import scala.scalajs.js.|
 
 package object crypto {
   @inline def crypto = GlobalCrypto.crypto

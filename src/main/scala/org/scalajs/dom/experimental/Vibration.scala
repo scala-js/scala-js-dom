@@ -1,7 +1,7 @@
 package org.scalajs.dom.experimental
 
 import scala.language.implicitConversions
-import scalajs.js
+import scala.scalajs.js
 
 /**
  * Implicit imports for the vibration api.

@@ -1,9 +1,7 @@
 package org.scalajs.dom.experimental
 
-import scala.language.implicitConversions
-
 import org.scalajs.dom
-
+import scala.language.implicitConversions
 import scala.scalajs.js
 
 /**

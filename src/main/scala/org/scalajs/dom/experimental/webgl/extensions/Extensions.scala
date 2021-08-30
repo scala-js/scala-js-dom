@@ -1,7 +1,6 @@
 package org.scalajs.dom.experimental.webgl.extensions
 
 import org.scalajs.dom.raw.WebGLShader
-
 import scala.scalajs.js
 
 /**
