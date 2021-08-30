@@ -1,5 +1,6 @@
 package org.scalajs.dom.experimental
 
+import org.scalajs.dom
 import org.scalajs.dom.{Navigator, WorkerNavigator}
 import scala.language.implicitConversions
 import scala.scalajs.js
@@ -40,7 +41,7 @@ package object beacon {
      * @param data The data parameter is the ArrayBufferView, Blob, DOMString,
      *             or FormData data that is to be transmitted.
      */
-    def sendBeacon(url: String, data: BodyInit = null): Boolean = js.native
+    def sendBeacon(url: String, data: dom.BodyInit = null): Boolean = js.native
   }
 
   @js.native
@@ -57,6 +58,6 @@ package object beacon {
      * @param data The data parameter is the ArrayBufferView, Blob, DOMString,
      *             or FormData data that is to be transmitted.
      */
-    def sendBeacon(url: String, data: BodyInit = null): Boolean = js.native
+    def sendBeacon(url: String, data: dom.BodyInit = null): Boolean = js.native
   }
 }

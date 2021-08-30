@@ -1,6 +1,5 @@
-package org.scalajs.dom.experimental
+package org.scalajs.dom
 
-import org.scalajs.dom.{Blob, FormData}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
@@ -180,17 +179,6 @@ trait ResponseInit extends js.Object {
   var status: Int
   var statusText: ByteString
   var headers: HeadersInit
-}
-
-object ResponseInit {
-  def apply(_status: Int = 200, _statusText: ByteString = "OK",
-      _headers: HeadersInit = js.Dictionary[String]()): ResponseInit = {
-    new ResponseInit {
-      var status = _status
-      var statusText = _statusText
-      var headers = _headers
-    }
-  }
 }
 
 /**

@@ -1,5 +1,6 @@
 package org.scalajs.dom.experimental
 
+import org.scalajs.dom
 import org.scalajs.dom.Blob
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
@@ -34,7 +35,7 @@ class FileReaderSync() extends js.Object {
    *
    * MDN
    */
-  def readAsDataURL(blob: Blob): URL = js.native
+  def readAsDataURL(blob: Blob): dom.URL = js.native
 
   /**
    * The readAsText method is used to read the contents of the specified Blob or File.

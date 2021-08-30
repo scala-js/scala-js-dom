@@ -11,6 +11,15 @@ Flags:
   [-O] = Object
 
 
+AbortController[JC] def abort(): Unit
+AbortController[JC] val signal: AbortSignal
+AbortSignal[JT] def aborted: Boolean
+AbortSignal[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+AbortSignal[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AbortSignal[JT] def dispatchEvent(evt: Event): Boolean
+AbortSignal[JT] var onabort: js.Function0[Any]
+AbortSignal[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+AbortSignal[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AbstractWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AbstractWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AbstractWorker[JT] def dispatchEvent(evt: Event): Boolean
@@ -309,6 +318,12 @@ Blob[JO]
 BlobPropertyBag[JT] def endings: String
 BlobPropertyBag[JT] def `type`: String
 BlobPropertyBag[SO] def apply(`type`: js.UndefOr[String] = js.undefined): BlobPropertyBag
+Body[JT] def arrayBuffer(): js.Promise[ArrayBuffer]
+Body[JT] def blob(): js.Promise[Blob]
+Body[JT] def bodyUsed: Boolean
+Body[JT] def formData(): js.Promise[FormData]
+Body[JT] def json(): js.Promise[js.Any]
+Body[JT] def text(): js.Promise[String]
 CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 CDATASection[JC] def appendChild(newChild: Node): Node
@@ -879,6 +894,8 @@ CharacterData[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 CharacterData[JC] def replaceData(offset: Int, count: Int, arg: String): Unit
 CharacterData[JC] def substringData(offset: Int, count: Int): String
 CharacterData[JC] var textContent: String
+Chunk[JT] def done: Boolean
+Chunk[JT] def value: T
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Clipboard[JT] def dispatchEvent(evt: Event): Boolean
@@ -1578,6 +1595,7 @@ EventTarget[JC] def dispatchEvent(evt: Event): Boolean
 EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 External[JT]
+Fetch[JO] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
 File[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 File[JC] def close(): Unit  (@deprecated in 1.2.0)
 File[JC] def name: String
@@ -13064,6 +13082,13 @@ HashChangeEvent[JT] def stopPropagation(): Unit
 HashChangeEvent[JT] def target: EventTarget
 HashChangeEvent[JT] def timeStamp: Double
 HashChangeEvent[JT] def `type`: String
+Headers[JC] def append(name: ByteString, value: ByteString): Unit
+Headers[JC] def delete(name: ByteString): Unit
+Headers[JC] def get(name: ByteString): ByteString
+Headers[JC] def getAll(name: ByteString): Sequence[ByteString]
+Headers[JC] def has(name: ByteString): Boolean
+Headers[JC] @JSName(js.Symbol.iterator) def jsIterator(): js.Iterator[js.Array[ByteString]]
+Headers[JC] def set(name: ByteString, value: ByteString): Unit
 History[JC] def back(): Unit
 History[JC] def forward(): Unit
 History[JC] def go(): Unit
@@ -13074,6 +13099,15 @@ History[JC] def pushState(statedata: js.Any, title: String, url: String): Unit
 History[JC] def replaceState(statedata: js.Any, title: String): Unit
 History[JC] def replaceState(statedata: js.Any, title: String, url: String): Unit
 History[JC] def state: js.Any
+HttpMethod[JT]
+HttpMethod[SO] val DELETE = "DELETE".asInstanceOf[HttpMethod]
+HttpMethod[SO] val GET = "GET".asInstanceOf[HttpMethod]
+HttpMethod[SO] val HEAD = "HEAD".asInstanceOf[HttpMethod]
+HttpMethod[SO] val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
+HttpMethod[SO] val PATCH = "PATCH".asInstanceOf[HttpMethod]
+HttpMethod[SO] val POST = "POST".asInstanceOf[HttpMethod]
+HttpMethod[SO] val PUT = "PUT".asInstanceOf[HttpMethod]
+HttpMethod[SO] val QUERY = "QUERY".asInstanceOf[HttpMethod]
 IDBCursor[JC] def advance(count: Int): Unit
 IDBCursor[JC] def continue(key: js.Any = ???): Unit
 IDBCursor[JC] def delete(): IDBRequest
@@ -14392,6 +14426,116 @@ Range[JO] val END_TO_END: Int
 Range[JO] val END_TO_START: Int
 Range[JO] val START_TO_END: Int
 Range[JO] val START_TO_START: Int
+ReadableStream[JT] def cancel(reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit]
+ReadableStream[JT] def getReader(): ReadableStreamReader[T]
+ReadableStream[JT] def locked: Boolean
+ReadableStream[JT] def pipeThrough[U](pair: Any, options: Any = js.undefined): ReadableStream[U]
+ReadableStream[JT] def pipeTo(dest: WriteableStream[T], options: Any = js.undefined): Unit
+ReadableStream[JT] def tee(): js.Array[_ <: ReadableStream[T]]
+ReadableStreamController[JC] def close(): Unit
+ReadableStreamController[JC] def desiredSize: Int
+ReadableStreamController[JC] def enqueue(chunk: Chunk[T]): js.UndefOr[Int]
+ReadableStreamController[JC] def error(e: Any): Unit
+ReadableStreamReader[JC] def cancel(reason: Any): js.Promise[Any]
+ReadableStreamReader[JC] def closed: js.Promise[ReadableStreamReader[T]]
+ReadableStreamReader[JC] def read(): js.Promise[Chunk[T]]
+ReadableStreamReader[JC] def releaseLock(): Unit
+ReferrerPolicy[JT]
+ReferrerPolicy[SO] val empty = "".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val `no-referrer-when-downgrade` = "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val `origin-only` = "origin-only".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val `origin-when-cross-origin` = "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val `unsafe-url` = "unsafe-url".asInstanceOf[ReferrerPolicy]
+Request[JC] def cache: RequestCache
+Request[JC] def credentials: RequestCredentials
+Request[JC] def destination: RequestDestination
+Request[JC] def headers: Headers
+Request[JC] def integrity: String
+Request[JC] def keepalive: Boolean
+Request[JC] @JSName("type") def mediaType: RequestType
+Request[JC] def method: HttpMethod
+Request[JC] def mode: RequestMode
+Request[JC] def redirect: RequestRedirect
+Request[JC] def referrer: String
+Request[JC] def referrerPolicy: ReferrerPolicy
+Request[JC] def signal: AbortSignal
+Request[JC] def url: String
+RequestCache[JT]
+RequestCache[SO] val default = "default".asInstanceOf[RequestCache]
+RequestCache[SO] val `force-cache` = "force-cache".asInstanceOf[RequestCache]
+RequestCache[SO] val `no-cache` = "no-cache".asInstanceOf[RequestCache]
+RequestCache[SO] val `no-store` = "no-store".asInstanceOf[RequestCache]
+RequestCache[SO] val `only-if-cached` = "only-if-cached".asInstanceOf[RequestCache]
+RequestCache[SO] val reload = "reload".asInstanceOf[RequestCache]
+RequestCredentials[JT]
+RequestCredentials[SO] val include = "include".asInstanceOf[RequestCredentials]
+RequestCredentials[SO] val omit = "omit".asInstanceOf[RequestCredentials]
+RequestCredentials[SO] val `same-origin` = "same-origin".asInstanceOf[RequestCredentials]
+RequestDestination[JT]
+RequestDestination[SO] val document = "document".asInstanceOf[RequestDestination]
+RequestDestination[SO] val empty = "".asInstanceOf[RequestDestination]
+RequestDestination[SO] val sharedworker = "sharedworker".asInstanceOf[RequestDestination]
+RequestDestination[SO] val subresource = "subresource".asInstanceOf[RequestDestination]
+RequestDestination[SO] val unknown = "unknown".asInstanceOf[RequestDestination]
+RequestDestination[SO] val worker = "worker".asInstanceOf[RequestDestination]
+RequestInit[JT] var body: js.UndefOr[BodyInit]
+RequestInit[JT] var cache: js.UndefOr[RequestCache]
+RequestInit[JT] var credentials: js.UndefOr[RequestCredentials]
+RequestInit[JT] var headers: js.UndefOr[HeadersInit]
+RequestInit[JT] var integrity: js.UndefOr[String]
+RequestInit[JT] var keepalive: js.UndefOr[Boolean]
+RequestInit[JT] var method: js.UndefOr[HttpMethod]
+RequestInit[JT] var mode: js.UndefOr[RequestMode]
+RequestInit[JT] var redirect: js.UndefOr[RequestRedirect]
+RequestInit[JT] var referrer: js.UndefOr[String]
+RequestInit[JT] var referrerPolicy: js.UndefOr[ReferrerPolicy]
+RequestInit[JT] var signal: js.UndefOr[AbortSignal]
+RequestInit[JT] var window: js.UndefOr[Null]
+RequestMode[JT]
+RequestMode[SO] val cors = "cors".asInstanceOf[RequestMode]
+RequestMode[SO] val navigate = "navigate".asInstanceOf[RequestMode]
+RequestMode[SO] val `no-cors` = "no-cors".asInstanceOf[RequestMode]
+RequestMode[SO] val `same-origin` = "same-origin".asInstanceOf[RequestMode]
+RequestRedirect[JT]
+RequestRedirect[SO] val error = "error".asInstanceOf[RequestRedirect]
+RequestRedirect[SO] val follow = "follow".asInstanceOf[RequestRedirect]
+RequestRedirect[SO] val manual = "manual".asInstanceOf[RequestRedirect]
+RequestType[JT]
+RequestType[SO] val audio = "audio".asInstanceOf[RequestType]
+RequestType[SO] val empty = "".asInstanceOf[RequestType]
+RequestType[SO] val font = "font".asInstanceOf[RequestType]
+RequestType[SO] val image = "image".asInstanceOf[RequestType]
+RequestType[SO] val script = "script".asInstanceOf[RequestType]
+RequestType[SO] val style = "style".asInstanceOf[RequestType]
+RequestType[SO] val track = "track".asInstanceOf[RequestType]
+RequestType[SO] val video = "video".asInstanceOf[RequestType]
+Response[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
+Response[JC] def blob(): js.Promise[Blob]
+Response[JC] val body: ReadableStream[Uint8Array]
+Response[JC] def bodyUsed: Boolean
+Response[JC] override def clone(): Response
+Response[JC] def formData(): js.Promise[FormData]
+Response[JC] val headers: Headers
+Response[JC] def json(): js.Promise[js.Any]
+Response[JC] def ok: Boolean
+Response[JC] val status: Int
+Response[JC] def statusText: ByteString
+Response[JC] def text(): js.Promise[String]
+Response[JC] def `type`: ResponseType
+Response[JC] def url: String
+Response[JO] def error(): Response
+Response[JO] def redirect(url: String, status: Int = 302): Response
+ResponseInit[JT] var headers: HeadersInit
+ResponseInit[JT] var status: Int
+ResponseInit[JT] var statusText: ByteString
+ResponseType[JT]
+ResponseType[SO] val basic = "basic".asInstanceOf[ResponseType]
+ResponseType[SO] val cors = "cors".asInstanceOf[ResponseType]
+ResponseType[SO] val default = "default".asInstanceOf[ResponseType]
+ResponseType[SO] val error = "error".asInstanceOf[ResponseType]
+ResponseType[SO] val opaque = "opaque".asInstanceOf[ResponseType]
+ResponseType[SO] val opaqueredirect = "opaqueredirect".asInstanceOf[ResponseType]
 SVGAElement[JC] var accessKey: String
 SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -22148,8 +22292,32 @@ UIEventInit[JT] var composed: js.UndefOr[Boolean]
 UIEventInit[JT] val detail: js.UndefOr[Int]
 UIEventInit[JT] var scoped: js.UndefOr[Boolean]
 UIEventInit[JT] val view: js.UndefOr[Window]
+URL[JC] var hash: String
+URL[JC] var host: String
+URL[JC] var hostname: String
+URL[JC] var href: String
+URL[JC] def origin: String
+URL[JC] var password: String
+URL[JC] var pathname: String
+URL[JC] var port: String
+URL[JC] var protocol: String
+URL[JC] var search: String
+URL[JC] var searchParams: URLSearchParams
+URL[JC] var username: String
 URL[JO] def createObjectURL(blob: Blob): String
 URL[JO] def revokeObjectURL(url: String): Unit
+URLSearchParams[JC] def append(name: String, value: String): Unit
+URLSearchParams[JC] def delete(name: String): Unit
+URLSearchParams[JC] def entries(): js.Iterator[js.Tuple2[String, String]]
+URLSearchParams[JC] def forEach(callback: js.Function2[String, String, Unit]): Unit
+URLSearchParams[JC] def get(name: String): String
+URLSearchParams[JC] def getAll(name: String): Sequence[String]
+URLSearchParams[JC] def has(name: String): Boolean
+URLSearchParams[JC] @JSName(js.Symbol.iterator) override def jsIterator(): js.Iterator[js.Tuple2[String, String]]
+URLSearchParams[JC] def keys(): js.Iterator[String]
+URLSearchParams[JC] def set(name: String, value: String): Unit
+URLSearchParams[JC] def sort(): Unit
+URLSearchParams[JC] def values(): js.Iterator[String]
 ValidityState[JT] def customError: Boolean
 ValidityState[JT] def patternMismatch: Boolean
 ValidityState[JT] def rangeOverflow: Boolean
@@ -22977,6 +23145,18 @@ WorkerNavigator[JT] def languages: js.Array[String]
 WorkerNavigator[JT] def onLine: Boolean
 WorkerNavigator[JT] def platform: String
 WorkerNavigator[JT] def userAgent: String
+WriteableState[JT]
+WriteableState[SO] val closed = "closed".asInstanceOf[WriteableState]
+WriteableState[SO] val closing = "closing".asInstanceOf[WriteableState]
+WriteableState[SO] val errored = "errored".asInstanceOf[WriteableState]
+WriteableState[SO] val waiting = "waiting".asInstanceOf[WriteableState]
+WriteableState[SO] val writable = "writable".asInstanceOf[WriteableState]
+WriteableStream[JT] def abort(reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit]
+WriteableStream[JT] def close(): js.Promise[WriteableStream[T]]
+WriteableStream[JT] val closed: js.Promise[WriteableStream[T]]
+WriteableStream[JT] val ready: js.Promise[WriteableStream[T]]
+WriteableStream[JT] def state: WriteableState
+WriteableStream[JT] def write(chunk: Chunk[T]): js.Promise[Any]
 XMLHttpRequest[JC] def abort(): Unit
 XMLHttpRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 XMLHttpRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -23239,44 +23419,10 @@ crypto/package[SO] type BigInteger = Uint8Array
 crypto/package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
 crypto/package[SO] type KeyAlgorithmIdentifier = KeyAlgorithm | String
 crypto/package[SO] @js.native @JSGlobal("crypto") val crypto: Crypto
-experimental/AbortController[JC] def abort(): Unit
-experimental/AbortController[JC] val signal: AbortSignal
-experimental/AbortSignal[JT] def aborted: Boolean
-experimental/AbortSignal[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/AbortSignal[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/AbortSignal[JT] def dispatchEvent(evt: Event): Boolean
-experimental/AbortSignal[JT] var onabort: js.Function0[Any]
-experimental/AbortSignal[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/AbortSignal[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/Body[JT] def arrayBuffer(): js.Promise[ArrayBuffer]
-experimental/Body[JT] def blob(): js.Promise[Blob]
-experimental/Body[JT] def bodyUsed: Boolean
-experimental/Body[JT] def formData(): js.Promise[FormData]
-experimental/Body[JT] def json(): js.Promise[js.Any]
-experimental/Body[JT] def text(): js.Promise[String]
-experimental/Chunk[JT] def done: Boolean
-experimental/Chunk[JT] def value: T
-experimental/Fetch[JO] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
 experimental/FileReaderSync[JC] def readAsArrayBuffer(blob: Blob): ArrayBuffer
-experimental/FileReaderSync[JC] def readAsDataURL(blob: Blob): URL
+experimental/FileReaderSync[JC] def readAsDataURL(blob: Blob): dom.URL
 experimental/FileReaderSync[JC] def readAsText(blob: Blob, encoding: String?): String
 experimental/Fullscreen[SO]  (@deprecated in 2.0.0)
-experimental/Headers[JC] def append(name: ByteString, value: ByteString): Unit
-experimental/Headers[JC] def delete(name: ByteString): Unit
-experimental/Headers[JC] def get(name: ByteString): ByteString
-experimental/Headers[JC] def getAll(name: ByteString): Sequence[ByteString]
-experimental/Headers[JC] def has(name: ByteString): Boolean
-experimental/Headers[JC] @JSName(js.Symbol.iterator) def jsIterator(): js.Iterator[js.Array[ByteString]]
-experimental/Headers[JC] def set(name: ByteString, value: ByteString): Unit
-experimental/HttpMethod[JT]
-experimental/HttpMethod[SO] val DELETE = "DELETE".asInstanceOf[HttpMethod]
-experimental/HttpMethod[SO] val GET = "GET".asInstanceOf[HttpMethod]
-experimental/HttpMethod[SO] val HEAD = "HEAD".asInstanceOf[HttpMethod]
-experimental/HttpMethod[SO] val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
-experimental/HttpMethod[SO] val PATCH = "PATCH".asInstanceOf[HttpMethod]
-experimental/HttpMethod[SO] val POST = "POST".asInstanceOf[HttpMethod]
-experimental/HttpMethod[SO] val PUT = "PUT".asInstanceOf[HttpMethod]
-experimental/HttpMethod[SO] val QUERY = "QUERY".asInstanceOf[HttpMethod]
 experimental/PointerLock[SO] def exitPointerLock(): Unit
 experimental/PointerLock[SO] def movementX: Double
 experimental/PointerLock[SO] def movementY: Double
@@ -23294,162 +23440,12 @@ experimental/PointerLock.PointerLockDocument[JT] def pointerLockElement: Element
 experimental/PointerLock.PointerLockElement[JT] def requestPointerLock(): Unit
 experimental/PointerLock.PointerLockMouseEvent[JT] def movementX: Double
 experimental/PointerLock.PointerLockMouseEvent[JT] def movementY: Double
-experimental/ReadableStream[JT] def cancel(reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit]
-experimental/ReadableStream[JT] def getReader(): ReadableStreamReader[T]
-experimental/ReadableStream[JT] def locked: Boolean
-experimental/ReadableStream[JT] def pipeThrough[U](pair: Any, options: Any = js.undefined): ReadableStream[U]
-experimental/ReadableStream[JT] def pipeTo(dest: WriteableStream[T], options: Any = js.undefined): Unit
-experimental/ReadableStream[JT] def tee(): js.Array[_ <: ReadableStream[T]]
-experimental/ReadableStreamController[JC] def close(): Unit
-experimental/ReadableStreamController[JC] def desiredSize: Int
-experimental/ReadableStreamController[JC] def enqueue(chunk: Chunk[T]): js.UndefOr[Int]
-experimental/ReadableStreamController[JC] def error(e: Any): Unit
-experimental/ReadableStreamReader[JC] def cancel(reason: Any): js.Promise[Any]
-experimental/ReadableStreamReader[JC] def closed: js.Promise[ReadableStreamReader[T]]
-experimental/ReadableStreamReader[JC] def read(): js.Promise[Chunk[T]]
-experimental/ReadableStreamReader[JC] def releaseLock(): Unit
-experimental/ReferrerPolicy[JT]
-experimental/ReferrerPolicy[SO] val empty = "".asInstanceOf[ReferrerPolicy]
-experimental/ReferrerPolicy[SO] val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
-experimental/ReferrerPolicy[SO] val `no-referrer-when-downgrade` = "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
-experimental/ReferrerPolicy[SO] val `origin-only` = "origin-only".asInstanceOf[ReferrerPolicy]
-experimental/ReferrerPolicy[SO] val `origin-when-cross-origin` = "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
-experimental/ReferrerPolicy[SO] val `unsafe-url` = "unsafe-url".asInstanceOf[ReferrerPolicy]
-experimental/Request[JC] def cache: RequestCache
-experimental/Request[JC] def credentials: RequestCredentials
-experimental/Request[JC] def destination: RequestDestination
-experimental/Request[JC] def headers: Headers
-experimental/Request[JC] def integrity: String
-experimental/Request[JC] def keepalive: Boolean
-experimental/Request[JC] @JSName("type") def mediaType: RequestType
-experimental/Request[JC] def method: HttpMethod
-experimental/Request[JC] def mode: RequestMode
-experimental/Request[JC] def redirect: RequestRedirect
-experimental/Request[JC] def referrer: String
-experimental/Request[JC] def referrerPolicy: ReferrerPolicy
-experimental/Request[JC] def signal: AbortSignal
-experimental/Request[JC] def url: String
-experimental/RequestCache[JT]
-experimental/RequestCache[SO] val default = "default".asInstanceOf[RequestCache]
-experimental/RequestCache[SO] val `force-cache` = "force-cache".asInstanceOf[RequestCache]
-experimental/RequestCache[SO] val `no-cache` = "no-cache".asInstanceOf[RequestCache]
-experimental/RequestCache[SO] val `no-store` = "no-store".asInstanceOf[RequestCache]
-experimental/RequestCache[SO] val `only-if-cached` = "only-if-cached".asInstanceOf[RequestCache]
-experimental/RequestCache[SO] val reload = "reload".asInstanceOf[RequestCache]
-experimental/RequestCredentials[JT]
-experimental/RequestCredentials[SO] val include = "include".asInstanceOf[RequestCredentials]
-experimental/RequestCredentials[SO] val omit = "omit".asInstanceOf[RequestCredentials]
-experimental/RequestCredentials[SO] val `same-origin` = "same-origin".asInstanceOf[RequestCredentials]
-experimental/RequestDestination[JT]
-experimental/RequestDestination[SO] val document = "document".asInstanceOf[RequestDestination]
-experimental/RequestDestination[SO] val empty = "".asInstanceOf[RequestDestination]
-experimental/RequestDestination[SO] val sharedworker = "sharedworker".asInstanceOf[RequestDestination]
-experimental/RequestDestination[SO] val subresource = "subresource".asInstanceOf[RequestDestination]
-experimental/RequestDestination[SO] val unknown = "unknown".asInstanceOf[RequestDestination]
-experimental/RequestDestination[SO] val worker = "worker".asInstanceOf[RequestDestination]
-experimental/RequestInit[JT] var body: js.UndefOr[BodyInit]
-experimental/RequestInit[JT] var cache: js.UndefOr[RequestCache]
-experimental/RequestInit[JT] var credentials: js.UndefOr[RequestCredentials]
-experimental/RequestInit[JT] var headers: js.UndefOr[HeadersInit]
-experimental/RequestInit[JT] var integrity: js.UndefOr[String]
-experimental/RequestInit[JT] var keepalive: js.UndefOr[Boolean]
-experimental/RequestInit[JT] var method: js.UndefOr[HttpMethod]
-experimental/RequestInit[JT] var mode: js.UndefOr[RequestMode]
-experimental/RequestInit[JT] var redirect: js.UndefOr[RequestRedirect]
-experimental/RequestInit[JT] var referrer: js.UndefOr[String]
-experimental/RequestInit[JT] var referrerPolicy: js.UndefOr[ReferrerPolicy]
-experimental/RequestInit[JT] var signal: js.UndefOr[AbortSignal]
-experimental/RequestInit[JT] var window: js.UndefOr[Null]
-experimental/RequestMode[JT]
-experimental/RequestMode[SO] val cors = "cors".asInstanceOf[RequestMode]
-experimental/RequestMode[SO] val navigate = "navigate".asInstanceOf[RequestMode]
-experimental/RequestMode[SO] val `no-cors` = "no-cors".asInstanceOf[RequestMode]
-experimental/RequestMode[SO] val `same-origin` = "same-origin".asInstanceOf[RequestMode]
-experimental/RequestRedirect[JT]
-experimental/RequestRedirect[SO] val error = "error".asInstanceOf[RequestRedirect]
-experimental/RequestRedirect[SO] val follow = "follow".asInstanceOf[RequestRedirect]
-experimental/RequestRedirect[SO] val manual = "manual".asInstanceOf[RequestRedirect]
-experimental/RequestType[JT]
-experimental/RequestType[SO] val audio = "audio".asInstanceOf[RequestType]
-experimental/RequestType[SO] val empty = "".asInstanceOf[RequestType]
-experimental/RequestType[SO] val font = "font".asInstanceOf[RequestType]
-experimental/RequestType[SO] val image = "image".asInstanceOf[RequestType]
-experimental/RequestType[SO] val script = "script".asInstanceOf[RequestType]
-experimental/RequestType[SO] val style = "style".asInstanceOf[RequestType]
-experimental/RequestType[SO] val track = "track".asInstanceOf[RequestType]
-experimental/RequestType[SO] val video = "video".asInstanceOf[RequestType]
-experimental/Response[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
-experimental/Response[JC] def blob(): js.Promise[Blob]
-experimental/Response[JC] val body: ReadableStream[Uint8Array]
-experimental/Response[JC] def bodyUsed: Boolean
-experimental/Response[JC] override def clone(): Response
-experimental/Response[JC] def formData(): js.Promise[FormData]
-experimental/Response[JC] val headers: Headers
-experimental/Response[JC] def json(): js.Promise[js.Any]
-experimental/Response[JC] def ok: Boolean
-experimental/Response[JC] val status: Int
-experimental/Response[JC] def statusText: ByteString
-experimental/Response[JC] def text(): js.Promise[String]
-experimental/Response[JC] def `type`: ResponseType
-experimental/Response[JC] def url: String
-experimental/Response[JO] def error(): Response
-experimental/Response[JO] def redirect(url: String, status: Int = 302): Response
-experimental/ResponseInit[JT] var headers: HeadersInit
-experimental/ResponseInit[JT] var status: Int
-experimental/ResponseInit[JT] var statusText: ByteString
-experimental/ResponseInit[SO] def apply(_status: Int = 200, _statusText: ByteString = "OK", _headers: HeadersInit = js.Dictionary[String]()): ResponseInit
-experimental/ResponseInit[SO] var headers = _headers
-experimental/ResponseInit[SO] var status = _status
-experimental/ResponseInit[SO] var statusText = _statusText
-experimental/ResponseType[JT]
-experimental/ResponseType[SO] val basic = "basic".asInstanceOf[ResponseType]
-experimental/ResponseType[SO] val cors = "cors".asInstanceOf[ResponseType]
-experimental/ResponseType[SO] val default = "default".asInstanceOf[ResponseType]
-experimental/ResponseType[SO] val error = "error".asInstanceOf[ResponseType]
-experimental/ResponseType[SO] val opaque = "opaque".asInstanceOf[ResponseType]
-experimental/ResponseType[SO] val opaqueredirect = "opaqueredirect".asInstanceOf[ResponseType]
-experimental/URL[JC] var hash: String
-experimental/URL[JC] var host: String
-experimental/URL[JC] var hostname: String
-experimental/URL[JC] var href: String
-experimental/URL[JC] def origin: String
-experimental/URL[JC] var password: String
-experimental/URL[JC] var pathname: String
-experimental/URL[JC] var port: String
-experimental/URL[JC] var protocol: String
-experimental/URL[JC] var search: String
-experimental/URL[JC] var searchParams: URLSearchParams
-experimental/URL[JC] var username: String
-experimental/URLSearchParams[JC] def append(name: String, value: String): Unit
-experimental/URLSearchParams[JC] def delete(name: String): Unit
-experimental/URLSearchParams[JC] def entries(): js.Iterator[js.Tuple2[String, String]]
-experimental/URLSearchParams[JC] def forEach(callback: js.Function2[String, String, Unit]): Unit
-experimental/URLSearchParams[JC] def get(name: String): String
-experimental/URLSearchParams[JC] def getAll(name: String): Sequence[String]
-experimental/URLSearchParams[JC] def has(name: String): Boolean
-experimental/URLSearchParams[JC] @JSName(js.Symbol.iterator) override def jsIterator(): js.Iterator[js.Tuple2[String, String]]
-experimental/URLSearchParams[JC] def keys(): js.Iterator[String]
-experimental/URLSearchParams[JC] def set(name: String, value: String): Unit
-experimental/URLSearchParams[JC] def sort(): Unit
-experimental/URLSearchParams[JC] def values(): js.Iterator[String]
 experimental/Vibration[SO]  (@deprecated in 2.0.0)
-experimental/WriteableState[JT]
-experimental/WriteableState[SO] val closed = "closed".asInstanceOf[WriteableState]
-experimental/WriteableState[SO] val closing = "closing".asInstanceOf[WriteableState]
-experimental/WriteableState[SO] val errored = "errored".asInstanceOf[WriteableState]
-experimental/WriteableState[SO] val waiting = "waiting".asInstanceOf[WriteableState]
-experimental/WriteableState[SO] val writable = "writable".asInstanceOf[WriteableState]
-experimental/WriteableStream[JT] def abort(reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit]
-experimental/WriteableStream[JT] def close(): js.Promise[WriteableStream[T]]
-experimental/WriteableStream[JT] val closed: js.Promise[WriteableStream[T]]
-experimental/WriteableStream[JT] val ready: js.Promise[WriteableStream[T]]
-experimental/WriteableStream[JT] def state: WriteableState
-experimental/WriteableStream[JT] def write(chunk: Chunk[T]): js.Promise[Any]
-experimental/beacon/package[SO] def sendBeacon(url: String, data: BodyInit = null): Boolean
+experimental/beacon/package[SO] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
 experimental/beacon/package[SO] implicit def toBeaconNavigator(n: Navigator): BeaconNavigator
 experimental/beacon/package[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator
-experimental/beacon/package.BeaconNavigator[JT] def sendBeacon(url: String, data: BodyInit = null): Boolean
-experimental/beacon/package.BeaconWorkerNavigator[JT] def sendBeacon(url: String, data: BodyInit = null): Boolean
+experimental/beacon/package.BeaconNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
+experimental/beacon/package.BeaconWorkerNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
 experimental/cachestorage/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]
 experimental/cachestorage/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]
 experimental/cachestorage/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]
@@ -23868,15 +23864,61 @@ experimental/mediastream/package[SO] type BufferSource = js.typedarray.ArrayBuff
 experimental/mediastream/package[SO] type EndOfStreamError = String
 experimental/mediastream/package[SO] type ReadyState = String
 experimental/mediastream/package[SO] type TextTrackMode = String
-experimental/package[SO] type BodyInit = Blob | BufferSource | FormData | String
-experimental/package[SO] type ByteString = String
-experimental/package[SO] type HeadersInit = Headers | Sequence[Sequence[ByteString]] | OpenEndedDictionary[ByteString]
+experimental/package[SO] type AbortController = dom.AbortController  (@deprecated in 2.0.0)
+experimental/package[SO] type AbortSignal = dom.AbortSignal  (@deprecated in 2.0.0)
+experimental/package[SO] type Body = dom.Body  (@deprecated in 2.0.0)
+experimental/package[SO] type BodyInit = dom.BodyInit  (@deprecated in 2.0.0)
+experimental/package[SO] type ByteString = dom.ByteString  (@deprecated in 2.0.0)
+experimental/package[SO] type Chunk[+T] = dom.Chunk[T]  (@deprecated in 2.0.0)
+experimental/package[SO] type Headers = dom.Headers  (@deprecated in 2.0.0)
+experimental/package[SO] type HeadersInit = dom.HeadersInit  (@deprecated in 2.0.0)
+experimental/package[SO] type HttpMethod = dom.HttpMethod  (@deprecated in 2.0.0)
 experimental/package[SO] type Notification = dom.Notification  (@deprecated in 2.0.0)
 experimental/package[SO] type NotificationOptions = dom.NotificationOptions  (@deprecated in 2.0.0)
-experimental/package[SO] type OpenEndedDictionary[T] = js.Dictionary[T]
-experimental/package[SO] type RequestInfo = String | Request
-experimental/package[SO] type Sequence[T] = js.Array[T]
+experimental/package[SO] type OpenEndedDictionary[T] = dom.OpenEndedDictionary[T]  (@deprecated in 2.0.0)
+experimental/package[SO] type ReadableStreamController[-T] = dom.ReadableStreamController[T]  (@deprecated in 2.0.0)
+experimental/package[SO] type ReadableStreamReader[+T] = dom.ReadableStreamReader[T]  (@deprecated in 2.0.0)
+experimental/package[SO] type ReadableStream[+T] = dom.ReadableStream[T]  (@deprecated in 2.0.0)
+experimental/package[SO] type ReferrerPolicy = dom.ReferrerPolicy  (@deprecated in 2.0.0)
+experimental/package[SO] type Request = dom.Request  (@deprecated in 2.0.0)
+experimental/package[SO] type RequestCache = dom.RequestCache  (@deprecated in 2.0.0)
+experimental/package[SO] type RequestCredentials = dom.RequestCredentials  (@deprecated in 2.0.0)
+experimental/package[SO] type RequestDestination = dom.RequestDestination  (@deprecated in 2.0.0)
+experimental/package[SO] type RequestInfo = dom.RequestInfo  (@deprecated in 2.0.0)
+experimental/package[SO] type RequestInit = dom.RequestInit  (@deprecated in 2.0.0)
+experimental/package[SO] type RequestMode = dom.RequestMode  (@deprecated in 2.0.0)
+experimental/package[SO] type RequestRedirect = dom.RequestRedirect  (@deprecated in 2.0.0)
+experimental/package[SO] type RequestType = dom.RequestType  (@deprecated in 2.0.0)
+experimental/package[SO] type Response = dom.Response  (@deprecated in 2.0.0)
+experimental/package[SO] type ResponseInit = dom.ResponseInit  (@deprecated in 2.0.0)
+experimental/package[SO] type ResponseType = dom.ResponseType  (@deprecated in 2.0.0)
+experimental/package[SO] type Sequence[T] = dom.Sequence[T]  (@deprecated in 2.0.0)
+experimental/package[SO] type URL = dom.URL  (@deprecated in 2.0.0)
+experimental/package[SO] type URLSearchParams = dom.URLSearchParams  (@deprecated in 2.0.0)
+experimental/package[SO] type WriteableState = dom.WriteableState  (@deprecated in 2.0.0)
+experimental/package[SO] type WriteableStream[-T] = dom.WriteableStream[T]  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val HttpMethod: dom.HttpMethod.type  (@deprecated in 2.0.0)
 experimental/package[SO] lazy val Notification: dom.Notification.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val ReferrerPolicy: dom.ReferrerPolicy.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val RequestCache: dom.RequestCache.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val RequestCredentials: dom.RequestCredentials.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val RequestDestination: dom.RequestDestination.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val RequestMode: dom.RequestMode.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val RequestRedirect: dom.RequestRedirect.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val RequestType: dom.RequestType.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val Response: dom.Response.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val ResponseType: dom.ResponseType.type  (@deprecated in 2.0.0)
+experimental/package[SO] lazy val WriteableState: dom.WriteableState.type  (@deprecated in 2.0.0)
+experimental/package[SO] def apply(_status: Int = 200, _statusText: ByteString = "OK", _headers: HeadersInit = js.Dictionary[String]()): ResponseInit
+experimental/package[SO] @js.native @JSGlobal("fetch") def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+experimental/package[SO] var headers = _headers
+experimental/package[SO] var status = _status
+experimental/package[SO] var statusText = _statusText
+experimental/package.Fetch[SO] @js.native @JSGlobal("fetch") def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]  (@deprecated in 2.0.0)
+experimental/package.ResponseInit[SO] def apply(_status: Int = 200, _statusText: ByteString = "OK", _headers: HeadersInit = js.Dictionary[String]()): ResponseInit  (@deprecated in 2.0.0)
+experimental/package.ResponseInit[SO] var headers = _headers  (@deprecated in 2.0.0)
+experimental/package.ResponseInit[SO] var status = _status  (@deprecated in 2.0.0)
+experimental/package.ResponseInit[SO] var statusText = _statusText  (@deprecated in 2.0.0)
 experimental/permissions/package[SO] def apply(permissionName: PermissionName): PermissionDescriptor
 experimental/permissions/package[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor
 experimental/permissions/package[SO] val denied = "denied".asInstanceOf[PermissionState]
@@ -24661,14 +24703,21 @@ idb[SO] type VersionChangeEvent = IDBVersionChangeEvent
 idb[SO] def Cursor = IDBCursor
 idb[SO] def KeyRange = IDBKeyRange
 idb[SO] def Transaction = IDBTransaction
+package[SO] type BodyInit = Blob | BufferSource | FormData | String
 package[SO] type BufferSource = ArrayBufferView | ArrayBuffer
+package[SO] type ByteString = String
 package[SO] type ClientRect = DOMRect  (@deprecated in 2.0.0)
 package[SO] type ClientRectList = DOMRectList  (@deprecated in 2.0.0)
+package[SO] type HeadersInit = Headers | Sequence[Sequence[ByteString]] | OpenEndedDictionary[ByteString]
 package[SO] type NodeListOf[+T <: Node] = NodeList[T]  (@deprecated in 2.0.0)
+package[SO] type OpenEndedDictionary[T] = js.Dictionary[T]
+package[SO] type RequestInfo = String | Request
+package[SO] type Sequence[T] = js.Array[T]
 package[SO] type Transferable = ArrayBuffer | MessagePort
 package[SO] @js.native @JSGlobal("console") val console: Console
 package[SO] lazy val css: DeprecatedCSSAliases.type  (@deprecated in 2.0.0)
 package[SO] @js.native @JSGlobal("document") val document: html.Document
+package[SO] @js.native @JSGlobal("fetch") def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
 package[SO] @js.native @JSGlobal("window") val window: Window
 raw[SO] type AbstractWorker = dom.AbstractWorker  (@deprecated in 2.0.0)
 raw[SO] type AnalyserNode = dom.AnalyserNode  (@deprecated in 2.0.0)
