@@ -37,7 +37,7 @@ name := "Scala.js DOM"
 ThisBuild / crossScalaVersions := Seq("2.11.12", "2.12.14", "2.13.6", "3.0.1")
 ThisBuild / scalaVersion := crossScalaVersions.value.find(_.startsWith("2.13.")).get
 
-val inCI = Option(System.getenv("CI")).exists(_.contains("1"))
+val inCI = sys.props.get("CI").exists(_.contains("1"))
 
 val commonSettings = Seq(
   organization := "org.scala-js",
@@ -95,11 +95,6 @@ pomExtra := (
         <url>https://github.com/japgolly</url>
       </developer>
       <developer>
-        <id>lihaoyi</id>
-        <name>Li Haoyi</name>
-        <url>https://github.com/lihaoyi/</url>
-      </developer>
-      <developer>
         <id>armanbilge</id>
         <name>Arman Bilge</name>
         <url>https://github.com/armanbilge</url>
@@ -113,6 +108,11 @@ pomExtra := (
         <id>gzm0</id>
         <name>Tobias Schlatter</name>
         <url>https://github.com/gzm0/</url>
+      </developer>
+      <developer>
+        <id>lihaoyi</id>
+        <name>Li Haoyi</name>
+        <url>https://github.com/lihaoyi/</url>
       </developer>
     </developers>
 )
