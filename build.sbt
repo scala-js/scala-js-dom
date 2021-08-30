@@ -28,7 +28,7 @@ ThisBuild / crossScalaVersions := {
 }
 ThisBuild / scalaVersion := crossScalaVersions.value.find(_.startsWith("2.13.")).get
 
-val inCI = Option(System.getenv("CI")).exists(_.contains("1"))
+val inCI = sys.props.get("CI").exists(_.contains("1"))
 
 val commonSettings = Seq(
   organization := "org.scala-js",
