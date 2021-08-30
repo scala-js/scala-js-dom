@@ -13,7 +13,8 @@ import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/** The AudioContext interface represents an audio-processing graph built
+/**
+ * The AudioContext interface represents an audio-processing graph built
  *  from audio modules linked together, each represented by an AudioNode.
  *  An audio context controls both the creation of the nodes it contains and the
  *  execution of the audio processing, or decoding. You need to create an
@@ -27,13 +28,15 @@ import scala.scalajs.js.annotation._
 @JSGlobal
 class AudioContext extends EventTarget {
 
-  /** Returns a double representing an ever-increasing hardware time in
+  /**
+   * Returns a double representing an ever-increasing hardware time in
    *  seconds used for scheduling.
    *  It starts at 0 and cannot be stopped, paused or reset.
    */
   def currentTime: Double = js.native
 
-  /** Returns an AudioDestinationNode representing the final destination of
+  /**
+   * Returns an AudioDestinationNode representing the final destination of
    *  all audio in the context.
    *  It can be thought of as the audio-rendering device.
    */
@@ -42,7 +45,8 @@ class AudioContext extends EventTarget {
   /** Returns the AudioListener object, used for 3D spatialization. */
   val listener: AudioListener = js.native
 
-  /** Returns a float representing the sample rate (in samples per second)
+  /**
+   * Returns a float representing the sample rate (in samples per second)
    *  used by all nodes in this context.
    *  The sample-rate of an AudioContext cannot be changed.
    */
@@ -51,23 +55,27 @@ class AudioContext extends EventTarget {
   /** Returns the current state of the AudioContext. */
   def state: String = js.native
 
-  /** Closes the audio context, releasing any system audio resources
+  /**
+   * Closes the audio context, releasing any system audio resources
    *  that it uses.
    */
   def close(): js.Promise[Unit] = js.native
 
-  /** Creates an AnalyserNode, which can be used to expose audio time and
+  /**
+   * Creates an AnalyserNode, which can be used to expose audio time and
    *  frequency data and for example to create data visualisations.
    */
   def createAnalyser(): AnalyserNode = js.native
 
-  /** Creates a BiquadFilterNode, which represents a second order filter
+  /**
+   * Creates a BiquadFilterNode, which represents a second order filter
    *  configurable as several different common filter types:
    *  high-pass, low-pass, band-pass, etc.
    */
   def createBiquadFilter(): BiquadFilterNode = js.native
 
-  /** Creates a new, empty AudioBuffer object, which can then be populated by
+  /**
+   * Creates a new, empty AudioBuffer object, which can then be populated by
    *  data and played via an AudioBufferSourceNode.
    *
    * @param numOfChannels An integer representing the number of channels this
@@ -83,14 +91,16 @@ class AudioContext extends EventTarget {
   def createBuffer(numOfChannels: Int, length: Int,
       sampleRate: Int): AudioBuffer = js.native
 
-  /** Creates an AudioBufferSourceNode, which can be used to play and
+  /**
+   * Creates an AudioBufferSourceNode, which can be used to play and
    *  manipulate audio data contained within an AudioBuffer object.
    *  AudioBuffers are created using AudioContext.createBuffer or returned by
    *  AudioContext.decodeAudioData when it successfully decodes an audio track.
    */
   def createBufferSource(): AudioBufferSourceNode = js.native
 
-  /** Creates a ChannelMergerNode, which is used to combine channels from
+  /**
+   * Creates a ChannelMergerNode, which is used to combine channels from
    *  multiple audio streams into a single audio stream.
    *
    *  @param numberOfInputs The number of channels in the input audio streams,
@@ -100,7 +110,8 @@ class AudioContext extends EventTarget {
   def createChannelMerger(
       numberOfInputs: Int = 6): ChannelMergerNode = js.native
 
-  /** Creates a ChannelSplitterNode, which is used to access the individual
+  /**
+   * Creates a ChannelSplitterNode, which is used to access the individual
    *  channels of an audio stream and process them separately.
    *
    *  @param numberOfOutputs The number of channels in the input audio stream
@@ -110,12 +121,14 @@ class AudioContext extends EventTarget {
   def createChannelSplitter(
       numberOfOutputs: Int = 6): ChannelSplitterNode = js.native
 
-  /** Creates a ConvolverNode, which can be used to apply convolution effects
+  /**
+   * Creates a ConvolverNode, which can be used to apply convolution effects
    *  to your audio graph, for example a reverberation effect.
    */
   def createConvolver(): ConvolverNode = js.native
 
-  /** Creates a DelayNode, which is used to delay the incoming audio signal
+  /**
+   * Creates a DelayNode, which is used to delay the incoming audio signal
    *  by a certain amount.
    *  This node is also useful to create feedback loops in a Web Audio API
    *  graph.
@@ -125,15 +138,20 @@ class AudioContext extends EventTarget {
    */
   def createDelay(maxDelayTime: Int): DelayNode = js.native
 
-  /** Creates a DynamicsCompressorNode, which can be used to apply acoustic
-   *  compression to an audio signal. */
+  /**
+   * Creates a DynamicsCompressorNode, which can be used to apply acoustic
+   *  compression to an audio signal.
+   */
   def createDynamicsCompressor(): DynamicsCompressorNode = js.native
 
-  /** Creates a GainNode, which can be used to control the overall volume of
-   *  the audio graph. */
+  /**
+   * Creates a GainNode, which can be used to control the overall volume of
+   *  the audio graph.
+   */
   def createGain(): GainNode = js.native
 
-  /** Creates a MediaElementAudioSourceNode associated with an HTMLMediaElement.
+  /**
+   * Creates a MediaElementAudioSourceNode associated with an HTMLMediaElement.
    *  This can be used to play and manipulate audio from &lt;video&gt; or
    *  &lt;audio&gt; elements.
    *
@@ -143,7 +161,8 @@ class AudioContext extends EventTarget {
   def createMediaElementSource(
       myMediaElement: HTMLMediaElement): MediaElementAudioSourceNode = js.native
 
-  /** Creates a MediaStreamAudioSourceNode associated with a MediaStream
+  /**
+   * Creates a MediaStreamAudioSourceNode associated with a MediaStream
    *  representing an audio stream which may come from the local computer
    *  microphone or other sources.
    *
@@ -153,35 +172,46 @@ class AudioContext extends EventTarget {
   def createMediaStreamSource(
       stream: MediaStream): MediaStreamAudioSourceNode = js.native
 
-  /** Creates a MediaStreamAudioDestinationNode associated with a MediaStream
+  /**
+   * Creates a MediaStreamAudioDestinationNode associated with a MediaStream
    *  representing an audio stream which may be stored in a local file or sent
    *  to another computer.
    */
   def createMediaStreamDestination(): MediaStreamAudioDestinationNode = js.native
 
-  /** Creates an OscillatorNode, a source representing a periodic waveform.
-   *  It basically generates a tone. */
+  /**
+   * Creates an OscillatorNode, a source representing a periodic waveform.
+   *  It basically generates a tone.
+   */
   def createOscillator(): OscillatorNode = js.native
 
-  /** Creates a PannerNode, which is used to spatialise an incoming audio
-   *  stream in 3D space. */
+  /**
+   * Creates a PannerNode, which is used to spatialise an incoming audio
+   *  stream in 3D space.
+   */
   def createPanner(): PannerNode = js.native
 
-  /** Creates a PeriodicWave, used to define a periodic waveform that can be
+  /**
+   * Creates a PeriodicWave, used to define a periodic waveform that can be
    *  used to determine the output of an OscillatorNode.
    */
   def createPeriodicWave(real: js.typedarray.Float32Array,
       imag: js.typedarray.Float32Array): PeriodicWave = js.native
 
-  /** Creates a StereoPannerNode, which can be used to apply stereo panning
-   *  to an audio source. */
+  /**
+   * Creates a StereoPannerNode, which can be used to apply stereo panning
+   *  to an audio source.
+   */
   def createStereoPanner(): StereoPannerNode = js.native
 
-  /** Creates a WaveShaperNode, which is used to implement non-linear
-   *  distortion effects. */
+  /**
+   * Creates a WaveShaperNode, which is used to implement non-linear
+   *  distortion effects.
+   */
   def createWaveShaper(): WaveShaperNode = js.native
 
-  /** Asynchronously decodes audio file data contained in an ArrayBuffer. In
+  /**
+   * Asynchronously decodes audio file data contained in an ArrayBuffer. In
    *  this case, the ArrayBuffer is usually loaded from an XMLHttpRequest's
    *  response attribute after setting the responseType to arraybuffer.
    *  This method only works on complete files, not fragments of audio files.
@@ -206,19 +236,22 @@ class AudioContext extends EventTarget {
       errorCallback: js.Function0[_] = js.native
   ): js.Promise[AudioBuffer] = js.native
 
-  /** Resumes the progression of time in an audio context that has previously
+  /**
+   * Resumes the progression of time in an audio context that has previously
    *  been suspended.
    */
   def resume(): js.Promise[Unit] = js.native
 
-  /** Suspends the progression of time in the audio context,
+  /**
+   * Suspends the progression of time in the audio context,
    *  temporarily halting audio hardware access and reducing CPU/battery
    *  usage in the process.
    */
   def suspend(): js.Promise[Unit] = js.native
 }
 
-/** The OfflineAudioContext interface is an AudioContext interface
+/**
+ * The OfflineAudioContext interface is an AudioContext interface
  *  representing an audio-processing graph built from linked together
  *  AudioNodes. In contrast with a standard AudioContext, an OfflineAudioContext
  *  doesn't render the audio to the device hardware; instead, it generates it,
@@ -252,7 +285,8 @@ class AudioContext extends EventTarget {
 class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int)
     extends AudioContext {
 
-  /** The promise-based startRendering() method of the OfflineAudioContext
+  /**
+   * The promise-based startRendering() method of the OfflineAudioContext
    *  Interface starts rendering the audio graph, taking into account the
    *  current connections and the current scheduled changes.
    *
@@ -263,7 +297,8 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int)
   def startRendering(): js.Promise[AudioBuffer] = js.native
 }
 
-/** The AudioNode interface is a generic interface for representing an audio
+/**
+ * The AudioNode interface is a generic interface for representing an audio
  *  processing module like an audio source (e.g. an HTML &lt;audio&gt; or
  *  &lt;video&gt; element, an OscillatorNode, etc.), the audio destination,
  *  intermediate processing module (e.g. a filter like BiquadFilterNode or
@@ -287,33 +322,39 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int)
 @js.native
 trait AudioNode extends EventTarget {
 
-  /** Returns the associated AudioContext, that is the object representing
+  /**
+   * Returns the associated AudioContext, that is the object representing
    *  the processing graph the node is participating in.
    */
   val context: AudioContext = js.native
 
-  /** Returns the number of inputs feeding the node. Source nodes are defined
+  /**
+   * Returns the number of inputs feeding the node. Source nodes are defined
    *  as nodes having a numberOfInputs property with a value of 0.
    */
   val numberOfInputs: Int = js.native
 
-  /** Returns the number of outputs coming out of the node. Destination nodes
+  /**
+   * Returns the number of outputs coming out of the node. Destination nodes
    *   — like AudioDestinationNode — have a value of 0 for this attribute.
    */
   val numberOfOutputs: Int = js.native
 
-  /** Represents an integer used to determine how many channels are used when
+  /**
+   * Represents an integer used to determine how many channels are used when
    *  up-mixing and down-mixing connections to any inputs to the node. Its usage
    *  and precise definition depend on the value of AudioNode.channelCountMode.
    */
   var channelCount: Int = js.native
 
-  /** Represents an enumerated value describing the way channels must be
+  /**
+   * Represents an enumerated value describing the way channels must be
    *  matched between the node's inputs and outputs.
    */
   var channelCountMode: Int = js.native
 
-  /** Represents an enumerated value describing the meaning of the channels.
+  /**
+   * Represents an enumerated value describing the meaning of the channels.
    *  This interpretation will define how audio up-mixing and down-mixing will
    *  happen.
    *
@@ -321,17 +362,20 @@ trait AudioNode extends EventTarget {
    */
   var channelInterpretation: String = js.native
 
-  /** Allows us to connect one output of this node to one input of another
+  /**
+   * Allows us to connect one output of this node to one input of another
    *  node.
    */
   def connect(audioNode: AudioNode): Unit = js.native
 
-  /** Allows us to connect one output of this node to one input of an audio
+  /**
+   * Allows us to connect one output of this node to one input of an audio
    *  parameter.
    */
   def connect(audioParam: AudioParam): Unit = js.native
 
-  /** Allows us to disconnect the current node from another one it is already
+  /**
+   * Allows us to disconnect the current node from another one it is already
    *  connected to.
    *
    *  @param output The index describing which output of the AudioNode is
@@ -340,7 +384,8 @@ trait AudioNode extends EventTarget {
   def disconnect(output: AudioNode = js.native): Unit = js.native
 }
 
-/** The AnalyserNode interface represents a node able to provide real-time
+/**
+ * The AnalyserNode interface represents a node able to provide real-time
  *  frequency and time-domain analysis information.
  *  It is an AudioNode that passes the audio stream unchanged from the input to
  *  the output, but allows you to take the generated data,process it, and create
@@ -358,38 +403,44 @@ trait AudioNode extends EventTarget {
 @js.native
 trait AnalyserNode extends AudioNode {
 
-  /** Is an unsigned long value representing the size of the FFT (Fast Fourier
+  /**
+   * Is an unsigned long value representing the size of the FFT (Fast Fourier
    *  Transform) to be used to determine the frequency domain.
    */
   var fftSize: Int = js.native
 
-  /** Is an unsigned long value half that of the FFT size. This generally
+  /**
+   * Is an unsigned long value half that of the FFT size. This generally
    *  equates to the number of data values you will have to play with for the
    *  visualization.
    */
   val frequencyBinCount: Int = js.native
 
-  /** Is a double value representing the minimum power value in the scaling
+  /**
+   * Is a double value representing the minimum power value in the scaling
    *  range for the FFT analysis data, for conversion to unsigned byte values —
    *  basically, this specifies the minimum value for the range of results when
    *  using getByteFrequencyData().
    */
   var minDecibels: Double = js.native
 
-  /** Is a double value representing the maximum power value in the scaling
+  /**
+   * Is a double value representing the maximum power value in the scaling
    *  range for the FFT analysis data, for conversion to unsigned byte values —
    *  basically, this specifies the maximum value for the range of results when
    *  using getByteFrequencyData().
    */
   var maxDecibels: Double = js.native
 
-  /** Is a double value representing the averaging constant with the last
+  /**
+   * Is a double value representing the averaging constant with the last
    *  analysis frame — basically, it makes the transition between values over
    *  time smoother.
    */
   var smoothingTimeConstant: Double = js.native
 
-  /** Copies the current frequency data into a Float32Array array passed into
+  /**
+   * Copies the current frequency data into a Float32Array array passed into
    *  it.
    *
    *  If the array has fewer elements than the AnalyserNode.frequencyBinCount,
@@ -402,7 +453,8 @@ trait AnalyserNode extends AudioNode {
   def getFloatFrequencyData(
       array: js.typedarray.Float32Array): Unit = js.native
 
-  /** Copies the current frequency data into a Uint8Array (unsigned byte
+  /**
+   * Copies the current frequency data into a Uint8Array (unsigned byte
    *  array) passed into it.
    *
    *  If the array has fewer elements than the AnalyserNode.frequencyBinCount,
@@ -414,7 +466,8 @@ trait AnalyserNode extends AudioNode {
    */
   def getByteFrequencyData(array: js.typedarray.Uint8Array): Unit = js.native
 
-  /** Copies the current waveform, or time-domain, data into a Float32Array
+  /**
+   * Copies the current waveform, or time-domain, data into a Float32Array
    *  array passed into it.
    *
    *  If the array has fewer elements than the AnalyserNode.fftSize, excess
@@ -426,7 +479,8 @@ trait AnalyserNode extends AudioNode {
   def getFloatTimeDomainData(
       array: js.typedarray.Float32Array): Unit = js.native
 
-  /** Copies the current waveform, or time-domain, data into a Uint8Array
+  /**
+   * Copies the current waveform, or time-domain, data into a Uint8Array
    *  (unsigned byte array) passed into it.
    *
    *  If the array has fewer elements than the AnalyserNode.fftSize, excess
@@ -438,7 +492,8 @@ trait AnalyserNode extends AudioNode {
   def getByteTimeDomainData(array: js.typedarray.Uint8Array): Unit = js.native
 }
 
-/** AudioBufferSourceNode has no input and exactly one output. The number of
+/**
+ * AudioBufferSourceNode has no input and exactly one output. The number of
  *  channels in the output corresponds to the number of channels of the
  *  AudioBuffer that is set to the AudioBufferSourceNode.buffer property.
  *  If there is no buffer set—that is, if the attribute's value is NULL—the
@@ -463,37 +518,43 @@ trait AnalyserNode extends AudioNode {
 @js.native
 trait AudioBufferSourceNode extends AudioNode {
 
-  /** Is an AudioBuffer that defines the audio asset to be played, or when
+  /**
+   * Is an AudioBuffer that defines the audio asset to be played, or when
    *  set to the value null, defines a single channel of silence.
    */
   var buffer: AudioBuffer = js.native
 
-  /** Is an a-rate AudioParam that defines the speed factor at which the
+  /**
+   * Is an a-rate AudioParam that defines the speed factor at which the
    *  audio asset will be played.
    *  Since no pitch correction is applied on the output, this can be used to
    *  change the pitch of the sample.
    */
   val playbackRate: AudioParam = js.native
 
-  /** Is a Boolean attribute indicating if the audio asset must be replayed
+  /**
+   * Is a Boolean attribute indicating if the audio asset must be replayed
    *  when the end of the AudioBuffer is reached.
    *  Its default value is false.
    */
   var loop: Boolean = js.native
 
-  /** Is a double value indicating, in seconds, where in the AudioBuffer the
+  /**
+   * Is a double value indicating, in seconds, where in the AudioBuffer the
    *  restart of the play must happen.
    *  Its default value is 0.
    */
   var loopStart: Double = js.native
 
-  /** Is a double value indicating, in seconds, where in the AudioBuffer the
+  /**
+   * Is a double value indicating, in seconds, where in the AudioBuffer the
    *  replay of the play must stop (and eventually loop again).
    *  Its default value is 0.
    */
   var loopEnd: Double = js.native
 
-  /** Schedules the start of the playback of the audio asset.
+  /**
+   * Schedules the start of the playback of the audio asset.
    *
    *  @param when     The when parameter defines when the play will start. If
    *                  when represents a time in the past, the play will start
@@ -509,7 +570,8 @@ trait AudioBufferSourceNode extends AudioNode {
   def start(when: Double = 0.0, offset: Double = 0.0,
       duration: Double = js.native): Unit = js.native
 
-  /** Schedules the end of the playback of an audio asset.
+  /**
+   * Schedules the end of the playback of an audio asset.
    *
    *  @param when The when parameter defines when the playback will stop. If
    *              it represents a time in the past, the playback will end
@@ -518,13 +580,15 @@ trait AudioBufferSourceNode extends AudioNode {
    */
   def stop(when: Double = 0.0): Unit = js.native
 
-  /** Is an EventHandler containing the callback associated with the ended
+  /**
+   * Is an EventHandler containing the callback associated with the ended
    *  event.
    */
   var onended: js.Function1[Event, _] = js.native
 }
 
-/** The AudioDestinationNode interface represents the end destination of an
+/**
+ * The AudioDestinationNode interface represents the end destination of an
  *  audio graph in a given context — usually the speakers of your device.
  *  It can also be the node that will "record" the audio data when used with an
  *  OfflineAudioContext.
@@ -546,13 +610,15 @@ trait AudioBufferSourceNode extends AudioNode {
 @js.native
 trait AudioDestinationNode extends AudioNode {
 
-  /** Is an unsigned long defining the maximum amount of channels that the
+  /**
+   * Is an unsigned long defining the maximum amount of channels that the
    *  physical device can handle.
    */
   var maxChannelCount: Int = js.native
 }
 
-/** The AudioListener interface represents the position and orientation of
+/**
+ * The AudioListener interface represents the position and orientation of
  *  the unique person listening to the audio scene, and is used in audio
  *  spatialisation. All PannerNodes spatialise in relation to the AudioListener
  *  stored in the AudioContext.listener attribute.
@@ -563,16 +629,19 @@ trait AudioDestinationNode extends AudioNode {
 @js.native
 trait AudioListener extends AudioNode {
 
-  /** Is a double value representing the amount of pitch shift to use when
+  /**
+   * Is a double value representing the amount of pitch shift to use when
    *  rendering a doppler effect.
    */
   var dopplerFactor: Double = js.native
 
-  /** Is a double value representing the speed of sound, in meters per second.
+  /**
+   * Is a double value representing the speed of sound, in meters per second.
    */
   var speedOfSound: Double = js.native
 
-  /** Defines the position of the listener.
+  /**
+   * Defines the position of the listener.
    *
    *  The three parameters x, y and z are unitless and describe the listener's
    *  position in 3D space according to the right-hand Cartesian coordinate
@@ -588,7 +657,8 @@ trait AudioListener extends AudioNode {
   def setPosition(x: Double = 0.0, y: Double = 0.0,
       z: Double = 0.0): Unit = js.native
 
-  /** Defines the orientation of the listener.
+  /**
+   * Defines the orientation of the listener.
    *
    *  It consists of two direction vectors:
    *
@@ -615,7 +685,8 @@ trait AudioListener extends AudioNode {
       zUp: Double = 0.0): Unit = js.native
 }
 
-/** The AudioParam interface represents an audio-related parameter, usually a
+/**
+ * The AudioParam interface represents an audio-related parameter, usually a
  *  parameter of an AudioNode (such as GainNode.gain). An AudioParam can be set
  *  to a specific value or a change in value, and can be scheduled to happen at
  *  a specific time and following a specific pattern.
@@ -640,7 +711,8 @@ trait AudioListener extends AudioNode {
 @js.native
 trait AudioParam extends AudioNode {
 
-  /** Represents the parameter's current floating point value; initially set
+  /**
+   * Represents the parameter's current floating point value; initially set
    *  to the value of AudioParam.defaultValue.
    *  Though it can be set, any modifications happening while there are
    *  automation events scheduled — that is events scheduled using the methods
@@ -648,12 +720,14 @@ trait AudioParam extends AudioNode {
    */
   var value: Double = js.native
 
-  /** Represents the initial value of the attributes as defined by the
+  /**
+   * Represents the initial value of the attributes as defined by the
    *  specific AudioNode creating the AudioParam.
    */
   val defaultValue: Double = js.native
 
-  /** Schedules an instant change to the value of the AudioParam at a precise
+  /**
+   * Schedules an instant change to the value of the AudioParam at a precise
    *  time, as measured against AudioContext.currentTime.
    *  The new value is given in the value parameter.
    *
@@ -665,7 +739,8 @@ trait AudioParam extends AudioNode {
    */
   def setValueAtTime(value: Double, startTime: Double): Unit = js.native
 
-  /** Schedules a gradual linear change in the value of the AudioParam. The
+  /**
+   * Schedules a gradual linear change in the value of the AudioParam. The
    *  change starts at the time specified for the previous event, follows a
    *  linear ramp to the new value given in the value parameter, and reaches the
    *  new value at the time given in the endTime parameter.
@@ -678,7 +753,8 @@ trait AudioParam extends AudioNode {
    */
   def linearRampToValueAtTime(value: Double, endTime: Double): Unit = js.native
 
-  /** Schedules a gradual exponential change in the value of the AudioParam.
+  /**
+   * Schedules a gradual exponential change in the value of the AudioParam.
    *  The change starts at the time specified for
    *  the previous event, follows an exponential ramp to the new value given
    *  in the value parameter, and reaches the new
@@ -693,7 +769,8 @@ trait AudioParam extends AudioNode {
   def exponentialRampToValueAtTime(value: Double,
       endTime: Double): Unit = js.native
 
-  /** Schedules the start of a change to the value of the AudioParam. The
+  /**
+   * Schedules the start of a change to the value of the AudioParam. The
    *  change starts at the time specified in startTime and exponentially moves
    *  towards the value given by the target parameter. The exponential decay
    *  rate is defined by the timeConstant parameter, which is a time measured in
@@ -710,7 +787,8 @@ trait AudioParam extends AudioNode {
   def setTargetAtTime(target: Double, startTime: Double,
       timeConstant: Double): Unit = js.native
 
-  /** Schedules the values of the AudioParam to follow a set of values,
+  /**
+   * Schedules the values of the AudioParam to follow a set of values,
    *  defined by the values Float32Array scaled to fit into the given interval,
    *  starting at startTime, and having a specific duration.
    *
@@ -726,7 +804,8 @@ trait AudioParam extends AudioNode {
   def setValueCurveAtTime(values: js.typedarray.Float32Array,
       startTime: Double, duration: Double): Unit = js.native
 
-  /** Cancels all scheduled future changes to the AudioParam.
+  /**
+   * Cancels all scheduled future changes to the AudioParam.
    *
    *  @param startTime A double representing the exact time (in seconds)
    *                   after the AudioContext was first created after
@@ -735,7 +814,8 @@ trait AudioParam extends AudioNode {
   def cancelScheduledValues(startTime: Double): Unit = js.native
 }
 
-/** The BiquadFilterNode interface represents a simple low-order filter, and
+/**
+ * The BiquadFilterNode interface represents a simple low-order filter, and
  *  is created using the AudioContext.createBiquadFilter() method.
  *  It is an AudioNode that can represent different kinds of filters, tone
  *  control devices, and graphic equalizers.
@@ -750,31 +830,37 @@ trait AudioParam extends AudioNode {
 @js.native
 trait BiquadFilterNode extends AudioNode {
 
-  /** Is a k-rate AudioParam, a double representing a frequency in the
+  /**
+   * Is a k-rate AudioParam, a double representing a frequency in the
    *  current filtering algorithm measured in hertz (Hz).
    */
   val frequency: AudioParam = js.native
 
-  /** Is an a-rate AudioParam representing detuning of the frequency in cents.
+  /**
+   * Is an a-rate AudioParam representing detuning of the frequency in cents.
    */
   val detune: AudioParam = js.native
 
-  /** Is a k-rate AudioParam, a double representing a Q factor, or quality
+  /**
+   * Is a k-rate AudioParam, a double representing a Q factor, or quality
    *  factor.
    */
   val Q: AudioParam = js.native
 
-  /** Is a k-rate AudioParam, a double representing the gain used in the
+  /**
+   * Is a k-rate AudioParam, a double representing the gain used in the
    *  current filtering algorithm.
    */
   val gain: AudioParam = js.native
 
-  /** Is a string value defining the kind of filtering algorithm the node is
+  /**
+   * Is a string value defining the kind of filtering algorithm the node is
    *  implementing.
    */
   var `type`: String = js.native
 
-  /** From the current filter parameter settings this method calculates the
+  /**
+   * From the current filter parameter settings this method calculates the
    *  frequency response for frequencies specified in the provided array of
    *  frequencies.
    *
@@ -793,7 +879,8 @@ trait BiquadFilterNode extends AudioNode {
       phaseResponse: js.typedarray.Float32Array): Unit = js.native
 }
 
-/** The ChannelMergerNode interface, often used in conjunction with its
+/**
+ * The ChannelMergerNode interface, often used in conjunction with its
  *  opposite, ChannelSplitterNode, reunites different mono inputs into a single
  *  output. Each input is used to fill a channel of the output. This is useful
  *  for accessing each channels separately, e.g. for performing channel mixing
@@ -818,7 +905,8 @@ trait BiquadFilterNode extends AudioNode {
 @js.native
 trait ChannelMergerNode extends AudioNode
 
-/** The ChannelSplitterNode interface, often used in conjunction with its
+/**
+ * The ChannelSplitterNode interface, often used in conjunction with its
  *  opposite, ChannelMergerNode, separates the different channels of an audio
  *  source into a set of mono outputs. This is useful for accessing each channel
  *  separately, e.g. for performing channel mixing where gain must be separately
@@ -839,7 +927,8 @@ trait ChannelMergerNode extends AudioNode
 @js.native
 trait ChannelSplitterNode extends AudioNode
 
-/** The ConvolverNode interface is an AudioNode that performs a Linear
+/**
+ * The ConvolverNode interface is an AudioNode that performs a Linear
  *  Convolution on a given AudioBuffer, often used to achieve a reverb effect.
  *  A ConvolverNode always has exactly one input and one output.
  *
@@ -856,20 +945,23 @@ trait ChannelSplitterNode extends AudioNode
 @js.native
 trait ConvolverNode extends AudioNode {
 
-  /** A mono, stereo, or 4-channel AudioBuffer containing the (possibly
+  /**
+   * A mono, stereo, or 4-channel AudioBuffer containing the (possibly
    *  multichannel) impulse response used by the ConvolverNode to create the
    *  reverb effect.
    */
   var buffer: AudioBuffer = js.native
 
-  /** A boolean that controls whether the impulse response from the buffer will
+  /**
+   * A boolean that controls whether the impulse response from the buffer will
    *  be scaled by an equal-power normalization when the buffer attribute is
    *  set, or not.
    */
   var normalize: Boolean = js.native
 }
 
-/** The DelayNode interface represents a delay-line; an AudioNode
+/**
+ * The DelayNode interface represents a delay-line; an AudioNode
  *  audio-processing module that causes a delay between the arrival of an input
  *  data and its propagation to the output.
  *  A DelayNode always has exactly one input and one output, both with the same
@@ -891,7 +983,8 @@ trait DelayNode extends AudioNode {
   val delayTime: AudioParam = js.native
 }
 
-/** The DynamicsCompressorNode interface provides a compression effect, which
+/**
+ * The DynamicsCompressorNode interface provides a compression effect, which
  *  lowers the volume of the loudest parts of the signal in order to help
  *  prevent clipping and distortion that can occur when multiple sounds are
  *  played and multiplexed together at once. This is often used in musical
@@ -908,39 +1001,46 @@ trait DelayNode extends AudioNode {
 @js.native
 trait DynamicsCompressorNode extends AudioNode {
 
-  /** Is a k-rate AudioParam representing the decibel value above which the
+  /**
+   * Is a k-rate AudioParam representing the decibel value above which the
    *  compression will start taking effect.
    */
   val threshold: AudioParam = js.native
 
-  /** Is a k-rate AudioParam containing a decibel value representing the
+  /**
+   * Is a k-rate AudioParam containing a decibel value representing the
    *  range above the threshold where the curve smoothly transitions to the
    *  compressed portion.
    */
   val knee: AudioParam = js.native
 
-  /** Is a k-rate AudioParam representing the amount of change, in dB, needed
+  /**
+   * Is a k-rate AudioParam representing the amount of change, in dB, needed
    *  in the input for a 1 dB change in the output.
    */
   val ratio: AudioParam = js.native
 
-  /** Is a k-rate AudioParam representing the amount of gain reduction
+  /**
+   * Is a k-rate AudioParam representing the amount of gain reduction
    *  currently applied by the compressor to the signal.
    */
   val reduction: AudioParam = js.native
 
-  /** Is a k-rate AudioParam representing the amount of time, in seconds,
+  /**
+   * Is a k-rate AudioParam representing the amount of time, in seconds,
    *  required to reduce the gain by 10 dB.
    */
   val attack: AudioParam = js.native
 
-  /** Is a k-rate AudioParam representing the amount of time, in seconds,
+  /**
+   * Is a k-rate AudioParam representing the amount of time, in seconds,
    *  required to increase the gain by 10 dB.
    */
   val release: AudioParam = js.native
 }
 
-/** The GainNode interface represents a change in volume. It is an AudioNode
+/**
+ * The GainNode interface represents a change in volume. It is an AudioNode
  *  audio-processing module that causes a given gain to be applied to the input
  *  data before its propagation to the output.
  *  A GainNode always has exactly one input and one output, both with the same
@@ -966,7 +1066,8 @@ trait GainNode extends AudioNode {
   val gain: AudioParam = js.native
 }
 
-/** The MediaElementAudioSourceNode interface represents an audio source
+/**
+ * The MediaElementAudioSourceNode interface represents an audio source
  *  consisting of an HTML5 &lt;audio&gt; or &lt;video&gt; element.
  *  It is an AudioNode that acts as an audio source.
  *
@@ -985,7 +1086,8 @@ trait GainNode extends AudioNode {
 @js.native
 trait MediaElementAudioSourceNode extends AudioNode
 
-/** The MediaElementAudioSourceNode interface represents an audio destination
+/**
+ * The MediaElementAudioSourceNode interface represents an audio destination
  *  consisting of a WebRTC MediaStream with a single AudioMediaStreamTrack,
  *  which can be used in a similar way to a MediaStream obtained from
  *  Navigator.getUserMedia.
@@ -1002,7 +1104,8 @@ trait MediaElementAudioSourceNode extends AudioNode
 @js.native
 trait MediaStreamAudioDestinationNode extends AudioNode {
 
-  /** Is a MediaStream containing a single AudioMediaStreamTrack with the
+  /**
+   * Is a MediaStream containing a single AudioMediaStreamTrack with the
    *  same number of channels as the node itself.
    *  You can use this property to get a stream out of the audio graph and
    *  feed it into another construct, such as a Media Recorder.
@@ -1010,7 +1113,8 @@ trait MediaStreamAudioDestinationNode extends AudioNode {
   var stream: MediaStream = js.native
 }
 
-/** The MediaStreamAudioSourceNode interface represents an audio source
+/**
+ * The MediaStreamAudioSourceNode interface represents an audio source
  *  consisting of a WebRTC MediaStream (such as a webcam or microphone).
  *  It is an AudioNode that acts as an audio source.
  *
@@ -1029,7 +1133,8 @@ trait MediaStreamAudioDestinationNode extends AudioNode {
 @js.native
 trait MediaStreamAudioSourceNode extends AudioNode
 
-/** The OscillatorNode interface represents a periodic waveform, like a sine
+/**
+ * The OscillatorNode interface represents a periodic waveform, like a sine
  *  wave. It is an AudioNode audio-processing module that causes a given
  *  frequency of sine wave to be created — in effect, a constant tone.
  *
@@ -1047,19 +1152,23 @@ trait MediaStreamAudioSourceNode extends AudioNode
 @js.native
 trait OscillatorNode extends AudioNode {
 
-  /** An a-rate AudioParam representing the frequency of oscillation in hertz
+  /**
+   * An a-rate AudioParam representing the frequency of oscillation in hertz
    *  (though the AudioParam returned is read-only, the value it represents is
    *  not.)
    */
   var frequency: AudioParam = js.native
 
-  /** An a-rate AudioParam representing detuning of oscillation in cents (though
+  /**
+   * An a-rate AudioParam representing detuning of oscillation in cents (though
    *  the AudioParam returned is read-only, the value it represents is not.)
    */
   var detune: AudioParam = js.native
 
-  /** Represents the shape of the oscillator wave generated. Different waves
-   *  will produce different tones. */
+  /**
+   * Represents the shape of the oscillator wave generated. Different waves
+   *  will produce different tones.
+   */
   var `type`: String = js.native // Not sure if this is correct ...
 
   /** This method specifies the exact time to start playing the tone. */
@@ -1068,20 +1177,23 @@ trait OscillatorNode extends AudioNode {
   /** This method specifies the exact time to stop playing the tone. */
   def stop(when: Double = 0.0): Unit = js.native
 
-  /** Used to point to a PeriodicWave defining a periodic waveform that can
+  /**
+   * Used to point to a PeriodicWave defining a periodic waveform that can
    *  be used to shape the oscillator's output, when type = "custom" is used.
    *
    *  This replaces the now-obsolete OscillatorNode.setWaveTable.
    */
   def setPeriodicWave(wave: PeriodicWave): Unit = js.native
 
-  /** Used to set the event handler for the ended event, which fires when the
+  /**
+   * Used to set the event handler for the ended event, which fires when the
    *  tone has stopped playing.
    */
   var onended: js.Function1[Event, _] = js.native
 }
 
-/** The PannerNode interface represents the position and behavior of an audio
+/**
+ * The PannerNode interface represents the position and behavior of an audio
  *  source signal in space. It is an AudioNode audio-processing module
  *  describing its position with right-hand Cartesian coordinates, its movement
  *  using a velocity vector and its directionality using a directionality cone.
@@ -1102,50 +1214,60 @@ trait OscillatorNode extends AudioNode {
 @js.native
 trait PannerNode extends AudioNode {
 
-  /** Is an enumerated value determining which spatialisation algorithm to
-   *  use to position the audio in 3D space. */
+  /**
+   * Is an enumerated value determining which spatialisation algorithm to
+   *  use to position the audio in 3D space.
+   */
   var panningModel: String = js.native
 
-  /** Is an enumerated value determining which algorithm to use to reduce the
+  /**
+   * Is an enumerated value determining which algorithm to use to reduce the
    *  volume of the audio source as it moves away from the listener.
    */
   var distanceModel: String = js.native
 
-  /** Is a double value representing the reference distance for reducing
+  /**
+   * Is a double value representing the reference distance for reducing
    *  volume as the audio source moves further from the listener.
    */
   var refDistance: Double = js.native
 
-  /** Is a double value representing the maximum distance between the audio
+  /**
+   * Is a double value representing the maximum distance between the audio
    *  source and the listener, after which the volume is not reduced any further.
    */
   var maxDistance: Double = js.native
 
-  /** Is a double value describing how quickly the volume is reduced as the
+  /**
+   * Is a double value describing how quickly the volume is reduced as the
    *  source moves away from the listener.
    *  This value is used by all distance models.
    */
   var rolloffFactor: Double = js.native
 
-  /** Is a double value describing the angle, in degrees, of a cone inside of
+  /**
+   * Is a double value describing the angle, in degrees, of a cone inside of
    *  which there will be no volume reduction.
    */
   var coneInnerAngle: Double = js.native
 
-  /** Is a double value describing the angle, in degrees, of a cone outside
+  /**
+   * Is a double value describing the angle, in degrees, of a cone outside
    *  of which the volume will be reduced by a constant value, defined by the
    *  coneOuterGain attribute.
    */
   var coneOuterAngle: Double = js.native
 
-  /** Is a double value describing the amount of volume reduction outside the
+  /**
+   * Is a double value describing the amount of volume reduction outside the
    *  cone defined by the coneOuterAngle attribute.
    *
    *  Its default value is 0, meaning that no sound can be heard.
    */
   var coneOuterGain: Double = js.native
 
-  /** Defines the position of the audio source relative to the listener
+  /**
+   * Defines the position of the audio source relative to the listener
    *  (represented by an AudioListener object stored in the
    *  AudioContext.listener attribute.) The three parameters x, y and z are
    *  unitless and describe the source's position in 3D space using the
@@ -1160,7 +1282,8 @@ trait PannerNode extends AudioNode {
   def setPosition(x: Double = 0.0, y: Double = 0.0,
       z: Double = 0.0): Unit = js.native
 
-  /** Defines the direction the audio source is playing in.
+  /**
+   * Defines the direction the audio source is playing in.
    *  This can have a big effect if the sound is very directional —
    *  controlled by the three cone-related attributes PannerNode.coneInnerAngle,
    *  PannerNode.coneOuterAngle, and PannerNode.coneOuterGain. In such a case,
@@ -1178,7 +1301,8 @@ trait PannerNode extends AudioNode {
   def setOrientation(x: Double = 1.0, y: Double = 0.0,
       z: Double = 0.0): Unit = js.native
 
-  /** Defines the velocity vector of the audio source — how fast it is moving
+  /**
+   * Defines the velocity vector of the audio source — how fast it is moving
    *  and in what direction.
    *
    *  The velocity relative to the listener is used to control the pitch change
@@ -1197,7 +1321,8 @@ trait PannerNode extends AudioNode {
       z: Double = 0.0): Unit = js.native
 }
 
-/** The StereoPannerNode interface of the Web Audio API represents a simple
+/**
+ * The StereoPannerNode interface of the Web Audio API represents a simple
  *  stereo panner node that can be used to pan an audio stream left or right.
  *  It is an AudioNode audio-processing module that positions an incoming audio
  *  stream in a stereo image using a low-cost equal-power panning algorithm.
@@ -1215,7 +1340,8 @@ trait StereoPannerNode extends AudioNode {
   val pan: AudioParam = js.native
 }
 
-/** The WaveShaperNode interface represents a non-linear distorter. It is an
+/**
+ * The WaveShaperNode interface represents a non-linear distorter. It is an
  *  AudioNode that uses a curve to apply a wave shaping distortion to the
  *  signal. Beside obvious distortion effects, it is often used to add a warm
  *  feeling to the signal.
@@ -1234,13 +1360,16 @@ trait WaveShaperNode extends AudioNode {
   /** Is a Float32Array of numbers describing the distortion to apply. */
   var curve: js.typedarray.Float32Array = js.native
 
-  /** Is an enumerated value indicating if oversampling must be used.
+  /**
+   * Is an enumerated value indicating if oversampling must be used.
    *  Oversampling is a technique for creating more samples (up-sampling) before
-   *  applying the distortion effect to the audio signal. */
+   *  applying the distortion effect to the audio signal.
+   */
   var oversample: String = js.native
 }
 
-/** The AudioBuffer interface represents a short audio asset residing in
+/**
+ * The AudioBuffer interface represents a short audio asset residing in
  *  memory, created from an audio file using the AudioContext.decodeAudioData()
  *  method, or from raw data using AudioContext.createBuffer(). Once put into an
  *  AudioBuffer, the audio can then be played by being passed into an
@@ -1258,27 +1387,32 @@ trait WaveShaperNode extends AudioNode {
 @js.native
 trait AudioBuffer extends js.Object {
 
-  /** Returns a float representing the sample rate, in samples per second, of
+  /**
+   * Returns a float representing the sample rate, in samples per second, of
    *  the PCM data stored in the buffer.
    */
   val sampleRate: Double = js.native
 
-  /** Returns an integer representing the length, in sample-frames, of the
+  /**
+   * Returns an integer representing the length, in sample-frames, of the
    *  PCM data stored in the buffer.
    */
   val length: Int = js.native
 
-  /** Returns a double representing the duration, in seconds, of the PCM data
+  /**
+   * Returns a double representing the duration, in seconds, of the PCM data
    *  stored in the buffer.
    */
   val duration: Double = js.native
 
-  /** Returns an integer representing the number of discrete audio channels
+  /**
+   * Returns an integer representing the number of discrete audio channels
    *  described by the PCM data stored in the buffer.
    */
   val numberOfChannels: Int = js.native
 
-  /** Returns a Float32Array containing the PCM data associated with the
+  /**
+   * Returns a Float32Array containing the PCM data associated with the
    *  channel, defined by the channel parameter (with 0 representing the first
    *  channel).
    *
@@ -1290,7 +1424,8 @@ trait AudioBuffer extends js.Object {
    */
   def getChannelData(channel: Int): js.typedarray.Float32Array = js.native
 
-  /** Copies the samples from the specified channel of the AudioBuffer to the
+  /**
+   * Copies the samples from the specified channel of the AudioBuffer to the
    *  destination array.
    *
    *  @param destination    A Float32Array to copy the channel data to.
@@ -1305,7 +1440,8 @@ trait AudioBuffer extends js.Object {
   def copyFromChannel(destination: js.typedarray.Float32Array,
       channelNumber: Int, startInChannel: Int): Unit = js.native
 
-  /** Copies the samples to the specified channel of the AudioBuffer, from
+  /**
+   * Copies the samples to the specified channel of the AudioBuffer, from
    *  the source array.
    *
    *  @param source         A Float32Array that the channel data will be
@@ -1322,20 +1458,23 @@ trait AudioBuffer extends js.Object {
       startInChannel: Int): Unit = js.native
 }
 
-/** The Web Audio API OfflineAudioCompletionEvent interface represents events
+/**
+ * The Web Audio API OfflineAudioCompletionEvent interface represents events
  *  that occur when the processing of an OfflineAudioContext is terminated.
  *  The complete event implements this interface.
  */
 @js.native
 trait OfflineAudioCompletionEvent extends Event {
 
-  /** The buffer containing the result of the processing of an
+  /**
+   * The buffer containing the result of the processing of an
    *  OfflineAudioContext.
    */
   val renderedBuffer: AudioBuffer = js.native
 }
 
-/** The PeriodicWave interface defines a periodic waveform that can be used
+/**
+ * The PeriodicWave interface defines a periodic waveform that can be used
  *  to shape the output of an OscillatorNode.
  *
  *  PeriodicWave has no inputs or outputs; it is used to create custom

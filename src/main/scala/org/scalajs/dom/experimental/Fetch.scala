@@ -133,7 +133,7 @@ class Response(content: BodyInit = null, init: ResponseInit = null)
   /**
    * Contains a boolean stating whether the response was successful (status in
    * the range 200-299) or not.
-   **/
+   */
   def ok: Boolean = js.native
 
   /** Contains the status code of the response (e.g., 200 for a success). */
@@ -175,7 +175,6 @@ object Response extends js.Object {
 /**
  * See [[https://fetch.spec.whatwg.org/#response-class ¶6.4 Response class]]
  * definition in whatwg Fetch spec.
- *
  */
 trait ResponseInit extends js.Object {
   var status: Int

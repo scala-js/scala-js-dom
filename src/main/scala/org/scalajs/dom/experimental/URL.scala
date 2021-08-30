@@ -103,8 +103,7 @@ class URL(url: String, base: String = js.native) extends js.Object {
  */
 @js.native
 @JSGlobal
-class URLSearchParams
-    extends js.Iterable[js.Tuple2[String, String]] {
+class URLSearchParams extends js.Iterable[js.Tuple2[String, String]] {
 
   /**
    * Leading '?' characters are ignored.

@@ -29,22 +29,24 @@ object WriteableState {
   /**
    * The stream’s .close() method has been called, and a command to close is
    * in the queue or being processed by the underlying sink; attempts to
-   * write will now fail. */
+   * write will now fail.
+   */
   val closing = "closing".asInstanceOf[WriteableState]
 
   /** The underlying sink has been closed; writing is no longer possible. */
   val closed = "closed".asInstanceOf[WriteableState]
 
-  /** An error occurred interacting with the underlying sink or the stream
+  /**
+   * An error occurred interacting with the underlying sink or the stream
    * has been aborted, so the stream is now
-   * dead. */
+   * dead.
+   */
   val errored = "errored".asInstanceOf[WriteableState]
 }
 
 /**
  * [[https://streams.spec.whatwg.org/#ws-class ¶4.2. Class WritableStream]] of
  * whatwg Stream spec
- *
  *
  * todo: the constructor
  * @tparam T Type of the Chunks to be written to the Stream
@@ -175,7 +177,6 @@ trait ReadableStream[+T] extends js.Object {
    * throws scala.scalajs.js.TypeError if not a readable stream
    *
    * @return a new ReadableStreamReader
-   *
    */
   def getReader(): ReadableStreamReader[T] = js.native
 
@@ -313,7 +314,6 @@ class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
 }
 
 /**
- *
  * [[https://streams.spec.whatwg.org/#rs-controller-class ¶3.3 Class
  * ReadableStreamController]] of whatwg spec
  *
@@ -322,7 +322,6 @@ class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
  *
  * @param stream can be null
  * @tparam T Type of the Chunks to be enqueued to the Stream
-
  */
 @js.native
 @JSGlobal
@@ -330,7 +329,6 @@ class ReadableStreamController[-T](stream: ReadableStream[T] = null)
     extends js.Object {
 
   /**
-   *
    * The desiredSize getter returns the desired size to fill the controlled
    * stream’s internal queue. It can be negative, if the queue is over-full.
    * An underlying source should use this information to determine when and how
@@ -355,7 +353,6 @@ class ReadableStreamController[-T](stream: ReadableStream[T] = null)
    * @param chunk
    * throws scala.scalajs.js.RangeError if size is too big
    * @return  seems like its an undefOr[Int] of the size
-   *
    */
   def enqueue(chunk: Chunk[T]): js.UndefOr[Int] = js.native
 
@@ -370,10 +367,8 @@ class ReadableStreamController[-T](stream: ReadableStream[T] = null)
 }
 
 /**
- *
  * See [[https://streams.spec.whatwg.org/#chunk ¶2 Model]] but mostly the
  * examples in the whatwg streams spec
- *
  */
 @js.native
 trait Chunk[+T] extends js.Object {

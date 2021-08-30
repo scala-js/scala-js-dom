@@ -6,7 +6,8 @@ import scalafix.v1._
 object Util {
 
   // Taken from https://scalacenter.github.io/scalafix/docs/developers/semantic-type.html#dealias-types
-  def dealias(tpe: SemanticType)(implicit doc: SemanticDocument): SemanticType =
+  def dealias(tpe: SemanticType)(
+      implicit doc: SemanticDocument): SemanticType =
     tpe match {
       case TypeRef(prefix, symbol, typeArguments) =>
         TypeRef(prefix, dealias(symbol), typeArguments.map(dealias(_)))
@@ -16,7 +17,8 @@ object Util {
 
   def dealias(symbol: Symbol)(implicit doc: SemanticDocument): Symbol =
     symbol.info.get.signature match {
-      case TypeSignature(_, lowerBound @ TypeRef(_, dealiased, _), upperBound) if lowerBound == upperBound =>
+      case TypeSignature(_, lowerBound @ TypeRef(_, dealiased, _), upperBound)
+          if lowerBound == upperBound =>
         dealiased
       case _ =>
         symbol
@@ -24,13 +26,15 @@ object Util {
 
   // ===================================================================================================================
 
-  def parents(sym: Symbol)(implicit doc: SemanticDocument): List[SemanticType] =
+  def parents(sym: Symbol)(
+      implicit doc: SemanticDocument): List[SemanticType] =
     dealias(sym).info match {
       case Some(i) => parents(i.signature)
       case None    => Nil
     }
 
-  def parents(sig: Signature)(implicit doc: SemanticDocument): List[SemanticType] =
+  def parents(sig: Signature)(
+      implicit doc: SemanticDocument): List[SemanticType] =
     sig match {
       case x: ClassSignature => x.parents.map(dealias(_))
       case _                 => Nil
@@ -82,10 +86,10 @@ object Util {
 
   def typeSymbol(t: SemanticType): Symbol =
     t match {
-      case x: TypeRef          => x.symbol
-      case x: SingleType       => x.symbol
-      case x: ThisType         => x.symbol
-      case x: SuperType        => x.symbol
+      case x: TypeRef    => x.symbol
+      case x: SingleType => x.symbol
+      case x: ThisType   => x.symbol
+      case x: SuperType  => x.symbol
       // case x: ConstantType     => xxx  // (constant) =>
       // case x: IntersectionType => xxx  // (types) =>
       // case x: UnionType        => xxx  // (types) =>
@@ -97,8 +101,7 @@ object Util {
       // case x: ByNameType       => xxx  // (tpe) =>
       // case x: RepeatedType     => xxx  // (tpe) =>
       // case NoType              => Symbol.None
-      case _              => Symbol.None
+      case _ => Symbol.None
     }
-
 
 }

@@ -13,7 +13,9 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
   override def beforeStart(): Unit = {
     Util.scalaSeriesVer match {
       case "2.11" => // disabled - can't read classfiles
-      case _      => MutableState.global = new MutableState // can't set state= in early Scala versions
+      case _ =>
+        MutableState.global =
+          new MutableState // can't set state= in early Scala versions
     }
   }
 
@@ -21,17 +23,22 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
 
     if (enabled)
       doc.tree.traverse {
-        case a: Defn.Class  => process(a.mods, a.symbol, a.templ, ScopeType.Class)
-        case a: Defn.Object => process(a.mods, a.symbol, a.templ, ScopeType.Object)
-        case a: Defn.Trait  => process(a.mods, a.symbol, a.templ, ScopeType.Trait)
-        case a: Pkg.Object  => process(a.mods, a.symbol, a.templ, ScopeType.Object)
+        case a: Defn.Class =>
+          process(a.mods, a.symbol, a.templ, ScopeType.Class)
+        case a: Defn.Object =>
+          process(a.mods, a.symbol, a.templ, ScopeType.Object)
+        case a: Defn.Trait =>
+          process(a.mods, a.symbol, a.templ, ScopeType.Trait)
+        case a: Pkg.Object =>
+          process(a.mods, a.symbol, a.templ, ScopeType.Object)
         case _ =>
       }
 
     Patch.empty
   }
 
-  private def process(parentMods: List[Mod], sym: Symbol, body: Template, typ: ScopeType)(implicit doc: SemanticDocument): Unit = {
+  private def process(parentMods: List[Mod], sym: Symbol, body: Template,
+      typ: ScopeType)(implicit doc: SemanticDocument): Unit = {
     // Skip non-public scopes
     val info = sym.info.get
     if (!info.isPublic && !info.isPackageObject)
@@ -39,12 +46,13 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
 
     def inspectAnnotationsFn(set: String => Unit): List[Mod] => List[Mod] =
       _.filter {
-        case Mod.Annot(Init(tpe, _, List(List(_, ver)))) if tpe.toString == "deprecated" =>
+        case Mod.Annot(Init(tpe, _, List(List(_, ver))))
+            if tpe.toString == "deprecated" =>
           set(
-            ver match {
-              case Lit.String(s) => s
-              case term          => term.toString
-            }
+              ver match {
+                case Lit.String(s) => s
+                case term          => term.toString
+              }
           )
           false
         case _ => true
@@ -54,10 +62,10 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
     var scopeDeprecatedVer = Option.empty[String]
     inspectAnnotationsFn(v => scopeDeprecatedVer = Some(v))(parentMods)
 
-    val parents    = Util.parents(sym).iterator.map(Util.typeSymbol).toList
+    val parents = Util.parents(sym).iterator.map(Util.typeSymbol).toList
     val domParents = parents.iterator.filter(isScalaJsDom).toSet
-    val isJsType   = parents.exists(isScalaJs)
-    val s          = state.register(sym, isJsType, typ, domParents, scopeDeprecatedVer)
+    val isJsType = parents.exists(isScalaJs)
+    val s = state.register(sym, isJsType, typ, domParents, scopeDeprecatedVer)
 
     def letsSeeHowLazyWeCanBeLol(t: Tree): Unit = {
       // Skip non-public members
@@ -67,27 +75,32 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
       // Remove definition bodies
       var t2: Tree =
         t match {
-          case Defn.Def(mods, name, tparams, paramss, Some(tpe), _) => Decl.Def(mods, name, tparams, paramss, tpe)
-          case Defn.Val(mods, pats, Some(tpe), _)                   => Decl.Val(mods, pats, tpe)
-          case Defn.Var(mods, pats, Some(tpe), _)                   => Decl.Var(mods, pats, tpe)
-          case _                                                    => t
+          case Defn.Def(mods, name, tparams, paramss, Some(tpe), _) =>
+            Decl.Def(mods, name, tparams, paramss, tpe)
+          case Defn.Val(mods, pats, Some(tpe), _) => Decl.Val(mods, pats, tpe)
+          case Defn.Var(mods, pats, Some(tpe), _) => Decl.Var(mods, pats, tpe)
+          case _                                  => t
         }
 
       // Inspect annotations
       var deprecatedVer = Option.empty[String]
-      val inspectAnnotations = inspectAnnotationsFn(v => deprecatedVer = Some(v))
+      val inspectAnnotations =
+        inspectAnnotationsFn(v => deprecatedVer = Some(v))
       t2 match {
-        case Decl.Def(mods, name, tparams, paramss, tpe) => t2 = Decl.Def(inspectAnnotations(mods), name, tparams, paramss, tpe)
-        case Decl.Val(mods, pats, tpe)                   => t2 = Decl.Val(inspectAnnotations(mods), pats, tpe)
-        case Decl.Var(mods, pats, tpe)                   => t2 = Decl.Var(inspectAnnotations(mods), pats, tpe)
-        case Defn.Type(mods, names, params, tpe)         => t2 = Defn.Type(inspectAnnotations(mods), names, params, tpe)
+        case Decl.Def(mods, name, tparams, paramss, tpe) =>
+          t2 = Decl.Def(inspectAnnotations(mods), name, tparams, paramss, tpe)
+        case Decl.Val(mods, pats, tpe) =>
+          t2 = Decl.Val(inspectAnnotations(mods), pats, tpe)
+        case Decl.Var(mods, pats, tpe) =>
+          t2 = Decl.Var(inspectAnnotations(mods), pats, tpe)
+        case Defn.Type(mods, names, params, tpe) =>
+          t2 = Defn.Type(inspectAnnotations(mods), names, params, tpe)
         case _ =>
       }
 
       // Generate member desc
       val desc =
-        t2
-          .toString
+        t2.toString
           .replace('\n', ' ')
           .replace("=", " = ")
           .replace("@inline ", "")
@@ -131,10 +144,14 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
     }
 
   private def saveReport(): Unit = {
-    val scalaVer    = Util.scalaSeriesVer.replace('.', '_')
+    val scalaVer = Util.scalaSeriesVer.replace('.', '_')
     val projectRoot = System.getProperty("user.dir")
-    val reportFile  = Paths.get(s"$projectRoot/api-reports/$scalaVer.txt")
-    val api         = state.result().iterator.map(_.stripPrefix("org/scalajs/dom/")).mkString("\n")
+    val reportFile = Paths.get(s"$projectRoot/api-reports/$scalaVer.txt")
+    val api = state
+      .result()
+      .iterator
+      .map(_.stripPrefix("org/scalajs/dom/"))
+      .mkString("\n")
 
     val content =
       s"""|scala-js-dom API

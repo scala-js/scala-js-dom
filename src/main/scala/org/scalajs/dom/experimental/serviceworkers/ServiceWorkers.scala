@@ -28,13 +28,14 @@ object FrameType {
 
   /**
    * The window client's global object's browsing context is a top-level
-   * browsing context. */
+   * browsing context.
+   */
   val `top-level` = "top-level".asInstanceOf[FrameType]
 
   /**
    * The window client's global object's browsing context is a nested
    * browsing context.
-   **/
+   */
   val nested = "nested".asInstanceOf[FrameType]
 
   val none = "none".asInstanceOf[FrameType]
@@ -61,10 +62,8 @@ trait Client extends js.Object {
   def id: String = js.native
 
   /**
-   *
    * @param message the spec says this is of type any (?!)
    * @param transfer https://html.spec.whatwg.org/multipage/infrastructure.html#transferable-objects
-   *
    */
   def postMessage(message: Any,
       transfer: Sequence[Transferable] = null): Unit = js.native
@@ -275,7 +274,8 @@ trait ServiceWorkerRegistration extends EventTarget {
    * MDN
    */
   def getNotifications(
-      options: GetNotificationOptions = ???): js.Promise[Sequence[Notification]] = js.native
+      options: GetNotificationOptions =
+        ???): js.Promise[Sequence[Notification]] = js.native
 
   /**
    * The showNotification() method of the ServiceWorkerRegistration interface
@@ -326,7 +326,8 @@ trait ServiceWorkerContainer extends EventTarget {
    *  MDN
    */
   def register(scriptURL: String,
-      options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration] = js.native
+      options: js.Object =
+        new js.Object()): js.Promise[ServiceWorkerRegistration] = js.native
 
   /**
    * The ServiceWorkerContainer.controller read-only property of the
@@ -347,7 +348,8 @@ trait ServiceWorkerContainer extends EventTarget {
    *  MDN
    */
   def getRegistration(
-      scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]] = js.native
+      scope: String =
+        ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]] = js.native
 
   /**
    * The getRegistrations() method of the ServiceWorkerContainer interface

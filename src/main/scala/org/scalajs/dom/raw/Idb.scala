@@ -693,7 +693,6 @@ class IDBOpenDBRequest extends IDBRequest {
  * see [[https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory IDBFactory on MDN]]
  *
  * official documentation [[http://www.w3.org/TR/IndexedDB/#idl-def-IDBFactory IDBFactory]] in w3c spec
- *
  */
 @js.native
 @JSGlobal

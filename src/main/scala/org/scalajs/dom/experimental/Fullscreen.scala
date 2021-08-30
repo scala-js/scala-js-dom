@@ -71,13 +71,13 @@ object Fullscreen {
     /**
      * Note: May not be available in implementations of older versions of
      * this spec.
-     **/
+     */
     var onfullscreenchange: js.Function1[Event, _] = js.native
 
     /**
      * Note: May not be available in implementations of older versions of
      * this spec.
-     **/
+     */
     var onfullscreenerror: js.Function1[Event, _] = js.native
   }
 }

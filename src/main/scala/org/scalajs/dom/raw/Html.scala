@@ -1643,7 +1643,7 @@ abstract class HTMLTableRowElement
 }
 
 /**
- * The HTMLHtmlElement interface serves as the root node for a given HTML document. 
+ * The HTMLHtmlElement interface serves as the root node for a given HTML document.
  * This object inherits the properties and methods described in the HTMLElement
  * interface.
  *
@@ -2305,7 +2305,7 @@ abstract class HTMLInputElement extends HTMLElement {
   var pattern: String = js.native
 
   /**
-   * The validity state that this element is in. 
+   * The validity state that this element is in.
    *
    * MDN
    */
@@ -2342,7 +2342,7 @@ abstract class HTMLInputElement extends HTMLElement {
    * Decrements the value by (step * n), where n defaults to 1 if not specified. Throws an
    * INVALID_STATE_ERR exception: if the method is not applicable to for the current
    * type value. if the element has no step value. if the value cannot be converted to a
-   * number. if the resulting value is above the max or below the min. 
+   * number. if the resulting value is above the max or below the min.
    *
    * MDN
    */
@@ -3148,7 +3148,7 @@ abstract class HTMLMediaElement extends HTMLElement {
    * The current state of fetching the media over the network. Constant Value
    * Description NETWORK_EMPTY 0 There is no data yet.  The readyState is also
    * HAVE_NOTHING. NETWORK_IDLE 1   NETWORK_LOADING 2 The media is loading.
-   * NETWORK_NO_SOURCE[1] 3  
+   * NETWORK_NO_SOURCE[1] 3
    *
    * MDN
    */

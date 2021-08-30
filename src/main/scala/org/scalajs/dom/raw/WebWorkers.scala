@@ -237,7 +237,6 @@ trait DedicatedWorkerGlobalScope extends WorkerGlobalScope {
    *                     transferred, it becomes unusable (neutered) in the
    *                     context it was sent from and it becomes available only
    *                     to the main thread it was sent to.
-   *
    */
   def postMessage(aMessage: js.Any,
       transferList: js.UndefOr[

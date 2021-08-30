@@ -11,26 +11,25 @@ final class MutableState {
 
   private[this] val scopes = mutable.Map.empty[Symbol, Scope]
 
-  def register(sym          : Symbol,
-               isJsType     : Boolean,
-               scopeType    : ScopeType,
-               parents      : Set[Symbol],
-               deprecatedVer: Option[String]): Scope = synchronized {
-    scopes.get(sym) match {
-      case None =>
-        val s = Scope(sym)(scopeType, parents)
-        scopes.update(sym, s)
-        s.isJsType = isJsType
-        s.deprecatedVer = deprecatedVer
-        s
-      case Some(s) =>
-        s
+  def register(sym: Symbol, isJsType: Boolean, scopeType: ScopeType,
+      parents: Set[Symbol], deprecatedVer: Option[String]): Scope =
+    synchronized {
+      scopes.get(sym) match {
+        case None =>
+          val s = Scope(sym)(scopeType, parents)
+          scopes.update(sym, s)
+          s.isJsType = isJsType
+          s.deprecatedVer = deprecatedVer
+          s
+        case Some(s) =>
+          s
+      }
     }
-  }
 
   private def scopeParents(root: Scope): List[Scope] = {
     @tailrec
-    def go(s: Scope, seen: Set[Symbol], queue: Set[Symbol], results: List[Scope]): List[Scope] =
+    def go(s: Scope, seen: Set[Symbol], queue: Set[Symbol],
+        results: List[Scope]): List[Scope] =
       if (!seen.contains(s.symbol))
         go(s, seen + s.symbol, queue ++ s.parents, s :: results)
       else if (queue.nonEmpty) {
@@ -71,11 +70,11 @@ final class MutableState {
     // Pass 2
     for (root <- scopes.valuesIterator) {
       val scopeName = root.symbol.value.stripSuffix("#").stripSuffix(".")
-      val flagLang  = if (root.isJsType) "J" else "S"
-      val flagTyp   = root.scopeType.id
-      val flags     = flagLang + flagTyp
-      val prefix    = s"$scopeName[$flags] "
-      val scopeKey  = s"$scopeName$sortHack[$flags"
+      val flagLang = if (root.isJsType) "J" else "S"
+      val flagTyp = root.scopeType.id
+      val flags = flagLang + flagTyp
+      val prefix = s"$scopeName[$flags] "
+      val scopeKey = s"$scopeName$sortHack[$flags"
 
       var membersFound = false
       for {
@@ -84,7 +83,8 @@ final class MutableState {
       } {
         membersFound = true
         val key = (scopeKey, m.name, m.desc)
-        val result = prefix + m.desc + deprecationSuffix(m.deprecatedVer.orElse(root.deprecatedVer))
+        val result = prefix + m.desc + deprecationSuffix(
+            m.deprecatedVer.orElse(root.deprecatedVer))
         b += Result(key, result)
       }
 
@@ -109,9 +109,8 @@ object MutableState {
     case object Object extends ScopeType("O")
   }
 
-  final case class Scope(symbol: Symbol)
-                        (val scopeType: ScopeType,
-                         val parents: Set[Symbol]) {
+  final case class Scope(symbol: Symbol)(val scopeType: ScopeType,
+      val parents: Set[Symbol]) {
 
     private[MutableState] val directMembers = mutable.Set.empty[Member]
     private[MutableState] var isJsType = false
@@ -121,9 +120,11 @@ object MutableState {
       synchronized(directMembers += v)
   }
 
-  final case class Member(name: String, desc: String, deprecatedVer: Option[String])
+  final case class Member(name: String, desc: String,
+      deprecatedVer: Option[String])
 
-  private[MutableState] final case class Result(sortKey: Result.SortKey, value: String)
+  private[MutableState] final case class Result(sortKey: Result.SortKey,
+      value: String)
 
   private[MutableState] object Result {
     type SortKey = (String, String, String) // prefix, name, desc

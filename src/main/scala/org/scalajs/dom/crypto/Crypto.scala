@@ -224,7 +224,6 @@ trait SubtleCrypto extends js.Object {
    *
    * We are being a bit more precise than the official definition by requiring a KeyAlgorithmIdentifier
    * rather than an AlgorithmIdentifier for the algorithm field.
-   *
    */
   def generateKey(algorithm: KeyAlgorithmIdentifier, extractable: Boolean,
       keyUsages: js.Array[KeyUsage]): js.Promise[js.Any] = js.native

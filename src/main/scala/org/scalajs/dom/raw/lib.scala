@@ -1185,7 +1185,7 @@ abstract class Node extends EventTarget {
    * required while processing custom JavaScript. There are many predefined
    * attributes for different nodes used for binding events, validations, and
    * specifying layout informations that are handled by browser (may vary from browser
-   * to browser).  
+   * to browser).
    *
    * MDN
    */
@@ -5040,10 +5040,8 @@ object MutationObserverInit {
    * have `attributeFilter` property.
    */
   def apply(
-      childList: Boolean = false,
-      attributes: Boolean = false,
-      characterData: Boolean = false,
-      subtree: Boolean = false,
+      childList: Boolean = false, attributes: Boolean = false,
+      characterData: Boolean = false, subtree: Boolean = false,
       attributeOldValue: Boolean = false,
       characterDataOldValue: Boolean = false,
       attributeFilter: js.UndefOr[js.Array[String]] = js.undefined

@@ -14,7 +14,6 @@ import scala.scalajs.js.|
  * https://www.w3.org/TR/2016/CR-mediacapture-streams-20160519/
  *
  * MDN
- *
  */
 @js.native
 @JSGlobal
@@ -134,14 +133,16 @@ trait MediaStreamTrackState extends js.Any
 
 object MediaStreamTrackState {
 
-  /** The track is active (the track's underlying media source is making a best-effort
+  /**
+   * The track is active (the track's underlying media source is making a best-effort
    * attempt to provide data in real time).
    * The output of a track in the live state can be switched on and off with the
    * enabled attribute.
    */
   val live = "live".asInstanceOf[MediaStreamTrackState]
 
-  /** The track has ended (the track's underlying media source is no longer providing
+  /**
+   * The track has ended (the track's underlying media source is no longer providing
    * data, and will never provide more data for this track). Once a track enters this
    * state, it never exits it.
    *
@@ -481,15 +482,18 @@ trait MediaDeviceKind extends js.Any
 
 object MediaDeviceKind {
 
-  /** Represents an audio input device; for example a microphone.
+  /**
+   * Represents an audio input device; for example a microphone.
    */
   val audioinput = "audioinput".asInstanceOf[MediaDeviceKind]
 
-  /** Represents an audio output device; for example a pair of headphones.
+  /**
+   * Represents an audio output device; for example a pair of headphones.
    */
   val audiooutput = "audiooutput".asInstanceOf[MediaDeviceKind]
 
-  /** Represents a video input device; for example a webcam.
+  /**
+   * Represents a video input device; for example a webcam.
    */
   val videoinput = "videoinput".asInstanceOf[MediaDeviceKind]
 }

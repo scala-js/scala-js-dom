@@ -308,8 +308,10 @@ object NumberFormatOptions {
           minimumIntegerDigits = minimumIntegerDigits.asInstanceOf[js.Any],
           minimumFractionDigits = minimumFractionDigits.asInstanceOf[js.Any],
           maximumFractionDigits = maximumFractionDigits.asInstanceOf[js.Any],
-          minimumSignificantDigits = minimumSignificantDigits.asInstanceOf[js.Any],
-          maximumSignificantDigits = maximumSignificantDigits.asInstanceOf[js.Any]
+          minimumSignificantDigits = minimumSignificantDigits.asInstanceOf[
+              js.Any],
+          maximumSignificantDigits = maximumSignificantDigits.asInstanceOf[
+              js.Any]
       )
       .asInstanceOf[NumberFormatOptions]
   }

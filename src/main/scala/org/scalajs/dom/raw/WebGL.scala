@@ -269,17 +269,17 @@ object WebGLRenderingContext {
   final val FUNC_ADD = 0x8006
   final val BLEND_EQUATION = 0x8009
   final val BLEND_EQUATION_RGB = 0x8009 /* same as BLEND_EQUATION */
-  final val BLEND_EQUATION_ALPHA = 0x883D
+  final val BLEND_EQUATION_ALPHA = 0x883d
 
   /* BlendSubtract */
-  final val FUNC_SUBTRACT = 0x800A
-  final val FUNC_REVERSE_SUBTRACT = 0x800B
+  final val FUNC_SUBTRACT = 0x800a
+  final val FUNC_REVERSE_SUBTRACT = 0x800b
 
   /* Separate Blend Functions */
-  final val BLEND_DST_RGB = 0x80C8
-  final val BLEND_SRC_RGB = 0x80C9
-  final val BLEND_DST_ALPHA = 0x80CA
-  final val BLEND_SRC_ALPHA = 0x80CB
+  final val BLEND_DST_RGB = 0x80c8
+  final val BLEND_SRC_RGB = 0x80c9
+  final val BLEND_DST_ALPHA = 0x80ca
+  final val BLEND_SRC_ALPHA = 0x80cb
   final val CONSTANT_COLOR = 0x8001
   final val ONE_MINUS_CONSTANT_COLOR = 0x8002
   final val CONSTANT_ALPHA = 0x8003
@@ -292,9 +292,9 @@ object WebGLRenderingContext {
   final val ARRAY_BUFFER_BINDING = 0x8894
   final val ELEMENT_ARRAY_BUFFER_BINDING = 0x8895
 
-  final val STREAM_DRAW = 0x88E0
-  final val STATIC_DRAW = 0x88E4
-  final val DYNAMIC_DRAW = 0x88E8
+  final val STREAM_DRAW = 0x88e0
+  final val STATIC_DRAW = 0x88e4
+  final val DYNAMIC_DRAW = 0x88e8
 
   final val BUFFER_SIZE = 0x8764
   final val BUFFER_USAGE = 0x8765
@@ -332,39 +332,39 @@ object WebGLRenderingContext {
   /**
    * Capability to enable/disable backface culling.
    */
-  final val CULL_FACE = 0x0B44
+  final val CULL_FACE = 0x0b44
 
   /**
    * Capability to enable/disable blending.
    */
-  final val BLEND = 0x0BE2
+  final val BLEND = 0x0be2
 
   /**
    * Capability to enable/disable dithering.
    */
-  final val DITHER = 0x0BD0
+  final val DITHER = 0x0bd0
 
   /**
    * Capability to enable/disable the stencil test.
    */
-  final val STENCIL_TEST = 0x0B90
+  final val STENCIL_TEST = 0x0b90
 
   /**
    * Capability to enable/disable the depth test.
    */
-  final val DEPTH_TEST = 0x0B71
+  final val DEPTH_TEST = 0x0b71
 
   /**
    * Capability to enable/disable the scissor test.
    */
-  final val SCISSOR_TEST = 0x0C11
+  final val SCISSOR_TEST = 0x0c11
 
   /**
    * Capability to enable/disable polygon offset.
    */
   final val POLYGON_OFFSET_FILL = 0x8037
-  final val SAMPLE_ALPHA_TO_COVERAGE = 0x809E
-  final val SAMPLE_COVERAGE = 0x80A0
+  final val SAMPLE_ALPHA_TO_COVERAGE = 0x809e
+  final val SAMPLE_COVERAGE = 0x80a0
 
   /* ErrorCode */
   /**
@@ -404,54 +404,54 @@ object WebGLRenderingContext {
   final val CCW = 0x0901
 
   /* GetPName */
-  final val LINE_WIDTH = 0x0B21
-  final val ALIASED_POINT_SIZE_RANGE = 0x846D
-  final val ALIASED_LINE_WIDTH_RANGE = 0x846E
-  final val CULL_FACE_MODE = 0x0B45
-  final val FRONT_FACE = 0x0B46
-  final val DEPTH_RANGE = 0x0B70
-  final val DEPTH_WRITEMASK = 0x0B72
-  final val DEPTH_CLEAR_VALUE = 0x0B73
-  final val DEPTH_FUNC = 0x0B74
-  final val STENCIL_CLEAR_VALUE = 0x0B91
-  final val STENCIL_FUNC = 0x0B92
-  final val STENCIL_FAIL = 0x0B94
-  final val STENCIL_PASS_DEPTH_FAIL = 0x0B95
-  final val STENCIL_PASS_DEPTH_PASS = 0x0B96
-  final val STENCIL_REF = 0x0B97
-  final val STENCIL_VALUE_MASK = 0x0B93
-  final val STENCIL_WRITEMASK = 0x0B98
+  final val LINE_WIDTH = 0x0b21
+  final val ALIASED_POINT_SIZE_RANGE = 0x846d
+  final val ALIASED_LINE_WIDTH_RANGE = 0x846e
+  final val CULL_FACE_MODE = 0x0b45
+  final val FRONT_FACE = 0x0b46
+  final val DEPTH_RANGE = 0x0b70
+  final val DEPTH_WRITEMASK = 0x0b72
+  final val DEPTH_CLEAR_VALUE = 0x0b73
+  final val DEPTH_FUNC = 0x0b74
+  final val STENCIL_CLEAR_VALUE = 0x0b91
+  final val STENCIL_FUNC = 0x0b92
+  final val STENCIL_FAIL = 0x0b94
+  final val STENCIL_PASS_DEPTH_FAIL = 0x0b95
+  final val STENCIL_PASS_DEPTH_PASS = 0x0b96
+  final val STENCIL_REF = 0x0b97
+  final val STENCIL_VALUE_MASK = 0x0b93
+  final val STENCIL_WRITEMASK = 0x0b98
   final val STENCIL_BACK_FUNC = 0x8800
   final val STENCIL_BACK_FAIL = 0x8801
   final val STENCIL_BACK_PASS_DEPTH_FAIL = 0x8802
   final val STENCIL_BACK_PASS_DEPTH_PASS = 0x8803
-  final val STENCIL_BACK_REF = 0x8CA3
-  final val STENCIL_BACK_VALUE_MASK = 0x8CA4
-  final val STENCIL_BACK_WRITEMASK = 0x8CA5
-  final val VIEWPORT = 0x0BA2
-  final val SCISSOR_BOX = 0x0C10
+  final val STENCIL_BACK_REF = 0x8ca3
+  final val STENCIL_BACK_VALUE_MASK = 0x8ca4
+  final val STENCIL_BACK_WRITEMASK = 0x8ca5
+  final val VIEWPORT = 0x0ba2
+  final val SCISSOR_BOX = 0x0c10
   /*    SCISSOR_TEST */
-  final val COLOR_CLEAR_VALUE = 0x0C22
-  final val COLOR_WRITEMASK = 0x0C23
-  final val UNPACK_ALIGNMENT = 0x0CF5
-  final val PACK_ALIGNMENT = 0x0D05
-  final val MAX_TEXTURE_SIZE = 0x0D33
-  final val MAX_VIEWPORT_DIMS = 0x0D3A
-  final val SUBPIXEL_BITS = 0x0D50
-  final val RED_BITS = 0x0D52
-  final val GREEN_BITS = 0x0D53
-  final val BLUE_BITS = 0x0D54
-  final val ALPHA_BITS = 0x0D55
-  final val DEPTH_BITS = 0x0D56
-  final val STENCIL_BITS = 0x0D57
-  final val POLYGON_OFFSET_UNITS = 0x2A00
+  final val COLOR_CLEAR_VALUE = 0x0c22
+  final val COLOR_WRITEMASK = 0x0c23
+  final val UNPACK_ALIGNMENT = 0x0cf5
+  final val PACK_ALIGNMENT = 0x0d05
+  final val MAX_TEXTURE_SIZE = 0x0d33
+  final val MAX_VIEWPORT_DIMS = 0x0d3a
+  final val SUBPIXEL_BITS = 0x0d50
+  final val RED_BITS = 0x0d52
+  final val GREEN_BITS = 0x0d53
+  final val BLUE_BITS = 0x0d54
+  final val ALPHA_BITS = 0x0d55
+  final val DEPTH_BITS = 0x0d56
+  final val STENCIL_BITS = 0x0d57
+  final val POLYGON_OFFSET_UNITS = 0x2a00
   /*    POLYGON_OFFSET_FILL */
   final val POLYGON_OFFSET_FACTOR = 0x8038
   final val TEXTURE_BINDING_2D = 0x8069
-  final val SAMPLE_BUFFERS = 0x80A8
-  final val SAMPLES = 0x80A9
-  final val SAMPLE_COVERAGE_VALUE = 0x80AA
-  final val SAMPLE_COVERAGE_INVERT = 0x80AB
+  final val SAMPLE_BUFFERS = 0x80a8
+  final val SAMPLES = 0x80a9
+  final val SAMPLE_COVERAGE_VALUE = 0x80aa
+  final val SAMPLE_COVERAGE_INVERT = 0x80ab
 
   /* GetTextureParameter */
   /*    TEXTURE_MAG_FILTER */
@@ -459,7 +459,7 @@ object WebGLRenderingContext {
   /*    TEXTURE_WRAP_S */
   /*    TEXTURE_WRAP_T */
 
-  final val COMPRESSED_TEXTURE_FORMATS = 0x86A3
+  final val COMPRESSED_TEXTURE_FORMATS = 0x86a3
 
   /* HintMode */
   final val DONT_CARE = 0x1100
@@ -484,7 +484,7 @@ object WebGLRenderingContext {
   final val RGB = 0x1907
   final val RGBA = 0x1908
   final val LUMINANCE = 0x1909
-  final val LUMINANCE_ALPHA = 0x190A
+  final val LUMINANCE_ALPHA = 0x190a
 
   /* PixelType */
   /*    UNSIGNED_BYTE */
@@ -493,24 +493,24 @@ object WebGLRenderingContext {
   final val UNSIGNED_SHORT_5_6_5 = 0x8363
 
   /* Shaders */
-  final val FRAGMENT_SHADER = 0x8B30
-  final val VERTEX_SHADER = 0x8B31
+  final val FRAGMENT_SHADER = 0x8b30
+  final val VERTEX_SHADER = 0x8b31
   final val MAX_VERTEX_ATTRIBS = 0x8869
-  final val MAX_VERTEX_UNIFORM_VECTORS = 0x8DFB
-  final val MAX_VARYING_VECTORS = 0x8DFC
-  final val MAX_COMBINED_TEXTURE_IMAGE_UNITS = 0x8B4D
-  final val MAX_VERTEX_TEXTURE_IMAGE_UNITS = 0x8B4C
+  final val MAX_VERTEX_UNIFORM_VECTORS = 0x8dfb
+  final val MAX_VARYING_VECTORS = 0x8dfc
+  final val MAX_COMBINED_TEXTURE_IMAGE_UNITS = 0x8b4d
+  final val MAX_VERTEX_TEXTURE_IMAGE_UNITS = 0x8b4c
   final val MAX_TEXTURE_IMAGE_UNITS = 0x8872
-  final val MAX_FRAGMENT_UNIFORM_VECTORS = 0x8DFD
-  final val SHADER_TYPE = 0x8B4F
-  final val DELETE_STATUS = 0x8B80
-  final val LINK_STATUS = 0x8B82
-  final val VALIDATE_STATUS = 0x8B83
-  final val ATTACHED_SHADERS = 0x8B85
-  final val ACTIVE_UNIFORMS = 0x8B86
-  final val ACTIVE_ATTRIBUTES = 0x8B89
-  final val SHADING_LANGUAGE_VERSION = 0x8B8C
-  final val CURRENT_PROGRAM = 0x8B8D
+  final val MAX_FRAGMENT_UNIFORM_VECTORS = 0x8dfd
+  final val SHADER_TYPE = 0x8b4f
+  final val DELETE_STATUS = 0x8b80
+  final val LINK_STATUS = 0x8b82
+  final val VALIDATE_STATUS = 0x8b83
+  final val ATTACHED_SHADERS = 0x8b85
+  final val ACTIVE_UNIFORMS = 0x8b86
+  final val ACTIVE_ATTRIBUTES = 0x8b89
+  final val SHADING_LANGUAGE_VERSION = 0x8b8c
+  final val CURRENT_PROGRAM = 0x8b8d
 
   /* StencilFunction */
   final val NEVER = 0x0200
@@ -524,18 +524,18 @@ object WebGLRenderingContext {
 
   /* StencilOp */
   /*    ZERO */
-  final val KEEP = 0x1E00
-  final val REPLACE = 0x1E01
-  final val INCR = 0x1E02
-  final val DECR = 0x1E03
-  final val INVERT = 0x150A
+  final val KEEP = 0x1e00
+  final val REPLACE = 0x1e01
+  final val INCR = 0x1e02
+  final val DECR = 0x1e03
+  final val INVERT = 0x150a
   final val INCR_WRAP = 0x8507
   final val DECR_WRAP = 0x8508
 
   /* StringName */
-  final val VENDOR = 0x1F00
-  final val RENDERER = 0x1F01
-  final val VERSION = 0x1F02
+  final val VENDOR = 0x1f00
+  final val RENDERER = 0x1f01
+  final val VERSION = 0x1f02
 
   /* TextureMagFilter */
   /** Specifies nearest neighbour interpolation. */
@@ -601,7 +601,7 @@ object WebGLRenderingContext {
   /**
    * The target for a simple 2 dimensional texture.
    */
-  final val TEXTURE_2D = 0x0DE1
+  final val TEXTURE_2D = 0x0de1
   final val TEXTURE = 0x1702
 
   /**
@@ -614,108 +614,108 @@ object WebGLRenderingContext {
   final val TEXTURE_CUBE_MAP_POSITIVE_Y = 0x8517
   final val TEXTURE_CUBE_MAP_NEGATIVE_Y = 0x8518
   final val TEXTURE_CUBE_MAP_POSITIVE_Z = 0x8519
-  final val TEXTURE_CUBE_MAP_NEGATIVE_Z = 0x851A
-  final val MAX_CUBE_MAP_TEXTURE_SIZE = 0x851C
+  final val TEXTURE_CUBE_MAP_NEGATIVE_Z = 0x851a
+  final val MAX_CUBE_MAP_TEXTURE_SIZE = 0x851c
 
   /* TextureUnit */
   /** Identifies texture unit 0. This texture unit is guaranteed to exist. */
-  final val TEXTURE0 = 0x84C0
+  final val TEXTURE0 = 0x84c0
 
   /** Identifies texture unit 1. This texture unit is guaranteed to exist. */
-  final val TEXTURE1 = 0x84C1
+  final val TEXTURE1 = 0x84c1
 
   /** Identifies texture unit 2. This texture unit is guaranteed to exist. */
-  final val TEXTURE2 = 0x84C2
+  final val TEXTURE2 = 0x84c2
 
   /** Identifies texture unit 3. This texture unit is guaranteed to exist. */
-  final val TEXTURE3 = 0x84C3
+  final val TEXTURE3 = 0x84c3
 
   /** Identifies texture unit 4. This texture unit is guaranteed to exist. */
-  final val TEXTURE4 = 0x84C4
+  final val TEXTURE4 = 0x84c4
 
   /** Identifies texture unit 5. This texture unit is guaranteed to exist. */
-  final val TEXTURE5 = 0x84C5
+  final val TEXTURE5 = 0x84c5
 
   /** Identifies texture unit 6. This texture unit is guaranteed to exist. */
-  final val TEXTURE6 = 0x84C6
+  final val TEXTURE6 = 0x84c6
 
   /** Identifies texture unit 7. This texture unit is guaranteed to exist. */
-  final val TEXTURE7 = 0x84C7
+  final val TEXTURE7 = 0x84c7
 
   /** Identifies texture unit 8. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE8 = 0x84C8
+  final val TEXTURE8 = 0x84c8
 
   /** Identifies texture unit 9. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE9 = 0x84C9
+  final val TEXTURE9 = 0x84c9
 
   /** Identifies texture unit 10. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE10 = 0x84CA
+  final val TEXTURE10 = 0x84ca
 
   /** Identifies texture unit 11. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE11 = 0x84CB
+  final val TEXTURE11 = 0x84cb
 
   /** Identifies texture unit 12. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE12 = 0x84CC
+  final val TEXTURE12 = 0x84cc
 
   /** Identifies texture unit 13. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE13 = 0x84CD
+  final val TEXTURE13 = 0x84cd
 
   /** Identifies texture unit 14. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE14 = 0x84CE
+  final val TEXTURE14 = 0x84ce
 
   /** Identifies texture unit 15. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE15 = 0x84CF
+  final val TEXTURE15 = 0x84cf
 
   /** Identifies texture unit 16. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE16 = 0x84D0
+  final val TEXTURE16 = 0x84d0
 
   /** Identifies texture unit 17. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE17 = 0x84D1
+  final val TEXTURE17 = 0x84d1
 
   /** Identifies texture unit 18. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE18 = 0x84D2
+  final val TEXTURE18 = 0x84d2
 
   /** Identifies texture unit 19. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE19 = 0x84D3
+  final val TEXTURE19 = 0x84d3
 
   /** Identifies texture unit 20. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE20 = 0x84D4
+  final val TEXTURE20 = 0x84d4
 
   /** Identifies texture unit 21. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE21 = 0x84D5
+  final val TEXTURE21 = 0x84d5
 
   /** Identifies texture unit 22. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE22 = 0x84D6
+  final val TEXTURE22 = 0x84d6
 
   /** Identifies texture unit 23. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE23 = 0x84D7
+  final val TEXTURE23 = 0x84d7
 
   /** Identifies texture unit 24. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE24 = 0x84D8
+  final val TEXTURE24 = 0x84d8
 
   /** Identifies texture unit 25. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE25 = 0x84D9
+  final val TEXTURE25 = 0x84d9
 
   /** Identifies texture unit 26. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE26 = 0x84DA
+  final val TEXTURE26 = 0x84da
 
   /** Identifies texture unit 27. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE27 = 0x84DB
+  final val TEXTURE27 = 0x84db
 
   /** Identifies texture unit 28. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE28 = 0x84DC
+  final val TEXTURE28 = 0x84dc
 
   /** Identifies texture unit 29. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE29 = 0x84DD
+  final val TEXTURE29 = 0x84dd
 
   /** Identifies texture unit 30. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE30 = 0x84DE
+  final val TEXTURE30 = 0x84de
 
   /** Identifies texture unit 31. This texture unit ''may not exist in a given implementation''. You should examine MAX_COMBINED_TEXTURE_IMAGE_UNITS before using it. */
-  final val TEXTURE31 = 0x84DF
+  final val TEXTURE31 = 0x84df
 
   /** The currently active texture unit. */
-  final val ACTIVE_TEXTURE = 0x84E0
+  final val ACTIVE_TEXTURE = 0x84e0
 
   /* TextureWrapMode */
   /**
@@ -726,7 +726,7 @@ object WebGLRenderingContext {
   /**
    * Clamp the texture along this axis.  The colour of the edge pixels will be replicated to infinity.
    */
-  final val CLAMP_TO_EDGE = 0x812F
+  final val CLAMP_TO_EDGE = 0x812f
 
   /**
    * Repeat the texture along this axis, mirroring it each step.
@@ -734,119 +734,119 @@ object WebGLRenderingContext {
   final val MIRRORED_REPEAT = 0x8370
 
   /* Uniform Types */
-  final val FLOAT_VEC2 = 0x8B50
-  final val FLOAT_VEC3 = 0x8B51
-  final val FLOAT_VEC4 = 0x8B52
-  final val INT_VEC2 = 0x8B53
-  final val INT_VEC3 = 0x8B54
-  final val INT_VEC4 = 0x8B55
-  final val BOOL = 0x8B56
-  final val BOOL_VEC2 = 0x8B57
-  final val BOOL_VEC3 = 0x8B58
-  final val BOOL_VEC4 = 0x8B59
-  final val FLOAT_MAT2 = 0x8B5A
-  final val FLOAT_MAT3 = 0x8B5B
-  final val FLOAT_MAT4 = 0x8B5C
-  final val SAMPLER_2D = 0x8B5E
-  final val SAMPLER_CUBE = 0x8B60
+  final val FLOAT_VEC2 = 0x8b50
+  final val FLOAT_VEC3 = 0x8b51
+  final val FLOAT_VEC4 = 0x8b52
+  final val INT_VEC2 = 0x8b53
+  final val INT_VEC3 = 0x8b54
+  final val INT_VEC4 = 0x8b55
+  final val BOOL = 0x8b56
+  final val BOOL_VEC2 = 0x8b57
+  final val BOOL_VEC3 = 0x8b58
+  final val BOOL_VEC4 = 0x8b59
+  final val FLOAT_MAT2 = 0x8b5a
+  final val FLOAT_MAT3 = 0x8b5b
+  final val FLOAT_MAT4 = 0x8b5c
+  final val SAMPLER_2D = 0x8b5e
+  final val SAMPLER_CUBE = 0x8b60
 
   /* Vertex Arrays */
   final val VERTEX_ATTRIB_ARRAY_ENABLED = 0x8622
   final val VERTEX_ATTRIB_ARRAY_SIZE = 0x8623
   final val VERTEX_ATTRIB_ARRAY_STRIDE = 0x8624
   final val VERTEX_ATTRIB_ARRAY_TYPE = 0x8625
-  final val VERTEX_ATTRIB_ARRAY_NORMALIZED = 0x886A
+  final val VERTEX_ATTRIB_ARRAY_NORMALIZED = 0x886a
   final val VERTEX_ATTRIB_ARRAY_POINTER = 0x8645
-  final val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING = 0x889F
+  final val VERTEX_ATTRIB_ARRAY_BUFFER_BINDING = 0x889f
 
   /* Read Format */
-  final val IMPLEMENTATION_COLOR_READ_TYPE = 0x8B9A
-  final val IMPLEMENTATION_COLOR_READ_FORMAT = 0x8B9B
+  final val IMPLEMENTATION_COLOR_READ_TYPE = 0x8b9a
+  final val IMPLEMENTATION_COLOR_READ_FORMAT = 0x8b9b
 
   /* Shader Source */
-  final val COMPILE_STATUS = 0x8B81
+  final val COMPILE_STATUS = 0x8b81
 
   /* Shader Precision-Specified Types */
   /**
    * Specifies a low precision float.
    */
-  final val LOW_FLOAT = 0x8DF0
+  final val LOW_FLOAT = 0x8df0
 
   /**
    * Specifies a medium precision float.
    */
-  final val MEDIUM_FLOAT = 0x8DF1
+  final val MEDIUM_FLOAT = 0x8df1
 
   /**
    * Specifies a high precision float.
    */
-  final val HIGH_FLOAT = 0x8DF2
+  final val HIGH_FLOAT = 0x8df2
 
   /**
    * Specifies a low precision integer.
    */
-  final val LOW_INT = 0x8DF3
+  final val LOW_INT = 0x8df3
 
   /**
    * Specifies a medium precision float.
    */
-  final val MEDIUM_INT = 0x8DF4
+  final val MEDIUM_INT = 0x8df4
 
   /**
    * Specifies a high precision float.
    */
-  final val HIGH_INT = 0x8DF5
+  final val HIGH_INT = 0x8df5
 
   /* Framebuffer Object. */
   /**
    * The framebuffer target.
    */
-  final val FRAMEBUFFER = 0x8D40
+  final val FRAMEBUFFER = 0x8d40
 
   /**
    * The renderbuffer target.
    */
-  final val RENDERBUFFER = 0x8D41
+  final val RENDERBUFFER = 0x8d41
 
   final val RGBA4 = 0x8056
   final val RGB5_A1 = 0x8057
-  final val RGB565 = 0x8D62
-  final val DEPTH_COMPONENT16 = 0x81A5
+  final val RGB565 = 0x8d62
+  final val DEPTH_COMPONENT16 = 0x81a5
   final val STENCIL_INDEX = 0x1901
-  final val STENCIL_INDEX8 = 0x8D48
-  final val DEPTH_STENCIL = 0x84F9
+  final val STENCIL_INDEX8 = 0x8d48
+  final val DEPTH_STENCIL = 0x84f9
 
-  final val RENDERBUFFER_WIDTH = 0x8D42
-  final val RENDERBUFFER_HEIGHT = 0x8D43
-  final val RENDERBUFFER_INTERNAL_FORMAT = 0x8D44
-  final val RENDERBUFFER_RED_SIZE = 0x8D50
-  final val RENDERBUFFER_GREEN_SIZE = 0x8D51
-  final val RENDERBUFFER_BLUE_SIZE = 0x8D52
-  final val RENDERBUFFER_ALPHA_SIZE = 0x8D53
-  final val RENDERBUFFER_DEPTH_SIZE = 0x8D54
-  final val RENDERBUFFER_STENCIL_SIZE = 0x8D55
+  final val RENDERBUFFER_WIDTH = 0x8d42
+  final val RENDERBUFFER_HEIGHT = 0x8d43
+  final val RENDERBUFFER_INTERNAL_FORMAT = 0x8d44
+  final val RENDERBUFFER_RED_SIZE = 0x8d50
+  final val RENDERBUFFER_GREEN_SIZE = 0x8d51
+  final val RENDERBUFFER_BLUE_SIZE = 0x8d52
+  final val RENDERBUFFER_ALPHA_SIZE = 0x8d53
+  final val RENDERBUFFER_DEPTH_SIZE = 0x8d54
+  final val RENDERBUFFER_STENCIL_SIZE = 0x8d55
 
-  final val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE = 0x8CD0
-  final val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME = 0x8CD1
-  final val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL = 0x8CD2
-  final val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE = 0x8CD3
+  final val FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE = 0x8cd0
+  final val FRAMEBUFFER_ATTACHMENT_OBJECT_NAME = 0x8cd1
+  final val FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL = 0x8cd2
+  final val FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE = 0x8cd3
 
-  final val COLOR_ATTACHMENT0 = 0x8CE0
-  final val DEPTH_ATTACHMENT = 0x8D00
-  final val STENCIL_ATTACHMENT = 0x8D20
-  final val DEPTH_STENCIL_ATTACHMENT = 0x821A
+  final val COLOR_ATTACHMENT0 = 0x8ce0
+  final val DEPTH_ATTACHMENT = 0x8d00
+  final val STENCIL_ATTACHMENT = 0x8d20
+  final val DEPTH_STENCIL_ATTACHMENT = 0x821a
 
   final val NONE = 0
 
-  final val FRAMEBUFFER_COMPLETE = 0x8CD5
-  final val FRAMEBUFFER_INCOMPLETE_ATTACHMENT = 0x8CD6
-  final val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT = 0x8CD7
-  final val FRAMEBUFFER_INCOMPLETE_DIMENSIONS = 0x8CD9
-  final val FRAMEBUFFER_UNSUPPORTED = 0x8CDD
+  final val FRAMEBUFFER_COMPLETE = 0x8cd5
+  final val FRAMEBUFFER_INCOMPLETE_ATTACHMENT = 0x8cd6
+  final val FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT = 0x8cd7
+  final val FRAMEBUFFER_INCOMPLETE_DIMENSIONS = 0x8cd9
+  final val FRAMEBUFFER_UNSUPPORTED = 0x8cdd
 
-  final val FRAMEBUFFER_BINDING = 0x8CA6
-  final val RENDERBUFFER_BINDING = 0x8CA7
-  final val MAX_RENDERBUFFER_SIZE = 0x84E8
+  final val FRAMEBUFFER_BINDING = 0x8ca6
+  final val RENDERBUFFER_BINDING = 0x8ca7
+  final val MAX_RENDERBUFFER_SIZE = 0x84e8
 
   final val INVALID_FRAMEBUFFER_OPERATION = 0x0506
 
@@ -1419,7 +1419,6 @@ class WebGLRenderingContext extends js.Object {
    *
    * @param target  must be [[WebGLRenderingContext.ARRAY_BUFFER]] or [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]
    * @param pname  the buffer parameter to retrieve, may be [[WebGLRenderingContext.BUFFER_SIZE]] or [[WebGLRenderingContext.BUFFER_USAGE]]
-   *
    */
   def getBufferParameter(target: Int, pname: Int): Int = js.native
 
@@ -1461,7 +1460,7 @@ class WebGLRenderingContext extends js.Object {
    *
    * @param target must be FRAMEBUFFER
    * @param attachment the attachment to examine.  May be [[WebGLRenderingContext.COLOR_ATTACHMENT0]], [[WebGLRenderingContext.DEPTH_ATTACHMENT]],
-   *  				   [[WebGLRenderingContext.STENCIL_ATTACHMENT]], or [[WebGLRenderingContext.DEPTH_STENCIL_ATTACHMENT]].
+   *         [[WebGLRenderingContext.STENCIL_ATTACHMENT]], or [[WebGLRenderingContext.DEPTH_STENCIL_ATTACHMENT]].
    * @param pname the framebuffer attachment parameter.  May be [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE]],
    *              [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_OBJECT_NAME]], [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL]], or
    *              [[WebGLRenderingContext.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE]]
@@ -1506,7 +1505,6 @@ class WebGLRenderingContext extends js.Object {
    * @param shader  the shader to query
    * @param pname  the parameter to get, may be one of [[WebGLRenderingContext.SHADER_TYPE]],
    *               [[WebGLRenderingContext.DELETE_STATUS]] or [[WebGLRenderingContext.COMPILE_STATUS]]
-   *
    */
   def getShaderParameter(shader: WebGLShader, pname: Int): js.Any = js.native
 
@@ -1560,10 +1558,9 @@ class WebGLRenderingContext extends js.Object {
    *
    * @param index  the index of the vertex attribute to query.
    * @param pname  the requested parameter, may be [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_BUFFER_BINDING]],
-   * 			   [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_ENABLED]], [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_SIZE]],
+   *       [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_ENABLED]], [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_SIZE]],
    *               [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_STRIDE]], [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_TYPE]],
    *               [[WebGLRenderingContext.VERTEX_ATTRIB_ARRAY_NORMALIZED]], [[WebGLRenderingContext.CURRENT_VERTEX_ATTRIB]]
-   *
    */
   def getVertexAttrib(index: Int, pname: Int): js.Any = js.native
 
@@ -1697,7 +1694,7 @@ class WebGLRenderingContext extends js.Object {
   /**
    * Sets the stencil test for front and back faces.
    * @param func the test function.  One of [[WebGLRenderingContext.NEVER]], [[WebGLRenderingContext.LESS]],
-   * 			 [[WebGLRenderingContext.LEQUAL]], [[WebGLRenderingContext.GREATER]], [[WebGLRenderingContext.GEQUAL]],
+   *     [[WebGLRenderingContext.LEQUAL]], [[WebGLRenderingContext.GREATER]], [[WebGLRenderingContext.GEQUAL]],
    *             [[WebGLRenderingContext.EQUAL]], [[WebGLRenderingContext.NOTEQUAL]], and [[WebGLRenderingContext.ALWAYS]]
    * @param ref  the reference value to test against in the stencil buffer
    * @param mask mask that is ANDed with `ref` and the tested value and stored in the stencil buffer.
@@ -1709,7 +1706,7 @@ class WebGLRenderingContext extends js.Object {
    * @param face the face(s) to configure the test for.  May be [[WebGLRenderingContext.FRONT]], [[WebGLRenderingContext.BACK]]
    *             or [[WebGLRenderingContext.FRONT_AND_BACK]].
    * @param func the test function.  One of [[WebGLRenderingContext.NEVER]], [[WebGLRenderingContext.LESS]],
-   * 			 [[WebGLRenderingContext.LEQUAL]], [[WebGLRenderingContext.GREATER]], [[WebGLRenderingContext.GEQUAL]],
+   *     [[WebGLRenderingContext.LEQUAL]], [[WebGLRenderingContext.GREATER]], [[WebGLRenderingContext.GEQUAL]],
    *             [[WebGLRenderingContext.EQUAL]], [[WebGLRenderingContext.NOTEQUAL]], and [[WebGLRenderingContext.ALWAYS]]
    * @param ref  the reference value to test against in the stencil buffer
    * @param mask mask that is ANDed with `ref` and the tested value and stored in the stencil buffer.
@@ -2346,7 +2343,7 @@ class WebGLRenderingContext extends js.Object {
    * @param indx the index of the attribute
    * @param size the number of components per attribute.  Must be 1..4
    * @param type the datatype for each component, may be [[WebGLRenderingContext.BYTE]],  [[WebGLRenderingContext.UNSIGNED_BYTE]],
-   * 			  [[WebGLRenderingContext.SHORT]], [[WebGLRenderingContext.UNSIGNED_SHORT]], or
+   *      [[WebGLRenderingContext.SHORT]], [[WebGLRenderingContext.UNSIGNED_SHORT]], or
    *               [[WebGLRenderingContext.FLOAT]].
    * @param normalized if `true`, values are normalized on access, otherwise they are converted to fixed point values on access.
    * @param stride the gap between attributes.  0 would be packed together.
