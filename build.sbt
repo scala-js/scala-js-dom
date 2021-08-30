@@ -34,7 +34,7 @@ lazy val root = project
 
 name := "Scala.js DOM"
 
-ThisBuild / crossScalaVersions := Seq("2.11.12", "2.12.12", "2.13.4", "3.0.1")
+ThisBuild / crossScalaVersions := Seq("2.11.12", "2.12.14", "2.13.4", "3.0.1")
 ThisBuild / scalaVersion := crossScalaVersions.value.find(_.startsWith("2.13.")).get
 
 val inCI = Option(System.getenv("CI")).exists(_.contains("1"))
