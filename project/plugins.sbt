@@ -1,4 +1,4 @@
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.5.1")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.7.0")
 
 addSbtPlugin("com.lihaoyi" % "scalatex-sbt-plugin" % "0.3.11")
 
