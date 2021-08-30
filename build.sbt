@@ -148,7 +148,7 @@ ThisBuild / prePR_nonCross := Def.sequential(
     if (scalaVersion.value.startsWith("2."))
       (root / Compile / scalafix).toTask("")
     else
-      (root / Compile / compile).toTask("")
+      Def.task[Unit]((root / Compile / compile).value)
   },
   example / Compile / compile,
 ).value
