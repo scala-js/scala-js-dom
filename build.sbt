@@ -144,7 +144,11 @@ val prePR_nonCross = taskKey[Unit]("Performs all necessary work required before 
 ThisBuild / prePR_nonCross := Def.sequential(
   root / clean,
   root / Compile / scalafmt,
-  root / Compile / compile,
-  (root / Compile / scalafix).toTask(""),
+  Def.taskDyn {
+  if (scalaVersion.value.startsWith("2."))
+    (root / Compile / scalafix).toTask("")
+  else
+    Def.task(())
+  },
   example / Compile / compile,
 ).value
