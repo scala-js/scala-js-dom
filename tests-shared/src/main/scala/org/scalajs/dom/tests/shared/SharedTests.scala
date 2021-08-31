@@ -25,7 +25,7 @@ trait SharedTests {
 object SharedTests {
   def testIdb(idb: IDBFactory): Unit = {
     val open = idb.open(UUID.randomUUID().toString())
-    open.onerror = e => sys.error("idb open failed: " + e)
+    open.onerror = (e: Event) => sys.error("idb open failed: " + e)
     // TODO: Test properly in a different PR
   }
 }

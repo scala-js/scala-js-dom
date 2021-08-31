@@ -9,24 +9,24 @@ object AsyncTesting {
 
   type AsyncResult = Future[Try[Unit]]
 
-  implicit final def global: ExecutionContext =
+  implicit def global: ExecutionContext =
     ExecutionContext.global
 
   def async(run: => Future[Any]): AsyncResult = {
-      val p = Promise[Try[Unit]]()
-      val timeout = setTimeout(1200) {
-        p.tryComplete(Failure(new RuntimeException("Test timed out.")))
+    val p = Promise[Try[Unit]]()
+    val timeout = setTimeout(1200) {
+      p.tryComplete(Failure(new RuntimeException("Test timed out.")))
+    }
+    setTimeout(1) {
+      run.onComplete { ta =>
+        clearTimeout(timeout)
+        p.complete(Success(ta.map(_ => ())))
       }
-      setTimeout(1) {
-        p.completeWith(run.transform { ta =>
-          clearTimeout(timeout)
-          Success(ta.map(_ => ()))
-        })
-      }
-      p.future
+    }
+    p.future
   }
 
-  implicit class AsyncFutureOps[A](private val self: Future[A]) extends AnyVal {
+  implicit final class AsyncFutureOps[A](private val self: Future[A]) extends AnyVal {
     def tap(f: A => Any): Future[A] =
       self.map { a => f(a); a }
 

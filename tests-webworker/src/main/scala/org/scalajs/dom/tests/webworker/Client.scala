@@ -1,8 +1,8 @@
 package org.scalajs.dom.tests.webworker
 
 import org.scalajs.dom.raw._
-import scala.scalajs.js
 import scala.concurrent._
+import scala.scalajs.js
 import scala.util.Success
 
 final class Client(worker: Worker) {
@@ -11,7 +11,7 @@ final class Client(worker: Worker) {
   private var preInit  = new js.Array[Message]
   private var promises = new js.Array[Promise[String]]
 
-  worker.onmessage = e => {
+  worker.onmessage = (e: MessageEvent) => {
     val m = e.data.asInstanceOf[Message]
     if (m._1 == ServerStarted) {
       preInit.foreach(worker.postMessage(_))

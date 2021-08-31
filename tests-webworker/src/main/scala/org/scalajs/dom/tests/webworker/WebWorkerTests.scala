@@ -29,7 +29,7 @@ import WebWorkerCmd._
 trait WebWorkerTests {
   import Client.{global => client}
 
-  final def webWorkerTest(test: (WebWorkerCmd, String)) = async {
+  final protected def webWorkerTest(test: (WebWorkerCmd, String)) = async {
     client.send(test._1).assertEquals(test._2)
   }
 

@@ -25,7 +25,7 @@ jobs:
         run: sbt -DCI=1 "++${{ matrix.scalaversion }}" test package doc
 
       - name: Validate formatting
-        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" scalafmtCheck
+        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" dom/scalafmtCheck
 
       - name: Validate api report
         if: matrix.scalaversion != '2.11.12' && matrix.scalaversion != '3.0.1'

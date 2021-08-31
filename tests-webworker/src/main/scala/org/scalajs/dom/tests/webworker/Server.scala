@@ -1,5 +1,6 @@
 package org.scalajs.dom.tests.webworker
 
+import org.scalajs.dom.raw.MessageEvent
 import org.scalajs.dom.webworkers._
 
 object Server extends ServerResponses {
@@ -8,7 +9,7 @@ object Server extends ServerResponses {
   def main(args: Array[String]): Unit = {
     val ww = DedicatedWorkerGlobalScope.self
 
-    ww.onmessage = e => {
+    ww.onmessage = (e: MessageEvent) => {
       val msgIn  = e.data.asInstanceOf[Message]
       val id     = msgIn._1
       val cmdId  = msgIn._2
