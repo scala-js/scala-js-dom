@@ -150,8 +150,8 @@ crypto/Pbkdf2Params[JT] var iterations: Double
 crypto/Pbkdf2Params[JT] var name: String
 crypto/Pbkdf2Params[JT] var salt: BufferSource
 crypto/Pbkdf2Params[SO] def apply(name: String, salt: BufferSource, iterations: Long, hash: HashAlgorithmIdentifier): Pbkdf2Params
-crypto/RSAPublicKey[JT] @js.native def e: String
-crypto/RSAPublicKey[JT] @js.native def n: String
+crypto/RSAPublicKey[JT] def e: String
+crypto/RSAPublicKey[JT] def n: String
 crypto/RsaHashedImportParams[JT] var hash: HashAlgorithmIdentifier
 crypto/RsaHashedImportParams[JT] var name: String
 crypto/RsaHashedImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): RsaHashedImportParams
@@ -2097,14 +2097,14 @@ ext/TouchEvents[JT] var ontouchstart: js.Function1[raw.TouchEvent, _]
 ext/TouchEvents[SO] implicit def HTMLDocumentToTouchEvents(html: raw.HTMLDocument): TouchEvents
 ext/TouchEvents[SO] implicit def WindowToTouchEvents(window: raw.Window): TouchEvents
 ext/package[SO] def cast[T] = x.asInstanceOf[T]
-ext/package[SO] implicit def color2String(c: Color) = c.toString
+ext/package[SO] implicit def color2String(c: Color): String
 ext/package[SO] def fillCircle(x: Double, y: Double, r: Double) = { prepCircle(x, y, r) ctx.fill() }
 ext/package[SO] def fillPath(points: (Double, Double)*) = { prepPath(points) ctx.fill() }
-ext/package[SO] implicit def pimpAnimatedLength(x: svg.AnimatedLength) = x.baseVal.value
-ext/package[SO] implicit def pimpAnimatedNumber(x: svg.AnimatedNumber) = x.baseVal
+ext/package[SO] implicit def pimpAnimatedLength(x: svg.AnimatedLength): Double
+ext/package[SO] implicit def pimpAnimatedNumber(x: svg.AnimatedNumber): Double
 ext/package[SO] implicit def pimpNamedNodeMap(namedNodeMap: NamedNodeMap): NamedNodeMapMap
-ext/package[SO] implicit def pimpRichAnimatedLength(x: svg.AnimatedLength) = x.baseVal.value: runtime.RichDouble
-ext/package[SO] implicit def pimpRichAnimatedNumber(x: svg.AnimatedNumber) = x.baseVal: runtime.RichDouble
+ext/package[SO] implicit def pimpRichAnimatedLength(x: svg.AnimatedLength): runtime.RichDouble
+ext/package[SO] implicit def pimpRichAnimatedNumber(x: svg.AnimatedNumber): runtime.RichDouble
 ext/package[SO] def prepCircle(x: Double, y: Double, r: Double) = { ctx.beginPath() ctx.arc(x, y, r, 0, math.Pi * 2) }
 ext/package[SO] def prepPath(points: Seq[(Double, Double)], closed: Boolean = true) = { ctx.beginPath() if (closed) ctx.moveTo(points.last._1, points.last._2) for (p <- points) { ctx.lineTo(p._1, p._2) } }
 ext/package[SO] def strokeCircle(x: Double, y: Double, r: Double) = { prepCircle(x, y, r) ctx.stroke() }
@@ -24681,6 +24681,7 @@ raw/Window[JC] def cancelAnimationFrame(handle: Int): Unit
 raw/Window[JC] def clearInterval(handle: Int): Unit
 raw/Window[JC] def clearTimeout(handle: Int): Unit
 raw/Window[JC] def close(): Unit
+raw/Window[JC] def closed: Boolean
 raw/Window[JC] def confirm(message: String?): Boolean
 raw/Window[JC] var console: Console
 raw/Window[JC] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
