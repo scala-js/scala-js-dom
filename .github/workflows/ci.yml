@@ -21,14 +21,8 @@ jobs:
       - name: Setup Scala
         uses: japgolly/setup-everything-scala@v1.0
 
-      - name: Build
-        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" package
-
-      - name: Test generate documentation
-        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" doc
-
-      - name: Build examples
-        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" example/compile
+      - name: Build and test
+        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" test package doc
 
       - name: Validate formatting
         run: sbt -DCI=1 "++${{ matrix.scalaversion }}" scalafmtCheck

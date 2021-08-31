@@ -1,5 +1,6 @@
 import sbt._
 import sbt.Keys._
+import org.scalajs.sbtplugin.ScalaJSJUnitPlugin
 import Dependencies._
 
 object Lib {
@@ -22,6 +23,7 @@ object Lib {
         case Some((2, 13)) => "-Wunused:imports,patvars,locals,implicits" :: Nil
         case _             => Nil
       }),
+      testOptions += Tests.Argument(TestFramework("com.novocode.junit.JUnitFramework"), "-v"),
     )
 
   def crossScala: Project => Project = _
@@ -100,4 +102,13 @@ object Lib {
     else
       sourceDir / "scala-old-collections"
 
+  def moveTestLibsToCompile: Project => Project =
+    _.settings(
+      libraryDependencies ~= { _.map(m =>
+        if (m.configurations.contains(Test.name))
+          m.withConfigurations(Some(Compile.name))
+        else
+          m
+      )},
+    )
 }

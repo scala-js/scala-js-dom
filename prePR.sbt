@@ -13,5 +13,11 @@ ThisBuild / prePR_nonCross := Def.sequential(
     else
       Def.task[Unit]((dom / Compile / compile).value)
   },
-  root / Compile / compile,
+  root / Test / compile,
+  Def.taskDyn {
+    if (scalaVersion.value.startsWith("2.12."))
+      Def.task[Unit]((readme / Compile / compile).value)
+    else
+      Def.task(())
+  },
 ).value
