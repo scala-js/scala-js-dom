@@ -5,7 +5,7 @@ How to Perform a Release
 
     ```sh
     # For v1.x.y
-    ver=1.2.0
+    ver=1.2.0 # change this to new version
     git checkout series/1.x
     git checkout -b topic/v$ver
     echo "ThisBuild / version := \"$ver\" // Workaround for #504" > version.sbt
@@ -15,7 +15,7 @@ How to Perform a Release
     git push --tags
 
     # For v2.x onwards
-    ver=2.0.0
+    ver=2.0.0 # change this to new version
     git checkout master
     git tag -s v$ver
     git push --tags
