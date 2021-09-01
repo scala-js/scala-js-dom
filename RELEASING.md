@@ -28,7 +28,7 @@ How to Perform a Release
 3. Go to GitHub releases (https://github.com/scala-js/scala-js-dom/releases),
    edit the auto-generated draft release,
    revise,
-   and git Publish.
+   and click Publish.
 
 4. Advertise the new release in the following places:
 
@@ -36,10 +36,10 @@ How to Perform a Release
       Example: https://old.reddit.com/r/scala/comments/pc9k5y/scalajsdom_120_released_this_is_the_first_release
 
     * Scala.js Discord
-      Example: ?
+      Example: https://discord.com/channels/632150470000902164/635668814956068864/880575154516819978
 
     * Scala.js gitter
-      Example: ?
+      Example: https://gitter.im/scala-js/scala-js?at=612811ec1179346966e36def
 
     * scala-users
       Example: https://users.scala-lang.org/t/scala-js-dom-v1-2-0-released/7745
