@@ -74,10 +74,10 @@ object raw {
   type ChannelSplitterNode = dom.ChannelSplitterNode
   @deprecated("use dom.CharacterData instead", "2.0.0")
   type CharacterData = dom.CharacterData
-  @deprecated("use dom.ClientRect instead", "2.0.0")
-  type ClientRect = dom.ClientRect
-  @deprecated("use dom.ClientRectList instead", "2.0.0")
-  type ClientRectList = dom.ClientRectList
+  @deprecated("use dom.DOMRect instead", "2.0.0")
+  type ClientRect = dom.DOMRect
+  @deprecated("use dom.DOMRectList instead", "2.0.0")
+  type ClientRectList = dom.DOMRectList
   @deprecated("use dom.ClipboardEvent instead", "2.0.0")
   type ClipboardEvent = dom.ClipboardEvent
   @deprecated("use dom.ClipboardEventInit instead", "2.0.0")
@@ -149,6 +149,10 @@ object raw {
   type DOMList[T] = dom.DOMList[T]
   @deprecated("use dom.DOMParser instead", "2.0.0")
   type DOMParser = dom.DOMParser
+  @deprecated("use dom.DOMRect instead", "2.0.0")
+  type DOMRect = dom.DOMRect
+  @deprecated("use dom.DOMRectList instead", "2.0.0")
+  type DOMRectList = dom.DOMRectList
   @deprecated("use dom.DOMSettableTokenList instead", "2.0.0")
   type DOMSettableTokenList = dom.DOMSettableTokenList
   @deprecated("use dom.DOMStringList instead", "2.0.0")

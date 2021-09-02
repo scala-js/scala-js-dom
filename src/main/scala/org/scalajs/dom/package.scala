@@ -35,4 +35,10 @@ package object dom {
 
   @deprecated("directly use the dom.CSS* types and values instead", "2.0.0")
   lazy val css: DeprecatedCSSAliases.type = DeprecatedCSSAliases
+
+  @deprecated("use DOMRect instead", "2.0.0")
+  type ClientRect = DOMRect
+
+  @deprecated("use DOMRectList instead", "2.0.0")
+  type ClientRectList = DOMRectList
 }

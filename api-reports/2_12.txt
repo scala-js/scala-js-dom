@@ -882,16 +882,6 @@ CharacterData[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 CharacterData[JC] def replaceData(offset: Int, count: Int, arg: String): Unit
 CharacterData[JC] def substringData(offset: Int, count: Int): String
 CharacterData[JC] var textContent: String
-ClientRect[JC] var bottom: Double
-ClientRect[JC] var height: Double
-ClientRect[JC] var left: Double
-ClientRect[JC] var right: Double
-ClientRect[JC] var top: Double
-ClientRect[JC] var width: Double
-ClientRectList[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-ClientRectList[JC] def item(index: Int): T
-ClientRectList[JC] def length: Int
-ClientRectList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Clipboard[JT] def dispatchEvent(evt: Event): Boolean
@@ -1115,6 +1105,16 @@ DOMList[JT] def item(index: Int): T
 DOMList[JT] def length: Int
 DOMList[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 DOMParser[JC] def parseFromString(source: String, mimeType: String): Document
+DOMRect[JC] var bottom: Double
+DOMRect[JC] var height: Double
+DOMRect[JC] var left: Double
+DOMRect[JC] var right: Double
+DOMRect[JC] var top: Double
+DOMRect[JC] var width: Double
+DOMRectList[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
+DOMRectList[JC] def item(index: Int): T
+DOMRectList[JC] def length: Int
+DOMRectList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 DOMSettableTokenList[JT] def add(token: String): Unit
 DOMSettableTokenList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
 DOMSettableTokenList[JT] def contains(token: String): Boolean
@@ -1451,8 +1451,8 @@ Element[JC] def getAttribute(name: String): String
 Element[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 Element[JC] def getAttributeNode(name: String): Attr
 Element[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-Element[JC] def getBoundingClientRect(): ClientRect
-Element[JC] def getClientRects(): ClientRectList
+Element[JC] def getBoundingClientRect(): DOMRect
+Element[JC] def getClientRects(): DOMRectList
 Element[JC] def getElementsByClassName(classNames: String): HTMLCollection
 Element[JC] def getElementsByTagName(name: String): HTMLCollection
 Element[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -1695,8 +1695,8 @@ HTMLAnchorElement[JC] def getAttribute(name: String): String
 HTMLAnchorElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLAnchorElement[JC] def getAttributeNode(name: String): Attr
 HTMLAnchorElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLAnchorElement[JC] def getBoundingClientRect(): ClientRect
-HTMLAnchorElement[JC] def getClientRects(): ClientRectList
+HTMLAnchorElement[JC] def getBoundingClientRect(): DOMRect
+HTMLAnchorElement[JC] def getClientRects(): DOMRectList
 HTMLAnchorElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLAnchorElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLAnchorElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -1900,8 +1900,8 @@ HTMLAreaElement[JC] def getAttribute(name: String): String
 HTMLAreaElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLAreaElement[JC] def getAttributeNode(name: String): Attr
 HTMLAreaElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLAreaElement[JC] def getBoundingClientRect(): ClientRect
-HTMLAreaElement[JC] def getClientRects(): ClientRectList
+HTMLAreaElement[JC] def getBoundingClientRect(): DOMRect
+HTMLAreaElement[JC] def getClientRects(): DOMRectList
 HTMLAreaElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLAreaElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLAreaElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -2110,8 +2110,8 @@ HTMLAudioElement[JC] def getAttribute(name: String): String
 HTMLAudioElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLAudioElement[JC] def getAttributeNode(name: String): Attr
 HTMLAudioElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLAudioElement[JC] def getBoundingClientRect(): ClientRect
-HTMLAudioElement[JC] def getClientRects(): ClientRectList
+HTMLAudioElement[JC] def getBoundingClientRect(): DOMRect
+HTMLAudioElement[JC] def getClientRects(): DOMRectList
 HTMLAudioElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLAudioElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLAudioElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -2316,8 +2316,8 @@ HTMLBRElement[JC] def getAttribute(name: String): String
 HTMLBRElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLBRElement[JC] def getAttributeNode(name: String): Attr
 HTMLBRElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLBRElement[JC] def getBoundingClientRect(): ClientRect
-HTMLBRElement[JC] def getClientRects(): ClientRectList
+HTMLBRElement[JC] def getBoundingClientRect(): DOMRect
+HTMLBRElement[JC] def getClientRects(): DOMRectList
 HTMLBRElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLBRElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLBRElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -2505,8 +2505,8 @@ HTMLBaseElement[JC] def getAttribute(name: String): String
 HTMLBaseElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLBaseElement[JC] def getAttributeNode(name: String): Attr
 HTMLBaseElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLBaseElement[JC] def getBoundingClientRect(): ClientRect
-HTMLBaseElement[JC] def getClientRects(): ClientRectList
+HTMLBaseElement[JC] def getBoundingClientRect(): DOMRect
+HTMLBaseElement[JC] def getClientRects(): DOMRectList
 HTMLBaseElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLBaseElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLBaseElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -2696,8 +2696,8 @@ HTMLBodyElement[JC] def getAttribute(name: String): String
 HTMLBodyElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLBodyElement[JC] def getAttributeNode(name: String): Attr
 HTMLBodyElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLBodyElement[JC] def getBoundingClientRect(): ClientRect
-HTMLBodyElement[JC] def getClientRects(): ClientRectList
+HTMLBodyElement[JC] def getBoundingClientRect(): DOMRect
+HTMLBodyElement[JC] def getClientRects(): DOMRectList
 HTMLBodyElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLBodyElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLBodyElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -2908,8 +2908,8 @@ HTMLButtonElement[JC] def getAttribute(name: String): String
 HTMLButtonElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLButtonElement[JC] def getAttributeNode(name: String): Attr
 HTMLButtonElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLButtonElement[JC] def getBoundingClientRect(): ClientRect
-HTMLButtonElement[JC] def getClientRects(): ClientRectList
+HTMLButtonElement[JC] def getBoundingClientRect(): DOMRect
+HTMLButtonElement[JC] def getClientRects(): DOMRectList
 HTMLButtonElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLButtonElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLButtonElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -3105,8 +3105,8 @@ HTMLCanvasElement[JC] def getAttribute(name: String): String
 HTMLCanvasElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLCanvasElement[JC] def getAttributeNode(name: String): Attr
 HTMLCanvasElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLCanvasElement[JC] def getBoundingClientRect(): ClientRect
-HTMLCanvasElement[JC] def getClientRects(): ClientRectList
+HTMLCanvasElement[JC] def getBoundingClientRect(): DOMRect
+HTMLCanvasElement[JC] def getClientRects(): DOMRectList
 HTMLCanvasElement[JC] def getContext(contextId: String, args: js.Any*): js.Dynamic
 HTMLCanvasElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLCanvasElement[JC] def getElementsByTagName(name: String): HTMLCollection
@@ -3303,8 +3303,8 @@ HTMLDListElement[JC] def getAttribute(name: String): String
 HTMLDListElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLDListElement[JC] def getAttributeNode(name: String): Attr
 HTMLDListElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLDListElement[JC] def getBoundingClientRect(): ClientRect
-HTMLDListElement[JC] def getClientRects(): ClientRectList
+HTMLDListElement[JC] def getBoundingClientRect(): DOMRect
+HTMLDListElement[JC] def getClientRects(): DOMRectList
 HTMLDListElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLDListElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLDListElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -3492,8 +3492,8 @@ HTMLDataListElement[JC] def getAttribute(name: String): String
 HTMLDataListElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLDataListElement[JC] def getAttributeNode(name: String): Attr
 HTMLDataListElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLDataListElement[JC] def getBoundingClientRect(): ClientRect
-HTMLDataListElement[JC] def getClientRects(): ClientRectList
+HTMLDataListElement[JC] def getBoundingClientRect(): DOMRect
+HTMLDataListElement[JC] def getClientRects(): DOMRectList
 HTMLDataListElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLDataListElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLDataListElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -3682,8 +3682,8 @@ HTMLDivElement[JC] def getAttribute(name: String): String
 HTMLDivElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLDivElement[JC] def getAttributeNode(name: String): Attr
 HTMLDivElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLDivElement[JC] def getBoundingClientRect(): ClientRect
-HTMLDivElement[JC] def getClientRects(): ClientRectList
+HTMLDivElement[JC] def getBoundingClientRect(): DOMRect
+HTMLDivElement[JC] def getClientRects(): DOMRectList
 HTMLDivElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLDivElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLDivElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -4065,8 +4065,8 @@ HTMLElement[JC] def getAttribute(name: String): String
 HTMLElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLElement[JC] def getAttributeNode(name: String): Attr
 HTMLElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLElement[JC] def getBoundingClientRect(): ClientRect
-HTMLElement[JC] def getClientRects(): ClientRectList
+HTMLElement[JC] def getBoundingClientRect(): DOMRect
+HTMLElement[JC] def getClientRects(): DOMRectList
 HTMLElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -4254,8 +4254,8 @@ HTMLEmbedElement[JC] def getAttribute(name: String): String
 HTMLEmbedElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLEmbedElement[JC] def getAttributeNode(name: String): Attr
 HTMLEmbedElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLEmbedElement[JC] def getBoundingClientRect(): ClientRect
-HTMLEmbedElement[JC] def getClientRects(): ClientRectList
+HTMLEmbedElement[JC] def getBoundingClientRect(): DOMRect
+HTMLEmbedElement[JC] def getClientRects(): DOMRectList
 HTMLEmbedElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLEmbedElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLEmbedElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -4450,8 +4450,8 @@ HTMLFieldSetElement[JC] def getAttribute(name: String): String
 HTMLFieldSetElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLFieldSetElement[JC] def getAttributeNode(name: String): Attr
 HTMLFieldSetElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLFieldSetElement[JC] def getBoundingClientRect(): ClientRect
-HTMLFieldSetElement[JC] def getClientRects(): ClientRectList
+HTMLFieldSetElement[JC] def getBoundingClientRect(): DOMRect
+HTMLFieldSetElement[JC] def getClientRects(): DOMRectList
 HTMLFieldSetElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLFieldSetElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLFieldSetElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -4651,8 +4651,8 @@ HTMLFormElement[JC] def getAttribute(name: String): String
 HTMLFormElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLFormElement[JC] def getAttributeNode(name: String): Attr
 HTMLFormElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLFormElement[JC] def getBoundingClientRect(): ClientRect
-HTMLFormElement[JC] def getClientRects(): ClientRectList
+HTMLFormElement[JC] def getBoundingClientRect(): DOMRect
+HTMLFormElement[JC] def getClientRects(): DOMRectList
 HTMLFormElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLFormElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLFormElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -4850,8 +4850,8 @@ HTMLHRElement[JC] def getAttribute(name: String): String
 HTMLHRElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLHRElement[JC] def getAttributeNode(name: String): Attr
 HTMLHRElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLHRElement[JC] def getBoundingClientRect(): ClientRect
-HTMLHRElement[JC] def getClientRects(): ClientRectList
+HTMLHRElement[JC] def getBoundingClientRect(): DOMRect
+HTMLHRElement[JC] def getClientRects(): DOMRectList
 HTMLHRElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLHRElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLHRElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -5039,8 +5039,8 @@ HTMLHeadElement[JC] def getAttribute(name: String): String
 HTMLHeadElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLHeadElement[JC] def getAttributeNode(name: String): Attr
 HTMLHeadElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLHeadElement[JC] def getBoundingClientRect(): ClientRect
-HTMLHeadElement[JC] def getClientRects(): ClientRectList
+HTMLHeadElement[JC] def getBoundingClientRect(): DOMRect
+HTMLHeadElement[JC] def getClientRects(): DOMRectList
 HTMLHeadElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLHeadElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLHeadElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -5228,8 +5228,8 @@ HTMLHeadingElement[JC] def getAttribute(name: String): String
 HTMLHeadingElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLHeadingElement[JC] def getAttributeNode(name: String): Attr
 HTMLHeadingElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLHeadingElement[JC] def getBoundingClientRect(): ClientRect
-HTMLHeadingElement[JC] def getClientRects(): ClientRectList
+HTMLHeadingElement[JC] def getBoundingClientRect(): DOMRect
+HTMLHeadingElement[JC] def getClientRects(): DOMRectList
 HTMLHeadingElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLHeadingElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLHeadingElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -5417,8 +5417,8 @@ HTMLHtmlElement[JC] def getAttribute(name: String): String
 HTMLHtmlElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLHtmlElement[JC] def getAttributeNode(name: String): Attr
 HTMLHtmlElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLHtmlElement[JC] def getBoundingClientRect(): ClientRect
-HTMLHtmlElement[JC] def getClientRects(): ClientRectList
+HTMLHtmlElement[JC] def getBoundingClientRect(): DOMRect
+HTMLHtmlElement[JC] def getClientRects(): DOMRectList
 HTMLHtmlElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLHtmlElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLHtmlElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -5609,8 +5609,8 @@ HTMLIFrameElement[JC] def getAttribute(name: String): String
 HTMLIFrameElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLIFrameElement[JC] def getAttributeNode(name: String): Attr
 HTMLIFrameElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLIFrameElement[JC] def getBoundingClientRect(): ClientRect
-HTMLIFrameElement[JC] def getClientRects(): ClientRectList
+HTMLIFrameElement[JC] def getBoundingClientRect(): DOMRect
+HTMLIFrameElement[JC] def getClientRects(): DOMRectList
 HTMLIFrameElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLIFrameElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLIFrameElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -5808,8 +5808,8 @@ HTMLImageElement[JC] def getAttribute(name: String): String
 HTMLImageElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLImageElement[JC] def getAttributeNode(name: String): Attr
 HTMLImageElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLImageElement[JC] def getBoundingClientRect(): ClientRect
-HTMLImageElement[JC] def getClientRects(): ClientRectList
+HTMLImageElement[JC] def getBoundingClientRect(): DOMRect
+HTMLImageElement[JC] def getClientRects(): DOMRectList
 HTMLImageElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLImageElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLImageElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -6022,8 +6022,8 @@ HTMLInputElement[JC] def getAttribute(name: String): String
 HTMLInputElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLInputElement[JC] def getAttributeNode(name: String): Attr
 HTMLInputElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLInputElement[JC] def getBoundingClientRect(): ClientRect
-HTMLInputElement[JC] def getClientRects(): ClientRectList
+HTMLInputElement[JC] def getBoundingClientRect(): DOMRect
+HTMLInputElement[JC] def getClientRects(): DOMRectList
 HTMLInputElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLInputElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLInputElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -6241,8 +6241,8 @@ HTMLLIElement[JC] def getAttribute(name: String): String
 HTMLLIElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLLIElement[JC] def getAttributeNode(name: String): Attr
 HTMLLIElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLLIElement[JC] def getBoundingClientRect(): ClientRect
-HTMLLIElement[JC] def getClientRects(): ClientRectList
+HTMLLIElement[JC] def getBoundingClientRect(): DOMRect
+HTMLLIElement[JC] def getClientRects(): DOMRectList
 HTMLLIElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLLIElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLLIElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -6432,8 +6432,8 @@ HTMLLabelElement[JC] def getAttribute(name: String): String
 HTMLLabelElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLLabelElement[JC] def getAttributeNode(name: String): Attr
 HTMLLabelElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLLabelElement[JC] def getBoundingClientRect(): ClientRect
-HTMLLabelElement[JC] def getClientRects(): ClientRectList
+HTMLLabelElement[JC] def getBoundingClientRect(): DOMRect
+HTMLLabelElement[JC] def getClientRects(): DOMRectList
 HTMLLabelElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLLabelElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLLabelElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -6624,8 +6624,8 @@ HTMLLegendElement[JC] def getAttribute(name: String): String
 HTMLLegendElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLLegendElement[JC] def getAttributeNode(name: String): Attr
 HTMLLegendElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLLegendElement[JC] def getBoundingClientRect(): ClientRect
-HTMLLegendElement[JC] def getClientRects(): ClientRectList
+HTMLLegendElement[JC] def getBoundingClientRect(): DOMRect
+HTMLLegendElement[JC] def getClientRects(): DOMRectList
 HTMLLegendElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLLegendElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLLegendElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -6813,8 +6813,8 @@ HTMLLinkElement[JC] def getAttribute(name: String): String
 HTMLLinkElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLLinkElement[JC] def getAttributeNode(name: String): Attr
 HTMLLinkElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLLinkElement[JC] def getBoundingClientRect(): ClientRect
-HTMLLinkElement[JC] def getClientRects(): ClientRectList
+HTMLLinkElement[JC] def getBoundingClientRect(): DOMRect
+HTMLLinkElement[JC] def getClientRects(): DOMRectList
 HTMLLinkElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLLinkElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLLinkElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -7010,8 +7010,8 @@ HTMLMapElement[JC] def getAttribute(name: String): String
 HTMLMapElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLMapElement[JC] def getAttributeNode(name: String): Attr
 HTMLMapElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLMapElement[JC] def getBoundingClientRect(): ClientRect
-HTMLMapElement[JC] def getClientRects(): ClientRectList
+HTMLMapElement[JC] def getBoundingClientRect(): DOMRect
+HTMLMapElement[JC] def getClientRects(): DOMRectList
 HTMLMapElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLMapElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLMapElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -7211,8 +7211,8 @@ HTMLMediaElement[JC] def getAttribute(name: String): String
 HTMLMediaElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLMediaElement[JC] def getAttributeNode(name: String): Attr
 HTMLMediaElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLMediaElement[JC] def getBoundingClientRect(): ClientRect
-HTMLMediaElement[JC] def getClientRects(): ClientRectList
+HTMLMediaElement[JC] def getBoundingClientRect(): DOMRect
+HTMLMediaElement[JC] def getClientRects(): DOMRectList
 HTMLMediaElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLMediaElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLMediaElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -7426,8 +7426,8 @@ HTMLMenuElement[JC] def getAttribute(name: String): String
 HTMLMenuElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLMenuElement[JC] def getAttributeNode(name: String): Attr
 HTMLMenuElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLMenuElement[JC] def getBoundingClientRect(): ClientRect
-HTMLMenuElement[JC] def getClientRects(): ClientRectList
+HTMLMenuElement[JC] def getBoundingClientRect(): DOMRect
+HTMLMenuElement[JC] def getClientRects(): DOMRectList
 HTMLMenuElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLMenuElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLMenuElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -7618,8 +7618,8 @@ HTMLMetaElement[JC] def getAttribute(name: String): String
 HTMLMetaElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLMetaElement[JC] def getAttributeNode(name: String): Attr
 HTMLMetaElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLMetaElement[JC] def getBoundingClientRect(): ClientRect
-HTMLMetaElement[JC] def getClientRects(): ClientRectList
+HTMLMetaElement[JC] def getBoundingClientRect(): DOMRect
+HTMLMetaElement[JC] def getClientRects(): DOMRectList
 HTMLMetaElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLMetaElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLMetaElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -7812,8 +7812,8 @@ HTMLModElement[JC] def getAttribute(name: String): String
 HTMLModElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLModElement[JC] def getAttributeNode(name: String): Attr
 HTMLModElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLModElement[JC] def getBoundingClientRect(): ClientRect
-HTMLModElement[JC] def getClientRects(): ClientRectList
+HTMLModElement[JC] def getBoundingClientRect(): DOMRect
+HTMLModElement[JC] def getClientRects(): DOMRectList
 HTMLModElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLModElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLModElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -8001,8 +8001,8 @@ HTMLOListElement[JC] def getAttribute(name: String): String
 HTMLOListElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLOListElement[JC] def getAttributeNode(name: String): Attr
 HTMLOListElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLOListElement[JC] def getBoundingClientRect(): ClientRect
-HTMLOListElement[JC] def getClientRects(): ClientRectList
+HTMLOListElement[JC] def getBoundingClientRect(): DOMRect
+HTMLOListElement[JC] def getClientRects(): DOMRectList
 HTMLOListElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLOListElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLOListElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -8199,8 +8199,8 @@ HTMLObjectElement[JC] def getAttribute(name: String): String
 HTMLObjectElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLObjectElement[JC] def getAttributeNode(name: String): Attr
 HTMLObjectElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLObjectElement[JC] def getBoundingClientRect(): ClientRect
-HTMLObjectElement[JC] def getClientRects(): ClientRectList
+HTMLObjectElement[JC] def getBoundingClientRect(): DOMRect
+HTMLObjectElement[JC] def getClientRects(): DOMRectList
 HTMLObjectElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLObjectElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLObjectElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -8400,8 +8400,8 @@ HTMLOptGroupElement[JC] def getAttribute(name: String): String
 HTMLOptGroupElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLOptGroupElement[JC] def getAttributeNode(name: String): Attr
 HTMLOptGroupElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLOptGroupElement[JC] def getBoundingClientRect(): ClientRect
-HTMLOptGroupElement[JC] def getClientRects(): ClientRectList
+HTMLOptGroupElement[JC] def getBoundingClientRect(): DOMRect
+HTMLOptGroupElement[JC] def getClientRects(): DOMRectList
 HTMLOptGroupElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLOptGroupElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLOptGroupElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -8594,8 +8594,8 @@ HTMLOptionElement[JC] def getAttribute(name: String): String
 HTMLOptionElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLOptionElement[JC] def getAttributeNode(name: String): Attr
 HTMLOptionElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLOptionElement[JC] def getBoundingClientRect(): ClientRect
-HTMLOptionElement[JC] def getClientRects(): ClientRectList
+HTMLOptionElement[JC] def getBoundingClientRect(): DOMRect
+HTMLOptionElement[JC] def getClientRects(): DOMRectList
 HTMLOptionElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLOptionElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLOptionElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -8788,8 +8788,8 @@ HTMLParagraphElement[JC] def getAttribute(name: String): String
 HTMLParagraphElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLParagraphElement[JC] def getAttributeNode(name: String): Attr
 HTMLParagraphElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLParagraphElement[JC] def getBoundingClientRect(): ClientRect
-HTMLParagraphElement[JC] def getClientRects(): ClientRectList
+HTMLParagraphElement[JC] def getBoundingClientRect(): DOMRect
+HTMLParagraphElement[JC] def getClientRects(): DOMRectList
 HTMLParagraphElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLParagraphElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLParagraphElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -8977,8 +8977,8 @@ HTMLParamElement[JC] def getAttribute(name: String): String
 HTMLParamElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLParamElement[JC] def getAttributeNode(name: String): Attr
 HTMLParamElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLParamElement[JC] def getBoundingClientRect(): ClientRect
-HTMLParamElement[JC] def getClientRects(): ClientRectList
+HTMLParamElement[JC] def getBoundingClientRect(): DOMRect
+HTMLParamElement[JC] def getClientRects(): DOMRectList
 HTMLParamElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLParamElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLParamElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -9168,8 +9168,8 @@ HTMLPreElement[JC] def getAttribute(name: String): String
 HTMLPreElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLPreElement[JC] def getAttributeNode(name: String): Attr
 HTMLPreElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLPreElement[JC] def getBoundingClientRect(): ClientRect
-HTMLPreElement[JC] def getClientRects(): ClientRectList
+HTMLPreElement[JC] def getBoundingClientRect(): DOMRect
+HTMLPreElement[JC] def getClientRects(): DOMRectList
 HTMLPreElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLPreElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLPreElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -9358,8 +9358,8 @@ HTMLProgressElement[JC] def getAttribute(name: String): String
 HTMLProgressElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLProgressElement[JC] def getAttributeNode(name: String): Attr
 HTMLProgressElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLProgressElement[JC] def getBoundingClientRect(): ClientRect
-HTMLProgressElement[JC] def getClientRects(): ClientRectList
+HTMLProgressElement[JC] def getBoundingClientRect(): DOMRect
+HTMLProgressElement[JC] def getClientRects(): DOMRectList
 HTMLProgressElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLProgressElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLProgressElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -9552,8 +9552,8 @@ HTMLQuoteElement[JC] def getAttribute(name: String): String
 HTMLQuoteElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLQuoteElement[JC] def getAttributeNode(name: String): Attr
 HTMLQuoteElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLQuoteElement[JC] def getBoundingClientRect(): ClientRect
-HTMLQuoteElement[JC] def getClientRects(): ClientRectList
+HTMLQuoteElement[JC] def getBoundingClientRect(): DOMRect
+HTMLQuoteElement[JC] def getClientRects(): DOMRectList
 HTMLQuoteElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLQuoteElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLQuoteElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -9745,8 +9745,8 @@ HTMLScriptElement[JC] def getAttribute(name: String): String
 HTMLScriptElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLScriptElement[JC] def getAttributeNode(name: String): Attr
 HTMLScriptElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLScriptElement[JC] def getBoundingClientRect(): ClientRect
-HTMLScriptElement[JC] def getClientRects(): ClientRectList
+HTMLScriptElement[JC] def getBoundingClientRect(): DOMRect
+HTMLScriptElement[JC] def getClientRects(): DOMRectList
 HTMLScriptElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLScriptElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLScriptElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -9944,8 +9944,8 @@ HTMLSelectElement[JC] def getAttribute(name: String): String
 HTMLSelectElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLSelectElement[JC] def getAttributeNode(name: String): Attr
 HTMLSelectElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLSelectElement[JC] def getBoundingClientRect(): ClientRect
-HTMLSelectElement[JC] def getClientRects(): ClientRectList
+HTMLSelectElement[JC] def getBoundingClientRect(): DOMRect
+HTMLSelectElement[JC] def getClientRects(): DOMRectList
 HTMLSelectElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLSelectElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLSelectElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -10150,8 +10150,8 @@ HTMLSourceElement[JC] def getAttribute(name: String): String
 HTMLSourceElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLSourceElement[JC] def getAttributeNode(name: String): Attr
 HTMLSourceElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLSourceElement[JC] def getBoundingClientRect(): ClientRect
-HTMLSourceElement[JC] def getClientRects(): ClientRectList
+HTMLSourceElement[JC] def getBoundingClientRect(): DOMRect
+HTMLSourceElement[JC] def getClientRects(): DOMRectList
 HTMLSourceElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLSourceElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLSourceElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -10342,8 +10342,8 @@ HTMLSpanElement[JC] def getAttribute(name: String): String
 HTMLSpanElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLSpanElement[JC] def getAttributeNode(name: String): Attr
 HTMLSpanElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLSpanElement[JC] def getBoundingClientRect(): ClientRect
-HTMLSpanElement[JC] def getClientRects(): ClientRectList
+HTMLSpanElement[JC] def getBoundingClientRect(): DOMRect
+HTMLSpanElement[JC] def getClientRects(): DOMRectList
 HTMLSpanElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLSpanElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLSpanElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -10531,8 +10531,8 @@ HTMLStyleElement[JC] def getAttribute(name: String): String
 HTMLStyleElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLStyleElement[JC] def getAttributeNode(name: String): Attr
 HTMLStyleElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLStyleElement[JC] def getBoundingClientRect(): ClientRect
-HTMLStyleElement[JC] def getClientRects(): ClientRectList
+HTMLStyleElement[JC] def getBoundingClientRect(): DOMRect
+HTMLStyleElement[JC] def getClientRects(): DOMRectList
 HTMLStyleElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLStyleElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLStyleElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -10724,8 +10724,8 @@ HTMLTableCaptionElement[JC] def getAttribute(name: String): String
 HTMLTableCaptionElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableCaptionElement[JC] def getAttributeNode(name: String): Attr
 HTMLTableCaptionElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLTableCaptionElement[JC] def getBoundingClientRect(): ClientRect
-HTMLTableCaptionElement[JC] def getClientRects(): ClientRectList
+HTMLTableCaptionElement[JC] def getBoundingClientRect(): DOMRect
+HTMLTableCaptionElement[JC] def getClientRects(): DOMRectList
 HTMLTableCaptionElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLTableCaptionElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLTableCaptionElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -10915,8 +10915,8 @@ HTMLTableCellElement[JC] def getAttribute(name: String): String
 HTMLTableCellElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableCellElement[JC] def getAttributeNode(name: String): Attr
 HTMLTableCellElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLTableCellElement[JC] def getBoundingClientRect(): ClientRect
-HTMLTableCellElement[JC] def getClientRects(): ClientRectList
+HTMLTableCellElement[JC] def getBoundingClientRect(): DOMRect
+HTMLTableCellElement[JC] def getClientRects(): DOMRectList
 HTMLTableCellElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLTableCellElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLTableCellElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -11106,8 +11106,8 @@ HTMLTableColElement[JC] def getAttribute(name: String): String
 HTMLTableColElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableColElement[JC] def getAttributeNode(name: String): Attr
 HTMLTableColElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLTableColElement[JC] def getBoundingClientRect(): ClientRect
-HTMLTableColElement[JC] def getClientRects(): ClientRectList
+HTMLTableColElement[JC] def getBoundingClientRect(): DOMRect
+HTMLTableColElement[JC] def getClientRects(): DOMRectList
 HTMLTableColElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLTableColElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLTableColElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -11305,8 +11305,8 @@ HTMLTableElement[JC] def getAttribute(name: String): String
 HTMLTableElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableElement[JC] def getAttributeNode(name: String): Attr
 HTMLTableElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLTableElement[JC] def getBoundingClientRect(): ClientRect
-HTMLTableElement[JC] def getClientRects(): ClientRectList
+HTMLTableElement[JC] def getBoundingClientRect(): DOMRect
+HTMLTableElement[JC] def getClientRects(): DOMRectList
 HTMLTableElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLTableElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLTableElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -11505,8 +11505,8 @@ HTMLTableRowElement[JC] def getAttribute(name: String): String
 HTMLTableRowElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableRowElement[JC] def getAttributeNode(name: String): Attr
 HTMLTableRowElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLTableRowElement[JC] def getBoundingClientRect(): ClientRect
-HTMLTableRowElement[JC] def getClientRects(): ClientRectList
+HTMLTableRowElement[JC] def getBoundingClientRect(): DOMRect
+HTMLTableRowElement[JC] def getClientRects(): DOMRectList
 HTMLTableRowElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLTableRowElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLTableRowElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -11699,8 +11699,8 @@ HTMLTableSectionElement[JC] def getAttribute(name: String): String
 HTMLTableSectionElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableSectionElement[JC] def getAttributeNode(name: String): Attr
 HTMLTableSectionElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLTableSectionElement[JC] def getBoundingClientRect(): ClientRect
-HTMLTableSectionElement[JC] def getClientRects(): ClientRectList
+HTMLTableSectionElement[JC] def getBoundingClientRect(): DOMRect
+HTMLTableSectionElement[JC] def getClientRects(): DOMRectList
 HTMLTableSectionElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLTableSectionElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLTableSectionElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -11897,8 +11897,8 @@ HTMLTextAreaElement[JC] def getAttribute(name: String): String
 HTMLTextAreaElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTextAreaElement[JC] def getAttributeNode(name: String): Attr
 HTMLTextAreaElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLTextAreaElement[JC] def getBoundingClientRect(): ClientRect
-HTMLTextAreaElement[JC] def getClientRects(): ClientRectList
+HTMLTextAreaElement[JC] def getBoundingClientRect(): DOMRect
+HTMLTextAreaElement[JC] def getClientRects(): DOMRectList
 HTMLTextAreaElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLTextAreaElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLTextAreaElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -12104,8 +12104,8 @@ HTMLTitleElement[JC] def getAttribute(name: String): String
 HTMLTitleElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTitleElement[JC] def getAttributeNode(name: String): Attr
 HTMLTitleElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLTitleElement[JC] def getBoundingClientRect(): ClientRect
-HTMLTitleElement[JC] def getClientRects(): ClientRectList
+HTMLTitleElement[JC] def getBoundingClientRect(): DOMRect
+HTMLTitleElement[JC] def getClientRects(): DOMRectList
 HTMLTitleElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLTitleElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLTitleElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -12294,8 +12294,8 @@ HTMLTrackElement[JC] def getAttribute(name: String): String
 HTMLTrackElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTrackElement[JC] def getAttributeNode(name: String): Attr
 HTMLTrackElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLTrackElement[JC] def getBoundingClientRect(): ClientRect
-HTMLTrackElement[JC] def getClientRects(): ClientRectList
+HTMLTrackElement[JC] def getBoundingClientRect(): DOMRect
+HTMLTrackElement[JC] def getClientRects(): DOMRectList
 HTMLTrackElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLTrackElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLTrackElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -12488,8 +12488,8 @@ HTMLUListElement[JC] def getAttribute(name: String): String
 HTMLUListElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLUListElement[JC] def getAttributeNode(name: String): Attr
 HTMLUListElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLUListElement[JC] def getBoundingClientRect(): ClientRect
-HTMLUListElement[JC] def getClientRects(): ClientRectList
+HTMLUListElement[JC] def getBoundingClientRect(): DOMRect
+HTMLUListElement[JC] def getClientRects(): DOMRectList
 HTMLUListElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLUListElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLUListElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -12677,8 +12677,8 @@ HTMLUnknownElement[JC] def getAttribute(name: String): String
 HTMLUnknownElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLUnknownElement[JC] def getAttributeNode(name: String): Attr
 HTMLUnknownElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLUnknownElement[JC] def getBoundingClientRect(): ClientRect
-HTMLUnknownElement[JC] def getClientRects(): ClientRectList
+HTMLUnknownElement[JC] def getBoundingClientRect(): DOMRect
+HTMLUnknownElement[JC] def getClientRects(): DOMRectList
 HTMLUnknownElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLUnknownElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLUnknownElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -12877,8 +12877,8 @@ HTMLVideoElement[JC] def getAttribute(name: String): String
 HTMLVideoElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLVideoElement[JC] def getAttributeNode(name: String): Attr
 HTMLVideoElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-HTMLVideoElement[JC] def getBoundingClientRect(): ClientRect
-HTMLVideoElement[JC] def getClientRects(): ClientRectList
+HTMLVideoElement[JC] def getBoundingClientRect(): DOMRect
+HTMLVideoElement[JC] def getClientRects(): DOMRectList
 HTMLVideoElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 HTMLVideoElement[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLVideoElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -13918,8 +13918,8 @@ Range[JC] def detach(): Unit
 Range[JC] def endContainer: Node
 Range[JC] def endOffset: Int
 Range[JC] def extractContents(): DocumentFragment
-Range[JC] def getBoundingClientRect(): ClientRect
-Range[JC] def getClientRects(): ClientRectList
+Range[JC] def getBoundingClientRect(): DOMRect
+Range[JC] def getClientRects(): DOMRectList
 Range[JC] def insertNode(newNode: Node): Unit
 Range[JC] def selectNode(refNode: Node): Unit
 Range[JC] def selectNodeContents(refNode: Node): Unit
@@ -13963,9 +13963,9 @@ SVGAElement[JC] def getAttributeNS(namespaceURI: String, localName: String): Str
 SVGAElement[JC] def getAttributeNode(name: String): Attr
 SVGAElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGAElement[JC] def getBBox(): SVGRect
-SVGAElement[JC] def getBoundingClientRect(): ClientRect
+SVGAElement[JC] def getBoundingClientRect(): DOMRect
 SVGAElement[JC] def getCTM(): SVGMatrix
-SVGAElement[JC] def getClientRects(): ClientRectList
+SVGAElement[JC] def getClientRects(): DOMRectList
 SVGAElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGAElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGAElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -14122,9 +14122,9 @@ SVGCircleElement[JC] def getAttributeNS(namespaceURI: String, localName: String)
 SVGCircleElement[JC] def getAttributeNode(name: String): Attr
 SVGCircleElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGCircleElement[JC] def getBBox(): SVGRect
-SVGCircleElement[JC] def getBoundingClientRect(): ClientRect
+SVGCircleElement[JC] def getBoundingClientRect(): DOMRect
 SVGCircleElement[JC] def getCTM(): SVGMatrix
-SVGCircleElement[JC] def getClientRects(): ClientRectList
+SVGCircleElement[JC] def getClientRects(): DOMRectList
 SVGCircleElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGCircleElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGCircleElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -14244,9 +14244,9 @@ SVGClipPathElement[JC] def getAttributeNS(namespaceURI: String, localName: Strin
 SVGClipPathElement[JC] def getAttributeNode(name: String): Attr
 SVGClipPathElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGClipPathElement[JC] def getBBox(): SVGRect
-SVGClipPathElement[JC] def getBoundingClientRect(): ClientRect
+SVGClipPathElement[JC] def getBoundingClientRect(): DOMRect
 SVGClipPathElement[JC] def getCTM(): SVGMatrix
-SVGClipPathElement[JC] def getClientRects(): ClientRectList
+SVGClipPathElement[JC] def getClientRects(): DOMRectList
 SVGClipPathElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGClipPathElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGClipPathElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -14359,8 +14359,8 @@ SVGComponentTransferFunctionElement[JC] def getAttribute(name: String): String
 SVGComponentTransferFunctionElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGComponentTransferFunctionElement[JC] def getAttributeNode(name: String): Attr
 SVGComponentTransferFunctionElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGComponentTransferFunctionElement[JC] def getBoundingClientRect(): ClientRect
-SVGComponentTransferFunctionElement[JC] def getClientRects(): ClientRectList
+SVGComponentTransferFunctionElement[JC] def getBoundingClientRect(): DOMRect
+SVGComponentTransferFunctionElement[JC] def getClientRects(): DOMRectList
 SVGComponentTransferFunctionElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGComponentTransferFunctionElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGComponentTransferFunctionElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -14475,9 +14475,9 @@ SVGDefsElement[JC] def getAttributeNS(namespaceURI: String, localName: String): 
 SVGDefsElement[JC] def getAttributeNode(name: String): Attr
 SVGDefsElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGDefsElement[JC] def getBBox(): SVGRect
-SVGDefsElement[JC] def getBoundingClientRect(): ClientRect
+SVGDefsElement[JC] def getBoundingClientRect(): DOMRect
 SVGDefsElement[JC] def getCTM(): SVGMatrix
-SVGDefsElement[JC] def getClientRects(): ClientRectList
+SVGDefsElement[JC] def getClientRects(): DOMRectList
 SVGDefsElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGDefsElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGDefsElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -14589,8 +14589,8 @@ SVGDescElement[JC] def getAttribute(name: String): String
 SVGDescElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGDescElement[JC] def getAttributeNode(name: String): Attr
 SVGDescElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGDescElement[JC] def getBoundingClientRect(): ClientRect
-SVGDescElement[JC] def getClientRects(): ClientRectList
+SVGDescElement[JC] def getBoundingClientRect(): DOMRect
+SVGDescElement[JC] def getClientRects(): DOMRectList
 SVGDescElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGDescElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGDescElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -14693,8 +14693,8 @@ SVGElement[JC] def getAttribute(name: String): String
 SVGElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGElement[JC] def getAttributeNode(name: String): Attr
 SVGElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGElement[JC] def getBoundingClientRect(): ClientRect
-SVGElement[JC] def getClientRects(): ClientRectList
+SVGElement[JC] def getBoundingClientRect(): DOMRect
+SVGElement[JC] def getClientRects(): DOMRectList
 SVGElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -14815,9 +14815,9 @@ SVGEllipseElement[JC] def getAttributeNS(namespaceURI: String, localName: String
 SVGEllipseElement[JC] def getAttributeNode(name: String): Attr
 SVGEllipseElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGEllipseElement[JC] def getBBox(): SVGRect
-SVGEllipseElement[JC] def getBoundingClientRect(): ClientRect
+SVGEllipseElement[JC] def getBoundingClientRect(): DOMRect
 SVGEllipseElement[JC] def getCTM(): SVGMatrix
-SVGEllipseElement[JC] def getClientRects(): ClientRectList
+SVGEllipseElement[JC] def getClientRects(): DOMRectList
 SVGEllipseElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGEllipseElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGEllipseElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -14938,8 +14938,8 @@ SVGFEBlendElement[JC] def getAttribute(name: String): String
 SVGFEBlendElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEBlendElement[JC] def getAttributeNode(name: String): Attr
 SVGFEBlendElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEBlendElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEBlendElement[JC] def getClientRects(): ClientRectList
+SVGFEBlendElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEBlendElement[JC] def getClientRects(): DOMRectList
 SVGFEBlendElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEBlendElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEBlendElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -15055,8 +15055,8 @@ SVGFEColorMatrixElement[JC] def getAttribute(name: String): String
 SVGFEColorMatrixElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEColorMatrixElement[JC] def getAttributeNode(name: String): Attr
 SVGFEColorMatrixElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEColorMatrixElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEColorMatrixElement[JC] def getClientRects(): ClientRectList
+SVGFEColorMatrixElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEColorMatrixElement[JC] def getClientRects(): DOMRectList
 SVGFEColorMatrixElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEColorMatrixElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEColorMatrixElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -15171,8 +15171,8 @@ SVGFEComponentTransferElement[JC] def getAttribute(name: String): String
 SVGFEComponentTransferElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEComponentTransferElement[JC] def getAttributeNode(name: String): Attr
 SVGFEComponentTransferElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEComponentTransferElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEComponentTransferElement[JC] def getClientRects(): ClientRectList
+SVGFEComponentTransferElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEComponentTransferElement[JC] def getClientRects(): DOMRectList
 SVGFEComponentTransferElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEComponentTransferElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEComponentTransferElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -15280,8 +15280,8 @@ SVGFECompositeElement[JC] def getAttribute(name: String): String
 SVGFECompositeElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFECompositeElement[JC] def getAttributeNode(name: String): Attr
 SVGFECompositeElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFECompositeElement[JC] def getBoundingClientRect(): ClientRect
-SVGFECompositeElement[JC] def getClientRects(): ClientRectList
+SVGFECompositeElement[JC] def getBoundingClientRect(): DOMRect
+SVGFECompositeElement[JC] def getClientRects(): DOMRectList
 SVGFECompositeElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFECompositeElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFECompositeElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -15405,8 +15405,8 @@ SVGFEConvolveMatrixElement[JC] def getAttribute(name: String): String
 SVGFEConvolveMatrixElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEConvolveMatrixElement[JC] def getAttributeNode(name: String): Attr
 SVGFEConvolveMatrixElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEConvolveMatrixElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEConvolveMatrixElement[JC] def getClientRects(): ClientRectList
+SVGFEConvolveMatrixElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEConvolveMatrixElement[JC] def getClientRects(): DOMRectList
 SVGFEConvolveMatrixElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEConvolveMatrixElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEConvolveMatrixElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -15527,8 +15527,8 @@ SVGFEDiffuseLightingElement[JC] def getAttribute(name: String): String
 SVGFEDiffuseLightingElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEDiffuseLightingElement[JC] def getAttributeNode(name: String): Attr
 SVGFEDiffuseLightingElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEDiffuseLightingElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEDiffuseLightingElement[JC] def getClientRects(): ClientRectList
+SVGFEDiffuseLightingElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEDiffuseLightingElement[JC] def getClientRects(): DOMRectList
 SVGFEDiffuseLightingElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEDiffuseLightingElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEDiffuseLightingElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -15639,8 +15639,8 @@ SVGFEDisplacementMapElement[JC] def getAttribute(name: String): String
 SVGFEDisplacementMapElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEDisplacementMapElement[JC] def getAttributeNode(name: String): Attr
 SVGFEDisplacementMapElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEDisplacementMapElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEDisplacementMapElement[JC] def getClientRects(): ClientRectList
+SVGFEDisplacementMapElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEDisplacementMapElement[JC] def getClientRects(): DOMRectList
 SVGFEDisplacementMapElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEDisplacementMapElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEDisplacementMapElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -15758,8 +15758,8 @@ SVGFEDistantLightElement[JC] def getAttribute(name: String): String
 SVGFEDistantLightElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEDistantLightElement[JC] def getAttributeNode(name: String): Attr
 SVGFEDistantLightElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEDistantLightElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEDistantLightElement[JC] def getClientRects(): ClientRectList
+SVGFEDistantLightElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEDistantLightElement[JC] def getClientRects(): DOMRectList
 SVGFEDistantLightElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEDistantLightElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEDistantLightElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -15860,8 +15860,8 @@ SVGFEFloodElement[JC] def getAttribute(name: String): String
 SVGFEFloodElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEFloodElement[JC] def getAttributeNode(name: String): Attr
 SVGFEFloodElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEFloodElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEFloodElement[JC] def getClientRects(): ClientRectList
+SVGFEFloodElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEFloodElement[JC] def getClientRects(): DOMRectList
 SVGFEFloodElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEFloodElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEFloodElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -15969,8 +15969,8 @@ SVGFEFuncAElement[JC] def getAttribute(name: String): String
 SVGFEFuncAElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEFuncAElement[JC] def getAttributeNode(name: String): Attr
 SVGFEFuncAElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEFuncAElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEFuncAElement[JC] def getClientRects(): ClientRectList
+SVGFEFuncAElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEFuncAElement[JC] def getClientRects(): DOMRectList
 SVGFEFuncAElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEFuncAElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEFuncAElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -16077,8 +16077,8 @@ SVGFEFuncBElement[JC] def getAttribute(name: String): String
 SVGFEFuncBElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEFuncBElement[JC] def getAttributeNode(name: String): Attr
 SVGFEFuncBElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEFuncBElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEFuncBElement[JC] def getClientRects(): ClientRectList
+SVGFEFuncBElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEFuncBElement[JC] def getClientRects(): DOMRectList
 SVGFEFuncBElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEFuncBElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEFuncBElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -16185,8 +16185,8 @@ SVGFEFuncGElement[JC] def getAttribute(name: String): String
 SVGFEFuncGElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEFuncGElement[JC] def getAttributeNode(name: String): Attr
 SVGFEFuncGElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEFuncGElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEFuncGElement[JC] def getClientRects(): ClientRectList
+SVGFEFuncGElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEFuncGElement[JC] def getClientRects(): DOMRectList
 SVGFEFuncGElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEFuncGElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEFuncGElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -16293,8 +16293,8 @@ SVGFEFuncRElement[JC] def getAttribute(name: String): String
 SVGFEFuncRElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEFuncRElement[JC] def getAttributeNode(name: String): Attr
 SVGFEFuncRElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEFuncRElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEFuncRElement[JC] def getClientRects(): ClientRectList
+SVGFEFuncRElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEFuncRElement[JC] def getClientRects(): DOMRectList
 SVGFEFuncRElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEFuncRElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEFuncRElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -16400,8 +16400,8 @@ SVGFEGaussianBlurElement[JC] def getAttribute(name: String): String
 SVGFEGaussianBlurElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEGaussianBlurElement[JC] def getAttributeNode(name: String): Attr
 SVGFEGaussianBlurElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEGaussianBlurElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEGaussianBlurElement[JC] def getClientRects(): ClientRectList
+SVGFEGaussianBlurElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEGaussianBlurElement[JC] def getClientRects(): DOMRectList
 SVGFEGaussianBlurElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEGaussianBlurElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEGaussianBlurElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -16513,8 +16513,8 @@ SVGFEImageElement[JC] def getAttribute(name: String): String
 SVGFEImageElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEImageElement[JC] def getAttributeNode(name: String): Attr
 SVGFEImageElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEImageElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEImageElement[JC] def getClientRects(): ClientRectList
+SVGFEImageElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEImageElement[JC] def getClientRects(): DOMRectList
 SVGFEImageElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEImageElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEImageElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -16625,8 +16625,8 @@ SVGFEMergeElement[JC] def getAttribute(name: String): String
 SVGFEMergeElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEMergeElement[JC] def getAttributeNode(name: String): Attr
 SVGFEMergeElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEMergeElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEMergeElement[JC] def getClientRects(): ClientRectList
+SVGFEMergeElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEMergeElement[JC] def getClientRects(): DOMRectList
 SVGFEMergeElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEMergeElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEMergeElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -16732,8 +16732,8 @@ SVGFEMergeNodeElement[JC] def getAttribute(name: String): String
 SVGFEMergeNodeElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEMergeNodeElement[JC] def getAttributeNode(name: String): Attr
 SVGFEMergeNodeElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEMergeNodeElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEMergeNodeElement[JC] def getClientRects(): ClientRectList
+SVGFEMergeNodeElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEMergeNodeElement[JC] def getClientRects(): DOMRectList
 SVGFEMergeNodeElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEMergeNodeElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEMergeNodeElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -16835,8 +16835,8 @@ SVGFEMorphologyElement[JC] def getAttribute(name: String): String
 SVGFEMorphologyElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEMorphologyElement[JC] def getAttributeNode(name: String): Attr
 SVGFEMorphologyElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEMorphologyElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEMorphologyElement[JC] def getClientRects(): ClientRectList
+SVGFEMorphologyElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEMorphologyElement[JC] def getClientRects(): DOMRectList
 SVGFEMorphologyElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEMorphologyElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEMorphologyElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -16952,8 +16952,8 @@ SVGFEOffsetElement[JC] def getAttribute(name: String): String
 SVGFEOffsetElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEOffsetElement[JC] def getAttributeNode(name: String): Attr
 SVGFEOffsetElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEOffsetElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEOffsetElement[JC] def getClientRects(): ClientRectList
+SVGFEOffsetElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEOffsetElement[JC] def getClientRects(): DOMRectList
 SVGFEOffsetElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEOffsetElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEOffsetElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -17060,8 +17060,8 @@ SVGFEPointLightElement[JC] def getAttribute(name: String): String
 SVGFEPointLightElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFEPointLightElement[JC] def getAttributeNode(name: String): Attr
 SVGFEPointLightElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFEPointLightElement[JC] def getBoundingClientRect(): ClientRect
-SVGFEPointLightElement[JC] def getClientRects(): ClientRectList
+SVGFEPointLightElement[JC] def getBoundingClientRect(): DOMRect
+SVGFEPointLightElement[JC] def getClientRects(): DOMRectList
 SVGFEPointLightElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFEPointLightElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEPointLightElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -17165,8 +17165,8 @@ SVGFESpecularLightingElement[JC] def getAttribute(name: String): String
 SVGFESpecularLightingElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFESpecularLightingElement[JC] def getAttributeNode(name: String): Attr
 SVGFESpecularLightingElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFESpecularLightingElement[JC] def getBoundingClientRect(): ClientRect
-SVGFESpecularLightingElement[JC] def getClientRects(): ClientRectList
+SVGFESpecularLightingElement[JC] def getBoundingClientRect(): DOMRect
+SVGFESpecularLightingElement[JC] def getClientRects(): DOMRectList
 SVGFESpecularLightingElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFESpecularLightingElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFESpecularLightingElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -17278,8 +17278,8 @@ SVGFESpotLightElement[JC] def getAttribute(name: String): String
 SVGFESpotLightElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFESpotLightElement[JC] def getAttributeNode(name: String): Attr
 SVGFESpotLightElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFESpotLightElement[JC] def getBoundingClientRect(): ClientRect
-SVGFESpotLightElement[JC] def getClientRects(): ClientRectList
+SVGFESpotLightElement[JC] def getBoundingClientRect(): DOMRect
+SVGFESpotLightElement[JC] def getClientRects(): DOMRectList
 SVGFESpotLightElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFESpotLightElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFESpotLightElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -17388,8 +17388,8 @@ SVGFETileElement[JC] def getAttribute(name: String): String
 SVGFETileElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFETileElement[JC] def getAttributeNode(name: String): Attr
 SVGFETileElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFETileElement[JC] def getBoundingClientRect(): ClientRect
-SVGFETileElement[JC] def getClientRects(): ClientRectList
+SVGFETileElement[JC] def getBoundingClientRect(): DOMRect
+SVGFETileElement[JC] def getClientRects(): DOMRectList
 SVGFETileElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFETileElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFETileElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -17499,8 +17499,8 @@ SVGFETurbulenceElement[JC] def getAttribute(name: String): String
 SVGFETurbulenceElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFETurbulenceElement[JC] def getAttributeNode(name: String): Attr
 SVGFETurbulenceElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFETurbulenceElement[JC] def getBoundingClientRect(): ClientRect
-SVGFETurbulenceElement[JC] def getClientRects(): ClientRectList
+SVGFETurbulenceElement[JC] def getBoundingClientRect(): DOMRect
+SVGFETurbulenceElement[JC] def getClientRects(): DOMRectList
 SVGFETurbulenceElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFETurbulenceElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFETurbulenceElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -17624,8 +17624,8 @@ SVGFilterElement[JC] def getAttribute(name: String): String
 SVGFilterElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGFilterElement[JC] def getAttributeNode(name: String): Attr
 SVGFilterElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGFilterElement[JC] def getBoundingClientRect(): ClientRect
-SVGFilterElement[JC] def getClientRects(): ClientRectList
+SVGFilterElement[JC] def getBoundingClientRect(): DOMRect
+SVGFilterElement[JC] def getClientRects(): DOMRectList
 SVGFilterElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGFilterElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFilterElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -17748,9 +17748,9 @@ SVGGElement[JC] def getAttributeNS(namespaceURI: String, localName: String): Str
 SVGGElement[JC] def getAttributeNode(name: String): Attr
 SVGGElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGGElement[JC] def getBBox(): SVGRect
-SVGGElement[JC] def getBoundingClientRect(): ClientRect
+SVGGElement[JC] def getBoundingClientRect(): DOMRect
 SVGGElement[JC] def getCTM(): SVGMatrix
-SVGGElement[JC] def getClientRects(): ClientRectList
+SVGGElement[JC] def getClientRects(): DOMRectList
 SVGGElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGGElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGGElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -17866,8 +17866,8 @@ SVGGradientElement[JC] def getAttribute(name: String): String
 SVGGradientElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGGradientElement[JC] def getAttributeNode(name: String): Attr
 SVGGradientElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGGradientElement[JC] def getBoundingClientRect(): ClientRect
-SVGGradientElement[JC] def getClientRects(): ClientRectList
+SVGGradientElement[JC] def getBoundingClientRect(): DOMRect
+SVGGradientElement[JC] def getClientRects(): DOMRectList
 SVGGradientElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGGradientElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGGradientElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -17980,9 +17980,9 @@ SVGImageElement[JC] def getAttributeNS(namespaceURI: String, localName: String):
 SVGImageElement[JC] def getAttributeNode(name: String): Attr
 SVGImageElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGImageElement[JC] def getBBox(): SVGRect
-SVGImageElement[JC] def getBoundingClientRect(): ClientRect
+SVGImageElement[JC] def getBoundingClientRect(): DOMRect
 SVGImageElement[JC] def getCTM(): SVGMatrix
-SVGImageElement[JC] def getClientRects(): ClientRectList
+SVGImageElement[JC] def getClientRects(): DOMRectList
 SVGImageElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGImageElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGImageElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -18130,9 +18130,9 @@ SVGLineElement[JC] def getAttributeNS(namespaceURI: String, localName: String): 
 SVGLineElement[JC] def getAttributeNode(name: String): Attr
 SVGLineElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGLineElement[JC] def getBBox(): SVGRect
-SVGLineElement[JC] def getBoundingClientRect(): ClientRect
+SVGLineElement[JC] def getBoundingClientRect(): DOMRect
 SVGLineElement[JC] def getCTM(): SVGMatrix
-SVGLineElement[JC] def getClientRects(): ClientRectList
+SVGLineElement[JC] def getClientRects(): DOMRectList
 SVGLineElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGLineElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGLineElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -18252,8 +18252,8 @@ SVGLinearGradientElement[JC] def getAttribute(name: String): String
 SVGLinearGradientElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGLinearGradientElement[JC] def getAttributeNode(name: String): Attr
 SVGLinearGradientElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGLinearGradientElement[JC] def getBoundingClientRect(): ClientRect
-SVGLinearGradientElement[JC] def getClientRects(): ClientRectList
+SVGLinearGradientElement[JC] def getBoundingClientRect(): DOMRect
+SVGLinearGradientElement[JC] def getClientRects(): DOMRectList
 SVGLinearGradientElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGLinearGradientElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGLinearGradientElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -18370,8 +18370,8 @@ SVGMarkerElement[JC] def getAttribute(name: String): String
 SVGMarkerElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGMarkerElement[JC] def getAttributeNode(name: String): Attr
 SVGMarkerElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGMarkerElement[JC] def getBoundingClientRect(): ClientRect
-SVGMarkerElement[JC] def getClientRects(): ClientRectList
+SVGMarkerElement[JC] def getBoundingClientRect(): DOMRect
+SVGMarkerElement[JC] def getClientRects(): DOMRectList
 SVGMarkerElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGMarkerElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGMarkerElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -18496,8 +18496,8 @@ SVGMaskElement[JC] def getAttribute(name: String): String
 SVGMaskElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGMaskElement[JC] def getAttributeNode(name: String): Attr
 SVGMaskElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGMaskElement[JC] def getBoundingClientRect(): ClientRect
-SVGMaskElement[JC] def getClientRects(): ClientRectList
+SVGMaskElement[JC] def getBoundingClientRect(): DOMRect
+SVGMaskElement[JC] def getClientRects(): DOMRectList
 SVGMaskElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGMaskElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGMaskElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -18627,8 +18627,8 @@ SVGMetadataElement[JC] def getAttribute(name: String): String
 SVGMetadataElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGMetadataElement[JC] def getAttributeNode(name: String): Attr
 SVGMetadataElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGMetadataElement[JC] def getBoundingClientRect(): ClientRect
-SVGMetadataElement[JC] def getClientRects(): ClientRectList
+SVGMetadataElement[JC] def getBoundingClientRect(): DOMRect
+SVGMetadataElement[JC] def getClientRects(): DOMRectList
 SVGMetadataElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGMetadataElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGMetadataElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -18760,9 +18760,9 @@ SVGPathElement[JC] def getAttributeNS(namespaceURI: String, localName: String): 
 SVGPathElement[JC] def getAttributeNode(name: String): Attr
 SVGPathElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGPathElement[JC] def getBBox(): SVGRect
-SVGPathElement[JC] def getBoundingClientRect(): ClientRect
+SVGPathElement[JC] def getBoundingClientRect(): DOMRect
 SVGPathElement[JC] def getCTM(): SVGMatrix
-SVGPathElement[JC] def getClientRects(): ClientRectList
+SVGPathElement[JC] def getClientRects(): DOMRectList
 SVGPathElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGPathElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGPathElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -19008,8 +19008,8 @@ SVGPatternElement[JC] def getAttribute(name: String): String
 SVGPatternElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGPatternElement[JC] def getAttributeNode(name: String): Attr
 SVGPatternElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGPatternElement[JC] def getBoundingClientRect(): ClientRect
-SVGPatternElement[JC] def getClientRects(): ClientRectList
+SVGPatternElement[JC] def getBoundingClientRect(): DOMRect
+SVGPatternElement[JC] def getClientRects(): DOMRectList
 SVGPatternElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGPatternElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGPatternElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -19142,9 +19142,9 @@ SVGPolygonElement[JC] def getAttributeNS(namespaceURI: String, localName: String
 SVGPolygonElement[JC] def getAttributeNode(name: String): Attr
 SVGPolygonElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGPolygonElement[JC] def getBBox(): SVGRect
-SVGPolygonElement[JC] def getBoundingClientRect(): ClientRect
+SVGPolygonElement[JC] def getBoundingClientRect(): DOMRect
 SVGPolygonElement[JC] def getCTM(): SVGMatrix
-SVGPolygonElement[JC] def getClientRects(): ClientRectList
+SVGPolygonElement[JC] def getClientRects(): DOMRectList
 SVGPolygonElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGPolygonElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGPolygonElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -19261,9 +19261,9 @@ SVGPolylineElement[JC] def getAttributeNS(namespaceURI: String, localName: Strin
 SVGPolylineElement[JC] def getAttributeNode(name: String): Attr
 SVGPolylineElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGPolylineElement[JC] def getBBox(): SVGRect
-SVGPolylineElement[JC] def getBoundingClientRect(): ClientRect
+SVGPolylineElement[JC] def getBoundingClientRect(): DOMRect
 SVGPolylineElement[JC] def getCTM(): SVGMatrix
-SVGPolylineElement[JC] def getClientRects(): ClientRectList
+SVGPolylineElement[JC] def getClientRects(): DOMRectList
 SVGPolylineElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGPolylineElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGPolylineElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -19400,8 +19400,8 @@ SVGRadialGradientElement[JC] def getAttribute(name: String): String
 SVGRadialGradientElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGRadialGradientElement[JC] def getAttributeNode(name: String): Attr
 SVGRadialGradientElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGRadialGradientElement[JC] def getBoundingClientRect(): ClientRect
-SVGRadialGradientElement[JC] def getClientRects(): ClientRectList
+SVGRadialGradientElement[JC] def getBoundingClientRect(): DOMRect
+SVGRadialGradientElement[JC] def getClientRects(): DOMRectList
 SVGRadialGradientElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGRadialGradientElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGRadialGradientElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -19515,9 +19515,9 @@ SVGRectElement[JC] def getAttributeNS(namespaceURI: String, localName: String): 
 SVGRectElement[JC] def getAttributeNode(name: String): Attr
 SVGRectElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGRectElement[JC] def getBBox(): SVGRect
-SVGRectElement[JC] def getBoundingClientRect(): ClientRect
+SVGRectElement[JC] def getBoundingClientRect(): DOMRect
 SVGRectElement[JC] def getCTM(): SVGMatrix
-SVGRectElement[JC] def getClientRects(): ClientRectList
+SVGRectElement[JC] def getClientRects(): DOMRectList
 SVGRectElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGRectElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGRectElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -19655,9 +19655,9 @@ SVGSVGElement[JC] def getAttributeNS(namespaceURI: String, localName: String): S
 SVGSVGElement[JC] def getAttributeNode(name: String): Attr
 SVGSVGElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGSVGElement[JC] def getBBox(): SVGRect
-SVGSVGElement[JC] def getBoundingClientRect(): ClientRect
+SVGSVGElement[JC] def getBoundingClientRect(): DOMRect
 SVGSVGElement[JC] def getCTM(): SVGMatrix
-SVGSVGElement[JC] def getClientRects(): ClientRectList
+SVGSVGElement[JC] def getClientRects(): DOMRectList
 SVGSVGElement[JC] def getComputedStyle(elt: Element, pseudoElt: String?): CSSStyleDeclaration
 SVGSVGElement[JC] def getCurrentTime(): Int
 SVGSVGElement[JC] def getElementById(elementId: String): Element
@@ -19797,8 +19797,8 @@ SVGScriptElement[JC] def getAttribute(name: String): String
 SVGScriptElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGScriptElement[JC] def getAttributeNode(name: String): Attr
 SVGScriptElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGScriptElement[JC] def getBoundingClientRect(): ClientRect
-SVGScriptElement[JC] def getClientRects(): ClientRectList
+SVGScriptElement[JC] def getBoundingClientRect(): DOMRect
+SVGScriptElement[JC] def getClientRects(): DOMRectList
 SVGScriptElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGScriptElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGScriptElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -19901,8 +19901,8 @@ SVGStopElement[JC] def getAttribute(name: String): String
 SVGStopElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGStopElement[JC] def getAttributeNode(name: String): Attr
 SVGStopElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGStopElement[JC] def getBoundingClientRect(): ClientRect
-SVGStopElement[JC] def getClientRects(): ClientRectList
+SVGStopElement[JC] def getBoundingClientRect(): DOMRect
+SVGStopElement[JC] def getClientRects(): DOMRectList
 SVGStopElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGStopElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGStopElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -20014,8 +20014,8 @@ SVGStyleElement[JC] def getAttribute(name: String): String
 SVGStyleElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGStyleElement[JC] def getAttributeNode(name: String): Attr
 SVGStyleElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGStyleElement[JC] def getBoundingClientRect(): ClientRect
-SVGStyleElement[JC] def getClientRects(): ClientRectList
+SVGStyleElement[JC] def getBoundingClientRect(): DOMRect
+SVGStyleElement[JC] def getClientRects(): DOMRectList
 SVGStyleElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGStyleElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGStyleElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -20124,9 +20124,9 @@ SVGSwitchElement[JC] def getAttributeNS(namespaceURI: String, localName: String)
 SVGSwitchElement[JC] def getAttributeNode(name: String): Attr
 SVGSwitchElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGSwitchElement[JC] def getBBox(): SVGRect
-SVGSwitchElement[JC] def getBoundingClientRect(): ClientRect
+SVGSwitchElement[JC] def getBoundingClientRect(): DOMRect
 SVGSwitchElement[JC] def getCTM(): SVGMatrix
-SVGSwitchElement[JC] def getClientRects(): ClientRectList
+SVGSwitchElement[JC] def getClientRects(): DOMRectList
 SVGSwitchElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGSwitchElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGSwitchElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -20239,8 +20239,8 @@ SVGSymbolElement[JC] def getAttribute(name: String): String
 SVGSymbolElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGSymbolElement[JC] def getAttributeNode(name: String): Attr
 SVGSymbolElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGSymbolElement[JC] def getBoundingClientRect(): ClientRect
-SVGSymbolElement[JC] def getClientRects(): ClientRectList
+SVGSymbolElement[JC] def getBoundingClientRect(): DOMRect
+SVGSymbolElement[JC] def getClientRects(): DOMRectList
 SVGSymbolElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGSymbolElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGSymbolElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -20349,9 +20349,9 @@ SVGTSpanElement[JC] def getAttribute(name: String): String
 SVGTSpanElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGTSpanElement[JC] def getAttributeNode(name: String): Attr
 SVGTSpanElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGTSpanElement[JC] def getBoundingClientRect(): ClientRect
+SVGTSpanElement[JC] def getBoundingClientRect(): DOMRect
 SVGTSpanElement[JC] def getCharNumAtPosition(point: SVGPoint): Int
-SVGTSpanElement[JC] def getClientRects(): ClientRectList
+SVGTSpanElement[JC] def getClientRects(): DOMRectList
 SVGTSpanElement[JC] def getComputedTextLength(): Double
 SVGTSpanElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGTSpanElement[JC] def getElementsByTagName(name: String): HTMLCollection
@@ -20477,9 +20477,9 @@ SVGTextContentElement[JC] def getAttribute(name: String): String
 SVGTextContentElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGTextContentElement[JC] def getAttributeNode(name: String): Attr
 SVGTextContentElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGTextContentElement[JC] def getBoundingClientRect(): ClientRect
+SVGTextContentElement[JC] def getBoundingClientRect(): DOMRect
 SVGTextContentElement[JC] def getCharNumAtPosition(point: SVGPoint): Int
-SVGTextContentElement[JC] def getClientRects(): ClientRectList
+SVGTextContentElement[JC] def getClientRects(): DOMRectList
 SVGTextContentElement[JC] def getComputedTextLength(): Double
 SVGTextContentElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGTextContentElement[JC] def getElementsByTagName(name: String): HTMLCollection
@@ -20605,10 +20605,10 @@ SVGTextElement[JC] def getAttributeNS(namespaceURI: String, localName: String): 
 SVGTextElement[JC] def getAttributeNode(name: String): Attr
 SVGTextElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGTextElement[JC] def getBBox(): SVGRect
-SVGTextElement[JC] def getBoundingClientRect(): ClientRect
+SVGTextElement[JC] def getBoundingClientRect(): DOMRect
 SVGTextElement[JC] def getCTM(): SVGMatrix
 SVGTextElement[JC] def getCharNumAtPosition(point: SVGPoint): Int
-SVGTextElement[JC] def getClientRects(): ClientRectList
+SVGTextElement[JC] def getClientRects(): DOMRectList
 SVGTextElement[JC] def getComputedTextLength(): Double
 SVGTextElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGTextElement[JC] def getElementsByTagName(name: String): HTMLCollection
@@ -20734,9 +20734,9 @@ SVGTextPathElement[JC] def getAttribute(name: String): String
 SVGTextPathElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGTextPathElement[JC] def getAttributeNode(name: String): Attr
 SVGTextPathElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGTextPathElement[JC] def getBoundingClientRect(): ClientRect
+SVGTextPathElement[JC] def getBoundingClientRect(): DOMRect
 SVGTextPathElement[JC] def getCharNumAtPosition(point: SVGPoint): Int
-SVGTextPathElement[JC] def getClientRects(): ClientRectList
+SVGTextPathElement[JC] def getClientRects(): DOMRectList
 SVGTextPathElement[JC] def getComputedTextLength(): Double
 SVGTextPathElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGTextPathElement[JC] def getElementsByTagName(name: String): HTMLCollection
@@ -20867,9 +20867,9 @@ SVGTextPositioningElement[JC] def getAttribute(name: String): String
 SVGTextPositioningElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGTextPositioningElement[JC] def getAttributeNode(name: String): Attr
 SVGTextPositioningElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGTextPositioningElement[JC] def getBoundingClientRect(): ClientRect
+SVGTextPositioningElement[JC] def getBoundingClientRect(): DOMRect
 SVGTextPositioningElement[JC] def getCharNumAtPosition(point: SVGPoint): Int
-SVGTextPositioningElement[JC] def getClientRects(): ClientRectList
+SVGTextPositioningElement[JC] def getClientRects(): DOMRectList
 SVGTextPositioningElement[JC] def getComputedTextLength(): Double
 SVGTextPositioningElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGTextPositioningElement[JC] def getElementsByTagName(name: String): HTMLCollection
@@ -20990,8 +20990,8 @@ SVGTitleElement[JC] def getAttribute(name: String): String
 SVGTitleElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGTitleElement[JC] def getAttributeNode(name: String): Attr
 SVGTitleElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGTitleElement[JC] def getBoundingClientRect(): ClientRect
-SVGTitleElement[JC] def getClientRects(): ClientRectList
+SVGTitleElement[JC] def getBoundingClientRect(): DOMRect
+SVGTitleElement[JC] def getClientRects(): DOMRectList
 SVGTitleElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGTitleElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGTitleElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -21139,9 +21139,9 @@ SVGUseElement[JC] def getAttributeNS(namespaceURI: String, localName: String): S
 SVGUseElement[JC] def getAttributeNode(name: String): Attr
 SVGUseElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 SVGUseElement[JC] def getBBox(): SVGRect
-SVGUseElement[JC] def getBoundingClientRect(): ClientRect
+SVGUseElement[JC] def getBoundingClientRect(): DOMRect
 SVGUseElement[JC] def getCTM(): SVGMatrix
-SVGUseElement[JC] def getClientRects(): ClientRectList
+SVGUseElement[JC] def getClientRects(): DOMRectList
 SVGUseElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGUseElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGUseElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -21259,8 +21259,8 @@ SVGViewElement[JC] def getAttribute(name: String): String
 SVGViewElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 SVGViewElement[JC] def getAttributeNode(name: String): Attr
 SVGViewElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
-SVGViewElement[JC] def getBoundingClientRect(): ClientRect
-SVGViewElement[JC] def getClientRects(): ClientRectList
+SVGViewElement[JC] def getBoundingClientRect(): DOMRect
+SVGViewElement[JC] def getClientRects(): DOMRectList
 SVGViewElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGViewElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGViewElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
@@ -24712,6 +24712,8 @@ idb[SO] type VersionChangeEvent = IDBVersionChangeEvent
 idb[SO] def Cursor = IDBCursor
 idb[SO] def KeyRange = IDBKeyRange
 idb[SO] def Transaction = IDBTransaction
+package[SO] type ClientRect = DOMRect  (@deprecated in 2.0.0)
+package[SO] type ClientRectList = DOMRectList  (@deprecated in 2.0.0)
 package[SO] type Transferable = ArrayBuffer | MessagePort
 package[SO] @js.native @JSGlobal("console") val console: Console
 package[SO] lazy val css: DeprecatedCSSAliases.type  (@deprecated in 2.0.0)
@@ -24753,8 +24755,8 @@ raw[SO] type CanvasRenderingContext2D = dom.CanvasRenderingContext2D  (@deprecat
 raw[SO] type ChannelMergerNode = dom.ChannelMergerNode  (@deprecated in 2.0.0)
 raw[SO] type ChannelSplitterNode = dom.ChannelSplitterNode  (@deprecated in 2.0.0)
 raw[SO] type CharacterData = dom.CharacterData  (@deprecated in 2.0.0)
-raw[SO] type ClientRect = dom.ClientRect  (@deprecated in 2.0.0)
-raw[SO] type ClientRectList = dom.ClientRectList  (@deprecated in 2.0.0)
+raw[SO] type ClientRect = dom.DOMRect  (@deprecated in 2.0.0)
+raw[SO] type ClientRectList = dom.DOMRectList  (@deprecated in 2.0.0)
 raw[SO] type ClipboardEvent = dom.ClipboardEvent  (@deprecated in 2.0.0)
 raw[SO] type ClipboardEventInit = dom.ClipboardEventInit  (@deprecated in 2.0.0)
 raw[SO] type CloseEvent = dom.CloseEvent  (@deprecated in 2.0.0)
@@ -24770,6 +24772,8 @@ raw[SO] type DOMException = dom.DOMException  (@deprecated in 2.0.0)
 raw[SO] type DOMImplementation = dom.DOMImplementation  (@deprecated in 2.0.0)
 raw[SO] type DOMList[T] = dom.DOMList[T]  (@deprecated in 2.0.0)
 raw[SO] type DOMParser = dom.DOMParser  (@deprecated in 2.0.0)
+raw[SO] type DOMRect = dom.DOMRect  (@deprecated in 2.0.0)
+raw[SO] type DOMRectList = dom.DOMRectList  (@deprecated in 2.0.0)
 raw[SO] type DOMSettableTokenList = dom.DOMSettableTokenList  (@deprecated in 2.0.0)
 raw[SO] type DOMStringList = dom.DOMStringList  (@deprecated in 2.0.0)
 raw[SO] type DOMTokenList = dom.DOMTokenList  (@deprecated in 2.0.0)
