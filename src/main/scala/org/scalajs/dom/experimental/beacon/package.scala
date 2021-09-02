@@ -1,6 +1,6 @@
 package org.scalajs.dom.experimental
 
-import org.scalajs.dom.raw.{Navigator, WorkerNavigator}
+import org.scalajs.dom.{Navigator, WorkerNavigator}
 import scala.language.implicitConversions
 import scala.scalajs.js
 

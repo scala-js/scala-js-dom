@@ -3,10 +3,9 @@
  */
 package org.scalajs.dom.experimental.webrtc
 
-import org.scalajs.dom.Blob
 import org.scalajs.dom.experimental.mediastream._
-import org.scalajs.dom.raw.{
-  DOMException, Event, EventInit, EventTarget, MessageEvent
+import org.scalajs.dom.{
+  Blob, DOMException, Event, EventInit, EventTarget, MessageEvent
 }
 import scala.scalajs.js
 import scala.scalajs.js.annotation._

@@ -4,7 +4,7 @@
  * Based on https://www.khronos.org/registry/webgl/specs/1.0/
  */
 
-package org.scalajs.dom.raw
+package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._

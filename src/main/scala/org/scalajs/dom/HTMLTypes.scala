@@ -7,7 +7,7 @@
  * Everything else is under the MIT License
  * http://opensource.org/licenses/MIT
  */
-package org.scalajs.dom.raw
+package org.scalajs.dom
 
 import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js

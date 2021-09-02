@@ -3,7 +3,6 @@ package org.scalajs.dom.tests.shared
 import java.util.UUID
 import org.junit.Test
 import org.scalajs.dom._
-import org.scalajs.dom.raw._
 
 trait SharedTests {
   import SharedTests._

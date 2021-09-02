@@ -1,6 +1,6 @@
 package org.scalajs.dom.experimental
 
-import org.scalajs.dom.raw.EventTarget
+import org.scalajs.dom.EventTarget
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 

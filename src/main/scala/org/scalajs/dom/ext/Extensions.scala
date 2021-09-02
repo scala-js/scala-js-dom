@@ -2,13 +2,12 @@ package org.scalajs.dom.ext
 
 import java.nio.ByteBuffer
 import org.scalajs.dom
-import org.scalajs.dom.raw.{Blob, KeyboardEvent}
-import org.scalajs.dom.{FormData, html, raw}
+import org.scalajs.dom.{Blob, FormData, KeyboardEvent, html}
 import scala.concurrent.{Future, Promise}
 import scala.language.implicitConversions
 import scala.scalajs.js
+import scala.scalajs.js.typedarray.ArrayBufferView
 import scala.scalajs.js.typedarray.TypedArrayBufferOps._
-import scala.scalajs.js.typedarray._
 
 /**
  * Used to extend out javascript *Collections to make them usable as normal
@@ -314,7 +313,7 @@ trait TouchEvents extends js.Object {
    *
    * MDN
    */
-  var ontouchstart: js.Function1[raw.TouchEvent, _] = js.native
+  var ontouchstart: js.Function1[dom.TouchEvent, _] = js.native
 
   /**
    * The touchmove event is fired when a touch point is moved along the touch
@@ -322,7 +321,7 @@ trait TouchEvents extends js.Object {
    *
    * MDN
    */
-  var ontouchmove: js.Function1[raw.TouchEvent, _] = js.native
+  var ontouchmove: js.Function1[dom.TouchEvent, _] = js.native
 
   /**
    * The touchend event is fired when a touch point is removed from the touch
@@ -330,7 +329,7 @@ trait TouchEvents extends js.Object {
    *
    * MDN
    */
-  var ontouchend: js.Function1[raw.TouchEvent, _] = js.native
+  var ontouchend: js.Function1[dom.TouchEvent, _] = js.native
 
   /**
    * The touchcancel event is fired when a touch point has been disrupted in an
@@ -338,21 +337,21 @@ trait TouchEvents extends js.Object {
    *
    * MDN
    */
-  var ontouchcancel: js.Function1[raw.TouchEvent, _] = js.native
+  var ontouchcancel: js.Function1[dom.TouchEvent, _] = js.native
 }
 
 /**
- * Implicits to add touch event handlers to [[raw.HTMLDocument]] and
- * [[raw.Window]].
+ * Implicits to add touch event handlers to [[dom.HTMLDocument]] and
+ * [[dom.Window]].
  *
  * @note Touch events may not be available on all modern browsers. See
  *       http://www.quirksmode.org/mobile/tableTouch.html#t00 for a compatibility
  *       table.
  */
 object TouchEvents {
-  implicit def HTMLDocumentToTouchEvents(html: raw.HTMLDocument): TouchEvents =
+  implicit def HTMLDocumentToTouchEvents(html: dom.HTMLDocument): TouchEvents =
     html.asInstanceOf[TouchEvents]
 
-  implicit def WindowToTouchEvents(window: raw.Window): TouchEvents =
+  implicit def WindowToTouchEvents(window: dom.Window): TouchEvents =
     window.asInstanceOf[TouchEvents]
 }

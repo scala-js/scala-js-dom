@@ -20,7 +20,7 @@ package object permissions {
     val prompt = "prompt".asInstanceOf[PermissionState]
   }
 
-  trait PermissionStatus extends dom.raw.EventTarget {
+  trait PermissionStatus extends dom.EventTarget {
     val state: PermissionState
     var onchange: js.Function1[dom.Event, _]
   }
@@ -73,8 +73,7 @@ package object permissions {
     val permissions: Permissions
   }
 
-  implicit def toPermissions(
-      navigator: dom.raw.Navigator): PermissionsNavigator =
+  implicit def toPermissions(navigator: dom.Navigator): PermissionsNavigator =
     navigator.asInstanceOf[PermissionsNavigator]
 
 }

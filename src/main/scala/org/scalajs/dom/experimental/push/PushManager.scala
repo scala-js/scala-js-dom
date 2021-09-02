@@ -1,7 +1,7 @@
 package org.scalajs.dom.experimental.push
 
+import org.scalajs.dom.Blob
 import org.scalajs.dom.experimental.serviceworkers.ExtendableEvent
-import org.scalajs.dom.raw.Blob
 import scala.scalajs.js
 import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 

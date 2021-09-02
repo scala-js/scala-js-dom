@@ -1,4 +1,4 @@
-package org.scalajs.dom.raw
+package org.scalajs.dom
 
 import org.scalajs.dom.experimental.cachestorage.CacheStorage
 import org.scalajs.dom.experimental.{RequestInfo, RequestInit, Response}
