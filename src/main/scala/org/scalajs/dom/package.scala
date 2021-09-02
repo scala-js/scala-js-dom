@@ -1,6 +1,7 @@
 package org.scalajs
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBuffer
 import scala.scalajs.js.|
 
@@ -20,10 +21,17 @@ package object dom {
    */
   type Transferable = ArrayBuffer | MessagePort
 
-  lazy val window: Window = js.Dynamic.global.window.asInstanceOf[Window]
-  lazy val document: html.Document = window.document
+  @js.native
+  @JSGlobal("window")
+  val window: Window = js.native
 
-  lazy val console: Console = js.Dynamic.global.console.asInstanceOf[Console] // #411
+  @js.native
+  @JSGlobal("document")
+  val document: html.Document = js.native
+
+  @js.native
+  @JSGlobal("console")
+  val console: Console = js.native
 
   @deprecated("directly use the dom.CSS* types and values instead", "2.0.0")
   lazy val css: DeprecatedCSSAliases.type = DeprecatedCSSAliases

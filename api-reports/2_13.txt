@@ -24786,10 +24786,10 @@ idb[SO] def Cursor = IDBCursor
 idb[SO] def KeyRange = IDBKeyRange
 idb[SO] def Transaction = IDBTransaction
 package[SO] type Transferable = ArrayBuffer | MessagePort
-package[SO] lazy val console: Console
+package[SO] @js.native @JSGlobal("console") val console: Console
 package[SO] lazy val css: DeprecatedCSSAliases.type  (@deprecated in 2.0.0)
-package[SO] lazy val document: html.Document
-package[SO] lazy val window: Window
+package[SO] @js.native @JSGlobal("document") val document: html.Document
+package[SO] @js.native @JSGlobal("window") val window: Window
 raw[SO] type AbstractWorker = dom.AbstractWorker  (@deprecated in 2.0.0)
 raw[SO] type AnalyserNode = dom.AnalyserNode  (@deprecated in 2.0.0)
 raw[SO] type AnimationEvent = dom.AnimationEvent  (@deprecated in 2.0.0)
