@@ -501,7 +501,9 @@ class CSSPageRule extends CSSRule {
  */
 @js.native
 @JSGlobal
-class CSSRuleList extends DOMList[CSSRule]
+class CSSRuleList private[this] () extends DOMList[CSSRule] {
+  def item(index: Int): CSSRule = js.native
+}
 
 /**
  * The CSSKeyframesRule interface describes an object representing a complete set

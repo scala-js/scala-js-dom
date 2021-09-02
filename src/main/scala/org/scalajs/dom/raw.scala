@@ -146,7 +146,7 @@ object raw {
   @deprecated("use dom.DOMException instead", "2.0.0")
   lazy val DOMException: dom.DOMException.type = dom.DOMException
   @deprecated("use dom.DOMList instead", "2.0.0")
-  type DOMList[T] = dom.DOMList[T]
+  type DOMList[+T] = dom.DOMList[T]
   @deprecated("use dom.DOMParser instead", "2.0.0")
   type DOMParser = dom.DOMParser
   @deprecated("use dom.DOMRect instead", "2.0.0")
@@ -451,9 +451,9 @@ object raw {
   @deprecated("use dom.NodeIterator instead", "2.0.0")
   type NodeIterator = dom.NodeIterator
   @deprecated("use dom.NodeList instead", "2.0.0")
-  type NodeList = dom.NodeList
+  type NodeList[+T <: Node] = dom.NodeList[T]
   @deprecated("use dom.NodeListOf instead", "2.0.0")
-  type NodeListOf[TNode <: Node] = dom.NodeListOf[TNode]
+  type NodeListOf[+T <: Node] = NodeList[T]
 
   @deprecated("use dom.OfflineAudioContext instead", "2.0.0")
   type OfflineAudioContext = dom.OfflineAudioContext

@@ -82,7 +82,7 @@ Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Attr[JC] def appendChild(newChild: Node): Node
 Attr[JC] def attributes: NamedNodeMap
-Attr[JC] def childNodes: NodeList
+Attr[JC] def childNodes: NodeList[Node]
 Attr[JC] def cloneNode(deep: Boolean?): Node
 Attr[JC] def compareDocumentPosition(other: Node): Int
 Attr[JC] def contains(otherNode: Node): Boolean
@@ -256,16 +256,14 @@ AudioTrack[JT] val label: String
 AudioTrack[JT] val language: String
 AudioTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-AudioTrackList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
+AudioTrackList[JT] @JSBracketAccess def apply(index: Int): T
 AudioTrackList[JT] def dispatchEvent(evt: Event): Boolean
 AudioTrackList[JT] def getTrackById(id: String): AudioTrack
-AudioTrackList[JT] def item(index: Int): T
 AudioTrackList[JT] def length: Int
 AudioTrackList[JT] var onaddtrack: js.Function1[TrackEvent, _]
 AudioTrackList[JT] var onchange: js.Function1[js.Any, _]
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-AudioTrackList[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 BeforeUnloadEvent[JC] def bubbles: Boolean
 BeforeUnloadEvent[JC] def cancelBubble: Boolean
 BeforeUnloadEvent[JC] def cancelable: Boolean
@@ -316,7 +314,7 @@ CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 CDATASection[JC] def appendChild(newChild: Node): Node
 CDATASection[JC] def appendData(arg: String): Unit
 CDATASection[JC] def attributes: NamedNodeMap
-CDATASection[JC] def childNodes: NodeList
+CDATASection[JC] def childNodes: NodeList[Node]
 CDATASection[JC] def cloneNode(deep: Boolean?): Node
 CDATASection[JC] def compareDocumentPosition(other: Node): Int
 CDATASection[JC] def contains(otherNode: Node): Boolean
@@ -509,10 +507,9 @@ CSSRule[JO] var NAMESPACE_RULE: Int
 CSSRule[JO] var PAGE_RULE: Int
 CSSRule[JO] var STYLE_RULE: Int
 CSSRule[JO] var UNKNOWN_RULE: Int
-CSSRuleList[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-CSSRuleList[JC] def item(index: Int): T
+CSSRuleList[JC] @JSBracketAccess def apply(index: Int): T
+CSSRuleList[JC] def item(index: Int): CSSRule
 CSSRuleList[JC] def length: Int
-CSSRuleList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 CSSStyleDeclaration[JC] var alignmentBaseline: String
 CSSStyleDeclaration[JC] var animation: String
 CSSStyleDeclaration[JC] var animationDelay: String
@@ -842,7 +839,7 @@ CharacterData[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 CharacterData[JC] def appendChild(newChild: Node): Node
 CharacterData[JC] def appendData(arg: String): Unit
 CharacterData[JC] def attributes: NamedNodeMap
-CharacterData[JC] def childNodes: NodeList
+CharacterData[JC] def childNodes: NodeList[Node]
 CharacterData[JC] def cloneNode(deep: Boolean?): Node
 CharacterData[JC] def compareDocumentPosition(other: Node): Int
 CharacterData[JC] def contains(otherNode: Node): Boolean
@@ -932,7 +929,7 @@ Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functi
 Comment[JC] def appendChild(newChild: Node): Node
 Comment[JC] def appendData(arg: String): Unit
 Comment[JC] def attributes: NamedNodeMap
-Comment[JC] def childNodes: NodeList
+Comment[JC] def childNodes: NodeList[Node]
 Comment[JC] def cloneNode(deep: Boolean?): Node
 Comment[JC] def compareDocumentPosition(other: Node): Int
 Comment[JC] def contains(otherNode: Node): Boolean
@@ -1100,10 +1097,14 @@ DOMImplementation[JC] def createDocumentType(qualifiedName: String, publicId: St
 DOMImplementation[JC] def createHTMLDocument(title: String): Document
 DOMImplementation[JC] def hasFeature(feature: String): Boolean
 DOMImplementation[JC] def hasFeature(feature: String, version: String): Boolean
-DOMList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-DOMList[JT] def item(index: Int): T
+DOMList[JT] @JSBracketAccess def apply(index: Int): T
 DOMList[JT] def length: Int
-DOMList[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
+DOMList[SO] def apply(x: Int): T
+DOMList[SO] implicit def domListAsSeq[T](domList: DOMList[T]): scala.collection.Seq[T]
+DOMList[SO] def hasNext: Boolean
+DOMList[SO] def iterator: Iterator[T]
+DOMList[SO] def length: Int
+DOMList[SO] def next(): T
 DOMParser[JC] def parseFromString(source: String, mimeType: String): Document
 DOMRect[JC] var bottom: Double
 DOMRect[JC] var height: Double
@@ -1111,34 +1112,29 @@ DOMRect[JC] var left: Double
 DOMRect[JC] var right: Double
 DOMRect[JC] var top: Double
 DOMRect[JC] var width: Double
-DOMRectList[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-DOMRectList[JC] def item(index: Int): T
+DOMRectList[JC] @JSBracketAccess def apply(index: Int): T
 DOMRectList[JC] def length: Int
-DOMRectList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 DOMSettableTokenList[JT] def add(token: String): Unit
-DOMSettableTokenList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
+DOMSettableTokenList[JT] @JSBracketAccess def apply(index: Int): T
 DOMSettableTokenList[JT] def contains(token: String): Boolean
-DOMSettableTokenList[JT] def item(index: Int): T
+DOMSettableTokenList[JT] def item(index: Int): String
 DOMSettableTokenList[JT] def length: Int
 DOMSettableTokenList[JT] def remove(token: String): Unit
 DOMSettableTokenList[JT] def toggle(token: String): Boolean
 DOMSettableTokenList[JT] def toggle(token: String, force: Boolean): Boolean
-DOMSettableTokenList[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 DOMSettableTokenList[JT] def value: String
-DOMStringList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-DOMStringList[JT] def contains(str: String): Boolean
-DOMStringList[JT] def item(index: Int): T
-DOMStringList[JT] def length: Int
-DOMStringList[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
-DOMTokenList[JT] def add(token: String): Unit
-DOMTokenList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-DOMTokenList[JT] def contains(token: String): Boolean
-DOMTokenList[JT] def item(index: Int): T
-DOMTokenList[JT] def length: Int
-DOMTokenList[JT] def remove(token: String): Unit
-DOMTokenList[JT] def toggle(token: String): Boolean
-DOMTokenList[JT] def toggle(token: String, force: Boolean): Boolean
-DOMTokenList[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
+DOMStringList[JC] @JSBracketAccess def apply(index: Int): T
+DOMStringList[JC] def contains(str: String): Boolean
+DOMStringList[JC] def item(index: Int): String
+DOMStringList[JC] def length: Int
+DOMTokenList[JC] def add(token: String): Unit
+DOMTokenList[JC] @JSBracketAccess def apply(index: Int): T
+DOMTokenList[JC] def contains(token: String): Boolean
+DOMTokenList[JC] def item(index: Int): String
+DOMTokenList[JC] def length: Int
+DOMTokenList[JC] def remove(token: String): Unit
+DOMTokenList[JC] def toggle(token: String): Boolean
+DOMTokenList[JC] def toggle(token: String, force: Boolean): Boolean
 DataTransfer[JT] def clearData(format: String?): Unit
 DataTransfer[JT] var dropEffect: String
 DataTransfer[JT] var effectAllowed: String
@@ -1216,7 +1212,7 @@ Document[JC] def appendChild(newChild: Node): Node
 Document[JC] def attributes: NamedNodeMap
 Document[JC] def characterSet: String
 Document[JC] def childElementCount: Int
-Document[JC] def childNodes: NodeList
+Document[JC] def childNodes: NodeList[Node]
 Document[JC] def children: HTMLCollection
 Document[JC] def cloneNode(deep: Boolean?): Node
 Document[JC] def compareDocumentPosition(other: Node): Int
@@ -1250,7 +1246,7 @@ Document[JC] def fullscreenElement: Element
 Document[JC] def fullscreenEnabled: Boolean
 Document[JC] def getElementById(elementId: String): Element
 Document[JC] def getElementsByClassName(classNames: String): HTMLCollection
-Document[JC] def getElementsByName(elementName: String): NodeList
+Document[JC] def getElementsByName(elementName: String): NodeList[Node]
 Document[JC] def getElementsByTagName(name: String): HTMLCollection
 Document[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
 Document[JC] def hasAttributes(): Boolean
@@ -1282,7 +1278,7 @@ Document[JC] def ownerDocument: Document
 Document[JC] def parentNode: Node
 Document[JC] def previousSibling: Node
 Document[JC] def querySelector(selectors: String): Element
-Document[JC] def querySelectorAll(selectors: String): NodeList
+Document[JC] def querySelectorAll(selectors: String): NodeList[Node]
 Document[JC] def removeChild(oldChild: Node): Node
 Document[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Document[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -1297,7 +1293,7 @@ DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: 
 DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentFragment[JC] def appendChild(newChild: Node): Node
 DocumentFragment[JC] def attributes: NamedNodeMap
-DocumentFragment[JC] def childNodes: NodeList
+DocumentFragment[JC] def childNodes: NodeList[Node]
 DocumentFragment[JC] def cloneNode(deep: Boolean?): Node
 DocumentFragment[JC] def compareDocumentPosition(other: Node): Int
 DocumentFragment[JC] def contains(otherNode: Node): Boolean
@@ -1325,7 +1321,7 @@ DocumentFragment[JC] def ownerDocument: Document
 DocumentFragment[JC] def parentNode: Node
 DocumentFragment[JC] def previousSibling: Node
 DocumentFragment[JC] def querySelector(selectors: String): Element
-DocumentFragment[JC] def querySelectorAll(selectors: String): NodeList
+DocumentFragment[JC] def querySelectorAll(selectors: String): NodeList[Node]
 DocumentFragment[JC] def removeChild(oldChild: Node): Node
 DocumentFragment[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DocumentFragment[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -1335,7 +1331,7 @@ DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentType[JC] def appendChild(newChild: Node): Node
 DocumentType[JC] def attributes: NamedNodeMap
-DocumentType[JC] def childNodes: NodeList
+DocumentType[JC] def childNodes: NodeList[Node]
 DocumentType[JC] def cloneNode(deep: Boolean?): Node
 DocumentType[JC] def compareDocumentPosition(other: Node): Int
 DocumentType[JC] def contains(otherNode: Node): Boolean
@@ -1434,7 +1430,7 @@ Element[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functi
 Element[JC] def appendChild(newChild: Node): Node
 Element[JC] def attributes: NamedNodeMap
 Element[JC] def childElementCount: Int
-Element[JC] def childNodes: NodeList
+Element[JC] def childNodes: NodeList[Node]
 Element[JC] def children: HTMLCollection
 Element[JC] var classList: DOMTokenList
 Element[JC] def clientHeight: Int
@@ -1495,7 +1491,7 @@ Element[JC] def prefix: String
 Element[JC] def previousElementSibling: Element
 Element[JC] def previousSibling: Node
 Element[JC] def querySelector(selectors: String): Element
-Element[JC] def querySelectorAll(selectors: String): NodeList
+Element[JC] def querySelectorAll(selectors: String): NodeList[Node]
 Element[JC] def removeAttribute(name: String): Unit
 Element[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 Element[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -1590,10 +1586,9 @@ File[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
 File[JC] def stream(): ReadableStream[Byte]
 File[JC] def text(): js.Promise[String]
 File[JC] def `type`: String
-FileList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-FileList[JT] def item(index: Int): T
-FileList[JT] def length: Int
-FileList[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
+FileList[JC] @JSBracketAccess def apply(index: Int): T
+FileList[JC] def item(index: Int): File
+FileList[JC] def length: Int
 FileReader[JC] def abort(): Unit
 FileReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 FileReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -1669,7 +1664,7 @@ HTMLAnchorElement[JC] def attributes: NamedNodeMap
 HTMLAnchorElement[JC] def blur(): Unit
 HTMLAnchorElement[JC] var charset: String
 HTMLAnchorElement[JC] def childElementCount: Int
-HTMLAnchorElement[JC] def childNodes: NodeList
+HTMLAnchorElement[JC] def childNodes: NodeList[Node]
 HTMLAnchorElement[JC] def children: HTMLCollection
 HTMLAnchorElement[JC] var classList: DOMTokenList
 HTMLAnchorElement[JC] var className: String
@@ -1831,7 +1826,7 @@ HTMLAnchorElement[JC] def previousElementSibling: Element
 HTMLAnchorElement[JC] def previousSibling: Node
 HTMLAnchorElement[JC] var protocol: String
 HTMLAnchorElement[JC] def querySelector(selectors: String): Element
-HTMLAnchorElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLAnchorElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLAnchorElement[JC] var readyState: js.Any
 HTMLAnchorElement[JC] var recordNumber: js.Any
 HTMLAnchorElement[JC] var rel: String
@@ -1873,7 +1868,7 @@ HTMLAreaElement[JC] def appendChild(newChild: Node): Node
 HTMLAreaElement[JC] def attributes: NamedNodeMap
 HTMLAreaElement[JC] def blur(): Unit
 HTMLAreaElement[JC] def childElementCount: Int
-HTMLAreaElement[JC] def childNodes: NodeList
+HTMLAreaElement[JC] def childNodes: NodeList[Node]
 HTMLAreaElement[JC] def children: HTMLCollection
 HTMLAreaElement[JC] var classList: DOMTokenList
 HTMLAreaElement[JC] var className: String
@@ -2034,7 +2029,7 @@ HTMLAreaElement[JC] def previousElementSibling: Element
 HTMLAreaElement[JC] def previousSibling: Node
 HTMLAreaElement[JC] var protocol: String
 HTMLAreaElement[JC] def querySelector(selectors: String): Element
-HTMLAreaElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLAreaElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLAreaElement[JC] var readyState: js.Any
 HTMLAreaElement[JC] var recordNumber: js.Any
 HTMLAreaElement[JC] def removeAttribute(name: String): Unit
@@ -2077,7 +2072,7 @@ HTMLAudioElement[JC] def blur(): Unit
 HTMLAudioElement[JC] def buffered: TimeRanges
 HTMLAudioElement[JC] def canPlayType(`type`: String): String
 HTMLAudioElement[JC] def childElementCount: Int
-HTMLAudioElement[JC] def childNodes: NodeList
+HTMLAudioElement[JC] def childNodes: NodeList[Node]
 HTMLAudioElement[JC] def children: HTMLCollection
 HTMLAudioElement[JC] var classList: DOMTokenList
 HTMLAudioElement[JC] var className: String
@@ -2248,7 +2243,7 @@ HTMLAudioElement[JC] var preload: String
 HTMLAudioElement[JC] def previousElementSibling: Element
 HTMLAudioElement[JC] def previousSibling: Node
 HTMLAudioElement[JC] def querySelector(selectors: String): Element
-HTMLAudioElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLAudioElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLAudioElement[JC] var readyState: js.Any
 HTMLAudioElement[JC] var recordNumber: js.Any
 HTMLAudioElement[JC] def removeAttribute(name: String): Unit
@@ -2290,7 +2285,7 @@ HTMLBRElement[JC] def appendChild(newChild: Node): Node
 HTMLBRElement[JC] def attributes: NamedNodeMap
 HTMLBRElement[JC] def blur(): Unit
 HTMLBRElement[JC] def childElementCount: Int
-HTMLBRElement[JC] def childNodes: NodeList
+HTMLBRElement[JC] def childNodes: NodeList[Node]
 HTMLBRElement[JC] def children: HTMLCollection
 HTMLBRElement[JC] var classList: DOMTokenList
 HTMLBRElement[JC] var className: String
@@ -2443,7 +2438,7 @@ HTMLBRElement[JC] def prefix: String
 HTMLBRElement[JC] def previousElementSibling: Element
 HTMLBRElement[JC] def previousSibling: Node
 HTMLBRElement[JC] def querySelector(selectors: String): Element
-HTMLBRElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLBRElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLBRElement[JC] var readyState: js.Any
 HTMLBRElement[JC] var recordNumber: js.Any
 HTMLBRElement[JC] def removeAttribute(name: String): Unit
@@ -2479,7 +2474,7 @@ HTMLBaseElement[JC] def appendChild(newChild: Node): Node
 HTMLBaseElement[JC] def attributes: NamedNodeMap
 HTMLBaseElement[JC] def blur(): Unit
 HTMLBaseElement[JC] def childElementCount: Int
-HTMLBaseElement[JC] def childNodes: NodeList
+HTMLBaseElement[JC] def childNodes: NodeList[Node]
 HTMLBaseElement[JC] def children: HTMLCollection
 HTMLBaseElement[JC] var classList: DOMTokenList
 HTMLBaseElement[JC] var className: String
@@ -2633,7 +2628,7 @@ HTMLBaseElement[JC] def prefix: String
 HTMLBaseElement[JC] def previousElementSibling: Element
 HTMLBaseElement[JC] def previousSibling: Node
 HTMLBaseElement[JC] def querySelector(selectors: String): Element
-HTMLBaseElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLBaseElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLBaseElement[JC] var readyState: js.Any
 HTMLBaseElement[JC] var recordNumber: js.Any
 HTMLBaseElement[JC] def removeAttribute(name: String): Unit
@@ -2670,7 +2665,7 @@ HTMLBodyElement[JC] def appendChild(newChild: Node): Node
 HTMLBodyElement[JC] def attributes: NamedNodeMap
 HTMLBodyElement[JC] def blur(): Unit
 HTMLBodyElement[JC] def childElementCount: Int
-HTMLBodyElement[JC] def childNodes: NodeList
+HTMLBodyElement[JC] def childNodes: NodeList[Node]
 HTMLBodyElement[JC] def children: HTMLCollection
 HTMLBodyElement[JC] var classList: DOMTokenList
 HTMLBodyElement[JC] var className: String
@@ -2836,7 +2831,7 @@ HTMLBodyElement[JC] def prefix: String
 HTMLBodyElement[JC] def previousElementSibling: Element
 HTMLBodyElement[JC] def previousSibling: Node
 HTMLBodyElement[JC] def querySelector(selectors: String): Element
-HTMLBodyElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLBodyElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLBodyElement[JC] var readyState: js.Any
 HTMLBodyElement[JC] var recordNumber: js.Any
 HTMLBodyElement[JC] def removeAttribute(name: String): Unit
@@ -2875,7 +2870,7 @@ HTMLButtonElement[JC] var autofocus: Boolean
 HTMLButtonElement[JC] def blur(): Unit
 HTMLButtonElement[JC] def checkValidity(): Boolean
 HTMLButtonElement[JC] def childElementCount: Int
-HTMLButtonElement[JC] def childNodes: NodeList
+HTMLButtonElement[JC] def childNodes: NodeList[Node]
 HTMLButtonElement[JC] def children: HTMLCollection
 HTMLButtonElement[JC] var classList: DOMTokenList
 HTMLButtonElement[JC] var className: String
@@ -3036,7 +3031,7 @@ HTMLButtonElement[JC] def prefix: String
 HTMLButtonElement[JC] def previousElementSibling: Element
 HTMLButtonElement[JC] def previousSibling: Node
 HTMLButtonElement[JC] def querySelector(selectors: String): Element
-HTMLButtonElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLButtonElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLButtonElement[JC] var readyState: js.Any
 HTMLButtonElement[JC] var recordNumber: js.Any
 HTMLButtonElement[JC] def removeAttribute(name: String): Unit
@@ -3079,7 +3074,7 @@ HTMLCanvasElement[JC] def appendChild(newChild: Node): Node
 HTMLCanvasElement[JC] def attributes: NamedNodeMap
 HTMLCanvasElement[JC] def blur(): Unit
 HTMLCanvasElement[JC] def childElementCount: Int
-HTMLCanvasElement[JC] def childNodes: NodeList
+HTMLCanvasElement[JC] def childNodes: NodeList[Node]
 HTMLCanvasElement[JC] def children: HTMLCollection
 HTMLCanvasElement[JC] var classList: DOMTokenList
 HTMLCanvasElement[JC] var className: String
@@ -3234,7 +3229,7 @@ HTMLCanvasElement[JC] def prefix: String
 HTMLCanvasElement[JC] def previousElementSibling: Element
 HTMLCanvasElement[JC] def previousSibling: Node
 HTMLCanvasElement[JC] def querySelector(selectors: String): Element
-HTMLCanvasElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLCanvasElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLCanvasElement[JC] var readyState: js.Any
 HTMLCanvasElement[JC] var recordNumber: js.Any
 HTMLCanvasElement[JC] def removeAttribute(name: String): Unit
@@ -3265,11 +3260,10 @@ HTMLCanvasElement[JC] var textContent: String
 HTMLCanvasElement[JC] var title: String
 HTMLCanvasElement[JC] def toDataURL(`type`: String, args: js.Any*): String
 HTMLCanvasElement[JC] var width: Int
-HTMLCollection[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-HTMLCollection[JC] def item(index: Int): T
+HTMLCollection[JC] @JSBracketAccess def apply(index: Int): T
+HTMLCollection[JC] def item(index: Int): Element
 HTMLCollection[JC] def length: Int
 HTMLCollection[JC] def namedItem(name: String): Element
-HTMLCollection[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 HTMLDListElement[JC] var accessKey: String
 HTMLDListElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 HTMLDListElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -3277,7 +3271,7 @@ HTMLDListElement[JC] def appendChild(newChild: Node): Node
 HTMLDListElement[JC] def attributes: NamedNodeMap
 HTMLDListElement[JC] def blur(): Unit
 HTMLDListElement[JC] def childElementCount: Int
-HTMLDListElement[JC] def childNodes: NodeList
+HTMLDListElement[JC] def childNodes: NodeList[Node]
 HTMLDListElement[JC] def children: HTMLCollection
 HTMLDListElement[JC] var classList: DOMTokenList
 HTMLDListElement[JC] var className: String
@@ -3430,7 +3424,7 @@ HTMLDListElement[JC] def prefix: String
 HTMLDListElement[JC] def previousElementSibling: Element
 HTMLDListElement[JC] def previousSibling: Node
 HTMLDListElement[JC] def querySelector(selectors: String): Element
-HTMLDListElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLDListElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLDListElement[JC] var readyState: js.Any
 HTMLDListElement[JC] var recordNumber: js.Any
 HTMLDListElement[JC] def removeAttribute(name: String): Unit
@@ -3466,7 +3460,7 @@ HTMLDataListElement[JC] def appendChild(newChild: Node): Node
 HTMLDataListElement[JC] def attributes: NamedNodeMap
 HTMLDataListElement[JC] def blur(): Unit
 HTMLDataListElement[JC] def childElementCount: Int
-HTMLDataListElement[JC] def childNodes: NodeList
+HTMLDataListElement[JC] def childNodes: NodeList[Node]
 HTMLDataListElement[JC] def children: HTMLCollection
 HTMLDataListElement[JC] var classList: DOMTokenList
 HTMLDataListElement[JC] var className: String
@@ -3620,7 +3614,7 @@ HTMLDataListElement[JC] def prefix: String
 HTMLDataListElement[JC] def previousElementSibling: Element
 HTMLDataListElement[JC] def previousSibling: Node
 HTMLDataListElement[JC] def querySelector(selectors: String): Element
-HTMLDataListElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLDataListElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLDataListElement[JC] var readyState: js.Any
 HTMLDataListElement[JC] var recordNumber: js.Any
 HTMLDataListElement[JC] def removeAttribute(name: String): Unit
@@ -3656,7 +3650,7 @@ HTMLDivElement[JC] def appendChild(newChild: Node): Node
 HTMLDivElement[JC] def attributes: NamedNodeMap
 HTMLDivElement[JC] def blur(): Unit
 HTMLDivElement[JC] def childElementCount: Int
-HTMLDivElement[JC] def childNodes: NodeList
+HTMLDivElement[JC] def childNodes: NodeList[Node]
 HTMLDivElement[JC] def children: HTMLCollection
 HTMLDivElement[JC] var classList: DOMTokenList
 HTMLDivElement[JC] var className: String
@@ -3809,7 +3803,7 @@ HTMLDivElement[JC] def prefix: String
 HTMLDivElement[JC] def previousElementSibling: Element
 HTMLDivElement[JC] def previousSibling: Node
 HTMLDivElement[JC] def querySelector(selectors: String): Element
-HTMLDivElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLDivElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLDivElement[JC] var readyState: js.Any
 HTMLDivElement[JC] var recordNumber: js.Any
 HTMLDivElement[JC] def removeAttribute(name: String): Unit
@@ -3849,7 +3843,7 @@ HTMLDocument[JC] def attributes: NamedNodeMap
 HTMLDocument[JC] var body: HTMLElement
 HTMLDocument[JC] def characterSet: String
 HTMLDocument[JC] def childElementCount: Int
-HTMLDocument[JC] def childNodes: NodeList
+HTMLDocument[JC] def childNodes: NodeList[Node]
 HTMLDocument[JC] def children: HTMLCollection
 HTMLDocument[JC] def cloneNode(deep: Boolean?): Node
 HTMLDocument[JC] def close(): Unit
@@ -3896,7 +3890,7 @@ HTMLDocument[JC] def fullscreenElement: Element
 HTMLDocument[JC] def fullscreenEnabled: Boolean
 HTMLDocument[JC] def getElementById(elementId: String): Element
 HTMLDocument[JC] def getElementsByClassName(classNames: String): HTMLCollection
-HTMLDocument[JC] def getElementsByName(elementName: String): NodeList
+HTMLDocument[JC] def getElementsByName(elementName: String): NodeList[Node]
 HTMLDocument[JC] def getElementsByTagName(name: String): HTMLCollection
 HTMLDocument[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
 HTMLDocument[JC] def getSelection(): Selection
@@ -4015,7 +4009,7 @@ HTMLDocument[JC] def queryCommandSupported(commandId: String): Boolean
 HTMLDocument[JC] def queryCommandText(commandId: String): String
 HTMLDocument[JC] def queryCommandValue(commandId: String): String
 HTMLDocument[JC] def querySelector(selectors: String): Element
-HTMLDocument[JC] def querySelectorAll(selectors: String): NodeList
+HTMLDocument[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLDocument[JC] def readyState: String
 HTMLDocument[JC] def referrer: String
 HTMLDocument[JC] def removeChild(oldChild: Node): Node
@@ -4039,7 +4033,7 @@ HTMLElement[JC] def appendChild(newChild: Node): Node
 HTMLElement[JC] def attributes: NamedNodeMap
 HTMLElement[JC] def blur(): Unit
 HTMLElement[JC] def childElementCount: Int
-HTMLElement[JC] def childNodes: NodeList
+HTMLElement[JC] def childNodes: NodeList[Node]
 HTMLElement[JC] def children: HTMLCollection
 HTMLElement[JC] var classList: DOMTokenList
 HTMLElement[JC] var className: String
@@ -4192,7 +4186,7 @@ HTMLElement[JC] def prefix: String
 HTMLElement[JC] def previousElementSibling: Element
 HTMLElement[JC] def previousSibling: Node
 HTMLElement[JC] def querySelector(selectors: String): Element
-HTMLElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLElement[JC] var readyState: js.Any
 HTMLElement[JC] var recordNumber: js.Any
 HTMLElement[JC] def removeAttribute(name: String): Unit
@@ -4228,7 +4222,7 @@ HTMLEmbedElement[JC] def appendChild(newChild: Node): Node
 HTMLEmbedElement[JC] def attributes: NamedNodeMap
 HTMLEmbedElement[JC] def blur(): Unit
 HTMLEmbedElement[JC] def childElementCount: Int
-HTMLEmbedElement[JC] def childNodes: NodeList
+HTMLEmbedElement[JC] def childNodes: NodeList[Node]
 HTMLEmbedElement[JC] def children: HTMLCollection
 HTMLEmbedElement[JC] var classList: DOMTokenList
 HTMLEmbedElement[JC] var className: String
@@ -4383,7 +4377,7 @@ HTMLEmbedElement[JC] def prefix: String
 HTMLEmbedElement[JC] def previousElementSibling: Element
 HTMLEmbedElement[JC] def previousSibling: Node
 HTMLEmbedElement[JC] def querySelector(selectors: String): Element
-HTMLEmbedElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLEmbedElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLEmbedElement[JC] var readyState: js.Any
 HTMLEmbedElement[JC] var recordNumber: js.Any
 HTMLEmbedElement[JC] def removeAttribute(name: String): Unit
@@ -4422,7 +4416,7 @@ HTMLFieldSetElement[JC] def attributes: NamedNodeMap
 HTMLFieldSetElement[JC] def blur(): Unit
 HTMLFieldSetElement[JC] def checkValidity(): Boolean
 HTMLFieldSetElement[JC] def childElementCount: Int
-HTMLFieldSetElement[JC] def childNodes: NodeList
+HTMLFieldSetElement[JC] def childNodes: NodeList[Node]
 HTMLFieldSetElement[JC] def children: HTMLCollection
 HTMLFieldSetElement[JC] var classList: DOMTokenList
 HTMLFieldSetElement[JC] var className: String
@@ -4577,7 +4571,7 @@ HTMLFieldSetElement[JC] def prefix: String
 HTMLFieldSetElement[JC] def previousElementSibling: Element
 HTMLFieldSetElement[JC] def previousSibling: Node
 HTMLFieldSetElement[JC] def querySelector(selectors: String): Element
-HTMLFieldSetElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLFieldSetElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLFieldSetElement[JC] var readyState: js.Any
 HTMLFieldSetElement[JC] var recordNumber: js.Any
 HTMLFieldSetElement[JC] def removeAttribute(name: String): Unit
@@ -4622,7 +4616,7 @@ HTMLFormElement[JC] var autocomplete: String
 HTMLFormElement[JC] def blur(): Unit
 HTMLFormElement[JC] def checkValidity(): Boolean
 HTMLFormElement[JC] def childElementCount: Int
-HTMLFormElement[JC] def childNodes: NodeList
+HTMLFormElement[JC] def childNodes: NodeList[Node]
 HTMLFormElement[JC] def children: HTMLCollection
 HTMLFormElement[JC] var classList: DOMTokenList
 HTMLFormElement[JC] var className: String
@@ -4784,7 +4778,7 @@ HTMLFormElement[JC] def prefix: String
 HTMLFormElement[JC] def previousElementSibling: Element
 HTMLFormElement[JC] def previousSibling: Node
 HTMLFormElement[JC] def querySelector(selectors: String): Element
-HTMLFormElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLFormElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLFormElement[JC] var readyState: js.Any
 HTMLFormElement[JC] var recordNumber: js.Any
 HTMLFormElement[JC] def removeAttribute(name: String): Unit
@@ -4824,7 +4818,7 @@ HTMLHRElement[JC] def appendChild(newChild: Node): Node
 HTMLHRElement[JC] def attributes: NamedNodeMap
 HTMLHRElement[JC] def blur(): Unit
 HTMLHRElement[JC] def childElementCount: Int
-HTMLHRElement[JC] def childNodes: NodeList
+HTMLHRElement[JC] def childNodes: NodeList[Node]
 HTMLHRElement[JC] def children: HTMLCollection
 HTMLHRElement[JC] var classList: DOMTokenList
 HTMLHRElement[JC] var className: String
@@ -4977,7 +4971,7 @@ HTMLHRElement[JC] def prefix: String
 HTMLHRElement[JC] def previousElementSibling: Element
 HTMLHRElement[JC] def previousSibling: Node
 HTMLHRElement[JC] def querySelector(selectors: String): Element
-HTMLHRElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLHRElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLHRElement[JC] var readyState: js.Any
 HTMLHRElement[JC] var recordNumber: js.Any
 HTMLHRElement[JC] def removeAttribute(name: String): Unit
@@ -5013,7 +5007,7 @@ HTMLHeadElement[JC] def appendChild(newChild: Node): Node
 HTMLHeadElement[JC] def attributes: NamedNodeMap
 HTMLHeadElement[JC] def blur(): Unit
 HTMLHeadElement[JC] def childElementCount: Int
-HTMLHeadElement[JC] def childNodes: NodeList
+HTMLHeadElement[JC] def childNodes: NodeList[Node]
 HTMLHeadElement[JC] def children: HTMLCollection
 HTMLHeadElement[JC] var classList: DOMTokenList
 HTMLHeadElement[JC] var className: String
@@ -5166,7 +5160,7 @@ HTMLHeadElement[JC] def prefix: String
 HTMLHeadElement[JC] def previousElementSibling: Element
 HTMLHeadElement[JC] def previousSibling: Node
 HTMLHeadElement[JC] def querySelector(selectors: String): Element
-HTMLHeadElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLHeadElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLHeadElement[JC] var readyState: js.Any
 HTMLHeadElement[JC] var recordNumber: js.Any
 HTMLHeadElement[JC] def removeAttribute(name: String): Unit
@@ -5202,7 +5196,7 @@ HTMLHeadingElement[JC] def appendChild(newChild: Node): Node
 HTMLHeadingElement[JC] def attributes: NamedNodeMap
 HTMLHeadingElement[JC] def blur(): Unit
 HTMLHeadingElement[JC] def childElementCount: Int
-HTMLHeadingElement[JC] def childNodes: NodeList
+HTMLHeadingElement[JC] def childNodes: NodeList[Node]
 HTMLHeadingElement[JC] def children: HTMLCollection
 HTMLHeadingElement[JC] var classList: DOMTokenList
 HTMLHeadingElement[JC] var className: String
@@ -5355,7 +5349,7 @@ HTMLHeadingElement[JC] def prefix: String
 HTMLHeadingElement[JC] def previousElementSibling: Element
 HTMLHeadingElement[JC] def previousSibling: Node
 HTMLHeadingElement[JC] def querySelector(selectors: String): Element
-HTMLHeadingElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLHeadingElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLHeadingElement[JC] var readyState: js.Any
 HTMLHeadingElement[JC] var recordNumber: js.Any
 HTMLHeadingElement[JC] def removeAttribute(name: String): Unit
@@ -5391,7 +5385,7 @@ HTMLHtmlElement[JC] def appendChild(newChild: Node): Node
 HTMLHtmlElement[JC] def attributes: NamedNodeMap
 HTMLHtmlElement[JC] def blur(): Unit
 HTMLHtmlElement[JC] def childElementCount: Int
-HTMLHtmlElement[JC] def childNodes: NodeList
+HTMLHtmlElement[JC] def childNodes: NodeList[Node]
 HTMLHtmlElement[JC] def children: HTMLCollection
 HTMLHtmlElement[JC] var classList: DOMTokenList
 HTMLHtmlElement[JC] var className: String
@@ -5544,7 +5538,7 @@ HTMLHtmlElement[JC] def prefix: String
 HTMLHtmlElement[JC] def previousElementSibling: Element
 HTMLHtmlElement[JC] def previousSibling: Node
 HTMLHtmlElement[JC] def querySelector(selectors: String): Element
-HTMLHtmlElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLHtmlElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLHtmlElement[JC] var readyState: js.Any
 HTMLHtmlElement[JC] var recordNumber: js.Any
 HTMLHtmlElement[JC] def removeAttribute(name: String): Unit
@@ -5581,7 +5575,7 @@ HTMLIFrameElement[JC] def attributes: NamedNodeMap
 HTMLIFrameElement[JC] def blur(): Unit
 HTMLIFrameElement[JC] var border: String
 HTMLIFrameElement[JC] def childElementCount: Int
-HTMLIFrameElement[JC] def childNodes: NodeList
+HTMLIFrameElement[JC] def childNodes: NodeList[Node]
 HTMLIFrameElement[JC] def children: HTMLCollection
 HTMLIFrameElement[JC] var classList: DOMTokenList
 HTMLIFrameElement[JC] var className: String
@@ -5740,7 +5734,7 @@ HTMLIFrameElement[JC] def prefix: String
 HTMLIFrameElement[JC] def previousElementSibling: Element
 HTMLIFrameElement[JC] def previousSibling: Node
 HTMLIFrameElement[JC] def querySelector(selectors: String): Element
-HTMLIFrameElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLIFrameElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLIFrameElement[JC] var readyState: js.Any
 HTMLIFrameElement[JC] var recordNumber: js.Any
 HTMLIFrameElement[JC] def removeAttribute(name: String): Unit
@@ -5781,7 +5775,7 @@ HTMLImageElement[JC] def appendChild(newChild: Node): Node
 HTMLImageElement[JC] def attributes: NamedNodeMap
 HTMLImageElement[JC] def blur(): Unit
 HTMLImageElement[JC] def childElementCount: Int
-HTMLImageElement[JC] def childNodes: NodeList
+HTMLImageElement[JC] def childNodes: NodeList[Node]
 HTMLImageElement[JC] def children: HTMLCollection
 HTMLImageElement[JC] var classList: DOMTokenList
 HTMLImageElement[JC] var className: String
@@ -5941,7 +5935,7 @@ HTMLImageElement[JC] def prefix: String
 HTMLImageElement[JC] def previousElementSibling: Element
 HTMLImageElement[JC] def previousSibling: Node
 HTMLImageElement[JC] def querySelector(selectors: String): Element
-HTMLImageElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLImageElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLImageElement[JC] var readyState: js.Any
 HTMLImageElement[JC] var recordNumber: js.Any
 HTMLImageElement[JC] def removeAttribute(name: String): Unit
@@ -5986,7 +5980,7 @@ HTMLInputElement[JC] def blur(): Unit
 HTMLInputElement[JC] def checkValidity(): Boolean
 HTMLInputElement[JC] var checked: Boolean
 HTMLInputElement[JC] def childElementCount: Int
-HTMLInputElement[JC] def childNodes: NodeList
+HTMLInputElement[JC] def childNodes: NodeList[Node]
 HTMLInputElement[JC] def children: HTMLCollection
 HTMLInputElement[JC] var classList: DOMTokenList
 HTMLInputElement[JC] var className: String
@@ -6159,7 +6153,7 @@ HTMLInputElement[JC] def prefix: String
 HTMLInputElement[JC] def previousElementSibling: Element
 HTMLInputElement[JC] def previousSibling: Node
 HTMLInputElement[JC] def querySelector(selectors: String): Element
-HTMLInputElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLInputElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLInputElement[JC] var readOnly: Boolean
 HTMLInputElement[JC] var readyState: js.Any
 HTMLInputElement[JC] var recordNumber: js.Any
@@ -6215,7 +6209,7 @@ HTMLLIElement[JC] def appendChild(newChild: Node): Node
 HTMLLIElement[JC] def attributes: NamedNodeMap
 HTMLLIElement[JC] def blur(): Unit
 HTMLLIElement[JC] def childElementCount: Int
-HTMLLIElement[JC] def childNodes: NodeList
+HTMLLIElement[JC] def childNodes: NodeList[Node]
 HTMLLIElement[JC] def children: HTMLCollection
 HTMLLIElement[JC] var classList: DOMTokenList
 HTMLLIElement[JC] var className: String
@@ -6368,7 +6362,7 @@ HTMLLIElement[JC] def prefix: String
 HTMLLIElement[JC] def previousElementSibling: Element
 HTMLLIElement[JC] def previousSibling: Node
 HTMLLIElement[JC] def querySelector(selectors: String): Element
-HTMLLIElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLLIElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLLIElement[JC] var readyState: js.Any
 HTMLLIElement[JC] var recordNumber: js.Any
 HTMLLIElement[JC] def removeAttribute(name: String): Unit
@@ -6405,7 +6399,7 @@ HTMLLabelElement[JC] def appendChild(newChild: Node): Node
 HTMLLabelElement[JC] def attributes: NamedNodeMap
 HTMLLabelElement[JC] def blur(): Unit
 HTMLLabelElement[JC] def childElementCount: Int
-HTMLLabelElement[JC] def childNodes: NodeList
+HTMLLabelElement[JC] def childNodes: NodeList[Node]
 HTMLLabelElement[JC] def children: HTMLCollection
 HTMLLabelElement[JC] var classList: DOMTokenList
 HTMLLabelElement[JC] var className: String
@@ -6560,7 +6554,7 @@ HTMLLabelElement[JC] def prefix: String
 HTMLLabelElement[JC] def previousElementSibling: Element
 HTMLLabelElement[JC] def previousSibling: Node
 HTMLLabelElement[JC] def querySelector(selectors: String): Element
-HTMLLabelElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLLabelElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLLabelElement[JC] var readyState: js.Any
 HTMLLabelElement[JC] var recordNumber: js.Any
 HTMLLabelElement[JC] def removeAttribute(name: String): Unit
@@ -6597,7 +6591,7 @@ HTMLLegendElement[JC] def appendChild(newChild: Node): Node
 HTMLLegendElement[JC] def attributes: NamedNodeMap
 HTMLLegendElement[JC] def blur(): Unit
 HTMLLegendElement[JC] def childElementCount: Int
-HTMLLegendElement[JC] def childNodes: NodeList
+HTMLLegendElement[JC] def childNodes: NodeList[Node]
 HTMLLegendElement[JC] def children: HTMLCollection
 HTMLLegendElement[JC] var classList: DOMTokenList
 HTMLLegendElement[JC] var className: String
@@ -6751,7 +6745,7 @@ HTMLLegendElement[JC] def prefix: String
 HTMLLegendElement[JC] def previousElementSibling: Element
 HTMLLegendElement[JC] def previousSibling: Node
 HTMLLegendElement[JC] def querySelector(selectors: String): Element
-HTMLLegendElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLLegendElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLLegendElement[JC] var readyState: js.Any
 HTMLLegendElement[JC] var recordNumber: js.Any
 HTMLLegendElement[JC] def removeAttribute(name: String): Unit
@@ -6787,7 +6781,7 @@ HTMLLinkElement[JC] def appendChild(newChild: Node): Node
 HTMLLinkElement[JC] def attributes: NamedNodeMap
 HTMLLinkElement[JC] def blur(): Unit
 HTMLLinkElement[JC] def childElementCount: Int
-HTMLLinkElement[JC] def childNodes: NodeList
+HTMLLinkElement[JC] def childNodes: NodeList[Node]
 HTMLLinkElement[JC] def children: HTMLCollection
 HTMLLinkElement[JC] var classList: DOMTokenList
 HTMLLinkElement[JC] var className: String
@@ -6943,7 +6937,7 @@ HTMLLinkElement[JC] def prefix: String
 HTMLLinkElement[JC] def previousElementSibling: Element
 HTMLLinkElement[JC] def previousSibling: Node
 HTMLLinkElement[JC] def querySelector(selectors: String): Element
-HTMLLinkElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLLinkElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLLinkElement[JC] var readyState: js.Any
 HTMLLinkElement[JC] var recordNumber: js.Any
 HTMLLinkElement[JC] var rel: String
@@ -6984,7 +6978,7 @@ HTMLMapElement[JC] def appendChild(newChild: Node): Node
 HTMLMapElement[JC] def attributes: NamedNodeMap
 HTMLMapElement[JC] def blur(): Unit
 HTMLMapElement[JC] def childElementCount: Int
-HTMLMapElement[JC] def childNodes: NodeList
+HTMLMapElement[JC] def childNodes: NodeList[Node]
 HTMLMapElement[JC] def children: HTMLCollection
 HTMLMapElement[JC] var classList: DOMTokenList
 HTMLMapElement[JC] var className: String
@@ -7138,7 +7132,7 @@ HTMLMapElement[JC] def prefix: String
 HTMLMapElement[JC] def previousElementSibling: Element
 HTMLMapElement[JC] def previousSibling: Node
 HTMLMapElement[JC] def querySelector(selectors: String): Element
-HTMLMapElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLMapElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLMapElement[JC] var readyState: js.Any
 HTMLMapElement[JC] var recordNumber: js.Any
 HTMLMapElement[JC] def removeAttribute(name: String): Unit
@@ -7178,7 +7172,7 @@ HTMLMediaElement[JC] def blur(): Unit
 HTMLMediaElement[JC] def buffered: TimeRanges
 HTMLMediaElement[JC] def canPlayType(`type`: String): String
 HTMLMediaElement[JC] def childElementCount: Int
-HTMLMediaElement[JC] def childNodes: NodeList
+HTMLMediaElement[JC] def childNodes: NodeList[Node]
 HTMLMediaElement[JC] def children: HTMLCollection
 HTMLMediaElement[JC] var classList: DOMTokenList
 HTMLMediaElement[JC] var className: String
@@ -7349,7 +7343,7 @@ HTMLMediaElement[JC] var preload: String
 HTMLMediaElement[JC] def previousElementSibling: Element
 HTMLMediaElement[JC] def previousSibling: Node
 HTMLMediaElement[JC] def querySelector(selectors: String): Element
-HTMLMediaElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLMediaElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLMediaElement[JC] var readyState: js.Any
 HTMLMediaElement[JC] var recordNumber: js.Any
 HTMLMediaElement[JC] def removeAttribute(name: String): Unit
@@ -7400,7 +7394,7 @@ HTMLMenuElement[JC] def appendChild(newChild: Node): Node
 HTMLMenuElement[JC] def attributes: NamedNodeMap
 HTMLMenuElement[JC] def blur(): Unit
 HTMLMenuElement[JC] def childElementCount: Int
-HTMLMenuElement[JC] def childNodes: NodeList
+HTMLMenuElement[JC] def childNodes: NodeList[Node]
 HTMLMenuElement[JC] def children: HTMLCollection
 HTMLMenuElement[JC] var classList: DOMTokenList
 HTMLMenuElement[JC] var className: String
@@ -7553,7 +7547,7 @@ HTMLMenuElement[JC] def prefix: String
 HTMLMenuElement[JC] def previousElementSibling: Element
 HTMLMenuElement[JC] def previousSibling: Node
 HTMLMenuElement[JC] def querySelector(selectors: String): Element
-HTMLMenuElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLMenuElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLMenuElement[JC] var readyState: js.Any
 HTMLMenuElement[JC] var recordNumber: js.Any
 HTMLMenuElement[JC] def removeAttribute(name: String): Unit
@@ -7591,7 +7585,7 @@ HTMLMetaElement[JC] def attributes: NamedNodeMap
 HTMLMetaElement[JC] def blur(): Unit
 HTMLMetaElement[JC] var charset: String
 HTMLMetaElement[JC] def childElementCount: Int
-HTMLMetaElement[JC] def childNodes: NodeList
+HTMLMetaElement[JC] def childNodes: NodeList[Node]
 HTMLMetaElement[JC] def children: HTMLCollection
 HTMLMetaElement[JC] var classList: DOMTokenList
 HTMLMetaElement[JC] var className: String
@@ -7747,7 +7741,7 @@ HTMLMetaElement[JC] def prefix: String
 HTMLMetaElement[JC] def previousElementSibling: Element
 HTMLMetaElement[JC] def previousSibling: Node
 HTMLMetaElement[JC] def querySelector(selectors: String): Element
-HTMLMetaElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLMetaElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLMetaElement[JC] var readyState: js.Any
 HTMLMetaElement[JC] var recordNumber: js.Any
 HTMLMetaElement[JC] def removeAttribute(name: String): Unit
@@ -7784,7 +7778,7 @@ HTMLModElement[JC] def appendChild(newChild: Node): Node
 HTMLModElement[JC] def attributes: NamedNodeMap
 HTMLModElement[JC] def blur(): Unit
 HTMLModElement[JC] def childElementCount: Int
-HTMLModElement[JC] def childNodes: NodeList
+HTMLModElement[JC] def childNodes: NodeList[Node]
 HTMLModElement[JC] def children: HTMLCollection
 HTMLModElement[JC] var cite: String
 HTMLModElement[JC] var classList: DOMTokenList
@@ -7939,7 +7933,7 @@ HTMLModElement[JC] def prefix: String
 HTMLModElement[JC] def previousElementSibling: Element
 HTMLModElement[JC] def previousSibling: Node
 HTMLModElement[JC] def querySelector(selectors: String): Element
-HTMLModElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLModElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLModElement[JC] var readyState: js.Any
 HTMLModElement[JC] var recordNumber: js.Any
 HTMLModElement[JC] def removeAttribute(name: String): Unit
@@ -7975,7 +7969,7 @@ HTMLOListElement[JC] def appendChild(newChild: Node): Node
 HTMLOListElement[JC] def attributes: NamedNodeMap
 HTMLOListElement[JC] def blur(): Unit
 HTMLOListElement[JC] def childElementCount: Int
-HTMLOListElement[JC] def childNodes: NodeList
+HTMLOListElement[JC] def childNodes: NodeList[Node]
 HTMLOListElement[JC] def children: HTMLCollection
 HTMLOListElement[JC] var classList: DOMTokenList
 HTMLOListElement[JC] var className: String
@@ -8128,7 +8122,7 @@ HTMLOListElement[JC] def prefix: String
 HTMLOListElement[JC] def previousElementSibling: Element
 HTMLOListElement[JC] def previousSibling: Node
 HTMLOListElement[JC] def querySelector(selectors: String): Element
-HTMLOListElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLOListElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLOListElement[JC] var readyState: js.Any
 HTMLOListElement[JC] var recordNumber: js.Any
 HTMLOListElement[JC] def removeAttribute(name: String): Unit
@@ -8169,7 +8163,7 @@ HTMLObjectElement[JC] def attributes: NamedNodeMap
 HTMLObjectElement[JC] def blur(): Unit
 HTMLObjectElement[JC] def checkValidity(): Boolean
 HTMLObjectElement[JC] def childElementCount: Int
-HTMLObjectElement[JC] def childNodes: NodeList
+HTMLObjectElement[JC] def childNodes: NodeList[Node]
 HTMLObjectElement[JC] def children: HTMLCollection
 HTMLObjectElement[JC] var classList: DOMTokenList
 HTMLObjectElement[JC] var className: String
@@ -8330,7 +8324,7 @@ HTMLObjectElement[JC] def prefix: String
 HTMLObjectElement[JC] def previousElementSibling: Element
 HTMLObjectElement[JC] def previousSibling: Node
 HTMLObjectElement[JC] def querySelector(selectors: String): Element
-HTMLObjectElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLObjectElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLObjectElement[JC] var readyState: js.Any
 HTMLObjectElement[JC] var recordNumber: js.Any
 HTMLObjectElement[JC] def removeAttribute(name: String): Unit
@@ -8373,7 +8367,7 @@ HTMLOptGroupElement[JC] def appendChild(newChild: Node): Node
 HTMLOptGroupElement[JC] def attributes: NamedNodeMap
 HTMLOptGroupElement[JC] def blur(): Unit
 HTMLOptGroupElement[JC] def childElementCount: Int
-HTMLOptGroupElement[JC] def childNodes: NodeList
+HTMLOptGroupElement[JC] def childNodes: NodeList[Node]
 HTMLOptGroupElement[JC] def children: HTMLCollection
 HTMLOptGroupElement[JC] var classList: DOMTokenList
 HTMLOptGroupElement[JC] var className: String
@@ -8528,7 +8522,7 @@ HTMLOptGroupElement[JC] def prefix: String
 HTMLOptGroupElement[JC] def previousElementSibling: Element
 HTMLOptGroupElement[JC] def previousSibling: Node
 HTMLOptGroupElement[JC] def querySelector(selectors: String): Element
-HTMLOptGroupElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLOptGroupElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLOptGroupElement[JC] var readyState: js.Any
 HTMLOptGroupElement[JC] var recordNumber: js.Any
 HTMLOptGroupElement[JC] def removeAttribute(name: String): Unit
@@ -8564,7 +8558,7 @@ HTMLOptionElement[JC] def appendChild(newChild: Node): Node
 HTMLOptionElement[JC] def attributes: NamedNodeMap
 HTMLOptionElement[JC] def blur(): Unit
 HTMLOptionElement[JC] def childElementCount: Int
-HTMLOptionElement[JC] def childNodes: NodeList
+HTMLOptionElement[JC] def childNodes: NodeList[Node]
 HTMLOptionElement[JC] def children: HTMLCollection
 HTMLOptionElement[JC] var classList: DOMTokenList
 HTMLOptionElement[JC] var className: String
@@ -8723,7 +8717,7 @@ HTMLOptionElement[JC] def prefix: String
 HTMLOptionElement[JC] def previousElementSibling: Element
 HTMLOptionElement[JC] def previousSibling: Node
 HTMLOptionElement[JC] def querySelector(selectors: String): Element
-HTMLOptionElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLOptionElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLOptionElement[JC] var readyState: js.Any
 HTMLOptionElement[JC] var recordNumber: js.Any
 HTMLOptionElement[JC] def removeAttribute(name: String): Unit
@@ -8762,7 +8756,7 @@ HTMLParagraphElement[JC] def appendChild(newChild: Node): Node
 HTMLParagraphElement[JC] def attributes: NamedNodeMap
 HTMLParagraphElement[JC] def blur(): Unit
 HTMLParagraphElement[JC] def childElementCount: Int
-HTMLParagraphElement[JC] def childNodes: NodeList
+HTMLParagraphElement[JC] def childNodes: NodeList[Node]
 HTMLParagraphElement[JC] def children: HTMLCollection
 HTMLParagraphElement[JC] var classList: DOMTokenList
 HTMLParagraphElement[JC] var className: String
@@ -8915,7 +8909,7 @@ HTMLParagraphElement[JC] def prefix: String
 HTMLParagraphElement[JC] def previousElementSibling: Element
 HTMLParagraphElement[JC] def previousSibling: Node
 HTMLParagraphElement[JC] def querySelector(selectors: String): Element
-HTMLParagraphElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLParagraphElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLParagraphElement[JC] var readyState: js.Any
 HTMLParagraphElement[JC] var recordNumber: js.Any
 HTMLParagraphElement[JC] def removeAttribute(name: String): Unit
@@ -8951,7 +8945,7 @@ HTMLParamElement[JC] def appendChild(newChild: Node): Node
 HTMLParamElement[JC] def attributes: NamedNodeMap
 HTMLParamElement[JC] def blur(): Unit
 HTMLParamElement[JC] def childElementCount: Int
-HTMLParamElement[JC] def childNodes: NodeList
+HTMLParamElement[JC] def childNodes: NodeList[Node]
 HTMLParamElement[JC] def children: HTMLCollection
 HTMLParamElement[JC] var classList: DOMTokenList
 HTMLParamElement[JC] var className: String
@@ -9105,7 +9099,7 @@ HTMLParamElement[JC] def prefix: String
 HTMLParamElement[JC] def previousElementSibling: Element
 HTMLParamElement[JC] def previousSibling: Node
 HTMLParamElement[JC] def querySelector(selectors: String): Element
-HTMLParamElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLParamElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLParamElement[JC] var readyState: js.Any
 HTMLParamElement[JC] var recordNumber: js.Any
 HTMLParamElement[JC] def removeAttribute(name: String): Unit
@@ -9142,7 +9136,7 @@ HTMLPreElement[JC] def appendChild(newChild: Node): Node
 HTMLPreElement[JC] def attributes: NamedNodeMap
 HTMLPreElement[JC] def blur(): Unit
 HTMLPreElement[JC] def childElementCount: Int
-HTMLPreElement[JC] def childNodes: NodeList
+HTMLPreElement[JC] def childNodes: NodeList[Node]
 HTMLPreElement[JC] def children: HTMLCollection
 HTMLPreElement[JC] var classList: DOMTokenList
 HTMLPreElement[JC] var className: String
@@ -9295,7 +9289,7 @@ HTMLPreElement[JC] def prefix: String
 HTMLPreElement[JC] def previousElementSibling: Element
 HTMLPreElement[JC] def previousSibling: Node
 HTMLPreElement[JC] def querySelector(selectors: String): Element
-HTMLPreElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLPreElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLPreElement[JC] var readyState: js.Any
 HTMLPreElement[JC] var recordNumber: js.Any
 HTMLPreElement[JC] def removeAttribute(name: String): Unit
@@ -9331,7 +9325,7 @@ HTMLProgressElement[JC] def appendChild(newChild: Node): Node
 HTMLProgressElement[JC] def attributes: NamedNodeMap
 HTMLProgressElement[JC] def blur(): Unit
 HTMLProgressElement[JC] def childElementCount: Int
-HTMLProgressElement[JC] def childNodes: NodeList
+HTMLProgressElement[JC] def childNodes: NodeList[Node]
 HTMLProgressElement[JC] def children: HTMLCollection
 HTMLProgressElement[JC] var classList: DOMTokenList
 HTMLProgressElement[JC] var className: String
@@ -9487,7 +9481,7 @@ HTMLProgressElement[JC] def prefix: String
 HTMLProgressElement[JC] def previousElementSibling: Element
 HTMLProgressElement[JC] def previousSibling: Node
 HTMLProgressElement[JC] def querySelector(selectors: String): Element
-HTMLProgressElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLProgressElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLProgressElement[JC] var readyState: js.Any
 HTMLProgressElement[JC] var recordNumber: js.Any
 HTMLProgressElement[JC] def removeAttribute(name: String): Unit
@@ -9524,7 +9518,7 @@ HTMLQuoteElement[JC] def appendChild(newChild: Node): Node
 HTMLQuoteElement[JC] def attributes: NamedNodeMap
 HTMLQuoteElement[JC] def blur(): Unit
 HTMLQuoteElement[JC] def childElementCount: Int
-HTMLQuoteElement[JC] def childNodes: NodeList
+HTMLQuoteElement[JC] def childNodes: NodeList[Node]
 HTMLQuoteElement[JC] def children: HTMLCollection
 HTMLQuoteElement[JC] var cite: String
 HTMLQuoteElement[JC] var classList: DOMTokenList
@@ -9679,7 +9673,7 @@ HTMLQuoteElement[JC] def prefix: String
 HTMLQuoteElement[JC] def previousElementSibling: Element
 HTMLQuoteElement[JC] def previousSibling: Node
 HTMLQuoteElement[JC] def querySelector(selectors: String): Element
-HTMLQuoteElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLQuoteElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLQuoteElement[JC] var readyState: js.Any
 HTMLQuoteElement[JC] var recordNumber: js.Any
 HTMLQuoteElement[JC] def removeAttribute(name: String): Unit
@@ -9717,7 +9711,7 @@ HTMLScriptElement[JC] def attributes: NamedNodeMap
 HTMLScriptElement[JC] def blur(): Unit
 HTMLScriptElement[JC] var charset: String
 HTMLScriptElement[JC] def childElementCount: Int
-HTMLScriptElement[JC] def childNodes: NodeList
+HTMLScriptElement[JC] def childNodes: NodeList[Node]
 HTMLScriptElement[JC] def children: HTMLCollection
 HTMLScriptElement[JC] var classList: DOMTokenList
 HTMLScriptElement[JC] var className: String
@@ -9873,7 +9867,7 @@ HTMLScriptElement[JC] def prefix: String
 HTMLScriptElement[JC] def previousElementSibling: Element
 HTMLScriptElement[JC] def previousSibling: Node
 HTMLScriptElement[JC] def querySelector(selectors: String): Element
-HTMLScriptElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLScriptElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLScriptElement[JC] var readyState: js.Any
 HTMLScriptElement[JC] var recordNumber: js.Any
 HTMLScriptElement[JC] def removeAttribute(name: String): Unit
@@ -9916,7 +9910,7 @@ HTMLSelectElement[JC] var autofocus: Boolean
 HTMLSelectElement[JC] def blur(): Unit
 HTMLSelectElement[JC] def checkValidity(): Boolean
 HTMLSelectElement[JC] def childElementCount: Int
-HTMLSelectElement[JC] def childNodes: NodeList
+HTMLSelectElement[JC] def childNodes: NodeList[Node]
 HTMLSelectElement[JC] def children: HTMLCollection
 HTMLSelectElement[JC] var classList: DOMTokenList
 HTMLSelectElement[JC] var className: String
@@ -10077,7 +10071,7 @@ HTMLSelectElement[JC] def prefix: String
 HTMLSelectElement[JC] def previousElementSibling: Element
 HTMLSelectElement[JC] def previousSibling: Node
 HTMLSelectElement[JC] def querySelector(selectors: String): Element
-HTMLSelectElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLSelectElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLSelectElement[JC] var readyState: js.Any
 HTMLSelectElement[JC] var recordNumber: js.Any
 HTMLSelectElement[JC] def remove(index: Int?): Unit
@@ -10124,7 +10118,7 @@ HTMLSourceElement[JC] def appendChild(newChild: Node): Node
 HTMLSourceElement[JC] def attributes: NamedNodeMap
 HTMLSourceElement[JC] def blur(): Unit
 HTMLSourceElement[JC] def childElementCount: Int
-HTMLSourceElement[JC] def childNodes: NodeList
+HTMLSourceElement[JC] def childNodes: NodeList[Node]
 HTMLSourceElement[JC] def children: HTMLCollection
 HTMLSourceElement[JC] var classList: DOMTokenList
 HTMLSourceElement[JC] var className: String
@@ -10278,7 +10272,7 @@ HTMLSourceElement[JC] def prefix: String
 HTMLSourceElement[JC] def previousElementSibling: Element
 HTMLSourceElement[JC] def previousSibling: Node
 HTMLSourceElement[JC] def querySelector(selectors: String): Element
-HTMLSourceElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLSourceElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLSourceElement[JC] var readyState: js.Any
 HTMLSourceElement[JC] var recordNumber: js.Any
 HTMLSourceElement[JC] def removeAttribute(name: String): Unit
@@ -10316,7 +10310,7 @@ HTMLSpanElement[JC] def appendChild(newChild: Node): Node
 HTMLSpanElement[JC] def attributes: NamedNodeMap
 HTMLSpanElement[JC] def blur(): Unit
 HTMLSpanElement[JC] def childElementCount: Int
-HTMLSpanElement[JC] def childNodes: NodeList
+HTMLSpanElement[JC] def childNodes: NodeList[Node]
 HTMLSpanElement[JC] def children: HTMLCollection
 HTMLSpanElement[JC] var classList: DOMTokenList
 HTMLSpanElement[JC] var className: String
@@ -10469,7 +10463,7 @@ HTMLSpanElement[JC] def prefix: String
 HTMLSpanElement[JC] def previousElementSibling: Element
 HTMLSpanElement[JC] def previousSibling: Node
 HTMLSpanElement[JC] def querySelector(selectors: String): Element
-HTMLSpanElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLSpanElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLSpanElement[JC] var readyState: js.Any
 HTMLSpanElement[JC] var recordNumber: js.Any
 HTMLSpanElement[JC] def removeAttribute(name: String): Unit
@@ -10505,7 +10499,7 @@ HTMLStyleElement[JC] def appendChild(newChild: Node): Node
 HTMLStyleElement[JC] def attributes: NamedNodeMap
 HTMLStyleElement[JC] def blur(): Unit
 HTMLStyleElement[JC] def childElementCount: Int
-HTMLStyleElement[JC] def childNodes: NodeList
+HTMLStyleElement[JC] def childNodes: NodeList[Node]
 HTMLStyleElement[JC] def children: HTMLCollection
 HTMLStyleElement[JC] var classList: DOMTokenList
 HTMLStyleElement[JC] var className: String
@@ -10659,7 +10653,7 @@ HTMLStyleElement[JC] def prefix: String
 HTMLStyleElement[JC] def previousElementSibling: Element
 HTMLStyleElement[JC] def previousSibling: Node
 HTMLStyleElement[JC] def querySelector(selectors: String): Element
-HTMLStyleElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLStyleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLStyleElement[JC] var readyState: js.Any
 HTMLStyleElement[JC] var recordNumber: js.Any
 HTMLStyleElement[JC] def removeAttribute(name: String): Unit
@@ -10698,7 +10692,7 @@ HTMLTableCaptionElement[JC] def appendChild(newChild: Node): Node
 HTMLTableCaptionElement[JC] def attributes: NamedNodeMap
 HTMLTableCaptionElement[JC] def blur(): Unit
 HTMLTableCaptionElement[JC] def childElementCount: Int
-HTMLTableCaptionElement[JC] def childNodes: NodeList
+HTMLTableCaptionElement[JC] def childNodes: NodeList[Node]
 HTMLTableCaptionElement[JC] def children: HTMLCollection
 HTMLTableCaptionElement[JC] var classList: DOMTokenList
 HTMLTableCaptionElement[JC] var className: String
@@ -10851,7 +10845,7 @@ HTMLTableCaptionElement[JC] def prefix: String
 HTMLTableCaptionElement[JC] def previousElementSibling: Element
 HTMLTableCaptionElement[JC] def previousSibling: Node
 HTMLTableCaptionElement[JC] def querySelector(selectors: String): Element
-HTMLTableCaptionElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLTableCaptionElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLTableCaptionElement[JC] var readyState: js.Any
 HTMLTableCaptionElement[JC] var recordNumber: js.Any
 HTMLTableCaptionElement[JC] def removeAttribute(name: String): Unit
@@ -10888,7 +10882,7 @@ HTMLTableCellElement[JC] def attributes: NamedNodeMap
 HTMLTableCellElement[JC] def blur(): Unit
 HTMLTableCellElement[JC] def cellIndex: Int
 HTMLTableCellElement[JC] def childElementCount: Int
-HTMLTableCellElement[JC] def childNodes: NodeList
+HTMLTableCellElement[JC] def childNodes: NodeList[Node]
 HTMLTableCellElement[JC] def children: HTMLCollection
 HTMLTableCellElement[JC] var classList: DOMTokenList
 HTMLTableCellElement[JC] var className: String
@@ -11043,7 +11037,7 @@ HTMLTableCellElement[JC] def prefix: String
 HTMLTableCellElement[JC] def previousElementSibling: Element
 HTMLTableCellElement[JC] def previousSibling: Node
 HTMLTableCellElement[JC] def querySelector(selectors: String): Element
-HTMLTableCellElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLTableCellElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLTableCellElement[JC] var readyState: js.Any
 HTMLTableCellElement[JC] var recordNumber: js.Any
 HTMLTableCellElement[JC] def removeAttribute(name: String): Unit
@@ -11080,7 +11074,7 @@ HTMLTableColElement[JC] def appendChild(newChild: Node): Node
 HTMLTableColElement[JC] def attributes: NamedNodeMap
 HTMLTableColElement[JC] def blur(): Unit
 HTMLTableColElement[JC] def childElementCount: Int
-HTMLTableColElement[JC] def childNodes: NodeList
+HTMLTableColElement[JC] def childNodes: NodeList[Node]
 HTMLTableColElement[JC] def children: HTMLCollection
 HTMLTableColElement[JC] var classList: DOMTokenList
 HTMLTableColElement[JC] var className: String
@@ -11233,7 +11227,7 @@ HTMLTableColElement[JC] def prefix: String
 HTMLTableColElement[JC] def previousElementSibling: Element
 HTMLTableColElement[JC] def previousSibling: Node
 HTMLTableColElement[JC] def querySelector(selectors: String): Element
-HTMLTableColElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLTableColElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLTableColElement[JC] var readyState: js.Any
 HTMLTableColElement[JC] var recordNumber: js.Any
 HTMLTableColElement[JC] def removeAttribute(name: String): Unit
@@ -11271,7 +11265,7 @@ HTMLTableElement[JC] def attributes: NamedNodeMap
 HTMLTableElement[JC] def blur(): Unit
 HTMLTableElement[JC] var caption: HTMLTableCaptionElement
 HTMLTableElement[JC] def childElementCount: Int
-HTMLTableElement[JC] def childNodes: NodeList
+HTMLTableElement[JC] def childNodes: NodeList[Node]
 HTMLTableElement[JC] def children: HTMLCollection
 HTMLTableElement[JC] var classList: DOMTokenList
 HTMLTableElement[JC] var className: String
@@ -11434,7 +11428,7 @@ HTMLTableElement[JC] def prefix: String
 HTMLTableElement[JC] def previousElementSibling: Element
 HTMLTableElement[JC] def previousSibling: Node
 HTMLTableElement[JC] def querySelector(selectors: String): Element
-HTMLTableElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLTableElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLTableElement[JC] var readyState: js.Any
 HTMLTableElement[JC] var recordNumber: js.Any
 HTMLTableElement[JC] def removeAttribute(name: String): Unit
@@ -11478,7 +11472,7 @@ HTMLTableRowElement[JC] var borderColorDark: js.Any
 HTMLTableRowElement[JC] var borderColorLight: js.Any
 HTMLTableRowElement[JC] def cells: HTMLCollection
 HTMLTableRowElement[JC] def childElementCount: Int
-HTMLTableRowElement[JC] def childNodes: NodeList
+HTMLTableRowElement[JC] def childNodes: NodeList[Node]
 HTMLTableRowElement[JC] def children: HTMLCollection
 HTMLTableRowElement[JC] var classList: DOMTokenList
 HTMLTableRowElement[JC] var className: String
@@ -11634,7 +11628,7 @@ HTMLTableRowElement[JC] def prefix: String
 HTMLTableRowElement[JC] def previousElementSibling: Element
 HTMLTableRowElement[JC] def previousSibling: Node
 HTMLTableRowElement[JC] def querySelector(selectors: String): Element
-HTMLTableRowElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLTableRowElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLTableRowElement[JC] var readyState: js.Any
 HTMLTableRowElement[JC] var recordNumber: js.Any
 HTMLTableRowElement[JC] def removeAttribute(name: String): Unit
@@ -11672,7 +11666,7 @@ HTMLTableSectionElement[JC] def appendChild(newChild: Node): Node
 HTMLTableSectionElement[JC] def attributes: NamedNodeMap
 HTMLTableSectionElement[JC] def blur(): Unit
 HTMLTableSectionElement[JC] def childElementCount: Int
-HTMLTableSectionElement[JC] def childNodes: NodeList
+HTMLTableSectionElement[JC] def childNodes: NodeList[Node]
 HTMLTableSectionElement[JC] def children: HTMLCollection
 HTMLTableSectionElement[JC] var classList: DOMTokenList
 HTMLTableSectionElement[JC] var className: String
@@ -11828,7 +11822,7 @@ HTMLTableSectionElement[JC] def prefix: String
 HTMLTableSectionElement[JC] def previousElementSibling: Element
 HTMLTableSectionElement[JC] def previousSibling: Node
 HTMLTableSectionElement[JC] def querySelector(selectors: String): Element
-HTMLTableSectionElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLTableSectionElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLTableSectionElement[JC] var readyState: js.Any
 HTMLTableSectionElement[JC] var recordNumber: js.Any
 HTMLTableSectionElement[JC] def removeAttribute(name: String): Unit
@@ -11867,7 +11861,7 @@ HTMLTextAreaElement[JC] var autofocus: Boolean
 HTMLTextAreaElement[JC] def blur(): Unit
 HTMLTextAreaElement[JC] def checkValidity(): Boolean
 HTMLTextAreaElement[JC] def childElementCount: Int
-HTMLTextAreaElement[JC] def childNodes: NodeList
+HTMLTextAreaElement[JC] def childNodes: NodeList[Node]
 HTMLTextAreaElement[JC] def children: HTMLCollection
 HTMLTextAreaElement[JC] var classList: DOMTokenList
 HTMLTextAreaElement[JC] var className: String
@@ -12027,7 +12021,7 @@ HTMLTextAreaElement[JC] def prefix: String
 HTMLTextAreaElement[JC] def previousElementSibling: Element
 HTMLTextAreaElement[JC] def previousSibling: Node
 HTMLTextAreaElement[JC] def querySelector(selectors: String): Element
-HTMLTextAreaElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLTextAreaElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLTextAreaElement[JC] var readOnly: Boolean
 HTMLTextAreaElement[JC] var readyState: js.Any
 HTMLTextAreaElement[JC] var recordNumber: js.Any
@@ -12078,7 +12072,7 @@ HTMLTitleElement[JC] def appendChild(newChild: Node): Node
 HTMLTitleElement[JC] def attributes: NamedNodeMap
 HTMLTitleElement[JC] def blur(): Unit
 HTMLTitleElement[JC] def childElementCount: Int
-HTMLTitleElement[JC] def childNodes: NodeList
+HTMLTitleElement[JC] def childNodes: NodeList[Node]
 HTMLTitleElement[JC] def children: HTMLCollection
 HTMLTitleElement[JC] var classList: DOMTokenList
 HTMLTitleElement[JC] var className: String
@@ -12231,7 +12225,7 @@ HTMLTitleElement[JC] def prefix: String
 HTMLTitleElement[JC] def previousElementSibling: Element
 HTMLTitleElement[JC] def previousSibling: Node
 HTMLTitleElement[JC] def querySelector(selectors: String): Element
-HTMLTitleElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLTitleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLTitleElement[JC] var readyState: js.Any
 HTMLTitleElement[JC] var recordNumber: js.Any
 HTMLTitleElement[JC] def removeAttribute(name: String): Unit
@@ -12268,7 +12262,7 @@ HTMLTrackElement[JC] def appendChild(newChild: Node): Node
 HTMLTrackElement[JC] def attributes: NamedNodeMap
 HTMLTrackElement[JC] def blur(): Unit
 HTMLTrackElement[JC] def childElementCount: Int
-HTMLTrackElement[JC] def childNodes: NodeList
+HTMLTrackElement[JC] def childNodes: NodeList[Node]
 HTMLTrackElement[JC] def children: HTMLCollection
 HTMLTrackElement[JC] var classList: DOMTokenList
 HTMLTrackElement[JC] var className: String
@@ -12423,7 +12417,7 @@ HTMLTrackElement[JC] def prefix: String
 HTMLTrackElement[JC] def previousElementSibling: Element
 HTMLTrackElement[JC] def previousSibling: Node
 HTMLTrackElement[JC] def querySelector(selectors: String): Element
-HTMLTrackElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLTrackElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLTrackElement[JC] var readyState: js.Any
 HTMLTrackElement[JC] var recordNumber: js.Any
 HTMLTrackElement[JC] def removeAttribute(name: String): Unit
@@ -12462,7 +12456,7 @@ HTMLUListElement[JC] def appendChild(newChild: Node): Node
 HTMLUListElement[JC] def attributes: NamedNodeMap
 HTMLUListElement[JC] def blur(): Unit
 HTMLUListElement[JC] def childElementCount: Int
-HTMLUListElement[JC] def childNodes: NodeList
+HTMLUListElement[JC] def childNodes: NodeList[Node]
 HTMLUListElement[JC] def children: HTMLCollection
 HTMLUListElement[JC] var classList: DOMTokenList
 HTMLUListElement[JC] var className: String
@@ -12615,7 +12609,7 @@ HTMLUListElement[JC] def prefix: String
 HTMLUListElement[JC] def previousElementSibling: Element
 HTMLUListElement[JC] def previousSibling: Node
 HTMLUListElement[JC] def querySelector(selectors: String): Element
-HTMLUListElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLUListElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLUListElement[JC] var readyState: js.Any
 HTMLUListElement[JC] var recordNumber: js.Any
 HTMLUListElement[JC] def removeAttribute(name: String): Unit
@@ -12651,7 +12645,7 @@ HTMLUnknownElement[JC] def appendChild(newChild: Node): Node
 HTMLUnknownElement[JC] def attributes: NamedNodeMap
 HTMLUnknownElement[JC] def blur(): Unit
 HTMLUnknownElement[JC] def childElementCount: Int
-HTMLUnknownElement[JC] def childNodes: NodeList
+HTMLUnknownElement[JC] def childNodes: NodeList[Node]
 HTMLUnknownElement[JC] def children: HTMLCollection
 HTMLUnknownElement[JC] var classList: DOMTokenList
 HTMLUnknownElement[JC] var className: String
@@ -12804,7 +12798,7 @@ HTMLUnknownElement[JC] def prefix: String
 HTMLUnknownElement[JC] def previousElementSibling: Element
 HTMLUnknownElement[JC] def previousSibling: Node
 HTMLUnknownElement[JC] def querySelector(selectors: String): Element
-HTMLUnknownElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLUnknownElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLUnknownElement[JC] var readyState: js.Any
 HTMLUnknownElement[JC] var recordNumber: js.Any
 HTMLUnknownElement[JC] def removeAttribute(name: String): Unit
@@ -12844,7 +12838,7 @@ HTMLVideoElement[JC] def blur(): Unit
 HTMLVideoElement[JC] def buffered: TimeRanges
 HTMLVideoElement[JC] def canPlayType(`type`: String): String
 HTMLVideoElement[JC] def childElementCount: Int
-HTMLVideoElement[JC] def childNodes: NodeList
+HTMLVideoElement[JC] def childNodes: NodeList[Node]
 HTMLVideoElement[JC] def children: HTMLCollection
 HTMLVideoElement[JC] var classList: DOMTokenList
 HTMLVideoElement[JC] var className: String
@@ -13017,7 +13011,7 @@ HTMLVideoElement[JC] var preload: String
 HTMLVideoElement[JC] def previousElementSibling: Element
 HTMLVideoElement[JC] def previousSibling: Node
 HTMLVideoElement[JC] def querySelector(selectors: String): Element
-HTMLVideoElement[JC] def querySelectorAll(selectors: String): NodeList
+HTMLVideoElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 HTMLVideoElement[JC] var readyState: js.Any
 HTMLVideoElement[JC] var recordNumber: js.Any
 HTMLVideoElement[JC] def removeAttribute(name: String): Unit
@@ -13441,13 +13435,13 @@ MutationObserverInit[JT] var characterDataOldValue: js.UndefOr[Boolean]
 MutationObserverInit[JT] var childList: js.UndefOr[Boolean]
 MutationObserverInit[JT] var subtree: js.UndefOr[Boolean]
 MutationObserverInit[SO] def apply(childList: Boolean = false, attributes: Boolean = false, characterData: Boolean = false, subtree: Boolean = false, attributeOldValue: Boolean = false, characterDataOldValue: Boolean = false, attributeFilter: js.UndefOr[js.Array[String]] = js.undefined): MutationObserverInit
-MutationRecord[JT] def addedNodes: NodeList
+MutationRecord[JT] def addedNodes: NodeList[Node]
 MutationRecord[JT] def attributeName: String
 MutationRecord[JT] def attributeNamespace: String
 MutationRecord[JT] def nextSibling: Node
 MutationRecord[JT] def oldValue: String
 MutationRecord[JT] def previousSibling: Node
-MutationRecord[JT] def removedNodes: NodeList
+MutationRecord[JT] def removedNodes: NodeList[Node]
 MutationRecord[JT] def target: Node
 MutationRecord[JT] def `type`: String
 NamedNodeMap[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): Attr
@@ -13484,7 +13478,7 @@ Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Node[JC] def appendChild(newChild: Node): Node
 Node[JC] def attributes: NamedNodeMap
-Node[JC] def childNodes: NodeList
+Node[JC] def childNodes: NodeList[Node]
 Node[JC] def cloneNode(deep: Boolean?): Node
 Node[JC] def compareDocumentPosition(other: Node): Int
 Node[JC] def contains(otherNode: Node): Boolean
@@ -13557,16 +13551,11 @@ NodeIterator[JC] def nextNode(): Node
 NodeIterator[JC] def previousNode(): Node
 NodeIterator[JC] def root: Node
 NodeIterator[JC] var whatToShow: Int
-NodeList[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
+NodeList[JC] @JSBracketAccess def apply(index: Int): T
 NodeList[JC] def item(index: Int): T
 NodeList[JC] def length: Int
-NodeList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
-NodeListOf[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-NodeListOf[JT] def item(index: Int): T
-NodeListOf[JT] def length: Int
-NodeListOf[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 NodeSelector[JT] def querySelector(selectors: String): Element
-NodeSelector[JT] def querySelectorAll(selectors: String): NodeList
+NodeSelector[JT] def querySelectorAll(selectors: String): NodeList[Node]
 NonDocumentTypeChildNode[JT] def nextElementSibling: Element
 NonDocumentTypeChildNode[JT] def previousElementSibling: Element
 OfflineAudioCompletionEvent[JT] def bubbles: Boolean
@@ -13856,7 +13845,7 @@ ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, liste
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ProcessingInstruction[JC] def appendChild(newChild: Node): Node
 ProcessingInstruction[JC] def attributes: NamedNodeMap
-ProcessingInstruction[JC] def childNodes: NodeList
+ProcessingInstruction[JC] def childNodes: NodeList[Node]
 ProcessingInstruction[JC] def cloneNode(deep: Boolean?): Node
 ProcessingInstruction[JC] def compareDocumentPosition(other: Node): Int
 ProcessingInstruction[JC] def contains(otherNode: Node): Boolean
@@ -13942,7 +13931,7 @@ SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 SVGAElement[JC] def appendChild(newChild: Node): Node
 SVGAElement[JC] def attributes: NamedNodeMap
 SVGAElement[JC] def childElementCount: Int
-SVGAElement[JC] def childNodes: NodeList
+SVGAElement[JC] def childNodes: NodeList[Node]
 SVGAElement[JC] def children: HTMLCollection
 SVGAElement[JC] var classList: DOMTokenList
 SVGAElement[JC] var className: SVGAnimatedString
@@ -14024,7 +14013,7 @@ SVGAElement[JC] def prefix: String
 SVGAElement[JC] def previousElementSibling: Element
 SVGAElement[JC] def previousSibling: Node
 SVGAElement[JC] def querySelector(selectors: String): Element
-SVGAElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGAElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGAElement[JC] def removeAttribute(name: String): Unit
 SVGAElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGAElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -14099,7 +14088,7 @@ SVGCircleElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGCircleElement[JC] def appendChild(newChild: Node): Node
 SVGCircleElement[JC] def attributes: NamedNodeMap
 SVGCircleElement[JC] def childElementCount: Int
-SVGCircleElement[JC] def childNodes: NodeList
+SVGCircleElement[JC] def childNodes: NodeList[Node]
 SVGCircleElement[JC] def children: HTMLCollection
 SVGCircleElement[JC] var classList: DOMTokenList
 SVGCircleElement[JC] var className: SVGAnimatedString
@@ -14182,7 +14171,7 @@ SVGCircleElement[JC] def prefix: String
 SVGCircleElement[JC] def previousElementSibling: Element
 SVGCircleElement[JC] def previousSibling: Node
 SVGCircleElement[JC] def querySelector(selectors: String): Element
-SVGCircleElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGCircleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGCircleElement[JC] def r: SVGAnimatedLength
 SVGCircleElement[JC] def removeAttribute(name: String): Unit
 SVGCircleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -14222,7 +14211,7 @@ SVGClipPathElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGClipPathElement[JC] def appendChild(newChild: Node): Node
 SVGClipPathElement[JC] def attributes: NamedNodeMap
 SVGClipPathElement[JC] def childElementCount: Int
-SVGClipPathElement[JC] def childNodes: NodeList
+SVGClipPathElement[JC] def childNodes: NodeList[Node]
 SVGClipPathElement[JC] def children: HTMLCollection
 SVGClipPathElement[JC] var classList: DOMTokenList
 SVGClipPathElement[JC] var className: SVGAnimatedString
@@ -14304,7 +14293,7 @@ SVGClipPathElement[JC] def prefix: String
 SVGClipPathElement[JC] def previousElementSibling: Element
 SVGClipPathElement[JC] def previousSibling: Node
 SVGClipPathElement[JC] def querySelector(selectors: String): Element
-SVGClipPathElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGClipPathElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGClipPathElement[JC] def removeAttribute(name: String): Unit
 SVGClipPathElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGClipPathElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -14341,7 +14330,7 @@ SVGComponentTransferFunctionElement[JC] def amplitude: SVGAnimatedNumber
 SVGComponentTransferFunctionElement[JC] def appendChild(newChild: Node): Node
 SVGComponentTransferFunctionElement[JC] def attributes: NamedNodeMap
 SVGComponentTransferFunctionElement[JC] def childElementCount: Int
-SVGComponentTransferFunctionElement[JC] def childNodes: NodeList
+SVGComponentTransferFunctionElement[JC] def childNodes: NodeList[Node]
 SVGComponentTransferFunctionElement[JC] def children: HTMLCollection
 SVGComponentTransferFunctionElement[JC] var classList: DOMTokenList
 SVGComponentTransferFunctionElement[JC] def clientHeight: Int
@@ -14416,7 +14405,7 @@ SVGComponentTransferFunctionElement[JC] def prefix: String
 SVGComponentTransferFunctionElement[JC] def previousElementSibling: Element
 SVGComponentTransferFunctionElement[JC] def previousSibling: Node
 SVGComponentTransferFunctionElement[JC] def querySelector(selectors: String): Element
-SVGComponentTransferFunctionElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGComponentTransferFunctionElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGComponentTransferFunctionElement[JC] def removeAttribute(name: String): Unit
 SVGComponentTransferFunctionElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGComponentTransferFunctionElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -14454,7 +14443,7 @@ SVGDefsElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGDefsElement[JC] def appendChild(newChild: Node): Node
 SVGDefsElement[JC] def attributes: NamedNodeMap
 SVGDefsElement[JC] def childElementCount: Int
-SVGDefsElement[JC] def childNodes: NodeList
+SVGDefsElement[JC] def childNodes: NodeList[Node]
 SVGDefsElement[JC] def children: HTMLCollection
 SVGDefsElement[JC] var classList: DOMTokenList
 SVGDefsElement[JC] var className: SVGAnimatedString
@@ -14535,7 +14524,7 @@ SVGDefsElement[JC] def prefix: String
 SVGDefsElement[JC] def previousElementSibling: Element
 SVGDefsElement[JC] def previousSibling: Node
 SVGDefsElement[JC] def querySelector(selectors: String): Element
-SVGDefsElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGDefsElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGDefsElement[JC] def removeAttribute(name: String): Unit
 SVGDefsElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGDefsElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -14571,7 +14560,7 @@ SVGDescElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGDescElement[JC] def appendChild(newChild: Node): Node
 SVGDescElement[JC] def attributes: NamedNodeMap
 SVGDescElement[JC] def childElementCount: Int
-SVGDescElement[JC] def childNodes: NodeList
+SVGDescElement[JC] def childNodes: NodeList[Node]
 SVGDescElement[JC] def children: HTMLCollection
 SVGDescElement[JC] var classList: DOMTokenList
 SVGDescElement[JC] var className: SVGAnimatedString
@@ -14644,7 +14633,7 @@ SVGDescElement[JC] def prefix: String
 SVGDescElement[JC] def previousElementSibling: Element
 SVGDescElement[JC] def previousSibling: Node
 SVGDescElement[JC] def querySelector(selectors: String): Element
-SVGDescElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGDescElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGDescElement[JC] def removeAttribute(name: String): Unit
 SVGDescElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGDescElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -14676,7 +14665,7 @@ SVGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fun
 SVGElement[JC] def appendChild(newChild: Node): Node
 SVGElement[JC] def attributes: NamedNodeMap
 SVGElement[JC] def childElementCount: Int
-SVGElement[JC] def childNodes: NodeList
+SVGElement[JC] def childNodes: NodeList[Node]
 SVGElement[JC] def children: HTMLCollection
 SVGElement[JC] var classList: DOMTokenList
 SVGElement[JC] def clientHeight: Int
@@ -14748,7 +14737,7 @@ SVGElement[JC] def prefix: String
 SVGElement[JC] def previousElementSibling: Element
 SVGElement[JC] def previousSibling: Node
 SVGElement[JC] def querySelector(selectors: String): Element
-SVGElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGElement[JC] def removeAttribute(name: String): Unit
 SVGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -14792,7 +14781,7 @@ SVGEllipseElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGEllipseElement[JC] def appendChild(newChild: Node): Node
 SVGEllipseElement[JC] def attributes: NamedNodeMap
 SVGEllipseElement[JC] def childElementCount: Int
-SVGEllipseElement[JC] def childNodes: NodeList
+SVGEllipseElement[JC] def childNodes: NodeList[Node]
 SVGEllipseElement[JC] def children: HTMLCollection
 SVGEllipseElement[JC] var classList: DOMTokenList
 SVGEllipseElement[JC] var className: SVGAnimatedString
@@ -14875,7 +14864,7 @@ SVGEllipseElement[JC] def prefix: String
 SVGEllipseElement[JC] def previousElementSibling: Element
 SVGEllipseElement[JC] def previousSibling: Node
 SVGEllipseElement[JC] def querySelector(selectors: String): Element
-SVGEllipseElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGEllipseElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGEllipseElement[JC] def removeAttribute(name: String): Unit
 SVGEllipseElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGEllipseElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -14920,7 +14909,7 @@ SVGFEBlendElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEBlendElement[JC] def appendChild(newChild: Node): Node
 SVGFEBlendElement[JC] def attributes: NamedNodeMap
 SVGFEBlendElement[JC] def childElementCount: Int
-SVGFEBlendElement[JC] def childNodes: NodeList
+SVGFEBlendElement[JC] def childNodes: NodeList[Node]
 SVGFEBlendElement[JC] def children: HTMLCollection
 SVGFEBlendElement[JC] var classList: DOMTokenList
 SVGFEBlendElement[JC] var className: SVGAnimatedString
@@ -14997,7 +14986,7 @@ SVGFEBlendElement[JC] def prefix: String
 SVGFEBlendElement[JC] def previousElementSibling: Element
 SVGFEBlendElement[JC] def previousSibling: Node
 SVGFEBlendElement[JC] def querySelector(selectors: String): Element
-SVGFEBlendElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEBlendElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEBlendElement[JC] def removeAttribute(name: String): Unit
 SVGFEBlendElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEBlendElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -15037,7 +15026,7 @@ SVGFEColorMatrixElement[JC] def addEventListener[T <: Event](`type`: String, lis
 SVGFEColorMatrixElement[JC] def appendChild(newChild: Node): Node
 SVGFEColorMatrixElement[JC] def attributes: NamedNodeMap
 SVGFEColorMatrixElement[JC] def childElementCount: Int
-SVGFEColorMatrixElement[JC] def childNodes: NodeList
+SVGFEColorMatrixElement[JC] def childNodes: NodeList[Node]
 SVGFEColorMatrixElement[JC] def children: HTMLCollection
 SVGFEColorMatrixElement[JC] var classList: DOMTokenList
 SVGFEColorMatrixElement[JC] var className: SVGAnimatedString
@@ -15112,7 +15101,7 @@ SVGFEColorMatrixElement[JC] def prefix: String
 SVGFEColorMatrixElement[JC] def previousElementSibling: Element
 SVGFEColorMatrixElement[JC] def previousSibling: Node
 SVGFEColorMatrixElement[JC] def querySelector(selectors: String): Element
-SVGFEColorMatrixElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEColorMatrixElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEColorMatrixElement[JC] def removeAttribute(name: String): Unit
 SVGFEColorMatrixElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEColorMatrixElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -15153,7 +15142,7 @@ SVGFEComponentTransferElement[JC] def addEventListener[T <: Event](`type`: Strin
 SVGFEComponentTransferElement[JC] def appendChild(newChild: Node): Node
 SVGFEComponentTransferElement[JC] def attributes: NamedNodeMap
 SVGFEComponentTransferElement[JC] def childElementCount: Int
-SVGFEComponentTransferElement[JC] def childNodes: NodeList
+SVGFEComponentTransferElement[JC] def childNodes: NodeList[Node]
 SVGFEComponentTransferElement[JC] def children: HTMLCollection
 SVGFEComponentTransferElement[JC] var classList: DOMTokenList
 SVGFEComponentTransferElement[JC] var className: SVGAnimatedString
@@ -15228,7 +15217,7 @@ SVGFEComponentTransferElement[JC] def prefix: String
 SVGFEComponentTransferElement[JC] def previousElementSibling: Element
 SVGFEComponentTransferElement[JC] def previousSibling: Node
 SVGFEComponentTransferElement[JC] def querySelector(selectors: String): Element
-SVGFEComponentTransferElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEComponentTransferElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEComponentTransferElement[JC] def removeAttribute(name: String): Unit
 SVGFEComponentTransferElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEComponentTransferElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -15262,7 +15251,7 @@ SVGFECompositeElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGFECompositeElement[JC] def appendChild(newChild: Node): Node
 SVGFECompositeElement[JC] def attributes: NamedNodeMap
 SVGFECompositeElement[JC] def childElementCount: Int
-SVGFECompositeElement[JC] def childNodes: NodeList
+SVGFECompositeElement[JC] def childNodes: NodeList[Node]
 SVGFECompositeElement[JC] def children: HTMLCollection
 SVGFECompositeElement[JC] var classList: DOMTokenList
 SVGFECompositeElement[JC] var className: SVGAnimatedString
@@ -15343,7 +15332,7 @@ SVGFECompositeElement[JC] def prefix: String
 SVGFECompositeElement[JC] def previousElementSibling: Element
 SVGFECompositeElement[JC] def previousSibling: Node
 SVGFECompositeElement[JC] def querySelector(selectors: String): Element
-SVGFECompositeElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFECompositeElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFECompositeElement[JC] def removeAttribute(name: String): Unit
 SVGFECompositeElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFECompositeElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -15385,7 +15374,7 @@ SVGFEConvolveMatrixElement[JC] def appendChild(newChild: Node): Node
 SVGFEConvolveMatrixElement[JC] def attributes: NamedNodeMap
 SVGFEConvolveMatrixElement[JC] def bias: SVGAnimatedNumber
 SVGFEConvolveMatrixElement[JC] def childElementCount: Int
-SVGFEConvolveMatrixElement[JC] def childNodes: NodeList
+SVGFEConvolveMatrixElement[JC] def childNodes: NodeList[Node]
 SVGFEConvolveMatrixElement[JC] def children: HTMLCollection
 SVGFEConvolveMatrixElement[JC] var classList: DOMTokenList
 SVGFEConvolveMatrixElement[JC] var className: SVGAnimatedString
@@ -15468,7 +15457,7 @@ SVGFEConvolveMatrixElement[JC] def preserveAlpha: SVGAnimatedBoolean
 SVGFEConvolveMatrixElement[JC] def previousElementSibling: Element
 SVGFEConvolveMatrixElement[JC] def previousSibling: Node
 SVGFEConvolveMatrixElement[JC] def querySelector(selectors: String): Element
-SVGFEConvolveMatrixElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEConvolveMatrixElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEConvolveMatrixElement[JC] def removeAttribute(name: String): Unit
 SVGFEConvolveMatrixElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEConvolveMatrixElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -15508,7 +15497,7 @@ SVGFEDiffuseLightingElement[JC] def addEventListener[T <: Event](`type`: String,
 SVGFEDiffuseLightingElement[JC] def appendChild(newChild: Node): Node
 SVGFEDiffuseLightingElement[JC] def attributes: NamedNodeMap
 SVGFEDiffuseLightingElement[JC] def childElementCount: Int
-SVGFEDiffuseLightingElement[JC] def childNodes: NodeList
+SVGFEDiffuseLightingElement[JC] def childNodes: NodeList[Node]
 SVGFEDiffuseLightingElement[JC] def children: HTMLCollection
 SVGFEDiffuseLightingElement[JC] var classList: DOMTokenList
 SVGFEDiffuseLightingElement[JC] var className: SVGAnimatedString
@@ -15586,7 +15575,7 @@ SVGFEDiffuseLightingElement[JC] def prefix: String
 SVGFEDiffuseLightingElement[JC] def previousElementSibling: Element
 SVGFEDiffuseLightingElement[JC] def previousSibling: Node
 SVGFEDiffuseLightingElement[JC] def querySelector(selectors: String): Element
-SVGFEDiffuseLightingElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEDiffuseLightingElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEDiffuseLightingElement[JC] def removeAttribute(name: String): Unit
 SVGFEDiffuseLightingElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEDiffuseLightingElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -15621,7 +15610,7 @@ SVGFEDisplacementMapElement[JC] def addEventListener[T <: Event](`type`: String,
 SVGFEDisplacementMapElement[JC] def appendChild(newChild: Node): Node
 SVGFEDisplacementMapElement[JC] def attributes: NamedNodeMap
 SVGFEDisplacementMapElement[JC] def childElementCount: Int
-SVGFEDisplacementMapElement[JC] def childNodes: NodeList
+SVGFEDisplacementMapElement[JC] def childNodes: NodeList[Node]
 SVGFEDisplacementMapElement[JC] def children: HTMLCollection
 SVGFEDisplacementMapElement[JC] var classList: DOMTokenList
 SVGFEDisplacementMapElement[JC] var className: SVGAnimatedString
@@ -15697,7 +15686,7 @@ SVGFEDisplacementMapElement[JC] def prefix: String
 SVGFEDisplacementMapElement[JC] def previousElementSibling: Element
 SVGFEDisplacementMapElement[JC] def previousSibling: Node
 SVGFEDisplacementMapElement[JC] def querySelector(selectors: String): Element
-SVGFEDisplacementMapElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEDisplacementMapElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEDisplacementMapElement[JC] def removeAttribute(name: String): Unit
 SVGFEDisplacementMapElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEDisplacementMapElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -15740,7 +15729,7 @@ SVGFEDistantLightElement[JC] def appendChild(newChild: Node): Node
 SVGFEDistantLightElement[JC] def attributes: NamedNodeMap
 SVGFEDistantLightElement[JC] def azimuth: SVGAnimatedNumber
 SVGFEDistantLightElement[JC] def childElementCount: Int
-SVGFEDistantLightElement[JC] def childNodes: NodeList
+SVGFEDistantLightElement[JC] def childNodes: NodeList[Node]
 SVGFEDistantLightElement[JC] def children: HTMLCollection
 SVGFEDistantLightElement[JC] var classList: DOMTokenList
 SVGFEDistantLightElement[JC] def clientHeight: Int
@@ -15813,7 +15802,7 @@ SVGFEDistantLightElement[JC] def prefix: String
 SVGFEDistantLightElement[JC] def previousElementSibling: Element
 SVGFEDistantLightElement[JC] def previousSibling: Node
 SVGFEDistantLightElement[JC] def querySelector(selectors: String): Element
-SVGFEDistantLightElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEDistantLightElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEDistantLightElement[JC] def removeAttribute(name: String): Unit
 SVGFEDistantLightElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEDistantLightElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -15842,7 +15831,7 @@ SVGFEFloodElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEFloodElement[JC] def appendChild(newChild: Node): Node
 SVGFEFloodElement[JC] def attributes: NamedNodeMap
 SVGFEFloodElement[JC] def childElementCount: Int
-SVGFEFloodElement[JC] def childNodes: NodeList
+SVGFEFloodElement[JC] def childNodes: NodeList[Node]
 SVGFEFloodElement[JC] def children: HTMLCollection
 SVGFEFloodElement[JC] var classList: DOMTokenList
 SVGFEFloodElement[JC] var className: SVGAnimatedString
@@ -15916,7 +15905,7 @@ SVGFEFloodElement[JC] def prefix: String
 SVGFEFloodElement[JC] def previousElementSibling: Element
 SVGFEFloodElement[JC] def previousSibling: Node
 SVGFEFloodElement[JC] def querySelector(selectors: String): Element
-SVGFEFloodElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEFloodElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEFloodElement[JC] def removeAttribute(name: String): Unit
 SVGFEFloodElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEFloodElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -15951,7 +15940,7 @@ SVGFEFuncAElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncAElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncAElement[JC] def attributes: NamedNodeMap
 SVGFEFuncAElement[JC] def childElementCount: Int
-SVGFEFuncAElement[JC] def childNodes: NodeList
+SVGFEFuncAElement[JC] def childNodes: NodeList[Node]
 SVGFEFuncAElement[JC] def children: HTMLCollection
 SVGFEFuncAElement[JC] var classList: DOMTokenList
 SVGFEFuncAElement[JC] def clientHeight: Int
@@ -16026,7 +16015,7 @@ SVGFEFuncAElement[JC] def prefix: String
 SVGFEFuncAElement[JC] def previousElementSibling: Element
 SVGFEFuncAElement[JC] def previousSibling: Node
 SVGFEFuncAElement[JC] def querySelector(selectors: String): Element
-SVGFEFuncAElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEFuncAElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEFuncAElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncAElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEFuncAElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -16059,7 +16048,7 @@ SVGFEFuncBElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncBElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncBElement[JC] def attributes: NamedNodeMap
 SVGFEFuncBElement[JC] def childElementCount: Int
-SVGFEFuncBElement[JC] def childNodes: NodeList
+SVGFEFuncBElement[JC] def childNodes: NodeList[Node]
 SVGFEFuncBElement[JC] def children: HTMLCollection
 SVGFEFuncBElement[JC] var classList: DOMTokenList
 SVGFEFuncBElement[JC] def clientHeight: Int
@@ -16134,7 +16123,7 @@ SVGFEFuncBElement[JC] def prefix: String
 SVGFEFuncBElement[JC] def previousElementSibling: Element
 SVGFEFuncBElement[JC] def previousSibling: Node
 SVGFEFuncBElement[JC] def querySelector(selectors: String): Element
-SVGFEFuncBElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEFuncBElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEFuncBElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncBElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEFuncBElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -16167,7 +16156,7 @@ SVGFEFuncGElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncGElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncGElement[JC] def attributes: NamedNodeMap
 SVGFEFuncGElement[JC] def childElementCount: Int
-SVGFEFuncGElement[JC] def childNodes: NodeList
+SVGFEFuncGElement[JC] def childNodes: NodeList[Node]
 SVGFEFuncGElement[JC] def children: HTMLCollection
 SVGFEFuncGElement[JC] var classList: DOMTokenList
 SVGFEFuncGElement[JC] def clientHeight: Int
@@ -16242,7 +16231,7 @@ SVGFEFuncGElement[JC] def prefix: String
 SVGFEFuncGElement[JC] def previousElementSibling: Element
 SVGFEFuncGElement[JC] def previousSibling: Node
 SVGFEFuncGElement[JC] def querySelector(selectors: String): Element
-SVGFEFuncGElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEFuncGElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEFuncGElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEFuncGElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -16275,7 +16264,7 @@ SVGFEFuncRElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncRElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncRElement[JC] def attributes: NamedNodeMap
 SVGFEFuncRElement[JC] def childElementCount: Int
-SVGFEFuncRElement[JC] def childNodes: NodeList
+SVGFEFuncRElement[JC] def childNodes: NodeList[Node]
 SVGFEFuncRElement[JC] def children: HTMLCollection
 SVGFEFuncRElement[JC] var classList: DOMTokenList
 SVGFEFuncRElement[JC] def clientHeight: Int
@@ -16350,7 +16339,7 @@ SVGFEFuncRElement[JC] def prefix: String
 SVGFEFuncRElement[JC] def previousElementSibling: Element
 SVGFEFuncRElement[JC] def previousSibling: Node
 SVGFEFuncRElement[JC] def querySelector(selectors: String): Element
-SVGFEFuncRElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEFuncRElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEFuncRElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncRElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEFuncRElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -16382,7 +16371,7 @@ SVGFEGaussianBlurElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGFEGaussianBlurElement[JC] def appendChild(newChild: Node): Node
 SVGFEGaussianBlurElement[JC] def attributes: NamedNodeMap
 SVGFEGaussianBlurElement[JC] def childElementCount: Int
-SVGFEGaussianBlurElement[JC] def childNodes: NodeList
+SVGFEGaussianBlurElement[JC] def childNodes: NodeList[Node]
 SVGFEGaussianBlurElement[JC] def children: HTMLCollection
 SVGFEGaussianBlurElement[JC] var classList: DOMTokenList
 SVGFEGaussianBlurElement[JC] var className: SVGAnimatedString
@@ -16457,7 +16446,7 @@ SVGFEGaussianBlurElement[JC] def prefix: String
 SVGFEGaussianBlurElement[JC] def previousElementSibling: Element
 SVGFEGaussianBlurElement[JC] def previousSibling: Node
 SVGFEGaussianBlurElement[JC] def querySelector(selectors: String): Element
-SVGFEGaussianBlurElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEGaussianBlurElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEGaussianBlurElement[JC] def removeAttribute(name: String): Unit
 SVGFEGaussianBlurElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEGaussianBlurElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -16494,7 +16483,7 @@ SVGFEImageElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEImageElement[JC] def appendChild(newChild: Node): Node
 SVGFEImageElement[JC] def attributes: NamedNodeMap
 SVGFEImageElement[JC] def childElementCount: Int
-SVGFEImageElement[JC] def childNodes: NodeList
+SVGFEImageElement[JC] def childNodes: NodeList[Node]
 SVGFEImageElement[JC] def children: HTMLCollection
 SVGFEImageElement[JC] var classList: DOMTokenList
 SVGFEImageElement[JC] var className: SVGAnimatedString
@@ -16571,7 +16560,7 @@ SVGFEImageElement[JC] def preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGFEImageElement[JC] def previousElementSibling: Element
 SVGFEImageElement[JC] def previousSibling: Node
 SVGFEImageElement[JC] def querySelector(selectors: String): Element
-SVGFEImageElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEImageElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEImageElement[JC] def removeAttribute(name: String): Unit
 SVGFEImageElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEImageElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -16607,7 +16596,7 @@ SVGFEMergeElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEMergeElement[JC] def appendChild(newChild: Node): Node
 SVGFEMergeElement[JC] def attributes: NamedNodeMap
 SVGFEMergeElement[JC] def childElementCount: Int
-SVGFEMergeElement[JC] def childNodes: NodeList
+SVGFEMergeElement[JC] def childNodes: NodeList[Node]
 SVGFEMergeElement[JC] def children: HTMLCollection
 SVGFEMergeElement[JC] var classList: DOMTokenList
 SVGFEMergeElement[JC] var className: SVGAnimatedString
@@ -16681,7 +16670,7 @@ SVGFEMergeElement[JC] def prefix: String
 SVGFEMergeElement[JC] def previousElementSibling: Element
 SVGFEMergeElement[JC] def previousSibling: Node
 SVGFEMergeElement[JC] def querySelector(selectors: String): Element
-SVGFEMergeElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEMergeElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEMergeElement[JC] def removeAttribute(name: String): Unit
 SVGFEMergeElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEMergeElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -16715,7 +16704,7 @@ SVGFEMergeNodeElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGFEMergeNodeElement[JC] def appendChild(newChild: Node): Node
 SVGFEMergeNodeElement[JC] def attributes: NamedNodeMap
 SVGFEMergeNodeElement[JC] def childElementCount: Int
-SVGFEMergeNodeElement[JC] def childNodes: NodeList
+SVGFEMergeNodeElement[JC] def childNodes: NodeList[Node]
 SVGFEMergeNodeElement[JC] def children: HTMLCollection
 SVGFEMergeNodeElement[JC] var classList: DOMTokenList
 SVGFEMergeNodeElement[JC] def clientHeight: Int
@@ -16788,7 +16777,7 @@ SVGFEMergeNodeElement[JC] def prefix: String
 SVGFEMergeNodeElement[JC] def previousElementSibling: Element
 SVGFEMergeNodeElement[JC] def previousSibling: Node
 SVGFEMergeNodeElement[JC] def querySelector(selectors: String): Element
-SVGFEMergeNodeElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEMergeNodeElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEMergeNodeElement[JC] def removeAttribute(name: String): Unit
 SVGFEMergeNodeElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEMergeNodeElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -16817,7 +16806,7 @@ SVGFEMorphologyElement[JC] def addEventListener[T <: Event](`type`: String, list
 SVGFEMorphologyElement[JC] def appendChild(newChild: Node): Node
 SVGFEMorphologyElement[JC] def attributes: NamedNodeMap
 SVGFEMorphologyElement[JC] def childElementCount: Int
-SVGFEMorphologyElement[JC] def childNodes: NodeList
+SVGFEMorphologyElement[JC] def childNodes: NodeList[Node]
 SVGFEMorphologyElement[JC] def children: HTMLCollection
 SVGFEMorphologyElement[JC] var classList: DOMTokenList
 SVGFEMorphologyElement[JC] var className: SVGAnimatedString
@@ -16893,7 +16882,7 @@ SVGFEMorphologyElement[JC] def prefix: String
 SVGFEMorphologyElement[JC] def previousElementSibling: Element
 SVGFEMorphologyElement[JC] def previousSibling: Node
 SVGFEMorphologyElement[JC] def querySelector(selectors: String): Element
-SVGFEMorphologyElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEMorphologyElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEMorphologyElement[JC] def radiusX: SVGAnimatedNumber
 SVGFEMorphologyElement[JC] def radiusY: SVGAnimatedNumber
 SVGFEMorphologyElement[JC] def removeAttribute(name: String): Unit
@@ -16932,7 +16921,7 @@ SVGFEOffsetElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGFEOffsetElement[JC] def appendChild(newChild: Node): Node
 SVGFEOffsetElement[JC] def attributes: NamedNodeMap
 SVGFEOffsetElement[JC] def childElementCount: Int
-SVGFEOffsetElement[JC] def childNodes: NodeList
+SVGFEOffsetElement[JC] def childNodes: NodeList[Node]
 SVGFEOffsetElement[JC] def children: HTMLCollection
 SVGFEOffsetElement[JC] var classList: DOMTokenList
 SVGFEOffsetElement[JC] var className: SVGAnimatedString
@@ -17009,7 +16998,7 @@ SVGFEOffsetElement[JC] def prefix: String
 SVGFEOffsetElement[JC] def previousElementSibling: Element
 SVGFEOffsetElement[JC] def previousSibling: Node
 SVGFEOffsetElement[JC] def querySelector(selectors: String): Element
-SVGFEOffsetElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEOffsetElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEOffsetElement[JC] def removeAttribute(name: String): Unit
 SVGFEOffsetElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEOffsetElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -17043,7 +17032,7 @@ SVGFEPointLightElement[JC] def addEventListener[T <: Event](`type`: String, list
 SVGFEPointLightElement[JC] def appendChild(newChild: Node): Node
 SVGFEPointLightElement[JC] def attributes: NamedNodeMap
 SVGFEPointLightElement[JC] def childElementCount: Int
-SVGFEPointLightElement[JC] def childNodes: NodeList
+SVGFEPointLightElement[JC] def childNodes: NodeList[Node]
 SVGFEPointLightElement[JC] def children: HTMLCollection
 SVGFEPointLightElement[JC] var classList: DOMTokenList
 SVGFEPointLightElement[JC] def clientHeight: Int
@@ -17115,7 +17104,7 @@ SVGFEPointLightElement[JC] def prefix: String
 SVGFEPointLightElement[JC] def previousElementSibling: Element
 SVGFEPointLightElement[JC] def previousSibling: Node
 SVGFEPointLightElement[JC] def querySelector(selectors: String): Element
-SVGFEPointLightElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFEPointLightElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFEPointLightElement[JC] def removeAttribute(name: String): Unit
 SVGFEPointLightElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFEPointLightElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -17147,7 +17136,7 @@ SVGFESpecularLightingElement[JC] def addEventListener[T <: Event](`type`: String
 SVGFESpecularLightingElement[JC] def appendChild(newChild: Node): Node
 SVGFESpecularLightingElement[JC] def attributes: NamedNodeMap
 SVGFESpecularLightingElement[JC] def childElementCount: Int
-SVGFESpecularLightingElement[JC] def childNodes: NodeList
+SVGFESpecularLightingElement[JC] def childNodes: NodeList[Node]
 SVGFESpecularLightingElement[JC] def children: HTMLCollection
 SVGFESpecularLightingElement[JC] var classList: DOMTokenList
 SVGFESpecularLightingElement[JC] var className: SVGAnimatedString
@@ -17224,7 +17213,7 @@ SVGFESpecularLightingElement[JC] def prefix: String
 SVGFESpecularLightingElement[JC] def previousElementSibling: Element
 SVGFESpecularLightingElement[JC] def previousSibling: Node
 SVGFESpecularLightingElement[JC] def querySelector(selectors: String): Element
-SVGFESpecularLightingElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFESpecularLightingElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFESpecularLightingElement[JC] def removeAttribute(name: String): Unit
 SVGFESpecularLightingElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFESpecularLightingElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -17261,7 +17250,7 @@ SVGFESpotLightElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGFESpotLightElement[JC] def appendChild(newChild: Node): Node
 SVGFESpotLightElement[JC] def attributes: NamedNodeMap
 SVGFESpotLightElement[JC] def childElementCount: Int
-SVGFESpotLightElement[JC] def childNodes: NodeList
+SVGFESpotLightElement[JC] def childNodes: NodeList[Node]
 SVGFESpotLightElement[JC] def children: HTMLCollection
 SVGFESpotLightElement[JC] var classList: DOMTokenList
 SVGFESpotLightElement[JC] def clientHeight: Int
@@ -17337,7 +17326,7 @@ SVGFESpotLightElement[JC] def prefix: String
 SVGFESpotLightElement[JC] def previousElementSibling: Element
 SVGFESpotLightElement[JC] def previousSibling: Node
 SVGFESpotLightElement[JC] def querySelector(selectors: String): Element
-SVGFESpotLightElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFESpotLightElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFESpotLightElement[JC] def removeAttribute(name: String): Unit
 SVGFESpotLightElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFESpotLightElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -17370,7 +17359,7 @@ SVGFETileElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGFETileElement[JC] def appendChild(newChild: Node): Node
 SVGFETileElement[JC] def attributes: NamedNodeMap
 SVGFETileElement[JC] def childElementCount: Int
-SVGFETileElement[JC] def childNodes: NodeList
+SVGFETileElement[JC] def childNodes: NodeList[Node]
 SVGFETileElement[JC] def children: HTMLCollection
 SVGFETileElement[JC] var classList: DOMTokenList
 SVGFETileElement[JC] var className: SVGAnimatedString
@@ -17445,7 +17434,7 @@ SVGFETileElement[JC] def prefix: String
 SVGFETileElement[JC] def previousElementSibling: Element
 SVGFETileElement[JC] def previousSibling: Node
 SVGFETileElement[JC] def querySelector(selectors: String): Element
-SVGFETileElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFETileElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFETileElement[JC] def removeAttribute(name: String): Unit
 SVGFETileElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFETileElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -17481,7 +17470,7 @@ SVGFETurbulenceElement[JC] def attributes: NamedNodeMap
 SVGFETurbulenceElement[JC] def baseFrequencyX: SVGAnimatedNumber
 SVGFETurbulenceElement[JC] def baseFrequencyY: SVGAnimatedNumber
 SVGFETurbulenceElement[JC] def childElementCount: Int
-SVGFETurbulenceElement[JC] def childNodes: NodeList
+SVGFETurbulenceElement[JC] def childNodes: NodeList[Node]
 SVGFETurbulenceElement[JC] def children: HTMLCollection
 SVGFETurbulenceElement[JC] var classList: DOMTokenList
 SVGFETurbulenceElement[JC] var className: SVGAnimatedString
@@ -17556,7 +17545,7 @@ SVGFETurbulenceElement[JC] def prefix: String
 SVGFETurbulenceElement[JC] def previousElementSibling: Element
 SVGFETurbulenceElement[JC] def previousSibling: Node
 SVGFETurbulenceElement[JC] def querySelector(selectors: String): Element
-SVGFETurbulenceElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFETurbulenceElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFETurbulenceElement[JC] def removeAttribute(name: String): Unit
 SVGFETurbulenceElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFETurbulenceElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -17602,7 +17591,7 @@ SVGFilterElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGFilterElement[JC] def appendChild(newChild: Node): Node
 SVGFilterElement[JC] def attributes: NamedNodeMap
 SVGFilterElement[JC] def childElementCount: Int
-SVGFilterElement[JC] def childNodes: NodeList
+SVGFilterElement[JC] def childNodes: NodeList[Node]
 SVGFilterElement[JC] def children: HTMLCollection
 SVGFilterElement[JC] var classList: DOMTokenList
 SVGFilterElement[JC] var className: SVGAnimatedString
@@ -17682,7 +17671,7 @@ SVGFilterElement[JC] def previousElementSibling: Element
 SVGFilterElement[JC] def previousSibling: Node
 SVGFilterElement[JC] def primitiveUnits: SVGAnimatedEnumeration
 SVGFilterElement[JC] def querySelector(selectors: String): Element
-SVGFilterElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGFilterElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGFilterElement[JC] def removeAttribute(name: String): Unit
 SVGFilterElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGFilterElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -17727,7 +17716,7 @@ SVGGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 SVGGElement[JC] def appendChild(newChild: Node): Node
 SVGGElement[JC] def attributes: NamedNodeMap
 SVGGElement[JC] def childElementCount: Int
-SVGGElement[JC] def childNodes: NodeList
+SVGGElement[JC] def childNodes: NodeList[Node]
 SVGGElement[JC] def children: HTMLCollection
 SVGGElement[JC] var classList: DOMTokenList
 SVGGElement[JC] var className: SVGAnimatedString
@@ -17808,7 +17797,7 @@ SVGGElement[JC] def prefix: String
 SVGGElement[JC] def previousElementSibling: Element
 SVGGElement[JC] def previousSibling: Node
 SVGGElement[JC] def querySelector(selectors: String): Element
-SVGGElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGGElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGGElement[JC] def removeAttribute(name: String): Unit
 SVGGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGGElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -17847,7 +17836,7 @@ SVGGradientElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGGradientElement[JC] def appendChild(newChild: Node): Node
 SVGGradientElement[JC] def attributes: NamedNodeMap
 SVGGradientElement[JC] def childElementCount: Int
-SVGGradientElement[JC] def childNodes: NodeList
+SVGGradientElement[JC] def childNodes: NodeList[Node]
 SVGGradientElement[JC] def children: HTMLCollection
 SVGGradientElement[JC] var classList: DOMTokenList
 SVGGradientElement[JC] var className: SVGAnimatedString
@@ -17924,7 +17913,7 @@ SVGGradientElement[JC] def prefix: String
 SVGGradientElement[JC] def previousElementSibling: Element
 SVGGradientElement[JC] def previousSibling: Node
 SVGGradientElement[JC] def querySelector(selectors: String): Element
-SVGGradientElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGGradientElement[JC] def removeAttribute(name: String): Unit
 SVGGradientElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGGradientElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -17959,7 +17948,7 @@ SVGImageElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGImageElement[JC] def appendChild(newChild: Node): Node
 SVGImageElement[JC] def attributes: NamedNodeMap
 SVGImageElement[JC] def childElementCount: Int
-SVGImageElement[JC] def childNodes: NodeList
+SVGImageElement[JC] def childNodes: NodeList[Node]
 SVGImageElement[JC] def children: HTMLCollection
 SVGImageElement[JC] var classList: DOMTokenList
 SVGImageElement[JC] var className: SVGAnimatedString
@@ -18043,7 +18032,7 @@ SVGImageElement[JC] def preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGImageElement[JC] def previousElementSibling: Element
 SVGImageElement[JC] def previousSibling: Node
 SVGImageElement[JC] def querySelector(selectors: String): Element
-SVGImageElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGImageElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGImageElement[JC] def removeAttribute(name: String): Unit
 SVGImageElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGImageElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -18109,7 +18098,7 @@ SVGLineElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGLineElement[JC] def appendChild(newChild: Node): Node
 SVGLineElement[JC] def attributes: NamedNodeMap
 SVGLineElement[JC] def childElementCount: Int
-SVGLineElement[JC] def childNodes: NodeList
+SVGLineElement[JC] def childNodes: NodeList[Node]
 SVGLineElement[JC] def children: HTMLCollection
 SVGLineElement[JC] var classList: DOMTokenList
 SVGLineElement[JC] var className: SVGAnimatedString
@@ -18190,7 +18179,7 @@ SVGLineElement[JC] def prefix: String
 SVGLineElement[JC] def previousElementSibling: Element
 SVGLineElement[JC] def previousSibling: Node
 SVGLineElement[JC] def querySelector(selectors: String): Element
-SVGLineElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGLineElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGLineElement[JC] def removeAttribute(name: String): Unit
 SVGLineElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGLineElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -18233,7 +18222,7 @@ SVGLinearGradientElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGLinearGradientElement[JC] def appendChild(newChild: Node): Node
 SVGLinearGradientElement[JC] def attributes: NamedNodeMap
 SVGLinearGradientElement[JC] def childElementCount: Int
-SVGLinearGradientElement[JC] def childNodes: NodeList
+SVGLinearGradientElement[JC] def childNodes: NodeList[Node]
 SVGLinearGradientElement[JC] def children: HTMLCollection
 SVGLinearGradientElement[JC] var classList: DOMTokenList
 SVGLinearGradientElement[JC] var className: SVGAnimatedString
@@ -18310,7 +18299,7 @@ SVGLinearGradientElement[JC] def prefix: String
 SVGLinearGradientElement[JC] def previousElementSibling: Element
 SVGLinearGradientElement[JC] def previousSibling: Node
 SVGLinearGradientElement[JC] def querySelector(selectors: String): Element
-SVGLinearGradientElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGLinearGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGLinearGradientElement[JC] def removeAttribute(name: String): Unit
 SVGLinearGradientElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGLinearGradientElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -18351,7 +18340,7 @@ SVGMarkerElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGMarkerElement[JC] def appendChild(newChild: Node): Node
 SVGMarkerElement[JC] def attributes: NamedNodeMap
 SVGMarkerElement[JC] def childElementCount: Int
-SVGMarkerElement[JC] def childNodes: NodeList
+SVGMarkerElement[JC] def childNodes: NodeList[Node]
 SVGMarkerElement[JC] def children: HTMLCollection
 SVGMarkerElement[JC] var classList: DOMTokenList
 SVGMarkerElement[JC] var className: SVGAnimatedString
@@ -18431,7 +18420,7 @@ SVGMarkerElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGMarkerElement[JC] def previousElementSibling: Element
 SVGMarkerElement[JC] def previousSibling: Node
 SVGMarkerElement[JC] def querySelector(selectors: String): Element
-SVGMarkerElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGMarkerElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGMarkerElement[JC] def refX: SVGAnimatedLength
 SVGMarkerElement[JC] def refY: SVGAnimatedLength
 SVGMarkerElement[JC] def removeAttribute(name: String): Unit
@@ -18477,7 +18466,7 @@ SVGMaskElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGMaskElement[JC] def appendChild(newChild: Node): Node
 SVGMaskElement[JC] def attributes: NamedNodeMap
 SVGMaskElement[JC] def childElementCount: Int
-SVGMaskElement[JC] def childNodes: NodeList
+SVGMaskElement[JC] def childNodes: NodeList[Node]
 SVGMaskElement[JC] def children: HTMLCollection
 SVGMaskElement[JC] var classList: DOMTokenList
 SVGMaskElement[JC] var className: SVGAnimatedString
@@ -18555,7 +18544,7 @@ SVGMaskElement[JC] def prefix: String
 SVGMaskElement[JC] def previousElementSibling: Element
 SVGMaskElement[JC] def previousSibling: Node
 SVGMaskElement[JC] def querySelector(selectors: String): Element
-SVGMaskElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGMaskElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGMaskElement[JC] def removeAttribute(name: String): Unit
 SVGMaskElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGMaskElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -18610,7 +18599,7 @@ SVGMetadataElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGMetadataElement[JC] def appendChild(newChild: Node): Node
 SVGMetadataElement[JC] def attributes: NamedNodeMap
 SVGMetadataElement[JC] def childElementCount: Int
-SVGMetadataElement[JC] def childNodes: NodeList
+SVGMetadataElement[JC] def childNodes: NodeList[Node]
 SVGMetadataElement[JC] def children: HTMLCollection
 SVGMetadataElement[JC] var classList: DOMTokenList
 SVGMetadataElement[JC] def clientHeight: Int
@@ -18682,7 +18671,7 @@ SVGMetadataElement[JC] def prefix: String
 SVGMetadataElement[JC] def previousElementSibling: Element
 SVGMetadataElement[JC] def previousSibling: Node
 SVGMetadataElement[JC] def querySelector(selectors: String): Element
-SVGMetadataElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGMetadataElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGMetadataElement[JC] def removeAttribute(name: String): Unit
 SVGMetadataElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGMetadataElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -18720,7 +18709,7 @@ SVGPathElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGPathElement[JC] def appendChild(newChild: Node): Node
 SVGPathElement[JC] def attributes: NamedNodeMap
 SVGPathElement[JC] def childElementCount: Int
-SVGPathElement[JC] def childNodes: NodeList
+SVGPathElement[JC] def childNodes: NodeList[Node]
 SVGPathElement[JC] def children: HTMLCollection
 SVGPathElement[JC] var classList: DOMTokenList
 SVGPathElement[JC] var className: SVGAnimatedString
@@ -18824,7 +18813,7 @@ SVGPathElement[JC] def prefix: String
 SVGPathElement[JC] def previousElementSibling: Element
 SVGPathElement[JC] def previousSibling: Node
 SVGPathElement[JC] def querySelector(selectors: String): Element
-SVGPathElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGPathElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGPathElement[JC] def removeAttribute(name: String): Unit
 SVGPathElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGPathElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -18989,7 +18978,7 @@ SVGPatternElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGPatternElement[JC] def appendChild(newChild: Node): Node
 SVGPatternElement[JC] def attributes: NamedNodeMap
 SVGPatternElement[JC] def childElementCount: Int
-SVGPatternElement[JC] def childNodes: NodeList
+SVGPatternElement[JC] def childNodes: NodeList[Node]
 SVGPatternElement[JC] def children: HTMLCollection
 SVGPatternElement[JC] var classList: DOMTokenList
 SVGPatternElement[JC] var className: SVGAnimatedString
@@ -19070,7 +19059,7 @@ SVGPatternElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGPatternElement[JC] def previousElementSibling: Element
 SVGPatternElement[JC] def previousSibling: Node
 SVGPatternElement[JC] def querySelector(selectors: String): Element
-SVGPatternElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGPatternElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGPatternElement[JC] def removeAttribute(name: String): Unit
 SVGPatternElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGPatternElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -19121,7 +19110,7 @@ SVGPolygonElement[JC] def animatedPoints: SVGPointList
 SVGPolygonElement[JC] def appendChild(newChild: Node): Node
 SVGPolygonElement[JC] def attributes: NamedNodeMap
 SVGPolygonElement[JC] def childElementCount: Int
-SVGPolygonElement[JC] def childNodes: NodeList
+SVGPolygonElement[JC] def childNodes: NodeList[Node]
 SVGPolygonElement[JC] def children: HTMLCollection
 SVGPolygonElement[JC] var classList: DOMTokenList
 SVGPolygonElement[JC] var className: SVGAnimatedString
@@ -19203,7 +19192,7 @@ SVGPolygonElement[JC] def prefix: String
 SVGPolygonElement[JC] def previousElementSibling: Element
 SVGPolygonElement[JC] def previousSibling: Node
 SVGPolygonElement[JC] def querySelector(selectors: String): Element
-SVGPolygonElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGPolygonElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGPolygonElement[JC] def removeAttribute(name: String): Unit
 SVGPolygonElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGPolygonElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -19240,7 +19229,7 @@ SVGPolylineElement[JC] def animatedPoints: SVGPointList
 SVGPolylineElement[JC] def appendChild(newChild: Node): Node
 SVGPolylineElement[JC] def attributes: NamedNodeMap
 SVGPolylineElement[JC] def childElementCount: Int
-SVGPolylineElement[JC] def childNodes: NodeList
+SVGPolylineElement[JC] def childNodes: NodeList[Node]
 SVGPolylineElement[JC] def children: HTMLCollection
 SVGPolylineElement[JC] var classList: DOMTokenList
 SVGPolylineElement[JC] var className: SVGAnimatedString
@@ -19322,7 +19311,7 @@ SVGPolylineElement[JC] def prefix: String
 SVGPolylineElement[JC] def previousElementSibling: Element
 SVGPolylineElement[JC] def previousSibling: Node
 SVGPolylineElement[JC] def querySelector(selectors: String): Element
-SVGPolylineElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGPolylineElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGPolylineElement[JC] def removeAttribute(name: String): Unit
 SVGPolylineElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGPolylineElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -19377,7 +19366,7 @@ SVGRadialGradientElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGRadialGradientElement[JC] def appendChild(newChild: Node): Node
 SVGRadialGradientElement[JC] def attributes: NamedNodeMap
 SVGRadialGradientElement[JC] def childElementCount: Int
-SVGRadialGradientElement[JC] def childNodes: NodeList
+SVGRadialGradientElement[JC] def childNodes: NodeList[Node]
 SVGRadialGradientElement[JC] def children: HTMLCollection
 SVGRadialGradientElement[JC] var classList: DOMTokenList
 SVGRadialGradientElement[JC] var className: SVGAnimatedString
@@ -19458,7 +19447,7 @@ SVGRadialGradientElement[JC] def prefix: String
 SVGRadialGradientElement[JC] def previousElementSibling: Element
 SVGRadialGradientElement[JC] def previousSibling: Node
 SVGRadialGradientElement[JC] def querySelector(selectors: String): Element
-SVGRadialGradientElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGRadialGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGRadialGradientElement[JC] def r: SVGAnimatedLength
 SVGRadialGradientElement[JC] def removeAttribute(name: String): Unit
 SVGRadialGradientElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19494,7 +19483,7 @@ SVGRectElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGRectElement[JC] def appendChild(newChild: Node): Node
 SVGRectElement[JC] def attributes: NamedNodeMap
 SVGRectElement[JC] def childElementCount: Int
-SVGRectElement[JC] def childNodes: NodeList
+SVGRectElement[JC] def childNodes: NodeList[Node]
 SVGRectElement[JC] def children: HTMLCollection
 SVGRectElement[JC] var classList: DOMTokenList
 SVGRectElement[JC] var className: SVGAnimatedString
@@ -19576,7 +19565,7 @@ SVGRectElement[JC] def prefix: String
 SVGRectElement[JC] def previousElementSibling: Element
 SVGRectElement[JC] def previousSibling: Node
 SVGRectElement[JC] def querySelector(selectors: String): Element
-SVGRectElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGRectElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGRectElement[JC] def removeAttribute(name: String): Unit
 SVGRectElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGRectElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -19619,7 +19608,7 @@ SVGSVGElement[JC] def attributes: NamedNodeMap
 SVGSVGElement[JC] def checkEnclosure(element: SVGElement, rect: SVGRect): Boolean
 SVGSVGElement[JC] def checkIntersection(element: SVGElement, rect: SVGRect): Boolean
 SVGSVGElement[JC] def childElementCount: Int
-SVGSVGElement[JC] def childNodes: NodeList
+SVGSVGElement[JC] def childNodes: NodeList[Node]
 SVGSVGElement[JC] def children: HTMLCollection
 SVGSVGElement[JC] var classList: DOMTokenList
 SVGSVGElement[JC] var className: SVGAnimatedString
@@ -19664,8 +19653,8 @@ SVGSVGElement[JC] def getElementById(elementId: String): Element
 SVGSVGElement[JC] def getElementsByClassName(classNames: String): HTMLCollection
 SVGSVGElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGSVGElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection
-SVGSVGElement[JC] def getEnclosureList(rect: SVGRect, referenceElement: SVGElement): NodeList
-SVGSVGElement[JC] def getIntersectionList(rect: SVGRect, referenceElement: SVGElement): NodeList
+SVGSVGElement[JC] def getEnclosureList(rect: SVGRect, referenceElement: SVGElement): NodeList[Node]
+SVGSVGElement[JC] def getIntersectionList(rect: SVGRect, referenceElement: SVGElement): NodeList[Node]
 SVGSVGElement[JC] def getScreenCTM(): SVGMatrix
 SVGSVGElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGSVGElement[JC] def hasAttribute(name: String): Boolean
@@ -19731,7 +19720,7 @@ SVGSVGElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGSVGElement[JC] def previousElementSibling: Element
 SVGSVGElement[JC] def previousSibling: Node
 SVGSVGElement[JC] def querySelector(selectors: String): Element
-SVGSVGElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGSVGElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGSVGElement[JC] def removeAttribute(name: String): Unit
 SVGSVGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGSVGElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -19779,7 +19768,7 @@ SVGScriptElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGScriptElement[JC] def appendChild(newChild: Node): Node
 SVGScriptElement[JC] def attributes: NamedNodeMap
 SVGScriptElement[JC] def childElementCount: Int
-SVGScriptElement[JC] def childNodes: NodeList
+SVGScriptElement[JC] def childNodes: NodeList[Node]
 SVGScriptElement[JC] def children: HTMLCollection
 SVGScriptElement[JC] var classList: DOMTokenList
 SVGScriptElement[JC] def clientHeight: Int
@@ -19853,7 +19842,7 @@ SVGScriptElement[JC] def prefix: String
 SVGScriptElement[JC] def previousElementSibling: Element
 SVGScriptElement[JC] def previousSibling: Node
 SVGScriptElement[JC] def querySelector(selectors: String): Element
-SVGScriptElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGScriptElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGScriptElement[JC] def removeAttribute(name: String): Unit
 SVGScriptElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGScriptElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -19883,7 +19872,7 @@ SVGStopElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGStopElement[JC] def appendChild(newChild: Node): Node
 SVGStopElement[JC] def attributes: NamedNodeMap
 SVGStopElement[JC] def childElementCount: Int
-SVGStopElement[JC] def childNodes: NodeList
+SVGStopElement[JC] def childNodes: NodeList[Node]
 SVGStopElement[JC] def children: HTMLCollection
 SVGStopElement[JC] var classList: DOMTokenList
 SVGStopElement[JC] var className: SVGAnimatedString
@@ -19957,7 +19946,7 @@ SVGStopElement[JC] def prefix: String
 SVGStopElement[JC] def previousElementSibling: Element
 SVGStopElement[JC] def previousSibling: Node
 SVGStopElement[JC] def querySelector(selectors: String): Element
-SVGStopElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGStopElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGStopElement[JC] def removeAttribute(name: String): Unit
 SVGStopElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGStopElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -19997,7 +19986,7 @@ SVGStyleElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGStyleElement[JC] def appendChild(newChild: Node): Node
 SVGStyleElement[JC] def attributes: NamedNodeMap
 SVGStyleElement[JC] def childElementCount: Int
-SVGStyleElement[JC] def childNodes: NodeList
+SVGStyleElement[JC] def childNodes: NodeList[Node]
 SVGStyleElement[JC] def children: HTMLCollection
 SVGStyleElement[JC] var classList: DOMTokenList
 SVGStyleElement[JC] def clientHeight: Int
@@ -20070,7 +20059,7 @@ SVGStyleElement[JC] def prefix: String
 SVGStyleElement[JC] def previousElementSibling: Element
 SVGStyleElement[JC] def previousSibling: Node
 SVGStyleElement[JC] def querySelector(selectors: String): Element
-SVGStyleElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGStyleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGStyleElement[JC] def removeAttribute(name: String): Unit
 SVGStyleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGStyleElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -20103,7 +20092,7 @@ SVGSwitchElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGSwitchElement[JC] def appendChild(newChild: Node): Node
 SVGSwitchElement[JC] def attributes: NamedNodeMap
 SVGSwitchElement[JC] def childElementCount: Int
-SVGSwitchElement[JC] def childNodes: NodeList
+SVGSwitchElement[JC] def childNodes: NodeList[Node]
 SVGSwitchElement[JC] def children: HTMLCollection
 SVGSwitchElement[JC] var classList: DOMTokenList
 SVGSwitchElement[JC] var className: SVGAnimatedString
@@ -20184,7 +20173,7 @@ SVGSwitchElement[JC] def prefix: String
 SVGSwitchElement[JC] def previousElementSibling: Element
 SVGSwitchElement[JC] def previousSibling: Node
 SVGSwitchElement[JC] def querySelector(selectors: String): Element
-SVGSwitchElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGSwitchElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGSwitchElement[JC] def removeAttribute(name: String): Unit
 SVGSwitchElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGSwitchElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -20220,7 +20209,7 @@ SVGSymbolElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGSymbolElement[JC] def appendChild(newChild: Node): Node
 SVGSymbolElement[JC] def attributes: NamedNodeMap
 SVGSymbolElement[JC] def childElementCount: Int
-SVGSymbolElement[JC] def childNodes: NodeList
+SVGSymbolElement[JC] def childNodes: NodeList[Node]
 SVGSymbolElement[JC] def children: HTMLCollection
 SVGSymbolElement[JC] var classList: DOMTokenList
 SVGSymbolElement[JC] var className: SVGAnimatedString
@@ -20295,7 +20284,7 @@ SVGSymbolElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGSymbolElement[JC] def previousElementSibling: Element
 SVGSymbolElement[JC] def previousSibling: Node
 SVGSymbolElement[JC] def querySelector(selectors: String): Element
-SVGSymbolElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGSymbolElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGSymbolElement[JC] def removeAttribute(name: String): Unit
 SVGSymbolElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGSymbolElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -20328,7 +20317,7 @@ SVGTSpanElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGTSpanElement[JC] def appendChild(newChild: Node): Node
 SVGTSpanElement[JC] def attributes: NamedNodeMap
 SVGTSpanElement[JC] def childElementCount: Int
-SVGTSpanElement[JC] def childNodes: NodeList
+SVGTSpanElement[JC] def childNodes: NodeList[Node]
 SVGTSpanElement[JC] def children: HTMLCollection
 SVGTSpanElement[JC] var classList: DOMTokenList
 SVGTSpanElement[JC] var className: SVGAnimatedString
@@ -20414,7 +20403,7 @@ SVGTSpanElement[JC] def prefix: String
 SVGTSpanElement[JC] def previousElementSibling: Element
 SVGTSpanElement[JC] def previousSibling: Node
 SVGTSpanElement[JC] def querySelector(selectors: String): Element
-SVGTSpanElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGTSpanElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGTSpanElement[JC] def removeAttribute(name: String): Unit
 SVGTSpanElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGTSpanElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -20458,7 +20447,7 @@ SVGTextContentElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGTextContentElement[JC] def appendChild(newChild: Node): Node
 SVGTextContentElement[JC] def attributes: NamedNodeMap
 SVGTextContentElement[JC] def childElementCount: Int
-SVGTextContentElement[JC] def childNodes: NodeList
+SVGTextContentElement[JC] def childNodes: NodeList[Node]
 SVGTextContentElement[JC] def children: HTMLCollection
 SVGTextContentElement[JC] var classList: DOMTokenList
 SVGTextContentElement[JC] var className: SVGAnimatedString
@@ -20542,7 +20531,7 @@ SVGTextContentElement[JC] def prefix: String
 SVGTextContentElement[JC] def previousElementSibling: Element
 SVGTextContentElement[JC] def previousSibling: Node
 SVGTextContentElement[JC] def querySelector(selectors: String): Element
-SVGTextContentElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGTextContentElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGTextContentElement[JC] def removeAttribute(name: String): Unit
 SVGTextContentElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGTextContentElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -20582,7 +20571,7 @@ SVGTextElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGTextElement[JC] def appendChild(newChild: Node): Node
 SVGTextElement[JC] def attributes: NamedNodeMap
 SVGTextElement[JC] def childElementCount: Int
-SVGTextElement[JC] def childNodes: NodeList
+SVGTextElement[JC] def childNodes: NodeList[Node]
 SVGTextElement[JC] def children: HTMLCollection
 SVGTextElement[JC] var classList: DOMTokenList
 SVGTextElement[JC] var className: SVGAnimatedString
@@ -20674,7 +20663,7 @@ SVGTextElement[JC] def prefix: String
 SVGTextElement[JC] def previousElementSibling: Element
 SVGTextElement[JC] def previousSibling: Node
 SVGTextElement[JC] def querySelector(selectors: String): Element
-SVGTextElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGTextElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGTextElement[JC] def removeAttribute(name: String): Unit
 SVGTextElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGTextElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -20715,7 +20704,7 @@ SVGTextPathElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGTextPathElement[JC] def appendChild(newChild: Node): Node
 SVGTextPathElement[JC] def attributes: NamedNodeMap
 SVGTextPathElement[JC] def childElementCount: Int
-SVGTextPathElement[JC] def childNodes: NodeList
+SVGTextPathElement[JC] def childNodes: NodeList[Node]
 SVGTextPathElement[JC] def children: HTMLCollection
 SVGTextPathElement[JC] var classList: DOMTokenList
 SVGTextPathElement[JC] var className: SVGAnimatedString
@@ -20801,7 +20790,7 @@ SVGTextPathElement[JC] def prefix: String
 SVGTextPathElement[JC] def previousElementSibling: Element
 SVGTextPathElement[JC] def previousSibling: Node
 SVGTextPathElement[JC] def querySelector(selectors: String): Element
-SVGTextPathElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGTextPathElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGTextPathElement[JC] def removeAttribute(name: String): Unit
 SVGTextPathElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGTextPathElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -20846,7 +20835,7 @@ SVGTextPositioningElement[JC] def addEventListener[T <: Event](`type`: String, l
 SVGTextPositioningElement[JC] def appendChild(newChild: Node): Node
 SVGTextPositioningElement[JC] def attributes: NamedNodeMap
 SVGTextPositioningElement[JC] def childElementCount: Int
-SVGTextPositioningElement[JC] def childNodes: NodeList
+SVGTextPositioningElement[JC] def childNodes: NodeList[Node]
 SVGTextPositioningElement[JC] def children: HTMLCollection
 SVGTextPositioningElement[JC] var classList: DOMTokenList
 SVGTextPositioningElement[JC] var className: SVGAnimatedString
@@ -20932,7 +20921,7 @@ SVGTextPositioningElement[JC] def prefix: String
 SVGTextPositioningElement[JC] def previousElementSibling: Element
 SVGTextPositioningElement[JC] def previousSibling: Node
 SVGTextPositioningElement[JC] def querySelector(selectors: String): Element
-SVGTextPositioningElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGTextPositioningElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGTextPositioningElement[JC] def removeAttribute(name: String): Unit
 SVGTextPositioningElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGTextPositioningElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -20972,7 +20961,7 @@ SVGTitleElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGTitleElement[JC] def appendChild(newChild: Node): Node
 SVGTitleElement[JC] def attributes: NamedNodeMap
 SVGTitleElement[JC] def childElementCount: Int
-SVGTitleElement[JC] def childNodes: NodeList
+SVGTitleElement[JC] def childNodes: NodeList[Node]
 SVGTitleElement[JC] def children: HTMLCollection
 SVGTitleElement[JC] var classList: DOMTokenList
 SVGTitleElement[JC] var className: SVGAnimatedString
@@ -21045,7 +21034,7 @@ SVGTitleElement[JC] def prefix: String
 SVGTitleElement[JC] def previousElementSibling: Element
 SVGTitleElement[JC] def previousSibling: Node
 SVGTitleElement[JC] def querySelector(selectors: String): Element
-SVGTitleElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGTitleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGTitleElement[JC] def removeAttribute(name: String): Unit
 SVGTitleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGTitleElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -21118,7 +21107,7 @@ SVGUseElement[JC] def animatedInstanceRoot: SVGElementInstance
 SVGUseElement[JC] def appendChild(newChild: Node): Node
 SVGUseElement[JC] def attributes: NamedNodeMap
 SVGUseElement[JC] def childElementCount: Int
-SVGUseElement[JC] def childNodes: NodeList
+SVGUseElement[JC] def childNodes: NodeList[Node]
 SVGUseElement[JC] def children: HTMLCollection
 SVGUseElement[JC] var classList: DOMTokenList
 SVGUseElement[JC] var className: SVGAnimatedString
@@ -21202,7 +21191,7 @@ SVGUseElement[JC] def prefix: String
 SVGUseElement[JC] def previousElementSibling: Element
 SVGUseElement[JC] def previousSibling: Node
 SVGUseElement[JC] def querySelector(selectors: String): Element
-SVGUseElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGUseElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGUseElement[JC] def removeAttribute(name: String): Unit
 SVGUseElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGUseElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -21241,7 +21230,7 @@ SVGViewElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGViewElement[JC] def appendChild(newChild: Node): Node
 SVGViewElement[JC] def attributes: NamedNodeMap
 SVGViewElement[JC] def childElementCount: Int
-SVGViewElement[JC] def childNodes: NodeList
+SVGViewElement[JC] def childNodes: NodeList[Node]
 SVGViewElement[JC] def children: HTMLCollection
 SVGViewElement[JC] var classList: DOMTokenList
 SVGViewElement[JC] def clientHeight: Int
@@ -21315,7 +21304,7 @@ SVGViewElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGViewElement[JC] def previousElementSibling: Element
 SVGViewElement[JC] def previousSibling: Node
 SVGViewElement[JC] def querySelector(selectors: String): Element
-SVGViewElement[JC] def querySelectorAll(selectors: String): NodeList
+SVGViewElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
 SVGViewElement[JC] def removeAttribute(name: String): Unit
 SVGViewElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
 SVGViewElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
@@ -21445,7 +21434,7 @@ Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1
 Text[JC] def appendChild(newChild: Node): Node
 Text[JC] def appendData(arg: String): Unit
 Text[JC] def attributes: NamedNodeMap
-Text[JC] def childNodes: NodeList
+Text[JC] def childNodes: NodeList[Node]
 Text[JC] def cloneNode(deep: Boolean?): Node
 Text[JC] def compareDocumentPosition(other: Node): Int
 Text[JC] def contains(otherNode: Node): Boolean
@@ -21569,15 +21558,11 @@ TextTrackCue[JT] def removeEventListener[T <: Event](`type`: String, listener: j
 TextTrackCue[JT] var startTime: Double
 TextTrackCue[JT] var text: String
 TextTrackCue[JT] var track: TextTrack
-TextTrackCueList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-TextTrackCueList[JT] def getCueById(id: String): TextTrackCue
-TextTrackCueList[JT] def item(index: Int): T
-TextTrackCueList[JT] def length: Int
-TextTrackCueList[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
-TextTrackList[JT] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-TextTrackList[JT] def item(index: Int): T
+TextTrackCueList[JC] @JSBracketAccess def apply(index: Int): T
+TextTrackCueList[JC] def getCueById(id: String): TextTrackCue
+TextTrackCueList[JC] def length: Int
+TextTrackList[JT] @JSBracketAccess def apply(index: Int): T
 TextTrackList[JT] def length: Int
-TextTrackList[JT] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
 TimeRanges[JC] def end(index: Int): Double
 TimeRanges[JC] def length: Int
 TimeRanges[JC] def start(index: Int): Double
@@ -21629,10 +21614,9 @@ TouchEventInit[JT] var shiftKey: js.UndefOr[Boolean]
 TouchEventInit[JT] var targetTouches: js.UndefOr[TouchList]
 TouchEventInit[JT] var touches: js.UndefOr[TouchList]
 TouchEventInit[JT] val view: js.UndefOr[Window]
-TouchList[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): T
-TouchList[JC] def item(index: Int): T
-TouchList[JC] def length: Int
-TouchList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: T): Unit
+TouchList[JT] @JSBracketAccess def apply(index: Int): T
+TouchList[JT] def item(index: Int): Touch
+TouchList[JT] def length: Int
 TrackEvent[JT] def bubbles: Boolean
 TrackEvent[JT] def cancelBubble: Boolean
 TrackEvent[JT] def cancelable: Boolean
@@ -24184,11 +24168,6 @@ ext/Ajax.InputData[SO] implicit def byteBuffer2ajax(data: ByteBuffer): InputData
 ext/Ajax.InputData[SO] implicit def formdata2ajax(b: FormData): InputData
 ext/Ajax.InputData[SO] implicit def str2ajax(s: String): InputData
 ext/AjaxException[SC] def isTimeout = xhr.status = = 0 && xhr.readyState = = 4
-ext/EasySeq[SC] def apply(x: Int) = jsApply(x)
-ext/EasySeq[SC] def hasNext: scala.Boolean
-ext/EasySeq[SC] def iterator = new Iterator[T] { var index = 0 def hasNext: scala.Boolean = index < jsLength def next() = { val res = jsApply(index) index + = 1 res } }
-ext/EasySeq[SC] def length = jsLength
-ext/EasySeq[SC] def next() = { val res = jsApply(index) index + = 1 res }
 ext/KeyCode[SO] final val A = 65
 ext/KeyCode[SO] final val Alt = 18
 ext/KeyCode[SO] final val B = 66
@@ -24616,26 +24595,6 @@ ext/KeyValue.Multimedia[SO] final val SpellCheck = "SpellCheck"
 ext/KeyValue.Multimedia[SO] final val VolumeDown = "VolumeDown"
 ext/KeyValue.Multimedia[SO] final val VolumeMute = "VolumeMute"
 ext/KeyValue.Multimedia[SO] final val VolumeUp = "VolumeUp"
-ext/package.PimpedHtmlCollection[SC] def apply(x: Int) = jsApply(x)
-ext/package.PimpedHtmlCollection[SC] def hasNext: scala.Boolean
-ext/package.PimpedHtmlCollection[SC] def iterator = new Iterator[T] { var index = 0 def hasNext: scala.Boolean = index < jsLength def next() = { val res = jsApply(index) index + = 1 res } }
-ext/package.PimpedHtmlCollection[SC] def length = jsLength
-ext/package.PimpedHtmlCollection[SC] def next() = { val res = jsApply(index) index + = 1 res }
-ext/package.PimpedNodeList[SC] def apply(x: Int) = jsApply(x)
-ext/package.PimpedNodeList[SC] def hasNext: scala.Boolean
-ext/package.PimpedNodeList[SC] def iterator = new Iterator[T] { var index = 0 def hasNext: scala.Boolean = index < jsLength def next() = { val res = jsApply(index) index + = 1 res } }
-ext/package.PimpedNodeList[SC] def length = jsLength
-ext/package.PimpedNodeList[SC] def next() = { val res = jsApply(index) index + = 1 res }
-ext/package.PimpedSVGTransformList[SC] def apply(x: Int) = jsApply(x)
-ext/package.PimpedSVGTransformList[SC] def hasNext: scala.Boolean
-ext/package.PimpedSVGTransformList[SC] def iterator = new Iterator[T] { var index = 0 def hasNext: scala.Boolean = index < jsLength def next() = { val res = jsApply(index) index + = 1 res } }
-ext/package.PimpedSVGTransformList[SC] def length = jsLength
-ext/package.PimpedSVGTransformList[SC] def next() = { val res = jsApply(index) index + = 1 res }
-ext/package.PimpedTouchList[SC] def apply(x: Int) = jsApply(x)
-ext/package.PimpedTouchList[SC] def hasNext: scala.Boolean
-ext/package.PimpedTouchList[SC] def iterator = new Iterator[T] { var index = 0 def hasNext: scala.Boolean = index < jsLength def next() = { val res = jsApply(index) index + = 1 res } }
-ext/package.PimpedTouchList[SC] def length = jsLength
-ext/package.PimpedTouchList[SC] def next() = { val res = jsApply(index) index + = 1 res }
 html[SO] type Anchor = HTMLAnchorElement
 html[SO] type Area = HTMLAreaElement
 html[SO] type Audio = HTMLAudioElement
@@ -24714,6 +24673,7 @@ idb[SO] def KeyRange = IDBKeyRange
 idb[SO] def Transaction = IDBTransaction
 package[SO] type ClientRect = DOMRect  (@deprecated in 2.0.0)
 package[SO] type ClientRectList = DOMRectList  (@deprecated in 2.0.0)
+package[SO] type NodeListOf[+T <: Node] = NodeList[T]  (@deprecated in 2.0.0)
 package[SO] type Transferable = ArrayBuffer | MessagePort
 package[SO] @js.native @JSGlobal("console") val console: Console
 package[SO] lazy val css: DeprecatedCSSAliases.type  (@deprecated in 2.0.0)
@@ -24770,7 +24730,7 @@ raw[SO] type CreateImageBitmapOptions = dom.CreateImageBitmapOptions  (@deprecat
 raw[SO] type CustomEvent = dom.CustomEvent  (@deprecated in 2.0.0)
 raw[SO] type DOMException = dom.DOMException  (@deprecated in 2.0.0)
 raw[SO] type DOMImplementation = dom.DOMImplementation  (@deprecated in 2.0.0)
-raw[SO] type DOMList[T] = dom.DOMList[T]  (@deprecated in 2.0.0)
+raw[SO] type DOMList[+T] = dom.DOMList[T]  (@deprecated in 2.0.0)
 raw[SO] type DOMParser = dom.DOMParser  (@deprecated in 2.0.0)
 raw[SO] type DOMRect = dom.DOMRect  (@deprecated in 2.0.0)
 raw[SO] type DOMRectList = dom.DOMRectList  (@deprecated in 2.0.0)
@@ -24907,8 +24867,8 @@ raw[SO] type NavigatorStorageUtils = dom.NavigatorStorageUtils  (@deprecated in 
 raw[SO] type Node = dom.Node  (@deprecated in 2.0.0)
 raw[SO] type NodeFilter = dom.NodeFilter  (@deprecated in 2.0.0)
 raw[SO] type NodeIterator = dom.NodeIterator  (@deprecated in 2.0.0)
-raw[SO] type NodeList = dom.NodeList  (@deprecated in 2.0.0)
-raw[SO] type NodeListOf[TNode <: Node] = dom.NodeListOf[TNode]  (@deprecated in 2.0.0)
+raw[SO] type NodeListOf[+T <: Node] = NodeList[T]  (@deprecated in 2.0.0)
+raw[SO] type NodeList[+T <: Node] = dom.NodeList[T]  (@deprecated in 2.0.0)
 raw[SO] type NodeSelector = dom.NodeSelector  (@deprecated in 2.0.0)
 raw[SO] type OfflineAudioContext = dom.OfflineAudioContext  (@deprecated in 2.0.0)
 raw[SO] type OffscreenCanvas = dom.OffscreenCanvas  (@deprecated in 2.0.0)

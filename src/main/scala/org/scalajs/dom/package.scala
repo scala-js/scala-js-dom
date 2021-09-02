@@ -41,4 +41,7 @@ package object dom {
 
   @deprecated("use DOMRectList instead", "2.0.0")
   type ClientRectList = DOMRectList
+
+  @deprecated("use NodeList[T] instead", "2.0.0")
+  type NodeListOf[+T <: Node] = NodeList[T]
 }

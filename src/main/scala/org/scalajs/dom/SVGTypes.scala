@@ -1244,7 +1244,7 @@ abstract class SVGSVGElement
    * MDN
    */
   def getIntersectionList(rect: SVGRect,
-      referenceElement: SVGElement): NodeList = js.native
+      referenceElement: SVGElement): NodeList[Node] = js.native
 
   /**
    * Unsuspends (i.e., unpauses) currently running animations that are defined
@@ -1327,7 +1327,7 @@ abstract class SVGSVGElement
   def createSVGAngle(): SVGAngle = js.native
 
   def getEnclosureList(rect: SVGRect,
-      referenceElement: SVGElement): NodeList = js.native
+      referenceElement: SVGElement): NodeList[Node] = js.native
 
   /**
    * Creates an SVGTransform object outside of any document trees. The object is

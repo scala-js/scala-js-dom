@@ -517,7 +517,7 @@ trait NodeSelector extends js.Object {
    *
    * MDN
    */
-  def querySelectorAll(selectors: String): NodeList = js.native
+  def querySelectorAll(selectors: String): NodeList[Node] = js.native
 
   /**
    * Returns the first element within the document (using depth-first pre-order
@@ -1158,7 +1158,7 @@ abstract class Node extends EventTarget {
    *
    * MDN
    */
-  def childNodes: NodeList = js.native
+  def childNodes: NodeList[Node] = js.native
 
   /**
    * Returns a DOMString containing the name of the Node. The structure of the name will
@@ -3050,8 +3050,9 @@ class TouchEvent(typeArg: String, init: js.UndefOr[TouchEventInit])
  * MDN
  */
 @js.native
-@JSGlobal
-class TouchList extends DOMList[Touch]
+trait TouchList extends DOMList[Touch] {
+  def item(index: Int): Touch = js.native
+}
 
 /**
  * A Touch object represents a single point of contact between the user and a touch-sensitive
@@ -3410,7 +3411,7 @@ abstract class Document
    *
    * MDN
    */
-  def getElementsByName(elementName: String): NodeList = js.native
+  def getElementsByName(elementName: String): NodeList[Node] = js.native
 
   /**
    * Returns a HTMLCollection of elements with the given tag name. The complete
@@ -5098,14 +5099,14 @@ trait MutationRecord extends js.Object {
    *
    * MDN
    */
-  def addedNodes: NodeList = js.native
+  def addedNodes: NodeList[Node] = js.native
 
   /**
    * Return the nodes removed. Will be an empty NodeList if no nodes were removed.
    *
    * MDN
    */
-  def removedNodes: NodeList = js.native
+  def removedNodes: NodeList[Node] = js.native
 
   /**
    * Return the previous sibling of the added or removed nodes, or null.
@@ -6383,14 +6384,40 @@ class StyleSheet extends js.Object {
 }
 
 @js.native
-trait DOMList[T] extends js.Object {
+trait DOMList[+T] extends js.Object {
   def length: Int = js.native
-  def item(index: Int): T = js.native
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): T = js.native
 
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: T): Unit = js.native
+  @JSBracketAccess
+  def apply(index: Int): T = js.native
+}
+
+object DOMList {
+  implicit def domListAsSeq[T](domList: DOMList[T]): scala.collection.Seq[T] =
+    new DOMListSeq(domList)
+
+  private final class DOMListSeq[+T](domList: DOMList[T])
+      extends scala.collection.Seq[T] {
+
+    def length: Int = domList.length
+
+    def apply(x: Int): T = domList(x)
+
+    def iterator: Iterator[T] = new DOMListIterator(domList)
+  }
+
+  private final class DOMListIterator[+T](domList: DOMList[T])
+      extends Iterator[T] {
+
+    private[this] var index = 0
+
+    def hasNext: Boolean = index < domList.length
+
+    def next(): T = {
+      val res = domList(index)
+      index += 1
+      res
+    }
+  }
 }
 
 /**
@@ -6401,10 +6428,9 @@ trait DOMList[T] extends js.Object {
  */
 @js.native
 @JSGlobal
-class NodeList extends DOMList[Node]
-
-@js.native
-trait NodeListOf[TNode <: Node] extends DOMList[TNode]
+class NodeList[+T <: Node] private[this] () extends DOMList[T] {
+  def item(index: Int): T = js.native
+}
 
 @js.native
 @JSGlobal
@@ -6925,7 +6951,9 @@ trait TextTrackCue extends EventTarget {
  * MDN
  */
 @js.native
-trait DOMTokenList extends DOMList[String] {
+@JSGlobal
+class DOMTokenList private[this] extends DOMList[String] {
+  def item(index: Int): String = js.native
 
   def contains(token: String): Boolean = js.native
 
@@ -7298,7 +7326,10 @@ trait ProgressEvent extends Event {
  * MDN
  */
 @js.native
-trait FileList extends DOMList[File]
+@JSGlobal
+class FileList private[this] () extends DOMList[File] {
+  def item(index: Int): File = js.native
+}
 
 /**
  * The File interface provides information about -- and access to the contents of --
@@ -7473,7 +7504,8 @@ trait AudioTrack extends js.Object {
 }
 
 @js.native
-trait TextTrackCueList extends DOMList[TextTrackCue] {
+@JSGlobal
+class TextTrackCueList private[this] () extends DOMList[TextTrackCue] {
   def getCueById(id: String): TextTrackCue = js.native
 }
 
@@ -7665,7 +7697,10 @@ trait WindowBase64 extends js.Object {
  * MDN
  */
 @js.native
-trait DOMStringList extends DOMList[String] {
+@JSGlobal
+class DOMStringList private[this] () extends DOMList[String] {
+  def item(index: Int): String = js.native
+
   def contains(str: String): Boolean = js.native
 }
 
