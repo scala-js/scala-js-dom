@@ -1,11 +1,7 @@
 package org.scalajs.dom.experimental.serviceworkers
 
-import org.scalajs.dom.experimental.{
-  Notification, NotificationOptions, Request, Response, Sequence
-}
-import org.scalajs.dom.raw.{EventInit, WorkerGlobalScope}
+import org.scalajs.dom._
 import org.scalajs.dom.webgl.RenderingContext
-import org.scalajs.dom.{Event, EventTarget, MessageEvent, MessagePort}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.|

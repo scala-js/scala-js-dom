@@ -13,25 +13,19 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scalaversion: ["2.11.12", "2.12.12", "2.13.4", "3.0.1"]
+        scalaversion: ["2.11.12", "2.12.14", "2.13.6", "3.0.1"]
     steps:
 
       - uses: actions/checkout@v2
 
       - name: Setup Scala
-        uses: japgolly/setup-everything-scala@v1.0
+        uses: japgolly/setup-everything-scala@v2.0
 
-      - name: Build
-        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" package
-
-      - name: Test generate documentation
-        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" doc
-
-      - name: Build examples
-        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" example/compile
+      - name: Build and test
+        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" test package doc
 
       - name: Validate formatting
-        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" scalafmtCheck
+        run: sbt -DCI=1 "++${{ matrix.scalaversion }}" dom/scalafmtCheck
 
       - name: Validate api report
         if: matrix.scalaversion != '2.11.12' && matrix.scalaversion != '3.0.1'
@@ -41,6 +35,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: japgolly/setup-everything-scala@v1.0
+      - uses: japgolly/setup-everything-scala@v2.0
       - name: Readme generation
         run: sbt readme/run

@@ -1,6 +1,6 @@
 package org.scalajs.dom.experimental.cachestorage
 
-import org.scalajs.dom.experimental._
+import org.scalajs.dom._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 

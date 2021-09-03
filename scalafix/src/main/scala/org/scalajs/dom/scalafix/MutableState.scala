@@ -3,7 +3,6 @@ package org.scalajs.dom.scalafix
 import scala.annotation.tailrec
 import scala.collection.immutable.SortedSet
 import scala.collection.mutable
-import scala.meta._
 import scalafix.v1._
 
 final class MutableState {

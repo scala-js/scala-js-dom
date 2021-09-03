@@ -1,6 +1,6 @@
 package org.scalajs.dom.experimental.domparser
 
-import org.scalajs.dom.raw.Document
+import org.scalajs.dom.Document
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
