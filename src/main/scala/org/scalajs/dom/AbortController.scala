@@ -1,6 +1,5 @@
-package org.scalajs.dom.experimental
+package org.scalajs.dom
 
-import org.scalajs.dom.raw.EventTarget
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 

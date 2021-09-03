@@ -1,7 +1,6 @@
 package org.scalajs.dom.experimental.sharedworkers
 
-import org.scalajs.dom.raw.MessagePort
-import org.scalajs.dom.webworkers
+import org.scalajs.dom.{AbstractWorker, MessagePort}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
@@ -30,7 +29,7 @@ import scala.scalajs.js.annotation._
 @js.native
 @JSGlobal
 class SharedWorker(stringUrl: String, name: js.UndefOr[String] = js.native)
-    extends webworkers.AbstractWorker {
+    extends AbstractWorker {
 
   /**
    * The port property of the SharedWorker interface returns a [[MessagePort]]

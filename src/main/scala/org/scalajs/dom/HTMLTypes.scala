@@ -7,7 +7,7 @@
  * Everything else is under the MIT License
  * http://opensource.org/licenses/MIT
  */
-package org.scalajs.dom.raw
+package org.scalajs.dom
 
 import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
@@ -1161,7 +1161,8 @@ abstract class HTMLMenuElement extends HTMLElement {
  */
 @js.native
 @JSGlobal
-abstract class HTMLCollection extends DOMList[Element] {
+class HTMLCollection private[this] () extends DOMList[Element] {
+  def item(index: Int): Element = js.native
 
   /**
    * Returns the specific node whose ID or, as a fallback, name matches the string

@@ -1,9 +1,11 @@
 package org.scalajs.dom.crypto
 
+import org.scalajs.dom.BufferSource
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBufferView
 
+@deprecated("use dom.crypto.crypto instead", "2.0.0")
 @js.native
 @JSGlobalScope
 object GlobalCrypto extends js.Object {
@@ -463,7 +465,9 @@ trait RsaOaepParams extends Algorithm {
 object RsaOaepParams {
   @inline
   def apply(name: String, label: BufferSource): RsaOaepParams = {
-    js.Dynamic.literal(name = name, label = label).asInstanceOf[RsaOaepParams]
+    js.Dynamic
+      .literal(name = name, label = label.asInstanceOf[js.Any])
+      .asInstanceOf[RsaOaepParams]
   }
 }
 
@@ -555,7 +559,8 @@ object AesCtrParams {
   def apply(name: String, counter: BufferSource,
       length: Short): AesCtrParams = {
     js.Dynamic
-      .literal(name = name, counter = counter, length = length)
+      .literal(name = name, counter = counter.asInstanceOf[js.Any],
+          length = length)
       .asInstanceOf[AesCtrParams]
   }
 }
@@ -611,8 +616,11 @@ trait AesCbcParams extends Algorithm {
 
 object AesCbcParams {
   @inline
-  def apply(name: String, iv: BufferSource): AesCbcParams =
-    js.Dynamic.literal(name = name, iv = iv).asInstanceOf[AesCbcParams]
+  def apply(name: String, iv: BufferSource): AesCbcParams = {
+    js.Dynamic
+      .literal(name = name, iv = iv.asInstanceOf[js.Any])
+      .asInstanceOf[AesCbcParams]
+  }
 }
 
 // AES-CMAC
@@ -647,7 +655,8 @@ object AesGcmParams {
   def apply(name: String, iv: BufferSource, additionalData: BufferSource,
       tagLength: Short): AesGcmParams = {
     js.Dynamic
-      .literal(name = name, iv = iv, additionalData = additionalData,
+      .literal(name = name, iv = iv.asInstanceOf[js.Any],
+          additionalData = additionalData.asInstanceOf[js.Any],
           tagLength = tagLength)
       .asInstanceOf[AesGcmParams]
   }
@@ -663,7 +672,9 @@ trait AesCfbParams extends Algorithm {
 object AesCfbParams {
   @inline
   def apply(name: String, iv: BufferSource): AesCfbParams =
-    js.Dynamic.literal(name = name, iv = iv).asInstanceOf[AesCfbParams]
+    js.Dynamic
+      .literal(name = name, iv = iv.asInstanceOf[js.Any])
+      .asInstanceOf[AesCfbParams]
 }
 
 // AES-KW
@@ -816,9 +827,11 @@ object ConcatParams {
       privateInfo: BufferSource): ConcatParams = {
     js.Dynamic
       .literal(name = name, hash = hash.asInstanceOf[js.Any],
-          algorithmId = algorithmId, partyUInfo = partyUInfo,
-          partyVInfo = partyVInfo, publicInfo = publicInfo,
-          privateInfo = privateInfo)
+          algorithmId = algorithmId.asInstanceOf[js.Any],
+          partyUInfo = partyUInfo.asInstanceOf[js.Any],
+          partyVInfo = partyVInfo.asInstanceOf[js.Any],
+          publicInfo = publicInfo.asInstanceOf[js.Any],
+          privateInfo = privateInfo.asInstanceOf[js.Any])
       .asInstanceOf[ConcatParams]
   }
 }
@@ -839,8 +852,9 @@ object HkdfCtrParams {
   def apply(name: String, hash: HashAlgorithmIdentifier, label: BufferSource,
       context: BufferSource): HkdfCtrParams = {
     js.Dynamic
-      .literal(name = name, hash = hash.asInstanceOf[js.Any], label = label,
-          context = context)
+      .literal(name = name, hash = hash.asInstanceOf[js.Any],
+          label = label.asInstanceOf[js.Any],
+          context = context.asInstanceOf[js.Any])
       .asInstanceOf[HkdfCtrParams]
   }
 }
@@ -861,8 +875,8 @@ object Pbkdf2Params {
   def apply(name: String, salt: BufferSource, iterations: Long,
       hash: HashAlgorithmIdentifier): Pbkdf2Params = {
     js.Dynamic
-      .literal(name = name, salt = salt, iterations = iterations.toDouble,
-          hash = hash.asInstanceOf[js.Any])
+      .literal(name = name, salt = salt.asInstanceOf[js.Any],
+          iterations = iterations.toDouble, hash = hash.asInstanceOf[js.Any])
       .asInstanceOf[Pbkdf2Params]
   }
 }

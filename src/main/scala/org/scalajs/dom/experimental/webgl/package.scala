@@ -1,6 +1,6 @@
 package org.scalajs.dom.experimental
 
-import org.scalajs.dom.raw.WebGLRenderingContext
+import org.scalajs.dom.WebGLRenderingContext
 import scala.scalajs.js
 
 package object webgl {

@@ -7,7 +7,7 @@
  * Everything else is under the MIT License
  * http://opensource.org/licenses/MIT
  */
-package org.scalajs.dom.raw
+package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
@@ -501,7 +501,9 @@ class CSSPageRule extends CSSRule {
  */
 @js.native
 @JSGlobal
-class CSSRuleList extends DOMList[CSSRule]
+class CSSRuleList private[this] () extends DOMList[CSSRule] {
+  def item(index: Int): CSSRule = js.native
+}
 
 /**
  * The CSSKeyframesRule interface describes an object representing a complete set

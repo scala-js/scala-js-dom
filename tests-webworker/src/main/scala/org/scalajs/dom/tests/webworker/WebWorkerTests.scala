@@ -47,7 +47,7 @@ trait WebWorkerTests {
 trait ServerResponses {
   import org.scalajs.dom._
   import org.scalajs.dom.tests.shared.SharedTests._
-  import org.scalajs.dom.webworkers.DedicatedWorkerGlobalScope.self
+  import org.scalajs.dom.DedicatedWorkerGlobalScope.self
 
   final val respond: WebWorkerCmd => String = {
 

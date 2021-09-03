@@ -1,5 +1,6 @@
 package example
 
+import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 import org.scalajs.dom
@@ -125,21 +126,25 @@ object EventHandler{
   }
 }
 
-@JSExportTopLevel("ExampleXMLHttpRequest")
-object XMLHttpRequest{
+@JSExportTopLevel("ExampleFetch")
+object Fetch {
   @JSExport
   def main(pre: html.Pre) = {
-    val xhr = new dom.XMLHttpRequest()
-    xhr.open("GET",
+    import scala.concurrent
+                .ExecutionContext
+                .Implicits
+                .global
+    import js.Thenable.Implicits._
+    val url =
       "https://www.boredapi.com/api/activity"
-    )
-    xhr.onload = { (e: dom.Event) =>
-      if (xhr.status == 200) {
-        pre.textContent =
-          xhr.responseText
-      }
+    val responseText = for {
+      response <- dom.fetch(url)
+      text <- response.text()
+    } yield {
+      text
     }
-    xhr.send()
+    for (text <- responseText)
+      pre.textContent = text
   }
 }
 
@@ -159,23 +164,6 @@ object Websocket {
       in.onkeyup = { (e: dom.Event) =>
         socket.send(in.value)
       }
-    }
-  }
-}
-
-@JSExportTopLevel("ExampleAjaxExtension")
-object AjaxExtension {
-  @JSExport
-  def main(pre: html.Pre) = {
-    import dom.ext.Ajax
-    import scala.concurrent
-                .ExecutionContext
-                .Implicits
-                .global
-    val url =
-      "https://www.boredapi.com/api/activity"
-    Ajax.get(url).foreach { case xhr =>
-      pre.textContent = xhr.responseText
     }
   }
 }

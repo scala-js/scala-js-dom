@@ -7,9 +7,10 @@
  * Everything else is under the MIT License
  * http://opensource.org/licenses/MIT
  */
-package org.scalajs.dom.raw
+package org.scalajs.dom
 
-import org.scalajs.dom.experimental.ReadableStream
+import scala.collection.mutable
+import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBuffer
@@ -488,8 +489,8 @@ trait WindowTimers extends js.Object {
 @JSGlobal
 class Navigator
     extends NavigatorID with NavigatorOnLine with NavigatorContentUtils
-    with NavigatorGeolocation with NavigatorStorageUtils
-    with NavigatorLanguage {
+    with NavigatorGeolocation with NavigatorStorageUtils with NavigatorLanguage
+    with NavigatorVibration {
 
   /**
    * The Clipboard API adds to the Navigator interface the read-only
@@ -515,7 +516,7 @@ trait NodeSelector extends js.Object {
    *
    * MDN
    */
-  def querySelectorAll(selectors: String): NodeList = js.native
+  def querySelectorAll(selectors: String): NodeList[Node] = js.native
 
   /**
    * Returns the first element within the document (using depth-first pre-order
@@ -529,7 +530,7 @@ trait NodeSelector extends js.Object {
 
 @js.native
 @JSGlobal
-class ClientRect extends js.Object {
+class DOMRect extends js.Object {
   var left: Double = js.native
   var width: Double = js.native
   var right: Double = js.native
@@ -906,7 +907,7 @@ abstract class Element
    *
    * MDN
    */
-  def getBoundingClientRect(): ClientRect = js.native
+  def getBoundingClientRect(): DOMRect = js.native
 
   /**
    * getAttributeNS returns the string value of the attribute with the specified
@@ -970,7 +971,7 @@ abstract class Element
    *
    * MDN
    */
-  def getClientRects(): ClientRectList = js.native
+  def getClientRects(): DOMRectList = js.native
 
   /**
    * setAttributeNode() adds a new Attr node to the specified element.
@@ -1156,7 +1157,7 @@ abstract class Node extends EventTarget {
    *
    * MDN
    */
-  def childNodes: NodeList = js.native
+  def childNodes: NodeList[Node] = js.native
 
   /**
    * Returns a DOMString containing the name of the Node. The structure of the name will
@@ -3048,8 +3049,9 @@ class TouchEvent(typeArg: String, init: js.UndefOr[TouchEventInit])
  * MDN
  */
 @js.native
-@JSGlobal
-class TouchList extends DOMList[Touch]
+trait TouchList extends DOMList[Touch] {
+  def item(index: Int): Touch = js.native
+}
 
 /**
  * A Touch object represents a single point of contact between the user and a touch-sensitive
@@ -3408,7 +3410,7 @@ abstract class Document
    *
    * MDN
    */
-  def getElementsByName(elementName: String): NodeList = js.native
+  def getElementsByName(elementName: String): NodeList[Node] = js.native
 
   /**
    * Returns a HTMLCollection of elements with the given tag name. The complete
@@ -4750,13 +4752,13 @@ class Range extends js.Object {
   def detach(): Unit = js.native
 
   /**
-   * The Range.getBoundingClientRect() method returns a ClientRect object that
+   * The Range.getBoundingClientRect() method returns a DOMRect object that
    * bounds the contents of the range; this a rectangle enclosing the union of the
    * bounding rectangles for all the elements in the range.
    *
    * MDN
    */
-  def getBoundingClientRect(): ClientRect = js.native
+  def getBoundingClientRect(): DOMRect = js.native
 
   /**
    * The Range.compareBoundaryPoints() method compares the boundary points of the
@@ -4819,7 +4821,7 @@ class Range extends js.Object {
    *
    * MDN
    */
-  def getClientRects(): ClientRectList = js.native
+  def getClientRects(): DOMRectList = js.native
 
   /**
    * The Range.surroundContents() method moves content of the Range into a new node,
@@ -5096,14 +5098,14 @@ trait MutationRecord extends js.Object {
    *
    * MDN
    */
-  def addedNodes: NodeList = js.native
+  def addedNodes: NodeList[Node] = js.native
 
   /**
    * Return the nodes removed. Will be an empty NodeList if no nodes were removed.
    *
    * MDN
    */
-  def removedNodes: NodeList = js.native
+  def removedNodes: NodeList[Node] = js.native
 
   /**
    * Return the previous sibling of the added or removed nodes, or null.
@@ -5456,6 +5458,21 @@ trait WindowLocalStorage extends js.Object {
 
 @js.native
 trait NavigatorStorageUtils extends js.Object
+
+@js.native
+trait NavigatorVibration extends js.Object {
+
+  /** Vibrate the device for the specified number of milliseconds. */
+  def vibrate(duration: Double): Boolean = js.native
+
+  /**
+   * Vibrate the device in the given pattern.
+   *
+   * @param pattern the pattern to vibrate.  The first number is the initial
+   *                duration, the subsequent a delay of silence, and so on.
+   */
+  def vibrate(pattern: js.Array[Double]): Boolean = js.native
+}
 
 /**
  * The Location interface represents the location of the object it is linked to.
@@ -6179,6 +6196,12 @@ class NamedNodeMap extends js.Object {
   def setNamedItemNS(arg: Attr): Attr = js.native
 }
 
+object NamedNodeMap {
+  implicit def namedNodeMapAsMap(
+      namedNodeMap: NamedNodeMap): mutable.Map[String, Attr] =
+    new NamedNodeMapMap(namedNodeMap)
+}
+
 @js.native
 @JSGlobal
 class MediaList extends js.Object {
@@ -6375,14 +6398,40 @@ class StyleSheet extends js.Object {
 }
 
 @js.native
-trait DOMList[T] extends js.Object {
+trait DOMList[+T] extends js.Object {
   def length: Int = js.native
-  def item(index: Int): T = js.native
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def apply(index: Int): T = js.native
 
-  @scala.scalajs.js.annotation.JSBracketAccess
-  def update(index: Int, v: T): Unit = js.native
+  @JSBracketAccess
+  def apply(index: Int): T = js.native
+}
+
+object DOMList {
+  implicit def domListAsSeq[T](domList: DOMList[T]): scala.collection.Seq[T] =
+    new DOMListSeq(domList)
+
+  private final class DOMListSeq[+T](domList: DOMList[T])
+      extends scala.collection.Seq[T] {
+
+    def length: Int = domList.length
+
+    def apply(x: Int): T = domList(x)
+
+    def iterator: Iterator[T] = new DOMListIterator(domList)
+  }
+
+  private final class DOMListIterator[+T](domList: DOMList[T])
+      extends Iterator[T] {
+
+    private[this] var index = 0
+
+    def hasNext: Boolean = index < domList.length
+
+    def next(): T = {
+      val res = domList(index)
+      index += 1
+      res
+    }
+  }
 }
 
 /**
@@ -6393,10 +6442,9 @@ trait DOMList[T] extends js.Object {
  */
 @js.native
 @JSGlobal
-class NodeList extends DOMList[Node]
-
-@js.native
-trait NodeListOf[TNode <: Node] extends DOMList[TNode]
+class NodeList[+T <: Node] private[this] () extends DOMList[T] {
+  def item(index: Int): T = js.native
+}
 
 @js.native
 @JSGlobal
@@ -6850,7 +6898,7 @@ trait LinkStyle extends js.Object {
 
 @js.native
 @JSGlobal
-class ClientRectList extends DOMList[ClientRect]
+class DOMRectList extends DOMList[DOMRect]
 
 @js.native
 trait External extends js.Object
@@ -6917,7 +6965,9 @@ trait TextTrackCue extends EventTarget {
  * MDN
  */
 @js.native
-trait DOMTokenList extends DOMList[String] {
+@JSGlobal
+class DOMTokenList private[this] extends DOMList[String] {
+  def item(index: Int): String = js.native
 
   def contains(token: String): Boolean = js.native
 
@@ -7290,7 +7340,10 @@ trait ProgressEvent extends Event {
  * MDN
  */
 @js.native
-trait FileList extends DOMList[File]
+@JSGlobal
+class FileList private[this] () extends DOMList[File] {
+  def item(index: Int): File = js.native
+}
 
 /**
  * The File interface provides information about -- and access to the contents of --
@@ -7317,36 +7370,6 @@ abstract class File extends Blob {
    * MDN
    */
   def name: String = js.native
-}
-
-/**
- * The URL object provides static methods used for creating object URLs.
- *
- * MDN
- */
-@js.native
-@JSGlobal
-object URL extends js.Object {
-
-  /**
-   * The URL.revokeObjectURL() static method releases an existing object URL which
-   * was previously created by calling window.URL.createObjectURL().  Call this
-   * method when you've finished using a object URL, in order to let the browser know it
-   * doesn't need to keep the reference to the file any longer.
-   *
-   * MDN
-   */
-  def revokeObjectURL(url: String): Unit = js.native
-
-  /**
-   * The URL.createObjectURL() static method creates a DOMString containing an URL
-   * representing the object given in parameter. The URL lifetime is tied to the
-   * document in the window on which it was created. The new object URL represents the
-   * specified File object or Blob object.
-   *
-   * MDN
-   */
-  def createObjectURL(blob: Blob): String = js.native
 }
 
 /**
@@ -7465,7 +7488,8 @@ trait AudioTrack extends js.Object {
 }
 
 @js.native
-trait TextTrackCueList extends DOMList[TextTrackCue] {
+@JSGlobal
+class TextTrackCueList private[this] () extends DOMList[TextTrackCue] {
   def getCueById(id: String): TextTrackCue = js.native
 }
 
@@ -7657,7 +7681,10 @@ trait WindowBase64 extends js.Object {
  * MDN
  */
 @js.native
-trait DOMStringList extends DOMList[String] {
+@JSGlobal
+class DOMStringList private[this] () extends DOMList[String] {
+  def item(index: Int): String = js.native
+
   def contains(str: String): Boolean = js.native
 }
 

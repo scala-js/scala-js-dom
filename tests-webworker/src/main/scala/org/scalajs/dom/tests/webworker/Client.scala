@@ -1,6 +1,6 @@
 package org.scalajs.dom.tests.webworker
 
-import org.scalajs.dom.raw._
+import org.scalajs.dom._
 import scala.concurrent._
 import scala.scalajs.js
 import scala.util.Success

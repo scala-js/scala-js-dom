@@ -1,7 +1,7 @@
 package org.scalajs.dom.experimental.deviceorientation
 
 import org.scalajs.dom
-import org.scalajs.dom.raw.EventInit
+import org.scalajs.dom.EventInit
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 

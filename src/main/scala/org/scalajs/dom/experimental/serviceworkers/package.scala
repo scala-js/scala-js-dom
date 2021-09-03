@@ -1,6 +1,6 @@
 package org.scalajs.dom.experimental
 
-import org.scalajs.dom.raw.Navigator
+import org.scalajs.dom.Navigator
 import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -16,7 +16,7 @@ package object serviceworkers {
    * [[https://html.spec.whatwg.org/multipage/infrastructure.html#transferable ¶2.7.4 Transferable Objects]]
    * in whatwg html spec.
    */
-  type Transferable = org.scalajs.dom.raw.Transferable | CanvasProxy
+  type Transferable = org.scalajs.dom.Transferable | CanvasProxy
 
   implicit def toServiceWorkerNavigator(n: Navigator): ServiceWorkerNavigator =
     n.asInstanceOf[ServiceWorkerNavigator]

@@ -1,7 +1,6 @@
 package org.scalajs.dom.tests.webworker
 
-import org.scalajs.dom.raw.MessageEvent
-import org.scalajs.dom.webworkers._
+import org.scalajs.dom._
 
 object Server extends ServerResponses {
   import Protocol._

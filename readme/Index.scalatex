@@ -115,9 +115,9 @@
         autorun=true
       )
 
-    @sect{dom.XMLHttpRequest}
+    @sect{dom.Fetch}
       @pair(
-        "XMLHttpRequest",
+        "Fetch",
         Seq(
           pre("output")
         )
@@ -145,7 +145,7 @@
     @li
       Deprecated properties/methods/types will not be present.
     @li
-      IE-only, Chrome-only, FF-only, and in general browser-specific attributes will only be found under the @hl.scala{experimental} package.
+      IE-only, Chrome-only, FF-only, and in general browser-specific attributes will typically not be present.
     @li
       The name of a Scala type should map directly to the name of the corresponding Javascript type.
     @li
@@ -153,30 +153,11 @@
     @li
       Read-only members should be @hl.scala{def}, and not-directly-instantiable classes should have @hl.scala{private} constructors.
 
-  @sect{Extensions}
-
-    @p
-      Apart from @hl.scala{Color}, Scala-js-dom contains some useful helpers and implicit classes in @hl.scala{org.scalajs.dom.ext} that serve no purpose other than to make your use of the DOM more pleasant.
-
-    @p
-      Examples include the @hl.scala{Ajax.get} and @hl.scala{Ajax.post} methods which let you avoid messing with @hl.scala{dom.XMLHttpRequest} directly, or @hl.scala{KeyCodes} which provides a nice list of the keycodes that result from pressing various keys on the keyboard.
-    @pair(
-      "AjaxExtension",
-      Seq(
-        pre("output")
-      )
-    )
-
-    @p
-      See also @a("roll", href:="https://github.com/lihaoyi/roll") (@a("live demo", href:="http://lihaoyi.github.io/roll/")) and @a("scala-js-games", href:="https://github.com/lihaoyi/scala-js-games") for an example of its use. @a("Scala-js-fiddle", href:="http://www.scala-js-fiddle.com/") also contains a pile of @a("fun examples", href:="(http://www.scala-js-fiddle.com/gist/9405209/Oscilloscope.scala") that demonstrate its usage. Pull requests/forks are welcome!
-
   @sect{Contributing}
     @p
-      Scala-js-dom is a work in progress. The current code base is a hodgepodge of auto-generated/scraped/hand-tweaked code, and is full of rough edges. If you see something that you think can be improved, feel free to send a pull request. These could include:
+      The DOM API is always evolving, and scala-js-dom is a hodgepodge of auto-generated/scraped/hand-tweaked code full of rough edges. If you see something that you think can be improved, feel free to send a pull request. These could include:
     @ul
       @li
         Improved doc-comments; who doesn't love better docs?
       @li
         Missing methods/properties/classes; send the PR adding it in including it together with a link to an authoritative source (e.g. MDN) and it should get merged.
-      @li
-        Additional extensions (in @hl.scala{org.scalajs.dom.ext}). These currently represent an arbitrary collection of helpers that have been needed so far. If there's some implicit that you find you need and you think other people will to, send a pull request and we can talk about it.

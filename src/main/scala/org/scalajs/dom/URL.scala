@@ -1,7 +1,37 @@
-package org.scalajs.dom.experimental
+package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
+
+/**
+ * The URL object provides static methods used for creating object URLs.
+ *
+ * MDN
+ */
+@js.native
+@JSGlobal
+object URL extends js.Object {
+
+  /**
+   * The URL.revokeObjectURL() static method releases an existing object URL which
+   * was previously created by calling window.URL.createObjectURL().  Call this
+   * method when you've finished using a object URL, in order to let the browser know it
+   * doesn't need to keep the reference to the file any longer.
+   *
+   * MDN
+   */
+  def revokeObjectURL(url: String): Unit = js.native
+
+  /**
+   * The URL.createObjectURL() static method creates a DOMString containing an URL
+   * representing the object given in parameter. The URL lifetime is tied to the
+   * document in the window on which it was created. The new object URL represents the
+   * specified File object or Blob object.
+   *
+   * MDN
+   */
+  def createObjectURL(blob: Blob): String = js.native
+}
 
 /**
  * The URL() constructor returns a newly created URL object representing the URL
