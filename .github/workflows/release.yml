@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Scala
-        uses: japgolly/setup-everything-scala@v1.0
+        uses: japgolly/setup-everything-scala@v2.0
 
       - name: Release
         run: sbt ci-release
