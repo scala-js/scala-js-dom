@@ -30,7 +30,7 @@ object IDBTransactionMode {
    *
    * MDN
    */
-  val READ_ONLY = "readonly".asInstanceOf[IDBTransactionMode]
+  val readonly = "readonly".asInstanceOf[IDBTransactionMode]
 
   /**
    * Allows any operation to be performed, including ones that delete and create object
@@ -40,15 +40,14 @@ object IDBTransactionMode {
    *
    * MDN
    */
-  val VERSION_CHANGE = "versionchange".asInstanceOf[IDBTransactionMode]
+  val versionchange = "versionchange".asInstanceOf[IDBTransactionMode]
 
   /**
    * Allows reading and writing of data in existing data stores to be changed.
    *
    * MDN
    */
-  val READ_WRITE = "readwrite".asInstanceOf[IDBTransactionMode]
-
+  val readwrite = "readwrite".asInstanceOf[IDBTransactionMode]
 }
 
 /**
