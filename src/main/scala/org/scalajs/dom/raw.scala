@@ -336,8 +336,6 @@ object raw {
 
   @deprecated("use dom.IDBCursor instead", "2.0.0")
   type IDBCursor = dom.IDBCursor
-  @deprecated("use dom.IDBCursor instead", "2.0.0")
-  @inline def IDBCursor = dom.IDBCursor
   @deprecated("use dom.IDBCursorWithValue instead", "2.0.0")
   type IDBCursorWithValue = dom.IDBCursorWithValue
   @deprecated("use dom.IDBDatabase instead", "2.0.0")
@@ -360,8 +358,6 @@ object raw {
   type IDBRequest = dom.IDBRequest
   @deprecated("use dom.IDBTransaction instead", "2.0.0")
   type IDBTransaction = dom.IDBTransaction
-  @deprecated("use dom.IDBTransaction instead", "2.0.0")
-  @inline def IDBTransaction = dom.IDBTransaction
   @deprecated("use dom.IDBVersionChangeEvent instead", "2.0.0")
   type IDBVersionChangeEvent = dom.IDBVersionChangeEvent
   @deprecated("use dom.ImageBitmap instead", "2.0.0")

@@ -11,6 +11,45 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
+
+/**
+ * IndexedDB transaction mode
+ * Provides constants for IDB Transaction modes
+ * These constants have been removed from browser support
+ * and replaced by String values
+ */
+@js.native
+sealed trait IDBTransactionMode extends js.Any
+
+object IDBTransactionMode {
+
+  /**
+   * Allows data to be read but not changed.
+   * It is the default transaction mode.
+   *
+   * MDN
+   */
+  val READ_ONLY = "readonly".asInstanceOf[IDBTransactionMode]
+
+  /**
+   * Allows any operation to be performed, including ones that delete and create object
+   * stores and indexes. This mode is for updating the version number of transactions
+   * that were started using the setVersion() method of IDBDatabase objects.
+   * Transactions of this mode cannot run concurrently with other transactions.
+   *
+   * MDN
+   */
+  val VERSION_CHANGE = "versionchange".asInstanceOf[IDBTransactionMode]
+
+  /**
+   * Allows reading and writing of data in existing data stores to be changed.
+   *
+   * MDN
+   */
+  val READ_WRITE = "readwrite".asInstanceOf[IDBTransactionMode]
+
+}
 
 /**
  * The IDBObjectStore interface of the IndexedDB API represents an object store in
@@ -86,8 +125,25 @@ class IDBObjectStore extends js.Object {
    */
   def put(value: js.Any, key: js.Any = js.native): IDBRequest = js.native
 
-  def openCursor(range: js.Any = js.native,
-      direction: String = js.native): IDBRequest = js.native
+  /**
+   * The method sets the position of the cursor to the appropriate record,
+   * based on the specified direction.
+   *
+   * MDN
+   */
+  def openCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
+      direction: js.UndefOr[
+          IDBCursorDirection] = js.undefined): IDBRequest = js.native
+
+  /**
+   * The method sets the position of the cursor to the appropriate key,
+   * based on the specified direction.
+   *
+   * MDN
+   */
+  def openKeyCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
+      direction: js.UndefOr[
+          IDBCursorDirection] = js.undefined): IDBRequest = js.native
 
   /**
    * Note that this method must be called only from a VersionChange transaction mode
@@ -112,6 +168,32 @@ class IDBObjectStore extends js.Object {
    * MDN
    */
   def get(key: js.Any): IDBRequest = js.native
+
+  /**
+   * If a value is successfully found, then a structured clone of it is created and set as
+   * the result of the request object.
+   *
+   * MDN
+   */
+  def getAll(query: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
+      count: js.UndefOr[Int] = js.undefined): IDBRequest = js.native
+
+  /**
+   * If a value is successfully found, then a structured clone of it is created and set as
+   * the result of the request object.
+   *
+   * MDN
+   */
+  def getAllKeys(query: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
+      count: js.UndefOr[Int] = js.undefined): IDBRequest = js.native
+
+  /**
+   * If a value is successfully found, then a structured clone of it is created and set as
+   * the result of the request object.
+   *
+   * MDN
+   */
+  def getKey(key: js.Any): IDBRequest = js.native
 
   /**
    * returns an IDBRequest object, and, in a separate thread, deletes the current
@@ -230,7 +312,7 @@ class IDBIndex extends js.Object {
    * MDN
    */
   def openKeyCursor(range: IDBKeyRange = js.native,
-      direction: String = js.native): IDBRequest = js.native
+      direction: IDBCursorDirection = js.native): IDBRequest = js.native
 
   /**
    * Returns an IDBRequest object, and, in a separate thread, finds either the value in
@@ -248,7 +330,7 @@ class IDBIndex extends js.Object {
    * MDN
    */
   def openCursor(range: IDBKeyRange = js.native,
-      direction: String = js.native): IDBRequest = js.native
+      direction: IDBCursorDirection = js.native): IDBRequest = js.native
 }
 
 /**
@@ -282,7 +364,7 @@ class IDBCursor extends js.Object {
    *
    * MDN
    */
-  def direction: String = js.native
+  def direction: IDBCursorDirection = js.native
 
   /**
    * Returns the key for the record at the cursor's position. If the cursor is outside its
@@ -336,13 +418,45 @@ class IDBCursor extends js.Object {
 }
 
 @js.native
-@JSGlobal
-object IDBCursor extends js.Object {
+sealed trait IDBCursorDirection extends js.Any
 
-  val PREV: String = js.native
-  val PREV_NO_DUPLICATE: String = js.native
-  val NEXT: String = js.native
-  val NEXT_NO_DUPLICATE: String = js.native
+object IDBCursorDirection {
+
+  /**
+   * The cursor shows all records, including duplicates.
+   * It starts at the upper bound of the key range and moves downwards
+   * (monotonically decreasing in the order of keys).
+   *
+   * MDN
+   */
+  val PREV = "prev".asInstanceOf[IDBCursorDirection]
+
+  /**
+   * The cursor shows all records, excluding duplicates.
+   * If multiple records exist with the same key, only the first one iterated is retrieved.
+   * It starts at the upper bound of the key range and moves downwards.
+   *
+   * MDN
+   */
+  val PREV_UNIQUE = "prevunique".asInstanceOf[IDBCursorDirection]
+
+  /**
+   * The cursor shows all records, including duplicates.
+   * It starts at the lower bound of the key range and moves upwards
+   * (monotonically increasing in the order of keys).
+   *
+   * MDN
+   */
+  val NEXT = "next".asInstanceOf[IDBCursorDirection]
+
+  /**
+   * The cursor shows all records, excluding duplicates.
+   * If multiple records exist with the same key, only the first one iterated is retrieved.
+   * It starts at the lower bound of the key range and moves upwards.
+   *
+   * MDN
+   */
+  val NEXT_UNIQUE = "nextunique".asInstanceOf[IDBCursorDirection]
 }
 
 /**
@@ -476,7 +590,7 @@ class IDBTransaction extends EventTarget {
    *
    * MDN
    */
-  def mode: String = js.native
+  def mode: IDBTransactionMode = js.native
 
   /**
    * Returns a DOMException indicating the type of error that occured when there is an
@@ -518,35 +632,6 @@ class IDBTransaction extends EventTarget {
    * MDN
    */
   def objectStore(name: String): IDBObjectStore = js.native
-}
-
-@js.native
-@JSGlobal
-object IDBTransaction extends js.Object {
-
-  /**
-   * Allows data to be read but not changed.
-   *
-   * MDN
-   */
-  val READ_ONLY: String = js.native
-
-  /**
-   * Allows any operation to be performed, including ones that delete and create object
-   * stores and indexes. This mode is for updating the version number of transactions
-   * that were started using the setVersion() method of IDBDatabase objects.
-   * Transactions of this mode cannot run concurrently with other transactions.
-   *
-   * MDN
-   */
-  val VERSION_CHANGE: String = js.native
-
-  /**
-   * Allows reading and writing of data in existing data stores to be changed.
-   *
-   * MDN
-   */
-  val READ_WRITE: String = js.native
 }
 
 /**
@@ -643,7 +728,7 @@ class IDBDatabase extends EventTarget {
    * MDN
    */
   def transaction(storeNames: js.Any,
-      mode: String = js.native): IDBTransaction = js.native
+      mode: IDBTransactionMode = js.native): IDBTransaction = js.native
 
   /**
    * As with createObjectStore, this method can be called only within a versionchange

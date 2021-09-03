@@ -13111,19 +13111,20 @@ HttpMethod[SO] val QUERY = "QUERY".asInstanceOf[HttpMethod]
 IDBCursor[JC] def advance(count: Int): Unit
 IDBCursor[JC] def continue(key: js.Any = ???): Unit
 IDBCursor[JC] def delete(): IDBRequest
-IDBCursor[JC] def direction: String
+IDBCursor[JC] def direction: IDBCursorDirection
 IDBCursor[JC] def key: js.Any
 IDBCursor[JC] def primaryKey: js.Any
 IDBCursor[JC] def source: js.Any
 IDBCursor[JC] def update(value: js.Any): IDBRequest
-IDBCursor[JO] val NEXT: String
-IDBCursor[JO] val NEXT_NO_DUPLICATE: String
-IDBCursor[JO] val PREV: String
-IDBCursor[JO] val PREV_NO_DUPLICATE: String
+IDBCursorDirection[JT]
+IDBCursorDirection[SO] val NEXT = "next".asInstanceOf[IDBCursorDirection]
+IDBCursorDirection[SO] val NEXT_UNIQUE = "nextunique".asInstanceOf[IDBCursorDirection]
+IDBCursorDirection[SO] val PREV = "prev".asInstanceOf[IDBCursorDirection]
+IDBCursorDirection[SO] val PREV_UNIQUE = "prevunique".asInstanceOf[IDBCursorDirection]
 IDBCursorWithValue[JC] def advance(count: Int): Unit
 IDBCursorWithValue[JC] def continue(key: js.Any = ???): Unit
 IDBCursorWithValue[JC] def delete(): IDBRequest
-IDBCursorWithValue[JC] def direction: String
+IDBCursorWithValue[JC] def direction: IDBCursorDirection
 IDBCursorWithValue[JC] def key: js.Any
 IDBCursorWithValue[JC] def primaryKey: js.Any
 IDBCursorWithValue[JC] def source: js.Any
@@ -13142,7 +13143,7 @@ IDBDatabase[JC] var onerror: js.Function1[Event, _]
 IDBDatabase[JC] var onversionchange: js.Function1[IDBVersionChangeEvent, _]
 IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-IDBDatabase[JC] def transaction(storeNames: js.Any, mode: String?): IDBTransaction
+IDBDatabase[JC] def transaction(storeNames: js.Any, mode: IDBTransactionMode?): IDBTransaction
 IDBDatabase[JC] def version: Int
 IDBEnvironment[JT] def indexedDB: IDBFactory  (@deprecated in 1.2.0)
 IDBFactory[JC] def cmp(first: js.Any, second: js.Any): Int
@@ -13156,8 +13157,8 @@ IDBIndex[JC] def getKey(key: js.Any): IDBRequest
 IDBIndex[JC] def keyPath: String
 IDBIndex[JC] def name: String
 IDBIndex[JC] def objectStore: IDBObjectStore
-IDBIndex[JC] def openCursor(range: IDBKeyRange?, direction: String?): IDBRequest
-IDBIndex[JC] def openKeyCursor(range: IDBKeyRange?, direction: String?): IDBRequest
+IDBIndex[JC] def openCursor(range: IDBKeyRange?, direction: IDBCursorDirection?): IDBRequest
+IDBIndex[JC] def openKeyCursor(range: IDBKeyRange?, direction: IDBCursorDirection?): IDBRequest
 IDBIndex[JC] def unique: Boolean
 IDBKeyRange[JC] def lower: js.Any
 IDBKeyRange[JC] def lowerOpen: Boolean
@@ -13174,11 +13175,15 @@ IDBObjectStore[JC] def createIndex(name: String, keyPath: String, optionalParame
 IDBObjectStore[JC] def delete(key: js.Any): IDBRequest
 IDBObjectStore[JC] def deleteIndex(indexName: String): Unit
 IDBObjectStore[JC] def get(key: js.Any): IDBRequest
+IDBObjectStore[JC] def getAll(query: js.UndefOr[IDBKeyRange | js.Any] = js.undefined, count: js.UndefOr[Int] = js.undefined): IDBRequest
+IDBObjectStore[JC] def getAllKeys(query: js.UndefOr[IDBKeyRange | js.Any] = js.undefined, count: js.UndefOr[Int] = js.undefined): IDBRequest
+IDBObjectStore[JC] def getKey(key: js.Any): IDBRequest
 IDBObjectStore[JC] def index(name: String): IDBIndex
 IDBObjectStore[JC] def indexNames: DOMStringList
 IDBObjectStore[JC] def keyPath: String
 IDBObjectStore[JC] def name: String
-IDBObjectStore[JC] def openCursor(range: js.Any?, direction: String?): IDBRequest
+IDBObjectStore[JC] def openCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined, direction: js.UndefOr[IDBCursorDirection] = js.undefined): IDBRequest
+IDBObjectStore[JC] def openKeyCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined, direction: js.UndefOr[IDBCursorDirection] = js.undefined): IDBRequest
 IDBObjectStore[JC] def put(value: js.Any, key: js.Any?): IDBRequest
 IDBObjectStore[JC] def transaction: IDBTransaction
 IDBOpenDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -13213,16 +13218,17 @@ IDBTransaction[JC] def addEventListener[T <: Event](`type`: String, listener: js
 IDBTransaction[JC] def db: IDBDatabase
 IDBTransaction[JC] def dispatchEvent(evt: Event): Boolean
 IDBTransaction[JC] def error: DOMException
-IDBTransaction[JC] def mode: String
+IDBTransaction[JC] def mode: IDBTransactionMode
 IDBTransaction[JC] def objectStore(name: String): IDBObjectStore
 IDBTransaction[JC] var onabort: js.Function1[Event, _]
 IDBTransaction[JC] var oncomplete: js.Function1[Event, _]
 IDBTransaction[JC] var onerror: js.Function1[Event, _]
 IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-IDBTransaction[JO] val READ_ONLY: String
-IDBTransaction[JO] val READ_WRITE: String
-IDBTransaction[JO] val VERSION_CHANGE: String
+IDBTransactionMode[JT]
+IDBTransactionMode[SO] val READ_ONLY = "readonly".asInstanceOf[IDBTransactionMode]
+IDBTransactionMode[SO] val READ_WRITE = "readwrite".asInstanceOf[IDBTransactionMode]
+IDBTransactionMode[SO] val VERSION_CHANGE = "versionchange".asInstanceOf[IDBTransactionMode]
 IDBVersionChangeEvent[JC] def bubbles: Boolean
 IDBVersionChangeEvent[JC] def cancelBubble: Boolean
 IDBVersionChangeEvent[JC] def cancelable: Boolean
@@ -24701,9 +24707,9 @@ idb[SO] type OpenDBRequest = IDBOpenDBRequest
 idb[SO] type Request = IDBRequest
 idb[SO] type Transaction = IDBTransaction
 idb[SO] type VersionChangeEvent = IDBVersionChangeEvent
-idb[SO] def Cursor = IDBCursor
+idb[SO] def CursorDirection = IDBCursorDirection
 idb[SO] def KeyRange = IDBKeyRange
-idb[SO] def Transaction = IDBTransaction
+idb[SO] def TransactionMode = IDBTransactionMode
 package[SO] type BodyInit = Blob | BufferSource | FormData | String
 package[SO] type BufferSource = ArrayBufferView | ArrayBuffer
 package[SO] type ByteString = String
@@ -25001,9 +25007,7 @@ raw[SO] lazy val EventSource: dom.EventSource.type  (@deprecated in 2.0.0)
 raw[SO] lazy val FileReader: dom.FileReader.type  (@deprecated in 2.0.0)
 raw[SO] lazy val FormData: dom.FormData.type  (@deprecated in 2.0.0)
 raw[SO] @deprecated("use dom.HTMLMediaElement instead", "2.0.0") def HTMLMediaElement = dom.HTMLMediaElement  (@deprecated in 2.0.0)
-raw[SO] @deprecated("use dom.IDBCursor instead", "2.0.0") def IDBCursor = dom.IDBCursor  (@deprecated in 2.0.0)
 raw[SO] @deprecated("use dom.IDBKeyRange instead", "2.0.0") def IDBKeyRange = dom.IDBKeyRange  (@deprecated in 2.0.0)
-raw[SO] @deprecated("use dom.IDBTransaction instead", "2.0.0") def IDBTransaction = dom.IDBTransaction  (@deprecated in 2.0.0)
 raw[SO] lazy val KeyboardEvent: dom.KeyboardEvent.type  (@deprecated in 2.0.0)
 raw[SO] lazy val MediaError: dom.MediaError.type  (@deprecated in 2.0.0)
 raw[SO] lazy val MutationObserverInit: dom.MutationObserverInit.type  (@deprecated in 2.0.0)
