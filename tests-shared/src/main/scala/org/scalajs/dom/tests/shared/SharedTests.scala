@@ -7,8 +7,15 @@ trait SharedTests {
   import SharedTests._
 
   // This tests that ops are always implicitly available, no imports required
-  @Test final def NodeListOpsTest(): Unit = {
-    val _ = org.scalajs.dom.document.body.childNodes.mkString
+  @Test final def NodeListOpsTest(): Unit =
+    org.scalajs.dom.document.body.childNodes.mkString
+
+  // This tests that ops are always implicitly available, no imports required
+  @Test final def DOMTokenListOpsTest(): Unit = {
+    org.scalajs.dom.document.querySelectorAll("*")
+      .iterator
+      .collect { case e: org.scalajs.dom.html.Element => e }
+      .map(_.classList.mkString)
   }
 
   // Don't move up
