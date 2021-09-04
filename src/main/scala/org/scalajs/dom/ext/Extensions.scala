@@ -9,10 +9,9 @@ import scala.scalajs.js
 import scala.scalajs.js.typedarray.ArrayBufferView
 import scala.scalajs.js.typedarray.TypedArrayBufferOps._
 
-/**
- * Thrown when `Ajax.get` or `Ajax.post` receives a non-20X response code.
- * Contains the XMLHttpRequest that resulted in that response
- */
+/** Thrown when `Ajax.get` or `Ajax.post` receives a non-20X response code. Contains the XMLHttpRequest that resulted in
+  * that response
+  */
 @deprecated("use the dom.fetch API instead", "2.0.0")
 case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
   def isTimeout = xhr.status == 0 && xhr.readyState == 4
@@ -22,16 +21,13 @@ case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
 @deprecated("use the dom.fetch API instead", "2.0.0")
 object AjaxException extends (dom.XMLHttpRequest => AjaxException)
 
-/**
- * Wraps an XMLHttpRequest to provide an easy one-line way of making
- * an Ajax call, returning a Future.
- */
+/** Wraps an XMLHttpRequest to provide an easy one-line way of making an Ajax call, returning a Future.
+  */
 @deprecated("use the dom.fetch API instead", "2.0.0")
 object Ajax {
 
-  /**
-   * Supported data formats for Ajax are implicitly converted to InputData
-   */
+  /** Supported data formats for Ajax are implicitly converted to InputData
+    */
   @js.native
   sealed trait InputData extends js.Any
 
@@ -61,39 +57,33 @@ object Ajax {
     }
   }
 
-  def get(url: String, data: InputData = null, timeout: Int = 0,
-      headers: Map[String, String] = Map.empty,
+  def get(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
       withCredentials: Boolean = false, responseType: String = "") = {
     apply("GET", url, data, timeout, headers, withCredentials, responseType)
   }
 
-  def post(url: String, data: InputData = null, timeout: Int = 0,
-      headers: Map[String, String] = Map.empty,
+  def post(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
       withCredentials: Boolean = false, responseType: String = "") = {
     apply("POST", url, data, timeout, headers, withCredentials, responseType)
   }
 
-  def put(url: String, data: InputData = null, timeout: Int = 0,
-      headers: Map[String, String] = Map.empty,
+  def put(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
       withCredentials: Boolean = false, responseType: String = "") = {
     apply("PUT", url, data, timeout, headers, withCredentials, responseType)
   }
 
-  def patch(url: String, data: InputData = null, timeout: Int = 0,
-      headers: Map[String, String] = Map.empty,
+  def patch(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
       withCredentials: Boolean = false, responseType: String = "") = {
     apply("PATCH", url, data, timeout, headers, withCredentials, responseType)
   }
 
-  def delete(url: String, data: InputData = null, timeout: Int = 0,
-      headers: Map[String, String] = Map.empty,
+  def delete(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
       withCredentials: Boolean = false, responseType: String = "") = {
     apply("DELETE", url, data, timeout, headers, withCredentials, responseType)
   }
 
-  def apply(method: String, url: String, data: InputData, timeout: Int,
-      headers: Map[String, String], withCredentials: Boolean,
-      responseType: String): Future[dom.XMLHttpRequest] = {
+  def apply(method: String, url: String, data: InputData, timeout: Int, headers: Map[String, String],
+      withCredentials: Boolean, responseType: String): Future[dom.XMLHttpRequest] = {
     val req = new dom.XMLHttpRequest()
     val promise = Promise[dom.XMLHttpRequest]()
 

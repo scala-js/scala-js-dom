@@ -2,9 +2,8 @@ package org.scalajs.dom
 
 import org.scalajs.dom
 
-/**
- * Short aliases of all the dom.SVGThing classes
- */
+/** Short aliases of all the dom.SVGThing classes
+  */
 object svg {
   type A = SVGAElement
   type AnimatedAngle = SVGAnimatedAngle
@@ -27,6 +26,7 @@ object svg {
   type Circle = SVGCircleElement
   type ClipPath = SVGClipPathElement
   type ComponentTransferFunction = SVGComponentTransferFunctionElement
+
   @inline def ComponentTransferFunction =
     SVGComponentTransferFunctionElement
 
@@ -73,6 +73,7 @@ object svg {
   type FETurbulence = SVGFETurbulenceElement
   @inline def FETurbulence = SVGFETurbulenceElement
   type Filter = SVGFilterElement
+
   type FilterPrimitiveStandardAttributes =
     SVGFilterPrimitiveStandardAttributes
   type FitToViewBox = SVGFitToViewBox
@@ -109,12 +110,14 @@ object svg {
   type PathSegClosePath = SVGPathSegClosePath
   type PathSegCurvetoCubicSmoothAbs = SVGPathSegCurvetoCubicSmoothAbs
   type PathSegCurvetoQuadraticRel = SVGPathSegCurvetoQuadraticRel
+
   type PathSegCurvetoQuadraticSmoothRel =
     SVGPathSegCurvetoQuadraticSmoothRel
   type PathSegCurvetoCubicAbs = SVGPathSegCurvetoCubicAbs
   type PathSegCurvetoCubicRel = SVGPathSegCurvetoCubicRel
   type PathSegCurvetoQuadraticAbs = SVGPathSegCurvetoQuadraticAbs
   type PathSegCurvetoCubicSmoothRel = SVGPathSegCurvetoCubicSmoothRel
+
   type PathSegCurvetoQuadraticSmoothAbs =
     SVGPathSegCurvetoQuadraticSmoothAbs
   type PathSegLinetoAbs = SVGPathSegLinetoAbs

@@ -4,11 +4,10 @@ import org.scalajs.dom
 import scala.language.implicitConversions
 import scala.scalajs.js
 
-/**
- * Implements the Permissions API.
- *
- * [[https://www.w3.org/TR/permissions/ W3C Working Draft]]
- */
+/** Implements the Permissions API.
+  *
+  * [[https://www.w3.org/TR/permissions/ W3C Working Draft]]
+  */
 package object permissions {
 
   @js.native
@@ -33,6 +32,7 @@ package object permissions {
     val midi = "midi".asInstanceOf[PermissionName]
     val notifications = "notifications".asInstanceOf[PermissionName]
     val push = "push".asInstanceOf[PermissionName]
+
     val `persistent-storage` =
       "persistent-storage".asInstanceOf[PermissionName]
   }
@@ -42,6 +42,7 @@ package object permissions {
   }
 
   object PermissionDescriptor {
+
     @inline
     def apply(permissionName: PermissionName): PermissionDescriptor = {
       new PermissionDescriptor {
@@ -55,6 +56,7 @@ package object permissions {
   }
 
   object PushPermissionDescriptor {
+
     @inline
     def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor = {
       new PushPermissionDescriptor {
@@ -65,8 +67,7 @@ package object permissions {
   }
 
   trait Permissions extends js.Object {
-    def query(
-        permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
+    def query(permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
   }
 
   trait PermissionsNavigator extends js.Object {

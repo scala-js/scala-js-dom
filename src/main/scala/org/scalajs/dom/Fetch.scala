@@ -8,46 +8,41 @@ import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 @JSGlobalScope
 object Fetch extends js.Object {
 
-  /**
-   * [[https://fetch.spec.whatwg.org/#fetch-method ¶6.0 Fetch method]] defined in WhatWG spec
-   *
-   * @param info
-   * @param init
-   * @return
-   */
-  def fetch(info: RequestInfo,
-      init: RequestInit = null): js.Promise[Response] = js.native
+  /** [[https://fetch.spec.whatwg.org/#fetch-method ¶6.0 Fetch method]] defined in WhatWG spec
+    *
+    * @param info
+    * @param init
+    * @return
+    */
+  def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response] = js.native
 }
 
-/**
- * The Request interface of the Fetch API represents a resource request.  MDN
- *
- * see [[https://fetch.spec.whatwg.org/#request-class ¶6.3 Request Class]]
- * in whatwg spec
- *
- * @param input the url of the requested resource or an unused Request object.
- * @param init initialisation information
- */
+/** The Request interface of the Fetch API represents a resource request. MDN
+  *
+  * see [[https://fetch.spec.whatwg.org/#request-class ¶6.3 Request Class]] in whatwg spec
+  *
+  * @param input
+  *   the url of the requested resource or an unused Request object.
+  * @param init
+  *   initialisation information
+  */
 @js.native
 @JSGlobal
 class Request(input: RequestInfo, init: RequestInit = null) extends js.Object {
 
-  /**
-   * Contains the request's method (GET, POST, etc.)
-   */
+  /** Contains the request's method (GET, POST, etc.)
+    */
   def method: HttpMethod = js.native
 
   @JSName("type")
   def `mediaType`: RequestType = js.native
 
-  /**
-   * Contains the URL of the request.
-   */
+  /** Contains the URL of the request.
+    */
   def url: String = js.native //should be USVString
 
-  /**
-   * Contains the associated Headers object of the request.
-   */
+  /** Contains the associated Headers object of the request.
+    */
   def headers: Headers = js.native
 
   def destination: RequestDestination = js.native
@@ -71,11 +66,9 @@ class Request(input: RequestInfo, init: RequestInit = null) extends js.Object {
   def signal: AbortSignal = js.native
 }
 
-/**
- * See [[https://fetch.spec.whatwg.org/#requestinit RequestInit]] in Fetch API
- * The underlying object is a dictionary. This trait is here to help encode
- * the types.
- */
+/** See [[https://fetch.spec.whatwg.org/#requestinit RequestInit]] in Fetch API The underlying object is a dictionary.
+  * This trait is here to help encode the types.
+  */
 trait RequestInit extends js.Object {
   var method: js.UndefOr[HttpMethod] = js.undefined
 
@@ -101,26 +94,24 @@ trait RequestInit extends js.Object {
 
   var signal: js.UndefOr[AbortSignal] = js.undefined
 
-  /**
-   * The whatwg spec section on [[https://fetch.spec.whatwg.org/#requestinit RequestInit dictionary]]
-   * has a comment that states that this value "can only be set to null".
-   * In the detailed steps section for [[https://fetch.spec.whatwg.org/#dom-request the Request(input,init) constructor]]
-   * it says even more clearly:
-   * "If init's window member is present and it is not null, throw a TypeError."
-   */
+  /** The whatwg spec section on [[https://fetch.spec.whatwg.org/#requestinit RequestInit dictionary]] has a comment
+    * that states that this value "can only be set to null". In the detailed steps section for
+    * [[https://fetch.spec.whatwg.org/#dom-request the Request(input,init) constructor]] it says even more clearly: "If
+    * init's window member is present and it is not null, throw a TypeError."
+    */
   var window: js.UndefOr[Null] = js.undefined
 }
 
-/**
- * [[https://fetch.spec.whatwg.org/#response ¶6.4 Response class]] in whatwg spec
- *
- * @param content optional content
- * @param init optional response initialisiton
- */
+/** [[https://fetch.spec.whatwg.org/#response ¶6.4 Response class]] in whatwg spec
+  *
+  * @param content
+  *   optional content
+  * @param init
+  *   optional response initialisiton
+  */
 @js.native
 @JSGlobal
-class Response(content: BodyInit = null, init: ResponseInit = null)
-    extends Body {
+class Response(content: BodyInit = null, init: ResponseInit = null) extends Body {
 
   /** Contains the type of the response */
   def `type`: ResponseType = js.native
@@ -128,10 +119,8 @@ class Response(content: BodyInit = null, init: ResponseInit = null)
   /** Contains the URL of the response. */
   def url: String = js.native
 
-  /**
-   * Contains a boolean stating whether the response was successful (status in
-   * the range 200-299) or not.
-   **/
+  /** Contains a boolean stating whether the response was successful (status in the range 200-299) or not.
+    */
   def ok: Boolean = js.native
 
   /** Contains the status code of the response (e.g., 200 for a success). */
@@ -148,170 +137,142 @@ class Response(content: BodyInit = null, init: ResponseInit = null)
   override def clone(): Response = js.native
 }
 
-/**
- * static methods associated with a Response object in
- * [[https://fetch.spec.whatwg.org/#response ¶6.4 Response class]] of
- * whatwg Fetch spec.
- */
+/** static methods associated with a Response object in [[https://fetch.spec.whatwg.org/#response ¶6.4 Response class]]
+  * of whatwg Fetch spec.
+  */
 @js.native
 @JSGlobal
 object Response extends js.Object {
 
-  /**
-   * @return a new Response object associated with a network error.
-   */
+  /** @return
+    *   a new Response object associated with a network error.
+    */
   def error(): Response = js.native
 
-  /**
-   * @param url
-   * @param status redirect status
-   * @return a new Response
-   */
+  /** @param url
+    * @param status
+    *   redirect status
+    * @return
+    *   a new Response
+    */
   def redirect(url: String, status: Int = 302): Response = js.native
 }
 
-/**
- * See [[https://fetch.spec.whatwg.org/#response-class ¶6.4 Response class]]
- * definition in whatwg Fetch spec.
- *
- */
+/** See [[https://fetch.spec.whatwg.org/#response-class ¶6.4 Response class]] definition in whatwg Fetch spec.
+  */
 trait ResponseInit extends js.Object {
   var status: Int
   var statusText: ByteString
   var headers: HeadersInit
 }
 
-/**
- * See [[https://fetch.spec.whatwg.org/#body body interface]] in whatwg Fetch spec.
- *
- * see also [[https://developer.mozilla.org/en-US/docs/Web/API/Body Body]] in MDN
- */
+/** See [[https://fetch.spec.whatwg.org/#body body interface]] in whatwg Fetch spec.
+  *
+  * see also [[https://developer.mozilla.org/en-US/docs/Web/API/Body Body]] in MDN
+  */
 @js.native
 trait Body extends js.Object {
 
-  /**
-   * MDN: Contains a Boolean that indicates whether the body has been read.
-   */
+  /** MDN: Contains a Boolean that indicates whether the body has been read.
+    */
   def bodyUsed: Boolean = js.native
 
-  /**
-   * MDN: Takes a Response stream and reads it to completion. It returns a
-   * promise that resolves with an ArrayBuffer.
-   */
+  /** MDN: Takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer.
+    */
   def arrayBuffer(): js.Promise[ArrayBuffer] = js.native
 
-  /**
-   * Takes a Response stream and reads it to completion. It returns a
-   * promise that resolves with a Blob.
-   */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob.
+    */
   def blob(): js.Promise[Blob] = js.native
 
-  /**
-   * Takes a Response stream and reads it to completion. It returns a
-   * promise that resolves with a FormData object.
-   */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a FormData object.
+    */
   def formData(): js.Promise[FormData] = js.native
 
-  /**
-   * Takes a Response stream and reads it to completion. It returns a
-   * promise that resolves with a JSON object.
-   * //todo: define the JSON type, and return a Promise[JSON] as per spec
-   */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a JSON object. //todo:
+    * define the JSON type, and return a Promise[JSON] as per spec
+    */
   def json(): js.Promise[js.Any] = js.native
 
-  /**
-   * Takes a Response stream and reads it to completion. It returns a
-   * promise that resolves with a USVString (text).
-   */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a USVString (text).
+    */
   def text(): js.Promise[String] = js.native
 }
 
-/**
- * [[https://fetch.spec.whatwg.org/#headers-class ¶6.1 Headers Class]] of whatwg spec
- *
- * The Headers interface of the Fetch API allows you to perform various actions
- * on HTTP request and response headers. These actions include retrieving, setting,
- * adding to, and removing. A Headers object has an associated header
- * list, which is initially empty and consists of zero or more name and value pairs.
- * You can add to this using methods like append() (see Examples.) In all methods of
- * this interface, header names are matched by case-insensitive byte sequence.
- *
- * For security reasons, some headers can only be controller by the user agent.
- * These headers include the forbidden header names  and forbidden response header
- * names.
- *
- * A Headers object also has an associated guard, which takes a value of immutable,
- * request, request-no-cors, response, or none. This affects whether the set(),
- * delete(), and append() methods will mutate the header. For more information
- * see Guard.
- *
- * You can retrieve a Headers object via the Request.headers and Response.headers
- * properties, and create a new Headers object using the Headers.Headers() constructor.
- *
- * MDN
- */
+/** [[https://fetch.spec.whatwg.org/#headers-class ¶6.1 Headers Class]] of whatwg spec
+  *
+  * The Headers interface of the Fetch API allows you to perform various actions on HTTP request and response headers.
+  * These actions include retrieving, setting, adding to, and removing. A Headers object has an associated header list,
+  * which is initially empty and consists of zero or more name and value pairs. You can add to this using methods like
+  * append() (see Examples.) In all methods of this interface, header names are matched by case-insensitive byte
+  * sequence.
+  *
+  * For security reasons, some headers can only be controller by the user agent. These headers include the forbidden
+  * header names and forbidden response header names.
+  *
+  * A Headers object also has an associated guard, which takes a value of immutable, request, request-no-cors, response,
+  * or none. This affects whether the set(), delete(), and append() methods will mutate the header. For more information
+  * see Guard.
+  *
+  * You can retrieve a Headers object via the Request.headers and Response.headers properties, and create a new Headers
+  * object using the Headers.Headers() constructor.
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
-class Headers(map: HeadersInit = js.Array[js.Array[String]]())
-    extends js.Iterable[js.Array[ByteString]] {
+class Headers(map: HeadersInit = js.Array[js.Array[String]]()) extends js.Iterable[js.Array[ByteString]] {
 
   @JSName(js.Symbol.iterator)
   def jsIterator(): js.Iterator[js.Array[ByteString]] = js.native
 
-  /**
-   * The append() method of the Headers interface appends a new value onto an
-   * existing header inside a Headers object, or adds the header if it does
-   * not already exist.
-   *
-   * The difference between Headers.set and append() is that if the specified
-   * header already exists and accepts multiple values, Headers.set will overwrite
-   * the existing value with the new one, whereas append() will append the new
-   * value onto the end of the set of values.
-   */
+  /** The append() method of the Headers interface appends a new value onto an existing header inside a Headers object,
+    * or adds the header if it does not already exist.
+    *
+    * The difference between Headers.set and append() is that if the specified header already exists and accepts
+    * multiple values, Headers.set will overwrite the existing value with the new one, whereas append() will append the
+    * new value onto the end of the set of values.
+    */
   def append(name: ByteString, value: ByteString): Unit = js.native
 
-  /**
-   * The set() method of the Headers interface sets a new value for an existing
-   * header inside a Headers object, or adds the header if it does not already exist.
-   *
-   * The difference between set() and Headers.append is that if the specified
-   * header already exists and accepts multiple values, set() overwrites the
-   * existing value with the new one, whereas Headers.append appends the new
-   * value to the end of the set of values.
-   *
-   * Not all headers can be set. See the list of forbidden header names in
-   * https://fetch.spec.whatwg.org/#terminology-headers
-   */
+  /** The set() method of the Headers interface sets a new value for an existing header inside a Headers object, or adds
+    * the header if it does not already exist.
+    *
+    * The difference between set() and Headers.append is that if the specified header already exists and accepts
+    * multiple values, set() overwrites the existing value with the new one, whereas Headers.append appends the new
+    * value to the end of the set of values.
+    *
+    * Not all headers can be set. See the list of forbidden header names in
+    * https://fetch.spec.whatwg.org/#terminology-headers
+    */
   def set(name: ByteString, value: ByteString): Unit = js.native
 
-  /**
-   * The delete() method of the Headers interface deletes a header from the current Headers object.
-   */
+  /** The delete() method of the Headers interface deletes a header from the current Headers object.
+    */
   def delete(name: ByteString): Unit = js.native
 
-  /**
-   * The get() method of the Headers interface returns the first value of a given header from within a Headers object
-   * . If the requested header doesn't exist in the Headers object, the call returns null.
-   *
-   * @param name a ByteString, ie. only ASCII chars
-   */
+  /** The get() method of the Headers interface returns the first value of a given header from within a Headers object .
+    * If the requested header doesn't exist in the Headers object, the call returns null.
+    *
+    * @param name
+    *   a ByteString, ie. only ASCII chars
+    */
   def get(name: ByteString): ByteString = js.native
 
-  /**
-   * The getAll() method of the Headers interface returns an array of all the
-   * values of a header within a Headers object with a given name. If the
-   * requested header doesn't exist in the Headers object, it returns an empty array.
-   *
-   * @param name a ByteString, ie. only ASCII chars
-   */
+  /** The getAll() method of the Headers interface returns an array of all the values of a header within a Headers
+    * object with a given name. If the requested header doesn't exist in the Headers object, it returns an empty array.
+    *
+    * @param name
+    *   a ByteString, ie. only ASCII chars
+    */
   def getAll(name: ByteString): Sequence[ByteString] = js.native
 
-  /**
-   * The has() method of the Headers interface returns a boolean stating whether
-   * a Headers object contains a certain header.
-   *
-   * @param name a ByteString, ie. only ASCII chars
-   */
+  /** The has() method of the Headers interface returns a boolean stating whether a Headers object contains a certain
+    * header.
+    *
+    * @param name
+    *   a ByteString, ie. only ASCII chars
+    */
   def has(name: ByteString): Boolean = js.native
 }
 
@@ -321,18 +282,18 @@ sealed trait ReferrerPolicy extends js.Any
 object ReferrerPolicy {
   val empty = "".asInstanceOf[ReferrerPolicy]
   val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
+
   val `no-referrer-when-downgrade` =
     "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
   val `origin-only` = "origin-only".asInstanceOf[ReferrerPolicy]
+
   val `origin-when-cross-origin` =
     "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
   val `unsafe-url` = "unsafe-url".asInstanceOf[ReferrerPolicy]
 }
 
-/**
- * This is not typed in the Fetch API but it is easy to create the most common
- * defaults.
- */
+/** This is not typed in the Fetch API but it is easy to create the most common defaults.
+  */
 @js.native
 trait HttpMethod extends js.Any
 
@@ -347,9 +308,8 @@ object HttpMethod {
   val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
 }
 
-/**
- *  Fetch APIs [[https://fetch.spec.whatwg.org/#requesttype RequestType enum]]
- */
+/** Fetch APIs [[https://fetch.spec.whatwg.org/#requesttype RequestType enum]]
+  */
 @js.native
 sealed trait RequestType extends js.Any
 
@@ -364,9 +324,8 @@ object RequestType {
   val video = "video".asInstanceOf[RequestType]
 }
 
-/**
- * Fetch APIs [[https://fetch.spec.whatwg.org/#requestdestination RequestDestination enum]]
- */
+/** Fetch APIs [[https://fetch.spec.whatwg.org/#requestdestination RequestDestination enum]]
+  */
 @js.native
 sealed trait RequestDestination extends js.Any
 
@@ -379,9 +338,8 @@ object RequestDestination {
   val worker = "worker".asInstanceOf[RequestDestination]
 }
 
-/**
- * Fetch API's [[https://fetch.spec.whatwg.org/#requestmode RequestMode enum]]
- */
+/** Fetch API's [[https://fetch.spec.whatwg.org/#requestmode RequestMode enum]]
+  */
 @js.native
 sealed trait RequestMode extends js.Any
 
@@ -392,9 +350,8 @@ object RequestMode {
   val cors = "cors".asInstanceOf[RequestMode]
 }
 
-/**
- * Fetch APIs [[https://fetch.spec.whatwg.org/#requestcredentials RequestCredentials enum]]
- */
+/** Fetch APIs [[https://fetch.spec.whatwg.org/#requestcredentials RequestCredentials enum]]
+  */
 @js.native
 sealed trait RequestCredentials extends js.Any
 
@@ -404,9 +361,8 @@ object RequestCredentials {
   val include = "include".asInstanceOf[RequestCredentials]
 }
 
-/**
- * Fetch APIs [[https://fetch.spec.whatwg.org/#requestcache RequestCache enum]]
- */
+/** Fetch APIs [[https://fetch.spec.whatwg.org/#requestcache RequestCache enum]]
+  */
 @js.native
 sealed trait RequestCache extends js.Any
 
@@ -419,9 +375,8 @@ object RequestCache {
   val `only-if-cached` = "only-if-cached".asInstanceOf[RequestCache]
 }
 
-/**
- * Fetch API's [[https://fetch.spec.whatwg.org/#requestredirect RequestRedirect enum]]
- */
+/** Fetch API's [[https://fetch.spec.whatwg.org/#requestredirect RequestRedirect enum]]
+  */
 @js.native
 sealed trait RequestRedirect extends js.Any
 
@@ -434,9 +389,8 @@ object RequestRedirect {
 @js.native
 sealed trait ResponseType extends js.Any
 
-/**
- * see [[https://fetch.spec.whatwg.org/#responsetype]] of whatwg Fetch spec
- */
+/** see [[https://fetch.spec.whatwg.org/#responsetype]] of whatwg Fetch spec
+  */
 object ResponseType {
   val basic = "basic".asInstanceOf[ResponseType]
   val cors = "cors".asInstanceOf[ResponseType]

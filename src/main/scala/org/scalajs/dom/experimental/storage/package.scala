@@ -4,10 +4,10 @@ import org.scalajs.dom
 import scala.language.implicitConversions
 import scala.scalajs.js
 
-/**
- * https://storage.spec.whatwg.org/
- */
+/** https://storage.spec.whatwg.org/
+  */
 package object storage {
+
   implicit def toNavigatorStorage(navigator: dom.Navigator): NavigatorStorage =
     navigator.asInstanceOf[NavigatorStorage]
 

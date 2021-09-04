@@ -38,10 +38,10 @@ package object experimental {
 
   @deprecated("use dom.fetch instead", "2.0.0")
   object Fetch {
+
     @js.native
     @JSGlobal("fetch")
-    def fetch(info: RequestInfo,
-        init: RequestInit = null): js.Promise[Response] = js.native
+    def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response] = js.native
   }
 
   @deprecated("use dom.Request instead", "2.0.0")
@@ -61,6 +61,7 @@ package object experimental {
 
   @deprecated("use new dom.ResponseInit { ... } instead", "2.0.0")
   object ResponseInit {
+
     def apply(_status: Int = 200, _statusText: ByteString = "OK",
         _headers: HeadersInit = js.Dictionary[String]()): ResponseInit = {
       new ResponseInit {

@@ -1,12 +1,9 @@
-/**
- * Documentation marked "MDN" is thanks to Mozilla Contributors
- * at https://developer.mozilla.org/en-US/docs/Web/API and available
- * under the Creative Commons Attribution-ShareAlike v2.5 or later.
- * http://creativecommons.org/licenses/by-sa/2.5/
- *
- * Everything else is under the MIT License
- * http://opensource.org/licenses/MIT
- */
+/** Documentation marked "MDN" is thanks to Mozilla Contributors at https://developer.mozilla.org/en-US/docs/Web/API and
+  * available under the Creative Commons Attribution-ShareAlike v2.5 or later.
+  * http://creativecommons.org/licenses/by-sa/2.5/
+  *
+  * Everything else is under the MIT License http://opensource.org/licenses/MIT
+  */
 package org.scalajs.dom
 
 import scala.scalajs.js
@@ -16,30 +13,27 @@ import scala.scalajs.js.annotation._
 @JSGlobal
 object CSS extends js.Object {
 
-  /**
-   * The CSS.supports() method returns a boolean value indicating if the browser supports a given CSS feature, or not.
-   * Allows to test the support of a pair property-value.
-   *
-   * MDN
-   */
+  /** The CSS.supports() method returns a boolean value indicating if the browser supports a given CSS feature, or not.
+    * Allows to test the support of a pair property-value.
+    *
+    * MDN
+    */
   def supports(propertyName: String, value: String): Boolean = js.native
 
-  /**
-   * The CSS.supports() method returns a boolean value indicating if the browser supports a given CSS feature, or not.
-   * Takes one parameter matching the condition of @supports.
-   *
-   * MDN
-   */
+  /** The CSS.supports() method returns a boolean value indicating if the browser supports a given CSS feature, or not.
+    * Takes one parameter matching the condition of @supports.
+    *
+    * MDN
+    */
   def supports(supportCondition: String): Boolean = js.native
 
 }
 
-/**
- * A CSSStyleDeclaration is an interface to the declaration block returned by the
- * style property of a cssRule in a stylesheet, when the rule is a CSSStyleRule.
- *
- * MDN
- */
+/** A CSSStyleDeclaration is an interface to the declaration block returned by the style property of a cssRule in a
+  * stylesheet, when the rule is a CSSStyleRule.
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSStyleDeclaration extends js.Object {
@@ -208,8 +202,7 @@ class CSSStyleDeclaration extends js.Object {
   @scala.scalajs.js.annotation.JSBracketAccess
   def update(index: Int, v: String): Unit = js.native
 
-  def setProperty(propertyName: String, value: String,
-      priority: String = js.native): Unit = js.native
+  def setProperty(propertyName: String, value: String, priority: String = js.native): Unit = js.native
 
   var animationFillMode: String = js.native
   var floodColor: String = js.native
@@ -253,12 +246,10 @@ class CSSStyleDeclaration extends js.Object {
   var transformStyle: String = js.native
 }
 
-/**
- * An object implementing the CSSStyleSheet interface represents a single CSS style
- * sheet.
- *
- * MDN
- */
+/** An object implementing the CSSStyleSheet interface represents a single CSS style sheet.
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSStyleSheet extends StyleSheet {
@@ -269,93 +260,79 @@ class CSSStyleSheet extends StyleSheet {
   var readOnly: Boolean = js.native
   var cssText: String = js.native
 
-  /**
-   * If this style sheet is imported into the document using an `@import` rule, the
-   * ownerRule property will return that CSSImportRule, otherwise it returns null.
-   *
-   * MDN
-   */
+  /** If this style sheet is imported into the document using an `@import` rule, the ownerRule property will return that
+    * CSSImportRule, otherwise it returns null.
+    *
+    * MDN
+    */
   var ownerRule: CSSRule = js.native
 
-  /**
-   * Returns a CSSRuleList of the CSS rules in the style sheet.
-   *
-   * MDN
-   */
+  /** Returns a CSSRuleList of the CSS rules in the style sheet.
+    *
+    * MDN
+    */
   var cssRules: CSSRuleList = js.native
   var id: String = js.native
 
   def addImport(bstrURL: String, lIndex: Int = js.native): Int = js.native
 
-  def addPageRule(bstrSelector: String, bstrStyle: String,
-      lIndex: Int = js.native): Int = js.native
+  def addPageRule(bstrSelector: String, bstrStyle: String, lIndex: Int = js.native): Int = js.native
 
-  /**
-   * The CSSStyleSheet.insertRule() method inserts a new style rule into the current
-   * style sheet.
-   *
-   * MDN
-   */
+  /** The CSSStyleSheet.insertRule() method inserts a new style rule into the current style sheet.
+    *
+    * MDN
+    */
   def insertRule(rule: String, index: Int = js.native): Int = js.native
 
   def removeRule(lIndex: Int): Unit = js.native
 
-  /**
-   * Deletes a rule from the style sheet.
-   *
-   * MDN
-   */
+  /** Deletes a rule from the style sheet.
+    *
+    * MDN
+    */
   def deleteRule(index: Int = js.native): Unit = js.native
 
-  def addRule(bstrSelector: String, bstrStyle: String = js.native,
-      lIndex: Int = js.native): Int = js.native
+  def addRule(bstrSelector: String, bstrStyle: String = js.native, lIndex: Int = js.native): Int = js.native
 
   def removeImport(lIndex: Int): Unit = js.native
 }
 
-/**
- * CSSStyleRule represents a single CSS style rule. It implements the CSSRule
- * interface with a type value of 1 (CSSRule.STYLE_RULE).
- *
- * MDN
- */
+/** CSSStyleRule represents a single CSS style rule. It implements the CSSRule interface with a type value of 1
+  * (CSSRule.STYLE_RULE).
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSStyleRule extends CSSRule {
 
-  /**
-   * Gets/sets the textual representation of the selector for this rule, e.g. "h1,h2".
-   *
-   * MDN
-   */
+  /** Gets/sets the textual representation of the selector for this rule, e.g. "h1,h2".
+    *
+    * MDN
+    */
   var selectorText: String = js.native
   var readOnly: Boolean = js.native
 
-  /**
-   * Returns the CSSStyleDeclaration object for the rule.
-   *
-   * MDN
-   */
+  /** Returns the CSSStyleDeclaration object for the rule.
+    *
+    * MDN
+    */
   val style: CSSStyleDeclaration = js.native
 }
 
-/**
- * CSSMediaRule is an object representing a single CSS `@media` rule. It implements the
- * CSSConditionRule interface, and therefore the CSSGroupingRule and the CSSRule
- * interface with a type value of 4 (CSSRule.MEDIA_RULE).
- *
- * MDN
- */
+/** CSSMediaRule is an object representing a single CSS `@media` rule. It implements the CSSConditionRule interface, and
+  * therefore the CSSGroupingRule and the CSSRule interface with a type value of 4 (CSSRule.MEDIA_RULE).
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSMediaRule extends CSSRule {
 
-  /**
-   * Specifies a MediaList representing the intended destination medium for style
-   * information.
-   *
-   * MDN
-   */
+  /** Specifies a MediaList representing the intended destination medium for style information.
+    *
+    * MDN
+    */
   var media: MediaList = js.native
   var cssRules: CSSRuleList = js.native
 
@@ -364,30 +341,26 @@ class CSSMediaRule extends CSSRule {
   def deleteRule(index: Int = js.native): Unit = js.native
 }
 
-/**
- * The CSSNamespaceRule interface describes an object representing a single CSS
- * `@@namespace` at-rule. It implements the CSSRule interface, with a type value of 10
- * (CSSRule.NAMESPACE_RULE).
- *
- * MDN
- */
+/** The CSSNamespaceRule interface describes an object representing a single CSS `@@namespace` at-rule. It implements
+  * the CSSRule interface, with a type value of 10 (CSSRule.NAMESPACE_RULE).
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSNamespaceRule extends CSSRule {
 
-  /**
-   * Returns a DOMString containing the text of the URI of the given namespace.
-   *
-   * MDN
-   */
+  /** Returns a DOMString containing the text of the URI of the given namespace.
+    *
+    * MDN
+    */
   var namespaceURI: String = js.native
 
-  /**
-   * Returns a DOMString with the name of the prefix associated to this namespace. If
-   * there is no such prefix, returns  null.
-   *
-   * MDN
-   */
+  /** Returns a DOMString with the name of the prefix associated to this namespace. If there is no such prefix, returns 
+    * null.
+    *
+    * MDN
+    */
   var prefix: String = js.native
 }
 
@@ -399,39 +372,33 @@ class CSSImportRule extends CSSRule {
   var media: MediaList = js.native
 }
 
-/**
- * An object implementing the CSSRule DOM interface represents a single CSS at-rule.
- * References to a CSSRule-implementing object may be obtained by looking at a CSS
- * style sheet's cssRules list.
- *
- * MDN
- */
+/** An object implementing the CSSRule DOM interface represents a single CSS at-rule. References to a
+  * CSSRule-implementing object may be obtained by looking at a CSS style sheet's cssRules list.
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSRule extends js.Object {
 
-  /**
-   * cssText returns the actual text of the style rule. To be able to set a stylesheet rule
-   * dynamically, see Using dynamic styling information.
-   *
-   * MDN
-   */
+  /** cssText returns the actual text of the style rule. To be able to set a stylesheet rule dynamically, see Using
+    * dynamic styling information.
+    *
+    * MDN
+    */
   var cssText: String = js.native
 
-  /**
-   * parentStyleSheet returns the stylesheet object in which the current rule is
-   * defined.
-   *
-   * MDN
-   */
+  /** parentStyleSheet returns the stylesheet object in which the current rule is defined.
+    *
+    * MDN
+    */
   var parentStyleSheet: CSSStyleSheet = js.native
 
-  /**
-   * Returns the containing rule, otherwise null. E.g. if this rule is a style rule
-   * inside an `@media` block, the parent rule would be that CSSMediaRule.
-   *
-   * MDN
-   */
+  /** Returns the containing rule, otherwise null. E.g. if this rule is a style rule inside an `@media` block, the
+    * parent rule would be that CSSMediaRule.
+    *
+    * MDN
+    */
   var parentRule: CSSRule = js.native
   var `type`: Int = js.native
   var IMPORT_RULE: Int = js.native
@@ -466,124 +433,105 @@ class CSSFontFaceRule extends CSSRule {
   var style: CSSStyleDeclaration = js.native
 }
 
-/**
- * CSSPageRule is an object representing a single CSS `@page` rule. It implements the
- * CSSRule interface with a type value of 6 (CSSRule.PAGE_RULE).
- *
- * MDN
- */
+/** CSSPageRule is an object representing a single CSS `@page` rule. It implements the CSSRule interface with a type
+  * value of 6 (CSSRule.PAGE_RULE).
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSPageRule extends CSSRule {
   var pseudoClass: String = js.native
 
-  /**
-   * Represents the text of the page selector associated with the at-rule.
-   *
-   * MDN
-   */
+  /** Represents the text of the page selector associated with the at-rule.
+    *
+    * MDN
+    */
   var selectorText: String = js.native
   var selector: String = js.native
 
-  /**
-   * Returns the declaration block associated with the at-rule.
-   *
-   * MDN
-   */
+  /** Returns the declaration block associated with the at-rule.
+    *
+    * MDN
+    */
   var style: CSSStyleDeclaration = js.native
 }
 
-/**
- * A CSSRuleList is an array-like object containing an ordered collection of CSSRule
- * objects.
- *
- * MDN
- */
+/** A CSSRuleList is an array-like object containing an ordered collection of CSSRule objects.
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSRuleList private[this] () extends DOMList[CSSRule] {
   def item(index: Int): CSSRule = js.native
 }
 
-/**
- * The CSSKeyframesRule interface describes an object representing a complete set
- * of keyframes for a CSS animation. It corresponds to the contains of a whole
- * `@@keyframes` at-rule. It implements the CSSRule interface with a type value of 7
- * (CSSRule.KEYFRAMES_RULE).
- *
- * MDN
- */
+/** The CSSKeyframesRule interface describes an object representing a complete set of keyframes for a CSS animation. It
+  * corresponds to the contains of a whole `@@keyframes` at-rule. It implements the CSSRule interface with a type value
+  * of 7 (CSSRule.KEYFRAMES_RULE).
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSKeyframesRule extends CSSRule {
 
-  /**
-   * Represents the name of the animation, used by the animation-name property.
-   *
-   * MDN
-   */
+  /** Represents the name of the animation, used by the animation-name property.
+    *
+    * MDN
+    */
   var name: String = js.native
 
-  /**
-   * Returns a CSSRuleList of the CSS rules in the media rule.
-   *
-   * MDN
-   */
+  /** Returns a CSSRuleList of the CSS rules in the media rule.
+    *
+    * MDN
+    */
   var cssRules: CSSRuleList = js.native
 
-  /**
-   * Returns a keyframe rule corresponding to the given key. The key is a DOMString
-   * containing an index of the keyframe o be returned, resolving to a number between 0
-   * and 1. If no such keyframe exists, findRule returns null.
-   *
-   * MDN
-   */
+  /** Returns a keyframe rule corresponding to the given key. The key is a DOMString containing an index of the keyframe
+    * o be returned, resolving to a number between 0 and 1. If no such keyframe exists, findRule returns null.
+    *
+    * MDN
+    */
   def findRule(rule: String): CSSKeyframeRule = js.native
 
-  /**
-   * Deletes a keyframe rule from the current CSSKeyframesRule. The parameter is the
-   * index of the keyframe to be deleted, expressed as a DOMString resolving as a number
-   * between 0 and 1.
-   *
-   * MDN
-   */
+  /** Deletes a keyframe rule from the current CSSKeyframesRule. The parameter is the index of the keyframe to be
+    * deleted, expressed as a DOMString resolving as a number between 0 and 1.
+    *
+    * MDN
+    */
   def deleteRule(rule: String): Unit = js.native
 
-  /**
-   * Inserts a new keyframe rule into the current CSSKeyframesRule. The parameter is a
-   * DOMString containing a keyframe in the same format as an entry of a `@keyframes`
-   * at-rule. If it contains more than one keyframe rule, a DOMException with a
-   * SYNTAX_ERR is thrown.
-   *
-   * MDN
-   */
+  /** Inserts a new keyframe rule into the current CSSKeyframesRule. The parameter is a DOMString containing a keyframe
+    * in the same format as an entry of a `@keyframes` at-rule. If it contains more than one keyframe rule, a
+    * DOMException with a SYNTAX_ERR is thrown.
+    *
+    * MDN
+    */
   def appendRule(rule: String): Unit = js.native
 }
 
-/**
- * The CSSKeyframeRule interface describes an object representing a set of style for
- * a given keyframe. It corresponds to the contains of a single keyframe of a
- * `@@keyframes` at-rule. It implements the CSSRule interface with a type value of 8
- * (CSSRule.KEYFRAME_RULE).
- *
- * MDN
- */
+/** The CSSKeyframeRule interface describes an object representing a set of style for a given keyframe. It corresponds
+  * to the contains of a single keyframe of a `@@keyframes` at-rule. It implements the CSSRule interface with a type
+  * value of 8 (CSSRule.KEYFRAME_RULE).
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
 class CSSKeyframeRule extends CSSRule {
 
-  /**
-   * Represents the key of the keyframe, like '10%', '75%'. The from keyword maps to '0%'
-   * and the to keyword maps to '100%'.
-   *
-   * MDN
-   */
+  /** Represents the key of the keyframe, like '10%', '75%'. The from keyword maps to '0%' and the to keyword maps to
+    * '100%'.
+    *
+    * MDN
+    */
   var keyText: String = js.native
 
-  /**
-   * Returns a CSSStyleDeclaration of the CSS style associated with the keyfrom.
-   *
-   * MDN
-   */
+  /** Returns a CSSStyleDeclaration of the CSS style associated with the keyfrom.
+    *
+    * MDN
+    */
   var style: CSSStyleDeclaration = js.native
 }
