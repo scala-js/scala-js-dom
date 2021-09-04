@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scalaversion: ["2.11.12", "2.12.14", "2.13.6", "3.0.1"]
+        scalaversion: ["2.11.12", "2.12.14", "2.13.6", "3.0.2"]
     steps:
 
       - uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
         run: sbt -DCI=1 "++${{ matrix.scalaversion }}" dom/scalafmtCheck
 
       - name: Validate api report
-        if: matrix.scalaversion != '2.11.12' && matrix.scalaversion != '3.0.1'
+        if: matrix.scalaversion != '2.11.12' && matrix.scalaversion != '3.0.2'
         run: ./api-reports/validate "${{ matrix.scalaversion }}"
 
   readme:
