@@ -2,7 +2,7 @@
   */
 package org.scalajs.dom.experimental.mediastream
 
-import org.scalajs.dom.{Event, EventInit, EventTarget, TimeRanges}
+import org.scalajs.dom._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.|
@@ -523,6 +523,37 @@ trait MediaTrackSupportedConstraints extends js.Object {
   var channelCount: js.UndefOr[Boolean] = js.undefined
   var deviceId: js.UndefOr[Boolean] = js.undefined
   var groupId: js.UndefOr[Boolean] = js.undefined
+}
+
+/** The ImageCapture interface of the MediaStream Image Capture API provides methods to enable the capture of images or
+  * photos from a camera or other photographic device referenced through a valid MediaStreamTrack.
+  *
+  * MDN
+  */
+@js.native
+@JSGlobal
+class ImageCapture(
+    init: MediaStreamTrack
+) extends js.Object {
+
+  /** Returns a reference to the MediaStreamTrack passed to the constructor.
+    *
+    * MDN
+    */
+  val track: MediaStreamTrack = js.native
+
+  /** Takes a single exposure using the video capture device sourcing a MediaStreamTrack and returns a Promise that
+    * resolves with a Blob containing the data.
+    *
+    * MDN
+    */
+  def takePhoto(): js.Promise[Blob] = js.native
+
+  /** Takes a snapshot of the live video in a MediaStreamTrack, returning an ImageBitmap, if successful.
+    *
+    * MDN
+    */
+  def grabFrame(): js.Promise[ImageBitmap] = js.native
 }
 
 /** Represents a source of media data for an HTMLMediaElement object.
