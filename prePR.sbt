@@ -19,13 +19,13 @@ ThisBuild / prePR_nonCross := Def.sequential(
     (example        / clean).value
   },
 
-  dom / Compile / scalafmt,
   Def.taskDyn {
-    if (scalaVersion.value.startsWith("2."))
+    if (scalaVersion.value.matches("2\\.1[23]\\..+"))
       (dom / Compile / scalafix).toTask("")
     else
-      Def.task[Unit]((dom / Compile / compile).value)
+      Def.task(())
   },
+  dom / Compile / scalafmt,
 
   Def.task {
     (testsShared    / Test / compile).value

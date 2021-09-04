@@ -106,16 +106,16 @@ object RTCIceTransportPolicy {
 
   /** The ICE engine must not send or receive any packets at this point.
     */
-  val none = "none".asInstanceOf[RTCIceTransportPolicy]
+  val none: RTCIceTransportPolicy = "none".asInstanceOf[RTCIceTransportPolicy]
 
   /** The ICE engine must only use media relay candidates such as candidates passing through a TURN server. This can be
     * used to reduce leakage of IP addresses in certain use cases.
     */
-  val relay = "relay".asInstanceOf[RTCIceTransportPolicy]
+  val relay: RTCIceTransportPolicy = "relay".asInstanceOf[RTCIceTransportPolicy]
 
   /** The ICE engine may use any type of candidates when this value is specified.
     */
-  val all = "all".asInstanceOf[RTCIceTransportPolicy]
+  val all: RTCIceTransportPolicy = "all".asInstanceOf[RTCIceTransportPolicy]
 }
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCBundlePolicy]] in W3C spec
@@ -128,7 +128,7 @@ object RTCBundlePolicy {
   /** Gather ICE candidates for each media type in use (audio, video, and data). If the remote endpoint is not
     * BUNDLE-aware, negotiate only one audio and video track on separate transports.
     */
-  val balanced = "balanced".asInstanceOf[RTCBundlePolicy]
+  val balanced: RTCBundlePolicy = "balanced".asInstanceOf[RTCBundlePolicy]
 
   /** Gather ICE candidates for each track. If the remote endpoint is not BUNDLE-aware, negotiate all media tracks on
     * separate transports.
@@ -187,19 +187,19 @@ object RTCSdpType {
 
   /** An RTCSdpType of "offer" indicates that a description should be treated as an [SDP] offer.
     */
-  val offer = "offer".asInstanceOf[RTCSdpType]
+  val offer: RTCSdpType = "offer".asInstanceOf[RTCSdpType]
 
   /** An RTCSdpType of "pranswer" indicates that a description should be treated as an [SDP] answer, but not a final
     * answer. A description used as an SDP "pranswer" may be applied as a response to a SDP offer, or an update to a
     * previously sent SDP "pranswer".
     */
-  val pranswer = "pranswer".asInstanceOf[RTCSdpType]
+  val pranswer: RTCSdpType = "pranswer".asInstanceOf[RTCSdpType]
 
   /** An RTCSdpType of "answer" indicates that a description should be treated as an [SDP] final answer, and the
     * offer-answer exchange should be considered complete. A description used as an SDP answer may be applied as a
     * response to an SDP offer or as an update to a previously sent SDP "pranswer".
     */
-  val answer = "answer".asInstanceOf[RTCSdpType]
+  val answer: RTCSdpType = "answer".asInstanceOf[RTCSdpType]
 }
 
 @js.native
@@ -301,20 +301,20 @@ object RTCDataChannelState {
   /** The user agent is attempting to establish the underlying data transport. This is the initial state of a
     * RTCDataChannel object created with createDataChannel().
     */
-  val connecting = "connecting".asInstanceOf[RTCDataChannelState]
+  val connecting: RTCDataChannelState = "connecting".asInstanceOf[RTCDataChannelState]
 
   /** The underlying data transport is established and communication is possible. This is the initial state of a
     * RTCDataChannel object dispatched as a part of a RTCDataChannelEvent.
     */
-  val open = "open".asInstanceOf[RTCDataChannelState]
+  val open: RTCDataChannelState = "open".asInstanceOf[RTCDataChannelState]
 
   /** The procedure to close down the underlying data transport has started.
     */
-  val closing = "closing".asInstanceOf[RTCDataChannelState]
+  val closing: RTCDataChannelState = "closing".asInstanceOf[RTCDataChannelState]
 
   /** The underlying data transport has been closed or could not be established.
     */
-  val closed = "closed".asInstanceOf[RTCDataChannelState]
+  val closed: RTCDataChannelState = "closed".asInstanceOf[RTCDataChannelState]
 }
 
 /** The RTCDataChannel interface represents a bi-directional data channel between two peers of a connection.
@@ -562,36 +562,36 @@ object RTCIceConnectionState {
 
   /** The ICE Agent is gathering addresses and/or waiting for remote candidates to be supplied.
     */
-  val `new` = "new".asInstanceOf[RTCIceConnectionState]
+  val `new`: RTCIceConnectionState = "new".asInstanceOf[RTCIceConnectionState]
 
   /** The ICE Agent has received remote candidates on at least one component, and is checking candidate pairs but has
     * not yet found a connection. In addition to checking, it may also still be gathering.
     */
-  val checking = "checking".asInstanceOf[RTCIceConnectionState]
+  val checking: RTCIceConnectionState = "checking".asInstanceOf[RTCIceConnectionState]
 
   /** The ICE Agent has found a usable connection for all components but is still checking other candidate pairs to see
     * if there is a better connection. It may also still be gathering.
     */
-  val connected = "connected".asInstanceOf[RTCIceConnectionState]
+  val connected: RTCIceConnectionState = "connected".asInstanceOf[RTCIceConnectionState]
 
   /** The ICE Agent has finished gathering and checking and found a connection for all components. Open issue: it is not
     * clear how the non controlling ICE side knows it is in the state.
     */
-  val completed = "completed".asInstanceOf[RTCIceConnectionState]
+  val completed: RTCIceConnectionState = "completed".asInstanceOf[RTCIceConnectionState]
 
   /** The ICE Agent is finished checking all candidate pairs and failed to find a connection for at least one component.
     * Connections may have been found for some components.
     */
-  val failed = "failed".asInstanceOf[RTCIceConnectionState]
+  val failed: RTCIceConnectionState = "failed".asInstanceOf[RTCIceConnectionState]
 
   /** Liveness checks have failed for one or more components. This is more aggressive than failed, and may trigger
     * intermittently (and resolve itself without action) on a flaky network.
     */
-  val disconnected = "disconnected".asInstanceOf[RTCIceConnectionState]
+  val disconnected: RTCIceConnectionState = "disconnected".asInstanceOf[RTCIceConnectionState]
 
   /** The ICE Agent has shut down and is no longer responding to STUN requests.
     */
-  val closed = "closed".asInstanceOf[RTCIceConnectionState]
+  val closed: RTCIceConnectionState = "closed".asInstanceOf[RTCIceConnectionState]
 }
 
 @js.native
@@ -602,7 +602,7 @@ object RTCSignalingState {
   /** There is no offer­answer exchange in progress. This is also the initial state in which case the local and remote
     * descriptions are empty.
     */
-  val stable = "stable".asInstanceOf[RTCSignalingState]
+  val stable: RTCSignalingState = "stable".asInstanceOf[RTCSignalingState]
 
   /** A local description, of type "offer", has been successfully applied.
     */
@@ -626,7 +626,7 @@ object RTCSignalingState {
 
   /** The connection is closed.
     */
-  val closed = "closed".asInstanceOf[RTCSignalingState]
+  val closed: RTCSignalingState = "closed".asInstanceOf[RTCSignalingState]
 }
 
 @js.native
@@ -636,16 +636,16 @@ object RTCIceGatheringState {
 
   /** The object was just created, and no networking has occurred yet.
     */
-  val `new` = "new".asInstanceOf[RTCIceGatheringState]
+  val `new`: RTCIceGatheringState = "new".asInstanceOf[RTCIceGatheringState]
 
   /** The ICE engine is in the process of gathering candidates for this RTCPeerConnection.
     */
-  val gathering = "gathering".asInstanceOf[RTCIceGatheringState]
+  val gathering: RTCIceGatheringState = "gathering".asInstanceOf[RTCIceGatheringState]
 
   /** The ICE engine has completed gathering. Events such as adding a new interface or a new TURN server will cause the
     * state to go back to gathering.
     */
-  val complete = "complete".asInstanceOf[RTCIceGatheringState]
+  val complete: RTCIceGatheringState = "complete".asInstanceOf[RTCIceGatheringState]
 }
 
 trait MediaStreamEventInit extends EventInit {

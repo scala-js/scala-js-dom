@@ -22,7 +22,7 @@ object IDBTransactionMode {
     *
     * MDN
     */
-  val READ_ONLY = "readonly".asInstanceOf[IDBTransactionMode]
+  val READ_ONLY: IDBTransactionMode = "readonly".asInstanceOf[IDBTransactionMode]
 
   /** Allows any operation to be performed, including ones that delete and create object stores and indexes. This mode
     * is for updating the version number of transactions that were started using the setVersion() method of IDBDatabase
@@ -30,13 +30,13 @@ object IDBTransactionMode {
     *
     * MDN
     */
-  val VERSION_CHANGE = "versionchange".asInstanceOf[IDBTransactionMode]
+  val VERSION_CHANGE: IDBTransactionMode = "versionchange".asInstanceOf[IDBTransactionMode]
 
   /** Allows reading and writing of data in existing data stores to be changed.
     *
     * MDN
     */
-  val READ_WRITE = "readwrite".asInstanceOf[IDBTransactionMode]
+  val READ_WRITE: IDBTransactionMode = "readwrite".asInstanceOf[IDBTransactionMode]
 
 }
 
@@ -355,28 +355,28 @@ object IDBCursorDirection {
     *
     * MDN
     */
-  val PREV = "prev".asInstanceOf[IDBCursorDirection]
+  val PREV: IDBCursorDirection = "prev".asInstanceOf[IDBCursorDirection]
 
   /** The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first
     * one iterated is retrieved. It starts at the upper bound of the key range and moves downwards.
     *
     * MDN
     */
-  val PREV_UNIQUE = "prevunique".asInstanceOf[IDBCursorDirection]
+  val PREV_UNIQUE: IDBCursorDirection = "prevunique".asInstanceOf[IDBCursorDirection]
 
   /** The cursor shows all records, including duplicates. It starts at the lower bound of the key range and moves
     * upwards (monotonically increasing in the order of keys).
     *
     * MDN
     */
-  val NEXT = "next".asInstanceOf[IDBCursorDirection]
+  val NEXT: IDBCursorDirection = "next".asInstanceOf[IDBCursorDirection]
 
   /** The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first
     * one iterated is retrieved. It starts at the lower bound of the key range and moves upwards.
     *
     * MDN
     */
-  val NEXT_UNIQUE = "nextunique".asInstanceOf[IDBCursorDirection]
+  val NEXT_UNIQUE: IDBCursorDirection = "nextunique".asInstanceOf[IDBCursorDirection]
 }
 
 /** Same as IDBCursor with the value property.

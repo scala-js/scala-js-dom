@@ -280,7 +280,7 @@ class Headers(map: HeadersInit = js.Array[js.Array[String]]()) extends js.Iterab
 sealed trait ReferrerPolicy extends js.Any
 
 object ReferrerPolicy {
-  val empty = "".asInstanceOf[ReferrerPolicy]
+  val empty: ReferrerPolicy = "".asInstanceOf[ReferrerPolicy]
   val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
 
   val `no-referrer-when-downgrade` =
@@ -298,14 +298,14 @@ object ReferrerPolicy {
 trait HttpMethod extends js.Any
 
 object HttpMethod {
-  val GET = "GET".asInstanceOf[HttpMethod]
-  val POST = "POST".asInstanceOf[HttpMethod]
-  val PUT = "PUT".asInstanceOf[HttpMethod]
-  val PATCH = "PATCH".asInstanceOf[HttpMethod]
-  val DELETE = "DELETE".asInstanceOf[HttpMethod]
-  val QUERY = "QUERY".asInstanceOf[HttpMethod]
-  val HEAD = "HEAD".asInstanceOf[HttpMethod]
-  val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
+  val GET: HttpMethod = "GET".asInstanceOf[HttpMethod]
+  val POST: HttpMethod = "POST".asInstanceOf[HttpMethod]
+  val PUT: HttpMethod = "PUT".asInstanceOf[HttpMethod]
+  val PATCH: HttpMethod = "PATCH".asInstanceOf[HttpMethod]
+  val DELETE: HttpMethod = "DELETE".asInstanceOf[HttpMethod]
+  val QUERY: HttpMethod = "QUERY".asInstanceOf[HttpMethod]
+  val HEAD: HttpMethod = "HEAD".asInstanceOf[HttpMethod]
+  val OPTIONS: HttpMethod = "OPTIONS".asInstanceOf[HttpMethod]
 }
 
 /** Fetch APIs [[https://fetch.spec.whatwg.org/#requesttype RequestType enum]]
@@ -314,14 +314,14 @@ object HttpMethod {
 sealed trait RequestType extends js.Any
 
 object RequestType {
-  val empty = "".asInstanceOf[RequestType]
-  val audio = "audio".asInstanceOf[RequestType]
-  val font = "font".asInstanceOf[RequestType]
-  val image = "image".asInstanceOf[RequestType]
-  val script = "script".asInstanceOf[RequestType]
-  val style = "style".asInstanceOf[RequestType]
-  val track = "track".asInstanceOf[RequestType]
-  val video = "video".asInstanceOf[RequestType]
+  val empty: RequestType = "".asInstanceOf[RequestType]
+  val audio: RequestType = "audio".asInstanceOf[RequestType]
+  val font: RequestType = "font".asInstanceOf[RequestType]
+  val image: RequestType = "image".asInstanceOf[RequestType]
+  val script: RequestType = "script".asInstanceOf[RequestType]
+  val style: RequestType = "style".asInstanceOf[RequestType]
+  val track: RequestType = "track".asInstanceOf[RequestType]
+  val video: RequestType = "video".asInstanceOf[RequestType]
 }
 
 /** Fetch APIs [[https://fetch.spec.whatwg.org/#requestdestination RequestDestination enum]]
@@ -330,12 +330,12 @@ object RequestType {
 sealed trait RequestDestination extends js.Any
 
 object RequestDestination {
-  val empty = "".asInstanceOf[RequestDestination]
-  val document = "document".asInstanceOf[RequestDestination]
-  val sharedworker = "sharedworker".asInstanceOf[RequestDestination]
-  val subresource = "subresource".asInstanceOf[RequestDestination]
-  val unknown = "unknown".asInstanceOf[RequestDestination]
-  val worker = "worker".asInstanceOf[RequestDestination]
+  val empty: RequestDestination = "".asInstanceOf[RequestDestination]
+  val document: RequestDestination = "document".asInstanceOf[RequestDestination]
+  val sharedworker: RequestDestination = "sharedworker".asInstanceOf[RequestDestination]
+  val subresource: RequestDestination = "subresource".asInstanceOf[RequestDestination]
+  val unknown: RequestDestination = "unknown".asInstanceOf[RequestDestination]
+  val worker: RequestDestination = "worker".asInstanceOf[RequestDestination]
 }
 
 /** Fetch API's [[https://fetch.spec.whatwg.org/#requestmode RequestMode enum]]
@@ -344,10 +344,10 @@ object RequestDestination {
 sealed trait RequestMode extends js.Any
 
 object RequestMode {
-  val navigate = "navigate".asInstanceOf[RequestMode]
+  val navigate: RequestMode = "navigate".asInstanceOf[RequestMode]
   val `same-origin` = "same-origin".asInstanceOf[RequestMode]
   val `no-cors` = "no-cors".asInstanceOf[RequestMode]
-  val cors = "cors".asInstanceOf[RequestMode]
+  val cors: RequestMode = "cors".asInstanceOf[RequestMode]
 }
 
 /** Fetch APIs [[https://fetch.spec.whatwg.org/#requestcredentials RequestCredentials enum]]
@@ -356,9 +356,9 @@ object RequestMode {
 sealed trait RequestCredentials extends js.Any
 
 object RequestCredentials {
-  val omit = "omit".asInstanceOf[RequestCredentials]
+  val omit: RequestCredentials = "omit".asInstanceOf[RequestCredentials]
   val `same-origin` = "same-origin".asInstanceOf[RequestCredentials]
-  val include = "include".asInstanceOf[RequestCredentials]
+  val include: RequestCredentials = "include".asInstanceOf[RequestCredentials]
 }
 
 /** Fetch APIs [[https://fetch.spec.whatwg.org/#requestcache RequestCache enum]]
@@ -367,9 +367,9 @@ object RequestCredentials {
 sealed trait RequestCache extends js.Any
 
 object RequestCache {
-  val default = "default".asInstanceOf[RequestCache]
+  val default: RequestCache = "default".asInstanceOf[RequestCache]
   val `no-store` = "no-store".asInstanceOf[RequestCache]
-  val reload = "reload".asInstanceOf[RequestCache]
+  val reload: RequestCache = "reload".asInstanceOf[RequestCache]
   val `no-cache` = "no-cache".asInstanceOf[RequestCache]
   val `force-cache` = "force-cache".asInstanceOf[RequestCache]
   val `only-if-cached` = "only-if-cached".asInstanceOf[RequestCache]
@@ -381,9 +381,9 @@ object RequestCache {
 sealed trait RequestRedirect extends js.Any
 
 object RequestRedirect {
-  val follow = "follow".asInstanceOf[RequestRedirect]
-  val error = "error".asInstanceOf[RequestRedirect]
-  val manual = "manual".asInstanceOf[RequestRedirect]
+  val follow: RequestRedirect = "follow".asInstanceOf[RequestRedirect]
+  val error: RequestRedirect = "error".asInstanceOf[RequestRedirect]
+  val manual: RequestRedirect = "manual".asInstanceOf[RequestRedirect]
 }
 
 @js.native
@@ -392,10 +392,10 @@ sealed trait ResponseType extends js.Any
 /** see [[https://fetch.spec.whatwg.org/#responsetype]] of whatwg Fetch spec
   */
 object ResponseType {
-  val basic = "basic".asInstanceOf[ResponseType]
-  val cors = "cors".asInstanceOf[ResponseType]
-  val default = "default".asInstanceOf[ResponseType]
-  val error = "error".asInstanceOf[ResponseType]
-  val opaque = "opaque".asInstanceOf[ResponseType]
-  val opaqueredirect = "opaqueredirect".asInstanceOf[ResponseType]
+  val basic: ResponseType = "basic".asInstanceOf[ResponseType]
+  val cors: ResponseType = "cors".asInstanceOf[ResponseType]
+  val default: ResponseType = "default".asInstanceOf[ResponseType]
+  val error: ResponseType = "error".asInstanceOf[ResponseType]
+  val opaque: ResponseType = "opaque".asInstanceOf[ResponseType]
+  val opaqueredirect: ResponseType = "opaqueredirect".asInstanceOf[ResponseType]
 }

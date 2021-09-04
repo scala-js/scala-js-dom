@@ -12,7 +12,7 @@ package object gamepad {
   implicit def toGamepad(navigator: dom.Navigator): GamepadNavigator =
     navigator.asInstanceOf[GamepadNavigator]
 
-  final val `unknown` = "".asInstanceOf[GamepadMappingType]
+  final val `unknown`: GamepadMappingType = "".asInstanceOf[GamepadMappingType]
 
-  final val `standard` = "standard".asInstanceOf[GamepadMappingType]
+  final val `standard`: GamepadMappingType = "standard".asInstanceOf[GamepadMappingType]
 }
