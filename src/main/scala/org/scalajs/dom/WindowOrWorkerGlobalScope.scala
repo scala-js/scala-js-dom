@@ -98,6 +98,8 @@ trait ImageBitmap extends js.Object {
   def width: Double = js.native
 
   /** Dispose of all graphical resources associated with an ImageBitmap.
+    *
+    * MDN
     */
   def close(): Unit = js.native
 }
