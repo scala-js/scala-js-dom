@@ -14453,11 +14453,16 @@ ReferrerPolicy[SO] val `no-referrer-when-downgrade` = "no-referrer-when-downgrad
 ReferrerPolicy[SO] val `origin-only` = "origin-only".asInstanceOf[ReferrerPolicy]
 ReferrerPolicy[SO] val `origin-when-cross-origin` = "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
 ReferrerPolicy[SO] val `unsafe-url` = "unsafe-url".asInstanceOf[ReferrerPolicy]
+Request[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
+Request[JC] def blob(): js.Promise[Blob]
+Request[JC] def bodyUsed: Boolean
 Request[JC] def cache: RequestCache
 Request[JC] def credentials: RequestCredentials
 Request[JC] def destination: RequestDestination
+Request[JC] def formData(): js.Promise[FormData]
 Request[JC] def headers: Headers
 Request[JC] def integrity: String
+Request[JC] def json(): js.Promise[js.Any]
 Request[JC] def keepalive: Boolean
 Request[JC] @JSName("type") def mediaType: RequestType
 Request[JC] def method: HttpMethod
@@ -14466,6 +14471,7 @@ Request[JC] def redirect: RequestRedirect
 Request[JC] def referrer: String
 Request[JC] def referrerPolicy: ReferrerPolicy
 Request[JC] def signal: AbortSignal
+Request[JC] def text(): js.Promise[String]
 Request[JC] def url: String
 RequestCache[JT]
 RequestCache[SO] val default: RequestCache
