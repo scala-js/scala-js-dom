@@ -28,7 +28,7 @@ object Fetch extends js.Object {
   */
 @js.native
 @JSGlobal
-class Request(input: RequestInfo, init: RequestInit = null) extends js.Object {
+class Request(input: RequestInfo, init: RequestInit = null) extends Body {
 
   /** Contains the request's method (GET, POST, etc.)
     */
