@@ -15,31 +15,11 @@ Contents:
 Packages
 ========
 
-TODO: Pending discussion in #545
+In v1.x, there used to be sub-packages grouping some parts of the DOM API by major feature.
+In v2.x, we've decided to put everything in `org.scalajs.dom` and get rid of sub-packages.
 
-TODO: Put DOMParser in `dom` with its extra types in its companion object
-TODO: Put `webgl/extensions` in `webgl`
-
-```
-org.scalajs.dom          — All top-level facades
-  +-- beacon             — Beacon API
-  +-- crypto             — Crypto API
-  +-- deviceorientation  — Device Orientation API
-  +-- domparser          — DOMParser API
-  +-- ext                — Scala helpers for nicer usage
-  +-- gamepad            — Gamepad API
-  +-- intl               — Internationalization API
-  +-- mediastream        — MediaStream API
-  +-- permissions        — Permissions API
-  +-- push               — Push API
-  +-- raw                — deprecated. Remains only for backwards-compatibility
-  +-- serviceworkers     — Service Workers API
-  +-- sharedworkers      —
-  +-- storage            — Storage API
-  +-- webgl              — WebGL API
-  |   +-- extensions     —
-  +-- webrtc             — WebRTC API
-```
+The reason for this change is that the real DOM API isn't namespaced in anyway, and the decision
+whether to group in a package or not, was subjective and inconsistent.
 
 
 Files
