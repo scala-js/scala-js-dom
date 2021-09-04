@@ -13100,14 +13100,14 @@ History[JC] def replaceState(statedata: js.Any, title: String): Unit
 History[JC] def replaceState(statedata: js.Any, title: String, url: String): Unit
 History[JC] def state: js.Any
 HttpMethod[JT]
-HttpMethod[SO] val DELETE = "DELETE".asInstanceOf[HttpMethod]
-HttpMethod[SO] val GET = "GET".asInstanceOf[HttpMethod]
-HttpMethod[SO] val HEAD = "HEAD".asInstanceOf[HttpMethod]
-HttpMethod[SO] val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
-HttpMethod[SO] val PATCH = "PATCH".asInstanceOf[HttpMethod]
-HttpMethod[SO] val POST = "POST".asInstanceOf[HttpMethod]
-HttpMethod[SO] val PUT = "PUT".asInstanceOf[HttpMethod]
-HttpMethod[SO] val QUERY = "QUERY".asInstanceOf[HttpMethod]
+HttpMethod[SO] val DELETE: HttpMethod
+HttpMethod[SO] val GET: HttpMethod
+HttpMethod[SO] val HEAD: HttpMethod
+HttpMethod[SO] val OPTIONS: HttpMethod
+HttpMethod[SO] val PATCH: HttpMethod
+HttpMethod[SO] val POST: HttpMethod
+HttpMethod[SO] val PUT: HttpMethod
+HttpMethod[SO] val QUERY: HttpMethod
 IDBCursor[JC] def advance(count: Int): Unit
 IDBCursor[JC] def continue(key: js.Any = ???): Unit
 IDBCursor[JC] def delete(): IDBRequest
@@ -13117,10 +13117,10 @@ IDBCursor[JC] def primaryKey: js.Any
 IDBCursor[JC] def source: js.Any
 IDBCursor[JC] def update(value: js.Any): IDBRequest
 IDBCursorDirection[JT]
-IDBCursorDirection[SO] val NEXT = "next".asInstanceOf[IDBCursorDirection]
-IDBCursorDirection[SO] val NEXT_UNIQUE = "nextunique".asInstanceOf[IDBCursorDirection]
-IDBCursorDirection[SO] val PREV = "prev".asInstanceOf[IDBCursorDirection]
-IDBCursorDirection[SO] val PREV_UNIQUE = "prevunique".asInstanceOf[IDBCursorDirection]
+IDBCursorDirection[SO] val NEXT: IDBCursorDirection
+IDBCursorDirection[SO] val NEXT_UNIQUE: IDBCursorDirection
+IDBCursorDirection[SO] val PREV: IDBCursorDirection
+IDBCursorDirection[SO] val PREV_UNIQUE: IDBCursorDirection
 IDBCursorWithValue[JC] def advance(count: Int): Unit
 IDBCursorWithValue[JC] def continue(key: js.Any = ???): Unit
 IDBCursorWithValue[JC] def delete(): IDBRequest
@@ -13226,9 +13226,9 @@ IDBTransaction[JC] var onerror: js.Function1[Event, _]
 IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBTransactionMode[JT]
-IDBTransactionMode[SO] val READ_ONLY = "readonly".asInstanceOf[IDBTransactionMode]
-IDBTransactionMode[SO] val READ_WRITE = "readwrite".asInstanceOf[IDBTransactionMode]
-IDBTransactionMode[SO] val VERSION_CHANGE = "versionchange".asInstanceOf[IDBTransactionMode]
+IDBTransactionMode[SO] val READ_ONLY: IDBTransactionMode
+IDBTransactionMode[SO] val READ_WRITE: IDBTransactionMode
+IDBTransactionMode[SO] val VERSION_CHANGE: IDBTransactionMode
 IDBVersionChangeEvent[JC] def bubbles: Boolean
 IDBVersionChangeEvent[JC] def cancelBubble: Boolean
 IDBVersionChangeEvent[JC] def cancelable: Boolean
@@ -14447,7 +14447,7 @@ ReadableStreamReader[JC] def closed: js.Promise[ReadableStreamReader[T]]
 ReadableStreamReader[JC] def read(): js.Promise[Chunk[T]]
 ReadableStreamReader[JC] def releaseLock(): Unit
 ReferrerPolicy[JT]
-ReferrerPolicy[SO] val empty = "".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val empty: ReferrerPolicy
 ReferrerPolicy[SO] val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
 ReferrerPolicy[SO] val `no-referrer-when-downgrade` = "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
 ReferrerPolicy[SO] val `origin-only` = "origin-only".asInstanceOf[ReferrerPolicy]
@@ -14468,23 +14468,23 @@ Request[JC] def referrerPolicy: ReferrerPolicy
 Request[JC] def signal: AbortSignal
 Request[JC] def url: String
 RequestCache[JT]
-RequestCache[SO] val default = "default".asInstanceOf[RequestCache]
+RequestCache[SO] val default: RequestCache
 RequestCache[SO] val `force-cache` = "force-cache".asInstanceOf[RequestCache]
 RequestCache[SO] val `no-cache` = "no-cache".asInstanceOf[RequestCache]
 RequestCache[SO] val `no-store` = "no-store".asInstanceOf[RequestCache]
 RequestCache[SO] val `only-if-cached` = "only-if-cached".asInstanceOf[RequestCache]
-RequestCache[SO] val reload = "reload".asInstanceOf[RequestCache]
+RequestCache[SO] val reload: RequestCache
 RequestCredentials[JT]
-RequestCredentials[SO] val include = "include".asInstanceOf[RequestCredentials]
-RequestCredentials[SO] val omit = "omit".asInstanceOf[RequestCredentials]
+RequestCredentials[SO] val include: RequestCredentials
+RequestCredentials[SO] val omit: RequestCredentials
 RequestCredentials[SO] val `same-origin` = "same-origin".asInstanceOf[RequestCredentials]
 RequestDestination[JT]
-RequestDestination[SO] val document = "document".asInstanceOf[RequestDestination]
-RequestDestination[SO] val empty = "".asInstanceOf[RequestDestination]
-RequestDestination[SO] val sharedworker = "sharedworker".asInstanceOf[RequestDestination]
-RequestDestination[SO] val subresource = "subresource".asInstanceOf[RequestDestination]
-RequestDestination[SO] val unknown = "unknown".asInstanceOf[RequestDestination]
-RequestDestination[SO] val worker = "worker".asInstanceOf[RequestDestination]
+RequestDestination[SO] val document: RequestDestination
+RequestDestination[SO] val empty: RequestDestination
+RequestDestination[SO] val sharedworker: RequestDestination
+RequestDestination[SO] val subresource: RequestDestination
+RequestDestination[SO] val unknown: RequestDestination
+RequestDestination[SO] val worker: RequestDestination
 RequestInit[JT] var body: js.UndefOr[BodyInit]
 RequestInit[JT] var cache: js.UndefOr[RequestCache]
 RequestInit[JT] var credentials: js.UndefOr[RequestCredentials]
@@ -14499,23 +14499,23 @@ RequestInit[JT] var referrerPolicy: js.UndefOr[ReferrerPolicy]
 RequestInit[JT] var signal: js.UndefOr[AbortSignal]
 RequestInit[JT] var window: js.UndefOr[Null]
 RequestMode[JT]
-RequestMode[SO] val cors = "cors".asInstanceOf[RequestMode]
-RequestMode[SO] val navigate = "navigate".asInstanceOf[RequestMode]
+RequestMode[SO] val cors: RequestMode
+RequestMode[SO] val navigate: RequestMode
 RequestMode[SO] val `no-cors` = "no-cors".asInstanceOf[RequestMode]
 RequestMode[SO] val `same-origin` = "same-origin".asInstanceOf[RequestMode]
 RequestRedirect[JT]
-RequestRedirect[SO] val error = "error".asInstanceOf[RequestRedirect]
-RequestRedirect[SO] val follow = "follow".asInstanceOf[RequestRedirect]
-RequestRedirect[SO] val manual = "manual".asInstanceOf[RequestRedirect]
+RequestRedirect[SO] val error: RequestRedirect
+RequestRedirect[SO] val follow: RequestRedirect
+RequestRedirect[SO] val manual: RequestRedirect
 RequestType[JT]
-RequestType[SO] val audio = "audio".asInstanceOf[RequestType]
-RequestType[SO] val empty = "".asInstanceOf[RequestType]
-RequestType[SO] val font = "font".asInstanceOf[RequestType]
-RequestType[SO] val image = "image".asInstanceOf[RequestType]
-RequestType[SO] val script = "script".asInstanceOf[RequestType]
-RequestType[SO] val style = "style".asInstanceOf[RequestType]
-RequestType[SO] val track = "track".asInstanceOf[RequestType]
-RequestType[SO] val video = "video".asInstanceOf[RequestType]
+RequestType[SO] val audio: RequestType
+RequestType[SO] val empty: RequestType
+RequestType[SO] val font: RequestType
+RequestType[SO] val image: RequestType
+RequestType[SO] val script: RequestType
+RequestType[SO] val style: RequestType
+RequestType[SO] val track: RequestType
+RequestType[SO] val video: RequestType
 Response[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 Response[JC] def blob(): js.Promise[Blob]
 Response[JC] val body: ReadableStream[Uint8Array]
@@ -14536,12 +14536,12 @@ ResponseInit[JT] var headers: HeadersInit
 ResponseInit[JT] var status: Int
 ResponseInit[JT] var statusText: ByteString
 ResponseType[JT]
-ResponseType[SO] val basic = "basic".asInstanceOf[ResponseType]
-ResponseType[SO] val cors = "cors".asInstanceOf[ResponseType]
-ResponseType[SO] val default = "default".asInstanceOf[ResponseType]
-ResponseType[SO] val error = "error".asInstanceOf[ResponseType]
-ResponseType[SO] val opaque = "opaque".asInstanceOf[ResponseType]
-ResponseType[SO] val opaqueredirect = "opaqueredirect".asInstanceOf[ResponseType]
+ResponseType[SO] val basic: ResponseType
+ResponseType[SO] val cors: ResponseType
+ResponseType[SO] val default: ResponseType
+ResponseType[SO] val error: ResponseType
+ResponseType[SO] val opaque: ResponseType
+ResponseType[SO] val opaqueredirect: ResponseType
 SVGAElement[JC] var accessKey: String
 SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -22334,10 +22334,10 @@ ValidityState[JT] def typeMismatch: Boolean
 ValidityState[JT] def valid: Boolean
 ValidityState[JT] def valueMissing: Boolean
 VisibilityState[JT]
-VisibilityState[SO] val hidden = "hidden".asInstanceOf[VisibilityState]
-VisibilityState[SO] val prerender = "prerender".asInstanceOf[VisibilityState]
-VisibilityState[SO] val unloaded = "unloaded".asInstanceOf[VisibilityState]
-VisibilityState[SO] val visible = "visible".asInstanceOf[VisibilityState]
+VisibilityState[SO] val hidden: VisibilityState
+VisibilityState[SO] val prerender: VisibilityState
+VisibilityState[SO] val unloaded: VisibilityState
+VisibilityState[SO] val visible: VisibilityState
 WaveShaperNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 WaveShaperNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 WaveShaperNode[JT] var channelCount: Int
@@ -23152,11 +23152,11 @@ WorkerNavigator[JT] def onLine: Boolean
 WorkerNavigator[JT] def platform: String
 WorkerNavigator[JT] def userAgent: String
 WriteableState[JT]
-WriteableState[SO] val closed = "closed".asInstanceOf[WriteableState]
-WriteableState[SO] val closing = "closing".asInstanceOf[WriteableState]
-WriteableState[SO] val errored = "errored".asInstanceOf[WriteableState]
-WriteableState[SO] val waiting = "waiting".asInstanceOf[WriteableState]
-WriteableState[SO] val writable = "writable".asInstanceOf[WriteableState]
+WriteableState[SO] val closed: WriteableState
+WriteableState[SO] val closing: WriteableState
+WriteableState[SO] val errored: WriteableState
+WriteableState[SO] val waiting: WriteableState
+WriteableState[SO] val writable: WriteableState
 WriteableStream[JT] def abort(reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit]
 WriteableStream[JT] def close(): js.Promise[WriteableStream[T]]
 WriteableStream[JT] val closed: js.Promise[WriteableStream[T]]
@@ -23350,23 +23350,23 @@ crypto/JsonWebKey[JT] var x: String
 crypto/JsonWebKey[JT] var y: String
 crypto/KeyAlgorithm[JT] var name: String
 crypto/KeyFormat[JT]
-crypto/KeyFormat[SO] val jwk = "jwk".asInstanceOf[KeyFormat]
-crypto/KeyFormat[SO] val pkcs8 = "pkcs8".asInstanceOf[KeyFormat]
-crypto/KeyFormat[SO] val raw = "raw".asInstanceOf[KeyFormat]
-crypto/KeyFormat[SO] val spki = "spki".asInstanceOf[KeyFormat]
+crypto/KeyFormat[SO] val jwk: KeyFormat
+crypto/KeyFormat[SO] val pkcs8: KeyFormat
+crypto/KeyFormat[SO] val raw: KeyFormat
+crypto/KeyFormat[SO] val spki: KeyFormat
 crypto/KeyType[JT]
-crypto/KeyType[SO] val `private` = "private".asInstanceOf[KeyType]
-crypto/KeyType[SO] val public = "public".asInstanceOf[KeyType]
-crypto/KeyType[SO] val secret = "secret".asInstanceOf[KeyType]
+crypto/KeyType[SO] val `private`: KeyType
+crypto/KeyType[SO] val public: KeyType
+crypto/KeyType[SO] val secret: KeyType
 crypto/KeyUsage[JT]
-crypto/KeyUsage[SO] val decrypt = "decrypt".asInstanceOf[KeyUsage]
-crypto/KeyUsage[SO] val deriveBits = "deriveBits".asInstanceOf[KeyUsage]
-crypto/KeyUsage[SO] val deriveKey = "deriveKey".asInstanceOf[KeyUsage]
-crypto/KeyUsage[SO] val encrypt = "encrypt".asInstanceOf[KeyUsage]
-crypto/KeyUsage[SO] val sign = "sign".asInstanceOf[KeyUsage]
-crypto/KeyUsage[SO] val unwrapKey = "unwrapKey".asInstanceOf[KeyUsage]
-crypto/KeyUsage[SO] val verify = "verify".asInstanceOf[KeyUsage]
-crypto/KeyUsage[SO] val wrapKey = "wrapKey".asInstanceOf[KeyUsage]
+crypto/KeyUsage[SO] val decrypt: KeyUsage
+crypto/KeyUsage[SO] val deriveBits: KeyUsage
+crypto/KeyUsage[SO] val deriveKey: KeyUsage
+crypto/KeyUsage[SO] val encrypt: KeyUsage
+crypto/KeyUsage[SO] val sign: KeyUsage
+crypto/KeyUsage[SO] val unwrapKey: KeyUsage
+crypto/KeyUsage[SO] val verify: KeyUsage
+crypto/KeyUsage[SO] val wrapKey: KeyUsage
 crypto/Pbkdf2Params[JT] var hash: HashAlgorithmIdentifier
 crypto/Pbkdf2Params[JT] var iterations: Double
 crypto/Pbkdf2Params[JT] var name: String
@@ -23561,9 +23561,9 @@ experimental/gamepad/GamepadEventInit[JT] var gamepad: js.UndefOr[Gamepad]
 experimental/gamepad/GamepadEventInit[JT] var scoped: js.UndefOr[Boolean]
 experimental/gamepad/GamepadMappingType[JT]
 experimental/gamepad/GamepadNavigator[JT] def getGamepads(): js.Array[Gamepad]
-experimental/gamepad/package[SO] final val `standard` = "standard".asInstanceOf[GamepadMappingType]
+experimental/gamepad/package[SO] final val standard: GamepadMappingType
 experimental/gamepad/package[SO] implicit def toGamepad(navigator: dom.Navigator): GamepadNavigator
-experimental/gamepad/package[SO] final val `unknown` = "".asInstanceOf[GamepadMappingType]
+experimental/gamepad/package[SO] final val unknown: GamepadMappingType
 experimental/intl/Collator[JC] def compare(string1: String, string2: String): Double
 experimental/intl/Collator[JC] def resolvedOptions(): CollatorOptions
 experimental/intl/Collator[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
@@ -23627,9 +23627,9 @@ experimental/mediastream/MediaDeviceInfo[JT] val kind: MediaDeviceKind
 experimental/mediastream/MediaDeviceInfo[JT] val label: String
 experimental/mediastream/MediaDeviceInfo[SO] def apply(deviceId: js.UndefOr[String] = js.undefined, groupId: js.UndefOr[String] = js.undefined, kind: js.UndefOr[String] = js.undefined, label: js.UndefOr[String] = js.undefined): MediaDeviceInfo
 experimental/mediastream/MediaDeviceKind[JT]
-experimental/mediastream/MediaDeviceKind[SO] val audioinput = "audioinput".asInstanceOf[MediaDeviceKind]
-experimental/mediastream/MediaDeviceKind[SO] val audiooutput = "audiooutput".asInstanceOf[MediaDeviceKind]
-experimental/mediastream/MediaDeviceKind[SO] val videoinput = "videoinput".asInstanceOf[MediaDeviceKind]
+experimental/mediastream/MediaDeviceKind[SO] val audioinput: MediaDeviceKind
+experimental/mediastream/MediaDeviceKind[SO] val audiooutput: MediaDeviceKind
+experimental/mediastream/MediaDeviceKind[SO] val videoinput: MediaDeviceKind
 experimental/mediastream/MediaDevices[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/MediaDevices[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/MediaDevices[JT] def dispatchEvent(evt: Event): Boolean
@@ -23722,8 +23722,8 @@ experimental/mediastream/MediaStreamTrackEventInit[JT] var composed: js.UndefOr[
 experimental/mediastream/MediaStreamTrackEventInit[JT] var scoped: js.UndefOr[Boolean]
 experimental/mediastream/MediaStreamTrackEventInit[JT] var track: js.UndefOr[MediaStreamTrack]
 experimental/mediastream/MediaStreamTrackState[JT]
-experimental/mediastream/MediaStreamTrackState[SO] val ended = "ended".asInstanceOf[MediaStreamTrackState]
-experimental/mediastream/MediaStreamTrackState[SO] val live = "live".asInstanceOf[MediaStreamTrackState]
+experimental/mediastream/MediaStreamTrackState[SO] val ended: MediaStreamTrackState
+experimental/mediastream/MediaStreamTrackState[SO] val live: MediaStreamTrackState
 experimental/mediastream/MediaTrackConstraintSet[JT] var aspectRatio: Double
 experimental/mediastream/MediaTrackConstraintSet[JT] var deviceId: String
 experimental/mediastream/MediaTrackConstraintSet[JT] var echoCancellation: Boolean
@@ -23927,19 +23927,19 @@ experimental/package.ResponseInit[SO] var status = _status  (@deprecated in 2.0.
 experimental/package.ResponseInit[SO] var statusText = _statusText  (@deprecated in 2.0.0)
 experimental/permissions/package[SO] def apply(permissionName: PermissionName): PermissionDescriptor
 experimental/permissions/package[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor
-experimental/permissions/package[SO] val denied = "denied".asInstanceOf[PermissionState]
-experimental/permissions/package[SO] val geolocation = "geolocation".asInstanceOf[PermissionName]
-experimental/permissions/package[SO] val granted = "granted".asInstanceOf[PermissionState]
-experimental/permissions/package[SO] val midi = "midi".asInstanceOf[PermissionName]
+experimental/permissions/package[SO] val denied: PermissionState
+experimental/permissions/package[SO] val geolocation: PermissionName
+experimental/permissions/package[SO] val granted: PermissionState
+experimental/permissions/package[SO] val midi: PermissionName
 experimental/permissions/package[SO] val name = PermissionName.push
 experimental/permissions/package[SO] val name = permissionName
 experimental/permissions/package[SO] val name: PermissionName
-experimental/permissions/package[SO] val notifications = "notifications".asInstanceOf[PermissionName]
+experimental/permissions/package[SO] val notifications: PermissionName
 experimental/permissions/package[SO] var onchange: js.Function1[dom.Event, _]
 experimental/permissions/package[SO] val permissions: Permissions
 experimental/permissions/package[SO] val `persistent-storage` = "persistent-storage".asInstanceOf[PermissionName]
-experimental/permissions/package[SO] val prompt = "prompt".asInstanceOf[PermissionState]
-experimental/permissions/package[SO] val push = "push".asInstanceOf[PermissionName]
+experimental/permissions/package[SO] val prompt: PermissionState
+experimental/permissions/package[SO] val push: PermissionName
 experimental/permissions/package[SO] def query(permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
 experimental/permissions/package[SO] val state: PermissionState
 experimental/permissions/package[SO] implicit def toPermissions(navigator: dom.Navigator): PermissionsNavigator
@@ -23949,15 +23949,15 @@ experimental/permissions/package.PermissionDescriptor[JT] val name: PermissionNa
 experimental/permissions/package.PermissionDescriptor[SO] def apply(permissionName: PermissionName): PermissionDescriptor
 experimental/permissions/package.PermissionDescriptor[SO] val name = permissionName
 experimental/permissions/package.PermissionName[JT]
-experimental/permissions/package.PermissionName[SO] val geolocation = "geolocation".asInstanceOf[PermissionName]
-experimental/permissions/package.PermissionName[SO] val midi = "midi".asInstanceOf[PermissionName]
-experimental/permissions/package.PermissionName[SO] val notifications = "notifications".asInstanceOf[PermissionName]
+experimental/permissions/package.PermissionName[SO] val geolocation: PermissionName
+experimental/permissions/package.PermissionName[SO] val midi: PermissionName
+experimental/permissions/package.PermissionName[SO] val notifications: PermissionName
 experimental/permissions/package.PermissionName[SO] val `persistent-storage` = "persistent-storage".asInstanceOf[PermissionName]
-experimental/permissions/package.PermissionName[SO] val push = "push".asInstanceOf[PermissionName]
+experimental/permissions/package.PermissionName[SO] val push: PermissionName
 experimental/permissions/package.PermissionState[JT]
-experimental/permissions/package.PermissionState[SO] val denied = "denied".asInstanceOf[PermissionState]
-experimental/permissions/package.PermissionState[SO] val granted = "granted".asInstanceOf[PermissionState]
-experimental/permissions/package.PermissionState[SO] val prompt = "prompt".asInstanceOf[PermissionState]
+experimental/permissions/package.PermissionState[SO] val denied: PermissionState
+experimental/permissions/package.PermissionState[SO] val granted: PermissionState
+experimental/permissions/package.PermissionState[SO] val prompt: PermissionState
 experimental/permissions/package.PermissionStatus[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/permissions/package.PermissionStatus[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/permissions/package.PermissionStatus[JT] def dispatchEvent(evt: Event): Boolean
@@ -23973,8 +23973,8 @@ experimental/permissions/package.PushPermissionDescriptor[SO] def apply(permissi
 experimental/permissions/package.PushPermissionDescriptor[SO] val name = PermissionName.push
 experimental/permissions/package.PushPermissionDescriptor[SO] val userVisibleOnly = permissionUserVisibleOnly
 experimental/push/PushEncryptionKeyName[JT]
-experimental/push/PushEncryptionKeyName[SO] val auth = "auth".asInstanceOf[PushEncryptionKeyName]
-experimental/push/PushEncryptionKeyName[SO] val p256dh = "p256dh".asInstanceOf[PushEncryptionKeyName]
+experimental/push/PushEncryptionKeyName[SO] val auth: PushEncryptionKeyName
+experimental/push/PushEncryptionKeyName[SO] val p256dh: PushEncryptionKeyName
 experimental/push/PushEvent[JT] def bubbles: Boolean
 experimental/push/PushEvent[JT] def cancelBubble: Boolean
 experimental/push/PushEvent[JT] def cancelable: Boolean
@@ -23998,9 +23998,9 @@ experimental/push/PushMessageData[JT] def blob(): Blob
 experimental/push/PushMessageData[JT] def json(): js.Any
 experimental/push/PushMessageData[JT] def text(): String
 experimental/push/PushPermissionState[JT]
-experimental/push/PushPermissionState[SO] val denied = "denied".asInstanceOf[PushPermissionState]
-experimental/push/PushPermissionState[SO] val granted = "granted".asInstanceOf[PushPermissionState]
-experimental/push/PushPermissionState[SO] val prompt = "prompt".asInstanceOf[PushPermissionState]
+experimental/push/PushPermissionState[SO] val denied: PushPermissionState
+experimental/push/PushPermissionState[SO] val granted: PushPermissionState
+experimental/push/PushPermissionState[SO] val prompt: PushPermissionState
 experimental/push/PushSubscription[JT] val endpoint: String
 experimental/push/PushSubscription[JT] val expirationTime: java.lang.Double
 experimental/push/PushSubscription[JT] def getKey(name: PushEncryptionKeyName): ArrayBuffer
@@ -24044,10 +24044,10 @@ experimental/serviceworkers/Client[JT] def url: String
 experimental/serviceworkers/ClientQueryOptions[JT] var includeUncontrolled: Boolean
 experimental/serviceworkers/ClientQueryOptions[JT] var `type`: ClientType
 experimental/serviceworkers/ClientType[JT]
-experimental/serviceworkers/ClientType[SO] val all = "all".asInstanceOf[ClientType]
-experimental/serviceworkers/ClientType[SO] val sharedworker = "sharedworker".asInstanceOf[ClientType]
-experimental/serviceworkers/ClientType[SO] val window = "window".asInstanceOf[ClientType]
-experimental/serviceworkers/ClientType[SO] val worker = "worker".asInstanceOf[ClientType]
+experimental/serviceworkers/ClientType[SO] val all: ClientType
+experimental/serviceworkers/ClientType[SO] val sharedworker: ClientType
+experimental/serviceworkers/ClientType[SO] val window: ClientType
+experimental/serviceworkers/ClientType[SO] val worker: ClientType
 experimental/serviceworkers/Clients[JT] def claim(): js.Promise[Unit]
 experimental/serviceworkers/Clients[JT] def get(id: String): js.Promise[js.UndefOr[Client]]
 experimental/serviceworkers/Clients[JT] def matchAll(options: js.UndefOr[ClientQueryOptions]?): js.Promise[js.Array[Client]]
@@ -24127,9 +24127,9 @@ experimental/serviceworkers/FetchEventInit[JT] var isReload: js.UndefOr[Boolean]
 experimental/serviceworkers/FetchEventInit[JT] var request: js.UndefOr[Request]
 experimental/serviceworkers/FetchEventInit[JT] var scoped: js.UndefOr[Boolean]
 experimental/serviceworkers/FrameType[JT]
-experimental/serviceworkers/FrameType[SO] val auxiliary = "auxiliary".asInstanceOf[FrameType]
-experimental/serviceworkers/FrameType[SO] val nested = "nested".asInstanceOf[FrameType]
-experimental/serviceworkers/FrameType[SO] val none = "none".asInstanceOf[FrameType]
+experimental/serviceworkers/FrameType[SO] val auxiliary: FrameType
+experimental/serviceworkers/FrameType[SO] val nested: FrameType
+experimental/serviceworkers/FrameType[SO] val none: FrameType
 experimental/serviceworkers/FrameType[SO] val `top-level` = "top-level".asInstanceOf[FrameType]
 experimental/serviceworkers/GetNotificationOptions[JT] var tag: js.UndefOr[String]
 experimental/serviceworkers/ServiceWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -24216,11 +24216,11 @@ experimental/serviceworkers/ServiceWorkerRegistration[JT] def unregister(): js.P
 experimental/serviceworkers/ServiceWorkerRegistration[JT] def update(): js.Promise[Unit]
 experimental/serviceworkers/ServiceWorkerRegistration[JT] var waiting: ServiceWorker
 experimental/serviceworkers/ServiceWorkerState[JT]
-experimental/serviceworkers/ServiceWorkerState[SO] val activated = "activated".asInstanceOf[ServiceWorkerState]
-experimental/serviceworkers/ServiceWorkerState[SO] val activating = "activating".asInstanceOf[ServiceWorkerState]
-experimental/serviceworkers/ServiceWorkerState[SO] val installed = "installed".asInstanceOf[ServiceWorkerState]
-experimental/serviceworkers/ServiceWorkerState[SO] val installing = "installing".asInstanceOf[ServiceWorkerState]
-experimental/serviceworkers/ServiceWorkerState[SO] val redundant = "redundant".asInstanceOf[ServiceWorkerState]
+experimental/serviceworkers/ServiceWorkerState[SO] val activated: ServiceWorkerState
+experimental/serviceworkers/ServiceWorkerState[SO] val activating: ServiceWorkerState
+experimental/serviceworkers/ServiceWorkerState[SO] val installed: ServiceWorkerState
+experimental/serviceworkers/ServiceWorkerState[SO] val installing: ServiceWorkerState
+experimental/serviceworkers/ServiceWorkerState[SO] val redundant: ServiceWorkerState
 experimental/serviceworkers/WindowClient[JT] def focus(): js.Promise[WindowClient]
 experimental/serviceworkers/WindowClient[JT] def focused: Boolean
 experimental/serviceworkers/WindowClient[JT] def frameType: FrameType
@@ -24424,7 +24424,7 @@ experimental/webrtc/MediaStreamEventInit[JT] var composed: js.UndefOr[Boolean]
 experimental/webrtc/MediaStreamEventInit[JT] var scoped: js.UndefOr[Boolean]
 experimental/webrtc/MediaStreamEventInit[JT] var stream: js.UndefOr[MediaStream]
 experimental/webrtc/RTCBundlePolicy[JT]
-experimental/webrtc/RTCBundlePolicy[SO] val balanced = "balanced".asInstanceOf[RTCBundlePolicy]
+experimental/webrtc/RTCBundlePolicy[SO] val balanced: RTCBundlePolicy
 experimental/webrtc/RTCBundlePolicy[SO] val `max-bundle` = "max-bundle".asInstanceOf[RTCBundlePolicy]
 experimental/webrtc/RTCBundlePolicy[SO] val `max-compat` = "max-compat".asInstanceOf[RTCBundlePolicy]
 experimental/webrtc/RTCConfiguration[JT] var bundlePolicy: RTCBundlePolicy
@@ -24487,10 +24487,10 @@ experimental/webrtc/RTCDataChannelInit[JT] var ordered: Boolean
 experimental/webrtc/RTCDataChannelInit[JT] var protocol: String
 experimental/webrtc/RTCDataChannelInit[SO] def apply(ordered: js.UndefOr[Boolean] = js.undefined, maxPacketLifeTime: js.UndefOr[Double] = js.undefined, maxRetransmits: js.UndefOr[Double] = js.undefined, protocol: js.UndefOr[String] = js.undefined, negotiated: js.UndefOr[Boolean] = js.undefined, id: js.UndefOr[Double] = js.undefined): RTCDataChannelInit
 experimental/webrtc/RTCDataChannelState[JT]
-experimental/webrtc/RTCDataChannelState[SO] val closed = "closed".asInstanceOf[RTCDataChannelState]
-experimental/webrtc/RTCDataChannelState[SO] val closing = "closing".asInstanceOf[RTCDataChannelState]
-experimental/webrtc/RTCDataChannelState[SO] val connecting = "connecting".asInstanceOf[RTCDataChannelState]
-experimental/webrtc/RTCDataChannelState[SO] val open = "open".asInstanceOf[RTCDataChannelState]
+experimental/webrtc/RTCDataChannelState[SO] val closed: RTCDataChannelState
+experimental/webrtc/RTCDataChannelState[SO] val closing: RTCDataChannelState
+experimental/webrtc/RTCDataChannelState[SO] val connecting: RTCDataChannelState
+experimental/webrtc/RTCDataChannelState[SO] val open: RTCDataChannelState
 experimental/webrtc/RTCIceCandidate[JC] var candidate: String
 experimental/webrtc/RTCIceCandidate[JC] var sdpMLineIndex: Double
 experimental/webrtc/RTCIceCandidate[JC] var sdpMid: String
@@ -24499,25 +24499,25 @@ experimental/webrtc/RTCIceCandidateInit[JT] var sdpMLineIndex: Double
 experimental/webrtc/RTCIceCandidateInit[JT] var sdpMid: String
 experimental/webrtc/RTCIceCandidateInit[SO] def apply(candidate: js.UndefOr[String] = js.undefined, sdpMid: js.UndefOr[String] = js.undefined, sdpMLineIndex: js.UndefOr[Double] = js.undefined): RTCIceCandidateInit
 experimental/webrtc/RTCIceConnectionState[JT]
-experimental/webrtc/RTCIceConnectionState[SO] val checking = "checking".asInstanceOf[RTCIceConnectionState]
-experimental/webrtc/RTCIceConnectionState[SO] val closed = "closed".asInstanceOf[RTCIceConnectionState]
-experimental/webrtc/RTCIceConnectionState[SO] val completed = "completed".asInstanceOf[RTCIceConnectionState]
-experimental/webrtc/RTCIceConnectionState[SO] val connected = "connected".asInstanceOf[RTCIceConnectionState]
-experimental/webrtc/RTCIceConnectionState[SO] val disconnected = "disconnected".asInstanceOf[RTCIceConnectionState]
-experimental/webrtc/RTCIceConnectionState[SO] val failed = "failed".asInstanceOf[RTCIceConnectionState]
-experimental/webrtc/RTCIceConnectionState[SO] val `new` = "new".asInstanceOf[RTCIceConnectionState]
+experimental/webrtc/RTCIceConnectionState[SO] val checking: RTCIceConnectionState
+experimental/webrtc/RTCIceConnectionState[SO] val closed: RTCIceConnectionState
+experimental/webrtc/RTCIceConnectionState[SO] val completed: RTCIceConnectionState
+experimental/webrtc/RTCIceConnectionState[SO] val connected: RTCIceConnectionState
+experimental/webrtc/RTCIceConnectionState[SO] val disconnected: RTCIceConnectionState
+experimental/webrtc/RTCIceConnectionState[SO] val failed: RTCIceConnectionState
+experimental/webrtc/RTCIceConnectionState[SO] val `new`: RTCIceConnectionState
 experimental/webrtc/RTCIceGatheringState[JT]
-experimental/webrtc/RTCIceGatheringState[SO] val complete = "complete".asInstanceOf[RTCIceGatheringState]
-experimental/webrtc/RTCIceGatheringState[SO] val gathering = "gathering".asInstanceOf[RTCIceGatheringState]
-experimental/webrtc/RTCIceGatheringState[SO] val `new` = "new".asInstanceOf[RTCIceGatheringState]
+experimental/webrtc/RTCIceGatheringState[SO] val complete: RTCIceGatheringState
+experimental/webrtc/RTCIceGatheringState[SO] val gathering: RTCIceGatheringState
+experimental/webrtc/RTCIceGatheringState[SO] val `new`: RTCIceGatheringState
 experimental/webrtc/RTCIceServer[JT] var credential: String
 experimental/webrtc/RTCIceServer[JT] var urls: String | js.Array[String]
 experimental/webrtc/RTCIceServer[JT] var username: String
 experimental/webrtc/RTCIceServer[SO] def apply(urls: js.UndefOr[String | js.Array[String]] = js.undefined, username: js.UndefOr[String] = js.undefined, credential: js.UndefOr[String] = js.undefined): RTCIceServer
 experimental/webrtc/RTCIceTransportPolicy[JT]
-experimental/webrtc/RTCIceTransportPolicy[SO] val all = "all".asInstanceOf[RTCIceTransportPolicy]
-experimental/webrtc/RTCIceTransportPolicy[SO] val none = "none".asInstanceOf[RTCIceTransportPolicy]
-experimental/webrtc/RTCIceTransportPolicy[SO] val relay = "relay".asInstanceOf[RTCIceTransportPolicy]
+experimental/webrtc/RTCIceTransportPolicy[SO] val all: RTCIceTransportPolicy
+experimental/webrtc/RTCIceTransportPolicy[SO] val none: RTCIceTransportPolicy
+experimental/webrtc/RTCIceTransportPolicy[SO] val relay: RTCIceTransportPolicy
 experimental/webrtc/RTCIdentityAssertion[JT] val idp: String
 experimental/webrtc/RTCIdentityAssertion[JT] val name: String
 experimental/webrtc/RTCIdentityAssertion[SO] def apply(idp: js.UndefOr[String] = js.undefined, name: js.UndefOr[String] = js.undefined): RTCIdentityAssertion
@@ -24587,21 +24587,21 @@ experimental/webrtc/RTCPeerConnectionIceEventInit[JT] var candidate: js.UndefOr[
 experimental/webrtc/RTCPeerConnectionIceEventInit[JT] var composed: js.UndefOr[Boolean]
 experimental/webrtc/RTCPeerConnectionIceEventInit[JT] var scoped: js.UndefOr[Boolean]
 experimental/webrtc/RTCSdpType[JT]
-experimental/webrtc/RTCSdpType[SO] val answer = "answer".asInstanceOf[RTCSdpType]
-experimental/webrtc/RTCSdpType[SO] val offer = "offer".asInstanceOf[RTCSdpType]
-experimental/webrtc/RTCSdpType[SO] val pranswer = "pranswer".asInstanceOf[RTCSdpType]
+experimental/webrtc/RTCSdpType[SO] val answer: RTCSdpType
+experimental/webrtc/RTCSdpType[SO] val offer: RTCSdpType
+experimental/webrtc/RTCSdpType[SO] val pranswer: RTCSdpType
 experimental/webrtc/RTCSessionDescription[JC] var sdp: String
 experimental/webrtc/RTCSessionDescription[JC] var `type`: RTCSdpType
 experimental/webrtc/RTCSessionDescriptionInit[JT] var sdp: String
 experimental/webrtc/RTCSessionDescriptionInit[JT] var `type`: RTCSdpType
 experimental/webrtc/RTCSessionDescriptionInit[SO] def apply(`type`: js.UndefOr[RTCSdpType] = js.undefined, sdp: js.UndefOr[String] = js.undefined): RTCSessionDescriptionInit
 experimental/webrtc/RTCSignalingState[JT]
-experimental/webrtc/RTCSignalingState[SO] val closed = "closed".asInstanceOf[RTCSignalingState]
+experimental/webrtc/RTCSignalingState[SO] val closed: RTCSignalingState
 experimental/webrtc/RTCSignalingState[SO] val `have-local-offer` = "have-local-offer".asInstanceOf[RTCSignalingState]
 experimental/webrtc/RTCSignalingState[SO] val `have-local-pranswer` = "have-local-pranswer".asInstanceOf[RTCSignalingState]
 experimental/webrtc/RTCSignalingState[SO] val `have-remote-offer` = "have-remote-offer".asInstanceOf[RTCSignalingState]
 experimental/webrtc/RTCSignalingState[SO] val `have-remote-pranswer` = "have-remote-pranswer".asInstanceOf[RTCSignalingState]
-experimental/webrtc/RTCSignalingState[SO] val stable = "stable".asInstanceOf[RTCSignalingState]
+experimental/webrtc/RTCSignalingState[SO] val stable: RTCSignalingState
 experimental/webrtc/RTCStats[JT] var id: String
 experimental/webrtc/RTCStats[JT] var timestamp: Double
 experimental/webrtc/RTCStats[JT] var `type`: RTCStatsType
@@ -24616,12 +24616,12 @@ ext/Ajax[SO] def apply(method: String, url: String, data: InputData, timeout: In
 ext/Ajax[SO] implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData  (@deprecated in 2.0.0)
 ext/Ajax[SO] implicit def blob2ajax(b: Blob): InputData  (@deprecated in 2.0.0)
 ext/Ajax[SO] implicit def byteBuffer2ajax(data: ByteBuffer): InputData  (@deprecated in 2.0.0)
-ext/Ajax[SO] def delete(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("DELETE", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
+ext/Ajax[SO] def delete(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest]  (@deprecated in 2.0.0)
 ext/Ajax[SO] implicit def formdata2ajax(b: FormData): InputData  (@deprecated in 2.0.0)
-ext/Ajax[SO] def get(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("GET", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
-ext/Ajax[SO] def patch(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("PATCH", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
-ext/Ajax[SO] def post(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("POST", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
-ext/Ajax[SO] def put(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = "") = { apply("PUT", url, data, timeout, headers, withCredentials, responseType) }  (@deprecated in 2.0.0)
+ext/Ajax[SO] def get(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest]  (@deprecated in 2.0.0)
+ext/Ajax[SO] def patch(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest]  (@deprecated in 2.0.0)
+ext/Ajax[SO] def post(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest]  (@deprecated in 2.0.0)
+ext/Ajax[SO] def put(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty, withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest]  (@deprecated in 2.0.0)
 ext/Ajax[SO] implicit def str2ajax(s: String): InputData  (@deprecated in 2.0.0)
 ext/Ajax.InputData[JT]
 ext/Ajax.InputData[SO] implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData
@@ -24629,7 +24629,7 @@ ext/Ajax.InputData[SO] implicit def blob2ajax(b: Blob): InputData
 ext/Ajax.InputData[SO] implicit def byteBuffer2ajax(data: ByteBuffer): InputData
 ext/Ajax.InputData[SO] implicit def formdata2ajax(b: FormData): InputData
 ext/Ajax.InputData[SO] implicit def str2ajax(s: String): InputData
-ext/AjaxException[SC] def isTimeout = xhr.status = = 0 && xhr.readyState = = 4  (@deprecated in 2.0.0)
+ext/AjaxException[SC] def isTimeout: Boolean  (@deprecated in 2.0.0)
 ext/AjaxException[SO]  (@deprecated in 2.0.0)
 ext/package[SO] val KeyCode: dom.KeyCode.type  (@deprecated in 2.0.0)
 ext/package[SO] val KeyLocation: dom.KeyLocation.type  (@deprecated in 2.0.0)

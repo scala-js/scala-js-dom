@@ -827,14 +827,14 @@ object Pbkdf2Params {
 trait KeyUsage extends js.Any
 
 object KeyUsage {
-  val encrypt = "encrypt".asInstanceOf[KeyUsage]
-  val decrypt = "decrypt".asInstanceOf[KeyUsage]
-  val sign = "sign".asInstanceOf[KeyUsage]
-  val verify = "verify".asInstanceOf[KeyUsage]
-  val deriveKey = "deriveKey".asInstanceOf[KeyUsage]
-  val deriveBits = "deriveBits".asInstanceOf[KeyUsage]
-  val wrapKey = "wrapKey".asInstanceOf[KeyUsage]
-  val unwrapKey = "unwrapKey".asInstanceOf[KeyUsage]
+  val encrypt: KeyUsage = "encrypt".asInstanceOf[KeyUsage]
+  val decrypt: KeyUsage = "decrypt".asInstanceOf[KeyUsage]
+  val sign: KeyUsage = "sign".asInstanceOf[KeyUsage]
+  val verify: KeyUsage = "verify".asInstanceOf[KeyUsage]
+  val deriveKey: KeyUsage = "deriveKey".asInstanceOf[KeyUsage]
+  val deriveBits: KeyUsage = "deriveBits".asInstanceOf[KeyUsage]
+  val wrapKey: KeyUsage = "wrapKey".asInstanceOf[KeyUsage]
+  val unwrapKey: KeyUsage = "unwrapKey".asInstanceOf[KeyUsage]
 }
 
 /** see [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶13 CryptoKey interface]] in W3C doc
@@ -843,9 +843,9 @@ object KeyUsage {
 trait KeyType extends js.Any
 
 object KeyType {
-  val public = "public".asInstanceOf[KeyType]
-  val `private` = "private".asInstanceOf[KeyType]
-  val secret = "secret".asInstanceOf[KeyType]
+  val public: KeyType = "public".asInstanceOf[KeyType]
+  val `private`: KeyType = "private".asInstanceOf[KeyType]
+  val secret: KeyType = "secret".asInstanceOf[KeyType]
 }
 
 /** see [[http://www.w3.org/TR/WebCryptoAPI/#dfn-KeyFormat ¶14.2 Data Types]] in W3C spec
@@ -856,16 +856,16 @@ trait KeyFormat extends js.Any
 object KeyFormat {
 
   /** An unformatted sequence of bytes. Intended for secret keys. */
-  val raw = "raw".asInstanceOf[KeyFormat]
+  val raw: KeyFormat = "raw".asInstanceOf[KeyFormat]
 
   /** The DER encoding of the PrivateKeyInfo structure from RFC 5208. */
-  val pkcs8 = "pkcs8".asInstanceOf[KeyFormat]
+  val pkcs8: KeyFormat = "pkcs8".asInstanceOf[KeyFormat]
 
   /** The DER encoding of the SubjectPublicKeyInfo structure from RFC 5280. */
-  val spki = "spki".asInstanceOf[KeyFormat]
+  val spki: KeyFormat = "spki".asInstanceOf[KeyFormat]
 
   /** The key is a JsonWebKey dictionary encoded as a JavaScript object */
-  val jwk = "jwk".asInstanceOf[KeyFormat]
+  val jwk: KeyFormat = "jwk".asInstanceOf[KeyFormat]
 }
 
 //

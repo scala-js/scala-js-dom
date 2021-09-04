@@ -14,7 +14,7 @@ import scala.scalajs.js.typedarray.TypedArrayBufferOps._
   */
 @deprecated("use the dom.fetch API instead", "2.0.0")
 case class AjaxException(xhr: dom.XMLHttpRequest) extends Exception {
-  def isTimeout = xhr.status == 0 && xhr.readyState == 4
+  def isTimeout: Boolean = xhr.status == 0 && xhr.readyState == 4
 }
 
 // This is just there to work around some weird warnings in Scala 3.x
@@ -58,27 +58,27 @@ object Ajax {
   }
 
   def get(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
-      withCredentials: Boolean = false, responseType: String = "") = {
+      withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest] = {
     apply("GET", url, data, timeout, headers, withCredentials, responseType)
   }
 
   def post(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
-      withCredentials: Boolean = false, responseType: String = "") = {
+      withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest] = {
     apply("POST", url, data, timeout, headers, withCredentials, responseType)
   }
 
   def put(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
-      withCredentials: Boolean = false, responseType: String = "") = {
+      withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest] = {
     apply("PUT", url, data, timeout, headers, withCredentials, responseType)
   }
 
   def patch(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
-      withCredentials: Boolean = false, responseType: String = "") = {
+      withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest] = {
     apply("PATCH", url, data, timeout, headers, withCredentials, responseType)
   }
 
   def delete(url: String, data: InputData = null, timeout: Int = 0, headers: Map[String, String] = Map.empty,
-      withCredentials: Boolean = false, responseType: String = "") = {
+      withCredentials: Boolean = false, responseType: String = ""): Future[dom.XMLHttpRequest] = {
     apply("DELETE", url, data, timeout, headers, withCredentials, responseType)
   }
 

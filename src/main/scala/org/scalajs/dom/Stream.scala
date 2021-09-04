@@ -15,23 +15,23 @@ object WriteableState {
   /** The stream’s internal queue is full; that is, the stream is exerting backpressure. Use .ready to be notified of
     * when the pressure subsides.
     */
-  val waiting = "waiting".asInstanceOf[WriteableState]
+  val waiting: WriteableState = "waiting".asInstanceOf[WriteableState]
 
   /** The stream’s internal queue is not full; call .write() until backpressure is exerted.
     */
-  val writable = "writable".asInstanceOf[WriteableState]
+  val writable: WriteableState = "writable".asInstanceOf[WriteableState]
 
   /** The stream’s .close() method has been called, and a command to close is in the queue or being processed by the
     * underlying sink; attempts to write will now fail.
     */
-  val closing = "closing".asInstanceOf[WriteableState]
+  val closing: WriteableState = "closing".asInstanceOf[WriteableState]
 
   /** The underlying sink has been closed; writing is no longer possible. */
-  val closed = "closed".asInstanceOf[WriteableState]
+  val closed: WriteableState = "closed".asInstanceOf[WriteableState]
 
   /** An error occurred interacting with the underlying sink or the stream has been aborted, so the stream is now dead.
     */
-  val errored = "errored".asInstanceOf[WriteableState]
+  val errored: WriteableState = "errored".asInstanceOf[WriteableState]
 }
 
 /** [[https://streams.spec.whatwg.org/#ws-class ¶4.2. Class WritableStream]] of whatwg Stream spec

@@ -17,7 +17,7 @@ object FrameType {
 
   /** The window client's global object's browsing context is an auxiliary browsing context.
     */
-  val auxiliary = "auxiliary".asInstanceOf[FrameType]
+  val auxiliary: FrameType = "auxiliary".asInstanceOf[FrameType]
 
   /** The window client's global object's browsing context is a top-level browsing context.
     */
@@ -25,9 +25,9 @@ object FrameType {
 
   /** The window client's global object's browsing context is a nested browsing context.
     */
-  val nested = "nested".asInstanceOf[FrameType]
+  val nested: FrameType = "nested".asInstanceOf[FrameType]
 
-  val none = "none".asInstanceOf[FrameType]
+  val none: FrameType = "none".asInstanceOf[FrameType]
 }
 
 /** [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#client ¶4.2 Client]] of Service Workers 1 spec.
@@ -383,39 +383,39 @@ object ServiceWorkerState {
     * resolves successfully. This is primarily used to ensure that the service worker is not active until all of the
     * core caches are populated.
     */
-  val installing = "installing".asInstanceOf[ServiceWorkerState]
+  val installing: ServiceWorkerState = "installing".asInstanceOf[ServiceWorkerState]
 
   /** The service worker in this state is considered a waiting worker.
     */
-  val installed = "installed".asInstanceOf[ServiceWorkerState]
+  val installed: ServiceWorkerState = "installed".asInstanceOf[ServiceWorkerState]
 
   /** The service worker in this state is considered an active worker. During this state, event.waitUntil(f) can be
     * called inside the onactivate event handler to extend the life of the active worker until the passed promise
     * resolves successfully. No functional events are dispatched until the state becomes activated.
     */
-  val activating = "activating".asInstanceOf[ServiceWorkerState]
+  val activating: ServiceWorkerState = "activating".asInstanceOf[ServiceWorkerState]
 
   /** The service worker in this state is considered an active worker ready to handle functional events.
     */
-  val activated = "activated".asInstanceOf[ServiceWorkerState]
+  val activated: ServiceWorkerState = "activated".asInstanceOf[ServiceWorkerState]
 
   /** A new service worker is replacing the current service worker, or the current service worker is being discarded due
     * to an install failure.
     */
-  val redundant = "redundant".asInstanceOf[ServiceWorkerState]
+  val redundant: ServiceWorkerState = "redundant".asInstanceOf[ServiceWorkerState]
 }
 
 @js.native
 sealed trait ClientType extends js.Any
 
 object ClientType {
-  val window = "window".asInstanceOf[ClientType]
+  val window: ClientType = "window".asInstanceOf[ClientType]
 
-  val worker = "worker".asInstanceOf[ClientType]
+  val worker: ClientType = "worker".asInstanceOf[ClientType]
 
-  val sharedworker = "sharedworker".asInstanceOf[ClientType]
+  val sharedworker: ClientType = "sharedworker".asInstanceOf[ClientType]
 
-  val all = "all".asInstanceOf[ClientType]
+  val all: ClientType = "all".asInstanceOf[ClientType]
 }
 
 /** [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#client ¶4.2 Client]] of Service Workers 1 spec.

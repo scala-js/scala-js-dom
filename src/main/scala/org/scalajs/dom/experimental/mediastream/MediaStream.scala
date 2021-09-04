@@ -112,7 +112,7 @@ object MediaStreamTrackState {
   /** The track is active (the track's underlying media source is making a best-effort attempt to provide data in real
     * time). The output of a track in the live state can be switched on and off with the enabled attribute.
     */
-  val live = "live".asInstanceOf[MediaStreamTrackState]
+  val live: MediaStreamTrackState = "live".asInstanceOf[MediaStreamTrackState]
 
   /** The track has ended (the track's underlying media source is no longer providing data, and will never provide more
     * data for this track). Once a track enters this state, it never exits it.
@@ -120,7 +120,7 @@ object MediaStreamTrackState {
     * For example, a video track in a MediaStream ends if the user unplugs the USB web camera that acts as the track's
     * media source.
     */
-  val ended = "ended".asInstanceOf[MediaStreamTrackState]
+  val ended: MediaStreamTrackState = "ended".asInstanceOf[MediaStreamTrackState]
 }
 
 @js.native
@@ -406,15 +406,15 @@ object MediaDeviceKind {
 
   /** Represents an audio input device; for example a microphone.
     */
-  val audioinput = "audioinput".asInstanceOf[MediaDeviceKind]
+  val audioinput: MediaDeviceKind = "audioinput".asInstanceOf[MediaDeviceKind]
 
   /** Represents an audio output device; for example a pair of headphones.
     */
-  val audiooutput = "audiooutput".asInstanceOf[MediaDeviceKind]
+  val audiooutput: MediaDeviceKind = "audiooutput".asInstanceOf[MediaDeviceKind]
 
   /** Represents a video input device; for example a webcam.
     */
-  val videoinput = "videoinput".asInstanceOf[MediaDeviceKind]
+  val videoinput: MediaDeviceKind = "videoinput".asInstanceOf[MediaDeviceKind]
 }
 
 @js.native

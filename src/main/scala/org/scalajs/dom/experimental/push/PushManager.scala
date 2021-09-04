@@ -202,15 +202,15 @@ object PushPermissionState {
 
   /** The webapp has permission to use the Push API.
     */
-  val granted = "granted".asInstanceOf[PushPermissionState]
+  val granted: PushPermissionState = "granted".asInstanceOf[PushPermissionState]
 
   /** The webapp has been denied permission to use the Push API.
     */
-  val denied = "denied".asInstanceOf[PushPermissionState]
+  val denied: PushPermissionState = "denied".asInstanceOf[PushPermissionState]
 
   /** The webapp needs to ask for permission in order to use the Push API.
     */
-  val prompt = "prompt".asInstanceOf[PushPermissionState]
+  val prompt: PushPermissionState = "prompt".asInstanceOf[PushPermissionState]
 }
 
 /** This represents a JavaScript enumeration representing the various keys you an request from a [[PushSubscription]] as
@@ -225,10 +225,10 @@ object PushEncryptionKeyName {
   /** used to retrieve the P-256 ECDH Diffie-Hellman public key described here:
     * [[https://tools.ietf.org/html/draft-ietf-webpush-encryption-01]]
     */
-  val p256dh = "p256dh".asInstanceOf[PushEncryptionKeyName]
+  val p256dh: PushEncryptionKeyName = "p256dh".asInstanceOf[PushEncryptionKeyName]
 
   /** used to retrieve the authentication secret described here:
     * [[https://tools.ietf.org/html/draft-ietf-webpush-encryption-01]]
     */
-  val auth = "auth".asInstanceOf[PushEncryptionKeyName]
+  val auth: PushEncryptionKeyName = "auth".asInstanceOf[PushEncryptionKeyName]
 }

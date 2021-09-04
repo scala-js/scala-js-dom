@@ -6829,14 +6829,14 @@ object VisibilityState {
     *
     * MDN
     */
-  val visible = "visible".asInstanceOf[VisibilityState]
+  val visible: VisibilityState = "visible".asInstanceOf[VisibilityState]
 
   /** The page content is not visible to the user. In practice this means that the document is either a background tab
     * or part of a minimized window, or the OS screen lock is active.
     *
     * MDN
     */
-  val hidden = "hidden".asInstanceOf[VisibilityState]
+  val hidden: VisibilityState = "hidden".asInstanceOf[VisibilityState]
 
   /** the page content is being prerendered and is not visible to the user (considered hidden for purposes of
     * document.hidden). The document may start in this state, but will never transition to it from another value. Note:
@@ -6844,13 +6844,13 @@ object VisibilityState {
     *
     * MDN
     */
-  val prerender = "prerender".asInstanceOf[VisibilityState]
+  val prerender: VisibilityState = "prerender".asInstanceOf[VisibilityState]
 
   /** The page is being unloaded from memory. Note: browser support is optional.
     *
     * MDN
     */
-  val unloaded = "unloaded".asInstanceOf[VisibilityState]
+  val unloaded: VisibilityState = "unloaded".asInstanceOf[VisibilityState]
 }
 
 /** The Clipboard interface implements the Clipboard API, providing—if the user grants permission—both read and write
