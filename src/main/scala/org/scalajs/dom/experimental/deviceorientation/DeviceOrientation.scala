@@ -1,15 +1,13 @@
 package org.scalajs.dom.experimental.deviceorientation
 
 import org.scalajs.dom
-import org.scalajs.dom.raw.EventInit
-
+import org.scalajs.dom.EventInit
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 @js.native
 @JSGlobal
-class DeviceOrientationEvent(typeArg: String,
-    init: js.UndefOr[DeviceOrientationEventInit])
+class DeviceOrientationEvent(typeArg: String, init: js.UndefOr[DeviceOrientationEventInit])
     extends dom.Event(typeArg, init) {
 
   /** Z-Axis rotation in degrees. */
@@ -21,11 +19,9 @@ class DeviceOrientationEvent(typeArg: String,
   /** Y-Axis rotation in degrees. */
   val gamma: Double = js.native
 
-  /**
-   * If true, this event data is has been produced using sensor fusion from
-   * the magnometer and other sensors.  When false- only the gyroscope has
-   * been used.
-   */
+  /** If true, this event data is has been produced using sensor fusion from the magnometer and other sensors. When
+    * false- only the gyroscope has been used.
+    */
   val absolute: Boolean = js.native
 }
 
@@ -40,11 +36,9 @@ trait DeviceOrientationEventInit extends EventInit {
   /** Y-Axis rotation in degrees. */
   var gamma: js.UndefOr[Double] = js.undefined
 
-  /**
-   * If true, this event data is has been produced using sensor fusion from
-   * the magnometer and other sensors.  When false- only the gyroscope has
-   * been used.
-   */
+  /** If true, this event data is has been produced using sensor fusion from the magnometer and other sensors. When
+    * false- only the gyroscope has been used.
+    */
   var absolute: js.UndefOr[Boolean] = js.undefined
 }
 
@@ -74,8 +68,7 @@ trait DeviceRotationRate extends js.Any {
 
 @js.native
 @JSGlobal
-class DeviceMotionEvent(typeArg: String,
-    init: js.UndefOr[DeviceMotionEventInit] = js.undefined)
+class DeviceMotionEvent(typeArg: String, init: js.UndefOr[DeviceMotionEventInit] = js.undefined)
     extends dom.Event(typeArg, init) {
 
   /** Device acceleration with gravity removed. */

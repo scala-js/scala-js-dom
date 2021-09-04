@@ -1,78 +1,15 @@
 package org.scalajs.dom
 
-import scala.language.implicitConversions
-
-import scala.collection.mutable
+import org.scalajs.dom
 
 package object ext {
 
-  implicit class PimpedNodeList(nodes: NodeList)
-      extends EasySeq[Node](nodes.length, nodes.apply)
+  @deprecated("use dom.KeyValue instead", "2.0.0")
+  val KeyValue: dom.KeyValue.type = dom.KeyValue
 
-  implicit class PimpedTouchList(nodes: TouchList)
-      extends EasySeq[Touch](nodes.length, nodes.apply)
+  @deprecated("use dom.KeyCode instead", "2.0.0")
+  val KeyCode: dom.KeyCode.type = dom.KeyCode
 
-  implicit class PimpedHtmlCollection(coll: html.Collection)
-      extends EasySeq[Element](coll.length, coll.apply)
-
-  implicit class PimpedSVGTransformList(coll: svg.TransformList)
-      extends EasySeq[svg.Transform](coll.numberOfItems, coll.getItem)
-
-  implicit class Castable(x: Any) {
-    def cast[T] = x.asInstanceOf[T]
-  }
-
-  implicit def pimpAnimatedNumber(x: svg.AnimatedNumber) = x.baseVal
-
-  implicit def pimpRichAnimatedNumber(x: svg.AnimatedNumber) =
-    x.baseVal: runtime.RichDouble
-
-  implicit def pimpAnimatedLength(x: svg.AnimatedLength) = x.baseVal.value
-
-  implicit def pimpRichAnimatedLength(x: svg.AnimatedLength) =
-    x.baseVal.value: runtime.RichDouble
-
-  implicit def color2String(c: Color) = c.toString
-  implicit class pimpedContext(val ctx: CanvasRenderingContext2D) {
-    def prepCircle(x: Double, y: Double, r: Double) = {
-      ctx.beginPath()
-      ctx.arc(x, y, r, 0, math.Pi * 2)
-    }
-
-    def fillCircle(x: Double, y: Double, r: Double) = {
-      prepCircle(x, y, r)
-      ctx.fill()
-    }
-
-    def strokeCircle(x: Double, y: Double, r: Double) = {
-      prepCircle(x, y, r)
-      ctx.stroke()
-    }
-
-    def prepPath(points: Seq[(Double, Double)], closed: Boolean = true) = {
-      ctx.beginPath()
-      if (closed) ctx.moveTo(points.last._1, points.last._2)
-      for (p <- points) {
-        ctx.lineTo(p._1, p._2)
-      }
-    }
-
-    def fillPath(points: (Double, Double)*) = {
-      prepPath(points)
-      ctx.fill()
-    }
-
-    def strokePath(points: (Double, Double)*) = {
-      prepPath(points)
-      ctx.stroke()
-    }
-
-    def strokePathOpen(points: (Double, Double)*) = {
-      prepPath(points, closed = false)
-      ctx.stroke()
-    }
-  }
-
-  implicit def pimpNamedNodeMap(namedNodeMap: NamedNodeMap): NamedNodeMapMap =
-    new NamedNodeMapMap(namedNodeMap)
+  @deprecated("use dom.KeyLocation instead", "2.0.0")
+  val KeyLocation: dom.KeyLocation.type = dom.KeyLocation
 }

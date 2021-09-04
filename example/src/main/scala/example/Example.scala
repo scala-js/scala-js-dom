@@ -1,5 +1,6 @@
 package example
 
+import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 import org.scalajs.dom
@@ -18,13 +19,20 @@ object Alert {
 object NodeAppendChild {
   @JSExport
   def main(div: html.Div) = {
-    val child = dom.document
-                   .createElement("div")
-
-    child.textContent =
-      "Hi from Scala-js-dom"
-
+    val child = dom.document.createElement("div")
+    child.textContent = "Hi from Scala-js-dom"
     div.appendChild(child)
+  }
+}
+
+@JSExportTopLevel("ExampleNodeReplaceChildren")
+object NodeReplaceChildren {
+  @JSExport
+  def main(div: html.Div): Unit = {
+    dom.document.replaceChildren()
+    dom.document.replaceChildren("")
+    dom.document.replaceChildren(div)
+    dom.document.replaceChildren("", div)
   }
 }
 
@@ -118,22 +126,25 @@ object EventHandler{
   }
 }
 
-@JSExportTopLevel("ExampleXMLHttpRequest")
-object XMLHttpRequest{
+@JSExportTopLevel("ExampleFetch")
+object Fetch {
   @JSExport
   def main(pre: html.Pre) = {
-    val xhr = new dom.XMLHttpRequest()
-    xhr.open("GET",
-      "http://api.openweathermap.org/" +
-      "data/2.5/weather?q=Singapore"
-    )
-    xhr.onload = { (e: dom.Event) =>
-      if (xhr.status == 200) {
-        pre.textContent =
-          xhr.responseText
-      }
+    import scala.concurrent
+                .ExecutionContext
+                .Implicits
+                .global
+    import js.Thenable.Implicits._
+    val url =
+      "https://www.boredapi.com/api/activity"
+    val responseText = for {
+      response <- dom.fetch(url)
+      text <- response.text()
+    } yield {
+      text
     }
-    xhr.send()
+    for (text <- responseText)
+      pre.textContent = text
   }
 }
 
@@ -142,7 +153,7 @@ object Websocket {
   @JSExport
   def main(in: html.Input,
            pre: html.Pre) = {
-    val echo = "ws://echo.websocket.org"
+    val echo = "wss://echo.websocket.org"
     val socket = new dom.WebSocket(echo)
     socket.onmessage = {
       (e: dom.MessageEvent) =>
@@ -153,24 +164,6 @@ object Websocket {
       in.onkeyup = { (e: dom.Event) =>
         socket.send(in.value)
       }
-    }
-  }
-}
-
-@JSExportTopLevel("ExampleAjaxExtension")
-object AjaxExtension {
-  @JSExport
-  def main(pre: html.Pre) = {
-    import dom.ext.Ajax
-    import scala.concurrent
-                .ExecutionContext
-                .Implicits
-                .global
-    val url =
-      "http://api.openweathermap.org/" +
-      "data/2.5/weather?q=Singapore"
-    Ajax.get(url).foreach { case xhr =>
-      pre.textContent = xhr.responseText
     }
   }
 }
