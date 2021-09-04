@@ -96,6 +96,10 @@ trait ImageBitmap extends js.Object {
   /** An unsigned long representing the width, in CSS pixels, of the ImageData.
     */
   def width: Double = js.native
+
+  /** Dispose of all graphical resources associated with an ImageBitmap.
+    */
+  def close(): Unit = js.native
 }
 
 trait CreateImageBitmapOptions extends js.Object {

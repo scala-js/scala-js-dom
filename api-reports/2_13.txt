@@ -13250,6 +13250,7 @@ IDBVersionChangeEventInit[JT] var composed: js.UndefOr[Boolean]
 IDBVersionChangeEventInit[JT] var newVersion: js.UndefOr[Integer]
 IDBVersionChangeEventInit[JT] var oldVersion: js.UndefOr[Int]
 IDBVersionChangeEventInit[JT] var scoped: js.UndefOr[Boolean]
+ImageBitmap[JT] def close(): Unit
 ImageBitmap[JT] def height: Double
 ImageBitmap[JT] def width: Double
 ImageData[JC] def data: js.Array[Int]
@@ -23627,6 +23628,9 @@ experimental/mediastream/AudioTrackList[JT] var onchange: js.Function1[Event, An
 experimental/mediastream/AudioTrackList[JT] var onremovetrack: js.Function1[Event, Any]
 experimental/mediastream/AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+experimental/mediastream/ImageCapture[JC] def grabFrame(): js.Promise[ImageBitmap]
+experimental/mediastream/ImageCapture[JC] def takePhoto(): js.Promise[Blob]
+experimental/mediastream/ImageCapture[JC] val track: MediaStreamTrack
 experimental/mediastream/MediaDeviceInfo[JT] val deviceId: String
 experimental/mediastream/MediaDeviceInfo[JT] val groupId: String
 experimental/mediastream/MediaDeviceInfo[JT] val kind: MediaDeviceKind
