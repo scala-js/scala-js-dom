@@ -3,6 +3,7 @@ package org.scalajs.dom
 import org.scalajs.dom
 
 package object ext {
+
   @deprecated("use dom.KeyValue instead", "2.0.0")
   val KeyValue: dom.KeyValue.type = dom.KeyValue
 

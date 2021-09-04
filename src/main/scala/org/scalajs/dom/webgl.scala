@@ -1,8 +1,7 @@
 package org.scalajs.dom
 
-/**
- * Short aliases of all the dom.WebGLThing classes
- */
+/** Short aliases of all the dom.WebGLThing classes
+  */
 object webgl {
   type ActiveInfo = WebGLActiveInfo
   type Buffer = WebGLBuffer

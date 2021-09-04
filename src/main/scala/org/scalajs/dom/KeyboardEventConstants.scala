@@ -1,49 +1,66 @@
 package org.scalajs.dom
 
-/**
- * The KeyboardEvent.key attribute of an event must always contain one of these control key or character values (even if
- * the value is 'Unidentified').
- *
- * If the key represents one of the set of printable control characters which has a Unicode character entry, such as the
- * tab key, the KeyboardEvent.key attribute must have the key value (e.g., 'Tab').
- *
- * Implementations that are unable to identify a key must use the key value 'Unidentified'.
- *
- * Taken from http://www.w3.org/TR/DOM-Level-3-Events/#keys-special
- */
+/** The KeyboardEvent.key attribute of an event must always contain one of these control key or character values (even
+  * if the value is 'Unidentified').
+  *
+  * If the key represents one of the set of printable control characters which has a Unicode character entry, such as
+  * the tab key, the KeyboardEvent.key attribute must have the key value (e.g., 'Tab').
+  *
+  * Implementations that are unable to identify a key must use the key value 'Unidentified'.
+  *
+  * Taken from http://www.w3.org/TR/DOM-Level-3-Events/#keys-special
+  */
 object KeyValue {
 
   // ===================================================================================================================
   // 6.3.1 Special Key Values
 
-  /** This key value is used when an implementation is unable to identify another key value, due to either hardware, platform, or software constraints. */
+  /** This key value is used when an implementation is unable to identify another key value, due to either hardware,
+    * platform, or software constraints.
+    */
   final val Unidentified = "Unidentified"
 
   // ===================================================================================================================
   // 6.3.2 Modifier Keys
 
-  /** The Alternative (Alt, Option, Menu) key. Enable alternate modifier function for interpreting concurrent or subsequent keyboard input. This key value is also used for the Apple 'Option' key. */
+  /** The Alternative (Alt, Option, Menu) key. Enable alternate modifier function for interpreting concurrent or
+    * subsequent keyboard input. This key value is also used for the Apple 'Option' key.
+    */
   final val Alt = "Alt"
 
-  /** The Alternate Graphics (AltGr or AltGraph) key. This key is used enable the ISO Level 3 shift modifier (the standard 'Shift' key is the level 2 modifier). */
+  /** The Alternate Graphics (AltGr or AltGraph) key. This key is used enable the ISO Level 3 shift modifier (the
+    * standard 'Shift' key is the level 2 modifier).
+    */
   final val AltGraph = "AltGraph"
 
-  /** The Caps Lock (Capital) key. Toggle capital character lock function for interpreting subsequent keyboard input event. */
+  /** The Caps Lock (Capital) key. Toggle capital character lock function for interpreting subsequent keyboard input
+    * event.
+    */
   final val CapsLock = "CapsLock"
 
-  /** The Control (Ctrl) key, to enable control modifier function for interpreting concurrent or subsequent keyboard input. */
+  /** The Control (Ctrl) key, to enable control modifier function for interpreting concurrent or subsequent keyboard
+    * input.
+    */
   final val Control = "Control"
 
-  /** The Function switch (Fn) key. Activating this key simultaneously with another key changes that key's value to an alternate character or function. This key is often handled directly in the keyboard hardware and does not usually generate key events. */
+  /** The Function switch (Fn) key. Activating this key simultaneously with another key changes that key's value to an
+    * alternate character or function. This key is often handled directly in the keyboard hardware and does not usually
+    * generate key events.
+    */
   final val Fn = "Fn"
 
-  /** The Function-Lock (FnLock, F-Lock) key. Activating this key switches the mode of the keyboard to changes some keys' values to an alternate character or function. This key is often handled directly in the keyboard hardware and does not usually generate key events. */
+  /** The Function-Lock (FnLock, F-Lock) key. Activating this key switches the mode of the keyboard to changes some
+    * keys' values to an alternate character or function. This key is often handled directly in the keyboard hardware
+    * and does not usually generate key events.
+    */
   final val FnLock = "FnLock"
 
   /** The Hyper key. */
   final val Hyper = "Hyper"
 
-  /** The Meta key, to enable meta modifier function for interpreting concurrent or subsequent keyboard input. This key value is also used for the Apple 'Command' key. */
+  /** The Meta key, to enable meta modifier function for interpreting concurrent or subsequent keyboard input. This key
+    * value is also used for the Apple 'Command' key.
+    */
   final val Meta = "Meta"
 
   /** The Number Lock key, to toggle numer-pad mode function for interpreting subsequent keyboard input. */
@@ -67,7 +84,9 @@ object KeyValue {
   // ===================================================================================================================
   // 6.3.3 Whitespace Keys
 
-  /** The Enter key, to activate current selection or accept current input. This key value is also used for the 'Return' (Macintosh numpad) key. */
+  /** The Enter key, to activate current selection or accept current input. This key value is also used for the 'Return'
+    * (Macintosh numpad) key.
+    */
   final val Enter = "Enter"
 
   /** The Separator key, for context-sensitive text separators. */
@@ -123,10 +142,14 @@ object KeyValue {
   /** The Cut key. */
   final val Cut = "Cut"
 
-  /** The Delete (Del) Key. This key value is also used for the key labeled 'delete' on MacOS keyboards when modified by the 'Fn' key. */
+  /** The Delete (Del) Key. This key value is also used for the key labeled 'delete' on MacOS keyboards when modified by
+    * the 'Fn' key.
+    */
   final val Delete = "Delete"
 
-  /** The Erase to End of Field key. This key deletes all characters from the current cursor position to the end of the current field. */
+  /** The Erase to End of Field key. This key deletes all characters from the current cursor position to the end of the
+    * current field.
+    */
   final val EraseEof = "EraseEof"
 
   /** The Extend Selection (Exsel) key. */
@@ -159,7 +182,9 @@ object KeyValue {
   /** The Cancel key. */
   final val Cancel = "Cancel"
 
-  /** Show the application's context menu. This key is commonly found between the right 'OS' key and the right 'Control' key. */
+  /** Show the application's context menu. This key is commonly found between the right 'OS' key and the right 'Control'
+    * key.
+    */
   final val ContextMenu = "ContextMenu"
 
   /** The Escape (Esc) key, to initiate an escape sequence. */
@@ -174,18 +199,16 @@ object KeyValue {
   /** Toggle display of help information. */
   final val Help = "Help"
 
-  /**
-   * Pause the current state or application (as appropriate).
-   *
-   * Note: Do not use this value for the pause button on media controllers. Use 'MediaPause' instead.
-   */
+  /** Pause the current state or application (as appropriate).
+    *
+    * Note: Do not use this value for the pause button on media controllers. Use 'MediaPause' instead.
+    */
   final val Pause = "Pause"
 
-  /**
-   * Play or resume the current state or application (as appropriate).
-   *
-   * Note: Do not use this value for the play button on media controllers. Use 'MediaPlay' instead.
-   */
+  /** Play or resume the current state or application (as appropriate).
+    *
+    * Note: Do not use this value for the play button on media controllers. Use 'MediaPlay' instead.
+    */
   final val Play = "Play"
 
   /** The properties (Props) key. */
@@ -220,11 +243,10 @@ object KeyValue {
     /** The LogOff key. */
     final val LogOff = "LogOff"
 
-    /**
-     * Toggle power state.
-     *
-     * Note: Some devices might not expose this key to the operating environment.
-     */
+    /** Toggle power state.
+      *
+      * Note: Some devices might not expose this key to the operating environment.
+      */
     final val Power = "Power"
 
     /** The PowerOff key. Sometime called "PowerDown". */
@@ -233,10 +255,14 @@ object KeyValue {
     /** The Print Screen (PrintScrn, SnapShot) key, to initiate print-screen function. */
     final val PrintScreen = "PrintScreen"
 
-    /** The Hibernate key. This key saves the current state of the computer to disk so that it can be restored. The computer will then shutdown. */
+    /** The Hibernate key. This key saves the current state of the computer to disk so that it can be restored. The
+      * computer will then shutdown.
+      */
     final val Hibernate = "Hibernate"
 
-    /** The Standby key. This key turns off the display and places the computer into a low-power mode without completely shutting down. It is sometimes called the "Suspend" or "Sleep" key. */
+    /** The Standby key. This key turns off the display and places the computer into a low-power mode without completely
+      * shutting down. It is sometimes called the "Suspend" or "Sleep" key.
+      */
     final val Standby = "Standby"
 
     /** The WakeUp key. */
@@ -257,7 +283,9 @@ object KeyValue {
     /** The Code Input key, to initiate the Code Input mode to allow characters to be entered by their code points. */
     final val CodeInput = "CodeInput"
 
-    /** The Compose key, also known as Multi_key on the X Window System. This key acts in a manner similar to a dead key, triggering a mode where subsequent key presses are combined to produce a different character. */
+    /** The Compose key, also known as Multi_key on the X Window System. This key acts in a manner similar to a dead
+      * key, triggering a mode where subsequent key presses are combined to produce a different character.
+      */
     final val Compose = "Compose"
 
     /** The Convert key, to convert the current input method sequence. */
@@ -636,24 +664,25 @@ object KeyValue {
     /** Lock or unlock current content or program. (VK_LOCK) */
     final val Lock = "Lock"
 
-    /**
-     * Show a list of media applications. (VK_APPS)
-     *
-     * Note: Do not confuse this key value with the Windows' VK_APPS / VK_CONTEXT_MENU key, which is encoded as 'ContextMenu'.
-     */
+    /** Show a list of media applications. (VK_APPS)
+      *
+      * Note: Do not confuse this key value with the Windows' VK_APPS / VK_CONTEXT_MENU key, which is encoded as
+      * 'ContextMenu'.
+      */
     final val MediaApps = "MediaApps"
 
-    /** Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding. (VK_FAST_FWD) */
+    /** Initiate or continue forward playback at faster than normal speed, or increase speed if already fast forwarding.
+      * (VK_FAST_FWD)
+      */
     final val MediaFastForward = "MediaFastForward"
 
     /** Select previously selected channel or media. (VK_LAST) */
     final val MediaLast = "MediaLast"
 
-    /**
-     * Pause the currently playing media. (VK_PAUSE)
-     *
-     * Note: Media controller devices should use this value rather than 'Pause' for their pause keys.
-     */
+    /** Pause the currently playing media. (VK_PAUSE)
+      *
+      * Note: Media controller devices should use this value rather than 'Pause' for their pause keys.
+      */
     final val MediaPause = "MediaPause"
 
     /** Initiate or continue media playback at normal speed, if not currently playing at normal speed. (VK_PLAY) */
@@ -662,7 +691,9 @@ object KeyValue {
     /** Initiate or resume recording of currently selected media. (VK_RECORD) */
     final val MediaRecord = "MediaRecord"
 
-    /** Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding. (VK_REWIND) */
+    /** Initiate or continue reverse playback at faster than normal speed, or increase speed if already rewinding.
+      * (VK_REWIND)
+      */
     final val MediaRewind = "MediaRewind"
 
     /** Skip forward to next content or program. (VK_SKIP) */
@@ -739,9 +770,8 @@ object KeyValue {
   }
 }
 
-/**
- * A list of the codes returned by KeyEvents.
- */
+/** A list of the codes returned by KeyEvents.
+  */
 object KeyCode {
   final val Backspace = 8
   final val Tab = 9
