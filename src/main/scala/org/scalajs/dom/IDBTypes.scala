@@ -9,9 +9,44 @@
  */
 package org.scalajs.dom
 
+import scala.annotation.nowarn
+import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
+import scala.scalajs.js.typedarray._
 import scala.scalajs.js.|
+
+/** number, date, string, binary, or array.
+ *
+ * Array objects, where every item is defined, is itself a valid key, and does not directly or indirectly contain itself. This includes empty arrays. Arrays can contain other arrays.
+ *
+ * https://w3c.github.io/IndexedDB/#key
+ * https://github.com/web-platform-tests/wpt/blob/master/IndexedDB/idb-binary-key-roundtrip.htm
+ */
+@js.native
+sealed trait IDBKey extends js.Any
+
+@nowarn("cat=unused")
+object IDBKey {
+
+  type Flat = Double | js.Date | String | ArrayBuffer | ArrayBufferView | BigInt64Array | BigUint64Array | DataView | Float32Array | Float64Array | Int16Array | Int32Array | Int8Array | Uint16Array | Uint32Array | Uint8Array | Uint8ClampedArray
+
+  sealed trait IsKey[-A]
+  object IsKey {
+    @inline implicit def flat[A](implicit e: |.Evidence[A, Flat]): IsKey[A] = null
+    @inline implicit def array[A](implicit e: IsKey[A]): IsKey[js.Array[A]] = null
+    @inline implicit def coproduct[A, B](implicit a: IsKey[A], b: IsKey[B]): IsKey[A | B] = null
+  }
+
+  @inline implicit def from[A: IsKey](a: A): IDBKey =
+    a.asInstanceOf[IDBKey]
+
+  @inline implicit def undef[A: IsKey](a: A): js.UndefOr[IDBKey] =
+    a.asInstanceOf[js.UndefOr[IDBKey]]
+
+  @inline implicit def undefOrLeft[A: IsKey, B](a: A): js.UndefOr[IDBKey | B] =
+    a.asInstanceOf[js.UndefOr[IDBKey | B]]
+}
 
 /**
  * IndexedDB transaction mode
@@ -85,7 +120,7 @@ class IDBObjectStore extends js.Object {
    */
   def keyPath: String = js.native
 
-  def count(key: js.Any = js.native): IDBRequest = js.native
+  def count(key: IDBKey = js.native): IDBRequest = js.native
 
   /**
    * To determine if the add operation has completed successfully, listen for the
@@ -96,7 +131,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def add(value: js.Any, key: js.Any = js.native): IDBRequest = js.native
+  def add(value: js.Any, key: IDBKey = js.native): IDBRequest = js.native
 
   /**
    * Clearing an object store consists of removing all records from the object store and
@@ -122,7 +157,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def put(value: js.Any, key: js.Any = js.native): IDBRequest = js.native
+  def put(value: js.Any, key: IDBKey = js.native): IDBRequest = js.native
 
   /**
    * The method sets the position of the cursor to the appropriate record,
@@ -130,7 +165,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def openCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
+  def openCursor(range: js.UndefOr[IDBKey | IDBKeyRange] = js.undefined,
       direction: js.UndefOr[
           IDBCursorDirection] = js.undefined): IDBRequest = js.native
 
@@ -140,7 +175,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def openKeyCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
+  def openKeyCursor(range: js.UndefOr[IDBKey | IDBKeyRange] = js.undefined,
       direction: js.UndefOr[
           IDBCursorDirection] = js.undefined): IDBRequest = js.native
 
@@ -166,7 +201,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def get(key: js.Any): IDBRequest = js.native
+  def get(key: IDBKey): IDBRequest = js.native
 
   /**
    * If a value is successfully found, then a structured clone of it is created and set as
@@ -174,7 +209,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def getAll(query: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
+  def getAll(query: js.UndefOr[IDBKey | IDBKeyRange] = js.undefined,
       count: js.UndefOr[Int] = js.undefined): IDBRequest = js.native
 
   /**
@@ -183,7 +218,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def getAllKeys(query: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
+  def getAllKeys(query: js.UndefOr[IDBKey | IDBKeyRange] = js.undefined,
       count: js.UndefOr[Int] = js.undefined): IDBRequest = js.native
 
   /**
@@ -192,7 +227,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def getKey(key: js.Any): IDBRequest = js.native
+  def getKey(key: IDBKey): IDBRequest = js.native
 
   /**
    * returns an IDBRequest object, and, in a separate thread, deletes the current
@@ -200,7 +235,7 @@ class IDBObjectStore extends js.Object {
    *
    * MDN
    */
-  def delete(key: js.Any): IDBRequest = js.native
+  def delete(key: IDBKey): IDBRequest = js.native
 }
 
 trait IDBVersionChangeEventInit extends EventInit {
@@ -286,7 +321,7 @@ class IDBIndex extends js.Object {
    */
   def objectStore: IDBObjectStore = js.native
 
-  def count(key: js.Any): IDBRequest = js.native
+  def count(key: IDBKey): IDBRequest = js.native
 
   /**
    * If you want to see how many records are between keys 1000 and 2000 in an object store,
@@ -302,7 +337,7 @@ class IDBIndex extends js.Object {
    *
    * MDN
    */
-  def getKey(key: js.Any): IDBRequest = js.native
+  def getKey(key: IDBKey): IDBRequest = js.native
 
   /**
    * Returns an IDBRequest object, and, in a separate thread, creates a cursor over the
@@ -320,7 +355,7 @@ class IDBIndex extends js.Object {
    *
    * MDN
    */
-  def get(key: js.Any): IDBRequest = js.native
+  def get(key: IDBKey): IDBRequest = js.native
 
   /**
    * The method sets the position of the cursor to the appropriate record, based on the
@@ -371,7 +406,7 @@ class IDBCursor extends js.Object {
    *
    * MDN
    */
-  def key: js.Any = js.native
+  def key: IDBKey = js.native
 
   /**
    * Returns the cursor's current effective key. If the cursor is currently being
@@ -397,7 +432,7 @@ class IDBCursor extends js.Object {
    *
    * W3C
    */
-  def continue(key: js.Any = ???): Unit = js.native
+  def continue(key: IDBKey = ???): Unit = js.native
 
   /**
    * Returns an IDBRequest object, and, in a separate thread, deletes the record at the
