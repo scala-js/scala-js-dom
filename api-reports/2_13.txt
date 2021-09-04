@@ -311,7 +311,7 @@ Blob[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 Blob[JC] def close(): Unit  (@deprecated in 1.2.0)
 Blob[JC] def size: Double
 Blob[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
-Blob[JC] def stream(): ReadableStream[Byte]
+Blob[JC] def stream(): ReadableStream[Uint8Array]
 Blob[JC] def text(): js.Promise[String]
 Blob[JC] def `type`: String
 Blob[JO]
@@ -1601,7 +1601,7 @@ File[JC] def close(): Unit  (@deprecated in 1.2.0)
 File[JC] def name: String
 File[JC] def size: Double
 File[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
-File[JC] def stream(): ReadableStream[Byte]
+File[JC] def stream(): ReadableStream[Uint8Array]
 File[JC] def text(): js.Promise[String]
 File[JC] def `type`: String
 FileList[JC] @JSBracketAccess def apply(index: Int): T

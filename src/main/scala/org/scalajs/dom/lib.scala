@@ -10,7 +10,7 @@ import scala.collection.mutable
 import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.ArrayBuffer
+import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 import scala.scalajs.js.|
 
 @js.native
@@ -6617,7 +6617,7 @@ class Blob(blobParts: js.Array[js.Any] = js.native, options: BlobPropertyBag = j
     *
     * MDN
     */
-  def stream(): ReadableStream[Byte] = js.native
+  def stream(): ReadableStream[Uint8Array] = js.native
 
   /** Returns a promise that resolves with a USVString containing the entire contents of the blob interpreted as UTF-8
     * text.
