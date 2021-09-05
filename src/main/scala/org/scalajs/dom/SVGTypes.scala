@@ -2191,11 +2191,9 @@ object SVGPreserveAspectRatio extends js.Object {
   val SVG_PRESERVEASPECTRATIO_XMAXYMID: Int = js.native
   val SVG_PRESERVEASPECTRATIO_XMIDYMAX: Int = js.native
   val SVG_PRESERVEASPECTRATIO_XMINYMIN: Int = js.native
-  /*
-   * Corresponds to value meet for attribute preserveAspectRatio.
-   *
 
-   */
+  /** Corresponds to value meet for attribute preserveAspectRatio.
+    */
   val SVG_MEETORSLICE_MEET: Int = js.native
   val SVG_PRESERVEASPECTRATIO_XMIDYMID: Int = js.native
   val SVG_PRESERVEASPECTRATIO_XMIDYMIN: Int = js.native

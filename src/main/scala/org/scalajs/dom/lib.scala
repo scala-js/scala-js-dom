@@ -2228,8 +2228,6 @@ abstract class Document extends Node with NodeSelector with DocumentEvent with P
 
   /** Creates an XPathNSResolver which resolves namespaces with respect to the definitions in scope for a specified
     * node.
-    *
-    * .
     */
   def createNSResolver(node: Node): XPathNSResolver = js.native
 
