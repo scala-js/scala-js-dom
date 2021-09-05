@@ -41,8 +41,7 @@ class AudioContext extends EventTarget {
   /** Returns the current state of the AudioContext. */
   def state: String = js.native
 
-  /** Closes the audio context, releasing any system audio resources that it uses.
-    */
+  /** Closes the audio context, releasing any system audio resources that it uses. */
   def close(): js.Promise[Unit] = js.native
 
   /** Creates an AnalyserNode, which can be used to expose audio time and frequency data and for example to create data
@@ -106,12 +105,10 @@ class AudioContext extends EventTarget {
     */
   def createDelay(maxDelayTime: Int): DelayNode = js.native
 
-  /** Creates a DynamicsCompressorNode, which can be used to apply acoustic compression to an audio signal.
-    */
+  /** Creates a DynamicsCompressorNode, which can be used to apply acoustic compression to an audio signal. */
   def createDynamicsCompressor(): DynamicsCompressorNode = js.native
 
-  /** Creates a GainNode, which can be used to control the overall volume of the audio graph.
-    */
+  /** Creates a GainNode, which can be used to control the overall volume of the audio graph. */
   def createGain(): GainNode = js.native
 
   /** Creates a MediaElementAudioSourceNode associated with an HTMLMediaElement. This can be used to play and manipulate
@@ -135,12 +132,10 @@ class AudioContext extends EventTarget {
     */
   def createMediaStreamDestination(): MediaStreamAudioDestinationNode = js.native
 
-  /** Creates an OscillatorNode, a source representing a periodic waveform. It basically generates a tone.
-    */
+  /** Creates an OscillatorNode, a source representing a periodic waveform. It basically generates a tone. */
   def createOscillator(): OscillatorNode = js.native
 
-  /** Creates a PannerNode, which is used to spatialise an incoming audio stream in 3D space.
-    */
+  /** Creates a PannerNode, which is used to spatialise an incoming audio stream in 3D space. */
   def createPanner(): PannerNode = js.native
 
   /** Creates a PeriodicWave, used to define a periodic waveform that can be used to determine the output of an
@@ -148,12 +143,10 @@ class AudioContext extends EventTarget {
     */
   def createPeriodicWave(real: js.typedarray.Float32Array, imag: js.typedarray.Float32Array): PeriodicWave = js.native
 
-  /** Creates a StereoPannerNode, which can be used to apply stereo panning to an audio source.
-    */
+  /** Creates a StereoPannerNode, which can be used to apply stereo panning to an audio source. */
   def createStereoPanner(): StereoPannerNode = js.native
 
-  /** Creates a WaveShaperNode, which is used to implement non-linear distortion effects.
-    */
+  /** Creates a WaveShaperNode, which is used to implement non-linear distortion effects. */
   def createWaveShaper(): WaveShaperNode = js.native
 
   /** Asynchronously decodes audio file data contained in an ArrayBuffer. In this case, the ArrayBuffer is usually
@@ -175,8 +168,7 @@ class AudioContext extends EventTarget {
       errorCallback: js.Function0[_] = js.native
   ): js.Promise[AudioBuffer] = js.native
 
-  /** Resumes the progression of time in an audio context that has previously been suspended.
-    */
+  /** Resumes the progression of time in an audio context that has previously been suspended. */
   def resume(): js.Promise[Unit] = js.native
 
   /** Suspends the progression of time in the audio context, temporarily halting audio hardware access and reducing
@@ -269,12 +261,10 @@ trait AudioNode extends EventTarget {
     */
   var channelInterpretation: String = js.native
 
-  /** Allows us to connect one output of this node to one input of another node.
-    */
+  /** Allows us to connect one output of this node to one input of another node. */
   def connect(audioNode: AudioNode): Unit = js.native
 
-  /** Allows us to connect one output of this node to one input of an audio parameter.
-    */
+  /** Allows us to connect one output of this node to one input of an audio parameter. */
   def connect(audioParam: AudioParam): Unit = js.native
 
   /** Allows us to disconnect the current node from another one it is already connected to.
@@ -434,8 +424,7 @@ trait AudioBufferSourceNode extends AudioNode {
     */
   def stop(when: Double = 0.0): Unit = js.native
 
-  /** Is an EventHandler containing the callback associated with the ended event.
-    */
+  /** Is an EventHandler containing the callback associated with the ended event. */
   var onended: js.Function1[Event, _] = js.native
 }
 
@@ -458,8 +447,7 @@ trait AudioBufferSourceNode extends AudioNode {
 @js.native
 trait AudioDestinationNode extends AudioNode {
 
-  /** Is an unsigned long defining the maximum amount of channels that the physical device can handle.
-    */
+  /** Is an unsigned long defining the maximum amount of channels that the physical device can handle. */
   var maxChannelCount: Int = js.native
 }
 
@@ -472,12 +460,10 @@ trait AudioDestinationNode extends AudioNode {
 @js.native
 trait AudioListener extends AudioNode {
 
-  /** Is a double value representing the amount of pitch shift to use when rendering a doppler effect.
-    */
+  /** Is a double value representing the amount of pitch shift to use when rendering a doppler effect. */
   var dopplerFactor: Double = js.native
 
-  /** Is a double value representing the speed of sound, in meters per second.
-    */
+  /** Is a double value representing the speed of sound, in meters per second. */
   var speedOfSound: Double = js.native
 
   /** Defines the position of the listener.
@@ -552,8 +538,7 @@ trait AudioParam extends AudioNode {
     */
   var value: Double = js.native
 
-  /** Represents the initial value of the attributes as defined by the specific AudioNode creating the AudioParam.
-    */
+  /** Represents the initial value of the attributes as defined by the specific AudioNode creating the AudioParam. */
   val defaultValue: Double = js.native
 
   /** Schedules an instant change to the value of the AudioParam at a precise time, as measured against
@@ -646,20 +631,16 @@ trait BiquadFilterNode extends AudioNode {
     */
   val frequency: AudioParam = js.native
 
-  /** Is an a-rate AudioParam representing detuning of the frequency in cents.
-    */
+  /** Is an a-rate AudioParam representing detuning of the frequency in cents. */
   val detune: AudioParam = js.native
 
-  /** Is a k-rate AudioParam, a double representing a Q factor, or quality factor.
-    */
+  /** Is a k-rate AudioParam, a double representing a Q factor, or quality factor. */
   val Q: AudioParam = js.native
 
-  /** Is a k-rate AudioParam, a double representing the gain used in the current filtering algorithm.
-    */
+  /** Is a k-rate AudioParam, a double representing the gain used in the current filtering algorithm. */
   val gain: AudioParam = js.native
 
-  /** Is a string value defining the kind of filtering algorithm the node is implementing.
-    */
+  /** Is a string value defining the kind of filtering algorithm the node is implementing. */
   var `type`: String = js.native
 
   /** From the current filter parameter settings this method calculates the frequency response for frequencies specified
@@ -778,8 +759,7 @@ trait DelayNode extends AudioNode {
 @js.native
 trait DynamicsCompressorNode extends AudioNode {
 
-  /** Is a k-rate AudioParam representing the decibel value above which the compression will start taking effect.
-    */
+  /** Is a k-rate AudioParam representing the decibel value above which the compression will start taking effect. */
   val threshold: AudioParam = js.native
 
   /** Is a k-rate AudioParam containing a decibel value representing the range above the threshold where the curve
@@ -797,12 +777,10 @@ trait DynamicsCompressorNode extends AudioNode {
     */
   val reduction: AudioParam = js.native
 
-  /** Is a k-rate AudioParam representing the amount of time, in seconds, required to reduce the gain by 10 dB.
-    */
+  /** Is a k-rate AudioParam representing the amount of time, in seconds, required to reduce the gain by 10 dB. */
   val attack: AudioParam = js.native
 
-  /** Is a k-rate AudioParam representing the amount of time, in seconds, required to increase the gain by 10 dB.
-    */
+  /** Is a k-rate AudioParam representing the amount of time, in seconds, required to increase the gain by 10 dB. */
   val release: AudioParam = js.native
 }
 
@@ -909,8 +887,7 @@ trait OscillatorNode extends AudioNode {
     */
   var detune: AudioParam = js.native
 
-  /** Represents the shape of the oscillator wave generated. Different waves will produce different tones.
-    */
+  /** Represents the shape of the oscillator wave generated. Different waves will produce different tones. */
   var `type`: String = js.native // Not sure if this is correct ...
 
   /** This method specifies the exact time to start playing the tone. */
@@ -926,8 +903,7 @@ trait OscillatorNode extends AudioNode {
     */
   def setPeriodicWave(wave: PeriodicWave): Unit = js.native
 
-  /** Used to set the event handler for the ended event, which fires when the tone has stopped playing.
-    */
+  /** Used to set the event handler for the ended event, which fires when the tone has stopped playing. */
   var onended: js.Function1[Event, _] = js.native
 }
 
@@ -949,8 +925,7 @@ trait OscillatorNode extends AudioNode {
 @js.native
 trait PannerNode extends AudioNode {
 
-  /** Is an enumerated value determining which spatialisation algorithm to use to position the audio in 3D space.
-    */
+  /** Is an enumerated value determining which spatialisation algorithm to use to position the audio in 3D space. */
   var panningModel: String = js.native
 
   /** Is an enumerated value determining which algorithm to use to reduce the volume of the audio source as it moves
@@ -1097,16 +1072,13 @@ trait WaveShaperNode extends AudioNode {
 @js.native
 trait AudioBuffer extends js.Object {
 
-  /** Returns a float representing the sample rate, in samples per second, of the PCM data stored in the buffer.
-    */
+  /** Returns a float representing the sample rate, in samples per second, of the PCM data stored in the buffer. */
   val sampleRate: Double = js.native
 
-  /** Returns an integer representing the length, in sample-frames, of the PCM data stored in the buffer.
-    */
+  /** Returns an integer representing the length, in sample-frames, of the PCM data stored in the buffer. */
   val length: Int = js.native
 
-  /** Returns a double representing the duration, in seconds, of the PCM data stored in the buffer.
-    */
+  /** Returns a double representing the duration, in seconds, of the PCM data stored in the buffer. */
   val duration: Double = js.native
 
   /** Returns an integer representing the number of discrete audio channels described by the PCM data stored in the
@@ -1158,8 +1130,7 @@ trait AudioBuffer extends js.Object {
 @js.native
 trait OfflineAudioCompletionEvent extends Event {
 
-  /** The buffer containing the result of the processing of an OfflineAudioContext.
-    */
+  /** The buffer containing the result of the processing of an OfflineAudioContext. */
   val renderedBuffer: AudioBuffer = js.native
 }
 

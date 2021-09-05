@@ -30,19 +30,16 @@ object Fetch extends js.Object {
 @JSGlobal
 class Request(input: RequestInfo, init: RequestInit = null) extends Body {
 
-  /** Contains the request's method (GET, POST, etc.)
-    */
+  /** Contains the request's method (GET, POST, etc.) */
   def method: HttpMethod = js.native
 
   @JSName("type")
   def `mediaType`: RequestType = js.native
 
-  /** Contains the URL of the request.
-    */
+  /** Contains the URL of the request. */
   def url: String = js.native //should be USVString
 
-  /** Contains the associated Headers object of the request.
-    */
+  /** Contains the associated Headers object of the request. */
   def headers: Headers = js.native
 
   def destination: RequestDestination = js.native
@@ -119,8 +116,7 @@ class Response(content: BodyInit = null, init: ResponseInit = null) extends Body
   /** Contains the URL of the response. */
   def url: String = js.native
 
-  /** Contains a boolean stating whether the response was successful (status in the range 200-299) or not.
-    */
+  /** Contains a boolean stating whether the response was successful (status in the range 200-299) or not. */
   def ok: Boolean = js.native
 
   /** Contains the status code of the response (e.g., 200 for a success). */
@@ -158,8 +154,7 @@ object Response extends js.Object {
   def redirect(url: String, status: Int = 302): Response = js.native
 }
 
-/** See [[https://fetch.spec.whatwg.org/#response-class ¶6.4 Response class]] definition in whatwg Fetch spec.
-  */
+/** See [[https://fetch.spec.whatwg.org/#response-class ¶6.4 Response class]] definition in whatwg Fetch spec. */
 trait ResponseInit extends js.Object {
   var status: Int
   var statusText: ByteString
@@ -173,20 +168,16 @@ trait ResponseInit extends js.Object {
 @js.native
 trait Body extends js.Object {
 
-  /** Contains a Boolean that indicates whether the body has been read.
-    */
+  /** Contains a Boolean that indicates whether the body has been read. */
   def bodyUsed: Boolean = js.native
 
-  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer.
-    */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer. */
   def arrayBuffer(): js.Promise[ArrayBuffer] = js.native
 
-  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob.
-    */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob. */
   def blob(): js.Promise[Blob] = js.native
 
-  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a FormData object.
-    */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a FormData object. */
   def formData(): js.Promise[FormData] = js.native
 
   /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a JSON object. //todo:
@@ -194,8 +185,7 @@ trait Body extends js.Object {
     */
   def json(): js.Promise[js.Any] = js.native
 
-  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a USVString (text).
-    */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a USVString (text). */
   def text(): js.Promise[String] = js.native
 }
 
@@ -245,8 +235,7 @@ class Headers(map: HeadersInit = js.Array[js.Array[String]]()) extends js.Iterab
     */
   def set(name: ByteString, value: ByteString): Unit = js.native
 
-  /** The delete() method of the Headers interface deletes a header from the current Headers object.
-    */
+  /** The delete() method of the Headers interface deletes a header from the current Headers object. */
   def delete(name: ByteString): Unit = js.native
 
   /** The get() method of the Headers interface returns the first value of a given header from within a Headers object .
@@ -290,8 +279,7 @@ object ReferrerPolicy {
   val `unsafe-url` = "unsafe-url".asInstanceOf[ReferrerPolicy]
 }
 
-/** This is not typed in the Fetch API but it is easy to create the most common defaults.
-  */
+/** This is not typed in the Fetch API but it is easy to create the most common defaults. */
 @js.native
 trait HttpMethod extends js.Any
 
@@ -306,8 +294,7 @@ object HttpMethod {
   val OPTIONS: HttpMethod = "OPTIONS".asInstanceOf[HttpMethod]
 }
 
-/** Fetch APIs [[https://fetch.spec.whatwg.org/#requesttype RequestType enum]]
-  */
+/** Fetch APIs [[https://fetch.spec.whatwg.org/#requesttype RequestType enum]] */
 @js.native
 sealed trait RequestType extends js.Any
 
@@ -322,8 +309,7 @@ object RequestType {
   val video: RequestType = "video".asInstanceOf[RequestType]
 }
 
-/** Fetch APIs [[https://fetch.spec.whatwg.org/#requestdestination RequestDestination enum]]
-  */
+/** Fetch APIs [[https://fetch.spec.whatwg.org/#requestdestination RequestDestination enum]] */
 @js.native
 sealed trait RequestDestination extends js.Any
 
@@ -336,8 +322,7 @@ object RequestDestination {
   val worker: RequestDestination = "worker".asInstanceOf[RequestDestination]
 }
 
-/** Fetch API's [[https://fetch.spec.whatwg.org/#requestmode RequestMode enum]]
-  */
+/** Fetch API's [[https://fetch.spec.whatwg.org/#requestmode RequestMode enum]] */
 @js.native
 sealed trait RequestMode extends js.Any
 
@@ -348,8 +333,7 @@ object RequestMode {
   val cors: RequestMode = "cors".asInstanceOf[RequestMode]
 }
 
-/** Fetch APIs [[https://fetch.spec.whatwg.org/#requestcredentials RequestCredentials enum]]
-  */
+/** Fetch APIs [[https://fetch.spec.whatwg.org/#requestcredentials RequestCredentials enum]] */
 @js.native
 sealed trait RequestCredentials extends js.Any
 
@@ -359,8 +343,7 @@ object RequestCredentials {
   val include: RequestCredentials = "include".asInstanceOf[RequestCredentials]
 }
 
-/** Fetch APIs [[https://fetch.spec.whatwg.org/#requestcache RequestCache enum]]
-  */
+/** Fetch APIs [[https://fetch.spec.whatwg.org/#requestcache RequestCache enum]] */
 @js.native
 sealed trait RequestCache extends js.Any
 
@@ -373,8 +356,7 @@ object RequestCache {
   val `only-if-cached` = "only-if-cached".asInstanceOf[RequestCache]
 }
 
-/** Fetch API's [[https://fetch.spec.whatwg.org/#requestredirect RequestRedirect enum]]
-  */
+/** Fetch API's [[https://fetch.spec.whatwg.org/#requestredirect RequestRedirect enum]] */
 @js.native
 sealed trait RequestRedirect extends js.Any
 
@@ -387,8 +369,7 @@ object RequestRedirect {
 @js.native
 sealed trait ResponseType extends js.Any
 
-/** see [[https://fetch.spec.whatwg.org/#responsetype]] of whatwg Fetch spec
-  */
+/** see [[https://fetch.spec.whatwg.org/#responsetype]] of whatwg Fetch spec */
 object ResponseType {
   val basic: ResponseType = "basic".asInstanceOf[ResponseType]
   val cors: ResponseType = "cors".asInstanceOf[ResponseType]

@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
-/** Short aliases of all the dom.IDBThing classes
-  */
+/** Short aliases of all the dom.IDBThing classes */
 object idb {
   type Cursor = IDBCursor
   @inline def CursorDirection = IDBCursorDirection

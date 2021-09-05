@@ -43,8 +43,7 @@ trait OESStandardDerivatives extends js.Object {
   val FRAGMENT_SHADER_DERIVATIVE_HINT_OES: Int = js.native
 }
 
-/** A vertex array object, as used by `OES_vertex_array_object`.
-  */
+/** A vertex array object, as used by `OES_vertex_array_object`. */
 @js.native
 trait WebGLVertexArrayObjectOES extends js.Object
 

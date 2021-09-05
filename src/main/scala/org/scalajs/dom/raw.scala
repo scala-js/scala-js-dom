@@ -920,8 +920,7 @@ object raw {
   @JSGlobalScope
   object DedicatedWorkerGlobalScope extends js.Object {
 
-    /** Returns an object reference to the DedicatedWorkerGlobalScope object itself.
-      */
+    /** Returns an object reference to the DedicatedWorkerGlobalScope object itself. */
     def self: DedicatedWorkerGlobalScope = js.native
   }
 }

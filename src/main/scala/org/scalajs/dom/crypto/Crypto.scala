@@ -23,8 +23,7 @@ trait Crypto extends js.Object {
     */
   val subtle: SubtleCrypto = js.native
 
-  /** Fills the passed TypedArray with cryptographically sound random values.
-    */
+  /** Fills the passed TypedArray with cryptographically sound random values. */
   def getRandomValues(array: ArrayBufferView): ArrayBufferView = js.native
 }
 
@@ -328,22 +327,19 @@ object RsaHashedKeyAlgorithm {
       .asInstanceOf[RsaHashedKeyAlgorithm]
   }
 
-  /** see [[http://www.w3.org/TR/WebCryptoAPI/#rsassa-pkcs1 ¶20. RSASSA-PKCS1-v1_5]] of w3c spec
-    */
+  /** see [[http://www.w3.org/TR/WebCryptoAPI/#rsassa-pkcs1 ¶20. RSASSA-PKCS1-v1_5]] of w3c spec */
   def `RSASSA-PKCS1-v1_5`(modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
     apply("RSASSA-PKCS1-v1_5", modulusLength, publicExponent, hash)
   }
 
-  /** see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-PSS]] of w3c spec
-    */
+  /** see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-PSS]] of w3c spec */
   def `RSA-PSS`(modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
     apply("RSA-PSS", modulusLength, publicExponent, hash)
   }
 
-  /** see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-OAEP]] of w3c spec
-    */
+  /** see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-OAEP]] of w3c spec */
   def `RSA-OAEP`(modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
     apply("RSA-OAEP", modulusLength, publicExponent, hash)
@@ -811,8 +807,7 @@ object Pbkdf2Params {
   }
 }
 
-/** See [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶ 13. CryptoKey Interface]] of w3c spec
-  */
+/** See [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶ 13. CryptoKey Interface]] of w3c spec */
 @js.native
 trait KeyUsage extends js.Any
 
@@ -827,8 +822,7 @@ object KeyUsage {
   val unwrapKey: KeyUsage = "unwrapKey".asInstanceOf[KeyUsage]
 }
 
-/** see [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶13 CryptoKey interface]] in W3C doc
-  */
+/** see [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶13 CryptoKey interface]] in W3C doc */
 @js.native
 trait KeyType extends js.Any
 
@@ -838,8 +832,7 @@ object KeyType {
   val secret: KeyType = "secret".asInstanceOf[KeyType]
 }
 
-/** see [[http://www.w3.org/TR/WebCryptoAPI/#dfn-KeyFormat ¶14.2 Data Types]] in W3C spec
-  */
+/** see [[http://www.w3.org/TR/WebCryptoAPI/#dfn-KeyFormat ¶14.2 Data Types]] in W3C spec */
 @js.native
 trait KeyFormat extends js.Any
 
@@ -863,8 +856,7 @@ object KeyFormat {
 // http://tools.ietf.org/html/rfc7517
 //
 
-/** see example http://tools.ietf.org/html/rfc7517#appendix-A.1 //todo: where is the specification of n and e?
-  */
+/** see example http://tools.ietf.org/html/rfc7517#appendix-A.1 //todo: where is the specification of n and e? */
 @js.native
 trait RSAPublicKey extends js.Object {
 

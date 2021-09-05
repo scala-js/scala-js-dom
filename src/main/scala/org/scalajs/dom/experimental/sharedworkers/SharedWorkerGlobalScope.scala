@@ -18,8 +18,7 @@ trait SharedWorkerGlobalScope extends WorkerGlobalScope {
     */
   def name: String = js.native
 
-  /** Returns the ApplicationCache object for the worker (see Using the application cache).
-    */
+  /** Returns the ApplicationCache object for the worker (see Using the application cache). */
   def applicationCache: ApplicationCache = js.native
 
   /** An EventHandler representing the code to be called when the connect event is raised — that is, when a MessagePort

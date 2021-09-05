@@ -770,8 +770,7 @@ object KeyValue {
   }
 }
 
-/** A list of the codes returned by KeyEvents.
-  */
+/** A list of the codes returned by KeyEvents. */
 object KeyCode {
   final val Backspace = 8
   final val Tab = 9

@@ -19,24 +19,19 @@ trait WindowOrWorkerGlobalScope extends WindowBase64 with WindowTimers {
     */
   def caches: js.UndefOr[CacheStorage] = js.native
 
-  /** Returns a boolean value that indicates whether a SharedArrayBuffer can be sent via a Window.postMessage() call.
-    */
+  /** Returns a boolean value that indicates whether a SharedArrayBuffer can be sent via a Window.postMessage() call. */
   def crossOriginIsolated: Boolean = js.native
 
-  /** Provides a mechanism for applications to asynchronously access capabilities of indexed databases.
-    */
+  /** Provides a mechanism for applications to asynchronously access capabilities of indexed databases. */
   def indexedDB: js.UndefOr[IDBFactory] = js.native
 
-  /** Returns a boolean indicating whether the current context is secure or not.
-    */
+  /** Returns a boolean indicating whether the current context is secure or not. */
   def isSecureContext: Boolean = js.native
 
-  /** Returns the origin of the global scope, serialized as a string.
-    */
+  /** Returns the origin of the global scope, serialized as a string. */
   def origin: String = js.native //should be USVString
 
-  /** Starts the process of fetching a resource from the network.
-    */
+  /** Starts the process of fetching a resource from the network. */
   def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response] = js.native
 
   /** Enqueues a microtask—a short function to be executed after execution of the JavaScript code completes and control
@@ -69,16 +64,13 @@ trait WindowOrWorkerGlobalScope extends WindowBase64 with WindowTimers {
 @js.native
 trait ImageBitmap extends js.Object {
 
-  /** An unsigned long representing the height, in CSS pixels, of the ImageData.
-    */
+  /** An unsigned long representing the height, in CSS pixels, of the ImageData. */
   def height: Double = js.native
 
-  /** An unsigned long representing the width, in CSS pixels, of the ImageData.
-    */
+  /** An unsigned long representing the width, in CSS pixels, of the ImageData. */
   def width: Double = js.native
 
-  /** Dispose of all graphical resources associated with an ImageBitmap.
-    */
+  /** Dispose of all graphical resources associated with an ImageBitmap. */
   def close(): Unit = js.native
 }
 

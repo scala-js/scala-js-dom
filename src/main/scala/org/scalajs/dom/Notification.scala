@@ -6,12 +6,10 @@ import scala.scalajs.js.annotation._
 @js.native
 trait NotificationOptions extends js.Object {
 
-  /** The body property of the Notification interface indicates the body string of the notification.
-    */
+  /** The body property of the Notification interface indicates the body string of the notification. */
   val body: String = js.native
 
-  /** The dir property of the Notification interface indicates the text direction of the notification.
-    */
+  /** The dir property of the Notification interface indicates the text direction of the notification. */
   val dir: String = js.native
 
   /** The icon property of the Notification interface contains the URL of an icon to be displayed as part of the
@@ -19,8 +17,7 @@ trait NotificationOptions extends js.Object {
     */
   val icon: String = js.native
 
-  /** The lang property of the Notification interface indicates the text direction of the notification.
-    */
+  /** The lang property of the Notification interface indicates the text direction of the notification. */
   val lang: String = js.native
 
   /** The noscreen property of the Notification interface specifies whether the notification firing should enable the
@@ -240,7 +237,6 @@ class Notification(title: String, options: NotificationOptions = ???) extends Ev
     */
   val vibrate: js.Array[Double] = js.native
 
-  /** The close() method of the Notification interface is used to close a previously displayed notification.
-    */
+  /** The close() method of the Notification interface is used to close a previously displayed notification. */
   def close(): Unit = js.native
 }

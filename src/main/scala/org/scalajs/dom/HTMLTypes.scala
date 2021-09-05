@@ -15,12 +15,10 @@ import scala.scalajs.js.|
 @JSGlobal
 abstract class HTMLDocument extends Document {
 
-  /** Returns the title of the current document.
-    */
+  /** Returns the title of the current document. */
   var title: String = js.native
 
-  /** Gets/sets the domain portion of the origin of the current document, as used by the same origin policy.
-    */
+  /** Gets/sets the domain portion of the origin of the current document, as used by the same origin policy. */
   var domain: String = js.native
 
   /** The Document.location property returns a Location object, which contains information about the URL of the document
@@ -28,16 +26,13 @@ abstract class HTMLDocument extends Document {
     */
   var location: Location = js.native
 
-  /** Returns a string containing the URL of the current document.
-    */
+  /** Returns a string containing the URL of the current document. */
   def URL: String = js.native
 
-  /** Returns the URI of the page that linked to this page.
-    */
+  /** Returns the URI of the page that linked to this page. */
   def referrer: String = js.native
 
-  /** Returns a semicolon-separated list of the cookies for that document or sets a single cookie.
-    */
+  /** Returns a semicolon-separated list of the cookies for that document or sets a single cookie. */
   var cookie: String = js.native
 
   /** The Document.dir property is a DOMString representing the directionality of the text of the document, whether left
@@ -45,12 +40,10 @@ abstract class HTMLDocument extends Document {
     */
   var dir: String = js.native
 
-  /** Can be used to make any document editable, for example in a &lt;iframe /&gt;:
-    */
+  /** Can be used to make any document editable, for example in a &lt;iframe /&gt;: */
   var designMode: String = js.native
 
-  /** Indicates whether the document is rendered in Quirks mode or Strict mode.
-    */
+  /** Indicates whether the document is rendered in Quirks mode or Strict mode. */
   def compatMode: String = js.native
 
   /** Returns "loading" while the document is loading, "interactive" once it is finished parsing but still loading
@@ -60,8 +53,7 @@ abstract class HTMLDocument extends Document {
 
   var uniqueID: String = js.native
 
-  /** In browsers returns the window object associated with the document or null if none available.
-    */
+  /** In browsers returns the window object associated with the document or null if none available. */
   def defaultView: Window = js.native
 
   /** Returns the &lt;head&gt; element of the current document. If there are more than one &lt;head&gt; elements, the
@@ -69,8 +61,7 @@ abstract class HTMLDocument extends Document {
     */
   def head: HTMLHeadElement = js.native
 
-  /** Returns the &lt;body&gt; or &lt;frameset&gt; node of the current document, or null if no such element exists.
-    */
+  /** Returns the &lt;body&gt; or &lt;frameset&gt; node of the current document, or null if no such element exists. */
   var body: HTMLElement = js.native
 
   /** Returns the currently focused element, that is, the element that will get keystroke events if the user types any.
@@ -78,12 +69,10 @@ abstract class HTMLDocument extends Document {
     */
   def activeElement: Element = js.native
 
-  /** Returns a list of the embedded &lt;embed&gt; elements within the current document.
-    */
+  /** Returns a list of the embedded &lt;embed&gt; elements within the current document. */
   def embeds: HTMLCollection = js.native
 
-  /** forms returns a collection (an HTMLCollection) of the form elements within the current document.
-    */
+  /** forms returns a collection (an HTMLCollection) of the form elements within the current document. */
   def forms: HTMLCollection = js.native
 
   /** The links property returns a collection of all AREA elements and anchor elements in a document with a value for
@@ -91,8 +80,7 @@ abstract class HTMLDocument extends Document {
     */
   def links: HTMLCollection = js.native
 
-  /** anchors returns a list of all of the anchors in the document.
-    */
+  /** anchors returns a list of all of the anchors in the document. */
   def anchors: HTMLCollection = js.native
 
   /** Returns an HTMLCollection object containing one or more HTMLEmbedElements or null which represent the
@@ -100,16 +88,13 @@ abstract class HTMLDocument extends Document {
     */
   def plugins: HTMLCollection = js.native
 
-  /** document.images returns a collection of the images in the current HTML document.
-    */
+  /** document.images returns a collection of the images in the current HTML document. */
   def images: HTMLCollection = js.native
 
-  /** Returns the current value of the current range for a formatting command.
-    */
+  /** Returns the current value of the current range for a formatting command. */
   def queryCommandValue(commandId: String): String = js.native
 
-  /** Returns true if the formatting command is in an indeterminate state on the current range.
-    */
+  /** Returns true if the formatting command is in an indeterminate state on the current range. */
   def queryCommandIndeterm(commandId: String): Boolean = js.native
 
   /** This method never did anything but throw an exception, and was removed in Gecko 14.0 (Firefox 14.0 / Thunderbird
@@ -117,16 +102,13 @@ abstract class HTMLDocument extends Document {
     */
   def queryCommandText(commandId: String): String = js.native
 
-  /** Reports whether or not the specified editor query command is supported by the browser.
-    */
+  /** Reports whether or not the specified editor query command is supported by the browser. */
   def queryCommandSupported(commandId: String): Boolean = js.native
 
-  /** Returns true if the formatting command can be executed on the current range.
-    */
+  /** Returns true if the formatting command can be executed on the current range. */
   def queryCommandEnabled(commandId: String): Boolean = js.native
 
-  /** Returns true if the formatting command has been executed on the current range.
-    */
+  /** Returns true if the formatting command has been executed on the current range. */
   def queryCommandState(commandId: String): Boolean = js.native
 
   /** When an HTML document has been switched to designMode, the document object exposes the execCommand method which
@@ -141,21 +123,17 @@ abstract class HTMLDocument extends Document {
     */
   def execCommandShowHelp(commandId: String): Boolean = js.native
 
-  /** Writes a string of text to a document stream opened by document.open().
-    */
+  /** Writes a string of text to a document stream opened by document.open(). */
   def write(content: String*): Unit = js.native
 
-  /** Writes a string of text followed by a newline character to a document.
-    */
+  /** Writes a string of text followed by a newline character to a document. */
   def writeln(content: String*): Unit = js.native
 
-  /** The document.open() method opens a document for writing.
-    */
+  /** The document.open() method opens a document for writing. */
   def open(url: String = js.native, name: String = js.native, features: String = js.native,
       replace: Boolean = js.native): js.Dynamic = js.native
 
-  /** The document.close() method finishes writing to a document, opened with document.open().
-    */
+  /** The document.close() method finishes writing to a document, opened with document.open(). */
   def close(): Unit = js.native
 
   def updateSettings(): Unit = js.native
@@ -186,16 +164,13 @@ abstract class HTMLDocument extends Document {
 
   var onload: js.Function1[Event, _] = js.native
 
-  /** The onchange property sets and returns the event handler for the change event.
-    */
+  /** The onchange property sets and returns the event handler for the change event. */
   var onchange: js.Function1[Event, _] = js.native
 
-  /** Returns the event handling code for the readystatechange event.
-    */
+  /** Returns the event handling code for the readystatechange event. */
   var onreadystatechange: js.Function1[Event, _] = js.native
 
-  /** The submit event is raised when the user clicks a submit button in a form
-    */
+  /** The submit event is raised when the user clicks a submit button in a form */
   var onsubmit: js.Function1[Event, _] = js.native
 
   var onfocus: js.Function1[FocusEvent, _] = js.native
@@ -214,30 +189,25 @@ abstract class HTMLDocument extends Document {
 
   var oninput: js.Function1[Event, _] = js.native
 
-  /** The keydown event is raised when the user presses a keyboard key.
-    */
+  /** The keydown event is raised when the user presses a keyboard key. */
   var onkeydown: js.Function1[KeyboardEvent, _] = js.native
 
-  /** The keyup event is raised when the user releases a key that's been pressed.
-    */
+  /** The keyup event is raised when the user releases a key that's been pressed. */
   var onkeyup: js.Function1[KeyboardEvent, _] = js.native
 
   var onkeypress: js.Function1[KeyboardEvent, _] = js.native
 
-  /** The onclick property returns the onClick event handler code on the current element.
-    */
+  /** The onclick property returns the onClick event handler code on the current element. */
   var onclick: js.Function1[MouseEvent, _] = js.native
 
   var ondblclick: js.Function1[MouseEvent, _] = js.native
 
   var onmouseup: js.Function1[MouseEvent, _] = js.native
 
-  /** The mouseover event is raised when the user moves the mouse over a particular element.
-    */
+  /** The mouseover event is raised when the user moves the mouse over a particular element. */
   var onmouseover: js.Function1[MouseEvent, _] = js.native
 
-  /** The mousedown event is raised when the user presses the mouse button.
-    */
+  /** The mousedown event is raised when the user presses the mouse button. */
   var onmousedown: js.Function1[MouseEvent, _] = js.native
 
   var onmousemove: js.Function1[MouseEvent, _] = js.native
@@ -253,8 +223,7 @@ abstract class HTMLDocument extends Document {
 
   var onscroll: js.Function1[UIEvent, _] = js.native
 
-  /** Called periodically throughout the drag and drop operation.
-    */
+  /** Called periodically throughout the drag and drop operation. */
   var ondrag: js.Function1[DragEvent, _] = js.native
 
   /** Called for an element when the mouse pointer first moves over the element while something is being dragged. This
@@ -275,8 +244,7 @@ abstract class HTMLDocument extends Document {
     */
   var ondragstart: js.Function1[DragEvent, _] = js.native
 
-  /** Called when the drag operation is finished.
-    */
+  /** Called when the drag operation is finished. */
   var ondragend: js.Function1[DragEvent, _] = js.native
 
   var ondrop: js.Function1[DragEvent, _] = js.native
@@ -333,8 +301,7 @@ abstract class HTMLDocument extends Document {
 
   var onstoragecommit: js.Function1[StorageEvent, _] = js.native
 
-  /** fired when a pointing device is moved into an element's hit test boundaries.
-    */
+  /** fired when a pointing device is moved into an element's hit test boundaries. */
   var onpointerover: js.Function1[PointerEvent, _] = js.native
 
   /** fired when a pointing device is moved into the hit test boundaries of an element or one of its descendants,
@@ -342,16 +309,13 @@ abstract class HTMLDocument extends Document {
     */
   var onpointerenter: js.Function1[PointerEvent, _] = js.native
 
-  /** fired when a pointer becomes active.
-    */
+  /** fired when a pointer becomes active. */
   var onpointerdown: js.Function1[PointerEvent, _] = js.native
 
-  /** fired when a pointer changes coordinates.
-    */
+  /** fired when a pointer changes coordinates. */
   var onpointermove: js.Function1[PointerEvent, _] = js.native
 
-  /** fired when a pointer is no longer active.
-    */
+  /** fired when a pointer is no longer active. */
   var onpointerup: js.Function1[PointerEvent, _] = js.native
 
   /** a browser fires this event if it concludes the pointer will no longer be able to generate events (for example the
@@ -370,12 +334,10 @@ abstract class HTMLDocument extends Document {
     */
   var onpointerleave: js.Function1[PointerEvent, _] = js.native
 
-  /** fired when an element receives pointer capture.
-    */
+  /** fired when an element receives pointer capture. */
   var gotpointercapture: js.Function1[PointerEvent, _] = js.native
 
-  /** Fired after pointer capture is released for a pointer.
-    */
+  /** Fired after pointer capture is released for a pointer. */
   var lostpointercapture: js.Function1[PointerEvent, _] = js.native
 }
 
@@ -430,8 +392,7 @@ abstract class HTMLTableElement extends HTMLElement {
 
   def createTBody(): HTMLElement = js.native
 
-  /** Removes the first &lt;caption&gt; that is a child of the element.
-    */
+  /** Removes the first &lt;caption&gt; that is a child of the element. */
   def deleteCaption(): Unit = js.native
 
   /** Returns an HTMLElement representing a new row of the table. It inserts it in the rows collection immediately
@@ -441,8 +402,7 @@ abstract class HTMLTableElement extends HTMLElement {
     */
   def insertRow(index: Int = js.native): HTMLElement = js.native
 
-  /** Removes the first &lt;tfoot&gt; that is a child of the element.
-    */
+  /** Removes the first &lt;tfoot&gt; that is a child of the element. */
   def deleteTFoot(): Unit = js.native
 
   /** Returns an HTMLElement representing the first &lt;thead&gt; that is a child of the element. If none is found, a
@@ -451,8 +411,7 @@ abstract class HTMLTableElement extends HTMLElement {
     */
   def createTHead(): HTMLElement = js.native
 
-  /** Removes the first &lt;thead&gt; that is a child of the element.
-    */
+  /** Removes the first &lt;thead&gt; that is a child of the element. */
   def deleteTHead(): Unit = js.native
 
   /** Returns an HTMLElement representing the first &lt;caption&gt; that is a child of the element. If none is found, a
@@ -481,8 +440,7 @@ abstract class HTMLBaseElement extends HTMLElement {
     */
   var target: String = js.native
 
-  /** Is a DOMString that reflects the href HTML attribute, containing a base URL for relative URLs in the document.
-    */
+  /** Is a DOMString that reflects the href HTML attribute, containing a base URL for relative URLs in the document. */
   var href: String = js.native
 }
 
@@ -512,12 +470,10 @@ abstract class HTMLOListElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLSelectElement extends HTMLElement {
 
-  /** The set of &lt;option&gt; elements contained by this element. Read only.
-    */
+  /** The set of &lt;option&gt; elements contained by this element. Read only. */
   val options: js.Array[HTMLOptionElement] = js.native
 
-  /** The value of this form control, that is, of the first selected option.
-    */
+  /** The value of this form control, that is, of the first selected option. */
   var value: String = js.native
 
   /** The form that this element is associated with. If this element is a descendant of a form element, then this
@@ -526,8 +482,7 @@ abstract class HTMLSelectElement extends HTMLElement {
     */
   def form: HTMLFormElement = js.native
 
-  /** Reflects the name HTML attribute, containing the name of this control used by servers and DOM search functions.
-    */
+  /** Reflects the name HTML attribute, containing the name of this control used by servers and DOM search functions. */
   var name: String = js.native
 
   /** Reflects the size HTML attribute, which contains the number of visible items in the control. The default is 1,
@@ -535,16 +490,13 @@ abstract class HTMLSelectElement extends HTMLElement {
     */
   var size: Int = js.native
 
-  /** The number of &lt;option&gt; elements in this select element.
-    */
+  /** The number of &lt;option&gt; elements in this select element. */
   var length: Int = js.native
 
-  /** The index of the first selected &lt;option&gt; element.
-    */
+  /** The index of the first selected &lt;option&gt; element. */
   var selectedIndex: Int = js.native
 
-  /** Reflects the multiple HTML attribute, whichindicates whether multiple items can be selected.
-    */
+  /** Reflects the multiple HTML attribute, whichindicates whether multiple items can be selected. */
   var multiple: Boolean = js.native
   def `type`: String = js.native
 
@@ -553,12 +505,10 @@ abstract class HTMLSelectElement extends HTMLElement {
     */
   var disabled: Boolean = js.native
 
-  /** Removes the element at the specified index from the options collection for this select element.
-    */
+  /** Removes the element at the specified index from the options collection for this select element. */
   def remove(index: Int = js.native): Unit = js.native
 
-  /** Adds an element to the collection of option elements for this select element.
-    */
+  /** Adds an element to the collection of option elements for this select element. */
   def add(element: HTMLElement, before: js.Any = js.native): Unit = js.native
 
   def item(name: js.Any = js.native, index: js.Any = js.native): js.Dynamic = js.native
@@ -583,8 +533,7 @@ abstract class HTMLSelectElement extends HTMLElement {
     */
   var autofocus: Boolean = js.native
 
-  /** The validity states that this control is in. Read only. HTML5
-    */
+  /** The validity states that this control is in. Read only. HTML5 */
   def validity: ValidityState = js.native
 
   /** Reflects the required HTML attribute, which indicates whether the user is required to select a value before
@@ -609,16 +558,13 @@ abstract class HTMLSelectElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLMetaElement extends HTMLElement {
 
-  /** Gets or sets the name of an HTTP response header to define for a document.
-    */
+  /** Gets or sets the name of an HTTP response header to define for a document. */
   var httpEquiv: String = js.native
 
-  /** Gets or sets the name of a meta-data property to define for a document.
-    */
+  /** Gets or sets the name of a meta-data property to define for a document. */
   var name: String = js.native
 
-  /** Gets or sets the value of meta-data property.
-    */
+  /** Gets or sets the value of meta-data property. */
   var content: String = js.native
   var url: String = js.native
 
@@ -633,29 +579,23 @@ abstract class HTMLMetaElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLLinkElement extends HTMLElement with LinkStyle {
 
-  /** Gets or sets the forward relationship of the linked resource from the document to the resource.
-    */
+  /** Gets or sets the forward relationship of the linked resource from the document to the resource. */
   var rel: String = js.native
 
-  /** Gets or sets the name of the target frame to which the resource applies.
-    */
+  /** Gets or sets the name of the target frame to which the resource applies. */
   var target: String = js.native
 
-  /** Gets or sets the URI for the target resource.
-    */
+  /** Gets or sets the URI for the target resource. */
   var href: String = js.native
 
-  /** Gets or sets a list of one or more media formats to which the resource applies.
-    */
+  /** Gets or sets a list of one or more media formats to which the resource applies. */
   var media: String = js.native
 
-  /** Gets or sets the reverse relationship of the linked resource from the resource to the document.
-    */
+  /** Gets or sets the reverse relationship of the linked resource from the resource to the document. */
   var rev: String = js.native
   var `type`: String = js.native
 
-  /** Gets or sets the language code for the linked resource.
-    */
+  /** Gets or sets the language code for the linked resource. */
   var hreflang: String = js.native
 }
 
@@ -688,8 +628,7 @@ abstract class HTMLOptionElement extends HTMLElement {
     */
   var value: String = js.native
 
-  /** Contains the text content of the element.
-    */
+  /** Contains the text content of the element. */
   var text: String = js.native
 
   /** If the option is a descendent of a &lt;select&gt; element, then this property has the same value as the form
@@ -702,8 +641,7 @@ abstract class HTMLOptionElement extends HTMLElement {
     */
   var label: String = js.native
 
-  /** Indicates whether the option is currently selected.
-    */
+  /** Indicates whether the option is currently selected. */
   var selected: Boolean = js.native
 
   /** Reflects the value of the disabled HTML attribute, which indicates that the option is unavailable to be selected.
@@ -755,42 +693,33 @@ class HTMLCollection private[this] () extends DOMList[Element] {
 @JSGlobal
 abstract class HTMLImageElement extends HTMLElement {
 
-  /** Reflects the width HTML attribute, indicating the rendered width of the image in CSS pixels.
-    */
+  /** Reflects the width HTML attribute, indicating the rendered width of the image in CSS pixels. */
   var width: Int = js.native
 
-  /** Intrinsic height of the image in CSS pixels, if it is available; otherwise, 0.
-    */
+  /** Intrinsic height of the image in CSS pixels, if it is available; otherwise, 0. */
   var naturalHeight: Int = js.native
 
-  /** Reflects the alt HTML attribute, indicating fallback context for the image.
-    */
+  /** Reflects the alt HTML attribute, indicating fallback context for the image. */
   var alt: String = js.native
 
-  /** Reflects the src HTML attribute, containing the URL of the image.
-    */
+  /** Reflects the src HTML attribute, containing the URL of the image. */
   var src: String = js.native
 
-  /** Reflects the usemap HTML attribute, containing a partial URL of a map element.
-    */
+  /** Reflects the usemap HTML attribute, containing a partial URL of a map element. */
   var useMap: String = js.native
 
-  /** Intrinsic width of the image in CSS pixels, if it is available; otherwise, 0.
-    */
+  /** Intrinsic width of the image in CSS pixels, if it is available; otherwise, 0. */
   var naturalWidth: Int = js.native
 
-  /** Reflects the height HTML attribute, indicating the rendered height of the image in CSS pixels.
-    */
+  /** Reflects the height HTML attribute, indicating the rendered height of the image in CSS pixels. */
   var height: Int = js.native
 
   var href: String = js.native
 
-  /** Reflects the ismap HTML attribute, indicating that the image is part of a server-side image map.
-    */
+  /** Reflects the ismap HTML attribute, indicating that the image is part of a server-side image map. */
   var isMap: Boolean = js.native
 
-  /** True if the browser has fetched the image, and it is in a supported image type that was decoded without errors.
-    */
+  /** True if the browser has fetched the image, and it is in a supported image type that was decoded without errors. */
   def complete: Boolean = js.native
 
   var onload: js.Function1[Event, _] = js.native
@@ -804,8 +733,7 @@ abstract class HTMLImageElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLAreaElement extends HTMLElement {
 
-  /** Is a DOMString containing the protocol component (including trailing colon ':'), of the referenced URL.
-    */
+  /** Is a DOMString containing the protocol component (including trailing colon ':'), of the referenced URL. */
   var protocol: String = js.native
 
   /** Is a DOMString containing tThe search element (including leading question mark '?'), if any, of the referenced
@@ -813,28 +741,22 @@ abstract class HTMLAreaElement extends HTMLElement {
     */
   var search: String = js.native
 
-  /** Is a DOMString that reflects the alt HTML attribute, containing alternative text for the element.
-    */
+  /** Is a DOMString that reflects the alt HTML attribute, containing alternative text for the element. */
   var alt: String = js.native
 
-  /** Is a DOMString that reflects the coords HTML attribute, containing coordinates to define the hot-spot region.
-    */
+  /** Is a DOMString that reflects the coords HTML attribute, containing coordinates to define the hot-spot region. */
   var coords: String = js.native
 
-  /** Is a DOMString containing the hostname in the referenced URL.
-    */
+  /** Is a DOMString containing the hostname in the referenced URL. */
   var hostname: String = js.native
 
-  /** Is a DOMString containing the port component, if any, of the referenced URL.
-    */
+  /** Is a DOMString containing the port component, if any, of the referenced URL. */
   var port: String = js.native
 
-  /** Is a DOMString containing the path name component, if any, of the referenced URL.
-    */
+  /** Is a DOMString containing the path name component, if any, of the referenced URL. */
   var pathname: String = js.native
 
-  /** Is a DOMString containing the hostname and port (if it's not the default port) in the referenced URL.
-    */
+  /** Is a DOMString containing the hostname and port (if it's not the default port) in the referenced URL. */
   var host: String = js.native
 
   /** Is a DOMString containing the fragment identifier (including the leading hash mark (#)), if any, in the referenced
@@ -847,8 +769,7 @@ abstract class HTMLAreaElement extends HTMLElement {
     */
   var target: String = js.native
 
-  /** Is a DOMString containing that reflects the href HTML attribute, containing a valid URL of a linked resource.
-    */
+  /** Is a DOMString containing that reflects the href HTML attribute, containing a valid URL of a linked resource. */
   var href: String = js.native
 
   /** Is a DOMString teflects the shape HTML attribute, indicating the shape of the hot-spot, limited to known values.
@@ -863,8 +784,7 @@ abstract class HTMLAreaElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLButtonElement extends HTMLElement {
 
-  /** The current form control value of the button.
-    */
+  /** The current form control value of the button. */
   var value: String = js.native
   var status: js.Any = js.native
 
@@ -874,13 +794,11 @@ abstract class HTMLButtonElement extends HTMLElement {
     */
   def form: HTMLFormElement = js.native
 
-  /** The name of the object when submitted with a form. HTML5 If specified, it must not be the empty string.
-    */
+  /** The name of the object when submitted with a form. HTML5 If specified, it must not be the empty string. */
   var name: String = js.native
   var `type`: String = js.native
 
-  /** The control is disabled, meaning that it does not accept any clicks.
-    */
+  /** The control is disabled, meaning that it does not accept any clicks. */
   var disabled: Boolean = js.native
 
   /** A localized message that describes the validation constraints that the control does not satisfy (if any). This
@@ -909,8 +827,7 @@ abstract class HTMLButtonElement extends HTMLElement {
     */
   var autofocus: Boolean = js.native
 
-  /** The validity states that this button is in.
-    */
+  /** The validity states that this button is in. */
   def validity: ValidityState = js.native
 
   /** Indicates that the form is not to be validated when it is submitted. If specified, this attribute overrides the
@@ -936,12 +853,10 @@ abstract class HTMLButtonElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLSourceElement extends HTMLElement {
 
-  /** Reflects the src HTML attribute, containing the URL for the media resource.
-    */
+  /** Reflects the src HTML attribute, containing the URL for the media resource. */
   var src: String = js.native
 
-  /** Reflects the media HTML attribute, containing the intended type of the media resource.
-    */
+  /** Reflects the media HTML attribute, containing the intended type of the media resource. */
   var media: String = js.native
   var `type`: String = js.native
 }
@@ -963,12 +878,10 @@ abstract class HTMLScriptElement extends HTMLElement {
     */
   var text: String = js.native
 
-  /** Represents gives the address of the external script resource to use. It reflects the src attribute.
-    */
+  /** Represents gives the address of the external script resource to use. It reflects the src attribute. */
   var src: String = js.native
 
-  /** Represents the character encoding of the external script resource. It reflects the charset attribute.
-    */
+  /** Represents the character encoding of the external script resource. It reflects the charset attribute. */
   var charset: String = js.native
   var `type`: String = js.native
   var event: String = js.native
@@ -1048,8 +961,7 @@ abstract class HTMLHtmlElement extends HTMLElement
 abstract class HTMLQuoteElement extends HTMLElement {
   var dateTime: String = js.native
 
-  /** Reflects the cite HTML attribute, containing a URL for the source of the quotation.
-    */
+  /** Reflects the cite HTML attribute, containing a URL for the source of the quotation. */
   var cite: String = js.native
 }
 
@@ -1067,8 +979,7 @@ abstract class HTMLDListElement extends HTMLElement
 @JSGlobal
 abstract class HTMLLabelElement extends HTMLElement {
 
-  /** The ID of the labeled control. Reflects the for attribute.
-    */
+  /** The ID of the labeled control. Reflects the for attribute. */
   var htmlFor: String = js.native
 
   def form: HTMLFormElement = js.native
@@ -1106,36 +1017,29 @@ abstract class HTMLLIElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
 
-  /** Reflects the width HTML attribute, indicating the width of the frame.
-    */
+  /** Reflects the width HTML attribute, indicating the width of the frame. */
   var width: String = js.native
 
-  /** The window proxy for the nested browsing context.
-    */
+  /** The window proxy for the nested browsing context. */
   def contentWindow: Window = js.native
 
-  /** Reflects the src HTML attribute, containing the address of the content to be embedded.
-    */
+  /** Reflects the src HTML attribute, containing the address of the content to be embedded. */
   var src: String = js.native
 
-  /** Reflects the name HTML attribute, containing a name by which to refer to the frame.
-    */
+  /** Reflects the name HTML attribute, containing a name by which to refer to the frame. */
   var name: String = js.native
 
-  /** Reflects the height HTML attribute, indicating the height of the frame.
-    */
+  /** Reflects the height HTML attribute, indicating the height of the frame. */
   var height: String = js.native
   var border: String = js.native
 
-  /** The active document in the inline frame's nested browsing context.
-    */
+  /** The active document in the inline frame's nested browsing context. */
   def contentDocument: Document = js.native
 
   var security: js.Any = js.native
   var onload: js.Function1[Event, _] = js.native
 
-  /** Reflects the sandbox HTML attribute, indicating extra restrictions on the behavior of the nested content.
-    */
+  /** Reflects the sandbox HTML attribute, indicating extra restrictions on the behavior of the nested content. */
   var sandbox: DOMSettableTokenList = js.native
 }
 
@@ -1147,12 +1051,10 @@ abstract class HTMLIFrameElement extends HTMLElement with GetSVGDocument {
 abstract class HTMLBodyElement extends HTMLElement {
   var scroll: String = js.native
 
-  /** Reflects the ononline HTML attribute value for a function to call when network communication is restored.
-    */
+  /** Reflects the ononline HTML attribute value for a function to call when network communication is restored. */
   var ononline: js.Function1[Event, _] = js.native
 
-  /** Reflects the onmessage HTML attribute value for a function to call when the document receives a message.
-    */
+  /** Reflects the onmessage HTML attribute value for a function to call when the document receives a message. */
   var onmessage: js.Function1[MessageEvent, _] = js.native
 
   /** Exposes the window.onerror event handler to call when the document fails to load properly. Note: This handler is
@@ -1161,12 +1063,10 @@ abstract class HTMLBodyElement extends HTMLElement {
     */
   var onerror: js.Function1[Event, _] = js.native
 
-  /** Reflects the onresize HTML attribute value for a function to call when the document has been resized.
-    */
+  /** Reflects the onresize HTML attribute value for a function to call when the document has been resized. */
   var onresize: js.Function1[UIEvent, _] = js.native
 
-  /** Reflects the onafterprint HTML attribute value for a function to call after the user has printed the document.
-    */
+  /** Reflects the onafterprint HTML attribute value for a function to call after the user has printed the document. */
   var onafterprint: js.Function1[Event, _] = js.native
 
   /** Reflects the onbeforeprint HTML attribute value for a function to call when the user has requested printing the
@@ -1174,12 +1074,10 @@ abstract class HTMLBodyElement extends HTMLElement {
     */
   var onbeforeprint: js.Function1[Event, _] = js.native
 
-  /** Reflects the onoffline HTML attribute value for a function to call when network communication fails.
-    */
+  /** Reflects the onoffline HTML attribute value for a function to call when network communication fails. */
   var onoffline: js.Function1[Event, _] = js.native
 
-  /** Reflects the onunload HTML attribute value for a function to call when when the document is going away.
-    */
+  /** Reflects the onunload HTML attribute value for a function to call when when the document is going away. */
   var onunload: js.Function1[Event, _] = js.native
 
   /** Reflects the onhashchange HTML attribute value for a function to call when the fragment identifier in the address
@@ -1197,8 +1095,7 @@ abstract class HTMLBodyElement extends HTMLElement {
     */
   var onbeforeunload: js.Function1[BeforeUnloadEvent, _] = js.native
 
-  /** Reflects the onpopstate HTML attribute value for a function to call when the storage area has changed.
-    */
+  /** Reflects the onpopstate HTML attribute value for a function to call when the storage area has changed. */
   var onstorage: js.Function1[StorageEvent, _] = js.native
 
   /** Reflects the onpopstate HTML attribute value for a function to call when the user has navigated session history.
@@ -1250,12 +1147,10 @@ abstract class HTMLInputElement extends HTMLElement {
     */
   def form: HTMLFormElement = js.native
 
-  /** The index of the beginning of selected text.
-    */
+  /** The index of the beginning of selected text. */
   var selectionStart: Int = js.native
 
-  /** Indicates that a checkbox is neither on nor off.
-    */
+  /** Indicates that a checkbox is neither on nor off. */
   var indeterminate: Boolean = js.native
 
   /** Reflects the readonly HTML attribute, indicating that the user cannot modify the value of the control. HTML5This
@@ -1269,8 +1164,7 @@ abstract class HTMLInputElement extends HTMLElement {
     */
   var size: Int = js.native
 
-  /** The index of the end of selected text.
-    */
+  /** The index of the end of selected text. */
   var selectionEnd: Int = js.native
 
   /** Reflects the accept HTML attribute, containing comma-separated list of file types accepted by the server when type
@@ -1278,16 +1172,13 @@ abstract class HTMLInputElement extends HTMLElement {
     */
   var accept: String = js.native
 
-  /** Reflects the alt HTML attribute, containing alternative text to use when type is image.
-    */
+  /** Reflects the alt HTML attribute, containing alternative text to use when type is image. */
   var alt: String = js.native
 
-  /** The default state of a radio button or checkbox as originally specified in HTML that created this object.
-    */
+  /** The default state of a radio button or checkbox as originally specified in HTML that created this object. */
   var defaultChecked: Boolean = js.native
 
-  /** Current value in the control.
-    */
+  /** Current value in the control. */
   var value: String = js.native
 
   /** Reflects the src HTML attribute, which specifies a URI for the location of an image to display on the graphical
@@ -1295,8 +1186,7 @@ abstract class HTMLInputElement extends HTMLElement {
     */
   var src: String = js.native
 
-  /** Reflects the name HTML attribute, containing a name that identifies the element when submitting the form.
-    */
+  /** Reflects the name HTML attribute, containing a name that identifies the element when submitting the form. */
   var name: String = js.native
 
   /** Reflects the height HTML attribute, which defines the height of the image displayed for the button, if the value
@@ -1304,8 +1194,7 @@ abstract class HTMLInputElement extends HTMLElement {
     */
   var height: String = js.native
 
-  /** The current state of the element when type is checkbox or radio.
-    */
+  /** The current state of the element when type is checkbox or radio. */
   var checked: Boolean = js.native
 
   /** Reflects the disabled HTML attribute, indicating that the control is not available for interaction. The input
@@ -1324,8 +1213,7 @@ abstract class HTMLInputElement extends HTMLElement {
     */
   var `type`: String = js.native
 
-  /** The default value as originally specified in HTML that created this object.
-    */
+  /** The default value as originally specified in HTML that created this object. */
   var defaultValue: String = js.native
 
   /** Selects a range of text in the element (but does not focus it). The optional selectionDirection parameter may be
@@ -1335,8 +1223,7 @@ abstract class HTMLInputElement extends HTMLElement {
     */
   def setSelectionRange(start: Int, end: Int): Unit = js.native
 
-  /** Selects the input text in the element, and focuses it so the user can subsequently replace the whole entry.
-    */
+  /** Selects the input text in the element, and focuses it so the user can subsequently replace the whole entry. */
   def select(): Unit = js.native
 
   /** A localized message that describes the validation constraints that the control does not satisfy (if any). This is
@@ -1375,8 +1262,7 @@ abstract class HTMLInputElement extends HTMLElement {
     */
   var autofocus: Boolean = js.native
 
-  /** Reflects the required HTML attribute, indicating that the user must fill in a value before submitting a form.
-    */
+  /** Reflects the required HTML attribute, indicating that the user must fill in a value before submitting a form. */
   var required: Boolean = js.native
 
   /** Reflects the formenctype HTML attribute, containing the type of content that is used to submit the form to the
@@ -1434,8 +1320,7 @@ abstract class HTMLInputElement extends HTMLElement {
     */
   var pattern: String = js.native
 
-  /** The validity state that this element is in.
-    */
+  /** The validity state that this element is in. */
   def validity: ValidityState = js.native
 
   /** Reflects the formnovalidate HTML attribute, indicating that the form is not to be validated when it is submitted.
@@ -1485,8 +1370,7 @@ abstract class HTMLAnchorElement extends HTMLElement {
     */
   var rel: String = js.native
 
-  /** Is a DOMString representing the protocol component, including trailing colon (':'), of the referenced URL.
-    */
+  /** Is a DOMString representing the protocol component, including trailing colon (':'), of the referenced URL. */
   var protocol: String = js.native
 
   /** Is a DOMString representing tThe search element, including leading question mark ('?'), if any, of the referenced
@@ -1494,36 +1378,28 @@ abstract class HTMLAnchorElement extends HTMLElement {
     */
   var search: String = js.native
 
-  /** Is a DOMString representing the hostname in the referenced URL.
-    */
+  /** Is a DOMString representing the hostname in the referenced URL. */
   var hostname: String = js.native
 
-  /** Is a DOMString representing the path name component, if any, of the referenced URL.
-    */
+  /** Is a DOMString representing the path name component, if any, of the referenced URL. */
   var pathname: String = js.native
 
-  /** Is a DOMString that reflects the target HTML attribute, indicating where to display the linked resource.
-    */
+  /** Is a DOMString that reflects the target HTML attribute, indicating where to display the linked resource. */
   var target: String = js.native
 
-  /** Is a DOMString that reflects the href HTML attribute, containing a valid URL of a linked resource.
-    */
+  /** Is a DOMString that reflects the href HTML attribute, containing a valid URL of a linked resource. */
   var href: String = js.native
 
-  /** Is a DOMString representing the character encoding of the linked resource.
-    */
+  /** Is a DOMString representing the character encoding of the linked resource. */
   var charset: String = js.native
 
-  /** Is a DOMString that reflects the hreflang HTML attribute, indicating the language of the linked resource.
-    */
+  /** Is a DOMString that reflects the hreflang HTML attribute, indicating the language of the linked resource. */
   var hreflang: String = js.native
 
-  /** Is a DOMString representing the port component, if any, of the referenced URL.
-    */
+  /** Is a DOMString representing the port component, if any, of the referenced URL. */
   var port: String = js.native
 
-  /** Is a DOMString representing the hostname and port (if it's not the default port) in the referenced URL.
-    */
+  /** Is a DOMString representing the hostname and port (if it's not the default port) in the referenced URL. */
   var host: String = js.native
 
   /** Is a DOMString representing the fragment identifier, including the leading hash mark ('#'), if any, in the
@@ -1534,8 +1410,7 @@ abstract class HTMLAnchorElement extends HTMLElement {
   var `type`: String = js.native
   var mimeType: String = js.native
 
-  /** Is a DOMString being a synonym for the Node.textContent property.
-    */
+  /** Is a DOMString being a synonym for the Node.textContent property. */
   var text: String = js.native
 }
 
@@ -1547,12 +1422,10 @@ abstract class HTMLAnchorElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLParamElement extends HTMLElement {
 
-  /** Is a DOMString representing the value associated to the parameter. It reflects the value attribute.
-    */
+  /** Is a DOMString representing the value associated to the parameter. It reflects the value attribute. */
   var value: String = js.native
 
-  /** Is a DOMString representing the name of the parameter. It reflects the name attribute.
-    */
+  /** Is a DOMString representing the name of the parameter. It reflects the name attribute. */
   var name: String = js.native
 }
 
@@ -1571,12 +1444,10 @@ abstract class HTMLPreElement extends HTMLElement
 @JSGlobal
 abstract class HTMLCanvasElement extends HTMLElement {
 
-  /** Reflects the width HTML attribute, specifying the width of the coordinate space in CSS pixels.
-    */
+  /** Reflects the width HTML attribute, specifying the width of the coordinate space in CSS pixels. */
   var width: Int = js.native
 
-  /** Reflects the height HTML attribute, specifying the height of the coordinate space in CSS pixels.
-    */
+  /** Reflects the height HTML attribute, specifying the height of the coordinate space in CSS pixels. */
   var height: Int = js.native
 
   /** Returns a data: URL containing a representation of the image in the format specified by type (defaults to PNG).
@@ -1603,8 +1474,7 @@ abstract class HTMLCanvasElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLTitleElement extends HTMLElement {
 
-  /** DOMString representing the text of the document's title.
-    */
+  /** DOMString representing the text of the document's title. */
   var text: String = js.native
 }
 
@@ -1615,12 +1485,10 @@ abstract class HTMLTitleElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLStyleElement extends HTMLElement with LinkStyle {
 
-  /** Is a DOMString representing the intended destination medium for style information.
-    */
+  /** Is a DOMString representing the intended destination medium for style information. */
   var media: String = js.native
 
-  /** Returns the type of the current style.
-    */
+  /** Returns the type of the current style. */
   var `type`: String = js.native
 }
 
@@ -1660,8 +1528,7 @@ abstract class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment 
     */
   var colSpan: Int = js.native
 
-  /** Is an unsigned long that represents the number of rows this cell must span. It reflects the rowspan attribute.
-    */
+  /** Is an unsigned long that represents the number of rows this cell must span. It reflects the rowspan attribute. */
   var rowSpan: Int = js.native
 }
 
@@ -1673,8 +1540,7 @@ abstract class HTMLTableCellElement extends HTMLElement with HTMLTableAlignment 
 @JSGlobal
 abstract class HTMLTextAreaElement extends HTMLElement {
 
-  /** The raw value contained in the control.
-    */
+  /** The raw value contained in the control. */
   var value: String = js.native
   var status: js.Any = js.native
 
@@ -1683,12 +1549,10 @@ abstract class HTMLTextAreaElement extends HTMLElement {
     */
   def form: HTMLFormElement = js.native
 
-  /** Reflects name HTML attribute, containing the name of the control.
-    */
+  /** Reflects name HTML attribute, containing the name of the control. */
   var name: String = js.native
 
-  /** Reflects the disabled HTML attribute, indicating that the control is not available for interaction.
-    */
+  /** Reflects the disabled HTML attribute, indicating that the control is not available for interaction. */
   var disabled: Boolean = js.native
 
   /** The index of the beginning of selected text. If no text is selected, contains the index of the character that
@@ -1697,20 +1561,16 @@ abstract class HTMLTextAreaElement extends HTMLElement {
     */
   var selectionStart: Int = js.native
 
-  /** Reflects the rows HTML attribute, indicating the number of visible text lines for the control.
-    */
+  /** Reflects the rows HTML attribute, indicating the number of visible text lines for the control. */
   var rows: Int = js.native
 
-  /** Reflects the cols HTML attribute, indicating the visible width of the text area.
-    */
+  /** Reflects the cols HTML attribute, indicating the visible width of the text area. */
   var cols: Int = js.native
 
-  /** Reflects the readonly HTML attribute, indicating that the user cannot modify the value of the control.
-    */
+  /** Reflects the readonly HTML attribute, indicating that the user cannot modify the value of the control. */
   var readOnly: Boolean = js.native
 
-  /** Reflects the wrap HTML attribute, indicating how the control wraps text.
-    */
+  /** Reflects the wrap HTML attribute, indicating how the control wraps text. */
   var wrap: String = js.native
 
   /** The index of the end of selected text. If no text is selected, contains the index of the character that follows
@@ -1719,12 +1579,10 @@ abstract class HTMLTextAreaElement extends HTMLElement {
     */
   var selectionEnd: Int = js.native
 
-  /** The string textarea.
-    */
+  /** The string textarea. */
   def `type`: String = js.native
 
-  /** The control's default value, which behaves like the element.textContent property.
-    */
+  /** The control's default value, which behaves like the element.textContent property. */
   var defaultValue: String = js.native
 
   /** Selects a range of text, and sets selectionStart and selectionEnd. If either argument is greater than the length
@@ -1733,8 +1591,7 @@ abstract class HTMLTextAreaElement extends HTMLElement {
     */
   def setSelectionRange(start: Int, end: Int): Unit = js.native
 
-  /** Selects the contents of the control.
-    */
+  /** Selects the contents of the control. */
   def select(): Unit = js.native
 
   /** A localized message that describes the validation constraints that the control does not satisfy (if any). This is
@@ -1743,16 +1600,13 @@ abstract class HTMLTextAreaElement extends HTMLElement {
     */
   def validationMessage: String = js.native
 
-  /** Reflects the autofocus HTML attribute, indicating that the control should have input focus when the page loads
-    */
+  /** Reflects the autofocus HTML attribute, indicating that the control should have input focus when the page loads */
   var autofocus: Boolean = js.native
 
-  /** The validity states that this element is in.
-    */
+  /** The validity states that this element is in. */
   def validity: ValidityState = js.native
 
-  /** Reflects the required HTML attribute, indicating that the user must specify a value before submitting the form.
-    */
+  /** Reflects the required HTML attribute, indicating that the user must specify a value before submitting the form. */
   var required: Boolean = js.native
 
   /** Reflects the maxlength HTML attribute, indicating the maximum number of characters the user can enter. This
@@ -1765,8 +1619,7 @@ abstract class HTMLTextAreaElement extends HTMLElement {
     */
   def willValidate: Boolean = js.native
 
-  /** Reflects the placeholder HTML attribute, containing a hint to the user about what to enter in the control.
-    */
+  /** Reflects the placeholder HTML attribute, containing a hint to the user about what to enter in the control. */
   var placeholder: String = js.native
 
   /** Returns false if the button is a candidate for constraint validation, and it does not satisfy its constraints. In
@@ -1790,8 +1643,7 @@ abstract class HTMLTextAreaElement extends HTMLElement {
 abstract class HTMLModElement extends HTMLElement {
   var dateTime: String = js.native
 
-  /** Reflects the cite HTML attribute, containing a URI of a resource explaining the change.
-    */
+  /** Reflects the cite HTML attribute, containing a URI of a resource explaining the change. */
   var cite: String = js.native
 }
 
@@ -1825,8 +1677,7 @@ abstract class HTMLUListElement extends HTMLElement
 @JSGlobal
 abstract class HTMLDivElement extends HTMLElement
 
-/** The HTMLBRElement interface represents a HTML line break element (&lt;br&gt;). It inherits from HTMLElement.
-  */
+/** The HTMLBRElement interface represents a HTML line break element (&lt;br&gt;). It inherits from HTMLElement. */
 @js.native
 @JSGlobal
 abstract class HTMLBRElement extends HTMLElement
@@ -1838,12 +1689,10 @@ abstract class HTMLBRElement extends HTMLElement
 @JSGlobal
 abstract class HTMLMediaElement extends HTMLElement {
 
-  /** The initial playback position in seconds.
-    */
+  /** The initial playback position in seconds. */
   def initialTime: Double = js.native
 
-  /** The ranges of the media source that the browser has played, if any.
-    */
+  /** The ranges of the media source that the browser has played, if any. */
   def played: TimeRanges = js.native
 
   /** The absolute URL of the chosen media resource (if, for example, the server selects a media file based on the
@@ -1855,8 +1704,7 @@ abstract class HTMLMediaElement extends HTMLElement {
     */
   var loop: Boolean = js.native
 
-  /** Indicates whether the media element has ended playback.
-    */
+  /** Indicates whether the media element has ended playback. */
   def ended: Boolean = js.native
 
   /** The ranges of the media source that the browser has buffered (if any) at the moment the buffered property is
@@ -1864,12 +1712,10 @@ abstract class HTMLMediaElement extends HTMLElement {
     */
   def buffered: TimeRanges = js.native
 
-  /** The MediaError object for the most recent error, or null if there has not been an error.
-    */
+  /** The MediaError object for the most recent error, or null if there has not been an error. */
   def error: MediaError = js.native
 
-  /** The time ranges that the user is able to seek to, if any.
-    */
+  /** The time ranges that the user is able to seek to, if any. */
   def seekable: TimeRanges = js.native
 
   /** Reflects the autoplay HTML attribute, indicating whether playback should automatically begin as soon as enough
@@ -1882,8 +1728,7 @@ abstract class HTMLMediaElement extends HTMLElement {
     */
   var controls: Boolean = js.native
 
-  /** The audio volume, from 0.0 (silent) to 1.0 (loudest).
-    */
+  /** The audio volume, from 0.0 (silent) to 1.0 (loudest). */
   var volume: Double = js.native
 
   /** Reflects the src HTML attribute, containing the URL of a media resource to use. Gecko implements a similar
@@ -1905,8 +1750,7 @@ abstract class HTMLMediaElement extends HTMLElement {
     */
   def duration: Double = js.native
 
-  /** true if the audio is muted, and false otherwise.
-    */
+  /** true if the audio is muted, and false otherwise. */
   var muted: Boolean = js.native
 
   /** The default playback rate for the media. 1.0 is "normal speed," values lower than
@@ -1915,16 +1759,13 @@ abstract class HTMLMediaElement extends HTMLElement {
     */
   var defaultPlaybackRate: Double = js.native
 
-  /** Indicates whether the media element is paused.
-    */
+  /** Indicates whether the media element is paused. */
   def paused: Boolean = js.native
 
-  /** Indicates whether the media is in the process of seeking to a new position.
-    */
+  /** Indicates whether the media is in the process of seeking to a new position. */
   def seeking: Boolean = js.native
 
-  /** The current playback time, in seconds. Setting this value seeks the media to the new time.
-    */
+  /** The current playback time, in seconds. Setting this value seeks the media to the new time. */
   var currentTime: Double = js.native
 
   /** Reflects the preload HTML attribute, indicating what data should be preloaded, if any. Possible values are: none,
@@ -1945,24 +1786,19 @@ abstract class HTMLMediaElement extends HTMLElement {
     */
   def play(): js.UndefOr[js.Promise[Unit]] = js.native
 
-  /** Begins loading the media content from the server.
-    */
+  /** Begins loading the media content from the server. */
   def load(): Unit = js.native
 
-  /** Determines whether the specified media type can be played back.
-    */
+  /** Determines whether the specified media type can be played back. */
   def canPlayType(`type`: String): String = js.native
 
-  /** Represents the list of TextTrack objects contained in the element.
-    */
+  /** Represents the list of TextTrack objects contained in the element. */
   def textTracks: TextTrackList = js.native
 
-  /** Represents the list of AudioTrack objects contained in the element.
-    */
+  /** Represents the list of AudioTrack objects contained in the element. */
   def audioTracks: AudioTrackList = js.native
 
-  /** Sets or returns the object which serves as the source of the media associated with the HTMLMediaElement.
-    */
+  /** Sets or returns the object which serves as the source of the media associated with the HTMLMediaElement. */
   var srcObject: js.UndefOr[MediaStream | MediaSource | Blob]
 }
 
@@ -1975,12 +1811,10 @@ object HTMLMediaElement extends js.Object {
     */
   val HAVE_METADATA: Int = js.native
 
-  /** Data is available for the current playback position, but not enough to actually play more than one frame.
-    */
+  /** Data is available for the current playback position, but not enough to actually play more than one frame. */
   val HAVE_CURRENT_DATA: Int = js.native
 
-  /** No information is available about the media resource.
-    */
+  /** No information is available about the media resource. */
   val HAVE_NOTHING: Int = js.native
   val NETWORK_NO_SOURCE: Int = js.native
 
@@ -1989,8 +1823,7 @@ object HTMLMediaElement extends js.Object {
     */
   val HAVE_ENOUGH_DATA: Int = js.native
 
-  /** There is no data yet.  The readyState is also HAVE_NOTHING.
-    */
+  /** There is no data yet.  The readyState is also HAVE_NOTHING. */
   val NETWORK_EMPTY: Int = js.native
   val NETWORK_LOADING: Int = js.native
   val NETWORK_IDLE: Int = js.native
@@ -2014,8 +1847,7 @@ abstract class HTMLFieldSetElement extends HTMLElement {
     */
   def form: HTMLFormElement = js.native
 
-  /** Reflects the disabled HTML attribute, indicating whether the user can interact with the control.
-    */
+  /** Reflects the disabled HTML attribute, indicating whether the user can interact with the control. */
   var disabled: Boolean = js.native
 
   /** A localized message that describes the validation constraints that the element does not satisfy (if any). This is
@@ -2024,16 +1856,13 @@ abstract class HTMLFieldSetElement extends HTMLElement {
     */
   def validationMessage: String = js.native
 
-  /** The validity states that this element is in.
-    */
+  /** The validity states that this element is in. */
   def validity: ValidityState = js.native
 
-  /** Always false because &lt;fieldset&gt; objects are never candidates for constraint validation.
-    */
+  /** Always false because &lt;fieldset&gt; objects are never candidates for constraint validation. */
   def willValidate: Boolean = js.native
 
-  /** Always returns true because &lt;fieldset&gt; objects are never candidates for constraint validation.
-    */
+  /** Always returns true because &lt;fieldset&gt; objects are never candidates for constraint validation. */
   def checkValidity(): Boolean = js.native
 
   /** Sets a custom validity message for the field set. If this message is not the empty string, then the field set is
@@ -2062,18 +1891,15 @@ abstract class HTMLElement extends Element {
   var onseeked: js.Function1[Event, _] = js.native
   var recordNumber: js.Any = js.native
 
-  /** Establishes the text to be displayed in a 'tool tip' popup when the mouse is over the displayed node.
-    */
+  /** Establishes the text to be displayed in a 'tool tip' popup when the mouse is over the displayed node. */
   var title: String = js.native
 
   var ondurationchange: js.Function1[Event, _] = js.native
 
-  /** Height of an element relative to the element's offsetParent.
-    */
+  /** Height of an element relative to the element's offsetParent. */
   def offsetHeight: Double = js.native
 
-  /** The dir attribute gets or sets the text writing directionality of the content of the current element.
-    */
+  /** The dir attribute gets or sets the text writing directionality of the content of the current element. */
   var dir: String = js.native
   var onemptied: js.Function1[Event, _] = js.native
   var onseeking: js.Function1[Event, _] = js.native
@@ -2117,8 +1943,7 @@ abstract class HTMLElement extends Element {
   var onbeforepaste: js.Function1[DragEvent, _] = js.native
   var ondragover: js.Function1[DragEvent, _] = js.native
 
-  /** offsetTop returns the distance of the current element relative to the top of the offsetParent node.
-    */
+  /** offsetTop returns the distance of the current element relative to the top of the offsetParent node. */
   def offsetTop: Double = js.native
 
   var onmouseup: js.Function1[MouseEvent, _] = js.native
@@ -2127,8 +1952,7 @@ abstract class HTMLElement extends Element {
   var ondrag: js.Function1[DragEvent, _] = js.native
   var onmouseover: js.Function1[MouseEvent, _] = js.native
 
-  /** This property gets or sets the base language of an element's attribute values and text content.
-    */
+  /** This property gets or sets the base language of an element's attribute values and text content. */
   var lang: String = js.native
 
   var onpause: js.Function1[Event, _] = js.native
@@ -2145,8 +1969,7 @@ abstract class HTMLElement extends Element {
   var onstalled: js.Function1[Event, _] = js.native
   var onmousemove: js.Function1[MouseEvent, _] = js.native
 
-  /** isContentEditable returns true if the contents of the element are editable; otherwise it returns false.
-    */
+  /** isContentEditable returns true if the contents of the element are editable; otherwise it returns false. */
   def isContentEditable: Boolean = js.native
   var onratechange: js.Function1[Event, _] = js.native
 
@@ -2198,8 +2021,7 @@ abstract class HTMLElement extends Element {
   var onselect: js.Function1[UIEvent, _] = js.native
   var ondrop: js.Function1[DragEvent, _] = js.native
 
-  /** Returns the layout width of an element.
-    */
+  /** Returns the layout width of an element. */
   def offsetWidth: Double = js.native
 
   var onended: js.Function1[Event, _] = js.native
@@ -2207,26 +2029,22 @@ abstract class HTMLElement extends Element {
 
   var oninput: js.Function1[Event, _] = js.native
 
-  /** Sets focus on the specified element, if it can be focused.
-    */
+  /** Sets focus on the specified element, if it can be focused. */
   def focus(): Unit = js.native
 
-  /** The blur method removes keyboard focus from the current element.
-    */
+  /** The blur method removes keyboard focus from the current element. */
   def blur(): Unit = js.native
 
   def contains(child: HTMLElement): Boolean = js.native
 
-  /** The click method simulates a mouse click on an element.
-    */
+  /** The click method simulates a mouse click on an element. */
   def click(): Unit = js.native
 
   var oncuechange: js.Function1[Event, _] = js.native
   var spellcheck: Boolean = js.native
   var draggable: Boolean = js.native
 
-  /** Returns an object that represents the element's style attribute.
-    */
+  /** Returns an object that represents the element's style attribute. */
   def style: CSSStyleDeclaration = js.native
   def style_=(value: CSSStyleDeclaration): Unit = js.native
   def style_=(value: String): Unit = js.native
@@ -2246,8 +2064,7 @@ abstract class HTMLElement extends Element {
     */
   def dataset: js.Dictionary[String] = js.native
 
-  /** fired when a pointing device is moved into an element's hit test boundaries.
-    */
+  /** fired when a pointing device is moved into an element's hit test boundaries. */
   var onpointerover: js.Function1[PointerEvent, _] = js.native
 
   /** fired when a pointing device is moved into the hit test boundaries of an element or one of its descendants,
@@ -2255,16 +2072,13 @@ abstract class HTMLElement extends Element {
     */
   var onpointerenter: js.Function1[PointerEvent, _] = js.native
 
-  /** fired when a pointer becomes active.
-    */
+  /** fired when a pointer becomes active. */
   var onpointerdown: js.Function1[PointerEvent, _] = js.native
 
-  /** fired when a pointer changes coordinates.
-    */
+  /** fired when a pointer changes coordinates. */
   var onpointermove: js.Function1[PointerEvent, _] = js.native
 
-  /** fired when a pointer is no longer active.
-    */
+  /** fired when a pointer is no longer active. */
   var onpointerup: js.Function1[PointerEvent, _] = js.native
 
   /** a browser fires this event if it concludes the pointer will no longer be able to generate events (for example the
@@ -2283,12 +2097,10 @@ abstract class HTMLElement extends Element {
     */
   var onpointerleave: js.Function1[PointerEvent, _] = js.native
 
-  /** fired when an element receives pointer capture.
-    */
+  /** fired when an element receives pointer capture. */
   var gotpointercapture: js.Function1[PointerEvent, _] = js.native
 
-  /** Fired after pointer capture is released for a pointer.
-    */
+  /** Fired after pointer capture is released for a pointer. */
   var lostpointercapture: js.Function1[PointerEvent, _] = js.native
 }
 
@@ -2307,37 +2119,30 @@ abstract class HTMLHRElement extends HTMLElement
 @JSGlobal
 abstract class HTMLObjectElement extends HTMLElement with GetSVGDocument {
 
-  /** Reflects the width HTML attribute, specifying the displayed width of the resource in CSS pixels.
-    */
+  /** Reflects the width HTML attribute, specifying the displayed width of the resource in CSS pixels. */
   var width: String = js.native
 
   var `object`: Object = js.native
 
-  /** The object element's form owner, or null if there isn't one.
-    */
+  /** The object element's form owner, or null if there isn't one. */
   def form: HTMLFormElement = js.native
 
   var alt: String = js.native
   var classid: String = js.native
 
-  /** Reflects the name HTML attribute, specifying the name of the object (HTML 4, or of a browsing context (HTML5.
-    */
+  /** Reflects the name HTML attribute, specifying the name of the object (HTML 4, or of a browsing context (HTML5. */
   var name: String = js.native
 
-  /** Reflects the usemap HTML attribute, specifying a &lt;map&gt; element to use.
-    */
+  /** Reflects the usemap HTML attribute, specifying a &lt;map&gt; element to use. */
   var useMap: String = js.native
 
-  /** Reflects the data HTML attribute, specifying the address of a resource's data.
-    */
+  /** Reflects the data HTML attribute, specifying the address of a resource's data. */
   var data: String = js.native
 
-  /** Reflects the height HTML attribute, specifying the displayed height of the resource in CSS pixels.
-    */
+  /** Reflects the height HTML attribute, specifying the displayed height of the resource in CSS pixels. */
   var height: String = js.native
 
-  /** The active document of the object element's nested browsing context, if any; otherwise null.
-    */
+  /** The active document of the object element's nested browsing context, if any; otherwise null. */
   def contentDocument: Document = js.native
   var altHtml: String = js.native
 
@@ -2350,8 +2155,7 @@ abstract class HTMLObjectElement extends HTMLElement with GetSVGDocument {
     */
   def validationMessage: String = js.native
 
-  /** The validity states that this element is in.
-    */
+  /** The validity states that this element is in. */
   def validity: ValidityState = js.native
 
   /** Indicates whether the element is a candidate for constraint validation. Always false for HTMLObjectElement
@@ -2359,8 +2163,7 @@ abstract class HTMLObjectElement extends HTMLElement with GetSVGDocument {
     */
   def willValidate: Boolean = js.native
 
-  /** Always returns true, because object objects are never candidates for constraint validation.
-    */
+  /** Always returns true, because object objects are never candidates for constraint validation. */
   def checkValidity(): Boolean = js.native
 
   /** Sets a custom validity message for the element. If this message is not the empty string, then the element is
@@ -2376,16 +2179,13 @@ abstract class HTMLObjectElement extends HTMLElement with GetSVGDocument {
 @JSGlobal
 abstract class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
 
-  /** Reflects the width HTML attribute, containing the displayed width of the resource.
-    */
+  /** Reflects the width HTML attribute, containing the displayed width of the resource. */
   var width: String = js.native
 
-  /** Reflects the src HTML attribute, containing the address of the resource.
-    */
+  /** Reflects the src HTML attribute, containing the address of the resource. */
   var src: String = js.native
 
-  /** Reflects the height HTML attribute, containing the displayed height of the resource.
-    */
+  /** Reflects the height HTML attribute, containing the displayed height of the resource. */
   var height: String = js.native
 }
 
@@ -2397,12 +2197,10 @@ abstract class HTMLEmbedElement extends HTMLElement with GetSVGDocument {
 @JSGlobal
 abstract class HTMLOptGroupElement extends HTMLElement {
 
-  /** Set or get the label for the group.
-    */
+  /** Set or get the label for the group. */
   var label: String = js.native
 
-  /** If true, the whole list of children &lt;option&gt; is disabled
-    */
+  /** If true, the whole list of children &lt;option&gt; is disabled */
   var disabled: Boolean = js.native
 }
 
@@ -2473,8 +2271,7 @@ abstract class HTMLProgressElement extends HTMLElement {
 @JSGlobal
 abstract class HTMLDataListElement extends HTMLElement {
 
-  /** A collection of the contained option elements.
-    */
+  /** A collection of the contained option elements. */
   def options: HTMLCollection = js.native
 }
 
@@ -2519,12 +2316,10 @@ abstract class HTMLHeadingElement extends HTMLElement
 @JSGlobal
 abstract class HTMLFormElement extends HTMLElement {
 
-  /** length returns the number of controls in the FORM element.
-    */
+  /** length returns the number of controls in the FORM element. */
   def length: Int = js.native
 
-  /** target gets/sets the target of the action (i.e., the frame to render its output in).
-    */
+  /** target gets/sets the target of the action (i.e., the frame to render its output in). */
   var target: String = js.native
 
   /** acceptCharset returns a list of the supported character encodings for the given FORM element. This list can be
@@ -2532,8 +2327,7 @@ abstract class HTMLFormElement extends HTMLElement {
     */
   var acceptCharset: String = js.native
 
-  /** enctype gets/sets the content type of the FORM element.
-    */
+  /** enctype gets/sets the content type of the FORM element. */
   var enctype: String = js.native
 
   /** elements returns an HTMLFormControlsCollection (HTML 4 HTMLCollection) of all the form controls contained in the
@@ -2541,24 +2335,19 @@ abstract class HTMLFormElement extends HTMLElement {
     */
   def elements: HTMLCollection = js.native
 
-  /** action gets/sets the action of the &lt;form&gt; element.
-    */
+  /** action gets/sets the action of the &lt;form&gt; element. */
   var action: String = js.native
 
-  /** name returns the name of the current form element as a string.
-    */
+  /** name returns the name of the current form element as a string. */
   var name: String = js.native
 
-  /** method gets/sets the HTTP method used to submit the form.
-    */
+  /** method gets/sets the HTTP method used to submit the form. */
   var method: String = js.native
 
-  /** encoding is an alternative name for the enctype element on the DOM HTMLFormElement object.
-    */
+  /** encoding is an alternative name for the enctype element on the DOM HTMLFormElement object. */
   var encoding: String = js.native
 
-  /** reset restores a form element's default values.
-    */
+  /** reset restores a form element's default values. */
   def reset(): Unit = js.native
 
   /** Gets the item in the elements collection at the specified index, or null if there is no item at that index. You
@@ -2567,8 +2356,7 @@ abstract class HTMLFormElement extends HTMLElement {
     */
   def item(name: js.Any = js.native, index: js.Any = js.native): js.Dynamic = js.native
 
-  /** This method does something similar to activating a submit button of the form.
-    */
+  /** This method does something similar to activating a submit button of the form. */
   def submit(): Unit = js.native
 
   /** Gets the item or list of items in elements collection whose name or id match the specified name, or null if no
@@ -2588,8 +2376,7 @@ abstract class HTMLFormElement extends HTMLElement {
     */
   var autocomplete: String = js.native
 
-  /** Reflects the novalidate HTML attribute, indicating that the form should not be validated.
-    */
+  /** Reflects the novalidate HTML attribute, indicating that the form should not be validated. */
   var noValidate: Boolean = js.native
 
   def checkValidity(): Boolean = js.native

@@ -240,8 +240,7 @@ class CSSStyleDeclaration extends js.Object {
   var transformStyle: String = js.native
 }
 
-/** An object implementing the CSSStyleSheet interface represents a single CSS style sheet.
-  */
+/** An object implementing the CSSStyleSheet interface represents a single CSS style sheet. */
 @js.native
 @JSGlobal
 class CSSStyleSheet extends StyleSheet {
@@ -257,8 +256,7 @@ class CSSStyleSheet extends StyleSheet {
     */
   var ownerRule: CSSRule = js.native
 
-  /** Returns a CSSRuleList of the CSS rules in the style sheet.
-    */
+  /** Returns a CSSRuleList of the CSS rules in the style sheet. */
   var cssRules: CSSRuleList = js.native
   var id: String = js.native
 
@@ -266,14 +264,12 @@ class CSSStyleSheet extends StyleSheet {
 
   def addPageRule(bstrSelector: String, bstrStyle: String, lIndex: Int = js.native): Int = js.native
 
-  /** The CSSStyleSheet.insertRule() method inserts a new style rule into the current style sheet.
-    */
+  /** The CSSStyleSheet.insertRule() method inserts a new style rule into the current style sheet. */
   def insertRule(rule: String, index: Int = js.native): Int = js.native
 
   def removeRule(lIndex: Int): Unit = js.native
 
-  /** Deletes a rule from the style sheet.
-    */
+  /** Deletes a rule from the style sheet. */
   def deleteRule(index: Int = js.native): Unit = js.native
 
   def addRule(bstrSelector: String, bstrStyle: String = js.native, lIndex: Int = js.native): Int = js.native
@@ -288,13 +284,11 @@ class CSSStyleSheet extends StyleSheet {
 @JSGlobal
 class CSSStyleRule extends CSSRule {
 
-  /** Gets/sets the textual representation of the selector for this rule, e.g. "h1,h2".
-    */
+  /** Gets/sets the textual representation of the selector for this rule, e.g. "h1,h2". */
   var selectorText: String = js.native
   var readOnly: Boolean = js.native
 
-  /** Returns the CSSStyleDeclaration object for the rule.
-    */
+  /** Returns the CSSStyleDeclaration object for the rule. */
   val style: CSSStyleDeclaration = js.native
 }
 
@@ -305,8 +299,7 @@ class CSSStyleRule extends CSSRule {
 @JSGlobal
 class CSSMediaRule extends CSSRule {
 
-  /** Specifies a MediaList representing the intended destination medium for style information.
-    */
+  /** Specifies a MediaList representing the intended destination medium for style information. */
   var media: MediaList = js.native
   var cssRules: CSSRuleList = js.native
 
@@ -322,8 +315,7 @@ class CSSMediaRule extends CSSRule {
 @JSGlobal
 class CSSNamespaceRule extends CSSRule {
 
-  /** Returns a DOMString containing the text of the URI of the given namespace.
-    */
+  /** Returns a DOMString containing the text of the URI of the given namespace. */
   var namespaceURI: String = js.native
 
   /** Returns a DOMString with the name of the prefix associated to this namespace. If there is no such prefix, returns 
@@ -352,8 +344,7 @@ class CSSRule extends js.Object {
     */
   var cssText: String = js.native
 
-  /** parentStyleSheet returns the stylesheet object in which the current rule is defined.
-    */
+  /** parentStyleSheet returns the stylesheet object in which the current rule is defined. */
   var parentStyleSheet: CSSStyleSheet = js.native
 
   /** Returns the containing rule, otherwise null. E.g. if this rule is a style rule inside an `@media` block, the
@@ -401,18 +392,15 @@ class CSSFontFaceRule extends CSSRule {
 class CSSPageRule extends CSSRule {
   var pseudoClass: String = js.native
 
-  /** Represents the text of the page selector associated with the at-rule.
-    */
+  /** Represents the text of the page selector associated with the at-rule. */
   var selectorText: String = js.native
   var selector: String = js.native
 
-  /** Returns the declaration block associated with the at-rule.
-    */
+  /** Returns the declaration block associated with the at-rule. */
   var style: CSSStyleDeclaration = js.native
 }
 
-/** A CSSRuleList is an array-like object containing an ordered collection of CSSRule objects.
-  */
+/** A CSSRuleList is an array-like object containing an ordered collection of CSSRule objects. */
 @js.native
 @JSGlobal
 class CSSRuleList private[this] () extends DOMList[CSSRule] {
@@ -427,12 +415,10 @@ class CSSRuleList private[this] () extends DOMList[CSSRule] {
 @JSGlobal
 class CSSKeyframesRule extends CSSRule {
 
-  /** Represents the name of the animation, used by the animation-name property.
-    */
+  /** Represents the name of the animation, used by the animation-name property. */
   var name: String = js.native
 
-  /** Returns a CSSRuleList of the CSS rules in the media rule.
-    */
+  /** Returns a CSSRuleList of the CSS rules in the media rule. */
   var cssRules: CSSRuleList = js.native
 
   /** Returns a keyframe rule corresponding to the given key. The key is a DOMString containing an index of the keyframe
@@ -465,7 +451,6 @@ class CSSKeyframeRule extends CSSRule {
     */
   var keyText: String = js.native
 
-  /** Returns a CSSStyleDeclaration of the CSS style associated with the keyfrom.
-    */
+  /** Returns a CSSStyleDeclaration of the CSS style associated with the keyfrom. */
   var style: CSSStyleDeclaration = js.native
 }

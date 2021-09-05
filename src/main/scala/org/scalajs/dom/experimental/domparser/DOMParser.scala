@@ -4,8 +4,7 @@ import org.scalajs.dom.Document
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/** DOMParser can parse XML or HTML source stored in a string into a DOM Document.
-  */
+/** DOMParser can parse XML or HTML source stored in a string into a DOM Document. */
 @js.native
 @JSGlobal
 class DOMParser extends js.Object {

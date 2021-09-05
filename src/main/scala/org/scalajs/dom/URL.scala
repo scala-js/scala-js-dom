@@ -3,8 +3,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/** The URL object provides static methods used for creating object URLs.
-  */
+/** The URL object provides static methods used for creating object URLs. */
 @js.native
 @JSGlobal
 object URL extends js.Object {
@@ -22,67 +21,53 @@ object URL extends js.Object {
   def createObjectURL(blob: Blob): String = js.native
 }
 
-/** The URL() constructor returns a newly created URL object representing the URL defined by the parameters.
-  */
+/** The URL() constructor returns a newly created URL object representing the URL defined by the parameters. */
 @js.native
 @JSGlobal
 class URL(url: String, base: String = js.native) extends js.Object {
 
-  /** Returns a DOMString containing the origin of the URL, that is its scheme, its domain and its port.
-    */
+  /** Returns a DOMString containing the origin of the URL, that is its scheme, its domain and its port. */
   def origin: String = js.native
 
-  /** Is a DOMString containing the whole URL.
-    */
+  /** Is a DOMString containing the whole URL. */
   var href: String = js.native
 
-  /** Is a DOMString containing the protocol scheme of the URL, including the final ':'.
-    */
+  /** Is a DOMString containing the protocol scheme of the URL, including the final ':'. */
   var protocol: String = js.native
 
-  /** Is a DOMString containing the username specified before the domain name.
-    */
+  /** Is a DOMString containing the username specified before the domain name. */
   var username: String = js.native
 
-  /** Is a DOMString containing the password specified before the domain name.
-    */
+  /** Is a DOMString containing the password specified before the domain name. */
   var password: String = js.native
 
-  /** Is a DOMString containing the host, that is the hostname, a ':', and the port of the URL.
-    */
+  /** Is a DOMString containing the host, that is the hostname, a ':', and the port of the URL. */
   var host: String = js.native
 
-  /** Is a DOMString containing the domain of the URL.
-    */
+  /** Is a DOMString containing the domain of the URL. */
   var hostname: String = js.native
 
-  /** Is a DOMString containing the port number of the URL.
-    */
+  /** Is a DOMString containing the port number of the URL. */
   var port: String = js.native
 
-  /** Is a DOMString containing an initial '/' followed by the path of the URL.
-    */
+  /** Is a DOMString containing an initial '/' followed by the path of the URL. */
   var pathname: String = js.native
 
-  /** Is a DOMString containing a '?' followed by the parameters of the URL.
-    */
+  /** Is a DOMString containing a '?' followed by the parameters of the URL. */
   var search: String = js.native
 
-  /** Is a DOMString containing a '#' followed by the fragment identifier of the URL.
-    */
+  /** Is a DOMString containing a '#' followed by the fragment identifier of the URL. */
   var hash: String = js.native
 
   var searchParams: URLSearchParams = js.native
 }
 
-/** The URLSearchParams defines utility methods to work with the query string of a URL.
-  */
+/** The URLSearchParams defines utility methods to work with the query string of a URL. */
 @js.native
 @JSGlobal
 class URLSearchParams extends js.Iterable[js.Tuple2[String, String]] {
 
-  /** Leading '?' characters are ignored.
-    */
+  /** Leading '?' characters are ignored. */
   def this(init: String) = this()
   def this(init: Sequence[String]) = this()
   def this(init: js.Dictionary[String]) = this()
