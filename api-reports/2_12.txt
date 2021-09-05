@@ -91,6 +91,7 @@ Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Attr[JC] def appendChild(newChild: Node): Node
 Attr[JC] def attributes: NamedNodeMap
+Attr[JC] def baseURI: String
 Attr[JC] def childNodes: NodeList[Node]
 Attr[JC] def cloneNode(deep: Boolean?): Node
 Attr[JC] def compareDocumentPosition(other: Node): Int
@@ -329,6 +330,7 @@ CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 CDATASection[JC] def appendChild(newChild: Node): Node
 CDATASection[JC] def appendData(arg: String): Unit
 CDATASection[JC] def attributes: NamedNodeMap
+CDATASection[JC] def baseURI: String
 CDATASection[JC] def childNodes: NodeList[Node]
 CDATASection[JC] def cloneNode(deep: Boolean?): Node
 CDATASection[JC] def compareDocumentPosition(other: Node): Int
@@ -854,6 +856,7 @@ CharacterData[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 CharacterData[JC] def appendChild(newChild: Node): Node
 CharacterData[JC] def appendData(arg: String): Unit
 CharacterData[JC] def attributes: NamedNodeMap
+CharacterData[JC] def baseURI: String
 CharacterData[JC] def childNodes: NodeList[Node]
 CharacterData[JC] def cloneNode(deep: Boolean?): Node
 CharacterData[JC] def compareDocumentPosition(other: Node): Int
@@ -946,6 +949,7 @@ Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functi
 Comment[JC] def appendChild(newChild: Node): Node
 Comment[JC] def appendData(arg: String): Unit
 Comment[JC] def attributes: NamedNodeMap
+Comment[JC] def baseURI: String
 Comment[JC] def childNodes: NodeList[Node]
 Comment[JC] def cloneNode(deep: Boolean?): Node
 Comment[JC] def compareDocumentPosition(other: Node): Int
@@ -1227,6 +1231,7 @@ Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Funct
 Document[JC] def adoptNode(source: Node): Node
 Document[JC] def appendChild(newChild: Node): Node
 Document[JC] def attributes: NamedNodeMap
+Document[JC] def baseURI: String
 Document[JC] def characterSet: String
 Document[JC] def childElementCount: Int
 Document[JC] def childNodes: NodeList[Node]
@@ -1310,6 +1315,7 @@ DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: 
 DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentFragment[JC] def appendChild(newChild: Node): Node
 DocumentFragment[JC] def attributes: NamedNodeMap
+DocumentFragment[JC] def baseURI: String
 DocumentFragment[JC] def childNodes: NodeList[Node]
 DocumentFragment[JC] def cloneNode(deep: Boolean?): Node
 DocumentFragment[JC] def compareDocumentPosition(other: Node): Int
@@ -1348,6 +1354,7 @@ DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentType[JC] def appendChild(newChild: Node): Node
 DocumentType[JC] def attributes: NamedNodeMap
+DocumentType[JC] def baseURI: String
 DocumentType[JC] def childNodes: NodeList[Node]
 DocumentType[JC] def cloneNode(deep: Boolean?): Node
 DocumentType[JC] def compareDocumentPosition(other: Node): Int
@@ -1446,6 +1453,7 @@ Element[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functi
 Element[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Element[JC] def appendChild(newChild: Node): Node
 Element[JC] def attributes: NamedNodeMap
+Element[JC] def baseURI: String
 Element[JC] def childElementCount: Int
 Element[JC] def childNodes: NodeList[Node]
 Element[JC] def children: HTMLCollection
@@ -1679,6 +1687,7 @@ HTMLAnchorElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLAnchorElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLAnchorElement[JC] def appendChild(newChild: Node): Node
 HTMLAnchorElement[JC] def attributes: NamedNodeMap
+HTMLAnchorElement[JC] def baseURI: String
 HTMLAnchorElement[JC] def blur(): Unit
 HTMLAnchorElement[JC] var charset: String
 HTMLAnchorElement[JC] def childElementCount: Int
@@ -1884,6 +1893,7 @@ HTMLAreaElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLAreaElement[JC] var alt: String
 HTMLAreaElement[JC] def appendChild(newChild: Node): Node
 HTMLAreaElement[JC] def attributes: NamedNodeMap
+HTMLAreaElement[JC] def baseURI: String
 HTMLAreaElement[JC] def blur(): Unit
 HTMLAreaElement[JC] def childElementCount: Int
 HTMLAreaElement[JC] def childNodes: NodeList[Node]
@@ -2086,6 +2096,7 @@ HTMLAudioElement[JC] def appendChild(newChild: Node): Node
 HTMLAudioElement[JC] def attributes: NamedNodeMap
 HTMLAudioElement[JC] def audioTracks: AudioTrackList
 HTMLAudioElement[JC] var autoplay: Boolean
+HTMLAudioElement[JC] def baseURI: String
 HTMLAudioElement[JC] def blur(): Unit
 HTMLAudioElement[JC] def buffered: TimeRanges
 HTMLAudioElement[JC] def canPlayType(`type`: String): String
@@ -2301,6 +2312,7 @@ HTMLBRElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 HTMLBRElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLBRElement[JC] def appendChild(newChild: Node): Node
 HTMLBRElement[JC] def attributes: NamedNodeMap
+HTMLBRElement[JC] def baseURI: String
 HTMLBRElement[JC] def blur(): Unit
 HTMLBRElement[JC] def childElementCount: Int
 HTMLBRElement[JC] def childNodes: NodeList[Node]
@@ -2490,6 +2502,7 @@ HTMLBaseElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLBaseElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLBaseElement[JC] def appendChild(newChild: Node): Node
 HTMLBaseElement[JC] def attributes: NamedNodeMap
+HTMLBaseElement[JC] def baseURI: String
 HTMLBaseElement[JC] def blur(): Unit
 HTMLBaseElement[JC] def childElementCount: Int
 HTMLBaseElement[JC] def childNodes: NodeList[Node]
@@ -2681,6 +2694,7 @@ HTMLBodyElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLBodyElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLBodyElement[JC] def appendChild(newChild: Node): Node
 HTMLBodyElement[JC] def attributes: NamedNodeMap
+HTMLBodyElement[JC] def baseURI: String
 HTMLBodyElement[JC] def blur(): Unit
 HTMLBodyElement[JC] def childElementCount: Int
 HTMLBodyElement[JC] def childNodes: NodeList[Node]
@@ -2885,6 +2899,7 @@ HTMLButtonElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLButtonElement[JC] def appendChild(newChild: Node): Node
 HTMLButtonElement[JC] def attributes: NamedNodeMap
 HTMLButtonElement[JC] var autofocus: Boolean
+HTMLButtonElement[JC] def baseURI: String
 HTMLButtonElement[JC] def blur(): Unit
 HTMLButtonElement[JC] def checkValidity(): Boolean
 HTMLButtonElement[JC] def childElementCount: Int
@@ -3090,6 +3105,7 @@ HTMLCanvasElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLCanvasElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLCanvasElement[JC] def appendChild(newChild: Node): Node
 HTMLCanvasElement[JC] def attributes: NamedNodeMap
+HTMLCanvasElement[JC] def baseURI: String
 HTMLCanvasElement[JC] def blur(): Unit
 HTMLCanvasElement[JC] def childElementCount: Int
 HTMLCanvasElement[JC] def childNodes: NodeList[Node]
@@ -3287,6 +3303,7 @@ HTMLDListElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLDListElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLDListElement[JC] def appendChild(newChild: Node): Node
 HTMLDListElement[JC] def attributes: NamedNodeMap
+HTMLDListElement[JC] def baseURI: String
 HTMLDListElement[JC] def blur(): Unit
 HTMLDListElement[JC] def childElementCount: Int
 HTMLDListElement[JC] def childNodes: NodeList[Node]
@@ -3476,6 +3493,7 @@ HTMLDataListElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLDataListElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLDataListElement[JC] def appendChild(newChild: Node): Node
 HTMLDataListElement[JC] def attributes: NamedNodeMap
+HTMLDataListElement[JC] def baseURI: String
 HTMLDataListElement[JC] def blur(): Unit
 HTMLDataListElement[JC] def childElementCount: Int
 HTMLDataListElement[JC] def childNodes: NodeList[Node]
@@ -3666,6 +3684,7 @@ HTMLDivElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 HTMLDivElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLDivElement[JC] def appendChild(newChild: Node): Node
 HTMLDivElement[JC] def attributes: NamedNodeMap
+HTMLDivElement[JC] def baseURI: String
 HTMLDivElement[JC] def blur(): Unit
 HTMLDivElement[JC] def childElementCount: Int
 HTMLDivElement[JC] def childNodes: NodeList[Node]
@@ -3858,6 +3877,7 @@ HTMLDocument[JC] def adoptNode(source: Node): Node
 HTMLDocument[JC] def anchors: HTMLCollection
 HTMLDocument[JC] def appendChild(newChild: Node): Node
 HTMLDocument[JC] def attributes: NamedNodeMap
+HTMLDocument[JC] def baseURI: String
 HTMLDocument[JC] var body: HTMLElement
 HTMLDocument[JC] def characterSet: String
 HTMLDocument[JC] def childElementCount: Int
@@ -4049,6 +4069,7 @@ HTMLElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 HTMLElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLElement[JC] def appendChild(newChild: Node): Node
 HTMLElement[JC] def attributes: NamedNodeMap
+HTMLElement[JC] def baseURI: String
 HTMLElement[JC] def blur(): Unit
 HTMLElement[JC] def childElementCount: Int
 HTMLElement[JC] def childNodes: NodeList[Node]
@@ -4238,6 +4259,7 @@ HTMLEmbedElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLEmbedElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLEmbedElement[JC] def appendChild(newChild: Node): Node
 HTMLEmbedElement[JC] def attributes: NamedNodeMap
+HTMLEmbedElement[JC] def baseURI: String
 HTMLEmbedElement[JC] def blur(): Unit
 HTMLEmbedElement[JC] def childElementCount: Int
 HTMLEmbedElement[JC] def childNodes: NodeList[Node]
@@ -4431,6 +4453,7 @@ HTMLFieldSetElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLFieldSetElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLFieldSetElement[JC] def appendChild(newChild: Node): Node
 HTMLFieldSetElement[JC] def attributes: NamedNodeMap
+HTMLFieldSetElement[JC] def baseURI: String
 HTMLFieldSetElement[JC] def blur(): Unit
 HTMLFieldSetElement[JC] def checkValidity(): Boolean
 HTMLFieldSetElement[JC] def childElementCount: Int
@@ -4631,6 +4654,7 @@ HTMLFormElement[JC] def appendChild(newChild: Node): Node
 HTMLFormElement[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(name: String): js.Any
 HTMLFormElement[JC] def attributes: NamedNodeMap
 HTMLFormElement[JC] var autocomplete: String
+HTMLFormElement[JC] def baseURI: String
 HTMLFormElement[JC] def blur(): Unit
 HTMLFormElement[JC] def checkValidity(): Boolean
 HTMLFormElement[JC] def childElementCount: Int
@@ -4834,6 +4858,7 @@ HTMLHRElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 HTMLHRElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLHRElement[JC] def appendChild(newChild: Node): Node
 HTMLHRElement[JC] def attributes: NamedNodeMap
+HTMLHRElement[JC] def baseURI: String
 HTMLHRElement[JC] def blur(): Unit
 HTMLHRElement[JC] def childElementCount: Int
 HTMLHRElement[JC] def childNodes: NodeList[Node]
@@ -5023,6 +5048,7 @@ HTMLHeadElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLHeadElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLHeadElement[JC] def appendChild(newChild: Node): Node
 HTMLHeadElement[JC] def attributes: NamedNodeMap
+HTMLHeadElement[JC] def baseURI: String
 HTMLHeadElement[JC] def blur(): Unit
 HTMLHeadElement[JC] def childElementCount: Int
 HTMLHeadElement[JC] def childNodes: NodeList[Node]
@@ -5212,6 +5238,7 @@ HTMLHeadingElement[JC] def addEventListener[T <: Event](`type`: String, listener
 HTMLHeadingElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLHeadingElement[JC] def appendChild(newChild: Node): Node
 HTMLHeadingElement[JC] def attributes: NamedNodeMap
+HTMLHeadingElement[JC] def baseURI: String
 HTMLHeadingElement[JC] def blur(): Unit
 HTMLHeadingElement[JC] def childElementCount: Int
 HTMLHeadingElement[JC] def childNodes: NodeList[Node]
@@ -5401,6 +5428,7 @@ HTMLHtmlElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLHtmlElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLHtmlElement[JC] def appendChild(newChild: Node): Node
 HTMLHtmlElement[JC] def attributes: NamedNodeMap
+HTMLHtmlElement[JC] def baseURI: String
 HTMLHtmlElement[JC] def blur(): Unit
 HTMLHtmlElement[JC] def childElementCount: Int
 HTMLHtmlElement[JC] def childNodes: NodeList[Node]
@@ -5590,6 +5618,7 @@ HTMLIFrameElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLIFrameElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLIFrameElement[JC] def appendChild(newChild: Node): Node
 HTMLIFrameElement[JC] def attributes: NamedNodeMap
+HTMLIFrameElement[JC] def baseURI: String
 HTMLIFrameElement[JC] def blur(): Unit
 HTMLIFrameElement[JC] var border: String
 HTMLIFrameElement[JC] def childElementCount: Int
@@ -5791,6 +5820,7 @@ HTMLImageElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLImageElement[JC] var alt: String
 HTMLImageElement[JC] def appendChild(newChild: Node): Node
 HTMLImageElement[JC] def attributes: NamedNodeMap
+HTMLImageElement[JC] def baseURI: String
 HTMLImageElement[JC] def blur(): Unit
 HTMLImageElement[JC] def childElementCount: Int
 HTMLImageElement[JC] def childNodes: NodeList[Node]
@@ -5994,6 +6024,7 @@ HTMLInputElement[JC] def appendChild(newChild: Node): Node
 HTMLInputElement[JC] def attributes: NamedNodeMap
 HTMLInputElement[JC] var autocomplete: String
 HTMLInputElement[JC] var autofocus: Boolean
+HTMLInputElement[JC] def baseURI: String
 HTMLInputElement[JC] def blur(): Unit
 HTMLInputElement[JC] def checkValidity(): Boolean
 HTMLInputElement[JC] var checked: Boolean
@@ -6225,6 +6256,7 @@ HTMLLIElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 HTMLLIElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLLIElement[JC] def appendChild(newChild: Node): Node
 HTMLLIElement[JC] def attributes: NamedNodeMap
+HTMLLIElement[JC] def baseURI: String
 HTMLLIElement[JC] def blur(): Unit
 HTMLLIElement[JC] def childElementCount: Int
 HTMLLIElement[JC] def childNodes: NodeList[Node]
@@ -6415,6 +6447,7 @@ HTMLLabelElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLLabelElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLLabelElement[JC] def appendChild(newChild: Node): Node
 HTMLLabelElement[JC] def attributes: NamedNodeMap
+HTMLLabelElement[JC] def baseURI: String
 HTMLLabelElement[JC] def blur(): Unit
 HTMLLabelElement[JC] def childElementCount: Int
 HTMLLabelElement[JC] def childNodes: NodeList[Node]
@@ -6607,6 +6640,7 @@ HTMLLegendElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLLegendElement[JC] var align: String
 HTMLLegendElement[JC] def appendChild(newChild: Node): Node
 HTMLLegendElement[JC] def attributes: NamedNodeMap
+HTMLLegendElement[JC] def baseURI: String
 HTMLLegendElement[JC] def blur(): Unit
 HTMLLegendElement[JC] def childElementCount: Int
 HTMLLegendElement[JC] def childNodes: NodeList[Node]
@@ -6797,6 +6831,7 @@ HTMLLinkElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLLinkElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLLinkElement[JC] def appendChild(newChild: Node): Node
 HTMLLinkElement[JC] def attributes: NamedNodeMap
+HTMLLinkElement[JC] def baseURI: String
 HTMLLinkElement[JC] def blur(): Unit
 HTMLLinkElement[JC] def childElementCount: Int
 HTMLLinkElement[JC] def childNodes: NodeList[Node]
@@ -6994,6 +7029,7 @@ HTMLMapElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 HTMLMapElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLMapElement[JC] def appendChild(newChild: Node): Node
 HTMLMapElement[JC] def attributes: NamedNodeMap
+HTMLMapElement[JC] def baseURI: String
 HTMLMapElement[JC] def blur(): Unit
 HTMLMapElement[JC] def childElementCount: Int
 HTMLMapElement[JC] def childNodes: NodeList[Node]
@@ -7186,6 +7222,7 @@ HTMLMediaElement[JC] def appendChild(newChild: Node): Node
 HTMLMediaElement[JC] def attributes: NamedNodeMap
 HTMLMediaElement[JC] def audioTracks: AudioTrackList
 HTMLMediaElement[JC] var autoplay: Boolean
+HTMLMediaElement[JC] def baseURI: String
 HTMLMediaElement[JC] def blur(): Unit
 HTMLMediaElement[JC] def buffered: TimeRanges
 HTMLMediaElement[JC] def canPlayType(`type`: String): String
@@ -7410,6 +7447,7 @@ HTMLMenuElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLMenuElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLMenuElement[JC] def appendChild(newChild: Node): Node
 HTMLMenuElement[JC] def attributes: NamedNodeMap
+HTMLMenuElement[JC] def baseURI: String
 HTMLMenuElement[JC] def blur(): Unit
 HTMLMenuElement[JC] def childElementCount: Int
 HTMLMenuElement[JC] def childNodes: NodeList[Node]
@@ -7600,6 +7638,7 @@ HTMLMetaElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLMetaElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLMetaElement[JC] def appendChild(newChild: Node): Node
 HTMLMetaElement[JC] def attributes: NamedNodeMap
+HTMLMetaElement[JC] def baseURI: String
 HTMLMetaElement[JC] def blur(): Unit
 HTMLMetaElement[JC] var charset: String
 HTMLMetaElement[JC] def childElementCount: Int
@@ -7794,6 +7833,7 @@ HTMLModElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 HTMLModElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLModElement[JC] def appendChild(newChild: Node): Node
 HTMLModElement[JC] def attributes: NamedNodeMap
+HTMLModElement[JC] def baseURI: String
 HTMLModElement[JC] def blur(): Unit
 HTMLModElement[JC] def childElementCount: Int
 HTMLModElement[JC] def childNodes: NodeList[Node]
@@ -7985,6 +8025,7 @@ HTMLOListElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLOListElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLOListElement[JC] def appendChild(newChild: Node): Node
 HTMLOListElement[JC] def attributes: NamedNodeMap
+HTMLOListElement[JC] def baseURI: String
 HTMLOListElement[JC] def blur(): Unit
 HTMLOListElement[JC] def childElementCount: Int
 HTMLOListElement[JC] def childNodes: NodeList[Node]
@@ -8178,6 +8219,7 @@ HTMLObjectElement[JC] var alt: String
 HTMLObjectElement[JC] var altHtml: String
 HTMLObjectElement[JC] def appendChild(newChild: Node): Node
 HTMLObjectElement[JC] def attributes: NamedNodeMap
+HTMLObjectElement[JC] def baseURI: String
 HTMLObjectElement[JC] def blur(): Unit
 HTMLObjectElement[JC] def checkValidity(): Boolean
 HTMLObjectElement[JC] def childElementCount: Int
@@ -8383,6 +8425,7 @@ HTMLOptGroupElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLOptGroupElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLOptGroupElement[JC] def appendChild(newChild: Node): Node
 HTMLOptGroupElement[JC] def attributes: NamedNodeMap
+HTMLOptGroupElement[JC] def baseURI: String
 HTMLOptGroupElement[JC] def blur(): Unit
 HTMLOptGroupElement[JC] def childElementCount: Int
 HTMLOptGroupElement[JC] def childNodes: NodeList[Node]
@@ -8574,6 +8617,7 @@ HTMLOptionElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLOptionElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLOptionElement[JC] def appendChild(newChild: Node): Node
 HTMLOptionElement[JC] def attributes: NamedNodeMap
+HTMLOptionElement[JC] def baseURI: String
 HTMLOptionElement[JC] def blur(): Unit
 HTMLOptionElement[JC] def childElementCount: Int
 HTMLOptionElement[JC] def childNodes: NodeList[Node]
@@ -8772,6 +8816,7 @@ HTMLParagraphElement[JC] def addEventListener[T <: Event](`type`: String, listen
 HTMLParagraphElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLParagraphElement[JC] def appendChild(newChild: Node): Node
 HTMLParagraphElement[JC] def attributes: NamedNodeMap
+HTMLParagraphElement[JC] def baseURI: String
 HTMLParagraphElement[JC] def blur(): Unit
 HTMLParagraphElement[JC] def childElementCount: Int
 HTMLParagraphElement[JC] def childNodes: NodeList[Node]
@@ -8961,6 +9006,7 @@ HTMLParamElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLParamElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLParamElement[JC] def appendChild(newChild: Node): Node
 HTMLParamElement[JC] def attributes: NamedNodeMap
+HTMLParamElement[JC] def baseURI: String
 HTMLParamElement[JC] def blur(): Unit
 HTMLParamElement[JC] def childElementCount: Int
 HTMLParamElement[JC] def childNodes: NodeList[Node]
@@ -9152,6 +9198,7 @@ HTMLPreElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 HTMLPreElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLPreElement[JC] def appendChild(newChild: Node): Node
 HTMLPreElement[JC] def attributes: NamedNodeMap
+HTMLPreElement[JC] def baseURI: String
 HTMLPreElement[JC] def blur(): Unit
 HTMLPreElement[JC] def childElementCount: Int
 HTMLPreElement[JC] def childNodes: NodeList[Node]
@@ -9341,6 +9388,7 @@ HTMLProgressElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLProgressElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLProgressElement[JC] def appendChild(newChild: Node): Node
 HTMLProgressElement[JC] def attributes: NamedNodeMap
+HTMLProgressElement[JC] def baseURI: String
 HTMLProgressElement[JC] def blur(): Unit
 HTMLProgressElement[JC] def childElementCount: Int
 HTMLProgressElement[JC] def childNodes: NodeList[Node]
@@ -9534,6 +9582,7 @@ HTMLQuoteElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLQuoteElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLQuoteElement[JC] def appendChild(newChild: Node): Node
 HTMLQuoteElement[JC] def attributes: NamedNodeMap
+HTMLQuoteElement[JC] def baseURI: String
 HTMLQuoteElement[JC] def blur(): Unit
 HTMLQuoteElement[JC] def childElementCount: Int
 HTMLQuoteElement[JC] def childNodes: NodeList[Node]
@@ -9726,6 +9775,7 @@ HTMLScriptElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLScriptElement[JC] def appendChild(newChild: Node): Node
 HTMLScriptElement[JC] var async: Boolean
 HTMLScriptElement[JC] def attributes: NamedNodeMap
+HTMLScriptElement[JC] def baseURI: String
 HTMLScriptElement[JC] def blur(): Unit
 HTMLScriptElement[JC] var charset: String
 HTMLScriptElement[JC] def childElementCount: Int
@@ -9925,6 +9975,7 @@ HTMLSelectElement[JC] def appendChild(newChild: Node): Node
 HTMLSelectElement[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(name: String): js.Any
 HTMLSelectElement[JC] def attributes: NamedNodeMap
 HTMLSelectElement[JC] var autofocus: Boolean
+HTMLSelectElement[JC] def baseURI: String
 HTMLSelectElement[JC] def blur(): Unit
 HTMLSelectElement[JC] def checkValidity(): Boolean
 HTMLSelectElement[JC] def childElementCount: Int
@@ -10134,6 +10185,7 @@ HTMLSourceElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLSourceElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLSourceElement[JC] def appendChild(newChild: Node): Node
 HTMLSourceElement[JC] def attributes: NamedNodeMap
+HTMLSourceElement[JC] def baseURI: String
 HTMLSourceElement[JC] def blur(): Unit
 HTMLSourceElement[JC] def childElementCount: Int
 HTMLSourceElement[JC] def childNodes: NodeList[Node]
@@ -10326,6 +10378,7 @@ HTMLSpanElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLSpanElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLSpanElement[JC] def appendChild(newChild: Node): Node
 HTMLSpanElement[JC] def attributes: NamedNodeMap
+HTMLSpanElement[JC] def baseURI: String
 HTMLSpanElement[JC] def blur(): Unit
 HTMLSpanElement[JC] def childElementCount: Int
 HTMLSpanElement[JC] def childNodes: NodeList[Node]
@@ -10515,6 +10568,7 @@ HTMLStyleElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLStyleElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLStyleElement[JC] def appendChild(newChild: Node): Node
 HTMLStyleElement[JC] def attributes: NamedNodeMap
+HTMLStyleElement[JC] def baseURI: String
 HTMLStyleElement[JC] def blur(): Unit
 HTMLStyleElement[JC] def childElementCount: Int
 HTMLStyleElement[JC] def childNodes: NodeList[Node]
@@ -10708,6 +10762,7 @@ HTMLTableCaptionElement[JC] def addEventListener[T <: Event](`type`: String, lis
 HTMLTableCaptionElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableCaptionElement[JC] def appendChild(newChild: Node): Node
 HTMLTableCaptionElement[JC] def attributes: NamedNodeMap
+HTMLTableCaptionElement[JC] def baseURI: String
 HTMLTableCaptionElement[JC] def blur(): Unit
 HTMLTableCaptionElement[JC] def childElementCount: Int
 HTMLTableCaptionElement[JC] def childNodes: NodeList[Node]
@@ -10897,6 +10952,7 @@ HTMLTableCellElement[JC] def addEventListener[T <: Event](`type`: String, listen
 HTMLTableCellElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableCellElement[JC] def appendChild(newChild: Node): Node
 HTMLTableCellElement[JC] def attributes: NamedNodeMap
+HTMLTableCellElement[JC] def baseURI: String
 HTMLTableCellElement[JC] def blur(): Unit
 HTMLTableCellElement[JC] def cellIndex: Int
 HTMLTableCellElement[JC] def childElementCount: Int
@@ -11090,6 +11146,7 @@ HTMLTableColElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLTableColElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableColElement[JC] def appendChild(newChild: Node): Node
 HTMLTableColElement[JC] def attributes: NamedNodeMap
+HTMLTableColElement[JC] def baseURI: String
 HTMLTableColElement[JC] def blur(): Unit
 HTMLTableColElement[JC] def childElementCount: Int
 HTMLTableColElement[JC] def childNodes: NodeList[Node]
@@ -11280,6 +11337,7 @@ HTMLTableElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLTableElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableElement[JC] def appendChild(newChild: Node): Node
 HTMLTableElement[JC] def attributes: NamedNodeMap
+HTMLTableElement[JC] def baseURI: String
 HTMLTableElement[JC] def blur(): Unit
 HTMLTableElement[JC] var caption: HTMLTableCaptionElement
 HTMLTableElement[JC] def childElementCount: Int
@@ -11484,6 +11542,7 @@ HTMLTableRowElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLTableRowElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableRowElement[JC] def appendChild(newChild: Node): Node
 HTMLTableRowElement[JC] def attributes: NamedNodeMap
+HTMLTableRowElement[JC] def baseURI: String
 HTMLTableRowElement[JC] def blur(): Unit
 HTMLTableRowElement[JC] var borderColor: js.Any
 HTMLTableRowElement[JC] var borderColorDark: js.Any
@@ -11682,6 +11741,7 @@ HTMLTableSectionElement[JC] def addEventListener[T <: Event](`type`: String, lis
 HTMLTableSectionElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableSectionElement[JC] def appendChild(newChild: Node): Node
 HTMLTableSectionElement[JC] def attributes: NamedNodeMap
+HTMLTableSectionElement[JC] def baseURI: String
 HTMLTableSectionElement[JC] def blur(): Unit
 HTMLTableSectionElement[JC] def childElementCount: Int
 HTMLTableSectionElement[JC] def childNodes: NodeList[Node]
@@ -11876,6 +11936,7 @@ HTMLTextAreaElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLTextAreaElement[JC] def appendChild(newChild: Node): Node
 HTMLTextAreaElement[JC] def attributes: NamedNodeMap
 HTMLTextAreaElement[JC] var autofocus: Boolean
+HTMLTextAreaElement[JC] def baseURI: String
 HTMLTextAreaElement[JC] def blur(): Unit
 HTMLTextAreaElement[JC] def checkValidity(): Boolean
 HTMLTextAreaElement[JC] def childElementCount: Int
@@ -12088,6 +12149,7 @@ HTMLTitleElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLTitleElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTitleElement[JC] def appendChild(newChild: Node): Node
 HTMLTitleElement[JC] def attributes: NamedNodeMap
+HTMLTitleElement[JC] def baseURI: String
 HTMLTitleElement[JC] def blur(): Unit
 HTMLTitleElement[JC] def childElementCount: Int
 HTMLTitleElement[JC] def childNodes: NodeList[Node]
@@ -12278,6 +12340,7 @@ HTMLTrackElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLTrackElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTrackElement[JC] def appendChild(newChild: Node): Node
 HTMLTrackElement[JC] def attributes: NamedNodeMap
+HTMLTrackElement[JC] def baseURI: String
 HTMLTrackElement[JC] def blur(): Unit
 HTMLTrackElement[JC] def childElementCount: Int
 HTMLTrackElement[JC] def childNodes: NodeList[Node]
@@ -12472,6 +12535,7 @@ HTMLUListElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLUListElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLUListElement[JC] def appendChild(newChild: Node): Node
 HTMLUListElement[JC] def attributes: NamedNodeMap
+HTMLUListElement[JC] def baseURI: String
 HTMLUListElement[JC] def blur(): Unit
 HTMLUListElement[JC] def childElementCount: Int
 HTMLUListElement[JC] def childNodes: NodeList[Node]
@@ -12661,6 +12725,7 @@ HTMLUnknownElement[JC] def addEventListener[T <: Event](`type`: String, listener
 HTMLUnknownElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLUnknownElement[JC] def appendChild(newChild: Node): Node
 HTMLUnknownElement[JC] def attributes: NamedNodeMap
+HTMLUnknownElement[JC] def baseURI: String
 HTMLUnknownElement[JC] def blur(): Unit
 HTMLUnknownElement[JC] def childElementCount: Int
 HTMLUnknownElement[JC] def childNodes: NodeList[Node]
@@ -12852,6 +12917,7 @@ HTMLVideoElement[JC] def appendChild(newChild: Node): Node
 HTMLVideoElement[JC] def attributes: NamedNodeMap
 HTMLVideoElement[JC] def audioTracks: AudioTrackList
 HTMLVideoElement[JC] var autoplay: Boolean
+HTMLVideoElement[JC] def baseURI: String
 HTMLVideoElement[JC] def blur(): Unit
 HTMLVideoElement[JC] def buffered: TimeRanges
 HTMLVideoElement[JC] def canPlayType(`type`: String): String
@@ -13950,6 +14016,7 @@ Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Node[JC] def appendChild(newChild: Node): Node
 Node[JC] def attributes: NamedNodeMap
+Node[JC] def baseURI: String
 Node[JC] def childNodes: NodeList[Node]
 Node[JC] def cloneNode(deep: Boolean?): Node
 Node[JC] def compareDocumentPosition(other: Node): Int
@@ -14353,6 +14420,7 @@ ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, liste
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ProcessingInstruction[JC] def appendChild(newChild: Node): Node
 ProcessingInstruction[JC] def attributes: NamedNodeMap
+ProcessingInstruction[JC] def baseURI: String
 ProcessingInstruction[JC] def childNodes: NodeList[Node]
 ProcessingInstruction[JC] def cloneNode(deep: Boolean?): Node
 ProcessingInstruction[JC] def compareDocumentPosition(other: Node): Int
@@ -14554,6 +14622,7 @@ SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGAElement[JC] def appendChild(newChild: Node): Node
 SVGAElement[JC] def attributes: NamedNodeMap
+SVGAElement[JC] def baseURI: String
 SVGAElement[JC] def childElementCount: Int
 SVGAElement[JC] def childNodes: NodeList[Node]
 SVGAElement[JC] def children: HTMLCollection
@@ -14711,6 +14780,7 @@ SVGCircleElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGCircleElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGCircleElement[JC] def appendChild(newChild: Node): Node
 SVGCircleElement[JC] def attributes: NamedNodeMap
+SVGCircleElement[JC] def baseURI: String
 SVGCircleElement[JC] def childElementCount: Int
 SVGCircleElement[JC] def childNodes: NodeList[Node]
 SVGCircleElement[JC] def children: HTMLCollection
@@ -14834,6 +14904,7 @@ SVGClipPathElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGClipPathElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGClipPathElement[JC] def appendChild(newChild: Node): Node
 SVGClipPathElement[JC] def attributes: NamedNodeMap
+SVGClipPathElement[JC] def baseURI: String
 SVGClipPathElement[JC] def childElementCount: Int
 SVGClipPathElement[JC] def childNodes: NodeList[Node]
 SVGClipPathElement[JC] def children: HTMLCollection
@@ -14953,6 +15024,7 @@ SVGComponentTransferFunctionElement[JC] def addEventListener[T <: Event](`type`:
 SVGComponentTransferFunctionElement[JC] def amplitude: SVGAnimatedNumber
 SVGComponentTransferFunctionElement[JC] def appendChild(newChild: Node): Node
 SVGComponentTransferFunctionElement[JC] def attributes: NamedNodeMap
+SVGComponentTransferFunctionElement[JC] def baseURI: String
 SVGComponentTransferFunctionElement[JC] def childElementCount: Int
 SVGComponentTransferFunctionElement[JC] def childNodes: NodeList[Node]
 SVGComponentTransferFunctionElement[JC] def children: HTMLCollection
@@ -15066,6 +15138,7 @@ SVGDefsElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGDefsElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGDefsElement[JC] def appendChild(newChild: Node): Node
 SVGDefsElement[JC] def attributes: NamedNodeMap
+SVGDefsElement[JC] def baseURI: String
 SVGDefsElement[JC] def childElementCount: Int
 SVGDefsElement[JC] def childNodes: NodeList[Node]
 SVGDefsElement[JC] def children: HTMLCollection
@@ -15183,6 +15256,7 @@ SVGDescElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGDescElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGDescElement[JC] def appendChild(newChild: Node): Node
 SVGDescElement[JC] def attributes: NamedNodeMap
+SVGDescElement[JC] def baseURI: String
 SVGDescElement[JC] def childElementCount: Int
 SVGDescElement[JC] def childNodes: NodeList[Node]
 SVGDescElement[JC] def children: HTMLCollection
@@ -15288,6 +15362,7 @@ SVGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fun
 SVGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGElement[JC] def appendChild(newChild: Node): Node
 SVGElement[JC] def attributes: NamedNodeMap
+SVGElement[JC] def baseURI: String
 SVGElement[JC] def childElementCount: Int
 SVGElement[JC] def childNodes: NodeList[Node]
 SVGElement[JC] def children: HTMLCollection
@@ -15404,6 +15479,7 @@ SVGEllipseElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGEllipseElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGEllipseElement[JC] def appendChild(newChild: Node): Node
 SVGEllipseElement[JC] def attributes: NamedNodeMap
+SVGEllipseElement[JC] def baseURI: String
 SVGEllipseElement[JC] def childElementCount: Int
 SVGEllipseElement[JC] def childNodes: NodeList[Node]
 SVGEllipseElement[JC] def children: HTMLCollection
@@ -15532,6 +15608,7 @@ SVGFEBlendElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEBlendElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEBlendElement[JC] def appendChild(newChild: Node): Node
 SVGFEBlendElement[JC] def attributes: NamedNodeMap
+SVGFEBlendElement[JC] def baseURI: String
 SVGFEBlendElement[JC] def childElementCount: Int
 SVGFEBlendElement[JC] def childNodes: NodeList[Node]
 SVGFEBlendElement[JC] def children: HTMLCollection
@@ -15649,6 +15726,7 @@ SVGFEColorMatrixElement[JC] def addEventListener[T <: Event](`type`: String, lis
 SVGFEColorMatrixElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEColorMatrixElement[JC] def appendChild(newChild: Node): Node
 SVGFEColorMatrixElement[JC] def attributes: NamedNodeMap
+SVGFEColorMatrixElement[JC] def baseURI: String
 SVGFEColorMatrixElement[JC] def childElementCount: Int
 SVGFEColorMatrixElement[JC] def childNodes: NodeList[Node]
 SVGFEColorMatrixElement[JC] def children: HTMLCollection
@@ -15765,6 +15843,7 @@ SVGFEComponentTransferElement[JC] def addEventListener[T <: Event](`type`: Strin
 SVGFEComponentTransferElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEComponentTransferElement[JC] def appendChild(newChild: Node): Node
 SVGFEComponentTransferElement[JC] def attributes: NamedNodeMap
+SVGFEComponentTransferElement[JC] def baseURI: String
 SVGFEComponentTransferElement[JC] def childElementCount: Int
 SVGFEComponentTransferElement[JC] def childNodes: NodeList[Node]
 SVGFEComponentTransferElement[JC] def children: HTMLCollection
@@ -15874,6 +15953,7 @@ SVGFECompositeElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGFECompositeElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFECompositeElement[JC] def appendChild(newChild: Node): Node
 SVGFECompositeElement[JC] def attributes: NamedNodeMap
+SVGFECompositeElement[JC] def baseURI: String
 SVGFECompositeElement[JC] def childElementCount: Int
 SVGFECompositeElement[JC] def childNodes: NodeList[Node]
 SVGFECompositeElement[JC] def children: HTMLCollection
@@ -15996,6 +16076,7 @@ SVGFEConvolveMatrixElement[JC] def addEventListener[T <: Event](`type`: String, 
 SVGFEConvolveMatrixElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEConvolveMatrixElement[JC] def appendChild(newChild: Node): Node
 SVGFEConvolveMatrixElement[JC] def attributes: NamedNodeMap
+SVGFEConvolveMatrixElement[JC] def baseURI: String
 SVGFEConvolveMatrixElement[JC] def bias: SVGAnimatedNumber
 SVGFEConvolveMatrixElement[JC] def childElementCount: Int
 SVGFEConvolveMatrixElement[JC] def childNodes: NodeList[Node]
@@ -16120,6 +16201,7 @@ SVGFEDiffuseLightingElement[JC] def addEventListener[T <: Event](`type`: String,
 SVGFEDiffuseLightingElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEDiffuseLightingElement[JC] def appendChild(newChild: Node): Node
 SVGFEDiffuseLightingElement[JC] def attributes: NamedNodeMap
+SVGFEDiffuseLightingElement[JC] def baseURI: String
 SVGFEDiffuseLightingElement[JC] def childElementCount: Int
 SVGFEDiffuseLightingElement[JC] def childNodes: NodeList[Node]
 SVGFEDiffuseLightingElement[JC] def children: HTMLCollection
@@ -16233,6 +16315,7 @@ SVGFEDisplacementMapElement[JC] def addEventListener[T <: Event](`type`: String,
 SVGFEDisplacementMapElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEDisplacementMapElement[JC] def appendChild(newChild: Node): Node
 SVGFEDisplacementMapElement[JC] def attributes: NamedNodeMap
+SVGFEDisplacementMapElement[JC] def baseURI: String
 SVGFEDisplacementMapElement[JC] def childElementCount: Int
 SVGFEDisplacementMapElement[JC] def childNodes: NodeList[Node]
 SVGFEDisplacementMapElement[JC] def children: HTMLCollection
@@ -16352,6 +16435,7 @@ SVGFEDistantLightElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGFEDistantLightElement[JC] def appendChild(newChild: Node): Node
 SVGFEDistantLightElement[JC] def attributes: NamedNodeMap
 SVGFEDistantLightElement[JC] def azimuth: SVGAnimatedNumber
+SVGFEDistantLightElement[JC] def baseURI: String
 SVGFEDistantLightElement[JC] def childElementCount: Int
 SVGFEDistantLightElement[JC] def childNodes: NodeList[Node]
 SVGFEDistantLightElement[JC] def children: HTMLCollection
@@ -16454,6 +16538,7 @@ SVGFEFloodElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEFloodElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEFloodElement[JC] def appendChild(newChild: Node): Node
 SVGFEFloodElement[JC] def attributes: NamedNodeMap
+SVGFEFloodElement[JC] def baseURI: String
 SVGFEFloodElement[JC] def childElementCount: Int
 SVGFEFloodElement[JC] def childNodes: NodeList[Node]
 SVGFEFloodElement[JC] def children: HTMLCollection
@@ -16563,6 +16648,7 @@ SVGFEFuncAElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEFuncAElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncAElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncAElement[JC] def attributes: NamedNodeMap
+SVGFEFuncAElement[JC] def baseURI: String
 SVGFEFuncAElement[JC] def childElementCount: Int
 SVGFEFuncAElement[JC] def childNodes: NodeList[Node]
 SVGFEFuncAElement[JC] def children: HTMLCollection
@@ -16671,6 +16757,7 @@ SVGFEFuncBElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEFuncBElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncBElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncBElement[JC] def attributes: NamedNodeMap
+SVGFEFuncBElement[JC] def baseURI: String
 SVGFEFuncBElement[JC] def childElementCount: Int
 SVGFEFuncBElement[JC] def childNodes: NodeList[Node]
 SVGFEFuncBElement[JC] def children: HTMLCollection
@@ -16779,6 +16866,7 @@ SVGFEFuncGElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEFuncGElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncGElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncGElement[JC] def attributes: NamedNodeMap
+SVGFEFuncGElement[JC] def baseURI: String
 SVGFEFuncGElement[JC] def childElementCount: Int
 SVGFEFuncGElement[JC] def childNodes: NodeList[Node]
 SVGFEFuncGElement[JC] def children: HTMLCollection
@@ -16887,6 +16975,7 @@ SVGFEFuncRElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEFuncRElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncRElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncRElement[JC] def attributes: NamedNodeMap
+SVGFEFuncRElement[JC] def baseURI: String
 SVGFEFuncRElement[JC] def childElementCount: Int
 SVGFEFuncRElement[JC] def childNodes: NodeList[Node]
 SVGFEFuncRElement[JC] def children: HTMLCollection
@@ -16994,6 +17083,7 @@ SVGFEGaussianBlurElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGFEGaussianBlurElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEGaussianBlurElement[JC] def appendChild(newChild: Node): Node
 SVGFEGaussianBlurElement[JC] def attributes: NamedNodeMap
+SVGFEGaussianBlurElement[JC] def baseURI: String
 SVGFEGaussianBlurElement[JC] def childElementCount: Int
 SVGFEGaussianBlurElement[JC] def childNodes: NodeList[Node]
 SVGFEGaussianBlurElement[JC] def children: HTMLCollection
@@ -17106,6 +17196,7 @@ SVGFEImageElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEImageElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEImageElement[JC] def appendChild(newChild: Node): Node
 SVGFEImageElement[JC] def attributes: NamedNodeMap
+SVGFEImageElement[JC] def baseURI: String
 SVGFEImageElement[JC] def childElementCount: Int
 SVGFEImageElement[JC] def childNodes: NodeList[Node]
 SVGFEImageElement[JC] def children: HTMLCollection
@@ -17219,6 +17310,7 @@ SVGFEMergeElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEMergeElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEMergeElement[JC] def appendChild(newChild: Node): Node
 SVGFEMergeElement[JC] def attributes: NamedNodeMap
+SVGFEMergeElement[JC] def baseURI: String
 SVGFEMergeElement[JC] def childElementCount: Int
 SVGFEMergeElement[JC] def childNodes: NodeList[Node]
 SVGFEMergeElement[JC] def children: HTMLCollection
@@ -17327,6 +17419,7 @@ SVGFEMergeNodeElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGFEMergeNodeElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEMergeNodeElement[JC] def appendChild(newChild: Node): Node
 SVGFEMergeNodeElement[JC] def attributes: NamedNodeMap
+SVGFEMergeNodeElement[JC] def baseURI: String
 SVGFEMergeNodeElement[JC] def childElementCount: Int
 SVGFEMergeNodeElement[JC] def childNodes: NodeList[Node]
 SVGFEMergeNodeElement[JC] def children: HTMLCollection
@@ -17429,6 +17522,7 @@ SVGFEMorphologyElement[JC] def addEventListener[T <: Event](`type`: String, list
 SVGFEMorphologyElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEMorphologyElement[JC] def appendChild(newChild: Node): Node
 SVGFEMorphologyElement[JC] def attributes: NamedNodeMap
+SVGFEMorphologyElement[JC] def baseURI: String
 SVGFEMorphologyElement[JC] def childElementCount: Int
 SVGFEMorphologyElement[JC] def childNodes: NodeList[Node]
 SVGFEMorphologyElement[JC] def children: HTMLCollection
@@ -17544,6 +17638,7 @@ SVGFEOffsetElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGFEOffsetElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEOffsetElement[JC] def appendChild(newChild: Node): Node
 SVGFEOffsetElement[JC] def attributes: NamedNodeMap
+SVGFEOffsetElement[JC] def baseURI: String
 SVGFEOffsetElement[JC] def childElementCount: Int
 SVGFEOffsetElement[JC] def childNodes: NodeList[Node]
 SVGFEOffsetElement[JC] def children: HTMLCollection
@@ -17655,6 +17750,7 @@ SVGFEPointLightElement[JC] def addEventListener[T <: Event](`type`: String, list
 SVGFEPointLightElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEPointLightElement[JC] def appendChild(newChild: Node): Node
 SVGFEPointLightElement[JC] def attributes: NamedNodeMap
+SVGFEPointLightElement[JC] def baseURI: String
 SVGFEPointLightElement[JC] def childElementCount: Int
 SVGFEPointLightElement[JC] def childNodes: NodeList[Node]
 SVGFEPointLightElement[JC] def children: HTMLCollection
@@ -17759,6 +17855,7 @@ SVGFESpecularLightingElement[JC] def addEventListener[T <: Event](`type`: String
 SVGFESpecularLightingElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFESpecularLightingElement[JC] def appendChild(newChild: Node): Node
 SVGFESpecularLightingElement[JC] def attributes: NamedNodeMap
+SVGFESpecularLightingElement[JC] def baseURI: String
 SVGFESpecularLightingElement[JC] def childElementCount: Int
 SVGFESpecularLightingElement[JC] def childNodes: NodeList[Node]
 SVGFESpecularLightingElement[JC] def children: HTMLCollection
@@ -17873,6 +17970,7 @@ SVGFESpotLightElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGFESpotLightElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFESpotLightElement[JC] def appendChild(newChild: Node): Node
 SVGFESpotLightElement[JC] def attributes: NamedNodeMap
+SVGFESpotLightElement[JC] def baseURI: String
 SVGFESpotLightElement[JC] def childElementCount: Int
 SVGFESpotLightElement[JC] def childNodes: NodeList[Node]
 SVGFESpotLightElement[JC] def children: HTMLCollection
@@ -17982,6 +18080,7 @@ SVGFETileElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGFETileElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFETileElement[JC] def appendChild(newChild: Node): Node
 SVGFETileElement[JC] def attributes: NamedNodeMap
+SVGFETileElement[JC] def baseURI: String
 SVGFETileElement[JC] def childElementCount: Int
 SVGFETileElement[JC] def childNodes: NodeList[Node]
 SVGFETileElement[JC] def children: HTMLCollection
@@ -18093,6 +18192,7 @@ SVGFETurbulenceElement[JC] def appendChild(newChild: Node): Node
 SVGFETurbulenceElement[JC] def attributes: NamedNodeMap
 SVGFETurbulenceElement[JC] def baseFrequencyX: SVGAnimatedNumber
 SVGFETurbulenceElement[JC] def baseFrequencyY: SVGAnimatedNumber
+SVGFETurbulenceElement[JC] def baseURI: String
 SVGFETurbulenceElement[JC] def childElementCount: Int
 SVGFETurbulenceElement[JC] def childNodes: NodeList[Node]
 SVGFETurbulenceElement[JC] def children: HTMLCollection
@@ -18214,6 +18314,7 @@ SVGFilterElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGFilterElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFilterElement[JC] def appendChild(newChild: Node): Node
 SVGFilterElement[JC] def attributes: NamedNodeMap
+SVGFilterElement[JC] def baseURI: String
 SVGFilterElement[JC] def childElementCount: Int
 SVGFilterElement[JC] def childNodes: NodeList[Node]
 SVGFilterElement[JC] def children: HTMLCollection
@@ -18339,6 +18440,7 @@ SVGGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 SVGGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGGElement[JC] def appendChild(newChild: Node): Node
 SVGGElement[JC] def attributes: NamedNodeMap
+SVGGElement[JC] def baseURI: String
 SVGGElement[JC] def childElementCount: Int
 SVGGElement[JC] def childNodes: NodeList[Node]
 SVGGElement[JC] def children: HTMLCollection
@@ -18459,6 +18561,7 @@ SVGGradientElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGGradientElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGGradientElement[JC] def appendChild(newChild: Node): Node
 SVGGradientElement[JC] def attributes: NamedNodeMap
+SVGGradientElement[JC] def baseURI: String
 SVGGradientElement[JC] def childElementCount: Int
 SVGGradientElement[JC] def childNodes: NodeList[Node]
 SVGGradientElement[JC] def children: HTMLCollection
@@ -18571,6 +18674,7 @@ SVGImageElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGImageElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGImageElement[JC] def appendChild(newChild: Node): Node
 SVGImageElement[JC] def attributes: NamedNodeMap
+SVGImageElement[JC] def baseURI: String
 SVGImageElement[JC] def childElementCount: Int
 SVGImageElement[JC] def childNodes: NodeList[Node]
 SVGImageElement[JC] def children: HTMLCollection
@@ -18721,6 +18825,7 @@ SVGLineElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGLineElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGLineElement[JC] def appendChild(newChild: Node): Node
 SVGLineElement[JC] def attributes: NamedNodeMap
+SVGLineElement[JC] def baseURI: String
 SVGLineElement[JC] def childElementCount: Int
 SVGLineElement[JC] def childNodes: NodeList[Node]
 SVGLineElement[JC] def children: HTMLCollection
@@ -18845,6 +18950,7 @@ SVGLinearGradientElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGLinearGradientElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGLinearGradientElement[JC] def appendChild(newChild: Node): Node
 SVGLinearGradientElement[JC] def attributes: NamedNodeMap
+SVGLinearGradientElement[JC] def baseURI: String
 SVGLinearGradientElement[JC] def childElementCount: Int
 SVGLinearGradientElement[JC] def childNodes: NodeList[Node]
 SVGLinearGradientElement[JC] def children: HTMLCollection
@@ -18963,6 +19069,7 @@ SVGMarkerElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGMarkerElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGMarkerElement[JC] def appendChild(newChild: Node): Node
 SVGMarkerElement[JC] def attributes: NamedNodeMap
+SVGMarkerElement[JC] def baseURI: String
 SVGMarkerElement[JC] def childElementCount: Int
 SVGMarkerElement[JC] def childNodes: NodeList[Node]
 SVGMarkerElement[JC] def children: HTMLCollection
@@ -19089,6 +19196,7 @@ SVGMaskElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGMaskElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGMaskElement[JC] def appendChild(newChild: Node): Node
 SVGMaskElement[JC] def attributes: NamedNodeMap
+SVGMaskElement[JC] def baseURI: String
 SVGMaskElement[JC] def childElementCount: Int
 SVGMaskElement[JC] def childNodes: NodeList[Node]
 SVGMaskElement[JC] def children: HTMLCollection
@@ -19222,6 +19330,7 @@ SVGMetadataElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGMetadataElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGMetadataElement[JC] def appendChild(newChild: Node): Node
 SVGMetadataElement[JC] def attributes: NamedNodeMap
+SVGMetadataElement[JC] def baseURI: String
 SVGMetadataElement[JC] def childElementCount: Int
 SVGMetadataElement[JC] def childNodes: NodeList[Node]
 SVGMetadataElement[JC] def children: HTMLCollection
@@ -19332,6 +19441,7 @@ SVGPathElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGPathElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGPathElement[JC] def appendChild(newChild: Node): Node
 SVGPathElement[JC] def attributes: NamedNodeMap
+SVGPathElement[JC] def baseURI: String
 SVGPathElement[JC] def childElementCount: Int
 SVGPathElement[JC] def childNodes: NodeList[Node]
 SVGPathElement[JC] def children: HTMLCollection
@@ -19601,6 +19711,7 @@ SVGPatternElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGPatternElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGPatternElement[JC] def appendChild(newChild: Node): Node
 SVGPatternElement[JC] def attributes: NamedNodeMap
+SVGPatternElement[JC] def baseURI: String
 SVGPatternElement[JC] def childElementCount: Int
 SVGPatternElement[JC] def childNodes: NodeList[Node]
 SVGPatternElement[JC] def children: HTMLCollection
@@ -19733,6 +19844,7 @@ SVGPolygonElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGPolygonElement[JC] def animatedPoints: SVGPointList
 SVGPolygonElement[JC] def appendChild(newChild: Node): Node
 SVGPolygonElement[JC] def attributes: NamedNodeMap
+SVGPolygonElement[JC] def baseURI: String
 SVGPolygonElement[JC] def childElementCount: Int
 SVGPolygonElement[JC] def childNodes: NodeList[Node]
 SVGPolygonElement[JC] def children: HTMLCollection
@@ -19852,6 +19964,7 @@ SVGPolylineElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGPolylineElement[JC] def animatedPoints: SVGPointList
 SVGPolylineElement[JC] def appendChild(newChild: Node): Node
 SVGPolylineElement[JC] def attributes: NamedNodeMap
+SVGPolylineElement[JC] def baseURI: String
 SVGPolylineElement[JC] def childElementCount: Int
 SVGPolylineElement[JC] def childNodes: NodeList[Node]
 SVGPolylineElement[JC] def children: HTMLCollection
@@ -19989,6 +20102,7 @@ SVGRadialGradientElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGRadialGradientElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGRadialGradientElement[JC] def appendChild(newChild: Node): Node
 SVGRadialGradientElement[JC] def attributes: NamedNodeMap
+SVGRadialGradientElement[JC] def baseURI: String
 SVGRadialGradientElement[JC] def childElementCount: Int
 SVGRadialGradientElement[JC] def childNodes: NodeList[Node]
 SVGRadialGradientElement[JC] def children: HTMLCollection
@@ -20106,6 +20220,7 @@ SVGRectElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGRectElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGRectElement[JC] def appendChild(newChild: Node): Node
 SVGRectElement[JC] def attributes: NamedNodeMap
+SVGRectElement[JC] def baseURI: String
 SVGRectElement[JC] def childElementCount: Int
 SVGRectElement[JC] def childNodes: NodeList[Node]
 SVGRectElement[JC] def children: HTMLCollection
@@ -20229,6 +20344,7 @@ SVGSVGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 SVGSVGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGSVGElement[JC] def appendChild(newChild: Node): Node
 SVGSVGElement[JC] def attributes: NamedNodeMap
+SVGSVGElement[JC] def baseURI: String
 SVGSVGElement[JC] def checkEnclosure(element: SVGElement, rect: SVGRect): Boolean
 SVGSVGElement[JC] def checkIntersection(element: SVGElement, rect: SVGRect): Boolean
 SVGSVGElement[JC] def childElementCount: Int
@@ -20391,6 +20507,7 @@ SVGScriptElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGScriptElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGScriptElement[JC] def appendChild(newChild: Node): Node
 SVGScriptElement[JC] def attributes: NamedNodeMap
+SVGScriptElement[JC] def baseURI: String
 SVGScriptElement[JC] def childElementCount: Int
 SVGScriptElement[JC] def childNodes: NodeList[Node]
 SVGScriptElement[JC] def children: HTMLCollection
@@ -20495,6 +20612,7 @@ SVGStopElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGStopElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGStopElement[JC] def appendChild(newChild: Node): Node
 SVGStopElement[JC] def attributes: NamedNodeMap
+SVGStopElement[JC] def baseURI: String
 SVGStopElement[JC] def childElementCount: Int
 SVGStopElement[JC] def childNodes: NodeList[Node]
 SVGStopElement[JC] def children: HTMLCollection
@@ -20609,6 +20727,7 @@ SVGStyleElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGStyleElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGStyleElement[JC] def appendChild(newChild: Node): Node
 SVGStyleElement[JC] def attributes: NamedNodeMap
+SVGStyleElement[JC] def baseURI: String
 SVGStyleElement[JC] def childElementCount: Int
 SVGStyleElement[JC] def childNodes: NodeList[Node]
 SVGStyleElement[JC] def children: HTMLCollection
@@ -20715,6 +20834,7 @@ SVGSwitchElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGSwitchElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGSwitchElement[JC] def appendChild(newChild: Node): Node
 SVGSwitchElement[JC] def attributes: NamedNodeMap
+SVGSwitchElement[JC] def baseURI: String
 SVGSwitchElement[JC] def childElementCount: Int
 SVGSwitchElement[JC] def childNodes: NodeList[Node]
 SVGSwitchElement[JC] def children: HTMLCollection
@@ -20832,6 +20952,7 @@ SVGSymbolElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGSymbolElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGSymbolElement[JC] def appendChild(newChild: Node): Node
 SVGSymbolElement[JC] def attributes: NamedNodeMap
+SVGSymbolElement[JC] def baseURI: String
 SVGSymbolElement[JC] def childElementCount: Int
 SVGSymbolElement[JC] def childNodes: NodeList[Node]
 SVGSymbolElement[JC] def children: HTMLCollection
@@ -20940,6 +21061,7 @@ SVGTSpanElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGTSpanElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTSpanElement[JC] def appendChild(newChild: Node): Node
 SVGTSpanElement[JC] def attributes: NamedNodeMap
+SVGTSpanElement[JC] def baseURI: String
 SVGTSpanElement[JC] def childElementCount: Int
 SVGTSpanElement[JC] def childNodes: NodeList[Node]
 SVGTSpanElement[JC] def children: HTMLCollection
@@ -21070,6 +21192,7 @@ SVGTextContentElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGTextContentElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTextContentElement[JC] def appendChild(newChild: Node): Node
 SVGTextContentElement[JC] def attributes: NamedNodeMap
+SVGTextContentElement[JC] def baseURI: String
 SVGTextContentElement[JC] def childElementCount: Int
 SVGTextContentElement[JC] def childNodes: NodeList[Node]
 SVGTextContentElement[JC] def children: HTMLCollection
@@ -21194,6 +21317,7 @@ SVGTextElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGTextElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTextElement[JC] def appendChild(newChild: Node): Node
 SVGTextElement[JC] def attributes: NamedNodeMap
+SVGTextElement[JC] def baseURI: String
 SVGTextElement[JC] def childElementCount: Int
 SVGTextElement[JC] def childNodes: NodeList[Node]
 SVGTextElement[JC] def children: HTMLCollection
@@ -21327,6 +21451,7 @@ SVGTextPathElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGTextPathElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTextPathElement[JC] def appendChild(newChild: Node): Node
 SVGTextPathElement[JC] def attributes: NamedNodeMap
+SVGTextPathElement[JC] def baseURI: String
 SVGTextPathElement[JC] def childElementCount: Int
 SVGTextPathElement[JC] def childNodes: NodeList[Node]
 SVGTextPathElement[JC] def children: HTMLCollection
@@ -21458,6 +21583,7 @@ SVGTextPositioningElement[JC] def addEventListener[T <: Event](`type`: String, l
 SVGTextPositioningElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTextPositioningElement[JC] def appendChild(newChild: Node): Node
 SVGTextPositioningElement[JC] def attributes: NamedNodeMap
+SVGTextPositioningElement[JC] def baseURI: String
 SVGTextPositioningElement[JC] def childElementCount: Int
 SVGTextPositioningElement[JC] def childNodes: NodeList[Node]
 SVGTextPositioningElement[JC] def children: HTMLCollection
@@ -21584,6 +21710,7 @@ SVGTitleElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGTitleElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTitleElement[JC] def appendChild(newChild: Node): Node
 SVGTitleElement[JC] def attributes: NamedNodeMap
+SVGTitleElement[JC] def baseURI: String
 SVGTitleElement[JC] def childElementCount: Int
 SVGTitleElement[JC] def childNodes: NodeList[Node]
 SVGTitleElement[JC] def children: HTMLCollection
@@ -21730,6 +21857,7 @@ SVGUseElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 SVGUseElement[JC] def animatedInstanceRoot: SVGElementInstance
 SVGUseElement[JC] def appendChild(newChild: Node): Node
 SVGUseElement[JC] def attributes: NamedNodeMap
+SVGUseElement[JC] def baseURI: String
 SVGUseElement[JC] def childElementCount: Int
 SVGUseElement[JC] def childNodes: NodeList[Node]
 SVGUseElement[JC] def children: HTMLCollection
@@ -21853,6 +21981,7 @@ SVGViewElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGViewElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGViewElement[JC] def appendChild(newChild: Node): Node
 SVGViewElement[JC] def attributes: NamedNodeMap
+SVGViewElement[JC] def baseURI: String
 SVGViewElement[JC] def childElementCount: Int
 SVGViewElement[JC] def childNodes: NodeList[Node]
 SVGViewElement[JC] def children: HTMLCollection
@@ -22058,6 +22187,7 @@ Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1
 Text[JC] def appendChild(newChild: Node): Node
 Text[JC] def appendData(arg: String): Unit
 Text[JC] def attributes: NamedNodeMap
+Text[JC] def baseURI: String
 Text[JC] def childNodes: NodeList[Node]
 Text[JC] def cloneNode(deep: Boolean?): Node
 Text[JC] def compareDocumentPosition(other: Node): Int
