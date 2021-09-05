@@ -781,6 +781,9 @@ abstract class Node extends EventTarget {
   /** Inserts the first Node given in a parameter immediately before the second, child of this element, Node. */
   def insertBefore(newChild: Node, refChild: Node): Node = js.native
 
+  /** Returns the absolute base URL of this Node. */
+  def baseURI: String = js.native
+
   /** True if this Node is connected to the Document context object (or ShadowRoot in the case of shadow DOM) */
   def isConnected: Boolean = js.native
 
