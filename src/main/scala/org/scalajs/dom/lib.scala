@@ -781,6 +781,9 @@ abstract class Node extends EventTarget {
   /** Inserts the first Node given in a parameter immediately before the second, child of this element, Node. */
   def insertBefore(newChild: Node, refChild: Node): Node = js.native
 
+  /** Returns the absolute base URL of this Node. */
+  def baseURI: String = js.native
+
   /** Represents the "rendered" text content of a node and its descendants. As a getter, it approximates the text the
     * user would get if they highlighted the contents of the element with the cursor and then copied to the clipboard.
     */
