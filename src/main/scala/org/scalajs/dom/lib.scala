@@ -784,6 +784,9 @@ abstract class Node extends EventTarget {
   /** Returns the absolute base URL of this Node. */
   def baseURI: String = js.native
 
+  /** True if this Node is connected to the Document context object (or ShadowRoot in the case of shadow DOM) */
+  def isConnected: Boolean = js.native
+
   /** Represents the "rendered" text content of a node and its descendants. As a getter, it approximates the text the
     * user would get if they highlighted the contents of the element with the cursor and then copied to the clipboard.
     */
