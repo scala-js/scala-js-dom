@@ -323,7 +323,7 @@ trait NodeSelector extends js.Object {
   /** Returns a list of the elements within the document (using depth-first pre-order traversal of the document's nodes)
     * that match the specified group of selectors.
     */
-  def querySelectorAll(selectors: String): NodeList[Node] = js.native
+  def querySelectorAll(selectors: String): NodeList[Element] = js.native
 
   /** Returns the first element within the document (using depth-first pre-order traversal of the document's nodes) that
     * matches the specified group of selectors.
