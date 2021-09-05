@@ -101,6 +101,7 @@ Attr[JC] def hasAttributes(): Boolean
 Attr[JC] def hasChildNodes(): Boolean
 Attr[JC] var innerText: String
 Attr[JC] def insertBefore(newChild: Node, refChild: Node): Node
+Attr[JC] def isConnected: Boolean
 Attr[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 Attr[JC] def isEqualNode(arg: Node): Boolean
 Attr[JC] def isSameNode(other: Node): Boolean
@@ -342,6 +343,7 @@ CDATASection[JC] def hasChildNodes(): Boolean
 CDATASection[JC] var innerText: String
 CDATASection[JC] def insertBefore(newChild: Node, refChild: Node): Node
 CDATASection[JC] def insertData(offset: Int, arg: String): Unit
+CDATASection[JC] def isConnected: Boolean
 CDATASection[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 CDATASection[JC] def isEqualNode(arg: Node): Boolean
 CDATASection[JC] def isSameNode(other: Node): Boolean
@@ -867,6 +869,7 @@ CharacterData[JC] def hasChildNodes(): Boolean
 CharacterData[JC] var innerText: String
 CharacterData[JC] def insertBefore(newChild: Node, refChild: Node): Node
 CharacterData[JC] def insertData(offset: Int, arg: String): Unit
+CharacterData[JC] def isConnected: Boolean
 CharacterData[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 CharacterData[JC] def isEqualNode(arg: Node): Boolean
 CharacterData[JC] def isSameNode(other: Node): Boolean
@@ -959,6 +962,7 @@ Comment[JC] def hasChildNodes(): Boolean
 Comment[JC] var innerText: String
 Comment[JC] def insertBefore(newChild: Node, refChild: Node): Node
 Comment[JC] def insertData(offset: Int, arg: String): Unit
+Comment[JC] def isConnected: Boolean
 Comment[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 Comment[JC] def isEqualNode(arg: Node): Boolean
 Comment[JC] def isSameNode(other: Node): Boolean
@@ -1273,6 +1277,7 @@ Document[JC] def implementation: DOMImplementation
 Document[JC] def importNode(importedNode: Node, deep: Boolean): Node
 Document[JC] var innerText: String
 Document[JC] def insertBefore(newChild: Node, refChild: Node): Node
+Document[JC] def isConnected: Boolean
 Document[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 Document[JC] def isEqualNode(arg: Node): Boolean
 Document[JC] def isSameNode(other: Node): Boolean
@@ -1320,6 +1325,7 @@ DocumentFragment[JC] def hasAttributes(): Boolean
 DocumentFragment[JC] def hasChildNodes(): Boolean
 DocumentFragment[JC] var innerText: String
 DocumentFragment[JC] def insertBefore(newChild: Node, refChild: Node): Node
+DocumentFragment[JC] def isConnected: Boolean
 DocumentFragment[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 DocumentFragment[JC] def isEqualNode(arg: Node): Boolean
 DocumentFragment[JC] def isSameNode(other: Node): Boolean
@@ -1358,6 +1364,7 @@ DocumentType[JC] def hasAttributes(): Boolean
 DocumentType[JC] def hasChildNodes(): Boolean
 DocumentType[JC] var innerText: String
 DocumentType[JC] def insertBefore(newChild: Node, refChild: Node): Node
+DocumentType[JC] def isConnected: Boolean
 DocumentType[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 DocumentType[JC] def isEqualNode(arg: Node): Boolean
 DocumentType[JC] def isSameNode(other: Node): Boolean
@@ -1479,6 +1486,7 @@ Element[JC] var innerText: String
 Element[JC] def insertAdjacentElement(position: String, element: Element): Element
 Element[JC] def insertAdjacentHTML(where: String, html: String): Unit
 Element[JC] def insertBefore(newChild: Node, refChild: Node): Node
+Element[JC] def isConnected: Boolean
 Element[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 Element[JC] def isEqualNode(arg: Node): Boolean
 Element[JC] def isSameNode(other: Node): Boolean
@@ -1729,6 +1737,7 @@ HTMLAnchorElement[JC] var innerText: String
 HTMLAnchorElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLAnchorElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLAnchorElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLAnchorElement[JC] def isConnected: Boolean
 HTMLAnchorElement[JC] def isContentEditable: Boolean
 HTMLAnchorElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLAnchorElement[JC] def isEqualNode(arg: Node): Boolean
@@ -1933,6 +1942,7 @@ HTMLAreaElement[JC] var innerText: String
 HTMLAreaElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLAreaElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLAreaElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLAreaElement[JC] def isConnected: Boolean
 HTMLAreaElement[JC] def isContentEditable: Boolean
 HTMLAreaElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLAreaElement[JC] def isEqualNode(arg: Node): Boolean
@@ -2140,6 +2150,7 @@ HTMLAudioElement[JC] var innerText: String
 HTMLAudioElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLAudioElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLAudioElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLAudioElement[JC] def isConnected: Boolean
 HTMLAudioElement[JC] def isContentEditable: Boolean
 HTMLAudioElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLAudioElement[JC] def isEqualNode(arg: Node): Boolean
@@ -2345,6 +2356,7 @@ HTMLBRElement[JC] var innerText: String
 HTMLBRElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLBRElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLBRElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLBRElement[JC] def isConnected: Boolean
 HTMLBRElement[JC] def isContentEditable: Boolean
 HTMLBRElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLBRElement[JC] def isEqualNode(arg: Node): Boolean
@@ -2535,6 +2547,7 @@ HTMLBaseElement[JC] var innerText: String
 HTMLBaseElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLBaseElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLBaseElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLBaseElement[JC] def isConnected: Boolean
 HTMLBaseElement[JC] def isContentEditable: Boolean
 HTMLBaseElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLBaseElement[JC] def isEqualNode(arg: Node): Boolean
@@ -2725,6 +2738,7 @@ HTMLBodyElement[JC] var innerText: String
 HTMLBodyElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLBodyElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLBodyElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLBodyElement[JC] def isConnected: Boolean
 HTMLBodyElement[JC] def isContentEditable: Boolean
 HTMLBodyElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLBodyElement[JC] def isEqualNode(arg: Node): Boolean
@@ -2937,6 +2951,7 @@ HTMLButtonElement[JC] var innerText: String
 HTMLButtonElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLButtonElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLButtonElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLButtonElement[JC] def isConnected: Boolean
 HTMLButtonElement[JC] def isContentEditable: Boolean
 HTMLButtonElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLButtonElement[JC] def isEqualNode(arg: Node): Boolean
@@ -3136,6 +3151,7 @@ HTMLCanvasElement[JC] var innerText: String
 HTMLCanvasElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLCanvasElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLCanvasElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLCanvasElement[JC] def isConnected: Boolean
 HTMLCanvasElement[JC] def isContentEditable: Boolean
 HTMLCanvasElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLCanvasElement[JC] def isEqualNode(arg: Node): Boolean
@@ -3331,6 +3347,7 @@ HTMLDListElement[JC] var innerText: String
 HTMLDListElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLDListElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLDListElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLDListElement[JC] def isConnected: Boolean
 HTMLDListElement[JC] def isContentEditable: Boolean
 HTMLDListElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLDListElement[JC] def isEqualNode(arg: Node): Boolean
@@ -3520,6 +3537,7 @@ HTMLDataListElement[JC] var innerText: String
 HTMLDataListElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLDataListElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLDataListElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLDataListElement[JC] def isConnected: Boolean
 HTMLDataListElement[JC] def isContentEditable: Boolean
 HTMLDataListElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLDataListElement[JC] def isEqualNode(arg: Node): Boolean
@@ -3710,6 +3728,7 @@ HTMLDivElement[JC] var innerText: String
 HTMLDivElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLDivElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLDivElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLDivElement[JC] def isConnected: Boolean
 HTMLDivElement[JC] def isContentEditable: Boolean
 HTMLDivElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLDivElement[JC] def isEqualNode(arg: Node): Boolean
@@ -3923,6 +3942,7 @@ HTMLDocument[JC] def implementation: DOMImplementation
 HTMLDocument[JC] def importNode(importedNode: Node, deep: Boolean): Node
 HTMLDocument[JC] var innerText: String
 HTMLDocument[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLDocument[JC] def isConnected: Boolean
 HTMLDocument[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLDocument[JC] def isEqualNode(arg: Node): Boolean
 HTMLDocument[JC] def isSameNode(other: Node): Boolean
@@ -4093,6 +4113,7 @@ HTMLElement[JC] var innerText: String
 HTMLElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLElement[JC] def isConnected: Boolean
 HTMLElement[JC] def isContentEditable: Boolean
 HTMLElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLElement[JC] def isEqualNode(arg: Node): Boolean
@@ -4284,6 +4305,7 @@ HTMLEmbedElement[JC] var innerText: String
 HTMLEmbedElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLEmbedElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLEmbedElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLEmbedElement[JC] def isConnected: Boolean
 HTMLEmbedElement[JC] def isContentEditable: Boolean
 HTMLEmbedElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLEmbedElement[JC] def isEqualNode(arg: Node): Boolean
@@ -4478,6 +4500,7 @@ HTMLFieldSetElement[JC] var innerText: String
 HTMLFieldSetElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLFieldSetElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLFieldSetElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLFieldSetElement[JC] def isConnected: Boolean
 HTMLFieldSetElement[JC] def isContentEditable: Boolean
 HTMLFieldSetElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLFieldSetElement[JC] def isEqualNode(arg: Node): Boolean
@@ -4679,6 +4702,7 @@ HTMLFormElement[JC] var innerText: String
 HTMLFormElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLFormElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLFormElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLFormElement[JC] def isConnected: Boolean
 HTMLFormElement[JC] def isContentEditable: Boolean
 HTMLFormElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLFormElement[JC] def isEqualNode(arg: Node): Boolean
@@ -4878,6 +4902,7 @@ HTMLHRElement[JC] var innerText: String
 HTMLHRElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLHRElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLHRElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLHRElement[JC] def isConnected: Boolean
 HTMLHRElement[JC] def isContentEditable: Boolean
 HTMLHRElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLHRElement[JC] def isEqualNode(arg: Node): Boolean
@@ -5067,6 +5092,7 @@ HTMLHeadElement[JC] var innerText: String
 HTMLHeadElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLHeadElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLHeadElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLHeadElement[JC] def isConnected: Boolean
 HTMLHeadElement[JC] def isContentEditable: Boolean
 HTMLHeadElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLHeadElement[JC] def isEqualNode(arg: Node): Boolean
@@ -5256,6 +5282,7 @@ HTMLHeadingElement[JC] var innerText: String
 HTMLHeadingElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLHeadingElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLHeadingElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLHeadingElement[JC] def isConnected: Boolean
 HTMLHeadingElement[JC] def isContentEditable: Boolean
 HTMLHeadingElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLHeadingElement[JC] def isEqualNode(arg: Node): Boolean
@@ -5445,6 +5472,7 @@ HTMLHtmlElement[JC] var innerText: String
 HTMLHtmlElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLHtmlElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLHtmlElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLHtmlElement[JC] def isConnected: Boolean
 HTMLHtmlElement[JC] def isContentEditable: Boolean
 HTMLHtmlElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLHtmlElement[JC] def isEqualNode(arg: Node): Boolean
@@ -5639,6 +5667,7 @@ HTMLIFrameElement[JC] var innerText: String
 HTMLIFrameElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLIFrameElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLIFrameElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLIFrameElement[JC] def isConnected: Boolean
 HTMLIFrameElement[JC] def isContentEditable: Boolean
 HTMLIFrameElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLIFrameElement[JC] def isEqualNode(arg: Node): Boolean
@@ -5838,6 +5867,7 @@ HTMLImageElement[JC] var innerText: String
 HTMLImageElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLImageElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLImageElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLImageElement[JC] def isConnected: Boolean
 HTMLImageElement[JC] def isContentEditable: Boolean
 HTMLImageElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLImageElement[JC] def isEqualNode(arg: Node): Boolean
@@ -6052,6 +6082,7 @@ HTMLInputElement[JC] var innerText: String
 HTMLInputElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLInputElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLInputElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLInputElement[JC] def isConnected: Boolean
 HTMLInputElement[JC] def isContentEditable: Boolean
 HTMLInputElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLInputElement[JC] def isEqualNode(arg: Node): Boolean
@@ -6269,6 +6300,7 @@ HTMLLIElement[JC] var innerText: String
 HTMLLIElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLLIElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLLIElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLLIElement[JC] def isConnected: Boolean
 HTMLLIElement[JC] def isContentEditable: Boolean
 HTMLLIElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLLIElement[JC] def isEqualNode(arg: Node): Boolean
@@ -6461,6 +6493,7 @@ HTMLLabelElement[JC] var innerText: String
 HTMLLabelElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLLabelElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLLabelElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLLabelElement[JC] def isConnected: Boolean
 HTMLLabelElement[JC] def isContentEditable: Boolean
 HTMLLabelElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLLabelElement[JC] def isEqualNode(arg: Node): Boolean
@@ -6652,6 +6685,7 @@ HTMLLegendElement[JC] var innerText: String
 HTMLLegendElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLLegendElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLLegendElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLLegendElement[JC] def isConnected: Boolean
 HTMLLegendElement[JC] def isContentEditable: Boolean
 HTMLLegendElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLLegendElement[JC] def isEqualNode(arg: Node): Boolean
@@ -6843,6 +6877,7 @@ HTMLLinkElement[JC] var innerText: String
 HTMLLinkElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLLinkElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLLinkElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLLinkElement[JC] def isConnected: Boolean
 HTMLLinkElement[JC] def isContentEditable: Boolean
 HTMLLinkElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLLinkElement[JC] def isEqualNode(arg: Node): Boolean
@@ -7038,6 +7073,7 @@ HTMLMapElement[JC] var innerText: String
 HTMLMapElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLMapElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLMapElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLMapElement[JC] def isConnected: Boolean
 HTMLMapElement[JC] def isContentEditable: Boolean
 HTMLMapElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLMapElement[JC] def isEqualNode(arg: Node): Boolean
@@ -7240,6 +7276,7 @@ HTMLMediaElement[JC] var innerText: String
 HTMLMediaElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLMediaElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLMediaElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLMediaElement[JC] def isConnected: Boolean
 HTMLMediaElement[JC] def isContentEditable: Boolean
 HTMLMediaElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLMediaElement[JC] def isEqualNode(arg: Node): Boolean
@@ -7454,6 +7491,7 @@ HTMLMenuElement[JC] var innerText: String
 HTMLMenuElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLMenuElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLMenuElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLMenuElement[JC] def isConnected: Boolean
 HTMLMenuElement[JC] def isContentEditable: Boolean
 HTMLMenuElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLMenuElement[JC] def isEqualNode(arg: Node): Boolean
@@ -7647,6 +7685,7 @@ HTMLMetaElement[JC] var innerText: String
 HTMLMetaElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLMetaElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLMetaElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLMetaElement[JC] def isConnected: Boolean
 HTMLMetaElement[JC] def isContentEditable: Boolean
 HTMLMetaElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLMetaElement[JC] def isEqualNode(arg: Node): Boolean
@@ -7840,6 +7879,7 @@ HTMLModElement[JC] var innerText: String
 HTMLModElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLModElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLModElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLModElement[JC] def isConnected: Boolean
 HTMLModElement[JC] def isContentEditable: Boolean
 HTMLModElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLModElement[JC] def isEqualNode(arg: Node): Boolean
@@ -8029,6 +8069,7 @@ HTMLOListElement[JC] var innerText: String
 HTMLOListElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLOListElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLOListElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLOListElement[JC] def isConnected: Boolean
 HTMLOListElement[JC] def isContentEditable: Boolean
 HTMLOListElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLOListElement[JC] def isEqualNode(arg: Node): Boolean
@@ -8229,6 +8270,7 @@ HTMLObjectElement[JC] var innerText: String
 HTMLObjectElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLObjectElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLObjectElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLObjectElement[JC] def isConnected: Boolean
 HTMLObjectElement[JC] def isContentEditable: Boolean
 HTMLObjectElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLObjectElement[JC] def isEqualNode(arg: Node): Boolean
@@ -8428,6 +8470,7 @@ HTMLOptGroupElement[JC] var innerText: String
 HTMLOptGroupElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLOptGroupElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLOptGroupElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLOptGroupElement[JC] def isConnected: Boolean
 HTMLOptGroupElement[JC] def isContentEditable: Boolean
 HTMLOptGroupElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLOptGroupElement[JC] def isEqualNode(arg: Node): Boolean
@@ -8623,6 +8666,7 @@ HTMLOptionElement[JC] var innerText: String
 HTMLOptionElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLOptionElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLOptionElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLOptionElement[JC] def isConnected: Boolean
 HTMLOptionElement[JC] def isContentEditable: Boolean
 HTMLOptionElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLOptionElement[JC] def isEqualNode(arg: Node): Boolean
@@ -8816,6 +8860,7 @@ HTMLParagraphElement[JC] var innerText: String
 HTMLParagraphElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLParagraphElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLParagraphElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLParagraphElement[JC] def isConnected: Boolean
 HTMLParagraphElement[JC] def isContentEditable: Boolean
 HTMLParagraphElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLParagraphElement[JC] def isEqualNode(arg: Node): Boolean
@@ -9005,6 +9050,7 @@ HTMLParamElement[JC] var innerText: String
 HTMLParamElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLParamElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLParamElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLParamElement[JC] def isConnected: Boolean
 HTMLParamElement[JC] def isContentEditable: Boolean
 HTMLParamElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLParamElement[JC] def isEqualNode(arg: Node): Boolean
@@ -9196,6 +9242,7 @@ HTMLPreElement[JC] var innerText: String
 HTMLPreElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLPreElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLPreElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLPreElement[JC] def isConnected: Boolean
 HTMLPreElement[JC] def isContentEditable: Boolean
 HTMLPreElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLPreElement[JC] def isEqualNode(arg: Node): Boolean
@@ -9386,6 +9433,7 @@ HTMLProgressElement[JC] var innerText: String
 HTMLProgressElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLProgressElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLProgressElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLProgressElement[JC] def isConnected: Boolean
 HTMLProgressElement[JC] def isContentEditable: Boolean
 HTMLProgressElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLProgressElement[JC] def isEqualNode(arg: Node): Boolean
@@ -9580,6 +9628,7 @@ HTMLQuoteElement[JC] var innerText: String
 HTMLQuoteElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLQuoteElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLQuoteElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLQuoteElement[JC] def isConnected: Boolean
 HTMLQuoteElement[JC] def isContentEditable: Boolean
 HTMLQuoteElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLQuoteElement[JC] def isEqualNode(arg: Node): Boolean
@@ -9773,6 +9822,7 @@ HTMLScriptElement[JC] var innerText: String
 HTMLScriptElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLScriptElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLScriptElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLScriptElement[JC] def isConnected: Boolean
 HTMLScriptElement[JC] def isContentEditable: Boolean
 HTMLScriptElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLScriptElement[JC] def isEqualNode(arg: Node): Boolean
@@ -9972,6 +10022,7 @@ HTMLSelectElement[JC] var innerText: String
 HTMLSelectElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLSelectElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLSelectElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLSelectElement[JC] def isConnected: Boolean
 HTMLSelectElement[JC] def isContentEditable: Boolean
 HTMLSelectElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLSelectElement[JC] def isEqualNode(arg: Node): Boolean
@@ -10178,6 +10229,7 @@ HTMLSourceElement[JC] var innerText: String
 HTMLSourceElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLSourceElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLSourceElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLSourceElement[JC] def isConnected: Boolean
 HTMLSourceElement[JC] def isContentEditable: Boolean
 HTMLSourceElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLSourceElement[JC] def isEqualNode(arg: Node): Boolean
@@ -10370,6 +10422,7 @@ HTMLSpanElement[JC] var innerText: String
 HTMLSpanElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLSpanElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLSpanElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLSpanElement[JC] def isConnected: Boolean
 HTMLSpanElement[JC] def isContentEditable: Boolean
 HTMLSpanElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLSpanElement[JC] def isEqualNode(arg: Node): Boolean
@@ -10559,6 +10612,7 @@ HTMLStyleElement[JC] var innerText: String
 HTMLStyleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLStyleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLStyleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLStyleElement[JC] def isConnected: Boolean
 HTMLStyleElement[JC] def isContentEditable: Boolean
 HTMLStyleElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLStyleElement[JC] def isEqualNode(arg: Node): Boolean
@@ -10752,6 +10806,7 @@ HTMLTableCaptionElement[JC] var innerText: String
 HTMLTableCaptionElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLTableCaptionElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLTableCaptionElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLTableCaptionElement[JC] def isConnected: Boolean
 HTMLTableCaptionElement[JC] def isContentEditable: Boolean
 HTMLTableCaptionElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLTableCaptionElement[JC] def isEqualNode(arg: Node): Boolean
@@ -10944,6 +10999,7 @@ HTMLTableCellElement[JC] var innerText: String
 HTMLTableCellElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLTableCellElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLTableCellElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLTableCellElement[JC] def isConnected: Boolean
 HTMLTableCellElement[JC] def isContentEditable: Boolean
 HTMLTableCellElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLTableCellElement[JC] def isEqualNode(arg: Node): Boolean
@@ -11134,6 +11190,7 @@ HTMLTableColElement[JC] var innerText: String
 HTMLTableColElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLTableColElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLTableColElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLTableColElement[JC] def isConnected: Boolean
 HTMLTableColElement[JC] def isContentEditable: Boolean
 HTMLTableColElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLTableColElement[JC] def isEqualNode(arg: Node): Boolean
@@ -11334,6 +11391,7 @@ HTMLTableElement[JC] def insertAdjacentElement(position: String, element: Elemen
 HTMLTableElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLTableElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 HTMLTableElement[JC] def insertRow(index: Int?): HTMLElement
+HTMLTableElement[JC] def isConnected: Boolean
 HTMLTableElement[JC] def isContentEditable: Boolean
 HTMLTableElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLTableElement[JC] def isEqualNode(arg: Node): Boolean
@@ -11535,6 +11593,7 @@ HTMLTableRowElement[JC] def insertAdjacentElement(position: String, element: Ele
 HTMLTableRowElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLTableRowElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 HTMLTableRowElement[JC] def insertCell(index: Int?): HTMLElement
+HTMLTableRowElement[JC] def isConnected: Boolean
 HTMLTableRowElement[JC] def isContentEditable: Boolean
 HTMLTableRowElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLTableRowElement[JC] def isEqualNode(arg: Node): Boolean
@@ -11728,6 +11787,7 @@ HTMLTableSectionElement[JC] def insertAdjacentElement(position: String, element:
 HTMLTableSectionElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLTableSectionElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 HTMLTableSectionElement[JC] def insertRow(index: Int?): HTMLElement
+HTMLTableSectionElement[JC] def isConnected: Boolean
 HTMLTableSectionElement[JC] def isContentEditable: Boolean
 HTMLTableSectionElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLTableSectionElement[JC] def isEqualNode(arg: Node): Boolean
@@ -11925,6 +11985,7 @@ HTMLTextAreaElement[JC] var innerText: String
 HTMLTextAreaElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLTextAreaElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLTextAreaElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLTextAreaElement[JC] def isConnected: Boolean
 HTMLTextAreaElement[JC] def isContentEditable: Boolean
 HTMLTextAreaElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLTextAreaElement[JC] def isEqualNode(arg: Node): Boolean
@@ -12132,6 +12193,7 @@ HTMLTitleElement[JC] var innerText: String
 HTMLTitleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLTitleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLTitleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLTitleElement[JC] def isConnected: Boolean
 HTMLTitleElement[JC] def isContentEditable: Boolean
 HTMLTitleElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLTitleElement[JC] def isEqualNode(arg: Node): Boolean
@@ -12322,6 +12384,7 @@ HTMLTrackElement[JC] var innerText: String
 HTMLTrackElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLTrackElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLTrackElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLTrackElement[JC] def isConnected: Boolean
 HTMLTrackElement[JC] def isContentEditable: Boolean
 HTMLTrackElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLTrackElement[JC] def isEqualNode(arg: Node): Boolean
@@ -12516,6 +12579,7 @@ HTMLUListElement[JC] var innerText: String
 HTMLUListElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLUListElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLUListElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLUListElement[JC] def isConnected: Boolean
 HTMLUListElement[JC] def isContentEditable: Boolean
 HTMLUListElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLUListElement[JC] def isEqualNode(arg: Node): Boolean
@@ -12705,6 +12769,7 @@ HTMLUnknownElement[JC] var innerText: String
 HTMLUnknownElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLUnknownElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLUnknownElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLUnknownElement[JC] def isConnected: Boolean
 HTMLUnknownElement[JC] def isContentEditable: Boolean
 HTMLUnknownElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLUnknownElement[JC] def isEqualNode(arg: Node): Boolean
@@ -12907,6 +12972,7 @@ HTMLVideoElement[JC] var innerText: String
 HTMLVideoElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 HTMLVideoElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 HTMLVideoElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLVideoElement[JC] def isConnected: Boolean
 HTMLVideoElement[JC] def isContentEditable: Boolean
 HTMLVideoElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 HTMLVideoElement[JC] def isEqualNode(arg: Node): Boolean
@@ -13960,6 +14026,7 @@ Node[JC] def hasAttributes(): Boolean
 Node[JC] def hasChildNodes(): Boolean
 Node[JC] var innerText: String
 Node[JC] def insertBefore(newChild: Node, refChild: Node): Node
+Node[JC] def isConnected: Boolean
 Node[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 Node[JC] def isEqualNode(arg: Node): Boolean
 Node[JC] def isSameNode(other: Node): Boolean
@@ -14364,6 +14431,7 @@ ProcessingInstruction[JC] def hasAttributes(): Boolean
 ProcessingInstruction[JC] def hasChildNodes(): Boolean
 ProcessingInstruction[JC] var innerText: String
 ProcessingInstruction[JC] def insertBefore(newChild: Node, refChild: Node): Node
+ProcessingInstruction[JC] def isConnected: Boolean
 ProcessingInstruction[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 ProcessingInstruction[JC] def isEqualNode(arg: Node): Boolean
 ProcessingInstruction[JC] def isSameNode(other: Node): Boolean
@@ -14596,6 +14664,7 @@ SVGAElement[JC] var innerText: String
 SVGAElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGAElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGAElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGAElement[JC] def isConnected: Boolean
 SVGAElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGAElement[JC] def isEqualNode(arg: Node): Boolean
 SVGAElement[JC] def isSameNode(other: Node): Boolean
@@ -14754,6 +14823,7 @@ SVGCircleElement[JC] var innerText: String
 SVGCircleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGCircleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGCircleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGCircleElement[JC] def isConnected: Boolean
 SVGCircleElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGCircleElement[JC] def isEqualNode(arg: Node): Boolean
 SVGCircleElement[JC] def isSameNode(other: Node): Boolean
@@ -14876,6 +14946,7 @@ SVGClipPathElement[JC] var innerText: String
 SVGClipPathElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGClipPathElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGClipPathElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGClipPathElement[JC] def isConnected: Boolean
 SVGClipPathElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGClipPathElement[JC] def isEqualNode(arg: Node): Boolean
 SVGClipPathElement[JC] def isSameNode(other: Node): Boolean
@@ -14988,6 +15059,7 @@ SVGComponentTransferFunctionElement[JC] def insertAdjacentElement(position: Stri
 SVGComponentTransferFunctionElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGComponentTransferFunctionElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 SVGComponentTransferFunctionElement[JC] def intercept: SVGAnimatedNumber
+SVGComponentTransferFunctionElement[JC] def isConnected: Boolean
 SVGComponentTransferFunctionElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGComponentTransferFunctionElement[JC] def isEqualNode(arg: Node): Boolean
 SVGComponentTransferFunctionElement[JC] def isSameNode(other: Node): Boolean
@@ -15107,6 +15179,7 @@ SVGDefsElement[JC] var innerText: String
 SVGDefsElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGDefsElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGDefsElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGDefsElement[JC] def isConnected: Boolean
 SVGDefsElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGDefsElement[JC] def isEqualNode(arg: Node): Boolean
 SVGDefsElement[JC] def isSameNode(other: Node): Boolean
@@ -15217,6 +15290,7 @@ SVGDescElement[JC] var innerText: String
 SVGDescElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGDescElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGDescElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGDescElement[JC] def isConnected: Boolean
 SVGDescElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGDescElement[JC] def isEqualNode(arg: Node): Boolean
 SVGDescElement[JC] def isSameNode(other: Node): Boolean
@@ -15321,6 +15395,7 @@ SVGElement[JC] var innerText: String
 SVGElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGElement[JC] def isConnected: Boolean
 SVGElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGElement[JC] def isEqualNode(arg: Node): Boolean
 SVGElement[JC] def isSameNode(other: Node): Boolean
@@ -15447,6 +15522,7 @@ SVGEllipseElement[JC] var innerText: String
 SVGEllipseElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGEllipseElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGEllipseElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGEllipseElement[JC] def isConnected: Boolean
 SVGEllipseElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGEllipseElement[JC] def isEqualNode(arg: Node): Boolean
 SVGEllipseElement[JC] def isSameNode(other: Node): Boolean
@@ -15569,6 +15645,7 @@ SVGFEBlendElement[JC] var innerText: String
 SVGFEBlendElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEBlendElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEBlendElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEBlendElement[JC] def isConnected: Boolean
 SVGFEBlendElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEBlendElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEBlendElement[JC] def isSameNode(other: Node): Boolean
@@ -15685,6 +15762,7 @@ SVGFEColorMatrixElement[JC] var innerText: String
 SVGFEColorMatrixElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEColorMatrixElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEColorMatrixElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEColorMatrixElement[JC] def isConnected: Boolean
 SVGFEColorMatrixElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEColorMatrixElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEColorMatrixElement[JC] def isSameNode(other: Node): Boolean
@@ -15801,6 +15879,7 @@ SVGFEComponentTransferElement[JC] var innerText: String
 SVGFEComponentTransferElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEComponentTransferElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEComponentTransferElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEComponentTransferElement[JC] def isConnected: Boolean
 SVGFEComponentTransferElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEComponentTransferElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEComponentTransferElement[JC] def isSameNode(other: Node): Boolean
@@ -15911,6 +15990,7 @@ SVGFECompositeElement[JC] var innerText: String
 SVGFECompositeElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFECompositeElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFECompositeElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFECompositeElement[JC] def isConnected: Boolean
 SVGFECompositeElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFECompositeElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFECompositeElement[JC] def isSameNode(other: Node): Boolean
@@ -16035,6 +16115,7 @@ SVGFEConvolveMatrixElement[JC] var innerText: String
 SVGFEConvolveMatrixElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEConvolveMatrixElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEConvolveMatrixElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEConvolveMatrixElement[JC] def isConnected: Boolean
 SVGFEConvolveMatrixElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEConvolveMatrixElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEConvolveMatrixElement[JC] def isSameNode(other: Node): Boolean
@@ -16157,6 +16238,7 @@ SVGFEDiffuseLightingElement[JC] var innerText: String
 SVGFEDiffuseLightingElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEDiffuseLightingElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEDiffuseLightingElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEDiffuseLightingElement[JC] def isConnected: Boolean
 SVGFEDiffuseLightingElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEDiffuseLightingElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEDiffuseLightingElement[JC] def isSameNode(other: Node): Boolean
@@ -16270,6 +16352,7 @@ SVGFEDisplacementMapElement[JC] var innerText: String
 SVGFEDisplacementMapElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEDisplacementMapElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEDisplacementMapElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEDisplacementMapElement[JC] def isConnected: Boolean
 SVGFEDisplacementMapElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEDisplacementMapElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEDisplacementMapElement[JC] def isSameNode(other: Node): Boolean
@@ -16386,6 +16469,7 @@ SVGFEDistantLightElement[JC] var innerText: String
 SVGFEDistantLightElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEDistantLightElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEDistantLightElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEDistantLightElement[JC] def isConnected: Boolean
 SVGFEDistantLightElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEDistantLightElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEDistantLightElement[JC] def isSameNode(other: Node): Boolean
@@ -16489,6 +16573,7 @@ SVGFEFloodElement[JC] var innerText: String
 SVGFEFloodElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEFloodElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEFloodElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEFloodElement[JC] def isConnected: Boolean
 SVGFEFloodElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEFloodElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEFloodElement[JC] def isSameNode(other: Node): Boolean
@@ -16598,6 +16683,7 @@ SVGFEFuncAElement[JC] def insertAdjacentElement(position: String, element: Eleme
 SVGFEFuncAElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEFuncAElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 SVGFEFuncAElement[JC] def intercept: SVGAnimatedNumber
+SVGFEFuncAElement[JC] def isConnected: Boolean
 SVGFEFuncAElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEFuncAElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEFuncAElement[JC] def isSameNode(other: Node): Boolean
@@ -16706,6 +16792,7 @@ SVGFEFuncBElement[JC] def insertAdjacentElement(position: String, element: Eleme
 SVGFEFuncBElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEFuncBElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 SVGFEFuncBElement[JC] def intercept: SVGAnimatedNumber
+SVGFEFuncBElement[JC] def isConnected: Boolean
 SVGFEFuncBElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEFuncBElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEFuncBElement[JC] def isSameNode(other: Node): Boolean
@@ -16814,6 +16901,7 @@ SVGFEFuncGElement[JC] def insertAdjacentElement(position: String, element: Eleme
 SVGFEFuncGElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEFuncGElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 SVGFEFuncGElement[JC] def intercept: SVGAnimatedNumber
+SVGFEFuncGElement[JC] def isConnected: Boolean
 SVGFEFuncGElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEFuncGElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEFuncGElement[JC] def isSameNode(other: Node): Boolean
@@ -16922,6 +17010,7 @@ SVGFEFuncRElement[JC] def insertAdjacentElement(position: String, element: Eleme
 SVGFEFuncRElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEFuncRElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 SVGFEFuncRElement[JC] def intercept: SVGAnimatedNumber
+SVGFEFuncRElement[JC] def isConnected: Boolean
 SVGFEFuncRElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEFuncRElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEFuncRElement[JC] def isSameNode(other: Node): Boolean
@@ -17030,6 +17119,7 @@ SVGFEGaussianBlurElement[JC] var innerText: String
 SVGFEGaussianBlurElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEGaussianBlurElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEGaussianBlurElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEGaussianBlurElement[JC] def isConnected: Boolean
 SVGFEGaussianBlurElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEGaussianBlurElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEGaussianBlurElement[JC] def isSameNode(other: Node): Boolean
@@ -17143,6 +17233,7 @@ SVGFEImageElement[JC] var innerText: String
 SVGFEImageElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEImageElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEImageElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEImageElement[JC] def isConnected: Boolean
 SVGFEImageElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEImageElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEImageElement[JC] def isSameNode(other: Node): Boolean
@@ -17254,6 +17345,7 @@ SVGFEMergeElement[JC] var innerText: String
 SVGFEMergeElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEMergeElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEMergeElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEMergeElement[JC] def isConnected: Boolean
 SVGFEMergeElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEMergeElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEMergeElement[JC] def isSameNode(other: Node): Boolean
@@ -17361,6 +17453,7 @@ SVGFEMergeNodeElement[JC] var innerText: String
 SVGFEMergeNodeElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEMergeNodeElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEMergeNodeElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEMergeNodeElement[JC] def isConnected: Boolean
 SVGFEMergeNodeElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEMergeNodeElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEMergeNodeElement[JC] def isSameNode(other: Node): Boolean
@@ -17465,6 +17558,7 @@ SVGFEMorphologyElement[JC] var innerText: String
 SVGFEMorphologyElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEMorphologyElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEMorphologyElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEMorphologyElement[JC] def isConnected: Boolean
 SVGFEMorphologyElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEMorphologyElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEMorphologyElement[JC] def isSameNode(other: Node): Boolean
@@ -17582,6 +17676,7 @@ SVGFEOffsetElement[JC] var innerText: String
 SVGFEOffsetElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEOffsetElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEOffsetElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEOffsetElement[JC] def isConnected: Boolean
 SVGFEOffsetElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEOffsetElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEOffsetElement[JC] def isSameNode(other: Node): Boolean
@@ -17688,6 +17783,7 @@ SVGFEPointLightElement[JC] var innerText: String
 SVGFEPointLightElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFEPointLightElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFEPointLightElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFEPointLightElement[JC] def isConnected: Boolean
 SVGFEPointLightElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFEPointLightElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFEPointLightElement[JC] def isSameNode(other: Node): Boolean
@@ -17795,6 +17891,7 @@ SVGFESpecularLightingElement[JC] var innerText: String
 SVGFESpecularLightingElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFESpecularLightingElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFESpecularLightingElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFESpecularLightingElement[JC] def isConnected: Boolean
 SVGFESpecularLightingElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFESpecularLightingElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFESpecularLightingElement[JC] def isSameNode(other: Node): Boolean
@@ -17906,6 +18003,7 @@ SVGFESpotLightElement[JC] var innerText: String
 SVGFESpotLightElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFESpotLightElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFESpotLightElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFESpotLightElement[JC] def isConnected: Boolean
 SVGFESpotLightElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFESpotLightElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFESpotLightElement[JC] def isSameNode(other: Node): Boolean
@@ -18018,6 +18116,7 @@ SVGFETileElement[JC] var innerText: String
 SVGFETileElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFETileElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFETileElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFETileElement[JC] def isConnected: Boolean
 SVGFETileElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFETileElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFETileElement[JC] def isSameNode(other: Node): Boolean
@@ -18128,6 +18227,7 @@ SVGFETurbulenceElement[JC] var innerText: String
 SVGFETurbulenceElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFETurbulenceElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFETurbulenceElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFETurbulenceElement[JC] def isConnected: Boolean
 SVGFETurbulenceElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFETurbulenceElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFETurbulenceElement[JC] def isSameNode(other: Node): Boolean
@@ -18254,6 +18354,7 @@ SVGFilterElement[JC] var innerText: String
 SVGFilterElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGFilterElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGFilterElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGFilterElement[JC] def isConnected: Boolean
 SVGFilterElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGFilterElement[JC] def isEqualNode(arg: Node): Boolean
 SVGFilterElement[JC] def isSameNode(other: Node): Boolean
@@ -18380,6 +18481,7 @@ SVGGElement[JC] var innerText: String
 SVGGElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGGElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGGElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGGElement[JC] def isConnected: Boolean
 SVGGElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGGElement[JC] def isEqualNode(arg: Node): Boolean
 SVGGElement[JC] def isSameNode(other: Node): Boolean
@@ -18497,6 +18599,7 @@ SVGGradientElement[JC] var innerText: String
 SVGGradientElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGGradientElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGGradientElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGGradientElement[JC] def isConnected: Boolean
 SVGGradientElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGGradientElement[JC] def isEqualNode(arg: Node): Boolean
 SVGGradientElement[JC] def isSameNode(other: Node): Boolean
@@ -18614,6 +18717,7 @@ SVGImageElement[JC] var innerText: String
 SVGImageElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGImageElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGImageElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGImageElement[JC] def isConnected: Boolean
 SVGImageElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGImageElement[JC] def isEqualNode(arg: Node): Boolean
 SVGImageElement[JC] def isSameNode(other: Node): Boolean
@@ -18762,6 +18866,7 @@ SVGLineElement[JC] var innerText: String
 SVGLineElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGLineElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGLineElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGLineElement[JC] def isConnected: Boolean
 SVGLineElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGLineElement[JC] def isEqualNode(arg: Node): Boolean
 SVGLineElement[JC] def isSameNode(other: Node): Boolean
@@ -18883,6 +18988,7 @@ SVGLinearGradientElement[JC] var innerText: String
 SVGLinearGradientElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGLinearGradientElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGLinearGradientElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGLinearGradientElement[JC] def isConnected: Boolean
 SVGLinearGradientElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGLinearGradientElement[JC] def isEqualNode(arg: Node): Boolean
 SVGLinearGradientElement[JC] def isSameNode(other: Node): Boolean
@@ -18998,6 +19104,7 @@ SVGMarkerElement[JC] var innerText: String
 SVGMarkerElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGMarkerElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGMarkerElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGMarkerElement[JC] def isConnected: Boolean
 SVGMarkerElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGMarkerElement[JC] def isEqualNode(arg: Node): Boolean
 SVGMarkerElement[JC] def isSameNode(other: Node): Boolean
@@ -19126,6 +19233,7 @@ SVGMaskElement[JC] var innerText: String
 SVGMaskElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGMaskElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGMaskElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGMaskElement[JC] def isConnected: Boolean
 SVGMaskElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGMaskElement[JC] def isEqualNode(arg: Node): Boolean
 SVGMaskElement[JC] def isSameNode(other: Node): Boolean
@@ -19255,6 +19363,7 @@ SVGMetadataElement[JC] var innerText: String
 SVGMetadataElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGMetadataElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGMetadataElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGMetadataElement[JC] def isConnected: Boolean
 SVGMetadataElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGMetadataElement[JC] def isEqualNode(arg: Node): Boolean
 SVGMetadataElement[JC] def isSameNode(other: Node): Boolean
@@ -19395,6 +19504,7 @@ SVGPathElement[JC] var innerText: String
 SVGPathElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGPathElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGPathElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGPathElement[JC] def isConnected: Boolean
 SVGPathElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGPathElement[JC] def isEqualNode(arg: Node): Boolean
 SVGPathElement[JC] def isSameNode(other: Node): Boolean
@@ -19639,6 +19749,7 @@ SVGPatternElement[JC] var innerText: String
 SVGPatternElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGPatternElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGPatternElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGPatternElement[JC] def isConnected: Boolean
 SVGPatternElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGPatternElement[JC] def isEqualNode(arg: Node): Boolean
 SVGPatternElement[JC] def isSameNode(other: Node): Boolean
@@ -19774,6 +19885,7 @@ SVGPolygonElement[JC] var innerText: String
 SVGPolygonElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGPolygonElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGPolygonElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGPolygonElement[JC] def isConnected: Boolean
 SVGPolygonElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGPolygonElement[JC] def isEqualNode(arg: Node): Boolean
 SVGPolygonElement[JC] def isSameNode(other: Node): Boolean
@@ -19893,6 +20005,7 @@ SVGPolylineElement[JC] var innerText: String
 SVGPolylineElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGPolylineElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGPolylineElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGPolylineElement[JC] def isConnected: Boolean
 SVGPolylineElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGPolylineElement[JC] def isEqualNode(arg: Node): Boolean
 SVGPolylineElement[JC] def isSameNode(other: Node): Boolean
@@ -20031,6 +20144,7 @@ SVGRadialGradientElement[JC] var innerText: String
 SVGRadialGradientElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGRadialGradientElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGRadialGradientElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGRadialGradientElement[JC] def isConnected: Boolean
 SVGRadialGradientElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGRadialGradientElement[JC] def isEqualNode(arg: Node): Boolean
 SVGRadialGradientElement[JC] def isSameNode(other: Node): Boolean
@@ -20148,6 +20262,7 @@ SVGRectElement[JC] var innerText: String
 SVGRectElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGRectElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGRectElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGRectElement[JC] def isConnected: Boolean
 SVGRectElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGRectElement[JC] def isEqualNode(arg: Node): Boolean
 SVGRectElement[JC] def isSameNode(other: Node): Boolean
@@ -20293,6 +20408,7 @@ SVGSVGElement[JC] var innerText: String
 SVGSVGElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGSVGElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGSVGElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGSVGElement[JC] def isConnected: Boolean
 SVGSVGElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGSVGElement[JC] def isEqualNode(arg: Node): Boolean
 SVGSVGElement[JC] def isSameNode(other: Node): Boolean
@@ -20426,6 +20542,7 @@ SVGScriptElement[JC] var innerText: String
 SVGScriptElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGScriptElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGScriptElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGScriptElement[JC] def isConnected: Boolean
 SVGScriptElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGScriptElement[JC] def isEqualNode(arg: Node): Boolean
 SVGScriptElement[JC] def isSameNode(other: Node): Boolean
@@ -20529,6 +20646,7 @@ SVGStopElement[JC] var innerText: String
 SVGStopElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGStopElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGStopElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGStopElement[JC] def isConnected: Boolean
 SVGStopElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGStopElement[JC] def isEqualNode(arg: Node): Boolean
 SVGStopElement[JC] def isSameNode(other: Node): Boolean
@@ -20642,6 +20760,7 @@ SVGStyleElement[JC] var innerText: String
 SVGStyleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGStyleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGStyleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGStyleElement[JC] def isConnected: Boolean
 SVGStyleElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGStyleElement[JC] def isEqualNode(arg: Node): Boolean
 SVGStyleElement[JC] def isSameNode(other: Node): Boolean
@@ -20756,6 +20875,7 @@ SVGSwitchElement[JC] var innerText: String
 SVGSwitchElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGSwitchElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGSwitchElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGSwitchElement[JC] def isConnected: Boolean
 SVGSwitchElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGSwitchElement[JC] def isEqualNode(arg: Node): Boolean
 SVGSwitchElement[JC] def isSameNode(other: Node): Boolean
@@ -20867,6 +20987,7 @@ SVGSymbolElement[JC] var innerText: String
 SVGSymbolElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGSymbolElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGSymbolElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGSymbolElement[JC] def isConnected: Boolean
 SVGSymbolElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGSymbolElement[JC] def isEqualNode(arg: Node): Boolean
 SVGSymbolElement[JC] def isSameNode(other: Node): Boolean
@@ -20986,6 +21107,7 @@ SVGTSpanElement[JC] var innerText: String
 SVGTSpanElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGTSpanElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGTSpanElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGTSpanElement[JC] def isConnected: Boolean
 SVGTSpanElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGTSpanElement[JC] def isEqualNode(arg: Node): Boolean
 SVGTSpanElement[JC] def isSameNode(other: Node): Boolean
@@ -21114,6 +21236,7 @@ SVGTextContentElement[JC] var innerText: String
 SVGTextContentElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGTextContentElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGTextContentElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGTextContentElement[JC] def isConnected: Boolean
 SVGTextContentElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGTextContentElement[JC] def isEqualNode(arg: Node): Boolean
 SVGTextContentElement[JC] def isSameNode(other: Node): Boolean
@@ -21245,6 +21368,7 @@ SVGTextElement[JC] var innerText: String
 SVGTextElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGTextElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGTextElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGTextElement[JC] def isConnected: Boolean
 SVGTextElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGTextElement[JC] def isEqualNode(arg: Node): Boolean
 SVGTextElement[JC] def isSameNode(other: Node): Boolean
@@ -21372,6 +21496,7 @@ SVGTextPathElement[JC] var innerText: String
 SVGTextPathElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGTextPathElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGTextPathElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGTextPathElement[JC] def isConnected: Boolean
 SVGTextPathElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGTextPathElement[JC] def isEqualNode(arg: Node): Boolean
 SVGTextPathElement[JC] def isSameNode(other: Node): Boolean
@@ -21504,6 +21629,7 @@ SVGTextPositioningElement[JC] var innerText: String
 SVGTextPositioningElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGTextPositioningElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGTextPositioningElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGTextPositioningElement[JC] def isConnected: Boolean
 SVGTextPositioningElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGTextPositioningElement[JC] def isEqualNode(arg: Node): Boolean
 SVGTextPositioningElement[JC] def isSameNode(other: Node): Boolean
@@ -21618,6 +21744,7 @@ SVGTitleElement[JC] var innerText: String
 SVGTitleElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGTitleElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGTitleElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGTitleElement[JC] def isConnected: Boolean
 SVGTitleElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGTitleElement[JC] def isEqualNode(arg: Node): Boolean
 SVGTitleElement[JC] def isSameNode(other: Node): Boolean
@@ -21774,6 +21901,7 @@ SVGUseElement[JC] def insertAdjacentElement(position: String, element: Element):
 SVGUseElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGUseElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
 SVGUseElement[JC] def instanceRoot: SVGElementInstance
+SVGUseElement[JC] def isConnected: Boolean
 SVGUseElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGUseElement[JC] def isEqualNode(arg: Node): Boolean
 SVGUseElement[JC] def isSameNode(other: Node): Boolean
@@ -21887,6 +22015,7 @@ SVGViewElement[JC] var innerText: String
 SVGViewElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 SVGViewElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 SVGViewElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+SVGViewElement[JC] def isConnected: Boolean
 SVGViewElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 SVGViewElement[JC] def isEqualNode(arg: Node): Boolean
 SVGViewElement[JC] def isSameNode(other: Node): Boolean
@@ -22071,6 +22200,7 @@ Text[JC] def hasChildNodes(): Boolean
 Text[JC] var innerText: String
 Text[JC] def insertBefore(newChild: Node, refChild: Node): Node
 Text[JC] def insertData(offset: Int, arg: String): Unit
+Text[JC] def isConnected: Boolean
 Text[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 Text[JC] def isEqualNode(arg: Node): Boolean
 Text[JC] def isSameNode(other: Node): Boolean
