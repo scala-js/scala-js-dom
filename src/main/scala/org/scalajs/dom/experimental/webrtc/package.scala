@@ -15,8 +15,6 @@ package object webrtc {
     /** The Navigator.mediaDevices read-only property returns a MediaDevices object, which provides access to connected
       * media input devices like cameras and microphones, as well as screen sharing.
       *
-      * MDN
-      *
       * @see
       *   [[https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices]]
       */

@@ -111,30 +111,22 @@ class FetchEvent(typeArg: String, init: js.UndefOr[FetchEventInit]) extends Exte
 /** The ServiceWorker interface of the ServiceWorker API provides a reference to a service worker. Multiple browsing
   * contexts (e.g. pages, workers, etc.) can be associated with the same service worker, each through a unique
   * ServiceWorker object.
-  *
-  * MDN
   */
 @js.native
 trait ServiceWorker extends EventTarget {
 
   /** Returns the ServiceWorker serialized script URL defined as part of ServiceWorkerRegistration. Must be on the same
     * origin as the document that registers the ServiceWorker.
-    *
-    * MDN
     */
   def scriptURL: String = js.native
 
   /** The state read-only property of the ServiceWorker interface returns a string representing the current state of the
     * service worker. It can be one of the following values: installing, installed, activating, activated, or redundant.
-    *
-    * MDN
     */
   def state: String = js.native
 
   /** An EventListener property called whenever an event of type statechange is fired; it is basically fired anytime the
     * ServiceWorker.state changes.
-    *
-    * MDN
     */
   var onstatechange: js.Function1[Event, _] = js.native
 
@@ -146,45 +138,33 @@ trait ServiceWorker extends EventTarget {
 
 /** The ServiceWorkerRegistion interface of the ServiceWorker API represents the service worker registration. You
   * register a service worker to control one or more pages that share the same origin.
-  *
-  * MDN
   */
 @js.native
 trait ServiceWorkerRegistration extends EventTarget {
 
   /** The installing property of the ServiceWorkerRegistration interface returns a service worker whose
     * ServiceWorker.state is installing. This property is initially set to null.
-    *
-    * MDN
     */
   var installing: ServiceWorker = js.native
 
   /** The waiting property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state
     * is installed. This property is initially set to null.
-    *
-    * MDN
     */
   var waiting: ServiceWorker = js.native
 
   /** The active property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state
     * is activating or activated. This property is initially set to null.
-    *
-    * MDN
     */
   var active: ServiceWorker = js.native
 
   /** The scope read-only property of the ServiceWorkerRegistration interface returns a unique identifier for a service
     * worker registration. The service worker must be on the same origin as the document that registers the
     * ServiceWorker.
-    *
-    * MDN
     */
   var scope: String = js.native
 
   /** The update method of the ServiceWorkerRegistration interface allows you to ping the server for an updated service
     * worker script. If you don't explicitly call this, the UA will do this automatically once every 24 hours.
-    *
-    * MDN
     */
   def update(): js.Promise[Unit] = js.native
 
@@ -193,16 +173,12 @@ trait ServiceWorkerRegistration extends EventTarget {
     * irrespective of whether unregistration happened or not (it may not unregister if someone else just called
     * ServiceWorkerContainer.register with the same scope.) The service worker will finish any ongoing operations before
     * it is unregistered.
-    *
-    * MDN
     */
   def unregister(): js.Promise[Boolean] = js.native
 
   /** The onupdatefound property of the ServiceWorkerRegistration interface is an EventListener property called whenever
     * an event of type statechange is fired; it is fired any time the ServiceWorkerRegistration. installing property
     * acquires a new service worker.
-    *
-    * MDN
     */
   var onupdatefound: js.Function1[Event, _] = js.native
 
@@ -210,28 +186,20 @@ trait ServiceWorkerRegistration extends EventTarget {
     * the order that they were created from the current origin via the current service worker registration. Origins can
     * have many active but differently-scoped service worker registrations. Notifications created by one service worker
     * on the same origin will not be available to other active services workers on that same origin.
-    *
-    * MDN
     */
   def getNotifications(options: GetNotificationOptions = ???): js.Promise[Sequence[Notification]] = js.native
 
   /** The showNotification() method of the ServiceWorkerRegistration interface creates a notification on an active
     * service worker.
-    *
-    * MDN
     */
   def showNotification(title: String, options: NotificationOptions = ???): js.Promise[Unit] = js.native
 }
 
 /** An object containing options to filter the notifications returned.
-  *
-  * MDN
   */
 trait GetNotificationOptions extends js.Object {
 
   /** A DOMString representing a notification tag. If specified, only notifications that have this tag will be returned.
-    *
-    * MDN
     */
   var tag: js.UndefOr[String] = js.undefined
 }
@@ -239,8 +207,6 @@ trait GetNotificationOptions extends js.Object {
 /** The ServiceWorkerContainer interface of the ServiceWorker API exposes the ServiceWorkerContainer.
   * register(scriptURL, scope[, base]) method used to register service workers, and the ServiceWorkerContainer.
   * controller property used to determine whether or not the current page is actively controlled.
-  *
-  * MDN
   */
 @js.native
 trait ServiceWorkerContainer extends EventTarget {
@@ -249,8 +215,6 @@ trait ServiceWorkerContainer extends EventTarget {
     * registration ties the provided script URL to a scope, which is subsequently used for navigation matching. If the
     * method can't return a ServiceWorkerRegistration, it returns a Promise. You can call this method unconditionally
     * from the controlled page, i.e., you don't need to first check whether there's an active registration.
-    *
-    * MDN
     */
   def register(scriptURL: String,
       options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration] = js.native
@@ -258,47 +222,35 @@ trait ServiceWorkerContainer extends EventTarget {
   /** The ServiceWorkerContainer.controller read-only property of the ServiceWorkerContainer interface returns the
     * ServiceWorker whose state is activated (the same object returned by ServiceWorkerRegistration.active). This
     * property returns null if the request is a force refresh (Shift + refresh) or if there is no active worker.
-    *
-    * MDN
     */
   def controller: ServiceWorker = js.native
 
   /** Gets a ServiceWorkerRegistration object whose scope URL matches the document URL. If the method can't return a
     * ServiceWorkerRegistration, it returns a Promise.
-    *
-    * MDN
     */
   def getRegistration(scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]] = js.native
 
   /** The getRegistrations() method of the ServiceWorkerContainer interface returns all ServiceWorkerRegistrations
     * associated with a ServiceWorkerContainer in an array. If the method can't return ServiceWorkerRegistrations, it
     * returns a Promise.
-    *
-    * MDN
     */
   def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]] = js.native
 
   /** The ready read-only property of the ServiceWorkerContainer interface defines whether a service worker is ready to
     * control a page or not. It returns a Promise that will never reject, which resolves to a ServiceWorkerRegistration
     * with an ServiceWorkerRegistration.active worker.
-    *
-    * MDN
     */
   def ready: js.Promise[ServiceWorkerRegistration] = js.native
 
   /** The oncontrollerchange property of the ServiceWorkerContainer interface is an event handler fired whenever a
     * controllerchange event occurs — when the document's associated ServiceWorkerRegistratin acquires a new
     * ServiceWorkerRegistration.active worker.
-    *
-    * MDN
     */
   var oncontrollerchange: js.Function1[Event, _] = js.native
 
   /** The onmessage property of the ServiceWorkerContainer interface is an event handler fired whenever a message event
     * occurs — when incoming messages are received to the ServiceWorkerContainer object (e.g., via a
     * MessagePort.postMessage() call).
-    *
-    * MDN
     */
   var onmessage: js.Function1[MessageEvent, _] = js.native
 }
@@ -332,8 +284,6 @@ trait ExtendableMessageEventInit extends ExtendableEventInit {
 
 /** Service workers define the extendable message event that extends the message event defined in HTML to allow
   * extending the lifetime of the event.
-  *
-  * MDN
   */
 @js.native
 @JSGlobal
@@ -430,30 +380,22 @@ trait ClientQueryOptions extends js.Object {
 /** The WindowClient interface of the ServiceWorker API represents the scope of a service worker client that is a
   * document in a browser context, controlled by an active worker. The service worker client independently selects and
   * uses a service worker for its own loading and sub-resources.
-  *
-  * MDN
   */
 @js.native
 trait WindowClient extends Client {
 
   /** The visibilityState read-only property of the WindowClient interface indicates the visibility of the current
     * client. This value can be one of hidden, visible, prerender, or unloaded.
-    *
-    * MDN
     */
   //todo: stubs for https://www.w3.org/TR/page-visibility/#dom-document-visibilitystate
   def visibilityState: String = js.native
 
   /** The focused read-only property of the WindowClient interface is a Boolean that indicates whether the current
     * client has focus.
-    *
-    * MDN
     */
   def focused: Boolean = js.native
 
   /** Gives user input focus to the current client and returns a Promise that resolves to the existing WindowClient.
-    *
-    * MDN
     */
   def focus(): js.Promise[WindowClient]
 
@@ -493,15 +435,11 @@ trait Clients extends js.Object {
   *
   * Additionally, synchronous requests are not allowed from within a service worker — only asynchronous requests, like
   * those initiated via the fetch() method, can be used.
-  *
-  * MDN
   */
 @js.native
 trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
 
   /** Returns the Clients object associated with the service worker.
-    *
-    * MDN
     */
   def clients: Clients = js.native
 
@@ -512,37 +450,27 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
 
   /** An event handler fired whenever an activate event occurs (when the service worker activates). This happens after
     * installation, when the page to be controlled by the service worker refreshes.
-    *
-    * MDN
     */
   var onactivate: js.Function1[ExtendableEvent, _] = js.native
 
   /** An event handler fired whenever a fetch event occurs — when a fetch() is called.
-    *
-    * MDN
     */
   var onfetch: js.Function1[FetchEvent, _] = js.native
 
   /** An event handler fired whenever an install event occurs — when a ServiceWorkerRegistration acquires a new
     * ServiceWorkerRegistration.installing worker.
-    *
-    * MDN
     */
   var oninstall: js.Function1[ExtendableEvent, _] = js.native
 
   /** An event handler fired whenever a message event occurs — when incoming messages are received. Controlled pages can
     * use the MessagePort.postMessage method to send messages to service workers. The service worker can optionally send
     * a response back via the MessagePort exposed in event.data.port, corresponding to the controlled page.
-    *
-    * MDN
     */
   var onmessage: js.Function1[MessageEvent, _] = js.native
 
   /** Forces the waiting service worker to become the active service worker. This method can be used with
     * [[Clients.claim]] to ensure that updates to the underlying service worker take effect immediately for both the
     * current client and all other active clients.
-    *
-    * MDN
     */
   def skipWaiting(): js.Promise[Unit] = js.native
 }

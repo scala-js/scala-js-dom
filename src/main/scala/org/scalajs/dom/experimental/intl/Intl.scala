@@ -11,8 +11,6 @@ import scala.scalajs.js.annotation._
 import scala.scalajs.js.|
 
 /** The Intl.Collator object is a constructor for collators, objects that enable language sensitive string comparison.
-  *
-  * MDN
   */
 @js.native
 @JSGlobal("Intl.Collator")
@@ -25,8 +23,6 @@ class Collator(locales: js.UndefOr[String | js.Array[String]] = js.undefined,
 }
 
 /** The Intl.DateTimeFormat object is a constructor for objects that enable language sensitive date and time formatting.
-  *
-  * MDN
   */
 @js.native
 @JSGlobal("Intl.DateTimeFormat")
@@ -39,8 +35,6 @@ class DateTimeFormat(locales: js.UndefOr[String | js.Array[String]] = js.undefin
 }
 
 /** The Intl.NumberFormat object is a constructor for objects that enable language sensitive number formatting.
-  *
-  * MDN
   */
 @js.native
 @JSGlobal("Intl.NumberFormat")
@@ -90,8 +84,6 @@ object CollatorOptions {
     *   locale's default); the default is "false". This option can be set through an options property or through a
     *   Unicode extension key; if both are provided, the options property takes precedence. Implementations are not
     *   required to support this property.
-    *
-    * MDN
     */
   def apply(
       localeMatcher: js.UndefOr[String] = js.undefined, usage: js.UndefOr[String] = js.undefined,
@@ -162,8 +154,6 @@ object DateTimeFormatOptions {
     *   The representation of the second. Possible values are "numeric", "2-digit".
     * @param timeZoneName
     *   The representation of the time zone name. Possible values are "short", "long".
-    *
-    * MDN
     */
   def apply(
       localeMatcher: js.UndefOr[String] = js.undefined, timeZone: js.UndefOr[String] = js.undefined,
@@ -253,8 +243,6 @@ object NumberFormatOptions {
     * @param maximumSignificantDigits
     *   The maximum number of significant digits to use. Possible values are from 1 to 21; the default is
     *   minimumSignificantDigits.
-    *
-    * MDN
     */
   def apply(
       localeMatcher: js.UndefOr[String] = js.undefined, style: js.UndefOr[String] = js.undefined,

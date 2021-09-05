@@ -10,8 +10,6 @@ import scala.scalajs.js
   * before a page is unloaded and they are run to completion without requiring a blocking request (for example
   * XMLHttpRequest).
   *
-  * MDN
-  *
   * @see
   *   [[https://www.w3.org/TR/2016/WD-beacon-20160204/ Beacon W3C Working Draft]]
   * @see
@@ -32,8 +30,6 @@ package object beacon {
     /** The navigator.sendBeacon() method can be used to asynchronously transfer small HTTP data from the User Agent to
       * a web server.
       *
-      * MDN
-      *
       * @param url
       *   The url parameter indicates the resolved URL where the data is to be transmitted.
       * @param data
@@ -47,8 +43,6 @@ package object beacon {
 
     /** The navigator.sendBeacon() method can be used to asynchronously transfer small HTTP data from the User Agent to
       * a web server.
-      *
-      * MDN
       *
       * @param url
       *   The url parameter indicates the resolved URL where the data is to be transmitted.

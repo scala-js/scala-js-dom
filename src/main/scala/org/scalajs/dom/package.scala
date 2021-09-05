@@ -13,8 +13,6 @@ package object dom {
     * This is an abstract interface and there isn't any object of this type. It also doesn't define any method or
     * property: it is merely a tag indicating objects that can be used in specific conditions, like to be transfered to
     * a Worker using the Worker.postMessage() method.
-    *
-    * MDN
     */
   type Transferable = ArrayBuffer | MessagePort
 
