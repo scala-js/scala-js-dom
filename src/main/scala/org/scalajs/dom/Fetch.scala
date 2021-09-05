@@ -173,12 +173,12 @@ trait ResponseInit extends js.Object {
 @js.native
 trait Body extends js.Object {
 
-  /* Contains a Boolean that indicates whether the body has been read.
-   */
+  /** Contains a Boolean that indicates whether the body has been read.
+    */
   def bodyUsed: Boolean = js.native
 
-  /* Takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer.
-   */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer.
+    */
   def arrayBuffer(): js.Promise[ArrayBuffer] = js.native
 
   /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob.

@@ -868,9 +868,9 @@ object KeyFormat {
 @js.native
 trait RSAPublicKey extends js.Object {
 
-  /* modulus, as a base64 URL encoded String */
+  /** modulus, as a base64 URL encoded String */
   def n: String = js.native
 
-  /* exponent, as a base64 URL encoded String */
+  /** exponent, as a base64 URL encoded String */
   def e: String = js.native
 }
