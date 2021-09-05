@@ -31,8 +31,6 @@ object webworkers {
   object DedicatedWorkerGlobalScope extends js.Object {
 
     /** Returns an object reference to the DedicatedWorkerGlobalScope object itself.
-      *
-      * MDN
       */
     def self: DedicatedWorkerGlobalScope = js.native
   }

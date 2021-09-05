@@ -17,7 +17,7 @@ object Fetch extends js.Object {
   def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response] = js.native
 }
 
-/** The Request interface of the Fetch API represents a resource request. MDN
+/** The Request interface of the Fetch API represents a resource request.
   *
   * see [[https://fetch.spec.whatwg.org/#request-class ¶6.3 Request Class]] in whatwg spec
   *
@@ -173,12 +173,12 @@ trait ResponseInit extends js.Object {
 @js.native
 trait Body extends js.Object {
 
-  /** MDN: Contains a Boolean that indicates whether the body has been read.
-    */
+  /*: Contains a Boolean that indicates whether the body has been read.
+   */
   def bodyUsed: Boolean = js.native
 
-  /** MDN: Takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer.
-    */
+  /*: Takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer.
+   */
   def arrayBuffer(): js.Promise[ArrayBuffer] = js.native
 
   /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob.
@@ -216,8 +216,6 @@ trait Body extends js.Object {
   *
   * You can retrieve a Headers object via the Request.headers and Response.headers properties, and create a new Headers
   * object using the Headers.Headers() constructor.
-  *
-  * MDN
   */
 @js.native
 @JSGlobal

@@ -25,8 +25,6 @@ package object serviceworkers {
 
     /** The Navigator.serviceWorker read-only property returns a ServiceWorkerContainer object, which provides access to
       * registration, removal, upgrade, and communication with the ServiceWorker objects for the associated document.
-      *
-      * MDN
       */
     val serviceWorker: ServiceWorkerContainer = js.native
   }

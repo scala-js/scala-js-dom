@@ -10,8 +10,6 @@ import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
   *
   * This interface is accessed via the ServiceWorkerRegistration.pushManager property.
   *
-  * MDN
-  *
   * The Push API is currently specified here: [[https://www.w3.org/TR/2018/WD-push-api-20181026/]]
   */
 @js.native
@@ -19,8 +17,6 @@ trait PushManager extends js.Object {
 
   /** Retrieves an existing push subscription. It returns a Promise that resolves to a PushSubscription object
     * containing details of an existing subscription. If no existing subscription exists, this resolves to a null value.
-    *
-    * MDN
     */
   def getSubscription(): js.Promise[PushSubscription] = js.native
 
@@ -31,8 +27,6 @@ trait PushManager extends js.Object {
     *   An object containing optional configuration parameters. It can have the following properties:
     *   - userVisibleOnly: A boolean indicating that the returned push subscription will only be used for messages whose
     *     effect is made visible to the user.
-    *
-    * MDN
     */
   def permissionState(options: PushSubscriptionOptions = js.native): js.Promise[PushPermissionState] = js.native
 
@@ -40,8 +34,6 @@ trait PushManager extends js.Object {
     *
     * It returns a Promise that resolves to a PushSubscription object containing details of a push subscription. A new
     * push subscription is created if the current service worker does not have an existing subscription.
-    *
-    * MDN
     */
   def subscribe(options: PushSubscriptionOptions = js.native): js.Promise[PushSubscription] = js.native
 }
@@ -50,8 +42,6 @@ trait PushManager extends js.Object {
   * a push service.
   *
   * An instance of this interface can be serialized.
-  *
-  * MDN
   */
 @js.native
 trait PushSubscription extends js.Object {
@@ -61,22 +51,16 @@ trait PushSubscription extends js.Object {
     * which can be used to send a push message to the particular service worker instance that subscribed to the push
     * service. For this reason, it is a good idea to keep your endPoint a secret, so others do not hijack it and abuse
     * the push functionality.
-    *
-    * MDN
     */
   val endpoint: String = js.native
 
   /** The expirationTime read-only property of the PushSubscription interface returns a DOMHighResTimeStamp of the
     * subscription expiration time associated with the push subscription, if there is one, or null otherwise.
-    *
-    * MDN
     */
   val expirationTime: java.lang.Double = js.native
 
   /** The options read-only property of the PushSubscription interface is an object containing containing the options
     * used to create the subscription.
-    *
-    * MDN
     */
   val options: PushSubscriptionOptions = js.native
 
@@ -86,58 +70,42 @@ trait PushSubscription extends js.Object {
 
   /** The unsubscribe() method of the PushSubscription interface returns a Promise that resolves to a Boolean when the
     * current subscription is successfully unsubscribed.
-    *
-    * MDN
     */
   def unsubscribe(): js.Promise[Boolean] = js.native
 
   /** The toJSON() method of the PushSubscription interface is a standard serializer: it returns a JSON representation
     * of the subscription properties, providing a useful shortcut.
-    *
-    * MDN
     */
   def toJSON(): PushSubscriptionJSON = js.native
 }
 
 /** A PushSubscriptionJSON dictionary represents the JSON type of a PushSubscription. In ECMAScript this can be
   * converted into a JSON string through the JSON.stringify function.
-  *
-  * MDN
   */
 @js.native
 trait PushSubscriptionJSON extends js.Object {
 
   /** The endpoint contains the underlying value of the endpoint attribute.
-    *
-    * MDN
     */
   val endpoint: String = js.native
 
   /** The endpoint contains the underlying value of the endpoint attribute.
-    *
-    * MDN
     */
   val expirationTime: java.lang.Double = js.native
 
   /** The keys record contains an entry for each of the supported PushEncryptionKeyName entries to the URL-safe base64
     * encoded representation [RFC4648] of its value.
-    *
-    * MDN
     */
   val keys: js.Dictionary[String] = js.native
 }
 
 /** The PushEvent interface of the Push API represents a push message that has been received. This event is sent to the
   * global scope of a ServiceWorker. It contains the information sent from an application server to a PushSubscription.
-  *
-  * MDN
   */
 @js.native
 trait PushEvent extends ExtendableEvent {
 
   /** Returns a reference to a PushMessageData object containing data sent to the PushSubscription. Read-only.
-    *
-    * MDN
     */
   val data: PushMessageData = js.native
 }
@@ -147,33 +115,23 @@ trait PushEvent extends ExtendableEvent {
   *
   * Unlike the similar methods in the Fetch API, which only allow the method to be invoked once, these methods can be
   * called multiple times.
-  *
-  * MDN
   */
 @js.native
 trait PushMessageData extends js.Object {
 
   /** Extracts the data as an ArrayBuffer object.
-    *
-    * MDN
     */
   def arrayBuffer(): ArrayBuffer = js.native
 
   /** Extracts the data as a Blob object.
-    *
-    * MDN
     */
   def blob(): Blob = js.native
 
   /** Extracts the data as a JSON object.
-    *
-    * MDN
     */
   def json(): js.Any = js.native
 
   /** Extracts the data as a plain text string.
-    *
-    * MDN
     */
   def text(): String = js.native
 }

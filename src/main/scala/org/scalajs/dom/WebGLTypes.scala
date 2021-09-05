@@ -127,8 +127,6 @@ class WebGLShaderPrecisionFormat private[this] () extends js.Object {
 
 /** WebGLRenderingContext objects expose the WebGLRenderingContext interface, the principal interface in WebGL which
   * provides special properties and methods to manipulate the 3D content rendered in an HTML canvas element.
-  *
-  * MDN
   */
 object WebGLRenderingContext {
   /* Note:

@@ -226,14 +226,10 @@ class RTCSessionDescription(descriptionInitDict: js.UndefOr[RTCSessionDescriptio
     extends js.Object {
 
   /** An enum of type RTCSdpType describing the session description's type.
-    *
-    * MDN
     */
   var `type`: RTCSdpType = js.native
 
   /** A DOMString containing the SDP format describing the session.
-    *
-    * MDN
     */
   var sdp: String = js.native
 }
@@ -262,8 +258,6 @@ object RTCIceCandidateInit {
 
 /** The RTCIceCandidate interface of the the WebRTC API represents a candidate internet connectivity establishment (ICE)
   * server for establishing an RTCPeerConnection.
-  *
-  * MDN
   */
 @js.native
 @JSGlobal
@@ -271,22 +265,16 @@ class RTCIceCandidate(candidateInitDict: RTCIceCandidateInit) extends js.Object 
 
   /** Returns a transport address for the candidate that can be used for connectivity checks. The format of this address
     * is a candidate-attribute as defined in RFC 5245.
-    *
-    * MDN
     */
   var candidate: String = js.native
 
   /** If not null, this contains the identifier of the "media stream identification" (as defined in RFC 5888) for the
     * media component this candidate is associated with.
-    *
-    * MDN
     */
   var sdpMid: String = js.native
 
   /** If not null, this indicates the index (starting at zero) of the media description (as defined in RFC 4566) in the
     * SDP this candidate is associated with.
-    *
-    * MDN
     */
   var sdpMLineIndex: Double = js.native
 }
@@ -318,52 +306,38 @@ object RTCDataChannelState {
 }
 
 /** The RTCDataChannel interface represents a bi-directional data channel between two peers of a connection.
-  *
-  * MDN
   */
 @js.native
 trait RTCDataChannel extends EventTarget {
 
   /** Returns a DOMString containing a name describing the data channel. There is no constraint of uniqueness about it.
-    *
-    * MDN
     */
   val label: String = js.native
 
   /** The read-only property RTCDataChannel.ordered returns a Boolean indicating if the order of delivery of the
     * messages is guaranteed or not.
-    *
-    * MDN
     */
   val ordered: Boolean = js.native
   val maxPacketLifeTime: Double = js.native
   val maxRetransmits: Double = js.native
 
   /** Returns a DOMString containing the name of the subprotocol in use. If none, it returns "".
-    *
-    * MDN
     */
   val protocol: String = js.native
   val negotiated: Boolean = js.native
 
   /** Returns an unsigned short being a unique id for the channel. It is set at the creation of the RTCDataChannel
     * object.
-    *
-    * MDN
     */
   val id: Double = js.native
 
   /** Returns an enum of the type RTCDataChannelState representing the state of the underlying data connection.
-    *
-    * MDN
     */
   def readyState: RTCDataChannelState = js.native
 
   /** Returns an unsigned long containing the amount of bytes that have been queued for sending: that is the amount of
     * data requested to be transmitted via RTCDataChannel.send() that has not been sent yet. Note that if the channel
     * state, as given by RTCDataChannel.readyState is "closed", the buffering continues.
-    *
-    * MDN
     */
   def bufferedAmount: Double = js.native
   var onopen: js.Function1[Event, Any] = js.native
@@ -371,16 +345,12 @@ trait RTCDataChannel extends EventTarget {
 
   /** Is the event handler called when the close event is received. Such an event is sent when the underlying data
     * transport has been closed.
-    *
-    * MDN
     */
   var onclose: js.Function1[Event, Any] = js.native
   def close(): Unit = js.native
 
   /** Is the event handler called when the message event is received. Such an event is sent when a message is available
     * on the data connection.
-    *
-    * MDN
     */
   var onmessage: js.Function1[MessageEvent, Any] = js.native
 
@@ -390,15 +360,11 @@ trait RTCDataChannel extends EventTarget {
     *
     * It controls the type of the MessageEvent.data property passed in the parameter of message targetting this
     * RTCDataChannel.
-    *
-    * MDN
     */
   var binaryType: String = js.native
 
   /** Sends the data in parameter over the channel. The data can be a DOMString, a Blob, an ArrayBuffer or an
     * ArrayBufferView.
-    *
-    * MDN
     */
   def send(data: String | Blob | ArrayBuffer | ArrayBufferView): Unit = js.native
 }
@@ -416,8 +382,6 @@ trait RTCDataChannelInit extends js.Object {
 
 /** The RTCDataChannelEvent interface represents events that occur while attaching a RTCDataChannel to a
   * RTCPeerConnection. The only event sent with this interface is datachannel.
-  *
-  * MDN
   */
 @js.native
 @JSGlobal
@@ -425,8 +389,6 @@ class RTCDataChannelEvent(typeArg: String, init: js.UndefOr[RTCDataChannelEventI
   def this(init: RTCDataChannelEventInit) = this("datachannel", init)
 
   /** Contains the RTCDataChannel containing the data channel associated with the event.
-    *
-    * MDN
     */
   val channel: RTCDataChannel = js.native
 }
@@ -538,8 +500,6 @@ trait RTCPeerConnectionIceEventInit extends EventInit {
 
 /** The RTCPeerConnectionIceEvent interface represents events that occurs in relation to ICE candidates with the target,
   * usually an RTCPeerConnection. Only one event is of this type: icecandidate.
-  *
-  * MDN
   */
 @js.native
 @JSGlobal
@@ -547,8 +507,6 @@ class RTCPeerConnectionIceEvent(typeArg: String, init: js.UndefOr[RTCPeerConnect
     extends Event(typeArg, init) {
 
   /** Contains the RTCIceCandidate containing the candidate associated with the event.
-    *
-    * MDN
     */
   var candidate: RTCIceCandidate = js.native
 }
@@ -654,8 +612,6 @@ trait MediaStreamEventInit extends EventInit {
 
 /** The RTCPeerConnection interface represents a WebRTC connection between the local computer and a remote peer. It is
   * used to handle efficient streaming of data between the two peers.
-  *
-  * MDN
   */
 @js.native
 @JSGlobal
@@ -681,8 +637,6 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
     *     a flaky network, that can recover by itself.
     *
     *   - "closed": the ICE agent has shutdown and is not answering to requests.
-    *
-    * MDN
     */
   def iceConnectionState: RTCIceConnectionState = js.native
 
@@ -694,8 +648,6 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
     *
     *   - "complete": the ICE engine has completed gathering. Events such as adding a new interface or a new TURN server
     *     will cause the state to go back to gathering.
-    *
-    * MDN
     */
   def iceGatheringState: RTCIceGatheringState = js.native
 
@@ -707,23 +659,17 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
 
   /** Returns a RTCSessionDescription describing the session for the local end of the connection. If it has not yet been
     * set, it can be null.
-    *
-    * MDN
     */
   def localDescription: RTCSessionDescription = js.native
 
   /** Returns a RTCIdentityAssertion, that is a couple of a domain name (idp) and a name (name) representing the
     * identity of the remote peer of this connection, once set and verified. If no peer has yet been set and verified,
     * this property will return null. Once set, via the appropriate method, it can't be changed.
-    *
-    * MDN
     */
   val peerIdentity: RTCIdentityAssertion = js.native
 
   /** Returns a RTCSessionDescription describing the session for the remote end of the connection. If it has not yet
     * been set, it can be null.
-    *
-    * MDN
     */
   def remoteDescription: RTCSessionDescription = js.native
 
@@ -743,8 +689,6 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
     *   - "have-remote-pranswer": a local SDP offer has been applied, and a SDP pranswer applied remotely.
     *
     *   - "closed": the connection is closed.
-    *
-    * MDN
     */
   def signalingState: RTCSignalingState = js.native
 
@@ -752,57 +696,41 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
 
   /** Is the event handler called when the datachannel event is received. Such an event is sent when a RTCDataChannel is
     * added to this connection.
-    *
-    * MDN
     */
   var ondatachannel: js.Function1[RTCDataChannelEvent, Any] = js.native
 
   /** Is the event handler called when the icecandidate event is received. Such an event is sent when a RTCICECandidate
     * object is added to the script.
-    *
-    * MDN
     */
   var onicecandidate: js.Function1[RTCPeerConnectionIceEvent, Any] = js.native
 
   /** Is the event handler called when the iceconnectionstatechange event is received. Such an event is sent when the
     * value of iceConnectionState changes.
-    *
-    * MDN
     */
   var oniceconnectionstatechange: js.Function1[Event, Any] = js.native
 
   /** Is the event handler called when the identityresult event is received. Such an event is sent when an identity
     * assertion is generated, via getIdentityAssertion(), or during the creation of an offer or an answer.
-    *
-    * MDN
     */
   var onidentityresult: js.Function1[Event, Any] = js.native
 
   /** Is the event handler called when the idpassertionerror event is received. Such an event is sent when the
     * associated identity provider (IdP) encounters an error while generating an identity assertion.
-    *
-    * MDN
     */
   var onidpassertionerror: js.Function1[Event, Any] = js.native
 
   /** Is the event handler alled when the idpvalidationerror event is received. Such an event is sent when the
     * associated identity provider (IdP) encounters an error while validating an identity assertion.
-    *
-    * MDN
     */
   var onidpvalidationerror: js.Function1[Event, Any] = js.native
 
   /** Is the event handler called when the negotiationneeded event, sent by the browser to inform that negotiation will
     * be required at some point in the future, is received.
-    *
-    * MDN
     */
   var onnegotiationneeded: js.Function1[Event, Any] = js.native
 
   /** Is the event handler called when the peeridentity event, sent when a peer identity has been set and verified on
     * this connection, is received.
-    *
-    * MDN
     */
   var onpeeridentity: js.Function1[Event, Any] = js.native
 
@@ -810,8 +738,6 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
 
   /** Is the event handler called when the signalingstatechange event, sent when the value of signalingState changes, is
     * received.
-    *
-    * MDN
     */
   var onsignalingstatechange: js.Function1[Event, Any] = js.native
 
@@ -823,8 +749,6 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
     *
     * The return value is a Promise which, when the offer has been created, is resolved with a RTCSessionDescription
     * object containing the newly-created offer.
-    *
-    * MDN
     */
   def createOffer(options: RTCOfferOptions = js.native): js.Promise[RTCSessionDescription] = js.native
 
@@ -833,24 +757,18 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
     * media already attached to the session, codecs and options supported by the browser, and any ICE candidates already
     * gathered. The answer is delivered to the returned Promise, and should then be sent to the source of the offer to
     * continue the negotiation process.
-    *
-    * MDN
     */
   def createAnswer(): js.Promise[RTCSessionDescription] = js.native
 
   /** Changes the local description associated with the connection. The description defines the properties of the
     * connection like its codec. The connection is affected by this change and must be able to support both old and new
     * descriptions. The method takes one parameters, a RTCSessionDescription object to set, and returns a Promise.
-    *
-    * MDN
     */
   def setLocalDescription(description: RTCSessionDescription): js.Promise[Unit] = js.native
 
   /** Changes the remote description associated with the connection. The description defines the properties of the
     * connection like its codec. The connection is affected by this change and must be able to support both old and new
     * descriptions. The method takes one parameters, a RTCSessionDescription object to set, and returns a Promise.
-    *
-    * MDN
     */
   def setRemoteDescription(description: RTCSessionDescription): js.Promise[Unit] = js.native
 
@@ -859,8 +777,6 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
     * used to limit the use to TURN candidates by a callee to avoid leaking location information prior to the call being
     * accepted. This call may result in a change to the state of the ICE Agent, and may result in a change to media
     * state if it results in connectivity being established
-    *
-    * MDN
     */
   def updateIce(configuration: RTCConfiguration): Unit = js.native
 
@@ -868,69 +784,49 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
     * remote description, connectivity checks will be sent to the new candidates as long as the "IceTransports"
     * constraint is not set to "none". This call will result in a change to the connection state of the ICE Agent, and
     * may result in a change to media state if it results in different connectivity being established.
-    *
-    * MDN
     */
   def addIceCandidate(candidate: RTCIceCandidate): js.Promise[Unit] = js.native
 
   def getConfiguration(): RTCConfiguration = js.native
 
   /** Returns an array of MediaStream associated with the local end of the connection. The array may be empty.
-    *
-    * MDN
     */
   def getLocalStreams(): js.Array[MediaStream] = js.native
 
   /** Returns an array of MediaStream associated with the remote end of the connection. The array may be empty.
-    *
-    * MDN
     */
   def getRemoteStreams(): js.Array[MediaStream] = js.native
 
   /** Returns the MediaStream with the given id that is associated with local or remote end of the connection. If no
     * stream matches, it returns null.
-    *
-    * MDN
     */
   def getStreamById(id: String): MediaStream = js.native
 
   /** Adds a MediaStream as a local source of audio or video. If the negotiation already happened, a new one will be
     * needed for the remote peer to be able to use it.
-    *
-    * MDN
     */
   def addStream(stream: MediaStream): Unit = js.native
 
   /** Removes a MediaStream as a local source of audio or video. If the negotiation already happened, a new one will be
     * needed for the remote peer to stop using it.
-    *
-    * MDN
     */
   def removeStream(stream: MediaStream): Unit = js.native
 
   /** Abruptly closes a connection.
-    *
-    * MDN
     */
   def close(): Unit = js.native
 
   /** Creates a new RTCDataChannel associated with this connection. The method takes a dictionary as parameter, with the
     * configuration required for the underlying data channel, like its reliability.
-    *
-    * MDN
     */
   def createDataChannel(label: String, dataChannelDict: RTCDataChannelInit): RTCDataChannel = js.native
 
   /** Creates a new RTCDTMFSender, associated to a specific MediaStreamTrack, that will be able to send DTMF phone
     * signaling over the connection.
-    *
-    * MDN
     */
   def createDTMFSender(track: MediaStreamTrack): RTCDTMFSender = js.native
 
   /** Creates a new RTCStatsReport that contains and allows access to statistics regarding the connection.
-    *
-    * MDN
     */
   def getStats(selector: MediaStreamTrack, callback: js.Function1[RTCStatsReport, Any],
       error: js.Function1[DOMException, Any]): RTCStatsReport = js.native

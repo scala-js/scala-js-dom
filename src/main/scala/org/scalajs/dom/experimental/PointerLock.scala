@@ -26,22 +26,16 @@ object PointerLock {
     /** When the Pointer lock state changes—for example, when calling requestPointerLock, exitPointerLock, the user
       * pressing the ESC key, etc.—the pointerlockchange event is dispatched to the document. This is a simple event and
       * contains no extra data.
-      *
-      * MDN
       */
     var onpointerlockchange: js.Function1[Event, _] = js.native
 
     /** When there is an error caused by calling requestPointerLock or exitPointerLock, the pointerlockerror event is
       * dispatched to the document. This is a simple event and contains no extra data.
-      *
-      * MDN
       */
     var onpointerlockerror: js.Function1[Event, _] = js.native
 
     /** The pointerLockElement property provides the element set as the target for mouse events while the pointer is
       * locked. It is `null` if lock is pending, pointer is unlocked, or the target is in another document.
-      *
-      * MDN
       */
     def pointerLockElement: Element = js.native
 
@@ -50,8 +44,6 @@ object PointerLock {
       *
       * To track the success or failure of the request, it is necessary to listen for the pointerlockchange and
       * pointerlockerror events.
-      *
-      * MDN
       */
     def exitPointerLock(): Unit = js.native
   }
@@ -64,8 +56,6 @@ object PointerLock {
       *
       * To track the success or failure of the request, it is necessary to listen for the pointerlockchange and
       * pointerlockerror events at the Document level.
-      *
-      * MDN
       */
     def requestPointerLock(): Unit = js.native
   }
@@ -83,8 +73,6 @@ object PointerLock {
     *
     * The parameters movementX and movementY are valid regardless of the mouse lock state, and are available even when
     * unlocked for convenience.
-    *
-    * MDN
     */
   @js.native
   trait PointerLockMouseEvent extends js.Object {

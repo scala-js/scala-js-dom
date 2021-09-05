@@ -14,22 +14,16 @@ object GlobalCrypto extends js.Object {
 
 /** The Crypto interface represents basic cryptography features available in the current context. It allows access to a
   * cryptographically strong random number generator and to cryptographic primitives.
-  *
-  * MDN
   */
 @js.native
 trait Crypto extends js.Object {
 
   /** Returns a SubtleCrypto object providing access to common cryptographic primitives, like hashing, signing,
     * encryption or decryption.
-    *
-    * MDN
     */
   val subtle: SubtleCrypto = js.native
 
   /** Fills the passed TypedArray with cryptographically sound random values.
-    *
-    * MDN
     */
   def getRandomValues(array: ArrayBufferView): ArrayBufferView = js.native
 }
@@ -140,41 +134,37 @@ trait JsonWebKey extends js.Object {
   *
   * The SubtleCrypto interface represents a set of cryptographic primitives. It is available via the Crypto.subtle
   * properties available in a window context (via Window.crypto).
-  *
-  * MDN
   */
 @js.native
 trait SubtleCrypto extends js.Object {
 
   /** Returns a Promise of the encrypted data corresponding to the clear text, algorithm and key given as parameters.
-    * MDN
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-encrypt ¶14.3.1 The encrypt method]]
     */
   def encrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any] = js.native
 
   /** Returns a Promise of the clear data corresponding to the encrypted text, algorithm and key given as parameters.
-    * MDN
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-decrypt ¶14.3.2 The decrypt method]]
     */
   def decrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any] = js.native
 
-  /** Returns a Promise of the signature corresponding to the text, algorithm and key given as parameters. MDN
+  /** Returns a Promise of the signature corresponding to the text, algorithm and key given as parameters.
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-sign ¶14.3.3 The sign method]]
     */
   def sign(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any] = js.native
 
   /** Returns a Promise of a Boolean value indicating if the signature given as parameter matches the text, algorithm
-    * and key also given as parameters. MDN
+    * and key also given as parameters.
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-verify ¶14.3.4 The verify method]]
     */
   def verify(algorithm: AlgorithmIdentifier, key: CryptoKey, signature: BufferSource,
       data: BufferSource): js.Promise[js.Any] = js.native
 
-  /** Returns a Promise of a digest generated from the algorithm and text given as parameters. MDN
+  /** Returns a Promise of a digest generated from the algorithm and text given as parameters.
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-digest ¶14.3.5 The digest method]] We are a
     * bit more precise than the official definition by requiring a HashAlgorithmIdentifier rather than an
@@ -184,7 +174,7 @@ trait SubtleCrypto extends js.Object {
 
   /** Returns a Promise of a newly generated CryptoKey, for symmetrical algorithms, or a CryptoKeyPair, containing two
     * newly generated keys, for asymmetrical algorithm, that matches the algorithm, the usages and the extractability
-    * given as parameters. MDN
+    * given as parameters.
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-generateKey ¶14.3.6 The generateKey method]]
     *
@@ -206,14 +196,14 @@ trait SubtleCrypto extends js.Object {
       extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any] = js.native
 
   /** Returns a Promise of a newly generated buffer of pseudo-random bits derivated from a master key and a specific
-    * algorithm given as parameters. MDN
+    * algorithm given as parameters.
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-deriveBits ¶14.3.8 The deriveBits method]]
     */
   def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, length: Double): js.Promise[js.Any] = js.native
 
   /** Returns a Promise of a CryptoKey corresponding to the format, the algorithm, the raw key data, the usages and the
-    * extractability given as parameters. MDN
+    * extractability given as parameters.
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-importKey ¶14.3.9 The importKey method]]
     *
@@ -224,7 +214,7 @@ trait SubtleCrypto extends js.Object {
       keyUsages: js.Array[KeyUsage]): js.Promise[CryptoKey] = js.native
 
   /** Returns a Promise of a CryptoKey corresponding to the format, the algorithm, the raw key data, the usages and the
-    * extractability given as parameters. MDN
+    * extractability given as parameters.
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-importKey ¶14.3.9 The importKey method]]
     *
@@ -249,7 +239,7 @@ trait SubtleCrypto extends js.Object {
   def wrapKey(format: KeyFormat, key: CryptoKey, wrappingKey: CryptoKey,
       wrapAlgorithm: AlgorithmIdentifier): js.Promise[js.Any] = js.native
 
-  /** Returns a Promise of a CryptoKey corresponding to the wrapped key given in parameter. MDN
+  /** Returns a Promise of a CryptoKey corresponding to the wrapped key given in parameter.
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-unwrapKey ¶14.3.12 The unwrapKey method]]
     *
