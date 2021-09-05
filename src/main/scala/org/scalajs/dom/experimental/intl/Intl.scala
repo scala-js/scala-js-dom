@@ -34,8 +34,7 @@ class DateTimeFormat(locales: js.UndefOr[String | js.Array[String]] = js.undefin
   def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String] = js.native
 }
 
-/** The Intl.NumberFormat object is a constructor for objects that enable language sensitive number formatting.
-  */
+/** The Intl.NumberFormat object is a constructor for objects that enable language sensitive number formatting. */
 @js.native
 @JSGlobal("Intl.NumberFormat")
 class NumberFormat(locales: js.UndefOr[String | js.Array[String]] = js.undefined,

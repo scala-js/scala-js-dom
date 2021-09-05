@@ -5,8 +5,7 @@ import scala.scalajs.js.annotation._
 
 // the stream API is defined in https://streams.spec.whatwg.org/
 
-/** [[https://streams.spec.whatwg.org/#ws-state ¶4.2.4.3. get state]] of whatwg streams spec
-  */
+/** [[https://streams.spec.whatwg.org/#ws-state ¶4.2.4.3. get state]] of whatwg streams spec */
 @js.native
 sealed trait WriteableState extends js.Any
 
@@ -17,8 +16,7 @@ object WriteableState {
     */
   val waiting: WriteableState = "waiting".asInstanceOf[WriteableState]
 
-  /** The stream’s internal queue is not full; call .write() until backpressure is exerted.
-    */
+  /** The stream’s internal queue is not full; call .write() until backpressure is exerted. */
   val writable: WriteableState = "writable".asInstanceOf[WriteableState]
 
   /** The stream’s .close() method has been called, and a command to close is in the queue or being processed by the
@@ -290,13 +288,11 @@ class ReadableStreamController[-T](stream: ReadableStream[T] = null) extends js.
   def error(e: Any): Unit = js.native
 }
 
-/** See [[https://streams.spec.whatwg.org/#chunk ¶2 Model]] but mostly the examples in the whatwg streams spec
-  */
+/** See [[https://streams.spec.whatwg.org/#chunk ¶2 Model]] but mostly the examples in the whatwg streams spec */
 @js.native
 trait Chunk[+T] extends js.Object {
 
-  /** The value of the chunk.
-    */
+  /** The value of the chunk. */
   def value: T = js.native
 
   def done: Boolean = js.native

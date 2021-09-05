@@ -64,8 +64,7 @@ trait PushSubscription extends js.Object {
     */
   val options: PushSubscriptionOptions = js.native
 
-  /** The getKey method retrieves keying material that can be used for encrypting and authenticating messages.
-    */
+  /** The getKey method retrieves keying material that can be used for encrypting and authenticating messages. */
   def getKey(name: PushEncryptionKeyName): ArrayBuffer = js.native
 
   /** The unsubscribe() method of the PushSubscription interface returns a Promise that resolves to a Boolean when the
@@ -85,12 +84,10 @@ trait PushSubscription extends js.Object {
 @js.native
 trait PushSubscriptionJSON extends js.Object {
 
-  /** The endpoint contains the underlying value of the endpoint attribute.
-    */
+  /** The endpoint contains the underlying value of the endpoint attribute. */
   val endpoint: String = js.native
 
-  /** The endpoint contains the underlying value of the endpoint attribute.
-    */
+  /** The endpoint contains the underlying value of the endpoint attribute. */
   val expirationTime: java.lang.Double = js.native
 
   /** The keys record contains an entry for each of the supported PushEncryptionKeyName entries to the URL-safe base64
@@ -105,8 +102,7 @@ trait PushSubscriptionJSON extends js.Object {
 @js.native
 trait PushEvent extends ExtendableEvent {
 
-  /** Returns a reference to a PushMessageData object containing data sent to the PushSubscription. Read-only.
-    */
+  /** Returns a reference to a PushMessageData object containing data sent to the PushSubscription. Read-only. */
   val data: PushMessageData = js.native
 }
 
@@ -119,20 +115,16 @@ trait PushEvent extends ExtendableEvent {
 @js.native
 trait PushMessageData extends js.Object {
 
-  /** Extracts the data as an ArrayBuffer object.
-    */
+  /** Extracts the data as an ArrayBuffer object. */
   def arrayBuffer(): ArrayBuffer = js.native
 
-  /** Extracts the data as a Blob object.
-    */
+  /** Extracts the data as a Blob object. */
   def blob(): Blob = js.native
 
-  /** Extracts the data as a JSON object.
-    */
+  /** Extracts the data as a JSON object. */
   def json(): js.Any = js.native
 
-  /** Extracts the data as a plain text string.
-    */
+  /** Extracts the data as a plain text string. */
   def text(): String = js.native
 }
 
@@ -158,16 +150,13 @@ sealed trait PushPermissionState extends js.Any
 /** Static definitions for [[PushPermissionState]] */
 object PushPermissionState {
 
-  /** The webapp has permission to use the Push API.
-    */
+  /** The webapp has permission to use the Push API. */
   val granted: PushPermissionState = "granted".asInstanceOf[PushPermissionState]
 
-  /** The webapp has been denied permission to use the Push API.
-    */
+  /** The webapp has been denied permission to use the Push API. */
   val denied: PushPermissionState = "denied".asInstanceOf[PushPermissionState]
 
-  /** The webapp needs to ask for permission in order to use the Push API.
-    */
+  /** The webapp needs to ask for permission in order to use the Push API. */
   val prompt: PushPermissionState = "prompt".asInstanceOf[PushPermissionState]
 }
 

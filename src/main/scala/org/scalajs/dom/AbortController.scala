@@ -10,8 +10,7 @@ import scala.scalajs.js.annotation.JSGlobal
 @JSGlobal
 class AbortController() extends js.Object {
 
-  /** Returns a AbortSignal object instance, which can be used to communicate with/abort a DOM request
-    */
+  /** Returns a AbortSignal object instance, which can be used to communicate with/abort a DOM request */
   val signal: AbortSignal = js.native
 
   /** Aborts a DOM request before it has completed. This is able to abort fetch requests, consumption of any response

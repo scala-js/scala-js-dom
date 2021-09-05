@@ -10,26 +10,21 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray._
 
-/** Contains drawing surface attributes.
-  */
+/** Contains drawing surface attributes. */
 @js.native
 @JSGlobal
 class WebGLContextAttributes extends js.Object {
 
-  /** When `true`, the drawing buffer has an alpha channel.
-    */
+  /** When `true`, the drawing buffer has an alpha channel. */
   var alpha: Boolean = js.native
 
-  /** When `true`, the drawing buffer has a depth buffer of at least 16 bits.
-    */
+  /** When `true`, the drawing buffer has a depth buffer of at least 16 bits. */
   var depth: Boolean = js.native
 
-  /** When `true`, the drawing buffer has a stencil buffer of at least 8 bits.
-    */
+  /** When `true`, the drawing buffer has a stencil buffer of at least 8 bits. */
   var stencil: Boolean = js.native
 
-  /** When `true` and antialiasing is supported, the drawing buffer will use an antialiasing method if it's choice.
-    */
+  /** When `true` and antialiasing is supported, the drawing buffer will use an antialiasing method if it's choice. */
   var antialias: Boolean = js.native
 
   /** When `true` the page compositor assumes the buffer's contents is premultiplied. Used for sensible transparency
@@ -43,44 +38,37 @@ class WebGLContextAttributes extends js.Object {
   var preserveDrawingBuffer: Boolean = js.native
 }
 
-/** An opaque type representing a WebGL buffer.
-  */
+/** An opaque type representing a WebGL buffer. */
 @js.native
 @JSGlobal
 class WebGLBuffer private[this] () extends js.Object
 
-/** An opaque type representing a WebGL framebuffer.
-  */
+/** An opaque type representing a WebGL framebuffer. */
 @js.native
 @JSGlobal
 class WebGLFramebuffer private[this] () extends js.Object
 
-/** An opaque type representing a WebGL program.
-  */
+/** An opaque type representing a WebGL program. */
 @js.native
 @JSGlobal
 class WebGLProgram private[this] () extends js.Object
 
-/** An opaque type representing a WebGL renderbuffer.
-  */
+/** An opaque type representing a WebGL renderbuffer. */
 @js.native
 @JSGlobal
 class WebGLRenderbuffer private[this] () extends js.Object
 
-/** An opaque type representing a WebGL shader.
-  */
+/** An opaque type representing a WebGL shader. */
 @js.native
 @JSGlobal
 class WebGLShader private[this] () extends js.Object
 
-/** An opaque type representing a WebGL texture.
-  */
+/** An opaque type representing a WebGL texture. */
 @js.native
 @JSGlobal
 class WebGLTexture private[this] () extends js.Object
 
-/** An opaque type representing a WebGL uniform location.
-  */
+/** An opaque type representing a WebGL uniform location. */
 @js.native
 @JSGlobal
 class WebGLUniformLocation private[this] () extends js.Object
@@ -92,16 +80,13 @@ class WebGLUniformLocation private[this] () extends js.Object
 @JSGlobal
 class WebGLActiveInfo private[this] () extends js.Object {
 
-  /** The size of the requested variable.
-    */
+  /** The size of the requested variable. */
   val size: Int = js.native
 
-  /** The type of the requested variable.
-    */
+  /** The type of the requested variable. */
   val `type`: Int = js.native
 
-  /** The name of the requested variable.
-    */
+  /** The name of the requested variable. */
   val name: String = js.native
 }
 
@@ -112,16 +97,13 @@ class WebGLActiveInfo private[this] () extends js.Object {
 @JSGlobal
 class WebGLShaderPrecisionFormat private[this] () extends js.Object {
 
-  /** The base 2 log of the absolute value of the minimum value that can be represented.
-    */
+  /** The base 2 log of the absolute value of the minimum value that can be represented. */
   val rangeMin: Int = js.native
 
-  /** The base 2 log of the absolute value of the maximum value that can be represented.
-    */
+  /** The base 2 log of the absolute value of the maximum value that can be represented. */
   val rangeMax: Int = js.native
 
-  /** The number of bits of precision that can be represented. For integer formats this value is always 0.
-    */
+  /** The number of bits of precision that can be represented. For integer formats this value is always 0. */
   val precision: Int = js.native
 }
 
@@ -286,16 +268,13 @@ object WebGLRenderingContext {
   final val CURRENT_VERTEX_ATTRIB = 0x8626
 
   /* CullFaceMode */
-  /** Specifies front faces.
-    */
+  /** Specifies front faces. */
   final val FRONT = 0x0404
 
-  /** Specifies back faces.
-    */
+  /** Specifies back faces. */
   final val BACK = 0x0405
 
-  /** Specifies both front and back faces.
-    */
+  /** Specifies both front and back faces. */
   final val FRONT_AND_BACK = 0x0408
 
   /* DepthFunction */
@@ -310,64 +289,50 @@ object WebGLRenderingContext {
 
   /* EnableCap */
   /* TEXTURE_2D */
-  /** Capability to enable/disable backface culling.
-    */
+  /** Capability to enable/disable backface culling. */
   final val CULL_FACE = 0x0B44
 
-  /** Capability to enable/disable blending.
-    */
+  /** Capability to enable/disable blending. */
   final val BLEND = 0x0BE2
 
-  /** Capability to enable/disable dithering.
-    */
+  /** Capability to enable/disable dithering. */
   final val DITHER = 0x0BD0
 
-  /** Capability to enable/disable the stencil test.
-    */
+  /** Capability to enable/disable the stencil test. */
   final val STENCIL_TEST = 0x0B90
 
-  /** Capability to enable/disable the depth test.
-    */
+  /** Capability to enable/disable the depth test. */
   final val DEPTH_TEST = 0x0B71
 
-  /** Capability to enable/disable the scissor test.
-    */
+  /** Capability to enable/disable the scissor test. */
   final val SCISSOR_TEST = 0x0C11
 
-  /** Capability to enable/disable polygon offset.
-    */
+  /** Capability to enable/disable polygon offset. */
   final val POLYGON_OFFSET_FILL = 0x8037
   final val SAMPLE_ALPHA_TO_COVERAGE = 0x809E
   final val SAMPLE_COVERAGE = 0x80A0
 
   /* ErrorCode */
-  /** No error has occurred.
-    */
+  /** No error has occurred. */
   final val NO_ERROR = 0
 
-  /** An invalid enumerated name has been passed to an API function.
-    */
+  /** An invalid enumerated name has been passed to an API function. */
   final val INVALID_ENUM = 0x0500
 
-  /** An invalid value has been passed to an API function.
-    */
+  /** An invalid value has been passed to an API function. */
   final val INVALID_VALUE = 0x0501
 
-  /** The requested operation is not valid.
-    */
+  /** The requested operation is not valid. */
   final val INVALID_OPERATION = 0x0502
 
-  /** The operation requested could not be completed because it ran out of memory.
-    */
+  /** The operation requested could not be completed because it ran out of memory. */
   final val OUT_OF_MEMORY = 0x0505
 
   /* FrontFaceDirection */
-  /** Clockwise wound triangles are front-facing.
-    */
+  /** Clockwise wound triangles are front-facing. */
   final val CW = 0x0900
 
-  /** Counter-Clockwise wound triangles are front-facing.
-    */
+  /** Counter-Clockwise wound triangles are front-facing. */
   final val CCW = 0x0901
 
   /* GetPName */
@@ -514,20 +479,16 @@ object WebGLRenderingContext {
   /* TextureMinFilter */
   /*    NEAREST */
   /*    LINEAR */
-  /** Specifies nearest neighbour interpolation on the nearest mipmap level.
-    */
+  /** Specifies nearest neighbour interpolation on the nearest mipmap level. */
   final val NEAREST_MIPMAP_NEAREST = 0x2700
 
-  /** Specifies linear interpolation on the nearest mipmap level.
-    */
+  /** Specifies linear interpolation on the nearest mipmap level. */
   final val LINEAR_MIPMAP_NEAREST = 0x2701
 
-  /** Specifies nearest neighbour interpolation, linearly blending between mipmap levels.
-    */
+  /** Specifies nearest neighbour interpolation, linearly blending between mipmap levels. */
   final val NEAREST_MIPMAP_LINEAR = 0x2702
 
-  /** Specifies linear interpolation linearly blending between mipmap levels.
-    */
+  /** Specifies linear interpolation linearly blending between mipmap levels. */
   final val LINEAR_MIPMAP_LINEAR = 0x2703
 
   /* TextureParameterName */
@@ -557,13 +518,11 @@ object WebGLRenderingContext {
   final val TEXTURE_WRAP_T = 0x2803
 
   /* TextureTarget */
-  /** The target for a simple 2 dimensional texture.
-    */
+  /** The target for a simple 2 dimensional texture. */
   final val TEXTURE_2D = 0x0DE1
   final val TEXTURE = 0x1702
 
-  /** The target for a cube mapped texture.
-    */
+  /** The target for a cube mapped texture. */
   final val TEXTURE_CUBE_MAP = 0x8513
   final val TEXTURE_BINDING_CUBE_MAP = 0x8514
   final val TEXTURE_CUBE_MAP_POSITIVE_X = 0x8515
@@ -723,16 +682,13 @@ object WebGLRenderingContext {
   final val ACTIVE_TEXTURE = 0x84E0
 
   /* TextureWrapMode */
-  /** Repeat the texture along this axis.
-    */
+  /** Repeat the texture along this axis. */
   final val REPEAT = 0x2901
 
-  /** Clamp the texture along this axis. The colour of the edge pixels will be replicated to infinity.
-    */
+  /** Clamp the texture along this axis. The colour of the edge pixels will be replicated to infinity. */
   final val CLAMP_TO_EDGE = 0x812F
 
-  /** Repeat the texture along this axis, mirroring it each step.
-    */
+  /** Repeat the texture along this axis, mirroring it each step. */
   final val MIRRORED_REPEAT = 0x8370
 
   /* Uniform Types */
@@ -769,37 +725,29 @@ object WebGLRenderingContext {
   final val COMPILE_STATUS = 0x8B81
 
   /* Shader Precision-Specified Types */
-  /** Specifies a low precision float.
-    */
+  /** Specifies a low precision float. */
   final val LOW_FLOAT = 0x8DF0
 
-  /** Specifies a medium precision float.
-    */
+  /** Specifies a medium precision float. */
   final val MEDIUM_FLOAT = 0x8DF1
 
-  /** Specifies a high precision float.
-    */
+  /** Specifies a high precision float. */
   final val HIGH_FLOAT = 0x8DF2
 
-  /** Specifies a low precision integer.
-    */
+  /** Specifies a low precision integer. */
   final val LOW_INT = 0x8DF3
 
-  /** Specifies a medium precision float.
-    */
+  /** Specifies a medium precision float. */
   final val MEDIUM_INT = 0x8DF4
 
-  /** Specifies a high precision float.
-    */
+  /** Specifies a high precision float. */
   final val HIGH_INT = 0x8DF5
 
   /* Framebuffer Object. */
-  /** The framebuffer target.
-    */
+  /** The framebuffer target. */
   final val FRAMEBUFFER = 0x8D40
 
-  /** The renderbuffer target.
-    */
+  /** The renderbuffer target. */
   final val RENDERBUFFER = 0x8D41
 
   final val RGBA4 = 0x8056
@@ -856,28 +804,22 @@ object WebGLRenderingContext {
 @JSGlobal
 class WebGLRenderingContext extends js.Object {
 
-  /** The canvas object this WebGLRenderingContext is associated with.
-    */
+  /** The canvas object this WebGLRenderingContext is associated with. */
   val canvas: HTMLCanvasElement = js.native
 
-  /** The actual width of the drawing buffer. This may be different than the underlying HTMLCanvasElement width.
-    */
+  /** The actual width of the drawing buffer. This may be different than the underlying HTMLCanvasElement width. */
   val drawingBufferWidth: Int = js.native
 
-  /** The actual height of the drawing buffer. This may be different than the underlying HTMLCanvasElement height.
-    */
+  /** The actual height of the drawing buffer. This may be different than the underlying HTMLCanvasElement height. */
   val drawingBufferHeight: Int = js.native
 
-  /** Returns `null` if [[isContextLost]] would return `false`, otherwise returns a copy of the context parameters.
-    */
+  /** Returns `null` if [[isContextLost]] would return `false`, otherwise returns a copy of the context parameters. */
   def getContextAttributes(): WebGLContextAttributes = js.native
 
-  /** Returns `true` if the context has been lost, `false` otherwise.
-    */
+  /** Returns `true` if the context has been lost, `false` otherwise. */
   def isContextLost(): Boolean = js.native
 
-  /** Returns an array of strings naming supported WebGL extensions.
-    */
+  /** Returns an array of strings naming supported WebGL extensions. */
   def getSupportedExtensions(): js.Array[String] = js.native
 
   /** Returns an object for the named extension, or `null` if no such extension exists.
@@ -894,12 +836,10 @@ class WebGLRenderingContext extends js.Object {
     */
   def activeTexture(texture: Int): Unit = js.native
 
-  /** Attaches a shader (fragment or vertex) to a [[WebGLProgram]].
-    */
+  /** Attaches a shader (fragment or vertex) to a [[WebGLProgram]]. */
   def attachShader(program: WebGLProgram, shader: WebGLShader): Unit = js.native
 
-  /** Associates a vertex attribute index with a named attribute variable.
-    */
+  /** Associates a vertex attribute index with a named attribute variable. */
   def bindAttribLocation(program: WebGLProgram, index: Int, name: String): Unit = js.native
 
   /** Loads a a target into a [[WebGLBuffer]].
@@ -938,8 +878,7 @@ class WebGLRenderingContext extends js.Object {
     */
   def bindTexture(target: Int, texture: WebGLTexture): Unit = js.native
 
-  /** Sets the blend color used in [[WebGLRenderingContext.BLEND_COLOR]].
-    */
+  /** Sets the blend color used in [[WebGLRenderingContext.BLEND_COLOR]]. */
   def blendColor(red: Double, green: Double, blue: Double, alpha: Double): Unit = js.native
 
   /** Specifies the equation used for RGB and Alpha blending.
@@ -1085,16 +1024,13 @@ class WebGLRenderingContext extends js.Object {
     */
   def clear(mask: Int): Unit = js.native
 
-  /** Sets the clear color to use with [[WebGLRenderingContext#clear]].
-    */
+  /** Sets the clear color to use with [[WebGLRenderingContext#clear]]. */
   def clearColor(red: Double, green: Double, blue: Double, alpha: Double): Unit = js.native
 
-  /** Sets the clear depth to use with [[WebGLRenderingContext#clear]].
-    */
+  /** Sets the clear depth to use with [[WebGLRenderingContext#clear]]. */
   def clearDepth(depth: Double): Unit = js.native
 
-  /** Sets the stencil value to use with [[WebGLRenderingContext#clear]].
-    */
+  /** Sets the stencil value to use with [[WebGLRenderingContext#clear]]. */
   def clearStencil(s: Int): Unit = js.native
 
   /** Enable and disable writing to the given channels. For each channel, `true` will allow writing, `false` will
@@ -1207,28 +1143,22 @@ class WebGLRenderingContext extends js.Object {
   def copyTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, x: Int, y: Int, width: Int,
       height: Int): Unit = js.native
 
-  /** Creates a new [[WebGLBuffer]].
-    */
+  /** Creates a new [[WebGLBuffer]]. */
   def createBuffer(): WebGLBuffer = js.native
 
-  /** Creates a new [[WebGLFramebuffer]].
-    */
+  /** Creates a new [[WebGLFramebuffer]]. */
   def createFramebuffer(): WebGLFramebuffer = js.native
 
-  /** Creates a new [[WebGLProgram]].
-    */
+  /** Creates a new [[WebGLProgram]]. */
   def createProgram(): WebGLProgram = js.native
 
-  /** Creates a new [[WebGLRenderbuffer]].
-    */
+  /** Creates a new [[WebGLRenderbuffer]]. */
   def createRenderbuffer(): WebGLRenderbuffer = js.native
 
-  /** Creates a new [[WebGLShader]].
-    */
+  /** Creates a new [[WebGLShader]]. */
   def createShader(`type`: Int): WebGLShader = js.native
 
-  /** Creates a new [[WebGLTexture]].
-    */
+  /** Creates a new [[WebGLTexture]]. */
   def createTexture(): WebGLTexture = js.native
 
   /** Set the culling mode for front and back facing polygons.
@@ -1330,8 +1260,7 @@ class WebGLRenderingContext extends js.Object {
     */
   def disable(cap: Int): Unit = js.native
 
-  /** Disables the generic vertex attribute array specified by index.
-    */
+  /** Disables the generic vertex attribute array specified by index. */
   def disableVertexAttribArray(index: Int): Unit = js.native
 
   /** Renders the primitives in the active arrays.
@@ -1376,16 +1305,13 @@ class WebGLRenderingContext extends js.Object {
     */
   def enable(cap: Int): Unit = js.native
 
-  /** Enables the generic vertex attribute array specified by index.
-    */
+  /** Enables the generic vertex attribute array specified by index. */
   def enableVertexAttribArray(index: Int): Unit = js.native
 
-  /** Block until all GL execution is complete.
-    */
+  /** Block until all GL execution is complete. */
   def finish(): Unit = js.native
 
-  /** Force all pending GL execution to complete as soon as possible.
-    */
+  /** Force all pending GL execution to complete as soon as possible. */
   def flush(): Unit = js.native
 
   /** Attach a [[WebGLRenderbuffer]] to a [[WebGLFramebuffer]].
@@ -1439,20 +1365,16 @@ class WebGLRenderingContext extends js.Object {
     */
   def generateMipmap(target: Int): Unit = js.native
 
-  /** Returns a new [[WebGLActiveInfo]] object describing the given attribute at `index`.
-    */
+  /** Returns a new [[WebGLActiveInfo]] object describing the given attribute at `index`. */
   def getActiveAttrib(program: WebGLProgram, index: Int): WebGLActiveInfo = js.native
 
-  /** Returns a new [[WebGLActiveInfo]] object describing the given uniform at `index`.
-    */
+  /** Returns a new [[WebGLActiveInfo]] object describing the given uniform at `index`. */
   def getActiveUniform(program: WebGLProgram, index: Int): WebGLActiveInfo = js.native
 
-  /** Returns a new array containing the shaders attached to the given program.
-    */
+  /** Returns a new array containing the shaders attached to the given program. */
   def getAttachedShaders(program: WebGLProgram): js.Array[WebGLShader] = js.native
 
-  /** Returns the index of the named attribute, or -1 on error.
-    */
+  /** Returns the index of the named attribute, or -1 on error. */
   def getAttribLocation(program: WebGLProgram, name: String): Int = js.native
 
   /** Returns the value of the requested parameter for a buffer.
@@ -1555,8 +1477,7 @@ class WebGLRenderingContext extends js.Object {
     */
   def getProgramParameter(program: WebGLProgram, pname: Int): js.Any = js.native
 
-  /** Returns a string containing information about the last link or validation operation for a program.
-    */
+  /** Returns a string containing information about the last link or validation operation for a program. */
   def getProgramInfoLog(program: WebGLProgram): String = js.native
 
   /** Returns the value of a parameter on the active renderbuffer. The return type is dependent on the requested
@@ -1595,12 +1516,10 @@ class WebGLRenderingContext extends js.Object {
     */
   def getShaderPrecisionFormat(shadertype: Int, precisiontype: Int): WebGLShaderPrecisionFormat = js.native
 
-  /** Returns the information log from the last compile of the shader.
-    */
+  /** Returns the information log from the last compile of the shader. */
   def getShaderInfoLog(shader: WebGLShader): String = js.native
 
-  /** Returns the source of the given shader.
-    */
+  /** Returns the source of the given shader. */
   def getShaderSource(shader: WebGLShader): String = js.native
 
   /** Returns the value of the given texture parameter on the target of the active texture.
@@ -1655,8 +1574,7 @@ class WebGLRenderingContext extends js.Object {
     */
   def hint(target: Int, mode: Int): Unit = js.native
 
-  /** Returns `true` if the `buffer` is valid, `false` otherwise.
-    */
+  /** Returns `true` if the `buffer` is valid, `false` otherwise. */
   def isBuffer(buffer: js.Any): Boolean = js.native
 
   /** Returns `true` if the specified capability is enabled, `false` otherwise.
@@ -1665,32 +1583,25 @@ class WebGLRenderingContext extends js.Object {
     */
   def isEnabled(cap: Int): Boolean = js.native
 
-  /** Returns `true` if the `framebuffer` is valid, `false` otherwise.
-    */
+  /** Returns `true` if the `framebuffer` is valid, `false` otherwise. */
   def isFramebuffer(framebuffer: js.Any): Boolean = js.native
 
-  /** Returns `true` if the `program` is valid, `false` otherwise.
-    */
+  /** Returns `true` if the `program` is valid, `false` otherwise. */
   def isProgram(program: js.Any): Boolean = js.native
 
-  /** Returns `true` if the `renderbuffer` is valid, `false` otherwise.
-    */
+  /** Returns `true` if the `renderbuffer` is valid, `false` otherwise. */
   def isRenderbuffer(renderbuffer: js.Any): Boolean = js.native
 
-  /** Returns `true` if the `shader` is valid, `false` otherwise.
-    */
+  /** Returns `true` if the `shader` is valid, `false` otherwise. */
   def isShader(shader: js.Any): Boolean = js.native
 
-  /** Returns `true` if the `texture` is valid, `false` otherwise.
-    */
+  /** Returns `true` if the `texture` is valid, `false` otherwise. */
   def isTexture(texture: js.Any): Boolean = js.native
 
-  /** Specifies the line width.
-    */
+  /** Specifies the line width. */
   def lineWidth(width: Double): Unit = js.native
 
-  /** Attempts to link the specified [[WebGLProgram]].
-    */
+  /** Attempts to link the specified [[WebGLProgram]]. */
   def linkProgram(program: WebGLProgram): Unit = js.native
 
   /** Sets the pixel store mode, used when copying image data such as framebuffers or textures.
@@ -1758,8 +1669,7 @@ class WebGLRenderingContext extends js.Object {
     */
   def scissor(x: Int, y: Int, width: Int, height: Int): Unit = js.native
 
-  /** Sets the GLSL source for the given shader.
-    */
+  /** Sets the GLSL source for the given shader. */
   def shaderSource(shader: WebGLShader, source: String): Unit = js.native
 
   /** Sets the stencil test for front and back faces.
@@ -2397,12 +2307,10 @@ class WebGLRenderingContext extends js.Object {
     */
   def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit = js.native
 
-  /** Makes a [[WebGLProgram]] become the active program.
-    */
+  /** Makes a [[WebGLProgram]] become the active program. */
   def useProgram(program: WebGLProgram): Unit = js.native
 
-  /** Validates a [[WebGLProgram]].
-    */
+  /** Validates a [[WebGLProgram]]. */
   def validateProgram(program: WebGLProgram): Unit = js.native
 
   /** Loads a scalar into a vertex attribute.
@@ -2544,7 +2452,6 @@ class WebGLRenderingContext extends js.Object {
   def vertexAttribPointer(indx: Int, size: Int, `type`: Int, normalized: Boolean, stride: Int,
       offset: Int): Unit = js.native
 
-  /** Sets the OpenGL viewport to render within.
-    */
+  /** Sets the OpenGL viewport to render within. */
   def viewport(x: Double, y: Double, width: Double, height: Double): Unit = js.native
 }

@@ -155,8 +155,7 @@ trait DedicatedWorkerGlobalScope extends WorkerGlobalScope {
 @JSGlobalScope
 object DedicatedWorkerGlobalScope extends js.Object {
 
-  /** Returns an object reference to the DedicatedWorkerGlobalScope object itself.
-    */
+  /** Returns an object reference to the DedicatedWorkerGlobalScope object itself. */
   def self: DedicatedWorkerGlobalScope = js.native
 }
 
@@ -174,36 +173,28 @@ trait WorkerNavigator extends NavigatorID with NavigatorOnLine with NavigatorLan
 @js.native
 trait WorkerLocation extends js.Object {
 
-  /** Is a DOMString containing a '#' followed by the fragment identifier of the URL.
-    */
+  /** Is a DOMString containing a '#' followed by the fragment identifier of the URL. */
   def hash: String = js.native
 
-  /** Is a DOMString containing the protocol scheme of the URL, including the final ':'.
-    */
+  /** Is a DOMString containing the protocol scheme of the URL, including the final ':'. */
   def protocol: String = js.native
 
-  /** Is a DOMString containing a '?' followed by the parameters of the URL.
-    */
+  /** Is a DOMString containing a '?' followed by the parameters of the URL. */
   def search: String = js.native
 
-  /** Is a DOMString containing the whole URL.
-    */
+  /** Is a DOMString containing the whole URL. */
   def href: String = js.native
 
-  /** Is a DOMString containing the domain of the URL.
-    */
+  /** Is a DOMString containing the domain of the URL. */
   def hostname: String = js.native
 
-  /** Is a DOMString containing the port number of the URL.
-    */
+  /** Is a DOMString containing the port number of the URL. */
   def port: String = js.native
 
-  /** Is a DOMString containing an initial '/' followed by the path of the URL.
-    */
+  /** Is a DOMString containing an initial '/' followed by the path of the URL. */
   def pathname: String = js.native
 
-  /** Is a DOMString containing the host, that is the hostname, a ':', and the port of the URL.
-    */
+  /** Is a DOMString containing the host, that is the hostname, a ':', and the port of the URL. */
   def host: String = js.native
 
   /** The origin read-only property is a String containing the Unicode serialization of the origin of the represented

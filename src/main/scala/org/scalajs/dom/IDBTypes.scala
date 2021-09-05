@@ -18,8 +18,7 @@ sealed trait IDBTransactionMode extends js.Any
 
 object IDBTransactionMode {
 
-  /** Allows data to be read but not changed. It is the default transaction mode.
-    */
+  /** Allows data to be read but not changed. It is the default transaction mode. */
   val READ_ONLY: IDBTransactionMode = "readonly".asInstanceOf[IDBTransactionMode]
 
   /** Allows any operation to be performed, including ones that delete and create object stores and indexes. This mode
@@ -28,8 +27,7 @@ object IDBTransactionMode {
     */
   val VERSION_CHANGE: IDBTransactionMode = "versionchange".asInstanceOf[IDBTransactionMode]
 
-  /** Allows reading and writing of data in existing data stores to be changed.
-    */
+  /** Allows reading and writing of data in existing data stores to be changed. */
   val READ_WRITE: IDBTransactionMode = "readwrite".asInstanceOf[IDBTransactionMode]
 
 }
@@ -41,14 +39,12 @@ object IDBTransactionMode {
 @JSGlobal
 class IDBObjectStore extends js.Object {
 
-  /** A list of the names of indexes on objects in this object store.
-    */
+  /** A list of the names of indexes on objects in this object store. */
   def indexNames: DOMStringList = js.native
 
   def name: String = js.native
 
-  /** The name of the transaction to which this object store belongs.
-    */
+  /** The name of the transaction to which this object store belongs. */
   def transaction: IDBTransaction = js.native
 
   /** The key path of this object store. If this attribute is null, the application must provide a key for each
@@ -70,8 +66,7 @@ class IDBObjectStore extends js.Object {
     */
   def clear(): IDBRequest = js.native
 
-  /** Note that this method must be called only from a VersionChange transaction mode callback.
-    */
+  /** Note that this method must be called only from a VersionChange transaction mode callback. */
   def createIndex(name: String, keyPath: String, optionalParameters: js.Any = js.native): IDBIndex = js.native
 
   /** If the record is successfully stored, then a success event is fired on the returned request object with the result
@@ -80,13 +75,11 @@ class IDBObjectStore extends js.Object {
     */
   def put(value: js.Any, key: js.Any = js.native): IDBRequest = js.native
 
-  /** The method sets the position of the cursor to the appropriate record, based on the specified direction.
-    */
+  /** The method sets the position of the cursor to the appropriate record, based on the specified direction. */
   def openCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
       direction: js.UndefOr[IDBCursorDirection] = js.undefined): IDBRequest = js.native
 
-  /** The method sets the position of the cursor to the appropriate key, based on the specified direction.
-    */
+  /** The method sets the position of the cursor to the appropriate key, based on the specified direction. */
   def openKeyCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
       direction: js.UndefOr[IDBCursorDirection] = js.undefined): IDBRequest = js.native
 
@@ -95,8 +88,7 @@ class IDBObjectStore extends js.Object {
     */
   def deleteIndex(indexName: String): Unit = js.native
 
-  /** This method may raise a DOMException of one of the following types:
-    */
+  /** This method may raise a DOMException of one of the following types: */
   def index(name: String): IDBIndex = js.native
 
   /** If a value is successfully found, then a structured clone of it is created and set as the result of the request
@@ -121,8 +113,7 @@ class IDBObjectStore extends js.Object {
     */
   def getKey(key: js.Any): IDBRequest = js.native
 
-  /** returns an IDBRequest object, and, in a separate thread, deletes the current object store.
-    */
+  /** returns an IDBRequest object, and, in a separate thread, deletes the current object store. */
   def delete(key: js.Any): IDBRequest = js.native
 }
 
@@ -144,8 +135,7 @@ class IDBVersionChangeEvent(typeArg: String, init: js.UndefOr[IDBVersionChangeEv
     */
   def newVersion: Integer = js.native
 
-  /** Returns the old version of the database.
-    */
+  /** Returns the old version of the database. */
   def oldVersion: Int = js.native
 }
 
@@ -167,18 +157,15 @@ class IDBVersionChangeEvent(typeArg: String, init: js.UndefOr[IDBVersionChangeEv
 @JSGlobal
 class IDBIndex extends js.Object {
 
-  /** If true, this index does not allow duplicate values for a key.
-    */
+  /** If true, this index does not allow duplicate values for a key. */
   def unique: Boolean = js.native
 
   def name: String = js.native
 
-  /** The key path of this index. If null, this index is not auto-populated.
-    */
+  /** The key path of this index. If null, this index is not auto-populated. */
   def keyPath: String = js.native
 
-  /** The name of the object store referenced by this index.
-    */
+  /** The name of the object store referenced by this index. */
   def objectStore: IDBObjectStore = js.native
 
   def count(key: js.Any): IDBRequest = js.native
@@ -203,8 +190,7 @@ class IDBIndex extends js.Object {
     */
   def get(key: js.Any): IDBRequest = js.native
 
-  /** The method sets the position of the cursor to the appropriate record, based on the specified direction.
-    */
+  /** The method sets the position of the cursor to the appropriate record, based on the specified direction. */
   def openCursor(range: IDBKeyRange = js.native, direction: IDBCursorDirection = js.native): IDBRequest = js.native
 }
 
@@ -240,8 +226,7 @@ class IDBCursor extends js.Object {
     */
   def primaryKey: js.Any = js.native
 
-  /** This method may raise a DOMException of one of the following types:
-    */
+  /** This method may raise a DOMException of one of the following types: */
   def advance(count: Int): Unit = js.native
 
   /** Sets cursor to key if specified, otherwise advances cursor by one.
@@ -291,8 +276,7 @@ object IDBCursorDirection {
   val NEXT_UNIQUE: IDBCursorDirection = "nextunique".asInstanceOf[IDBCursorDirection]
 }
 
-/** Same as IDBCursor with the value property.
-  */
+/** Same as IDBCursor with the value property. */
 @js.native
 @JSGlobal
 class IDBCursorWithValue extends IDBCursor {
@@ -312,20 +296,16 @@ class IDBCursorWithValue extends IDBCursor {
 @JSGlobal
 class IDBKeyRange extends js.Object {
 
-  /** The upper bound of the key range (can be any type.)
-    */
+  /** The upper bound of the key range (can be any type.) */
   def upper: js.Any = js.native
 
-  /** Returns false if the upper-bound value is included in the key range.
-    */
+  /** Returns false if the upper-bound value is included in the key range. */
   def upperOpen: Boolean = js.native
 
-  /** The lower bound of the key range (can be any type.)
-    */
+  /** The lower bound of the key range (can be any type.) */
   def lower: js.Any = js.native
 
-  /** Returns false if the lower-bound value is included in the key range.
-    */
+  /** Returns false if the lower-bound value is included in the key range. */
   def lowerOpen: Boolean = js.native
 }
 
@@ -339,16 +319,13 @@ object IDBKeyRange extends js.Object {
   def bound(lower: js.Any, upper: js.Any, lowerOpen: Boolean = js.native,
       upperOpen: Boolean = js.native): IDBKeyRange = js.native
 
-  /** This method may raise a DOMException of the following types:
-    */
+  /** This method may raise a DOMException of the following types: */
   def only(value: js.Any): IDBKeyRange = js.native
 
-  /** By default, it includes the lower endpoint value and is closed.
-    */
+  /** By default, it includes the lower endpoint value and is closed. */
   def lowerBound(bound: js.Any, open: Boolean = js.native): IDBKeyRange = js.native
 
-  /** By default, it includes the upper endpoint value and is closed.
-    */
+  /** By default, it includes the upper endpoint value and is closed. */
   def upperBound(bound: js.Any, open: Boolean = js.native): IDBKeyRange = js.native
 }
 
@@ -361,12 +338,10 @@ object IDBKeyRange extends js.Object {
 @JSGlobal
 class IDBTransaction extends EventTarget {
 
-  /** The event handler for the oncomplete event.
-    */
+  /** The event handler for the oncomplete event. */
   var oncomplete: js.Function1[Event, _] = js.native
 
-  /** The database connection with which this transaction is associated.
-    */
+  /** The database connection with which this transaction is associated. */
   def db: IDBDatabase = js.native
 
   /** The mode for isolating access to data in the object stores that are in the scope of the transaction. For possible
@@ -380,12 +355,10 @@ class IDBTransaction extends EventTarget {
     */
   def error: DOMException = js.native
 
-  /** The event handler for the onerror event.
-    */
+  /** The event handler for the onerror event. */
   var onerror: js.Function1[Event, _] = js.native
 
-  /** The event handler for the onabort event.
-    */
+  /** The event handler for the onabort event. */
   var onabort: js.Function1[Event, _] = js.native
 
   /** Returns immediately, and rolls back all the changes to objects in the database associated with this transaction.
@@ -418,20 +391,16 @@ class IDBDatabase extends EventTarget {
     */
   def version: Int = js.native
 
-  /** A DOMString that contains the name of the connected database.
-    */
+  /** A DOMString that contains the name of the connected database. */
   def name: String = js.native
 
-  /** A DOMStringList that contains a list of the names of the object stores currently in the connected database.
-    */
+  /** A DOMStringList that contains a list of the names of the object stores currently in the connected database. */
   def objectStoreNames: DOMStringList = js.native
 
-  /** Fires when access to the database fails.
-    */
+  /** Fires when access to the database fails. */
   var onerror: js.Function1[Event, _] = js.native
 
-  /** Fires when access of the database is aborted.
-    */
+  /** Fires when access of the database is aborted. */
   var onabort: js.Function1[Event, _] = js.native
 
   /** The onversionchange event handler of the IDBDatabase interface handles the versionchange event, fired when a
@@ -502,12 +471,10 @@ class IDBFactory extends js.Object {
     */
   def open(name: String): IDBOpenDBRequest = js.native
 
-  /** A method that compares two keys and returns a result indicating which one is greater in value.
-    */
+  /** A method that compares two keys and returns a result indicating which one is greater in value. */
   def cmp(first: js.Any, second: js.Any): Int = js.native
 
-  /** The deletion operation (performed in a different thread) consists of the following steps:
-    */
+  /** The deletion operation (performed in a different thread) consists of the following steps: */
   def deleteDatabase(name: String): IDBOpenDBRequest = js.native
 }
 
@@ -528,12 +495,10 @@ class IDBRequest extends EventTarget {
     */
   def source: js.Any = js.native
 
-  /** The event handler for the success event.
-    */
+  /** The event handler for the success event. */
   var onsuccess: js.Function1[Event, _] = js.native
 
-  /** Returns a DOMException in the event of an unsuccessful request, indicating what went wrong.
-    */
+  /** Returns a DOMException in the event of an unsuccessful request, indicating what went wrong. */
   def error: DOMException = js.native
 
   /** The transaction for the request. This property can be null for certain requests, such as for request returned from
@@ -541,8 +506,7 @@ class IDBRequest extends EventTarget {
     */
   def transaction: IDBTransaction = js.native
 
-  /** The event handler for the error event.
-    */
+  /** The event handler for the error event. */
   var onerror: js.Function1[Event, _] = js.native
 
   /** The state of the request. Every request starts in the pending state. The state changes to done when the request

@@ -2,8 +2,7 @@ package org.scalajs.dom
 
 import org.scalajs.dom
 
-/** Short aliases of all the dom.CSSThing classes
-  */
+/** Short aliases of all the dom.CSSThing classes */
 @deprecated("directly use the dom.CSS* types and values instead", "2.0.0")
 object DeprecatedCSSAliases {
 

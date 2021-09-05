@@ -1,5 +1,4 @@
-/** http://www.w3.org/TR/2015/WD-webrtc-20150210/
-  */
+/** http://www.w3.org/TR/2015/WD-webrtc-20150210/ */
 package org.scalajs.dom.experimental.webrtc
 
 import org.scalajs.dom.experimental.mediastream._
@@ -97,15 +96,13 @@ object RTCIceServer {
   }
 }
 
-/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCIceTransportPolicy]] in W3C spec
-  */
+/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCIceTransportPolicy]] in W3C spec */
 @js.native
 trait RTCIceTransportPolicy extends js.Any
 
 object RTCIceTransportPolicy {
 
-  /** The ICE engine must not send or receive any packets at this point.
-    */
+  /** The ICE engine must not send or receive any packets at this point. */
   val none: RTCIceTransportPolicy = "none".asInstanceOf[RTCIceTransportPolicy]
 
   /** The ICE engine must only use media relay candidates such as candidates passing through a TURN server. This can be
@@ -113,13 +110,11 @@ object RTCIceTransportPolicy {
     */
   val relay: RTCIceTransportPolicy = "relay".asInstanceOf[RTCIceTransportPolicy]
 
-  /** The ICE engine may use any type of candidates when this value is specified.
-    */
+  /** The ICE engine may use any type of candidates when this value is specified. */
   val all: RTCIceTransportPolicy = "all".asInstanceOf[RTCIceTransportPolicy]
 }
 
-/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCBundlePolicy]] in W3C spec
-  */
+/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCBundlePolicy]] in W3C spec */
 @js.native
 trait RTCBundlePolicy extends js.Any
 
@@ -144,16 +139,13 @@ object RTCBundlePolicy {
 @js.native
 trait RTCConfiguration extends js.Object {
 
-  /** An array containing URIs of servers available to be used by ICE, such as STUN and TURN server.
-    */
+  /** An array containing URIs of servers available to be used by ICE, such as STUN and TURN server. */
   var iceServers: js.Array[RTCIceServer] = js.native
 
-  /** defaulting to "all" Indicates which candidates the ICE engine is allowed to use.
-    */
+  /** defaulting to "all" Indicates which candidates the ICE engine is allowed to use. */
   var iceTransportPolicy: RTCIceTransportPolicy = js.native
 
-  /** defaulting to "balanced" Indicates which BundlePolicy to use.
-    */
+  /** defaulting to "balanced" Indicates which BundlePolicy to use. */
   var bundlePolicy: RTCBundlePolicy = js.native
 
   /** Sets the target peer identity for the RTCPeerConnection. The RTCPeerConnection will establish a connection to a
@@ -178,15 +170,13 @@ object RTCConfiguration {
   }
 }
 
-/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCSdpType]] in W3C spec
-  */
+/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCSdpType]] in W3C spec */
 @js.native
 trait RTCSdpType extends js.Any
 
 object RTCSdpType {
 
-  /** An RTCSdpType of "offer" indicates that a description should be treated as an [SDP] offer.
-    */
+  /** An RTCSdpType of "offer" indicates that a description should be treated as an [SDP] offer. */
   val offer: RTCSdpType = "offer".asInstanceOf[RTCSdpType]
 
   /** An RTCSdpType of "pranswer" indicates that a description should be treated as an [SDP] answer, but not a final
@@ -225,12 +215,10 @@ object RTCSessionDescriptionInit {
 class RTCSessionDescription(descriptionInitDict: js.UndefOr[RTCSessionDescriptionInit] = js.undefined)
     extends js.Object {
 
-  /** An enum of type RTCSdpType describing the session description's type.
-    */
+  /** An enum of type RTCSdpType describing the session description's type. */
   var `type`: RTCSdpType = js.native
 
-  /** A DOMString containing the SDP format describing the session.
-    */
+  /** A DOMString containing the SDP format describing the session. */
   var sdp: String = js.native
 }
 
@@ -279,8 +267,7 @@ class RTCIceCandidate(candidateInitDict: RTCIceCandidateInit) extends js.Object 
   var sdpMLineIndex: Double = js.native
 }
 
-/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCDataChannelState]] in W3C spec
-  */
+/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCDataChannelState]] in W3C spec */
 @js.native
 trait RTCDataChannelState extends js.Any
 
@@ -296,17 +283,14 @@ object RTCDataChannelState {
     */
   val open: RTCDataChannelState = "open".asInstanceOf[RTCDataChannelState]
 
-  /** The procedure to close down the underlying data transport has started.
-    */
+  /** The procedure to close down the underlying data transport has started. */
   val closing: RTCDataChannelState = "closing".asInstanceOf[RTCDataChannelState]
 
-  /** The underlying data transport has been closed or could not be established.
-    */
+  /** The underlying data transport has been closed or could not be established. */
   val closed: RTCDataChannelState = "closed".asInstanceOf[RTCDataChannelState]
 }
 
-/** The RTCDataChannel interface represents a bi-directional data channel between two peers of a connection.
-  */
+/** The RTCDataChannel interface represents a bi-directional data channel between two peers of a connection. */
 @js.native
 trait RTCDataChannel extends EventTarget {
 
@@ -321,8 +305,7 @@ trait RTCDataChannel extends EventTarget {
   val maxPacketLifeTime: Double = js.native
   val maxRetransmits: Double = js.native
 
-  /** Returns a DOMString containing the name of the subprotocol in use. If none, it returns "".
-    */
+  /** Returns a DOMString containing the name of the subprotocol in use. If none, it returns "". */
   val protocol: String = js.native
   val negotiated: Boolean = js.native
 
@@ -331,8 +314,7 @@ trait RTCDataChannel extends EventTarget {
     */
   val id: Double = js.native
 
-  /** Returns an enum of the type RTCDataChannelState representing the state of the underlying data connection.
-    */
+  /** Returns an enum of the type RTCDataChannelState representing the state of the underlying data connection. */
   def readyState: RTCDataChannelState = js.native
 
   /** Returns an unsigned long containing the amount of bytes that have been queued for sending: that is the amount of
@@ -388,8 +370,7 @@ trait RTCDataChannelInit extends js.Object {
 class RTCDataChannelEvent(typeArg: String, init: js.UndefOr[RTCDataChannelEventInit]) extends Event(typeArg, init) {
   def this(init: RTCDataChannelEventInit) = this("datachannel", init)
 
-  /** Contains the RTCDataChannel containing the data channel associated with the event.
-    */
+  /** Contains the RTCDataChannel containing the data channel associated with the event. */
   val channel: RTCDataChannel = js.native
 }
 
@@ -420,8 +401,7 @@ object RTCDataChannelInit {
 @js.native
 trait RTCDTMFSender extends js.Object {
 
-  /** The canInsertDTMF attribute must indicate if the RTCDTMFSender is capable of sending DTMF.
-    */
+  /** The canInsertDTMF attribute must indicate if the RTCDTMFSender is capable of sending DTMF. */
   val canInsertDTMF: Boolean = js.native
 
   /** An RTCDTMFSender object's insertDTMF() method is used to send DTMF tones. The tones parameter is treated as a
@@ -441,8 +421,7 @@ trait RTCDTMFSender extends js.Object {
   def insertDTMF(tones: String = js.native, duration: Double = js.native,
       interToneGap: Double = js.native): Unit = js.native
 
-  /** The track attribute must return the MediaStreamTrack given as argument to the createDTMFSender() method.
-    */
+  /** The track attribute must return the MediaStreamTrack given as argument to the createDTMFSender() method. */
   val track: MediaStreamTrack = js.native
 
   /** This event handler uses the RTCDTMFToneChangeEvent interface to return the character for each tone as it is played
@@ -467,8 +446,7 @@ trait RTCDTMFSender extends js.Object {
   val interToneGap: Double = js.native
 }
 
-/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCStatsType]] in W3C spec
-  */
+/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCStatsType]] in W3C spec */
 @js.native
 trait RTCStatsType extends js.Any
 
@@ -506,20 +484,17 @@ trait RTCPeerConnectionIceEventInit extends EventInit {
 class RTCPeerConnectionIceEvent(typeArg: String, init: js.UndefOr[RTCPeerConnectionIceEventInit])
     extends Event(typeArg, init) {
 
-  /** Contains the RTCIceCandidate containing the candidate associated with the event.
-    */
+  /** Contains the RTCIceCandidate containing the candidate associated with the event. */
   var candidate: RTCIceCandidate = js.native
 }
 
-/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#rtciceconnectionstate-enum]] in W3C spec
-  */
+/** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#rtciceconnectionstate-enum]] in W3C spec */
 @js.native
 trait RTCIceConnectionState extends js.Any
 
 object RTCIceConnectionState {
 
-  /** The ICE Agent is gathering addresses and/or waiting for remote candidates to be supplied.
-    */
+  /** The ICE Agent is gathering addresses and/or waiting for remote candidates to be supplied. */
   val `new`: RTCIceConnectionState = "new".asInstanceOf[RTCIceConnectionState]
 
   /** The ICE Agent has received remote candidates on at least one component, and is checking candidate pairs but has
@@ -547,8 +522,7 @@ object RTCIceConnectionState {
     */
   val disconnected: RTCIceConnectionState = "disconnected".asInstanceOf[RTCIceConnectionState]
 
-  /** The ICE Agent has shut down and is no longer responding to STUN requests.
-    */
+  /** The ICE Agent has shut down and is no longer responding to STUN requests. */
   val closed: RTCIceConnectionState = "closed".asInstanceOf[RTCIceConnectionState]
 }
 
@@ -562,12 +536,10 @@ object RTCSignalingState {
     */
   val stable: RTCSignalingState = "stable".asInstanceOf[RTCSignalingState]
 
-  /** A local description, of type "offer", has been successfully applied.
-    */
+  /** A local description, of type "offer", has been successfully applied. */
   val `have-local-offer` = "have-local-offer".asInstanceOf[RTCSignalingState]
 
-  /** A remote description, of type "offer", has been successfully applied.
-    */
+  /** A remote description, of type "offer", has been successfully applied. */
   val `have-remote-offer` = "have-remote-offer".asInstanceOf[RTCSignalingState]
 
   /** A remote description of type "offer" has been successfully applied and a local description of type "pranswer" has
@@ -582,8 +554,7 @@ object RTCSignalingState {
   val `have-remote-pranswer` =
     "have-remote-pranswer".asInstanceOf[RTCSignalingState]
 
-  /** The connection is closed.
-    */
+  /** The connection is closed. */
   val closed: RTCSignalingState = "closed".asInstanceOf[RTCSignalingState]
 }
 
@@ -592,12 +563,10 @@ trait RTCIceGatheringState extends js.Any
 
 object RTCIceGatheringState {
 
-  /** The object was just created, and no networking has occurred yet.
-    */
+  /** The object was just created, and no networking has occurred yet. */
   val `new`: RTCIceGatheringState = "new".asInstanceOf[RTCIceGatheringState]
 
-  /** The ICE engine is in the process of gathering candidates for this RTCPeerConnection.
-    */
+  /** The ICE engine is in the process of gathering candidates for this RTCPeerConnection. */
   val gathering: RTCIceGatheringState = "gathering".asInstanceOf[RTCIceGatheringState]
 
   /** The ICE engine has completed gathering. Events such as adding a new interface or a new TURN server will cause the
@@ -789,12 +758,10 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
 
   def getConfiguration(): RTCConfiguration = js.native
 
-  /** Returns an array of MediaStream associated with the local end of the connection. The array may be empty.
-    */
+  /** Returns an array of MediaStream associated with the local end of the connection. The array may be empty. */
   def getLocalStreams(): js.Array[MediaStream] = js.native
 
-  /** Returns an array of MediaStream associated with the remote end of the connection. The array may be empty.
-    */
+  /** Returns an array of MediaStream associated with the remote end of the connection. The array may be empty. */
   def getRemoteStreams(): js.Array[MediaStream] = js.native
 
   /** Returns the MediaStream with the given id that is associated with local or remote end of the connection. If no
@@ -812,8 +779,7 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
     */
   def removeStream(stream: MediaStream): Unit = js.native
 
-  /** Abruptly closes a connection.
-    */
+  /** Abruptly closes a connection. */
   def close(): Unit = js.native
 
   /** Creates a new RTCDataChannel associated with this connection. The method takes a dictionary as parameter, with the
@@ -826,8 +792,7 @@ class RTCPeerConnection(configuration: js.UndefOr[RTCConfiguration] = js.undefin
     */
   def createDTMFSender(track: MediaStreamTrack): RTCDTMFSender = js.native
 
-  /** Creates a new RTCStatsReport that contains and allows access to statistics regarding the connection.
-    */
+  /** Creates a new RTCStatsReport that contains and allows access to statistics regarding the connection. */
   def getStats(selector: MediaStreamTrack, callback: js.Function1[RTCStatsReport, Any],
       error: js.Function1[DOMException, Any]): RTCStatsReport = js.native
 

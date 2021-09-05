@@ -18,8 +18,7 @@ package object dom {
 
   type BufferSource = ArrayBufferView | ArrayBuffer
 
-  /** defined at [[https://fetch.spec.whatwg.org/#request-class ¶6.3 Request class]] of whatwg Fetch spec
-    */
+  /** defined at [[https://fetch.spec.whatwg.org/#request-class ¶6.3 Request class]] of whatwg Fetch spec */
   type RequestInfo = String | Request
 
   /** defined at [[https://fetch.spec.whatwg.org/#headersinit ¶6.1 Header Class]] in whatwg Fetch spec todo: it should
@@ -28,12 +27,10 @@ package object dom {
   type HeadersInit =
     Headers | Sequence[Sequence[ByteString]] | OpenEndedDictionary[ByteString]
 
-  /** This type should capture strings consisting only of ASCII chars todo: is there a way to capture this type?
-    */
+  /** This type should capture strings consisting only of ASCII chars todo: is there a way to capture this type? */
   type ByteString = String
 
-  /** defined at [[https://fetch.spec.whatwg.org/#body-mixin ¶6.2 Body mixin]] in whatwg Fetch spec
-    */
+  /** defined at [[https://fetch.spec.whatwg.org/#body-mixin ¶6.2 Body mixin]] in whatwg Fetch spec */
   type BodyInit =
     Blob | BufferSource | FormData | String //todo: add URLSearchParams
 

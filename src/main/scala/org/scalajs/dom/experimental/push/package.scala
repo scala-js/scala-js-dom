@@ -4,24 +4,20 @@ import org.scalajs.dom.experimental.serviceworkers.{ServiceWorkerGlobalScope, Se
 import scala.language.implicitConversions
 import scala.scalajs.js
 
-/** The Push API is currently specified here: [[http://www.w3.org/TR/2015/WD-push-api-20151215/]]
-  */
+/** The Push API is currently specified here: [[http://www.w3.org/TR/2015/WD-push-api-20151215/]] */
 package object push {
 
-  /** Implicit function for patching Push API support onto ServiceWorkerRegistration.
-    */
+  /** Implicit function for patching Push API support onto ServiceWorkerRegistration. */
   implicit def pushServiceWorkerRegistration(swr: ServiceWorkerRegistration): PushServiceWorkerRegistration = {
     swr.asInstanceOf[PushServiceWorkerRegistration]
   }
 
-  /** Implicit function for patching Push API support onto ServiceWorkerGlobalScope
-    */
+  /** Implicit function for patching Push API support onto ServiceWorkerGlobalScope */
   implicit def pushServiceWorkerGlobalScope(swgs: ServiceWorkerGlobalScope): PushServiceWorkerGlobalScope = {
     swgs.asInstanceOf[PushServiceWorkerGlobalScope]
   }
 
-  /** A trait used for patching Push API support onto ServiceWorkerRegistration.
-    */
+  /** A trait used for patching Push API support onto ServiceWorkerRegistration. */
   @js.native
   trait PushServiceWorkerRegistration extends js.Any {
 
@@ -32,8 +28,7 @@ package object push {
     val pushManager: PushManager = js.native
   }
 
-  /** A trait used for patching Push API support onto ServiceWorkerGlobalScope.
-    */
+  /** A trait used for patching Push API support onto ServiceWorkerGlobalScope. */
   @js.native
   trait PushServiceWorkerGlobalScope extends js.Any {
 

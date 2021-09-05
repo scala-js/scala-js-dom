@@ -15,16 +15,13 @@ sealed trait FrameType extends js.Any
   */
 object FrameType {
 
-  /** The window client's global object's browsing context is an auxiliary browsing context.
-    */
+  /** The window client's global object's browsing context is an auxiliary browsing context. */
   val auxiliary: FrameType = "auxiliary".asInstanceOf[FrameType]
 
-  /** The window client's global object's browsing context is a top-level browsing context.
-    */
+  /** The window client's global object's browsing context is a top-level browsing context. */
   val `top-level` = "top-level".asInstanceOf[FrameType]
 
-  /** The window client's global object's browsing context is a nested browsing context.
-    */
+  /** The window client's global object's browsing context is a nested browsing context. */
   val nested: FrameType = "nested".asInstanceOf[FrameType]
 
   val none: FrameType = "none".asInstanceOf[FrameType]
@@ -35,14 +32,12 @@ object FrameType {
 @js.native
 trait Client extends js.Object {
 
-  /** The url attribute must return the context object's associated service worker client's serialized creation url.
-    */
+  /** The url attribute must return the context object's associated service worker client's serialized creation url. */
   def url: String = js.native
 
   def frameType: FrameType = js.native
 
-  /** The id attribute must return its associated service worker client's id.
-    */
+  /** The id attribute must return its associated service worker client's id. */
   def id: String = js.native
 
   /** @param message
@@ -82,8 +77,7 @@ class FetchEvent(typeArg: String, init: js.UndefOr[FetchEventInit]) extends Exte
     */
   def isReload: Boolean = js.native
 
-  /** The Request that triggered the event handler.
-    */
+  /** The Request that triggered the event handler. */
   def request: Request = js.native
 
   def preloadResponse: js.Promise[js.UndefOr[Response]] = js.native
@@ -195,8 +189,7 @@ trait ServiceWorkerRegistration extends EventTarget {
   def showNotification(title: String, options: NotificationOptions = ???): js.Promise[Unit] = js.native
 }
 
-/** An object containing options to filter the notifications returned.
-  */
+/** An object containing options to filter the notifications returned. */
 trait GetNotificationOptions extends js.Object {
 
   /** A DOMString representing a notification tag. If specified, only notifications that have this tag will be returned.
@@ -290,16 +283,13 @@ trait ExtendableMessageEventInit extends ExtendableEventInit {
 class ExtendableMessageEvent(typeArg: String, init: js.UndefOr[ExtendableMessageEventInit])
     extends ExtendableEvent(typeArg, init) {
 
-  /** Returns the event's data. It can be any data type.
-    */
+  /** Returns the event's data. It can be any data type. */
   val data: Any = js.native
 
-  /** Returns the origin of the service worker's environment settings object.
-    */
+  /** Returns the origin of the service worker's environment settings object. */
   val origin: String = js.native
 
-  /** Represents, in server-sent events, the last event ID of the event source.
-    */
+  /** Represents, in server-sent events, the last event ID of the event source. */
   val lastEventId: String = js.native
 
   /** @return
@@ -307,8 +297,7 @@ class ExtendableMessageEvent(typeArg: String, init: js.UndefOr[ExtendableMessage
     */
   def source: ServiceWorker | MessagePort = js.native
 
-  /** It represents the MessagePort array being sent, if any.
-    */
+  /** It represents the MessagePort array being sent, if any. */
   def ports: js.Array[MessagePort] = js.native
 }
 
@@ -335,8 +324,7 @@ object ServiceWorkerState {
     */
   val installing: ServiceWorkerState = "installing".asInstanceOf[ServiceWorkerState]
 
-  /** The service worker in this state is considered a waiting worker.
-    */
+  /** The service worker in this state is considered a waiting worker. */
   val installed: ServiceWorkerState = "installed".asInstanceOf[ServiceWorkerState]
 
   /** The service worker in this state is considered an active worker. During this state, event.waitUntil(f) can be
@@ -345,8 +333,7 @@ object ServiceWorkerState {
     */
   val activating: ServiceWorkerState = "activating".asInstanceOf[ServiceWorkerState]
 
-  /** The service worker in this state is considered an active worker ready to handle functional events.
-    */
+  /** The service worker in this state is considered an active worker ready to handle functional events. */
   val activated: ServiceWorkerState = "activated".asInstanceOf[ServiceWorkerState]
 
   /** A new service worker is replacing the current service worker, or the current service worker is being discarded due
@@ -395,8 +382,7 @@ trait WindowClient extends Client {
     */
   def focused: Boolean = js.native
 
-  /** Gives user input focus to the current client and returns a Promise that resolves to the existing WindowClient.
-    */
+  /** Gives user input focus to the current client and returns a Promise that resolves to the existing WindowClient. */
   def focus(): js.Promise[WindowClient]
 
   /** See
@@ -439,8 +425,7 @@ trait Clients extends js.Object {
 @js.native
 trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
 
-  /** Returns the Clients object associated with the service worker.
-    */
+  /** Returns the Clients object associated with the service worker. */
   def clients: Clients = js.native
 
   /** The registration read-only property of the ServiceWorkerGlobalScope interface returns a reference to the
@@ -453,8 +438,7 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
     */
   var onactivate: js.Function1[ExtendableEvent, _] = js.native
 
-  /** An event handler fired whenever a fetch event occurs — when a fetch() is called.
-    */
+  /** An event handler fired whenever a fetch event occurs — when a fetch() is called. */
   var onfetch: js.Function1[FetchEvent, _] = js.native
 
   /** An event handler fired whenever an install event occurs — when a ServiceWorkerRegistration acquires a new
