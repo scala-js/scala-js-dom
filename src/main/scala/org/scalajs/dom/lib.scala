@@ -5182,9 +5182,6 @@ object BlobPropertyBag {
 @JSGlobal
 class Blob(blobParts: js.Array[js.Any] = js.native, options: BlobPropertyBag = js.native) extends js.Object {
 
-  @deprecated("This method seems to have been added in error and not actually exist.", "1.2.0")
-  def close(): Unit = js.native
-
   /** The size, in bytes, of the data contained in the Blob object.
     */
   def size: Double = js.native

@@ -487,9 +487,6 @@ object raw {
   @deprecated("use dom.IDBDatabase instead", "2.0.0")
   type IDBDatabase = dom.IDBDatabase
 
-  @deprecated("use dom.IDBEnvironment instead", "2.0.0")
-  type IDBEnvironment = dom.IDBEnvironment
-
   @deprecated("use dom.IDBFactory instead", "2.0.0")
   type IDBFactory = dom.IDBFactory
 

@@ -480,25 +480,3 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
 object ServiceWorkerGlobalScope extends js.Object {
   def self: ServiceWorkerGlobalScope = js.native
 }
-
-/** See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]] of ServiceWorker whatwg
-  * spec.
-  */
-@deprecated("Use org.scalajs.dom.experimental.cachestorage.Cache", "1.2.0")
-@js.native
-@JSGlobal
-abstract class Cache extends org.scalajs.dom.experimental.cachestorage.Cache
-
-/** See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache ¶5.4 cache]] of ServiceWorker whatwg
-  * spec.
-  */
-@deprecated("Use org.scalajs.dom.experimental.cachestorage.CacheQueryOptions", "1.2.0")
-@js.native
-trait CacheQueryOptions extends org.scalajs.dom.experimental.cachestorage.CacheQueryOptions
-
-/** See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#cache-storage ¶5.5 cache]] of ServiceWorker
-  * whatwg spec.
-  */
-@deprecated("Use org.scalajs.dom.experimental.cachestorage.CacheStorage", "1.2.0")
-@js.native
-trait CacheStorage extends org.scalajs.dom.experimental.cachestorage.CacheStorage
