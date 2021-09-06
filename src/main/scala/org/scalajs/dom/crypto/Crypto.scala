@@ -850,19 +850,3 @@ object KeyFormat {
   /** The key is a JsonWebKey dictionary encoded as a JavaScript object */
   val jwk: KeyFormat = "jwk".asInstanceOf[KeyFormat]
 }
-
-//
-// Todo: fill in the full list of types defined in JSON Web Key (JWK) RFC
-// http://tools.ietf.org/html/rfc7517
-//
-
-/** see example http://tools.ietf.org/html/rfc7517#appendix-A.1 //todo: where is the specification of n and e? */
-@js.native
-trait RSAPublicKey extends js.Object {
-
-  /** modulus, as a base64 URL encoded String */
-  def n: String = js.native
-
-  /** exponent, as a base64 URL encoded String */
-  def e: String = js.native
-}

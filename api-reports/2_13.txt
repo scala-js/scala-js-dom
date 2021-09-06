@@ -24346,8 +24346,6 @@ crypto/Pbkdf2Params[JT] var iterations: Double
 crypto/Pbkdf2Params[JT] var name: String
 crypto/Pbkdf2Params[JT] var salt: BufferSource
 crypto/Pbkdf2Params[SO] def apply(name: String, salt: BufferSource, iterations: Long, hash: HashAlgorithmIdentifier): Pbkdf2Params
-crypto/RSAPublicKey[JT] def e: String
-crypto/RSAPublicKey[JT] def n: String
 crypto/RsaHashedImportParams[JT] var hash: HashAlgorithmIdentifier
 crypto/RsaHashedImportParams[JT] var name: String
 crypto/RsaHashedImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): RsaHashedImportParams
