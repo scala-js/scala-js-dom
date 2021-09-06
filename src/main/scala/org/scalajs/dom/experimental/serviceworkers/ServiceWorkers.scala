@@ -40,12 +40,14 @@ trait Client extends js.Object {
   /** The id attribute must return its associated service worker client's id. */
   def id: String = js.native
 
-  /** @param message
-    *   the spec says this is of type any (?!)
+  /** Allows a service worker to send a message to a client (a Window, Worker, or SharedWorker). The message is received
+    * in the "message" event on navigator.serviceWorker.
+    *
     * @param transfer
-    *   https://html.spec.whatwg.org/multipage/infrastructure.html#transferable-objects
+    *   A sequence of objects that are transferred with the message. The ownership of these objects is given to the
+    *   destination side and they are no longer usable on the sending side.
     */
-  def postMessage(message: Any, transfer: Sequence[Transferable] = null): Unit = js.native
+  def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
 }
 
 /** see [[https://html.spec.whatwg.org/multipage/scripting.html#canvasproxy ¶4.12.4.1 Proxying canvases to workers]] in
@@ -119,15 +121,16 @@ trait ServiceWorker extends EventTarget {
     */
   def state: String = js.native
 
-  /** An EventListener property called whenever an event of type statechange is fired; it is basically fired anytime the
-    * ServiceWorker.state changes.
+  /** @param transfer
+    *   A sequence of objects that are transferred with the message. The ownership of these objects is given to the
+    *   destination side and they are no longer usable on the sending side.
     */
   var onstatechange: js.Function1[Event, _] = js.native
 
   /** [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#service-worker-postmessage ¶3.1.3 postMessage]]
     * on whatwg ServiceWorker spec.
     */
-  def postMessage(message: js.Any, transfer: js.Array[Transferable] = js.native): Unit = js.native
+  def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
 }
 
 /** The ServiceWorkerRegistion interface of the ServiceWorker API represents the service worker registration. You

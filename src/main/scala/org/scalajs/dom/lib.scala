@@ -1529,13 +1529,35 @@ class Window
 
   def closed: Boolean = js.native
 
-  /** The window.postMessage method safely enables cross-origin communication. Normally, scripts on different pages are
-    * allowed to access each other if and only if the pages that executed them are at locations with the same protocol
-    * (usually both http), port number (80 being the default for http), and host (modulo document.domain being set by
-    * both pages to the same value). window.postMessage provides a controlled mechanism to circumvent this restriction
-    * in a way which is secure when properly used.
+  /** Safely enables cross-origin communication between Window objects; e.g., between a page and a pop-up that it
+    * spawned, or between a page and an iframe embedded within it.
+    *
+    * Normally, scripts on different pages are allowed to access each other if and only if the pages they originate from
+    * share the same protocol, port number, and host (also known as the "same-origin policy"). window.postMessage()
+    * provides a controlled mechanism to securely circumvent this restriction (if used properly).
+    *
+    * Broadly, one window may obtain a reference to another (e.g., via targetWindow = window.opener), and then dispatch
+    * a MessageEvent on it with targetWindow.postMessage(). The receiving window is then free to handle this event as
+    * needed. The arguments passed to window.postMessage() (i.e., the “message”) are exposed to the receiving window
+    * through the event object.
+    *
+    * @param targetOrigin
+    *   Specifies what the origin of targetWindow must be for the event to be dispatched, either as the literal string
+    *   "*" (indicating no preference) or as a URI. If at the time the event is scheduled to be dispatched the scheme,
+    *   hostname, or port of targetWindow's document does not match that provided in targetOrigin, the event will not be
+    *   dispatched; only if all three match will the event be dispatched. This mechanism provides control over where
+    *   messages are sent; for example, if postMessage() was used to transmit a password, it would be absolutely
+    *   critical that this argument be a URI whose origin is the same as the intended receiver of the message containing
+    *   the password, to prevent interception of the password by a malicious third party. Always provide a specific
+    *   targetOrigin, not *, if you know where the other window's document should be located. Failing to provide a
+    *   specific target discloses the data you send to any interested malicious site.
+    *
+    * @param transfer
+    *   A sequence of objects that are transferred with the message. The ownership of these objects is given to the
+    *   destination side and they are no longer usable on the sending side.
     */
-  def postMessage(message: js.Any, targetOrigin: String, transfer: js.Any = js.native): Unit = js.native
+  def postMessage(message: js.Any, targetOrigin: String,
+      transfer: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
 
   /** The Window.showModalDialog() creates and displays a modal dialog box containing a specified HTML document.
     *
@@ -4734,12 +4756,12 @@ trait MessagePort extends EventTarget {
   def close(): Unit = js.native
 
   /** Sends a message from the port, and optionally, transfers ownership of objects to other browsing contexts.
-    * @param message
-    *   The message you want to send through the channel. This can be of any basic data type. Multiple data items can be
-    *   sent as an array.
-    * @param ports
+    *
+    * @param transferList
+    *   Transferable objects to be transferred — these objects have their ownership transferred to the receiving
+    *   browsing context, so are no longer usable by the sending browsing context.
     */
-  def postMessage(message: js.Any, ports: js.Any = js.native): Unit = js.native
+  def postMessage(message: js.Any, transferList: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
 
   def start(): Unit = js.native
 }

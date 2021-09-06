@@ -1195,7 +1195,7 @@ DedicatedWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent, _]
 DedicatedWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
 DedicatedWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
 DedicatedWorkerGlobalScope[JT] def origin: String
-DedicatedWorkerGlobalScope[JT] def postMessage(aMessage: js.Any, transferList: js.UndefOr[js.Array[Transferable]]?): Unit
+DedicatedWorkerGlobalScope[JT] def postMessage(message: js.Any, transferList: js.UndefOr[js.Array[Transferable]]?): Unit
 DedicatedWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
 DedicatedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DedicatedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -13964,7 +13964,7 @@ MessagePort[JT] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 MessagePort[JT] def close(): Unit
 MessagePort[JT] def dispatchEvent(evt: Event): Boolean
 MessagePort[JT] var onmessage: js.Function1[MessageEvent, _]
-MessagePort[JT] def postMessage(message: js.Any, ports: js.Any?): Unit
+MessagePort[JT] def postMessage(message: js.Any, transferList: js.UndefOr[js.Array[Transferable]]?): Unit
 MessagePort[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MessagePort[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MessagePort[JT] def start(): Unit
@@ -23309,7 +23309,7 @@ Window[JC] def pageXOffset: Double
 Window[JC] def pageYOffset: Double
 Window[JC] def parent: Window
 Window[JC] def performance: Performance
-Window[JC] def postMessage(message: js.Any, targetOrigin: String, transfer: js.Any?): Unit
+Window[JC] def postMessage(message: js.Any, targetOrigin: String, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
 Window[JC] def print(): Unit
 Window[JC] def prompt(): String
 Window[JC] def prompt(message: String, default: String?): String
@@ -23367,7 +23367,7 @@ Worker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functio
 Worker[JC] def dispatchEvent(evt: Event): Boolean
 Worker[JC] var onerror: js.Function1[ErrorEvent, _]
 Worker[JC] var onmessage: js.Function1[MessageEvent, _]
-Worker[JC] def postMessage(aMessage: js.Any, transferList: js.UndefOr[js.Array[Transferable]]?): Unit
+Worker[JC] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
 Worker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Worker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Worker[JC] def terminate(): Unit
@@ -24309,7 +24309,7 @@ experimental/serviceworkers/CacheStorage[JT] def open(cacheName: String): js.Pro
 experimental/serviceworkers/CanvasProxy[JT] def setContext(context: RenderingContext): Unit
 experimental/serviceworkers/Client[JT] def frameType: FrameType
 experimental/serviceworkers/Client[JT] def id: String
-experimental/serviceworkers/Client[JT] def postMessage(message: Any, transfer: Sequence[Transferable] = null): Unit
+experimental/serviceworkers/Client[JT] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
 experimental/serviceworkers/Client[JT] def url: String
 experimental/serviceworkers/ClientQueryOptions[JT] var includeUncontrolled: Boolean
 experimental/serviceworkers/ClientQueryOptions[JT] var `type`: ClientType
@@ -24406,7 +24406,7 @@ experimental/serviceworkers/ServiceWorker[JT] def addEventListener[T <: Event](`
 experimental/serviceworkers/ServiceWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/serviceworkers/ServiceWorker[JT] def dispatchEvent(evt: Event): Boolean
 experimental/serviceworkers/ServiceWorker[JT] var onstatechange: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorker[JT] def postMessage(message: js.Any, transfer: js.Array[Transferable]?): Unit
+experimental/serviceworkers/ServiceWorker[JT] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
 experimental/serviceworkers/ServiceWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/serviceworkers/ServiceWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/serviceworkers/ServiceWorker[JT] def scriptURL: String
@@ -24496,7 +24496,7 @@ experimental/serviceworkers/WindowClient[JT] def focused: Boolean
 experimental/serviceworkers/WindowClient[JT] def frameType: FrameType
 experimental/serviceworkers/WindowClient[JT] def id: String
 experimental/serviceworkers/WindowClient[JT] def navigate(url: String): js.Promise[WindowClient]
-experimental/serviceworkers/WindowClient[JT] def postMessage(message: Any, transfer: Sequence[Transferable] = null): Unit
+experimental/serviceworkers/WindowClient[JT] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
 experimental/serviceworkers/WindowClient[JT] def url: String
 experimental/serviceworkers/WindowClient[JT] def visibilityState: String
 experimental/serviceworkers/package[SO] type Transferable = org.scalajs.dom.Transferable | CanvasProxy
