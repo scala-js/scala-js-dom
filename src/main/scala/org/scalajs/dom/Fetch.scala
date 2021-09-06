@@ -14,7 +14,7 @@ object Fetch extends js.Object {
     * @param init
     * @return
     */
-  def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response] = js.native
+  def fetch(info: RequestInfo, init: RequestInit = js.native): js.Promise[Response] = js.native
 }
 
 /** The Request interface of the Fetch API represents a resource request.
@@ -151,7 +151,7 @@ object Response extends js.Object {
     * @return
     *   a new Response
     */
-  def redirect(url: String, status: Int = 302): Response = js.native
+  def redirect(url: String, status: Int = js.native): Response = js.native
 }
 
 /** See [[https://fetch.spec.whatwg.org/#response-class ¶6.4 Response class]] definition in whatwg Fetch spec. */

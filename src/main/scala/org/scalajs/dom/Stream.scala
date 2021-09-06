@@ -66,7 +66,7 @@ trait WriteableStream[-T] extends js.Object {
     *
     * @param reason
     */
-  def abort(reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit] = js.native
+  def abort(reason: js.UndefOr[Any] = js.native): js.Promise[Unit] = js.native
 
   /** The close method signals that the producer is done writing chunks to the stream and wishes to move the stream to a
     * "closed" state. This queues an action to close the stream, such that once any currently queued-up writes complete,
@@ -118,7 +118,7 @@ trait ReadableStream[+T] extends js.Object {
     * @return
     *   a Promise
     */
-  def cancel(reason: js.UndefOr[Any] = js.undefined): js.Promise[Unit] = js.native
+  def cancel(reason: js.UndefOr[Any] = js.native): js.Promise[Unit] = js.native
 
   /** See [[https://streams.spec.whatwg.org/#rs-get-reader ¶3.2.4.3. getReader()]] of whatwg streams spec. Also see the
     * example usage there.
@@ -153,7 +153,7 @@ trait ReadableStream[+T] extends js.Object {
     * //todo: determine the type of options
     */
   def pipeThrough[U](pair: Any, // TODO js.Tuple2[WriteableStream[T], ReadableStream[U]]
-      options: Any = js.undefined): ReadableStream[U] = js.native
+      options: Any = js.native): ReadableStream[U] = js.native
 
   /** See
     * [[https://streams.spec.whatwg.org/#rs-pipe-to ¶3.2.4.5. pipeTo(dest, { preventClose, preventAbort, preventCancel } = {})]]
@@ -169,7 +169,7 @@ trait ReadableStream[+T] extends js.Object {
     *
     * //todo: determine the type of options
     */
-  def pipeTo(dest: WriteableStream[T], options: Any = js.undefined): Unit = js.native
+  def pipeTo(dest: WriteableStream[T], options: Any = js.native): Unit = js.native
 
   /** See [[https://streams.spec.whatwg.org/#rs-tee ¶3.2.4.6. tee()]] of whatwg streams spec.
     *

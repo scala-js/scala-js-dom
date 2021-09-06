@@ -32,7 +32,7 @@ trait WindowOrWorkerGlobalScope extends WindowBase64 with WindowTimers {
   def origin: String = js.native //should be USVString
 
   /** Starts the process of fetching a resource from the network. */
-  def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response] = js.native
+  def fetch(info: RequestInfo, init: RequestInit = js.native): js.Promise[Response] = js.native
 
   /** Enqueues a microtask—a short function to be executed after execution of the JavaScript code completes and control
     * isn't being returned to a JavaScript caller, but before handling callbacks and other tasks.

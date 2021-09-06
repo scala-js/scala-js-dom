@@ -76,12 +76,12 @@ class IDBObjectStore extends js.Object {
   def put(value: js.Any, key: js.Any = js.native): IDBRequest = js.native
 
   /** The method sets the position of the cursor to the appropriate record, based on the specified direction. */
-  def openCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
-      direction: js.UndefOr[IDBCursorDirection] = js.undefined): IDBRequest = js.native
+  def openCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.native,
+      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest = js.native
 
   /** The method sets the position of the cursor to the appropriate key, based on the specified direction. */
-  def openKeyCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
-      direction: js.UndefOr[IDBCursorDirection] = js.undefined): IDBRequest = js.native
+  def openKeyCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.native,
+      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest = js.native
 
   /** Note that this method must be called only from a VersionChange transaction mode callback. Note that this method
     * synchronously modifies the IDBObjectStore.indexNames property.
@@ -99,14 +99,14 @@ class IDBObjectStore extends js.Object {
   /** If a value is successfully found, then a structured clone of it is created and set as the result of the request
     * object.
     */
-  def getAll(query: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
-      count: js.UndefOr[Int] = js.undefined): IDBRequest = js.native
+  def getAll(query: js.UndefOr[IDBKeyRange | js.Any] = js.native,
+      count: js.UndefOr[Int] = js.native): IDBRequest = js.native
 
   /** If a value is successfully found, then a structured clone of it is created and set as the result of the request
     * object.
     */
-  def getAllKeys(query: js.UndefOr[IDBKeyRange | js.Any] = js.undefined,
-      count: js.UndefOr[Int] = js.undefined): IDBRequest = js.native
+  def getAllKeys(query: js.UndefOr[IDBKeyRange | js.Any] = js.native,
+      count: js.UndefOr[Int] = js.native): IDBRequest = js.native
 
   /** If a value is successfully found, then a structured clone of it is created and set as the result of the request
     * object.
@@ -237,7 +237,7 @@ class IDBCursor extends js.Object {
     *
     * W3C
     */
-  def continue(key: js.Any = ???): Unit = js.native
+  def continue(key: js.Any = js.native): Unit = js.native
 
   /** Returns an IDBRequest object, and, in a separate thread, deletes the record at the cursor's position, without
     * changing the cursor's position.

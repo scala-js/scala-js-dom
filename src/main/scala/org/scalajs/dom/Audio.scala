@@ -81,7 +81,7 @@ class AudioContext extends EventTarget {
     *   The number of channels in the input audio streams, which the output stream will contain; the default is 6 is
     *   this parameter is not specified.
     */
-  def createChannelMerger(numberOfInputs: Int = 6): ChannelMergerNode = js.native
+  def createChannelMerger(numberOfInputs: Int = js.native): ChannelMergerNode = js.native
 
   /** Creates a ChannelSplitterNode, which is used to access the individual channels of an audio stream and process them
     * separately.
@@ -90,7 +90,7 @@ class AudioContext extends EventTarget {
     *   The number of channels in the input audio stream that you want to output separately; the default is 6 is this
     *   parameter is not specified.
     */
-  def createChannelSplitter(numberOfOutputs: Int = 6): ChannelSplitterNode = js.native
+  def createChannelSplitter(numberOfOutputs: Int = js.native): ChannelSplitterNode = js.native
 
   /** Creates a ConvolverNode, which can be used to apply convolution effects to your audio graph, for example a
     * reverberation effect.
@@ -414,7 +414,7 @@ trait AudioBufferSourceNode extends AudioNode {
     *   The duration parameter, which defaults to the length of the asset minus the value of offset, defines the length
     *   of the portion of the asset to be played.
     */
-  def start(when: Double = 0.0, offset: Double = 0.0, duration: Double = js.native): Unit = js.native
+  def start(when: Double = js.native, offset: Double = js.native, duration: Double = js.native): Unit = js.native
 
   /** Schedules the end of the playback of an audio asset.
     *
@@ -422,7 +422,7 @@ trait AudioBufferSourceNode extends AudioNode {
     *   The when parameter defines when the playback will stop. If it represents a time in the past, the playback will
     *   end immediately. If this method is called twice or more, an exception is raised.
     */
-  def stop(when: Double = 0.0): Unit = js.native
+  def stop(when: Double = js.native): Unit = js.native
 
   /** Is an EventHandler containing the callback associated with the ended event. */
   var onended: js.Function1[Event, _] = js.native
@@ -481,7 +481,7 @@ trait AudioListener extends AudioNode {
     * @param z
     *   The z position of the listener in 3D space.
     */
-  def setPosition(x: Double = 0.0, y: Double = 0.0, z: Double = 0.0): Unit = js.native
+  def setPosition(x: Double = js.native, y: Double = js.native, z: Double = js.native): Unit = js.native
 
   /** Defines the orientation of the listener.
     *
@@ -508,8 +508,8 @@ trait AudioListener extends AudioNode {
     * @param zUp
     *   The z value of the up vector of the listener.
     */
-  def setOrientation(x: Double = 0.0, y: Double = 0.0, z: Double = -1.0, xUp: Double = 0.0, yUp: Double = 1.0,
-      zUp: Double = 0.0): Unit = js.native
+  def setOrientation(x: Double = js.native, y: Double = js.native, z: Double = js.native, xUp: Double = js.native,
+      yUp: Double = js.native, zUp: Double = js.native): Unit = js.native
 }
 
 /** The AudioParam interface represents an audio-related parameter, usually a parameter of an AudioNode (such as
@@ -891,10 +891,10 @@ trait OscillatorNode extends AudioNode {
   var `type`: String = js.native // Not sure if this is correct ...
 
   /** This method specifies the exact time to start playing the tone. */
-  def start(when: Double = 0.0): Unit = js.native
+  def start(when: Double = js.native): Unit = js.native
 
   /** This method specifies the exact time to stop playing the tone. */
-  def stop(when: Double = 0.0): Unit = js.native
+  def stop(when: Double = js.native): Unit = js.native
 
   /** Used to point to a PeriodicWave defining a periodic waveform that can be used to shape the oscillator's output,
     * when type = "custom" is used.
@@ -977,7 +977,7 @@ trait PannerNode extends AudioNode {
     * @param z
     *   The z position of the panner in 3D space.
     */
-  def setPosition(x: Double = 0.0, y: Double = 0.0, z: Double = 0.0): Unit = js.native
+  def setPosition(x: Double = js.native, y: Double = js.native, z: Double = js.native): Unit = js.native
 
   /** Defines the direction the audio source is playing in. This can have a big effect if the sound is very directional
     * — controlled by the three cone-related attributes PannerNode.coneInnerAngle, PannerNode.coneOuterAngle, and
@@ -996,7 +996,7 @@ trait PannerNode extends AudioNode {
     * @param z
     *   The z value of the panner's direction vector in 3D space.
     */
-  def setOrientation(x: Double = 1.0, y: Double = 0.0, z: Double = 0.0): Unit = js.native
+  def setOrientation(x: Double = js.native, y: Double = js.native, z: Double = js.native): Unit = js.native
 
   /** Defines the velocity vector of the audio source — how fast it is moving and in what direction.
     *
@@ -1015,7 +1015,7 @@ trait PannerNode extends AudioNode {
     * @param z
     *   The z value of the panner's velocity vector.
     */
-  def setVelocity(x: Double = 0.0, y: Double = 0.0, z: Double = 0.0): Unit = js.native
+  def setVelocity(x: Double = js.native, y: Double = js.native, z: Double = js.native): Unit = js.native
 }
 
 /** The StereoPannerNode interface of the Web Audio API represents a simple stereo panner node that can be used to pan
