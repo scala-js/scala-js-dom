@@ -3847,17 +3847,6 @@ trait Position extends js.Object {
 @JSGlobal
 class PerformanceMark extends PerformanceEntry
 
-/** DOMParser can parse XML or HTML source stored in a string into a DOM Document. DOMParser is specified in DOM Parsing
-  * and Serialization.
-  *
-  * Note that XMLHttpRequest supports parsing XML and HTML from URL-addressable resources.
-  */
-@js.native
-@JSGlobal
-class DOMParser extends js.Object {
-  def parseFromString(source: String, mimeType: String): Document = js.native
-}
-
 /** An object implementing the StyleSheet interface represents a single style sheet. CSS style sheets will further
   * implement the more specialized CSSStyleSheet interface.
   */
