@@ -275,6 +275,8 @@ AudioTrackList[JT] var onaddtrack: js.Function1[TrackEvent, _]
 AudioTrackList[JT] var onchange: js.Function1[js.Any, _]
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+BeaconNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
+BeaconWorkerNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
 BeforeUnloadEvent[JC] def bubbles: Boolean
 BeforeUnloadEvent[JC] def cancelBubble: Boolean
 BeforeUnloadEvent[JC] def cancelable: Boolean
@@ -14356,6 +14358,7 @@ Navigator[JC] def platform: String
 Navigator[JC] def userAgent: String
 Navigator[JC] def vibrate(duration: Double): Boolean
 Navigator[JC] def vibrate(pattern: js.Array[Double]): Boolean
+Navigator[SO] implicit def toBeaconNavigator(n: Navigator): BeaconNavigator
 NavigatorContentUtils[JT]
 NavigatorGeolocation[JT] def geolocation: Geolocation
 NavigatorID[JT] def appName: String
@@ -24013,6 +24016,7 @@ WorkerNavigator[JT] def languages: js.Array[String]
 WorkerNavigator[JT] def onLine: Boolean
 WorkerNavigator[JT] def platform: String
 WorkerNavigator[JT] def userAgent: String
+WorkerNavigator[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator
 WriteableState[JT]
 WriteableState[SO] val closed: WriteableState
 WriteableState[SO] val closing: WriteableState
@@ -24309,11 +24313,10 @@ experimental/PointerLock.PointerLockElement[JT] def requestPointerLock(): Unit
 experimental/PointerLock.PointerLockMouseEvent[JT] def movementX: Double
 experimental/PointerLock.PointerLockMouseEvent[JT] def movementY: Double
 experimental/Vibration[SO]  (@deprecated in 2.0.0)
-experimental/beacon/package[SO] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
-experimental/beacon/package[SO] implicit def toBeaconNavigator(n: Navigator): BeaconNavigator
-experimental/beacon/package[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator
-experimental/beacon/package.BeaconNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
-experimental/beacon/package.BeaconWorkerNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
+experimental/beacon/package[SO] type BeaconNavigator = dom.BeaconNavigator  (@deprecated in 2.0.0)
+experimental/beacon/package[SO] type BeaconWorkerNavigator = dom.BeaconWorkerNavigator  (@deprecated in 2.0.0)
+experimental/beacon/package[SO] implicit def toBeaconNavigator(n: Navigator): BeaconNavigator  (@deprecated in 2.0.0)
+experimental/beacon/package[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator  (@deprecated in 2.0.0)
 experimental/cachestorage/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]
 experimental/cachestorage/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]
 experimental/cachestorage/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]

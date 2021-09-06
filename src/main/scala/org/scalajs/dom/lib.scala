@@ -317,6 +317,13 @@ class Navigator
   def clipboard: Clipboard = js.native
 }
 
+object Navigator {
+
+  implicit def toBeaconNavigator(n: Navigator): BeaconNavigator =
+    n.asInstanceOf[BeaconNavigator]
+
+}
+
 @js.native
 trait NodeSelector extends js.Object {
 
