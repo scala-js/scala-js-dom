@@ -14582,20 +14582,20 @@ Notification[JC] val tag: String
 Notification[JC] val vibrate: js.Array[Double]
 Notification[JO] val permission: String
 Notification[JO] def requestPermission(callback: js.Function1[String, Any]): Unit
-NotificationOptions[JT] val body: String
-NotificationOptions[JT] val dir: String
-NotificationOptions[JT] val icon: String
-NotificationOptions[JT] val lang: String
-NotificationOptions[JT] val noscreen: Boolean
-NotificationOptions[JT] val onclick: js.Function0[Any]
-NotificationOptions[JT] val onerror: js.Function0[Any]
-NotificationOptions[JT] val renotify: Boolean
-NotificationOptions[JT] val silent: Boolean
-NotificationOptions[JT] val sound: String
-NotificationOptions[JT] val sticky: Boolean
-NotificationOptions[JT] val tag: String
-NotificationOptions[JT] val vibrate: js.Array[Double]
-NotificationOptions[SO] def apply(body: js.UndefOr[String]?, dir: js.UndefOr[String]?, icon: js.UndefOr[String]?, lang: js.UndefOr[String]?, noscreen: js.UndefOr[Boolean]?, renotify: js.UndefOr[Boolean]?, silent: js.UndefOr[Boolean]?, sound: js.UndefOr[String]?, sticky: js.UndefOr[Boolean]?, tag: js.UndefOr[String]?, onclick: js.UndefOr[js.Function0[Any]]?, onerror: js.UndefOr[js.Function0[Any]]?, vibrate: js.UndefOr[js.Array[Double]]?): NotificationOptions
+NotificationOptions[JT] var body: js.UndefOr[String]
+NotificationOptions[JT] var dir: js.UndefOr[String]
+NotificationOptions[JT] var icon: js.UndefOr[String]
+NotificationOptions[JT] var lang: js.UndefOr[String]
+NotificationOptions[JT] var noscreen: js.UndefOr[Boolean]
+NotificationOptions[JT] var onclick: js.UndefOr[js.Function0[Any]]
+NotificationOptions[JT] var onerror: js.UndefOr[js.Function0[Any]]
+NotificationOptions[JT] var renotify: js.UndefOr[Boolean]
+NotificationOptions[JT] var silent: js.UndefOr[Boolean]
+NotificationOptions[JT] var sound: js.UndefOr[String]
+NotificationOptions[JT] var sticky: js.UndefOr[Boolean]
+NotificationOptions[JT] var tag: js.UndefOr[String]
+NotificationOptions[JT] var vibrate: js.UndefOr[js.Array[Double]]
+NotificationOptions[SO] def apply(body: js.UndefOr[String]?, dir: js.UndefOr[String]?, icon: js.UndefOr[String]?, lang: js.UndefOr[String]?, noscreen: js.UndefOr[Boolean]?, renotify: js.UndefOr[Boolean]?, silent: js.UndefOr[Boolean]?, sound: js.UndefOr[String]?, sticky: js.UndefOr[Boolean]?, tag: js.UndefOr[String]?, onclick: js.UndefOr[js.Function0[Any]]?, onerror: js.UndefOr[js.Function0[Any]]?, vibrate: js.UndefOr[js.Array[Double]]?): NotificationOptions  (@deprecated in 2.0.0)
 OfflineAudioCompletionEvent[JT] def bubbles: Boolean
 OfflineAudioCompletionEvent[JT] def cancelBubble: Boolean
 OfflineAudioCompletionEvent[JT] def cancelable: Boolean
@@ -24582,44 +24582,44 @@ experimental/gamepad/package[SO] def unknown: dom.GamepadMappingType  (@deprecat
 experimental/intl/Collator[JC] def compare(string1: String, string2: String): Double
 experimental/intl/Collator[JC] def resolvedOptions(): CollatorOptions
 experimental/intl/Collator[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
-experimental/intl/CollatorOptions[JT] val caseFirst: js.UndefOr[String]
-experimental/intl/CollatorOptions[JT] val ignorePunctuation: js.UndefOr[Boolean]
-experimental/intl/CollatorOptions[JT] val localeMatcher: js.UndefOr[String]
-experimental/intl/CollatorOptions[JT] val numeric: js.UndefOr[Boolean]
-experimental/intl/CollatorOptions[JT] val sensitivity: js.UndefOr[String]
-experimental/intl/CollatorOptions[JT] val usage: js.UndefOr[String]
-experimental/intl/CollatorOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, usage: js.UndefOr[String]?, sensitivity: js.UndefOr[String]?, ignorePunctuation: js.UndefOr[Boolean]?, numeric: js.UndefOr[Boolean]?, caseFirst: js.UndefOr[String]?): CollatorOptions
+experimental/intl/CollatorOptions[JT] var caseFirst: js.UndefOr[String]
+experimental/intl/CollatorOptions[JT] var ignorePunctuation: js.UndefOr[Boolean]
+experimental/intl/CollatorOptions[JT] var localeMatcher: js.UndefOr[String]
+experimental/intl/CollatorOptions[JT] var numeric: js.UndefOr[Boolean]
+experimental/intl/CollatorOptions[JT] var sensitivity: js.UndefOr[String]
+experimental/intl/CollatorOptions[JT] var usage: js.UndefOr[String]
+experimental/intl/CollatorOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, usage: js.UndefOr[String]?, sensitivity: js.UndefOr[String]?, ignorePunctuation: js.UndefOr[Boolean]?, numeric: js.UndefOr[Boolean]?, caseFirst: js.UndefOr[String]?): CollatorOptions  (@deprecated in 2.0.0)
 experimental/intl/DateTimeFormat[JC] def format(date: js.Date): String
 experimental/intl/DateTimeFormat[JC] def resolvedOptions(): DateTimeFormatOptions
 experimental/intl/DateTimeFormat[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
-experimental/intl/DateTimeFormatOptions[JT] val day: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val era: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val formatMatcher: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val hour: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val hour12: js.UndefOr[Boolean]
-experimental/intl/DateTimeFormatOptions[JT] val localeMatcher: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val minute: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val month: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val second: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val timeZone: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val timeZoneName: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val weekday: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val year: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, timeZone: js.UndefOr[String]?, hour12: js.UndefOr[Boolean]?, formatMatcher: js.UndefOr[String]?, weekday: js.UndefOr[String]?, era: js.UndefOr[String]?, year: js.UndefOr[String]?, month: js.UndefOr[String]?, day: js.UndefOr[String]?, hour: js.UndefOr[String]?, minute: js.UndefOr[String]?, second: js.UndefOr[String]?, timeZoneName: js.UndefOr[String]?): DateTimeFormatOptions
+experimental/intl/DateTimeFormatOptions[JT] var day: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var era: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var formatMatcher: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var hour: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var hour12: js.UndefOr[Boolean]
+experimental/intl/DateTimeFormatOptions[JT] var localeMatcher: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var minute: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var month: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var second: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var timeZone: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var timeZoneName: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var weekday: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var year: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, timeZone: js.UndefOr[String]?, hour12: js.UndefOr[Boolean]?, formatMatcher: js.UndefOr[String]?, weekday: js.UndefOr[String]?, era: js.UndefOr[String]?, year: js.UndefOr[String]?, month: js.UndefOr[String]?, day: js.UndefOr[String]?, hour: js.UndefOr[String]?, minute: js.UndefOr[String]?, second: js.UndefOr[String]?, timeZoneName: js.UndefOr[String]?): DateTimeFormatOptions  (@deprecated in 2.0.0)
 experimental/intl/NumberFormat[JC] def format(number: Double): String
 experimental/intl/NumberFormat[JC] def resolvedOptions(): NumberFormatOptions
 experimental/intl/NumberFormat[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
-experimental/intl/NumberFormatOptions[JT] val currency: js.UndefOr[String]
-experimental/intl/NumberFormatOptions[JT] val currencyDisplay: js.UndefOr[String]
-experimental/intl/NumberFormatOptions[JT] val localeMatcher: js.UndefOr[String]
-experimental/intl/NumberFormatOptions[JT] val maximumFractionDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val maximumSignificantDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val minimumFractionDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val minimumIntegerDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val minimumSignificantDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val style: js.UndefOr[String]
-experimental/intl/NumberFormatOptions[JT] val useGrouping: js.UndefOr[Boolean]
-experimental/intl/NumberFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, style: js.UndefOr[String]?, currency: js.UndefOr[String]?, currencyDisplay: js.UndefOr[String]?, useGrouping: js.UndefOr[Boolean]?, minimumIntegerDigits: js.UndefOr[Double]?, minimumFractionDigits: js.UndefOr[Double]?, maximumFractionDigits: js.UndefOr[Double]?, minimumSignificantDigits: js.UndefOr[Double]?, maximumSignificantDigits: js.UndefOr[Double]?): NumberFormatOptions
+experimental/intl/NumberFormatOptions[JT] var currency: js.UndefOr[String]
+experimental/intl/NumberFormatOptions[JT] var currencyDisplay: js.UndefOr[String]
+experimental/intl/NumberFormatOptions[JT] var localeMatcher: js.UndefOr[String]
+experimental/intl/NumberFormatOptions[JT] var maximumFractionDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var maximumSignificantDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var minimumFractionDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var minimumIntegerDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var minimumSignificantDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var style: js.UndefOr[String]
+experimental/intl/NumberFormatOptions[JT] var useGrouping: js.UndefOr[Boolean]
+experimental/intl/NumberFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, style: js.UndefOr[String]?, currency: js.UndefOr[String]?, currencyDisplay: js.UndefOr[String]?, useGrouping: js.UndefOr[Boolean]?, minimumIntegerDigits: js.UndefOr[Double]?, minimumFractionDigits: js.UndefOr[Double]?, maximumFractionDigits: js.UndefOr[Double]?, minimumSignificantDigits: js.UndefOr[Double]?, maximumSignificantDigits: js.UndefOr[Double]?): NumberFormatOptions  (@deprecated in 2.0.0)
 experimental/mediastream/AudioTrack[JT] var enabled: Boolean
 experimental/mediastream/AudioTrack[JT] val id: String
 experimental/mediastream/AudioTrack[JT] val kind: String

@@ -45,26 +45,21 @@ class NumberFormat(locales: js.UndefOr[String | js.Array[String]] = js.undefined
   def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String] = js.native
 }
 
-@js.native
 trait CollatorOptions extends js.Object {
-  val localeMatcher: js.UndefOr[String]
-  val usage: js.UndefOr[String]
-  val sensitivity: js.UndefOr[String]
-  val ignorePunctuation: js.UndefOr[Boolean]
-  val numeric: js.UndefOr[Boolean]
-  val caseFirst: js.UndefOr[String]
-}
 
-object CollatorOptions {
+  /** The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit". For
+    * information about this option, see the Intl page.
+    */
+  var localeMatcher: js.UndefOr[String] = js.undefined
 
-  /** @param localeMatcher
-    *   The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit".
-    *   For information about this option, see the Intl page.
-    * @param usage
-    *   Whether the comparison is for sorting or for searching for matching strings. Possible values are "sort" and
-    *   "search"; the default is "sort".
-    * @param sensitivity
-    *   Which differences in the strings should lead to non-zero result values. Possible values are:
+  /** Whether the comparison is for sorting or for searching for matching strings. Possible values are "sort" and
+    * "search"; the default is "sort".
+    */
+  var usage: js.UndefOr[String] = js.undefined
+
+  /** Which differences in the strings should lead to non-zero result values.
+    *
+    * Possible values are:
     *   - "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A.
     *   - "accent": Only strings that differ in base letters or accents and other diacritic marks compare as unequal.
     *     Examples: a ≠ b, a ≠ á, a = A.
@@ -72,88 +67,107 @@ object CollatorOptions {
     *   - "variant": Strings that differ in base letters, accents and other diacritic marks, or case compare as unequal.
     *     Other differences may also be taken into consideration. Examples: a ≠ b, a ≠ á, a ≠ A. The default is
     *     "variant" for usage "sort"; it's locale dependent for usage "search".
-    * @param ignorePunctuation
-    *   Whether punctuation should be ignored. Possible values are true and false; the default is false.
-    * @param numeric
-    *   Whether numeric collation should be used, such that "1" < "2" < "10". Possible values are true and false; the
-    *   default is false. This option can be set through an options property or through a Unicode extension key; if both
-    *   are provided, the options property takes precedence. Implementations are not required to support this property.
-    * @param caseFirst
-    *   Whether upper case or lower case should sort first. Possible values are "upper", "lower", or "false" (use the
-    *   locale's default); the default is "false". This option can be set through an options property or through a
-    *   Unicode extension key; if both are provided, the options property takes precedence. Implementations are not
-    *   required to support this property.
     */
+  var sensitivity: js.UndefOr[String] = js.undefined
+
+  /** Whether punctuation should be ignored. Possible values are true and false; the default is false. */
+  var ignorePunctuation: js.UndefOr[Boolean] = js.undefined
+
+  /** Whether numeric collation should be used, such that "1" < "2" < "10". Possible values are true and false; the
+    * default is false. This option can be set through an options property or through a Unicode extension key; if both
+    * are provided, the options property takes precedence. Implementations are not required to support this property.
+    */
+  var numeric: js.UndefOr[Boolean] = js.undefined
+
+  /** Whether upper case or lower case should sort first. Possible values are "upper", "lower", or "false" (use the
+    * locale's default); the default is "false". This option can be set through an options property or through a Unicode
+    * extension key; if both are provided, the options property takes precedence. Implementations are not required to
+    * support this property.
+    */
+  var caseFirst: js.UndefOr[String] = js.undefined
+}
+
+@deprecated("all the members of CollatorOptions are deprecated", "2.0.0")
+object CollatorOptions {
+
+  @deprecated("use `new CollatorOptions { ... }` instead", "2.0.0")
   def apply(
       localeMatcher: js.UndefOr[String] = js.undefined, usage: js.UndefOr[String] = js.undefined,
       sensitivity: js.UndefOr[String] = js.undefined, ignorePunctuation: js.UndefOr[Boolean] = js.undefined,
       numeric: js.UndefOr[Boolean] = js.undefined, caseFirst: js.UndefOr[String] = js.undefined
   ): CollatorOptions = {
-    js.Dynamic
-      .literal(
-          localeMatcher = localeMatcher.asInstanceOf[js.Any],
-          usage = usage.asInstanceOf[js.Any],
-          sensitivity = sensitivity.asInstanceOf[js.Any],
-          ignorePunctuation = ignorePunctuation.asInstanceOf[js.Any],
-          numeric = numeric.asInstanceOf[js.Any],
-          caseFirst = caseFirst.asInstanceOf[js.Any]
-      )
-      .asInstanceOf[CollatorOptions]
+    val localeMatcher0 = localeMatcher
+    val usage0 = usage
+    val sensitivity0 = sensitivity
+    val ignorePunctuation0 = ignorePunctuation
+    val numeric0 = numeric
+    val caseFirst0 = caseFirst
+    new CollatorOptions {
+      this.localeMatcher = localeMatcher0
+      this.usage = usage0
+      this.sensitivity = sensitivity0
+      this.ignorePunctuation = ignorePunctuation0
+      this.numeric = numeric0
+      this.caseFirst = caseFirst0
+    }
   }
 }
 
-@js.native
 trait DateTimeFormatOptions extends js.Object {
-  val localeMatcher: js.UndefOr[String]
-  val timeZone: js.UndefOr[String]
-  val hour12: js.UndefOr[Boolean]
-  val formatMatcher: js.UndefOr[String]
 
-  val weekday: js.UndefOr[String]
-  val era: js.UndefOr[String]
-  val year: js.UndefOr[String]
-  val month: js.UndefOr[String]
-  val day: js.UndefOr[String]
-  val hour: js.UndefOr[String]
-  val minute: js.UndefOr[String]
-  val second: js.UndefOr[String]
-  val timeZoneName: js.UndefOr[String]
+  /** The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit". For
+    * information about this option, see the Intl page.
+    */
+  var localeMatcher: js.UndefOr[String] = js.undefined
+
+  /** The time zone to use. The only value implementations must recognize is "UTC"; the default is the runtime's default
+    * time zone. Implementations may also recognize the time zone names of the IANA time zone database, such as
+    * "Asia/Shanghai", "Asia/Kolkata", "America/New_York".
+    */
+  var timeZone: js.UndefOr[String] = js.undefined
+
+  /** Whether to use 12-hour time (as opposed to 24-hour time). Possible values are true and false; the default is
+    * locale dependent.
+    */
+  var hour12: js.UndefOr[Boolean] = js.undefined
+
+  /** The format matching algorithm to use. Possible values are "basic" and "best fit"; the default is "best fit". See
+    * the following paragraphs for information about the use of this property.
+    */
+  var formatMatcher: js.UndefOr[String] = js.undefined
+
+  /** The representation of the weekday. Possible values are "narrow", "short", "long". */
+  var weekday: js.UndefOr[String] = js.undefined
+
+  /** The representation of the era. Possible values are "narrow", "short", "long". */
+  var era: js.UndefOr[String] = js.undefined
+
+  /** The representation of the year. Possible values are "numeric", "2-digit". */
+  var year: js.UndefOr[String] = js.undefined
+
+  /** The representation of the month. Possible values are "numeric", "2-digit", "narrow", "short", "long". */
+  var month: js.UndefOr[String] = js.undefined
+
+  /** The representation of the day. Possible values are "numeric", "2-digit". */
+  var day: js.UndefOr[String] = js.undefined
+
+  /** The representation of the hour. Possible values are "numeric", "2-digit". */
+  var hour: js.UndefOr[String] = js.undefined
+
+  /** The representation of the minute. Possible values are "numeric", "2-digit". */
+  var minute: js.UndefOr[String] = js.undefined
+
+  /** The representation of the second. Possible values are "numeric", "2-digit". */
+  var second: js.UndefOr[String] = js.undefined
+
+  /** The representation of the time zone name. Possible values are "short", "long". */
+  var timeZoneName: js.UndefOr[String] = js.undefined
 }
 
+@deprecated("all members of DateTimeFormatOptions are deprecated", "2.0.0")
 object DateTimeFormatOptions {
 
-  /** @param localeMatcher
-    *   The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit".
-    *   For information about this option, see the Intl page.
-    * @param timeZone
-    *   The time zone to use. The only value implementations must recognize is "UTC"; the default is the runtime's
-    *   default time zone. Implementations may also recognize the time zone names of the IANA time zone database, such
-    *   as "Asia/Shanghai", "Asia/Kolkata", "America/New_York".
-    * @param hour12
-    *   Whether to use 12-hour time (as opposed to 24-hour time). Possible values are true and false; the default is
-    *   locale dependent.
-    * @param formatMatcher
-    *   The format matching algorithm to use. Possible values are "basic" and "best fit"; the default is "best fit". See
-    *   the following paragraphs for information about the use of this property.
-    * @param weekday
-    *   The representation of the weekday. Possible values are "narrow", "short", "long".
-    * @param era
-    *   The representation of the era. Possible values are "narrow", "short", "long".
-    * @param year
-    *   The representation of the year. Possible values are "numeric", "2-digit".
-    * @param month
-    *   The representation of the month. Possible values are "numeric", "2-digit", "narrow", "short", "long".
-    * @param day
-    *   The representation of the day. Possible values are "numeric", "2-digit".
-    * @param hour
-    *   The representation of the hour. Possible values are "numeric", "2-digit".
-    * @param minute
-    *   The representation of the minute. Possible values are "numeric", "2-digit".
-    * @param second
-    *   The representation of the second. Possible values are "numeric", "2-digit".
-    * @param timeZoneName
-    *   The representation of the time zone name. Possible values are "short", "long".
-    */
+  @deprecated("use `new DateTimeFormatOptions { ... }` instead", "2.0.0")
   def apply(
       localeMatcher: js.UndefOr[String] = js.undefined, timeZone: js.UndefOr[String] = js.undefined,
       hour12: js.UndefOr[Boolean] = js.undefined, formatMatcher: js.UndefOr[String] = js.undefined,
@@ -163,86 +177,102 @@ object DateTimeFormatOptions {
       minute: js.UndefOr[String] = js.undefined, second: js.UndefOr[String] = js.undefined,
       timeZoneName: js.UndefOr[String] = js.undefined
   ): DateTimeFormatOptions = {
-    // format: off
-    js.Dynamic
-      .literal(
-          localeMatcher = localeMatcher.asInstanceOf[js.Any],
-          timeZone = timeZone.asInstanceOf[js.Any],
-          hour12 = hour12.asInstanceOf[js.Any],
-          formatMatcher = formatMatcher.asInstanceOf[js.Any],
-          weekday = weekday.asInstanceOf[js.Any],
-          era = era.asInstanceOf[js.Any],
-          year = year.asInstanceOf[js.Any],
-          month = month.asInstanceOf[js.Any],
-          day = day.asInstanceOf[js.Any],
-          hour = hour.asInstanceOf[js.Any],
-          minute = minute.asInstanceOf[js.Any],
-          second = second.asInstanceOf[js.Any],
-          timeZoneName = timeZoneName.asInstanceOf[js.Any]
-      )
-      .asInstanceOf[DateTimeFormatOptions]
-    // format: on
+    val localeMatcher0 = localeMatcher
+    val timeZone0 = timeZone
+    val hour12_0 = hour12
+    val formatMatcher0 = formatMatcher
+    val weekday0 = weekday
+    val era0 = era
+    val year0 = year
+    val month0 = month
+    val day0 = day
+    val hour0 = hour
+    val minute0 = minute
+    val second0 = second
+    val timeZoneName0 = timeZoneName
+    new DateTimeFormatOptions {
+      this.localeMatcher = localeMatcher0
+      this.timeZone = timeZone0
+      this.hour12 = hour12_0
+      this.formatMatcher = formatMatcher0
+      this.weekday = weekday0
+      this.era = era0
+      this.year = year0
+      this.month = month0
+      this.day = day0
+      this.hour = hour0
+      this.minute = minute0
+      this.second = second0
+      this.timeZoneName = timeZoneName0
+    }
   }
 }
 
-@js.native
+/** The following properties fall into two groups:
+  *
+  *   - minimumIntegerDigits, minimumFractionDigits, and maximumFractionDigits in one group,
+  *   - minimumSignificantDigits and maximumSignificantDigits in the other. If at least one property from the second
+  *     group is defined, then the first group is ignored.
+  */
 trait NumberFormatOptions extends js.Object {
-  val localeMatcher: js.UndefOr[String]
-  val style: js.UndefOr[String]
-  val currency: js.UndefOr[String]
-  val currencyDisplay: js.UndefOr[String]
-  val useGrouping: js.UndefOr[Boolean]
 
-  val minimumIntegerDigits: js.UndefOr[Double]
-  val minimumFractionDigits: js.UndefOr[Double]
-  val maximumFractionDigits: js.UndefOr[Double]
+  /** The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit". For
+    * information about this option, see the Intl page.
+    */
+  var localeMatcher: js.UndefOr[String] = js.undefined
 
-  val minimumSignificantDigits: js.UndefOr[Double]
-  val maximumSignificantDigits: js.UndefOr[Double]
+  /** The formatting style to use. Possible values are "decimal" for plain number formatting, "currency" for currency
+    * formatting, and "percent" for percent formatting; the default is "decimal".
+    */
+  var style: js.UndefOr[String] = js.undefined
+
+  /** The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as "USD" for the
+    * US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB — see the Current currency & funds code list. There is
+    * no default value; if the style is "currency", the currency property must be provided.
+    */
+  var currency: js.UndefOr[String] = js.undefined
+
+  /** How to display the currency in currency formatting. Possible values are "symbol" to use a localized currency
+    * symbol such as €, "code" to use the ISO currency code, "name" to use a localized currency name such as "dollar";
+    * the default is "symbol".
+    */
+  var currencyDisplay: js.UndefOr[String] = js.undefined
+
+  /** Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible
+    * values are true and false; the default is true.
+    */
+  var useGrouping: js.UndefOr[Boolean] = js.undefined
+
+  /** The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1. */
+  var minimumIntegerDigits: js.UndefOr[Double] = js.undefined
+
+  /** The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and
+    * percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the
+    * ISO 4217 currency code list (2 if the list doesn't provide that information).
+    */
+  var minimumFractionDigits: js.UndefOr[Double] = js.undefined
+
+  /** The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number
+    * formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of
+    * minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the
+    * list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits
+    * and 0.
+    */
+  var maximumFractionDigits: js.UndefOr[Double] = js.undefined
+
+  /** The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1. */
+  var minimumSignificantDigits: js.UndefOr[Double] = js.undefined
+
+  /** The maximum number of significant digits to use. Possible values are from 1 to 21; the default is
+    * minimumSignificantDigits.
+    */
+  var maximumSignificantDigits: js.UndefOr[Double] = js.undefined
 }
 
+@deprecated("all the members of NumberFormatOptions are deprecated", "2.0.0")
 object NumberFormatOptions {
 
-  /** The following properties fall into two groups:
-    *   - minimumIntegerDigits, minimumFractionDigits, and maximumFractionDigits in one group,
-    *   - minimumSignificantDigits and maximumSignificantDigits in the other. If at least one property from the second
-    *     group is defined, then the first group is ignored.
-    *
-    * @param localeMatcher
-    *   The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit".
-    *   For information about this option, see the Intl page.
-    * @param style
-    *   The formatting style to use. Possible values are "decimal" for plain number formatting, "currency" for currency
-    *   formatting, and "percent" for percent formatting; the default is "decimal".
-    * @param currency
-    *   The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as "USD" for
-    *   the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB — see the Current currency & funds code list.
-    *   There is no default value; if the style is "currency", the currency property must be provided.
-    * @param currencyDisplay
-    *   How to display the currency in currency formatting. Possible values are "symbol" to use a localized currency
-    *   symbol such as €, "code" to use the ISO currency code, "name" to use a localized currency name such as "dollar";
-    *   the default is "symbol".
-    * @param useGrouping
-    *   Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible
-    *   values are true and false; the default is true.
-    * @param minimumIntegerDigits
-    *   The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.
-    * @param minimumFractionDigits
-    *   The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and
-    *   percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the
-    *   ISO 4217 currency code list (2 if the list doesn't provide that information).
-    * @param maximumFractionDigits
-    *   The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number
-    *   formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of
-    *   minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the
-    *   list doesn't provide that information); the default for percent formatting is the larger of
-    *   minimumFractionDigits and 0.
-    * @param minimumSignificantDigits
-    *   The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.
-    * @param maximumSignificantDigits
-    *   The maximum number of significant digits to use. Possible values are from 1 to 21; the default is
-    *   minimumSignificantDigits.
-    */
+  @deprecated("use `new NumberFormatOptions { ... }` instead", "2.0.0")
   def apply(
       localeMatcher: js.UndefOr[String] = js.undefined, style: js.UndefOr[String] = js.undefined,
       currency: js.UndefOr[String] = js.undefined, currencyDisplay: js.UndefOr[String] = js.undefined,
@@ -252,19 +282,27 @@ object NumberFormatOptions {
       minimumSignificantDigits: js.UndefOr[Double] = js.undefined,
       maximumSignificantDigits: js.UndefOr[Double] = js.undefined
   ): NumberFormatOptions = {
-    js.Dynamic
-      .literal(
-          localeMatcher = localeMatcher.asInstanceOf[js.Any],
-          style = style.asInstanceOf[js.Any],
-          currency = currency.asInstanceOf[js.Any],
-          currencyDisplay = currencyDisplay.asInstanceOf[js.Any],
-          useGrouping = useGrouping.asInstanceOf[js.Any],
-          minimumIntegerDigits = minimumIntegerDigits.asInstanceOf[js.Any],
-          minimumFractionDigits = minimumFractionDigits.asInstanceOf[js.Any],
-          maximumFractionDigits = maximumFractionDigits.asInstanceOf[js.Any],
-          minimumSignificantDigits = minimumSignificantDigits.asInstanceOf[js.Any],
-          maximumSignificantDigits = maximumSignificantDigits.asInstanceOf[js.Any]
-      )
-      .asInstanceOf[NumberFormatOptions]
+    val localeMatcher0 = localeMatcher
+    val style0 = style
+    val currency0 = currency
+    val currencyDisplay0 = currencyDisplay
+    val useGrouping0 = useGrouping
+    val minimumIntegerDigits0 = minimumIntegerDigits
+    val minimumFractionDigits0 = minimumFractionDigits
+    val maximumFractionDigits0 = maximumFractionDigits
+    val minimumSignificantDigits0 = minimumSignificantDigits
+    val maximumSignificantDigits0 = maximumSignificantDigits
+    new NumberFormatOptions {
+      this.localeMatcher = localeMatcher0
+      this.style = style0
+      this.currency = currency0
+      this.currencyDisplay = currencyDisplay0
+      this.useGrouping = useGrouping0
+      this.minimumIntegerDigits = minimumIntegerDigits0
+      this.minimumFractionDigits = minimumFractionDigits0
+      this.maximumFractionDigits = maximumFractionDigits0
+      this.minimumSignificantDigits = minimumSignificantDigits0
+      this.maximumSignificantDigits = maximumSignificantDigits0
+    }
   }
 }
