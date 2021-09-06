@@ -1,6 +1,5 @@
 package org.scalajs.dom
 
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
@@ -168,12 +167,10 @@ object DedicatedWorkerGlobalScope extends js.Object {
   * obtained by calling window.self.navigator
   */
 @js.native
-trait WorkerNavigator extends NavigatorID with NavigatorOnLine with NavigatorLanguage
+trait WorkerNavigator extends NavigatorID with NavigatorOnLine with NavigatorLanguage {
 
-object WorkerNavigator {
-
-  implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator =
-    n.asInstanceOf[BeaconWorkerNavigator]
+  @deprecated("sendBeacon is not supported in web workers", "2.0.0")
+  def sendBeacon(url: String, data: BodyInit = js.native): Boolean = js.native
 }
 
 /** The WorkerLocation interface defines the absolute location of the script executed by the Worker. Such an object is
