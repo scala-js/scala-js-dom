@@ -40,19 +40,20 @@ class Worker(stringUrl: String) extends AbstractWorker {
     * The Worker can send back information to the thread that spawned it using the
     * DedicatedWorkerGlobalScope.postMessage method.
     *
-    * @param aMessage
+    * @param message
     *   The object to deliver to the worker; this will be in the data field in the event delivered to the
     *   DedicatedWorkerGlobalScope.onmessage handler. This may be any value or JavaScript object handled by the
     *   structured clone algorithm, which includes cyclical references.
     *
-    * @param transferList
+    * @param transfer
     *   An optional array of Transferable objects to transfer ownership of. If the ownership of an object is
-    *   transferred, it becomes unusable (neutered) in the context it was sent from and it becomes available only to the
-    *   main thread it was sent to.
+    *   transferred, it becomes unusable in the context it was sent from and becomes available only to the worker it was
+    *   sent to.
     *
-    * Only MessagePort and ArrayBuffer objects can be transferred. null is not an acceptable value for the transferList.
+    * Transferable objects are instances of classes like ArrayBuffer, MessagePort or ImageBitmap objects that can be
+    * transferred. null is not an acceptable value for transfer.
     */
-  def postMessage(aMessage: js.Any, transferList: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
+  def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
 
   /** The Worker.terminate() method immediately terminates the Worker. This does not offer the worker an opportunity to
     * finish its operations; it is simply stopped at once.
@@ -139,16 +140,18 @@ trait DedicatedWorkerGlobalScope extends WorkerGlobalScope {
     * The main scope that spawned the worker can send back information to the thread that spawned it using the
     * Worker.postMessage method.
     *
-    * @param aMessage
+    * @param message
     *   The object to deliver to the main thread; this will be in the data field in the event delivered to the
     *   Worker.onmessage handler. This may be any value or JavaScript object handled by the structured clone algorithm,
     *   which includes cyclical references.
     * @param transferList
     *   An optional array of Transferable objects to transfer ownership of. If the ownership of an object is
-    *   transferred, it becomes unusable (neutered) in the context it was sent from and it becomes available only to the
-    *   main thread it was sent to.
+    *   transferred, it becomes unusable in the context it was sent from and it becomes available only to the main
+    *   thread it was sent to.
+    *
+    * Only MessagePort and ArrayBuffer objects can be transferred.
     */
-  def postMessage(aMessage: js.Any, transferList: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
+  def postMessage(message: js.Any, transferList: js.UndefOr[js.Array[Transferable]] = js.native): Unit = js.native
 }
 
 @js.native
