@@ -157,8 +157,8 @@ AudioBufferSourceNode[JT] var onended: js.Function1[Event, _]
 AudioBufferSourceNode[JT] val playbackRate: AudioParam
 AudioBufferSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioBufferSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-AudioBufferSourceNode[JT] def start(when: Double = 0.0d, offset: Double = 0.0d, duration: Double?): Unit
-AudioBufferSourceNode[JT] def stop(when: Double = 0.0d): Unit
+AudioBufferSourceNode[JT] def start(when: Double?, offset: Double?, duration: Double?): Unit
+AudioBufferSourceNode[JT] def stop(when: Double?): Unit
 AudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioContext[JC] def close(): js.Promise[Unit]
@@ -166,8 +166,8 @@ AudioContext[JC] def createAnalyser(): AnalyserNode
 AudioContext[JC] def createBiquadFilter(): BiquadFilterNode
 AudioContext[JC] def createBuffer(numOfChannels: Int, length: Int, sampleRate: Int): AudioBuffer
 AudioContext[JC] def createBufferSource(): AudioBufferSourceNode
-AudioContext[JC] def createChannelMerger(numberOfInputs: Int = 6): ChannelMergerNode
-AudioContext[JC] def createChannelSplitter(numberOfOutputs: Int = 6): ChannelSplitterNode
+AudioContext[JC] def createChannelMerger(numberOfInputs: Int?): ChannelMergerNode
+AudioContext[JC] def createChannelSplitter(numberOfOutputs: Int?): ChannelSplitterNode
 AudioContext[JC] def createConvolver(): ConvolverNode
 AudioContext[JC] def createDelay(maxDelayTime: Int): DelayNode
 AudioContext[JC] def createDynamicsCompressor(): DynamicsCompressorNode
@@ -221,8 +221,8 @@ AudioListener[JT] val numberOfInputs: Int
 AudioListener[JT] val numberOfOutputs: Int
 AudioListener[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioListener[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-AudioListener[JT] def setOrientation(x: Double = 0.0d, y: Double = 0.0d, z: Double = -1.0d, xUp: Double = 0.0d, yUp: Double = 1.0d, zUp: Double = 0.0d): Unit
-AudioListener[JT] def setPosition(x: Double = 0.0d, y: Double = 0.0d, z: Double = 0.0d): Unit
+AudioListener[JT] def setOrientation(x: Double?, y: Double?, z: Double?, xUp: Double?, yUp: Double?, zUp: Double?): Unit
+AudioListener[JT] def setPosition(x: Double?, y: Double?, z: Double?): Unit
 AudioListener[JT] var speedOfSound: Double
 AudioNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -275,8 +275,8 @@ AudioTrackList[JT] var onaddtrack: js.Function1[TrackEvent, _]
 AudioTrackList[JT] var onchange: js.Function1[js.Any, _]
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-BeaconNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
-BeaconWorkerNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit = null): Boolean
+BeaconNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit?): Boolean
+BeaconWorkerNavigator[JT] def sendBeacon(url: String, data: dom.BodyInit?): Boolean
 BeforeUnloadEvent[JC] def bubbles: Boolean
 BeforeUnloadEvent[JC] def cancelBubble: Boolean
 BeforeUnloadEvent[JC] def cancelable: Boolean
@@ -785,7 +785,7 @@ CanvasRenderingContext2D[JC] def createLinearGradient(x0: Double, y0: Double, x1
 CanvasRenderingContext2D[JC] def createPattern(image: HTMLElement, repetition: String): CanvasPattern
 CanvasRenderingContext2D[JC] def createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): CanvasGradient
 CanvasRenderingContext2D[JC] def drawImage(image: HTMLElement, offsetX: Double, offsetY: Double, width: Double?, height: Double?, canvasOffsetX: Double?, canvasOffsetY: Double?, canvasImageWidth: Double?, canvasImageHeight: Double?): Unit
-CanvasRenderingContext2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean = false): Unit
+CanvasRenderingContext2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean?): Unit
 CanvasRenderingContext2D[JC] def fill(): Unit
 CanvasRenderingContext2D[JC] def fillRect(x: Double, y: Double, w: Double, h: Double): Unit
 CanvasRenderingContext2D[JC] var fillStyle: js.Any
@@ -1024,8 +1024,8 @@ CompositionEventInit[JT] var scoped: js.UndefOr[Boolean]
 CompositionEventInit[JT] val view: js.UndefOr[Window]
 Console[JT] def assert(test: Boolean, message: String, optionalParams: Any*): Unit
 Console[JT] def clear(): Unit
-Console[JT] def count(label: String = "default"): Unit
-Console[JT] def countReset(label: String = "default"): Unit
+Console[JT] def count(label: String?): Unit
+Console[JT] def countReset(label: String?): Unit
 Console[JT] def debug(message: Any, optionalParams: Any*): Unit
 Console[JT] def dir(value: Any, optionalParams: Any*): Unit
 Console[JT] def dirxml(value: Any): Unit
@@ -1185,7 +1185,7 @@ DedicatedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInp
 DedicatedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
 DedicatedWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
 DedicatedWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
-DedicatedWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+DedicatedWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
 DedicatedWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
 DedicatedWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
 DedicatedWorkerGlobalScope[JT] def isSecureContext: Boolean
@@ -1618,7 +1618,7 @@ EventTarget[JC] def dispatchEvent(evt: Event): Boolean
 EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 External[JT]
-Fetch[JO] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+Fetch[JO] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
 File[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 File[JC] def close(): Unit  (@deprecated in 1.2.0)
 File[JC] def name: String
@@ -1643,7 +1643,7 @@ FileReader[JC] var onloadstart: js.Function1[ProgressEvent, _]
 FileReader[JC] var onprogress: js.Function1[ProgressEvent, _]
 FileReader[JC] def readAsArrayBuffer(blob: Blob): Unit
 FileReader[JC] def readAsDataURL(blob: Blob): Unit
-FileReader[JC] def readAsText(blob: Blob, encoding: String = "UTF-8"): Unit
+FileReader[JC] def readAsText(blob: Blob, encoding: String?): Unit
 FileReader[JC] def readyState: Short
 FileReader[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 FileReader[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -13533,7 +13533,7 @@ HttpMethod[SO] val POST: HttpMethod
 HttpMethod[SO] val PUT: HttpMethod
 HttpMethod[SO] val QUERY: HttpMethod
 IDBCursor[JC] def advance(count: Int): Unit
-IDBCursor[JC] def continue(key: js.Any = ???): Unit
+IDBCursor[JC] def continue(key: js.Any?): Unit
 IDBCursor[JC] def delete(): IDBRequest
 IDBCursor[JC] def direction: IDBCursorDirection
 IDBCursor[JC] def key: js.Any
@@ -13546,7 +13546,7 @@ IDBCursorDirection[SO] val NEXT_UNIQUE: IDBCursorDirection
 IDBCursorDirection[SO] val PREV: IDBCursorDirection
 IDBCursorDirection[SO] val PREV_UNIQUE: IDBCursorDirection
 IDBCursorWithValue[JC] def advance(count: Int): Unit
-IDBCursorWithValue[JC] def continue(key: js.Any = ???): Unit
+IDBCursorWithValue[JC] def continue(key: js.Any?): Unit
 IDBCursorWithValue[JC] def delete(): IDBRequest
 IDBCursorWithValue[JC] def direction: IDBCursorDirection
 IDBCursorWithValue[JC] def key: js.Any
@@ -14514,8 +14514,8 @@ OfflineAudioContext[JC] def createAnalyser(): AnalyserNode
 OfflineAudioContext[JC] def createBiquadFilter(): BiquadFilterNode
 OfflineAudioContext[JC] def createBuffer(numOfChannels: Int, length: Int, sampleRate: Int): AudioBuffer
 OfflineAudioContext[JC] def createBufferSource(): AudioBufferSourceNode
-OfflineAudioContext[JC] def createChannelMerger(numberOfInputs: Int = 6): ChannelMergerNode
-OfflineAudioContext[JC] def createChannelSplitter(numberOfOutputs: Int = 6): ChannelSplitterNode
+OfflineAudioContext[JC] def createChannelMerger(numberOfInputs: Int?): ChannelMergerNode
+OfflineAudioContext[JC] def createChannelSplitter(numberOfOutputs: Int?): ChannelSplitterNode
 OfflineAudioContext[JC] def createConvolver(): ConvolverNode
 OfflineAudioContext[JC] def createDelay(maxDelayTime: Int): DelayNode
 OfflineAudioContext[JC] def createDynamicsCompressor(): DynamicsCompressorNode
@@ -14540,7 +14540,7 @@ OfflineAudioContext[JC] val sampleRate: Double
 OfflineAudioContext[JC] def startRendering(): js.Promise[AudioBuffer]
 OfflineAudioContext[JC] def state: String
 OfflineAudioContext[JC] def suspend(): js.Promise[Unit]
-OffscreenCanvas[JC] def convertToBlob(options: ConvertToBlobOptions = ???): js.Promise[Blob]
+OffscreenCanvas[JC] def convertToBlob(options: ConvertToBlobOptions?): js.Promise[Blob]
 OffscreenCanvas[JC] def getContext(contextType: String): js.Dynamic
 OffscreenCanvas[JC] def getContext(contextType: String, contextAttributes: TwoDContextAttributes): js.Dynamic
 OffscreenCanvas[JC] def getContext(contextType: String, contextAttributes: WebGLContextAttributes): js.Dynamic
@@ -14563,8 +14563,8 @@ OscillatorNode[JT] var onended: js.Function1[Event, _]
 OscillatorNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 OscillatorNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 OscillatorNode[JT] def setPeriodicWave(wave: PeriodicWave): Unit
-OscillatorNode[JT] def start(when: Double = 0.0d): Unit
-OscillatorNode[JT] def stop(when: Double = 0.0d): Unit
+OscillatorNode[JT] def start(when: Double?): Unit
+OscillatorNode[JT] def stop(when: Double?): Unit
 OscillatorNode[JT] var `type`: String
 PageTransitionEvent[JT] def bubbles: Boolean
 PageTransitionEvent[JT] def cancelBubble: Boolean
@@ -14605,9 +14605,9 @@ PannerNode[JT] var refDistance: Double
 PannerNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 PannerNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 PannerNode[JT] var rolloffFactor: Double
-PannerNode[JT] def setOrientation(x: Double = 1.0d, y: Double = 0.0d, z: Double = 0.0d): Unit
-PannerNode[JT] def setPosition(x: Double = 0.0d, y: Double = 0.0d, z: Double = 0.0d): Unit
-PannerNode[JT] def setVelocity(x: Double = 0.0d, y: Double = 0.0d, z: Double = 0.0d): Unit
+PannerNode[JT] def setOrientation(x: Double?, y: Double?, z: Double?): Unit
+PannerNode[JT] def setPosition(x: Double?, y: Double?, z: Double?): Unit
+PannerNode[JT] def setVelocity(x: Double?, y: Double?, z: Double?): Unit
 ParentNode[JT] def childElementCount: Int
 ParentNode[JT] def children: HTMLCollection
 ParentNode[JT] def firstElementChild: Element
@@ -14967,7 +14967,7 @@ Response[JC] def text(): js.Promise[String]
 Response[JC] def `type`: ResponseType
 Response[JC] def url: String
 Response[JO] def error(): Response
-Response[JO] def redirect(url: String, status: Int = 302): Response
+Response[JO] def redirect(url: String, status: Int?): Response
 ResponseInit[JT] var headers: HeadersInit
 ResponseInit[JT] var status: Int
 ResponseInit[JT] var statusText: ByteString
@@ -22837,9 +22837,9 @@ Selection[JC] def anchorOffset: Int
 Selection[JC] def collapse(parentNode: Node, offset: Int): Unit
 Selection[JC] def collapseToEnd(): Unit
 Selection[JC] def collapseToStart(): Unit
-Selection[JC] def containsNode(node: Node, partialContainment: Boolean = false): Boolean
+Selection[JC] def containsNode(node: Node, partialContainment: Boolean?): Boolean
 Selection[JC] def deleteFromDocument(): Unit
-Selection[JC] def extend(node: Node, offset: Int = 0): Unit
+Selection[JC] def extend(node: Node, offset: Int?): Unit
 Selection[JC] def focusNode: Node
 Selection[JC] def focusOffset: Int
 Selection[JC] def getRangeAt(index: Int): Range
@@ -23804,7 +23804,7 @@ Window[JC] def crossOriginIsolated: Boolean
 Window[JC] def devicePixelRatio: Double
 Window[JC] def dispatchEvent(evt: Event): Boolean
 Window[JC] def document: HTMLDocument
-Window[JC] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+Window[JC] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
 Window[JC] def focus(): Unit
 Window[JC] def frameElement: Element
 Window[JC] def frames: Window
@@ -23947,7 +23947,7 @@ WindowOrWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInpu
 WindowOrWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
 WindowOrWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
 WindowOrWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
-WindowOrWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+WindowOrWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
 WindowOrWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
 WindowOrWorkerGlobalScope[JT] def isSecureContext: Boolean
 WindowOrWorkerGlobalScope[JT] def origin: String
@@ -23983,7 +23983,7 @@ WorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: D
 WorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
 WorkerGlobalScope[JT] def crossOriginIsolated: Boolean
 WorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
-WorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+WorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
 WorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
 WorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
 WorkerGlobalScope[JT] def isSecureContext: Boolean
@@ -25013,12 +25013,12 @@ experimental/serviceworkers/ServiceWorkerContainer[JT] def addEventListener[T <:
 experimental/serviceworkers/ServiceWorkerContainer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/serviceworkers/ServiceWorkerContainer[JT] def controller: ServiceWorker
 experimental/serviceworkers/ServiceWorkerContainer[JT] def dispatchEvent(evt: Event): Boolean
-experimental/serviceworkers/ServiceWorkerContainer[JT] def getRegistration(scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]]
+experimental/serviceworkers/ServiceWorkerContainer[JT] def getRegistration(scope: String?): js.Promise[js.UndefOr[ServiceWorkerRegistration]]
 experimental/serviceworkers/ServiceWorkerContainer[JT] def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]]
 experimental/serviceworkers/ServiceWorkerContainer[JT] var oncontrollerchange: js.Function1[Event, _]
 experimental/serviceworkers/ServiceWorkerContainer[JT] var onmessage: js.Function1[MessageEvent, _]
 experimental/serviceworkers/ServiceWorkerContainer[JT] def ready: js.Promise[ServiceWorkerRegistration]
-experimental/serviceworkers/ServiceWorkerContainer[JT] def register(scriptURL: String, options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration]
+experimental/serviceworkers/ServiceWorkerContainer[JT] def register(scriptURL: String, options: js.Object?): js.Promise[ServiceWorkerRegistration]
 experimental/serviceworkers/ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/serviceworkers/ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/serviceworkers/ServiceWorkerGlobalScope[JO] def self: ServiceWorkerGlobalScope
@@ -25037,7 +25037,7 @@ experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(i
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
 experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def isSecureContext: Boolean
@@ -25073,13 +25073,13 @@ experimental/serviceworkers/ServiceWorkerRegistration[JT] var active: ServiceWor
 experimental/serviceworkers/ServiceWorkerRegistration[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/serviceworkers/ServiceWorkerRegistration[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/serviceworkers/ServiceWorkerRegistration[JT] def dispatchEvent(evt: Event): Boolean
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def getNotifications(options: GetNotificationOptions = ???): js.Promise[Sequence[Notification]]
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def getNotifications(options: GetNotificationOptions?): js.Promise[Sequence[Notification]]
 experimental/serviceworkers/ServiceWorkerRegistration[JT] var installing: ServiceWorker
 experimental/serviceworkers/ServiceWorkerRegistration[JT] var onupdatefound: js.Function1[Event, _]
 experimental/serviceworkers/ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/serviceworkers/ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/serviceworkers/ServiceWorkerRegistration[JT] var scope: String
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def showNotification(title: String, options: NotificationOptions = ???): js.Promise[Unit]
+experimental/serviceworkers/ServiceWorkerRegistration[JT] def showNotification(title: String, options: NotificationOptions?): js.Promise[Unit]
 experimental/serviceworkers/ServiceWorkerRegistration[JT] def unregister(): js.Promise[Boolean]
 experimental/serviceworkers/ServiceWorkerRegistration[JT] def update(): js.Promise[Unit]
 experimental/serviceworkers/ServiceWorkerRegistration[JT] var waiting: ServiceWorker
@@ -25124,7 +25124,7 @@ experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(ima
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+experimental/sharedworkers/SharedWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def isSecureContext: Boolean
