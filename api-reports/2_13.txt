@@ -1132,7 +1132,7 @@ DOMList[SO] def hasNext: Boolean
 DOMList[SO] def iterator: Iterator[T]
 DOMList[SO] def length: Int
 DOMList[SO] def next(): T
-DOMParser[JC] def parseFromString(source: String, mimeType: String): Document
+DOMParser[JC] def parseFromString(string: String, mimeType: MIMEType): Document
 DOMRect[JC] var bottom: Double
 DOMRect[JC] var height: Double
 DOMRect[JC] var left: Double
@@ -14165,6 +14165,12 @@ Location[JT] var protocol: String
 Location[JT] def reload(flag: Boolean?): Unit
 Location[JT] def replace(url: String): Unit
 Location[JT] var search: String
+MIMEType[JT]
+MIMEType[SO] val `application/xhtml+xml` = "application/xhtml+xml".asInstanceOf[MIMEType]
+MIMEType[SO] val `application/xml` = "application/xml".asInstanceOf[MIMEType]
+MIMEType[SO] val `image/svg+xml` = "image/svg+xml".asInstanceOf[MIMEType]
+MIMEType[SO] val `text/html` = "text/html".asInstanceOf[MIMEType]
+MIMEType[SO] val `text/xml` = "text/xml".asInstanceOf[MIMEType]
 MediaElementAudioSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaElementAudioSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaElementAudioSourceNode[JT] var channelCount: Int
@@ -24389,13 +24395,9 @@ experimental/deviceorientation/DeviceOrientationEventInit[JT] var scoped: js.Und
 experimental/deviceorientation/DeviceRotationRate[JT] val alpha: Double
 experimental/deviceorientation/DeviceRotationRate[JT] val beta: Double
 experimental/deviceorientation/DeviceRotationRate[JT] val gamma: Double
-experimental/domparser/DOMParser[JC] def parseFromString(string: String, supportedType: SupportedType): Document
-experimental/domparser/SupportedType[JT]
-experimental/domparser/SupportedType[SO] val `application/xhtml+xml` = "application/xhtml+xml".asInstanceOf[SupportedType]
-experimental/domparser/SupportedType[SO] val `application/xml` = "application/xml".asInstanceOf[SupportedType]
-experimental/domparser/SupportedType[SO] val `image/svg+xml` = "image/svg+xml".asInstanceOf[SupportedType]
-experimental/domparser/SupportedType[SO] val `text/html` = "text/html".asInstanceOf[SupportedType]
-experimental/domparser/SupportedType[SO] val `text/xml` = "text/xml".asInstanceOf[SupportedType]
+experimental/domparser/package[SO] type DOMParser = dom.DOMParser  (@deprecated in 2.0.0)
+experimental/domparser/package[SO] type SupportedType = dom.MIMEType  (@deprecated in 2.0.0)
+experimental/domparser/package[SO] @deprecated("use dom.MIMEType instead", "2.0.0") val SupportedType = dom.MIMEType
 experimental/gamepad/Gamepad[JT] val axes: js.Array[Double]
 experimental/gamepad/Gamepad[JT] val buttons: js.Array[GamepadButton]
 experimental/gamepad/Gamepad[JT] val connected: Boolean
