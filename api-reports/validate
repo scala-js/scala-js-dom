@@ -1,14 +1,17 @@
 #!/bin/bash
 set -euo pipefail
-cd "$(dirname "$0")"
 
 [ $# -ne 1 ] && echo "Usage: $0 <scala version>" && exit 1
 
+cd "$(dirname "$0")/.."
+sbt -DCI=1 "++$1" dom/scalafix
+
+cd "$(dirname "$0")"
 series="${1%.*}"
 file="${series/./_}.txt"
 echo -n "Validating $file ... "
 
-help='Run `sbt +compile` and check in the differences to the '"$(basename "$0") directory"
+help='Run `sbt prePR` and check in the differences to the '"$(basename "$0") directory"
 
 if [ ! -e "$file" ]; then
   echo "file not found. $help"
