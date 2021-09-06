@@ -1,6 +1,7 @@
 package org.scalajs.dom.tests.webworker
 
 import org.scalajs.dom._
+import scala.concurrent.ExecutionContext.Implicits.global
 
 object Server extends ServerResponses {
   import Protocol._
@@ -13,9 +14,11 @@ object Server extends ServerResponses {
       val id     = msgIn._1
       val cmdId  = msgIn._2
       val cmd    = WebWorkerCmd.byId(cmdId)
-      val output = respond(cmd)
-      val msgOut = Message(id, output)
-      ww.postMessage(msgOut)
+      respond(cmd).onComplete { t =>
+        val output = t.getOrElse(t.failed.get.toString)
+        val msgOut = Message(id, output)
+        ww.postMessage(msgOut)
+      }
     }
 
     ww.postMessage(Message(ServerStarted, ""))

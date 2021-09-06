@@ -3,6 +3,7 @@ package org.scalajs.dom.tests.shared
 import org.junit.Assert
 import scala.concurrent._
 import scala.util._
+import scala.scalajs.js
 import scala.scalajs.js.timers._
 
 object AsyncTesting {
@@ -11,6 +12,12 @@ object AsyncTesting {
 
   implicit def global: ExecutionContext =
     ExecutionContext.global
+
+  def asyncPass: AsyncResult =
+    Future.successful(Success(()))
+
+  def asyncWhenDefined[A](o: js.UndefOr[A])(f: A => AsyncResult): AsyncResult =
+    o.fold(asyncPass)(f)
 
   def async(run: => Future[Any]): AsyncResult = {
     val p = Promise[Try[Unit]]()

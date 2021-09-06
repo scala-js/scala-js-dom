@@ -506,10 +506,10 @@ object raw {
   type IDBObjectStore = dom.IDBObjectStore
 
   @deprecated("use dom.IDBOpenDBRequest instead", "2.0.0")
-  type IDBOpenDBRequest = dom.IDBOpenDBRequest
+  type IDBOpenDBRequest = dom.IDBOpenDBRequest[js.Any]
 
   @deprecated("use dom.IDBRequest instead", "2.0.0")
-  type IDBRequest = dom.IDBRequest
+  type IDBRequest = dom.IDBRequest[js.Any]
 
   @deprecated("use dom.IDBTransaction instead", "2.0.0")
   type IDBTransaction = dom.IDBTransaction
