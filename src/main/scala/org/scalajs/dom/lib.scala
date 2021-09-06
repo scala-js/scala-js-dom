@@ -1213,12 +1213,12 @@ class Selection extends js.Object {
   def removeRange(range: Range): Unit = js.native
 
   /** Indicates if the node is part of the selection */
-  def containsNode(node: Node, partialContainment: Boolean = false): Boolean = js.native
+  def containsNode(node: Node, partialContainment: Boolean = js.native): Boolean = js.native
 
   /** Moves the focus of the selection to a specified point. The anchor of the selection does not move. The selection
     * will be from the anchor to the new focus regardless of direction.
     */
-  def extend(node: Node, offset: Int = 0): Unit = js.native
+  def extend(node: Node, offset: Int = js.native): Unit = js.native
 }
 
 /** The NodeIterator interface represents an iterator over the members of a list of the nodes in a subtree of the DOM.
@@ -2425,7 +2425,7 @@ class CanvasRenderingContext2D extends js.Object {
     * clockwise).
     */
   def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double,
-      endAngle: Double, anticlockwise: Boolean = false): Unit = js.native
+      endAngle: Double, anticlockwise: Boolean = js.native): Unit = js.native
 }
 
 /** XMLHttpRequest is a JavaScript object that was designed by Microsoft and adopted by Mozilla, Apple, and Google. It's
@@ -4675,7 +4675,7 @@ trait Console extends js.Object {
     * indices. If data is an object, then its values will be the property names. Note that (in Firefox) console.table is
     * limited to displaying 1000 rows (first row is the labeled index).
     */
-  def table(data: js.Object | js.Array[_], columns: js.UndefOr[Int] = js.undefined): Unit = js.native
+  def table(data: js.Object | js.Array[_], columns: js.UndefOr[Int] = js.native): Unit = js.native
 
   /** Outputs a stack trace to the Web Console. */
   def trace(): Unit = js.native
@@ -4694,15 +4694,15 @@ trait Console extends js.Object {
   /** Logs the number of times that this particular call to count() has been called. This function takes an optional
     * argument label.
     */
-  def count(label: String = "default"): Unit = js.native
+  def count(label: String = js.native): Unit = js.native
 
   /** Resets the counter. This function takes an optional argument label. */
-  def countReset(label: String = "default"): Unit = js.native
+  def countReset(label: String = js.native): Unit = js.native
 
   /** Creates a new inline group in the Web Console log. This indents following console messages by an additional level,
     * until console.groupEnd() is called.
     */
-  def group(label: js.UndefOr[String] = js.undefined): Unit = js.native
+  def group(label: js.UndefOr[String] = js.native): Unit = js.native
 
   /** Creates a new inline group in the Web Console. Unlike console.group(), however, the new group is created
     * collapsed. The user will need to use the disclosure button next to it to expand it, revealing the entries created
@@ -4710,7 +4710,7 @@ trait Console extends js.Object {
     *
     * Call console.groupEnd() to back out to the parent group.
     */
-  def groupCollapsed(label: js.UndefOr[String] = js.undefined): Unit = js.native
+  def groupCollapsed(label: js.UndefOr[String] = js.native): Unit = js.native
 
   /** Exits the current inline group in the Web Console. */
   def groupEnd(): Unit = js.native
@@ -4864,7 +4864,7 @@ class FileReader() extends EventTarget {
     * complete, the readyState is changed to DONE, the loadend is triggered, and the result attribute contains the
     * contents of the file as a text string.
     */
-  def readAsText(blob: Blob, encoding: String = "UTF-8"): Unit = js.native
+  def readAsText(blob: Blob, encoding: String = js.native): Unit = js.native
 }
 
 @js.native

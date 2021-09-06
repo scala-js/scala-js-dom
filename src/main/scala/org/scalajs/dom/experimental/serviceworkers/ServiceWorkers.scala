@@ -184,12 +184,12 @@ trait ServiceWorkerRegistration extends EventTarget {
     * have many active but differently-scoped service worker registrations. Notifications created by one service worker
     * on the same origin will not be available to other active services workers on that same origin.
     */
-  def getNotifications(options: GetNotificationOptions = ???): js.Promise[Sequence[Notification]] = js.native
+  def getNotifications(options: GetNotificationOptions = js.native): js.Promise[Sequence[Notification]] = js.native
 
   /** The showNotification() method of the ServiceWorkerRegistration interface creates a notification on an active
     * service worker.
     */
-  def showNotification(title: String, options: NotificationOptions = ???): js.Promise[Unit] = js.native
+  def showNotification(title: String, options: NotificationOptions = js.native): js.Promise[Unit] = js.native
 }
 
 /** An object containing options to filter the notifications returned. */
@@ -212,8 +212,7 @@ trait ServiceWorkerContainer extends EventTarget {
     * method can't return a ServiceWorkerRegistration, it returns a Promise. You can call this method unconditionally
     * from the controlled page, i.e., you don't need to first check whether there's an active registration.
     */
-  def register(scriptURL: String,
-      options: js.Object = new js.Object()): js.Promise[ServiceWorkerRegistration] = js.native
+  def register(scriptURL: String, options: js.Object = js.native): js.Promise[ServiceWorkerRegistration] = js.native
 
   /** The ServiceWorkerContainer.controller read-only property of the ServiceWorkerContainer interface returns the
     * ServiceWorker whose state is activated (the same object returned by ServiceWorkerRegistration.active). This
@@ -224,7 +223,7 @@ trait ServiceWorkerContainer extends EventTarget {
   /** Gets a ServiceWorkerRegistration object whose scope URL matches the document URL. If the method can't return a
     * ServiceWorkerRegistration, it returns a Promise.
     */
-  def getRegistration(scope: String = ""): js.Promise[js.UndefOr[ServiceWorkerRegistration]] = js.native
+  def getRegistration(scope: String = js.native): js.Promise[js.UndefOr[ServiceWorkerRegistration]] = js.native
 
   /** The getRegistrations() method of the ServiceWorkerContainer interface returns all ServiceWorkerRegistrations
     * associated with a ServiceWorkerContainer in an array. If the method can't return ServiceWorkerRegistrations, it

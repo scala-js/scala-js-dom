@@ -16,7 +16,7 @@ class OffscreenCanvas(var width: Double, var height: Double) extends js.Object {
   def getContext(contextType: String, contextAttributes: TwoDContextAttributes): js.Dynamic = js.native
 
   /** Creates a Blob object representing the image contained in the canvas. */
-  def convertToBlob(options: ConvertToBlobOptions = ???): js.Promise[Blob] = js.native
+  def convertToBlob(options: ConvertToBlobOptions = js.native): js.Promise[Blob] = js.native
 
   /** Creates an ImageBitmap object from the most recently rendered image of the OffscreenCanvas. */
   def transferToImageBitmap(): ImageBitmap = js.native

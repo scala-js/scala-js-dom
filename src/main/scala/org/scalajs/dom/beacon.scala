@@ -24,7 +24,7 @@ trait BeaconNavigator extends js.Object {
     * @param data
     *   The data parameter is the ArrayBufferView, Blob, DOMString, or FormData data that is to be transmitted.
     */
-  def sendBeacon(url: String, data: dom.BodyInit = null): Boolean = js.native
+  def sendBeacon(url: String, data: dom.BodyInit = js.native): Boolean = js.native
 }
 
 /** The Beacon interface is used to schedule an asynchronous and non-blocking request to a web server. Beacon requests
@@ -48,5 +48,5 @@ trait BeaconWorkerNavigator extends js.Object {
     * @param data
     *   The data parameter is the ArrayBufferView, Blob, DOMString, or FormData data that is to be transmitted.
     */
-  def sendBeacon(url: String, data: dom.BodyInit = null): Boolean = js.native
+  def sendBeacon(url: String, data: dom.BodyInit = js.native): Boolean = js.native
 }

@@ -24,6 +24,19 @@ object Util {
 
   // ===================================================================================================================
 
+  def isJSGlobal(mods: List[Mod]): Boolean =
+    mods.exists {
+      case Mod.Annot(Init(Type.Name("JSGlobal"), _, _)) => true
+      case _ => false
+    }
+
+  def isJsNative(t: Term): Boolean = {
+    val s = t.toString
+    s == "js.native" || s == "native"
+  }
+
+  // ===================================================================================================================
+
   def parents(sym: Symbol)(implicit doc: SemanticDocument): List[SemanticType] =
     dealias(sym).info match {
       case Some(i) => parents(i.signature)

@@ -1,6 +1,9 @@
 import Build._
+import Dependencies.Ver._
 
 addCommandAlias("prePR", "+prePR_nonCross")
+
+addCommandAlias("quickPrePR", s"++$scala212; prePR_nonCross; ++$scala213; prePR_nonCross")
 
 val prePR_nonCross = taskKey[Unit]("Performs all necessary work required before submitting a PR, for a single version of Scala.")
 
