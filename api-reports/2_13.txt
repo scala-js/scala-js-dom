@@ -24643,7 +24643,7 @@ experimental/mediastream/MediaDeviceInfo[JT] val deviceId: String
 experimental/mediastream/MediaDeviceInfo[JT] val groupId: String
 experimental/mediastream/MediaDeviceInfo[JT] val kind: MediaDeviceKind
 experimental/mediastream/MediaDeviceInfo[JT] val label: String
-experimental/mediastream/MediaDeviceInfo[SO] def apply(deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?): MediaDeviceInfo
+experimental/mediastream/MediaDeviceInfo[SO] def apply(deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?): MediaDeviceInfo  (@deprecated in 2.0.0)
 experimental/mediastream/MediaDeviceKind[JT]
 experimental/mediastream/MediaDeviceKind[SO] val audioinput: MediaDeviceKind
 experimental/mediastream/MediaDeviceKind[SO] val audiooutput: MediaDeviceKind
@@ -24691,10 +24691,10 @@ experimental/mediastream/MediaStream[JC] var onremovetrack: js.Function1[Event, 
 experimental/mediastream/MediaStream[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/MediaStream[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/MediaStream[JC] def removeTrack(track: MediaStreamTrack): Unit
-experimental/mediastream/MediaStreamConstraints[JT] var audio: Boolean | MediaTrackConstraints
-experimental/mediastream/MediaStreamConstraints[JT] var peerIdentity: String
-experimental/mediastream/MediaStreamConstraints[JT] var video: Boolean | MediaTrackConstraints
-experimental/mediastream/MediaStreamConstraints[SO] def apply(video: js.UndefOr[Boolean | MediaTrackConstraints]?, audio: js.UndefOr[Boolean | MediaTrackConstraints]?, peerIdentity: js.UndefOr[String]?): MediaStreamConstraints
+experimental/mediastream/MediaStreamConstraints[JT] var audio: js.UndefOr[Boolean | MediaTrackConstraints]
+experimental/mediastream/MediaStreamConstraints[JT] var peerIdentity: js.UndefOr[String]
+experimental/mediastream/MediaStreamConstraints[JT] var video: js.UndefOr[Boolean | MediaTrackConstraints]
+experimental/mediastream/MediaStreamConstraints[SO] def apply(video: js.UndefOr[Boolean | MediaTrackConstraints]?, audio: js.UndefOr[Boolean | MediaTrackConstraints]?, peerIdentity: js.UndefOr[String]?): MediaStreamConstraints  (@deprecated in 2.0.0)
 experimental/mediastream/MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/MediaStreamTrack[JT] def applyConstraints(constraints: MediaTrackConstraints): js.Promise[Unit]
@@ -24719,7 +24719,7 @@ experimental/mediastream/MediaStreamTrack[JT] val remote: Boolean
 experimental/mediastream/MediaStreamTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/MediaStreamTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/MediaStreamTrack[JT] def stop(): Unit
-experimental/mediastream/MediaStreamTrack[SO] def apply(enabled: js.UndefOr[Boolean]?, id: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?, muted: js.UndefOr[Boolean]?, readonly: js.UndefOr[Boolean]?, readyState: js.UndefOr[String]?, remote: js.UndefOr[Boolean]?, onstarted: js.UndefOr[js.Function0[Any]]?, onmute: js.UndefOr[js.Function0[Any]]?, onunmute: js.UndefOr[js.Function0[Any]]?, onoverconstrained: js.UndefOr[js.Function0[Any]]?, oneended: js.UndefOr[js.Function0[Any]]?): MediaStreamTrack
+experimental/mediastream/MediaStreamTrack[SO] def apply(enabled: js.UndefOr[Boolean]?, id: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?, muted: js.UndefOr[Boolean]?, readonly: js.UndefOr[Boolean]?, readyState: js.UndefOr[String]?, remote: js.UndefOr[Boolean]?, onstarted: js.UndefOr[js.Function0[Any]]?, onmute: js.UndefOr[js.Function0[Any]]?, onunmute: js.UndefOr[js.Function0[Any]]?, onoverconstrained: js.UndefOr[js.Function0[Any]]?, oneended: js.UndefOr[js.Function0[Any]]?): MediaStreamTrack  (@deprecated in 2.0.0)
 experimental/mediastream/MediaStreamTrackEvent[JC] def bubbles: Boolean
 experimental/mediastream/MediaStreamTrackEvent[JC] def cancelBubble: Boolean
 experimental/mediastream/MediaStreamTrackEvent[JC] def cancelable: Boolean
@@ -24742,31 +24742,31 @@ experimental/mediastream/MediaStreamTrackEventInit[JT] var track: js.UndefOr[Med
 experimental/mediastream/MediaStreamTrackState[JT]
 experimental/mediastream/MediaStreamTrackState[SO] val ended: MediaStreamTrackState
 experimental/mediastream/MediaStreamTrackState[SO] val live: MediaStreamTrackState
-experimental/mediastream/MediaTrackConstraintSet[JT] var aspectRatio: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var deviceId: String
-experimental/mediastream/MediaTrackConstraintSet[JT] var echoCancellation: Boolean
-experimental/mediastream/MediaTrackConstraintSet[JT] var facingMode: String
-experimental/mediastream/MediaTrackConstraintSet[JT] var frameRate: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var groupId: String
-experimental/mediastream/MediaTrackConstraintSet[JT] var height: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var sampleRate: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var sampleSize: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var volume: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var width: Double
-experimental/mediastream/MediaTrackConstraintSet[SO] def apply(width: js.UndefOr[Double]?, height: js.UndefOr[Double]?, aspectRatio: js.UndefOr[Double]?, frameRate: js.UndefOr[Double]?, facingMode: js.UndefOr[String]?, volume: js.UndefOr[Double]?, sampleRate: js.UndefOr[Double]?, sampleSize: js.UndefOr[Double]?, echoCancellation: js.UndefOr[Boolean]?, deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?): MediaTrackConstraintSet
-experimental/mediastream/MediaTrackConstraints[JT] var advanced: js.Array[MediaTrackConstraintSet]
-experimental/mediastream/MediaTrackConstraints[JT] var aspectRatio: Double
-experimental/mediastream/MediaTrackConstraints[JT] var deviceId: String
-experimental/mediastream/MediaTrackConstraints[JT] var echoCancellation: Boolean
-experimental/mediastream/MediaTrackConstraints[JT] var facingMode: String
-experimental/mediastream/MediaTrackConstraints[JT] var frameRate: Double
-experimental/mediastream/MediaTrackConstraints[JT] var groupId: String
-experimental/mediastream/MediaTrackConstraints[JT] var height: Double
-experimental/mediastream/MediaTrackConstraints[JT] var sampleRate: Double
-experimental/mediastream/MediaTrackConstraints[JT] var sampleSize: Double
-experimental/mediastream/MediaTrackConstraints[JT] var volume: Double
-experimental/mediastream/MediaTrackConstraints[JT] var width: Double
-experimental/mediastream/MediaTrackConstraints[SO] def apply(advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]?): MediaTrackConstraints
+experimental/mediastream/MediaTrackConstraintSet[JT] var aspectRatio: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var deviceId: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraintSet[JT] var echoCancellation: js.UndefOr[Boolean]
+experimental/mediastream/MediaTrackConstraintSet[JT] var facingMode: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraintSet[JT] var frameRate: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var groupId: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraintSet[JT] var height: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var sampleRate: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var sampleSize: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var volume: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var width: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[SO] def apply(width: js.UndefOr[Double]?, height: js.UndefOr[Double]?, aspectRatio: js.UndefOr[Double]?, frameRate: js.UndefOr[Double]?, facingMode: js.UndefOr[String]?, volume: js.UndefOr[Double]?, sampleRate: js.UndefOr[Double]?, sampleSize: js.UndefOr[Double]?, echoCancellation: js.UndefOr[Boolean]?, deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?): MediaTrackConstraintSet  (@deprecated in 2.0.0)
+experimental/mediastream/MediaTrackConstraints[JT] var advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]
+experimental/mediastream/MediaTrackConstraints[JT] var aspectRatio: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var deviceId: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraints[JT] var echoCancellation: js.UndefOr[Boolean]
+experimental/mediastream/MediaTrackConstraints[JT] var facingMode: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraints[JT] var frameRate: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var groupId: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraints[JT] var height: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var sampleRate: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var sampleSize: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var volume: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var width: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[SO] def apply(advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]?): MediaTrackConstraints  (@deprecated in 2.0.0)
 experimental/mediastream/MediaTrackSettings[JT] var aspectRatio: js.UndefOr[Double]
 experimental/mediastream/MediaTrackSettings[JT] var channelCount: js.UndefOr[Double]
 experimental/mediastream/MediaTrackSettings[JT] var deviceId: js.UndefOr[String]
