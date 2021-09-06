@@ -1305,7 +1305,7 @@ Document[JC] def ownerDocument: Document
 Document[JC] def parentNode: Node
 Document[JC] def previousSibling: Node
 Document[JC] def querySelector(selectors: String): Element
-Document[JC] def querySelectorAll(selectors: String): NodeList[Node]
+Document[JC] def querySelectorAll(selectors: String): NodeList[Element]
 Document[JC] def removeChild(oldChild: Node): Node
 Document[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Document[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -1350,7 +1350,7 @@ DocumentFragment[JC] def ownerDocument: Document
 DocumentFragment[JC] def parentNode: Node
 DocumentFragment[JC] def previousSibling: Node
 DocumentFragment[JC] def querySelector(selectors: String): Element
-DocumentFragment[JC] def querySelectorAll(selectors: String): NodeList[Node]
+DocumentFragment[JC] def querySelectorAll(selectors: String): NodeList[Element]
 DocumentFragment[JC] def removeChild(oldChild: Node): Node
 DocumentFragment[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DocumentFragment[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -1528,7 +1528,7 @@ Element[JC] def prepend(nodes: Node | String*): Unit
 Element[JC] def previousElementSibling: Element
 Element[JC] def previousSibling: Node
 Element[JC] def querySelector(selectors: String): Element
-Element[JC] def querySelectorAll(selectors: String): NodeList[Node]
+Element[JC] def querySelectorAll(selectors: String): NodeList[Element]
 Element[JC] def remove(): Unit
 Element[JC] def removeAttribute(name: String): Unit
 Element[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -1871,7 +1871,7 @@ HTMLAnchorElement[JC] def previousElementSibling: Element
 HTMLAnchorElement[JC] def previousSibling: Node
 HTMLAnchorElement[JC] var protocol: String
 HTMLAnchorElement[JC] def querySelector(selectors: String): Element
-HTMLAnchorElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLAnchorElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLAnchorElement[JC] var readyState: js.Any
 HTMLAnchorElement[JC] var recordNumber: js.Any
 HTMLAnchorElement[JC] var rel: String
@@ -2081,7 +2081,7 @@ HTMLAreaElement[JC] def previousElementSibling: Element
 HTMLAreaElement[JC] def previousSibling: Node
 HTMLAreaElement[JC] var protocol: String
 HTMLAreaElement[JC] def querySelector(selectors: String): Element
-HTMLAreaElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLAreaElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLAreaElement[JC] var readyState: js.Any
 HTMLAreaElement[JC] var recordNumber: js.Any
 HTMLAreaElement[JC] def remove(): Unit
@@ -2302,7 +2302,7 @@ HTMLAudioElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLAudioElement[JC] def previousElementSibling: Element
 HTMLAudioElement[JC] def previousSibling: Node
 HTMLAudioElement[JC] def querySelector(selectors: String): Element
-HTMLAudioElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLAudioElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLAudioElement[JC] var readyState: js.Any
 HTMLAudioElement[JC] var recordNumber: js.Any
 HTMLAudioElement[JC] def remove(): Unit
@@ -2504,7 +2504,7 @@ HTMLBRElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLBRElement[JC] def previousElementSibling: Element
 HTMLBRElement[JC] def previousSibling: Node
 HTMLBRElement[JC] def querySelector(selectors: String): Element
-HTMLBRElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLBRElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLBRElement[JC] var readyState: js.Any
 HTMLBRElement[JC] var recordNumber: js.Any
 HTMLBRElement[JC] def remove(): Unit
@@ -2701,7 +2701,7 @@ HTMLBaseElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLBaseElement[JC] def previousElementSibling: Element
 HTMLBaseElement[JC] def previousSibling: Node
 HTMLBaseElement[JC] def querySelector(selectors: String): Element
-HTMLBaseElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLBaseElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLBaseElement[JC] var readyState: js.Any
 HTMLBaseElement[JC] var recordNumber: js.Any
 HTMLBaseElement[JC] def remove(): Unit
@@ -2911,7 +2911,7 @@ HTMLBodyElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLBodyElement[JC] def previousElementSibling: Element
 HTMLBodyElement[JC] def previousSibling: Node
 HTMLBodyElement[JC] def querySelector(selectors: String): Element
-HTMLBodyElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLBodyElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLBodyElement[JC] var readyState: js.Any
 HTMLBodyElement[JC] var recordNumber: js.Any
 HTMLBodyElement[JC] def remove(): Unit
@@ -3118,7 +3118,7 @@ HTMLButtonElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLButtonElement[JC] def previousElementSibling: Element
 HTMLButtonElement[JC] def previousSibling: Node
 HTMLButtonElement[JC] def querySelector(selectors: String): Element
-HTMLButtonElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLButtonElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLButtonElement[JC] var readyState: js.Any
 HTMLButtonElement[JC] var recordNumber: js.Any
 HTMLButtonElement[JC] def remove(): Unit
@@ -3323,7 +3323,7 @@ HTMLCanvasElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLCanvasElement[JC] def previousElementSibling: Element
 HTMLCanvasElement[JC] def previousSibling: Node
 HTMLCanvasElement[JC] def querySelector(selectors: String): Element
-HTMLCanvasElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLCanvasElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLCanvasElement[JC] var readyState: js.Any
 HTMLCanvasElement[JC] var recordNumber: js.Any
 HTMLCanvasElement[JC] def remove(): Unit
@@ -3525,7 +3525,7 @@ HTMLDListElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLDListElement[JC] def previousElementSibling: Element
 HTMLDListElement[JC] def previousSibling: Node
 HTMLDListElement[JC] def querySelector(selectors: String): Element
-HTMLDListElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLDListElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLDListElement[JC] var readyState: js.Any
 HTMLDListElement[JC] var recordNumber: js.Any
 HTMLDListElement[JC] def remove(): Unit
@@ -3722,7 +3722,7 @@ HTMLDataListElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLDataListElement[JC] def previousElementSibling: Element
 HTMLDataListElement[JC] def previousSibling: Node
 HTMLDataListElement[JC] def querySelector(selectors: String): Element
-HTMLDataListElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLDataListElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLDataListElement[JC] var readyState: js.Any
 HTMLDataListElement[JC] var recordNumber: js.Any
 HTMLDataListElement[JC] def remove(): Unit
@@ -3918,7 +3918,7 @@ HTMLDivElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLDivElement[JC] def previousElementSibling: Element
 HTMLDivElement[JC] def previousSibling: Node
 HTMLDivElement[JC] def querySelector(selectors: String): Element
-HTMLDivElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLDivElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLDivElement[JC] var readyState: js.Any
 HTMLDivElement[JC] var recordNumber: js.Any
 HTMLDivElement[JC] def remove(): Unit
@@ -4127,7 +4127,7 @@ HTMLDocument[JC] def queryCommandSupported(commandId: String): Boolean
 HTMLDocument[JC] def queryCommandText(commandId: String): String
 HTMLDocument[JC] def queryCommandValue(commandId: String): String
 HTMLDocument[JC] def querySelector(selectors: String): Element
-HTMLDocument[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLDocument[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLDocument[JC] def readyState: String
 HTMLDocument[JC] def referrer: String
 HTMLDocument[JC] def removeChild(oldChild: Node): Node
@@ -4310,7 +4310,7 @@ HTMLElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLElement[JC] def previousElementSibling: Element
 HTMLElement[JC] def previousSibling: Node
 HTMLElement[JC] def querySelector(selectors: String): Element
-HTMLElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLElement[JC] var readyState: js.Any
 HTMLElement[JC] var recordNumber: js.Any
 HTMLElement[JC] def remove(): Unit
@@ -4508,7 +4508,7 @@ HTMLEmbedElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLEmbedElement[JC] def previousElementSibling: Element
 HTMLEmbedElement[JC] def previousSibling: Node
 HTMLEmbedElement[JC] def querySelector(selectors: String): Element
-HTMLEmbedElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLEmbedElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLEmbedElement[JC] var readyState: js.Any
 HTMLEmbedElement[JC] var recordNumber: js.Any
 HTMLEmbedElement[JC] def remove(): Unit
@@ -4709,7 +4709,7 @@ HTMLFieldSetElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLFieldSetElement[JC] def previousElementSibling: Element
 HTMLFieldSetElement[JC] def previousSibling: Node
 HTMLFieldSetElement[JC] def querySelector(selectors: String): Element
-HTMLFieldSetElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLFieldSetElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLFieldSetElement[JC] var readyState: js.Any
 HTMLFieldSetElement[JC] var recordNumber: js.Any
 HTMLFieldSetElement[JC] def remove(): Unit
@@ -4923,7 +4923,7 @@ HTMLFormElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLFormElement[JC] def previousElementSibling: Element
 HTMLFormElement[JC] def previousSibling: Node
 HTMLFormElement[JC] def querySelector(selectors: String): Element
-HTMLFormElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLFormElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLFormElement[JC] var readyState: js.Any
 HTMLFormElement[JC] var recordNumber: js.Any
 HTMLFormElement[JC] def remove(): Unit
@@ -5123,7 +5123,7 @@ HTMLHRElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLHRElement[JC] def previousElementSibling: Element
 HTMLHRElement[JC] def previousSibling: Node
 HTMLHRElement[JC] def querySelector(selectors: String): Element
-HTMLHRElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLHRElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLHRElement[JC] var readyState: js.Any
 HTMLHRElement[JC] var recordNumber: js.Any
 HTMLHRElement[JC] def remove(): Unit
@@ -5319,7 +5319,7 @@ HTMLHeadElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLHeadElement[JC] def previousElementSibling: Element
 HTMLHeadElement[JC] def previousSibling: Node
 HTMLHeadElement[JC] def querySelector(selectors: String): Element
-HTMLHeadElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLHeadElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLHeadElement[JC] var readyState: js.Any
 HTMLHeadElement[JC] var recordNumber: js.Any
 HTMLHeadElement[JC] def remove(): Unit
@@ -5515,7 +5515,7 @@ HTMLHeadingElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLHeadingElement[JC] def previousElementSibling: Element
 HTMLHeadingElement[JC] def previousSibling: Node
 HTMLHeadingElement[JC] def querySelector(selectors: String): Element
-HTMLHeadingElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLHeadingElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLHeadingElement[JC] var readyState: js.Any
 HTMLHeadingElement[JC] var recordNumber: js.Any
 HTMLHeadingElement[JC] def remove(): Unit
@@ -5711,7 +5711,7 @@ HTMLHtmlElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLHtmlElement[JC] def previousElementSibling: Element
 HTMLHtmlElement[JC] def previousSibling: Node
 HTMLHtmlElement[JC] def querySelector(selectors: String): Element
-HTMLHtmlElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLHtmlElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLHtmlElement[JC] var readyState: js.Any
 HTMLHtmlElement[JC] var recordNumber: js.Any
 HTMLHtmlElement[JC] def remove(): Unit
@@ -5914,7 +5914,7 @@ HTMLIFrameElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLIFrameElement[JC] def previousElementSibling: Element
 HTMLIFrameElement[JC] def previousSibling: Node
 HTMLIFrameElement[JC] def querySelector(selectors: String): Element
-HTMLIFrameElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLIFrameElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLIFrameElement[JC] var readyState: js.Any
 HTMLIFrameElement[JC] var recordNumber: js.Any
 HTMLIFrameElement[JC] def remove(): Unit
@@ -6122,7 +6122,7 @@ HTMLImageElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLImageElement[JC] def previousElementSibling: Element
 HTMLImageElement[JC] def previousSibling: Node
 HTMLImageElement[JC] def querySelector(selectors: String): Element
-HTMLImageElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLImageElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLImageElement[JC] var readyState: js.Any
 HTMLImageElement[JC] var recordNumber: js.Any
 HTMLImageElement[JC] def remove(): Unit
@@ -6347,7 +6347,7 @@ HTMLInputElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLInputElement[JC] def previousElementSibling: Element
 HTMLInputElement[JC] def previousSibling: Node
 HTMLInputElement[JC] def querySelector(selectors: String): Element
-HTMLInputElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLInputElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLInputElement[JC] var readOnly: Boolean
 HTMLInputElement[JC] var readyState: js.Any
 HTMLInputElement[JC] var recordNumber: js.Any
@@ -6563,7 +6563,7 @@ HTMLLIElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLLIElement[JC] def previousElementSibling: Element
 HTMLLIElement[JC] def previousSibling: Node
 HTMLLIElement[JC] def querySelector(selectors: String): Element
-HTMLLIElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLLIElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLLIElement[JC] var readyState: js.Any
 HTMLLIElement[JC] var recordNumber: js.Any
 HTMLLIElement[JC] def remove(): Unit
@@ -6762,7 +6762,7 @@ HTMLLabelElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLLabelElement[JC] def previousElementSibling: Element
 HTMLLabelElement[JC] def previousSibling: Node
 HTMLLabelElement[JC] def querySelector(selectors: String): Element
-HTMLLabelElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLLabelElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLLabelElement[JC] var readyState: js.Any
 HTMLLabelElement[JC] var recordNumber: js.Any
 HTMLLabelElement[JC] def remove(): Unit
@@ -6960,7 +6960,7 @@ HTMLLegendElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLLegendElement[JC] def previousElementSibling: Element
 HTMLLegendElement[JC] def previousSibling: Node
 HTMLLegendElement[JC] def querySelector(selectors: String): Element
-HTMLLegendElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLLegendElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLLegendElement[JC] var readyState: js.Any
 HTMLLegendElement[JC] var recordNumber: js.Any
 HTMLLegendElement[JC] def remove(): Unit
@@ -7159,7 +7159,7 @@ HTMLLinkElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLLinkElement[JC] def previousElementSibling: Element
 HTMLLinkElement[JC] def previousSibling: Node
 HTMLLinkElement[JC] def querySelector(selectors: String): Element
-HTMLLinkElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLLinkElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLLinkElement[JC] var readyState: js.Any
 HTMLLinkElement[JC] var recordNumber: js.Any
 HTMLLinkElement[JC] var rel: String
@@ -7361,7 +7361,7 @@ HTMLMapElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLMapElement[JC] def previousElementSibling: Element
 HTMLMapElement[JC] def previousSibling: Node
 HTMLMapElement[JC] def querySelector(selectors: String): Element
-HTMLMapElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLMapElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLMapElement[JC] var readyState: js.Any
 HTMLMapElement[JC] var recordNumber: js.Any
 HTMLMapElement[JC] def remove(): Unit
@@ -7579,7 +7579,7 @@ HTMLMediaElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLMediaElement[JC] def previousElementSibling: Element
 HTMLMediaElement[JC] def previousSibling: Node
 HTMLMediaElement[JC] def querySelector(selectors: String): Element
-HTMLMediaElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLMediaElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLMediaElement[JC] var readyState: js.Any
 HTMLMediaElement[JC] var recordNumber: js.Any
 HTMLMediaElement[JC] def remove(): Unit
@@ -7790,7 +7790,7 @@ HTMLMenuElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLMenuElement[JC] def previousElementSibling: Element
 HTMLMenuElement[JC] def previousSibling: Node
 HTMLMenuElement[JC] def querySelector(selectors: String): Element
-HTMLMenuElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLMenuElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLMenuElement[JC] var readyState: js.Any
 HTMLMenuElement[JC] var recordNumber: js.Any
 HTMLMenuElement[JC] def remove(): Unit
@@ -7991,7 +7991,7 @@ HTMLMetaElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLMetaElement[JC] def previousElementSibling: Element
 HTMLMetaElement[JC] def previousSibling: Node
 HTMLMetaElement[JC] def querySelector(selectors: String): Element
-HTMLMetaElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLMetaElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLMetaElement[JC] var readyState: js.Any
 HTMLMetaElement[JC] var recordNumber: js.Any
 HTMLMetaElement[JC] def remove(): Unit
@@ -8190,7 +8190,7 @@ HTMLModElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLModElement[JC] def previousElementSibling: Element
 HTMLModElement[JC] def previousSibling: Node
 HTMLModElement[JC] def querySelector(selectors: String): Element
-HTMLModElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLModElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLModElement[JC] var readyState: js.Any
 HTMLModElement[JC] var recordNumber: js.Any
 HTMLModElement[JC] def remove(): Unit
@@ -8386,7 +8386,7 @@ HTMLOListElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLOListElement[JC] def previousElementSibling: Element
 HTMLOListElement[JC] def previousSibling: Node
 HTMLOListElement[JC] def querySelector(selectors: String): Element
-HTMLOListElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLOListElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLOListElement[JC] var readyState: js.Any
 HTMLOListElement[JC] var recordNumber: js.Any
 HTMLOListElement[JC] def remove(): Unit
@@ -8595,7 +8595,7 @@ HTMLObjectElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLObjectElement[JC] def previousElementSibling: Element
 HTMLObjectElement[JC] def previousSibling: Node
 HTMLObjectElement[JC] def querySelector(selectors: String): Element
-HTMLObjectElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLObjectElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLObjectElement[JC] var readyState: js.Any
 HTMLObjectElement[JC] var recordNumber: js.Any
 HTMLObjectElement[JC] def remove(): Unit
@@ -8800,7 +8800,7 @@ HTMLOptGroupElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLOptGroupElement[JC] def previousElementSibling: Element
 HTMLOptGroupElement[JC] def previousSibling: Node
 HTMLOptGroupElement[JC] def querySelector(selectors: String): Element
-HTMLOptGroupElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLOptGroupElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLOptGroupElement[JC] var readyState: js.Any
 HTMLOptGroupElement[JC] var recordNumber: js.Any
 HTMLOptGroupElement[JC] def remove(): Unit
@@ -9002,7 +9002,7 @@ HTMLOptionElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLOptionElement[JC] def previousElementSibling: Element
 HTMLOptionElement[JC] def previousSibling: Node
 HTMLOptionElement[JC] def querySelector(selectors: String): Element
-HTMLOptionElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLOptionElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLOptionElement[JC] var readyState: js.Any
 HTMLOptionElement[JC] var recordNumber: js.Any
 HTMLOptionElement[JC] def remove(): Unit
@@ -9201,7 +9201,7 @@ HTMLParagraphElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLParagraphElement[JC] def previousElementSibling: Element
 HTMLParagraphElement[JC] def previousSibling: Node
 HTMLParagraphElement[JC] def querySelector(selectors: String): Element
-HTMLParagraphElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLParagraphElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLParagraphElement[JC] var readyState: js.Any
 HTMLParagraphElement[JC] var recordNumber: js.Any
 HTMLParagraphElement[JC] def remove(): Unit
@@ -9398,7 +9398,7 @@ HTMLParamElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLParamElement[JC] def previousElementSibling: Element
 HTMLParamElement[JC] def previousSibling: Node
 HTMLParamElement[JC] def querySelector(selectors: String): Element
-HTMLParamElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLParamElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLParamElement[JC] var readyState: js.Any
 HTMLParamElement[JC] var recordNumber: js.Any
 HTMLParamElement[JC] def remove(): Unit
@@ -9595,7 +9595,7 @@ HTMLPreElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLPreElement[JC] def previousElementSibling: Element
 HTMLPreElement[JC] def previousSibling: Node
 HTMLPreElement[JC] def querySelector(selectors: String): Element
-HTMLPreElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLPreElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLPreElement[JC] var readyState: js.Any
 HTMLPreElement[JC] var recordNumber: js.Any
 HTMLPreElement[JC] def remove(): Unit
@@ -9794,7 +9794,7 @@ HTMLProgressElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLProgressElement[JC] def previousElementSibling: Element
 HTMLProgressElement[JC] def previousSibling: Node
 HTMLProgressElement[JC] def querySelector(selectors: String): Element
-HTMLProgressElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLProgressElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLProgressElement[JC] var readyState: js.Any
 HTMLProgressElement[JC] var recordNumber: js.Any
 HTMLProgressElement[JC] def remove(): Unit
@@ -9993,7 +9993,7 @@ HTMLQuoteElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLQuoteElement[JC] def previousElementSibling: Element
 HTMLQuoteElement[JC] def previousSibling: Node
 HTMLQuoteElement[JC] def querySelector(selectors: String): Element
-HTMLQuoteElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLQuoteElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLQuoteElement[JC] var readyState: js.Any
 HTMLQuoteElement[JC] var recordNumber: js.Any
 HTMLQuoteElement[JC] def remove(): Unit
@@ -10194,7 +10194,7 @@ HTMLScriptElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLScriptElement[JC] def previousElementSibling: Element
 HTMLScriptElement[JC] def previousSibling: Node
 HTMLScriptElement[JC] def querySelector(selectors: String): Element
-HTMLScriptElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLScriptElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLScriptElement[JC] var readyState: js.Any
 HTMLScriptElement[JC] var recordNumber: js.Any
 HTMLScriptElement[JC] def remove(): Unit
@@ -10405,7 +10405,7 @@ HTMLSelectElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLSelectElement[JC] def previousElementSibling: Element
 HTMLSelectElement[JC] def previousSibling: Node
 HTMLSelectElement[JC] def querySelector(selectors: String): Element
-HTMLSelectElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLSelectElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLSelectElement[JC] var readyState: js.Any
 HTMLSelectElement[JC] var recordNumber: js.Any
 HTMLSelectElement[JC] def remove(): Unit
@@ -10613,7 +10613,7 @@ HTMLSourceElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLSourceElement[JC] def previousElementSibling: Element
 HTMLSourceElement[JC] def previousSibling: Node
 HTMLSourceElement[JC] def querySelector(selectors: String): Element
-HTMLSourceElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLSourceElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLSourceElement[JC] var readyState: js.Any
 HTMLSourceElement[JC] var recordNumber: js.Any
 HTMLSourceElement[JC] def remove(): Unit
@@ -10811,7 +10811,7 @@ HTMLSpanElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLSpanElement[JC] def previousElementSibling: Element
 HTMLSpanElement[JC] def previousSibling: Node
 HTMLSpanElement[JC] def querySelector(selectors: String): Element
-HTMLSpanElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLSpanElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLSpanElement[JC] var readyState: js.Any
 HTMLSpanElement[JC] var recordNumber: js.Any
 HTMLSpanElement[JC] def remove(): Unit
@@ -11008,7 +11008,7 @@ HTMLStyleElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLStyleElement[JC] def previousElementSibling: Element
 HTMLStyleElement[JC] def previousSibling: Node
 HTMLStyleElement[JC] def querySelector(selectors: String): Element
-HTMLStyleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLStyleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLStyleElement[JC] var readyState: js.Any
 HTMLStyleElement[JC] var recordNumber: js.Any
 HTMLStyleElement[JC] def remove(): Unit
@@ -11207,7 +11207,7 @@ HTMLTableCaptionElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLTableCaptionElement[JC] def previousElementSibling: Element
 HTMLTableCaptionElement[JC] def previousSibling: Node
 HTMLTableCaptionElement[JC] def querySelector(selectors: String): Element
-HTMLTableCaptionElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLTableCaptionElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableCaptionElement[JC] var readyState: js.Any
 HTMLTableCaptionElement[JC] var recordNumber: js.Any
 HTMLTableCaptionElement[JC] def remove(): Unit
@@ -11406,7 +11406,7 @@ HTMLTableCellElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLTableCellElement[JC] def previousElementSibling: Element
 HTMLTableCellElement[JC] def previousSibling: Node
 HTMLTableCellElement[JC] def querySelector(selectors: String): Element
-HTMLTableCellElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLTableCellElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableCellElement[JC] var readyState: js.Any
 HTMLTableCellElement[JC] var recordNumber: js.Any
 HTMLTableCellElement[JC] def remove(): Unit
@@ -11603,7 +11603,7 @@ HTMLTableColElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLTableColElement[JC] def previousElementSibling: Element
 HTMLTableColElement[JC] def previousSibling: Node
 HTMLTableColElement[JC] def querySelector(selectors: String): Element
-HTMLTableColElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLTableColElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableColElement[JC] var readyState: js.Any
 HTMLTableColElement[JC] var recordNumber: js.Any
 HTMLTableColElement[JC] def remove(): Unit
@@ -11811,7 +11811,7 @@ HTMLTableElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLTableElement[JC] def previousElementSibling: Element
 HTMLTableElement[JC] def previousSibling: Node
 HTMLTableElement[JC] def querySelector(selectors: String): Element
-HTMLTableElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLTableElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableElement[JC] var readyState: js.Any
 HTMLTableElement[JC] var recordNumber: js.Any
 HTMLTableElement[JC] def remove(): Unit
@@ -12018,7 +12018,7 @@ HTMLTableRowElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLTableRowElement[JC] def previousElementSibling: Element
 HTMLTableRowElement[JC] def previousSibling: Node
 HTMLTableRowElement[JC] def querySelector(selectors: String): Element
-HTMLTableRowElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLTableRowElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableRowElement[JC] var readyState: js.Any
 HTMLTableRowElement[JC] var recordNumber: js.Any
 HTMLTableRowElement[JC] def remove(): Unit
@@ -12219,7 +12219,7 @@ HTMLTableSectionElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLTableSectionElement[JC] def previousElementSibling: Element
 HTMLTableSectionElement[JC] def previousSibling: Node
 HTMLTableSectionElement[JC] def querySelector(selectors: String): Element
-HTMLTableSectionElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLTableSectionElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableSectionElement[JC] var readyState: js.Any
 HTMLTableSectionElement[JC] var recordNumber: js.Any
 HTMLTableSectionElement[JC] def remove(): Unit
@@ -12425,7 +12425,7 @@ HTMLTextAreaElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLTextAreaElement[JC] def previousElementSibling: Element
 HTMLTextAreaElement[JC] def previousSibling: Node
 HTMLTextAreaElement[JC] def querySelector(selectors: String): Element
-HTMLTextAreaElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLTextAreaElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTextAreaElement[JC] var readOnly: Boolean
 HTMLTextAreaElement[JC] var readyState: js.Any
 HTMLTextAreaElement[JC] var recordNumber: js.Any
@@ -12636,7 +12636,7 @@ HTMLTitleElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLTitleElement[JC] def previousElementSibling: Element
 HTMLTitleElement[JC] def previousSibling: Node
 HTMLTitleElement[JC] def querySelector(selectors: String): Element
-HTMLTitleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLTitleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTitleElement[JC] var readyState: js.Any
 HTMLTitleElement[JC] var recordNumber: js.Any
 HTMLTitleElement[JC] def remove(): Unit
@@ -12835,7 +12835,7 @@ HTMLTrackElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLTrackElement[JC] def previousElementSibling: Element
 HTMLTrackElement[JC] def previousSibling: Node
 HTMLTrackElement[JC] def querySelector(selectors: String): Element
-HTMLTrackElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLTrackElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTrackElement[JC] var readyState: js.Any
 HTMLTrackElement[JC] var recordNumber: js.Any
 HTMLTrackElement[JC] def remove(): Unit
@@ -13034,7 +13034,7 @@ HTMLUListElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLUListElement[JC] def previousElementSibling: Element
 HTMLUListElement[JC] def previousSibling: Node
 HTMLUListElement[JC] def querySelector(selectors: String): Element
-HTMLUListElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLUListElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLUListElement[JC] var readyState: js.Any
 HTMLUListElement[JC] var recordNumber: js.Any
 HTMLUListElement[JC] def remove(): Unit
@@ -13230,7 +13230,7 @@ HTMLUnknownElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLUnknownElement[JC] def previousElementSibling: Element
 HTMLUnknownElement[JC] def previousSibling: Node
 HTMLUnknownElement[JC] def querySelector(selectors: String): Element
-HTMLUnknownElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLUnknownElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLUnknownElement[JC] var readyState: js.Any
 HTMLUnknownElement[JC] var recordNumber: js.Any
 HTMLUnknownElement[JC] def remove(): Unit
@@ -13450,7 +13450,7 @@ HTMLVideoElement[JC] def prepend(nodes: Node | String*): Unit
 HTMLVideoElement[JC] def previousElementSibling: Element
 HTMLVideoElement[JC] def previousSibling: Node
 HTMLVideoElement[JC] def querySelector(selectors: String): Element
-HTMLVideoElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+HTMLVideoElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLVideoElement[JC] var readyState: js.Any
 HTMLVideoElement[JC] var recordNumber: js.Any
 HTMLVideoElement[JC] def remove(): Unit
@@ -14451,7 +14451,7 @@ NodeList[JC] @JSBracketAccess def apply(index: Int): T
 NodeList[JC] def item(index: Int): T
 NodeList[JC] def length: Int
 NodeSelector[JT] def querySelector(selectors: String): Element
-NodeSelector[JT] def querySelectorAll(selectors: String): NodeList[Node]
+NodeSelector[JT] def querySelectorAll(selectors: String): NodeList[Element]
 NonDocumentTypeChildNode[JT] def nextElementSibling: Element
 NonDocumentTypeChildNode[JT] def previousElementSibling: Element
 Notification[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -15069,7 +15069,7 @@ SVGAElement[JC] def prepend(nodes: Node | String*): Unit
 SVGAElement[JC] def previousElementSibling: Element
 SVGAElement[JC] def previousSibling: Node
 SVGAElement[JC] def querySelector(selectors: String): Element
-SVGAElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGAElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGAElement[JC] def remove(): Unit
 SVGAElement[JC] def removeAttribute(name: String): Unit
 SVGAElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -15234,7 +15234,7 @@ SVGCircleElement[JC] def prepend(nodes: Node | String*): Unit
 SVGCircleElement[JC] def previousElementSibling: Element
 SVGCircleElement[JC] def previousSibling: Node
 SVGCircleElement[JC] def querySelector(selectors: String): Element
-SVGCircleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGCircleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGCircleElement[JC] def r: SVGAnimatedLength
 SVGCircleElement[JC] def remove(): Unit
 SVGCircleElement[JC] def removeAttribute(name: String): Unit
@@ -15363,7 +15363,7 @@ SVGClipPathElement[JC] def prepend(nodes: Node | String*): Unit
 SVGClipPathElement[JC] def previousElementSibling: Element
 SVGClipPathElement[JC] def previousSibling: Node
 SVGClipPathElement[JC] def querySelector(selectors: String): Element
-SVGClipPathElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGClipPathElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGClipPathElement[JC] def remove(): Unit
 SVGClipPathElement[JC] def removeAttribute(name: String): Unit
 SVGClipPathElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -15482,7 +15482,7 @@ SVGComponentTransferFunctionElement[JC] def prepend(nodes: Node | String*): Unit
 SVGComponentTransferFunctionElement[JC] def previousElementSibling: Element
 SVGComponentTransferFunctionElement[JC] def previousSibling: Node
 SVGComponentTransferFunctionElement[JC] def querySelector(selectors: String): Element
-SVGComponentTransferFunctionElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGComponentTransferFunctionElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGComponentTransferFunctionElement[JC] def remove(): Unit
 SVGComponentTransferFunctionElement[JC] def removeAttribute(name: String): Unit
 SVGComponentTransferFunctionElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -15608,7 +15608,7 @@ SVGDefsElement[JC] def prepend(nodes: Node | String*): Unit
 SVGDefsElement[JC] def previousElementSibling: Element
 SVGDefsElement[JC] def previousSibling: Node
 SVGDefsElement[JC] def querySelector(selectors: String): Element
-SVGDefsElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGDefsElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGDefsElement[JC] def remove(): Unit
 SVGDefsElement[JC] def removeAttribute(name: String): Unit
 SVGDefsElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -15724,7 +15724,7 @@ SVGDescElement[JC] def prepend(nodes: Node | String*): Unit
 SVGDescElement[JC] def previousElementSibling: Element
 SVGDescElement[JC] def previousSibling: Node
 SVGDescElement[JC] def querySelector(selectors: String): Element
-SVGDescElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGDescElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGDescElement[JC] def remove(): Unit
 SVGDescElement[JC] def removeAttribute(name: String): Unit
 SVGDescElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -15835,7 +15835,7 @@ SVGElement[JC] def prepend(nodes: Node | String*): Unit
 SVGElement[JC] def previousElementSibling: Element
 SVGElement[JC] def previousSibling: Node
 SVGElement[JC] def querySelector(selectors: String): Element
-SVGElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGElement[JC] def remove(): Unit
 SVGElement[JC] def removeAttribute(name: String): Unit
 SVGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -15969,7 +15969,7 @@ SVGEllipseElement[JC] def prepend(nodes: Node | String*): Unit
 SVGEllipseElement[JC] def previousElementSibling: Element
 SVGEllipseElement[JC] def previousSibling: Node
 SVGEllipseElement[JC] def querySelector(selectors: String): Element
-SVGEllipseElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGEllipseElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGEllipseElement[JC] def remove(): Unit
 SVGEllipseElement[JC] def removeAttribute(name: String): Unit
 SVGEllipseElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -16098,7 +16098,7 @@ SVGFEBlendElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEBlendElement[JC] def previousElementSibling: Element
 SVGFEBlendElement[JC] def previousSibling: Node
 SVGFEBlendElement[JC] def querySelector(selectors: String): Element
-SVGFEBlendElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEBlendElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEBlendElement[JC] def remove(): Unit
 SVGFEBlendElement[JC] def removeAttribute(name: String): Unit
 SVGFEBlendElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -16220,7 +16220,7 @@ SVGFEColorMatrixElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEColorMatrixElement[JC] def previousElementSibling: Element
 SVGFEColorMatrixElement[JC] def previousSibling: Node
 SVGFEColorMatrixElement[JC] def querySelector(selectors: String): Element
-SVGFEColorMatrixElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEColorMatrixElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEColorMatrixElement[JC] def remove(): Unit
 SVGFEColorMatrixElement[JC] def removeAttribute(name: String): Unit
 SVGFEColorMatrixElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -16343,7 +16343,7 @@ SVGFEComponentTransferElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEComponentTransferElement[JC] def previousElementSibling: Element
 SVGFEComponentTransferElement[JC] def previousSibling: Node
 SVGFEComponentTransferElement[JC] def querySelector(selectors: String): Element
-SVGFEComponentTransferElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEComponentTransferElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEComponentTransferElement[JC] def remove(): Unit
 SVGFEComponentTransferElement[JC] def removeAttribute(name: String): Unit
 SVGFEComponentTransferElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -16465,7 +16465,7 @@ SVGFECompositeElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFECompositeElement[JC] def previousElementSibling: Element
 SVGFECompositeElement[JC] def previousSibling: Node
 SVGFECompositeElement[JC] def querySelector(selectors: String): Element
-SVGFECompositeElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFECompositeElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFECompositeElement[JC] def remove(): Unit
 SVGFECompositeElement[JC] def removeAttribute(name: String): Unit
 SVGFECompositeElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -16597,7 +16597,7 @@ SVGFEConvolveMatrixElement[JC] def preserveAlpha: SVGAnimatedBoolean
 SVGFEConvolveMatrixElement[JC] def previousElementSibling: Element
 SVGFEConvolveMatrixElement[JC] def previousSibling: Node
 SVGFEConvolveMatrixElement[JC] def querySelector(selectors: String): Element
-SVGFEConvolveMatrixElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEConvolveMatrixElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEConvolveMatrixElement[JC] def remove(): Unit
 SVGFEConvolveMatrixElement[JC] def removeAttribute(name: String): Unit
 SVGFEConvolveMatrixElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -16722,7 +16722,7 @@ SVGFEDiffuseLightingElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEDiffuseLightingElement[JC] def previousElementSibling: Element
 SVGFEDiffuseLightingElement[JC] def previousSibling: Node
 SVGFEDiffuseLightingElement[JC] def querySelector(selectors: String): Element
-SVGFEDiffuseLightingElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEDiffuseLightingElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEDiffuseLightingElement[JC] def remove(): Unit
 SVGFEDiffuseLightingElement[JC] def removeAttribute(name: String): Unit
 SVGFEDiffuseLightingElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -16840,7 +16840,7 @@ SVGFEDisplacementMapElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEDisplacementMapElement[JC] def previousElementSibling: Element
 SVGFEDisplacementMapElement[JC] def previousSibling: Node
 SVGFEDisplacementMapElement[JC] def querySelector(selectors: String): Element
-SVGFEDisplacementMapElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEDisplacementMapElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEDisplacementMapElement[JC] def remove(): Unit
 SVGFEDisplacementMapElement[JC] def removeAttribute(name: String): Unit
 SVGFEDisplacementMapElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -16963,7 +16963,7 @@ SVGFEDistantLightElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEDistantLightElement[JC] def previousElementSibling: Element
 SVGFEDistantLightElement[JC] def previousSibling: Node
 SVGFEDistantLightElement[JC] def querySelector(selectors: String): Element
-SVGFEDistantLightElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEDistantLightElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEDistantLightElement[JC] def remove(): Unit
 SVGFEDistantLightElement[JC] def removeAttribute(name: String): Unit
 SVGFEDistantLightElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17073,7 +17073,7 @@ SVGFEFloodElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEFloodElement[JC] def previousElementSibling: Element
 SVGFEFloodElement[JC] def previousSibling: Node
 SVGFEFloodElement[JC] def querySelector(selectors: String): Element
-SVGFEFloodElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEFloodElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEFloodElement[JC] def remove(): Unit
 SVGFEFloodElement[JC] def removeAttribute(name: String): Unit
 SVGFEFloodElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17190,7 +17190,7 @@ SVGFEFuncAElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEFuncAElement[JC] def previousElementSibling: Element
 SVGFEFuncAElement[JC] def previousSibling: Node
 SVGFEFuncAElement[JC] def querySelector(selectors: String): Element
-SVGFEFuncAElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEFuncAElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEFuncAElement[JC] def remove(): Unit
 SVGFEFuncAElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncAElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17305,7 +17305,7 @@ SVGFEFuncBElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEFuncBElement[JC] def previousElementSibling: Element
 SVGFEFuncBElement[JC] def previousSibling: Node
 SVGFEFuncBElement[JC] def querySelector(selectors: String): Element
-SVGFEFuncBElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEFuncBElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEFuncBElement[JC] def remove(): Unit
 SVGFEFuncBElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncBElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17420,7 +17420,7 @@ SVGFEFuncGElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEFuncGElement[JC] def previousElementSibling: Element
 SVGFEFuncGElement[JC] def previousSibling: Node
 SVGFEFuncGElement[JC] def querySelector(selectors: String): Element
-SVGFEFuncGElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEFuncGElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEFuncGElement[JC] def remove(): Unit
 SVGFEFuncGElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17535,7 +17535,7 @@ SVGFEFuncRElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEFuncRElement[JC] def previousElementSibling: Element
 SVGFEFuncRElement[JC] def previousSibling: Node
 SVGFEFuncRElement[JC] def querySelector(selectors: String): Element
-SVGFEFuncRElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEFuncRElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEFuncRElement[JC] def remove(): Unit
 SVGFEFuncRElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncRElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17649,7 +17649,7 @@ SVGFEGaussianBlurElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEGaussianBlurElement[JC] def previousElementSibling: Element
 SVGFEGaussianBlurElement[JC] def previousSibling: Node
 SVGFEGaussianBlurElement[JC] def querySelector(selectors: String): Element
-SVGFEGaussianBlurElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEGaussianBlurElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEGaussianBlurElement[JC] def remove(): Unit
 SVGFEGaussianBlurElement[JC] def removeAttribute(name: String): Unit
 SVGFEGaussianBlurElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17770,7 +17770,7 @@ SVGFEImageElement[JC] def preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGFEImageElement[JC] def previousElementSibling: Element
 SVGFEImageElement[JC] def previousSibling: Node
 SVGFEImageElement[JC] def querySelector(selectors: String): Element
-SVGFEImageElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEImageElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEImageElement[JC] def remove(): Unit
 SVGFEImageElement[JC] def removeAttribute(name: String): Unit
 SVGFEImageElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17887,7 +17887,7 @@ SVGFEMergeElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEMergeElement[JC] def previousElementSibling: Element
 SVGFEMergeElement[JC] def previousSibling: Node
 SVGFEMergeElement[JC] def querySelector(selectors: String): Element
-SVGFEMergeElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEMergeElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEMergeElement[JC] def remove(): Unit
 SVGFEMergeElement[JC] def removeAttribute(name: String): Unit
 SVGFEMergeElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18001,7 +18001,7 @@ SVGFEMergeNodeElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEMergeNodeElement[JC] def previousElementSibling: Element
 SVGFEMergeNodeElement[JC] def previousSibling: Node
 SVGFEMergeNodeElement[JC] def querySelector(selectors: String): Element
-SVGFEMergeNodeElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEMergeNodeElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEMergeNodeElement[JC] def remove(): Unit
 SVGFEMergeNodeElement[JC] def removeAttribute(name: String): Unit
 SVGFEMergeNodeElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18113,7 +18113,7 @@ SVGFEMorphologyElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEMorphologyElement[JC] def previousElementSibling: Element
 SVGFEMorphologyElement[JC] def previousSibling: Node
 SVGFEMorphologyElement[JC] def querySelector(selectors: String): Element
-SVGFEMorphologyElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEMorphologyElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEMorphologyElement[JC] def radiusX: SVGAnimatedNumber
 SVGFEMorphologyElement[JC] def radiusY: SVGAnimatedNumber
 SVGFEMorphologyElement[JC] def remove(): Unit
@@ -18236,7 +18236,7 @@ SVGFEOffsetElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEOffsetElement[JC] def previousElementSibling: Element
 SVGFEOffsetElement[JC] def previousSibling: Node
 SVGFEOffsetElement[JC] def querySelector(selectors: String): Element
-SVGFEOffsetElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEOffsetElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEOffsetElement[JC] def remove(): Unit
 SVGFEOffsetElement[JC] def removeAttribute(name: String): Unit
 SVGFEOffsetElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18349,7 +18349,7 @@ SVGFEPointLightElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFEPointLightElement[JC] def previousElementSibling: Element
 SVGFEPointLightElement[JC] def previousSibling: Node
 SVGFEPointLightElement[JC] def querySelector(selectors: String): Element
-SVGFEPointLightElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFEPointLightElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEPointLightElement[JC] def remove(): Unit
 SVGFEPointLightElement[JC] def removeAttribute(name: String): Unit
 SVGFEPointLightElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18465,7 +18465,7 @@ SVGFESpecularLightingElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFESpecularLightingElement[JC] def previousElementSibling: Element
 SVGFESpecularLightingElement[JC] def previousSibling: Node
 SVGFESpecularLightingElement[JC] def querySelector(selectors: String): Element
-SVGFESpecularLightingElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFESpecularLightingElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFESpecularLightingElement[JC] def remove(): Unit
 SVGFESpecularLightingElement[JC] def removeAttribute(name: String): Unit
 SVGFESpecularLightingElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18585,7 +18585,7 @@ SVGFESpotLightElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFESpotLightElement[JC] def previousElementSibling: Element
 SVGFESpotLightElement[JC] def previousSibling: Node
 SVGFESpotLightElement[JC] def querySelector(selectors: String): Element
-SVGFESpotLightElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFESpotLightElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFESpotLightElement[JC] def remove(): Unit
 SVGFESpotLightElement[JC] def removeAttribute(name: String): Unit
 SVGFESpotLightElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18700,7 +18700,7 @@ SVGFETileElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFETileElement[JC] def previousElementSibling: Element
 SVGFETileElement[JC] def previousSibling: Node
 SVGFETileElement[JC] def querySelector(selectors: String): Element
-SVGFETileElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFETileElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFETileElement[JC] def remove(): Unit
 SVGFETileElement[JC] def removeAttribute(name: String): Unit
 SVGFETileElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18818,7 +18818,7 @@ SVGFETurbulenceElement[JC] def prepend(nodes: Node | String*): Unit
 SVGFETurbulenceElement[JC] def previousElementSibling: Element
 SVGFETurbulenceElement[JC] def previousSibling: Node
 SVGFETurbulenceElement[JC] def querySelector(selectors: String): Element
-SVGFETurbulenceElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFETurbulenceElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFETurbulenceElement[JC] def remove(): Unit
 SVGFETurbulenceElement[JC] def removeAttribute(name: String): Unit
 SVGFETurbulenceElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18951,7 +18951,7 @@ SVGFilterElement[JC] def previousElementSibling: Element
 SVGFilterElement[JC] def previousSibling: Node
 SVGFilterElement[JC] def primitiveUnits: SVGAnimatedEnumeration
 SVGFilterElement[JC] def querySelector(selectors: String): Element
-SVGFilterElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGFilterElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFilterElement[JC] def remove(): Unit
 SVGFilterElement[JC] def removeAttribute(name: String): Unit
 SVGFilterElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19084,7 +19084,7 @@ SVGGElement[JC] def prepend(nodes: Node | String*): Unit
 SVGGElement[JC] def previousElementSibling: Element
 SVGGElement[JC] def previousSibling: Node
 SVGGElement[JC] def querySelector(selectors: String): Element
-SVGGElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGGElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGGElement[JC] def remove(): Unit
 SVGGElement[JC] def removeAttribute(name: String): Unit
 SVGGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19207,7 +19207,7 @@ SVGGradientElement[JC] def prepend(nodes: Node | String*): Unit
 SVGGradientElement[JC] def previousElementSibling: Element
 SVGGradientElement[JC] def previousSibling: Node
 SVGGradientElement[JC] def querySelector(selectors: String): Element
-SVGGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGGradientElement[JC] def remove(): Unit
 SVGGradientElement[JC] def removeAttribute(name: String): Unit
 SVGGradientElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19333,7 +19333,7 @@ SVGImageElement[JC] def preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGImageElement[JC] def previousElementSibling: Element
 SVGImageElement[JC] def previousSibling: Node
 SVGImageElement[JC] def querySelector(selectors: String): Element
-SVGImageElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGImageElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGImageElement[JC] def remove(): Unit
 SVGImageElement[JC] def removeAttribute(name: String): Unit
 SVGImageElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19487,7 +19487,7 @@ SVGLineElement[JC] def prepend(nodes: Node | String*): Unit
 SVGLineElement[JC] def previousElementSibling: Element
 SVGLineElement[JC] def previousSibling: Node
 SVGLineElement[JC] def querySelector(selectors: String): Element
-SVGLineElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGLineElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGLineElement[JC] def remove(): Unit
 SVGLineElement[JC] def removeAttribute(name: String): Unit
 SVGLineElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19614,7 +19614,7 @@ SVGLinearGradientElement[JC] def prepend(nodes: Node | String*): Unit
 SVGLinearGradientElement[JC] def previousElementSibling: Element
 SVGLinearGradientElement[JC] def previousSibling: Node
 SVGLinearGradientElement[JC] def querySelector(selectors: String): Element
-SVGLinearGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGLinearGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGLinearGradientElement[JC] def remove(): Unit
 SVGLinearGradientElement[JC] def removeAttribute(name: String): Unit
 SVGLinearGradientElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19742,7 +19742,7 @@ SVGMarkerElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGMarkerElement[JC] def previousElementSibling: Element
 SVGMarkerElement[JC] def previousSibling: Node
 SVGMarkerElement[JC] def querySelector(selectors: String): Element
-SVGMarkerElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGMarkerElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGMarkerElement[JC] def refX: SVGAnimatedLength
 SVGMarkerElement[JC] def refY: SVGAnimatedLength
 SVGMarkerElement[JC] def remove(): Unit
@@ -19873,7 +19873,7 @@ SVGMaskElement[JC] def prepend(nodes: Node | String*): Unit
 SVGMaskElement[JC] def previousElementSibling: Element
 SVGMaskElement[JC] def previousSibling: Node
 SVGMaskElement[JC] def querySelector(selectors: String): Element
-SVGMaskElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGMaskElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGMaskElement[JC] def remove(): Unit
 SVGMaskElement[JC] def removeAttribute(name: String): Unit
 SVGMaskElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20007,7 +20007,7 @@ SVGMetadataElement[JC] def prepend(nodes: Node | String*): Unit
 SVGMetadataElement[JC] def previousElementSibling: Element
 SVGMetadataElement[JC] def previousSibling: Node
 SVGMetadataElement[JC] def querySelector(selectors: String): Element
-SVGMetadataElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGMetadataElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGMetadataElement[JC] def remove(): Unit
 SVGMetadataElement[JC] def removeAttribute(name: String): Unit
 SVGMetadataElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20156,7 +20156,7 @@ SVGPathElement[JC] def prepend(nodes: Node | String*): Unit
 SVGPathElement[JC] def previousElementSibling: Element
 SVGPathElement[JC] def previousSibling: Node
 SVGPathElement[JC] def querySelector(selectors: String): Element
-SVGPathElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGPathElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGPathElement[JC] def remove(): Unit
 SVGPathElement[JC] def removeAttribute(name: String): Unit
 SVGPathElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20409,7 +20409,7 @@ SVGPatternElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGPatternElement[JC] def previousElementSibling: Element
 SVGPatternElement[JC] def previousSibling: Node
 SVGPatternElement[JC] def querySelector(selectors: String): Element
-SVGPatternElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGPatternElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGPatternElement[JC] def remove(): Unit
 SVGPatternElement[JC] def removeAttribute(name: String): Unit
 SVGPatternElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20549,7 +20549,7 @@ SVGPolygonElement[JC] def prepend(nodes: Node | String*): Unit
 SVGPolygonElement[JC] def previousElementSibling: Element
 SVGPolygonElement[JC] def previousSibling: Node
 SVGPolygonElement[JC] def querySelector(selectors: String): Element
-SVGPolygonElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGPolygonElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGPolygonElement[JC] def remove(): Unit
 SVGPolygonElement[JC] def removeAttribute(name: String): Unit
 SVGPolygonElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20675,7 +20675,7 @@ SVGPolylineElement[JC] def prepend(nodes: Node | String*): Unit
 SVGPolylineElement[JC] def previousElementSibling: Element
 SVGPolylineElement[JC] def previousSibling: Node
 SVGPolylineElement[JC] def querySelector(selectors: String): Element
-SVGPolylineElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGPolylineElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGPolylineElement[JC] def remove(): Unit
 SVGPolylineElement[JC] def removeAttribute(name: String): Unit
 SVGPolylineElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20818,7 +20818,7 @@ SVGRadialGradientElement[JC] def prepend(nodes: Node | String*): Unit
 SVGRadialGradientElement[JC] def previousElementSibling: Element
 SVGRadialGradientElement[JC] def previousSibling: Node
 SVGRadialGradientElement[JC] def querySelector(selectors: String): Element
-SVGRadialGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGRadialGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGRadialGradientElement[JC] def r: SVGAnimatedLength
 SVGRadialGradientElement[JC] def remove(): Unit
 SVGRadialGradientElement[JC] def removeAttribute(name: String): Unit
@@ -20943,7 +20943,7 @@ SVGRectElement[JC] def prepend(nodes: Node | String*): Unit
 SVGRectElement[JC] def previousElementSibling: Element
 SVGRectElement[JC] def previousSibling: Node
 SVGRectElement[JC] def querySelector(selectors: String): Element
-SVGRectElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGRectElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGRectElement[JC] def remove(): Unit
 SVGRectElement[JC] def removeAttribute(name: String): Unit
 SVGRectElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21105,7 +21105,7 @@ SVGSVGElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGSVGElement[JC] def previousElementSibling: Element
 SVGSVGElement[JC] def previousSibling: Node
 SVGSVGElement[JC] def querySelector(selectors: String): Element
-SVGSVGElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGSVGElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGSVGElement[JC] def remove(): Unit
 SVGSVGElement[JC] def removeAttribute(name: String): Unit
 SVGSVGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21234,7 +21234,7 @@ SVGScriptElement[JC] def prepend(nodes: Node | String*): Unit
 SVGScriptElement[JC] def previousElementSibling: Element
 SVGScriptElement[JC] def previousSibling: Node
 SVGScriptElement[JC] def querySelector(selectors: String): Element
-SVGScriptElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGScriptElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGScriptElement[JC] def remove(): Unit
 SVGScriptElement[JC] def removeAttribute(name: String): Unit
 SVGScriptElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21345,7 +21345,7 @@ SVGStopElement[JC] def prepend(nodes: Node | String*): Unit
 SVGStopElement[JC] def previousElementSibling: Element
 SVGStopElement[JC] def previousSibling: Node
 SVGStopElement[JC] def querySelector(selectors: String): Element
-SVGStopElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGStopElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGStopElement[JC] def remove(): Unit
 SVGStopElement[JC] def removeAttribute(name: String): Unit
 SVGStopElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21465,7 +21465,7 @@ SVGStyleElement[JC] def prepend(nodes: Node | String*): Unit
 SVGStyleElement[JC] def previousElementSibling: Element
 SVGStyleElement[JC] def previousSibling: Node
 SVGStyleElement[JC] def querySelector(selectors: String): Element
-SVGStyleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGStyleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGStyleElement[JC] def remove(): Unit
 SVGStyleElement[JC] def removeAttribute(name: String): Unit
 SVGStyleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21586,7 +21586,7 @@ SVGSwitchElement[JC] def prepend(nodes: Node | String*): Unit
 SVGSwitchElement[JC] def previousElementSibling: Element
 SVGSwitchElement[JC] def previousSibling: Node
 SVGSwitchElement[JC] def querySelector(selectors: String): Element
-SVGSwitchElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGSwitchElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGSwitchElement[JC] def remove(): Unit
 SVGSwitchElement[JC] def removeAttribute(name: String): Unit
 SVGSwitchElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21704,7 +21704,7 @@ SVGSymbolElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGSymbolElement[JC] def previousElementSibling: Element
 SVGSymbolElement[JC] def previousSibling: Node
 SVGSymbolElement[JC] def querySelector(selectors: String): Element
-SVGSymbolElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGSymbolElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGSymbolElement[JC] def remove(): Unit
 SVGSymbolElement[JC] def removeAttribute(name: String): Unit
 SVGSymbolElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21830,7 +21830,7 @@ SVGTSpanElement[JC] def prepend(nodes: Node | String*): Unit
 SVGTSpanElement[JC] def previousElementSibling: Element
 SVGTSpanElement[JC] def previousSibling: Node
 SVGTSpanElement[JC] def querySelector(selectors: String): Element
-SVGTSpanElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGTSpanElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGTSpanElement[JC] def remove(): Unit
 SVGTSpanElement[JC] def removeAttribute(name: String): Unit
 SVGTSpanElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21965,7 +21965,7 @@ SVGTextContentElement[JC] def prepend(nodes: Node | String*): Unit
 SVGTextContentElement[JC] def previousElementSibling: Element
 SVGTextContentElement[JC] def previousSibling: Node
 SVGTextContentElement[JC] def querySelector(selectors: String): Element
-SVGTextContentElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGTextContentElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGTextContentElement[JC] def remove(): Unit
 SVGTextContentElement[JC] def removeAttribute(name: String): Unit
 SVGTextContentElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22104,7 +22104,7 @@ SVGTextElement[JC] def prepend(nodes: Node | String*): Unit
 SVGTextElement[JC] def previousElementSibling: Element
 SVGTextElement[JC] def previousSibling: Node
 SVGTextElement[JC] def querySelector(selectors: String): Element
-SVGTextElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGTextElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGTextElement[JC] def remove(): Unit
 SVGTextElement[JC] def removeAttribute(name: String): Unit
 SVGTextElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22238,7 +22238,7 @@ SVGTextPathElement[JC] def prepend(nodes: Node | String*): Unit
 SVGTextPathElement[JC] def previousElementSibling: Element
 SVGTextPathElement[JC] def previousSibling: Node
 SVGTextPathElement[JC] def querySelector(selectors: String): Element
-SVGTextPathElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGTextPathElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGTextPathElement[JC] def remove(): Unit
 SVGTextPathElement[JC] def removeAttribute(name: String): Unit
 SVGTextPathElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22376,7 +22376,7 @@ SVGTextPositioningElement[JC] def prepend(nodes: Node | String*): Unit
 SVGTextPositioningElement[JC] def previousElementSibling: Element
 SVGTextPositioningElement[JC] def previousSibling: Node
 SVGTextPositioningElement[JC] def querySelector(selectors: String): Element
-SVGTextPositioningElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGTextPositioningElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGTextPositioningElement[JC] def remove(): Unit
 SVGTextPositioningElement[JC] def removeAttribute(name: String): Unit
 SVGTextPositioningElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22496,7 +22496,7 @@ SVGTitleElement[JC] def prepend(nodes: Node | String*): Unit
 SVGTitleElement[JC] def previousElementSibling: Element
 SVGTitleElement[JC] def previousSibling: Node
 SVGTitleElement[JC] def querySelector(selectors: String): Element
-SVGTitleElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGTitleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGTitleElement[JC] def remove(): Unit
 SVGTitleElement[JC] def removeAttribute(name: String): Unit
 SVGTitleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22660,7 +22660,7 @@ SVGUseElement[JC] def prepend(nodes: Node | String*): Unit
 SVGUseElement[JC] def previousElementSibling: Element
 SVGUseElement[JC] def previousSibling: Node
 SVGUseElement[JC] def querySelector(selectors: String): Element
-SVGUseElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGUseElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGUseElement[JC] def remove(): Unit
 SVGUseElement[JC] def removeAttribute(name: String): Unit
 SVGUseElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22780,7 +22780,7 @@ SVGViewElement[JC] var preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 SVGViewElement[JC] def previousElementSibling: Element
 SVGViewElement[JC] def previousSibling: Node
 SVGViewElement[JC] def querySelector(selectors: String): Element
-SVGViewElement[JC] def querySelectorAll(selectors: String): NodeList[Node]
+SVGViewElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGViewElement[JC] def remove(): Unit
 SVGViewElement[JC] def removeAttribute(name: String): Unit
 SVGViewElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
