@@ -6,18 +6,18 @@ import scala.language.implicitConversions
 
 package object beacon {
 
-  @deprecated("use dom.BeaconNavigator instead", "2.0.0")
-  type BeaconNavigator = dom.BeaconNavigator
+  @deprecated("use dom.Navigator instead", "2.0.0")
+  type BeaconNavigator = dom.Navigator
 
-  @deprecated("use dom.BeaconWorkerNavigator instead", "2.0.0")
-  type BeaconWorkerNavigator = dom.BeaconWorkerNavigator
+  @deprecated("use dom.WorkerNavigator instead", "2.0.0")
+  type BeaconWorkerNavigator = dom.WorkerNavigator
 
-  @deprecated("use dom.Navigator.toBeaconNavigator instead", "2.0.0")
+  @deprecated("use dom.Navigator directly instead", "2.0.0")
   implicit def toBeaconNavigator(n: Navigator): BeaconNavigator =
-    Navigator.toBeaconNavigator(n)
+    n
 
-  @deprecated("use dom.WorkerNavigator.toBeaconWorkerNavigator instead", "2.0.0")
+  @deprecated("use dom.WorkerNavigator directly instead", "2.0.0")
   implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator =
-    WorkerNavigator.toBeaconWorkerNavigator(n)
+    n
 
 }

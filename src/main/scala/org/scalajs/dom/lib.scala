@@ -315,13 +315,16 @@ class Navigator
     * "clipboard-read" and/or "clipboard-write" permissions.
     */
   def clipboard: Clipboard = js.native
-}
 
-object Navigator {
-
-  implicit def toBeaconNavigator(n: Navigator): BeaconNavigator =
-    n.asInstanceOf[BeaconNavigator]
-
+  /** The navigator.sendBeacon() method can be used to asynchronously transfer small HTTP data from the User Agent to a
+    * web server.
+    *
+    * @param url
+    *   The url parameter indicates the resolved URL where the data is to be transmitted.
+    * @param data
+    *   The data parameter is the ArrayBufferView, Blob, DOMString, or FormData data that is to be transmitted.
+    */
+  def sendBeacon(url: String, data: BodyInit = js.native): Boolean = js.native
 }
 
 @js.native
