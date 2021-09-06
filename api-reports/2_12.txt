@@ -14359,7 +14359,6 @@ Navigator[JC] def userAgent: String
 Navigator[JC] def vibrate(duration: Double): Boolean
 Navigator[JC] def vibrate(pattern: js.Array[Double]): Boolean
 Navigator[SO] implicit def toBeaconNavigator(n: Navigator): BeaconNavigator
-Navigator[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator
 NavigatorContentUtils[JT]
 NavigatorGeolocation[JT] def geolocation: Geolocation
 NavigatorID[JT] def appName: String
@@ -24017,6 +24016,7 @@ WorkerNavigator[JT] def languages: js.Array[String]
 WorkerNavigator[JT] def onLine: Boolean
 WorkerNavigator[JT] def platform: String
 WorkerNavigator[JT] def userAgent: String
+WorkerNavigator[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator
 WriteableState[JT]
 WriteableState[SO] val closed: WriteableState
 WriteableState[SO] val closing: WriteableState

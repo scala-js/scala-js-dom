@@ -16,8 +16,8 @@ package object beacon {
   implicit def toBeaconNavigator(n: Navigator): BeaconNavigator =
     Navigator.toBeaconNavigator(n)
 
-  @deprecated("use dom.Navigator.toBeaconWorkerNavigator instead", "2.0.0")
+  @deprecated("use dom.WorkerNavigator.toBeaconWorkerNavigator instead", "2.0.0")
   implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator =
-    Navigator.toBeaconWorkerNavigator(n)
+    WorkerNavigator.toBeaconWorkerNavigator(n)
 
 }
