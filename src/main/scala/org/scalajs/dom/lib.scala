@@ -423,6 +423,36 @@ trait NonDocumentTypeChildNode extends js.Object {
 @JSGlobal
 abstract class Element extends Node with NodeSelector with ParentNode with NonDocumentTypeChildNode {
 
+  /** Removes the element from the tree it belongs to. */
+  def remove(): Unit = js.native
+
+  /** Inserts a set of Node or DOMString objects in the children list of this Element's parent, just before this
+    * Element. DOMString objects are inserted as equivalent Text nodes.
+    */
+  def before(nodes: (Node | String)*): Unit = js.native
+
+  /** Inserts a set of Node or DOMString objects in the children list of the Element's parent, just after the Element.
+    * DOMString objects are inserted as equivalent Text nodes.
+    */
+  def after(nodes: (Node | String)*): Unit = js.native
+
+  /** Inserts a set of Node objects or DOMString objects after the last child of the Element. DOMString objects are
+    * inserted as equivalent Text nodes.
+    *
+    * Differences from Node.appendChild():
+    *
+    *   - Element.append() allows you to also append DOMString objects, whereas Node.appendChild() only accepts Node
+    *     objects.
+    *   - Element.append() has no return value, whereas Node.appendChild() returns the appended Node object.
+    *   - Element.append() can append several nodes and strings, whereas Node.appendChild() can only append one node.
+    */
+  def append(nodes: (Node | String)*): Unit = js.native
+
+  /** Inserts a set of Node objects or DOMString objects before the first child of the Element. DOMString objects are
+    * inserted as equivalent Text nodes.
+    */
+  def prepend(nodes: (Node | String)*): Unit = js.native
+
   /** A DOMString representing the namespace prefix of the element, or null if no prefix is specified. */
   def prefix: String = js.native
 
