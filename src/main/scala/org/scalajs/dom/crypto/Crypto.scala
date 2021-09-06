@@ -809,7 +809,7 @@ object Pbkdf2Params {
 
 /** See [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶ 13. CryptoKey Interface]] of w3c spec */
 @js.native
-trait KeyUsage extends js.Any
+sealed trait KeyUsage extends js.Any
 
 object KeyUsage {
   val encrypt: KeyUsage = "encrypt".asInstanceOf[KeyUsage]
@@ -824,7 +824,7 @@ object KeyUsage {
 
 /** see [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶13 CryptoKey interface]] in W3C doc */
 @js.native
-trait KeyType extends js.Any
+sealed trait KeyType extends js.Any
 
 object KeyType {
   val public: KeyType = "public".asInstanceOf[KeyType]
@@ -834,7 +834,7 @@ object KeyType {
 
 /** see [[http://www.w3.org/TR/WebCryptoAPI/#dfn-KeyFormat ¶14.2 Data Types]] in W3C spec */
 @js.native
-trait KeyFormat extends js.Any
+sealed trait KeyFormat extends js.Any
 
 object KeyFormat {
 
