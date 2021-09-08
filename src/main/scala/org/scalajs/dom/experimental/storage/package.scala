@@ -1,8 +1,7 @@
-package org.scalajs.dom.experimental
+package org.scalajs
+package dom.experimental
 
-import org.scalajs.dom
 import scala.language.implicitConversions
-import scala.scalajs.js
 
 /** https://storage.spec.whatwg.org/ */
 package object storage {
@@ -12,8 +11,7 @@ package object storage {
     navigator
 
   @deprecated("use dom.Navigator directly instead", "2.0.0")
-  @js.native
-  trait NavigatorStorage extends dom.Navigator
+  type NavigatorStorage = dom.Navigator
 
   @deprecated("use dom.StorageManager instead", "2.0.0")
   type StorageManager = dom.StorageManager
