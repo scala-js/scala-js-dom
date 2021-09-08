@@ -13605,8 +13605,8 @@ IDBFactory[JC] def cmp(first: Any, second: Any): Int
 IDBFactory[JC] def databases(): js.Promise[js.Array[IDBDatabaseInfo]]
 IDBFactory[JC] def deleteDatabase(name: String): IDBOpenDBRequest[Unit]
 IDBFactory[JC] def open(name: String, version: Int?): IDBOpenDBRequest[IDBDatabase]
-IDBIndex[JC] def count(): IDBRequest[Double]
-IDBIndex[JC] def count(key: Any): IDBRequest[Double]
+IDBIndex[JC] def count(): IDBRequest[Int]
+IDBIndex[JC] def count(key: Any): IDBRequest[Int]
 IDBIndex[JC] def get(key: Any): IDBRequest[Any]
 IDBIndex[JC] def getKey(key: Any): IDBRequest[js.UndefOr[Any]]
 IDBIndex[JC] def keyPath: String
@@ -13625,7 +13625,7 @@ IDBKeyRange[JO] def only(value: Any): IDBKeyRange
 IDBKeyRange[JO] def upperBound(bound: Any, open: Boolean?): IDBKeyRange
 IDBObjectStore[JC] def add(value: Any, key: Any?): IDBRequest[Any]
 IDBObjectStore[JC] def clear(): IDBRequest[Unit]
-IDBObjectStore[JC] def count(key: Any?): IDBRequest[Double]
+IDBObjectStore[JC] def count(key: Any?): IDBRequest[Int]
 IDBObjectStore[JC] def createIndex(name: String, keyPath: Any, optionalParameters: IDBCreateIndexOptions?): IDBIndex
 IDBObjectStore[JC] def delete(key: Any): IDBRequest[Unit]
 IDBObjectStore[JC] def deleteIndex(indexName: String): Unit

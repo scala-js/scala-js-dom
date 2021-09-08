@@ -64,7 +64,7 @@ class IDBObjectStore extends js.Object {
     */
   def keyPath: String = js.native
 
-  def count(key: Any = js.native): IDBRequest[Double] = js.native
+  def count(key: Any = js.native): IDBRequest[Int] = js.native
 
   /** To determine if the add operation has completed successfully, listen for the transaction’s complete event in
     * addition to the IDBObjectStore.add request’s success event, because the transaction may still fail after the
@@ -196,12 +196,12 @@ class IDBIndex extends js.Object {
   /** The name of the object store referenced by this index. */
   def objectStore: IDBObjectStore = js.native
 
-  def count(key: Any): IDBRequest[Double] = js.native
+  def count(key: Any): IDBRequest[Int] = js.native
 
   /** If you want to see how many records are between keys 1000 and 2000 in an object store, you can write the
     * following:
     */
-  def count(): IDBRequest[Double] = js.native
+  def count(): IDBRequest[Int] = js.native
 
   /** Returns an IDBRequest object, and, in a separate thread, finds either the value in the referenced object store
     * that corresponds to the given key or the first corresponding value, if key is a key range.
