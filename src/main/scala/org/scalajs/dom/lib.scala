@@ -325,6 +325,9 @@ class Navigator
     *   The data parameter is the ArrayBufferView, Blob, DOMString, or FormData data that is to be transmitted.
     */
   def sendBeacon(url: String, data: BodyInit = js.native): Boolean = js.native
+
+  /** https://storage.spec.whatwg.org/ */
+  val storage: StorageManager = js.native
 }
 
 @js.native

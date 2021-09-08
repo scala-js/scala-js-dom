@@ -7,24 +7,18 @@ import scala.scalajs.js
 /** https://storage.spec.whatwg.org/ */
 package object storage {
 
-  implicit def toNavigatorStorage(navigator: dom.Navigator): NavigatorStorage =
-    navigator.asInstanceOf[NavigatorStorage]
+  @deprecated("use dom.Navigator directly instead", "2.0.0")
+  implicit def toNavigatorStorage(navigator: dom.Navigator): dom.Navigator =
+    navigator
 
+  @deprecated("use dom.Navigator directly instead", "2.0.0")
   @js.native
-  trait NavigatorStorage extends js.Object {
-    val storage: StorageManager = js.native
-  }
+  trait NavigatorStorage extends dom.Navigator
 
-  @js.native
-  trait StorageManager extends js.Any {
-    def persisted(): js.Promise[Boolean] = js.native
-    def persist(): js.Promise[Boolean] = js.native
-    def estimate(): js.Promise[StorageEstimate] = js.native
-  }
+  @deprecated("use dom.StorageManager instead", "2.0.0")
+  type StorageManager = dom.StorageManager
 
-  @js.native
-  trait StorageEstimate extends js.Any {
-    val usage: Double = js.native
-    val quota: Double = js.native
-  }
+  @deprecated("use dom.StorageEstimate instead", "2.0.0")
+  type StorageEstimate = dom.StorageEstimate
+
 }

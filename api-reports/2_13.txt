@@ -14360,6 +14360,7 @@ Navigator[JC] def languages: js.Array[String]
 Navigator[JC] def onLine: Boolean
 Navigator[JC] def platform: String
 Navigator[JC] def sendBeacon(url: String, data: BodyInit?): Boolean
+Navigator[JC] val storage: StorageManager
 Navigator[JC] def userAgent: String
 Navigator[JC] def vibrate(duration: Double): Boolean
 Navigator[JC] def vibrate(pattern: js.Array[Double]): Boolean
@@ -22873,6 +22874,8 @@ Storage[JC] def key(index: Int): String
 Storage[JC] var length: Int
 Storage[JC] def removeItem(key: String): Unit
 Storage[JC] def setItem(key: String, data: String): Unit
+StorageEstimate[JT] val quota: Double
+StorageEstimate[JT] val usage: Double
 StorageEvent[JC] def bubbles: Boolean
 StorageEvent[JC] def cancelBubble: Boolean
 StorageEvent[JC] def cancelable: Boolean
@@ -22900,6 +22903,9 @@ StorageEventInit[JT] var oldValue: js.UndefOr[String]
 StorageEventInit[JT] var scoped: js.UndefOr[Boolean]
 StorageEventInit[JT] var storageArea: js.UndefOr[Storage]
 StorageEventInit[JT] var url: js.UndefOr[String]
+StorageManager[JT] def estimate(): js.Promise[StorageEstimate]
+StorageManager[JT] def persist(): js.Promise[Boolean]
+StorageManager[JT] def persisted(): js.Promise[Boolean]
 StyleMedia[JT] def matchMedium(mediaquery: String): Boolean
 StyleMedia[JT] def `type`: String
 StyleSheet[JC] def disabled: Boolean
@@ -25143,19 +25149,22 @@ experimental/sharedworkers/SharedWorkerGlobalScope[JT] def removeEventListener[T
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def self: this.type
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
 experimental/sharedworkers/SharedWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
-experimental/storage/package[SO] def estimate(): js.Promise[StorageEstimate]
-experimental/storage/package[SO] def persist(): js.Promise[Boolean]
-experimental/storage/package[SO] def persisted(): js.Promise[Boolean]
-experimental/storage/package[SO] val quota: Double
-experimental/storage/package[SO] val storage: StorageManager
-experimental/storage/package[SO] implicit def toNavigatorStorage(navigator: dom.Navigator): NavigatorStorage
-experimental/storage/package[SO] val usage: Double
-experimental/storage/package.NavigatorStorage[JT] val storage: StorageManager
-experimental/storage/package.StorageEstimate[JT] val quota: Double
-experimental/storage/package.StorageEstimate[JT] val usage: Double
-experimental/storage/package.StorageManager[JT] def estimate(): js.Promise[StorageEstimate]
-experimental/storage/package.StorageManager[JT] def persist(): js.Promise[Boolean]
-experimental/storage/package.StorageManager[JT] def persisted(): js.Promise[Boolean]
+experimental/storage/package[SO] type StorageEstimate = dom.StorageEstimate  (@deprecated in 2.0.0)
+experimental/storage/package[SO] type StorageManager = dom.StorageManager  (@deprecated in 2.0.0)
+experimental/storage/package[SO] implicit def toNavigatorStorage(navigator: dom.Navigator): dom.Navigator  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def appName: String  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def appVersion: String  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def clipboard: Clipboard  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def geolocation: Geolocation  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def language: String  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def languages: js.Array[String]  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def onLine: Boolean  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def platform: String  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def sendBeacon(url: String, data: BodyInit?): Boolean  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] val storage: StorageManager  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def userAgent: String  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def vibrate(duration: Double): Boolean  (@deprecated in 2.0.0)
+experimental/storage/package.NavigatorStorage[JT] def vibrate(pattern: js.Array[Double]): Boolean  (@deprecated in 2.0.0)
 experimental/webgl/ANGLE_instanced_arrays[SO]
 experimental/webgl/EXT_blend_minmax[SO]
 experimental/webgl/EXT_color_buffer_half_float[SO]
