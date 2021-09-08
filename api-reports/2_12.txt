@@ -767,6 +767,22 @@ CSSStyleSheet[JC] def removeImport(lIndex: Int): Unit
 CSSStyleSheet[JC] def removeRule(lIndex: Int): Unit
 CSSStyleSheet[JC] def title: String
 CSSStyleSheet[JC] def `type`: String
+Cache[JC] def add(request: RequestInfo): js.Promise[Unit]
+Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]
+Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]
+Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Request]]
+Cache[JC] def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.UndefOr[Response]]
+Cache[JC] def matchAll(request: RequestInfo?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Response]]
+Cache[JC] def put(request: RequestInfo, response: Response): js.Promise[Unit]
+CacheQueryOptions[JT] var cacheName: String
+CacheQueryOptions[JT] var ignoreMethod: Boolean
+CacheQueryOptions[JT] var ignoreSearch: Boolean
+CacheQueryOptions[JT] var ignoreVary: Boolean
+CacheStorage[JT] def delete(cacheName: String): js.Promise[Boolean]
+CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]
+CacheStorage[JT] def keys(): js.Promise[js.Array[String]]
+CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]
+CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]
 CanvasGradient[JC] def addColorStop(offset: Double, color: String): Unit
 CanvasPattern[JC]
 CanvasRenderingContext2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit
@@ -24321,22 +24337,9 @@ experimental/beacon/package[SO] type BeaconNavigator = dom.Navigator  (@deprecat
 experimental/beacon/package[SO] type BeaconWorkerNavigator = dom.WorkerNavigator  (@deprecated in 2.0.0)
 experimental/beacon/package[SO] implicit def toBeaconNavigator(n: Navigator): BeaconNavigator  (@deprecated in 2.0.0)
 experimental/beacon/package[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator  (@deprecated in 2.0.0)
-experimental/cachestorage/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]
-experimental/cachestorage/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]
-experimental/cachestorage/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]
-experimental/cachestorage/Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Request]]
-experimental/cachestorage/Cache[JC] def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.UndefOr[Response]]
-experimental/cachestorage/Cache[JC] def matchAll(request: RequestInfo?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Response]]
-experimental/cachestorage/Cache[JC] def put(request: RequestInfo, response: Response): js.Promise[Unit]
-experimental/cachestorage/CacheQueryOptions[JT] var cacheName: String
-experimental/cachestorage/CacheQueryOptions[JT] var ignoreMethod: Boolean
-experimental/cachestorage/CacheQueryOptions[JT] var ignoreSearch: Boolean
-experimental/cachestorage/CacheQueryOptions[JT] var ignoreVary: Boolean
-experimental/cachestorage/CacheStorage[JT] def delete(cacheName: String): js.Promise[Boolean]
-experimental/cachestorage/CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]
-experimental/cachestorage/CacheStorage[JT] def keys(): js.Promise[js.Array[String]]
-experimental/cachestorage/CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]
-experimental/cachestorage/CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]
+experimental/cachestorage/package[SO] type Cache = dom.Cache  (@deprecated in 2.0.0)
+experimental/cachestorage/package[SO] type CacheQueryOptions = dom.CacheQueryOptions  (@deprecated in 2.0.0)
+experimental/cachestorage/package[SO] type CacheStorage = dom.CacheStorage  (@deprecated in 2.0.0)
 experimental/deviceorientation/DeviceAcceleration[JT] val x: Double
 experimental/deviceorientation/DeviceAcceleration[JT] val y: Double
 experimental/deviceorientation/DeviceAcceleration[JT] val z: Double
