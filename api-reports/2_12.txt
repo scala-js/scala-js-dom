@@ -13540,9 +13540,9 @@ IDBCursor[JC] def continue(key: Any?): Unit
 IDBCursor[JC] def delete(): IDBRequest[Unit]
 IDBCursor[JC] def direction: IDBCursorDirection
 IDBCursor[JC] def key: Any
-IDBCursor[JC] def primaryKey: js.Any
-IDBCursor[JC] def source: js.Any
-IDBCursor[JC] def update(value: js.Any): IDBRequest[Any]
+IDBCursor[JC] def primaryKey: Any
+IDBCursor[JC] def source: Any
+IDBCursor[JC] def update(value: Any): IDBRequest[Any]
 IDBCursorDirection[JT]
 IDBCursorDirection[SO] val NEXT: IDBCursorDirection
 IDBCursorDirection[SO] val NEXT_UNIQUE: IDBCursorDirection
@@ -13552,17 +13552,17 @@ IDBCursorReadOnly[JC] def advance(count: Int): Unit
 IDBCursorReadOnly[JC] def continue(key: Any?): Unit
 IDBCursorReadOnly[JC] def direction: IDBCursorDirection
 IDBCursorReadOnly[JC] def key: Any
-IDBCursorReadOnly[JC] def primaryKey: js.Any
-IDBCursorReadOnly[JC] def source: js.Any
+IDBCursorReadOnly[JC] def primaryKey: Any
+IDBCursorReadOnly[JC] def source: Any
 IDBCursorWithValue[JC] def advance(count: Int): Unit
 IDBCursorWithValue[JC] def continue(key: Any?): Unit
 IDBCursorWithValue[JC] def delete(): IDBRequest[Unit]
 IDBCursorWithValue[JC] def direction: IDBCursorDirection
 IDBCursorWithValue[JC] def key: Any
-IDBCursorWithValue[JC] def primaryKey: js.Any
-IDBCursorWithValue[JC] def source: js.Any
-IDBCursorWithValue[JC] def update(value: js.Any): IDBRequest[Any]
-IDBCursorWithValue[JC] def value: js.Any
+IDBCursorWithValue[JC] def primaryKey: Any
+IDBCursorWithValue[JC] def source: Any
+IDBCursorWithValue[JC] def update(value: Any): IDBRequest[Any]
+IDBCursorWithValue[JC] def value: Any
 IDBDatabase[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBDatabase[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBDatabase[JC] def close(): Unit
@@ -13576,7 +13576,7 @@ IDBDatabase[JC] var onerror: js.Function1[Event, _]
 IDBDatabase[JC] var onversionchange: js.Function1[IDBVersionChangeEvent, _]
 IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-IDBDatabase[JC] def transaction(storeNames: js.Any, mode: IDBTransactionMode?): IDBTransaction
+IDBDatabase[JC] def transaction(storeNames: Any, mode: IDBTransactionMode?): IDBTransaction
 IDBDatabase[JC] def version: Int
 IDBDatabaseInfo[JT] val name: String
 IDBDatabaseInfo[JT] val version: Int
@@ -13601,36 +13601,36 @@ IDBEventTarget[JC] def dispatchEvent(evt: Event): Boolean
 IDBEventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBEventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBEventTarget[JC] def result: A
-IDBFactory[JC] def cmp(first: js.Any, second: js.Any): Int
+IDBFactory[JC] def cmp(first: Any, second: Any): Int
 IDBFactory[JC] def databases(): js.Promise[js.Array[IDBDatabaseInfo]]
 IDBFactory[JC] def deleteDatabase(name: String): IDBOpenDBRequest[Unit]
 IDBFactory[JC] def open(name: String, version: Int?): IDBOpenDBRequest[IDBDatabase]
 IDBIndex[JC] def count(): IDBRequest[Double]
 IDBIndex[JC] def count(key: Any): IDBRequest[Double]
-IDBIndex[JC] def get(key: Any): IDBRequest[js.Any]
-IDBIndex[JC] def getKey(key: Any): IDBRequest[js.UndefOr[js.Any]]
+IDBIndex[JC] def get(key: Any): IDBRequest[Any]
+IDBIndex[JC] def getKey(key: Any): IDBRequest[js.UndefOr[Any]]
 IDBIndex[JC] def keyPath: String
 IDBIndex[JC] def name: String
 IDBIndex[JC] def objectStore: IDBObjectStore
 IDBIndex[JC] def openCursor(range: IDBKeyRange?, direction: IDBCursorDirection?): IDBRequest[IDBCursor]
 IDBIndex[JC] def openKeyCursor(range: IDBKeyRange?, direction: IDBCursorDirection?): IDBRequest[IDBCursorReadOnly]
 IDBIndex[JC] def unique: Boolean
-IDBKeyRange[JC] def lower: js.Any
+IDBKeyRange[JC] def lower: Any
 IDBKeyRange[JC] def lowerOpen: Boolean
-IDBKeyRange[JC] def upper: js.Any
+IDBKeyRange[JC] def upper: Any
 IDBKeyRange[JC] def upperOpen: Boolean
-IDBKeyRange[JO] def bound(lower: js.Any, upper: js.Any, lowerOpen: Boolean?, upperOpen: Boolean?): IDBKeyRange
-IDBKeyRange[JO] def lowerBound(bound: js.Any, open: Boolean?): IDBKeyRange
-IDBKeyRange[JO] def only(value: js.Any): IDBKeyRange
-IDBKeyRange[JO] def upperBound(bound: js.Any, open: Boolean?): IDBKeyRange
-IDBObjectStore[JC] def add(value: js.Any, key: Any?): IDBRequest[Any]
+IDBKeyRange[JO] def bound(lower: Any, upper: Any, lowerOpen: Boolean?, upperOpen: Boolean?): IDBKeyRange
+IDBKeyRange[JO] def lowerBound(bound: Any, open: Boolean?): IDBKeyRange
+IDBKeyRange[JO] def only(value: Any): IDBKeyRange
+IDBKeyRange[JO] def upperBound(bound: Any, open: Boolean?): IDBKeyRange
+IDBObjectStore[JC] def add(value: Any, key: Any?): IDBRequest[Any]
 IDBObjectStore[JC] def clear(): IDBRequest[Unit]
 IDBObjectStore[JC] def count(key: Any?): IDBRequest[Double]
 IDBObjectStore[JC] def createIndex(name: String, keyPath: Any, optionalParameters: IDBCreateIndexOptions?): IDBIndex
 IDBObjectStore[JC] def delete(key: Any): IDBRequest[Unit]
 IDBObjectStore[JC] def deleteIndex(indexName: String): Unit
-IDBObjectStore[JC] def get(key: Any): IDBRequest[js.Any]
-IDBObjectStore[JC] def getAll(query: js.UndefOr[IDBKeyRange | Any]?, count: js.UndefOr[Int]?): IDBRequest[js.Array[js.Any]]
+IDBObjectStore[JC] def get(key: Any): IDBRequest[Any]
+IDBObjectStore[JC] def getAll(query: js.UndefOr[IDBKeyRange | Any]?, count: js.UndefOr[Int]?): IDBRequest[js.Array[Any]]
 IDBObjectStore[JC] def getAllKeys(query: js.UndefOr[IDBKeyRange | Any]?, count: js.UndefOr[Int]?): IDBRequest[js.Array[Any]]
 IDBObjectStore[JC] def getKey(key: Any): IDBRequest[js.UndefOr[Any]]
 IDBObjectStore[JC] def index(name: String): IDBIndex
@@ -13639,7 +13639,7 @@ IDBObjectStore[JC] def keyPath: String
 IDBObjectStore[JC] def name: String
 IDBObjectStore[JC] def openCursor(range: js.UndefOr[IDBKeyRange | Any]?, direction: js.UndefOr[IDBCursorDirection]?): IDBRequest[IDBCursor]
 IDBObjectStore[JC] def openKeyCursor(range: js.UndefOr[IDBKeyRange | Any]?, direction: js.UndefOr[IDBCursorDirection]?): IDBRequest[IDBCursorReadOnly]
-IDBObjectStore[JC] def put(value: js.Any, key: Any?): IDBRequest[Any]
+IDBObjectStore[JC] def put(value: Any, key: Any?): IDBRequest[Any]
 IDBObjectStore[JC] def transaction: IDBTransaction
 IDBOpenDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBOpenDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -13653,7 +13653,7 @@ IDBOpenDBRequest[JC] def readyState: String
 IDBOpenDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBOpenDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBOpenDBRequest[JC] def result: A
-IDBOpenDBRequest[JC] def source: js.Any
+IDBOpenDBRequest[JC] def source: Any
 IDBOpenDBRequest[JC] def transaction: IDBTransaction
 IDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -13665,7 +13665,7 @@ IDBRequest[JC] def readyState: String
 IDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBRequest[JC] def result: A
-IDBRequest[JC] def source: js.Any
+IDBRequest[JC] def source: Any
 IDBRequest[JC] def transaction: IDBTransaction
 IDBTransaction[JC] def abort(): Unit
 IDBTransaction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit

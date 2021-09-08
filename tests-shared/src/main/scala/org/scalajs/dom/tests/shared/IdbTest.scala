@@ -62,10 +62,10 @@ object IdbTest {
       db.close()
     }
 
-    def getFirstName(r: IDBRequest[js.Any]): Future[String] = {
+    def getFirstName(r: IDBRequest[Any]): Future[String] = {
       val p = Promise[String]()
       r.onerror = (e: Event) => fail(p, e)
-      r.onsuccess = (e: IDBEvent[js.Any]) => {
+      r.onsuccess = (e: IDBEvent[Any]) => {
         p.complete(Try(e.target.result.asInstanceOf[js.Dynamic].name.first.asInstanceOf[String]))
       }
       p.future
