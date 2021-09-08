@@ -1690,6 +1690,37 @@ GainNode[JT] val numberOfInputs: Int
 GainNode[JT] val numberOfOutputs: Int
 GainNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 GainNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+Gamepad[JT] val axes: js.Array[Double]
+Gamepad[JT] val buttons: js.Array[GamepadButton]
+Gamepad[JT] val connected: Boolean
+Gamepad[JT] val id: String
+Gamepad[JT] val index: Double
+Gamepad[JT] val mapping: GamepadMappingType
+Gamepad[JT] val timestamp: Double
+GamepadButton[JT] val pressed: Boolean
+GamepadButton[JT] val value: Double
+GamepadEvent[JC] def bubbles: Boolean
+GamepadEvent[JC] def cancelBubble: Boolean
+GamepadEvent[JC] def cancelable: Boolean
+GamepadEvent[JC] def currentTarget: EventTarget
+GamepadEvent[JC] def defaultPrevented: Boolean
+GamepadEvent[JC] def eventPhase: Int
+GamepadEvent[JC] val gamepad: Gamepad
+GamepadEvent[JC] def isTrusted: Boolean
+GamepadEvent[JC] def preventDefault(): Unit
+GamepadEvent[JC] def stopImmediatePropagation(): Unit
+GamepadEvent[JC] def stopPropagation(): Unit
+GamepadEvent[JC] def target: EventTarget
+GamepadEvent[JC] def timeStamp: Double
+GamepadEvent[JC] def `type`: String
+GamepadEventInit[JT] var bubbles: js.UndefOr[Boolean]
+GamepadEventInit[JT] var cancelable: js.UndefOr[Boolean]
+GamepadEventInit[JT] var composed: js.UndefOr[Boolean]
+GamepadEventInit[JT] var gamepad: js.UndefOr[Gamepad]
+GamepadEventInit[JT] var scoped: js.UndefOr[Boolean]
+GamepadMappingType[JT]
+GamepadMappingType[SO] final val standard: GamepadMappingType
+GamepadMappingType[SO] final val unknown: GamepadMappingType
 Geolocation[JT] def clearWatch(watchId: Int): Unit
 Geolocation[JT] def getCurrentPosition(successCallback: js.Function1[Position, _]): Unit
 Geolocation[JT] def getCurrentPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _], options: PositionOptions?): Unit
@@ -14355,6 +14386,7 @@ Navigator[JC] def appName: String
 Navigator[JC] def appVersion: String
 Navigator[JC] def clipboard: Clipboard
 Navigator[JC] def geolocation: Geolocation
+Navigator[JC] def getGamepads(): js.Array[Gamepad]
 Navigator[JC] def language: String
 Navigator[JC] def languages: js.Array[String]
 Navigator[JC] def onLine: Boolean
@@ -24396,39 +24428,15 @@ experimental/deviceorientation/DeviceRotationRate[JT] val gamma: Double
 experimental/domparser/package[SO] type DOMParser = dom.DOMParser  (@deprecated in 2.0.0)
 experimental/domparser/package[SO] type SupportedType = dom.MIMEType  (@deprecated in 2.0.0)
 experimental/domparser/package[SO] @deprecated("use dom.MIMEType instead", "2.0.0") val SupportedType = dom.MIMEType
-experimental/gamepad/Gamepad[JT] val axes: js.Array[Double]
-experimental/gamepad/Gamepad[JT] val buttons: js.Array[GamepadButton]
-experimental/gamepad/Gamepad[JT] val connected: Boolean
-experimental/gamepad/Gamepad[JT] val id: String
-experimental/gamepad/Gamepad[JT] val index: Double
-experimental/gamepad/Gamepad[JT] val mapping: GamepadMappingType
-experimental/gamepad/Gamepad[JT] val timestamp: Double
-experimental/gamepad/GamepadButton[JT] val pressed: Boolean
-experimental/gamepad/GamepadButton[JT] val value: Double
-experimental/gamepad/GamepadEvent[JC] def bubbles: Boolean
-experimental/gamepad/GamepadEvent[JC] def cancelBubble: Boolean
-experimental/gamepad/GamepadEvent[JC] def cancelable: Boolean
-experimental/gamepad/GamepadEvent[JC] def currentTarget: EventTarget
-experimental/gamepad/GamepadEvent[JC] def defaultPrevented: Boolean
-experimental/gamepad/GamepadEvent[JC] def eventPhase: Int
-experimental/gamepad/GamepadEvent[JC] val gamepad: Gamepad
-experimental/gamepad/GamepadEvent[JC] def isTrusted: Boolean
-experimental/gamepad/GamepadEvent[JC] def preventDefault(): Unit
-experimental/gamepad/GamepadEvent[JC] def stopImmediatePropagation(): Unit
-experimental/gamepad/GamepadEvent[JC] def stopPropagation(): Unit
-experimental/gamepad/GamepadEvent[JC] def target: EventTarget
-experimental/gamepad/GamepadEvent[JC] def timeStamp: Double
-experimental/gamepad/GamepadEvent[JC] def `type`: String
-experimental/gamepad/GamepadEventInit[JT] var bubbles: js.UndefOr[Boolean]
-experimental/gamepad/GamepadEventInit[JT] var cancelable: js.UndefOr[Boolean]
-experimental/gamepad/GamepadEventInit[JT] var composed: js.UndefOr[Boolean]
-experimental/gamepad/GamepadEventInit[JT] var gamepad: js.UndefOr[Gamepad]
-experimental/gamepad/GamepadEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/gamepad/GamepadMappingType[JT]
-experimental/gamepad/GamepadNavigator[JT] def getGamepads(): js.Array[Gamepad]
-experimental/gamepad/package[SO] final val standard: GamepadMappingType
-experimental/gamepad/package[SO] implicit def toGamepad(navigator: dom.Navigator): GamepadNavigator
-experimental/gamepad/package[SO] final val unknown: GamepadMappingType
+experimental/gamepad/package[SO] type Gamepad = dom.Gamepad  (@deprecated in 2.0.0)
+experimental/gamepad/package[SO] type GamepadButton = dom.GamepadButton  (@deprecated in 2.0.0)
+experimental/gamepad/package[SO] type GamepadEvent = dom.GamepadEvent  (@deprecated in 2.0.0)
+experimental/gamepad/package[SO] type GamepadEventInit = dom.GamepadEventInit  (@deprecated in 2.0.0)
+experimental/gamepad/package[SO] type GamepadMappingType = dom.GamepadMappingType  (@deprecated in 2.0.0)
+experimental/gamepad/package[SO] type GamepadNavigator = dom.Navigator  (@deprecated in 2.0.0)
+experimental/gamepad/package[SO] def standard: dom.GamepadMappingType  (@deprecated in 2.0.0)
+experimental/gamepad/package[SO] implicit def toGamepad(navigator: dom.Navigator): GamepadNavigator  (@deprecated in 2.0.0)
+experimental/gamepad/package[SO] def unknown: dom.GamepadMappingType  (@deprecated in 2.0.0)
 experimental/intl/Collator[JC] def compare(string1: String, string2: String): Double
 experimental/intl/Collator[JC] def resolvedOptions(): CollatorOptions
 experimental/intl/Collator[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]

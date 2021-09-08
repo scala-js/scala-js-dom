@@ -325,6 +325,12 @@ class Navigator
     *   The data parameter is the ArrayBufferView, Blob, DOMString, or FormData data that is to be transmitted.
     */
   def sendBeacon(url: String, data: BodyInit = js.native): Boolean = js.native
+
+  /** Implements the Gamepad API.
+    *
+    * [[https://www.w3.org/TR/2015/WD-gamepad-20151217/ W3C Working Draft]]
+    */
+  def getGamepads(): js.Array[Gamepad] = js.native
 }
 
 @js.native
