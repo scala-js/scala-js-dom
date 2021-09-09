@@ -1246,62 +1246,6 @@ DeprecatedCSSAliases[SO] type StyleRule = CSSStyleRule  (@deprecated in 2.0.0)
 DeprecatedCSSAliases[SO] type StyleSheet = CSSStyleSheet  (@deprecated in 2.0.0)
 DeprecatedCSSAliases[SO] @deprecated("use dom.CSS instead", "2.0.0") def CSS = dom.CSS  (@deprecated in 2.0.0)
 DeprecatedCSSAliases[SO] @deprecated("use dom.Rule instead", "2.0.0") def Rule = CSSRule  (@deprecated in 2.0.0)
-DeviceAcceleration[JT] val x: Double
-DeviceAcceleration[JT] val y: Double
-DeviceAcceleration[JT] val z: Double
-DeviceMotionEvent[JC] val acceleration: DeviceAcceleration
-DeviceMotionEvent[JC] val accelerationIncludingGravity: DeviceAcceleration
-DeviceMotionEvent[JC] def bubbles: Boolean
-DeviceMotionEvent[JC] def cancelBubble: Boolean
-DeviceMotionEvent[JC] def cancelable: Boolean
-DeviceMotionEvent[JC] def currentTarget: EventTarget
-DeviceMotionEvent[JC] def defaultPrevented: Boolean
-DeviceMotionEvent[JC] def eventPhase: Int
-DeviceMotionEvent[JC] val interval: Double
-DeviceMotionEvent[JC] def isTrusted: Boolean
-DeviceMotionEvent[JC] def preventDefault(): Unit
-DeviceMotionEvent[JC] val rotationRate: DeviceRotationRate
-DeviceMotionEvent[JC] def stopImmediatePropagation(): Unit
-DeviceMotionEvent[JC] def stopPropagation(): Unit
-DeviceMotionEvent[JC] def target: EventTarget
-DeviceMotionEvent[JC] def timeStamp: Double
-DeviceMotionEvent[JC] def `type`: String
-DeviceMotionEventInit[JT] val acceleration: js.UndefOr[DeviceAcceleration]
-DeviceMotionEventInit[JT] val accelerationIncludingGravity: js.UndefOr[DeviceAcceleration]
-DeviceMotionEventInit[JT] var bubbles: js.UndefOr[Boolean]
-DeviceMotionEventInit[JT] var cancelable: js.UndefOr[Boolean]
-DeviceMotionEventInit[JT] var composed: js.UndefOr[Boolean]
-DeviceMotionEventInit[JT] val interval: js.UndefOr[Double]
-DeviceMotionEventInit[JT] val rotationRate: js.UndefOr[DeviceRotationRate]
-DeviceMotionEventInit[JT] var scoped: js.UndefOr[Boolean]
-DeviceOrientationEvent[JC] val absolute: Boolean
-DeviceOrientationEvent[JC] val alpha: Double
-DeviceOrientationEvent[JC] val beta: Double
-DeviceOrientationEvent[JC] def bubbles: Boolean
-DeviceOrientationEvent[JC] def cancelBubble: Boolean
-DeviceOrientationEvent[JC] def cancelable: Boolean
-DeviceOrientationEvent[JC] def currentTarget: EventTarget
-DeviceOrientationEvent[JC] def defaultPrevented: Boolean
-DeviceOrientationEvent[JC] def eventPhase: Int
-DeviceOrientationEvent[JC] val gamma: Double
-DeviceOrientationEvent[JC] def isTrusted: Boolean
-DeviceOrientationEvent[JC] def preventDefault(): Unit
-DeviceOrientationEvent[JC] def stopImmediatePropagation(): Unit
-DeviceOrientationEvent[JC] def stopPropagation(): Unit
-DeviceOrientationEvent[JC] def target: EventTarget
-DeviceOrientationEvent[JC] def timeStamp: Double
-DeviceOrientationEvent[JC] def `type`: String
-DeviceOrientationEventInit[JT] var absolute: js.UndefOr[Boolean]
-DeviceOrientationEventInit[JT] var alpha: js.UndefOr[Double]
-DeviceOrientationEventInit[JT] var beta: js.UndefOr[Double]
-DeviceOrientationEventInit[JT] var bubbles: js.UndefOr[Boolean]
-DeviceOrientationEventInit[JT] var cancelable: js.UndefOr[Boolean]
-DeviceOrientationEventInit[JT] var composed: js.UndefOr[Boolean]
-DeviceOrientationEventInit[JT] var gamma: js.UndefOr[Double]
-DeviceOrientationEventInit[JT] var scoped: js.UndefOr[Boolean]
-DeviceRotationRate[JT] val alpha: Double
-DeviceRotationRate[JT] val beta: Double
-DeviceRotationRate[JT] val gamma: Double
 Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Document[JC] def adoptNode(source: Node): Node
@@ -24484,12 +24428,62 @@ experimental/beacon/package[SO] implicit def toBeaconWorkerNavigator(n: WorkerNa
 experimental/cachestorage/package[SO] type Cache = dom.Cache  (@deprecated in 2.0.0)
 experimental/cachestorage/package[SO] type CacheQueryOptions = dom.CacheQueryOptions  (@deprecated in 2.0.0)
 experimental/cachestorage/package[SO] type CacheStorage = dom.CacheStorage  (@deprecated in 2.0.0)
-experimental/deviceorientation/package[SO] type DeviceAcceleration = dom.DeviceAcceleration  (@deprecated in 2.0.0)
-experimental/deviceorientation/package[SO] type DeviceMotionEvent = dom.DeviceMotionEvent  (@deprecated in 2.0.0)
-experimental/deviceorientation/package[SO] type DeviceMotionEventInit = dom.DeviceMotionEventInit  (@deprecated in 2.0.0)
-experimental/deviceorientation/package[SO] type DeviceOrientationEvent = dom.DeviceOrientationEvent  (@deprecated in 2.0.0)
-experimental/deviceorientation/package[SO] type DeviceOrientationEventInit = dom.DeviceOrientationEventInit  (@deprecated in 2.0.0)
-experimental/deviceorientation/package[SO] type DeviceRotationRate = dom.DeviceRotationRate  (@deprecated in 2.0.0)
+experimental/deviceorientation/DeviceAcceleration[JT] val x: Double
+experimental/deviceorientation/DeviceAcceleration[JT] val y: Double
+experimental/deviceorientation/DeviceAcceleration[JT] val z: Double
+experimental/deviceorientation/DeviceMotionEvent[JC] val acceleration: DeviceAcceleration
+experimental/deviceorientation/DeviceMotionEvent[JC] val accelerationIncludingGravity: DeviceAcceleration
+experimental/deviceorientation/DeviceMotionEvent[JC] def bubbles: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def cancelBubble: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def cancelable: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def currentTarget: EventTarget
+experimental/deviceorientation/DeviceMotionEvent[JC] def defaultPrevented: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def eventPhase: Int
+experimental/deviceorientation/DeviceMotionEvent[JC] val interval: Double
+experimental/deviceorientation/DeviceMotionEvent[JC] def isTrusted: Boolean
+experimental/deviceorientation/DeviceMotionEvent[JC] def preventDefault(): Unit
+experimental/deviceorientation/DeviceMotionEvent[JC] val rotationRate: DeviceRotationRate
+experimental/deviceorientation/DeviceMotionEvent[JC] def stopImmediatePropagation(): Unit
+experimental/deviceorientation/DeviceMotionEvent[JC] def stopPropagation(): Unit
+experimental/deviceorientation/DeviceMotionEvent[JC] def target: EventTarget
+experimental/deviceorientation/DeviceMotionEvent[JC] def timeStamp: Double
+experimental/deviceorientation/DeviceMotionEvent[JC] def `type`: String
+experimental/deviceorientation/DeviceMotionEventInit[JT] val acceleration: js.UndefOr[DeviceAcceleration]
+experimental/deviceorientation/DeviceMotionEventInit[JT] val accelerationIncludingGravity: js.UndefOr[DeviceAcceleration]
+experimental/deviceorientation/DeviceMotionEventInit[JT] var bubbles: js.UndefOr[Boolean]
+experimental/deviceorientation/DeviceMotionEventInit[JT] var cancelable: js.UndefOr[Boolean]
+experimental/deviceorientation/DeviceMotionEventInit[JT] var composed: js.UndefOr[Boolean]
+experimental/deviceorientation/DeviceMotionEventInit[JT] val interval: js.UndefOr[Double]
+experimental/deviceorientation/DeviceMotionEventInit[JT] val rotationRate: js.UndefOr[DeviceRotationRate]
+experimental/deviceorientation/DeviceMotionEventInit[JT] var scoped: js.UndefOr[Boolean]
+experimental/deviceorientation/DeviceOrientationEvent[JC] val absolute: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] val alpha: Double
+experimental/deviceorientation/DeviceOrientationEvent[JC] val beta: Double
+experimental/deviceorientation/DeviceOrientationEvent[JC] def bubbles: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def cancelBubble: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def cancelable: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def currentTarget: EventTarget
+experimental/deviceorientation/DeviceOrientationEvent[JC] def defaultPrevented: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def eventPhase: Int
+experimental/deviceorientation/DeviceOrientationEvent[JC] val gamma: Double
+experimental/deviceorientation/DeviceOrientationEvent[JC] def isTrusted: Boolean
+experimental/deviceorientation/DeviceOrientationEvent[JC] def preventDefault(): Unit
+experimental/deviceorientation/DeviceOrientationEvent[JC] def stopImmediatePropagation(): Unit
+experimental/deviceorientation/DeviceOrientationEvent[JC] def stopPropagation(): Unit
+experimental/deviceorientation/DeviceOrientationEvent[JC] def target: EventTarget
+experimental/deviceorientation/DeviceOrientationEvent[JC] def timeStamp: Double
+experimental/deviceorientation/DeviceOrientationEvent[JC] def `type`: String
+experimental/deviceorientation/DeviceOrientationEventInit[JT] var absolute: js.UndefOr[Boolean]
+experimental/deviceorientation/DeviceOrientationEventInit[JT] var alpha: js.UndefOr[Double]
+experimental/deviceorientation/DeviceOrientationEventInit[JT] var beta: js.UndefOr[Double]
+experimental/deviceorientation/DeviceOrientationEventInit[JT] var bubbles: js.UndefOr[Boolean]
+experimental/deviceorientation/DeviceOrientationEventInit[JT] var cancelable: js.UndefOr[Boolean]
+experimental/deviceorientation/DeviceOrientationEventInit[JT] var composed: js.UndefOr[Boolean]
+experimental/deviceorientation/DeviceOrientationEventInit[JT] var gamma: js.UndefOr[Double]
+experimental/deviceorientation/DeviceOrientationEventInit[JT] var scoped: js.UndefOr[Boolean]
+experimental/deviceorientation/DeviceRotationRate[JT] val alpha: Double
+experimental/deviceorientation/DeviceRotationRate[JT] val beta: Double
+experimental/deviceorientation/DeviceRotationRate[JT] val gamma: Double
 experimental/domparser/package[SO] type DOMParser = dom.DOMParser  (@deprecated in 2.0.0)
 experimental/domparser/package[SO] type SupportedType = dom.MIMEType  (@deprecated in 2.0.0)
 experimental/domparser/package[SO] @deprecated("use dom.MIMEType instead", "2.0.0") val SupportedType = dom.MIMEType
