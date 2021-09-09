@@ -1,8 +1,6 @@
 package org.scalajs
 package dom.experimental
 
-import scala.language.implicitConversions
-
 package object gamepad {
 
   @deprecated("use dom.GamepadMappingType instead", "2.0.0")
@@ -24,7 +22,7 @@ package object gamepad {
   type GamepadNavigator = dom.Navigator
 
   @deprecated("use dom.Navigator directly instead", "2.0.0")
-  implicit def toGamepad(navigator: dom.Navigator): GamepadNavigator =
+  def toGamepad(navigator: dom.Navigator): GamepadNavigator =
     navigator
 
   @deprecated("use dom.GamepadMappingType.`unknown` instead", "2.0.0")
