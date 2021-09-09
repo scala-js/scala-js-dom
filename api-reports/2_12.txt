@@ -13535,7 +13535,7 @@ IDBCreateIndexOptions[JT] val multiEntry: js.UndefOr[Boolean]
 IDBCreateIndexOptions[JT] val unique: js.UndefOr[Boolean]
 IDBCreateObjectStoreOptions[JT] val autoIncrement: js.UndefOr[Boolean]
 IDBCreateObjectStoreOptions[JT] val keyPath: IDBKeyPath
-IDBCursor[JC] def advance(count: Int): Unit
+IDBCursor[JC] def advance(count: Double): Unit
 IDBCursor[JC] def continue(key: IDBKey?): Unit
 IDBCursor[JC] def delete(): IDBRequest[S, Unit]
 IDBCursor[JC] def direction: IDBCursorDirection
@@ -13548,13 +13548,13 @@ IDBCursorDirection[SO] def next: IDBCursorDirection
 IDBCursorDirection[SO] def nextunique: IDBCursorDirection
 IDBCursorDirection[SO] def prev: IDBCursorDirection
 IDBCursorDirection[SO] def prevunique: IDBCursorDirection
-IDBCursorReadOnly[JC] def advance(count: Int): Unit
+IDBCursorReadOnly[JC] def advance(count: Double): Unit
 IDBCursorReadOnly[JC] def continue(key: IDBKey?): Unit
 IDBCursorReadOnly[JC] def direction: IDBCursorDirection
 IDBCursorReadOnly[JC] def key: IDBKey
 IDBCursorReadOnly[JC] def primaryKey: IDBKey
 IDBCursorReadOnly[JC] def source: S
-IDBCursorWithValue[JC] def advance(count: Int): Unit
+IDBCursorWithValue[JC] def advance(count: Double): Unit
 IDBCursorWithValue[JC] def continue(key: IDBKey?): Unit
 IDBCursorWithValue[JC] def delete(): IDBRequest[S, Unit]
 IDBCursorWithValue[JC] def direction: IDBCursorDirection
@@ -13605,10 +13605,10 @@ IDBFactory[JC] def cmp(first: IDBValue, second: IDBValue): Int
 IDBFactory[JC] def databases(): js.Promise[js.Array[IDBDatabaseInfo]]
 IDBFactory[JC] def deleteDatabase(name: String): IDBOpenDBRequest[Unit]
 IDBFactory[JC] def open(name: String, version: Int?): IDBOpenDBRequest[IDBDatabase]
-IDBIndex[JC] def count(query: IDBKey | IDBKeyRange?): IDBRequest[S, Int]
+IDBIndex[JC] def count(query: IDBKey | IDBKeyRange?): IDBRequest[S, Double]
 IDBIndex[JC] def get(key: IDBKey | IDBKeyRange): IDBRequest[S, IDBValue]
-IDBIndex[JC] def getAll(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Int]?): IDBRequest[S, js.Array[IDBValue]]
-IDBIndex[JC] def getAllKeys(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Int]?): IDBRequest[S, js.Array[IDBKey]]
+IDBIndex[JC] def getAll(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Double]?): IDBRequest[S, js.Array[IDBValue]]
+IDBIndex[JC] def getAllKeys(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Double]?): IDBRequest[S, js.Array[IDBKey]]
 IDBIndex[JC] def getKey(key: IDBKey): IDBRequest[S, js.UndefOr[IDBKey]]
 IDBIndex[JC] def keyPath: IDBKeyPath
 IDBIndex[JC] val multiEntry: Boolean
@@ -13627,13 +13627,13 @@ IDBKeyRange[JO] def only(value: IDBValue): IDBKeyRange
 IDBKeyRange[JO] def upperBound(bound: IDBKey, open: Boolean?): IDBKeyRange
 IDBObjectStore[JC] def add(value: IDBValue, key: IDBKey?): IDBRequest[IDBObjectStore, IDBKey]
 IDBObjectStore[JC] def clear(): IDBRequest[IDBObjectStore, Unit]
-IDBObjectStore[JC] def count(query: IDBKey | IDBKeyRange?): IDBRequest[S, Int]
+IDBObjectStore[JC] def count(query: IDBKey | IDBKeyRange?): IDBRequest[S, Double]
 IDBObjectStore[JC] def createIndex(name: String, keyPath: IDBKeyPath, optionalParameters: IDBCreateIndexOptions?): IDBIndex
 IDBObjectStore[JC] def delete(key: IDBKey | IDBKeyRange): IDBRequest[IDBObjectStore, Unit]
 IDBObjectStore[JC] def deleteIndex(indexName: String): Unit
 IDBObjectStore[JC] def get(key: IDBKey | IDBKeyRange): IDBRequest[S, IDBValue]
-IDBObjectStore[JC] def getAll(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Int]?): IDBRequest[S, js.Array[IDBValue]]
-IDBObjectStore[JC] def getAllKeys(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Int]?): IDBRequest[S, js.Array[IDBKey]]
+IDBObjectStore[JC] def getAll(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Double]?): IDBRequest[S, js.Array[IDBValue]]
+IDBObjectStore[JC] def getAllKeys(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Double]?): IDBRequest[S, js.Array[IDBKey]]
 IDBObjectStore[JC] def getKey(key: IDBKey): IDBRequest[S, js.UndefOr[IDBKey]]
 IDBObjectStore[JC] def index(name: String): IDBIndex
 IDBObjectStore[JC] def indexNames: DOMStringList
@@ -13669,10 +13669,10 @@ IDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.
 IDBRequest[JC] def result: A
 IDBRequest[JC] def source: S
 IDBRequest[JC] def transaction: IDBTransaction
-IDBStoreLike[JT] def count(query: IDBKey | IDBKeyRange?): IDBRequest[S, Int]
+IDBStoreLike[JT] def count(query: IDBKey | IDBKeyRange?): IDBRequest[S, Double]
 IDBStoreLike[JT] def get(key: IDBKey | IDBKeyRange): IDBRequest[S, IDBValue]
-IDBStoreLike[JT] def getAll(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Int]?): IDBRequest[S, js.Array[IDBValue]]
-IDBStoreLike[JT] def getAllKeys(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Int]?): IDBRequest[S, js.Array[IDBKey]]
+IDBStoreLike[JT] def getAll(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Double]?): IDBRequest[S, js.Array[IDBValue]]
+IDBStoreLike[JT] def getAllKeys(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Double]?): IDBRequest[S, js.Array[IDBKey]]
 IDBStoreLike[JT] def getKey(key: IDBKey): IDBRequest[S, js.UndefOr[IDBKey]]
 IDBStoreLike[JT] def keyPath: IDBKeyPath
 IDBStoreLike[JT] def name: String

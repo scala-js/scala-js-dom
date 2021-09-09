@@ -61,7 +61,7 @@ object IDBTransactionDurability {
 @js.native
 trait IDBStoreLike[S] extends js.Object {
 
-  def count(query: IDBKey | IDBKeyRange = js.native): IDBRequest[S, Int] = js.native
+  def count(query: IDBKey | IDBKeyRange = js.native): IDBRequest[S, Double] = js.native
 
   /** Returns an [[IDBRequest]] object, and, in a separate thread, returns the object store selected by the specified
     * key. This is for retrieving specific records from an object store.
@@ -90,7 +90,7 @@ trait IDBStoreLike[S] extends js.Object {
     *   - the [[count]] method with the same key, which will return 1 if the row exists and 0 if it doesn't.
     */
   def getAll(query: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
-      count: js.UndefOr[Int] = js.native): IDBRequest[S, js.Array[IDBValue]] = js.native
+      count: js.UndefOr[Double] = js.native): IDBRequest[S, js.Array[IDBValue]] = js.native
 
   /** Returns an [[IDBRequest]] object retrieves record keys for all objects in the object store matching the specified
     * parameter or all objects in the store if no parameters are given.
@@ -107,7 +107,7 @@ trait IDBStoreLike[S] extends js.Object {
     * a cursor if the record exists, and no cursor if it does not.
     */
   def getAllKeys(query: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
-      count: js.UndefOr[Int] = js.native): IDBRequest[S, js.Array[IDBKey]] = js.native
+      count: js.UndefOr[Double] = js.native): IDBRequest[S, js.Array[IDBKey]] = js.native
 
   /** Returns an [[IDBRequest]] object, and, in a separate thread, returns the key selected by the specified query. This
     * is for retrieving specific records from an object store.
@@ -290,7 +290,7 @@ class IDBCursorReadOnly[+S] extends js.Object {
   def primaryKey: IDBKey = js.native
 
   /** This method may raise a DOMException of one of the following types: */
-  def advance(count: Int): Unit = js.native
+  def advance(count: Double): Unit = js.native
 
   /** Sets cursor to key if specified, otherwise advances cursor by one.
     *
