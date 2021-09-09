@@ -67,7 +67,7 @@ trait IDBStoreLike[S] extends js.Object {
     * key. This is for retrieving specific records from an object store.
     *
     * Note: This method produces the same result for: a) a record that doesn't exist in the database and b) a record
-    * that has an undefined value. To tell these situations apart, call the [[openCursor()]] method with the same key.
+    * that has an undefined value. To tell these situations apart, call the [[openCursor]] method with the same key.
     * That method provides a cursor if the record exists, and no cursor if it does not.
     */
   def get(key: IDBKey | IDBKeyRange): IDBRequest[S, IDBValue] = js.native
@@ -85,9 +85,9 @@ trait IDBStoreLike[S] extends js.Object {
     *
     * To tell these situations apart, you either call
     *
-    *   - the [[openCursor()]] method with the same key. That method provides a cursor if the record exists, and no
-    *     cursor if it does not.
-    *   - the [[count()]] method with the same key, which will return 1 if the row exists and 0 if it doesn't.
+    *   - the [[openCursor]] method with the same key. That method provides a cursor if the record exists, and no cursor
+    *     if it does not.
+    *   - the [[count]] method with the same key, which will return 1 if the row exists and 0 if it doesn't.
     */
   def getAll(query: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
       count: js.UndefOr[Int] = js.native): IDBRequest[S, js.Array[IDBValue]] = js.native
@@ -103,8 +103,8 @@ trait IDBStoreLike[S] extends js.Object {
     *   - a record that doesn't exist in the database
     *   - a record that has an undefined value
     *
-    * To tell these situations apart, you need to call the [[openCursor()]] method with the same key. That method
-    * provides a cursor if the record exists, and no cursor if it does not.
+    * To tell these situations apart, you need to call the [[openCursor]] method with the same key. That method provides
+    * a cursor if the record exists, and no cursor if it does not.
     */
   def getAllKeys(query: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
       count: js.UndefOr[Int] = js.native): IDBRequest[S, js.Array[IDBKey]] = js.native
@@ -167,9 +167,9 @@ class IDBObjectStore extends IDBStoreLike[IDBObjectStore] {
   /** Returns an [[IDBRequest]] object, and, in a separate thread, deletes the specified record or records.
     *
     * Either a key or an [[IDBKeyRange]] can be passed, allowing one or multiple records to be deleted from a store. To
-    * delete all records in a store, use [[clear()]].
+    * delete all records in a store, use [[clear]].
     *
-    * Bear in mind that if you are using an [[IDBCursor]], you can use the [[IDBCursor.delete()]] method to more
+    * Bear in mind that if you are using an [[IDBCursor]], you can use the [[IDBCursor.delete]] method to more
     * efficiently delete the current record — without having to explicitly look up the record's key.
     */
   def delete(key: IDBKey | IDBKeyRange): IDBRequest[IDBObjectStore, Unit] = js.native
