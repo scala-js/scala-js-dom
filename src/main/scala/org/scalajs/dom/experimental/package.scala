@@ -134,6 +134,10 @@ package object experimental {
   @deprecated("use dom.ResponseType instead", "2.0.0")
   lazy val ResponseType: dom.ResponseType.type = dom.ResponseType
 
+  // old FileReaderSync.scala
+  @deprecated("use dom.FileReaderSync instead", "2.0.0")
+  type FileReaderSync = dom.FileReaderSync
+
   // old Notification.scala
 
   @deprecated("use dom.Notification instead", "2.0.0")
