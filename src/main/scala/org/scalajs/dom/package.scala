@@ -71,4 +71,16 @@ package object dom {
 
   @deprecated("use NodeList[T] instead", "2.0.0")
   type NodeListOf[+T <: Node] = NodeList[T]
+
+  type IDBKey = Any
+
+  /** A valid key path can include one of the following: an empty string, a JavaScript identifier, or multiple
+    * JavaScript identifiers separated by periods or an array containing any of those. It cannot include spaces.
+    *
+    * @see
+    *   https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path
+    */
+  type IDBKeyPath = Any
+
+  type IDBValue = Any
 }

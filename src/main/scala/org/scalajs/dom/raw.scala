@@ -9,6 +9,7 @@ package org.scalajs.dom
 import org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
 @deprecated("All the members of raw.* have been moved to dom.*", "2.0.0")
 object raw {
@@ -479,10 +480,10 @@ object raw {
   type HTMLVideoElement = dom.HTMLVideoElement
 
   @deprecated("use dom.IDBCursor instead", "2.0.0")
-  type IDBCursor = dom.IDBCursor
+  type IDBCursor = dom.IDBCursor[IDBObjectStore | IDBIndex]
 
   @deprecated("use dom.IDBCursorWithValue instead", "2.0.0")
-  type IDBCursorWithValue = dom.IDBCursorWithValue
+  type IDBCursorWithValue = dom.IDBCursorWithValue[Any]
 
   @deprecated("use dom.IDBDatabase instead", "2.0.0")
   type IDBDatabase = dom.IDBDatabase
@@ -506,10 +507,10 @@ object raw {
   type IDBObjectStore = dom.IDBObjectStore
 
   @deprecated("use dom.IDBOpenDBRequest instead", "2.0.0")
-  type IDBOpenDBRequest = dom.IDBOpenDBRequest
+  type IDBOpenDBRequest = dom.IDBOpenDBRequest[Any]
 
   @deprecated("use dom.IDBRequest instead", "2.0.0")
-  type IDBRequest = dom.IDBRequest
+  type IDBRequest = dom.IDBRequest[Any, Any]
 
   @deprecated("use dom.IDBTransaction instead", "2.0.0")
   type IDBTransaction = dom.IDBTransaction

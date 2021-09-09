@@ -10,6 +10,19 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.|
 
+/** @tparam A Type of `.target.result` */
+@js.native
+@JSGlobal("Event")
+class IDBEvent[+A](typeArg: String, init: js.UndefOr[EventInit] = js.undefined) extends Event(typeArg, init) {
+  override def target: IDBEventTarget[A] = js.native
+}
+
+@js.native
+@JSGlobal("EventTarget")
+class IDBEventTarget[+A] extends EventTarget {
+  def result: A = js.native
+}
+
 /** IndexedDB transaction mode Provides constants for IDB Transaction modes These constants have been removed from
   * browser support and replaced by String values
   */
@@ -19,17 +32,110 @@ sealed trait IDBTransactionMode extends js.Any
 object IDBTransactionMode {
 
   /** Allows data to be read but not changed. It is the default transaction mode. */
-  val READ_ONLY: IDBTransactionMode = "readonly".asInstanceOf[IDBTransactionMode]
+  @inline def readonly: IDBTransactionMode = "readonly".asInstanceOf[IDBTransactionMode]
 
   /** Allows any operation to be performed, including ones that delete and create object stores and indexes. This mode
     * is for updating the version number of transactions that were started using the setVersion() method of IDBDatabase
     * objects. Transactions of this mode cannot run concurrently with other transactions.
     */
-  val VERSION_CHANGE: IDBTransactionMode = "versionchange".asInstanceOf[IDBTransactionMode]
+  @inline def versionchange: IDBTransactionMode = "versionchange".asInstanceOf[IDBTransactionMode]
 
   /** Allows reading and writing of data in existing data stores to be changed. */
-  val READ_WRITE: IDBTransactionMode = "readwrite".asInstanceOf[IDBTransactionMode]
+  @inline def readwrite: IDBTransactionMode = "readwrite".asInstanceOf[IDBTransactionMode]
+}
 
+@js.native
+sealed trait IDBTransactionDurability extends js.Any
+
+object IDBTransactionDurability {
+  @inline def default: IDBTransactionDurability = "default".asInstanceOf[IDBTransactionDurability]
+  @inline def strict: IDBTransactionDurability = "strict".asInstanceOf[IDBTransactionDurability]
+  @inline def relaxed: IDBTransactionDurability = "relaxed".asInstanceOf[IDBTransactionDurability]
+}
+
+/** Common members shared between [[IDBObjectStore]] and [[IDBIndex]].
+  *
+  * @tparam S
+  *   The type of `.source`
+  */
+@js.native
+trait IDBStoreLike[S] extends js.Object {
+
+  def count(query: IDBKey | IDBKeyRange = js.native): IDBRequest[S, Double] = js.native
+
+  /** Returns an [[IDBRequest]] object, and, in a separate thread, returns the object store selected by the specified
+    * key. This is for retrieving specific records from an object store.
+    *
+    * Note: This method produces the same result for: a) a record that doesn't exist in the database and b) a record
+    * that has an undefined value. To tell these situations apart, call the [[openCursor]] method with the same key.
+    * That method provides a cursor if the record exists, and no cursor if it does not.
+    */
+  def get(key: IDBKey | IDBKeyRange): IDBRequest[S, IDBValue] = js.native
+
+  /** Returns an [[IDBRequest]] object containing all objects in the object store matching the specified parameter or
+    * all objects in the store if no parameters are given.
+    *
+    * If a value is successfully found, then a structured clone of it is created and set as the result of the request
+    * object.
+    *
+    * This method produces the same result for:
+    *
+    *   - a record that doesn't exist in the database
+    *   - a record that has an undefined value
+    *
+    * To tell these situations apart, you either call
+    *
+    *   - the [[openCursor]] method with the same key. That method provides a cursor if the record exists, and no cursor
+    *     if it does not.
+    *   - the [[count]] method with the same key, which will return 1 if the row exists and 0 if it doesn't.
+    */
+  def getAll(query: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
+      count: js.UndefOr[Double] = js.native): IDBRequest[S, js.Array[IDBValue]] = js.native
+
+  /** Returns an [[IDBRequest]] object retrieves record keys for all objects in the object store matching the specified
+    * parameter or all objects in the store if no parameters are given.
+    *
+    * If a value is successfully found, then a structured clone of it is created and set as the result of the request
+    * object.
+    *
+    * This method produces the same result for:
+    *
+    *   - a record that doesn't exist in the database
+    *   - a record that has an undefined value
+    *
+    * To tell these situations apart, you need to call the [[openCursor]] method with the same key. That method provides
+    * a cursor if the record exists, and no cursor if it does not.
+    */
+  def getAllKeys(query: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
+      count: js.UndefOr[Double] = js.native): IDBRequest[S, js.Array[IDBKey]] = js.native
+
+  /** Returns an [[IDBRequest]] object, and, in a separate thread, returns the key selected by the specified query. This
+    * is for retrieving specific records from an object store.
+    */
+  def getKey(key: IDBKey): IDBRequest[S, js.UndefOr[IDBKey]] = js.native
+
+  /** The key path of this object store. If this attribute is null, the application must provide a key for each
+    * modification operation.
+    */
+  def keyPath: IDBKeyPath = js.native
+
+  def name: String = js.native
+
+  /** The method sets the position of the cursor to the appropriate record, based on the specified direction.
+    *
+    * @return
+    *   [[IDBRequest]] with the `target` value being a new cursor or `null`.
+    */
+  def openCursor(range: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
+      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest[S, IDBCursor[S]] = js.native
+
+  /** The method sets the position of the cursor to the appropriate key, based on the specified direction.
+    *
+    * @return
+    *   [[IDBRequest]] with the `target` value being a new cursor or `null`.
+    */
+  def openKeyCursor(range: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
+      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest[S, IDBCursorReadOnly[S]] = js.native
 }
 
 /** The IDBObjectStore interface of the IndexedDB API represents an object store in a database. Records within an object
@@ -37,51 +143,36 @@ object IDBTransactionMode {
   */
 @js.native
 @JSGlobal
-class IDBObjectStore extends js.Object {
-
-  /** A list of the names of indexes on objects in this object store. */
-  def indexNames: DOMStringList = js.native
-
-  def name: String = js.native
-
-  /** The name of the transaction to which this object store belongs. */
-  def transaction: IDBTransaction = js.native
-
-  /** The key path of this object store. If this attribute is null, the application must provide a key for each
-    * modification operation.
-    */
-  def keyPath: String = js.native
-
-  def count(key: js.Any = js.native): IDBRequest = js.native
+class IDBObjectStore extends IDBStoreLike[IDBObjectStore] {
 
   /** To determine if the add operation has completed successfully, listen for the transaction’s complete event in
     * addition to the IDBObjectStore.add request’s success event, because the transaction may still fail after the
     * success event fires. In other words, the success event is only triggered when the transaction has been
     * successfully queued.
+    *
+    * @return
+    *   [[IDBRequest]] with the key as the `target` value
     */
-  def add(value: js.Any, key: js.Any = js.native): IDBRequest = js.native
+  def add(value: IDBValue, key: IDBKey = js.native): IDBRequest[IDBObjectStore, IDBKey] = js.native
 
   /** Clearing an object store consists of removing all records from the object store and removing all records in
     * indexes that reference the object store.
     */
-  def clear(): IDBRequest = js.native
+  def clear(): IDBRequest[IDBObjectStore, Unit] = js.native
 
   /** Note that this method must be called only from a VersionChange transaction mode callback. */
-  def createIndex(name: String, keyPath: String, optionalParameters: js.Any = js.native): IDBIndex = js.native
+  def createIndex(name: String, keyPath: IDBKeyPath,
+      optionalParameters: IDBCreateIndexOptions = js.native): IDBIndex = js.native
 
-  /** If the record is successfully stored, then a success event is fired on the returned request object with the result
-    * set to the key for the stored record, and the transaction set to the transaction in which this object store is
-    * opened.
+  /** Returns an [[IDBRequest]] object, and, in a separate thread, deletes the specified record or records.
+    *
+    * Either a key or an [[IDBKeyRange]] can be passed, allowing one or multiple records to be deleted from a store. To
+    * delete all records in a store, use [[clear]].
+    *
+    * Bear in mind that if you are using an [[IDBCursor]], you can use the [[IDBCursor.delete]] method to more
+    * efficiently delete the current record — without having to explicitly look up the record's key.
     */
-  def put(value: js.Any, key: js.Any = js.native): IDBRequest = js.native
-
-  /** The method sets the position of the cursor to the appropriate record, based on the specified direction. */
-  def openCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.native,
-      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest = js.native
-
-  /** The method sets the position of the cursor to the appropriate key, based on the specified direction. */
-  def openKeyCursor(range: js.UndefOr[IDBKeyRange | js.Any] = js.native,
-      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest = js.native
+  def delete(key: IDBKey | IDBKeyRange): IDBRequest[IDBObjectStore, Unit] = js.native
 
   /** Note that this method must be called only from a VersionChange transaction mode callback. Note that this method
     * synchronously modifies the IDBObjectStore.indexNames property.
@@ -91,30 +182,20 @@ class IDBObjectStore extends js.Object {
   /** This method may raise a DOMException of one of the following types: */
   def index(name: String): IDBIndex = js.native
 
-  /** If a value is successfully found, then a structured clone of it is created and set as the result of the request
-    * object.
-    */
-  def get(key: js.Any): IDBRequest = js.native
+  /** A list of the names of indexes on objects in this object store. */
+  def indexNames: DOMStringList = js.native
 
-  /** If a value is successfully found, then a structured clone of it is created and set as the result of the request
-    * object.
+  /** If the record is successfully stored, then a success event is fired on the returned request object with the result
+    * set to the key for the stored record, and the transaction set to the transaction in which this object store is
+    * opened.
+    *
+    * @return
+    *   [[IDBRequest]] with the key as the `target` value
     */
-  def getAll(query: js.UndefOr[IDBKeyRange | js.Any] = js.native,
-      count: js.UndefOr[Int] = js.native): IDBRequest = js.native
+  def put(value: IDBValue, key: IDBKey = js.native): IDBRequest[IDBObjectStore, IDBKey] = js.native
 
-  /** If a value is successfully found, then a structured clone of it is created and set as the result of the request
-    * object.
-    */
-  def getAllKeys(query: js.UndefOr[IDBKeyRange | js.Any] = js.native,
-      count: js.UndefOr[Int] = js.native): IDBRequest = js.native
-
-  /** If a value is successfully found, then a structured clone of it is created and set as the result of the request
-    * object.
-    */
-  def getKey(key: js.Any): IDBRequest = js.native
-
-  /** returns an IDBRequest object, and, in a separate thread, deletes the current object store. */
-  def delete(key: js.Any): IDBRequest = js.native
+  /** The name of the transaction to which this object store belongs. */
+  def transaction: IDBTransaction = js.native
 }
 
 trait IDBVersionChangeEventInit extends EventInit {
@@ -127,7 +208,8 @@ trait IDBVersionChangeEventInit extends EventInit {
   */
 @js.native
 @JSGlobal
-class IDBVersionChangeEvent(typeArg: String, init: js.UndefOr[IDBVersionChangeEventInit]) extends Event(typeArg, init) {
+class IDBVersionChangeEvent(typeArg: String, init: js.UndefOr[IDBVersionChangeEventInit])
+    extends IDBEvent[IDBDatabase](typeArg, init) {
 
   /** Returns the new version of the database.
     *
@@ -155,43 +237,21 @@ class IDBVersionChangeEvent(typeArg: String, init: js.UndefOr[IDBVersionChangeEv
   */
 @js.native
 @JSGlobal
-class IDBIndex extends js.Object {
-
-  /** If true, this index does not allow duplicate values for a key. */
-  def unique: Boolean = js.native
-
-  def name: String = js.native
-
-  /** The key path of this index. If null, this index is not auto-populated. */
-  def keyPath: String = js.native
+class IDBIndex extends IDBStoreLike[IDBIndex] {
 
   /** The name of the object store referenced by this index. */
   def objectStore: IDBObjectStore = js.native
 
-  def count(key: js.Any): IDBRequest = js.native
-
-  /** If you want to see how many records are between keys 1000 and 2000 in an object store, you can write the
-    * following:
+  /** Returns a boolean value that affects how the index behaves when the result of evaluating the index's key path
+    * yields an array.
+    *
+    * This is decided when the index is created, using the `IDBObjectStore.createIndex` method. This method takes an
+    * optional options parameter whose `multiEntry` property is set to `true`/`false`.
     */
-  def count(): IDBRequest = js.native
+  val multiEntry: Boolean = js.native
 
-  /** Returns an IDBRequest object, and, in a separate thread, finds either the given key or the primary key, if key is
-    * a key range.
-    */
-  def getKey(key: js.Any): IDBRequest = js.native
-
-  /** Returns an IDBRequest object, and, in a separate thread, creates a cursor over the specified key range, as
-    * arranged by this index.
-    */
-  def openKeyCursor(range: IDBKeyRange = js.native, direction: IDBCursorDirection = js.native): IDBRequest = js.native
-
-  /** Returns an IDBRequest object, and, in a separate thread, finds either the value in the referenced object store
-    * that corresponds to the given key or the first corresponding value, if key is a key range.
-    */
-  def get(key: js.Any): IDBRequest = js.native
-
-  /** The method sets the position of the cursor to the appropriate record, based on the specified direction. */
-  def openCursor(range: IDBKeyRange = js.native, direction: IDBCursorDirection = js.native): IDBRequest = js.native
+  /** If true, this index does not allow duplicate values for a key. */
+  def unique: Boolean = js.native
 }
 
 /** The IDBCursor interface of the IndexedDB API represents a cursor for traversing or iterating over multiple records
@@ -200,16 +260,19 @@ class IDBIndex extends js.Object {
   * The cursor has a source that indicates which index or object store it is iterating. It has a position within the
   * range, and moves in a direction that is increasing or decreasing in the order of record keys. The cursor enables an
   * application to asynchronously process all the records in the cursor's range.
+  *
+  * @tparam S
+  *   The type of `.source`
   */
 @js.native
 @JSGlobal
-class IDBCursor extends js.Object {
+class IDBCursorReadOnly[+S] extends js.Object {
 
   /** On getting, this object returns the IDBObjectStore or IDBIndex that the cursor is iterating. This function never
     * returns null or throws an exception, even if the cursor is currently being iterated, has iterated past its end, or
     * its transaction is not active.
     */
-  def source: js.Any = js.native
+  def source: S = js.native
 
   /** Is a DOMString that, on getting, returns the direction of traversal of the cursor. See Constants for possible
     * values.
@@ -219,15 +282,15 @@ class IDBCursor extends js.Object {
   /** Returns the key for the record at the cursor's position. If the cursor is outside its range, this is set to
     * undefined. The cursor's key can be any data type.
     */
-  def key: js.Any = js.native
+  def key: IDBKey = js.native
 
   /** Returns the cursor's current effective key. If the cursor is currently being iterated or has iterated outside its
     * range, this is set to undefined. The cursor's primary key can be any data type.
     */
-  def primaryKey: js.Any = js.native
+  def primaryKey: IDBKey = js.native
 
   /** This method may raise a DOMException of one of the following types: */
-  def advance(count: Int): Unit = js.native
+  def advance(count: Double): Unit = js.native
 
   /** Sets cursor to key if specified, otherwise advances cursor by one.
     *
@@ -237,17 +300,32 @@ class IDBCursor extends js.Object {
     *
     * W3C
     */
-  def continue(key: js.Any = js.native): Unit = js.native
+  def continue(key: IDBKey = js.native): Unit = js.native
+}
+
+/** The IDBCursor interface of the IndexedDB API represents a cursor for traversing or iterating over multiple records
+  * in a database.
+  *
+  * The cursor has a source that indicates which index or object store it is iterating. It has a position within the
+  * range, and moves in a direction that is increasing or decreasing in the order of record keys. The cursor enables an
+  * application to asynchronously process all the records in the cursor's range.
+  *
+  * @tparam S
+  *   The type of `.source`
+  */
+@js.native
+@JSGlobal
+class IDBCursor[+S] extends IDBCursorReadOnly[S] {
 
   /** Returns an IDBRequest object, and, in a separate thread, deletes the record at the cursor's position, without
     * changing the cursor's position.
     */
-  def delete(): IDBRequest = js.native
+  def delete(): IDBRequest[S, Unit] = js.native
 
   /** Returns an IDBRequest object, and, in a separate thread, updates the value at the current position of the cursor
     * in the object store.
     */
-  def update(value: js.Any): IDBRequest = js.native
+  def update(value: IDBValue): IDBRequest[S, IDBKey] = js.native
 }
 
 @js.native
@@ -258,29 +336,33 @@ object IDBCursorDirection {
   /** The cursor shows all records, including duplicates. It starts at the upper bound of the key range and moves
     * downwards (monotonically decreasing in the order of keys).
     */
-  val PREV: IDBCursorDirection = "prev".asInstanceOf[IDBCursorDirection]
+  @inline def prev: IDBCursorDirection = "prev".asInstanceOf[IDBCursorDirection]
 
   /** The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first
     * one iterated is retrieved. It starts at the upper bound of the key range and moves downwards.
     */
-  val PREV_UNIQUE: IDBCursorDirection = "prevunique".asInstanceOf[IDBCursorDirection]
+  @inline def prevunique: IDBCursorDirection = "prevunique".asInstanceOf[IDBCursorDirection]
 
   /** The cursor shows all records, including duplicates. It starts at the lower bound of the key range and moves
     * upwards (monotonically increasing in the order of keys).
     */
-  val NEXT: IDBCursorDirection = "next".asInstanceOf[IDBCursorDirection]
+  @inline def next: IDBCursorDirection = "next".asInstanceOf[IDBCursorDirection]
 
   /** The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first
     * one iterated is retrieved. It starts at the lower bound of the key range and moves upwards.
     */
-  val NEXT_UNIQUE: IDBCursorDirection = "nextunique".asInstanceOf[IDBCursorDirection]
+  @inline def nextunique: IDBCursorDirection = "nextunique".asInstanceOf[IDBCursorDirection]
 }
 
-/** Same as IDBCursor with the value property. */
+/** Same as [[IDBCursor]] with the `value` property.
+  *
+  * @tparam S
+  *   The type of `.source`
+  */
 @js.native
 @JSGlobal
-class IDBCursorWithValue extends IDBCursor {
-  def value: js.Any = js.native
+class IDBCursorWithValue[+S] extends IDBCursor[S] {
+  def value: IDBValue = js.native
 }
 
 /** The IDBKeyRange interface of the IndexedDB API represents a continuous interval over some data type that is used for
@@ -297,13 +379,13 @@ class IDBCursorWithValue extends IDBCursor {
 class IDBKeyRange extends js.Object {
 
   /** The upper bound of the key range (can be any type.) */
-  def upper: js.Any = js.native
+  def upper: IDBKey = js.native
 
   /** Returns false if the upper-bound value is included in the key range. */
   def upperOpen: Boolean = js.native
 
   /** The lower bound of the key range (can be any type.) */
-  def lower: js.Any = js.native
+  def lower: IDBKey = js.native
 
   /** Returns false if the lower-bound value is included in the key range. */
   def lowerOpen: Boolean = js.native
@@ -316,17 +398,17 @@ object IDBKeyRange extends js.Object {
   /** The bounds can be open (that is, the bounds exclude the endpoint values) or closed (that is, the bounds include
     * the endpoint values). By default, the bounds are closed.
     */
-  def bound(lower: js.Any, upper: js.Any, lowerOpen: Boolean = js.native,
+  def bound(lower: IDBKey, upper: IDBKey, lowerOpen: Boolean = js.native,
       upperOpen: Boolean = js.native): IDBKeyRange = js.native
 
   /** This method may raise a DOMException of the following types: */
-  def only(value: js.Any): IDBKeyRange = js.native
+  def only(value: IDBValue): IDBKeyRange = js.native
 
   /** By default, it includes the lower endpoint value and is closed. */
-  def lowerBound(bound: js.Any, open: Boolean = js.native): IDBKeyRange = js.native
+  def lowerBound(bound: IDBKey, open: Boolean = js.native): IDBKeyRange = js.native
 
   /** By default, it includes the upper endpoint value and is closed. */
-  def upperBound(bound: js.Any, open: Boolean = js.native): IDBKeyRange = js.native
+  def upperBound(bound: IDBKey, open: Boolean = js.native): IDBKeyRange = js.native
 }
 
 /** The IDBTransaction interface of the IndexedDB API provides a static, asynchronous transaction on a database using
@@ -413,7 +495,8 @@ class IDBDatabase extends EventTarget {
     * important optional properties. You can use the property to uniquely identify individual objects in the store. As
     * the property is an identifier, it should be unique to every object, and every object should have that property.
     */
-  def createObjectStore(name: String, optionalParameters: js.Any = js.native): IDBObjectStore = js.native
+  def createObjectStore(name: String,
+      optionalParameters: js.UndefOr[IDBCreateObjectStoreOptions] = js.native): IDBObjectStore = js.native
 
   /** The connection is not actually closed until all transactions created using this connection are complete. No new
     * transactions can be created for this connection once this method is called. Methods that create transactions throw
@@ -424,7 +507,8 @@ class IDBDatabase extends EventTarget {
   /** Immediately returns a transaction object (IDBTransaction) containing the IDBTransaction.objectStore method, which
     * you can use to access your object store. Runs in a separate thread.
     */
-  def transaction(storeNames: js.Any, mode: IDBTransactionMode = js.native): IDBTransaction = js.native
+  def transaction(storeNames: String | js.Array[String], mode: js.UndefOr[IDBTransactionMode] = js.native,
+      options: js.UndefOr[IDBTransactionOptions] = js.native): IDBTransaction = js.native
 
   /** As with createObjectStore, this method can be called only within a versionchange transaction. So for WebKit
     * browsers you must call the IDBVersionChangeRequest.setVersion method first before you can remove any object store
@@ -435,10 +519,13 @@ class IDBDatabase extends EventTarget {
 
 /** The IDBOpenDBRequest interface of the IndexedDB API provides access to results of requests to open databases using
   * specific event handler attributes.
+  *
+  * @tparam A
+  *   Type of `.target.result` on events
   */
 @js.native
 @JSGlobal
-class IDBOpenDBRequest extends IDBRequest {
+class IDBOpenDBRequest[A] extends IDBRequest[Null, A] {
 
   /** The event handler for the upgradeneeded event, fired when a database of a bigger version number than the existing
     * stored database is loaded.
@@ -462,20 +549,37 @@ class IDBOpenDBRequest extends IDBRequest {
 @js.native
 @JSGlobal
 class IDBFactory extends js.Object {
-  def open(name: String, version: Int): IDBOpenDBRequest = js.native
 
   /** The open() method of the IDBFactory interface requests opening a connection to a database. see
     * [[https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/open IDBFactory.open() on MDN]]
     *
     * w3c spec [[http://www.w3.org/TR/IndexedDB/#requests ¶3.2.3 Opening a database]]
     */
-  def open(name: String): IDBOpenDBRequest = js.native
+  def open(name: String, version: Int = js.native): IDBOpenDBRequest[IDBDatabase] = js.native
 
-  /** A method that compares two keys and returns a result indicating which one is greater in value. */
-  def cmp(first: js.Any, second: js.Any): Int = js.native
+  /** Compares two values as keys to determine equality and ordering for IndexedDB operations, such as storing and
+    * iterating.
+    *
+    * @return
+    *   One of the following:
+    *   - `-1` means 1st key is less than the 2nd key
+    *   - `0` means 1st key is equal to the 2nd key
+    *   - `1` means 1st key is greater than the 2nd key
+    */
+  def cmp(first: IDBValue, second: IDBValue): Int = js.native
+
+  /** Returns a promise which resolves to a list of objects giving a snapshot of the names and versions of databases
+    * within the origin.
+    *
+    * This API is intended for web applications to introspect the use of databases, for example to clean up from earlier
+    * versions of a site’s code. Note that the result is a snapshot; there are no guarantees about the sequencing of the
+    * collection of the data or the delivery of the response with respect to requests to create, upgrade, or delete
+    * databases by this context or others.
+    */
+  def databases(): js.Promise[js.Array[IDBDatabaseInfo]] = js.native
 
   /** The deletion operation (performed in a different thread) consists of the following steps: */
-  def deleteDatabase(name: String): IDBOpenDBRequest = js.native
+  def deleteDatabase(name: String): IDBOpenDBRequest[Unit] = js.native
 }
 
 /** The IDBRequest interface of the IndexedDB API provides access to results of asynchronous requests to databases and
@@ -485,18 +589,21 @@ class IDBFactory extends js.Object {
   * The request object does not initially contain any information about the result of the operation, but once
   * information becomes available, an event is fired on the request, and the information becomes available through the
   * properties of the IDBRequest instance.
+  *
+  * @tparam A
+  *   Type of `.target.result` on events
   */
 @js.native
 @JSGlobal
-class IDBRequest extends EventTarget {
+class IDBRequest[+S, A] extends EventTarget {
 
   /** The source of the request, such as an Index or a ObjectStore. If no source exists (such as when calling
     * IDBFactory.open), it returns null.
     */
-  def source: js.Any = js.native
+  def source: S = js.native
 
   /** The event handler for the success event. */
-  var onsuccess: js.Function1[Event, _] = js.native
+  var onsuccess: js.Function1[IDBEvent[A], _] = js.native
 
   /** Returns a DOMException in the event of an unsuccessful request, indicating what went wrong. */
   def error: DOMException = js.native
@@ -517,7 +624,28 @@ class IDBRequest extends EventTarget {
   /** Returns the result of the request. If the the request failed and the result is not available,
     * the InvalidStateError exception is thrown.
     */
-  def result: js.Any = js.native
+  def result: A = js.native
+}
+
+@js.native
+trait IDBDatabaseInfo extends js.Object {
+  val name: String = js.native
+  val version: Int = js.native
+}
+
+trait IDBCreateObjectStoreOptions extends js.Object {
+  val keyPath: IDBKeyPath = js.undefined
+  val autoIncrement: js.UndefOr[Boolean] = js.undefined
+}
+
+trait IDBCreateIndexOptions extends js.Object {
+  val unique: js.UndefOr[Boolean] = js.undefined
+  val multiEntry: js.UndefOr[Boolean] = js.undefined
+  val locale: js.UndefOr[String] = js.undefined
+}
+
+trait IDBTransactionOptions extends js.Object {
+  val durability: js.UndefOr[IDBTransactionDurability] = js.undefined
 }
 
 /** The IDBEvironment interface of the IndexedDB API provides asynchronous access to a client-side database. It is

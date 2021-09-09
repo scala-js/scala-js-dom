@@ -1,5 +1,7 @@
 package org.scalajs.dom.tests.webworker
 
+import scala.language.implicitConversions
+import scala.concurrent.Future
 import org.junit.Assert._
 import org.junit.Test
 import org.scalajs.dom.tests.shared.AsyncTesting._
@@ -46,10 +48,21 @@ trait WebWorkerTests {
 // =====================================================================================================================
 trait ServerResponses {
   import org.scalajs.dom._
-  import org.scalajs.dom.tests.shared.SharedTests._
+  import org.scalajs.dom.tests.shared._
   import org.scalajs.dom.DedicatedWorkerGlobalScope.self
 
-  final val respond: WebWorkerCmd => String = {
+  private implicit def autoLift(s: => String): Future[String] =
+    Future(s)
+
+  private implicit class AsyncOps(r: AsyncResult) {
+    def andReturn(s: String): Future[String] =
+      r.map { t =>
+        t.get
+        s
+      }
+  }
+
+  final val respond: WebWorkerCmd => Future[String] = {
 
     case SayHello =>
       "hello"
@@ -60,7 +73,6 @@ trait ServerResponses {
 
     case TestIdb =>
       assertTrue(self.indexedDB.isDefined)
-      testIdb(self.indexedDB.get)
-      "ok"
+      IdbTest(self.indexedDB.get).andReturn("ok")
   }
 }
