@@ -7,7 +7,7 @@ object idb {
   type CreateObjectStoreOptions = IDBCreateObjectStoreOptions
   type Cursor[+Source] = IDBCursor[Source]
   type CursorReadOnly[+Source] = IDBCursorReadOnly[Source]
-  type CursorWithValue = IDBCursorWithValue
+  type CursorWithValue[+Source] = IDBCursorWithValue[Source]
   type Database = IDBDatabase
   type DatabaseInfo = IDBDatabaseInfo
   type Event[+TargetResult] = IDBEvent[TargetResult]

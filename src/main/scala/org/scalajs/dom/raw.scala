@@ -483,7 +483,7 @@ object raw {
   type IDBCursor = dom.IDBCursor[IDBObjectStore | IDBIndex]
 
   @deprecated("use dom.IDBCursorWithValue instead", "2.0.0")
-  type IDBCursorWithValue = dom.IDBCursorWithValue
+  type IDBCursorWithValue = dom.IDBCursorWithValue[Any]
 
   @deprecated("use dom.IDBDatabase instead", "2.0.0")
   type IDBDatabase = dom.IDBDatabase

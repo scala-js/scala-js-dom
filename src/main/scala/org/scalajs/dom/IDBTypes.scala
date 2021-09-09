@@ -260,6 +260,9 @@ class IDBIndex extends IDBStoreLike[IDBIndex] {
   * The cursor has a source that indicates which index or object store it is iterating. It has a position within the
   * range, and moves in a direction that is increasing or decreasing in the order of record keys. The cursor enables an
   * application to asynchronously process all the records in the cursor's range.
+  *
+  * @tparam S
+  *   The type of `.source`
   */
 @js.native
 @JSGlobal
@@ -306,6 +309,9 @@ class IDBCursorReadOnly[+S] extends js.Object {
   * The cursor has a source that indicates which index or object store it is iterating. It has a position within the
   * range, and moves in a direction that is increasing or decreasing in the order of record keys. The cursor enables an
   * application to asynchronously process all the records in the cursor's range.
+  *
+  * @tparam S
+  *   The type of `.source`
   */
 @js.native
 @JSGlobal
@@ -348,10 +354,14 @@ object IDBCursorDirection {
   @inline def nextunique: IDBCursorDirection = "nextunique".asInstanceOf[IDBCursorDirection]
 }
 
-/** Same as IDBCursor with the value property. */
+/** Same as [[IDBCursor]] with the `value` property.
+  *
+  * @tparam S
+  *   The type of `.source`
+  */
 @js.native
 @JSGlobal
-class IDBCursorWithValue extends IDBCursor {
+class IDBCursorWithValue[+S] extends IDBCursor[S] {
   def value: IDBValue = js.native
 }
 
