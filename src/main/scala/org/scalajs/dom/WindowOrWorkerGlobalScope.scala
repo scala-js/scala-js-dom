@@ -1,6 +1,5 @@
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.cachestorage.CacheStorage
 import scala.scalajs.js
 import scala.scalajs.js.|
 
