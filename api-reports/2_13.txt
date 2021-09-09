@@ -14408,7 +14408,7 @@ Navigator[JC] def languages: js.Array[String]
 Navigator[JC] def onLine: Boolean
 Navigator[JC] def platform: String
 Navigator[JC] def sendBeacon(url: String, data: BodyInit?): Boolean
-Navigator[JC] val storage: StorageManager
+Navigator[JC] def storage: StorageManager
 Navigator[JC] def userAgent: String
 Navigator[JC] def vibrate(duration: Double): Boolean
 Navigator[JC] def vibrate(pattern: js.Array[Double]): Boolean
@@ -25163,7 +25163,7 @@ experimental/sharedworkers/SharedWorkerGlobalScope[JT] def setTimeout(handler: j
 experimental/storage/package[SO] type NavigatorStorage = dom.Navigator  (@deprecated in 2.0.0)
 experimental/storage/package[SO] type StorageEstimate = dom.StorageEstimate  (@deprecated in 2.0.0)
 experimental/storage/package[SO] type StorageManager = dom.StorageManager  (@deprecated in 2.0.0)
-experimental/storage/package[SO] implicit def toNavigatorStorage(navigator: dom.Navigator): dom.Navigator  (@deprecated in 2.0.0)
+experimental/storage/package[SO] def toNavigatorStorage(navigator: dom.Navigator): dom.Navigator  (@deprecated in 2.0.0)
 experimental/webgl/ANGLE_instanced_arrays[SO]
 experimental/webgl/EXT_blend_minmax[SO]
 experimental/webgl/EXT_color_buffer_half_float[SO]

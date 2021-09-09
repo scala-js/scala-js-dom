@@ -1,8 +1,6 @@
 package org.scalajs
 package dom.experimental
 
-import scala.language.implicitConversions
-
 /** https://storage.spec.whatwg.org/ */
 package object storage {
 
