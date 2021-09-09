@@ -326,6 +326,9 @@ class Navigator
     */
   def sendBeacon(url: String, data: BodyInit = js.native): Boolean = js.native
 
+  /** https://storage.spec.whatwg.org/ */
+  def storage: StorageManager = js.native
+
   /** Implements the Gamepad API.
     *
     * [[https://www.w3.org/TR/2015/WD-gamepad-20151217/ W3C Working Draft]]
