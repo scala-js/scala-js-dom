@@ -7,7 +7,7 @@ import scala.language.implicitConversions
 package object storage {
 
   @deprecated("use dom.Navigator directly instead", "2.0.0")
-  implicit def toNavigatorStorage(navigator: dom.Navigator): dom.Navigator =
+  def toNavigatorStorage(navigator: dom.Navigator): dom.Navigator =
     navigator
 
   @deprecated("use dom.Navigator directly instead", "2.0.0")
