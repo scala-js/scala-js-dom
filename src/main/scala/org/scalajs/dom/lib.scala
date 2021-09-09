@@ -673,6 +673,14 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
     * to the element when an error occurs while attempting to transition into or out of full-screen mode.
     */
   var onfullscreenerror: js.Function1[Event, _] = js.native
+
+  /** The Element.requestPointerLock() method allows to asynchronously ask for the pointer to be locked on the given
+    * element.
+    *
+    * To track the success or failure of the request, it is necessary to listen for the pointerlockchange and
+    * pointerlockerror events at the Document level.
+    */
+  def requestPointerLock(): Unit = js.native
 }
 
 trait FullscreenOptions extends js.Object {
@@ -978,6 +986,16 @@ class MouseEvent(typeArg: String, init: js.UndefOr[MouseEventInit])
     * for details.
     */
   def getModifierState(keyArg: String): Boolean = js.native
+
+  /** Provides the difference in the X coordinate of the mouse pointer between the given event and the previous
+    * mousemove event
+    */
+  def movementX: Double = js.native
+
+  /** Provides the difference in the Y coordinate of the mouse pointer between the given event and the previous
+    * mousemove event
+    */
+  def movementY: Double = js.native
 }
 
 /** Most of today's web content assumes the user's pointing device will be a mouse. However, since many devices support
@@ -2225,6 +2243,30 @@ abstract class Document extends Node with NodeSelector with DocumentEvent with P
     * document when it fails to transition into full-screen mode after a prior call to Element.requestFullscreen().
     */
   var onfullscreenerror: js.Function1[Event, _] = js.native
+
+  /** When the Pointer lock state changes—for example, when calling requestPointerLock, exitPointerLock, the user
+    * pressing the ESC key, etc.—the pointerlockchange event is dispatched to the document. This is a simple event and
+    * contains no extra data.
+    */
+  var onpointerlockchange: js.Function1[Event, _] = js.native
+
+  /** When there is an error caused by calling requestPointerLock or exitPointerLock, the pointerlockerror event is
+    * dispatched to the document. This is a simple event and contains no extra data.
+    */
+  var onpointerlockerror: js.Function1[Event, _] = js.native
+
+  /** The pointerLockElement property provides the element set as the target for mouse events while the pointer is
+    * locked. It is `null` if lock is pending, pointer is unlocked, or the target is in another document.
+    */
+  def pointerLockElement: Element = js.native
+
+  /** The exitPointerLock asynchronously releases a pointer lock previously requested through
+    * Element.requestPointerLock.
+    *
+    * To track the success or failure of the request, it is necessary to listen for the pointerlockchange and
+    * pointerlockerror events.
+    */
+  def exitPointerLock(): Unit = js.native
 }
 
 trait MessageEventInit extends EventInit {
