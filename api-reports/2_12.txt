@@ -24943,8 +24943,8 @@ experimental/package.ResponseInit[SO] def apply(_status: Int = 200, _statusText:
 experimental/package.ResponseInit[SO] var headers = _headers  (@deprecated in 2.0.0)
 experimental/package.ResponseInit[SO] var status = _status  (@deprecated in 2.0.0)
 experimental/package.ResponseInit[SO] var statusText = _statusText  (@deprecated in 2.0.0)
-experimental/permissions/package[SO] def apply(permissionName: PermissionName): PermissionDescriptor
-experimental/permissions/package[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor
+experimental/permissions/package[SO] def apply(permissionName: PermissionName): PermissionDescriptor  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor  (@deprecated in 2.0.0)
 experimental/permissions/package[SO] val denied: PermissionState
 experimental/permissions/package[SO] val geolocation: PermissionName
 experimental/permissions/package[SO] val granted: PermissionState
@@ -24964,8 +24964,8 @@ experimental/permissions/package[SO] implicit def toPermissions(navigator: dom.N
 experimental/permissions/package[SO] val userVisibleOnly = permissionUserVisibleOnly
 experimental/permissions/package[SO] val userVisibleOnly: Boolean
 experimental/permissions/package.PermissionDescriptor[JT] val name: PermissionName
-experimental/permissions/package.PermissionDescriptor[SO] def apply(permissionName: PermissionName): PermissionDescriptor
-experimental/permissions/package.PermissionDescriptor[SO] val name = permissionName
+experimental/permissions/package.PermissionDescriptor[SO] def apply(permissionName: PermissionName): PermissionDescriptor  (@deprecated in 2.0.0)
+experimental/permissions/package.PermissionDescriptor[SO] val name = permissionName  (@deprecated in 2.0.0)
 experimental/permissions/package.PermissionName[JT]
 experimental/permissions/package.PermissionName[SO] val geolocation: PermissionName
 experimental/permissions/package.PermissionName[SO] val midi: PermissionName
@@ -24987,9 +24987,9 @@ experimental/permissions/package.Permissions[JT] def query(permissionDescriptor:
 experimental/permissions/package.PermissionsNavigator[JT] val permissions: Permissions
 experimental/permissions/package.PushPermissionDescriptor[JT] val name: PermissionName
 experimental/permissions/package.PushPermissionDescriptor[JT] val userVisibleOnly: Boolean
-experimental/permissions/package.PushPermissionDescriptor[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor
-experimental/permissions/package.PushPermissionDescriptor[SO] val name = PermissionName.push
-experimental/permissions/package.PushPermissionDescriptor[SO] val userVisibleOnly = permissionUserVisibleOnly
+experimental/permissions/package.PushPermissionDescriptor[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor  (@deprecated in 2.0.0)
+experimental/permissions/package.PushPermissionDescriptor[SO] val name = PermissionName.push  (@deprecated in 2.0.0)
+experimental/permissions/package.PushPermissionDescriptor[SO] val userVisibleOnly = permissionUserVisibleOnly  (@deprecated in 2.0.0)
 experimental/push/PushEncryptionKeyName[JT]
 experimental/push/PushEncryptionKeyName[SO] val auth: PushEncryptionKeyName
 experimental/push/PushEncryptionKeyName[SO] val p256dh: PushEncryptionKeyName

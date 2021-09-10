@@ -41,8 +41,10 @@ package object permissions {
     val name: PermissionName
   }
 
+  @deprecated("all the members of PermissionDescriptor are deprecated", "2.0.0")
   object PermissionDescriptor {
 
+    @deprecated("use `new PermissionDescriptor { ... }` instead", "2.0.0")
     @inline
     def apply(permissionName: PermissionName): PermissionDescriptor = {
       new PermissionDescriptor {
@@ -55,8 +57,10 @@ package object permissions {
     val userVisibleOnly: Boolean
   }
 
+  @deprecated("all the members of PushPermissionDescriptor are deprecated", "2.0.0")
   object PushPermissionDescriptor {
 
+    @deprecated("use `new PushPermissionDescriptor { ... }` instead", "2.0.0")
     @inline
     def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor = {
       new PushPermissionDescriptor {
