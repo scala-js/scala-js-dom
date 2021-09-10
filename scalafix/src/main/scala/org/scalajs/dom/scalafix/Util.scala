@@ -27,7 +27,7 @@ object Util {
   def isJSGlobal(mods: List[Mod]): Boolean =
     mods.exists {
       case Mod.Annot(Init(Type.Name("JSGlobal"), _, _)) => true
-      case _ => false
+      case _                                            => false
     }
 
   def isJsNative(t: Term): Boolean = {
@@ -95,10 +95,10 @@ object Util {
 
   def typeSymbol(t: SemanticType): Symbol =
     t match {
-      case x: TypeRef          => x.symbol
-      case x: SingleType       => x.symbol
-      case x: ThisType         => x.symbol
-      case x: SuperType        => x.symbol
+      case x: TypeRef    => x.symbol
+      case x: SingleType => x.symbol
+      case x: ThisType   => x.symbol
+      case x: SuperType  => x.symbol
       // case x: ConstantType     => xxx  // (constant) =>
       // case x: IntersectionType => xxx  // (types) =>
       // case x: UnionType        => xxx  // (types) =>
@@ -110,8 +110,7 @@ object Util {
       // case x: ByNameType       => xxx  // (tpe) =>
       // case x: RepeatedType     => xxx  // (tpe) =>
       // case NoType              => Symbol.None
-      case _              => Symbol.None
+      case _ => Symbol.None
     }
-
 
 }

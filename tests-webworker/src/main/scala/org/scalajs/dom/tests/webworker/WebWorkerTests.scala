@@ -13,9 +13,9 @@ sealed abstract class WebWorkerCmd {
 
 object WebWorkerCmd {
 
-  case object SayHello    extends WebWorkerCmd
+  case object SayHello extends WebWorkerCmd
   case object TestConsole extends WebWorkerCmd
-  case object TestIdb     extends WebWorkerCmd
+  case object TestIdb extends WebWorkerCmd
 
   def byId(id: String): WebWorkerCmd =
     id match {
@@ -55,6 +55,7 @@ trait ServerResponses {
     Future(s)
 
   private implicit class AsyncOps(r: AsyncResult) {
+
     def andReturn(s: String): Future[String] =
       r.map { t =>
         t.get

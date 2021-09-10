@@ -34,6 +34,7 @@ object AsyncTesting {
   }
 
   implicit final class AsyncFutureOps[A](private val self: Future[A]) extends AnyVal {
+
     def tap(f: A => Any): Future[A] =
       self.map { a => f(a); a }
 
