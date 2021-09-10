@@ -317,9 +317,9 @@ Blob[JC] def stream(): ReadableStream[Uint8Array]
 Blob[JC] def text(): js.Promise[String]
 Blob[JC] def `type`: String
 Blob[JO]
-BlobPropertyBag[JT] def endings: String
-BlobPropertyBag[JT] def `type`: String
-BlobPropertyBag[SO] def apply(`type`: js.UndefOr[String]?): BlobPropertyBag
+BlobPropertyBag[JT] var endings: js.UndefOr[String]
+BlobPropertyBag[JT] var `type`: js.UndefOr[String]
+BlobPropertyBag[SO] def apply(`type`: js.UndefOr[String]?): BlobPropertyBag  (@deprecated in 2.0.0)
 Body[JT] def arrayBuffer(): js.Promise[ArrayBuffer]
 Body[JT] def blob(): js.Promise[Blob]
 Body[JT] def bodyUsed: Boolean
@@ -14427,7 +14427,7 @@ MutationObserverInit[JT] var characterData: js.UndefOr[Boolean]
 MutationObserverInit[JT] var characterDataOldValue: js.UndefOr[Boolean]
 MutationObserverInit[JT] var childList: js.UndefOr[Boolean]
 MutationObserverInit[JT] var subtree: js.UndefOr[Boolean]
-MutationObserverInit[SO] def apply(childList: Boolean = false, attributes: Boolean = false, characterData: Boolean = false, subtree: Boolean = false, attributeOldValue: Boolean = false, characterDataOldValue: Boolean = false, attributeFilter: js.UndefOr[js.Array[String]]?): MutationObserverInit
+MutationObserverInit[SO] def apply(childList: Boolean = false, attributes: Boolean = false, characterData: Boolean = false, subtree: Boolean = false, attributeOldValue: Boolean = false, characterDataOldValue: Boolean = false, attributeFilter: js.UndefOr[js.Array[String]]?): MutationObserverInit  (@deprecated in 2.0.0)
 MutationRecord[JT] def addedNodes: NodeList[Node]
 MutationRecord[JT] def attributeName: String
 MutationRecord[JT] def attributeNamespace: String
