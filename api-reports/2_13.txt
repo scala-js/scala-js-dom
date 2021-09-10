@@ -25436,11 +25436,11 @@ experimental/webrtc/RTCBundlePolicy[JT]
 experimental/webrtc/RTCBundlePolicy[SO] val balanced: RTCBundlePolicy
 experimental/webrtc/RTCBundlePolicy[SO] val `max-bundle` = "max-bundle".asInstanceOf[RTCBundlePolicy]
 experimental/webrtc/RTCBundlePolicy[SO] val `max-compat` = "max-compat".asInstanceOf[RTCBundlePolicy]
-experimental/webrtc/RTCConfiguration[JT] var bundlePolicy: RTCBundlePolicy
-experimental/webrtc/RTCConfiguration[JT] var iceServers: js.Array[RTCIceServer]
-experimental/webrtc/RTCConfiguration[JT] var iceTransportPolicy: RTCIceTransportPolicy
-experimental/webrtc/RTCConfiguration[JT] var peerIdentity: String
-experimental/webrtc/RTCConfiguration[SO] def apply(iceServers: js.UndefOr[js.Array[RTCIceServer]]?, iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]?, bundlePolicy: js.UndefOr[RTCBundlePolicy]?, peerIdentity: js.UndefOr[String]?): RTCConfiguration
+experimental/webrtc/RTCConfiguration[JT] var bundlePolicy: js.UndefOr[RTCBundlePolicy]
+experimental/webrtc/RTCConfiguration[JT] var iceServers: js.UndefOr[js.Array[RTCIceServer]]
+experimental/webrtc/RTCConfiguration[JT] var iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]
+experimental/webrtc/RTCConfiguration[JT] var peerIdentity: js.UndefOr[String]
+experimental/webrtc/RTCConfiguration[SO] def apply(iceServers: js.UndefOr[js.Array[RTCIceServer]]?, iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]?, bundlePolicy: js.UndefOr[RTCBundlePolicy]?, peerIdentity: js.UndefOr[String]?): RTCConfiguration  (@deprecated in 2.0.0)
 experimental/webrtc/RTCDTMFSender[JT] val canInsertDTMF: Boolean
 experimental/webrtc/RTCDTMFSender[JT] val duration: Double
 experimental/webrtc/RTCDTMFSender[JT] def insertDTMF(tones: String?, duration: Double?, interToneGap: Double?): Unit
@@ -25488,13 +25488,13 @@ experimental/webrtc/RTCDataChannelEventInit[JT] var cancelable: js.UndefOr[Boole
 experimental/webrtc/RTCDataChannelEventInit[JT] var channel: js.UndefOr[RTCDataChannel]
 experimental/webrtc/RTCDataChannelEventInit[JT] var composed: js.UndefOr[Boolean]
 experimental/webrtc/RTCDataChannelEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/webrtc/RTCDataChannelInit[JT] var id: Double
-experimental/webrtc/RTCDataChannelInit[JT] var maxPacketLifeTime: Double
-experimental/webrtc/RTCDataChannelInit[JT] var maxRetransmits: Double
-experimental/webrtc/RTCDataChannelInit[JT] var negotiated: Boolean
-experimental/webrtc/RTCDataChannelInit[JT] var ordered: Boolean
-experimental/webrtc/RTCDataChannelInit[JT] var protocol: String
-experimental/webrtc/RTCDataChannelInit[SO] def apply(ordered: js.UndefOr[Boolean]?, maxPacketLifeTime: js.UndefOr[Double]?, maxRetransmits: js.UndefOr[Double]?, protocol: js.UndefOr[String]?, negotiated: js.UndefOr[Boolean]?, id: js.UndefOr[Double]?): RTCDataChannelInit
+experimental/webrtc/RTCDataChannelInit[JT] var id: js.UndefOr[Double]
+experimental/webrtc/RTCDataChannelInit[JT] var maxPacketLifeTime: js.UndefOr[Double]
+experimental/webrtc/RTCDataChannelInit[JT] var maxRetransmits: js.UndefOr[Double]
+experimental/webrtc/RTCDataChannelInit[JT] var negotiated: js.UndefOr[Boolean]
+experimental/webrtc/RTCDataChannelInit[JT] var ordered: js.UndefOr[Boolean]
+experimental/webrtc/RTCDataChannelInit[JT] var protocol: js.UndefOr[String]
+experimental/webrtc/RTCDataChannelInit[SO] def apply(ordered: js.UndefOr[Boolean]?, maxPacketLifeTime: js.UndefOr[Double]?, maxRetransmits: js.UndefOr[Double]?, protocol: js.UndefOr[String]?, negotiated: js.UndefOr[Boolean]?, id: js.UndefOr[Double]?): RTCDataChannelInit  (@deprecated in 2.0.0)
 experimental/webrtc/RTCDataChannelState[JT]
 experimental/webrtc/RTCDataChannelState[SO] val closed: RTCDataChannelState
 experimental/webrtc/RTCDataChannelState[SO] val closing: RTCDataChannelState
@@ -25503,10 +25503,10 @@ experimental/webrtc/RTCDataChannelState[SO] val open: RTCDataChannelState
 experimental/webrtc/RTCIceCandidate[JC] var candidate: String
 experimental/webrtc/RTCIceCandidate[JC] var sdpMLineIndex: Double
 experimental/webrtc/RTCIceCandidate[JC] var sdpMid: String
-experimental/webrtc/RTCIceCandidateInit[JT] var candidate: String
-experimental/webrtc/RTCIceCandidateInit[JT] var sdpMLineIndex: Double
-experimental/webrtc/RTCIceCandidateInit[JT] var sdpMid: String
-experimental/webrtc/RTCIceCandidateInit[SO] def apply(candidate: js.UndefOr[String]?, sdpMid: js.UndefOr[String]?, sdpMLineIndex: js.UndefOr[Double]?): RTCIceCandidateInit
+experimental/webrtc/RTCIceCandidateInit[JT] var candidate: js.UndefOr[String]
+experimental/webrtc/RTCIceCandidateInit[JT] var sdpMLineIndex: js.UndefOr[Double]
+experimental/webrtc/RTCIceCandidateInit[JT] var sdpMid: js.UndefOr[String]
+experimental/webrtc/RTCIceCandidateInit[SO] def apply(candidate: js.UndefOr[String]?, sdpMid: js.UndefOr[String]?, sdpMLineIndex: js.UndefOr[Double]?): RTCIceCandidateInit  (@deprecated in 2.0.0)
 experimental/webrtc/RTCIceConnectionState[JT]
 experimental/webrtc/RTCIceConnectionState[SO] val checking: RTCIceConnectionState
 experimental/webrtc/RTCIceConnectionState[SO] val closed: RTCIceConnectionState
@@ -25519,22 +25519,22 @@ experimental/webrtc/RTCIceGatheringState[JT]
 experimental/webrtc/RTCIceGatheringState[SO] val complete: RTCIceGatheringState
 experimental/webrtc/RTCIceGatheringState[SO] val gathering: RTCIceGatheringState
 experimental/webrtc/RTCIceGatheringState[SO] val `new`: RTCIceGatheringState
-experimental/webrtc/RTCIceServer[JT] var credential: String
-experimental/webrtc/RTCIceServer[JT] var urls: String | js.Array[String]
-experimental/webrtc/RTCIceServer[JT] var username: String
-experimental/webrtc/RTCIceServer[SO] def apply(urls: js.UndefOr[String | js.Array[String]]?, username: js.UndefOr[String]?, credential: js.UndefOr[String]?): RTCIceServer
+experimental/webrtc/RTCIceServer[JT] var credential: js.UndefOr[String]
+experimental/webrtc/RTCIceServer[JT] var urls: js.UndefOr[String | js.Array[String]]
+experimental/webrtc/RTCIceServer[JT] var username: js.UndefOr[String]
+experimental/webrtc/RTCIceServer[SO] def apply(urls: js.UndefOr[String | js.Array[String]]?, username: js.UndefOr[String]?, credential: js.UndefOr[String]?): RTCIceServer  (@deprecated in 2.0.0)
 experimental/webrtc/RTCIceTransportPolicy[JT]
 experimental/webrtc/RTCIceTransportPolicy[SO] val all: RTCIceTransportPolicy
 experimental/webrtc/RTCIceTransportPolicy[SO] val none: RTCIceTransportPolicy
 experimental/webrtc/RTCIceTransportPolicy[SO] val relay: RTCIceTransportPolicy
 experimental/webrtc/RTCIdentityAssertion[JT] val idp: String
 experimental/webrtc/RTCIdentityAssertion[JT] val name: String
-experimental/webrtc/RTCIdentityAssertion[SO] def apply(idp: js.UndefOr[String]?, name: js.UndefOr[String]?): RTCIdentityAssertion
-experimental/webrtc/RTCOfferOptions[JT] var iceRestart: Boolean
-experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveAudio: Double
-experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveVideo: Double
-experimental/webrtc/RTCOfferOptions[JT] var voiceActivityDetection: Boolean
-experimental/webrtc/RTCOfferOptions[SO] def apply(iceRestart: js.UndefOr[Boolean]?, offerToReceiveAudio: js.UndefOr[Double]?, offerToReceiveVideo: js.UndefOr[Double]?, voiceActivityDetection: js.UndefOr[Boolean]?): RTCOfferOptions
+experimental/webrtc/RTCIdentityAssertion[SO] def apply(idp: js.UndefOr[String]?, name: js.UndefOr[String]?): RTCIdentityAssertion  (@deprecated in 2.0.0)
+experimental/webrtc/RTCOfferOptions[JT] var iceRestart: js.UndefOr[Boolean]
+experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveAudio: js.UndefOr[Double]
+experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveVideo: js.UndefOr[Double]
+experimental/webrtc/RTCOfferOptions[JT] var voiceActivityDetection: js.UndefOr[Boolean]
+experimental/webrtc/RTCOfferOptions[SO] def apply(iceRestart: js.UndefOr[Boolean]?, offerToReceiveAudio: js.UndefOr[Double]?, offerToReceiveVideo: js.UndefOr[Double]?, voiceActivityDetection: js.UndefOr[Boolean]?): RTCOfferOptions  (@deprecated in 2.0.0)
 experimental/webrtc/RTCPeerConnection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/webrtc/RTCPeerConnection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/webrtc/RTCPeerConnection[JC] def addIceCandidate(candidate: RTCIceCandidate): js.Promise[Unit]
@@ -25601,9 +25601,9 @@ experimental/webrtc/RTCSdpType[SO] val offer: RTCSdpType
 experimental/webrtc/RTCSdpType[SO] val pranswer: RTCSdpType
 experimental/webrtc/RTCSessionDescription[JC] var sdp: String
 experimental/webrtc/RTCSessionDescription[JC] var `type`: RTCSdpType
-experimental/webrtc/RTCSessionDescriptionInit[JT] var sdp: String
-experimental/webrtc/RTCSessionDescriptionInit[JT] var `type`: RTCSdpType
-experimental/webrtc/RTCSessionDescriptionInit[SO] def apply(`type`: js.UndefOr[RTCSdpType]?, sdp: js.UndefOr[String]?): RTCSessionDescriptionInit
+experimental/webrtc/RTCSessionDescriptionInit[JT] var sdp: js.UndefOr[String]
+experimental/webrtc/RTCSessionDescriptionInit[JT] var `type`: js.UndefOr[RTCSdpType]
+experimental/webrtc/RTCSessionDescriptionInit[SO] def apply(`type`: js.UndefOr[RTCSdpType]?, sdp: js.UndefOr[String]?): RTCSessionDescriptionInit  (@deprecated in 2.0.0)
 experimental/webrtc/RTCSignalingState[JT]
 experimental/webrtc/RTCSignalingState[SO] val closed: RTCSignalingState
 experimental/webrtc/RTCSignalingState[SO] val `have-local-offer` = "have-local-offer".asInstanceOf[RTCSignalingState]
@@ -25611,9 +25611,9 @@ experimental/webrtc/RTCSignalingState[SO] val `have-local-pranswer` = "have-loca
 experimental/webrtc/RTCSignalingState[SO] val `have-remote-offer` = "have-remote-offer".asInstanceOf[RTCSignalingState]
 experimental/webrtc/RTCSignalingState[SO] val `have-remote-pranswer` = "have-remote-pranswer".asInstanceOf[RTCSignalingState]
 experimental/webrtc/RTCSignalingState[SO] val stable: RTCSignalingState
-experimental/webrtc/RTCStats[JT] var id: String
-experimental/webrtc/RTCStats[JT] var timestamp: Double
-experimental/webrtc/RTCStats[JT] var `type`: RTCStatsType
+experimental/webrtc/RTCStats[JT] val id: String
+experimental/webrtc/RTCStats[JT] val timestamp: Double
+experimental/webrtc/RTCStats[JT] val `type`: RTCStatsType
 experimental/webrtc/RTCStatsReport[JT] def apply(id: String): RTCStats
 experimental/webrtc/RTCStatsType[JT]
 experimental/webrtc/RTCStatsType[SO] val `inbound-rtp` = "inbound-rtp".asInstanceOf[RTCStatsType]
