@@ -73,7 +73,7 @@ object IdbTest {
 
     for {
       john <- getFirstName(getJohn)
-      bob  <- getFirstName(getBob)
+      bob <- getFirstName(getBob)
     } yield {
       assertEquals("John", john)
       assertEquals("Bob", bob)
