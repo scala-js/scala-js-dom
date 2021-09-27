@@ -1665,6 +1665,9 @@ FileReader[JC] def result: js.Any
 FileReader[JO] val DONE: Short
 FileReader[JO] val EMPTY: Short
 FileReader[JO] val LOADING: Short
+FileReaderSync[JC] def readAsArrayBuffer(blob: Blob): ArrayBuffer
+FileReaderSync[JC] def readAsDataURL(blob: Blob): URL
+FileReaderSync[JC] def readAsText(blob: Blob, encoding: String?): String
 FocusEvent[JC] def bubbles: Boolean
 FocusEvent[JC] def cancelBubble: Boolean
 FocusEvent[JC] def cancelable: Boolean
@@ -24399,9 +24402,6 @@ crypto/package[SO] type BigInteger = Uint8Array
 crypto/package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
 crypto/package[SO] type KeyAlgorithmIdentifier = KeyAlgorithm | String
 crypto/package[SO] @js.native @JSGlobal("crypto") val crypto: Crypto
-experimental/FileReaderSync[JC] def readAsArrayBuffer(blob: Blob): ArrayBuffer
-experimental/FileReaderSync[JC] def readAsDataURL(blob: Blob): dom.URL
-experimental/FileReaderSync[JC] def readAsText(blob: Blob, encoding: String?): String
 experimental/Fullscreen[SO]  (@deprecated in 2.0.0)
 experimental/PointerLock[SO] def exitPointerLock(): Unit
 experimental/PointerLock[SO] def movementX: Double
@@ -24811,6 +24811,7 @@ experimental/package[SO] type Body = dom.Body  (@deprecated in 2.0.0)
 experimental/package[SO] type BodyInit = dom.BodyInit  (@deprecated in 2.0.0)
 experimental/package[SO] type ByteString = dom.ByteString  (@deprecated in 2.0.0)
 experimental/package[SO] type Chunk[+T] = dom.Chunk[T]  (@deprecated in 2.0.0)
+experimental/package[SO] type FileReaderSync = dom.FileReaderSync  (@deprecated in 2.0.0)
 experimental/package[SO] type Headers = dom.Headers  (@deprecated in 2.0.0)
 experimental/package[SO] type HeadersInit = dom.HeadersInit  (@deprecated in 2.0.0)
 experimental/package[SO] type HttpMethod = dom.HttpMethod  (@deprecated in 2.0.0)

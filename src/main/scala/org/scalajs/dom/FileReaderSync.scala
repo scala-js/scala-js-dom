@@ -1,7 +1,5 @@
-package org.scalajs.dom.experimental
+package org.scalajs.dom
 
-import org.scalajs.dom
-import org.scalajs.dom.Blob
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBuffer
@@ -24,7 +22,7 @@ class FileReaderSync() extends js.Object {
     * operation is finished, the readyState becomes DONE, and the loadend is triggered. At that time, the result
     * attribute contains a data: URL representing the file's data as base64 encoded string.
     */
-  def readAsDataURL(blob: Blob): dom.URL = js.native
+  def readAsDataURL(blob: Blob): URL = js.native
 
   /** The readAsText method is used to read the contents of the specified Blob or File. When the read operation is
     * complete, the readyState is changed to DONE, the loadend is triggered, and the result attribute contains the
