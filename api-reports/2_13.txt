@@ -14540,6 +14540,11 @@ MediaStreamConstraints[JT] var audio: js.UndefOr[Boolean | MediaTrackConstraints
 MediaStreamConstraints[JT] var peerIdentity: js.UndefOr[String]
 MediaStreamConstraints[JT] var video: js.UndefOr[Boolean | MediaTrackConstraints]
 MediaStreamConstraints[SO] def apply(video: js.UndefOr[Boolean | MediaTrackConstraints]?, audio: js.UndefOr[Boolean | MediaTrackConstraints]?, peerIdentity: js.UndefOr[String]?): MediaStreamConstraints  (@deprecated in 2.0.0)
+MediaStreamEventInit[JT] var bubbles: js.UndefOr[Boolean]
+MediaStreamEventInit[JT] var cancelable: js.UndefOr[Boolean]
+MediaStreamEventInit[JT] var composed: js.UndefOr[Boolean]
+MediaStreamEventInit[JT] var scoped: js.UndefOr[Boolean]
+MediaStreamEventInit[JT] var stream: js.UndefOr[MediaStream]
 MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaStreamTrack[JT] def applyConstraints(constraints: MediaTrackConstraints): js.Promise[Unit]
@@ -14769,6 +14774,7 @@ Navigator[JC] def geolocation: Geolocation
 Navigator[JC] def getGamepads(): js.Array[Gamepad]
 Navigator[JC] def language: String
 Navigator[JC] def languages: js.Array[String]
+Navigator[JC] def mediaDevices: MediaDevices
 Navigator[JC] def onLine: Boolean
 Navigator[JC] def platform: String
 Navigator[JC] def sendBeacon(url: String, data: BodyInit?): Boolean
@@ -15265,6 +15271,192 @@ ProgressEvent[JT] def target: EventTarget
 ProgressEvent[JT] def timeStamp: Double
 ProgressEvent[JT] def total: Double
 ProgressEvent[JT] def `type`: String
+RTCBundlePolicy[JT]
+RTCBundlePolicy[SO] val balanced: RTCBundlePolicy
+RTCBundlePolicy[SO] val `max-bundle` = "max-bundle".asInstanceOf[RTCBundlePolicy]
+RTCBundlePolicy[SO] val `max-compat` = "max-compat".asInstanceOf[RTCBundlePolicy]
+RTCConfiguration[JT] var bundlePolicy: js.UndefOr[RTCBundlePolicy]
+RTCConfiguration[JT] var iceServers: js.UndefOr[js.Array[RTCIceServer]]
+RTCConfiguration[JT] var iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]
+RTCConfiguration[JT] var peerIdentity: js.UndefOr[String]
+RTCConfiguration[SO] def apply(iceServers: js.UndefOr[js.Array[RTCIceServer]]?, iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]?, bundlePolicy: js.UndefOr[RTCBundlePolicy]?, peerIdentity: js.UndefOr[String]?): RTCConfiguration  (@deprecated in 2.0.0)
+RTCDTMFSender[JT] val canInsertDTMF: Boolean
+RTCDTMFSender[JT] val duration: Double
+RTCDTMFSender[JT] def insertDTMF(tones: String?, duration: Double?, interToneGap: Double?): Unit
+RTCDTMFSender[JT] val interToneGap: Double
+RTCDTMFSender[JT] var ontonechange: js.Function1[Event, Any]
+RTCDTMFSender[JT] val toneBuffer: String
+RTCDTMFSender[JT] val track: MediaStreamTrack
+RTCDataChannel[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+RTCDataChannel[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+RTCDataChannel[JT] var binaryType: String
+RTCDataChannel[JT] def bufferedAmount: Double
+RTCDataChannel[JT] def close(): Unit
+RTCDataChannel[JT] def dispatchEvent(evt: Event): Boolean
+RTCDataChannel[JT] val id: Double
+RTCDataChannel[JT] val label: String
+RTCDataChannel[JT] val maxPacketLifeTime: Double
+RTCDataChannel[JT] val maxRetransmits: Double
+RTCDataChannel[JT] val negotiated: Boolean
+RTCDataChannel[JT] var onclose: js.Function1[Event, Any]
+RTCDataChannel[JT] var onerror: js.Function1[Event, Any]
+RTCDataChannel[JT] var onmessage: js.Function1[MessageEvent, Any]
+RTCDataChannel[JT] var onopen: js.Function1[Event, Any]
+RTCDataChannel[JT] val ordered: Boolean
+RTCDataChannel[JT] val protocol: String
+RTCDataChannel[JT] def readyState: RTCDataChannelState
+RTCDataChannel[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+RTCDataChannel[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+RTCDataChannel[JT] def send(data: String | Blob | ArrayBuffer | ArrayBufferView): Unit
+RTCDataChannelEvent[JC] def bubbles: Boolean
+RTCDataChannelEvent[JC] def cancelBubble: Boolean
+RTCDataChannelEvent[JC] def cancelable: Boolean
+RTCDataChannelEvent[JC] val channel: RTCDataChannel
+RTCDataChannelEvent[JC] def currentTarget: EventTarget
+RTCDataChannelEvent[JC] def defaultPrevented: Boolean
+RTCDataChannelEvent[JC] def eventPhase: Int
+RTCDataChannelEvent[JC] def isTrusted: Boolean
+RTCDataChannelEvent[JC] def preventDefault(): Unit
+RTCDataChannelEvent[JC] def stopImmediatePropagation(): Unit
+RTCDataChannelEvent[JC] def stopPropagation(): Unit
+RTCDataChannelEvent[JC] def target: EventTarget
+RTCDataChannelEvent[JC] def timeStamp: Double
+RTCDataChannelEvent[JC] def `type`: String
+RTCDataChannelEventInit[JT] var bubbles: js.UndefOr[Boolean]
+RTCDataChannelEventInit[JT] var cancelable: js.UndefOr[Boolean]
+RTCDataChannelEventInit[JT] var channel: js.UndefOr[RTCDataChannel]
+RTCDataChannelEventInit[JT] var composed: js.UndefOr[Boolean]
+RTCDataChannelEventInit[JT] var scoped: js.UndefOr[Boolean]
+RTCDataChannelInit[JT] var id: js.UndefOr[Double]
+RTCDataChannelInit[JT] var maxPacketLifeTime: js.UndefOr[Double]
+RTCDataChannelInit[JT] var maxRetransmits: js.UndefOr[Double]
+RTCDataChannelInit[JT] var negotiated: js.UndefOr[Boolean]
+RTCDataChannelInit[JT] var ordered: js.UndefOr[Boolean]
+RTCDataChannelInit[JT] var protocol: js.UndefOr[String]
+RTCDataChannelInit[SO] def apply(ordered: js.UndefOr[Boolean]?, maxPacketLifeTime: js.UndefOr[Double]?, maxRetransmits: js.UndefOr[Double]?, protocol: js.UndefOr[String]?, negotiated: js.UndefOr[Boolean]?, id: js.UndefOr[Double]?): RTCDataChannelInit  (@deprecated in 2.0.0)
+RTCDataChannelState[JT]
+RTCDataChannelState[SO] val closed: RTCDataChannelState
+RTCDataChannelState[SO] val closing: RTCDataChannelState
+RTCDataChannelState[SO] val connecting: RTCDataChannelState
+RTCDataChannelState[SO] val open: RTCDataChannelState
+RTCIceCandidate[JC] var candidate: String
+RTCIceCandidate[JC] var sdpMLineIndex: Double
+RTCIceCandidate[JC] var sdpMid: String
+RTCIceCandidateInit[JT] var candidate: js.UndefOr[String]
+RTCIceCandidateInit[JT] var sdpMLineIndex: js.UndefOr[Double]
+RTCIceCandidateInit[JT] var sdpMid: js.UndefOr[String]
+RTCIceCandidateInit[SO] def apply(candidate: js.UndefOr[String]?, sdpMid: js.UndefOr[String]?, sdpMLineIndex: js.UndefOr[Double]?): RTCIceCandidateInit  (@deprecated in 2.0.0)
+RTCIceConnectionState[JT]
+RTCIceConnectionState[SO] val checking: RTCIceConnectionState
+RTCIceConnectionState[SO] val closed: RTCIceConnectionState
+RTCIceConnectionState[SO] val completed: RTCIceConnectionState
+RTCIceConnectionState[SO] val connected: RTCIceConnectionState
+RTCIceConnectionState[SO] val disconnected: RTCIceConnectionState
+RTCIceConnectionState[SO] val failed: RTCIceConnectionState
+RTCIceConnectionState[SO] val `new`: RTCIceConnectionState
+RTCIceGatheringState[JT]
+RTCIceGatheringState[SO] val complete: RTCIceGatheringState
+RTCIceGatheringState[SO] val gathering: RTCIceGatheringState
+RTCIceGatheringState[SO] val `new`: RTCIceGatheringState
+RTCIceServer[JT] var credential: js.UndefOr[String]
+RTCIceServer[JT] var urls: js.UndefOr[String | js.Array[String]]
+RTCIceServer[JT] var username: js.UndefOr[String]
+RTCIceServer[SO] def apply(urls: js.UndefOr[String | js.Array[String]]?, username: js.UndefOr[String]?, credential: js.UndefOr[String]?): RTCIceServer  (@deprecated in 2.0.0)
+RTCIceTransportPolicy[JT]
+RTCIceTransportPolicy[SO] val all: RTCIceTransportPolicy
+RTCIceTransportPolicy[SO] val none: RTCIceTransportPolicy
+RTCIceTransportPolicy[SO] val relay: RTCIceTransportPolicy
+RTCIdentityAssertion[JT] val idp: String
+RTCIdentityAssertion[JT] val name: String
+RTCIdentityAssertion[SO] def apply(idp: js.UndefOr[String]?, name: js.UndefOr[String]?): RTCIdentityAssertion  (@deprecated in 2.0.0)
+RTCOfferOptions[JT] var iceRestart: js.UndefOr[Boolean]
+RTCOfferOptions[JT] var offerToReceiveAudio: js.UndefOr[Double]
+RTCOfferOptions[JT] var offerToReceiveVideo: js.UndefOr[Double]
+RTCOfferOptions[JT] var voiceActivityDetection: js.UndefOr[Boolean]
+RTCOfferOptions[SO] def apply(iceRestart: js.UndefOr[Boolean]?, offerToReceiveAudio: js.UndefOr[Double]?, offerToReceiveVideo: js.UndefOr[Double]?, voiceActivityDetection: js.UndefOr[Boolean]?): RTCOfferOptions  (@deprecated in 2.0.0)
+RTCPeerConnection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+RTCPeerConnection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+RTCPeerConnection[JC] def addIceCandidate(candidate: RTCIceCandidate): js.Promise[Unit]
+RTCPeerConnection[JC] def addStream(stream: MediaStream): Unit
+RTCPeerConnection[JC] val canTrickleIceCandidates: js.Any
+RTCPeerConnection[JC] def close(): Unit
+RTCPeerConnection[JC] def createAnswer(): js.Promise[RTCSessionDescription]
+RTCPeerConnection[JC] def createDTMFSender(track: MediaStreamTrack): RTCDTMFSender
+RTCPeerConnection[JC] def createDataChannel(label: String, dataChannelDict: RTCDataChannelInit): RTCDataChannel
+RTCPeerConnection[JC] def createOffer(options: RTCOfferOptions?): js.Promise[RTCSessionDescription]
+RTCPeerConnection[JC] def dispatchEvent(evt: Event): Boolean
+RTCPeerConnection[JC] def getConfiguration(): RTCConfiguration
+RTCPeerConnection[JC] def getIdentityAssertion(): js.Promise[Unit]
+RTCPeerConnection[JC] def getLocalStreams(): js.Array[MediaStream]
+RTCPeerConnection[JC] def getRemoteStreams(): js.Array[MediaStream]
+RTCPeerConnection[JC] def getStats(selector: MediaStreamTrack, callback: js.Function1[RTCStatsReport, Any], error: js.Function1[DOMException, Any]): RTCStatsReport
+RTCPeerConnection[JC] def getStreamById(id: String): MediaStream
+RTCPeerConnection[JC] def iceConnectionState: RTCIceConnectionState
+RTCPeerConnection[JC] def iceGatheringState: RTCIceGatheringState
+RTCPeerConnection[JC] def localDescription: RTCSessionDescription
+RTCPeerConnection[JC] var ondatachannel: js.Function1[RTCDataChannelEvent, Any]
+RTCPeerConnection[JC] var onicecandidate: js.Function1[RTCPeerConnectionIceEvent, Any]
+RTCPeerConnection[JC] var oniceconnectionstatechange: js.Function1[Event, Any]
+RTCPeerConnection[JC] var onidentityresult: js.Function1[Event, Any]
+RTCPeerConnection[JC] var onidpassertionerror: js.Function1[Event, Any]
+RTCPeerConnection[JC] var onidpvalidationerror: js.Function1[Event, Any]
+RTCPeerConnection[JC] var onnegotiationneeded: js.Function1[Event, Any]
+RTCPeerConnection[JC] var onpeeridentity: js.Function1[Event, Any]
+RTCPeerConnection[JC] var onremovetrack: js.Function1[MediaStreamTrackEvent, Any]
+RTCPeerConnection[JC] var onsignalingstatechange: js.Function1[Event, Any]
+RTCPeerConnection[JC] var ontrack: js.Function1[MediaStreamTrackEvent, Any]
+RTCPeerConnection[JC] val peerIdentity: RTCIdentityAssertion
+RTCPeerConnection[JC] def remoteDescription: RTCSessionDescription
+RTCPeerConnection[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+RTCPeerConnection[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+RTCPeerConnection[JC] def removeStream(stream: MediaStream): Unit
+RTCPeerConnection[JC] def setIdentityProvider(provider: String, protocol: String?, usernameHint: String?): Unit
+RTCPeerConnection[JC] def setLocalDescription(description: RTCSessionDescription): js.Promise[Unit]
+RTCPeerConnection[JC] def setRemoteDescription(description: RTCSessionDescription): js.Promise[Unit]
+RTCPeerConnection[JC] def signalingState: RTCSignalingState
+RTCPeerConnection[JC] def updateIce(configuration: RTCConfiguration): Unit
+RTCPeerConnectionIceEvent[JC] def bubbles: Boolean
+RTCPeerConnectionIceEvent[JC] def cancelBubble: Boolean
+RTCPeerConnectionIceEvent[JC] def cancelable: Boolean
+RTCPeerConnectionIceEvent[JC] var candidate: RTCIceCandidate
+RTCPeerConnectionIceEvent[JC] def currentTarget: EventTarget
+RTCPeerConnectionIceEvent[JC] def defaultPrevented: Boolean
+RTCPeerConnectionIceEvent[JC] def eventPhase: Int
+RTCPeerConnectionIceEvent[JC] def isTrusted: Boolean
+RTCPeerConnectionIceEvent[JC] def preventDefault(): Unit
+RTCPeerConnectionIceEvent[JC] def stopImmediatePropagation(): Unit
+RTCPeerConnectionIceEvent[JC] def stopPropagation(): Unit
+RTCPeerConnectionIceEvent[JC] def target: EventTarget
+RTCPeerConnectionIceEvent[JC] def timeStamp: Double
+RTCPeerConnectionIceEvent[JC] def `type`: String
+RTCPeerConnectionIceEventInit[JT] var bubbles: js.UndefOr[Boolean]
+RTCPeerConnectionIceEventInit[JT] var cancelable: js.UndefOr[Boolean]
+RTCPeerConnectionIceEventInit[JT] var candidate: js.UndefOr[RTCIceCandidate]
+RTCPeerConnectionIceEventInit[JT] var composed: js.UndefOr[Boolean]
+RTCPeerConnectionIceEventInit[JT] var scoped: js.UndefOr[Boolean]
+RTCSdpType[JT]
+RTCSdpType[SO] val answer: RTCSdpType
+RTCSdpType[SO] val offer: RTCSdpType
+RTCSdpType[SO] val pranswer: RTCSdpType
+RTCSessionDescription[JC] var sdp: String
+RTCSessionDescription[JC] var `type`: RTCSdpType
+RTCSessionDescriptionInit[JT] var sdp: js.UndefOr[String]
+RTCSessionDescriptionInit[JT] var `type`: js.UndefOr[RTCSdpType]
+RTCSessionDescriptionInit[SO] def apply(`type`: js.UndefOr[RTCSdpType]?, sdp: js.UndefOr[String]?): RTCSessionDescriptionInit  (@deprecated in 2.0.0)
+RTCSignalingState[JT]
+RTCSignalingState[SO] val closed: RTCSignalingState
+RTCSignalingState[SO] val `have-local-offer` = "have-local-offer".asInstanceOf[RTCSignalingState]
+RTCSignalingState[SO] val `have-local-pranswer` = "have-local-pranswer".asInstanceOf[RTCSignalingState]
+RTCSignalingState[SO] val `have-remote-offer` = "have-remote-offer".asInstanceOf[RTCSignalingState]
+RTCSignalingState[SO] val `have-remote-pranswer` = "have-remote-pranswer".asInstanceOf[RTCSignalingState]
+RTCSignalingState[SO] val stable: RTCSignalingState
+RTCStats[JT] val id: String
+RTCStats[JT] val timestamp: Double
+RTCStats[JT] val `type`: RTCStatsType
+RTCStatsReport[JT] def apply(id: String): RTCStats
+RTCStatsType[JT]
+RTCStatsType[SO] val `inbound-rtp` = "inbound-rtp".asInstanceOf[RTCStatsType]
+RTCStatsType[SO] val `outbound-rtp` = "outbound-rtp".asInstanceOf[RTCStatsType]
 Range[JC] def cloneContents(): DocumentFragment
 Range[JC] def cloneRange(): Range
 Range[JC] def collapse(toStart: Boolean): Unit
@@ -25555,200 +25747,52 @@ experimental/webgl/extensions/WebGLTimerQueryEXT[JT]
 experimental/webgl/extensions/WebGLVertexArrayObjectOES[JT]
 experimental/webgl/package[SO] def getExtension[T](id: WebGLExtensionIdentifier[T]): js.UndefOr[T]
 experimental/webgl/package.WebGLRenderingContextOps[SC] def getExtension[T](id: WebGLExtensionIdentifier[T]): js.UndefOr[T]
-experimental/webrtc/MediaStreamEventInit[JT] var bubbles: js.UndefOr[Boolean]
-experimental/webrtc/MediaStreamEventInit[JT] var cancelable: js.UndefOr[Boolean]
-experimental/webrtc/MediaStreamEventInit[JT] var composed: js.UndefOr[Boolean]
-experimental/webrtc/MediaStreamEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/webrtc/MediaStreamEventInit[JT] var stream: js.UndefOr[MediaStream]
-experimental/webrtc/RTCBundlePolicy[JT]
-experimental/webrtc/RTCBundlePolicy[SO] val balanced: RTCBundlePolicy
-experimental/webrtc/RTCBundlePolicy[SO] val `max-bundle` = "max-bundle".asInstanceOf[RTCBundlePolicy]
-experimental/webrtc/RTCBundlePolicy[SO] val `max-compat` = "max-compat".asInstanceOf[RTCBundlePolicy]
-experimental/webrtc/RTCConfiguration[JT] var bundlePolicy: js.UndefOr[RTCBundlePolicy]
-experimental/webrtc/RTCConfiguration[JT] var iceServers: js.UndefOr[js.Array[RTCIceServer]]
-experimental/webrtc/RTCConfiguration[JT] var iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]
-experimental/webrtc/RTCConfiguration[JT] var peerIdentity: js.UndefOr[String]
-experimental/webrtc/RTCConfiguration[SO] def apply(iceServers: js.UndefOr[js.Array[RTCIceServer]]?, iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]?, bundlePolicy: js.UndefOr[RTCBundlePolicy]?, peerIdentity: js.UndefOr[String]?): RTCConfiguration  (@deprecated in 2.0.0)
-experimental/webrtc/RTCDTMFSender[JT] val canInsertDTMF: Boolean
-experimental/webrtc/RTCDTMFSender[JT] val duration: Double
-experimental/webrtc/RTCDTMFSender[JT] def insertDTMF(tones: String?, duration: Double?, interToneGap: Double?): Unit
-experimental/webrtc/RTCDTMFSender[JT] val interToneGap: Double
-experimental/webrtc/RTCDTMFSender[JT] var ontonechange: js.Function1[Event, Any]
-experimental/webrtc/RTCDTMFSender[JT] val toneBuffer: String
-experimental/webrtc/RTCDTMFSender[JT] val track: MediaStreamTrack
-experimental/webrtc/RTCDataChannel[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/webrtc/RTCDataChannel[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/webrtc/RTCDataChannel[JT] var binaryType: String
-experimental/webrtc/RTCDataChannel[JT] def bufferedAmount: Double
-experimental/webrtc/RTCDataChannel[JT] def close(): Unit
-experimental/webrtc/RTCDataChannel[JT] def dispatchEvent(evt: Event): Boolean
-experimental/webrtc/RTCDataChannel[JT] val id: Double
-experimental/webrtc/RTCDataChannel[JT] val label: String
-experimental/webrtc/RTCDataChannel[JT] val maxPacketLifeTime: Double
-experimental/webrtc/RTCDataChannel[JT] val maxRetransmits: Double
-experimental/webrtc/RTCDataChannel[JT] val negotiated: Boolean
-experimental/webrtc/RTCDataChannel[JT] var onclose: js.Function1[Event, Any]
-experimental/webrtc/RTCDataChannel[JT] var onerror: js.Function1[Event, Any]
-experimental/webrtc/RTCDataChannel[JT] var onmessage: js.Function1[MessageEvent, Any]
-experimental/webrtc/RTCDataChannel[JT] var onopen: js.Function1[Event, Any]
-experimental/webrtc/RTCDataChannel[JT] val ordered: Boolean
-experimental/webrtc/RTCDataChannel[JT] val protocol: String
-experimental/webrtc/RTCDataChannel[JT] def readyState: RTCDataChannelState
-experimental/webrtc/RTCDataChannel[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/webrtc/RTCDataChannel[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/webrtc/RTCDataChannel[JT] def send(data: String | Blob | ArrayBuffer | ArrayBufferView): Unit
-experimental/webrtc/RTCDataChannelEvent[JC] def bubbles: Boolean
-experimental/webrtc/RTCDataChannelEvent[JC] def cancelBubble: Boolean
-experimental/webrtc/RTCDataChannelEvent[JC] def cancelable: Boolean
-experimental/webrtc/RTCDataChannelEvent[JC] val channel: RTCDataChannel
-experimental/webrtc/RTCDataChannelEvent[JC] def currentTarget: EventTarget
-experimental/webrtc/RTCDataChannelEvent[JC] def defaultPrevented: Boolean
-experimental/webrtc/RTCDataChannelEvent[JC] def eventPhase: Int
-experimental/webrtc/RTCDataChannelEvent[JC] def isTrusted: Boolean
-experimental/webrtc/RTCDataChannelEvent[JC] def preventDefault(): Unit
-experimental/webrtc/RTCDataChannelEvent[JC] def stopImmediatePropagation(): Unit
-experimental/webrtc/RTCDataChannelEvent[JC] def stopPropagation(): Unit
-experimental/webrtc/RTCDataChannelEvent[JC] def target: EventTarget
-experimental/webrtc/RTCDataChannelEvent[JC] def timeStamp: Double
-experimental/webrtc/RTCDataChannelEvent[JC] def `type`: String
-experimental/webrtc/RTCDataChannelEventInit[JT] var bubbles: js.UndefOr[Boolean]
-experimental/webrtc/RTCDataChannelEventInit[JT] var cancelable: js.UndefOr[Boolean]
-experimental/webrtc/RTCDataChannelEventInit[JT] var channel: js.UndefOr[RTCDataChannel]
-experimental/webrtc/RTCDataChannelEventInit[JT] var composed: js.UndefOr[Boolean]
-experimental/webrtc/RTCDataChannelEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/webrtc/RTCDataChannelInit[JT] var id: js.UndefOr[Double]
-experimental/webrtc/RTCDataChannelInit[JT] var maxPacketLifeTime: js.UndefOr[Double]
-experimental/webrtc/RTCDataChannelInit[JT] var maxRetransmits: js.UndefOr[Double]
-experimental/webrtc/RTCDataChannelInit[JT] var negotiated: js.UndefOr[Boolean]
-experimental/webrtc/RTCDataChannelInit[JT] var ordered: js.UndefOr[Boolean]
-experimental/webrtc/RTCDataChannelInit[JT] var protocol: js.UndefOr[String]
-experimental/webrtc/RTCDataChannelInit[SO] def apply(ordered: js.UndefOr[Boolean]?, maxPacketLifeTime: js.UndefOr[Double]?, maxRetransmits: js.UndefOr[Double]?, protocol: js.UndefOr[String]?, negotiated: js.UndefOr[Boolean]?, id: js.UndefOr[Double]?): RTCDataChannelInit  (@deprecated in 2.0.0)
-experimental/webrtc/RTCDataChannelState[JT]
-experimental/webrtc/RTCDataChannelState[SO] val closed: RTCDataChannelState
-experimental/webrtc/RTCDataChannelState[SO] val closing: RTCDataChannelState
-experimental/webrtc/RTCDataChannelState[SO] val connecting: RTCDataChannelState
-experimental/webrtc/RTCDataChannelState[SO] val open: RTCDataChannelState
-experimental/webrtc/RTCIceCandidate[JC] var candidate: String
-experimental/webrtc/RTCIceCandidate[JC] var sdpMLineIndex: Double
-experimental/webrtc/RTCIceCandidate[JC] var sdpMid: String
-experimental/webrtc/RTCIceCandidateInit[JT] var candidate: js.UndefOr[String]
-experimental/webrtc/RTCIceCandidateInit[JT] var sdpMLineIndex: js.UndefOr[Double]
-experimental/webrtc/RTCIceCandidateInit[JT] var sdpMid: js.UndefOr[String]
-experimental/webrtc/RTCIceCandidateInit[SO] def apply(candidate: js.UndefOr[String]?, sdpMid: js.UndefOr[String]?, sdpMLineIndex: js.UndefOr[Double]?): RTCIceCandidateInit  (@deprecated in 2.0.0)
-experimental/webrtc/RTCIceConnectionState[JT]
-experimental/webrtc/RTCIceConnectionState[SO] val checking: RTCIceConnectionState
-experimental/webrtc/RTCIceConnectionState[SO] val closed: RTCIceConnectionState
-experimental/webrtc/RTCIceConnectionState[SO] val completed: RTCIceConnectionState
-experimental/webrtc/RTCIceConnectionState[SO] val connected: RTCIceConnectionState
-experimental/webrtc/RTCIceConnectionState[SO] val disconnected: RTCIceConnectionState
-experimental/webrtc/RTCIceConnectionState[SO] val failed: RTCIceConnectionState
-experimental/webrtc/RTCIceConnectionState[SO] val `new`: RTCIceConnectionState
-experimental/webrtc/RTCIceGatheringState[JT]
-experimental/webrtc/RTCIceGatheringState[SO] val complete: RTCIceGatheringState
-experimental/webrtc/RTCIceGatheringState[SO] val gathering: RTCIceGatheringState
-experimental/webrtc/RTCIceGatheringState[SO] val `new`: RTCIceGatheringState
-experimental/webrtc/RTCIceServer[JT] var credential: js.UndefOr[String]
-experimental/webrtc/RTCIceServer[JT] var urls: js.UndefOr[String | js.Array[String]]
-experimental/webrtc/RTCIceServer[JT] var username: js.UndefOr[String]
-experimental/webrtc/RTCIceServer[SO] def apply(urls: js.UndefOr[String | js.Array[String]]?, username: js.UndefOr[String]?, credential: js.UndefOr[String]?): RTCIceServer  (@deprecated in 2.0.0)
-experimental/webrtc/RTCIceTransportPolicy[JT]
-experimental/webrtc/RTCIceTransportPolicy[SO] val all: RTCIceTransportPolicy
-experimental/webrtc/RTCIceTransportPolicy[SO] val none: RTCIceTransportPolicy
-experimental/webrtc/RTCIceTransportPolicy[SO] val relay: RTCIceTransportPolicy
-experimental/webrtc/RTCIdentityAssertion[JT] val idp: String
-experimental/webrtc/RTCIdentityAssertion[JT] val name: String
-experimental/webrtc/RTCIdentityAssertion[SO] def apply(idp: js.UndefOr[String]?, name: js.UndefOr[String]?): RTCIdentityAssertion  (@deprecated in 2.0.0)
-experimental/webrtc/RTCOfferOptions[JT] var iceRestart: js.UndefOr[Boolean]
-experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveAudio: js.UndefOr[Double]
-experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveVideo: js.UndefOr[Double]
-experimental/webrtc/RTCOfferOptions[JT] var voiceActivityDetection: js.UndefOr[Boolean]
-experimental/webrtc/RTCOfferOptions[SO] def apply(iceRestart: js.UndefOr[Boolean]?, offerToReceiveAudio: js.UndefOr[Double]?, offerToReceiveVideo: js.UndefOr[Double]?, voiceActivityDetection: js.UndefOr[Boolean]?): RTCOfferOptions  (@deprecated in 2.0.0)
-experimental/webrtc/RTCPeerConnection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/webrtc/RTCPeerConnection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/webrtc/RTCPeerConnection[JC] def addIceCandidate(candidate: RTCIceCandidate): js.Promise[Unit]
-experimental/webrtc/RTCPeerConnection[JC] def addStream(stream: MediaStream): Unit
-experimental/webrtc/RTCPeerConnection[JC] val canTrickleIceCandidates: js.Any
-experimental/webrtc/RTCPeerConnection[JC] def close(): Unit
-experimental/webrtc/RTCPeerConnection[JC] def createAnswer(): js.Promise[RTCSessionDescription]
-experimental/webrtc/RTCPeerConnection[JC] def createDTMFSender(track: MediaStreamTrack): RTCDTMFSender
-experimental/webrtc/RTCPeerConnection[JC] def createDataChannel(label: String, dataChannelDict: RTCDataChannelInit): RTCDataChannel
-experimental/webrtc/RTCPeerConnection[JC] def createOffer(options: RTCOfferOptions?): js.Promise[RTCSessionDescription]
-experimental/webrtc/RTCPeerConnection[JC] def dispatchEvent(evt: Event): Boolean
-experimental/webrtc/RTCPeerConnection[JC] def getConfiguration(): RTCConfiguration
-experimental/webrtc/RTCPeerConnection[JC] def getIdentityAssertion(): js.Promise[Unit]
-experimental/webrtc/RTCPeerConnection[JC] def getLocalStreams(): js.Array[MediaStream]
-experimental/webrtc/RTCPeerConnection[JC] def getRemoteStreams(): js.Array[MediaStream]
-experimental/webrtc/RTCPeerConnection[JC] def getStats(selector: MediaStreamTrack, callback: js.Function1[RTCStatsReport, Any], error: js.Function1[DOMException, Any]): RTCStatsReport
-experimental/webrtc/RTCPeerConnection[JC] def getStreamById(id: String): MediaStream
-experimental/webrtc/RTCPeerConnection[JC] def iceConnectionState: RTCIceConnectionState
-experimental/webrtc/RTCPeerConnection[JC] def iceGatheringState: RTCIceGatheringState
-experimental/webrtc/RTCPeerConnection[JC] def localDescription: RTCSessionDescription
-experimental/webrtc/RTCPeerConnection[JC] var ondatachannel: js.Function1[RTCDataChannelEvent, Any]
-experimental/webrtc/RTCPeerConnection[JC] var onicecandidate: js.Function1[RTCPeerConnectionIceEvent, Any]
-experimental/webrtc/RTCPeerConnection[JC] var oniceconnectionstatechange: js.Function1[Event, Any]
-experimental/webrtc/RTCPeerConnection[JC] var onidentityresult: js.Function1[Event, Any]
-experimental/webrtc/RTCPeerConnection[JC] var onidpassertionerror: js.Function1[Event, Any]
-experimental/webrtc/RTCPeerConnection[JC] var onidpvalidationerror: js.Function1[Event, Any]
-experimental/webrtc/RTCPeerConnection[JC] var onnegotiationneeded: js.Function1[Event, Any]
-experimental/webrtc/RTCPeerConnection[JC] var onpeeridentity: js.Function1[Event, Any]
-experimental/webrtc/RTCPeerConnection[JC] var onremovetrack: js.Function1[MediaStreamTrackEvent, Any]
-experimental/webrtc/RTCPeerConnection[JC] var onsignalingstatechange: js.Function1[Event, Any]
-experimental/webrtc/RTCPeerConnection[JC] var ontrack: js.Function1[MediaStreamTrackEvent, Any]
-experimental/webrtc/RTCPeerConnection[JC] val peerIdentity: RTCIdentityAssertion
-experimental/webrtc/RTCPeerConnection[JC] def remoteDescription: RTCSessionDescription
-experimental/webrtc/RTCPeerConnection[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/webrtc/RTCPeerConnection[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/webrtc/RTCPeerConnection[JC] def removeStream(stream: MediaStream): Unit
-experimental/webrtc/RTCPeerConnection[JC] def setIdentityProvider(provider: String, protocol: String?, usernameHint: String?): Unit
-experimental/webrtc/RTCPeerConnection[JC] def setLocalDescription(description: RTCSessionDescription): js.Promise[Unit]
-experimental/webrtc/RTCPeerConnection[JC] def setRemoteDescription(description: RTCSessionDescription): js.Promise[Unit]
-experimental/webrtc/RTCPeerConnection[JC] def signalingState: RTCSignalingState
-experimental/webrtc/RTCPeerConnection[JC] def updateIce(configuration: RTCConfiguration): Unit
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def bubbles: Boolean
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def cancelBubble: Boolean
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def cancelable: Boolean
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] var candidate: RTCIceCandidate
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def currentTarget: EventTarget
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def defaultPrevented: Boolean
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def eventPhase: Int
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def isTrusted: Boolean
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def preventDefault(): Unit
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def stopImmediatePropagation(): Unit
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def stopPropagation(): Unit
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def target: EventTarget
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def timeStamp: Double
-experimental/webrtc/RTCPeerConnectionIceEvent[JC] def `type`: String
-experimental/webrtc/RTCPeerConnectionIceEventInit[JT] var bubbles: js.UndefOr[Boolean]
-experimental/webrtc/RTCPeerConnectionIceEventInit[JT] var cancelable: js.UndefOr[Boolean]
-experimental/webrtc/RTCPeerConnectionIceEventInit[JT] var candidate: js.UndefOr[RTCIceCandidate]
-experimental/webrtc/RTCPeerConnectionIceEventInit[JT] var composed: js.UndefOr[Boolean]
-experimental/webrtc/RTCPeerConnectionIceEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/webrtc/RTCSdpType[JT]
-experimental/webrtc/RTCSdpType[SO] val answer: RTCSdpType
-experimental/webrtc/RTCSdpType[SO] val offer: RTCSdpType
-experimental/webrtc/RTCSdpType[SO] val pranswer: RTCSdpType
-experimental/webrtc/RTCSessionDescription[JC] var sdp: String
-experimental/webrtc/RTCSessionDescription[JC] var `type`: RTCSdpType
-experimental/webrtc/RTCSessionDescriptionInit[JT] var sdp: js.UndefOr[String]
-experimental/webrtc/RTCSessionDescriptionInit[JT] var `type`: js.UndefOr[RTCSdpType]
-experimental/webrtc/RTCSessionDescriptionInit[SO] def apply(`type`: js.UndefOr[RTCSdpType]?, sdp: js.UndefOr[String]?): RTCSessionDescriptionInit  (@deprecated in 2.0.0)
-experimental/webrtc/RTCSignalingState[JT]
-experimental/webrtc/RTCSignalingState[SO] val closed: RTCSignalingState
-experimental/webrtc/RTCSignalingState[SO] val `have-local-offer` = "have-local-offer".asInstanceOf[RTCSignalingState]
-experimental/webrtc/RTCSignalingState[SO] val `have-local-pranswer` = "have-local-pranswer".asInstanceOf[RTCSignalingState]
-experimental/webrtc/RTCSignalingState[SO] val `have-remote-offer` = "have-remote-offer".asInstanceOf[RTCSignalingState]
-experimental/webrtc/RTCSignalingState[SO] val `have-remote-pranswer` = "have-remote-pranswer".asInstanceOf[RTCSignalingState]
-experimental/webrtc/RTCSignalingState[SO] val stable: RTCSignalingState
-experimental/webrtc/RTCStats[JT] val id: String
-experimental/webrtc/RTCStats[JT] val timestamp: Double
-experimental/webrtc/RTCStats[JT] val `type`: RTCStatsType
-experimental/webrtc/RTCStatsReport[JT] def apply(id: String): RTCStats
-experimental/webrtc/RTCStatsType[JT]
-experimental/webrtc/RTCStatsType[SO] val `inbound-rtp` = "inbound-rtp".asInstanceOf[RTCStatsType]
-experimental/webrtc/RTCStatsType[SO] val `outbound-rtp` = "outbound-rtp".asInstanceOf[RTCStatsType]
-experimental/webrtc/package[SO] def mediaDevices: MediaDevices
-experimental/webrtc/package[SO] implicit def toWebRTC(n: org.scalajs.dom.Navigator): NavigatorMediaStream
-experimental/webrtc/package.NavigatorMediaStream[JT] def mediaDevices: MediaDevices
+experimental/webrtc/package[SO] type MediaStreamEventInit = dom.MediaStreamEventInit  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type NavigatorMediaStream = dom.Navigator  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCBundlePolicy = dom.RTCBundlePolicy  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCConfiguration = dom.RTCConfiguration  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCDTMFSender = dom.RTCDTMFSender  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCDataChannel = dom.RTCDataChannel  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCDataChannelEvent = dom.RTCDataChannelEvent  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCDataChannelEventInit = dom.RTCDataChannelEventInit  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCDataChannelInit = dom.RTCDataChannelInit  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCDataChannelState = dom.RTCDataChannelState  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCIceCandidate = dom.RTCIceCandidate  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCIceCandidateInit = dom.RTCIceCandidateInit  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCIceConnectionState = dom.RTCIceConnectionState  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCIceGatheringState = dom.RTCIceGatheringState  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCIceServer = dom.RTCIceServer  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCIceTransportPolicy = dom.RTCIceTransportPolicy  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCIdentityAssertion = dom.RTCIdentityAssertion  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCOfferOptions = dom.RTCOfferOptions  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCPeerConnection = dom.RTCPeerConnection  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCPeerConnectionIceEvent = dom.RTCPeerConnectionIceEvent  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCPeerConnectionIceEventInit = dom.RTCPeerConnectionIceEventInit  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCSdpType = dom.RTCSdpType  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCSessionDescription = dom.RTCSessionDescription  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCSessionDescriptionInit = dom.RTCSessionDescriptionInit  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCSignalingState = dom.RTCSignalingState  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCStats = dom.RTCStats  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCStatsReport = dom.RTCStatsReport  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] type RTCStatsType = dom.RTCStatsType  (@deprecated in 2.0.0)
+experimental/webrtc/package[SO] @deprecated("use dom.RTCBundlePolicy instead", "2.0.0") val RTCBundlePolicy = dom.RTCBundlePolicy
+experimental/webrtc/package[SO] @deprecated("use dom.RTCConfiguration instead", "2.0.0") val RTCConfiguration = dom.RTCConfiguration
+experimental/webrtc/package[SO] @deprecated("use dom.RTCDataChannelInit instead", "2.0.0") val RTCDataChannelInit = dom.RTCDataChannelInit
+experimental/webrtc/package[SO] @deprecated("use dom.RTCDataChannelState instead", "2.0.0") val RTCDataChannelState = dom.RTCDataChannelState
+experimental/webrtc/package[SO] @deprecated("use dom.RTCIceCandidateInit instead", "2.0.0") val RTCIceCandidateInit = dom.RTCIceCandidateInit
+experimental/webrtc/package[SO] @deprecated("use dom.RTCIceConnectionState instead", "2.0.0") val RTCIceConnectionState = dom.RTCIceConnectionState
+experimental/webrtc/package[SO] @deprecated("use dom.RTCIceGatheringState instead", "2.0.0") val RTCIceGatheringState = dom.RTCIceGatheringState
+experimental/webrtc/package[SO] @deprecated("use dom.RTCIceServer instead", "2.0.0") val RTCIceServer = dom.RTCIceServer
+experimental/webrtc/package[SO] @deprecated("use dom.RTCIceTransportPolicy instead", "2.0.0") val RTCIceTransportPolicy = dom.RTCIceTransportPolicy
+experimental/webrtc/package[SO] @deprecated("use dom.RTCIdentityAssertion instead", "2.0.0") val RTCIdentityAssertion = dom.RTCIdentityAssertion
+experimental/webrtc/package[SO] @deprecated("use dom.RTCOfferOptions instead", "2.0.0") val RTCOfferOptions = dom.RTCOfferOptions
+experimental/webrtc/package[SO] @deprecated("use dom.RTCPeerConnection instead", "2.0.0") val RTCPeerConnection = dom.RTCPeerConnection
+experimental/webrtc/package[SO] @deprecated("use dom.RTCSdpType instead", "2.0.0") val RTCSdpType = dom.RTCSdpType
+experimental/webrtc/package[SO] @deprecated("use dom.RTCSessionDescription instead", "2.0.0") val RTCSessionDescription = dom.RTCSessionDescription
+experimental/webrtc/package[SO] @deprecated("use dom.RTCSessionDescriptionInit instead", "2.0.0") val RTCSessionDescriptionInit = dom.RTCSessionDescriptionInit
+experimental/webrtc/package[SO] @deprecated("use dom.RTCSignalingState instead", "2.0.0") val RTCSignalingState = dom.RTCSignalingState
+experimental/webrtc/package[SO] @deprecated("use dom.RTCStatsType instead", "2.0.0") val RTCStatsType = dom.RTCStatsType
+experimental/webrtc/package[SO] def toWebRTC(n: dom.Navigator): NavigatorMediaStream  (@deprecated in 2.0.0)
 ext/Ajax[SO] def apply(method: String, url: String, data: InputData, timeout: Int, headers: Map[String, String], withCredentials: Boolean, responseType: String): Future[dom.XMLHttpRequest]  (@deprecated in 2.0.0)
 ext/Ajax[SO] implicit def arrayBufferView2ajax(b: ArrayBufferView): InputData  (@deprecated in 2.0.0)
 ext/Ajax[SO] implicit def blob2ajax(b: Blob): InputData  (@deprecated in 2.0.0)

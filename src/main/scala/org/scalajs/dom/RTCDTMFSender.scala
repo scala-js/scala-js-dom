@@ -1,8 +1,6 @@
 /** http://www.w3.org/TR/2015/WD-webrtc-20150210/ */
 package org.scalajs.dom
-package experimental.webrtc
 
-import org.scalajs.dom.Event
 import scala.scalajs.js
 
 //https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection

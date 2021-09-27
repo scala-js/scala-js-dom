@@ -48,4 +48,12 @@ class Navigator
     * [[https://www.w3.org/TR/2015/WD-gamepad-20151217/ W3C Working Draft]]
     */
   def getGamepads(): js.Array[Gamepad] = js.native
+
+  /** The Navigator.mediaDevices read-only property returns a MediaDevices object, which provides access to connected
+    * media input devices like cameras and microphones, as well as screen sharing.
+    *
+    * @see
+    *   [[https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices]]
+    */
+  def mediaDevices: MediaDevices = js.native
 }

@@ -1,8 +1,6 @@
 /** http://www.w3.org/TR/2015/WD-webrtc-20150210/ */
 package org.scalajs.dom
-package experimental.webrtc
 
-import org.scalajs.dom.{DOMException, Event, EventTarget}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
