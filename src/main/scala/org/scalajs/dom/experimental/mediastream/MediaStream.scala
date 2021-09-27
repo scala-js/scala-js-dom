@@ -77,7 +77,7 @@ class MediaStream() extends EventTarget {
 
 /** see [[https://www.w3.org/TR/2013/WD-mediacapture-streams-20130903/#widl-MediaStream-onended]] in W3C spec */
 @js.native
-trait MediaStreamTrackState extends js.Any
+sealed trait MediaStreamTrackState extends js.Any
 
 object MediaStreamTrackState {
 
@@ -206,23 +206,24 @@ trait MediaTrackSettings extends js.Object {
   var groupId: js.UndefOr[String] = js.undefined
 }
 
-@js.native
 trait MediaTrackConstraintSet extends js.Object {
-  var width: Double = js.native
-  var height: Double = js.native
-  var aspectRatio: Double = js.native
-  var frameRate: Double = js.native
-  var facingMode: String = js.native
-  var volume: Double = js.native
-  var sampleRate: Double = js.native
-  var sampleSize: Double = js.native
-  var echoCancellation: Boolean = js.native
-  var deviceId: String = js.native
-  var groupId: String = js.native
+  var width: js.UndefOr[Double] = js.undefined
+  var height: js.UndefOr[Double] = js.undefined
+  var aspectRatio: js.UndefOr[Double] = js.undefined
+  var frameRate: js.UndefOr[Double] = js.undefined
+  var facingMode: js.UndefOr[String] = js.undefined
+  var volume: js.UndefOr[Double] = js.undefined
+  var sampleRate: js.UndefOr[Double] = js.undefined
+  var sampleSize: js.UndefOr[Double] = js.undefined
+  var echoCancellation: js.UndefOr[Boolean] = js.undefined
+  var deviceId: js.UndefOr[String] = js.undefined
+  var groupId: js.UndefOr[String] = js.undefined
 }
 
+@deprecated("all the members of MediaTrackConstraintSet are deprecated", "2.0.0")
 object MediaTrackConstraintSet {
 
+  @deprecated("use `new MediaTrackConstraintSet { ... }` instead", "2.0.0")
   @inline
   def apply(
       width: js.UndefOr[Double] = js.undefined, height: js.UndefOr[Double] = js.undefined,
@@ -248,13 +249,14 @@ object MediaTrackConstraintSet {
   }
 }
 
-@js.native
 trait MediaTrackConstraints extends MediaTrackConstraintSet {
-  var advanced: js.Array[MediaTrackConstraintSet] = js.native
+  var advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]] = js.undefined
 }
 
+@deprecated("all the members of MediaTrackConstraints are deprecated", "2.0.0")
 object MediaTrackConstraints {
 
+  @deprecated("use `new MediaTrackConstraints { ... }` instead", "2.0.0")
   @inline
   def apply(
       advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]] = js.undefined
@@ -265,8 +267,10 @@ object MediaTrackConstraints {
   }
 }
 
+@deprecated("all the members of MediaStreamTrack are deprecated", "2.0.0")
 object MediaStreamTrack {
 
+  @deprecated("MediaStreamTrack's cannot be created manually", "2.0.0")
   @inline
   def apply(
       enabled: js.UndefOr[Boolean] = js.undefined, id: js.UndefOr[String] = js.undefined,
@@ -296,15 +300,16 @@ object MediaStreamTrack {
   }
 }
 
-@js.native
 trait MediaStreamConstraints extends js.Object {
-  var video: Boolean | MediaTrackConstraints = js.native
-  var audio: Boolean | MediaTrackConstraints = js.native
-  var peerIdentity: String = js.native
+  var video: js.UndefOr[Boolean | MediaTrackConstraints] = js.undefined
+  var audio: js.UndefOr[Boolean | MediaTrackConstraints] = js.undefined
+  var peerIdentity: js.UndefOr[String] = js.undefined
 }
 
+@deprecated("all the members of MediaStreamConstraints are deprecated", "2.0.0")
 object MediaStreamConstraints {
 
+  @deprecated("use `new MediaStreamConstraints { ... }` instead", "2.0.0")
   @inline
   def apply(
       video: js.UndefOr[Boolean | MediaTrackConstraints] = js.undefined,
@@ -330,7 +335,7 @@ class MediaStreamTrackEvent(typeArg: String, init: js.UndefOr[MediaStreamTrackEv
 
 /** see [[https://www.w3.org/TR/2016/CR-mediacapture-streams-20160519/#idl-def-MediaDeviceKind]] in W3C spec */
 @js.native
-trait MediaDeviceKind extends js.Any
+sealed trait MediaDeviceKind extends js.Any
 
 object MediaDeviceKind {
 
@@ -368,8 +373,10 @@ trait MediaDeviceInfo extends js.Object {
   val label: String = js.native
 }
 
+@deprecated("all the members of MediaDeviceInfo are deprecated", "2.0.0")
 object MediaDeviceInfo {
 
+  @deprecated("MediaDeviceInfo's cannot be created manually", "2.0.0")
   @inline
   def apply(
       deviceId: js.UndefOr[String] = js.undefined, groupId: js.UndefOr[String] = js.undefined,
@@ -481,7 +488,7 @@ class MediaSource extends EventTarget {
 }
 
 @js.native
-@JSGlobalScope
+@JSGlobal
 object MediaSource extends js.Object {
   def isTypeSupported(mediaType: String): Boolean = js.native
 }

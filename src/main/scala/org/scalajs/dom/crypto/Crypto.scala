@@ -27,34 +27,34 @@ trait Crypto extends js.Object {
   def getRandomValues(array: ArrayBufferView): ArrayBufferView = js.native
 }
 
-@js.native
 trait Algorithm extends js.Object {
-  var name: String = js.native
+  val name: String
 }
 
 /** The KeyAlgorithm dictionary represents information about the contents of a given CryptoKey object.
   *
   * See [[http://www.w3.org/TR/WebCryptoAPI/#key-algorithm-dictionary ¶12 KeyAlgorithm dictionary]] in w3c spec.
   */
-@js.native
 trait KeyAlgorithm extends Algorithm
 
 /** A HashAlgorithm type is not defined in the [[http://www.w3.org/TR/WebCryptoAPI/ W3C Web Crypto API]], even though a
   * [[http://www.w3.org/TR/WebCryptoAPI/#key-algorithm-dictionary KeyAlgorithm dictionary]] type is. There are
   * nevertheless a number of indications that HashAlgorithm's are a type of their own, as searching the spec will show.
   */
-@js.native
 trait HashAlgorithm extends Algorithm
 
 object HashAlgorithm {
 
-  private def named(name: String): HashAlgorithm =
-    js.Dynamic.literal(name = name).asInstanceOf[HashAlgorithm]
+  private def named(name0: String): HashAlgorithm = {
+    new HashAlgorithm {
+      val name = name0
+    }
+  }
 
-  val `SHA-1` = named("SHA-1")
-  val `SHA-256` = named("SHA-256")
-  val `SHA-384` = named("SHA-384")
-  val `SHA-512` = named("SHA-512")
+  val `SHA-1`: HashAlgorithm = named("SHA-1")
+  val `SHA-256`: HashAlgorithm = named("SHA-256")
+  val `SHA-384`: HashAlgorithm = named("SHA-384")
+  val `SHA-512`: HashAlgorithm = named("SHA-512")
 }
 
 /** The CryptoKey object represents an opaque reference to keying material that is managed by the user agent.
@@ -62,7 +62,8 @@ object HashAlgorithm {
   * defined at [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶13 The CryptoKey Interface]]
   */
 @js.native
-trait CryptoKey extends js.Object {
+@JSGlobal
+final class CryptoKey private[this] () extends js.Object {
   val `type`: String = js.native
 
   val extractable: Boolean = js.native
@@ -252,564 +253,699 @@ trait SubtleCrypto extends js.Object {
 
 // RSASSA-PKCS1-v1_5
 
-@js.native
 trait RsaKeyGenParams extends KeyAlgorithm {
-  var modulusLength: Double = js.native
+  val modulusLength: Double
 
-  var publicExponent: BigInteger = js.native
+  val publicExponent: BigInteger
 }
 
 object RsaKeyGenParams {
 
+  @deprecated("use `new RsaKeyGenParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyGenParams = {
-    js.Dynamic
-      .literal(name = name, modulusLength = modulusLength.toDouble, publicExponent = publicExponent)
-      .asInstanceOf[RsaKeyGenParams]
+    val name0 = name
+    val modulusLength0 = modulusLength
+    val publicExponent0 = publicExponent
+    new RsaKeyGenParams {
+      val name = name0
+      val modulusLength = modulusLength0.toDouble
+      val publicExponent = publicExponent0
+    }
   }
 }
 
-@js.native
 trait RsaHashedKeyGenParams extends RsaKeyGenParams {
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 }
 
 object RsaHashedKeyGenParams {
 
+  @deprecated("use `new RsaHashedKeyGenParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyGenParams = {
-    js.Dynamic
-      .literal(name = name, modulusLength = modulusLength.toDouble, publicExponent = publicExponent,
-          hash = hash.asInstanceOf[js.Any])
-      .asInstanceOf[RsaHashedKeyGenParams]
+    val name0 = name
+    val modulusLength0 = modulusLength
+    val publicExponent0 = publicExponent
+    val hash0 = hash
+    new RsaHashedKeyGenParams {
+      val name = name0
+      val modulusLength = modulusLength0.toDouble
+      val publicExponent = publicExponent0
+      val hash = hash0
+    }
   }
 }
 
-@js.native
 trait RsaKeyAlgorithm extends KeyAlgorithm {
-  var modulusLength: Double = js.native
+  val modulusLength: Double
 
-  var publicExponent: BigInteger = js.native
+  val publicExponent: BigInteger
 }
 
 object RsaKeyAlgorithm {
 
+  @deprecated("use `new RsaKeyAlgorithm { ... } instead", "2.0.0")
   @inline
   def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyAlgorithm = {
-    js.Dynamic
-      .literal(name = name, modulusLength = modulusLength.toDouble, publicExponent = publicExponent)
-      .asInstanceOf[RsaKeyAlgorithm]
+    val name0 = name
+    val modulusLength0 = modulusLength
+    val publicExponent0 = publicExponent
+    new RsaKeyAlgorithm {
+      val name = name0
+      val modulusLength = modulusLength0.toDouble
+      val publicExponent = publicExponent0
+    }
   }
 }
 
 /** see W3C doc
   * [[http://www.w3.org/TR/WebCryptoAPI/#RsaHashedKeyAlgorithm-dictionary 20.6. RsaHashedKeyAlgorithm dictionary]]
   */
-@js.native
 trait RsaHashedKeyAlgorithm extends RsaKeyAlgorithm {
 
   /** Note that section
     * [[http://www.w3.org/TR/WebCryptoAPI/#RsaHashedKeyAlgorithm-dictionary 20.6. RsaHashedKeyAlgorithm dictionary]] of
     * the W3C documentation uses a KeyAlgorithm here, and not what seems more correct a HashAlgorithmIdentifier.
     */
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 }
 
 object RsaHashedKeyAlgorithm {
 
+  @deprecated("use `new RsaHashedKeyAlgorithm { ... } instead", "2.0.0")
   @inline
   def apply(name: String, modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
-    js.Dynamic
-      .literal(name = name, modulusLength = modulusLength.toDouble, publicExponent = publicExponent,
-          hash = hash.asInstanceOf[js.Any])
-      .asInstanceOf[RsaHashedKeyAlgorithm]
+    val name0 = name
+    val modulusLength0 = modulusLength
+    val publicExponent0 = publicExponent
+    val hash0 = hash
+    new RsaHashedKeyAlgorithm {
+      val name = name0
+      val modulusLength = modulusLength0.toDouble
+      val publicExponent = publicExponent0
+      val hash = hash0
+    }
   }
 
   /** see [[http://www.w3.org/TR/WebCryptoAPI/#rsassa-pkcs1 ¶20. RSASSA-PKCS1-v1_5]] of w3c spec */
+  @deprecated("use `new RsaHashedKeyAlgorithm { ... } instead", "2.0.0")
   def `RSASSA-PKCS1-v1_5`(modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
     apply("RSASSA-PKCS1-v1_5", modulusLength, publicExponent, hash)
   }
 
   /** see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-PSS]] of w3c spec */
+  @deprecated("use `new RsaHashedKeyAlgorithm { ... } instead", "2.0.0")
   def `RSA-PSS`(modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
     apply("RSA-PSS", modulusLength, publicExponent, hash)
   }
 
   /** see [[http://www.w3.org/TR/WebCryptoAPI/#rsa-pss ¶21. RSA-OAEP]] of w3c spec */
+  @deprecated("use `new RsaHashedKeyAlgorithm { ... } instead", "2.0.0")
   def `RSA-OAEP`(modulusLength: Long, publicExponent: BigInteger,
       hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm = {
     apply("RSA-OAEP", modulusLength, publicExponent, hash)
   }
 }
 
-@js.native
 trait RsaHashedImportParams extends KeyAlgorithm {
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 }
 
 object RsaHashedImportParams {
 
+  @deprecated("use `new RsaHashedImportParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, hash: HashAlgorithmIdentifier): RsaHashedImportParams = {
-    js.Dynamic
-      .literal(name = name, hash = hash.asInstanceOf[js.Any])
-      .asInstanceOf[RsaHashedImportParams]
+    val name0 = name
+    val hash0 = hash
+    new RsaHashedImportParams {
+      val name = name0
+      val hash = hash0
+    }
   }
 }
 
 // RSA-PSS
 
-@js.native
 trait RsaPssParams extends Algorithm {
-  var saltLength: Double = js.native
+  val saltLength: Double
 }
 
 object RsaPssParams {
 
+  @deprecated("use `new RsaPssParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, saltLength: Long): RsaPssParams = {
-    js.Dynamic
-      .literal(name = name, saltLength = saltLength.toDouble)
-      .asInstanceOf[RsaPssParams]
+    val name0 = name
+    val saltLength0 = saltLength
+    new RsaPssParams {
+      val name = name0
+      val saltLength = saltLength0.toDouble
+    }
   }
 }
 
 // RSA-OAEP
 
-@js.native
 trait RsaOaepParams extends Algorithm {
-  var label: BufferSource = js.native
+  val label: BufferSource
 }
 
 object RsaOaepParams {
 
+  @deprecated("use `new RsaOaepParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, label: BufferSource): RsaOaepParams = {
-    js.Dynamic
-      .literal(name = name, label = label.asInstanceOf[js.Any])
-      .asInstanceOf[RsaOaepParams]
+    val name0 = name
+    val label0 = label
+    new RsaOaepParams {
+      val name = name0
+      val label = label0
+    }
   }
 }
 
 // ECDSA
 
-@js.native
 trait EcdsaParams extends Algorithm {
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 }
 
 object EcdsaParams {
 
+  @deprecated("use `new EcdsaParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, hash: HashAlgorithmIdentifier): EcdsaParams = {
-    js.Dynamic
-      .literal(name = name, hash = hash.asInstanceOf[js.Any])
-      .asInstanceOf[EcdsaParams]
+    val name0 = name
+    val hash0 = hash
+    new EcdsaParams {
+      val name = name0
+      val hash = hash0
+    }
   }
 }
 
-@js.native
 trait EcKeyGenParams extends Algorithm {
-  var namedCurve: String = js.native
+  val namedCurve: String
 }
 
 object EcKeyGenParams {
 
+  @deprecated("use `new EcKeyGenParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, namedCurve: String): EcKeyGenParams = {
-    js.Dynamic
-      .literal(name = name, namedCurve = namedCurve)
-      .asInstanceOf[EcKeyGenParams]
+    val name0 = name
+    val namedCurve0 = namedCurve
+    new EcKeyGenParams {
+      val name = name0
+      val namedCurve = namedCurve0
+    }
   }
 }
 
-@js.native
 trait EcKeyAlgorithm extends KeyAlgorithm {
-  var namedCurve: String = js.native
+  val namedCurve: String
 }
 
 object EcKeyAlgorithm {
 
+  @deprecated("use `new EcKeyAlgorithm { ... } instead", "2.0.0")
   @inline
   def apply(name: String, namedCurve: String): EcKeyAlgorithm = {
-    js.Dynamic
-      .literal(name = name, namedCurve = namedCurve)
-      .asInstanceOf[EcKeyAlgorithm]
+    val name0 = name
+    val namedCurve0 = namedCurve
+    new EcKeyAlgorithm {
+      val name = name0
+      val namedCurve = namedCurve0
+    }
   }
 }
 
-@js.native
 trait EcKeyImportParams extends KeyAlgorithm {
-  var namedCurve: String = js.native
+  val namedCurve: String
 }
 
 object EcKeyImportParams {
 
+  @deprecated("use `new EcKeyImportParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, namedCurve: String): EcKeyImportParams = {
-    js.Dynamic
-      .literal(name = name, namedCurve = namedCurve)
-      .asInstanceOf[EcKeyImportParams]
+    val name0 = name
+    val namedCurve0 = namedCurve
+    new EcKeyImportParams {
+      val name = name0
+      val namedCurve = namedCurve0
+    }
   }
 }
 
 // ECDH
 
-@js.native
 trait EcdhKeyDeriveParams extends KeyAlgorithm {
-  var `public`: CryptoKey = js.native
+  val public: CryptoKey
 }
 
 object EcdhKeyDeriveParams {
 
+  @deprecated("use `new EcdhKeyDeriveParams { ... } instead", "2.0.0")
   @inline
-  def apply(name: String, `public`: CryptoKey): EcdhKeyDeriveParams = {
-    js.Dynamic
-      .literal(name = name, `public` = `public`)
-      .asInstanceOf[EcdhKeyDeriveParams]
+  def apply(name: String, public: CryptoKey): EcdhKeyDeriveParams = {
+    val name0 = name
+    val public0 = public
+    new EcdhKeyDeriveParams {
+      val name = name0
+      val public = public0
+    }
   }
 }
 
 // AES-CTR
 
-@js.native
 trait AesCtrParams extends Algorithm {
-  var counter: BufferSource = js.native
+  val counter: BufferSource
 
-  var length: Short = js.native
+  val length: Int
 }
 
 object AesCtrParams {
 
+  @deprecated("use `new AesCtrParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, counter: BufferSource, length: Short): AesCtrParams = {
-    js.Dynamic
-      .literal(name = name, counter = counter.asInstanceOf[js.Any], length = length)
-      .asInstanceOf[AesCtrParams]
+    val name0 = name
+    val counter0 = counter
+    val length0 = length
+    new AesCtrParams {
+      val name = name0
+      val counter = counter0
+      val length = length0.toInt
+    }
   }
 }
 
-@js.native
 trait AesKeyAlgorithm extends KeyAlgorithm {
-  var length: Int = js.native
+  val length: Int
 }
 
 object AesKeyAlgorithm {
 
+  @deprecated("use `new AesKeyAlgorithm { ... } instead", "2.0.0")
   @inline
   def apply(name: String, length: Short): AesKeyAlgorithm = {
-    js.Dynamic
-      .literal(name = name, length = length)
-      .asInstanceOf[AesKeyAlgorithm]
+    val name0 = name
+    val length0 = length
+    new AesKeyAlgorithm {
+      val name = name0
+      val length = length0.toInt
+    }
   }
 }
 
-@js.native
 trait AesKeyGenParams extends KeyAlgorithm {
-  var length: Int = js.native
+  val length: Int
 }
 
 object AesKeyGenParams {
 
+  @deprecated("use `new AesKeyGenParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, length: Short): AesKeyGenParams = {
-    js.Dynamic
-      .literal(name = name, length = length)
-      .asInstanceOf[AesKeyGenParams]
+    val name0 = name
+    val length0 = length
+    new AesKeyGenParams {
+      val name = name0
+      val length = length0.toInt
+    }
   }
 }
 
-@js.native
 trait AesDerivedKeyParams extends KeyAlgorithm {
-  var length: Int = js.native
+  val length: Int
 }
 
 object AesDerivedKeyParams {
 
+  @deprecated("use `new AesDerivedKeyParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, length: Short): AesDerivedKeyParams = {
-    js.Dynamic
-      .literal(name = name, length = length)
-      .asInstanceOf[AesDerivedKeyParams]
+    val name0 = name
+    val length0 = length
+    new AesDerivedKeyParams {
+      val name = name0
+      val length = length0.toInt
+    }
   }
 }
 
 // AES-CBC
 
-@js.native
 trait AesCbcParams extends Algorithm {
-  var iv: BufferSource = js.native
+  val iv: BufferSource
 }
 
 object AesCbcParams {
 
+  @deprecated("use `new AesCbcParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, iv: BufferSource): AesCbcParams = {
-    js.Dynamic
-      .literal(name = name, iv = iv.asInstanceOf[js.Any])
-      .asInstanceOf[AesCbcParams]
+    val name0 = name
+    val iv0 = iv
+    new AesCbcParams {
+      val name = name0
+      val iv = iv0
+    }
   }
 }
 
 // AES-CMAC
 
-@js.native
 trait AesCmacParams extends Algorithm {
-  var length: Int = js.native
+  val length: Int
 }
 
 object AesCmacParams {
 
+  @deprecated("use `new AesCmacParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, length: Int): AesCmacParams = {
-    js.Dynamic
-      .literal(name = name, length = length)
-      .asInstanceOf[AesCmacParams]
+    val name0 = name
+    val length0 = length
+    new AesCmacParams {
+      val name = name0
+      val length = length0
+    }
   }
 }
 
 // AES-GCM
 
-@js.native
 trait AesGcmParams extends Algorithm {
-  var iv: BufferSource = js.native
+  val iv: BufferSource
 
-  var additionalData: BufferSource = js.native
+  val additionalData: BufferSource
 
-  var tagLength: Short = js.native
+  val tagLength: Int
 }
 
 object AesGcmParams {
 
+  @deprecated("use `new AesGcmParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, iv: BufferSource, additionalData: BufferSource, tagLength: Short): AesGcmParams = {
-    js.Dynamic
-      .literal(name = name, iv = iv.asInstanceOf[js.Any], additionalData = additionalData.asInstanceOf[js.Any],
-          tagLength = tagLength)
-      .asInstanceOf[AesGcmParams]
+    val name0 = name
+    val iv0 = iv
+    val additionalData0 = additionalData
+    val tagLength0 = tagLength
+    new AesGcmParams {
+      val name = name0
+      val iv = iv0
+      val additionalData = additionalData0
+      val tagLength = tagLength0.toInt
+    }
   }
 }
 
 // AES-CFB
 
-@js.native
 trait AesCfbParams extends Algorithm {
-  var iv: BufferSource = js.native
+  val iv: BufferSource
 }
 
 object AesCfbParams {
 
+  @deprecated("use `new AesCfbParams { ... } instead", "2.0.0")
   @inline
-  def apply(name: String, iv: BufferSource): AesCfbParams =
-    js.Dynamic
-      .literal(name = name, iv = iv.asInstanceOf[js.Any])
-      .asInstanceOf[AesCfbParams]
+  def apply(name: String, iv: BufferSource): AesCfbParams = {
+    val name0 = name
+    val iv0 = iv
+    new AesCfbParams {
+      val name = name0
+      val iv = iv0
+    }
+  }
 }
 
 // AES-KW
 
 // HMAC
 
-@js.native
 trait HmacImportParams extends Algorithm {
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 
-  var length: Double = js.native
+  val length: Double
 }
 
 object HmacImportParams {
 
+  @deprecated("use `new HmacImportParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacImportParams = {
-    js.Dynamic
-      .literal(name = name, hash = hash.asInstanceOf[js.Any], length = length.toDouble)
-      .asInstanceOf[HmacImportParams]
+    val name0 = name
+    val hash0 = hash
+    val length0 = length
+    new HmacImportParams {
+      val name = name0
+      val hash = hash0
+      val length = length0.toDouble
+    }
   }
 }
 
-@js.native
 trait HmacKeyAlgorithm extends KeyAlgorithm {
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 
-  var length: Double = js.native
+  val length: Double
 }
 
 object HmacKeyAlgorithm {
 
+  @deprecated("use `new HmacKeyAlgorithm { ... } instead", "2.0.0")
   @inline
   def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyAlgorithm = {
-    js.Dynamic
-      .literal(name = name, hash = hash.asInstanceOf[js.Any], length = length.toDouble)
-      .asInstanceOf[HmacKeyAlgorithm]
+    val name0 = name
+    val hash0 = hash
+    val length0 = length
+    new HmacKeyAlgorithm {
+      val name = name0
+      val hash = hash0
+      val length = length0.toDouble
+    }
   }
 }
 
-@js.native
 trait HmacKeyGenParams extends KeyAlgorithm {
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 
-  var length: Double = js.native
+  val length: Double
 }
 
 object HmacKeyGenParams {
 
+  @deprecated("use `new HmacKeyGenParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyGenParams = {
-    js.Dynamic
-      .literal(name = name, hash = hash.asInstanceOf[js.Any], length = length.toDouble)
-      .asInstanceOf[HmacKeyGenParams]
+    val name0 = name
+    val hash0 = hash
+    val length0 = length
+    new HmacKeyGenParams {
+      val name = name0
+      val hash = hash0
+      val length = length0.toDouble
+    }
   }
 }
 
 // Diffie-Hellman
 
-@js.native
 trait DhKeyGenParams extends Algorithm {
-  var prime: BigInteger = js.native
+  val prime: BigInteger
 
-  var generator: BigInteger = js.native
+  val generator: BigInteger
 }
 
 object DhKeyGenParams {
 
+  @deprecated("use `new DhKeyGenParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyGenParams = {
-    js.Dynamic
-      .literal(name = name, prime = prime, generator = generator)
-      .asInstanceOf[DhKeyGenParams]
+    val name0 = name
+    val prime0 = prime
+    val generator0 = generator
+    new DhKeyGenParams {
+      val name = name0
+      val prime = prime0
+      val generator = generator0
+    }
   }
 }
 
-@js.native
 trait DhKeyAlgorithm extends KeyAlgorithm {
-  var prime: BigInteger = js.native
+  val prime: BigInteger
 
-  var generator: BigInteger = js.native
+  val generator: BigInteger
 }
 
 object DhKeyAlgorithm {
 
+  @deprecated("use `new DhKeyAlgorithm { ... } instead", "2.0.0")
   @inline
   def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyAlgorithm = {
-    js.Dynamic
-      .literal(name = name, prime = prime, generator = generator)
-      .asInstanceOf[DhKeyAlgorithm]
+    val name0 = name
+    val prime0 = prime
+    val generator0 = generator
+    new DhKeyAlgorithm {
+      val name = name0
+      val prime = prime0
+      val generator = generator0
+    }
   }
 }
 
-@js.native
 trait DhKeyDeriveParams extends Algorithm {
-  var `public`: CryptoKey = js.native
+  val public: CryptoKey
 }
 
 object DhKeyDeriveParams {
 
+  @deprecated("use `new DhKeyDeriveParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, public: CryptoKey): DhKeyDeriveParams = {
-    js.Dynamic
-      .literal(name = name, public = public)
-      .asInstanceOf[DhKeyDeriveParams]
+    val name0 = name
+    val public0 = public
+    new DhKeyDeriveParams {
+      val name = name0
+      val public = public0
+    }
   }
 }
 
-@js.native
 trait DhImportKeyParams extends Algorithm {
-  var prime: BigInteger = js.native
+  val prime: BigInteger
 
-  var generator: BigInteger = js.native
+  val generator: BigInteger
 }
 
 object DhImportKeyParams {
 
+  @deprecated("use `new DhImportKeyParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, prime: BigInteger, generator: BigInteger): DhImportKeyParams = {
-    js.Dynamic
-      .literal(name = name, prime = prime, generator = generator)
-      .asInstanceOf[DhImportKeyParams]
+    val name0 = name
+    val prime0 = prime
+    val generator0 = generator
+    new DhImportKeyParams {
+      val name = name0
+      val prime = prime0
+      val generator = generator0
+    }
   }
 }
 
 // CONCAT
 
-@js.native
 trait ConcatParams extends Algorithm {
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 
-  var algorithmId: BufferSource = js.native
+  val algorithmId: BufferSource
 
-  var partyUInfo: BufferSource = js.native
+  val partyUInfo: BufferSource
 
-  var partyVInfo: BufferSource = js.native
+  val partyVInfo: BufferSource
 
-  var publicInfo: BufferSource = js.native
+  val publicInfo: BufferSource
 
-  var privateInfo: BufferSource = js.native
+  val privateInfo: BufferSource
 }
 
 object ConcatParams {
 
+  @deprecated("use `new ConcatParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, hash: HashAlgorithmIdentifier, algorithmId: BufferSource, partyUInfo: BufferSource,
       partyVInfo: BufferSource, publicInfo: BufferSource, privateInfo: BufferSource): ConcatParams = {
-    js.Dynamic
-      .literal(name = name, hash = hash.asInstanceOf[js.Any], algorithmId = algorithmId.asInstanceOf[js.Any],
-          partyUInfo = partyUInfo.asInstanceOf[js.Any], partyVInfo = partyVInfo.asInstanceOf[js.Any],
-          publicInfo = publicInfo.asInstanceOf[js.Any], privateInfo = privateInfo.asInstanceOf[js.Any])
-      .asInstanceOf[ConcatParams]
+    val name0 = name
+    val hash0 = hash
+    val algorithmId0 = algorithmId
+    val partyUInfo0 = partyUInfo
+    val partyVInfo0 = partyVInfo
+    val publicInfo0 = publicInfo
+    val privateInfo0 = privateInfo
+    new ConcatParams {
+      val name = name0
+      val hash = hash0
+      val algorithmId = algorithmId0
+      val partyUInfo = partyUInfo0
+      val partyVInfo = partyVInfo0
+      val publicInfo = publicInfo0
+      val privateInfo = privateInfo0
+    }
   }
 }
 
 // HKDF-CTR
 
-@js.native
 trait HkdfCtrParams extends Algorithm {
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 
-  var label: BufferSource = js.native
+  val label: BufferSource
 
-  var context: BufferSource = js.native
+  val context: BufferSource
 }
 
 object HkdfCtrParams {
 
+  @deprecated("use `new HkdfCtrParams { ... } instead", "2.0.0")
   @inline
   def apply(name: String, hash: HashAlgorithmIdentifier, label: BufferSource, context: BufferSource): HkdfCtrParams = {
-    js.Dynamic
-      .literal(name = name, hash = hash.asInstanceOf[js.Any], label = label.asInstanceOf[js.Any],
-          context = context.asInstanceOf[js.Any])
-      .asInstanceOf[HkdfCtrParams]
+    val name0 = name
+    val hash0 = hash
+    val label0 = label
+    val context0 = context
+    new HkdfCtrParams {
+      val name = name0
+      val hash = hash0
+      val label = label0
+      val context = context0
+    }
   }
 }
 
 // PBKDF2
 
-@js.native
 trait Pbkdf2Params extends HashAlgorithm {
-  var salt: BufferSource = js.native
+  val salt: BufferSource
 
-  var iterations: Double = js.native
+  val iterations: Double
 
-  var hash: HashAlgorithmIdentifier = js.native
+  val hash: HashAlgorithmIdentifier
 }
 
 object Pbkdf2Params {
 
+  @deprecated("use `new Pbkdf2Params { ... } instead", "2.0.0")
   @inline
   def apply(name: String, salt: BufferSource, iterations: Long, hash: HashAlgorithmIdentifier): Pbkdf2Params = {
-    js.Dynamic
-      .literal(name = name, salt = salt.asInstanceOf[js.Any], iterations = iterations.toDouble,
-          hash = hash.asInstanceOf[js.Any])
-      .asInstanceOf[Pbkdf2Params]
+    val name0 = name
+    val salt0 = salt
+    val iterations0 = iterations
+    val hash0 = hash
+    new Pbkdf2Params {
+      val name = name0
+      val salt = salt0
+      val iterations = iterations0.toDouble
+      val hash = hash0
+    }
   }
 }
 
 /** See [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶ 13. CryptoKey Interface]] of w3c spec */
 @js.native
-trait KeyUsage extends js.Any
+sealed trait KeyUsage extends js.Any
 
 object KeyUsage {
   val encrypt: KeyUsage = "encrypt".asInstanceOf[KeyUsage]
@@ -824,7 +960,7 @@ object KeyUsage {
 
 /** see [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶13 CryptoKey interface]] in W3C doc */
 @js.native
-trait KeyType extends js.Any
+sealed trait KeyType extends js.Any
 
 object KeyType {
   val public: KeyType = "public".asInstanceOf[KeyType]
@@ -834,7 +970,7 @@ object KeyType {
 
 /** see [[http://www.w3.org/TR/WebCryptoAPI/#dfn-KeyFormat ¶14.2 Data Types]] in W3C spec */
 @js.native
-trait KeyFormat extends js.Any
+sealed trait KeyFormat extends js.Any
 
 object KeyFormat {
 
@@ -849,20 +985,4 @@ object KeyFormat {
 
   /** The key is a JsonWebKey dictionary encoded as a JavaScript object */
   val jwk: KeyFormat = "jwk".asInstanceOf[KeyFormat]
-}
-
-//
-// Todo: fill in the full list of types defined in JSON Web Key (JWK) RFC
-// http://tools.ietf.org/html/rfc7517
-//
-
-/** see example http://tools.ietf.org/html/rfc7517#appendix-A.1 //todo: where is the specification of n and e? */
-@js.native
-trait RSAPublicKey extends js.Object {
-
-  /** modulus, as a base64 URL encoded String */
-  def n: String = js.native
-
-  /** exponent, as a base64 URL encoded String */
-  def e: String = js.native
 }

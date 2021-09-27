@@ -3055,41 +3055,42 @@ class MutationObserver(callback: js.Function2[js.Array[MutationRecord], Mutation
   * attributes, or characterDatamust be set to true. Otherwise, "An invalid or illegal string was specified" error is
   * thrown.
   */
-@js.native
 trait MutationObserverInit extends js.Object {
 
   /** Set to true if additions and removals of the target node's child elements (including text nodes) are to be
     * observed.
     */
-  var childList: js.UndefOr[Boolean] = js.native
+  var childList: js.UndefOr[Boolean] = js.undefined
 
   /** Set to true if mutations to target's attributes are to be observed. */
-  var attributes: js.UndefOr[Boolean] = js.native
+  var attributes: js.UndefOr[Boolean] = js.undefined
 
   /** Set to true if mutations to target's data are to be observed. */
-  var characterData: js.UndefOr[Boolean] = js.native
+  var characterData: js.UndefOr[Boolean] = js.undefined
 
   /** Set to true if mutations to not just target, but also target's descendants are to be observed. */
-  var subtree: js.UndefOr[Boolean] = js.native
+  var subtree: js.UndefOr[Boolean] = js.undefined
 
   /** Set to true if attributes is set to true and target's attribute value before the mutation needs to be recorded. */
-  var attributeOldValue: js.UndefOr[Boolean] = js.native
+  var attributeOldValue: js.UndefOr[Boolean] = js.undefined
 
   /** Set to true if characterData is set to true and target's data before the mutation needs to be recorded. */
-  var characterDataOldValue: js.UndefOr[Boolean] = js.native
+  var characterDataOldValue: js.UndefOr[Boolean] = js.undefined
 
   /** Set to an array of attribute local names (without namespace) if not all attribute mutations need to be observed.
     */
-  var attributeFilter: js.UndefOr[js.Array[String]] = js.native
+  var attributeFilter: js.UndefOr[js.Array[String]] = js.undefined
 }
 
 /** Factory for [[MutationObserverInit]] objects. */
+@deprecated("all members of MutationObserverInit are deprecated", "2.0.0")
 object MutationObserverInit {
 
   /** Creates a new [[MutationObserverInit]] object with the given values. Default values for the `Boolean` parameters
     * are `false`. If the value of `attributeFilter` is `js.undefined`, created object won't have `attributeFilter`
     * property.
     */
+  @deprecated("use `new MutationObserverInit { ... }` instead", "2.0.0")
   def apply(
       childList: Boolean = false, attributes: Boolean = false, characterData: Boolean = false, subtree: Boolean = false,
       attributeOldValue: Boolean = false, characterDataOldValue: Boolean = false,
@@ -4919,15 +4920,16 @@ object FileReader extends js.Object {
   val DONE: Short = js.native
 }
 
-@js.native
 trait BlobPropertyBag extends js.Object {
-  def `type`: String = js.native
+  var `type`: js.UndefOr[String] = js.undefined
 
-  def endings: String = js.native
+  var endings: js.UndefOr[String] = js.undefined
 }
 
+@deprecated("all members of BlobPropertyBag are deprecated", "2.0.0")
 object BlobPropertyBag {
 
+  @deprecated("use `new BlobPropertyBag { ... }` instead", "2.0.0")
   @inline
   def apply(`type`: js.UndefOr[String] = js.undefined): BlobPropertyBag = {
     val result = js.Dynamic.literal()

@@ -8,14 +8,15 @@ import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.{ArrayBuffer, ArrayBufferView}
 import scala.scalajs.js.|
 
-@js.native
 trait RTCIdentityAssertion extends js.Object {
-  val idp: String = js.native
-  val name: String = js.native
+  val idp: String
+  val name: String
 }
 
+@deprecated("all members of RTCPeerConnection are deprecated", "2.0.0")
 object RTCIdentityAssertion {
 
+  @deprecated("RTCIdentityAssertions should not be created manually", "2.0.0")
   @inline
   def apply(
       idp: js.UndefOr[String] = js.undefined, name: js.UndefOr[String] = js.undefined
@@ -27,7 +28,6 @@ object RTCIdentityAssertion {
   }
 }
 
-@js.native
 trait RTCOfferOptions extends js.Object {
 
   /** When the value of this dictionary member is true, the generated description will have ICE credentials that are
@@ -38,30 +38,32 @@ trait RTCOfferOptions extends js.Object {
     * the generated description will have the same ICE credentials as the current value from the localDescription
     * attribute.
     */
-  var iceRestart: Boolean = js.native
+  var iceRestart: js.UndefOr[Boolean] = js.undefined
 
   /** In some cases, an RTCPeerConnection may wish to receive audio but not send any audio. The RTCPeerConnection needs
     * to know if it should signal to the remote side whether it wishes to receive audio. This option allows an
     * application to indicate its preferences for the number of audio streams to receive when creating an offer.
     */
-  var offerToReceiveAudio: Double = js.native
+  var offerToReceiveAudio: js.UndefOr[Double] = js.undefined
 
   /** In some cases, an RTCPeerConnection may wish to receive video but not send any video. The RTCPeerConnection needs
     * to know if it should signal to the remote side whether it wishes to receive video or not. This option allows an
     * application to indicate its preferences for the number of video streams to receive when creating an offer.
     */
-  var offerToReceiveVideo: Double = js.native
+  var offerToReceiveVideo: js.UndefOr[Double] = js.undefined
 
   /** default: true Many codecs and system are capable of detecting "silence" and changing their behavior in this case
     * by doing things such as not transmitting any media. In many cases, such as when dealing with emergency calling or
     * sounds other than spoken voice, it is desirable to be able to turn off this behavior. This option allows the
     * application to provide information about whether it wishes this type of processing enabled or disabled.
     */
-  var voiceActivityDetection: Boolean = js.native
+  var voiceActivityDetection: js.UndefOr[Boolean] = js.undefined
 }
 
+@deprecated("all members of RTCOfferOptions are deprecated", "2.0.0")
 object RTCOfferOptions {
 
+  @deprecated("use `new RTCOfferOptions { ... }` instead", "2.0.0")
   @inline
   def apply(
       iceRestart: js.UndefOr[Boolean] = js.undefined, offerToReceiveAudio: js.UndefOr[Double] = js.undefined,
@@ -76,15 +78,16 @@ object RTCOfferOptions {
   }
 }
 
-@js.native
 trait RTCIceServer extends js.Object {
-  var urls: String | js.Array[String] = js.native
-  var username: String = js.native
-  var credential: String = js.native
+  var urls: js.UndefOr[String | js.Array[String]] = js.undefined
+  var username: js.UndefOr[String] = js.undefined
+  var credential: js.UndefOr[String] = js.undefined
 }
 
+@deprecated("all members of RTCIceServer are deprecated", "2.0.0")
 object RTCIceServer {
 
+  @deprecated("use `new RTCIceServer { ... }` instead", "2.0.0")
   @inline
   def apply(urls: js.UndefOr[String | js.Array[String]] = js.undefined, username: js.UndefOr[String] = js.undefined,
       credential: js.UndefOr[String] = js.undefined): RTCIceServer = {
@@ -97,8 +100,7 @@ object RTCIceServer {
 }
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCIceTransportPolicy]] in W3C spec */
-@js.native
-trait RTCIceTransportPolicy extends js.Any
+sealed trait RTCIceTransportPolicy extends js.Any
 
 object RTCIceTransportPolicy {
 
@@ -115,8 +117,7 @@ object RTCIceTransportPolicy {
 }
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCBundlePolicy]] in W3C spec */
-@js.native
-trait RTCBundlePolicy extends js.Any
+sealed trait RTCBundlePolicy extends js.Any
 
 object RTCBundlePolicy {
 
@@ -136,26 +137,27 @@ object RTCBundlePolicy {
   val `max-bundle` = "max-bundle".asInstanceOf[RTCBundlePolicy]
 }
 
-@js.native
 trait RTCConfiguration extends js.Object {
 
   /** An array containing URIs of servers available to be used by ICE, such as STUN and TURN server. */
-  var iceServers: js.Array[RTCIceServer] = js.native
+  var iceServers: js.UndefOr[js.Array[RTCIceServer]] = js.undefined
 
   /** defaulting to "all" Indicates which candidates the ICE engine is allowed to use. */
-  var iceTransportPolicy: RTCIceTransportPolicy = js.native
+  var iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy] = js.undefined
 
   /** defaulting to "balanced" Indicates which BundlePolicy to use. */
-  var bundlePolicy: RTCBundlePolicy = js.native
+  var bundlePolicy: js.UndefOr[RTCBundlePolicy] = js.undefined
 
   /** Sets the target peer identity for the RTCPeerConnection. The RTCPeerConnection will establish a connection to a
     * remote peer unless it can be successfully authenticated with the provided name.
     */
-  var peerIdentity: String = js.native
+  var peerIdentity: js.UndefOr[String] = js.undefined
 }
 
+@deprecated("all members of RTCConfiguration are deprecated", "2.0.0")
 object RTCConfiguration {
 
+  @deprecated("use `new RTCConfiguration { ... }` instead", "2.0.0")
   @inline
   def apply(iceServers: js.UndefOr[js.Array[RTCIceServer]] = js.undefined,
       iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy] = js.undefined,
@@ -171,8 +173,7 @@ object RTCConfiguration {
 }
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCSdpType]] in W3C spec */
-@js.native
-trait RTCSdpType extends js.Any
+sealed trait RTCSdpType extends js.Any
 
 object RTCSdpType {
 
@@ -192,14 +193,15 @@ object RTCSdpType {
   val answer: RTCSdpType = "answer".asInstanceOf[RTCSdpType]
 }
 
-@js.native
 trait RTCSessionDescriptionInit extends js.Object {
-  var `type`: RTCSdpType = js.native
-  var sdp: String = js.native
+  var `type`: js.UndefOr[RTCSdpType] = js.undefined
+  var sdp: js.UndefOr[String] = js.undefined
 }
 
+@deprecated("all members of RTCSessionDescriptionInit are deprecated", "2.0.0")
 object RTCSessionDescriptionInit {
 
+  @deprecated("use `new RTCSessionDescriptionInit { ... }` instead", "2.0.0")
   @inline
   def apply(`type`: js.UndefOr[RTCSdpType] = js.undefined,
       sdp: js.UndefOr[String] = js.undefined): RTCSessionDescriptionInit = {
@@ -222,15 +224,16 @@ class RTCSessionDescription(descriptionInitDict: js.UndefOr[RTCSessionDescriptio
   var sdp: String = js.native
 }
 
-@js.native
 trait RTCIceCandidateInit extends js.Object {
-  var candidate: String = js.native
-  var sdpMid: String = js.native
-  var sdpMLineIndex: Double = js.native
+  var candidate: js.UndefOr[String] = js.undefined
+  var sdpMid: js.UndefOr[String] = js.undefined
+  var sdpMLineIndex: js.UndefOr[Double] = js.undefined
 }
 
+@deprecated("all members of RTCIceCandidateInit are deprecated", "2.0.0")
 object RTCIceCandidateInit {
 
+  @deprecated("use `new RTCIceCandidateInit { ... }` instead", "2.0.0")
   @inline
   def apply(
       candidate: js.UndefOr[String] = js.undefined, sdpMid: js.UndefOr[String] = js.undefined,
@@ -268,8 +271,7 @@ class RTCIceCandidate(candidateInitDict: RTCIceCandidateInit) extends js.Object 
 }
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCDataChannelState]] in W3C spec */
-@js.native
-trait RTCDataChannelState extends js.Any
+sealed trait RTCDataChannelState extends js.Any
 
 object RTCDataChannelState {
 
@@ -352,14 +354,13 @@ trait RTCDataChannel extends EventTarget {
 }
 
 //https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCDataChannelInit
-@js.native
 trait RTCDataChannelInit extends js.Object {
-  var ordered: Boolean = js.native
-  var maxPacketLifeTime: Double = js.native
-  var maxRetransmits: Double = js.native
-  var protocol: String = js.native
-  var negotiated: Boolean = js.native
-  var id: Double = js.native
+  var ordered: js.UndefOr[Boolean] = js.undefined
+  var maxPacketLifeTime: js.UndefOr[Double] = js.undefined
+  var maxRetransmits: js.UndefOr[Double] = js.undefined
+  var protocol: js.UndefOr[String] = js.undefined
+  var negotiated: js.UndefOr[Boolean] = js.undefined
+  var id: js.UndefOr[Double] = js.undefined
 }
 
 /** The RTCDataChannelEvent interface represents events that occur while attaching a RTCDataChannel to a
@@ -378,8 +379,10 @@ trait RTCDataChannelEventInit extends EventInit {
   var channel: js.UndefOr[RTCDataChannel] = js.undefined
 }
 
+@deprecated("all members of RTCDataChannelInit are deprecated", "2.0.0")
 object RTCDataChannelInit {
 
+  @deprecated("use `new RTCDataChannelInit { ... }` instead", "2.0.0")
   @inline
   def apply(
       ordered: js.UndefOr[Boolean] = js.undefined, maxPacketLifeTime: js.UndefOr[Double] = js.undefined,
@@ -447,8 +450,7 @@ trait RTCDTMFSender extends js.Object {
 }
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCStatsType]] in W3C spec */
-@js.native
-trait RTCStatsType extends js.Any
+sealed trait RTCStatsType extends js.Any
 
 object RTCStatsType {
 
@@ -459,11 +461,10 @@ object RTCStatsType {
   val `outbound-rtp` = "outbound-rtp".asInstanceOf[RTCStatsType]
 }
 
-@js.native
 trait RTCStats extends js.Object {
-  var timestamp: Double = js.native
-  var `type`: RTCStatsType = js.native
-  var id: String = js.native
+  val timestamp: Double
+  val `type`: RTCStatsType
+  val id: String
 }
 
 //https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCStatsReport
@@ -489,8 +490,7 @@ class RTCPeerConnectionIceEvent(typeArg: String, init: js.UndefOr[RTCPeerConnect
 }
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#rtciceconnectionstate-enum]] in W3C spec */
-@js.native
-trait RTCIceConnectionState extends js.Any
+sealed trait RTCIceConnectionState extends js.Any
 
 object RTCIceConnectionState {
 
@@ -526,8 +526,7 @@ object RTCIceConnectionState {
   val closed: RTCIceConnectionState = "closed".asInstanceOf[RTCIceConnectionState]
 }
 
-@js.native
-trait RTCSignalingState extends js.Any
+sealed trait RTCSignalingState extends js.Any
 
 object RTCSignalingState {
 
@@ -558,8 +557,7 @@ object RTCSignalingState {
   val closed: RTCSignalingState = "closed".asInstanceOf[RTCSignalingState]
 }
 
-@js.native
-trait RTCIceGatheringState extends js.Any
+sealed trait RTCIceGatheringState extends js.Any
 
 object RTCIceGatheringState {
 

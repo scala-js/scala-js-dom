@@ -317,9 +317,9 @@ Blob[JC] def stream(): ReadableStream[Uint8Array]
 Blob[JC] def text(): js.Promise[String]
 Blob[JC] def `type`: String
 Blob[JO]
-BlobPropertyBag[JT] def endings: String
-BlobPropertyBag[JT] def `type`: String
-BlobPropertyBag[SO] def apply(`type`: js.UndefOr[String]?): BlobPropertyBag
+BlobPropertyBag[JT] var endings: js.UndefOr[String]
+BlobPropertyBag[JT] var `type`: js.UndefOr[String]
+BlobPropertyBag[SO] def apply(`type`: js.UndefOr[String]?): BlobPropertyBag  (@deprecated in 2.0.0)
 Body[JT] def arrayBuffer(): js.Promise[ArrayBuffer]
 Body[JT] def blob(): js.Promise[Blob]
 Body[JT] def bodyUsed: Boolean
@@ -14556,7 +14556,7 @@ MutationObserverInit[JT] var characterData: js.UndefOr[Boolean]
 MutationObserverInit[JT] var characterDataOldValue: js.UndefOr[Boolean]
 MutationObserverInit[JT] var childList: js.UndefOr[Boolean]
 MutationObserverInit[JT] var subtree: js.UndefOr[Boolean]
-MutationObserverInit[SO] def apply(childList: Boolean = false, attributes: Boolean = false, characterData: Boolean = false, subtree: Boolean = false, attributeOldValue: Boolean = false, characterDataOldValue: Boolean = false, attributeFilter: js.UndefOr[js.Array[String]]?): MutationObserverInit
+MutationObserverInit[SO] def apply(childList: Boolean = false, attributes: Boolean = false, characterData: Boolean = false, subtree: Boolean = false, attributeOldValue: Boolean = false, characterDataOldValue: Boolean = false, attributeFilter: js.UndefOr[js.Array[String]]?): MutationObserverInit  (@deprecated in 2.0.0)
 MutationRecord[JT] def addedNodes: NodeList[Node]
 MutationRecord[JT] def attributeName: String
 MutationRecord[JT] def attributeNamespace: String
@@ -14711,20 +14711,20 @@ Notification[JC] val tag: String
 Notification[JC] val vibrate: js.Array[Double]
 Notification[JO] val permission: String
 Notification[JO] def requestPermission(callback: js.Function1[String, Any]): Unit
-NotificationOptions[JT] val body: String
-NotificationOptions[JT] val dir: String
-NotificationOptions[JT] val icon: String
-NotificationOptions[JT] val lang: String
-NotificationOptions[JT] val noscreen: Boolean
-NotificationOptions[JT] val onclick: js.Function0[Any]
-NotificationOptions[JT] val onerror: js.Function0[Any]
-NotificationOptions[JT] val renotify: Boolean
-NotificationOptions[JT] val silent: Boolean
-NotificationOptions[JT] val sound: String
-NotificationOptions[JT] val sticky: Boolean
-NotificationOptions[JT] val tag: String
-NotificationOptions[JT] val vibrate: js.Array[Double]
-NotificationOptions[SO] def apply(body: js.UndefOr[String]?, dir: js.UndefOr[String]?, icon: js.UndefOr[String]?, lang: js.UndefOr[String]?, noscreen: js.UndefOr[Boolean]?, renotify: js.UndefOr[Boolean]?, silent: js.UndefOr[Boolean]?, sound: js.UndefOr[String]?, sticky: js.UndefOr[Boolean]?, tag: js.UndefOr[String]?, onclick: js.UndefOr[js.Function0[Any]]?, onerror: js.UndefOr[js.Function0[Any]]?, vibrate: js.UndefOr[js.Array[Double]]?): NotificationOptions
+NotificationOptions[JT] var body: js.UndefOr[String]
+NotificationOptions[JT] var dir: js.UndefOr[String]
+NotificationOptions[JT] var icon: js.UndefOr[String]
+NotificationOptions[JT] var lang: js.UndefOr[String]
+NotificationOptions[JT] var noscreen: js.UndefOr[Boolean]
+NotificationOptions[JT] var onclick: js.UndefOr[js.Function0[Any]]
+NotificationOptions[JT] var onerror: js.UndefOr[js.Function0[Any]]
+NotificationOptions[JT] var renotify: js.UndefOr[Boolean]
+NotificationOptions[JT] var silent: js.UndefOr[Boolean]
+NotificationOptions[JT] var sound: js.UndefOr[String]
+NotificationOptions[JT] var sticky: js.UndefOr[Boolean]
+NotificationOptions[JT] var tag: js.UndefOr[String]
+NotificationOptions[JT] var vibrate: js.UndefOr[js.Array[Double]]
+NotificationOptions[SO] def apply(body: js.UndefOr[String]?, dir: js.UndefOr[String]?, icon: js.UndefOr[String]?, lang: js.UndefOr[String]?, noscreen: js.UndefOr[Boolean]?, renotify: js.UndefOr[Boolean]?, silent: js.UndefOr[Boolean]?, sound: js.UndefOr[String]?, sticky: js.UndefOr[Boolean]?, tag: js.UndefOr[String]?, onclick: js.UndefOr[js.Function0[Any]]?, onerror: js.UndefOr[js.Function0[Any]]?, vibrate: js.UndefOr[js.Array[Double]]?): NotificationOptions  (@deprecated in 2.0.0)
 OfflineAudioCompletionEvent[JT] def bubbles: Boolean
 OfflineAudioCompletionEvent[JT] def cancelBubble: Boolean
 OfflineAudioCompletionEvent[JT] def cancelable: Boolean
@@ -24401,103 +24401,164 @@ XPathResult[JO] val ORDERED_NODE_SNAPSHOT_TYPE: Int
 XPathResult[JO] val STRING_TYPE: Int
 XPathResult[JO] val UNORDERED_NODE_ITERATOR_TYPE: Int
 XPathResult[JO] val UNORDERED_NODE_SNAPSHOT_TYPE: Int
-crypto/AesCbcParams[JT] var iv: BufferSource
-crypto/AesCbcParams[JT] var name: String
-crypto/AesCbcParams[SO] def apply(name: String, iv: BufferSource): AesCbcParams
-crypto/AesCfbParams[JT] var iv: BufferSource
-crypto/AesCfbParams[JT] var name: String
-crypto/AesCfbParams[SO] def apply(name: String, iv: BufferSource): AesCfbParams
-crypto/AesCmacParams[JT] var length: Int
-crypto/AesCmacParams[JT] var name: String
-crypto/AesCmacParams[SO] def apply(name: String, length: Int): AesCmacParams
-crypto/AesCtrParams[JT] var counter: BufferSource
-crypto/AesCtrParams[JT] var length: Short
-crypto/AesCtrParams[JT] var name: String
-crypto/AesCtrParams[SO] def apply(name: String, counter: BufferSource, length: Short): AesCtrParams
-crypto/AesDerivedKeyParams[JT] var length: Int
-crypto/AesDerivedKeyParams[JT] var name: String
-crypto/AesDerivedKeyParams[SO] def apply(name: String, length: Short): AesDerivedKeyParams
-crypto/AesGcmParams[JT] var additionalData: BufferSource
-crypto/AesGcmParams[JT] var iv: BufferSource
-crypto/AesGcmParams[JT] var name: String
-crypto/AesGcmParams[JT] var tagLength: Short
-crypto/AesGcmParams[SO] def apply(name: String, iv: BufferSource, additionalData: BufferSource, tagLength: Short): AesGcmParams
-crypto/AesKeyAlgorithm[JT] var length: Int
-crypto/AesKeyAlgorithm[JT] var name: String
-crypto/AesKeyAlgorithm[SO] def apply(name: String, length: Short): AesKeyAlgorithm
-crypto/AesKeyGenParams[JT] var length: Int
-crypto/AesKeyGenParams[JT] var name: String
-crypto/AesKeyGenParams[SO] def apply(name: String, length: Short): AesKeyGenParams
-crypto/Algorithm[JT] var name: String
-crypto/ConcatParams[JT] var algorithmId: BufferSource
-crypto/ConcatParams[JT] var hash: HashAlgorithmIdentifier
-crypto/ConcatParams[JT] var name: String
-crypto/ConcatParams[JT] var partyUInfo: BufferSource
-crypto/ConcatParams[JT] var partyVInfo: BufferSource
-crypto/ConcatParams[JT] var privateInfo: BufferSource
-crypto/ConcatParams[JT] var publicInfo: BufferSource
-crypto/ConcatParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, algorithmId: BufferSource, partyUInfo: BufferSource, partyVInfo: BufferSource, publicInfo: BufferSource, privateInfo: BufferSource): ConcatParams
+crypto/AesCbcParams[JT] val iv: BufferSource
+crypto/AesCbcParams[JT] val name: String
+crypto/AesCbcParams[SO] def apply(name: String, iv: BufferSource): AesCbcParams  (@deprecated in 2.0.0)
+crypto/AesCbcParams[SO] val iv = iv0
+crypto/AesCbcParams[SO] val name = name0
+crypto/AesCfbParams[JT] val iv: BufferSource
+crypto/AesCfbParams[JT] val name: String
+crypto/AesCfbParams[SO] def apply(name: String, iv: BufferSource): AesCfbParams  (@deprecated in 2.0.0)
+crypto/AesCfbParams[SO] val iv = iv0
+crypto/AesCfbParams[SO] val name = name0
+crypto/AesCmacParams[JT] val length: Int
+crypto/AesCmacParams[JT] val name: String
+crypto/AesCmacParams[SO] def apply(name: String, length: Int): AesCmacParams  (@deprecated in 2.0.0)
+crypto/AesCmacParams[SO] val length = length0
+crypto/AesCmacParams[SO] val name = name0
+crypto/AesCtrParams[JT] val counter: BufferSource
+crypto/AesCtrParams[JT] val length: Int
+crypto/AesCtrParams[JT] val name: String
+crypto/AesCtrParams[SO] def apply(name: String, counter: BufferSource, length: Short): AesCtrParams  (@deprecated in 2.0.0)
+crypto/AesCtrParams[SO] val counter = counter0
+crypto/AesCtrParams[SO] val length = length0.toInt
+crypto/AesCtrParams[SO] val name = name0
+crypto/AesDerivedKeyParams[JT] val length: Int
+crypto/AesDerivedKeyParams[JT] val name: String
+crypto/AesDerivedKeyParams[SO] def apply(name: String, length: Short): AesDerivedKeyParams  (@deprecated in 2.0.0)
+crypto/AesDerivedKeyParams[SO] val length = length0.toInt
+crypto/AesDerivedKeyParams[SO] val name = name0
+crypto/AesGcmParams[JT] val additionalData: BufferSource
+crypto/AesGcmParams[JT] val iv: BufferSource
+crypto/AesGcmParams[JT] val name: String
+crypto/AesGcmParams[JT] val tagLength: Int
+crypto/AesGcmParams[SO] val additionalData = additionalData0
+crypto/AesGcmParams[SO] def apply(name: String, iv: BufferSource, additionalData: BufferSource, tagLength: Short): AesGcmParams  (@deprecated in 2.0.0)
+crypto/AesGcmParams[SO] val iv = iv0
+crypto/AesGcmParams[SO] val name = name0
+crypto/AesGcmParams[SO] val tagLength = tagLength0.toInt
+crypto/AesKeyAlgorithm[JT] val length: Int
+crypto/AesKeyAlgorithm[JT] val name: String
+crypto/AesKeyAlgorithm[SO] def apply(name: String, length: Short): AesKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/AesKeyAlgorithm[SO] val length = length0.toInt
+crypto/AesKeyAlgorithm[SO] val name = name0
+crypto/AesKeyGenParams[JT] val length: Int
+crypto/AesKeyGenParams[JT] val name: String
+crypto/AesKeyGenParams[SO] def apply(name: String, length: Short): AesKeyGenParams  (@deprecated in 2.0.0)
+crypto/AesKeyGenParams[SO] val length = length0.toInt
+crypto/AesKeyGenParams[SO] val name = name0
+crypto/Algorithm[JT] val name: String
+crypto/ConcatParams[JT] val algorithmId: BufferSource
+crypto/ConcatParams[JT] val hash: HashAlgorithmIdentifier
+crypto/ConcatParams[JT] val name: String
+crypto/ConcatParams[JT] val partyUInfo: BufferSource
+crypto/ConcatParams[JT] val partyVInfo: BufferSource
+crypto/ConcatParams[JT] val privateInfo: BufferSource
+crypto/ConcatParams[JT] val publicInfo: BufferSource
+crypto/ConcatParams[SO] val algorithmId = algorithmId0
+crypto/ConcatParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, algorithmId: BufferSource, partyUInfo: BufferSource, partyVInfo: BufferSource, publicInfo: BufferSource, privateInfo: BufferSource): ConcatParams  (@deprecated in 2.0.0)
+crypto/ConcatParams[SO] val hash = hash0
+crypto/ConcatParams[SO] val name = name0
+crypto/ConcatParams[SO] val partyUInfo = partyUInfo0
+crypto/ConcatParams[SO] val partyVInfo = partyVInfo0
+crypto/ConcatParams[SO] val privateInfo = privateInfo0
+crypto/ConcatParams[SO] val publicInfo = publicInfo0
 crypto/Crypto[JT] def getRandomValues(array: ArrayBufferView): ArrayBufferView
 crypto/Crypto[JT] val subtle: SubtleCrypto
-crypto/CryptoKey[JT] val algorithm: KeyAlgorithm
-crypto/CryptoKey[JT] val extractable: Boolean
-crypto/CryptoKey[JT] val `type`: String
-crypto/CryptoKey[JT] val usages: js.Array[KeyUsage]
+crypto/CryptoKey[JC] val algorithm: KeyAlgorithm
+crypto/CryptoKey[JC] val extractable: Boolean
+crypto/CryptoKey[JC] val `type`: String
+crypto/CryptoKey[JC] val usages: js.Array[KeyUsage]
 crypto/CryptoKeyPair[JT] val privateKey: CryptoKey
 crypto/CryptoKeyPair[JT] val publicKey: CryptoKey
-crypto/DhImportKeyParams[JT] var generator: BigInteger
-crypto/DhImportKeyParams[JT] var name: String
-crypto/DhImportKeyParams[JT] var prime: BigInteger
-crypto/DhImportKeyParams[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhImportKeyParams
-crypto/DhKeyAlgorithm[JT] var generator: BigInteger
-crypto/DhKeyAlgorithm[JT] var name: String
-crypto/DhKeyAlgorithm[JT] var prime: BigInteger
-crypto/DhKeyAlgorithm[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyAlgorithm
-crypto/DhKeyDeriveParams[JT] var name: String
-crypto/DhKeyDeriveParams[JT] var public: CryptoKey
-crypto/DhKeyDeriveParams[SO] def apply(name: String, public: CryptoKey): DhKeyDeriveParams
-crypto/DhKeyGenParams[JT] var generator: BigInteger
-crypto/DhKeyGenParams[JT] var name: String
-crypto/DhKeyGenParams[JT] var prime: BigInteger
-crypto/DhKeyGenParams[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyGenParams
-crypto/EcKeyAlgorithm[JT] var name: String
-crypto/EcKeyAlgorithm[JT] var namedCurve: String
-crypto/EcKeyAlgorithm[SO] def apply(name: String, namedCurve: String): EcKeyAlgorithm
-crypto/EcKeyGenParams[JT] var name: String
-crypto/EcKeyGenParams[JT] var namedCurve: String
-crypto/EcKeyGenParams[SO] def apply(name: String, namedCurve: String): EcKeyGenParams
-crypto/EcKeyImportParams[JT] var name: String
-crypto/EcKeyImportParams[JT] var namedCurve: String
-crypto/EcKeyImportParams[SO] def apply(name: String, namedCurve: String): EcKeyImportParams
-crypto/EcdhKeyDeriveParams[JT] var name: String
-crypto/EcdhKeyDeriveParams[JT] var public: CryptoKey
-crypto/EcdhKeyDeriveParams[SO] def apply(name: String, public: CryptoKey): EcdhKeyDeriveParams
-crypto/EcdsaParams[JT] var hash: HashAlgorithmIdentifier
-crypto/EcdsaParams[JT] var name: String
-crypto/EcdsaParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): EcdsaParams
+crypto/DhImportKeyParams[JT] val generator: BigInteger
+crypto/DhImportKeyParams[JT] val name: String
+crypto/DhImportKeyParams[JT] val prime: BigInteger
+crypto/DhImportKeyParams[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhImportKeyParams  (@deprecated in 2.0.0)
+crypto/DhImportKeyParams[SO] val generator = generator0
+crypto/DhImportKeyParams[SO] val name = name0
+crypto/DhImportKeyParams[SO] val prime = prime0
+crypto/DhKeyAlgorithm[JT] val generator: BigInteger
+crypto/DhKeyAlgorithm[JT] val name: String
+crypto/DhKeyAlgorithm[JT] val prime: BigInteger
+crypto/DhKeyAlgorithm[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/DhKeyAlgorithm[SO] val generator = generator0
+crypto/DhKeyAlgorithm[SO] val name = name0
+crypto/DhKeyAlgorithm[SO] val prime = prime0
+crypto/DhKeyDeriveParams[JT] val name: String
+crypto/DhKeyDeriveParams[JT] val public: CryptoKey
+crypto/DhKeyDeriveParams[SO] def apply(name: String, public: CryptoKey): DhKeyDeriveParams  (@deprecated in 2.0.0)
+crypto/DhKeyDeriveParams[SO] val name = name0
+crypto/DhKeyDeriveParams[SO] val public = public0
+crypto/DhKeyGenParams[JT] val generator: BigInteger
+crypto/DhKeyGenParams[JT] val name: String
+crypto/DhKeyGenParams[JT] val prime: BigInteger
+crypto/DhKeyGenParams[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyGenParams  (@deprecated in 2.0.0)
+crypto/DhKeyGenParams[SO] val generator = generator0
+crypto/DhKeyGenParams[SO] val name = name0
+crypto/DhKeyGenParams[SO] val prime = prime0
+crypto/EcKeyAlgorithm[JT] val name: String
+crypto/EcKeyAlgorithm[JT] val namedCurve: String
+crypto/EcKeyAlgorithm[SO] def apply(name: String, namedCurve: String): EcKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/EcKeyAlgorithm[SO] val name = name0
+crypto/EcKeyAlgorithm[SO] val namedCurve = namedCurve0
+crypto/EcKeyGenParams[JT] val name: String
+crypto/EcKeyGenParams[JT] val namedCurve: String
+crypto/EcKeyGenParams[SO] def apply(name: String, namedCurve: String): EcKeyGenParams  (@deprecated in 2.0.0)
+crypto/EcKeyGenParams[SO] val name = name0
+crypto/EcKeyGenParams[SO] val namedCurve = namedCurve0
+crypto/EcKeyImportParams[JT] val name: String
+crypto/EcKeyImportParams[JT] val namedCurve: String
+crypto/EcKeyImportParams[SO] def apply(name: String, namedCurve: String): EcKeyImportParams  (@deprecated in 2.0.0)
+crypto/EcKeyImportParams[SO] val name = name0
+crypto/EcKeyImportParams[SO] val namedCurve = namedCurve0
+crypto/EcdhKeyDeriveParams[JT] val name: String
+crypto/EcdhKeyDeriveParams[JT] val public: CryptoKey
+crypto/EcdhKeyDeriveParams[SO] def apply(name: String, public: CryptoKey): EcdhKeyDeriveParams  (@deprecated in 2.0.0)
+crypto/EcdhKeyDeriveParams[SO] val name = name0
+crypto/EcdhKeyDeriveParams[SO] val public = public0
+crypto/EcdsaParams[JT] val hash: HashAlgorithmIdentifier
+crypto/EcdsaParams[JT] val name: String
+crypto/EcdsaParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): EcdsaParams  (@deprecated in 2.0.0)
+crypto/EcdsaParams[SO] val hash = hash0
+crypto/EcdsaParams[SO] val name = name0
 crypto/GlobalCrypto[JO] val crypto: Crypto  (@deprecated in 2.0.0)
-crypto/HashAlgorithm[JT] var name: String
-crypto/HashAlgorithm[SO] val `SHA-1` = named("SHA-1")
-crypto/HashAlgorithm[SO] val `SHA-256` = named("SHA-256")
-crypto/HashAlgorithm[SO] val `SHA-384` = named("SHA-384")
-crypto/HashAlgorithm[SO] val `SHA-512` = named("SHA-512")
-crypto/HkdfCtrParams[JT] var context: BufferSource
-crypto/HkdfCtrParams[JT] var hash: HashAlgorithmIdentifier
-crypto/HkdfCtrParams[JT] var label: BufferSource
-crypto/HkdfCtrParams[JT] var name: String
-crypto/HkdfCtrParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, label: BufferSource, context: BufferSource): HkdfCtrParams
-crypto/HmacImportParams[JT] var hash: HashAlgorithmIdentifier
-crypto/HmacImportParams[JT] var length: Double
-crypto/HmacImportParams[JT] var name: String
-crypto/HmacImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacImportParams
-crypto/HmacKeyAlgorithm[JT] var hash: HashAlgorithmIdentifier
-crypto/HmacKeyAlgorithm[JT] var length: Double
-crypto/HmacKeyAlgorithm[JT] var name: String
-crypto/HmacKeyAlgorithm[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyAlgorithm
-crypto/HmacKeyGenParams[JT] var hash: HashAlgorithmIdentifier
-crypto/HmacKeyGenParams[JT] var length: Double
-crypto/HmacKeyGenParams[JT] var name: String
-crypto/HmacKeyGenParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyGenParams
+crypto/HashAlgorithm[JT] val name: String
+crypto/HashAlgorithm[SO] val `SHA-1`: HashAlgorithm
+crypto/HashAlgorithm[SO] val `SHA-256`: HashAlgorithm
+crypto/HashAlgorithm[SO] val `SHA-384`: HashAlgorithm
+crypto/HashAlgorithm[SO] val `SHA-512`: HashAlgorithm
+crypto/HashAlgorithm[SO] val name = name0
+crypto/HkdfCtrParams[JT] val context: BufferSource
+crypto/HkdfCtrParams[JT] val hash: HashAlgorithmIdentifier
+crypto/HkdfCtrParams[JT] val label: BufferSource
+crypto/HkdfCtrParams[JT] val name: String
+crypto/HkdfCtrParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, label: BufferSource, context: BufferSource): HkdfCtrParams  (@deprecated in 2.0.0)
+crypto/HkdfCtrParams[SO] val context = context0
+crypto/HkdfCtrParams[SO] val hash = hash0
+crypto/HkdfCtrParams[SO] val label = label0
+crypto/HkdfCtrParams[SO] val name = name0
+crypto/HmacImportParams[JT] val hash: HashAlgorithmIdentifier
+crypto/HmacImportParams[JT] val length: Double
+crypto/HmacImportParams[JT] val name: String
+crypto/HmacImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacImportParams  (@deprecated in 2.0.0)
+crypto/HmacImportParams[SO] val hash = hash0
+crypto/HmacImportParams[SO] val length = length0.toDouble
+crypto/HmacImportParams[SO] val name = name0
+crypto/HmacKeyAlgorithm[JT] val hash: HashAlgorithmIdentifier
+crypto/HmacKeyAlgorithm[JT] val length: Double
+crypto/HmacKeyAlgorithm[JT] val name: String
+crypto/HmacKeyAlgorithm[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/HmacKeyAlgorithm[SO] val hash = hash0
+crypto/HmacKeyAlgorithm[SO] val length = length0.toDouble
+crypto/HmacKeyAlgorithm[SO] val name = name0
+crypto/HmacKeyGenParams[JT] val hash: HashAlgorithmIdentifier
+crypto/HmacKeyGenParams[JT] val length: Double
+crypto/HmacKeyGenParams[JT] val name: String
+crypto/HmacKeyGenParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyGenParams  (@deprecated in 2.0.0)
+crypto/HmacKeyGenParams[SO] val hash = hash0
+crypto/HmacKeyGenParams[SO] val length = length0.toDouble
+crypto/HmacKeyGenParams[SO] val name = name0
 crypto/JsonWebKey[JT] var alg: js.Array[String]
 crypto/JsonWebKey[JT] var crv: String
 crypto/JsonWebKey[JT] var d: String
@@ -24516,7 +24577,7 @@ crypto/JsonWebKey[JT] var qi: String
 crypto/JsonWebKey[JT] var use: String
 crypto/JsonWebKey[JT] var x: String
 crypto/JsonWebKey[JT] var y: String
-crypto/KeyAlgorithm[JT] var name: String
+crypto/KeyAlgorithm[JT] val name: String
 crypto/KeyFormat[JT]
 crypto/KeyFormat[SO] val jwk: KeyFormat
 crypto/KeyFormat[SO] val pkcs8: KeyFormat
@@ -24535,46 +24596,68 @@ crypto/KeyUsage[SO] val sign: KeyUsage
 crypto/KeyUsage[SO] val unwrapKey: KeyUsage
 crypto/KeyUsage[SO] val verify: KeyUsage
 crypto/KeyUsage[SO] val wrapKey: KeyUsage
-crypto/Pbkdf2Params[JT] var hash: HashAlgorithmIdentifier
-crypto/Pbkdf2Params[JT] var iterations: Double
-crypto/Pbkdf2Params[JT] var name: String
-crypto/Pbkdf2Params[JT] var salt: BufferSource
-crypto/Pbkdf2Params[SO] def apply(name: String, salt: BufferSource, iterations: Long, hash: HashAlgorithmIdentifier): Pbkdf2Params
-crypto/RSAPublicKey[JT] def e: String
-crypto/RSAPublicKey[JT] def n: String
-crypto/RsaHashedImportParams[JT] var hash: HashAlgorithmIdentifier
-crypto/RsaHashedImportParams[JT] var name: String
-crypto/RsaHashedImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): RsaHashedImportParams
-crypto/RsaHashedKeyAlgorithm[JT] var hash: HashAlgorithmIdentifier
-crypto/RsaHashedKeyAlgorithm[JT] var modulusLength: Double
-crypto/RsaHashedKeyAlgorithm[JT] var name: String
-crypto/RsaHashedKeyAlgorithm[JT] var publicExponent: BigInteger
-crypto/RsaHashedKeyAlgorithm[SO] def `RSA-OAEP`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm
-crypto/RsaHashedKeyAlgorithm[SO] def `RSA-PSS`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm
-crypto/RsaHashedKeyAlgorithm[SO] def `RSASSA-PKCS1-v1_5`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm
-crypto/RsaHashedKeyAlgorithm[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm
-crypto/RsaHashedKeyGenParams[JT] var hash: HashAlgorithmIdentifier
-crypto/RsaHashedKeyGenParams[JT] var modulusLength: Double
-crypto/RsaHashedKeyGenParams[JT] var name: String
-crypto/RsaHashedKeyGenParams[JT] var publicExponent: BigInteger
-crypto/RsaHashedKeyGenParams[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyGenParams
-crypto/RsaKeyAlgorithm[JT] var modulusLength: Double
-crypto/RsaKeyAlgorithm[JT] var name: String
-crypto/RsaKeyAlgorithm[JT] var publicExponent: BigInteger
-crypto/RsaKeyAlgorithm[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyAlgorithm
-crypto/RsaKeyGenParams[JT] var modulusLength: Double
-crypto/RsaKeyGenParams[JT] var name: String
-crypto/RsaKeyGenParams[JT] var publicExponent: BigInteger
-crypto/RsaKeyGenParams[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyGenParams
-crypto/RsaOaepParams[JT] var label: BufferSource
-crypto/RsaOaepParams[JT] var name: String
-crypto/RsaOaepParams[SO] def apply(name: String, label: BufferSource): RsaOaepParams
+crypto/Pbkdf2Params[JT] val hash: HashAlgorithmIdentifier
+crypto/Pbkdf2Params[JT] val iterations: Double
+crypto/Pbkdf2Params[JT] val name: String
+crypto/Pbkdf2Params[JT] val salt: BufferSource
+crypto/Pbkdf2Params[SO] def apply(name: String, salt: BufferSource, iterations: Long, hash: HashAlgorithmIdentifier): Pbkdf2Params  (@deprecated in 2.0.0)
+crypto/Pbkdf2Params[SO] val hash = hash0
+crypto/Pbkdf2Params[SO] val iterations = iterations0.toDouble
+crypto/Pbkdf2Params[SO] val name = name0
+crypto/Pbkdf2Params[SO] val salt = salt0
+crypto/RsaHashedImportParams[JT] val hash: HashAlgorithmIdentifier
+crypto/RsaHashedImportParams[JT] val name: String
+crypto/RsaHashedImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): RsaHashedImportParams  (@deprecated in 2.0.0)
+crypto/RsaHashedImportParams[SO] val hash = hash0
+crypto/RsaHashedImportParams[SO] val name = name0
+crypto/RsaHashedKeyAlgorithm[JT] val hash: HashAlgorithmIdentifier
+crypto/RsaHashedKeyAlgorithm[JT] val modulusLength: Double
+crypto/RsaHashedKeyAlgorithm[JT] val name: String
+crypto/RsaHashedKeyAlgorithm[JT] val publicExponent: BigInteger
+crypto/RsaHashedKeyAlgorithm[SO] def `RSA-OAEP`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/RsaHashedKeyAlgorithm[SO] def `RSA-PSS`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/RsaHashedKeyAlgorithm[SO] def `RSASSA-PKCS1-v1_5`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/RsaHashedKeyAlgorithm[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/RsaHashedKeyAlgorithm[SO] val hash = hash0
+crypto/RsaHashedKeyAlgorithm[SO] val modulusLength = modulusLength0.toDouble
+crypto/RsaHashedKeyAlgorithm[SO] val name = name0
+crypto/RsaHashedKeyAlgorithm[SO] val publicExponent = publicExponent0
+crypto/RsaHashedKeyGenParams[JT] val hash: HashAlgorithmIdentifier
+crypto/RsaHashedKeyGenParams[JT] val modulusLength: Double
+crypto/RsaHashedKeyGenParams[JT] val name: String
+crypto/RsaHashedKeyGenParams[JT] val publicExponent: BigInteger
+crypto/RsaHashedKeyGenParams[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyGenParams  (@deprecated in 2.0.0)
+crypto/RsaHashedKeyGenParams[SO] val hash = hash0
+crypto/RsaHashedKeyGenParams[SO] val modulusLength = modulusLength0.toDouble
+crypto/RsaHashedKeyGenParams[SO] val name = name0
+crypto/RsaHashedKeyGenParams[SO] val publicExponent = publicExponent0
+crypto/RsaKeyAlgorithm[JT] val modulusLength: Double
+crypto/RsaKeyAlgorithm[JT] val name: String
+crypto/RsaKeyAlgorithm[JT] val publicExponent: BigInteger
+crypto/RsaKeyAlgorithm[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/RsaKeyAlgorithm[SO] val modulusLength = modulusLength0.toDouble
+crypto/RsaKeyAlgorithm[SO] val name = name0
+crypto/RsaKeyAlgorithm[SO] val publicExponent = publicExponent0
+crypto/RsaKeyGenParams[JT] val modulusLength: Double
+crypto/RsaKeyGenParams[JT] val name: String
+crypto/RsaKeyGenParams[JT] val publicExponent: BigInteger
+crypto/RsaKeyGenParams[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyGenParams  (@deprecated in 2.0.0)
+crypto/RsaKeyGenParams[SO] val modulusLength = modulusLength0.toDouble
+crypto/RsaKeyGenParams[SO] val name = name0
+crypto/RsaKeyGenParams[SO] val publicExponent = publicExponent0
+crypto/RsaOaepParams[JT] val label: BufferSource
+crypto/RsaOaepParams[JT] val name: String
+crypto/RsaOaepParams[SO] def apply(name: String, label: BufferSource): RsaOaepParams  (@deprecated in 2.0.0)
+crypto/RsaOaepParams[SO] val label = label0
+crypto/RsaOaepParams[SO] val name = name0
 crypto/RsaOtherPrimesInfo[JT] var d: String
 crypto/RsaOtherPrimesInfo[JT] var r: String
 crypto/RsaOtherPrimesInfo[JT] var t: String
-crypto/RsaPssParams[JT] var name: String
-crypto/RsaPssParams[JT] var saltLength: Double
-crypto/RsaPssParams[SO] def apply(name: String, saltLength: Long): RsaPssParams
+crypto/RsaPssParams[JT] val name: String
+crypto/RsaPssParams[JT] val saltLength: Double
+crypto/RsaPssParams[SO] def apply(name: String, saltLength: Long): RsaPssParams  (@deprecated in 2.0.0)
+crypto/RsaPssParams[SO] val name = name0
+crypto/RsaPssParams[SO] val saltLength = saltLength0.toDouble
 crypto/SubtleCrypto[JT] def decrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
 crypto/SubtleCrypto[JT] def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, length: Double): js.Promise[js.Any]
 crypto/SubtleCrypto[JT] def deriveKey(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, derivedKeyType: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
@@ -24629,44 +24712,44 @@ experimental/gamepad/package[SO] def unknown: dom.GamepadMappingType  (@deprecat
 experimental/intl/Collator[JC] def compare(string1: String, string2: String): Double
 experimental/intl/Collator[JC] def resolvedOptions(): CollatorOptions
 experimental/intl/Collator[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
-experimental/intl/CollatorOptions[JT] val caseFirst: js.UndefOr[String]
-experimental/intl/CollatorOptions[JT] val ignorePunctuation: js.UndefOr[Boolean]
-experimental/intl/CollatorOptions[JT] val localeMatcher: js.UndefOr[String]
-experimental/intl/CollatorOptions[JT] val numeric: js.UndefOr[Boolean]
-experimental/intl/CollatorOptions[JT] val sensitivity: js.UndefOr[String]
-experimental/intl/CollatorOptions[JT] val usage: js.UndefOr[String]
-experimental/intl/CollatorOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, usage: js.UndefOr[String]?, sensitivity: js.UndefOr[String]?, ignorePunctuation: js.UndefOr[Boolean]?, numeric: js.UndefOr[Boolean]?, caseFirst: js.UndefOr[String]?): CollatorOptions
+experimental/intl/CollatorOptions[JT] var caseFirst: js.UndefOr[String]
+experimental/intl/CollatorOptions[JT] var ignorePunctuation: js.UndefOr[Boolean]
+experimental/intl/CollatorOptions[JT] var localeMatcher: js.UndefOr[String]
+experimental/intl/CollatorOptions[JT] var numeric: js.UndefOr[Boolean]
+experimental/intl/CollatorOptions[JT] var sensitivity: js.UndefOr[String]
+experimental/intl/CollatorOptions[JT] var usage: js.UndefOr[String]
+experimental/intl/CollatorOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, usage: js.UndefOr[String]?, sensitivity: js.UndefOr[String]?, ignorePunctuation: js.UndefOr[Boolean]?, numeric: js.UndefOr[Boolean]?, caseFirst: js.UndefOr[String]?): CollatorOptions  (@deprecated in 2.0.0)
 experimental/intl/DateTimeFormat[JC] def format(date: js.Date): String
 experimental/intl/DateTimeFormat[JC] def resolvedOptions(): DateTimeFormatOptions
 experimental/intl/DateTimeFormat[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
-experimental/intl/DateTimeFormatOptions[JT] val day: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val era: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val formatMatcher: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val hour: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val hour12: js.UndefOr[Boolean]
-experimental/intl/DateTimeFormatOptions[JT] val localeMatcher: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val minute: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val month: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val second: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val timeZone: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val timeZoneName: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val weekday: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[JT] val year: js.UndefOr[String]
-experimental/intl/DateTimeFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, timeZone: js.UndefOr[String]?, hour12: js.UndefOr[Boolean]?, formatMatcher: js.UndefOr[String]?, weekday: js.UndefOr[String]?, era: js.UndefOr[String]?, year: js.UndefOr[String]?, month: js.UndefOr[String]?, day: js.UndefOr[String]?, hour: js.UndefOr[String]?, minute: js.UndefOr[String]?, second: js.UndefOr[String]?, timeZoneName: js.UndefOr[String]?): DateTimeFormatOptions
+experimental/intl/DateTimeFormatOptions[JT] var day: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var era: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var formatMatcher: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var hour: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var hour12: js.UndefOr[Boolean]
+experimental/intl/DateTimeFormatOptions[JT] var localeMatcher: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var minute: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var month: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var second: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var timeZone: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var timeZoneName: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var weekday: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[JT] var year: js.UndefOr[String]
+experimental/intl/DateTimeFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, timeZone: js.UndefOr[String]?, hour12: js.UndefOr[Boolean]?, formatMatcher: js.UndefOr[String]?, weekday: js.UndefOr[String]?, era: js.UndefOr[String]?, year: js.UndefOr[String]?, month: js.UndefOr[String]?, day: js.UndefOr[String]?, hour: js.UndefOr[String]?, minute: js.UndefOr[String]?, second: js.UndefOr[String]?, timeZoneName: js.UndefOr[String]?): DateTimeFormatOptions  (@deprecated in 2.0.0)
 experimental/intl/NumberFormat[JC] def format(number: Double): String
 experimental/intl/NumberFormat[JC] def resolvedOptions(): NumberFormatOptions
 experimental/intl/NumberFormat[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
-experimental/intl/NumberFormatOptions[JT] val currency: js.UndefOr[String]
-experimental/intl/NumberFormatOptions[JT] val currencyDisplay: js.UndefOr[String]
-experimental/intl/NumberFormatOptions[JT] val localeMatcher: js.UndefOr[String]
-experimental/intl/NumberFormatOptions[JT] val maximumFractionDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val maximumSignificantDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val minimumFractionDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val minimumIntegerDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val minimumSignificantDigits: js.UndefOr[Double]
-experimental/intl/NumberFormatOptions[JT] val style: js.UndefOr[String]
-experimental/intl/NumberFormatOptions[JT] val useGrouping: js.UndefOr[Boolean]
-experimental/intl/NumberFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, style: js.UndefOr[String]?, currency: js.UndefOr[String]?, currencyDisplay: js.UndefOr[String]?, useGrouping: js.UndefOr[Boolean]?, minimumIntegerDigits: js.UndefOr[Double]?, minimumFractionDigits: js.UndefOr[Double]?, maximumFractionDigits: js.UndefOr[Double]?, minimumSignificantDigits: js.UndefOr[Double]?, maximumSignificantDigits: js.UndefOr[Double]?): NumberFormatOptions
+experimental/intl/NumberFormatOptions[JT] var currency: js.UndefOr[String]
+experimental/intl/NumberFormatOptions[JT] var currencyDisplay: js.UndefOr[String]
+experimental/intl/NumberFormatOptions[JT] var localeMatcher: js.UndefOr[String]
+experimental/intl/NumberFormatOptions[JT] var maximumFractionDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var maximumSignificantDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var minimumFractionDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var minimumIntegerDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var minimumSignificantDigits: js.UndefOr[Double]
+experimental/intl/NumberFormatOptions[JT] var style: js.UndefOr[String]
+experimental/intl/NumberFormatOptions[JT] var useGrouping: js.UndefOr[Boolean]
+experimental/intl/NumberFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, style: js.UndefOr[String]?, currency: js.UndefOr[String]?, currencyDisplay: js.UndefOr[String]?, useGrouping: js.UndefOr[Boolean]?, minimumIntegerDigits: js.UndefOr[Double]?, minimumFractionDigits: js.UndefOr[Double]?, maximumFractionDigits: js.UndefOr[Double]?, minimumSignificantDigits: js.UndefOr[Double]?, maximumSignificantDigits: js.UndefOr[Double]?): NumberFormatOptions  (@deprecated in 2.0.0)
 experimental/mediastream/AudioTrack[JT] var enabled: Boolean
 experimental/mediastream/AudioTrack[JT] val id: String
 experimental/mediastream/AudioTrack[JT] val kind: String
@@ -24690,7 +24773,7 @@ experimental/mediastream/MediaDeviceInfo[JT] val deviceId: String
 experimental/mediastream/MediaDeviceInfo[JT] val groupId: String
 experimental/mediastream/MediaDeviceInfo[JT] val kind: MediaDeviceKind
 experimental/mediastream/MediaDeviceInfo[JT] val label: String
-experimental/mediastream/MediaDeviceInfo[SO] def apply(deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?): MediaDeviceInfo
+experimental/mediastream/MediaDeviceInfo[SO] def apply(deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?): MediaDeviceInfo  (@deprecated in 2.0.0)
 experimental/mediastream/MediaDeviceKind[JT]
 experimental/mediastream/MediaDeviceKind[SO] val audioinput: MediaDeviceKind
 experimental/mediastream/MediaDeviceKind[SO] val audiooutput: MediaDeviceKind
@@ -24738,10 +24821,10 @@ experimental/mediastream/MediaStream[JC] var onremovetrack: js.Function1[Event, 
 experimental/mediastream/MediaStream[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/MediaStream[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/MediaStream[JC] def removeTrack(track: MediaStreamTrack): Unit
-experimental/mediastream/MediaStreamConstraints[JT] var audio: Boolean | MediaTrackConstraints
-experimental/mediastream/MediaStreamConstraints[JT] var peerIdentity: String
-experimental/mediastream/MediaStreamConstraints[JT] var video: Boolean | MediaTrackConstraints
-experimental/mediastream/MediaStreamConstraints[SO] def apply(video: js.UndefOr[Boolean | MediaTrackConstraints]?, audio: js.UndefOr[Boolean | MediaTrackConstraints]?, peerIdentity: js.UndefOr[String]?): MediaStreamConstraints
+experimental/mediastream/MediaStreamConstraints[JT] var audio: js.UndefOr[Boolean | MediaTrackConstraints]
+experimental/mediastream/MediaStreamConstraints[JT] var peerIdentity: js.UndefOr[String]
+experimental/mediastream/MediaStreamConstraints[JT] var video: js.UndefOr[Boolean | MediaTrackConstraints]
+experimental/mediastream/MediaStreamConstraints[SO] def apply(video: js.UndefOr[Boolean | MediaTrackConstraints]?, audio: js.UndefOr[Boolean | MediaTrackConstraints]?, peerIdentity: js.UndefOr[String]?): MediaStreamConstraints  (@deprecated in 2.0.0)
 experimental/mediastream/MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/MediaStreamTrack[JT] def applyConstraints(constraints: MediaTrackConstraints): js.Promise[Unit]
@@ -24766,7 +24849,7 @@ experimental/mediastream/MediaStreamTrack[JT] val remote: Boolean
 experimental/mediastream/MediaStreamTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/mediastream/MediaStreamTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/mediastream/MediaStreamTrack[JT] def stop(): Unit
-experimental/mediastream/MediaStreamTrack[SO] def apply(enabled: js.UndefOr[Boolean]?, id: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?, muted: js.UndefOr[Boolean]?, readonly: js.UndefOr[Boolean]?, readyState: js.UndefOr[String]?, remote: js.UndefOr[Boolean]?, onstarted: js.UndefOr[js.Function0[Any]]?, onmute: js.UndefOr[js.Function0[Any]]?, onunmute: js.UndefOr[js.Function0[Any]]?, onoverconstrained: js.UndefOr[js.Function0[Any]]?, oneended: js.UndefOr[js.Function0[Any]]?): MediaStreamTrack
+experimental/mediastream/MediaStreamTrack[SO] def apply(enabled: js.UndefOr[Boolean]?, id: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?, muted: js.UndefOr[Boolean]?, readonly: js.UndefOr[Boolean]?, readyState: js.UndefOr[String]?, remote: js.UndefOr[Boolean]?, onstarted: js.UndefOr[js.Function0[Any]]?, onmute: js.UndefOr[js.Function0[Any]]?, onunmute: js.UndefOr[js.Function0[Any]]?, onoverconstrained: js.UndefOr[js.Function0[Any]]?, oneended: js.UndefOr[js.Function0[Any]]?): MediaStreamTrack  (@deprecated in 2.0.0)
 experimental/mediastream/MediaStreamTrackEvent[JC] def bubbles: Boolean
 experimental/mediastream/MediaStreamTrackEvent[JC] def cancelBubble: Boolean
 experimental/mediastream/MediaStreamTrackEvent[JC] def cancelable: Boolean
@@ -24789,31 +24872,31 @@ experimental/mediastream/MediaStreamTrackEventInit[JT] var track: js.UndefOr[Med
 experimental/mediastream/MediaStreamTrackState[JT]
 experimental/mediastream/MediaStreamTrackState[SO] val ended: MediaStreamTrackState
 experimental/mediastream/MediaStreamTrackState[SO] val live: MediaStreamTrackState
-experimental/mediastream/MediaTrackConstraintSet[JT] var aspectRatio: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var deviceId: String
-experimental/mediastream/MediaTrackConstraintSet[JT] var echoCancellation: Boolean
-experimental/mediastream/MediaTrackConstraintSet[JT] var facingMode: String
-experimental/mediastream/MediaTrackConstraintSet[JT] var frameRate: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var groupId: String
-experimental/mediastream/MediaTrackConstraintSet[JT] var height: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var sampleRate: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var sampleSize: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var volume: Double
-experimental/mediastream/MediaTrackConstraintSet[JT] var width: Double
-experimental/mediastream/MediaTrackConstraintSet[SO] def apply(width: js.UndefOr[Double]?, height: js.UndefOr[Double]?, aspectRatio: js.UndefOr[Double]?, frameRate: js.UndefOr[Double]?, facingMode: js.UndefOr[String]?, volume: js.UndefOr[Double]?, sampleRate: js.UndefOr[Double]?, sampleSize: js.UndefOr[Double]?, echoCancellation: js.UndefOr[Boolean]?, deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?): MediaTrackConstraintSet
-experimental/mediastream/MediaTrackConstraints[JT] var advanced: js.Array[MediaTrackConstraintSet]
-experimental/mediastream/MediaTrackConstraints[JT] var aspectRatio: Double
-experimental/mediastream/MediaTrackConstraints[JT] var deviceId: String
-experimental/mediastream/MediaTrackConstraints[JT] var echoCancellation: Boolean
-experimental/mediastream/MediaTrackConstraints[JT] var facingMode: String
-experimental/mediastream/MediaTrackConstraints[JT] var frameRate: Double
-experimental/mediastream/MediaTrackConstraints[JT] var groupId: String
-experimental/mediastream/MediaTrackConstraints[JT] var height: Double
-experimental/mediastream/MediaTrackConstraints[JT] var sampleRate: Double
-experimental/mediastream/MediaTrackConstraints[JT] var sampleSize: Double
-experimental/mediastream/MediaTrackConstraints[JT] var volume: Double
-experimental/mediastream/MediaTrackConstraints[JT] var width: Double
-experimental/mediastream/MediaTrackConstraints[SO] def apply(advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]?): MediaTrackConstraints
+experimental/mediastream/MediaTrackConstraintSet[JT] var aspectRatio: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var deviceId: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraintSet[JT] var echoCancellation: js.UndefOr[Boolean]
+experimental/mediastream/MediaTrackConstraintSet[JT] var facingMode: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraintSet[JT] var frameRate: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var groupId: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraintSet[JT] var height: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var sampleRate: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var sampleSize: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var volume: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[JT] var width: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraintSet[SO] def apply(width: js.UndefOr[Double]?, height: js.UndefOr[Double]?, aspectRatio: js.UndefOr[Double]?, frameRate: js.UndefOr[Double]?, facingMode: js.UndefOr[String]?, volume: js.UndefOr[Double]?, sampleRate: js.UndefOr[Double]?, sampleSize: js.UndefOr[Double]?, echoCancellation: js.UndefOr[Boolean]?, deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?): MediaTrackConstraintSet  (@deprecated in 2.0.0)
+experimental/mediastream/MediaTrackConstraints[JT] var advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]
+experimental/mediastream/MediaTrackConstraints[JT] var aspectRatio: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var deviceId: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraints[JT] var echoCancellation: js.UndefOr[Boolean]
+experimental/mediastream/MediaTrackConstraints[JT] var facingMode: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraints[JT] var frameRate: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var groupId: js.UndefOr[String]
+experimental/mediastream/MediaTrackConstraints[JT] var height: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var sampleRate: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var sampleSize: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var volume: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[JT] var width: js.UndefOr[Double]
+experimental/mediastream/MediaTrackConstraints[SO] def apply(advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]?): MediaTrackConstraints  (@deprecated in 2.0.0)
 experimental/mediastream/MediaTrackSettings[JT] var aspectRatio: js.UndefOr[Double]
 experimental/mediastream/MediaTrackSettings[JT] var channelCount: js.UndefOr[Double]
 experimental/mediastream/MediaTrackSettings[JT] var deviceId: js.UndefOr[String]
@@ -24991,8 +25074,8 @@ experimental/package.ResponseInit[SO] def apply(_status: Int = 200, _statusText:
 experimental/package.ResponseInit[SO] var headers = _headers  (@deprecated in 2.0.0)
 experimental/package.ResponseInit[SO] var status = _status  (@deprecated in 2.0.0)
 experimental/package.ResponseInit[SO] var statusText = _statusText  (@deprecated in 2.0.0)
-experimental/permissions/package[SO] def apply(permissionName: PermissionName): PermissionDescriptor
-experimental/permissions/package[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor
+experimental/permissions/package[SO] def apply(permissionName: PermissionName): PermissionDescriptor  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor  (@deprecated in 2.0.0)
 experimental/permissions/package[SO] val denied: PermissionState
 experimental/permissions/package[SO] val geolocation: PermissionName
 experimental/permissions/package[SO] val granted: PermissionState
@@ -25012,8 +25095,8 @@ experimental/permissions/package[SO] implicit def toPermissions(navigator: dom.N
 experimental/permissions/package[SO] val userVisibleOnly = permissionUserVisibleOnly
 experimental/permissions/package[SO] val userVisibleOnly: Boolean
 experimental/permissions/package.PermissionDescriptor[JT] val name: PermissionName
-experimental/permissions/package.PermissionDescriptor[SO] def apply(permissionName: PermissionName): PermissionDescriptor
-experimental/permissions/package.PermissionDescriptor[SO] val name = permissionName
+experimental/permissions/package.PermissionDescriptor[SO] def apply(permissionName: PermissionName): PermissionDescriptor  (@deprecated in 2.0.0)
+experimental/permissions/package.PermissionDescriptor[SO] val name = permissionName  (@deprecated in 2.0.0)
 experimental/permissions/package.PermissionName[JT]
 experimental/permissions/package.PermissionName[SO] val geolocation: PermissionName
 experimental/permissions/package.PermissionName[SO] val midi: PermissionName
@@ -25035,9 +25118,9 @@ experimental/permissions/package.Permissions[JT] def query(permissionDescriptor:
 experimental/permissions/package.PermissionsNavigator[JT] val permissions: Permissions
 experimental/permissions/package.PushPermissionDescriptor[JT] val name: PermissionName
 experimental/permissions/package.PushPermissionDescriptor[JT] val userVisibleOnly: Boolean
-experimental/permissions/package.PushPermissionDescriptor[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor
-experimental/permissions/package.PushPermissionDescriptor[SO] val name = PermissionName.push
-experimental/permissions/package.PushPermissionDescriptor[SO] val userVisibleOnly = permissionUserVisibleOnly
+experimental/permissions/package.PushPermissionDescriptor[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor  (@deprecated in 2.0.0)
+experimental/permissions/package.PushPermissionDescriptor[SO] val name = PermissionName.push  (@deprecated in 2.0.0)
+experimental/permissions/package.PushPermissionDescriptor[SO] val userVisibleOnly = permissionUserVisibleOnly  (@deprecated in 2.0.0)
 experimental/push/PushEncryptionKeyName[JT]
 experimental/push/PushEncryptionKeyName[SO] val auth: PushEncryptionKeyName
 experimental/push/PushEncryptionKeyName[SO] val p256dh: PushEncryptionKeyName
@@ -25484,11 +25567,11 @@ experimental/webrtc/RTCBundlePolicy[JT]
 experimental/webrtc/RTCBundlePolicy[SO] val balanced: RTCBundlePolicy
 experimental/webrtc/RTCBundlePolicy[SO] val `max-bundle` = "max-bundle".asInstanceOf[RTCBundlePolicy]
 experimental/webrtc/RTCBundlePolicy[SO] val `max-compat` = "max-compat".asInstanceOf[RTCBundlePolicy]
-experimental/webrtc/RTCConfiguration[JT] var bundlePolicy: RTCBundlePolicy
-experimental/webrtc/RTCConfiguration[JT] var iceServers: js.Array[RTCIceServer]
-experimental/webrtc/RTCConfiguration[JT] var iceTransportPolicy: RTCIceTransportPolicy
-experimental/webrtc/RTCConfiguration[JT] var peerIdentity: String
-experimental/webrtc/RTCConfiguration[SO] def apply(iceServers: js.UndefOr[js.Array[RTCIceServer]]?, iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]?, bundlePolicy: js.UndefOr[RTCBundlePolicy]?, peerIdentity: js.UndefOr[String]?): RTCConfiguration
+experimental/webrtc/RTCConfiguration[JT] var bundlePolicy: js.UndefOr[RTCBundlePolicy]
+experimental/webrtc/RTCConfiguration[JT] var iceServers: js.UndefOr[js.Array[RTCIceServer]]
+experimental/webrtc/RTCConfiguration[JT] var iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]
+experimental/webrtc/RTCConfiguration[JT] var peerIdentity: js.UndefOr[String]
+experimental/webrtc/RTCConfiguration[SO] def apply(iceServers: js.UndefOr[js.Array[RTCIceServer]]?, iceTransportPolicy: js.UndefOr[RTCIceTransportPolicy]?, bundlePolicy: js.UndefOr[RTCBundlePolicy]?, peerIdentity: js.UndefOr[String]?): RTCConfiguration  (@deprecated in 2.0.0)
 experimental/webrtc/RTCDTMFSender[JT] val canInsertDTMF: Boolean
 experimental/webrtc/RTCDTMFSender[JT] val duration: Double
 experimental/webrtc/RTCDTMFSender[JT] def insertDTMF(tones: String?, duration: Double?, interToneGap: Double?): Unit
@@ -25536,13 +25619,13 @@ experimental/webrtc/RTCDataChannelEventInit[JT] var cancelable: js.UndefOr[Boole
 experimental/webrtc/RTCDataChannelEventInit[JT] var channel: js.UndefOr[RTCDataChannel]
 experimental/webrtc/RTCDataChannelEventInit[JT] var composed: js.UndefOr[Boolean]
 experimental/webrtc/RTCDataChannelEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/webrtc/RTCDataChannelInit[JT] var id: Double
-experimental/webrtc/RTCDataChannelInit[JT] var maxPacketLifeTime: Double
-experimental/webrtc/RTCDataChannelInit[JT] var maxRetransmits: Double
-experimental/webrtc/RTCDataChannelInit[JT] var negotiated: Boolean
-experimental/webrtc/RTCDataChannelInit[JT] var ordered: Boolean
-experimental/webrtc/RTCDataChannelInit[JT] var protocol: String
-experimental/webrtc/RTCDataChannelInit[SO] def apply(ordered: js.UndefOr[Boolean]?, maxPacketLifeTime: js.UndefOr[Double]?, maxRetransmits: js.UndefOr[Double]?, protocol: js.UndefOr[String]?, negotiated: js.UndefOr[Boolean]?, id: js.UndefOr[Double]?): RTCDataChannelInit
+experimental/webrtc/RTCDataChannelInit[JT] var id: js.UndefOr[Double]
+experimental/webrtc/RTCDataChannelInit[JT] var maxPacketLifeTime: js.UndefOr[Double]
+experimental/webrtc/RTCDataChannelInit[JT] var maxRetransmits: js.UndefOr[Double]
+experimental/webrtc/RTCDataChannelInit[JT] var negotiated: js.UndefOr[Boolean]
+experimental/webrtc/RTCDataChannelInit[JT] var ordered: js.UndefOr[Boolean]
+experimental/webrtc/RTCDataChannelInit[JT] var protocol: js.UndefOr[String]
+experimental/webrtc/RTCDataChannelInit[SO] def apply(ordered: js.UndefOr[Boolean]?, maxPacketLifeTime: js.UndefOr[Double]?, maxRetransmits: js.UndefOr[Double]?, protocol: js.UndefOr[String]?, negotiated: js.UndefOr[Boolean]?, id: js.UndefOr[Double]?): RTCDataChannelInit  (@deprecated in 2.0.0)
 experimental/webrtc/RTCDataChannelState[JT]
 experimental/webrtc/RTCDataChannelState[SO] val closed: RTCDataChannelState
 experimental/webrtc/RTCDataChannelState[SO] val closing: RTCDataChannelState
@@ -25551,10 +25634,10 @@ experimental/webrtc/RTCDataChannelState[SO] val open: RTCDataChannelState
 experimental/webrtc/RTCIceCandidate[JC] var candidate: String
 experimental/webrtc/RTCIceCandidate[JC] var sdpMLineIndex: Double
 experimental/webrtc/RTCIceCandidate[JC] var sdpMid: String
-experimental/webrtc/RTCIceCandidateInit[JT] var candidate: String
-experimental/webrtc/RTCIceCandidateInit[JT] var sdpMLineIndex: Double
-experimental/webrtc/RTCIceCandidateInit[JT] var sdpMid: String
-experimental/webrtc/RTCIceCandidateInit[SO] def apply(candidate: js.UndefOr[String]?, sdpMid: js.UndefOr[String]?, sdpMLineIndex: js.UndefOr[Double]?): RTCIceCandidateInit
+experimental/webrtc/RTCIceCandidateInit[JT] var candidate: js.UndefOr[String]
+experimental/webrtc/RTCIceCandidateInit[JT] var sdpMLineIndex: js.UndefOr[Double]
+experimental/webrtc/RTCIceCandidateInit[JT] var sdpMid: js.UndefOr[String]
+experimental/webrtc/RTCIceCandidateInit[SO] def apply(candidate: js.UndefOr[String]?, sdpMid: js.UndefOr[String]?, sdpMLineIndex: js.UndefOr[Double]?): RTCIceCandidateInit  (@deprecated in 2.0.0)
 experimental/webrtc/RTCIceConnectionState[JT]
 experimental/webrtc/RTCIceConnectionState[SO] val checking: RTCIceConnectionState
 experimental/webrtc/RTCIceConnectionState[SO] val closed: RTCIceConnectionState
@@ -25567,22 +25650,22 @@ experimental/webrtc/RTCIceGatheringState[JT]
 experimental/webrtc/RTCIceGatheringState[SO] val complete: RTCIceGatheringState
 experimental/webrtc/RTCIceGatheringState[SO] val gathering: RTCIceGatheringState
 experimental/webrtc/RTCIceGatheringState[SO] val `new`: RTCIceGatheringState
-experimental/webrtc/RTCIceServer[JT] var credential: String
-experimental/webrtc/RTCIceServer[JT] var urls: String | js.Array[String]
-experimental/webrtc/RTCIceServer[JT] var username: String
-experimental/webrtc/RTCIceServer[SO] def apply(urls: js.UndefOr[String | js.Array[String]]?, username: js.UndefOr[String]?, credential: js.UndefOr[String]?): RTCIceServer
+experimental/webrtc/RTCIceServer[JT] var credential: js.UndefOr[String]
+experimental/webrtc/RTCIceServer[JT] var urls: js.UndefOr[String | js.Array[String]]
+experimental/webrtc/RTCIceServer[JT] var username: js.UndefOr[String]
+experimental/webrtc/RTCIceServer[SO] def apply(urls: js.UndefOr[String | js.Array[String]]?, username: js.UndefOr[String]?, credential: js.UndefOr[String]?): RTCIceServer  (@deprecated in 2.0.0)
 experimental/webrtc/RTCIceTransportPolicy[JT]
 experimental/webrtc/RTCIceTransportPolicy[SO] val all: RTCIceTransportPolicy
 experimental/webrtc/RTCIceTransportPolicy[SO] val none: RTCIceTransportPolicy
 experimental/webrtc/RTCIceTransportPolicy[SO] val relay: RTCIceTransportPolicy
 experimental/webrtc/RTCIdentityAssertion[JT] val idp: String
 experimental/webrtc/RTCIdentityAssertion[JT] val name: String
-experimental/webrtc/RTCIdentityAssertion[SO] def apply(idp: js.UndefOr[String]?, name: js.UndefOr[String]?): RTCIdentityAssertion
-experimental/webrtc/RTCOfferOptions[JT] var iceRestart: Boolean
-experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveAudio: Double
-experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveVideo: Double
-experimental/webrtc/RTCOfferOptions[JT] var voiceActivityDetection: Boolean
-experimental/webrtc/RTCOfferOptions[SO] def apply(iceRestart: js.UndefOr[Boolean]?, offerToReceiveAudio: js.UndefOr[Double]?, offerToReceiveVideo: js.UndefOr[Double]?, voiceActivityDetection: js.UndefOr[Boolean]?): RTCOfferOptions
+experimental/webrtc/RTCIdentityAssertion[SO] def apply(idp: js.UndefOr[String]?, name: js.UndefOr[String]?): RTCIdentityAssertion  (@deprecated in 2.0.0)
+experimental/webrtc/RTCOfferOptions[JT] var iceRestart: js.UndefOr[Boolean]
+experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveAudio: js.UndefOr[Double]
+experimental/webrtc/RTCOfferOptions[JT] var offerToReceiveVideo: js.UndefOr[Double]
+experimental/webrtc/RTCOfferOptions[JT] var voiceActivityDetection: js.UndefOr[Boolean]
+experimental/webrtc/RTCOfferOptions[SO] def apply(iceRestart: js.UndefOr[Boolean]?, offerToReceiveAudio: js.UndefOr[Double]?, offerToReceiveVideo: js.UndefOr[Double]?, voiceActivityDetection: js.UndefOr[Boolean]?): RTCOfferOptions  (@deprecated in 2.0.0)
 experimental/webrtc/RTCPeerConnection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 experimental/webrtc/RTCPeerConnection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 experimental/webrtc/RTCPeerConnection[JC] def addIceCandidate(candidate: RTCIceCandidate): js.Promise[Unit]
@@ -25649,9 +25732,9 @@ experimental/webrtc/RTCSdpType[SO] val offer: RTCSdpType
 experimental/webrtc/RTCSdpType[SO] val pranswer: RTCSdpType
 experimental/webrtc/RTCSessionDescription[JC] var sdp: String
 experimental/webrtc/RTCSessionDescription[JC] var `type`: RTCSdpType
-experimental/webrtc/RTCSessionDescriptionInit[JT] var sdp: String
-experimental/webrtc/RTCSessionDescriptionInit[JT] var `type`: RTCSdpType
-experimental/webrtc/RTCSessionDescriptionInit[SO] def apply(`type`: js.UndefOr[RTCSdpType]?, sdp: js.UndefOr[String]?): RTCSessionDescriptionInit
+experimental/webrtc/RTCSessionDescriptionInit[JT] var sdp: js.UndefOr[String]
+experimental/webrtc/RTCSessionDescriptionInit[JT] var `type`: js.UndefOr[RTCSdpType]
+experimental/webrtc/RTCSessionDescriptionInit[SO] def apply(`type`: js.UndefOr[RTCSdpType]?, sdp: js.UndefOr[String]?): RTCSessionDescriptionInit  (@deprecated in 2.0.0)
 experimental/webrtc/RTCSignalingState[JT]
 experimental/webrtc/RTCSignalingState[SO] val closed: RTCSignalingState
 experimental/webrtc/RTCSignalingState[SO] val `have-local-offer` = "have-local-offer".asInstanceOf[RTCSignalingState]
@@ -25659,9 +25742,9 @@ experimental/webrtc/RTCSignalingState[SO] val `have-local-pranswer` = "have-loca
 experimental/webrtc/RTCSignalingState[SO] val `have-remote-offer` = "have-remote-offer".asInstanceOf[RTCSignalingState]
 experimental/webrtc/RTCSignalingState[SO] val `have-remote-pranswer` = "have-remote-pranswer".asInstanceOf[RTCSignalingState]
 experimental/webrtc/RTCSignalingState[SO] val stable: RTCSignalingState
-experimental/webrtc/RTCStats[JT] var id: String
-experimental/webrtc/RTCStats[JT] var timestamp: Double
-experimental/webrtc/RTCStats[JT] var `type`: RTCStatsType
+experimental/webrtc/RTCStats[JT] val id: String
+experimental/webrtc/RTCStats[JT] val timestamp: Double
+experimental/webrtc/RTCStats[JT] val `type`: RTCStatsType
 experimental/webrtc/RTCStatsReport[JT] def apply(id: String): RTCStats
 experimental/webrtc/RTCStatsType[JT]
 experimental/webrtc/RTCStatsType[SO] val `inbound-rtp` = "inbound-rtp".asInstanceOf[RTCStatsType]
