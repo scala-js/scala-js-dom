@@ -4,7 +4,7 @@
  * [[http://tc39.github.io/ecma402/#intl-object The Intl Object]]
  */
 
-package org.scalajs.dom.experimental.intl
+package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
