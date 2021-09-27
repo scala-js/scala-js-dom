@@ -14,7 +14,7 @@ object Lib {
         "-deprecation",
         "-feature",
       ),
-      scalacOptions ++= (if (!inCI) Seq.empty else Seq(
+      scalacOptions ++= (if (!inCI || CrossVersion.partialVersion(scalaVersion.value).contains(2, 11)) Seq.empty else Seq(
         "-Xfatal-warnings",
       )),
       scalacOptions ++= (CrossVersion.partialVersion(scalaVersion.value) match {
