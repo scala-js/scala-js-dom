@@ -12,7 +12,7 @@ import scala.scalajs.js.annotation._
 @js.native
 trait TextTrack extends EventTarget {
   var language: String = js.native
-  var mode: js.Any = js.native
+  var mode: String = js.native
   var readyState: Int = js.native
   var activeCues: TextTrackCueList = js.native
   var cues: TextTrackCueList = js.native
@@ -29,6 +29,12 @@ trait TextTrack extends EventTarget {
   var NONE: Int = js.native
   var HIDDEN: Int = js.native
   var DISABLED: Int = js.native
+
+  val id: String = js.native
+  val inBandMetadataTrackDispatchType: String = js.native
+
+  def addCue(cue: TextTrackCue): Unit = js.native
+  def removeCue(cue: TextTrackCue): Unit = js.native
 }
 
 @js.native

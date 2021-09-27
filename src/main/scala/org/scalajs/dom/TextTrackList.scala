@@ -9,4 +9,10 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 @js.native
-trait TextTrackList extends DOMList[TextTrack]
+trait TextTrackList extends DOMList[TextTrack] {
+  def getTrackById(id: String): TextTrack = js.native
+
+  var onchange: js.Function1[Event, Any] = js.native
+  var onaddtrack: js.Function1[Event, Any] = js.native
+  var onremovetrack: js.Function1[Event, Any] = js.native
+}

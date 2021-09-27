@@ -1,12 +1,11 @@
 /** https://www.w3.org/TR/2016/CR-mediacapture-streams-20160519/ */
-package org.scalajs.dom.experimental.mediastream
+package org.scalajs.dom
 
-import org.scalajs.dom._
 import scala.scalajs.js
 
 @js.native
 trait SourceBuffer extends EventTarget {
-  var mode: AppendMode = js.native
+  var mode: String = js.native
   var timestampOffset: Double = js.native
 
   def updating: Boolean = js.native

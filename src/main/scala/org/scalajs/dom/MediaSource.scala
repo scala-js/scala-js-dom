@@ -1,7 +1,6 @@
 /** https://www.w3.org/TR/2016/CR-mediacapture-streams-20160519/ */
-package org.scalajs.dom.experimental.mediastream
+package org.scalajs.dom
 
-import org.scalajs.dom._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
@@ -14,7 +13,7 @@ import scala.scalajs.js.annotation._
 class MediaSource extends EventTarget {
   def sourceBuffers: SourceBufferList = js.native
   def activeSourceBuffers: SourceBufferList = js.native
-  def readyState: ReadyState = js.native
+  def readyState: String = js.native
 
   /** Allows the web application to set the presentation duration.
     *
@@ -28,7 +27,7 @@ class MediaSource extends EventTarget {
 
   def addSourceBuffer(mimeType: String): SourceBuffer = js.native
   def removeSourceBuffer(sourceBuffer: SourceBuffer): Unit = js.native
-  def endOfStream(error: EndOfStreamError = js.native): Unit = js.native
+  def endOfStream(error: String = js.native): Unit = js.native
   def setLiveSeekableRange(start: Double, end: Double): Unit = js.native
   def clearLiveSeekableRange(): Unit = js.native
 }

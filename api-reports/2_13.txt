@@ -271,8 +271,9 @@ AudioTrackList[JT] @JSBracketAccess def apply(index: Int): T
 AudioTrackList[JT] def dispatchEvent(evt: Event): Boolean
 AudioTrackList[JT] def getTrackById(id: String): AudioTrack
 AudioTrackList[JT] def length: Int
-AudioTrackList[JT] var onaddtrack: js.Function1[TrackEvent, _]
-AudioTrackList[JT] var onchange: js.Function1[js.Any, _]
+AudioTrackList[JT] var onaddtrack: js.Function1[Event, Any]
+AudioTrackList[JT] var onchange: js.Function1[Event, Any]
+AudioTrackList[JT] var onremovetrack: js.Function1[Event, Any]
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 BeforeUnloadEvent[JC] def bubbles: Boolean
@@ -13926,6 +13927,9 @@ IDBVersionChangeEventInit[JT] var scoped: js.UndefOr[Boolean]
 ImageBitmap[JT] def close(): Unit
 ImageBitmap[JT] def height: Double
 ImageBitmap[JT] def width: Double
+ImageCapture[JC] def grabFrame(): js.Promise[ImageBitmap]
+ImageCapture[JC] def takePhoto(): js.Promise[Blob]
+ImageCapture[JC] val track: MediaStreamTrack
 ImageData[JC] def data: js.Array[Int]
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
@@ -14420,6 +14424,24 @@ MIMEType[SO] val `application/xml` = "application/xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `image/svg+xml` = "image/svg+xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `text/html` = "text/html".asInstanceOf[MIMEType]
 MIMEType[SO] val `text/xml` = "text/xml".asInstanceOf[MIMEType]
+MediaDeviceInfo[JT] val deviceId: String
+MediaDeviceInfo[JT] val groupId: String
+MediaDeviceInfo[JT] val kind: MediaDeviceKind
+MediaDeviceInfo[JT] val label: String
+MediaDeviceInfo[SO] def apply(deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?): MediaDeviceInfo  (@deprecated in 2.0.0)
+MediaDeviceKind[JT]
+MediaDeviceKind[SO] val audioinput: MediaDeviceKind
+MediaDeviceKind[SO] val audiooutput: MediaDeviceKind
+MediaDeviceKind[SO] val videoinput: MediaDeviceKind
+MediaDevices[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaDevices[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaDevices[JT] def dispatchEvent(evt: Event): Boolean
+MediaDevices[JT] def enumerateDevices(): js.Promise[js.Array[MediaDeviceInfo]]
+MediaDevices[JT] def getSupportedConstraints(): MediaTrackSupportedConstraints
+MediaDevices[JT] def getUserMedia(constraints: MediaStreamConstraints): js.Promise[MediaStream]
+MediaDevices[JT] var ondevicechange: js.Function1[Event, Any]
+MediaDevices[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaDevices[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaElementAudioSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaElementAudioSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaElementAudioSourceNode[JT] var channelCount: Int
@@ -14451,6 +14473,40 @@ MediaQueryList[JT] def matches: Boolean
 MediaQueryList[JT] var media: String
 MediaQueryList[JT] def removeListener(listener: MediaQueryListListener): Unit
 MediaQueryListListener[JT] def apply(mql: MediaQueryList): Unit
+MediaSource[JC] def activeSourceBuffers: SourceBufferList
+MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaSource[JC] def addSourceBuffer(mimeType: String): SourceBuffer
+MediaSource[JC] def clearLiveSeekableRange(): Unit
+MediaSource[JC] def dispatchEvent(evt: Event): Boolean
+MediaSource[JC] var duration: Double
+MediaSource[JC] def endOfStream(error: String?): Unit
+MediaSource[JC] var onsourceclose: js.Function1[Event, Any]
+MediaSource[JC] var onsourceended: js.Function1[Event, Any]
+MediaSource[JC] var onsourceopen: js.Function1[Event, Any]
+MediaSource[JC] def readyState: String
+MediaSource[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaSource[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaSource[JC] def removeSourceBuffer(sourceBuffer: SourceBuffer): Unit
+MediaSource[JC] def setLiveSeekableRange(start: Double, end: Double): Unit
+MediaSource[JC] def sourceBuffers: SourceBufferList
+MediaSource[JO] def isTypeSupported(mediaType: String): Boolean
+MediaStream[JC] val active: Boolean
+MediaStream[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaStream[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaStream[JC] def addTrack(track: MediaStreamTrack): Unit
+MediaStream[JC] override def clone(): MediaStream
+MediaStream[JC] def dispatchEvent(evt: Event): Boolean
+MediaStream[JC] def getAudioTracks(): js.Array[MediaStreamTrack]
+MediaStream[JC] def getTrackById(trackId: String): MediaStreamTrack
+MediaStream[JC] def getTracks(): js.Array[MediaStreamTrack]
+MediaStream[JC] def getVideoTracks(): js.Array[MediaStreamTrack]
+MediaStream[JC] val id: String
+MediaStream[JC] var onaddtrack: js.Function1[Event, Any]
+MediaStream[JC] var onremovetrack: js.Function1[Event, Any]
+MediaStream[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaStream[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaStream[JC] def removeTrack(track: MediaStreamTrack): Unit
 MediaStreamAudioDestinationNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaStreamAudioDestinationNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaStreamAudioDestinationNode[JT] var channelCount: Int
@@ -14480,6 +14536,108 @@ MediaStreamAudioSourceNode[JT] val numberOfInputs: Int
 MediaStreamAudioSourceNode[JT] val numberOfOutputs: Int
 MediaStreamAudioSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaStreamAudioSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaStreamConstraints[JT] var audio: js.UndefOr[Boolean | MediaTrackConstraints]
+MediaStreamConstraints[JT] var peerIdentity: js.UndefOr[String]
+MediaStreamConstraints[JT] var video: js.UndefOr[Boolean | MediaTrackConstraints]
+MediaStreamConstraints[SO] def apply(video: js.UndefOr[Boolean | MediaTrackConstraints]?, audio: js.UndefOr[Boolean | MediaTrackConstraints]?, peerIdentity: js.UndefOr[String]?): MediaStreamConstraints  (@deprecated in 2.0.0)
+MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaStreamTrack[JT] def applyConstraints(constraints: MediaTrackConstraints): js.Promise[Unit]
+MediaStreamTrack[JT] override def clone(): MediaStreamTrack
+MediaStreamTrack[JT] def dispatchEvent(evt: Event): Boolean
+MediaStreamTrack[JT] var enabled: Boolean
+MediaStreamTrack[JT] def getCapabilities(): js.Any
+MediaStreamTrack[JT] def getConstraints(): MediaTrackConstraints
+MediaStreamTrack[JT] def getSettings(): js.Any
+MediaStreamTrack[JT] val id: String
+MediaStreamTrack[JT] val kind: String
+MediaStreamTrack[JT] val label: String
+MediaStreamTrack[JT] val muted: Boolean
+MediaStreamTrack[JT] var onended: js.Function1[Event, Any]
+MediaStreamTrack[JT] var onmute: js.Function1[Event, Any]
+MediaStreamTrack[JT] var onoverconstrained: js.Function1[Event, Any]
+MediaStreamTrack[JT] var onstarted: js.Function1[Event, Any]
+MediaStreamTrack[JT] var onunmute: js.Function1[Event, Any]
+MediaStreamTrack[JT] val readonly: Boolean
+MediaStreamTrack[JT] val readyState: MediaStreamTrackState
+MediaStreamTrack[JT] val remote: Boolean
+MediaStreamTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaStreamTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaStreamTrack[JT] def stop(): Unit
+MediaStreamTrack[SO] def apply(enabled: js.UndefOr[Boolean]?, id: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?, muted: js.UndefOr[Boolean]?, readonly: js.UndefOr[Boolean]?, readyState: js.UndefOr[String]?, remote: js.UndefOr[Boolean]?, onstarted: js.UndefOr[js.Function0[Any]]?, onmute: js.UndefOr[js.Function0[Any]]?, onunmute: js.UndefOr[js.Function0[Any]]?, onoverconstrained: js.UndefOr[js.Function0[Any]]?, oneended: js.UndefOr[js.Function0[Any]]?): MediaStreamTrack  (@deprecated in 2.0.0)
+MediaStreamTrackEvent[JC] def bubbles: Boolean
+MediaStreamTrackEvent[JC] def cancelBubble: Boolean
+MediaStreamTrackEvent[JC] def cancelable: Boolean
+MediaStreamTrackEvent[JC] def currentTarget: EventTarget
+MediaStreamTrackEvent[JC] def defaultPrevented: Boolean
+MediaStreamTrackEvent[JC] def eventPhase: Int
+MediaStreamTrackEvent[JC] def isTrusted: Boolean
+MediaStreamTrackEvent[JC] def preventDefault(): Unit
+MediaStreamTrackEvent[JC] def stopImmediatePropagation(): Unit
+MediaStreamTrackEvent[JC] def stopPropagation(): Unit
+MediaStreamTrackEvent[JC] def target: EventTarget
+MediaStreamTrackEvent[JC] def timeStamp: Double
+MediaStreamTrackEvent[JC] val track: MediaStreamTrack
+MediaStreamTrackEvent[JC] def `type`: String
+MediaStreamTrackEventInit[JT] var bubbles: js.UndefOr[Boolean]
+MediaStreamTrackEventInit[JT] var cancelable: js.UndefOr[Boolean]
+MediaStreamTrackEventInit[JT] var composed: js.UndefOr[Boolean]
+MediaStreamTrackEventInit[JT] var scoped: js.UndefOr[Boolean]
+MediaStreamTrackEventInit[JT] var track: js.UndefOr[MediaStreamTrack]
+MediaStreamTrackState[JT]
+MediaStreamTrackState[SO] val ended: MediaStreamTrackState
+MediaStreamTrackState[SO] val live: MediaStreamTrackState
+MediaTrackConstraintSet[JT] var aspectRatio: js.UndefOr[Double]
+MediaTrackConstraintSet[JT] var deviceId: js.UndefOr[String]
+MediaTrackConstraintSet[JT] var echoCancellation: js.UndefOr[Boolean]
+MediaTrackConstraintSet[JT] var facingMode: js.UndefOr[String]
+MediaTrackConstraintSet[JT] var frameRate: js.UndefOr[Double]
+MediaTrackConstraintSet[JT] var groupId: js.UndefOr[String]
+MediaTrackConstraintSet[JT] var height: js.UndefOr[Double]
+MediaTrackConstraintSet[JT] var sampleRate: js.UndefOr[Double]
+MediaTrackConstraintSet[JT] var sampleSize: js.UndefOr[Double]
+MediaTrackConstraintSet[JT] var volume: js.UndefOr[Double]
+MediaTrackConstraintSet[JT] var width: js.UndefOr[Double]
+MediaTrackConstraintSet[SO] def apply(width: js.UndefOr[Double]?, height: js.UndefOr[Double]?, aspectRatio: js.UndefOr[Double]?, frameRate: js.UndefOr[Double]?, facingMode: js.UndefOr[String]?, volume: js.UndefOr[Double]?, sampleRate: js.UndefOr[Double]?, sampleSize: js.UndefOr[Double]?, echoCancellation: js.UndefOr[Boolean]?, deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?): MediaTrackConstraintSet  (@deprecated in 2.0.0)
+MediaTrackConstraints[JT] var advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]
+MediaTrackConstraints[JT] var aspectRatio: js.UndefOr[Double]
+MediaTrackConstraints[JT] var deviceId: js.UndefOr[String]
+MediaTrackConstraints[JT] var echoCancellation: js.UndefOr[Boolean]
+MediaTrackConstraints[JT] var facingMode: js.UndefOr[String]
+MediaTrackConstraints[JT] var frameRate: js.UndefOr[Double]
+MediaTrackConstraints[JT] var groupId: js.UndefOr[String]
+MediaTrackConstraints[JT] var height: js.UndefOr[Double]
+MediaTrackConstraints[JT] var sampleRate: js.UndefOr[Double]
+MediaTrackConstraints[JT] var sampleSize: js.UndefOr[Double]
+MediaTrackConstraints[JT] var volume: js.UndefOr[Double]
+MediaTrackConstraints[JT] var width: js.UndefOr[Double]
+MediaTrackConstraints[SO] def apply(advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]?): MediaTrackConstraints  (@deprecated in 2.0.0)
+MediaTrackSettings[JT] var aspectRatio: js.UndefOr[Double]
+MediaTrackSettings[JT] var channelCount: js.UndefOr[Double]
+MediaTrackSettings[JT] var deviceId: js.UndefOr[String]
+MediaTrackSettings[JT] var echoCancellation: js.UndefOr[Boolean]
+MediaTrackSettings[JT] var facingMode: js.UndefOr[String]
+MediaTrackSettings[JT] var frameRate: js.UndefOr[Double]
+MediaTrackSettings[JT] var groupId: js.UndefOr[String]
+MediaTrackSettings[JT] var height: js.UndefOr[Double]
+MediaTrackSettings[JT] var latency: js.UndefOr[Double]
+MediaTrackSettings[JT] var sampleRate: js.UndefOr[Double]
+MediaTrackSettings[JT] var sampleSize: js.UndefOr[Double]
+MediaTrackSettings[JT] var volume: js.UndefOr[Double]
+MediaTrackSettings[JT] var width: js.UndefOr[Double]
+MediaTrackSupportedConstraints[JT] var aspectRatio: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var channelCount: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var deviceId: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var echoCancellation: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var facingMode: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var frameRate: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var groupId: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var height: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var latency: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var sampleRate: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var sampleSize: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var volume: js.UndefOr[Boolean]
+MediaTrackSupportedConstraints[JT] var width: js.UndefOr[Boolean]
 MessageChannel[JC] def port1: MessagePort
 MessageChannel[JC] def port2: MessagePort
 MessageEvent[JC] def bubbles: Boolean
@@ -23184,6 +23342,37 @@ Selection[JC] def rangeCount: Int
 Selection[JC] def removeAllRanges(): Unit
 Selection[JC] def removeRange(range: Range): Unit
 Selection[JC] def selectAllChildren(parentNode: Node): Unit
+SourceBuffer[JT] def abort(): Unit
+SourceBuffer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+SourceBuffer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+SourceBuffer[JT] def appendBuffer(data: BufferSource): Unit
+SourceBuffer[JT] var appendWindowEnd: Double
+SourceBuffer[JT] var appendWindowStart: Double
+SourceBuffer[JT] def audioTracks: AudioTrackList
+SourceBuffer[JT] def buffered: TimeRanges
+SourceBuffer[JT] def dispatchEvent(evt: Event): Boolean
+SourceBuffer[JT] var mode: String
+SourceBuffer[JT] var onabort: js.Function1[Event, Any]
+SourceBuffer[JT] var onerror: js.Function1[Event, Any]
+SourceBuffer[JT] var onupdate: js.Function1[Event, Any]
+SourceBuffer[JT] var onupdateend: js.Function1[Event, Any]
+SourceBuffer[JT] var onupdatestart: js.Function1[Event, Any]
+SourceBuffer[JT] def remove(start: Double, end: Double): Unit
+SourceBuffer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+SourceBuffer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+SourceBuffer[JT] def textTracks: TextTrackList
+SourceBuffer[JT] var timestampOffset: Double
+SourceBuffer[JT] def updating: Boolean
+SourceBuffer[JT] def videoTracks: VideoTrackList
+SourceBufferList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+SourceBufferList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+SourceBufferList[JT] @JSBracketAccess def apply(index: Double): SourceBuffer
+SourceBufferList[JT] def dispatchEvent(evt: Event): Boolean
+SourceBufferList[JT] def length: Double
+SourceBufferList[JT] var onaddsourcebuffer: js.Function1[Event, Any]
+SourceBufferList[JT] var onremovesourcebuffer: js.Function1[Event, Any]
+SourceBufferList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+SourceBufferList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 StereoPannerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 StereoPannerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 StereoPannerNode[JT] var channelCount: Int
@@ -23353,18 +23542,22 @@ TextTrack[JT] var LOADING: Int
 TextTrack[JT] var NONE: Int
 TextTrack[JT] var SHOWING: Int
 TextTrack[JT] var activeCues: TextTrackCueList
+TextTrack[JT] def addCue(cue: TextTrackCue): Unit
 TextTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 TextTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 TextTrack[JT] var cues: TextTrackCueList
 TextTrack[JT] def dispatchEvent(evt: Event): Boolean
+TextTrack[JT] val id: String
+TextTrack[JT] val inBandMetadataTrackDispatchType: String
 TextTrack[JT] var kind: String
 TextTrack[JT] var label: String
 TextTrack[JT] var language: String
-TextTrack[JT] var mode: js.Any
+TextTrack[JT] var mode: String
 TextTrack[JT] var oncuechange: js.Function1[Event, _]
 TextTrack[JT] var onerror: js.Function1[ErrorEvent, _]
 TextTrack[JT] var onload: js.Function1[js.Any, _]
 TextTrack[JT] var readyState: Int
+TextTrack[JT] def removeCue(cue: TextTrackCue): Unit
 TextTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 TextTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 TextTrackCue[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -23385,7 +23578,11 @@ TextTrackCueList[JC] @JSBracketAccess def apply(index: Int): T
 TextTrackCueList[JC] def getCueById(id: String): TextTrackCue
 TextTrackCueList[JC] def length: Int
 TextTrackList[JT] @JSBracketAccess def apply(index: Int): T
+TextTrackList[JT] def getTrackById(id: String): TextTrack
 TextTrackList[JT] def length: Int
+TextTrackList[JT] var onaddtrack: js.Function1[Event, Any]
+TextTrackList[JT] var onchange: js.Function1[Event, Any]
+TextTrackList[JT] var onremovetrack: js.Function1[Event, Any]
 TimeRanges[JC] def end(index: Int): Double
 TimeRanges[JC] def length: Int
 TimeRanges[JC] def start(index: Int): Double
@@ -23539,6 +23736,23 @@ ValidityState[JT] def tooLong: Boolean
 ValidityState[JT] def typeMismatch: Boolean
 ValidityState[JT] def valid: Boolean
 ValidityState[JT] def valueMissing: Boolean
+VideoTrack[JT] val id: String
+VideoTrack[JT] val kind: String
+VideoTrack[JT] val label: String
+VideoTrack[JT] val language: String
+VideoTrack[JT] var selected: Boolean
+VideoTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+VideoTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+VideoTrackList[JT] @JSBracketAccess def apply(index: Double): VideoTrack
+VideoTrackList[JT] def dispatchEvent(evt: Event): Boolean
+VideoTrackList[JT] def getTrackById(id: String): VideoTrack
+VideoTrackList[JT] def length: Double
+VideoTrackList[JT] var onaddtrack: js.Function1[Event, Any]
+VideoTrackList[JT] var onchange: js.Function1[Event, Any]
+VideoTrackList[JT] var onremovetrack: js.Function1[Event, Any]
+VideoTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+VideoTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+VideoTrackList[JT] def selectedIndex: Double
 VisibilityState[JT]
 VisibilityState[SO] val hidden: VisibilityState
 VisibilityState[SO] val prerender: VisibilityState
@@ -24762,274 +24976,45 @@ experimental/intl/package[SO] @deprecated("use dom.DateTimeFormat instead", "2.0
 experimental/intl/package[SO] @deprecated("use dom.DateTimeFormatOptions instead", "2.0.0") val DateTimeFormatOptions = dom.DateTimeFormatOptions
 experimental/intl/package[SO] @deprecated("use dom.NumberFormat instead", "2.0.0") val NumberFormat = dom.NumberFormat
 experimental/intl/package[SO] @deprecated("use dom.NumberFormatOptions instead", "2.0.0") val NumberFormatOptions = dom.NumberFormatOptions
-experimental/mediastream/AudioTrack[JT] var enabled: Boolean
-experimental/mediastream/AudioTrack[JT] val id: String
-experimental/mediastream/AudioTrack[JT] val kind: String
-experimental/mediastream/AudioTrack[JT] val label: String
-experimental/mediastream/AudioTrack[JT] val language: String
-experimental/mediastream/AudioTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/AudioTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/AudioTrackList[JT] @JSBracketAccess def apply(index: Double): AudioTrack
-experimental/mediastream/AudioTrackList[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/AudioTrackList[JT] def getTrackById(id: String): AudioTrack
-experimental/mediastream/AudioTrackList[JT] def length: Double
-experimental/mediastream/AudioTrackList[JT] var onaddtrack: js.Function1[Event, Any]
-experimental/mediastream/AudioTrackList[JT] var onchange: js.Function1[Event, Any]
-experimental/mediastream/AudioTrackList[JT] var onremovetrack: js.Function1[Event, Any]
-experimental/mediastream/AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/ImageCapture[JC] def grabFrame(): js.Promise[ImageBitmap]
-experimental/mediastream/ImageCapture[JC] def takePhoto(): js.Promise[Blob]
-experimental/mediastream/ImageCapture[JC] val track: MediaStreamTrack
-experimental/mediastream/MediaDeviceInfo[JT] val deviceId: String
-experimental/mediastream/MediaDeviceInfo[JT] val groupId: String
-experimental/mediastream/MediaDeviceInfo[JT] val kind: MediaDeviceKind
-experimental/mediastream/MediaDeviceInfo[JT] val label: String
-experimental/mediastream/MediaDeviceInfo[SO] def apply(deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?): MediaDeviceInfo  (@deprecated in 2.0.0)
-experimental/mediastream/MediaDeviceKind[JT]
-experimental/mediastream/MediaDeviceKind[SO] val audioinput: MediaDeviceKind
-experimental/mediastream/MediaDeviceKind[SO] val audiooutput: MediaDeviceKind
-experimental/mediastream/MediaDeviceKind[SO] val videoinput: MediaDeviceKind
-experimental/mediastream/MediaDevices[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/MediaDevices[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/MediaDevices[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/MediaDevices[JT] def enumerateDevices(): js.Promise[js.Array[MediaDeviceInfo]]
-experimental/mediastream/MediaDevices[JT] def getSupportedConstraints(): MediaTrackSupportedConstraints
-experimental/mediastream/MediaDevices[JT] def getUserMedia(constraints: MediaStreamConstraints): js.Promise[MediaStream]
-experimental/mediastream/MediaDevices[JT] var ondevicechange: js.Function1[Event, Any]
-experimental/mediastream/MediaDevices[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/MediaDevices[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/MediaSource[JC] def activeSourceBuffers: SourceBufferList
-experimental/mediastream/MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/MediaSource[JC] def addSourceBuffer(mimeType: String): SourceBuffer
-experimental/mediastream/MediaSource[JC] def clearLiveSeekableRange(): Unit
-experimental/mediastream/MediaSource[JC] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/MediaSource[JC] var duration: Double
-experimental/mediastream/MediaSource[JC] def endOfStream(error: EndOfStreamError?): Unit
-experimental/mediastream/MediaSource[JC] var onsourceclose: js.Function1[Event, Any]
-experimental/mediastream/MediaSource[JC] var onsourceended: js.Function1[Event, Any]
-experimental/mediastream/MediaSource[JC] var onsourceopen: js.Function1[Event, Any]
-experimental/mediastream/MediaSource[JC] def readyState: ReadyState
-experimental/mediastream/MediaSource[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/MediaSource[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/MediaSource[JC] def removeSourceBuffer(sourceBuffer: SourceBuffer): Unit
-experimental/mediastream/MediaSource[JC] def setLiveSeekableRange(start: Double, end: Double): Unit
-experimental/mediastream/MediaSource[JC] def sourceBuffers: SourceBufferList
-experimental/mediastream/MediaSource[JO] def isTypeSupported(mediaType: String): Boolean
-experimental/mediastream/MediaStream[JC] val active: Boolean
-experimental/mediastream/MediaStream[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/MediaStream[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/MediaStream[JC] def addTrack(track: MediaStreamTrack): Unit
-experimental/mediastream/MediaStream[JC] override def clone(): MediaStream
-experimental/mediastream/MediaStream[JC] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/MediaStream[JC] def getAudioTracks(): js.Array[MediaStreamTrack]
-experimental/mediastream/MediaStream[JC] def getTrackById(trackId: String): MediaStreamTrack
-experimental/mediastream/MediaStream[JC] def getTracks(): js.Array[MediaStreamTrack]
-experimental/mediastream/MediaStream[JC] def getVideoTracks(): js.Array[MediaStreamTrack]
-experimental/mediastream/MediaStream[JC] val id: String
-experimental/mediastream/MediaStream[JC] var onaddtrack: js.Function1[Event, Any]
-experimental/mediastream/MediaStream[JC] var onremovetrack: js.Function1[Event, Any]
-experimental/mediastream/MediaStream[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/MediaStream[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/MediaStream[JC] def removeTrack(track: MediaStreamTrack): Unit
-experimental/mediastream/MediaStreamConstraints[JT] var audio: js.UndefOr[Boolean | MediaTrackConstraints]
-experimental/mediastream/MediaStreamConstraints[JT] var peerIdentity: js.UndefOr[String]
-experimental/mediastream/MediaStreamConstraints[JT] var video: js.UndefOr[Boolean | MediaTrackConstraints]
-experimental/mediastream/MediaStreamConstraints[SO] def apply(video: js.UndefOr[Boolean | MediaTrackConstraints]?, audio: js.UndefOr[Boolean | MediaTrackConstraints]?, peerIdentity: js.UndefOr[String]?): MediaStreamConstraints  (@deprecated in 2.0.0)
-experimental/mediastream/MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/MediaStreamTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/MediaStreamTrack[JT] def applyConstraints(constraints: MediaTrackConstraints): js.Promise[Unit]
-experimental/mediastream/MediaStreamTrack[JT] override def clone(): MediaStreamTrack
-experimental/mediastream/MediaStreamTrack[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/MediaStreamTrack[JT] var enabled: Boolean
-experimental/mediastream/MediaStreamTrack[JT] def getCapabilities(): js.Any
-experimental/mediastream/MediaStreamTrack[JT] def getConstraints(): MediaTrackConstraints
-experimental/mediastream/MediaStreamTrack[JT] def getSettings(): js.Any
-experimental/mediastream/MediaStreamTrack[JT] val id: String
-experimental/mediastream/MediaStreamTrack[JT] val kind: String
-experimental/mediastream/MediaStreamTrack[JT] val label: String
-experimental/mediastream/MediaStreamTrack[JT] val muted: Boolean
-experimental/mediastream/MediaStreamTrack[JT] var onended: js.Function1[Event, Any]
-experimental/mediastream/MediaStreamTrack[JT] var onmute: js.Function1[Event, Any]
-experimental/mediastream/MediaStreamTrack[JT] var onoverconstrained: js.Function1[Event, Any]
-experimental/mediastream/MediaStreamTrack[JT] var onstarted: js.Function1[Event, Any]
-experimental/mediastream/MediaStreamTrack[JT] var onunmute: js.Function1[Event, Any]
-experimental/mediastream/MediaStreamTrack[JT] val readonly: Boolean
-experimental/mediastream/MediaStreamTrack[JT] val readyState: MediaStreamTrackState
-experimental/mediastream/MediaStreamTrack[JT] val remote: Boolean
-experimental/mediastream/MediaStreamTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/MediaStreamTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/MediaStreamTrack[JT] def stop(): Unit
-experimental/mediastream/MediaStreamTrack[SO] def apply(enabled: js.UndefOr[Boolean]?, id: js.UndefOr[String]?, kind: js.UndefOr[String]?, label: js.UndefOr[String]?, muted: js.UndefOr[Boolean]?, readonly: js.UndefOr[Boolean]?, readyState: js.UndefOr[String]?, remote: js.UndefOr[Boolean]?, onstarted: js.UndefOr[js.Function0[Any]]?, onmute: js.UndefOr[js.Function0[Any]]?, onunmute: js.UndefOr[js.Function0[Any]]?, onoverconstrained: js.UndefOr[js.Function0[Any]]?, oneended: js.UndefOr[js.Function0[Any]]?): MediaStreamTrack  (@deprecated in 2.0.0)
-experimental/mediastream/MediaStreamTrackEvent[JC] def bubbles: Boolean
-experimental/mediastream/MediaStreamTrackEvent[JC] def cancelBubble: Boolean
-experimental/mediastream/MediaStreamTrackEvent[JC] def cancelable: Boolean
-experimental/mediastream/MediaStreamTrackEvent[JC] def currentTarget: EventTarget
-experimental/mediastream/MediaStreamTrackEvent[JC] def defaultPrevented: Boolean
-experimental/mediastream/MediaStreamTrackEvent[JC] def eventPhase: Int
-experimental/mediastream/MediaStreamTrackEvent[JC] def isTrusted: Boolean
-experimental/mediastream/MediaStreamTrackEvent[JC] def preventDefault(): Unit
-experimental/mediastream/MediaStreamTrackEvent[JC] def stopImmediatePropagation(): Unit
-experimental/mediastream/MediaStreamTrackEvent[JC] def stopPropagation(): Unit
-experimental/mediastream/MediaStreamTrackEvent[JC] def target: EventTarget
-experimental/mediastream/MediaStreamTrackEvent[JC] def timeStamp: Double
-experimental/mediastream/MediaStreamTrackEvent[JC] val track: MediaStreamTrack
-experimental/mediastream/MediaStreamTrackEvent[JC] def `type`: String
-experimental/mediastream/MediaStreamTrackEventInit[JT] var bubbles: js.UndefOr[Boolean]
-experimental/mediastream/MediaStreamTrackEventInit[JT] var cancelable: js.UndefOr[Boolean]
-experimental/mediastream/MediaStreamTrackEventInit[JT] var composed: js.UndefOr[Boolean]
-experimental/mediastream/MediaStreamTrackEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/mediastream/MediaStreamTrackEventInit[JT] var track: js.UndefOr[MediaStreamTrack]
-experimental/mediastream/MediaStreamTrackState[JT]
-experimental/mediastream/MediaStreamTrackState[SO] val ended: MediaStreamTrackState
-experimental/mediastream/MediaStreamTrackState[SO] val live: MediaStreamTrackState
-experimental/mediastream/MediaTrackConstraintSet[JT] var aspectRatio: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraintSet[JT] var deviceId: js.UndefOr[String]
-experimental/mediastream/MediaTrackConstraintSet[JT] var echoCancellation: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackConstraintSet[JT] var facingMode: js.UndefOr[String]
-experimental/mediastream/MediaTrackConstraintSet[JT] var frameRate: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraintSet[JT] var groupId: js.UndefOr[String]
-experimental/mediastream/MediaTrackConstraintSet[JT] var height: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraintSet[JT] var sampleRate: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraintSet[JT] var sampleSize: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraintSet[JT] var volume: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraintSet[JT] var width: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraintSet[SO] def apply(width: js.UndefOr[Double]?, height: js.UndefOr[Double]?, aspectRatio: js.UndefOr[Double]?, frameRate: js.UndefOr[Double]?, facingMode: js.UndefOr[String]?, volume: js.UndefOr[Double]?, sampleRate: js.UndefOr[Double]?, sampleSize: js.UndefOr[Double]?, echoCancellation: js.UndefOr[Boolean]?, deviceId: js.UndefOr[String]?, groupId: js.UndefOr[String]?): MediaTrackConstraintSet  (@deprecated in 2.0.0)
-experimental/mediastream/MediaTrackConstraints[JT] var advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]
-experimental/mediastream/MediaTrackConstraints[JT] var aspectRatio: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraints[JT] var deviceId: js.UndefOr[String]
-experimental/mediastream/MediaTrackConstraints[JT] var echoCancellation: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackConstraints[JT] var facingMode: js.UndefOr[String]
-experimental/mediastream/MediaTrackConstraints[JT] var frameRate: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraints[JT] var groupId: js.UndefOr[String]
-experimental/mediastream/MediaTrackConstraints[JT] var height: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraints[JT] var sampleRate: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraints[JT] var sampleSize: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraints[JT] var volume: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraints[JT] var width: js.UndefOr[Double]
-experimental/mediastream/MediaTrackConstraints[SO] def apply(advanced: js.UndefOr[js.Array[MediaTrackConstraintSet]]?): MediaTrackConstraints  (@deprecated in 2.0.0)
-experimental/mediastream/MediaTrackSettings[JT] var aspectRatio: js.UndefOr[Double]
-experimental/mediastream/MediaTrackSettings[JT] var channelCount: js.UndefOr[Double]
-experimental/mediastream/MediaTrackSettings[JT] var deviceId: js.UndefOr[String]
-experimental/mediastream/MediaTrackSettings[JT] var echoCancellation: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSettings[JT] var facingMode: js.UndefOr[String]
-experimental/mediastream/MediaTrackSettings[JT] var frameRate: js.UndefOr[Double]
-experimental/mediastream/MediaTrackSettings[JT] var groupId: js.UndefOr[String]
-experimental/mediastream/MediaTrackSettings[JT] var height: js.UndefOr[Double]
-experimental/mediastream/MediaTrackSettings[JT] var latency: js.UndefOr[Double]
-experimental/mediastream/MediaTrackSettings[JT] var sampleRate: js.UndefOr[Double]
-experimental/mediastream/MediaTrackSettings[JT] var sampleSize: js.UndefOr[Double]
-experimental/mediastream/MediaTrackSettings[JT] var volume: js.UndefOr[Double]
-experimental/mediastream/MediaTrackSettings[JT] var width: js.UndefOr[Double]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var aspectRatio: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var channelCount: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var deviceId: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var echoCancellation: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var facingMode: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var frameRate: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var groupId: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var height: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var latency: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var sampleRate: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var sampleSize: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var volume: js.UndefOr[Boolean]
-experimental/mediastream/MediaTrackSupportedConstraints[JT] var width: js.UndefOr[Boolean]
-experimental/mediastream/SourceBuffer[JT] def abort(): Unit
-experimental/mediastream/SourceBuffer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/SourceBuffer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/SourceBuffer[JT] def appendBuffer(data: BufferSource): Unit
-experimental/mediastream/SourceBuffer[JT] var appendWindowEnd: Double
-experimental/mediastream/SourceBuffer[JT] var appendWindowStart: Double
-experimental/mediastream/SourceBuffer[JT] def audioTracks: AudioTrackList
-experimental/mediastream/SourceBuffer[JT] def buffered: TimeRanges
-experimental/mediastream/SourceBuffer[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/SourceBuffer[JT] var mode: AppendMode
-experimental/mediastream/SourceBuffer[JT] var onabort: js.Function1[Event, Any]
-experimental/mediastream/SourceBuffer[JT] var onerror: js.Function1[Event, Any]
-experimental/mediastream/SourceBuffer[JT] var onupdate: js.Function1[Event, Any]
-experimental/mediastream/SourceBuffer[JT] var onupdateend: js.Function1[Event, Any]
-experimental/mediastream/SourceBuffer[JT] var onupdatestart: js.Function1[Event, Any]
-experimental/mediastream/SourceBuffer[JT] def remove(start: Double, end: Double): Unit
-experimental/mediastream/SourceBuffer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/SourceBuffer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/SourceBuffer[JT] def textTracks: TextTrackList
-experimental/mediastream/SourceBuffer[JT] var timestampOffset: Double
-experimental/mediastream/SourceBuffer[JT] def updating: Boolean
-experimental/mediastream/SourceBuffer[JT] def videoTracks: VideoTrackList
-experimental/mediastream/SourceBufferList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/SourceBufferList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/SourceBufferList[JT] @JSBracketAccess def apply(index: Double): SourceBuffer
-experimental/mediastream/SourceBufferList[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/SourceBufferList[JT] def length: Double
-experimental/mediastream/SourceBufferList[JT] var onaddsourcebuffer: js.Function1[Event, Any]
-experimental/mediastream/SourceBufferList[JT] var onremovesourcebuffer: js.Function1[Event, Any]
-experimental/mediastream/SourceBufferList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/SourceBufferList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/TextTrack[JT] def activeCues: TextTrackCueList
-experimental/mediastream/TextTrack[JT] def addCue(cue: TextTrackCue): Unit
-experimental/mediastream/TextTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/TextTrack[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/TextTrack[JT] def cues: TextTrackCueList
-experimental/mediastream/TextTrack[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/TextTrack[JT] val id: String
-experimental/mediastream/TextTrack[JT] val inBandMetadataTrackDispatchType: String
-experimental/mediastream/TextTrack[JT] val kind: String
-experimental/mediastream/TextTrack[JT] val label: String
-experimental/mediastream/TextTrack[JT] val language: String
-experimental/mediastream/TextTrack[JT] var mode: TextTrackMode
-experimental/mediastream/TextTrack[JT] var oncuechange: js.Function1[Event, Any]
-experimental/mediastream/TextTrack[JT] def removeCue(cue: TextTrackCue): Unit
-experimental/mediastream/TextTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/TextTrack[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/TextTrackCue[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/TextTrackCue[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/TextTrackCue[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/TextTrackCue[JT] var endTime: Double
-experimental/mediastream/TextTrackCue[JT] var id: String
-experimental/mediastream/TextTrackCue[JT] var onenter: js.Function1[Event, Any]
-experimental/mediastream/TextTrackCue[JT] var onexit: js.Function1[Event, Any]
-experimental/mediastream/TextTrackCue[JT] var pauseOnExit: Boolean
-experimental/mediastream/TextTrackCue[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/TextTrackCue[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/TextTrackCue[JT] var startTime: Double
-experimental/mediastream/TextTrackCue[JT] def track: TextTrack
-experimental/mediastream/TextTrackCueList[JT] @JSBracketAccess def apply(index: Double): TextTrackCue
-experimental/mediastream/TextTrackCueList[JT] def getCueById(id: String): TextTrackCue
-experimental/mediastream/TextTrackCueList[JT] def length: Double
-experimental/mediastream/TextTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/TextTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/TextTrackList[JT] @JSBracketAccess def apply(index: Double): VideoTrack
-experimental/mediastream/TextTrackList[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/TextTrackList[JT] def getTrackById(id: String): TextTrack
-experimental/mediastream/TextTrackList[JT] def length: Double
-experimental/mediastream/TextTrackList[JT] var onaddtrack: js.Function1[Event, Any]
-experimental/mediastream/TextTrackList[JT] var onchange: js.Function1[Event, Any]
-experimental/mediastream/TextTrackList[JT] var onremovetrack: js.Function1[Event, Any]
-experimental/mediastream/TextTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/TextTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/VideoTrack[JT] val id: String
-experimental/mediastream/VideoTrack[JT] val kind: String
-experimental/mediastream/VideoTrack[JT] val label: String
-experimental/mediastream/VideoTrack[JT] val language: String
-experimental/mediastream/VideoTrack[JT] var selected: Boolean
-experimental/mediastream/VideoTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/VideoTrackList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/VideoTrackList[JT] @JSBracketAccess def apply(index: Double): VideoTrack
-experimental/mediastream/VideoTrackList[JT] def dispatchEvent(evt: Event): Boolean
-experimental/mediastream/VideoTrackList[JT] def getTrackById(id: String): VideoTrack
-experimental/mediastream/VideoTrackList[JT] def length: Double
-experimental/mediastream/VideoTrackList[JT] var onaddtrack: js.Function1[Event, Any]
-experimental/mediastream/VideoTrackList[JT] var onchange: js.Function1[Event, Any]
-experimental/mediastream/VideoTrackList[JT] var onremovetrack: js.Function1[Event, Any]
-experimental/mediastream/VideoTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/mediastream/VideoTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/mediastream/VideoTrackList[JT] def selectedIndex: Double
-experimental/mediastream/package[SO] type AppendMode = String
-experimental/mediastream/package[SO] type BufferSource = js.typedarray.ArrayBufferView | js.typedarray.ArrayBuffer
-experimental/mediastream/package[SO] type EndOfStreamError = String
-experimental/mediastream/package[SO] type ReadyState = String
-experimental/mediastream/package[SO] type TextTrackMode = String
+experimental/mediastream/package[SO] type AppendMode = String  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type AudioTrack = dom.AudioTrack  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type AudioTrackList = dom.AudioTrackList  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type BufferSource = js.typedarray.ArrayBufferView | js.typedarray.ArrayBuffer  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type EndOfStreamError = String  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type ImageCapture = dom.ImageCapture  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaDeviceInfo = dom.MediaDeviceInfo  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaDeviceKind = dom.MediaDeviceKind  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaDevices = dom.MediaDevices  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaSource = dom.MediaSource  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaStream = dom.MediaStream  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaStreamConstraints = dom.MediaStreamConstraints  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaStreamTrack = dom.MediaStreamTrack  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaStreamTrackEvent = dom.MediaStreamTrackEvent  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaStreamTrackEventInit = dom.MediaStreamTrackEventInit  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaStreamTrackState = dom.MediaStreamTrackState  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaTrackConstraintSet = dom.MediaTrackConstraintSet  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaTrackConstraints = dom.MediaTrackConstraints  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaTrackSettings = dom.MediaTrackSettings  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type MediaTrackSupportedConstraints = dom.MediaTrackSupportedConstraints  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type ReadyState = String  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type SourceBuffer = dom.SourceBuffer  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type SourceBufferList = dom.SourceBufferList  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type TextTrack = dom.TextTrack  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type TextTrackCue = dom.TextTrackCue  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type TextTrackCueList = dom.TextTrackCueList  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type TextTrackList = dom.TextTrackList  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type TextTrackMode = String  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type VideoTrack = dom.VideoTrack  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type VideoTrackList = dom.VideoTrackList  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] @deprecated("use dom.MediaDeviceInfo instead", "2.0.0") val MediaDeviceInfo = dom.MediaDeviceInfo
+experimental/mediastream/package[SO] @deprecated("use dom.MediaDeviceKind instead", "2.0.0") val MediaDeviceKind = dom.MediaDeviceKind
+experimental/mediastream/package[SO] @deprecated("use dom.MediaSource instead", "2.0.0") val MediaSource = dom.MediaSource
+experimental/mediastream/package[SO] @deprecated("use dom.MediaStreamConstraints instead", "2.0.0") val MediaStreamConstraints = dom.MediaStreamConstraints
+experimental/mediastream/package[SO] @deprecated("use dom.MediaStreamTrack instead", "2.0.0") val MediaStreamTrack = dom.MediaStreamTrack
+experimental/mediastream/package[SO] @deprecated("use dom.MediaStreamTrackState instead", "2.0.0") val MediaStreamTrackState = dom.MediaStreamTrackState
+experimental/mediastream/package[SO] @deprecated("use dom.MediaTrackConstraintSet instead", "2.0.0") val MediaTrackConstraintSet = dom.MediaTrackConstraintSet
+experimental/mediastream/package[SO] @deprecated("use dom.MediaTrackConstraints instead", "2.0.0") val MediaTrackConstraints = dom.MediaTrackConstraints
+experimental/mediastream/package[SO] @deprecated("use dom.TextTrack instead", "2.0.0") val TextTrack = dom.TextTrack
 experimental/package[SO] type AbortController = dom.AbortController  (@deprecated in 2.0.0)
 experimental/package[SO] type AbortSignal = dom.AbortSignal  (@deprecated in 2.0.0)
 experimental/package[SO] type Body = dom.Body  (@deprecated in 2.0.0)

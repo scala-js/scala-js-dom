@@ -11,8 +11,9 @@ import scala.scalajs.js
 @js.native
 trait AudioTrackList extends EventTarget with DOMList[AudioTrack] {
 
-  var onchange: js.Function1[js.Any, _] = js.native
-  var onaddtrack: js.Function1[TrackEvent, _] = js.native
+  var onchange: js.Function1[Event, Any] = js.native
+  var onaddtrack: js.Function1[Event, Any] = js.native
+  var onremovetrack: js.Function1[Event, Any] = js.native
 
   def getTrackById(id: String): AudioTrack = js.native
 }
