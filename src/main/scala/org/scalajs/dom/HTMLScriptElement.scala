@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** DOM Script objects expose the HTMLScriptElement (or HTML 4 HTMLScriptElement) interface, which provides special
   * properties and methods (beyond the regular element object interface they also have available to them by inheritance)

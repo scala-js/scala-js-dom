@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLBRElement interface represents a HTML line break element (&lt;br&gt;). It inherits from HTMLElement. */
 @js.native

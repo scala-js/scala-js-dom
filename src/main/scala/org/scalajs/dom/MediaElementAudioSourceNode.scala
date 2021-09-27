@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The MediaElementAudioSourceNode interface represents an audio source consisting of an HTML5 &lt;audio&gt; or
   * &lt;video&gt; element. It is an AudioNode that acts as an audio source.

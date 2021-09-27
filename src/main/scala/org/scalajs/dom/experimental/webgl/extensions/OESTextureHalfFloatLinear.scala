@@ -1,6 +1,5 @@
 package org.scalajs.dom.experimental.webgl.extensions
 
-import org.scalajs.dom.WebGLShader
 import scala.scalajs.js
 
 /** Extends OES_texture_half_float to support linear and mipmap minification filters. (Khronos Extension)

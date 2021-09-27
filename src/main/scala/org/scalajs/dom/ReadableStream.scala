@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** defined at [[https://streams.spec.whatwg.org/#readable-stream ¶2.1. Readable Streams]] of whatwg Streams spec.
   *

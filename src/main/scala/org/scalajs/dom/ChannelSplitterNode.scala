@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The ChannelSplitterNode interface, often used in conjunction with its opposite, ChannelMergerNode, separates the
   * different channels of an audio source into a set of mono outputs. This is useful for accessing each channel

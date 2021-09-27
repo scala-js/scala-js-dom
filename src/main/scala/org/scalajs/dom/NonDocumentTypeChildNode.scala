@@ -6,12 +6,7 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** The NonDocumentTypeChildNode interface contains methods that are particular to Node objects that can have a parent,
   * but not suitable for DocumentType.

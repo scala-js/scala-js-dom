@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLTitleElement interface contains the title for a document. This element inherits all of the properties and
   * methods of the HTMLElement interface.

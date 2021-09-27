@@ -1,10 +1,7 @@
 package org.scalajs.dom.experimental.serviceworkers
 
 import org.scalajs.dom._
-import org.scalajs.dom.webgl.RenderingContext
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The ServiceWorkerContainer interface of the ServiceWorker API exposes the ServiceWorkerContainer.
   * register(scriptURL, scope[, base]) method used to register service workers, and the ServiceWorkerContainer.

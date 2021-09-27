@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The AudioBuffer interface represents a short audio asset residing in memory, created from an audio file using the
   * AudioContext.decodeAudioData() method, or from raw data using AudioContext.createBuffer(). Once put into an

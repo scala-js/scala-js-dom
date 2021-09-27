@@ -1,10 +1,5 @@
 package org.scalajs.dom.crypto
 
-import org.scalajs.dom.BufferSource
-import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.ArrayBufferView
-
 /** A HashAlgorithm type is not defined in the [[http://www.w3.org/TR/WebCryptoAPI/ W3C Web Crypto API]], even though a
   * [[http://www.w3.org/TR/WebCryptoAPI/#key-algorithm-dictionary KeyAlgorithm dictionary]] type is. There are
   * nevertheless a number of indications that HashAlgorithm's are a type of their own, as searching the spec will show.

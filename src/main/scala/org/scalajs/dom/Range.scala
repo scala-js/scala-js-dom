@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** The Range interface represents a fragment of a document that can contain nodes and parts of text nodes in a given
   * document.

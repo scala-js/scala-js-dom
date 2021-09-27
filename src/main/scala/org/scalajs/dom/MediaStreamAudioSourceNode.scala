@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The MediaStreamAudioSourceNode interface represents an audio source consisting of a WebRTC MediaStream (such as a
   * webcam or microphone). It is an AudioNode that acts as an audio source.

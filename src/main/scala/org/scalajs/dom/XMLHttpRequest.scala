@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** XMLHttpRequest is a JavaScript object that was designed by Microsoft and adopted by Mozilla, Apple, and Google. It's
   * now being standardized in the W3C. It provides an easy way to retrieve data from a URL without having to do a full

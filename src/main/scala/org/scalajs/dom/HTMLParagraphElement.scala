@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLParagraphElement interface provides special properties (beyond those of the regular HTMLElement object
   * interface it inherits) for manipulating &lt;p&gt; elements.

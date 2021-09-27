@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 trait CreateImageBitmapOptions extends js.Object {
   var imageOrientation: js.UndefOr[String] = js.undefined

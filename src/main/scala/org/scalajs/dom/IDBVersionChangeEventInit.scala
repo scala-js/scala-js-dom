@@ -7,8 +7,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 trait IDBVersionChangeEventInit extends EventInit {
   var newVersion: js.UndefOr[Integer] = js.undefined

@@ -1,6 +1,5 @@
 package example
 
-import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 import org.scalajs.dom

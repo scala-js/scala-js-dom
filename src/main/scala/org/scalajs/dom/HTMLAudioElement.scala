@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLAudioElement interface provides access to the properties of &lt;audio&gt; elements, as well as methods to
   * manipulate them. It derives from the HTMLMediaElement interface.

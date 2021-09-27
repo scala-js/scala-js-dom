@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** The window object represents the window itself. The document property of a window points to the DOM document loaded
   * in that window. A window for a given document can be obtained using the document.defaultView property.

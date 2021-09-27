@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLBodyElement interface provides special properties (beyond those of the regular HTMLElement interface they
   * also inherit) for manipulating body elements.

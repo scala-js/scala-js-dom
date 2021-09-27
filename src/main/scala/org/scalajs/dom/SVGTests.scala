@@ -7,7 +7,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** Interface SVGTests defines an interface which applies to all elements which have attributes requiredFeatures,
   * requiredExtensions and systemLanguage.

@@ -1,6 +1,5 @@
 package org.scalajs.dom.experimental.webgl.extensions
 
-import org.scalajs.dom.WebGLShader
 import scala.scalajs.js
 
 /** Extends `drawElements` to support the type `UNSIGNED_INT`. (Khronos Extension)

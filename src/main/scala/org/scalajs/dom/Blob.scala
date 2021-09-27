@@ -6,12 +6,9 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** A Blob object represents a file-like object of immutable, raw data; they can be read as text or binary data, or
   * converted into a ReadableStream so its methods can be used for processing the data. Blobs can represent data that

@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** An object implementing the StyleSheet interface represents a single style sheet. CSS style sheets will further
   * implement the more specialized CSSStyleSheet interface.

@@ -2,7 +2,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
+import scala.scalajs.js.typedarray.Uint8Array
 
 /** [[https://fetch.spec.whatwg.org/#response ¶6.4 Response class]] in whatwg spec
   *

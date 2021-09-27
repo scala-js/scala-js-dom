@@ -1,6 +1,5 @@
 package org.scalajs.dom.experimental.webgl.extensions
 
-import org.scalajs.dom.WebGLShader
 import scala.scalajs.js
 
 /** Extends GLSL to support assigning the fragments depth via `gl_FragDepthEXT`. (Khronos Extension)

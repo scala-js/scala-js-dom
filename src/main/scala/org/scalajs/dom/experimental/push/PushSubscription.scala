@@ -1,9 +1,7 @@
 package org.scalajs.dom.experimental.push
 
-import org.scalajs.dom.Blob
-import org.scalajs.dom.experimental.serviceworkers.ExtendableEvent
 import scala.scalajs.js
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
+import scala.scalajs.js.typedarray.ArrayBuffer
 
 /** The PushSubscription interface of the Push API provides a subcription's URL endpoint and allows unsubscription from
   * a push service.

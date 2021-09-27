@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLCanvasElement interface provides properties and methods for manipulating the layout and presentation of
   * canvas elements. The HTMLCanvasElement interface also inherits the properties and methods of the HTMLElement

@@ -8,7 +8,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The specification has changed and some not up-to-date browsers only support the deprecated unique attribute,
   * version, from an early draft version.

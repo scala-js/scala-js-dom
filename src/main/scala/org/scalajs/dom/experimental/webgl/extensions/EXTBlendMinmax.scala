@@ -1,6 +1,5 @@
 package org.scalajs.dom.experimental.webgl.extensions
 
-import org.scalajs.dom.WebGLShader
 import scala.scalajs.js
 
 /** Extends `blendEquation` to support `MIN_EXT` and `MAX_EXT`. (Khronos Extension)

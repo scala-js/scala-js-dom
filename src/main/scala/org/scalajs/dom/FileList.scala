@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** An object of this type is returned by the files property of the HTML input element; this lets you access the list of
   * files selected with the &lt;input type="file"&gt; element. It's also used for a list of files dropped into web

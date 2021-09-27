@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The DelayNode interface represents a delay-line; an AudioNode audio-processing module that causes a delay between
   * the arrival of an input data and its propagation to the output. A DelayNode always has exactly one input and one

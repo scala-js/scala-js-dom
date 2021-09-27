@@ -1,8 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 
 /** This is not typed in the Fetch API but it is easy to create the most common defaults. */
 @js.native

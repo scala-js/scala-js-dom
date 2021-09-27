@@ -1,6 +1,5 @@
 package org.scalajs.dom.experimental.webgl.extensions
 
-import org.scalajs.dom.WebGLShader
 import scala.scalajs.js
 
 /** Provides S3TC texture compression support. (Khronos Extension)

@@ -1,8 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 
 /** See [[https://fetch.spec.whatwg.org/#requestinit RequestInit]] in Fetch API The underlying object is a dictionary.
   * This trait is here to help encode the types.

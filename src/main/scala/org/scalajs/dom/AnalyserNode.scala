@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The AnalyserNode interface represents a node able to provide real-time frequency and time-domain analysis
   * information. It is an AudioNode that passes the audio stream unchanged from the input to the output, but allows you

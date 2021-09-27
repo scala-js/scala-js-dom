@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The AudioNode interface is a generic interface for representing an audio processing module like an audio source
   * (e.g. an HTML &lt;audio&gt; or &lt;video&gt; element, an OscillatorNode, etc.), the audio destination, intermediate

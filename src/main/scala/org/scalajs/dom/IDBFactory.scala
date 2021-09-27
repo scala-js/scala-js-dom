@@ -8,7 +8,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The IDBFactory interface of the IndexedDB API lets applications asynchronously access the indexed databases. The
   * object that implements the interface is window.indexedDB. You open — that is, create and access — and delete a

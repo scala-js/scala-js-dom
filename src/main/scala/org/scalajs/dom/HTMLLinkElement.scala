@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLLinkElement interface represents reference information for external resources and the relationship of those
   * resources to a document and vice-versa. This object inherits all of the properties and methods of the HTMLElement

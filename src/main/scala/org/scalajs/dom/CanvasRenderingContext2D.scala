@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** The 2D rendering context for the drawing surface of a &lt;canvas&gt; element. To get this object, call getContext()
   * on a &lt;canvas&gt;, supplying "2d" as the argument:

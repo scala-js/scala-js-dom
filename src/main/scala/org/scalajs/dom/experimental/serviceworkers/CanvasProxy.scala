@@ -1,10 +1,7 @@
 package org.scalajs.dom.experimental.serviceworkers
 
-import org.scalajs.dom._
 import org.scalajs.dom.webgl.RenderingContext
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** see [[https://html.spec.whatwg.org/multipage/scripting.html#canvasproxy ¶4.12.4.1 Proxying canvases to workers]] in
   * whatwg html spec.

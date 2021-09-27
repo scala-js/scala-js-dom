@@ -7,8 +7,6 @@
 package org.scalajs.dom.experimental.intl
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The following properties fall into two groups:
   *

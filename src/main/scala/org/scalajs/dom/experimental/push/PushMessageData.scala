@@ -1,9 +1,8 @@
 package org.scalajs.dom.experimental.push
 
 import org.scalajs.dom.Blob
-import org.scalajs.dom.experimental.serviceworkers.ExtendableEvent
 import scala.scalajs.js
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
+import scala.scalajs.js.typedarray.ArrayBuffer
 
 /** The PushMessageData interface of the Push API provides methods which let you retrieve the push data sent by a server
   * in various formats.

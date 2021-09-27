@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 // the stream API is defined in https://streams.spec.whatwg.org/
 

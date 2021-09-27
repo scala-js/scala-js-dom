@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** The DOM Storage mechanism is a means through which string key/value pairs can be securely stored and later retrieved
   * for use. The goal of this addition is to provide a comprehensive means through which interactive applications can be

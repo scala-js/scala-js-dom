@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** [[https://streams.spec.whatwg.org/#ws-class ¶4.2. Class WritableStream]] of whatwg Stream spec
   *

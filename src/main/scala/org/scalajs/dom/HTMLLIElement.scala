@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLLIElement interface expose specific properties and methods (beyond those defined by regular HTMLElement
   * interface it also has available to it by inheritance) for manipulating list elements.

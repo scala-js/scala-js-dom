@@ -6,12 +6,7 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** A MediaQueryList object maintains a list of media queries on a document, and handles sending notifications to
   * listeners when the media queries on the document change.

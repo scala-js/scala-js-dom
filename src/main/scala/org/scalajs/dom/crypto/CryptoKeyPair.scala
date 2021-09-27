@@ -1,9 +1,6 @@
 package org.scalajs.dom.crypto
 
-import org.scalajs.dom.BufferSource
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.ArrayBufferView
 
 /** The CryptoKeyPair dictionary represents an asymmetric key pair that is comprised of both public and private keys.
   * defined at [[http://www.w3.org/TR/WebCryptoAPI/#keypair ¶17 CryptoKeyPair dictionary]] of spec

@@ -8,7 +8,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The IDBRequest interface of the IndexedDB API provides access to results of asynchronous requests to databases and
   * database objects using event handler attributes. Each reading and writing operation on a database is done using a

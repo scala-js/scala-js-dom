@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLSourceElement interface provides special properties (beyond the regular HTMLElement object interface it also
   * has available to it by inheritance) for manipulating &lt;source&gt; elements.

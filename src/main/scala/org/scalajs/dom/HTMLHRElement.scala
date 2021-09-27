@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLHRElement interface provides special properties (beyond those of the HTMLElement interface it also has
   * available to it by inheritance) for manipulating &lt;hr&gt; elements.

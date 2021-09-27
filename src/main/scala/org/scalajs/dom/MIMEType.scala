@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 @js.native
 sealed trait MIMEType extends js.Any

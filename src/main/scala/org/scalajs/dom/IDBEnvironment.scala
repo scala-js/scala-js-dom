@@ -7,8 +7,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The IDBEvironment interface of the IndexedDB API provides asynchronous access to a client-side database. It is
   * implemented by window and Worker objects.

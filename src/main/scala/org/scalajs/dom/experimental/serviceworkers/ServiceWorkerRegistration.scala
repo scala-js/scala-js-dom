@@ -1,10 +1,7 @@
 package org.scalajs.dom.experimental.serviceworkers
 
 import org.scalajs.dom._
-import org.scalajs.dom.webgl.RenderingContext
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The ServiceWorkerRegistion interface of the ServiceWorker API represents the service worker registration. You
   * register a service worker to control one or more pages that share the same origin.

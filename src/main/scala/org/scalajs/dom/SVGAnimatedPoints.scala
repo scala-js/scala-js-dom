@@ -7,7 +7,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The SVGAnimatedPoints interface supports elements which have a points attribute which holds a list of coordinate
   * values and which support the ability to animate that attribute.

@@ -7,7 +7,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 trait SVGZoomEventInit extends UIEventInit {
   var zoomRectScreen: js.UndefOr[SVGRect] = js.undefined

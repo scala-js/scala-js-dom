@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The WorkerNavigator interface represents a subset of the [[Navigator]] interface allowed to be accessed from a
   * Worker. Such an object is initialized for each worker and is available via the WorkerGlobalScope.navigator property

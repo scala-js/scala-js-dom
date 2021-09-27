@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLAnchorElement interface represents hyperlink elements and provides special properties and methods (beyond
   * those of the regular HTMLElement object interface they also have available to them by inheritance) for manipulating

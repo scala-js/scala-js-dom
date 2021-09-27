@@ -2,7 +2,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 
 /** [[https://fetch.spec.whatwg.org/#headers-class ¶6.1 Headers Class]] of whatwg spec
   *

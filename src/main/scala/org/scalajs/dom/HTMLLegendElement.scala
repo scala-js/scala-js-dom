@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLLegendElement is an interface allowing to access properties of the &lt;legend&gt; elements. It inherits
   * properties and methods from the HTMLElement interface.

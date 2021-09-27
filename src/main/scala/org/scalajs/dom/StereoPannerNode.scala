@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The StereoPannerNode interface of the Web Audio API represents a simple stereo panner node that can be used to pan
   * an audio stream left or right. It is an AudioNode audio-processing module that positions an incoming audio stream in

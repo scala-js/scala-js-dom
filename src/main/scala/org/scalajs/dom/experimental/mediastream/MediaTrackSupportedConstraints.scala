@@ -1,10 +1,7 @@
 /** https://www.w3.org/TR/2016/CR-mediacapture-streams-20160519/ */
 package org.scalajs.dom.experimental.mediastream
 
-import org.scalajs.dom._
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The MediaTrackSupportedConstraints dictionary establishes the list of constrainable properties recognized by the
   * user agent or browser in its implementation of the MediaStreamTrack object. An object conforming to

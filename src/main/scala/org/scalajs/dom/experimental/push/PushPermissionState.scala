@@ -1,9 +1,6 @@
 package org.scalajs.dom.experimental.push
 
-import org.scalajs.dom.Blob
-import org.scalajs.dom.experimental.serviceworkers.ExtendableEvent
 import scala.scalajs.js
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
 
 /** This represents a JavaScript enumeration describing the state of permissions for pushing described here:
   * [[http://www.w3.org/TR/push-api/#idl-def-PushPermissionState]]

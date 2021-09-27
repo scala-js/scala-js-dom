@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The WaveShaperNode interface represents a non-linear distorter. It is an AudioNode that uses a curve to apply a wave
   * shaping distortion to the signal. Beside obvious distortion effects, it is often used to add a warm feeling to the

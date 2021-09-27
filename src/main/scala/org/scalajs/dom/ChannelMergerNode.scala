@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The ChannelMergerNode interface, often used in conjunction with its opposite, ChannelSplitterNode, reunites
   * different mono inputs into a single output. Each input is used to fill a channel of the output. This is useful for

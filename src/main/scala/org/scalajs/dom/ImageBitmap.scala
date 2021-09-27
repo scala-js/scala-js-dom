@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 /** The ImageBitmap interface represents a bitmap image which can be drawn to a &lt;canvas&gt; without undue latency. It
   * can be created from a variety of source objects using the createImageBitmap() factory method. ImageBitmap provides

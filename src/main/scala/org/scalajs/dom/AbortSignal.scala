@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSGlobal
 
 /** The AbortSignal interface represents a signal object that allows you to communicate with a DOM request (such as a
   * Fetch) and abort it if required via an AbortController object.

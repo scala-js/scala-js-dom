@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The AudioDestinationNode interface represents the end destination of an audio graph in a given context — usually the
   * speakers of your device. It can also be the node that will "record" the audio data when used with an

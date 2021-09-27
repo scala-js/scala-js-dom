@@ -8,7 +8,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray._
 
 /** Holds information returned by [[WebGLRenderingContext#getActiveAttrib]] and
   * [[WebGLRenderingContext#getActiveUniform]].

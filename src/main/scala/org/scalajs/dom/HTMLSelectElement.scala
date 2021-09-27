@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** DOM select elements share all of the properties and methods of other HTML elements described in the element section.
   * They also have the specialized interface HTMLSelectElement (or HTML 4 HTMLSelectElement).

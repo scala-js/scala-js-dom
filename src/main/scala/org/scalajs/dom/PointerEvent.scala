@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** Most of today's web content assumes the user's pointing device will be a mouse. However, since many devices support
   * other types of pointing input devices, such as pen/stylus and touch surfaces, extensions to the existing pointing

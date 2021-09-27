@@ -8,7 +8,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The IDBKeyRange interface of the IndexedDB API represents a continuous interval over some data type that is used for
   * keys. Records can be retrieved from object stores and indexes using keys or a range of keys. You can limit the range

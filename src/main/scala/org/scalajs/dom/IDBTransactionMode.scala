@@ -7,8 +7,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** IndexedDB transaction mode Provides constants for IDB Transaction modes These constants have been removed from
   * browser support and replaced by String values

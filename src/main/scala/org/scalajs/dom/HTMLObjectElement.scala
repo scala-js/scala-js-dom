@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLObjectElement interface provides special properties and methods (beyond those on the HTMLElement interface
   * it also has available to it by inheritance) for manipulating the layout and presentation of &lt;object&gt; element,

@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** This type represents a DOM element's attribute as an object. In most DOM methods, you will probably directly
   * retrieve the attribute as a string (e.g., Element.getAttribute(), but certain functions (e.g.,

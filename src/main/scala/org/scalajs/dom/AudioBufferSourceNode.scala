@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** AudioBufferSourceNode has no input and exactly one output. The number of channels in the output corresponds to the
   * number of channels of the AudioBuffer that is set to the AudioBufferSourceNode.buffer property. If there is no

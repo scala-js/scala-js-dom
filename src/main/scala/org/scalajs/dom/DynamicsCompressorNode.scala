@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The DynamicsCompressorNode interface provides a compression effect, which lowers the volume of the loudest parts of
   * the signal in order to help prevent clipping and distortion that can occur when multiple sounds are played and

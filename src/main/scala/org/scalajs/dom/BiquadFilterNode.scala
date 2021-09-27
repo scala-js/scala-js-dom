@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The BiquadFilterNode interface represents a simple low-order filter, and is created using the
   * AudioContext.createBiquadFilter() method. It is an AudioNode that can represent different kinds of filters, tone

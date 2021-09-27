@@ -7,8 +7,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 trait IDBCreateIndexOptions extends js.Object {
   val unique: js.UndefOr[Boolean] = js.undefined

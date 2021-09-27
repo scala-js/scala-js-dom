@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLVideoElement interface provides special properties and methods for manipulating video objects. It also
   * inherits properties and methods of HTMLMediaElement and HTMLElement.

@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The AbstractWorker interface abstracts properties and methods common to all kind of workers, being Worker or
   * SharedWorker.

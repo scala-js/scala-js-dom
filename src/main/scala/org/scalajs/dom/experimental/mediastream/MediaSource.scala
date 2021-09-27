@@ -4,7 +4,6 @@ package org.scalajs.dom.experimental.mediastream
 import org.scalajs.dom._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** Represents a source of media data for an HTMLMediaElement object.
   *

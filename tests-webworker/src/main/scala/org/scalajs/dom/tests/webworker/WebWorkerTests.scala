@@ -1,8 +1,5 @@
 package org.scalajs.dom.tests.webworker
 
-import scala.language.implicitConversions
-import scala.concurrent.Future
-import org.junit.Assert._
 import org.junit.Test
 import org.scalajs.dom.tests.shared.AsyncTesting._
 

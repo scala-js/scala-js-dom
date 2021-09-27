@@ -6,13 +6,6 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
-import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
-
 /** When dragging, there are several operations that may be performed. The copy operation is used to indicate that the
   * data being dragged will be copied from its present location to the drop location. The move operation is used to
   * indicate that the data being dragged will be moved, and the link operation is used to indicate that some form of

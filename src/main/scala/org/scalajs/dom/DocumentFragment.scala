@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** The DocumentFragment interface represents a minimal document object that has no parent. It is used as a light-weight
   * version of Document to store well-formed or potentially non-well-formed fragments of XML.

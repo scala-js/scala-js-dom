@@ -4,7 +4,6 @@ package org.scalajs.dom.experimental.mediastream
 import org.scalajs.dom._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The ImageCapture interface of the MediaStream Image Capture API provides methods to enable the capture of images or
   * photos from a camera or other photographic device referenced through a valid MediaStreamTrack.

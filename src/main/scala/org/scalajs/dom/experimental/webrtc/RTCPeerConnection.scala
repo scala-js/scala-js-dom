@@ -2,11 +2,9 @@
 package org.scalajs.dom.experimental.webrtc
 
 import org.scalajs.dom.experimental.mediastream._
-import org.scalajs.dom.{Blob, DOMException, Event, EventInit, EventTarget, MessageEvent}
+import org.scalajs.dom.{DOMException, Event, EventTarget}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, ArrayBufferView}
-import scala.scalajs.js.|
 
 /** The RTCPeerConnection interface represents a WebRTC connection between the local computer and a remote peer. It is
   * used to handle efficient streaming of data between the two peers.

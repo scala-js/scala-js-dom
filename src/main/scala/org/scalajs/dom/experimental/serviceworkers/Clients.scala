@@ -1,10 +1,6 @@
 package org.scalajs.dom.experimental.serviceworkers
 
-import org.scalajs.dom._
-import org.scalajs.dom.webgl.RenderingContext
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#clients ¶4.3 clients]] of ServiceWorker
   * whatwg spec.

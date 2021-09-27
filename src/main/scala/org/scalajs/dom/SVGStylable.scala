@@ -7,7 +7,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The SVGStylable interface is implemented on all objects corresponding to SVG elements that can have style, class and
   * presentation attributes specified on them.

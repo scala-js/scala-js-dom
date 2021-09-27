@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The AudioParam interface represents an audio-related parameter, usually a parameter of an AudioNode (such as
   * GainNode.gain). An AudioParam can be set to a specific value or a change in value, and can be scheduled to happen at

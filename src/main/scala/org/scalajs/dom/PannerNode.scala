@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The PannerNode interface represents the position and behavior of an audio source signal in space. It is an AudioNode
   * audio-processing module describing its position with right-hand Cartesian coordinates, its movement using a velocity

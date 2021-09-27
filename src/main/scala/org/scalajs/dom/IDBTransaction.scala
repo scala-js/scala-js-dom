@@ -8,7 +8,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The IDBTransaction interface of the IndexedDB API provides a static, asynchronous transaction on a database using
   * event handler attributes. All reading and writing of data are done within transactions. You actually use IDBDatabase

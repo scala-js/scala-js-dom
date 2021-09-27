@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** Each web page loaded in the browser has its own document object. The Document interface serves as an entry point to
   * the web page's content (the DOM tree, including elements such as &lt;body&gt; and &lt;table&gt;) and provides

@@ -1,9 +1,6 @@
 package org.scalajs.dom.crypto
 
-import org.scalajs.dom.BufferSource
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.ArrayBufferView
 
 /** See [[http://www.w3.org/TR/WebCryptoAPI/#cryptokey-interface ¶ 13. CryptoKey Interface]] of w3c spec */
 @js.native

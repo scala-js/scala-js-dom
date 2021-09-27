@@ -7,8 +7,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 trait IDBTransactionOptions extends js.Object {
   val durability: js.UndefOr[IDBTransactionDurability] = js.undefined

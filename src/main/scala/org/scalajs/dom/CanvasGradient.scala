@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** The CanvasGradient interface represents an opaque object describing a gradient and returned by
   * CanvasRenderingContext2D.createLinearGradient or CanvasRenderingContext2D.createRadialGradient methods.

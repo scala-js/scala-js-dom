@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The OscillatorNode interface represents a periodic waveform, like a sine wave. It is an AudioNode audio-processing
   * module that causes a given frequency of sine wave to be created — in effect, a constant tone.

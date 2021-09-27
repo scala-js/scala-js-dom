@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLStyleElement interface represents a &lt;style&gt; element. It inherits properties and methods from its
   * parent, HTMLElement, and from LinkStyle.

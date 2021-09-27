@@ -6,10 +6,8 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.{MediaSource, MediaStream}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The HTMLTableColElement interface provides special properties (beyond the HTMLElement interface it also has
   * available to it inheritance) for manipulating single or grouped table column elements.

@@ -6,12 +6,8 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** EventSource enables servers to push data to Web pages over HTTP or using dedicated server-push protocols. Event
   * streams requests can be redirected using HTTP 301 and 307 redirects as with normal HTTP requests. Clients will

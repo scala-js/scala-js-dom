@@ -6,12 +6,7 @@
   */
 package org.scalajs.dom
 
-import scala.collection.mutable
-import scala.language.implicitConversions
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
-import scala.scalajs.js.|
 
 /** The Geolocation interface represents an object able to programmatically obtain the position of the device. It gives
   * Web content access to the location of the device. This allows a Web site or app offer customized results based on

@@ -5,9 +5,7 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The AudioListener interface represents the position and orientation of the unique person listening to the audio
   * scene, and is used in audio spatialisation. All PannerNodes spatialise in relation to the AudioListener stored in

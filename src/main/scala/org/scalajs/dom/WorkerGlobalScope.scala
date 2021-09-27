@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The WorkerGlobalScope interface of the Web Workers API is an interface representing the scope of any worker. Workers
   * have no browsing context; this scope contains the information usually conveyed by Window objects — in this case

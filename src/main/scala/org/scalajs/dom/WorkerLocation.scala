@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The WorkerLocation interface defines the absolute location of the script executed by the Worker. Such an object is
   * initialized for each worker and is available via the WorkerGlobalScope.location property obtained by calling
