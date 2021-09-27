@@ -8,7 +8,7 @@ import scala.util.Success
 final class Client(worker: Worker) {
   import Protocol._
 
-  private var preInit  = new js.Array[Message]
+  private var preInit = new js.Array[Message]
   private var promises = new js.Array[Promise[String]]
 
   worker.onmessage = (e: MessageEvent) => {
@@ -22,8 +22,8 @@ final class Client(worker: Worker) {
 
   def send(cmd: WebWorkerCmd): Future[String] = {
     val id = promises.length
-    val p  = Promise[String]()
-    val m  = Message(id, cmd.id)
+    val p = Promise[String]()
+    val m = Message(id, cmd.id)
     promises.push(p)
     if (preInit eq null)
       worker.postMessage(m)

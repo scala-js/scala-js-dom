@@ -4,7 +4,7 @@ import scala.scalajs.js
 
 object Protocol {
 
-  type MsgId   = Int
+  type MsgId = Int
   type Message = js.Tuple2[MsgId, String]
 
   def Message(id: MsgId, data: String): Message =

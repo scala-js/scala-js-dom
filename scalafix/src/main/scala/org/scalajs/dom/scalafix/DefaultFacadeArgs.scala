@@ -9,7 +9,6 @@ class DefaultFacadeArgs extends SemanticRule("DefaultFacadeArgs") {
     doc.tree.collect {
 
       case Defn.Def(mods, _, _, paramss, _, body) if Util.isJsNative(body) =>
-
         // https://github.com/scala-js/scala-js/issues/4553
         // `js.native` as default arg doesn't compile for top-level method facades.
         if (Util.isJSGlobal(mods)) {

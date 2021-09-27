@@ -10,10 +10,10 @@ object Server extends ServerResponses {
     val ww = DedicatedWorkerGlobalScope.self
 
     ww.onmessage = (e: MessageEvent) => {
-      val msgIn  = e.data.asInstanceOf[Message]
-      val id     = msgIn._1
-      val cmdId  = msgIn._2
-      val cmd    = WebWorkerCmd.byId(cmdId)
+      val msgIn = e.data.asInstanceOf[Message]
+      val id = msgIn._1
+      val cmdId = msgIn._2
+      val cmd = WebWorkerCmd.byId(cmdId)
       respond(cmd).onComplete { t =>
         val output = t.getOrElse(t.failed.get.toString)
         val msgOut = Message(id, output)

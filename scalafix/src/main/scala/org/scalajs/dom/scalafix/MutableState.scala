@@ -10,11 +10,8 @@ final class MutableState {
 
   private[this] val scopes = mutable.Map.empty[Symbol, Scope]
 
-  def register(sym          : Symbol,
-               isJsType     : Boolean,
-               scopeType    : ScopeType,
-               parents      : Set[Symbol],
-               deprecatedVer: Option[String]): Scope = synchronized {
+  def register(sym: Symbol, isJsType: Boolean, scopeType: ScopeType, parents: Set[Symbol],
+      deprecatedVer: Option[String]): Scope = synchronized {
     scopes.get(sym) match {
       case None =>
         val s = Scope(sym)(scopeType, parents)
@@ -70,11 +67,11 @@ final class MutableState {
     // Pass 2
     for (root <- scopes.valuesIterator) {
       val scopeName = root.symbol.value.stripSuffix("#").stripSuffix(".")
-      val flagLang  = if (root.isJsType) "J" else "S"
-      val flagTyp   = root.scopeType.id
-      val flags     = flagLang + flagTyp
-      val prefix    = s"$scopeName[$flags] "
-      val scopeKey  = s"$scopeName$sortHack[$flags"
+      val flagLang = if (root.isJsType) "J" else "S"
+      val flagTyp = root.scopeType.id
+      val flags = flagLang + flagTyp
+      val prefix = s"$scopeName[$flags] "
+      val scopeKey = s"$scopeName$sortHack[$flags"
 
       var membersFound = false
       for {
@@ -102,15 +99,14 @@ object MutableState {
   var global: MutableState = null
 
   sealed abstract class ScopeType(final val id: String)
+
   object ScopeType {
     case object Class extends ScopeType("C")
     case object Trait extends ScopeType("T")
     case object Object extends ScopeType("O")
   }
 
-  final case class Scope(symbol: Symbol)
-                        (val scopeType: ScopeType,
-                         val parents: Set[Symbol]) {
+  final case class Scope(symbol: Symbol)(val scopeType: ScopeType, val parents: Set[Symbol]) {
 
     private[MutableState] val directMembers = mutable.Set.empty[Member]
     private[MutableState] var isJsType = false

@@ -14,7 +14,8 @@ trait SharedTests {
 
   // This tests that ops are always implicitly available, no imports required
   @Test final def DOMTokenListOpsTest(): Unit = {
-    org.scalajs.dom.document.querySelectorAll("*")
+    org.scalajs.dom.document
+      .querySelectorAll("*")
       .iterator
       .collect { case e: org.scalajs.dom.html.Element => e }
       .map(_.classList.mkString)
