@@ -11,7 +11,6 @@ object Lib {
     .configure(sourceMapsToGithub)
     .settings(
       scalacOptions ++= Seq(
-        "-deprecation",
         "-feature",
       ),
       scalacOptions ++= (if (!inCI) Seq.empty else Seq(
@@ -19,9 +18,9 @@ object Lib {
       )),
       scalacOptions ++= (CrossVersion.partialVersion(scalaVersion.value) match {
         case Some((2, 11)) => "-Ywarn-unused-import" :: Nil
-        case Some((2, 12)) => "-Ywarn-unused:imports,patvars,locals,implicits" :: Nil
-        case Some((2, 13)) => "-Wunused:imports,patvars,locals,implicits" :: Nil
-        case _             => Nil
+        case Some((2, 12)) => "-deprecation" :: "-Ywarn-unused:imports,patvars,locals,implicits" :: Nil
+        case Some((2, 13)) => "-deprecation" :: "-Wunused:imports,patvars,locals,implicits" :: Nil
+        case _             => "-deprecation" :: Nil
       }),
       testOptions += Tests.Argument(TestFramework("com.novocode.junit.JUnitFramework"), "-v"),
     )
