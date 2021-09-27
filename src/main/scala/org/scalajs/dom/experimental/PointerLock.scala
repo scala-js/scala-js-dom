@@ -1,82 +1,27 @@
-package org.scalajs.dom.experimental
+package org.scalajs
+package dom.experimental
 
-import org.scalajs.dom.{Document, Element, Event, MouseEvent}
-import scala.language.implicitConversions
-import scala.scalajs.js
-
-/** Pointer Lock API
-  *
-  * @see
-  *   [[https://www.w3.org/TR/2013/CR-pointerlock-20131217/ Pointer Lock W3C Candidate Recommendation]]
-  */
+@deprecated("the extensions provided by PointerLock are now available by default", "2.0.0")
 object PointerLock {
 
-  implicit def toPointerLockDocument(document: Document): PointerLockDocument =
-    document.asInstanceOf[PointerLockDocument]
+  @deprecated("Use dom.Document directly instead", "2.0.0")
+  def toPointerLockDocument(document: dom.Document): PointerLockDocument =
+    document
 
-  implicit def toPointerLockElement(element: Element): PointerLockElement =
-    element.asInstanceOf[PointerLockElement]
+  @deprecated("Use dom.Element directly instead", "2.0.0")
+  def toPointerLockElement(element: dom.Element): PointerLockElement =
+    element
 
-  implicit def toPointerLockMouseEvent(me: MouseEvent): PointerLockMouseEvent =
-    me.asInstanceOf[PointerLockMouseEvent]
+  @deprecated("Use dom.MouseEvent directly instead", "2.0.0")
+  def toPointerLockMouseEvent(me: dom.MouseEvent): PointerLockMouseEvent =
+    me
 
-  @js.native
-  trait PointerLockDocument extends js.Object {
+  @deprecated("Use dom.Document instead", "2.0.0")
+  type PointerLockDocument = dom.Document
 
-    /** When the Pointer lock state changes—for example, when calling requestPointerLock, exitPointerLock, the user
-      * pressing the ESC key, etc.—the pointerlockchange event is dispatched to the document. This is a simple event and
-      * contains no extra data.
-      */
-    var onpointerlockchange: js.Function1[Event, _] = js.native
+  @deprecated("Use dom.Element instead", "2.0.0")
+  type PointerLockElement = dom.Element
 
-    /** When there is an error caused by calling requestPointerLock or exitPointerLock, the pointerlockerror event is
-      * dispatched to the document. This is a simple event and contains no extra data.
-      */
-    var onpointerlockerror: js.Function1[Event, _] = js.native
-
-    /** The pointerLockElement property provides the element set as the target for mouse events while the pointer is
-      * locked. It is `null` if lock is pending, pointer is unlocked, or the target is in another document.
-      */
-    def pointerLockElement: Element = js.native
-
-    /** The exitPointerLock asynchronously releases a pointer lock previously requested through
-      * Element.requestPointerLock.
-      *
-      * To track the success or failure of the request, it is necessary to listen for the pointerlockchange and
-      * pointerlockerror events.
-      */
-    def exitPointerLock(): Unit = js.native
-  }
-
-  @js.native
-  trait PointerLockElement extends js.Object {
-
-    /** The Element.requestPointerLock() method allows to asynchronously ask for the pointer to be locked on the given
-      * element.
-      *
-      * To track the success or failure of the request, it is necessary to listen for the pointerlockchange and
-      * pointerlockerror events at the Document level.
-      */
-    def requestPointerLock(): Unit = js.native
-  }
-
-  /** Two new parameters to mouse events—movementX and movementY—provide the change in mouse positions. The values of
-    * the parameters are the same as the difference between the values of MouseEvent properties, screenX and screenY,
-    * which are stored in two subsequent mousemove events, eNow and ePrevious. In other words, the Pointer lock
-    * parameter `movementX = eNow.screenX - ePrevious.screenX`.
-    *
-    * When Pointer lock is enabled, the standard MouseEvent properties clientX, clientY, screenX, and screenY are held
-    * constant, as if the mouse is not moving. The movementX and movementY properties continue to provide the mouse's
-    * change in position. There is no limit to movementX and movementY values if the mouse is continuously moving in a
-    * single direction. The concept of the mouse cursor does not exist and the cursor cannot move off the window or be
-    * clamped by a screen edge.
-    *
-    * The parameters movementX and movementY are valid regardless of the mouse lock state, and are available even when
-    * unlocked for convenience.
-    */
-  @js.native
-  trait PointerLockMouseEvent extends js.Object {
-    def movementX: Double = js.native
-    def movementY: Double = js.native
-  }
+  @deprecated("Use dom.MouseEvent instead", "2.0.0")
+  type PointerLockMouseEvent = dom.MouseEvent
 }
