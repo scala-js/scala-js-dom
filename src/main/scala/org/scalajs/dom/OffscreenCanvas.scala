@@ -21,17 +21,3 @@ class OffscreenCanvas(var width: Double, var height: Double) extends js.Object {
   /** Creates an ImageBitmap object from the most recently rendered image of the OffscreenCanvas. */
   def transferToImageBitmap(): ImageBitmap = js.native
 }
-
-trait TwoDContextAttributes extends js.Object {
-  var alpha: js.UndefOr[Boolean] = js.undefined
-
-  var willReadFrequently: js.UndefOr[Boolean] = js.undefined
-
-  var storage: js.UndefOr[String] = js.undefined
-}
-
-trait ConvertToBlobOptions extends js.Object {
-  var `type`: js.UndefOr[String] = js.undefined
-
-  var quality: js.UndefOr[Double] = js.undefined
-}
