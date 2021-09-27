@@ -24423,8 +24423,8 @@ experimental/PointerLock.PointerLockMouseEvent[JT] def movementY: Double
 experimental/Vibration[SO]  (@deprecated in 2.0.0)
 experimental/beacon/package[SO] type BeaconNavigator = dom.Navigator  (@deprecated in 2.0.0)
 experimental/beacon/package[SO] type BeaconWorkerNavigator = dom.WorkerNavigator  (@deprecated in 2.0.0)
-experimental/beacon/package[SO] implicit def toBeaconNavigator(n: Navigator): BeaconNavigator  (@deprecated in 2.0.0)
-experimental/beacon/package[SO] implicit def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator  (@deprecated in 2.0.0)
+experimental/beacon/package[SO] def toBeaconNavigator(n: Navigator): BeaconNavigator  (@deprecated in 2.0.0)
+experimental/beacon/package[SO] def toBeaconWorkerNavigator(n: WorkerNavigator): BeaconWorkerNavigator  (@deprecated in 2.0.0)
 experimental/cachestorage/package[SO] type Cache = dom.Cache  (@deprecated in 2.0.0)
 experimental/cachestorage/package[SO] type CacheQueryOptions = dom.CacheQueryOptions  (@deprecated in 2.0.0)
 experimental/cachestorage/package[SO] type CacheStorage = dom.CacheStorage  (@deprecated in 2.0.0)
@@ -24494,7 +24494,7 @@ experimental/gamepad/package[SO] type GamepadEventInit = dom.GamepadEventInit  (
 experimental/gamepad/package[SO] type GamepadMappingType = dom.GamepadMappingType  (@deprecated in 2.0.0)
 experimental/gamepad/package[SO] type GamepadNavigator = dom.Navigator  (@deprecated in 2.0.0)
 experimental/gamepad/package[SO] def standard: dom.GamepadMappingType  (@deprecated in 2.0.0)
-experimental/gamepad/package[SO] implicit def toGamepad(navigator: dom.Navigator): GamepadNavigator  (@deprecated in 2.0.0)
+experimental/gamepad/package[SO] def toGamepad(navigator: dom.Navigator): GamepadNavigator  (@deprecated in 2.0.0)
 experimental/gamepad/package[SO] def unknown: dom.GamepadMappingType  (@deprecated in 2.0.0)
 experimental/intl/Collator[JC] def compare(string1: String, string2: String): Double
 experimental/intl/Collator[JC] def resolvedOptions(): CollatorOptions
