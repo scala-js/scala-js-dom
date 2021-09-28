@@ -63,11 +63,6 @@ package object dom {
   @deprecated("directly use the dom.CSS* types and values instead", "2.0.0")
   lazy val css: DeprecatedCSSAliases.type = DeprecatedCSSAliases
 
-  @js.native
-  @JSGlobal("crypto")
-  // `webCrypto` instead of just `crypto` to avoid conflict with deprecated package :(
-  def webCrypto: Crypto = js.native
-
   @deprecated("use DOMRect instead", "2.0.0")
   type ClientRect = DOMRect
 
