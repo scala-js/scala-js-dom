@@ -26,6 +26,53 @@ AbstractWorker[JT] def dispatchEvent(evt: Event): Boolean
 AbstractWorker[JT] var onerror: js.Function1[ErrorEvent, _]
 AbstractWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AbstractWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AesCbcParams[JT] val iv: BufferSource
+AesCbcParams[JT] val name: String
+AesCbcParams[SO] def apply(name: String, iv: BufferSource): AesCbcParams  (@deprecated in 2.0.0)
+AesCbcParams[SO] val iv = iv0
+AesCbcParams[SO] val name = name0
+AesCfbParams[JT] val iv: BufferSource
+AesCfbParams[JT] val name: String
+AesCfbParams[SO] def apply(name: String, iv: BufferSource): AesCfbParams  (@deprecated in 2.0.0)
+AesCfbParams[SO] val iv = iv0
+AesCfbParams[SO] val name = name0
+AesCmacParams[JT] val length: Int
+AesCmacParams[JT] val name: String
+AesCmacParams[SO] def apply(name: String, length: Int): AesCmacParams  (@deprecated in 2.0.0)
+AesCmacParams[SO] val length = length0
+AesCmacParams[SO] val name = name0
+AesCtrParams[JT] val counter: BufferSource
+AesCtrParams[JT] val length: Int
+AesCtrParams[JT] val name: String
+AesCtrParams[SO] def apply(name: String, counter: BufferSource, length: Short): AesCtrParams  (@deprecated in 2.0.0)
+AesCtrParams[SO] val counter = counter0
+AesCtrParams[SO] val length = length0.toInt
+AesCtrParams[SO] val name = name0
+AesDerivedKeyParams[JT] val length: Int
+AesDerivedKeyParams[JT] val name: String
+AesDerivedKeyParams[SO] def apply(name: String, length: Short): AesDerivedKeyParams  (@deprecated in 2.0.0)
+AesDerivedKeyParams[SO] val length = length0.toInt
+AesDerivedKeyParams[SO] val name = name0
+AesGcmParams[JT] val additionalData: BufferSource
+AesGcmParams[JT] val iv: BufferSource
+AesGcmParams[JT] val name: String
+AesGcmParams[JT] val tagLength: Int
+AesGcmParams[SO] val additionalData = additionalData0
+AesGcmParams[SO] def apply(name: String, iv: BufferSource, additionalData: BufferSource, tagLength: Short): AesGcmParams  (@deprecated in 2.0.0)
+AesGcmParams[SO] val iv = iv0
+AesGcmParams[SO] val name = name0
+AesGcmParams[SO] val tagLength = tagLength0.toInt
+AesKeyAlgorithm[JT] val length: Int
+AesKeyAlgorithm[JT] val name: String
+AesKeyAlgorithm[SO] def apply(name: String, length: Short): AesKeyAlgorithm  (@deprecated in 2.0.0)
+AesKeyAlgorithm[SO] val length = length0.toInt
+AesKeyAlgorithm[SO] val name = name0
+AesKeyGenParams[JT] val length: Int
+AesKeyGenParams[JT] val name: String
+AesKeyGenParams[SO] def apply(name: String, length: Short): AesKeyGenParams  (@deprecated in 2.0.0)
+AesKeyGenParams[SO] val length = length0.toInt
+AesKeyGenParams[SO] val name = name0
+Algorithm[JT] val name: String
 AnalyserNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AnalyserNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AnalyserNode[JT] var channelCount: Int
@@ -1063,6 +1110,21 @@ CompositionEventInit[JT] val detail: js.UndefOr[Int]
 CompositionEventInit[JT] var locale: js.UndefOr[String]
 CompositionEventInit[JT] var scoped: js.UndefOr[Boolean]
 CompositionEventInit[JT] val view: js.UndefOr[Window]
+ConcatParams[JT] val algorithmId: BufferSource
+ConcatParams[JT] val hash: HashAlgorithmIdentifier
+ConcatParams[JT] val name: String
+ConcatParams[JT] val partyUInfo: BufferSource
+ConcatParams[JT] val partyVInfo: BufferSource
+ConcatParams[JT] val privateInfo: BufferSource
+ConcatParams[JT] val publicInfo: BufferSource
+ConcatParams[SO] val algorithmId = algorithmId0
+ConcatParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, algorithmId: BufferSource, partyUInfo: BufferSource, partyVInfo: BufferSource, publicInfo: BufferSource, privateInfo: BufferSource): ConcatParams  (@deprecated in 2.0.0)
+ConcatParams[SO] val hash = hash0
+ConcatParams[SO] val name = name0
+ConcatParams[SO] val partyUInfo = partyUInfo0
+ConcatParams[SO] val partyVInfo = partyVInfo0
+ConcatParams[SO] val privateInfo = privateInfo0
+ConcatParams[SO] val publicInfo = publicInfo0
 Console[JT] def assert(test: Boolean, message: String, optionalParams: Any*): Unit
 Console[JT] def clear(): Unit
 Console[JT] def count(label: String?): Unit
@@ -1114,6 +1176,14 @@ CreateImageBitmapOptions[JT] var premultiplyAlpha: js.UndefOr[String]
 CreateImageBitmapOptions[JT] var resizeHeight: js.UndefOr[Double]
 CreateImageBitmapOptions[JT] var resizeQuality: js.UndefOr[String]
 CreateImageBitmapOptions[JT] var resizeWidth: js.UndefOr[Double]
+Crypto[JT] def getRandomValues(array: ArrayBufferView): ArrayBufferView
+Crypto[JT] val subtle: SubtleCrypto
+CryptoKey[JC] val algorithm: KeyAlgorithm
+CryptoKey[JC] val extractable: Boolean
+CryptoKey[JC] val `type`: String
+CryptoKey[JC] val usages: js.Array[KeyUsage]
+CryptoKeyPair[JT] val privateKey: CryptoKey
+CryptoKeyPair[JT] val publicKey: CryptoKey
 CustomEvent[JC] def bubbles: Boolean
 CustomEvent[JC] def cancelBubble: Boolean
 CustomEvent[JC] def cancelable: Boolean
@@ -1346,6 +1416,32 @@ DeviceOrientationEventInit[JT] var scoped: js.UndefOr[Boolean]
 DeviceRotationRate[JT] val alpha: Double
 DeviceRotationRate[JT] val beta: Double
 DeviceRotationRate[JT] val gamma: Double
+DhImportKeyParams[JT] val generator: BigInteger
+DhImportKeyParams[JT] val name: String
+DhImportKeyParams[JT] val prime: BigInteger
+DhImportKeyParams[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhImportKeyParams  (@deprecated in 2.0.0)
+DhImportKeyParams[SO] val generator = generator0
+DhImportKeyParams[SO] val name = name0
+DhImportKeyParams[SO] val prime = prime0
+DhKeyAlgorithm[JT] val generator: BigInteger
+DhKeyAlgorithm[JT] val name: String
+DhKeyAlgorithm[JT] val prime: BigInteger
+DhKeyAlgorithm[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyAlgorithm  (@deprecated in 2.0.0)
+DhKeyAlgorithm[SO] val generator = generator0
+DhKeyAlgorithm[SO] val name = name0
+DhKeyAlgorithm[SO] val prime = prime0
+DhKeyDeriveParams[JT] val name: String
+DhKeyDeriveParams[JT] val public: CryptoKey
+DhKeyDeriveParams[SO] def apply(name: String, public: CryptoKey): DhKeyDeriveParams  (@deprecated in 2.0.0)
+DhKeyDeriveParams[SO] val name = name0
+DhKeyDeriveParams[SO] val public = public0
+DhKeyGenParams[JT] val generator: BigInteger
+DhKeyGenParams[JT] val name: String
+DhKeyGenParams[JT] val prime: BigInteger
+DhKeyGenParams[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyGenParams  (@deprecated in 2.0.0)
+DhKeyGenParams[SO] val generator = generator0
+DhKeyGenParams[SO] val name = name0
+DhKeyGenParams[SO] val prime = prime0
 Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Document[JC] def adoptNode(source: Node): Node
@@ -1577,6 +1673,31 @@ DynamicsCompressorNode[JT] val release: AudioParam
 DynamicsCompressorNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DynamicsCompressorNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DynamicsCompressorNode[JT] val threshold: AudioParam
+EcKeyAlgorithm[JT] val name: String
+EcKeyAlgorithm[JT] val namedCurve: String
+EcKeyAlgorithm[SO] def apply(name: String, namedCurve: String): EcKeyAlgorithm  (@deprecated in 2.0.0)
+EcKeyAlgorithm[SO] val name = name0
+EcKeyAlgorithm[SO] val namedCurve = namedCurve0
+EcKeyGenParams[JT] val name: String
+EcKeyGenParams[JT] val namedCurve: String
+EcKeyGenParams[SO] def apply(name: String, namedCurve: String): EcKeyGenParams  (@deprecated in 2.0.0)
+EcKeyGenParams[SO] val name = name0
+EcKeyGenParams[SO] val namedCurve = namedCurve0
+EcKeyImportParams[JT] val name: String
+EcKeyImportParams[JT] val namedCurve: String
+EcKeyImportParams[SO] def apply(name: String, namedCurve: String): EcKeyImportParams  (@deprecated in 2.0.0)
+EcKeyImportParams[SO] val name = name0
+EcKeyImportParams[SO] val namedCurve = namedCurve0
+EcdhKeyDeriveParams[JT] val name: String
+EcdhKeyDeriveParams[JT] val public: CryptoKey
+EcdhKeyDeriveParams[SO] def apply(name: String, public: CryptoKey): EcdhKeyDeriveParams  (@deprecated in 2.0.0)
+EcdhKeyDeriveParams[SO] val name = name0
+EcdhKeyDeriveParams[SO] val public = public0
+EcdsaParams[JT] val hash: HashAlgorithmIdentifier
+EcdsaParams[JT] val name: String
+EcdsaParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): EcdsaParams  (@deprecated in 2.0.0)
+EcdsaParams[SO] val hash = hash0
+EcdsaParams[SO] val name = name0
 Element[JC] var accessKey: String
 Element[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Element[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -13787,6 +13908,12 @@ HTMLVideoElement[JC] def videoHeight: Int
 HTMLVideoElement[JC] def videoWidth: Int
 HTMLVideoElement[JC] var volume: Double
 HTMLVideoElement[JC] var width: Int
+HashAlgorithm[JT] val name: String
+HashAlgorithm[SO] val `SHA-1`: HashAlgorithm
+HashAlgorithm[SO] val `SHA-256`: HashAlgorithm
+HashAlgorithm[SO] val `SHA-384`: HashAlgorithm
+HashAlgorithm[SO] val `SHA-512`: HashAlgorithm
+HashAlgorithm[SO] val name = name0
 HashChangeEvent[JT] def bubbles: Boolean
 HashChangeEvent[JT] def cancelBubble: Boolean
 HashChangeEvent[JT] def cancelable: Boolean
@@ -13819,6 +13946,36 @@ History[JC] def pushState(statedata: js.Any, title: String, url: String): Unit
 History[JC] def replaceState(statedata: js.Any, title: String): Unit
 History[JC] def replaceState(statedata: js.Any, title: String, url: String): Unit
 History[JC] def state: js.Any
+HkdfCtrParams[JT] val context: BufferSource
+HkdfCtrParams[JT] val hash: HashAlgorithmIdentifier
+HkdfCtrParams[JT] val label: BufferSource
+HkdfCtrParams[JT] val name: String
+HkdfCtrParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, label: BufferSource, context: BufferSource): HkdfCtrParams  (@deprecated in 2.0.0)
+HkdfCtrParams[SO] val context = context0
+HkdfCtrParams[SO] val hash = hash0
+HkdfCtrParams[SO] val label = label0
+HkdfCtrParams[SO] val name = name0
+HmacImportParams[JT] val hash: HashAlgorithmIdentifier
+HmacImportParams[JT] val length: Double
+HmacImportParams[JT] val name: String
+HmacImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacImportParams  (@deprecated in 2.0.0)
+HmacImportParams[SO] val hash = hash0
+HmacImportParams[SO] val length = length0.toDouble
+HmacImportParams[SO] val name = name0
+HmacKeyAlgorithm[JT] val hash: HashAlgorithmIdentifier
+HmacKeyAlgorithm[JT] val length: Double
+HmacKeyAlgorithm[JT] val name: String
+HmacKeyAlgorithm[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyAlgorithm  (@deprecated in 2.0.0)
+HmacKeyAlgorithm[SO] val hash = hash0
+HmacKeyAlgorithm[SO] val length = length0.toDouble
+HmacKeyAlgorithm[SO] val name = name0
+HmacKeyGenParams[JT] val hash: HashAlgorithmIdentifier
+HmacKeyGenParams[JT] val length: Double
+HmacKeyGenParams[JT] val name: String
+HmacKeyGenParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyGenParams  (@deprecated in 2.0.0)
+HmacKeyGenParams[SO] val hash = hash0
+HmacKeyGenParams[SO] val length = length0.toDouble
+HmacKeyGenParams[SO] val name = name0
 HttpMethod[JT]
 HttpMethod[SO] val DELETE: HttpMethod
 HttpMethod[SO] val GET: HttpMethod
@@ -14029,6 +14186,25 @@ ImageCapture[JC] val track: MediaStreamTrack
 ImageData[JC] def data: js.Array[Int]
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
+JsonWebKey[JT] var alg: js.Array[String]
+JsonWebKey[JT] var crv: String
+JsonWebKey[JT] var d: String
+JsonWebKey[JT] var dp: String
+JsonWebKey[JT] var dq: String
+JsonWebKey[JT] var e: String
+JsonWebKey[JT] var ext: Boolean
+JsonWebKey[JT] var k: String
+JsonWebKey[JT] var key_ops: js.Array[String]
+JsonWebKey[JT] var kty: String
+JsonWebKey[JT] var n: String
+JsonWebKey[JT] var oth: js.Array[String]
+JsonWebKey[JT] var p: String
+JsonWebKey[JT] var q: String
+JsonWebKey[JT] var qi: String
+JsonWebKey[JT] var use: String
+JsonWebKey[JT] var x: String
+JsonWebKey[JT] var y: String
+KeyAlgorithm[JT] val name: String
 KeyCode[SO] final val A = 65
 KeyCode[SO] final val Alt = 18
 KeyCode[SO] final val B = 66
@@ -14097,10 +14273,28 @@ KeyCode[SO] final val W = 87
 KeyCode[SO] final val X = 88
 KeyCode[SO] final val Y = 89
 KeyCode[SO] final val Z = 90
+KeyFormat[JT]
+KeyFormat[SO] val jwk: KeyFormat
+KeyFormat[SO] val pkcs8: KeyFormat
+KeyFormat[SO] val raw: KeyFormat
+KeyFormat[SO] val spki: KeyFormat
 KeyLocation[SO] final val Left = KeyboardEvent.DOM_KEY_LOCATION_LEFT
 KeyLocation[SO] final val NumPad = KeyboardEvent.DOM_KEY_LOCATION_NUMPAD
 KeyLocation[SO] final val Right = KeyboardEvent.DOM_KEY_LOCATION_RIGHT
 KeyLocation[SO] final val Standard = KeyboardEvent.DOM_KEY_LOCATION_STANDARD
+KeyType[JT]
+KeyType[SO] val `private`: KeyType
+KeyType[SO] val public: KeyType
+KeyType[SO] val secret: KeyType
+KeyUsage[JT]
+KeyUsage[SO] val decrypt: KeyUsage
+KeyUsage[SO] val deriveBits: KeyUsage
+KeyUsage[SO] val deriveKey: KeyUsage
+KeyUsage[SO] val encrypt: KeyUsage
+KeyUsage[SO] val sign: KeyUsage
+KeyUsage[SO] val unwrapKey: KeyUsage
+KeyUsage[SO] val verify: KeyUsage
+KeyUsage[SO] val wrapKey: KeyUsage
 KeyValue[SO] final val Accept = "Accept"
 KeyValue[SO] final val Again = "Again"
 KeyValue[SO] final val AllCandidates = "AllCandidates"
@@ -15147,6 +15341,15 @@ ParentNode[JT] def children: HTMLCollection
 ParentNode[JT] def firstElementChild: Element
 ParentNode[JT] def lastElementChild: Element
 ParentNode[JT] def replaceChildren(nodes: Node | String*): Unit
+Pbkdf2Params[JT] val hash: HashAlgorithmIdentifier
+Pbkdf2Params[JT] val iterations: Double
+Pbkdf2Params[JT] val name: String
+Pbkdf2Params[JT] val salt: BufferSource
+Pbkdf2Params[SO] def apply(name: String, salt: BufferSource, iterations: Long, hash: HashAlgorithmIdentifier): Pbkdf2Params  (@deprecated in 2.0.0)
+Pbkdf2Params[SO] val hash = hash0
+Pbkdf2Params[SO] val iterations = iterations0.toDouble
+Pbkdf2Params[SO] val name = name0
+Pbkdf2Params[SO] val salt = salt0
 Performance[JC] def clearMarks(markName: String?): Unit
 Performance[JC] def clearMeasures(measureName: String?): Unit
 Performance[JC] def clearResourceTimings(): Unit
@@ -15740,6 +15943,59 @@ ResponseType[SO] val default: ResponseType
 ResponseType[SO] val error: ResponseType
 ResponseType[SO] val opaque: ResponseType
 ResponseType[SO] val opaqueredirect: ResponseType
+RsaHashedImportParams[JT] val hash: HashAlgorithmIdentifier
+RsaHashedImportParams[JT] val name: String
+RsaHashedImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): RsaHashedImportParams  (@deprecated in 2.0.0)
+RsaHashedImportParams[SO] val hash = hash0
+RsaHashedImportParams[SO] val name = name0
+RsaHashedKeyAlgorithm[JT] val hash: HashAlgorithmIdentifier
+RsaHashedKeyAlgorithm[JT] val modulusLength: Double
+RsaHashedKeyAlgorithm[JT] val name: String
+RsaHashedKeyAlgorithm[JT] val publicExponent: BigInteger
+RsaHashedKeyAlgorithm[SO] def `RSA-OAEP`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
+RsaHashedKeyAlgorithm[SO] def `RSA-PSS`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
+RsaHashedKeyAlgorithm[SO] def `RSASSA-PKCS1-v1_5`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
+RsaHashedKeyAlgorithm[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
+RsaHashedKeyAlgorithm[SO] val hash = hash0
+RsaHashedKeyAlgorithm[SO] val modulusLength = modulusLength0.toDouble
+RsaHashedKeyAlgorithm[SO] val name = name0
+RsaHashedKeyAlgorithm[SO] val publicExponent = publicExponent0
+RsaHashedKeyGenParams[JT] val hash: HashAlgorithmIdentifier
+RsaHashedKeyGenParams[JT] val modulusLength: Double
+RsaHashedKeyGenParams[JT] val name: String
+RsaHashedKeyGenParams[JT] val publicExponent: BigInteger
+RsaHashedKeyGenParams[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyGenParams  (@deprecated in 2.0.0)
+RsaHashedKeyGenParams[SO] val hash = hash0
+RsaHashedKeyGenParams[SO] val modulusLength = modulusLength0.toDouble
+RsaHashedKeyGenParams[SO] val name = name0
+RsaHashedKeyGenParams[SO] val publicExponent = publicExponent0
+RsaKeyAlgorithm[JT] val modulusLength: Double
+RsaKeyAlgorithm[JT] val name: String
+RsaKeyAlgorithm[JT] val publicExponent: BigInteger
+RsaKeyAlgorithm[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyAlgorithm  (@deprecated in 2.0.0)
+RsaKeyAlgorithm[SO] val modulusLength = modulusLength0.toDouble
+RsaKeyAlgorithm[SO] val name = name0
+RsaKeyAlgorithm[SO] val publicExponent = publicExponent0
+RsaKeyGenParams[JT] val modulusLength: Double
+RsaKeyGenParams[JT] val name: String
+RsaKeyGenParams[JT] val publicExponent: BigInteger
+RsaKeyGenParams[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyGenParams  (@deprecated in 2.0.0)
+RsaKeyGenParams[SO] val modulusLength = modulusLength0.toDouble
+RsaKeyGenParams[SO] val name = name0
+RsaKeyGenParams[SO] val publicExponent = publicExponent0
+RsaOaepParams[JT] val label: BufferSource
+RsaOaepParams[JT] val name: String
+RsaOaepParams[SO] def apply(name: String, label: BufferSource): RsaOaepParams  (@deprecated in 2.0.0)
+RsaOaepParams[SO] val label = label0
+RsaOaepParams[SO] val name = name0
+RsaOtherPrimesInfo[JT] var d: String
+RsaOtherPrimesInfo[JT] var r: String
+RsaOtherPrimesInfo[JT] var t: String
+RsaPssParams[JT] val name: String
+RsaPssParams[JT] val saltLength: Double
+RsaPssParams[SO] def apply(name: String, saltLength: Long): RsaPssParams  (@deprecated in 2.0.0)
+RsaPssParams[SO] val name = name0
+RsaPssParams[SO] val saltLength = saltLength0.toDouble
 SVGAElement[JC] var accessKey: String
 SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -23902,6 +24158,19 @@ StyleSheetList[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index:
 StyleSheetList[JC] def item(index: Int): StyleSheet
 StyleSheetList[JC] def length: Int
 StyleSheetList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: StyleSheet): Unit
+SubtleCrypto[JT] def decrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
+SubtleCrypto[JT] def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, length: Double): js.Promise[js.Any]
+SubtleCrypto[JT] def deriveKey(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, derivedKeyType: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
+SubtleCrypto[JT] def digest(algorithm: HashAlgorithmIdentifier, data: BufferSource): js.Promise[js.Any]
+SubtleCrypto[JT] def encrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
+SubtleCrypto[JT] def exportKey(format: KeyFormat, key: CryptoKey): js.Promise[js.Any]
+SubtleCrypto[JT] def generateKey(algorithm: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
+SubtleCrypto[JT] def importKey(format: KeyFormat, keyData: BufferSource, algorithm: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[CryptoKey]
+SubtleCrypto[JT] def importKey(format: KeyFormat, keyData: JsonWebKey, algorithm: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[CryptoKey]
+SubtleCrypto[JT] def sign(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
+SubtleCrypto[JT] def unwrapKey(format: String, wrappedKey: BufferSource, unwrappingKey: CryptoKey, unwrapAlgorithm: AlgorithmIdentifier, unwrappedKeyAlgorithm: AlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
+SubtleCrypto[JT] def verify(algorithm: AlgorithmIdentifier, key: CryptoKey, signature: BufferSource, data: BufferSource): js.Promise[js.Any]
+SubtleCrypto[JT] def wrapKey(format: KeyFormat, key: CryptoKey, wrappingKey: CryptoKey, wrapAlgorithm: AlgorithmIdentifier): js.Promise[js.Any]
 Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Text[JC] def appendChild(newChild: Node): Node
@@ -25127,281 +25396,88 @@ XPathResult[JO] val ORDERED_NODE_SNAPSHOT_TYPE: Int
 XPathResult[JO] val STRING_TYPE: Int
 XPathResult[JO] val UNORDERED_NODE_ITERATOR_TYPE: Int
 XPathResult[JO] val UNORDERED_NODE_SNAPSHOT_TYPE: Int
-crypto/AesCbcParams[JT] val iv: BufferSource
-crypto/AesCbcParams[JT] val name: String
-crypto/AesCbcParams[SO] def apply(name: String, iv: BufferSource): AesCbcParams  (@deprecated in 2.0.0)
-crypto/AesCbcParams[SO] val iv = iv0
-crypto/AesCbcParams[SO] val name = name0
-crypto/AesCfbParams[JT] val iv: BufferSource
-crypto/AesCfbParams[JT] val name: String
-crypto/AesCfbParams[SO] def apply(name: String, iv: BufferSource): AesCfbParams  (@deprecated in 2.0.0)
-crypto/AesCfbParams[SO] val iv = iv0
-crypto/AesCfbParams[SO] val name = name0
-crypto/AesCmacParams[JT] val length: Int
-crypto/AesCmacParams[JT] val name: String
-crypto/AesCmacParams[SO] def apply(name: String, length: Int): AesCmacParams  (@deprecated in 2.0.0)
-crypto/AesCmacParams[SO] val length = length0
-crypto/AesCmacParams[SO] val name = name0
-crypto/AesCtrParams[JT] val counter: BufferSource
-crypto/AesCtrParams[JT] val length: Int
-crypto/AesCtrParams[JT] val name: String
-crypto/AesCtrParams[SO] def apply(name: String, counter: BufferSource, length: Short): AesCtrParams  (@deprecated in 2.0.0)
-crypto/AesCtrParams[SO] val counter = counter0
-crypto/AesCtrParams[SO] val length = length0.toInt
-crypto/AesCtrParams[SO] val name = name0
-crypto/AesDerivedKeyParams[JT] val length: Int
-crypto/AesDerivedKeyParams[JT] val name: String
-crypto/AesDerivedKeyParams[SO] def apply(name: String, length: Short): AesDerivedKeyParams  (@deprecated in 2.0.0)
-crypto/AesDerivedKeyParams[SO] val length = length0.toInt
-crypto/AesDerivedKeyParams[SO] val name = name0
-crypto/AesGcmParams[JT] val additionalData: BufferSource
-crypto/AesGcmParams[JT] val iv: BufferSource
-crypto/AesGcmParams[JT] val name: String
-crypto/AesGcmParams[JT] val tagLength: Int
-crypto/AesGcmParams[SO] val additionalData = additionalData0
-crypto/AesGcmParams[SO] def apply(name: String, iv: BufferSource, additionalData: BufferSource, tagLength: Short): AesGcmParams  (@deprecated in 2.0.0)
-crypto/AesGcmParams[SO] val iv = iv0
-crypto/AesGcmParams[SO] val name = name0
-crypto/AesGcmParams[SO] val tagLength = tagLength0.toInt
-crypto/AesKeyAlgorithm[JT] val length: Int
-crypto/AesKeyAlgorithm[JT] val name: String
-crypto/AesKeyAlgorithm[SO] def apply(name: String, length: Short): AesKeyAlgorithm  (@deprecated in 2.0.0)
-crypto/AesKeyAlgorithm[SO] val length = length0.toInt
-crypto/AesKeyAlgorithm[SO] val name = name0
-crypto/AesKeyGenParams[JT] val length: Int
-crypto/AesKeyGenParams[JT] val name: String
-crypto/AesKeyGenParams[SO] def apply(name: String, length: Short): AesKeyGenParams  (@deprecated in 2.0.0)
-crypto/AesKeyGenParams[SO] val length = length0.toInt
-crypto/AesKeyGenParams[SO] val name = name0
-crypto/Algorithm[JT] val name: String
-crypto/ConcatParams[JT] val algorithmId: BufferSource
-crypto/ConcatParams[JT] val hash: HashAlgorithmIdentifier
-crypto/ConcatParams[JT] val name: String
-crypto/ConcatParams[JT] val partyUInfo: BufferSource
-crypto/ConcatParams[JT] val partyVInfo: BufferSource
-crypto/ConcatParams[JT] val privateInfo: BufferSource
-crypto/ConcatParams[JT] val publicInfo: BufferSource
-crypto/ConcatParams[SO] val algorithmId = algorithmId0
-crypto/ConcatParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, algorithmId: BufferSource, partyUInfo: BufferSource, partyVInfo: BufferSource, publicInfo: BufferSource, privateInfo: BufferSource): ConcatParams  (@deprecated in 2.0.0)
-crypto/ConcatParams[SO] val hash = hash0
-crypto/ConcatParams[SO] val name = name0
-crypto/ConcatParams[SO] val partyUInfo = partyUInfo0
-crypto/ConcatParams[SO] val partyVInfo = partyVInfo0
-crypto/ConcatParams[SO] val privateInfo = privateInfo0
-crypto/ConcatParams[SO] val publicInfo = publicInfo0
-crypto/Crypto[JT] def getRandomValues(array: ArrayBufferView): ArrayBufferView
-crypto/Crypto[JT] val subtle: SubtleCrypto
-crypto/CryptoKey[JC] val algorithm: KeyAlgorithm
-crypto/CryptoKey[JC] val extractable: Boolean
-crypto/CryptoKey[JC] val `type`: String
-crypto/CryptoKey[JC] val usages: js.Array[KeyUsage]
-crypto/CryptoKeyPair[JT] val privateKey: CryptoKey
-crypto/CryptoKeyPair[JT] val publicKey: CryptoKey
-crypto/DhImportKeyParams[JT] val generator: BigInteger
-crypto/DhImportKeyParams[JT] val name: String
-crypto/DhImportKeyParams[JT] val prime: BigInteger
-crypto/DhImportKeyParams[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhImportKeyParams  (@deprecated in 2.0.0)
-crypto/DhImportKeyParams[SO] val generator = generator0
-crypto/DhImportKeyParams[SO] val name = name0
-crypto/DhImportKeyParams[SO] val prime = prime0
-crypto/DhKeyAlgorithm[JT] val generator: BigInteger
-crypto/DhKeyAlgorithm[JT] val name: String
-crypto/DhKeyAlgorithm[JT] val prime: BigInteger
-crypto/DhKeyAlgorithm[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyAlgorithm  (@deprecated in 2.0.0)
-crypto/DhKeyAlgorithm[SO] val generator = generator0
-crypto/DhKeyAlgorithm[SO] val name = name0
-crypto/DhKeyAlgorithm[SO] val prime = prime0
-crypto/DhKeyDeriveParams[JT] val name: String
-crypto/DhKeyDeriveParams[JT] val public: CryptoKey
-crypto/DhKeyDeriveParams[SO] def apply(name: String, public: CryptoKey): DhKeyDeriveParams  (@deprecated in 2.0.0)
-crypto/DhKeyDeriveParams[SO] val name = name0
-crypto/DhKeyDeriveParams[SO] val public = public0
-crypto/DhKeyGenParams[JT] val generator: BigInteger
-crypto/DhKeyGenParams[JT] val name: String
-crypto/DhKeyGenParams[JT] val prime: BigInteger
-crypto/DhKeyGenParams[SO] def apply(name: String, prime: BigInteger, generator: BigInteger): DhKeyGenParams  (@deprecated in 2.0.0)
-crypto/DhKeyGenParams[SO] val generator = generator0
-crypto/DhKeyGenParams[SO] val name = name0
-crypto/DhKeyGenParams[SO] val prime = prime0
-crypto/EcKeyAlgorithm[JT] val name: String
-crypto/EcKeyAlgorithm[JT] val namedCurve: String
-crypto/EcKeyAlgorithm[SO] def apply(name: String, namedCurve: String): EcKeyAlgorithm  (@deprecated in 2.0.0)
-crypto/EcKeyAlgorithm[SO] val name = name0
-crypto/EcKeyAlgorithm[SO] val namedCurve = namedCurve0
-crypto/EcKeyGenParams[JT] val name: String
-crypto/EcKeyGenParams[JT] val namedCurve: String
-crypto/EcKeyGenParams[SO] def apply(name: String, namedCurve: String): EcKeyGenParams  (@deprecated in 2.0.0)
-crypto/EcKeyGenParams[SO] val name = name0
-crypto/EcKeyGenParams[SO] val namedCurve = namedCurve0
-crypto/EcKeyImportParams[JT] val name: String
-crypto/EcKeyImportParams[JT] val namedCurve: String
-crypto/EcKeyImportParams[SO] def apply(name: String, namedCurve: String): EcKeyImportParams  (@deprecated in 2.0.0)
-crypto/EcKeyImportParams[SO] val name = name0
-crypto/EcKeyImportParams[SO] val namedCurve = namedCurve0
-crypto/EcdhKeyDeriveParams[JT] val name: String
-crypto/EcdhKeyDeriveParams[JT] val public: CryptoKey
-crypto/EcdhKeyDeriveParams[SO] def apply(name: String, public: CryptoKey): EcdhKeyDeriveParams  (@deprecated in 2.0.0)
-crypto/EcdhKeyDeriveParams[SO] val name = name0
-crypto/EcdhKeyDeriveParams[SO] val public = public0
-crypto/EcdsaParams[JT] val hash: HashAlgorithmIdentifier
-crypto/EcdsaParams[JT] val name: String
-crypto/EcdsaParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): EcdsaParams  (@deprecated in 2.0.0)
-crypto/EcdsaParams[SO] val hash = hash0
-crypto/EcdsaParams[SO] val name = name0
 crypto/GlobalCrypto[JO] val crypto: Crypto  (@deprecated in 2.0.0)
-crypto/HashAlgorithm[JT] val name: String
-crypto/HashAlgorithm[SO] val `SHA-1`: HashAlgorithm
-crypto/HashAlgorithm[SO] val `SHA-256`: HashAlgorithm
-crypto/HashAlgorithm[SO] val `SHA-384`: HashAlgorithm
-crypto/HashAlgorithm[SO] val `SHA-512`: HashAlgorithm
-crypto/HashAlgorithm[SO] val name = name0
-crypto/HkdfCtrParams[JT] val context: BufferSource
-crypto/HkdfCtrParams[JT] val hash: HashAlgorithmIdentifier
-crypto/HkdfCtrParams[JT] val label: BufferSource
-crypto/HkdfCtrParams[JT] val name: String
-crypto/HkdfCtrParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, label: BufferSource, context: BufferSource): HkdfCtrParams  (@deprecated in 2.0.0)
-crypto/HkdfCtrParams[SO] val context = context0
-crypto/HkdfCtrParams[SO] val hash = hash0
-crypto/HkdfCtrParams[SO] val label = label0
-crypto/HkdfCtrParams[SO] val name = name0
-crypto/HmacImportParams[JT] val hash: HashAlgorithmIdentifier
-crypto/HmacImportParams[JT] val length: Double
-crypto/HmacImportParams[JT] val name: String
-crypto/HmacImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacImportParams  (@deprecated in 2.0.0)
-crypto/HmacImportParams[SO] val hash = hash0
-crypto/HmacImportParams[SO] val length = length0.toDouble
-crypto/HmacImportParams[SO] val name = name0
-crypto/HmacKeyAlgorithm[JT] val hash: HashAlgorithmIdentifier
-crypto/HmacKeyAlgorithm[JT] val length: Double
-crypto/HmacKeyAlgorithm[JT] val name: String
-crypto/HmacKeyAlgorithm[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyAlgorithm  (@deprecated in 2.0.0)
-crypto/HmacKeyAlgorithm[SO] val hash = hash0
-crypto/HmacKeyAlgorithm[SO] val length = length0.toDouble
-crypto/HmacKeyAlgorithm[SO] val name = name0
-crypto/HmacKeyGenParams[JT] val hash: HashAlgorithmIdentifier
-crypto/HmacKeyGenParams[JT] val length: Double
-crypto/HmacKeyGenParams[JT] val name: String
-crypto/HmacKeyGenParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier, length: Long): HmacKeyGenParams  (@deprecated in 2.0.0)
-crypto/HmacKeyGenParams[SO] val hash = hash0
-crypto/HmacKeyGenParams[SO] val length = length0.toDouble
-crypto/HmacKeyGenParams[SO] val name = name0
-crypto/JsonWebKey[JT] var alg: js.Array[String]
-crypto/JsonWebKey[JT] var crv: String
-crypto/JsonWebKey[JT] var d: String
-crypto/JsonWebKey[JT] var dp: String
-crypto/JsonWebKey[JT] var dq: String
-crypto/JsonWebKey[JT] var e: String
-crypto/JsonWebKey[JT] var ext: Boolean
-crypto/JsonWebKey[JT] var k: String
-crypto/JsonWebKey[JT] var key_ops: js.Array[String]
-crypto/JsonWebKey[JT] var kty: String
-crypto/JsonWebKey[JT] var n: String
-crypto/JsonWebKey[JT] var oth: js.Array[String]
-crypto/JsonWebKey[JT] var p: String
-crypto/JsonWebKey[JT] var q: String
-crypto/JsonWebKey[JT] var qi: String
-crypto/JsonWebKey[JT] var use: String
-crypto/JsonWebKey[JT] var x: String
-crypto/JsonWebKey[JT] var y: String
-crypto/KeyAlgorithm[JT] val name: String
-crypto/KeyFormat[JT]
-crypto/KeyFormat[SO] val jwk: KeyFormat
-crypto/KeyFormat[SO] val pkcs8: KeyFormat
-crypto/KeyFormat[SO] val raw: KeyFormat
-crypto/KeyFormat[SO] val spki: KeyFormat
-crypto/KeyType[JT]
-crypto/KeyType[SO] val `private`: KeyType
-crypto/KeyType[SO] val public: KeyType
-crypto/KeyType[SO] val secret: KeyType
-crypto/KeyUsage[JT]
-crypto/KeyUsage[SO] val decrypt: KeyUsage
-crypto/KeyUsage[SO] val deriveBits: KeyUsage
-crypto/KeyUsage[SO] val deriveKey: KeyUsage
-crypto/KeyUsage[SO] val encrypt: KeyUsage
-crypto/KeyUsage[SO] val sign: KeyUsage
-crypto/KeyUsage[SO] val unwrapKey: KeyUsage
-crypto/KeyUsage[SO] val verify: KeyUsage
-crypto/KeyUsage[SO] val wrapKey: KeyUsage
-crypto/Pbkdf2Params[JT] val hash: HashAlgorithmIdentifier
-crypto/Pbkdf2Params[JT] val iterations: Double
-crypto/Pbkdf2Params[JT] val name: String
-crypto/Pbkdf2Params[JT] val salt: BufferSource
-crypto/Pbkdf2Params[SO] def apply(name: String, salt: BufferSource, iterations: Long, hash: HashAlgorithmIdentifier): Pbkdf2Params  (@deprecated in 2.0.0)
-crypto/Pbkdf2Params[SO] val hash = hash0
-crypto/Pbkdf2Params[SO] val iterations = iterations0.toDouble
-crypto/Pbkdf2Params[SO] val name = name0
-crypto/Pbkdf2Params[SO] val salt = salt0
-crypto/RsaHashedImportParams[JT] val hash: HashAlgorithmIdentifier
-crypto/RsaHashedImportParams[JT] val name: String
-crypto/RsaHashedImportParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): RsaHashedImportParams  (@deprecated in 2.0.0)
-crypto/RsaHashedImportParams[SO] val hash = hash0
-crypto/RsaHashedImportParams[SO] val name = name0
-crypto/RsaHashedKeyAlgorithm[JT] val hash: HashAlgorithmIdentifier
-crypto/RsaHashedKeyAlgorithm[JT] val modulusLength: Double
-crypto/RsaHashedKeyAlgorithm[JT] val name: String
-crypto/RsaHashedKeyAlgorithm[JT] val publicExponent: BigInteger
-crypto/RsaHashedKeyAlgorithm[SO] def `RSA-OAEP`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
-crypto/RsaHashedKeyAlgorithm[SO] def `RSA-PSS`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
-crypto/RsaHashedKeyAlgorithm[SO] def `RSASSA-PKCS1-v1_5`(modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
-crypto/RsaHashedKeyAlgorithm[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
-crypto/RsaHashedKeyAlgorithm[SO] val hash = hash0
-crypto/RsaHashedKeyAlgorithm[SO] val modulusLength = modulusLength0.toDouble
-crypto/RsaHashedKeyAlgorithm[SO] val name = name0
-crypto/RsaHashedKeyAlgorithm[SO] val publicExponent = publicExponent0
-crypto/RsaHashedKeyGenParams[JT] val hash: HashAlgorithmIdentifier
-crypto/RsaHashedKeyGenParams[JT] val modulusLength: Double
-crypto/RsaHashedKeyGenParams[JT] val name: String
-crypto/RsaHashedKeyGenParams[JT] val publicExponent: BigInteger
-crypto/RsaHashedKeyGenParams[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger, hash: HashAlgorithmIdentifier): RsaHashedKeyGenParams  (@deprecated in 2.0.0)
-crypto/RsaHashedKeyGenParams[SO] val hash = hash0
-crypto/RsaHashedKeyGenParams[SO] val modulusLength = modulusLength0.toDouble
-crypto/RsaHashedKeyGenParams[SO] val name = name0
-crypto/RsaHashedKeyGenParams[SO] val publicExponent = publicExponent0
-crypto/RsaKeyAlgorithm[JT] val modulusLength: Double
-crypto/RsaKeyAlgorithm[JT] val name: String
-crypto/RsaKeyAlgorithm[JT] val publicExponent: BigInteger
-crypto/RsaKeyAlgorithm[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyAlgorithm  (@deprecated in 2.0.0)
-crypto/RsaKeyAlgorithm[SO] val modulusLength = modulusLength0.toDouble
-crypto/RsaKeyAlgorithm[SO] val name = name0
-crypto/RsaKeyAlgorithm[SO] val publicExponent = publicExponent0
-crypto/RsaKeyGenParams[JT] val modulusLength: Double
-crypto/RsaKeyGenParams[JT] val name: String
-crypto/RsaKeyGenParams[JT] val publicExponent: BigInteger
-crypto/RsaKeyGenParams[SO] def apply(name: String, modulusLength: Long, publicExponent: BigInteger): RsaKeyGenParams  (@deprecated in 2.0.0)
-crypto/RsaKeyGenParams[SO] val modulusLength = modulusLength0.toDouble
-crypto/RsaKeyGenParams[SO] val name = name0
-crypto/RsaKeyGenParams[SO] val publicExponent = publicExponent0
-crypto/RsaOaepParams[JT] val label: BufferSource
-crypto/RsaOaepParams[JT] val name: String
-crypto/RsaOaepParams[SO] def apply(name: String, label: BufferSource): RsaOaepParams  (@deprecated in 2.0.0)
-crypto/RsaOaepParams[SO] val label = label0
-crypto/RsaOaepParams[SO] val name = name0
-crypto/RsaOtherPrimesInfo[JT] var d: String
-crypto/RsaOtherPrimesInfo[JT] var r: String
-crypto/RsaOtherPrimesInfo[JT] var t: String
-crypto/RsaPssParams[JT] val name: String
-crypto/RsaPssParams[JT] val saltLength: Double
-crypto/RsaPssParams[SO] def apply(name: String, saltLength: Long): RsaPssParams  (@deprecated in 2.0.0)
-crypto/RsaPssParams[SO] val name = name0
-crypto/RsaPssParams[SO] val saltLength = saltLength0.toDouble
-crypto/SubtleCrypto[JT] def decrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, length: Double): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def deriveKey(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, derivedKeyType: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def digest(algorithm: HashAlgorithmIdentifier, data: BufferSource): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def encrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def exportKey(format: KeyFormat, key: CryptoKey): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def generateKey(algorithm: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def importKey(format: KeyFormat, keyData: BufferSource, algorithm: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[CryptoKey]
-crypto/SubtleCrypto[JT] def importKey(format: KeyFormat, keyData: JsonWebKey, algorithm: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[CryptoKey]
-crypto/SubtleCrypto[JT] def sign(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def unwrapKey(format: String, wrappedKey: BufferSource, unwrappingKey: CryptoKey, unwrapAlgorithm: AlgorithmIdentifier, unwrappedKeyAlgorithm: AlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def verify(algorithm: AlgorithmIdentifier, key: CryptoKey, signature: BufferSource, data: BufferSource): js.Promise[js.Any]
-crypto/SubtleCrypto[JT] def wrapKey(format: KeyFormat, key: CryptoKey, wrappingKey: CryptoKey, wrapAlgorithm: AlgorithmIdentifier): js.Promise[js.Any]
-crypto/package[SO] type AlgorithmIdentifier = Algorithm | String
-crypto/package[SO] type BigInteger = Uint8Array
-crypto/package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
-crypto/package[SO] type KeyAlgorithmIdentifier = KeyAlgorithm | String
-crypto/package[SO] @js.native @JSGlobal("crypto") val crypto: Crypto
+crypto/package[SO] type AesCbcParams = dom.AesCbcParams  (@deprecated in 2.0.0)
+crypto/package[SO] type AesCfbParams = dom.AesCfbParams  (@deprecated in 2.0.0)
+crypto/package[SO] type AesCmacParams = dom.AesCmacParams  (@deprecated in 2.0.0)
+crypto/package[SO] type AesCtrParams = dom.AesCtrParams  (@deprecated in 2.0.0)
+crypto/package[SO] type AesDerivedKeyParams = dom.AesDerivedKeyParams  (@deprecated in 2.0.0)
+crypto/package[SO] type AesGcmParams = dom.AesGcmParams  (@deprecated in 2.0.0)
+crypto/package[SO] type AesKeyAlgorithm = dom.AesKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/package[SO] type AesKeyGenParams = dom.AesKeyGenParams  (@deprecated in 2.0.0)
+crypto/package[SO] type Algorithm = dom.Algorithm  (@deprecated in 2.0.0)
+crypto/package[SO] type AlgorithmIdentifier = dom.AlgorithmIdentifier  (@deprecated in 2.0.0)
+crypto/package[SO] type BigInteger = dom.BigInteger  (@deprecated in 2.0.0)
+crypto/package[SO] type ConcatParams = dom.ConcatParams  (@deprecated in 2.0.0)
+crypto/package[SO] type Crypto = dom.Crypto  (@deprecated in 2.0.0)
+crypto/package[SO] type CryptoKey = dom.CryptoKey  (@deprecated in 2.0.0)
+crypto/package[SO] type CryptoKeyPair = dom.CryptoKeyPair  (@deprecated in 2.0.0)
+crypto/package[SO] type DhImportKeyParams = dom.DhImportKeyParams  (@deprecated in 2.0.0)
+crypto/package[SO] type DhKeyAlgorithm = dom.DhKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/package[SO] type DhKeyDeriveParams = dom.DhKeyDeriveParams  (@deprecated in 2.0.0)
+crypto/package[SO] type DhKeyGenParams = dom.DhKeyGenParams  (@deprecated in 2.0.0)
+crypto/package[SO] type EcKeyAlgorithm = dom.EcKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/package[SO] type EcKeyGenParams = dom.EcKeyGenParams  (@deprecated in 2.0.0)
+crypto/package[SO] type EcKeyImportParams = dom.EcKeyImportParams  (@deprecated in 2.0.0)
+crypto/package[SO] type EcdhKeyDeriveParams = dom.EcdhKeyDeriveParams  (@deprecated in 2.0.0)
+crypto/package[SO] type EcdsaParams = dom.EcdsaParams  (@deprecated in 2.0.0)
+crypto/package[SO] type HashAlgorithm = dom.HashAlgorithm  (@deprecated in 2.0.0)
+crypto/package[SO] type HashAlgorithmIdentifier = dom.HashAlgorithmIdentifier  (@deprecated in 2.0.0)
+crypto/package[SO] type HkdfCtrParams = dom.HkdfCtrParams  (@deprecated in 2.0.0)
+crypto/package[SO] type HmacImportParams = dom.HmacImportParams  (@deprecated in 2.0.0)
+crypto/package[SO] type HmacKeyAlgorithm = dom.HmacKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/package[SO] type HmacKeyGenParams = dom.HmacKeyGenParams  (@deprecated in 2.0.0)
+crypto/package[SO] type JsonWebKey = dom.JsonWebKey  (@deprecated in 2.0.0)
+crypto/package[SO] type KeyAlgorithm = dom.KeyAlgorithm  (@deprecated in 2.0.0)
+crypto/package[SO] type KeyAlgorithmIdentifier = dom.KeyAlgorithmIdentifier  (@deprecated in 2.0.0)
+crypto/package[SO] type KeyFormat = dom.KeyFormat  (@deprecated in 2.0.0)
+crypto/package[SO] type KeyType = dom.KeyType  (@deprecated in 2.0.0)
+crypto/package[SO] type KeyUsage = dom.KeyUsage  (@deprecated in 2.0.0)
+crypto/package[SO] type Pbkdf2Params = dom.Pbkdf2Params  (@deprecated in 2.0.0)
+crypto/package[SO] type RsaHashedImportParams = dom.RsaHashedImportParams  (@deprecated in 2.0.0)
+crypto/package[SO] type RsaHashedKeyAlgorithm = dom.RsaHashedKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/package[SO] type RsaHashedKeyGenParams = dom.RsaHashedKeyGenParams  (@deprecated in 2.0.0)
+crypto/package[SO] type RsaKeyAlgorithm = dom.RsaKeyAlgorithm  (@deprecated in 2.0.0)
+crypto/package[SO] type RsaKeyGenParams = dom.RsaKeyGenParams  (@deprecated in 2.0.0)
+crypto/package[SO] type RsaOaepParams = dom.RsaOaepParams  (@deprecated in 2.0.0)
+crypto/package[SO] type RsaOtherPrimesInfo = dom.RsaOtherPrimesInfo  (@deprecated in 2.0.0)
+crypto/package[SO] type RsaPssParams = dom.RsaPssParams  (@deprecated in 2.0.0)
+crypto/package[SO] type SubtleCrypto = dom.SubtleCrypto  (@deprecated in 2.0.0)
+crypto/package[SO] @deprecated("use dom.AesCbcParams instead", "2.0.0") val AesCbcParams = dom.AesCbcParams
+crypto/package[SO] @deprecated("use dom.AesCfbParams instead", "2.0.0") val AesCfbParams = dom.AesCfbParams
+crypto/package[SO] @deprecated("use dom.AesCmacParams instead", "2.0.0") val AesCmacParams = dom.AesCmacParams
+crypto/package[SO] @deprecated("use dom.AesCtrParams instead", "2.0.0") val AesCtrParams = dom.AesCtrParams
+crypto/package[SO] @deprecated("use dom.AesDerivedKeyParams instead", "2.0.0") val AesDerivedKeyParams = dom.AesDerivedKeyParams
+crypto/package[SO] @deprecated("use dom.AesGcmParams instead", "2.0.0") val AesGcmParams = dom.AesGcmParams
+crypto/package[SO] @deprecated("use dom.AesKeyAlgorithm instead", "2.0.0") val AesKeyAlgorithm = dom.AesKeyAlgorithm
+crypto/package[SO] @deprecated("use dom.AesKeyGenParams instead", "2.0.0") val AesKeyGenParams = dom.AesKeyGenParams
+crypto/package[SO] @deprecated("use dom.ConcatParams instead", "2.0.0") val ConcatParams = dom.ConcatParams
+crypto/package[SO] @deprecated("use dom.DhImportKeyParams instead", "2.0.0") val DhImportKeyParams = dom.DhImportKeyParams
+crypto/package[SO] @deprecated("use dom.DhKeyAlgorithm instead", "2.0.0") val DhKeyAlgorithm = dom.DhKeyAlgorithm
+crypto/package[SO] @deprecated("use dom.DhKeyDeriveParams instead", "2.0.0") val DhKeyDeriveParams = dom.DhKeyDeriveParams
+crypto/package[SO] @deprecated("use dom.DhKeyGenParams instead", "2.0.0") val DhKeyGenParams = dom.DhKeyGenParams
+crypto/package[SO] @deprecated("use dom.EcKeyAlgorithm instead", "2.0.0") val EcKeyAlgorithm = dom.EcKeyAlgorithm
+crypto/package[SO] @deprecated("use dom.EcKeyGenParams instead", "2.0.0") val EcKeyGenParams = dom.EcKeyGenParams
+crypto/package[SO] @deprecated("use dom.EcKeyImportParams instead", "2.0.0") val EcKeyImportParams = dom.EcKeyImportParams
+crypto/package[SO] @deprecated("use dom.EcdhKeyDeriveParams instead", "2.0.0") val EcdhKeyDeriveParams = dom.EcdhKeyDeriveParams
+crypto/package[SO] @deprecated("use dom.EcdsaParams instead", "2.0.0") val EcdsaParams = dom.EcdsaParams
+crypto/package[SO] @deprecated("use dom.HashAlgorithm instead", "2.0.0") val HashAlgorithm = dom.HashAlgorithm
+crypto/package[SO] @deprecated("use dom.HkdfCtrParams instead", "2.0.0") val HkdfCtrParams = dom.HkdfCtrParams
+crypto/package[SO] @deprecated("use dom.HmacImportParams instead", "2.0.0") val HmacImportParams = dom.HmacImportParams
+crypto/package[SO] @deprecated("use dom.HmacKeyAlgorithm instead", "2.0.0") val HmacKeyAlgorithm = dom.HmacKeyAlgorithm
+crypto/package[SO] @deprecated("use dom.HmacKeyGenParams instead", "2.0.0") val HmacKeyGenParams = dom.HmacKeyGenParams
+crypto/package[SO] @deprecated("use dom.KeyFormat instead", "2.0.0") val KeyFormat = dom.KeyFormat
+crypto/package[SO] @deprecated("use dom.KeyType instead", "2.0.0") val KeyType = dom.KeyType
+crypto/package[SO] @deprecated("use dom.KeyUsage instead", "2.0.0") val KeyUsage = dom.KeyUsage
+crypto/package[SO] @deprecated("use dom.Pbkdf2Params instead", "2.0.0") val Pbkdf2Params = dom.Pbkdf2Params
+crypto/package[SO] @deprecated("use dom.RsaHashedImportParams instead", "2.0.0") val RsaHashedImportParams = dom.RsaHashedImportParams
+crypto/package[SO] @deprecated("use dom.RsaHashedKeyAlgorithm instead", "2.0.0") val RsaHashedKeyAlgorithm = dom.RsaHashedKeyAlgorithm
+crypto/package[SO] @deprecated("use dom.RsaHashedKeyGenParams instead", "2.0.0") val RsaHashedKeyGenParams = dom.RsaHashedKeyGenParams
+crypto/package[SO] @deprecated("use dom.RsaKeyAlgorithm instead", "2.0.0") val RsaKeyAlgorithm = dom.RsaKeyAlgorithm
+crypto/package[SO] @deprecated("use dom.RsaKeyGenParams instead", "2.0.0") val RsaKeyGenParams = dom.RsaKeyGenParams
+crypto/package[SO] @deprecated("use dom.RsaOaepParams instead", "2.0.0") val RsaOaepParams = dom.RsaOaepParams
+crypto/package[SO] @deprecated("use dom.RsaPssParams instead", "2.0.0") val RsaPssParams = dom.RsaPssParams
+crypto/package[SO] def crypto: Crypto  (@deprecated in 2.0.0)
 experimental/Fullscreen[SO]  (@deprecated in 2.0.0)
 experimental/PointerLock[SO] type PointerLockDocument = dom.Document  (@deprecated in 2.0.0)
 experimental/PointerLock[SO] type PointerLockElement = dom.Element  (@deprecated in 2.0.0)
@@ -25922,15 +25998,19 @@ idb[SO] type VersionChangeEvent = IDBVersionChangeEvent
 idb[SO] def CursorDirection = IDBCursorDirection
 idb[SO] def KeyRange = IDBKeyRange
 idb[SO] def TransactionMode = IDBTransactionMode
+package[SO] type AlgorithmIdentifier = Algorithm | String
+package[SO] type BigInteger = js.typedarray.Uint8Array
 package[SO] type BodyInit = Blob | BufferSource | FormData | String
 package[SO] type BufferSource = ArrayBufferView | ArrayBuffer
 package[SO] type ByteString = String
 package[SO] type ClientRect = DOMRect  (@deprecated in 2.0.0)
 package[SO] type ClientRectList = DOMRectList  (@deprecated in 2.0.0)
+package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
 package[SO] type HeadersInit = Headers | Sequence[Sequence[ByteString]] | OpenEndedDictionary[ByteString]
 package[SO] type IDBKey = Any
 package[SO] type IDBKeyPath = Any
 package[SO] type IDBValue = Any
+package[SO] type KeyAlgorithmIdentifier = KeyAlgorithm | String
 package[SO] type NodeListOf[+T <: Node] = NodeList[T]  (@deprecated in 2.0.0)
 package[SO] type OpenEndedDictionary[T] = js.Dictionary[T]
 package[SO] type RequestInfo = String | Request
@@ -25940,6 +26020,7 @@ package[SO] @js.native @JSGlobal("console") val console: Console
 package[SO] lazy val css: DeprecatedCSSAliases.type  (@deprecated in 2.0.0)
 package[SO] @js.native @JSGlobal("document") val document: html.Document
 package[SO] @js.native @JSGlobal("fetch") def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+package[SO] @js.native @JSGlobal("crypto") def webCrypto: Crypto
 package[SO] @js.native @JSGlobal("window") val window: Window
 raw[SO] type AbstractWorker = dom.AbstractWorker  (@deprecated in 2.0.0)
 raw[SO] type AnalyserNode = dom.AnalyserNode  (@deprecated in 2.0.0)

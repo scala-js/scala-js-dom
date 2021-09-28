@@ -31,7 +31,7 @@ trait SharedTests {
 
   // https://github.com/scala-js/scala-js-dom/pull/432 - Avoid forcing evaluation of crypto
   @Test final def CryptoNonStrictTest(): Unit = {
-    val _ = crypto.HashAlgorithm
+    val _ = HashAlgorithm
   }
 
   @Test final def WindowIdbTest(): AsyncResult =

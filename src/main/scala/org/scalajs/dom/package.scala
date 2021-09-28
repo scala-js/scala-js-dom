@@ -63,6 +63,11 @@ package object dom {
   @deprecated("directly use the dom.CSS* types and values instead", "2.0.0")
   lazy val css: DeprecatedCSSAliases.type = DeprecatedCSSAliases
 
+  @js.native
+  @JSGlobal("crypto")
+  // `webCrypto` instead of just `crypto` to avoid conflict with deprecated package :(
+  def webCrypto: Crypto = js.native
+
   @deprecated("use DOMRect instead", "2.0.0")
   type ClientRect = DOMRect
 
@@ -83,4 +88,24 @@ package object dom {
   type IDBKeyPath = Any
 
   type IDBValue = Any
+
+  type BigInteger = js.typedarray.Uint8Array
+
+  /** According to [[http://www.w3.org/TR/WebCryptoAPI/#algorithm-dictionary ¶11 Algorithm Identifier]] of the
+    * WebCryptoAPI an AlgorithmIdentifier is an `object or DOMString`. We make this more precise here and specify an
+    * Algorithm. note: it may be that we can do only with KeyAlgorithmIdentifier and HashAlgorithmIdentifier
+    */
+  type AlgorithmIdentifier = Algorithm | String
+
+  /** According to [[http://www.w3.org/TR/WebCryptoAPI/#algorithm-dictionary ¶11 Algorithm Identifier]] of the
+    * WebCryptoAPI an AlgorithmIdentifier is an `object or DOMString`. We make this more precise here and distinguish
+    * the non overlapping classes of Key and Hash Algorithms.
+    */
+  type KeyAlgorithmIdentifier = KeyAlgorithm | String
+
+  /** According to [[http://www.w3.org/TR/WebCryptoAPI/#algorithm-dictionary ¶11 Algorithm Identifier]] a
+    * HashAlgorithmIdentifier is an AlgorithmIdentifier. Here we distinguish between Hash and Key Algorithm Identifiers.
+    * At the JS layer these have the same structure.
+    */
+  type HashAlgorithmIdentifier = HashAlgorithm | String
 }
