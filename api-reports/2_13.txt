@@ -24940,6 +24940,8 @@ WebGLRenderingContext[SO] final val VERTEX_ATTRIB_ARRAY_TYPE = 0x8625
 WebGLRenderingContext[SO] final val VERTEX_SHADER = 0x8B31
 WebGLRenderingContext[SO] final val VIEWPORT = 0x0BA2
 WebGLRenderingContext[SO] final val ZERO = 0
+WebGLRenderingContext[SO] def getExtension[T](id: webgl.WebGLExtensionIdentifier[T]): js.UndefOr[T]
+WebGLRenderingContext.WebGLRenderingContextOps[SC] def getExtension[T](id: webgl.WebGLExtensionIdentifier[T]): js.UndefOr[T]
 WebGLShader[JC]
 WebGLShaderPrecisionFormat[JC] val precision: Int
 WebGLShaderPrecisionFormat[JC] val rangeMax: Int
@@ -25674,136 +25676,60 @@ experimental/storage/package[SO] type NavigatorStorage = dom.Navigator  (@deprec
 experimental/storage/package[SO] type StorageEstimate = dom.StorageEstimate  (@deprecated in 2.0.0)
 experimental/storage/package[SO] type StorageManager = dom.StorageManager  (@deprecated in 2.0.0)
 experimental/storage/package[SO] def toNavigatorStorage(navigator: dom.Navigator): dom.Navigator  (@deprecated in 2.0.0)
-experimental/webgl/ANGLE_instanced_arrays[SO]
-experimental/webgl/EXT_blend_minmax[SO]
-experimental/webgl/EXT_color_buffer_half_float[SO]
-experimental/webgl/EXT_disjoint_timer_query[SO]
-experimental/webgl/EXT_frag_depth[SO]
-experimental/webgl/EXT_sRGB[SO]
-experimental/webgl/EXT_shader_texture_lod[SO]
-experimental/webgl/EXT_texture_filter_anisotropic[SO]
-experimental/webgl/OES_element_index_uint[SO]
-experimental/webgl/OES_standard_derivatives[SO]
-experimental/webgl/OES_texture_float[SO]
-experimental/webgl/OES_texture_float_linear[SO]
-experimental/webgl/OES_texture_half_float[SO]
-experimental/webgl/OES_texture_half_float_linear[SO]
-experimental/webgl/OES_vertex_array_object[SO]
-experimental/webgl/WEBGL_color_buffer_float[SO]
-experimental/webgl/WEBGL_compressed_texture_atc[SO]
-experimental/webgl/WEBGL_compressed_texture_etc1[SO]
-experimental/webgl/WEBGL_compressed_texture_pvrtc[SO]
-experimental/webgl/WEBGL_compressed_texture_s3tc[SO]
-experimental/webgl/WEBGL_debug_renderer_info[SO]
-experimental/webgl/WEBGL_debug_shaders[SO]
-experimental/webgl/WEBGL_depth_texture[SO]
-experimental/webgl/WEBGL_draw_buffers[SO]
-experimental/webgl/WEBGL_lose_context[SO]
-experimental/webgl/WebGLExtensionIdentifier[SC]
-experimental/webgl/extensions/ANGLEInstancedArrays[JT] val VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE: Int
-experimental/webgl/extensions/ANGLEInstancedArrays[JT] def drawArraysInstancedANGLE(mode: Int, first: Int, count: Int, primcount: Int): Unit
-experimental/webgl/extensions/ANGLEInstancedArrays[JT] def drawElementsInstancedANGLE(mode: Int, count: Int, `type`: Int, offset: Int, primcount: Int): Unit
-experimental/webgl/extensions/ANGLEInstancedArrays[JT] def vertexAttribDivisorANGLE(index: Int, divisor: Int): Unit
-experimental/webgl/extensions/EXTBlendMinmax[JT] val MAX_EXT: Int
-experimental/webgl/extensions/EXTBlendMinmax[JT] val MIN_EXT: Int
-experimental/webgl/extensions/EXTColorBufferHalfFloat[JT] val FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT: Int
-experimental/webgl/extensions/EXTColorBufferHalfFloat[JT] val RGB16F_EXT: Int
-experimental/webgl/extensions/EXTColorBufferHalfFloat[JT] val RGBA16F_EXT: Int
-experimental/webgl/extensions/EXTColorBufferHalfFloat[JT] val UNSIGNED_NORMALIZED_EXT: Int
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] val CURRENT_QUERY_EXT: Int
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] val GPU_DISJOINT_EXT: Int
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] val QUERY_COUNTER_BITS_EXT: Int
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] val QUERY_RESULT_AVAILABLE_EXT: Int
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] val QUERY_RESULT_EXT: Int
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] val TIMESTAMP_EXT: Int
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] val TIME_ELAPSED_EXT: Int
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] def beginQueryEXT(target: Int, query: WebGLTimerQueryEXT): Unit
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] def createQueryEXT(): WebGLTimerQueryEXT
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] def deleteQueryEXT(query: WebGLTimerQueryEXT): Unit
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] def endQueryEXT(target: Int): Unit
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] def getQueryEXT(target: Int, pname: Int): js.Any
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] def getQueryObjectEXT(target: Int, pname: Int): js.Any
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] def isQueryEXT(query: WebGLTimerQueryEXT): Boolean
-experimental/webgl/extensions/EXTDisjointTimerQuery[JT] def queryCounterEXT(query: WebGLTimerQueryEXT, target: Int): Unit
-experimental/webgl/extensions/EXTFragDepth[JT]
-experimental/webgl/extensions/EXTShaderTextureLOD[JT]
-experimental/webgl/extensions/EXTTextureFilterAnisotropic[JT] val MAX_TEXTURE_MAX_ANISOTROPY_EXT: Int
-experimental/webgl/extensions/EXTTextureFilterAnisotropic[JT] val TEXTURE_MAX_ANISOTROPY_EXT: Int
-experimental/webgl/extensions/EXTsRGB[JT] val FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT: Int
-experimental/webgl/extensions/EXTsRGB[JT] val SRGB8_ALPHA8_EXT: Int
-experimental/webgl/extensions/EXTsRGB[JT] val SRGB_ALPHA_EXT: Int
-experimental/webgl/extensions/EXTsRGB[JT] val SRGB_EXT: Int
-experimental/webgl/extensions/OESElementIndexUint[JT]
-experimental/webgl/extensions/OESStandardDerivatives[JT] val FRAGMENT_SHADER_DERIVATIVE_HINT_OES: Int
-experimental/webgl/extensions/OESTextureFloat[JT]
-experimental/webgl/extensions/OESTextureFloatLinear[JT]
-experimental/webgl/extensions/OESTextureHalfFloat[JT] val HALF_FLOAT_OES: Int
-experimental/webgl/extensions/OESTextureHalfFloatLinear[JT]
-experimental/webgl/extensions/OESVertexArrayObject[JT] val VERTEX_ARRAY_BINDING_OES: Int
-experimental/webgl/extensions/OESVertexArrayObject[JT] def bindVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES): Unit
-experimental/webgl/extensions/OESVertexArrayObject[JT] def createVertexArrayOES(): WebGLVertexArrayObjectOES
-experimental/webgl/extensions/OESVertexArrayObject[JT] def deleteVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES): Unit
-experimental/webgl/extensions/OESVertexArrayObject[JT] def isVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES): Boolean
-experimental/webgl/extensions/WEBGLColorBufferFloat[JT] val FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT: Int
-experimental/webgl/extensions/WEBGLColorBufferFloat[JT] val RGBA32F_EXT: Int
-experimental/webgl/extensions/WEBGLColorBufferFloat[JT] val UNSIGNED_NORMALIZED_EXT: Int
-experimental/webgl/extensions/WEBGLCompressedTextureETC1[JT] val COMPRESSED_RGB_ETC1_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT0_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT10_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT11_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT12_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT13_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT14_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT15_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT1_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT2_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT3_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT4_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT5_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT6_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT7_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT8_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT9_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER0_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER10_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER11_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER12_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER13_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER14_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER15_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER1_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER2_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER3_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER4_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER5_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER6_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER7_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER8_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER9_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val MAX_COLOR_ATTACHMENTS_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] val MAX_DRAW_BUFFERS_WEBGL: Int
-experimental/webgl/extensions/WEBGLDrawBuffers[JT] def drawBuffersWEBGL(buffers: js.Array[Int]): Unit
-experimental/webgl/extensions/WebGLCompressedTextureATC[JT] val COMPRESSED_RGBA_ATC_EXPLICIT_ALPHA_WEBGL: Int
-experimental/webgl/extensions/WebGLCompressedTextureATC[JT] val COMPRESSED_RGBA_ATC_INTERPOLATED_ALPHA_WEBGL: Int
-experimental/webgl/extensions/WebGLCompressedTextureATC[JT] val COMPRESSED_RGB_ATC_WEBGL: Int
-experimental/webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGBA_PVRTC_2BPPV1_IMG: Int
-experimental/webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGBA_PVRTC_4BPPV1_IMG: Int
-experimental/webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGB_PVRTC_2BPPV1_IMG: Int
-experimental/webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGB_PVRTC_4BPPV1_IMG: Int
-experimental/webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGBA_S3TC_DXT1_EXT: Int
-experimental/webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGBA_S3TC_DXT3_EXT: Int
-experimental/webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGBA_S3TC_DXT5_EXT: Int
-experimental/webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGB_S3TC_DXT1_EXT: Int
-experimental/webgl/extensions/WebGLDebugRendererInfo[JT] val UNMASKED_RENDERER_WEBGL: Int
-experimental/webgl/extensions/WebGLDebugRendererInfo[JT] val UNMASKED_VENDOR_WEBGL: Int
-experimental/webgl/extensions/WebGLDebugShaders[JT] def getTranslatedShaderSource(shader: WebGLShader): String
-experimental/webgl/extensions/WebGLDepthTexture[JT] val UNSIGNED_INT_24_8_WEBGL: Int
-experimental/webgl/extensions/WebGLLoseContext[JT] def loseContext(): Unit
-experimental/webgl/extensions/WebGLLoseContext[JT] def restoreContext(): Unit
-experimental/webgl/extensions/WebGLTimerQueryEXT[JT]
-experimental/webgl/extensions/WebGLVertexArrayObjectOES[JT]
-experimental/webgl/package[SO] def getExtension[T](id: WebGLExtensionIdentifier[T]): js.UndefOr[T]
-experimental/webgl/package.WebGLRenderingContextOps[SC] def getExtension[T](id: WebGLExtensionIdentifier[T]): js.UndefOr[T]
+experimental/webgl/extensions/package[SO] type ANGLEInstancedArrays = dom.webgl.extensions.ANGLEInstancedArrays  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type EXTBlendMinmax = dom.webgl.extensions.EXTBlendMinmax  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type EXTColorBufferHalfFloat = dom.webgl.extensions.EXTColorBufferHalfFloat  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type EXTDisjointTimerQuery = dom.webgl.extensions.EXTDisjointTimerQuery  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type EXTFragDepth = dom.webgl.extensions.EXTFragDepth  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type EXTShaderTextureLOD = dom.webgl.extensions.EXTShaderTextureLOD  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type EXTTextureFilterAnisotropic = dom.webgl.extensions.EXTTextureFilterAnisotropic  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type EXTsRGB = dom.webgl.extensions.EXTsRGB  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type OESElementIndexUint = dom.webgl.extensions.OESElementIndexUint  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type OESStandardDerivatives = dom.webgl.extensions.OESStandardDerivatives  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type OESTextureFloat = dom.webgl.extensions.OESTextureFloat  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type OESTextureFloatLinear = dom.webgl.extensions.OESTextureFloatLinear  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type OESTextureHalfFloat = dom.webgl.extensions.OESTextureHalfFloat  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type OESTextureHalfFloatLinear = dom.webgl.extensions.OESTextureHalfFloatLinear  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type OESVertexArrayObject = dom.webgl.extensions.OESVertexArrayObject  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WEBGLColorBufferFloat = dom.webgl.extensions.WEBGLColorBufferFloat  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WEBGLCompressedTextureETC1 = dom.webgl.extensions.WEBGLCompressedTextureETC1  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WEBGLDrawBuffers = dom.webgl.extensions.WEBGLDrawBuffers  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WebGLCompressedTextureATC = dom.webgl.extensions.WebGLCompressedTextureATC  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WebGLCompressedTexturePVRTC = dom.webgl.extensions.WebGLCompressedTexturePVRTC  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WebGLCompressedTextureS3TC = dom.webgl.extensions.WebGLCompressedTextureS3TC  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WebGLDebugRendererInfo = dom.webgl.extensions.WebGLDebugRendererInfo  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WebGLDebugShaders = dom.webgl.extensions.WebGLDebugShaders  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WebGLDepthTexture = dom.webgl.extensions.WebGLDepthTexture  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WebGLLoseContext = dom.webgl.extensions.WebGLLoseContext  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WebGLTimerQueryEXT = dom.webgl.extensions.WebGLTimerQueryEXT  (@deprecated in 2.0.0)
+experimental/webgl/extensions/package[SO] type WebGLVertexArrayObjectOES = dom.webgl.extensions.WebGLVertexArrayObjectOES  (@deprecated in 2.0.0)
+experimental/webgl/package[SO] type WebGLExtensionIdentifier[T] = dom.webgl.WebGLExtensionIdentifier[T]  (@deprecated in 2.0.0)
+experimental/webgl/package[SO] type WebGLRenderingContextOps = WebGLRenderingContext.WebGLRenderingContextOps  (@deprecated in 2.0.0)
+experimental/webgl/package[SO] @deprecated("use dom.webgl.ANGLE_instanced_arrays instead", "2.0.0") val ANGLE_instanced_arrays = dom.webgl.ANGLE_instanced_arrays
+experimental/webgl/package[SO] @deprecated("use dom.webgl.EXT_blend_minmax instead", "2.0.0") val EXT_blend_minmax = dom.webgl.EXT_blend_minmax
+experimental/webgl/package[SO] @deprecated("use dom.webgl.EXT_color_buffer_half_float instead", "2.0.0") val EXT_color_buffer_half_float = dom.webgl.EXT_color_buffer_half_float
+experimental/webgl/package[SO] @deprecated("use dom.webgl.EXT_disjoint_timer_query instead", "2.0.0") val EXT_disjoint_timer_query = dom.webgl.EXT_disjoint_timer_query
+experimental/webgl/package[SO] @deprecated("use dom.webgl.EXT_frag_depth instead", "2.0.0") val EXT_frag_depth = dom.webgl.EXT_frag_depth
+experimental/webgl/package[SO] @deprecated("use dom.webgl.EXT_sRGB instead", "2.0.0") val EXT_sRGB = dom.webgl.EXT_sRGB
+experimental/webgl/package[SO] @deprecated("use dom.webgl.EXT_shader_texture_lod instead", "2.0.0") val EXT_shader_texture_lod = dom.webgl.EXT_shader_texture_lod
+experimental/webgl/package[SO] @deprecated("use dom.webgl.EXT_texture_filter_anisotropic instead", "2.0.0") val EXT_texture_filter_anisotropic = dom.webgl.EXT_texture_filter_anisotropic
+experimental/webgl/package[SO] @deprecated("use dom.webgl.OES_element_index_uint instead", "2.0.0") val OES_element_index_uint = dom.webgl.OES_element_index_uint
+experimental/webgl/package[SO] @deprecated("use dom.webgl.OES_standard_derivatives instead", "2.0.0") val OES_standard_derivatives = dom.webgl.OES_standard_derivatives
+experimental/webgl/package[SO] @deprecated("use dom.webgl.OES_texture_float instead", "2.0.0") val OES_texture_float = dom.webgl.OES_texture_float
+experimental/webgl/package[SO] @deprecated("use dom.webgl.OES_texture_float_linear instead", "2.0.0") val OES_texture_float_linear = dom.webgl.OES_texture_float_linear
+experimental/webgl/package[SO] @deprecated("use dom.webgl.OES_texture_half_float instead", "2.0.0") val OES_texture_half_float = dom.webgl.OES_texture_half_float
+experimental/webgl/package[SO] @deprecated("use dom.webgl.OES_texture_half_float_linear instead", "2.0.0") val OES_texture_half_float_linear = dom.webgl.OES_texture_half_float_linear
+experimental/webgl/package[SO] @deprecated("use dom.webgl.OES_vertex_array_object instead", "2.0.0") val OES_vertex_array_object = dom.webgl.OES_vertex_array_object
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_color_buffer_float instead", "2.0.0") val WEBGL_color_buffer_float = dom.webgl.WEBGL_color_buffer_float
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_compressed_texture_atc instead", "2.0.0") val WEBGL_compressed_texture_atc = dom.webgl.WEBGL_compressed_texture_atc
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_compressed_texture_etc1 instead", "2.0.0") val WEBGL_compressed_texture_etc1 = dom.webgl.WEBGL_compressed_texture_etc1
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_compressed_texture_pvrtc instead", "2.0.0") val WEBGL_compressed_texture_pvrtc = dom.webgl.WEBGL_compressed_texture_pvrtc
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_compressed_texture_s3tc instead", "2.0.0") val WEBGL_compressed_texture_s3tc = dom.webgl.WEBGL_compressed_texture_s3tc
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_debug_renderer_info instead", "2.0.0") val WEBGL_debug_renderer_info = dom.webgl.WEBGL_debug_renderer_info
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_debug_shaders instead", "2.0.0") val WEBGL_debug_shaders = dom.webgl.WEBGL_debug_shaders
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_depth_texture instead", "2.0.0") val WEBGL_depth_texture = dom.webgl.WEBGL_depth_texture
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_draw_buffers instead", "2.0.0") val WEBGL_draw_buffers = dom.webgl.WEBGL_draw_buffers
+experimental/webgl/package[SO] @deprecated("use dom.webgl.WEBGL_lose_context instead", "2.0.0") val WEBGL_lose_context = dom.webgl.WEBGL_lose_context
 experimental/webrtc/package[SO] type MediaStreamEventInit = dom.MediaStreamEventInit  (@deprecated in 2.0.0)
 experimental/webrtc/package[SO] type NavigatorMediaStream = dom.Navigator  (@deprecated in 2.0.0)
 experimental/webrtc/package[SO] type RTCBundlePolicy = dom.RTCBundlePolicy  (@deprecated in 2.0.0)
@@ -26468,18 +26394,146 @@ svg[SO] def TextPath = SVGTextPathElement
 svg[SO] def Transform = SVGTransform
 svg[SO] def UnitTypes = SVGUnitTypes
 svg[SO] def ZoomAndPan = SVGZoomAndPan
-webgl[SO] type ActiveInfo = WebGLActiveInfo
-webgl[SO] type Buffer = WebGLBuffer
-webgl[SO] type ContextAttributes = WebGLContextAttributes
-webgl[SO] type Framebuffer = WebGLFramebuffer
-webgl[SO] type Program = WebGLProgram
-webgl[SO] type Renderbuffer = WebGLRenderbuffer
-webgl[SO] type RenderingContext = WebGLRenderingContext
-webgl[SO] type Shader = WebGLShader
-webgl[SO] type ShaderPrecisionFormat = WebGLShaderPrecisionFormat
-webgl[SO] type Texture = WebGLTexture
-webgl[SO] type UniformLocation = WebGLUniformLocation
-webgl[SO] def RenderingContext = WebGLRenderingContext
+webgl/ANGLE_instanced_arrays[SO]
+webgl/EXT_blend_minmax[SO]
+webgl/EXT_color_buffer_half_float[SO]
+webgl/EXT_disjoint_timer_query[SO]
+webgl/EXT_frag_depth[SO]
+webgl/EXT_sRGB[SO]
+webgl/EXT_shader_texture_lod[SO]
+webgl/EXT_texture_filter_anisotropic[SO]
+webgl/OES_element_index_uint[SO]
+webgl/OES_standard_derivatives[SO]
+webgl/OES_texture_float[SO]
+webgl/OES_texture_float_linear[SO]
+webgl/OES_texture_half_float[SO]
+webgl/OES_texture_half_float_linear[SO]
+webgl/OES_vertex_array_object[SO]
+webgl/WEBGL_color_buffer_float[SO]
+webgl/WEBGL_compressed_texture_atc[SO]
+webgl/WEBGL_compressed_texture_etc1[SO]
+webgl/WEBGL_compressed_texture_pvrtc[SO]
+webgl/WEBGL_compressed_texture_s3tc[SO]
+webgl/WEBGL_debug_renderer_info[SO]
+webgl/WEBGL_debug_shaders[SO]
+webgl/WEBGL_depth_texture[SO]
+webgl/WEBGL_draw_buffers[SO]
+webgl/WEBGL_lose_context[SO]
+webgl/WebGLExtensionIdentifier[SC]
+webgl/extensions/ANGLEInstancedArrays[JT] val VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE: Int
+webgl/extensions/ANGLEInstancedArrays[JT] def drawArraysInstancedANGLE(mode: Int, first: Int, count: Int, primcount: Int): Unit
+webgl/extensions/ANGLEInstancedArrays[JT] def drawElementsInstancedANGLE(mode: Int, count: Int, `type`: Int, offset: Int, primcount: Int): Unit
+webgl/extensions/ANGLEInstancedArrays[JT] def vertexAttribDivisorANGLE(index: Int, divisor: Int): Unit
+webgl/extensions/EXTBlendMinmax[JT] val MAX_EXT: Int
+webgl/extensions/EXTBlendMinmax[JT] val MIN_EXT: Int
+webgl/extensions/EXTColorBufferHalfFloat[JT] val FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT: Int
+webgl/extensions/EXTColorBufferHalfFloat[JT] val RGB16F_EXT: Int
+webgl/extensions/EXTColorBufferHalfFloat[JT] val RGBA16F_EXT: Int
+webgl/extensions/EXTColorBufferHalfFloat[JT] val UNSIGNED_NORMALIZED_EXT: Int
+webgl/extensions/EXTDisjointTimerQuery[JT] val CURRENT_QUERY_EXT: Int
+webgl/extensions/EXTDisjointTimerQuery[JT] val GPU_DISJOINT_EXT: Int
+webgl/extensions/EXTDisjointTimerQuery[JT] val QUERY_COUNTER_BITS_EXT: Int
+webgl/extensions/EXTDisjointTimerQuery[JT] val QUERY_RESULT_AVAILABLE_EXT: Int
+webgl/extensions/EXTDisjointTimerQuery[JT] val QUERY_RESULT_EXT: Int
+webgl/extensions/EXTDisjointTimerQuery[JT] val TIMESTAMP_EXT: Int
+webgl/extensions/EXTDisjointTimerQuery[JT] val TIME_ELAPSED_EXT: Int
+webgl/extensions/EXTDisjointTimerQuery[JT] def beginQueryEXT(target: Int, query: WebGLTimerQueryEXT): Unit
+webgl/extensions/EXTDisjointTimerQuery[JT] def createQueryEXT(): WebGLTimerQueryEXT
+webgl/extensions/EXTDisjointTimerQuery[JT] def deleteQueryEXT(query: WebGLTimerQueryEXT): Unit
+webgl/extensions/EXTDisjointTimerQuery[JT] def endQueryEXT(target: Int): Unit
+webgl/extensions/EXTDisjointTimerQuery[JT] def getQueryEXT(target: Int, pname: Int): js.Any
+webgl/extensions/EXTDisjointTimerQuery[JT] def getQueryObjectEXT(target: Int, pname: Int): js.Any
+webgl/extensions/EXTDisjointTimerQuery[JT] def isQueryEXT(query: WebGLTimerQueryEXT): Boolean
+webgl/extensions/EXTDisjointTimerQuery[JT] def queryCounterEXT(query: WebGLTimerQueryEXT, target: Int): Unit
+webgl/extensions/EXTFragDepth[JT]
+webgl/extensions/EXTShaderTextureLOD[JT]
+webgl/extensions/EXTTextureFilterAnisotropic[JT] val MAX_TEXTURE_MAX_ANISOTROPY_EXT: Int
+webgl/extensions/EXTTextureFilterAnisotropic[JT] val TEXTURE_MAX_ANISOTROPY_EXT: Int
+webgl/extensions/EXTsRGB[JT] val FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT: Int
+webgl/extensions/EXTsRGB[JT] val SRGB8_ALPHA8_EXT: Int
+webgl/extensions/EXTsRGB[JT] val SRGB_ALPHA_EXT: Int
+webgl/extensions/EXTsRGB[JT] val SRGB_EXT: Int
+webgl/extensions/OESElementIndexUint[JT]
+webgl/extensions/OESStandardDerivatives[JT] val FRAGMENT_SHADER_DERIVATIVE_HINT_OES: Int
+webgl/extensions/OESTextureFloat[JT]
+webgl/extensions/OESTextureFloatLinear[JT]
+webgl/extensions/OESTextureHalfFloat[JT] val HALF_FLOAT_OES: Int
+webgl/extensions/OESTextureHalfFloatLinear[JT]
+webgl/extensions/OESVertexArrayObject[JT] val VERTEX_ARRAY_BINDING_OES: Int
+webgl/extensions/OESVertexArrayObject[JT] def bindVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES): Unit
+webgl/extensions/OESVertexArrayObject[JT] def createVertexArrayOES(): WebGLVertexArrayObjectOES
+webgl/extensions/OESVertexArrayObject[JT] def deleteVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES): Unit
+webgl/extensions/OESVertexArrayObject[JT] def isVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES): Boolean
+webgl/extensions/WEBGLColorBufferFloat[JT] val FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT: Int
+webgl/extensions/WEBGLColorBufferFloat[JT] val RGBA32F_EXT: Int
+webgl/extensions/WEBGLColorBufferFloat[JT] val UNSIGNED_NORMALIZED_EXT: Int
+webgl/extensions/WEBGLCompressedTextureETC1[JT] val COMPRESSED_RGB_ETC1_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT0_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT10_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT11_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT12_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT13_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT14_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT15_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT1_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT2_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT3_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT4_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT5_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT6_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT7_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT8_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val COLOR_ATTACHMENT9_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER0_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER10_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER11_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER12_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER13_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER14_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER15_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER1_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER2_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER3_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER4_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER5_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER6_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER7_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER8_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER9_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val MAX_COLOR_ATTACHMENTS_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] val MAX_DRAW_BUFFERS_WEBGL: Int
+webgl/extensions/WEBGLDrawBuffers[JT] def drawBuffersWEBGL(buffers: js.Array[Int]): Unit
+webgl/extensions/WebGLCompressedTextureATC[JT] val COMPRESSED_RGBA_ATC_EXPLICIT_ALPHA_WEBGL: Int
+webgl/extensions/WebGLCompressedTextureATC[JT] val COMPRESSED_RGBA_ATC_INTERPOLATED_ALPHA_WEBGL: Int
+webgl/extensions/WebGLCompressedTextureATC[JT] val COMPRESSED_RGB_ATC_WEBGL: Int
+webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGBA_PVRTC_2BPPV1_IMG: Int
+webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGBA_PVRTC_4BPPV1_IMG: Int
+webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGB_PVRTC_2BPPV1_IMG: Int
+webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGB_PVRTC_4BPPV1_IMG: Int
+webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGBA_S3TC_DXT1_EXT: Int
+webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGBA_S3TC_DXT3_EXT: Int
+webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGBA_S3TC_DXT5_EXT: Int
+webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGB_S3TC_DXT1_EXT: Int
+webgl/extensions/WebGLDebugRendererInfo[JT] val UNMASKED_RENDERER_WEBGL: Int
+webgl/extensions/WebGLDebugRendererInfo[JT] val UNMASKED_VENDOR_WEBGL: Int
+webgl/extensions/WebGLDebugShaders[JT] def getTranslatedShaderSource(shader: WebGLShader): String
+webgl/extensions/WebGLDepthTexture[JT] val UNSIGNED_INT_24_8_WEBGL: Int
+webgl/extensions/WebGLLoseContext[JT] def loseContext(): Unit
+webgl/extensions/WebGLLoseContext[JT] def restoreContext(): Unit
+webgl/extensions/WebGLTimerQueryEXT[JT]
+webgl/extensions/WebGLVertexArrayObjectOES[JT]
+webgl/package[SO] type ActiveInfo = WebGLActiveInfo
+webgl/package[SO] type Buffer = WebGLBuffer
+webgl/package[SO] type ContextAttributes = WebGLContextAttributes
+webgl/package[SO] type Framebuffer = WebGLFramebuffer
+webgl/package[SO] type Program = WebGLProgram
+webgl/package[SO] type Renderbuffer = WebGLRenderbuffer
+webgl/package[SO] type RenderingContext = WebGLRenderingContext
+webgl/package[SO] type Shader = WebGLShader
+webgl/package[SO] type ShaderPrecisionFormat = WebGLShaderPrecisionFormat
+webgl/package[SO] type Texture = WebGLTexture
+webgl/package[SO] type UniformLocation = WebGLUniformLocation
+webgl/package[SO] def RenderingContext = WebGLRenderingContext
 webworkers[SO] type AbstractWorker = dom.AbstractWorker  (@deprecated in 2.0.0)
 webworkers[SO] type DedicatedWorkerGlobalScope = dom.DedicatedWorkerGlobalScope  (@deprecated in 2.0.0)
 webworkers[SO] type Worker = dom.Worker  (@deprecated in 2.0.0)

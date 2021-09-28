@@ -701,6 +701,21 @@ object WebGLRenderingContext {
   final val CONTEXT_LOST_WEBGL = 0x9242
   final val UNPACK_COLORSPACE_CONVERSION_WEBGL = 0x9243
   final val BROWSER_DEFAULT_WEBGL = 0x9244
+
+  implicit class WebGLRenderingContextOps(val webGL: WebGLRenderingContext) extends AnyVal {
+
+    /** Returns the WebGL extension for the given identifier, if present on this browser.
+      *
+      * @param id
+      *   the identifier singleton.
+      * @tparam T
+      *   The type of the result for this extension.
+      * @return
+      *   `Some(extension)` or `None`
+      */
+    def getExtension[T](id: webgl.WebGLExtensionIdentifier[T]): js.UndefOr[T] =
+      webGL.getExtension(id.value).asInstanceOf[js.UndefOr[T]]
+  }
 }
 
 @js.native

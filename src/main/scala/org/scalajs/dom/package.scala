@@ -108,4 +108,5 @@ package object dom {
     * At the JS layer these have the same structure.
     */
   type HashAlgorithmIdentifier = HashAlgorithm | String
+
 }
