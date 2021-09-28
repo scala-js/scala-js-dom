@@ -1,6 +1,5 @@
-package org.scalajs.dom.experimental.serviceworkers
+package org.scalajs.dom
 
-import org.scalajs.dom._
 import scala.scalajs.js
 
 /** The ServiceWorker interface of the ServiceWorker API provides a reference to a service worker. Multiple browsing

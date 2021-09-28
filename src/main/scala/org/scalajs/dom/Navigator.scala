@@ -56,4 +56,9 @@ class Navigator
     *   [[https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices]]
     */
   def mediaDevices: MediaDevices = js.native
+
+  /** The Navigator.serviceWorker read-only property returns a ServiceWorkerContainer object, which provides access to
+    * registration, removal, upgrade, and communication with the ServiceWorker objects for the associated document.
+    */
+  val serviceWorker: ServiceWorkerContainer = js.native
 }

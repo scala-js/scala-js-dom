@@ -786,6 +786,7 @@ CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?):
 CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]
 CanvasGradient[JC] def addColorStop(offset: Double, color: String): Unit
 CanvasPattern[JC]
+CanvasProxy[JT] def setContext(context: RenderingContext): Unit
 CanvasRenderingContext2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit
 CanvasRenderingContext2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Unit
 CanvasRenderingContext2D[JC] def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit
@@ -919,6 +920,21 @@ CharacterData[JC] def substringData(offset: Int, count: Int): String
 CharacterData[JC] var textContent: String
 Chunk[JT] def done: Boolean
 Chunk[JT] def value: T
+Client[JT] def frameType: FrameType
+Client[JT] def id: String
+Client[JT] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
+Client[JT] def url: String
+ClientQueryOptions[JT] var includeUncontrolled: Boolean
+ClientQueryOptions[JT] var `type`: ClientType
+ClientType[JT]
+ClientType[SO] val all: ClientType
+ClientType[SO] val sharedworker: ClientType
+ClientType[SO] val window: ClientType
+ClientType[SO] val worker: ClientType
+Clients[JT] def claim(): js.Promise[Unit]
+Clients[JT] def get(id: String): js.Promise[js.UndefOr[Client]]
+Clients[JT] def matchAll(options: js.UndefOr[ClientQueryOptions]?): js.Promise[js.Array[Client]]
+Clients[JT] def openWindow(url: String): js.Promise[WindowClient]
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Clipboard[JT] def dispatchEvent(evt: Event): Boolean
@@ -1722,8 +1738,82 @@ EventTarget[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 EventTarget[JC] def dispatchEvent(evt: Event): Boolean
 EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ExtendableEvent[JC] def bubbles: Boolean
+ExtendableEvent[JC] def cancelBubble: Boolean
+ExtendableEvent[JC] def cancelable: Boolean
+ExtendableEvent[JC] def currentTarget: EventTarget
+ExtendableEvent[JC] def defaultPrevented: Boolean
+ExtendableEvent[JC] def eventPhase: Int
+ExtendableEvent[JC] def isTrusted: Boolean
+ExtendableEvent[JC] def preventDefault(): Unit
+ExtendableEvent[JC] def stopImmediatePropagation(): Unit
+ExtendableEvent[JC] def stopPropagation(): Unit
+ExtendableEvent[JC] def target: EventTarget
+ExtendableEvent[JC] def timeStamp: Double
+ExtendableEvent[JC] def `type`: String
+ExtendableEvent[JC] def waitUntil(promise: js.Promise[Any]): Unit
+ExtendableEventInit[JT] var bubbles: js.UndefOr[Boolean]
+ExtendableEventInit[JT] var cancelable: js.UndefOr[Boolean]
+ExtendableEventInit[JT] var composed: js.UndefOr[Boolean]
+ExtendableEventInit[JT] var scoped: js.UndefOr[Boolean]
+ExtendableMessageEvent[JC] def bubbles: Boolean
+ExtendableMessageEvent[JC] def cancelBubble: Boolean
+ExtendableMessageEvent[JC] def cancelable: Boolean
+ExtendableMessageEvent[JC] def currentTarget: EventTarget
+ExtendableMessageEvent[JC] val data: Any
+ExtendableMessageEvent[JC] def defaultPrevented: Boolean
+ExtendableMessageEvent[JC] def eventPhase: Int
+ExtendableMessageEvent[JC] def isTrusted: Boolean
+ExtendableMessageEvent[JC] val lastEventId: String
+ExtendableMessageEvent[JC] val origin: String
+ExtendableMessageEvent[JC] def ports: js.Array[MessagePort]
+ExtendableMessageEvent[JC] def preventDefault(): Unit
+ExtendableMessageEvent[JC] def source: ServiceWorker | MessagePort
+ExtendableMessageEvent[JC] def stopImmediatePropagation(): Unit
+ExtendableMessageEvent[JC] def stopPropagation(): Unit
+ExtendableMessageEvent[JC] def target: EventTarget
+ExtendableMessageEvent[JC] def timeStamp: Double
+ExtendableMessageEvent[JC] def `type`: String
+ExtendableMessageEvent[JC] def waitUntil(promise: js.Promise[Any]): Unit
+ExtendableMessageEventInit[JT] var bubbles: js.UndefOr[Boolean]
+ExtendableMessageEventInit[JT] var cancelable: js.UndefOr[Boolean]
+ExtendableMessageEventInit[JT] var composed: js.UndefOr[Boolean]
+ExtendableMessageEventInit[JT] var data: js.UndefOr[Any]
+ExtendableMessageEventInit[JT] var lastEventId: js.UndefOr[String]
+ExtendableMessageEventInit[JT] var origin: js.UndefOr[String]
+ExtendableMessageEventInit[JT] var ports: js.UndefOr[js.Array[MessagePort]]
+ExtendableMessageEventInit[JT] var scoped: js.UndefOr[Boolean]
+ExtendableMessageEventInit[JT] var source: js.UndefOr[Client | ServiceWorker | MessagePort]
 External[JT]
 Fetch[JO] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
+FetchEvent[JC] def bubbles: Boolean
+FetchEvent[JC] def cancelBubble: Boolean
+FetchEvent[JC] def cancelable: Boolean
+FetchEvent[JC] def clientId: String
+FetchEvent[JC] def currentTarget: EventTarget
+FetchEvent[JC] def defaultPrevented: Boolean
+FetchEvent[JC] def eventPhase: Int
+FetchEvent[JC] def isReload: Boolean
+FetchEvent[JC] def isTrusted: Boolean
+FetchEvent[JC] def preloadResponse: js.Promise[js.UndefOr[Response]]
+FetchEvent[JC] def preventDefault(): Unit
+FetchEvent[JC] def replacesClientId: String
+FetchEvent[JC] def request: Request
+FetchEvent[JC] def respondWith(promisedResponse: Response | js.Promise[Response]): Unit
+FetchEvent[JC] def resultingClientId: String
+FetchEvent[JC] def stopImmediatePropagation(): Unit
+FetchEvent[JC] def stopPropagation(): Unit
+FetchEvent[JC] def target: EventTarget
+FetchEvent[JC] def timeStamp: Double
+FetchEvent[JC] def `type`: String
+FetchEvent[JC] def waitUntil(promise: js.Promise[Any]): Unit
+FetchEventInit[JT] var bubbles: js.UndefOr[Boolean]
+FetchEventInit[JT] var cancelable: js.UndefOr[Boolean]
+FetchEventInit[JT] var clientId: js.UndefOr[String]
+FetchEventInit[JT] var composed: js.UndefOr[Boolean]
+FetchEventInit[JT] var isReload: js.UndefOr[Boolean]
+FetchEventInit[JT] var request: js.UndefOr[Request]
+FetchEventInit[JT] var scoped: js.UndefOr[Boolean]
 File[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 File[JC] def close(): Unit  (@deprecated in 1.2.0)
 File[JC] def name: String
@@ -1784,6 +1874,11 @@ FocusEventInit[JT] var scoped: js.UndefOr[Boolean]
 FocusEventInit[JT] val view: js.UndefOr[Window]
 FormData[JC] def append(name: js.Any, value: js.Any, blobName: String?): Unit
 FormData[JO]
+FrameType[JT]
+FrameType[SO] val auxiliary: FrameType
+FrameType[SO] val nested: FrameType
+FrameType[SO] val none: FrameType
+FrameType[SO] val `top-level` = "top-level".asInstanceOf[FrameType]
 FullscreenOptions[JT] var navigationUI: js.UndefOr[String]
 GainNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 GainNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -1835,6 +1930,7 @@ Geolocation[JT] def clearWatch(watchId: Int): Unit
 Geolocation[JT] def getCurrentPosition(successCallback: js.Function1[Position, _]): Unit
 Geolocation[JT] def getCurrentPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _], options: PositionOptions?): Unit
 Geolocation[JT] def watchPosition(successCallback: js.Function1[Position, _], errorCallback: js.Function1[PositionError, _]?, options: PositionOptions?): Int
+GetNotificationOptions[JT] var tag: js.UndefOr[String]
 GetSVGDocument[JT] def getSVGDocument(): Document
 HTMLAnchorElement[JC] var accessKey: String
 HTMLAnchorElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -14778,6 +14874,7 @@ Navigator[JC] def mediaDevices: MediaDevices
 Navigator[JC] def onLine: Boolean
 Navigator[JC] def platform: String
 Navigator[JC] def sendBeacon(url: String, data: BodyInit?): Boolean
+Navigator[JC] val serviceWorker: ServiceWorkerContainer
 Navigator[JC] def storage: StorageManager
 Navigator[JC] def userAgent: String
 Navigator[JC] def vibrate(duration: Double): Boolean
@@ -23534,6 +23631,95 @@ Selection[JC] def rangeCount: Int
 Selection[JC] def removeAllRanges(): Unit
 Selection[JC] def removeRange(range: Range): Unit
 Selection[JC] def selectAllChildren(parentNode: Node): Unit
+ServiceWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ServiceWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ServiceWorker[JT] def dispatchEvent(evt: Event): Boolean
+ServiceWorker[JT] var onstatechange: js.Function1[Event, _]
+ServiceWorker[JT] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
+ServiceWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ServiceWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ServiceWorker[JT] def scriptURL: String
+ServiceWorker[JT] def state: String
+ServiceWorkerContainer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ServiceWorkerContainer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ServiceWorkerContainer[JT] def controller: ServiceWorker
+ServiceWorkerContainer[JT] def dispatchEvent(evt: Event): Boolean
+ServiceWorkerContainer[JT] def getRegistration(scope: String?): js.Promise[js.UndefOr[ServiceWorkerRegistration]]
+ServiceWorkerContainer[JT] def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]]
+ServiceWorkerContainer[JT] var oncontrollerchange: js.Function1[Event, _]
+ServiceWorkerContainer[JT] var onmessage: js.Function1[MessageEvent, _]
+ServiceWorkerContainer[JT] def ready: js.Promise[ServiceWorkerRegistration]
+ServiceWorkerContainer[JT] def register(scriptURL: String, options: js.Object?): js.Promise[ServiceWorkerRegistration]
+ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ServiceWorkerGlobalScope[JO] def self: ServiceWorkerGlobalScope
+ServiceWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ServiceWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ServiceWorkerGlobalScope[JT] def atob(encodedString: String): String
+ServiceWorkerGlobalScope[JT] def btoa(rawString: String): String
+ServiceWorkerGlobalScope[JT] def caches: js.UndefOr[CacheStorage]
+ServiceWorkerGlobalScope[JT] def clearInterval(handle: Int): Unit
+ServiceWorkerGlobalScope[JT] def clearTimeout(handle: Int): Unit
+ServiceWorkerGlobalScope[JT] def clients: Clients
+ServiceWorkerGlobalScope[JT] def close(): Unit
+ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
+ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
+ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+ServiceWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
+ServiceWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
+ServiceWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
+ServiceWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
+ServiceWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
+ServiceWorkerGlobalScope[JT] def isSecureContext: Boolean
+ServiceWorkerGlobalScope[JT] def location: WorkerLocation
+ServiceWorkerGlobalScope[JT] def navigator: WorkerNavigator
+ServiceWorkerGlobalScope[JT] var onError: js.Function1[ErrorEvent, _]
+ServiceWorkerGlobalScope[JT] var onactivate: js.Function1[ExtendableEvent, _]
+ServiceWorkerGlobalScope[JT] var onfetch: js.Function1[FetchEvent, _]
+ServiceWorkerGlobalScope[JT] var oninstall: js.Function1[ExtendableEvent, _]
+ServiceWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
+ServiceWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent, _]
+ServiceWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
+ServiceWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
+ServiceWorkerGlobalScope[JT] def origin: String
+ServiceWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
+ServiceWorkerGlobalScope[JT] def registration: ServiceWorkerRegistration
+ServiceWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ServiceWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ServiceWorkerGlobalScope[JT] def self: this.type
+ServiceWorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
+ServiceWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
+ServiceWorkerGlobalScope[JT] def skipWaiting(): js.Promise[Unit]
+ServiceWorkerMessageEventInit[JT] var bubbles: js.UndefOr[Boolean]
+ServiceWorkerMessageEventInit[JT] var cancelable: js.UndefOr[Boolean]
+ServiceWorkerMessageEventInit[JT] var composed: js.UndefOr[Boolean]
+ServiceWorkerMessageEventInit[JT] var data: js.UndefOr[Any]
+ServiceWorkerMessageEventInit[JT] var lastEventId: js.UndefOr[String]
+ServiceWorkerMessageEventInit[JT] var origin: js.UndefOr[String]
+ServiceWorkerMessageEventInit[JT] var ports: js.UndefOr[js.Array[MessagePort]]
+ServiceWorkerMessageEventInit[JT] var scoped: js.UndefOr[Boolean]
+ServiceWorkerMessageEventInit[JT] var source: js.UndefOr[ServiceWorker | MessagePort]
+ServiceWorkerRegistration[JT] var active: ServiceWorker
+ServiceWorkerRegistration[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ServiceWorkerRegistration[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ServiceWorkerRegistration[JT] def dispatchEvent(evt: Event): Boolean
+ServiceWorkerRegistration[JT] def getNotifications(options: GetNotificationOptions?): js.Promise[Sequence[Notification]]
+ServiceWorkerRegistration[JT] var installing: ServiceWorker
+ServiceWorkerRegistration[JT] var onupdatefound: js.Function1[Event, _]
+ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ServiceWorkerRegistration[JT] var scope: String
+ServiceWorkerRegistration[JT] def showNotification(title: String, options: NotificationOptions?): js.Promise[Unit]
+ServiceWorkerRegistration[JT] def unregister(): js.Promise[Boolean]
+ServiceWorkerRegistration[JT] def update(): js.Promise[Unit]
+ServiceWorkerRegistration[JT] var waiting: ServiceWorker
+ServiceWorkerState[JT]
+ServiceWorkerState[SO] val activated: ServiceWorkerState
+ServiceWorkerState[SO] val activating: ServiceWorkerState
+ServiceWorkerState[SO] val installed: ServiceWorkerState
+ServiceWorkerState[SO] val installing: ServiceWorkerState
+ServiceWorkerState[SO] val redundant: ServiceWorkerState
 SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SharedWorker[JC] def dispatchEvent(evt: Event): Boolean
@@ -24726,6 +24912,14 @@ Window[JC] def top: Window
 Window[JC] def window: Window
 WindowBase64[JT] def atob(encodedString: String): String
 WindowBase64[JT] def btoa(rawString: String): String
+WindowClient[JT] def focus(): js.Promise[WindowClient]
+WindowClient[JT] def focused: Boolean
+WindowClient[JT] def frameType: FrameType
+WindowClient[JT] def id: String
+WindowClient[JT] def navigate(url: String): js.Promise[WindowClient]
+WindowClient[JT] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
+WindowClient[JT] def url: String
+WindowClient[JT] def visibilityState: String
 WindowConsole[JT] var console: Console
 WindowLocalStorage[JT] def localStorage: Storage
 WindowOrWorkerGlobalScope[JT] def atob(encodedString: String): String
@@ -25400,219 +25594,35 @@ experimental/push/package[SO] implicit def pushServiceWorkerRegistration(swr: Se
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpush: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpushsubscriptionchange: js.Function1[PushEvent, _]
 experimental/push/package.PushServiceWorkerRegistration[JT] val pushManager: PushManager
-experimental/serviceworkers/Cache[JC] def add(request: RequestInfo): js.Promise[Unit]  (@deprecated in 1.2.0)
-experimental/serviceworkers/Cache[JC] def addAll(requests: js.Array[RequestInfo]): js.Promise[Unit]  (@deprecated in 1.2.0)
-experimental/serviceworkers/Cache[JC] def delete(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[Boolean]  (@deprecated in 1.2.0)
-experimental/serviceworkers/Cache[JC] def keys(request: js.UndefOr[RequestInfo]?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Request]]  (@deprecated in 1.2.0)
-experimental/serviceworkers/Cache[JC] def `match`(request: RequestInfo, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.UndefOr[Response]]  (@deprecated in 1.2.0)
-experimental/serviceworkers/Cache[JC] def matchAll(request: RequestInfo?, options: js.UndefOr[CacheQueryOptions]?): js.Promise[js.Array[Response]]  (@deprecated in 1.2.0)
-experimental/serviceworkers/Cache[JC] def put(request: RequestInfo, response: Response): js.Promise[Unit]  (@deprecated in 1.2.0)
-experimental/serviceworkers/CacheQueryOptions[JT] var cacheName: String  (@deprecated in 1.2.0)
-experimental/serviceworkers/CacheQueryOptions[JT] var ignoreMethod: Boolean  (@deprecated in 1.2.0)
-experimental/serviceworkers/CacheQueryOptions[JT] var ignoreSearch: Boolean  (@deprecated in 1.2.0)
-experimental/serviceworkers/CacheQueryOptions[JT] var ignoreVary: Boolean  (@deprecated in 1.2.0)
-experimental/serviceworkers/CacheStorage[JT] def delete(cacheName: String): js.Promise[Boolean]  (@deprecated in 1.2.0)
-experimental/serviceworkers/CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]  (@deprecated in 1.2.0)
-experimental/serviceworkers/CacheStorage[JT] def keys(): js.Promise[js.Array[String]]  (@deprecated in 1.2.0)
-experimental/serviceworkers/CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]  (@deprecated in 1.2.0)
-experimental/serviceworkers/CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]  (@deprecated in 1.2.0)
-experimental/serviceworkers/CanvasProxy[JT] def setContext(context: RenderingContext): Unit
-experimental/serviceworkers/Client[JT] def frameType: FrameType
-experimental/serviceworkers/Client[JT] def id: String
-experimental/serviceworkers/Client[JT] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
-experimental/serviceworkers/Client[JT] def url: String
-experimental/serviceworkers/ClientQueryOptions[JT] var includeUncontrolled: Boolean
-experimental/serviceworkers/ClientQueryOptions[JT] var `type`: ClientType
-experimental/serviceworkers/ClientType[JT]
-experimental/serviceworkers/ClientType[SO] val all: ClientType
-experimental/serviceworkers/ClientType[SO] val sharedworker: ClientType
-experimental/serviceworkers/ClientType[SO] val window: ClientType
-experimental/serviceworkers/ClientType[SO] val worker: ClientType
-experimental/serviceworkers/Clients[JT] def claim(): js.Promise[Unit]
-experimental/serviceworkers/Clients[JT] def get(id: String): js.Promise[js.UndefOr[Client]]
-experimental/serviceworkers/Clients[JT] def matchAll(options: js.UndefOr[ClientQueryOptions]?): js.Promise[js.Array[Client]]
-experimental/serviceworkers/Clients[JT] def openWindow(url: String): js.Promise[WindowClient]
-experimental/serviceworkers/ExtendableEvent[JC] def bubbles: Boolean
-experimental/serviceworkers/ExtendableEvent[JC] def cancelBubble: Boolean
-experimental/serviceworkers/ExtendableEvent[JC] def cancelable: Boolean
-experimental/serviceworkers/ExtendableEvent[JC] def currentTarget: EventTarget
-experimental/serviceworkers/ExtendableEvent[JC] def defaultPrevented: Boolean
-experimental/serviceworkers/ExtendableEvent[JC] def eventPhase: Int
-experimental/serviceworkers/ExtendableEvent[JC] def isTrusted: Boolean
-experimental/serviceworkers/ExtendableEvent[JC] def preventDefault(): Unit
-experimental/serviceworkers/ExtendableEvent[JC] def stopImmediatePropagation(): Unit
-experimental/serviceworkers/ExtendableEvent[JC] def stopPropagation(): Unit
-experimental/serviceworkers/ExtendableEvent[JC] def target: EventTarget
-experimental/serviceworkers/ExtendableEvent[JC] def timeStamp: Double
-experimental/serviceworkers/ExtendableEvent[JC] def `type`: String
-experimental/serviceworkers/ExtendableEvent[JC] def waitUntil(promise: js.Promise[Any]): Unit
-experimental/serviceworkers/ExtendableEventInit[JT] var bubbles: js.UndefOr[Boolean]
-experimental/serviceworkers/ExtendableEventInit[JT] var cancelable: js.UndefOr[Boolean]
-experimental/serviceworkers/ExtendableEventInit[JT] var composed: js.UndefOr[Boolean]
-experimental/serviceworkers/ExtendableEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/serviceworkers/ExtendableMessageEvent[JC] def bubbles: Boolean
-experimental/serviceworkers/ExtendableMessageEvent[JC] def cancelBubble: Boolean
-experimental/serviceworkers/ExtendableMessageEvent[JC] def cancelable: Boolean
-experimental/serviceworkers/ExtendableMessageEvent[JC] def currentTarget: EventTarget
-experimental/serviceworkers/ExtendableMessageEvent[JC] val data: Any
-experimental/serviceworkers/ExtendableMessageEvent[JC] def defaultPrevented: Boolean
-experimental/serviceworkers/ExtendableMessageEvent[JC] def eventPhase: Int
-experimental/serviceworkers/ExtendableMessageEvent[JC] def isTrusted: Boolean
-experimental/serviceworkers/ExtendableMessageEvent[JC] val lastEventId: String
-experimental/serviceworkers/ExtendableMessageEvent[JC] val origin: String
-experimental/serviceworkers/ExtendableMessageEvent[JC] def ports: js.Array[MessagePort]
-experimental/serviceworkers/ExtendableMessageEvent[JC] def preventDefault(): Unit
-experimental/serviceworkers/ExtendableMessageEvent[JC] def source: ServiceWorker | MessagePort
-experimental/serviceworkers/ExtendableMessageEvent[JC] def stopImmediatePropagation(): Unit
-experimental/serviceworkers/ExtendableMessageEvent[JC] def stopPropagation(): Unit
-experimental/serviceworkers/ExtendableMessageEvent[JC] def target: EventTarget
-experimental/serviceworkers/ExtendableMessageEvent[JC] def timeStamp: Double
-experimental/serviceworkers/ExtendableMessageEvent[JC] def `type`: String
-experimental/serviceworkers/ExtendableMessageEvent[JC] def waitUntil(promise: js.Promise[Any]): Unit
-experimental/serviceworkers/ExtendableMessageEventInit[JT] var bubbles: js.UndefOr[Boolean]
-experimental/serviceworkers/ExtendableMessageEventInit[JT] var cancelable: js.UndefOr[Boolean]
-experimental/serviceworkers/ExtendableMessageEventInit[JT] var composed: js.UndefOr[Boolean]
-experimental/serviceworkers/ExtendableMessageEventInit[JT] var data: js.UndefOr[Any]
-experimental/serviceworkers/ExtendableMessageEventInit[JT] var lastEventId: js.UndefOr[String]
-experimental/serviceworkers/ExtendableMessageEventInit[JT] var origin: js.UndefOr[String]
-experimental/serviceworkers/ExtendableMessageEventInit[JT] var ports: js.UndefOr[js.Array[MessagePort]]
-experimental/serviceworkers/ExtendableMessageEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/serviceworkers/ExtendableMessageEventInit[JT] var source: js.UndefOr[Client | ServiceWorker | MessagePort]
-experimental/serviceworkers/FetchEvent[JC] def bubbles: Boolean
-experimental/serviceworkers/FetchEvent[JC] def cancelBubble: Boolean
-experimental/serviceworkers/FetchEvent[JC] def cancelable: Boolean
-experimental/serviceworkers/FetchEvent[JC] def clientId: String
-experimental/serviceworkers/FetchEvent[JC] def currentTarget: EventTarget
-experimental/serviceworkers/FetchEvent[JC] def defaultPrevented: Boolean
-experimental/serviceworkers/FetchEvent[JC] def eventPhase: Int
-experimental/serviceworkers/FetchEvent[JC] def isReload: Boolean
-experimental/serviceworkers/FetchEvent[JC] def isTrusted: Boolean
-experimental/serviceworkers/FetchEvent[JC] def preloadResponse: js.Promise[js.UndefOr[Response]]
-experimental/serviceworkers/FetchEvent[JC] def preventDefault(): Unit
-experimental/serviceworkers/FetchEvent[JC] def replacesClientId: String
-experimental/serviceworkers/FetchEvent[JC] def request: Request
-experimental/serviceworkers/FetchEvent[JC] def respondWith(promisedResponse: Response | js.Promise[Response]): Unit
-experimental/serviceworkers/FetchEvent[JC] def resultingClientId: String
-experimental/serviceworkers/FetchEvent[JC] def stopImmediatePropagation(): Unit
-experimental/serviceworkers/FetchEvent[JC] def stopPropagation(): Unit
-experimental/serviceworkers/FetchEvent[JC] def target: EventTarget
-experimental/serviceworkers/FetchEvent[JC] def timeStamp: Double
-experimental/serviceworkers/FetchEvent[JC] def `type`: String
-experimental/serviceworkers/FetchEvent[JC] def waitUntil(promise: js.Promise[Any]): Unit
-experimental/serviceworkers/FetchEventInit[JT] var bubbles: js.UndefOr[Boolean]
-experimental/serviceworkers/FetchEventInit[JT] var cancelable: js.UndefOr[Boolean]
-experimental/serviceworkers/FetchEventInit[JT] var clientId: js.UndefOr[String]
-experimental/serviceworkers/FetchEventInit[JT] var composed: js.UndefOr[Boolean]
-experimental/serviceworkers/FetchEventInit[JT] var isReload: js.UndefOr[Boolean]
-experimental/serviceworkers/FetchEventInit[JT] var request: js.UndefOr[Request]
-experimental/serviceworkers/FetchEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/serviceworkers/FrameType[JT]
-experimental/serviceworkers/FrameType[SO] val auxiliary: FrameType
-experimental/serviceworkers/FrameType[SO] val nested: FrameType
-experimental/serviceworkers/FrameType[SO] val none: FrameType
-experimental/serviceworkers/FrameType[SO] val `top-level` = "top-level".asInstanceOf[FrameType]
-experimental/serviceworkers/GetNotificationOptions[JT] var tag: js.UndefOr[String]
-experimental/serviceworkers/ServiceWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/serviceworkers/ServiceWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/serviceworkers/ServiceWorker[JT] def dispatchEvent(evt: Event): Boolean
-experimental/serviceworkers/ServiceWorker[JT] var onstatechange: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorker[JT] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
-experimental/serviceworkers/ServiceWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/serviceworkers/ServiceWorker[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/serviceworkers/ServiceWorker[JT] def scriptURL: String
-experimental/serviceworkers/ServiceWorker[JT] def state: String
-experimental/serviceworkers/ServiceWorkerContainer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/serviceworkers/ServiceWorkerContainer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/serviceworkers/ServiceWorkerContainer[JT] def controller: ServiceWorker
-experimental/serviceworkers/ServiceWorkerContainer[JT] def dispatchEvent(evt: Event): Boolean
-experimental/serviceworkers/ServiceWorkerContainer[JT] def getRegistration(scope: String?): js.Promise[js.UndefOr[ServiceWorkerRegistration]]
-experimental/serviceworkers/ServiceWorkerContainer[JT] def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]]
-experimental/serviceworkers/ServiceWorkerContainer[JT] var oncontrollerchange: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorkerContainer[JT] var onmessage: js.Function1[MessageEvent, _]
-experimental/serviceworkers/ServiceWorkerContainer[JT] def ready: js.Promise[ServiceWorkerRegistration]
-experimental/serviceworkers/ServiceWorkerContainer[JT] def register(scriptURL: String, options: js.Object?): js.Promise[ServiceWorkerRegistration]
-experimental/serviceworkers/ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/serviceworkers/ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JO] def self: ServiceWorkerGlobalScope
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def atob(encodedString: String): String
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def btoa(rawString: String): String
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def caches: js.UndefOr[CacheStorage]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def clearInterval(handle: Int): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def clearTimeout(handle: Int): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def clients: Clients
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def close(): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def isSecureContext: Boolean
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def location: WorkerLocation
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def navigator: WorkerNavigator
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onError: js.Function1[ErrorEvent, _]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onactivate: js.Function1[ExtendableEvent, _]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onfetch: js.Function1[FetchEvent, _]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var oninstall: js.Function1[ExtendableEvent, _]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent, _]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def origin: String
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def registration: ServiceWorkerRegistration
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def self: this.type
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
-experimental/serviceworkers/ServiceWorkerGlobalScope[JT] def skipWaiting(): js.Promise[Unit]
-experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var bubbles: js.UndefOr[Boolean]
-experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var cancelable: js.UndefOr[Boolean]
-experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var composed: js.UndefOr[Boolean]
-experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var data: js.UndefOr[Any]
-experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var lastEventId: js.UndefOr[String]
-experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var origin: js.UndefOr[String]
-experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var ports: js.UndefOr[js.Array[MessagePort]]
-experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var scoped: js.UndefOr[Boolean]
-experimental/serviceworkers/ServiceWorkerMessageEventInit[JT] var source: js.UndefOr[ServiceWorker | MessagePort]
-experimental/serviceworkers/ServiceWorkerRegistration[JT] var active: ServiceWorker
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def dispatchEvent(evt: Event): Boolean
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def getNotifications(options: GetNotificationOptions?): js.Promise[Sequence[Notification]]
-experimental/serviceworkers/ServiceWorkerRegistration[JT] var installing: ServiceWorker
-experimental/serviceworkers/ServiceWorkerRegistration[JT] var onupdatefound: js.Function1[Event, _]
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/serviceworkers/ServiceWorkerRegistration[JT] var scope: String
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def showNotification(title: String, options: NotificationOptions?): js.Promise[Unit]
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def unregister(): js.Promise[Boolean]
-experimental/serviceworkers/ServiceWorkerRegistration[JT] def update(): js.Promise[Unit]
-experimental/serviceworkers/ServiceWorkerRegistration[JT] var waiting: ServiceWorker
-experimental/serviceworkers/ServiceWorkerState[JT]
-experimental/serviceworkers/ServiceWorkerState[SO] val activated: ServiceWorkerState
-experimental/serviceworkers/ServiceWorkerState[SO] val activating: ServiceWorkerState
-experimental/serviceworkers/ServiceWorkerState[SO] val installed: ServiceWorkerState
-experimental/serviceworkers/ServiceWorkerState[SO] val installing: ServiceWorkerState
-experimental/serviceworkers/ServiceWorkerState[SO] val redundant: ServiceWorkerState
-experimental/serviceworkers/WindowClient[JT] def focus(): js.Promise[WindowClient]
-experimental/serviceworkers/WindowClient[JT] def focused: Boolean
-experimental/serviceworkers/WindowClient[JT] def frameType: FrameType
-experimental/serviceworkers/WindowClient[JT] def id: String
-experimental/serviceworkers/WindowClient[JT] def navigate(url: String): js.Promise[WindowClient]
-experimental/serviceworkers/WindowClient[JT] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
-experimental/serviceworkers/WindowClient[JT] def url: String
-experimental/serviceworkers/WindowClient[JT] def visibilityState: String
-experimental/serviceworkers/package[SO] type Transferable = org.scalajs.dom.Transferable | CanvasProxy
-experimental/serviceworkers/package[SO] val serviceWorker: ServiceWorkerContainer
-experimental/serviceworkers/package[SO] implicit def toServiceWorkerNavigator(n: Navigator): ServiceWorkerNavigator
-experimental/serviceworkers/package.ServiceWorkerNavigator[JT] val serviceWorker: ServiceWorkerContainer
+experimental/serviceworkers/package[SO] type Cache = dom.Cache  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type CacheQueryOptions = dom.CacheQueryOptions  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type CacheStorage = dom.CacheStorage  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type CanvasProxy = dom.CanvasProxy  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type Client = dom.Client  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ClientQueryOptions = dom.ClientQueryOptions  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ClientType = dom.ClientType  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type Clients = dom.Clients  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ExtendableEvent = dom.ExtendableEvent  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ExtendableEventInit = dom.ExtendableEventInit  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ExtendableMessageEvent = dom.ExtendableMessageEvent  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ExtendableMessageEventInit = dom.ExtendableMessageEventInit  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type FetchEvent = dom.FetchEvent  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type FetchEventInit = dom.FetchEventInit  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type FrameType = dom.FrameType  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type GetNotificationOptions = dom.GetNotificationOptions  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ServiceWorker = dom.ServiceWorker  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ServiceWorkerContainer = dom.ServiceWorkerContainer  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ServiceWorkerGlobalScope = dom.ServiceWorkerGlobalScope  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ServiceWorkerMessageEventInit = dom.ServiceWorkerMessageEventInit  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ServiceWorkerNavigator = dom.Navigator  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ServiceWorkerRegistration = dom.ServiceWorkerRegistration  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type ServiceWorkerState = dom.ServiceWorkerState  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type Transferable = dom.Transferable  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] type WindowClient = dom.WindowClient  (@deprecated in 2.0.0)
+experimental/serviceworkers/package[SO] @deprecated("use dom.ClientType instead", "2.0.0") val ClientType = dom.ClientType
+experimental/serviceworkers/package[SO] @deprecated("use dom.FrameType instead", "2.0.0") val FrameType = dom.FrameType
+experimental/serviceworkers/package[SO] @deprecated("use dom.ServiceWorkerState instead", "2.0.0") val ServiceWorkerState = dom.ServiceWorkerState
+experimental/serviceworkers/package[SO] implicit def toServiceWorkerNavigator(n: Navigator): ServiceWorkerNavigator  (@deprecated in 2.0.0)
 experimental/sharedworkers/package[SO] type SharedWorker = dom.SharedWorker  (@deprecated in 2.0.0)
 experimental/sharedworkers/package[SO] type SharedWorkerGlobalScope = dom.SharedWorkerGlobalScope  (@deprecated in 2.0.0)
 experimental/sharedworkers/package[SO] @deprecated("use dom.SharedWorker instead", "2.0.0") val SharedWorker = dom.SharedWorker
@@ -25916,7 +25926,7 @@ package[SO] type NodeListOf[+T <: Node] = NodeList[T]  (@deprecated in 2.0.0)
 package[SO] type OpenEndedDictionary[T] = js.Dictionary[T]
 package[SO] type RequestInfo = String | Request
 package[SO] type Sequence[T] = js.Array[T]
-package[SO] type Transferable = ArrayBuffer | MessagePort
+package[SO] type Transferable = ArrayBuffer | MessagePort | CanvasProxy
 package[SO] @js.native @JSGlobal("console") val console: Console
 package[SO] lazy val css: DeprecatedCSSAliases.type  (@deprecated in 2.0.0)
 package[SO] @js.native @JSGlobal("document") val document: html.Document

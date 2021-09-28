@@ -1,4 +1,4 @@
-package org.scalajs.dom.experimental.serviceworkers
+package org.scalajs.dom
 
 import org.scalajs.dom.webgl.RenderingContext
 import scala.scalajs.js

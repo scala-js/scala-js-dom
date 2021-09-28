@@ -1,6 +1,5 @@
-package org.scalajs.dom.experimental.serviceworkers
+package org.scalajs.dom
 
-import org.scalajs.dom._
 import scala.scalajs.js
 
 /** The ServiceWorkerRegistion interface of the ServiceWorker API represents the service worker registration. You

@@ -1,6 +1,6 @@
-package org.scalajs.dom.experimental.push
+package org.scalajs.dom
+package experimental.push
 
-import org.scalajs.dom.experimental.serviceworkers.ExtendableEvent
 import scala.scalajs.js
 
 /** The PushEvent interface of the Push API represents a push message that has been received. This event is sent to the

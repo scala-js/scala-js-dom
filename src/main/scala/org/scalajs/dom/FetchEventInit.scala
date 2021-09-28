@@ -1,6 +1,5 @@
-package org.scalajs.dom.experimental.serviceworkers
+package org.scalajs.dom
 
-import org.scalajs.dom._
 import scala.scalajs.js
 
 trait FetchEventInit extends ExtendableEventInit {

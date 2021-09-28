@@ -1,6 +1,5 @@
-package org.scalajs.dom.experimental.serviceworkers
+package org.scalajs.dom
 
-import org.scalajs.dom._
 import scala.scalajs.js
 
 /** The ServiceWorkerContainer interface of the ServiceWorker API exposes the ServiceWorkerContainer.

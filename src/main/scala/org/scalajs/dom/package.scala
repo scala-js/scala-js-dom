@@ -14,7 +14,7 @@ package object dom {
     * property: it is merely a tag indicating objects that can be used in specific conditions, like to be transfered to
     * a Worker using the Worker.postMessage() method.
     */
-  type Transferable = ArrayBuffer | MessagePort
+  type Transferable = ArrayBuffer | MessagePort | CanvasProxy
 
   type BufferSource = ArrayBufferView | ArrayBuffer
 
