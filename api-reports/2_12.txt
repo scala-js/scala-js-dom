@@ -1027,16 +1027,6 @@ CloseEvent[JT] def target: EventTarget
 CloseEvent[JT] def timeStamp: Double
 CloseEvent[JT] def `type`: String
 CloseEvent[JT] def wasClean: Boolean
-Collator[JC] def compare(string1: String, string2: String): Double
-Collator[JC] def resolvedOptions(): CollatorOptions
-Collator[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
-CollatorOptions[JT] var caseFirst: js.UndefOr[String]
-CollatorOptions[JT] var ignorePunctuation: js.UndefOr[Boolean]
-CollatorOptions[JT] var localeMatcher: js.UndefOr[String]
-CollatorOptions[JT] var numeric: js.UndefOr[Boolean]
-CollatorOptions[JT] var sensitivity: js.UndefOr[String]
-CollatorOptions[JT] var usage: js.UndefOr[String]
-CollatorOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, usage: js.UndefOr[String]?, sensitivity: js.UndefOr[String]?, ignorePunctuation: js.UndefOr[Boolean]?, numeric: js.UndefOr[Boolean]?, caseFirst: js.UndefOr[String]?): CollatorOptions  (@deprecated in 2.0.0)
 Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Comment[JC] def appendChild(newChild: Node): Node
@@ -1281,23 +1271,6 @@ DataTransfer[JT] def getData(format: String): String
 DataTransfer[JT] def setData(format: String, data: String): Unit
 DataTransfer[JT] def setDragImage(image: Element, x: Double, y: Double): Unit
 DataTransfer[JT] def types: js.Array[String]
-DateTimeFormat[JC] def format(date: js.Date): String
-DateTimeFormat[JC] def resolvedOptions(): DateTimeFormatOptions
-DateTimeFormat[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
-DateTimeFormatOptions[JT] var day: js.UndefOr[String]
-DateTimeFormatOptions[JT] var era: js.UndefOr[String]
-DateTimeFormatOptions[JT] var formatMatcher: js.UndefOr[String]
-DateTimeFormatOptions[JT] var hour: js.UndefOr[String]
-DateTimeFormatOptions[JT] var hour12: js.UndefOr[Boolean]
-DateTimeFormatOptions[JT] var localeMatcher: js.UndefOr[String]
-DateTimeFormatOptions[JT] var minute: js.UndefOr[String]
-DateTimeFormatOptions[JT] var month: js.UndefOr[String]
-DateTimeFormatOptions[JT] var second: js.UndefOr[String]
-DateTimeFormatOptions[JT] var timeZone: js.UndefOr[String]
-DateTimeFormatOptions[JT] var timeZoneName: js.UndefOr[String]
-DateTimeFormatOptions[JT] var weekday: js.UndefOr[String]
-DateTimeFormatOptions[JT] var year: js.UndefOr[String]
-DateTimeFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, timeZone: js.UndefOr[String]?, hour12: js.UndefOr[Boolean]?, formatMatcher: js.UndefOr[String]?, weekday: js.UndefOr[String]?, era: js.UndefOr[String]?, year: js.UndefOr[String]?, month: js.UndefOr[String]?, day: js.UndefOr[String]?, hour: js.UndefOr[String]?, minute: js.UndefOr[String]?, second: js.UndefOr[String]?, timeZoneName: js.UndefOr[String]?): DateTimeFormatOptions  (@deprecated in 2.0.0)
 DedicatedWorkerGlobalScope[JO] def self: DedicatedWorkerGlobalScope
 DedicatedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DedicatedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -15207,20 +15180,6 @@ NotificationOptions[JT] var sticky: js.UndefOr[Boolean]
 NotificationOptions[JT] var tag: js.UndefOr[String]
 NotificationOptions[JT] var vibrate: js.UndefOr[js.Array[Double]]
 NotificationOptions[SO] def apply(body: js.UndefOr[String]?, dir: js.UndefOr[String]?, icon: js.UndefOr[String]?, lang: js.UndefOr[String]?, noscreen: js.UndefOr[Boolean]?, renotify: js.UndefOr[Boolean]?, silent: js.UndefOr[Boolean]?, sound: js.UndefOr[String]?, sticky: js.UndefOr[Boolean]?, tag: js.UndefOr[String]?, onclick: js.UndefOr[js.Function0[Any]]?, onerror: js.UndefOr[js.Function0[Any]]?, vibrate: js.UndefOr[js.Array[Double]]?): NotificationOptions  (@deprecated in 2.0.0)
-NumberFormat[JC] def format(number: Double): String
-NumberFormat[JC] def resolvedOptions(): NumberFormatOptions
-NumberFormat[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
-NumberFormatOptions[JT] var currency: js.UndefOr[String]
-NumberFormatOptions[JT] var currencyDisplay: js.UndefOr[String]
-NumberFormatOptions[JT] var localeMatcher: js.UndefOr[String]
-NumberFormatOptions[JT] var maximumFractionDigits: js.UndefOr[Double]
-NumberFormatOptions[JT] var maximumSignificantDigits: js.UndefOr[Double]
-NumberFormatOptions[JT] var minimumFractionDigits: js.UndefOr[Double]
-NumberFormatOptions[JT] var minimumIntegerDigits: js.UndefOr[Double]
-NumberFormatOptions[JT] var minimumSignificantDigits: js.UndefOr[Double]
-NumberFormatOptions[JT] var style: js.UndefOr[String]
-NumberFormatOptions[JT] var useGrouping: js.UndefOr[Boolean]
-NumberFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, style: js.UndefOr[String]?, currency: js.UndefOr[String]?, currencyDisplay: js.UndefOr[String]?, useGrouping: js.UndefOr[Boolean]?, minimumIntegerDigits: js.UndefOr[Double]?, minimumFractionDigits: js.UndefOr[Double]?, maximumFractionDigits: js.UndefOr[Double]?, minimumSignificantDigits: js.UndefOr[Double]?, maximumSignificantDigits: js.UndefOr[Double]?): NumberFormatOptions  (@deprecated in 2.0.0)
 OfflineAudioCompletionEvent[JT] def bubbles: Boolean
 OfflineAudioCompletionEvent[JT] def cancelBubble: Boolean
 OfflineAudioCompletionEvent[JT] def cancelable: Boolean
@@ -25511,18 +25470,18 @@ experimental/gamepad/package[SO] type GamepadNavigator = dom.Navigator  (@deprec
 experimental/gamepad/package[SO] def standard: dom.GamepadMappingType  (@deprecated in 2.0.0)
 experimental/gamepad/package[SO] def toGamepad(navigator: dom.Navigator): GamepadNavigator  (@deprecated in 2.0.0)
 experimental/gamepad/package[SO] def unknown: dom.GamepadMappingType  (@deprecated in 2.0.0)
-experimental/intl/package[SO] type Collator = dom.Collator  (@deprecated in 2.0.0)
-experimental/intl/package[SO] type CollatorOptions = dom.CollatorOptions  (@deprecated in 2.0.0)
-experimental/intl/package[SO] type DateTimeFormat = dom.DateTimeFormat  (@deprecated in 2.0.0)
-experimental/intl/package[SO] type DateTimeFormatOptions = dom.DateTimeFormatOptions  (@deprecated in 2.0.0)
-experimental/intl/package[SO] type NumberFormat = dom.NumberFormat  (@deprecated in 2.0.0)
-experimental/intl/package[SO] type NumberFormatOptions = dom.NumberFormatOptions  (@deprecated in 2.0.0)
-experimental/intl/package[SO] @deprecated("use dom.Collator instead", "2.0.0") val Collator = dom.Collator
-experimental/intl/package[SO] @deprecated("use dom.CollatorOptions instead", "2.0.0") val CollatorOptions = dom.CollatorOptions
-experimental/intl/package[SO] @deprecated("use dom.DateTimeFormat instead", "2.0.0") val DateTimeFormat = dom.DateTimeFormat
-experimental/intl/package[SO] @deprecated("use dom.DateTimeFormatOptions instead", "2.0.0") val DateTimeFormatOptions = dom.DateTimeFormatOptions
-experimental/intl/package[SO] @deprecated("use dom.NumberFormat instead", "2.0.0") val NumberFormat = dom.NumberFormat
-experimental/intl/package[SO] @deprecated("use dom.NumberFormatOptions instead", "2.0.0") val NumberFormatOptions = dom.NumberFormatOptions
+experimental/intl/package[SO] type Collator = dom.intl.Collator  (@deprecated in 2.0.0)
+experimental/intl/package[SO] type CollatorOptions = dom.intl.CollatorOptions  (@deprecated in 2.0.0)
+experimental/intl/package[SO] type DateTimeFormat = dom.intl.DateTimeFormat  (@deprecated in 2.0.0)
+experimental/intl/package[SO] type DateTimeFormatOptions = dom.intl.DateTimeFormatOptions  (@deprecated in 2.0.0)
+experimental/intl/package[SO] type NumberFormat = dom.intl.NumberFormat  (@deprecated in 2.0.0)
+experimental/intl/package[SO] type NumberFormatOptions = dom.intl.NumberFormatOptions  (@deprecated in 2.0.0)
+experimental/intl/package[SO] @deprecated("use dom.intl.Collator instead", "2.0.0") val Collator = dom.intl.Collator
+experimental/intl/package[SO] @deprecated("use dom.intl.CollatorOptions instead", "2.0.0") val CollatorOptions = dom.intl.CollatorOptions
+experimental/intl/package[SO] @deprecated("use dom.intl.DateTimeFormat instead", "2.0.0") val DateTimeFormat = dom.intl.DateTimeFormat
+experimental/intl/package[SO] @deprecated("use dom.intl.DateTimeFormatOptions instead", "2.0.0") val DateTimeFormatOptions = dom.intl.DateTimeFormatOptions
+experimental/intl/package[SO] @deprecated("use dom.intl.NumberFormat instead", "2.0.0") val NumberFormat = dom.intl.NumberFormat
+experimental/intl/package[SO] @deprecated("use dom.intl.NumberFormatOptions instead", "2.0.0") val NumberFormatOptions = dom.intl.NumberFormatOptions
 experimental/mediastream/package[SO] type AppendMode = String  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type AudioTrack = dom.AudioTrack  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type AudioTrackList = dom.AudioTrackList  (@deprecated in 2.0.0)
@@ -25998,6 +25957,47 @@ idb[SO] type VersionChangeEvent = IDBVersionChangeEvent
 idb[SO] def CursorDirection = IDBCursorDirection
 idb[SO] def KeyRange = IDBKeyRange
 idb[SO] def TransactionMode = IDBTransactionMode
+intl/Collator[JC] def compare(string1: String, string2: String): Double
+intl/Collator[JC] def resolvedOptions(): CollatorOptions
+intl/Collator[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
+intl/CollatorOptions[JT] var caseFirst: js.UndefOr[String]
+intl/CollatorOptions[JT] var ignorePunctuation: js.UndefOr[Boolean]
+intl/CollatorOptions[JT] var localeMatcher: js.UndefOr[String]
+intl/CollatorOptions[JT] var numeric: js.UndefOr[Boolean]
+intl/CollatorOptions[JT] var sensitivity: js.UndefOr[String]
+intl/CollatorOptions[JT] var usage: js.UndefOr[String]
+intl/CollatorOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, usage: js.UndefOr[String]?, sensitivity: js.UndefOr[String]?, ignorePunctuation: js.UndefOr[Boolean]?, numeric: js.UndefOr[Boolean]?, caseFirst: js.UndefOr[String]?): CollatorOptions  (@deprecated in 2.0.0)
+intl/DateTimeFormat[JC] def format(date: js.Date): String
+intl/DateTimeFormat[JC] def resolvedOptions(): DateTimeFormatOptions
+intl/DateTimeFormat[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
+intl/DateTimeFormatOptions[JT] var day: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var era: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var formatMatcher: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var hour: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var hour12: js.UndefOr[Boolean]
+intl/DateTimeFormatOptions[JT] var localeMatcher: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var minute: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var month: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var second: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var timeZone: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var timeZoneName: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var weekday: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var year: js.UndefOr[String]
+intl/DateTimeFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, timeZone: js.UndefOr[String]?, hour12: js.UndefOr[Boolean]?, formatMatcher: js.UndefOr[String]?, weekday: js.UndefOr[String]?, era: js.UndefOr[String]?, year: js.UndefOr[String]?, month: js.UndefOr[String]?, day: js.UndefOr[String]?, hour: js.UndefOr[String]?, minute: js.UndefOr[String]?, second: js.UndefOr[String]?, timeZoneName: js.UndefOr[String]?): DateTimeFormatOptions  (@deprecated in 2.0.0)
+intl/NumberFormat[JC] def format(number: Double): String
+intl/NumberFormat[JC] def resolvedOptions(): NumberFormatOptions
+intl/NumberFormat[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
+intl/NumberFormatOptions[JT] var currency: js.UndefOr[String]
+intl/NumberFormatOptions[JT] var currencyDisplay: js.UndefOr[String]
+intl/NumberFormatOptions[JT] var localeMatcher: js.UndefOr[String]
+intl/NumberFormatOptions[JT] var maximumFractionDigits: js.UndefOr[Double]
+intl/NumberFormatOptions[JT] var maximumSignificantDigits: js.UndefOr[Double]
+intl/NumberFormatOptions[JT] var minimumFractionDigits: js.UndefOr[Double]
+intl/NumberFormatOptions[JT] var minimumIntegerDigits: js.UndefOr[Double]
+intl/NumberFormatOptions[JT] var minimumSignificantDigits: js.UndefOr[Double]
+intl/NumberFormatOptions[JT] var style: js.UndefOr[String]
+intl/NumberFormatOptions[JT] var useGrouping: js.UndefOr[Boolean]
+intl/NumberFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, style: js.UndefOr[String]?, currency: js.UndefOr[String]?, currencyDisplay: js.UndefOr[String]?, useGrouping: js.UndefOr[Boolean]?, minimumIntegerDigits: js.UndefOr[Double]?, minimumFractionDigits: js.UndefOr[Double]?, maximumFractionDigits: js.UndefOr[Double]?, minimumSignificantDigits: js.UndefOr[Double]?, maximumSignificantDigits: js.UndefOr[Double]?): NumberFormatOptions  (@deprecated in 2.0.0)
 package[SO] type AlgorithmIdentifier = Algorithm | String
 package[SO] type BigInteger = js.typedarray.Uint8Array
 package[SO] type BodyInit = Blob | BufferSource | FormData | String

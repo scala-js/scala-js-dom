@@ -11,40 +11,40 @@ import org.scalajs.dom
   */
 package object intl {
 
-  @deprecated("use dom.CollatorOptions instead", "2.0.0")
-  type CollatorOptions = dom.CollatorOptions
+  @deprecated("use dom.intl.CollatorOptions instead", "2.0.0")
+  type CollatorOptions = dom.intl.CollatorOptions
 
-  @deprecated("use dom.CollatorOptions instead", "2.0.0")
-  val CollatorOptions = dom.CollatorOptions
+  @deprecated("use dom.intl.CollatorOptions instead", "2.0.0")
+  val CollatorOptions = dom.intl.CollatorOptions
 
-  @deprecated("use dom.Collator instead", "2.0.0")
-  type Collator = dom.Collator
+  @deprecated("use dom.intl.Collator instead", "2.0.0")
+  type Collator = dom.intl.Collator
 
-  @deprecated("use dom.Collator instead", "2.0.0")
-  val Collator = dom.Collator
+  @deprecated("use dom.intl.Collator instead", "2.0.0")
+  val Collator = dom.intl.Collator
 
-  @deprecated("use dom.DateTimeFormatOptions instead", "2.0.0")
-  type DateTimeFormatOptions = dom.DateTimeFormatOptions
+  @deprecated("use dom.intl.DateTimeFormatOptions instead", "2.0.0")
+  type DateTimeFormatOptions = dom.intl.DateTimeFormatOptions
 
-  @deprecated("use dom.DateTimeFormatOptions instead", "2.0.0")
-  val DateTimeFormatOptions = dom.DateTimeFormatOptions
+  @deprecated("use dom.intl.DateTimeFormatOptions instead", "2.0.0")
+  val DateTimeFormatOptions = dom.intl.DateTimeFormatOptions
 
-  @deprecated("use dom.DateTimeFormat instead", "2.0.0")
-  type DateTimeFormat = dom.DateTimeFormat
+  @deprecated("use dom.intl.DateTimeFormat instead", "2.0.0")
+  type DateTimeFormat = dom.intl.DateTimeFormat
 
-  @deprecated("use dom.DateTimeFormat instead", "2.0.0")
-  val DateTimeFormat = dom.DateTimeFormat
+  @deprecated("use dom.intl.DateTimeFormat instead", "2.0.0")
+  val DateTimeFormat = dom.intl.DateTimeFormat
 
-  @deprecated("use dom.NumberFormatOptions instead", "2.0.0")
-  type NumberFormatOptions = dom.NumberFormatOptions
+  @deprecated("use dom.intl.NumberFormatOptions instead", "2.0.0")
+  type NumberFormatOptions = dom.intl.NumberFormatOptions
 
-  @deprecated("use dom.NumberFormatOptions instead", "2.0.0")
-  val NumberFormatOptions = dom.NumberFormatOptions
+  @deprecated("use dom.intl.NumberFormatOptions instead", "2.0.0")
+  val NumberFormatOptions = dom.intl.NumberFormatOptions
 
-  @deprecated("use dom.NumberFormat instead", "2.0.0")
-  type NumberFormat = dom.NumberFormat
+  @deprecated("use dom.intl.NumberFormat instead", "2.0.0")
+  type NumberFormat = dom.intl.NumberFormat
 
-  @deprecated("use dom.NumberFormat instead", "2.0.0")
-  val NumberFormat = dom.NumberFormat
+  @deprecated("use dom.intl.NumberFormat instead", "2.0.0")
+  val NumberFormat = dom.intl.NumberFormat
 
 }
