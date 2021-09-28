@@ -1,5 +1,4 @@
 package org.scalajs.dom
-package experimental.push
 
 import scala.scalajs.js
 

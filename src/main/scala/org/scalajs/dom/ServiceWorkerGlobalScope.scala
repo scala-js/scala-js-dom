@@ -51,6 +51,18 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
     * current client and all other active clients.
     */
   def skipWaiting(): js.Promise[Unit] = js.native
+
+  /** The ServiceWorkerGlobalScope.onpush event of the ServiceWorkerGlobalScope interface is fired whenever a push
+    * message is received by a service worker via a push server.
+    */
+  var onpush: js.Function1[PushEvent, _] = js.native
+
+  /** The ServiceWorkerGlobalScope.onpushsubscriptionchange event of the ServiceWorkerGlobalScope interface is fired
+    * whenever a push subscription has been invalidated (or is about to become so). This offers an opportunity to
+    * resubscribe in order to continue receiving push messages, if desired. This might happen if, for example, the push
+    * service sets an expiration time a subscription.
+    */
+  var onpushsubscriptionchange: js.Function1[PushEvent, _] = js.native
 }
 
 @js.native

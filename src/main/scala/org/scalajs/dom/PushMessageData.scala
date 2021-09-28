@@ -1,6 +1,5 @@
-package org.scalajs.dom.experimental.push
+package org.scalajs.dom
 
-import org.scalajs.dom.Blob
 import scala.scalajs.js
 import scala.scalajs.js.typedarray.ArrayBuffer
 

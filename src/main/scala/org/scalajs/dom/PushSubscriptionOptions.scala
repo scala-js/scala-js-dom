@@ -1,4 +1,4 @@
-package org.scalajs.dom.experimental.push
+package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.typedarray.Uint8Array

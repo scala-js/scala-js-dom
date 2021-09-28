@@ -1,47 +1,59 @@
 package org.scalajs.dom
 package experimental
 
-import scala.language.implicitConversions
-import scala.scalajs.js
+import org.scalajs.dom
 
 /** The Push API is currently specified here: [[http://www.w3.org/TR/2015/WD-push-api-20151215/]] */
 package object push {
 
   /** Implicit function for patching Push API support onto ServiceWorkerRegistration. */
-  implicit def pushServiceWorkerRegistration(swr: ServiceWorkerRegistration): PushServiceWorkerRegistration = {
-    swr.asInstanceOf[PushServiceWorkerRegistration]
+  @deprecated("use dom.ServiceWorkerRegistration directly instead", "2.0.0")
+  def pushServiceWorkerRegistration(swr: ServiceWorkerRegistration): PushServiceWorkerRegistration = {
+    swr
   }
 
   /** Implicit function for patching Push API support onto ServiceWorkerGlobalScope */
-  implicit def pushServiceWorkerGlobalScope(swgs: ServiceWorkerGlobalScope): PushServiceWorkerGlobalScope = {
-    swgs.asInstanceOf[PushServiceWorkerGlobalScope]
+  @deprecated("use dom.ServiceWorkerGlobalScope directly instead", "2.0.0")
+  def pushServiceWorkerGlobalScope(swgs: ServiceWorkerGlobalScope): PushServiceWorkerGlobalScope = {
+    swgs
   }
 
   /** A trait used for patching Push API support onto ServiceWorkerRegistration. */
-  @js.native
-  trait PushServiceWorkerRegistration extends js.Any {
-
-    /** The pushManager property of the ServiceWorkerRegistration interface returns a reference to the PushManager
-      * interface for managing push subscriptions; this includes support for subscribing, getting an active
-      * subscription, and accessing push permission status.
-      */
-    val pushManager: PushManager = js.native
-  }
+  @deprecated("use dom.ServiceWorkerRegistration instead", "2.0.0")
+  type PushServiceWorkerRegistration = ServiceWorkerRegistration
 
   /** A trait used for patching Push API support onto ServiceWorkerGlobalScope. */
-  @js.native
-  trait PushServiceWorkerGlobalScope extends js.Any {
+  @deprecated("use dom.ServiceWorkerGlobalScope instead", "2.0.0")
+  type PushServiceWorkerGlobalScope = ServiceWorkerGlobalScope
 
-    /** The ServiceWorkerGlobalScope.onpush event of the ServiceWorkerGlobalScope interface is fired whenever a push
-      * message is received by a service worker via a push server.
-      */
-    var onpush: js.Function1[PushEvent, _] = js.native
+  @deprecated("use dom.PushEncryptionKeyName instead", "2.0.0")
+  type PushEncryptionKeyName = dom.PushEncryptionKeyName
 
-    /** The ServiceWorkerGlobalScope.onpushsubscriptionchange event of the ServiceWorkerGlobalScope interface is fired
-      * whenever a push subscription has been invalidated (or is about to become so). This offers an opportunity to
-      * resubscribe in order to continue receiving push messages, if desired. This might happen if, for example, the
-      * push service sets an expiration time a subscription.
-      */
-    var onpushsubscriptionchange: js.Function1[PushEvent, _] = js.native
-  }
+  @deprecated("use dom.PushEncryptionKeyName instead", "2.0.0")
+  val PushEncryptionKeyName = dom.PushEncryptionKeyName
+
+  @deprecated("use dom.PushEvent instead", "2.0.0")
+  type PushEvent = dom.PushEvent
+
+  @deprecated("use dom.PushManager instead", "2.0.0")
+  type PushManager = dom.PushManager
+
+  @deprecated("use dom.PushMessageData instead", "2.0.0")
+  type PushMessageData = dom.PushMessageData
+
+  @deprecated("use dom.PushPermissionState instead", "2.0.0")
+  type PushPermissionState = dom.PushPermissionState
+
+  @deprecated("use dom.PushPermissionState instead", "2.0.0")
+  val PushPermissionState = dom.PushPermissionState
+
+  @deprecated("use dom.PushSubscriptionJSON instead", "2.0.0")
+  type PushSubscriptionJSON = dom.PushSubscriptionJSON
+
+  @deprecated("use dom.PushSubscriptionOptions instead", "2.0.0")
+  type PushSubscriptionOptions = dom.PushSubscriptionOptions
+
+  @deprecated("use dom.PushSubscription instead", "2.0.0")
+  type PushSubscription = dom.PushSubscription
+
 }

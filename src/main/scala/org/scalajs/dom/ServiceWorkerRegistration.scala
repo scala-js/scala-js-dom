@@ -59,4 +59,10 @@ trait ServiceWorkerRegistration extends EventTarget {
     * service worker.
     */
   def showNotification(title: String, options: NotificationOptions = js.native): js.Promise[Unit] = js.native
+
+  /** The pushManager property of the ServiceWorkerRegistration interface returns a reference to the PushManager
+    * interface for managing push subscriptions; this includes support for subscribing, getting an active subscription,
+    * and accessing push permission status.
+    */
+  val pushManager: PushManager = js.native
 }

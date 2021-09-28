@@ -15368,6 +15368,46 @@ ProgressEvent[JT] def target: EventTarget
 ProgressEvent[JT] def timeStamp: Double
 ProgressEvent[JT] def total: Double
 ProgressEvent[JT] def `type`: String
+PushEncryptionKeyName[JT]
+PushEncryptionKeyName[SO] val auth: PushEncryptionKeyName
+PushEncryptionKeyName[SO] val p256dh: PushEncryptionKeyName
+PushEvent[JT] def bubbles: Boolean
+PushEvent[JT] def cancelBubble: Boolean
+PushEvent[JT] def cancelable: Boolean
+PushEvent[JT] def currentTarget: EventTarget
+PushEvent[JT] val data: PushMessageData
+PushEvent[JT] def defaultPrevented: Boolean
+PushEvent[JT] def eventPhase: Int
+PushEvent[JT] def isTrusted: Boolean
+PushEvent[JT] def preventDefault(): Unit
+PushEvent[JT] def stopImmediatePropagation(): Unit
+PushEvent[JT] def stopPropagation(): Unit
+PushEvent[JT] def target: EventTarget
+PushEvent[JT] def timeStamp: Double
+PushEvent[JT] def `type`: String
+PushEvent[JT] def waitUntil(promise: js.Promise[Any]): Unit
+PushManager[JT] def getSubscription(): js.Promise[PushSubscription]
+PushManager[JT] def permissionState(options: PushSubscriptionOptions?): js.Promise[PushPermissionState]
+PushManager[JT] def subscribe(options: PushSubscriptionOptions?): js.Promise[PushSubscription]
+PushMessageData[JT] def arrayBuffer(): ArrayBuffer
+PushMessageData[JT] def blob(): Blob
+PushMessageData[JT] def json(): js.Any
+PushMessageData[JT] def text(): String
+PushPermissionState[JT]
+PushPermissionState[SO] val denied: PushPermissionState
+PushPermissionState[SO] val granted: PushPermissionState
+PushPermissionState[SO] val prompt: PushPermissionState
+PushSubscription[JT] val endpoint: String
+PushSubscription[JT] val expirationTime: java.lang.Double
+PushSubscription[JT] def getKey(name: PushEncryptionKeyName): ArrayBuffer
+PushSubscription[JT] val options: PushSubscriptionOptions
+PushSubscription[JT] def toJSON(): PushSubscriptionJSON
+PushSubscription[JT] def unsubscribe(): js.Promise[Boolean]
+PushSubscriptionJSON[JT] val endpoint: String
+PushSubscriptionJSON[JT] val expirationTime: java.lang.Double
+PushSubscriptionJSON[JT] val keys: js.Dictionary[String]
+PushSubscriptionOptions[JT] var applicationServerKey: js.UndefOr[Uint8Array]
+PushSubscriptionOptions[JT] var userVisibleOnly: js.UndefOr[Boolean]
 RTCBundlePolicy[JT]
 RTCBundlePolicy[SO] val balanced: RTCBundlePolicy
 RTCBundlePolicy[SO] val `max-bundle` = "max-bundle".asInstanceOf[RTCBundlePolicy]
@@ -23682,6 +23722,8 @@ ServiceWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
 ServiceWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent, _]
 ServiceWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
 ServiceWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
+ServiceWorkerGlobalScope[JT] var onpush: js.Function1[PushEvent, _]
+ServiceWorkerGlobalScope[JT] var onpushsubscriptionchange: js.Function1[PushEvent, _]
 ServiceWorkerGlobalScope[JT] def origin: String
 ServiceWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
 ServiceWorkerGlobalScope[JT] def registration: ServiceWorkerRegistration
@@ -23707,6 +23749,7 @@ ServiceWorkerRegistration[JT] def dispatchEvent(evt: Event): Boolean
 ServiceWorkerRegistration[JT] def getNotifications(options: GetNotificationOptions?): js.Promise[Sequence[Notification]]
 ServiceWorkerRegistration[JT] var installing: ServiceWorker
 ServiceWorkerRegistration[JT] var onupdatefound: js.Function1[Event, _]
+ServiceWorkerRegistration[JT] val pushManager: PushManager
 ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ServiceWorkerRegistration[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ServiceWorkerRegistration[JT] var scope: String
@@ -25546,54 +25589,20 @@ experimental/permissions/package.PushPermissionDescriptor[JT] val userVisibleOnl
 experimental/permissions/package.PushPermissionDescriptor[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor  (@deprecated in 2.0.0)
 experimental/permissions/package.PushPermissionDescriptor[SO] val name = PermissionName.push  (@deprecated in 2.0.0)
 experimental/permissions/package.PushPermissionDescriptor[SO] val userVisibleOnly = permissionUserVisibleOnly  (@deprecated in 2.0.0)
-experimental/push/PushEncryptionKeyName[JT]
-experimental/push/PushEncryptionKeyName[SO] val auth: PushEncryptionKeyName
-experimental/push/PushEncryptionKeyName[SO] val p256dh: PushEncryptionKeyName
-experimental/push/PushEvent[JT] def bubbles: Boolean
-experimental/push/PushEvent[JT] def cancelBubble: Boolean
-experimental/push/PushEvent[JT] def cancelable: Boolean
-experimental/push/PushEvent[JT] def currentTarget: EventTarget
-experimental/push/PushEvent[JT] val data: PushMessageData
-experimental/push/PushEvent[JT] def defaultPrevented: Boolean
-experimental/push/PushEvent[JT] def eventPhase: Int
-experimental/push/PushEvent[JT] def isTrusted: Boolean
-experimental/push/PushEvent[JT] def preventDefault(): Unit
-experimental/push/PushEvent[JT] def stopImmediatePropagation(): Unit
-experimental/push/PushEvent[JT] def stopPropagation(): Unit
-experimental/push/PushEvent[JT] def target: EventTarget
-experimental/push/PushEvent[JT] def timeStamp: Double
-experimental/push/PushEvent[JT] def `type`: String
-experimental/push/PushEvent[JT] def waitUntil(promise: js.Promise[Any]): Unit
-experimental/push/PushManager[JT] def getSubscription(): js.Promise[PushSubscription]
-experimental/push/PushManager[JT] def permissionState(options: PushSubscriptionOptions?): js.Promise[PushPermissionState]
-experimental/push/PushManager[JT] def subscribe(options: PushSubscriptionOptions?): js.Promise[PushSubscription]
-experimental/push/PushMessageData[JT] def arrayBuffer(): ArrayBuffer
-experimental/push/PushMessageData[JT] def blob(): Blob
-experimental/push/PushMessageData[JT] def json(): js.Any
-experimental/push/PushMessageData[JT] def text(): String
-experimental/push/PushPermissionState[JT]
-experimental/push/PushPermissionState[SO] val denied: PushPermissionState
-experimental/push/PushPermissionState[SO] val granted: PushPermissionState
-experimental/push/PushPermissionState[SO] val prompt: PushPermissionState
-experimental/push/PushSubscription[JT] val endpoint: String
-experimental/push/PushSubscription[JT] val expirationTime: java.lang.Double
-experimental/push/PushSubscription[JT] def getKey(name: PushEncryptionKeyName): ArrayBuffer
-experimental/push/PushSubscription[JT] val options: PushSubscriptionOptions
-experimental/push/PushSubscription[JT] def toJSON(): PushSubscriptionJSON
-experimental/push/PushSubscription[JT] def unsubscribe(): js.Promise[Boolean]
-experimental/push/PushSubscriptionJSON[JT] val endpoint: String
-experimental/push/PushSubscriptionJSON[JT] val expirationTime: java.lang.Double
-experimental/push/PushSubscriptionJSON[JT] val keys: js.Dictionary[String]
-experimental/push/PushSubscriptionOptions[JT] var applicationServerKey: js.UndefOr[Uint8Array]
-experimental/push/PushSubscriptionOptions[JT] var userVisibleOnly: js.UndefOr[Boolean]
-experimental/push/package[SO] var onpush: js.Function1[PushEvent, _]
-experimental/push/package[SO] var onpushsubscriptionchange: js.Function1[PushEvent, _]
-experimental/push/package[SO] val pushManager: PushManager
-experimental/push/package[SO] implicit def pushServiceWorkerGlobalScope(swgs: ServiceWorkerGlobalScope): PushServiceWorkerGlobalScope
-experimental/push/package[SO] implicit def pushServiceWorkerRegistration(swr: ServiceWorkerRegistration): PushServiceWorkerRegistration
-experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpush: js.Function1[PushEvent, _]
-experimental/push/package.PushServiceWorkerGlobalScope[JT] var onpushsubscriptionchange: js.Function1[PushEvent, _]
-experimental/push/package.PushServiceWorkerRegistration[JT] val pushManager: PushManager
+experimental/push/package[SO] type PushEncryptionKeyName = dom.PushEncryptionKeyName  (@deprecated in 2.0.0)
+experimental/push/package[SO] type PushEvent = dom.PushEvent  (@deprecated in 2.0.0)
+experimental/push/package[SO] type PushManager = dom.PushManager  (@deprecated in 2.0.0)
+experimental/push/package[SO] type PushMessageData = dom.PushMessageData  (@deprecated in 2.0.0)
+experimental/push/package[SO] type PushPermissionState = dom.PushPermissionState  (@deprecated in 2.0.0)
+experimental/push/package[SO] type PushServiceWorkerGlobalScope = ServiceWorkerGlobalScope  (@deprecated in 2.0.0)
+experimental/push/package[SO] type PushServiceWorkerRegistration = ServiceWorkerRegistration  (@deprecated in 2.0.0)
+experimental/push/package[SO] type PushSubscription = dom.PushSubscription  (@deprecated in 2.0.0)
+experimental/push/package[SO] type PushSubscriptionJSON = dom.PushSubscriptionJSON  (@deprecated in 2.0.0)
+experimental/push/package[SO] type PushSubscriptionOptions = dom.PushSubscriptionOptions  (@deprecated in 2.0.0)
+experimental/push/package[SO] @deprecated("use dom.PushEncryptionKeyName instead", "2.0.0") val PushEncryptionKeyName = dom.PushEncryptionKeyName
+experimental/push/package[SO] @deprecated("use dom.PushPermissionState instead", "2.0.0") val PushPermissionState = dom.PushPermissionState
+experimental/push/package[SO] def pushServiceWorkerGlobalScope(swgs: ServiceWorkerGlobalScope): PushServiceWorkerGlobalScope  (@deprecated in 2.0.0)
+experimental/push/package[SO] def pushServiceWorkerRegistration(swr: ServiceWorkerRegistration): PushServiceWorkerRegistration  (@deprecated in 2.0.0)
 experimental/serviceworkers/package[SO] type Cache = dom.Cache  (@deprecated in 2.0.0)
 experimental/serviceworkers/package[SO] type CacheQueryOptions = dom.CacheQueryOptions  (@deprecated in 2.0.0)
 experimental/serviceworkers/package[SO] type CacheStorage = dom.CacheStorage  (@deprecated in 2.0.0)
