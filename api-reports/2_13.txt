@@ -15039,6 +15039,7 @@ Navigator[JC] def language: String
 Navigator[JC] def languages: js.Array[String]
 Navigator[JC] def mediaDevices: MediaDevices
 Navigator[JC] def onLine: Boolean
+Navigator[JC] val permissions: Permissions
 Navigator[JC] def platform: String
 Navigator[JC] def sendBeacon(url: String, data: BodyInit?): Boolean
 Navigator[JC] val serviceWorker: ServiceWorkerContainer
@@ -15380,6 +15381,27 @@ PerformanceTiming[JC] def toJSON(): js.Dynamic
 PerformanceTiming[JC] def unloadEventEnd: Double
 PerformanceTiming[JC] def unloadEventStart: Double
 PeriodicWave[JT]
+PermissionDescriptor[JT] val name: PermissionName
+PermissionDescriptor[SO] def apply(permissionName: PermissionName): PermissionDescriptor  (@deprecated in 2.0.0)
+PermissionDescriptor[SO] val name = permissionName  (@deprecated in 2.0.0)
+PermissionName[JT]
+PermissionName[SO] val geolocation: PermissionName
+PermissionName[SO] val midi: PermissionName
+PermissionName[SO] val notifications: PermissionName
+PermissionName[SO] val `persistent-storage` = "persistent-storage".asInstanceOf[PermissionName]
+PermissionName[SO] val push: PermissionName
+PermissionState[JT]
+PermissionState[SO] val denied: PermissionState
+PermissionState[SO] val granted: PermissionState
+PermissionState[SO] val prompt: PermissionState
+PermissionStatus[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+PermissionStatus[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+PermissionStatus[JT] def dispatchEvent(evt: Event): Boolean
+PermissionStatus[JT] var onchange: js.Function1[Event, _]
+PermissionStatus[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+PermissionStatus[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+PermissionStatus[JT] val state: PermissionState
+Permissions[JT] def query(permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
 PointerEvent[JC] def altKey: Boolean
 PointerEvent[JC] def bubbles: Boolean
 PointerEvent[JC] def button: Int
@@ -15555,6 +15577,11 @@ PushMessageData[JT] def arrayBuffer(): ArrayBuffer
 PushMessageData[JT] def blob(): Blob
 PushMessageData[JT] def json(): js.Any
 PushMessageData[JT] def text(): String
+PushPermissionDescriptor[JT] val name: PermissionName
+PushPermissionDescriptor[JT] val userVisibleOnly: Boolean
+PushPermissionDescriptor[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor  (@deprecated in 2.0.0)
+PushPermissionDescriptor[SO] val name = PermissionName.push  (@deprecated in 2.0.0)
+PushPermissionDescriptor[SO] val userVisibleOnly = permissionUserVisibleOnly  (@deprecated in 2.0.0)
 PushPermissionState[JT]
 PushPermissionState[SO] val denied: PushPermissionState
 PushPermissionState[SO] val granted: PushPermissionState
@@ -25579,53 +25606,18 @@ experimental/package.ResponseInit[SO] def apply(_status: Int = 200, _statusText:
 experimental/package.ResponseInit[SO] var headers = _headers  (@deprecated in 2.0.0)
 experimental/package.ResponseInit[SO] var status = _status  (@deprecated in 2.0.0)
 experimental/package.ResponseInit[SO] var statusText = _statusText  (@deprecated in 2.0.0)
-experimental/permissions/package[SO] def apply(permissionName: PermissionName): PermissionDescriptor  (@deprecated in 2.0.0)
-experimental/permissions/package[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor  (@deprecated in 2.0.0)
-experimental/permissions/package[SO] val denied: PermissionState
-experimental/permissions/package[SO] val geolocation: PermissionName
-experimental/permissions/package[SO] val granted: PermissionState
-experimental/permissions/package[SO] val midi: PermissionName
-experimental/permissions/package[SO] val name = PermissionName.push
-experimental/permissions/package[SO] val name = permissionName
-experimental/permissions/package[SO] val name: PermissionName
-experimental/permissions/package[SO] val notifications: PermissionName
-experimental/permissions/package[SO] var onchange: js.Function1[dom.Event, _]
-experimental/permissions/package[SO] val permissions: Permissions
-experimental/permissions/package[SO] val `persistent-storage` = "persistent-storage".asInstanceOf[PermissionName]
-experimental/permissions/package[SO] val prompt: PermissionState
-experimental/permissions/package[SO] val push: PermissionName
-experimental/permissions/package[SO] def query(permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
-experimental/permissions/package[SO] val state: PermissionState
-experimental/permissions/package[SO] implicit def toPermissions(navigator: dom.Navigator): PermissionsNavigator
-experimental/permissions/package[SO] val userVisibleOnly = permissionUserVisibleOnly
-experimental/permissions/package[SO] val userVisibleOnly: Boolean
-experimental/permissions/package.PermissionDescriptor[JT] val name: PermissionName
-experimental/permissions/package.PermissionDescriptor[SO] def apply(permissionName: PermissionName): PermissionDescriptor  (@deprecated in 2.0.0)
-experimental/permissions/package.PermissionDescriptor[SO] val name = permissionName  (@deprecated in 2.0.0)
-experimental/permissions/package.PermissionName[JT]
-experimental/permissions/package.PermissionName[SO] val geolocation: PermissionName
-experimental/permissions/package.PermissionName[SO] val midi: PermissionName
-experimental/permissions/package.PermissionName[SO] val notifications: PermissionName
-experimental/permissions/package.PermissionName[SO] val `persistent-storage` = "persistent-storage".asInstanceOf[PermissionName]
-experimental/permissions/package.PermissionName[SO] val push: PermissionName
-experimental/permissions/package.PermissionState[JT]
-experimental/permissions/package.PermissionState[SO] val denied: PermissionState
-experimental/permissions/package.PermissionState[SO] val granted: PermissionState
-experimental/permissions/package.PermissionState[SO] val prompt: PermissionState
-experimental/permissions/package.PermissionStatus[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/permissions/package.PermissionStatus[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/permissions/package.PermissionStatus[JT] def dispatchEvent(evt: Event): Boolean
-experimental/permissions/package.PermissionStatus[JT] var onchange: js.Function1[dom.Event, _]
-experimental/permissions/package.PermissionStatus[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/permissions/package.PermissionStatus[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/permissions/package.PermissionStatus[JT] val state: PermissionState
-experimental/permissions/package.Permissions[JT] def query(permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
-experimental/permissions/package.PermissionsNavigator[JT] val permissions: Permissions
-experimental/permissions/package.PushPermissionDescriptor[JT] val name: PermissionName
-experimental/permissions/package.PushPermissionDescriptor[JT] val userVisibleOnly: Boolean
-experimental/permissions/package.PushPermissionDescriptor[SO] def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor  (@deprecated in 2.0.0)
-experimental/permissions/package.PushPermissionDescriptor[SO] val name = PermissionName.push  (@deprecated in 2.0.0)
-experimental/permissions/package.PushPermissionDescriptor[SO] val userVisibleOnly = permissionUserVisibleOnly  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] type PermissionDescriptor = dom.PermissionDescriptor  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] type PermissionName = dom.PermissionName  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] type PermissionState = dom.PermissionState  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] type PermissionStatus = dom.PermissionStatus  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] type Permissions = dom.Permissions  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] type PermissionsNavigator = dom.Navigator  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] type PushPermissionDescriptor = dom.PushPermissionDescriptor  (@deprecated in 2.0.0)
+experimental/permissions/package[SO] @deprecated("use dom.PermissionDescriptor instead", "2.0.0") val PermissionDescriptor = dom.PermissionDescriptor
+experimental/permissions/package[SO] @deprecated("use dom.PermissionName instead", "2.0.0") val PermissionName = dom.PermissionName
+experimental/permissions/package[SO] @deprecated("use dom.PermissionState instead", "2.0.0") val PermissionState = dom.PermissionState
+experimental/permissions/package[SO] @deprecated("use dom.PushPermissionDescriptor instead", "2.0.0") val PushPermissionDescriptor = dom.PushPermissionDescriptor
+experimental/permissions/package[SO] def toPermissions(navigator: dom.Navigator): PermissionsNavigator  (@deprecated in 2.0.0)
 experimental/push/package[SO] type PushEncryptionKeyName = dom.PushEncryptionKeyName  (@deprecated in 2.0.0)
 experimental/push/package[SO] type PushEvent = dom.PushEvent  (@deprecated in 2.0.0)
 experimental/push/package[SO] type PushManager = dom.PushManager  (@deprecated in 2.0.0)

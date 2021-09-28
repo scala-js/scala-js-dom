@@ -61,4 +61,6 @@ class Navigator
     * registration, removal, upgrade, and communication with the ServiceWorker objects for the associated document.
     */
   val serviceWorker: ServiceWorkerContainer = js.native
+
+  val permissions: Permissions = js.native
 }

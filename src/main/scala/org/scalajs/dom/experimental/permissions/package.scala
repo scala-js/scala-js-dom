@@ -1,8 +1,6 @@
 package org.scalajs.dom.experimental
 
 import org.scalajs.dom
-import scala.language.implicitConversions
-import scala.scalajs.js
 
 /** Implements the Permissions API.
   *
@@ -10,75 +8,41 @@ import scala.scalajs.js
   */
 package object permissions {
 
-  @js.native
-  sealed trait PermissionState extends js.Any
+  @deprecated("use dom.PermissionState instead", "2.0.0")
+  type PermissionState = dom.PermissionState
 
-  object PermissionState {
-    val granted: PermissionState = "granted".asInstanceOf[PermissionState]
-    val denied: PermissionState = "denied".asInstanceOf[PermissionState]
-    val prompt: PermissionState = "prompt".asInstanceOf[PermissionState]
-  }
+  @deprecated("use dom.PermissionState instead", "2.0.0")
+  val PermissionState = dom.PermissionState
 
-  trait PermissionStatus extends dom.EventTarget {
-    val state: PermissionState
-    var onchange: js.Function1[dom.Event, _]
-  }
+  @deprecated("use dom.PermissionStatus instead", "2.0.0")
+  type PermissionStatus = dom.PermissionStatus
 
-  @js.native
-  sealed trait PermissionName extends js.Any
+  @deprecated("use dom.PermissionName instead", "2.0.0")
+  type PermissionName = dom.PermissionName
 
-  object PermissionName {
-    val geolocation: PermissionName = "geolocation".asInstanceOf[PermissionName]
-    val midi: PermissionName = "midi".asInstanceOf[PermissionName]
-    val notifications: PermissionName = "notifications".asInstanceOf[PermissionName]
-    val push: PermissionName = "push".asInstanceOf[PermissionName]
+  @deprecated("use dom.PermissionName instead", "2.0.0")
+  val PermissionName = dom.PermissionName
 
-    val `persistent-storage` =
-      "persistent-storage".asInstanceOf[PermissionName]
-  }
+  @deprecated("use dom.PermissionDescriptor instead", "2.0.0")
+  type PermissionDescriptor = dom.PermissionDescriptor
 
-  trait PermissionDescriptor extends js.Object {
-    val name: PermissionName
-  }
+  @deprecated("use dom.PermissionDescriptor instead", "2.0.0")
+  val PermissionDescriptor = dom.PermissionDescriptor
 
-  @deprecated("all the members of PermissionDescriptor are deprecated", "2.0.0")
-  object PermissionDescriptor {
+  @deprecated("use dom.PushPermissionDescriptor instead", "2.0.0")
+  type PushPermissionDescriptor = dom.PushPermissionDescriptor
 
-    @deprecated("use `new PermissionDescriptor { ... }` instead", "2.0.0")
-    @inline
-    def apply(permissionName: PermissionName): PermissionDescriptor = {
-      new PermissionDescriptor {
-        val name = permissionName
-      }
-    }
-  }
+  @deprecated("use dom.PushPermissionDescriptor instead", "2.0.0")
+  val PushPermissionDescriptor = dom.PushPermissionDescriptor
 
-  trait PushPermissionDescriptor extends PermissionDescriptor {
-    val userVisibleOnly: Boolean
-  }
+  @deprecated("use dom.Permissions instead", "2.0.0")
+  type Permissions = dom.Permissions
 
-  @deprecated("all the members of PushPermissionDescriptor are deprecated", "2.0.0")
-  object PushPermissionDescriptor {
+  @deprecated("use dom.Navigator instead", "2.0.0")
+  type PermissionsNavigator = dom.Navigator
 
-    @deprecated("use `new PushPermissionDescriptor { ... }` instead", "2.0.0")
-    @inline
-    def apply(permissionUserVisibleOnly: Boolean): PushPermissionDescriptor = {
-      new PushPermissionDescriptor {
-        val name = PermissionName.push
-        val userVisibleOnly = permissionUserVisibleOnly
-      }
-    }
-  }
-
-  trait Permissions extends js.Object {
-    def query(permissionDescriptor: PermissionDescriptor): js.Promise[PermissionStatus]
-  }
-
-  trait PermissionsNavigator extends js.Object {
-    val permissions: Permissions
-  }
-
-  implicit def toPermissions(navigator: dom.Navigator): PermissionsNavigator =
-    navigator.asInstanceOf[PermissionsNavigator]
+  @deprecated("use dom.Navigator directly instead", "2.0.0")
+  def toPermissions(navigator: dom.Navigator): PermissionsNavigator =
+    navigator
 
 }
