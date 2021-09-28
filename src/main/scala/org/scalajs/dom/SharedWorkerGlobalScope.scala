@@ -1,7 +1,6 @@
-package org.scalajs.dom.experimental.sharedworkers
+package org.scalajs.dom
 
 import org.scalajs.dom.experimental.serviceworkers.ExtendableMessageEvent
-import org.scalajs.dom.{ApplicationCache, WorkerGlobalScope}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 

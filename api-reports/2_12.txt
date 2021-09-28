@@ -23534,6 +23534,48 @@ Selection[JC] def rangeCount: Int
 Selection[JC] def removeAllRanges(): Unit
 Selection[JC] def removeRange(range: Range): Unit
 Selection[JC] def selectAllChildren(parentNode: Node): Unit
+SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+SharedWorker[JC] def dispatchEvent(evt: Event): Boolean
+SharedWorker[JC] var onerror: js.Function1[ErrorEvent, _]
+SharedWorker[JC] def port: MessagePort
+SharedWorker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+SharedWorker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+SharedWorkerGlobalScope[JO] def self: SharedWorkerGlobalScope
+SharedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+SharedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+SharedWorkerGlobalScope[JT] def applicationCache: ApplicationCache
+SharedWorkerGlobalScope[JT] def atob(encodedString: String): String
+SharedWorkerGlobalScope[JT] def btoa(rawString: String): String
+SharedWorkerGlobalScope[JT] def caches: js.UndefOr[CacheStorage]
+SharedWorkerGlobalScope[JT] def clearInterval(handle: Int): Unit
+SharedWorkerGlobalScope[JT] def clearTimeout(handle: Int): Unit
+SharedWorkerGlobalScope[JT] def close(): Unit
+SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
+SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
+SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
+SharedWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
+SharedWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
+SharedWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
+SharedWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
+SharedWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
+SharedWorkerGlobalScope[JT] def isSecureContext: Boolean
+SharedWorkerGlobalScope[JT] def location: WorkerLocation
+SharedWorkerGlobalScope[JT] def name: String
+SharedWorkerGlobalScope[JT] def navigator: WorkerNavigator
+SharedWorkerGlobalScope[JT] var onError: js.Function1[ErrorEvent, _]
+SharedWorkerGlobalScope[JT] var onconnect: js.Function1[ExtendableMessageEvent, _]
+SharedWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
+SharedWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
+SharedWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
+SharedWorkerGlobalScope[JT] def origin: String
+SharedWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
+SharedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+SharedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+SharedWorkerGlobalScope[JT] def self: this.type
+SharedWorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
+SharedWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
 SourceBuffer[JT] def abort(): Unit
 SourceBuffer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SourceBuffer[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -25571,48 +25613,9 @@ experimental/serviceworkers/package[SO] type Transferable = org.scalajs.dom.Tran
 experimental/serviceworkers/package[SO] val serviceWorker: ServiceWorkerContainer
 experimental/serviceworkers/package[SO] implicit def toServiceWorkerNavigator(n: Navigator): ServiceWorkerNavigator
 experimental/serviceworkers/package.ServiceWorkerNavigator[JT] val serviceWorker: ServiceWorkerContainer
-experimental/sharedworkers/SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/sharedworkers/SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/sharedworkers/SharedWorker[JC] def dispatchEvent(evt: Event): Boolean
-experimental/sharedworkers/SharedWorker[JC] var onerror: js.Function1[ErrorEvent, _]
-experimental/sharedworkers/SharedWorker[JC] def port: MessagePort
-experimental/sharedworkers/SharedWorker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/sharedworkers/SharedWorker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JO] def self: SharedWorkerGlobalScope
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def applicationCache: ApplicationCache
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def atob(encodedString: String): String
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def btoa(rawString: String): String
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def caches: js.UndefOr[CacheStorage]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def clearInterval(handle: Int): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def clearTimeout(handle: Int): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def close(): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput): js.Promise[ImageBitmap]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def crossOriginIsolated: Boolean
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def dispatchEvent(evt: Event): Boolean
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def importScripts(urls: js.Array[String]): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def indexedDB: js.UndefOr[IDBFactory]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def isSecureContext: Boolean
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def location: WorkerLocation
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def name: String
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def navigator: WorkerNavigator
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onError: js.Function1[ErrorEvent, _]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onconnect: js.Function1[ExtendableMessageEvent, _]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def origin: String
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def queueMicrotask(function: js.Function0[Any]): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def self: this.type
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def setInterval(handler: js.Function0[Any], timeout: Double): Int
-experimental/sharedworkers/SharedWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeout: Double): Int
+experimental/sharedworkers/package[SO] type SharedWorker = dom.SharedWorker  (@deprecated in 2.0.0)
+experimental/sharedworkers/package[SO] type SharedWorkerGlobalScope = dom.SharedWorkerGlobalScope  (@deprecated in 2.0.0)
+experimental/sharedworkers/package[SO] @deprecated("use dom.SharedWorker instead", "2.0.0") val SharedWorker = dom.SharedWorker
 experimental/storage/package[SO] type NavigatorStorage = dom.Navigator  (@deprecated in 2.0.0)
 experimental/storage/package[SO] type StorageEstimate = dom.StorageEstimate  (@deprecated in 2.0.0)
 experimental/storage/package[SO] type StorageManager = dom.StorageManager  (@deprecated in 2.0.0)

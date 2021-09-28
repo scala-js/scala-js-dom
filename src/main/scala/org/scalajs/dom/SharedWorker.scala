@@ -1,6 +1,5 @@
-package org.scalajs.dom.experimental.sharedworkers
+package org.scalajs.dom
 
-import org.scalajs.dom.{AbstractWorker, MessagePort}
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
