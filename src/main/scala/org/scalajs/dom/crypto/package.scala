@@ -2,10 +2,10 @@ package org.scalajs.dom
 
 import org.scalajs.dom
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSGlobal, JSGlobalScope}
+import scala.scalajs.js.annotation.JSGlobal
 import scala.scalajs.js.typedarray.ArrayBufferView
 
-object crypto {
+package object crypto {
 
   /** Returns a SubtleCrypto object providing access to common cryptographic primitives, like hashing, signing,
     * encryption or decryption.
@@ -18,13 +18,6 @@ object crypto {
   @JSGlobal("crypto.subtle")
   @js.native
   def getRandomValues(array: ArrayBufferView): ArrayBufferView = js.native
-
-  @deprecated("use dom.crypto instead", "2.0.0")
-  @js.native
-  @JSGlobalScope
-  object GlobalCrypto extends js.Object {
-    val crypto: Crypto = js.native
-  }
 
   @deprecated("use dom.crypto instead", "2.0.0")
   @inline def crypto: Crypto = GlobalCrypto.crypto
