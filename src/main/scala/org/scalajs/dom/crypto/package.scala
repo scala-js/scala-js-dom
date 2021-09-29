@@ -15,7 +15,7 @@ package object crypto {
   val subtle: dom.SubtleCrypto = js.native
 
   /** Fills the passed TypedArray with cryptographically sound random values. */
-  @JSGlobal("crypto.subtle")
+  @JSGlobal("crypto.getRandomValues")
   @js.native
   def getRandomValues(array: ArrayBufferView): ArrayBufferView = js.native
 
