@@ -1,6 +1,5 @@
 package org.scalajs.dom.tests.webworker
 
-
 // =====================================================================================================================
 sealed abstract class WebWorkerCmd {
   def id = toString
