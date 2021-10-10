@@ -16,7 +16,7 @@ object RTCSessionDescriptionInit {
   def apply(`type`: js.UndefOr[RTCSdpType] = js.undefined,
       sdp: js.UndefOr[String] = js.undefined): RTCSessionDescriptionInit = {
     val result = js.Dynamic.literal()
-    `type`.foreach(result.`type` = _)
+    `type`.map(_.asInstanceOf[js.Any]).foreach(result.`type` = _)
     sdp.foreach(result.sdp = _)
     result.asInstanceOf[RTCSessionDescriptionInit]
   }
