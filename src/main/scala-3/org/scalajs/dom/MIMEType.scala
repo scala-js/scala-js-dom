@@ -5,11 +5,11 @@ import scala.scalajs.js
 opaque type MIMEType = String
 
 object MIMEType {
-  val `text/html` = "text/html"
-  val `text/xml` = "text/xml"
-  val `application/xml` = "application/xml"
+  val `text/html`: MIMEType = "text/html"
+  val `text/xml`: MIMEType = "text/xml"
+  val `application/xml`: MIMEType = "application/xml"
 
-  val `application/xhtml+xml` =
+  val `application/xhtml+xml`: MIMEType =
     "application/xhtml+xml"
-  val `image/svg+xml` = "image/svg+xml"
+  val `image/svg+xml`: MIMEType = "image/svg+xml"
 }

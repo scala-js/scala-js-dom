@@ -10,6 +10,6 @@ object PermissionName {
   val notifications: PermissionName = "notifications"
   val push: PermissionName = "push"
 
-  val `persistent-storage` =
+  val `persistent-storage`: PermissionName =
     "persistent-storage"
 }

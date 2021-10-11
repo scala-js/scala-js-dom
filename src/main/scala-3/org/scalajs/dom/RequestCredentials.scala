@@ -7,6 +7,6 @@ opaque type RequestCredentials = String
 
 object RequestCredentials {
   val omit: RequestCredentials = "omit"
-  val `same-origin` = "same-origin"
+  val `same-origin`: RequestCredentials = "same-origin"
   val include: RequestCredentials = "include"
 }

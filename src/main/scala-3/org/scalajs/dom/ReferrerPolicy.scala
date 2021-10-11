@@ -6,13 +6,13 @@ opaque type ReferrerPolicy = String
 
 object ReferrerPolicy {
   val empty: ReferrerPolicy = ""
-  val `no-referrer` = "no-referrer"
+  val `no-referrer`: ReferrerPolicy = "no-referrer"
 
-  val `no-referrer-when-downgrade` =
+  val `no-referrer-when-downgrade`: ReferrerPolicy =
     "no-referrer-when-downgrade"
-  val `origin-only` = "origin-only"
+  val `origin-only`: ReferrerPolicy = "origin-only"
 
-  val `origin-when-cross-origin` =
+  val `origin-when-cross-origin`: ReferrerPolicy =
     "origin-when-cross-origin"
-  val `unsafe-url` = "unsafe-url"
+  val `unsafe-url`: ReferrerPolicy = "unsafe-url"
 }

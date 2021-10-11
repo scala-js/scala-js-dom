@@ -14,7 +14,7 @@ object FrameType {
   val auxiliary: FrameType = "auxiliary"
 
   /** The window client's global object's browsing context is a top-level browsing context. */
-  val `top-level` = "top-level"
+  val `top-level`: FrameType = "top-level"
 
   /** The window client's global object's browsing context is a nested browsing context. */
   val nested: FrameType = "nested"

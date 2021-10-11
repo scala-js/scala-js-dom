@@ -9,8 +9,8 @@ opaque type RTCStatsType = String
 object RTCStatsType {
 
   /** Inbound RTP. */
-  val `inbound-rtp` = "inbound-rtp"
+  val `inbound-rtp`: RTCStatsType = "inbound-rtp"
 
   /** Outbound RTP. */
-  val `outbound-rtp` = "outbound-rtp"
+  val `outbound-rtp`: RTCStatsType = "outbound-rtp"
 }

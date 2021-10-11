@@ -16,10 +16,10 @@ object RTCBundlePolicy {
   /** Gather ICE candidates for each track. If the remote endpoint is not BUNDLE-aware, negotiate all media tracks on
     * separate transports.
     */
-  val `max-compat` = "max-compat"
+  val `max-compat`: RTCBundlePolicy = "max-compat"
 
   /** Gather ICE candidates for only one track. If the remote endpoint is not BUNDLE-aware, negotiate only one media
     * track.
     */
-  val `max-bundle` = "max-bundle"
+  val `max-bundle`: RTCBundlePolicy = "max-bundle"
 }

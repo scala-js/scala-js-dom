@@ -7,9 +7,9 @@ opaque type RequestCache = String
 
 object RequestCache {
   val default: RequestCache = "default"
-  val `no-store` = "no-store"
+  val `no-store`: RequestCache = "no-store"
   val reload: RequestCache = "reload"
-  val `no-cache` = "no-cache"
-  val `force-cache` = "force-cache"
-  val `only-if-cached` = "only-if-cached"
+  val `no-cache`: RequestCache = "no-cache"
+  val `force-cache`: RequestCache = "force-cache"
+  val `only-if-cached`: RequestCache = "only-if-cached"
 }
