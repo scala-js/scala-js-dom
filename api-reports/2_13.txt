@@ -9187,6 +9187,10 @@ HTMLOptionElement[JC] var text: String
 HTMLOptionElement[JC] var textContent: String
 HTMLOptionElement[JC] var title: String
 HTMLOptionElement[JC] var value: String
+HTMLOptionsCollection[JC] @JSBracketAccess def apply(index: Int): T
+HTMLOptionsCollection[JC] def item(index: Int): HTMLOptionElement
+HTMLOptionsCollection[JC] def length: Int
+HTMLOptionsCollection[JC] def namedItem(name: String): HTMLOptionElement
 HTMLParagraphElement[JC] var accessKey: String
 HTMLParagraphElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 HTMLParagraphElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -10552,7 +10556,7 @@ HTMLSelectElement[JC] var ontimeupdate: js.Function1[Event, _]
 HTMLSelectElement[JC] var onvolumechange: js.Function1[Event, _]
 HTMLSelectElement[JC] var onwaiting: js.Function1[Event, _]
 HTMLSelectElement[JC] var onwheel: js.Function1[WheelEvent, _]
-HTMLSelectElement[JC] val options: js.Array[HTMLOptionElement]
+HTMLSelectElement[JC] val options: HTMLOptionsCollection
 HTMLSelectElement[JC] var outerHTML: String
 HTMLSelectElement[JC] def ownerDocument: Document
 HTMLSelectElement[JC] override def ownerDocument: HTMLDocument
