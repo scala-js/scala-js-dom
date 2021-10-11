@@ -31,9 +31,9 @@ object RTCConfiguration {
       peerIdentity: js.UndefOr[String] = js.undefined): RTCConfiguration = {
     val result = js.Dynamic.literal()
     iceServers.foreach(result.iceServers = _)
-    iceTransportPolicy.map(_.asInstanceOf[js.Any]).foreach(result.iceTransportPolicy = _)
-    bundlePolicy.map(_.asInstanceOf[js.Any]).foreach(result.bundlePolicy = _)
-    peerIdentity.map(_.asInstanceOf[js.Any]).foreach(result.peerIdentity = _)
+    iceTransportPolicy.foreach(x => result.iceTransportPolicy = x.asInstanceOf[js.Any])
+    bundlePolicy.foreach(x => result.bundlePolicy = x.asInstanceOf[js.Any])
+    peerIdentity.foreach(x => result.peerIdentity = x.asInstanceOf[js.Any])
     result.asInstanceOf[RTCConfiguration]
   }
 }
