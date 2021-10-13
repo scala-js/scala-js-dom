@@ -18,7 +18,7 @@ import scala.scalajs.js.|
 trait ParentNode extends js.Object {
 
   /** Returns a live HTMLCollection containing all objects of type Element that are children of the object. */
-  def children: HTMLCollection = js.native
+  def children: HTMLCollection[Element] = js.native
 
   /** Returns the Element that is the first child of the object, or null if there is none. */
   def firstElementChild: Element = js.native

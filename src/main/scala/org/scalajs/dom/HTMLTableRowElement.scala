@@ -24,7 +24,7 @@ abstract class HTMLTableRowElement extends HTMLElement with HTMLTableAlignment {
   /** Returns a live HTMLCollection containing the cells in the row. The HTMLCollection is live and is automatically
     * updated when cells are added or removed.
     */
-  def cells: HTMLCollection = js.native
+  def cells: HTMLCollection[Element] = js.native
 
   var borderColorLight: js.Any = js.native
 

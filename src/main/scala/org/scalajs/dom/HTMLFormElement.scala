@@ -33,7 +33,7 @@ abstract class HTMLFormElement extends HTMLElement {
   /** elements returns an HTMLFormControlsCollection (HTML 4 HTMLCollection) of all the form controls contained in the
     * FORM element, with the exception of input elements which have a type attribute of image.
     */
-  def elements: HTMLCollection = js.native
+  def elements: HTMLCollection[Element] = js.native
 
   /** action gets/sets the action of the &lt;form&gt; element. */
   var action: String = js.native

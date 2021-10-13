@@ -20,7 +20,7 @@ abstract class HTMLTableSectionElement extends HTMLElement with HTMLTableAlignme
   /** Returns a live HTMLCollection containing the rows in the section. The HTMLCollection is live and is automatically
     * updated when rows are added or removed.
     */
-  def rows: HTMLCollection = js.native
+  def rows: HTMLCollection[Element] = js.native
 
   /** Removes the cell at the given position in the section. If the given position is greater (or equal as it starts at
     * zero) than the amount of rows in the section, or is smaller than 0, it raises a DOMException with the

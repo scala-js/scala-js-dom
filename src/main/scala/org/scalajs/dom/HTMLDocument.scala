@@ -68,26 +68,26 @@ abstract class HTMLDocument extends Document {
   def activeElement: Element = js.native
 
   /** Returns a list of the embedded &lt;embed&gt; elements within the current document. */
-  def embeds: HTMLCollection = js.native
+  def embeds: HTMLCollection[Element] = js.native
 
   /** forms returns a collection (an HTMLCollection) of the form elements within the current document. */
-  def forms: HTMLCollection = js.native
+  def forms: HTMLCollection[Element] = js.native
 
   /** The links property returns a collection of all AREA elements and anchor elements in a document with a value for
     * the href attribute.
     */
-  def links: HTMLCollection = js.native
+  def links: HTMLCollection[Element] = js.native
 
   /** anchors returns a list of all of the anchors in the document. */
-  def anchors: HTMLCollection = js.native
+  def anchors: HTMLCollection[Element] = js.native
 
   /** Returns an HTMLCollection object containing one or more HTMLEmbedElements or null which represent the
     * &lt;embed&gt; elements in the current document.
     */
-  def plugins: HTMLCollection = js.native
+  def plugins: HTMLCollection[Element] = js.native
 
   /** document.images returns a collection of the images in the current HTML document. */
-  def images: HTMLCollection = js.native
+  def images: HTMLCollection[Element] = js.native
 
   /** Returns the current value of the current range for a formatting command. */
   def queryCommandValue(commandId: String): String = js.native

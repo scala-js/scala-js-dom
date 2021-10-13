@@ -10,7 +10,7 @@ object html {
   type Button = HTMLButtonElement
   type BR = HTMLBRElement
   type Canvas = HTMLCanvasElement
-  type Collection = HTMLCollection
+  type Collection[E <: Element] = HTMLCollection[E]
   type DataList = HTMLDataListElement
   type Div = HTMLDivElement
   type DList = HTMLDListElement

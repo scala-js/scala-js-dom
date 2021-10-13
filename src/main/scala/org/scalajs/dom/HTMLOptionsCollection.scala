@@ -15,12 +15,4 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class HTMLOptionsCollection private[this] () extends HTMLCollection {
-  override def item(index: Int): HTMLOptionElement = js.native
-
-  /** Returns the specific node whose ID or, as a fallback, name matches the string specified by name. Matching by name
-    * is only done as a last resort, only in HTML, and only if the referenced element supports the name attribute.
-    * Returns null if no node exists by the given name.
-    */
-  override def namedItem(name: String): HTMLOptionElement = js.native
-}
+class HTMLOptionsCollection private[this] () extends HTMLCollection[HTMLOptionElement]
