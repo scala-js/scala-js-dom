@@ -13972,10 +13972,10 @@ IDBCursor[JC] def primaryKey: IDBKey
 IDBCursor[JC] def source: S
 IDBCursor[JC] def update(value: IDBValue): IDBRequest[S, IDBKey]
 IDBCursorDirection[JT]
-IDBCursorDirection[SO] def next: IDBCursorDirection
-IDBCursorDirection[SO] def nextunique: IDBCursorDirection
-IDBCursorDirection[SO] def prev: IDBCursorDirection
-IDBCursorDirection[SO] def prevunique: IDBCursorDirection
+IDBCursorDirection[SO] val next: IDBCursorDirection
+IDBCursorDirection[SO] val nextunique: IDBCursorDirection
+IDBCursorDirection[SO] val prev: IDBCursorDirection
+IDBCursorDirection[SO] val prevunique: IDBCursorDirection
 IDBCursorReadOnly[JC] def advance(count: Double): Unit
 IDBCursorReadOnly[JC] def continue(key: IDBKey?): Unit
 IDBCursorReadOnly[JC] def direction: IDBCursorDirection
@@ -14120,13 +14120,13 @@ IDBTransaction[JC] var onerror: js.Function1[Event, _]
 IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBTransactionDurability[JT]
-IDBTransactionDurability[SO] def default: IDBTransactionDurability
-IDBTransactionDurability[SO] def relaxed: IDBTransactionDurability
-IDBTransactionDurability[SO] def strict: IDBTransactionDurability
+IDBTransactionDurability[SO] val default: IDBTransactionDurability
+IDBTransactionDurability[SO] val relaxed: IDBTransactionDurability
+IDBTransactionDurability[SO] val strict: IDBTransactionDurability
 IDBTransactionMode[JT]
-IDBTransactionMode[SO] def readonly: IDBTransactionMode
-IDBTransactionMode[SO] def readwrite: IDBTransactionMode
-IDBTransactionMode[SO] def versionchange: IDBTransactionMode
+IDBTransactionMode[SO] val readonly: IDBTransactionMode
+IDBTransactionMode[SO] val readwrite: IDBTransactionMode
+IDBTransactionMode[SO] val versionchange: IDBTransactionMode
 IDBTransactionOptions[JT] val durability: js.UndefOr[IDBTransactionDurability]
 IDBVersionChangeEvent[JC] def bubbles: Boolean
 IDBVersionChangeEvent[JC] def cancelBubble: Boolean

@@ -15,20 +15,20 @@ object IDBCursorDirection {
   /** The cursor shows all records, including duplicates. It starts at the upper bound of the key range and moves
     * downwards (monotonically decreasing in the order of keys).
     */
-  @inline def prev: IDBCursorDirection = "prev"
+  val prev: IDBCursorDirection = "prev"
 
   /** The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first
     * one iterated is retrieved. It starts at the upper bound of the key range and moves downwards.
     */
-  @inline def prevunique: IDBCursorDirection = "prevunique"
+  val prevunique: IDBCursorDirection = "prevunique"
 
   /** The cursor shows all records, including duplicates. It starts at the lower bound of the key range and moves
     * upwards (monotonically increasing in the order of keys).
     */
-  @inline def next: IDBCursorDirection = "next"
+  val next: IDBCursorDirection = "next"
 
   /** The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first
     * one iterated is retrieved. It starts at the lower bound of the key range and moves upwards.
     */
-  @inline def nextunique: IDBCursorDirection = "nextunique"
+  val nextunique: IDBCursorDirection = "nextunique"
 }

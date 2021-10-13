@@ -12,7 +12,7 @@ import scala.scalajs.js
 sealed trait IDBTransactionDurability extends js.Any
 
 object IDBTransactionDurability {
-  @inline def default: IDBTransactionDurability = "default".asInstanceOf[IDBTransactionDurability]
-  @inline def strict: IDBTransactionDurability = "strict".asInstanceOf[IDBTransactionDurability]
-  @inline def relaxed: IDBTransactionDurability = "relaxed".asInstanceOf[IDBTransactionDurability]
+  val default: IDBTransactionDurability = "default".asInstanceOf[IDBTransactionDurability]
+  val strict: IDBTransactionDurability = "strict".asInstanceOf[IDBTransactionDurability]
+  val relaxed: IDBTransactionDurability = "relaxed".asInstanceOf[IDBTransactionDurability]
 }

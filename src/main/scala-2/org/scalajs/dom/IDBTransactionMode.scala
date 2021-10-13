@@ -17,14 +17,14 @@ sealed trait IDBTransactionMode extends js.Any
 object IDBTransactionMode {
 
   /** Allows data to be read but not changed. It is the default transaction mode. */
-  @inline def readonly: IDBTransactionMode = "readonly".asInstanceOf[IDBTransactionMode]
+  val readonly: IDBTransactionMode = "readonly".asInstanceOf[IDBTransactionMode]
 
   /** Allows any operation to be performed, including ones that delete and create object stores and indexes. This mode
     * is for updating the version number of transactions that were started using the setVersion() method of IDBDatabase
     * objects. Transactions of this mode cannot run concurrently with other transactions.
     */
-  @inline def versionchange: IDBTransactionMode = "versionchange".asInstanceOf[IDBTransactionMode]
+  val versionchange: IDBTransactionMode = "versionchange".asInstanceOf[IDBTransactionMode]
 
   /** Allows reading and writing of data in existing data stores to be changed. */
-  @inline def readwrite: IDBTransactionMode = "readwrite".asInstanceOf[IDBTransactionMode]
+  val readwrite: IDBTransactionMode = "readwrite".asInstanceOf[IDBTransactionMode]
 }

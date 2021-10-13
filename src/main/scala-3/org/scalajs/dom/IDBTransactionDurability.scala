@@ -11,7 +11,7 @@ import scala.scalajs.js
 opaque type IDBTransactionDurability = String
 
 object IDBTransactionDurability {
-  @inline def default: IDBTransactionDurability = "default"
-  @inline def strict: IDBTransactionDurability = "strict"
-  @inline def relaxed: IDBTransactionDurability = "relaxed"
+  val default: IDBTransactionDurability = "default"
+  val strict: IDBTransactionDurability = "strict"
+  val relaxed: IDBTransactionDurability = "relaxed"
 }
