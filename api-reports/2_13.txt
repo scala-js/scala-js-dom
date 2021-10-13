@@ -24308,9 +24308,9 @@ TextTrackCueList[JC] def length: Int
 TextTrackList[JT] @JSBracketAccess def apply(index: Int): T
 TextTrackList[JT] def getTrackById(id: String): TextTrack
 TextTrackList[JT] def length: Int
-TextTrackList[JT] var onaddtrack: js.Function1[Event, Any]
+TextTrackList[JT] var onaddtrack: js.Function1[TrackEvent, Any]
 TextTrackList[JT] var onchange: js.Function1[Event, Any]
-TextTrackList[JT] var onremovetrack: js.Function1[Event, Any]
+TextTrackList[JT] var onremovetrack: js.Function1[TrackEvent, Any]
 TextTrackMode[JT]
 TextTrackMode[SO] val disabled: TextTrackMode
 TextTrackMode[SO] val hidden: TextTrackMode

@@ -13,6 +13,6 @@ trait TextTrackList extends DOMList[TextTrack] {
   def getTrackById(id: String): TextTrack = js.native
 
   var onchange: js.Function1[Event, Any] = js.native
-  var onaddtrack: js.Function1[Event, Any] = js.native
-  var onremovetrack: js.Function1[Event, Any] = js.native
+  var onaddtrack: js.Function1[TrackEvent, Any] = js.native
+  var onremovetrack: js.Function1[TrackEvent, Any] = js.native
 }
