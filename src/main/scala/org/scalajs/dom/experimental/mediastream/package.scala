@@ -1,25 +1,23 @@
 package org.scalajs.dom.experimental
 
 import org.scalajs.dom
-import scala.scalajs.js
-import scala.scalajs.js.|
 
 package object mediastream {
 
   @deprecated("use dom.BufferSource instead", "2.0.0")
-  type BufferSource = js.typedarray.ArrayBufferView | js.typedarray.ArrayBuffer
+  type BufferSource = dom.BufferSource
 
-  @deprecated("use String instead", "2.0.0")
-  type AppendMode = String
+  @deprecated("use dom.AppendMode instead", "2.0.0")
+  type AppendMode = dom.AppendMode
 
-  @deprecated("use String instead", "2.0.0")
-  type TextTrackMode = String
+  @deprecated("use dom.TextTrackMode instead", "2.0.0")
+  type TextTrackMode = dom.TextTrackMode
 
-  @deprecated("use String instead", "2.0.0")
-  type EndOfStreamError = String
+  @deprecated("use dom.EndOfStreamError instead", "2.0.0")
+  type EndOfStreamError = dom.EndOfStreamError
 
-  @deprecated("use String instead", "2.0.0")
-  type ReadyState = String
+  @deprecated("use dom.ReadyState instead", "2.0.0")
+  type ReadyState = dom.ReadyState
 
   @deprecated("use dom.AudioTrack instead", "2.0.0")
   type AudioTrack = dom.AudioTrack

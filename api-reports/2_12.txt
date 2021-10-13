@@ -111,6 +111,9 @@ AnimationEvent[JT] def stopPropagation(): Unit
 AnimationEvent[JT] def target: EventTarget
 AnimationEvent[JT] def timeStamp: Double
 AnimationEvent[JT] def `type`: String
+AppendMode[JT]
+AppendMode[SO] val segments: AppendMode
+AppendMode[SO] val sequence: AppendMode
 ApplicationCache[JO] val CHECKING: Int
 ApplicationCache[JO] val DOWNLOADING: Int
 ApplicationCache[JO] val IDLE: Int
@@ -1767,6 +1770,9 @@ Element[JC] def setAttributeNode(newAttr: Attr): Attr
 Element[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 Element[JC] def tagName: String
 Element[JC] var textContent: String
+EndOfStreamError[JT]
+EndOfStreamError[SO] val decode: EndOfStreamError
+EndOfStreamError[SO] val network: EndOfStreamError
 ErrorEvent[JT] def bubbles: Boolean
 ErrorEvent[JT] def cancelBubble: Boolean
 ErrorEvent[JT] def cancelable: Boolean
@@ -14743,11 +14749,11 @@ MediaSource[JC] def addSourceBuffer(mimeType: String): SourceBuffer
 MediaSource[JC] def clearLiveSeekableRange(): Unit
 MediaSource[JC] def dispatchEvent(evt: Event): Boolean
 MediaSource[JC] var duration: Double
-MediaSource[JC] def endOfStream(error: String?): Unit
+MediaSource[JC] def endOfStream(error: EndOfStreamError?): Unit
 MediaSource[JC] var onsourceclose: js.Function1[Event, Any]
 MediaSource[JC] var onsourceended: js.Function1[Event, Any]
 MediaSource[JC] var onsourceopen: js.Function1[Event, Any]
-MediaSource[JC] def readyState: String
+MediaSource[JC] def readyState: ReadyState
 MediaSource[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaSource[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaSource[JC] def removeSourceBuffer(sourceBuffer: SourceBuffer): Unit
@@ -15827,6 +15833,10 @@ ReadableStreamReader[JC] def cancel(reason: Any): js.Promise[Any]
 ReadableStreamReader[JC] def closed: js.Promise[ReadableStreamReader[T]]
 ReadableStreamReader[JC] def read(): js.Promise[Chunk[T]]
 ReadableStreamReader[JC] def releaseLock(): Unit
+ReadyState[JT]
+ReadyState[SO] val closed: ReadyState
+ReadyState[SO] val ended: ReadyState
+ReadyState[SO] val open: ReadyState
 ReferrerPolicy[JT]
 ReferrerPolicy[SO] val empty: ReferrerPolicy
 ReferrerPolicy[SO] val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
@@ -24056,7 +24066,7 @@ SourceBuffer[JT] var appendWindowStart: Double
 SourceBuffer[JT] def audioTracks: AudioTrackList
 SourceBuffer[JT] def buffered: TimeRanges
 SourceBuffer[JT] def dispatchEvent(evt: Event): Boolean
-SourceBuffer[JT] var mode: String
+SourceBuffer[JT] var mode: AppendMode
 SourceBuffer[JT] var onabort: js.Function1[Event, Any]
 SourceBuffer[JT] var onerror: js.Function1[Event, Any]
 SourceBuffer[JT] var onupdate: js.Function1[Event, Any]
@@ -24270,7 +24280,7 @@ TextTrack[JT] val inBandMetadataTrackDispatchType: String
 TextTrack[JT] var kind: String
 TextTrack[JT] var label: String
 TextTrack[JT] var language: String
-TextTrack[JT] var mode: String
+TextTrack[JT] var mode: TextTrackMode
 TextTrack[JT] var oncuechange: js.Function1[Event, _]
 TextTrack[JT] var onerror: js.Function1[ErrorEvent, _]
 TextTrack[JT] var onload: js.Function1[js.Any, _]
@@ -24301,6 +24311,10 @@ TextTrackList[JT] def length: Int
 TextTrackList[JT] var onaddtrack: js.Function1[Event, Any]
 TextTrackList[JT] var onchange: js.Function1[Event, Any]
 TextTrackList[JT] var onremovetrack: js.Function1[Event, Any]
+TextTrackMode[JT]
+TextTrackMode[SO] val disabled: TextTrackMode
+TextTrackMode[SO] val hidden: TextTrackMode
+TextTrackMode[SO] val showing: TextTrackMode
 TimeRanges[JC] def end(index: Int): Double
 TimeRanges[JC] def length: Int
 TimeRanges[JC] def start(index: Int): Double
@@ -25513,11 +25527,11 @@ experimental/intl/package[SO] @deprecated("use dom.intl.DateTimeFormat instead",
 experimental/intl/package[SO] @deprecated("use dom.intl.DateTimeFormatOptions instead", "2.0.0") val DateTimeFormatOptions = dom.intl.DateTimeFormatOptions
 experimental/intl/package[SO] @deprecated("use dom.intl.NumberFormat instead", "2.0.0") val NumberFormat = dom.intl.NumberFormat
 experimental/intl/package[SO] @deprecated("use dom.intl.NumberFormatOptions instead", "2.0.0") val NumberFormatOptions = dom.intl.NumberFormatOptions
-experimental/mediastream/package[SO] type AppendMode = String  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type AppendMode = dom.AppendMode  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type AudioTrack = dom.AudioTrack  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type AudioTrackList = dom.AudioTrackList  (@deprecated in 2.0.0)
-experimental/mediastream/package[SO] type BufferSource = js.typedarray.ArrayBufferView | js.typedarray.ArrayBuffer  (@deprecated in 2.0.0)
-experimental/mediastream/package[SO] type EndOfStreamError = String  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type BufferSource = dom.BufferSource  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type EndOfStreamError = dom.EndOfStreamError  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type ImageCapture = dom.ImageCapture  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type MediaDeviceInfo = dom.MediaDeviceInfo  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type MediaDeviceKind = dom.MediaDeviceKind  (@deprecated in 2.0.0)
@@ -25533,14 +25547,14 @@ experimental/mediastream/package[SO] type MediaTrackConstraintSet = dom.MediaTra
 experimental/mediastream/package[SO] type MediaTrackConstraints = dom.MediaTrackConstraints  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type MediaTrackSettings = dom.MediaTrackSettings  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type MediaTrackSupportedConstraints = dom.MediaTrackSupportedConstraints  (@deprecated in 2.0.0)
-experimental/mediastream/package[SO] type ReadyState = String  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type ReadyState = dom.ReadyState  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type SourceBuffer = dom.SourceBuffer  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type SourceBufferList = dom.SourceBufferList  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type TextTrack = dom.TextTrack  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type TextTrackCue = dom.TextTrackCue  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type TextTrackCueList = dom.TextTrackCueList  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type TextTrackList = dom.TextTrackList  (@deprecated in 2.0.0)
-experimental/mediastream/package[SO] type TextTrackMode = String  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type TextTrackMode = dom.TextTrackMode  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type VideoTrack = dom.VideoTrack  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type VideoTrackList = dom.VideoTrackList  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] @deprecated("use dom.MediaDeviceInfo instead", "2.0.0") val MediaDeviceInfo = dom.MediaDeviceInfo

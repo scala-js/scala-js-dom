@@ -12,7 +12,7 @@ import scala.scalajs.js.annotation._
 @js.native
 trait TextTrack extends EventTarget {
   var language: String = js.native
-  var mode: String = js.native
+  var mode: TextTrackMode = js.native
   var readyState: Int = js.native
   var activeCues: TextTrackCueList = js.native
   var cues: TextTrackCueList = js.native

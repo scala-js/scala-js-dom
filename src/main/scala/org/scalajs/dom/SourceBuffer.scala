@@ -5,7 +5,7 @@ import scala.scalajs.js
 
 @js.native
 trait SourceBuffer extends EventTarget {
-  var mode: String = js.native
+  var mode: AppendMode = js.native
   var timestampOffset: Double = js.native
 
   def updating: Boolean = js.native
