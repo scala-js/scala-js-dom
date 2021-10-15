@@ -4874,6 +4874,10 @@ HTMLFieldSetElement[JC] var title: String
 HTMLFieldSetElement[JC] def validationMessage: String
 HTMLFieldSetElement[JC] def validity: ValidityState
 HTMLFieldSetElement[JC] def willValidate: Boolean
+HTMLFormControlsCollection[JC] @JSBracketAccess def apply(index: Int): T
+HTMLFormControlsCollection[JC] def item(index: Int): E
+HTMLFormControlsCollection[JC] def length: Int
+HTMLFormControlsCollection[JC] def namedItem(name: String): E
 HTMLFormElement[JC] var acceptCharset: String
 HTMLFormElement[JC] var accessKey: String
 HTMLFormElement[JC] var action: String
@@ -15070,6 +15074,10 @@ ProgressEvent[JT] def target: EventTarget
 ProgressEvent[JT] def timeStamp: Double
 ProgressEvent[JT] def total: Double
 ProgressEvent[JT] def `type`: String
+RadioNodeList[JC] @JSBracketAccess def apply(index: Int): T
+RadioNodeList[JC] def item(index: Int): T
+RadioNodeList[JC] def length: Int
+RadioNodeList[JC] def value: String
 Range[JC] def cloneContents(): DocumentFragment
 Range[JC] def cloneRange(): Range
 Range[JC] def collapse(toStart: Boolean): Unit

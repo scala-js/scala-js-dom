@@ -14,7 +14,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-abstract class HTMLCollection[E <: Element] extends DOMList[E] {
+abstract class HTMLCollection[E] extends DOMList[E] {
   def item(index: Int): E = js.native
 
   /** Returns the specific node whose ID or, as a fallback, name matches the string specified by name. Matching by name

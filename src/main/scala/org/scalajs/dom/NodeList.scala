@@ -13,6 +13,6 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class NodeList[+T <: Node] private[this] () extends DOMList[T] {
+class NodeList[+T <: Node]() extends DOMList[T] {
   def item(index: Int): T = js.native
 }
