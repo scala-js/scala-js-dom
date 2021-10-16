@@ -321,7 +321,7 @@ object raw {
   type HTMLCanvasElement = dom.HTMLCanvasElement
 
   @deprecated("use dom.HTMLCollection instead", "2.0.0")
-  type HTMLCollectionElement[E] = dom.HTMLCollection[E]
+  type HTMLCollectionElement = dom.HTMLCollection[dom.Element]
 
   @deprecated("use dom.HTMLDataListElement instead", "2.0.0")
   type HTMLDataListElement = dom.HTMLDataListElement
