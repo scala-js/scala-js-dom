@@ -30,7 +30,7 @@ abstract class HTMLTableElement extends HTMLElement {
     * a &lt;thead&gt; appear first, in tree order, and those members of a &lt;tbody&gt; last, also in tree order. The
     * HTMLCollection is live and is automatically updated when the HTMLTableElement changes.
     */
-  def rows: HTMLCollection = js.native
+  def rows: HTMLCollection[Element] = js.native
 
   /** Is an HTMLTableCaptionElement representing the first &lt;caption&gt; that is a child of the element, or null if
     * none is found. When set, if the object doesn't represent a &lt;caption&gt;, a DOMException with the
@@ -42,7 +42,7 @@ abstract class HTMLTableElement extends HTMLElement {
   /** Returns a live HTMLCollection containing all the &lt;tbody&gt; of the element. The HTMLCollection is live and is
     * automatically updated when the HTMLTableElement changes.
     */
-  def tBodies: HTMLCollection = js.native
+  def tBodies: HTMLCollection[Element] = js.native
 
   /** Is an HTMLTableSectionElement representing the first &lt;thead&gt; that is a child of the element, or null if none
     * is found. When set, if the object doesn't represent a &lt;thead&gt;, a DOMException with the HierarchyRequestError

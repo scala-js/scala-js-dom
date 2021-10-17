@@ -17,7 +17,7 @@ import scala.scalajs.js.annotation._
 abstract class HTMLSelectElement extends HTMLElement {
 
   /** The set of &lt;option&gt; elements contained by this element. Read only. */
-  val options: js.Array[HTMLOptionElement] = js.native
+  val options: HTMLOptionsCollection = js.native
 
   /** The value of this form control, that is, of the first selected option. */
   var value: String = js.native

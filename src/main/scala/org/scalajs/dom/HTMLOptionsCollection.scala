@@ -9,10 +9,10 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/** NodeList objects are collections of nodes such as those returned by Node.childNodes and the querySelectorAll method.
+/** The HTMLOptionsCollection interface represents a collection of <option> HTML elements (in document order) and offers
+  * methods and properties for selecting from the list as well as optionally altering its items. This object is returned
+  * only by the options property of select.
   */
 @js.native
 @JSGlobal
-class NodeList[+T <: Node]() extends DOMList[T] {
-  def item(index: Int): T = js.native
-}
+class HTMLOptionsCollection private[this] () extends HTMLCollection[HTMLOptionElement]

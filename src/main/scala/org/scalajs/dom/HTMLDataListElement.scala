@@ -17,5 +17,5 @@ import scala.scalajs.js.annotation._
 abstract class HTMLDataListElement extends HTMLElement {
 
   /** A collection of the contained option elements. */
-  def options: HTMLCollection = js.native
+  def options: HTMLCollection[Element] = js.native
 }

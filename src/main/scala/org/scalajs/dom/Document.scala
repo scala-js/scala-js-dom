@@ -51,18 +51,18 @@ abstract class Document extends Node with NodeSelector with DocumentEvent with P
     * root node. The returned HTMLCollection is live, meaning that it updates itself automatically to stay in sync with
     * the DOM tree without having to call document.getElementsByTagName again.
     */
-  def getElementsByTagName(name: String): HTMLCollection = js.native
+  def getElementsByTagName(name: String): HTMLCollection[Element] = js.native
 
   /** Returns a list of elements with the given tag name belonging to the given namespace. The complete document is
     * searched, including the root node.
     */
-  def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection = js.native
+  def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element] = js.native
 
   /** Returns a set of elements which have all the given class names. When called on the document object, the complete
     * document is searched, including the root node. You may also call getElementsByClassName on any element; it will
     * return only elements which are descendants of the specified root element with the given class names.
     */
-  def getElementsByClassName(classNames: String): HTMLCollection = js.native
+  def getElementsByClassName(classNames: String): HTMLCollection[Element] = js.native
 
   /** Returns the element from the document whose elementFromPoint method is being called which is the topmost element
     * which lies under the given point.  To get an element, specify the point via coordinates, in CSS pixels, relative
