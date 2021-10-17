@@ -321,9 +321,9 @@ AudioTrackList[JT] @JSBracketAccess def apply(index: Int): T
 AudioTrackList[JT] def dispatchEvent(evt: Event): Boolean
 AudioTrackList[JT] def getTrackById(id: String): AudioTrack
 AudioTrackList[JT] def length: Int
-AudioTrackList[JT] var onaddtrack: js.Function1[Event, Any]
+AudioTrackList[JT] var onaddtrack: js.Function1[TrackEvent, Any]
 AudioTrackList[JT] var onchange: js.Function1[Event, Any]
-AudioTrackList[JT] var onremovetrack: js.Function1[Event, Any]
+AudioTrackList[JT] var onremovetrack: js.Function1[TrackEvent, Any]
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 BeforeUnloadEvent[JC] def bubbles: Boolean
