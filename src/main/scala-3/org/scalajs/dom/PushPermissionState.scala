@@ -5,7 +5,7 @@ import scala.scalajs.js
 /** This represents a JavaScript enumeration describing the state of permissions for pushing described here:
   * [[http://www.w3.org/TR/push-api/#idl-def-PushPermissionState]]
   */
-opaque type PushPermissionState = String
+opaque type PushPermissionState <: String = String
 
 /** Static definitions for [[PushPermissionState]] */
 object PushPermissionState {

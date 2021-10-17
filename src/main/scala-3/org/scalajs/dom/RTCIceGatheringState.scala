@@ -3,7 +3,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-opaque type RTCIceGatheringState = String
+opaque type RTCIceGatheringState <: String = String
 
 object RTCIceGatheringState {
 

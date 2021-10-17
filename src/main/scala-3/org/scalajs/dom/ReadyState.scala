@@ -1,6 +1,6 @@
 package org.scalajs.dom
 
-opaque type ReadyState = String
+opaque type ReadyState <: String = String
 
 object ReadyState {
   val closed: ReadyState = "closed"

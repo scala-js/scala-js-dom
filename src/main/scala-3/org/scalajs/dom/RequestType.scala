@@ -3,7 +3,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** Fetch APIs [[https://fetch.spec.whatwg.org/#requesttype RequestType enum]] */
-opaque type RequestType = String
+opaque type RequestType <: String = String
 
 object RequestType {
   val empty: RequestType = ""

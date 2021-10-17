@@ -1,6 +1,6 @@
 package org.scalajs.dom
 
-opaque type TextTrackMode = String
+opaque type TextTrackMode <: String = String
 
 object TextTrackMode {
   val disabled: TextTrackMode = "disabled"

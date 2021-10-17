@@ -2,7 +2,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-opaque type ClientType = String
+opaque type ClientType <: String = String
 
 object ClientType {
   val window: ClientType = "window"

@@ -2,7 +2,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-opaque type FrameType = String
+opaque type FrameType <: String = String
 
 /** part of ServiceWorker
   * [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#client-frametype ¶4.2.2 frameType]] of

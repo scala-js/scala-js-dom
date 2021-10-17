@@ -4,7 +4,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCDataChannelState]] in W3C spec */
-opaque type RTCDataChannelState = String
+opaque type RTCDataChannelState <: String = String
 
 object RTCDataChannelState {
 

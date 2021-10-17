@@ -4,7 +4,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#rtciceconnectionstate-enum]] in W3C spec */
-opaque type RTCIceConnectionState = String
+opaque type RTCIceConnectionState <: String = String
 
 object RTCIceConnectionState {
 

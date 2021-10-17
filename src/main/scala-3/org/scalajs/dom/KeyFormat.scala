@@ -3,7 +3,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** see [[http://www.w3.org/TR/WebCryptoAPI/#dfn-KeyFormat ¶14.2 Data Types]] in W3C spec */
-opaque type KeyFormat = String
+opaque type KeyFormat <: String = String
 
 object KeyFormat {
 

@@ -4,7 +4,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** see [[https://www.w3.org/TR/2013/WD-mediacapture-streams-20130903/#widl-MediaStream-onended]] in W3C spec */
-opaque type MediaStreamTrackState = String
+opaque type MediaStreamTrackState <: String = String
 
 object MediaStreamTrackState {
 
