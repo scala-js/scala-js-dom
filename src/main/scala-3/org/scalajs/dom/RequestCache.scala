@@ -3,7 +3,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** Fetch APIs [[https://fetch.spec.whatwg.org/#requestcache RequestCache enum]] */
-opaque type RequestCache = String
+opaque type RequestCache <: String = String
 
 object RequestCache {
   val default: RequestCache = "default"

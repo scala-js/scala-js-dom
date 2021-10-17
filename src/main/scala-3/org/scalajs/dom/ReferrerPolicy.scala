@@ -2,7 +2,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-opaque type ReferrerPolicy = String
+opaque type ReferrerPolicy <: String = String
 
 object ReferrerPolicy {
   val empty: ReferrerPolicy = ""

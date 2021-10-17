@@ -8,7 +8,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-opaque type VisibilityState = String
+opaque type VisibilityState <: String = String
 
 object VisibilityState {
 

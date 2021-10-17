@@ -2,7 +2,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-opaque type ResponseType = String
+opaque type ResponseType <: String = String
 
 /** see [[https://fetch.spec.whatwg.org/#responsetype]] of whatwg Fetch spec */
 object ResponseType {

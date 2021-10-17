@@ -5,7 +5,7 @@ import scala.scalajs.js
 // the stream API is defined in https://streams.spec.whatwg.org/
 
 /** [[https://streams.spec.whatwg.org/#ws-state ¶4.2.4.3. get state]] of whatwg streams spec */
-opaque type WriteableState = String
+opaque type WriteableState <: String = String
 
 object WriteableState {
 

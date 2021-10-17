@@ -3,7 +3,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** Fetch APIs [[https://fetch.spec.whatwg.org/#requestdestination RequestDestination enum]] */
-opaque type RequestDestination = String
+opaque type RequestDestination <: String = String
 
 object RequestDestination {
   val empty: RequestDestination = ""

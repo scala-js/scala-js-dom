@@ -11,7 +11,7 @@ import scala.scalajs.js
 /** IndexedDB transaction mode Provides constants for IDB Transaction modes These constants have been removed from
   * browser support and replaced by String values
   */
-opaque type IDBTransactionMode = String
+opaque type IDBTransactionMode <: String = String
 
 object IDBTransactionMode {
 

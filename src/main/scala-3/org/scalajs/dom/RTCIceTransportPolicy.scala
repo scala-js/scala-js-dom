@@ -4,7 +4,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCIceTransportPolicy]] in W3C spec */
-opaque type RTCIceTransportPolicy = String
+opaque type RTCIceTransportPolicy <: String = String
 
 object RTCIceTransportPolicy {
 

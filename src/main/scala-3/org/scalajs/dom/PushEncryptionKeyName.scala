@@ -5,7 +5,7 @@ import scala.scalajs.js
 /** This represents a JavaScript enumeration representing the various keys you an request from a [[PushSubscription]] as
   * described here: [[http://www.w3.org/TR/push-api/#idl-def-PushEncryptionKeyName]]
   */
-opaque type PushEncryptionKeyName = String
+opaque type PushEncryptionKeyName <: String = String
 
 /** Static definitions for [[PushEncryptionKeyName]] */
 object PushEncryptionKeyName {

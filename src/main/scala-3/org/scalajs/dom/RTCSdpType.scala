@@ -4,7 +4,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** see [[https://www.w3.org/TR/2015/WD-webrtc-20150210/#idl-def-RTCSdpType]] in W3C spec */
-opaque type RTCSdpType = String
+opaque type RTCSdpType <: String = String
 
 object RTCSdpType {
 

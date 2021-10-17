@@ -5,7 +5,7 @@ import scala.scalajs.js
 /** See [[https://slightlyoff.github.io/ServiceWorker/spec/service_worker_1/#service-worker-obj ¶3.1 ServiceWorker]] of
   * ServiceWorker whatwg spec.
   */
-opaque type ServiceWorkerState = String
+opaque type ServiceWorkerState <: String = String
 
 object ServiceWorkerState {
 

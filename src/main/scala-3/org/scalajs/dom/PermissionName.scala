@@ -2,7 +2,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-opaque type PermissionName = String
+opaque type PermissionName <: String = String
 
 object PermissionName {
   val geolocation: PermissionName = "geolocation"

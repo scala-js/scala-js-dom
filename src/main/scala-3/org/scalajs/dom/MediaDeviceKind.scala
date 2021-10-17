@@ -4,7 +4,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 /** see [[https://www.w3.org/TR/2016/CR-mediacapture-streams-20160519/#idl-def-MediaDeviceKind]] in W3C spec */
-opaque type MediaDeviceKind = String
+opaque type MediaDeviceKind <: String = String
 
 object MediaDeviceKind {
 

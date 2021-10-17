@@ -2,7 +2,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-opaque type MIMEType = String
+opaque type MIMEType <: String = String
 
 object MIMEType {
   val `text/html`: MIMEType = "text/html"

@@ -8,7 +8,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-opaque type IDBTransactionDurability = String
+opaque type IDBTransactionDurability <: String = String
 
 object IDBTransactionDurability {
   val default: IDBTransactionDurability = "default"
