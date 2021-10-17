@@ -104,4 +104,12 @@ package object dom {
     */
   type HashAlgorithmIdentifier = HashAlgorithm | String
 
+  /** This is the same as `crypto` in JS.
+    *
+    * To maintain backwards-source-compatibility with scala-js-dom v1, `crypto` in scala-js-dom is retained as a package
+    * object.
+    */
+  @js.native
+  @JSGlobal("crypto")
+  val webcrypto: Crypto = js.native
 }
