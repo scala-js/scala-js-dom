@@ -25954,6 +25954,7 @@ package[SO] @js.native @JSGlobal("console") val console: Console
 package[SO] lazy val css: DeprecatedCSSAliases.type  (@deprecated in 2.0.0)
 package[SO] @js.native @JSGlobal("document") val document: html.Document
 package[SO] @js.native @JSGlobal("fetch") def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
+package[SO] @js.native @JSGlobal("crypto") val webcrypto: Crypto
 package[SO] @js.native @JSGlobal("window") val window: Window
 raw[SO] type AbstractWorker = dom.AbstractWorker  (@deprecated in 2.0.0)
 raw[SO] type AnalyserNode = dom.AnalyserNode  (@deprecated in 2.0.0)
