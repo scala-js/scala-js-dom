@@ -8,11 +8,10 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-@js.native
-sealed trait IDBTransactionDurability extends js.Any
+opaque type IDBTransactionDurability = String
 
 object IDBTransactionDurability {
-  @inline def default: IDBTransactionDurability = "default".asInstanceOf[IDBTransactionDurability]
-  @inline def strict: IDBTransactionDurability = "strict".asInstanceOf[IDBTransactionDurability]
-  @inline def relaxed: IDBTransactionDurability = "relaxed".asInstanceOf[IDBTransactionDurability]
+  val default: IDBTransactionDurability = "default"
+  val strict: IDBTransactionDurability = "strict"
+  val relaxed: IDBTransactionDurability = "relaxed"
 }
