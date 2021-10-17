@@ -14,7 +14,7 @@ package object dom {
     * property: it is merely a tag indicating objects that can be used in specific conditions, like to be transfered to
     * a Worker using the Worker.postMessage() method.
     */
-  type Transferable = ArrayBuffer | MessagePort
+  type Transferable = ArrayBuffer | MessagePort | CanvasProxy
 
   type BufferSource = ArrayBufferView | ArrayBuffer
 
@@ -83,4 +83,25 @@ package object dom {
   type IDBKeyPath = Any
 
   type IDBValue = Any
+
+  type BigInteger = js.typedarray.Uint8Array
+
+  /** According to [[http://www.w3.org/TR/WebCryptoAPI/#algorithm-dictionary ¶11 Algorithm Identifier]] of the
+    * WebCryptoAPI an AlgorithmIdentifier is an `object or DOMString`. We make this more precise here and specify an
+    * Algorithm. note: it may be that we can do only with KeyAlgorithmIdentifier and HashAlgorithmIdentifier
+    */
+  type AlgorithmIdentifier = Algorithm | String
+
+  /** According to [[http://www.w3.org/TR/WebCryptoAPI/#algorithm-dictionary ¶11 Algorithm Identifier]] of the
+    * WebCryptoAPI an AlgorithmIdentifier is an `object or DOMString`. We make this more precise here and distinguish
+    * the non overlapping classes of Key and Hash Algorithms.
+    */
+  type KeyAlgorithmIdentifier = KeyAlgorithm | String
+
+  /** According to [[http://www.w3.org/TR/WebCryptoAPI/#algorithm-dictionary ¶11 Algorithm Identifier]] a
+    * HashAlgorithmIdentifier is an AlgorithmIdentifier. Here we distinguish between Hash and Key Algorithm Identifiers.
+    * At the JS layer these have the same structure.
+    */
+  type HashAlgorithmIdentifier = HashAlgorithm | String
+
 }

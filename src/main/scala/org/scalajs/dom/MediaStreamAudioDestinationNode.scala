@@ -5,7 +5,6 @@
   */
 package org.scalajs.dom
 
-import org.scalajs.dom.experimental.mediastream.MediaStream
 import scala.scalajs.js
 
 /** The MediaElementAudioSourceNode interface represents an audio destination consisting of a WebRTC MediaStream with a
