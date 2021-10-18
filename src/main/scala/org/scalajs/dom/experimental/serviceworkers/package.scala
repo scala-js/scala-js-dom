@@ -3,6 +3,8 @@ package experimental
 
 import org.scalajs.dom
 import scala.language.implicitConversions
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /** Service Workers
   *
@@ -83,6 +85,13 @@ package object serviceworkers {
 
   @deprecated("use dom.ServiceWorkerGlobalScope instead", "2.0.0")
   type ServiceWorkerGlobalScope = dom.ServiceWorkerGlobalScope
+
+  @deprecated("use dom.ServiceWorkerGlobalScope instead", "2.0.0")
+  @js.native
+  @JSGlobalScope
+  object SharedWorkerGlobalScope extends js.Object {
+    def self: SharedWorkerGlobalScope = js.native
+  }
 
   @deprecated("use dom.ServiceWorkerMessageEventInit instead", "2.0.0")
   type ServiceWorkerMessageEventInit = dom.ServiceWorkerMessageEventInit
