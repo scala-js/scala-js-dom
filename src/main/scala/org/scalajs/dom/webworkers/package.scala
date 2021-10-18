@@ -4,8 +4,7 @@ import org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-@deprecated("All the members of webworkers.* have been moved to dom.*", "2.0.0")
-object webworkers {
+package object webworkers {
 
   @deprecated("use dom.AbstractWorker instead", "2.0.0")
   type AbstractWorker = dom.AbstractWorker

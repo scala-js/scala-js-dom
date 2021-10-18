@@ -3,7 +3,7 @@ package org.scalajs.dom
 import org.scalajs.dom
 
 /** Short aliases of all the dom.SVGThing classes */
-object svg {
+package object svg {
   type A = SVGAElement
   type AnimatedAngle = SVGAnimatedAngle
   type AnimatedBoolean = SVGAnimatedBoolean

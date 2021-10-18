@@ -1,7 +1,7 @@
 package org.scalajs.dom
 
 /** Short aliases of all the dom.HTMLThing classes */
-object html {
+package object html {
   type Anchor = HTMLAnchorElement
   type Audio = HTMLAudioElement
   type Area = HTMLAreaElement

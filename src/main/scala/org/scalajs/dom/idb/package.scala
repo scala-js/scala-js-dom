@@ -1,7 +1,7 @@
 package org.scalajs.dom
 
 /** Short aliases of all the dom.IDBThing classes */
-object idb {
+package object idb {
 
   type CreateIndexOptions = IDBCreateIndexOptions
   type CreateObjectStoreOptions = IDBCreateObjectStoreOptions
