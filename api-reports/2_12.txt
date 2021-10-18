@@ -25688,7 +25688,9 @@ experimental/serviceworkers/package[SO] type WindowClient = dom.WindowClient  (@
 experimental/serviceworkers/package[SO] @deprecated("use dom.ClientType instead", "2.0.0") val ClientType = dom.ClientType
 experimental/serviceworkers/package[SO] @deprecated("use dom.FrameType instead", "2.0.0") val FrameType = dom.FrameType
 experimental/serviceworkers/package[SO] @deprecated("use dom.ServiceWorkerState instead", "2.0.0") val ServiceWorkerState = dom.ServiceWorkerState
+experimental/serviceworkers/package[SO] def self: SharedWorkerGlobalScope
 experimental/serviceworkers/package[SO] implicit def toServiceWorkerNavigator(n: Navigator): ServiceWorkerNavigator  (@deprecated in 2.0.0)
+experimental/serviceworkers/package.SharedWorkerGlobalScope[JO] def self: SharedWorkerGlobalScope  (@deprecated in 2.0.0)
 experimental/sharedworkers/package[SO] type SharedWorker = dom.SharedWorker  (@deprecated in 2.0.0)
 experimental/sharedworkers/package[SO] type SharedWorkerGlobalScope = dom.SharedWorkerGlobalScope  (@deprecated in 2.0.0)
 experimental/sharedworkers/package[SO] @deprecated("use dom.SharedWorker instead", "2.0.0") val SharedWorker = dom.SharedWorker
