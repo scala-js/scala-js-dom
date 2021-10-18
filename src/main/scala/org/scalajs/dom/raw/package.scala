@@ -11,8 +11,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.|
 
-@deprecated("All the members of raw.* have been moved to dom.*", "2.0.0")
-object raw {
+package object raw {
 
   @deprecated("use dom.AbstractWorker instead", "2.0.0")
   type AbstractWorker = dom.AbstractWorker
