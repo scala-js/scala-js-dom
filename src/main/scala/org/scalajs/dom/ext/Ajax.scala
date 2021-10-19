@@ -10,7 +10,7 @@ import scala.scalajs.js.typedarray.ArrayBufferView
 import scala.scalajs.js.typedarray.TypedArrayBufferOps._
 
 /** Wraps an XMLHttpRequest to provide an easy one-line way of making an Ajax call, returning a Future. */
-@deprecated("use the dom.fetch API instead", "2.0.0")
+@deprecated("scalajs-dom no longer includes custom utilities, only facades. Try using dom.fetch API which doesn't require additional utilities.", "2.0.0")
 object Ajax {
 
   /** Supported data formats for Ajax are implicitly converted to InputData */
