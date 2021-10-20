@@ -14,6 +14,3 @@ val testsFirefox   = Build.testsFirefox
 val testsNodeJsdom = Build.testsNodeJsdom
 val example        = Build.example
 val readme         = Build.readme
-
-// TODO: Remove after dom project get it's own directory
-Global / onLoad ~= (_.andThen("project root" :: _))
