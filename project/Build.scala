@@ -23,7 +23,7 @@ object Build {
   // TODO: Change root from {.root => .} and dom from {. => dom}
 
   lazy val root = project
-    .in(file(".root"))
+    .in(file("."))
     .configure(commonSettings, crossScala, preventPublication)
     .settings(
       name := "Scala.js DOM",
@@ -41,7 +41,6 @@ object Build {
     )
 
   lazy val dom = project
-    .in(file("."))
     .dependsOn(scalafixRules % ScalafixConfig)
     .enablePlugins(ScalaJSPlugin, ScalafixPlugin)
     .configure(commonSettings, crossScala, publicationSetttings)
