@@ -54,13 +54,13 @@ trait NotificationOptions extends js.Object {
   /** The onclick property of the Notification interface specifies an event listener to receive click events. These
     * events occur when the user clicks on a displayed Notification.
     */
-  var onclick: js.UndefOr[js.Function0[Any]] = js.undefined
+  var onclick: js.UndefOr[js.Function1[Event, Any]] = js.undefined
 
   /** The onerror property of the Notification interface specifies an event listener to receive error events. These
     * events occur when something goes wrong with a Notification (in many cases an error preventing the notification
     * from being displayed.)
     */
-  var onerror: js.UndefOr[js.Function0[Any]] = js.undefined
+  var onerror: js.UndefOr[js.Function1[ErrorEvent, Any]] = js.undefined
 
   var vibrate: js.UndefOr[js.Array[Double]] = js.undefined
 }
@@ -104,7 +104,8 @@ object NotificationOptions {
       noscreen: js.UndefOr[Boolean] = js.undefined, renotify: js.UndefOr[Boolean] = js.undefined,
       silent: js.UndefOr[Boolean] = js.undefined, sound: js.UndefOr[String] = js.undefined,
       sticky: js.UndefOr[Boolean] = js.undefined, tag: js.UndefOr[String] = js.undefined,
-      onclick: js.UndefOr[js.Function0[Any]] = js.undefined, onerror: js.UndefOr[js.Function0[Any]] = js.undefined,
+      onclick: js.UndefOr[js.Function1[Event, Any]] = js.undefined,
+      onerror: js.UndefOr[js.Function1[ErrorEvent, Any]] = js.undefined,
       vibrate: js.UndefOr[js.Array[Double]] = js.undefined
   ): NotificationOptions = {
     val body0 = body

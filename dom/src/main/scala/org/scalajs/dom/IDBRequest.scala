@@ -17,6 +17,9 @@ import scala.scalajs.js.annotation._
   * information becomes available, an event is fired on the request, and the information becomes available through the
   * properties of the IDBRequest instance.
   *
+  * @tparam S
+  *   Type of `.source` on events
+  *
   * @tparam A
   *   Type of `.target.result` on events
   */
@@ -41,7 +44,7 @@ class IDBRequest[+S, A] extends EventTarget {
   def transaction: IDBTransaction = js.native
 
   /** The event handler for the error event. */
-  var onerror: js.Function1[Event, _] = js.native
+  var onerror: js.Function1[ErrorEvent, _] = js.native
 
   /** The state of the request. Every request starts in the pending state. The state changes to done when the request
     * completes successfully or when an error occurs.

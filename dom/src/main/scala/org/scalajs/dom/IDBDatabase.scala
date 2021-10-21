@@ -26,7 +26,7 @@ class IDBDatabase extends EventTarget {
     * you should use [[IDBVersionChangeEvent#newVersion]] instead. Webkit returns always integer and the value is 1 when
     * database is first created.
     */
-  def version: Int = js.native
+  def version: Double = js.native
 
   /** A DOMString that contains the name of the connected database. */
   def name: String = js.native
@@ -34,8 +34,16 @@ class IDBDatabase extends EventTarget {
   /** A DOMStringList that contains a list of the names of the object stores currently in the connected database. */
   def objectStoreNames: DOMStringList = js.native
 
+  /** The onclose event handler of the IDBDatabase interface handles the close event, which is fired when the database
+    * is unexpectedly closed. This can happen, for example, when the application is shut down or access to the disk the
+    * database is stored on is lost while the database is open.
+    *
+    * The close event is fired after all transactions have been aborted and the connection has been closed.
+    */
+  var onclose: js.Function1[CloseEvent, _] = js.native
+
   /** Fires when access to the database fails. */
-  var onerror: js.Function1[Event, _] = js.native
+  var onerror: js.Function1[ErrorEvent, _] = js.native
 
   /** Fires when access of the database is aborted. */
   var onabort: js.Function1[Event, _] = js.native

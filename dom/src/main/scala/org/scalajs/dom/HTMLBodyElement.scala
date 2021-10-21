@@ -27,7 +27,7 @@ abstract class HTMLBodyElement extends HTMLElement {
     * triggered when the event reaches the window, not the body element. Use addEventListener() to attach an event
     * listener to the body element.
     */
-  var onerror: js.Function1[Event, _] = js.native
+  var onerror: js.Function1[ErrorEvent, _] = js.native
 
   /** Reflects the onresize HTML attribute value for a function to call when the document has been resized. */
   var onresize: js.Function1[UIEvent, _] = js.native

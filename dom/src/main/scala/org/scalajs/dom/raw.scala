@@ -924,4 +924,7 @@ object raw {
     /** Returns an object reference to the DedicatedWorkerGlobalScope object itself. */
     def self: DedicatedWorkerGlobalScope = js.native
   }
+
+  @deprecated("use dom.DragEffect instead", "2.0.0")
+  lazy val DragEffect = dom.DragEffect
 }

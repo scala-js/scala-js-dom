@@ -72,13 +72,13 @@ class Notification(title: String, options: NotificationOptions = ???) extends Ev
   /** The onclick property of the Notification interface specifies an event listener to receive click events. These
     * events occur when the user clicks on a displayed Notification.
     */
-  var onclick: js.Function0[Any] = js.native
+  var onclick: js.Function1[Event, Any] = js.native
 
   /** The onerror property of the Notification interface specifies an event listener to receive error events. These
     * events occur when something goes wrong with a Notification (in many cases an error preventing the notification
     * from being displayed.)
     */
-  var onerror: js.Function0[Any] = js.native
+  var onerror: js.Function1[ErrorEvent, Any] = js.native
 
   /** The renotify read-only property of the Notification interface specifies whether the user should be notified after
     * a new notification replaces an old one, as specified in the renotify option of the Notification() constructor.

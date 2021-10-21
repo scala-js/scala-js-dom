@@ -21,8 +21,24 @@ class IDBVersionChangeEvent(typeArg: String, init: js.UndefOr[IDBVersionChangeEv
     *
     * This is null when the database is being deleted.
     */
-  def newVersion: Integer = js.native
+  def newVersion: java.lang.Double = js.native
 
   /** Returns the old version of the database. */
-  def oldVersion: Int = js.native
+  def oldVersion: Double = js.native
+}
+
+object IDBVersionChangeEvent {
+
+  @inline implicit final class Ops(private val e: IDBVersionChangeEvent) extends AnyVal {
+
+    /** Returns the new version of the database.
+      *
+      * This is None when the database is being deleted.
+      */
+    def newVersionOption: Option[Double] =
+      (e.newVersion: Any) match {
+        case i: Double => Some(i)
+        case _         => None
+      }
+  }
 }

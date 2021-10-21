@@ -36,7 +36,7 @@ class IDBTransaction extends EventTarget {
   def error: DOMException = js.native
 
   /** The event handler for the onerror event. */
-  var onerror: js.Function1[Event, _] = js.native
+  var onerror: js.Function1[ErrorEvent, _] = js.native
 
   /** The event handler for the onabort event. */
   var onabort: js.Function1[Event, _] = js.native
