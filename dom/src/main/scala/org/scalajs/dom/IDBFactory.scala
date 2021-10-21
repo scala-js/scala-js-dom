@@ -25,7 +25,7 @@ class IDBFactory extends js.Object {
     *
     * w3c spec [[http://www.w3.org/TR/IndexedDB/#requests ¶3.2.3 Opening a database]]
     */
-  def open(name: String, version: Int = js.native): IDBOpenDBRequest[IDBDatabase] = js.native
+  def open(name: String, version: Double = js.native): IDBOpenDBRequest[IDBDatabase] = js.native
 
   /** Compares two values as keys to determine equality and ordering for IndexedDB operations, such as storing and
     * iterating.

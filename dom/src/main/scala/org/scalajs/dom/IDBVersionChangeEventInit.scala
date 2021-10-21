@@ -9,6 +9,6 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 trait IDBVersionChangeEventInit extends EventInit {
-  var newVersion: js.UndefOr[Integer] = js.undefined
-  var oldVersion: js.UndefOr[Int] = js.undefined
+  var newVersion: js.UndefOr[java.lang.Double] = js.undefined
+  var oldVersion: js.UndefOr[Double] = js.undefined
 }

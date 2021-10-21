@@ -26,7 +26,7 @@ class IDBDatabase extends EventTarget {
     * you should use [[IDBVersionChangeEvent#newVersion]] instead. Webkit returns always integer and the value is 1 when
     * database is first created.
     */
-  def version: Int = js.native
+  def version: Double = js.native
 
   /** A DOMString that contains the name of the connected database. */
   def name: String = js.native

@@ -11,5 +11,5 @@ import scala.scalajs.js
 @js.native
 trait IDBDatabaseInfo extends js.Object {
   val name: String = js.native
-  val version: Int = js.native
+  val version: Double = js.native
 }
