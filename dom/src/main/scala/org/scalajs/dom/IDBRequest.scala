@@ -17,6 +17,9 @@ import scala.scalajs.js.annotation._
   * information becomes available, an event is fired on the request, and the information becomes available through the
   * properties of the IDBRequest instance.
   *
+  * @tparam S
+  *   Type of `.source` on events
+  *
   * @tparam A
   *   Type of `.target.result` on events
   */
