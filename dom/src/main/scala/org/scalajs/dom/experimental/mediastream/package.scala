@@ -16,8 +16,8 @@ package object mediastream {
   @deprecated("use dom.EndOfStreamError instead", "2.0.0")
   type EndOfStreamError = dom.EndOfStreamError
 
-  @deprecated("use dom.ReadyState instead", "2.0.0")
-  type ReadyState = dom.ReadyState
+  @deprecated("use dom.MediaSourceReadyState instead", "2.0.0")
+  type ReadyState = dom.MediaSourceReadyState
 
   @deprecated("use dom.AudioTrack instead", "2.0.0")
   type AudioTrack = dom.AudioTrack

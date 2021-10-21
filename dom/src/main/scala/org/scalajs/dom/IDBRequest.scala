@@ -46,7 +46,7 @@ class IDBRequest[+S, A] extends EventTarget {
   /** The state of the request. Every request starts in the pending state. The state changes to done when the request
     * completes successfully or when an error occurs.
     */
-  def readyState: String = js.native
+  def readyState: IDBRequestReadyState = js.native
 
   /** Returns the result of the request. If the the request failed and the result is not available,
     * the InvalidStateError exception is thrown.
