@@ -34,6 +34,14 @@ class IDBDatabase extends EventTarget {
   /** A DOMStringList that contains a list of the names of the object stores currently in the connected database. */
   def objectStoreNames: DOMStringList = js.native
 
+  /** The onclose event handler of the IDBDatabase interface handles the close event, which is fired when the database
+    * is unexpectedly closed. This can happen, for example, when the application is shut down or access to the disk the
+    * database is stored on is lost while the database is open.
+    *
+    * The close event is fired after all transactions have been aborted and the connection has been closed.
+    */
+  var onclose: js.Function1[CloseEvent, _] = js.native
+
   /** Fires when access to the database fails. */
   var onerror: js.Function1[Event, _] = js.native
 

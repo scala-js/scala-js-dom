@@ -14014,6 +14014,7 @@ IDBDatabase[JC] def dispatchEvent(evt: Event): Boolean
 IDBDatabase[JC] def name: String
 IDBDatabase[JC] def objectStoreNames: DOMStringList
 IDBDatabase[JC] var onabort: js.Function1[Event, _]
+IDBDatabase[JC] var onclose: js.Function1[CloseEvent, _]
 IDBDatabase[JC] var onerror: js.Function1[Event, _]
 IDBDatabase[JC] var onversionchange: js.Function1[IDBVersionChangeEvent, _]
 IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
