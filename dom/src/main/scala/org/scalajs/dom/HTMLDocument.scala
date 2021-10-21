@@ -287,7 +287,7 @@ abstract class HTMLDocument extends Document {
 
   var onloadedmetadata: js.Function1[Event, _] = js.native
 
-  var onerror: js.Function1[Event, _] = js.native
+  var onerror: js.Function1[ErrorEvent, _] = js.native
 
   var onplay: js.Function1[Event, _] = js.native
 

@@ -1822,7 +1822,7 @@ EventSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 EventSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 EventSource[JC] def close(): Unit
 EventSource[JC] def dispatchEvent(evt: Event): Boolean
-EventSource[JC] var onerror: js.Function1[Event, _]
+EventSource[JC] var onerror: js.Function1[ErrorEvent, _]
 EventSource[JC] var onmessage: js.Function1[MessageEvent, _]
 EventSource[JC] var onopen: js.Function1[Event, _]
 EventSource[JC] def readyState: Int
@@ -3184,7 +3184,7 @@ HTMLBodyElement[JC] var ondrop: js.Function1[DragEvent, _]
 HTMLBodyElement[JC] var ondurationchange: js.Function1[Event, _]
 HTMLBodyElement[JC] var onemptied: js.Function1[Event, _]
 HTMLBodyElement[JC] var onended: js.Function1[Event, _]
-HTMLBodyElement[JC] var onerror: js.Function1[Event, _]
+HTMLBodyElement[JC] var onerror: js.Function1[ErrorEvent, _]
 HTMLBodyElement[JC] var onfocus: js.Function1[FocusEvent, _]
 HTMLBodyElement[JC] var onfocusin: js.Function1[FocusEvent, _]
 HTMLBodyElement[JC] var onfocusout: js.Function1[FocusEvent, _]
@@ -4413,7 +4413,7 @@ HTMLDocument[JC] var ondrop: js.Function1[DragEvent, _]
 HTMLDocument[JC] var ondurationchange: js.Function1[Event, _]
 HTMLDocument[JC] var onemptied: js.Function1[Event, _]
 HTMLDocument[JC] var onended: js.Function1[Event, _]
-HTMLDocument[JC] var onerror: js.Function1[Event, _]
+HTMLDocument[JC] var onerror: js.Function1[ErrorEvent, _]
 HTMLDocument[JC] var onfocus: js.Function1[FocusEvent, _]
 HTMLDocument[JC] var onfocusin: js.Function1[FocusEvent, _]
 HTMLDocument[JC] var onfocusout: js.Function1[FocusEvent, _]
@@ -14015,7 +14015,7 @@ IDBDatabase[JC] def name: String
 IDBDatabase[JC] def objectStoreNames: DOMStringList
 IDBDatabase[JC] var onabort: js.Function1[Event, _]
 IDBDatabase[JC] var onclose: js.Function1[CloseEvent, _]
-IDBDatabase[JC] var onerror: js.Function1[Event, _]
+IDBDatabase[JC] var onerror: js.Function1[ErrorEvent, _]
 IDBDatabase[JC] var onversionchange: js.Function1[IDBVersionChangeEvent, _]
 IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBDatabase[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -14091,7 +14091,7 @@ IDBOpenDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: 
 IDBOpenDBRequest[JC] def dispatchEvent(evt: Event): Boolean
 IDBOpenDBRequest[JC] def error: DOMException
 IDBOpenDBRequest[JC] var onblocked: js.Function1[IDBVersionChangeEvent, _]
-IDBOpenDBRequest[JC] var onerror: js.Function1[Event, _]
+IDBOpenDBRequest[JC] var onerror: js.Function1[ErrorEvent, _]
 IDBOpenDBRequest[JC] var onsuccess: js.Function1[IDBEvent[A], _]
 IDBOpenDBRequest[JC] var onupgradeneeded: js.Function1[IDBVersionChangeEvent, _]
 IDBOpenDBRequest[JC] def readyState: String
@@ -14104,7 +14104,7 @@ IDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fun
 IDBRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBRequest[JC] def dispatchEvent(evt: Event): Boolean
 IDBRequest[JC] def error: DOMException
-IDBRequest[JC] var onerror: js.Function1[Event, _]
+IDBRequest[JC] var onerror: js.Function1[ErrorEvent, _]
 IDBRequest[JC] var onsuccess: js.Function1[IDBEvent[A], _]
 IDBRequest[JC] def readyState: String
 IDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -14131,7 +14131,7 @@ IDBTransaction[JC] def mode: IDBTransactionMode
 IDBTransaction[JC] def objectStore(name: String): IDBObjectStore
 IDBTransaction[JC] var onabort: js.Function1[Event, _]
 IDBTransaction[JC] var oncomplete: js.Function1[Event, _]
-IDBTransaction[JC] var onerror: js.Function1[Event, _]
+IDBTransaction[JC] var onerror: js.Function1[ErrorEvent, _]
 IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBTransaction[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBTransactionDurability[JT]
@@ -14159,6 +14159,8 @@ IDBVersionChangeEvent[JC] def target: EventTarget
 IDBVersionChangeEvent[JC] override def target: IDBEventTarget[A]
 IDBVersionChangeEvent[JC] def timeStamp: Double
 IDBVersionChangeEvent[JC] def `type`: String
+IDBVersionChangeEvent[SO] def newVersionOption: Option[Int]
+IDBVersionChangeEvent.Ops[SC] def newVersionOption: Option[Int]
 IDBVersionChangeEventInit[JT] var bubbles: js.UndefOr[Boolean]
 IDBVersionChangeEventInit[JT] var cancelable: js.UndefOr[Boolean]
 IDBVersionChangeEventInit[JT] var composed: js.UndefOr[Boolean]
@@ -15170,8 +15172,8 @@ Notification[JC] def dispatchEvent(evt: Event): Boolean
 Notification[JC] val icon: String
 Notification[JC] val lang: String
 Notification[JC] val noscreen: Boolean
-Notification[JC] var onclick: js.Function0[Any]
-Notification[JC] var onerror: js.Function0[Any]
+Notification[JC] var onclick: js.Function1[Event, Any]
+Notification[JC] var onerror: js.Function1[ErrorEvent, Any]
 Notification[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Notification[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Notification[JC] val renotify: Boolean
@@ -15187,15 +15189,15 @@ NotificationOptions[JT] var dir: js.UndefOr[String]
 NotificationOptions[JT] var icon: js.UndefOr[String]
 NotificationOptions[JT] var lang: js.UndefOr[String]
 NotificationOptions[JT] var noscreen: js.UndefOr[Boolean]
-NotificationOptions[JT] var onclick: js.UndefOr[js.Function0[Any]]
-NotificationOptions[JT] var onerror: js.UndefOr[js.Function0[Any]]
+NotificationOptions[JT] var onclick: js.UndefOr[js.Function1[Event, Any]]
+NotificationOptions[JT] var onerror: js.UndefOr[js.Function1[ErrorEvent, Any]]
 NotificationOptions[JT] var renotify: js.UndefOr[Boolean]
 NotificationOptions[JT] var silent: js.UndefOr[Boolean]
 NotificationOptions[JT] var sound: js.UndefOr[String]
 NotificationOptions[JT] var sticky: js.UndefOr[Boolean]
 NotificationOptions[JT] var tag: js.UndefOr[String]
 NotificationOptions[JT] var vibrate: js.UndefOr[js.Array[Double]]
-NotificationOptions[SO] def apply(body: js.UndefOr[String]?, dir: js.UndefOr[String]?, icon: js.UndefOr[String]?, lang: js.UndefOr[String]?, noscreen: js.UndefOr[Boolean]?, renotify: js.UndefOr[Boolean]?, silent: js.UndefOr[Boolean]?, sound: js.UndefOr[String]?, sticky: js.UndefOr[Boolean]?, tag: js.UndefOr[String]?, onclick: js.UndefOr[js.Function0[Any]]?, onerror: js.UndefOr[js.Function0[Any]]?, vibrate: js.UndefOr[js.Array[Double]]?): NotificationOptions  (@deprecated in 2.0.0)
+NotificationOptions[SO] def apply(body: js.UndefOr[String]?, dir: js.UndefOr[String]?, icon: js.UndefOr[String]?, lang: js.UndefOr[String]?, noscreen: js.UndefOr[Boolean]?, renotify: js.UndefOr[Boolean]?, silent: js.UndefOr[Boolean]?, sound: js.UndefOr[String]?, sticky: js.UndefOr[Boolean]?, tag: js.UndefOr[String]?, onclick: js.UndefOr[js.Function1[Event, Any]]?, onerror: js.UndefOr[js.Function1[ErrorEvent, Any]]?, vibrate: js.UndefOr[js.Array[Double]]?): NotificationOptions  (@deprecated in 2.0.0)
 OfflineAudioCompletionEvent[JT] def bubbles: Boolean
 OfflineAudioCompletionEvent[JT] def cancelBubble: Boolean
 OfflineAudioCompletionEvent[JT] def cancelable: Boolean
@@ -25010,7 +25012,7 @@ WebSocket[JC] def close(code: Int?, reason: String?): Unit
 WebSocket[JC] def dispatchEvent(evt: Event): Boolean
 WebSocket[JC] def extensions: String
 WebSocket[JC] var onclose: js.Function1[CloseEvent, _]
-WebSocket[JC] var onerror: js.Function1[Event, _]
+WebSocket[JC] var onerror: js.Function1[ErrorEvent, _]
 WebSocket[JC] var onmessage: js.Function1[MessageEvent, _]
 WebSocket[JC] var onopen: js.Function1[Event, _]
 WebSocket[JC] def readyState: Int

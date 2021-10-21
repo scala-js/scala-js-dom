@@ -43,7 +43,7 @@ class IDBDatabase extends EventTarget {
   var onclose: js.Function1[CloseEvent, _] = js.native
 
   /** Fires when access to the database fails. */
-  var onerror: js.Function1[Event, _] = js.native
+  var onerror: js.Function1[ErrorEvent, _] = js.native
 
   /** Fires when access of the database is aborted. */
   var onabort: js.Function1[Event, _] = js.native
