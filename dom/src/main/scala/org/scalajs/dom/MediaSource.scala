@@ -13,7 +13,7 @@ import scala.scalajs.js.annotation._
 class MediaSource extends EventTarget {
   def sourceBuffers: SourceBufferList = js.native
   def activeSourceBuffers: SourceBufferList = js.native
-  def readyState: ReadyState = js.native
+  def readyState: MediaSourceReadyState = js.native
 
   /** Allows the web application to set the presentation duration.
     *

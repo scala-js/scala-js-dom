@@ -1548,6 +1548,10 @@ DocumentFragment[JC] def removeEventListener[T <: Event](`type`: String, listene
 DocumentFragment[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentFragment[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 DocumentFragment[JC] var textContent: String
+DocumentReadyState[JT]
+DocumentReadyState[SO] val complete: DocumentReadyState
+DocumentReadyState[SO] val interactive: DocumentReadyState
+DocumentReadyState[SO] val loading: DocumentReadyState
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentType[JC] def appendChild(newChild: Node): Node
@@ -4480,7 +4484,7 @@ HTMLDocument[JC] def queryCommandText(commandId: String): String
 HTMLDocument[JC] def queryCommandValue(commandId: String): String
 HTMLDocument[JC] def querySelector(selectors: String): Element
 HTMLDocument[JC] def querySelectorAll(selectors: String): NodeList[Element]
-HTMLDocument[JC] def readyState: String
+HTMLDocument[JC] def readyState: DocumentReadyState
 HTMLDocument[JC] def referrer: String
 HTMLDocument[JC] def removeChild(oldChild: Node): Node
 HTMLDocument[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -14093,7 +14097,7 @@ IDBOpenDBRequest[JC] var onblocked: js.Function1[IDBVersionChangeEvent, _]
 IDBOpenDBRequest[JC] var onerror: js.Function1[Event, _]
 IDBOpenDBRequest[JC] var onsuccess: js.Function1[IDBEvent[A], _]
 IDBOpenDBRequest[JC] var onupgradeneeded: js.Function1[IDBVersionChangeEvent, _]
-IDBOpenDBRequest[JC] def readyState: String
+IDBOpenDBRequest[JC] def readyState: IDBRequestReadyState
 IDBOpenDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBOpenDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBOpenDBRequest[JC] def result: A
@@ -14105,12 +14109,15 @@ IDBRequest[JC] def dispatchEvent(evt: Event): Boolean
 IDBRequest[JC] def error: DOMException
 IDBRequest[JC] var onerror: js.Function1[Event, _]
 IDBRequest[JC] var onsuccess: js.Function1[IDBEvent[A], _]
-IDBRequest[JC] def readyState: String
+IDBRequest[JC] def readyState: IDBRequestReadyState
 IDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 IDBRequest[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 IDBRequest[JC] def result: A
 IDBRequest[JC] def source: S
 IDBRequest[JC] def transaction: IDBTransaction
+IDBRequestReadyState[JT]
+IDBRequestReadyState[SO] val done: IDBRequestReadyState
+IDBRequestReadyState[SO] val pending: IDBRequestReadyState
 IDBStoreLike[JT] def count(query: IDBKey | IDBKeyRange?): IDBRequest[S, Double]
 IDBStoreLike[JT] def get(key: IDBKey | IDBKeyRange): IDBRequest[S, IDBValue]
 IDBStoreLike[JT] def getAll(query: js.UndefOr[IDBKeyRange | IDBKey]?, count: js.UndefOr[Double]?): IDBRequest[S, js.Array[IDBValue]]
@@ -14761,13 +14768,17 @@ MediaSource[JC] def endOfStream(error: EndOfStreamError?): Unit
 MediaSource[JC] var onsourceclose: js.Function1[Event, Any]
 MediaSource[JC] var onsourceended: js.Function1[Event, Any]
 MediaSource[JC] var onsourceopen: js.Function1[Event, Any]
-MediaSource[JC] def readyState: ReadyState
+MediaSource[JC] def readyState: MediaSourceReadyState
 MediaSource[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaSource[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaSource[JC] def removeSourceBuffer(sourceBuffer: SourceBuffer): Unit
 MediaSource[JC] def setLiveSeekableRange(start: Double, end: Double): Unit
 MediaSource[JC] def sourceBuffers: SourceBufferList
 MediaSource[JO] def isTypeSupported(mediaType: String): Boolean
+MediaSourceReadyState[JT]
+MediaSourceReadyState[SO] val closed: MediaSourceReadyState
+MediaSourceReadyState[SO] val ended: MediaSourceReadyState
+MediaSourceReadyState[SO] val open: MediaSourceReadyState
 MediaStream[JC] val active: Boolean
 MediaStream[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaStream[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -15845,10 +15856,6 @@ ReadableStreamReader[JC] def cancel(reason: Any): js.Promise[Any]
 ReadableStreamReader[JC] def closed: js.Promise[ReadableStreamReader[T]]
 ReadableStreamReader[JC] def read(): js.Promise[Chunk[T]]
 ReadableStreamReader[JC] def releaseLock(): Unit
-ReadyState[JT]
-ReadyState[SO] val closed: ReadyState
-ReadyState[SO] val ended: ReadyState
-ReadyState[SO] val open: ReadyState
 ReferrerPolicy[JT]
 ReferrerPolicy[SO] val empty: ReferrerPolicy
 ReferrerPolicy[SO] val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
@@ -25559,7 +25566,7 @@ experimental/mediastream/package[SO] type MediaTrackConstraintSet = dom.MediaTra
 experimental/mediastream/package[SO] type MediaTrackConstraints = dom.MediaTrackConstraints  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type MediaTrackSettings = dom.MediaTrackSettings  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type MediaTrackSupportedConstraints = dom.MediaTrackSupportedConstraints  (@deprecated in 2.0.0)
-experimental/mediastream/package[SO] type ReadyState = dom.ReadyState  (@deprecated in 2.0.0)
+experimental/mediastream/package[SO] type ReadyState = dom.MediaSourceReadyState  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type SourceBuffer = dom.SourceBuffer  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type SourceBufferList = dom.SourceBufferList  (@deprecated in 2.0.0)
 experimental/mediastream/package[SO] type TextTrack = dom.TextTrack  (@deprecated in 2.0.0)

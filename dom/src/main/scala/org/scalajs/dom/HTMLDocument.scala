@@ -47,7 +47,7 @@ abstract class HTMLDocument extends Document {
   /** Returns "loading" while the document is loading, "interactive" once it is finished parsing but still loading
     * sub-resources, and "complete" once it has loaded.
     */
-  def readyState: String = js.native
+  def readyState: DocumentReadyState = js.native
 
   var uniqueID: String = js.native
 
