@@ -11,7 +11,7 @@ trait CacheQueryOptions extends js.Object {
 
   var ignoreMethod: Boolean = js.native // false
 
-  var ignoreVary: Boolean = js.native //false
+  var ignoreVary: Boolean = js.native // false
 
   var cacheName: String = js.native
 }

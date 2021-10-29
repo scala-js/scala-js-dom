@@ -25,10 +25,10 @@ class Response(content: BodyInit = null, init: ResponseInit = null) extends Body
   def ok: Boolean = js.native
 
   /** Contains the status code of the response (e.g., 200 for a success). */
-  val status: Int = js.native //actually returns unsigned short
+  val status: Int = js.native // actually returns unsigned short
 
   /** Contains the status message corresponding to the status code (e.g., OK for 200). */
-  def statusText: ByteString = js.native //actually returns ByteString
+  def statusText: ByteString = js.native // actually returns ByteString
 
   /** Contains the Headers object associated with the response. */
   val headers: Headers = js.native

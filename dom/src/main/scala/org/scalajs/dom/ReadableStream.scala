@@ -90,5 +90,5 @@ trait ReadableStream[+T] extends js.Object {
     * allow interference between the two branches. (Let us know if you think we should add an option to tee that creates
     * structured clones of the chunks for each branch.)
     */
-  def tee(): js.Array[_ <: ReadableStream[T]] = js.native //TODO js.Tuple2[ReadableStream[T], ReadableStream[T]]
+  def tee(): js.Array[_ <: ReadableStream[T]] = js.native // TODO js.Tuple2[ReadableStream[T], ReadableStream[T]]
 }

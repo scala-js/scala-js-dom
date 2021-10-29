@@ -32,7 +32,7 @@ package object dom {
 
   /** defined at [[https://fetch.spec.whatwg.org/#body-mixin ¶6.2 Body mixin]] in whatwg Fetch spec */
   type BodyInit =
-    Blob | BufferSource | FormData | String //todo: add URLSearchParams
+    Blob | BufferSource | FormData | String // todo: add URLSearchParams
 
   /** WebIDL sequence<T> is js.Array[T] | JSIterable[T]. However @mseddon knows at least Blink's IDL compiler treats
     * these as simply js.Array[T] for now. We keep this type as a reminder to check in more detail
