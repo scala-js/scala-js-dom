@@ -12,7 +12,7 @@ trait WindowClient extends Client {
   /** The visibilityState read-only property of the WindowClient interface indicates the visibility of the current
     * client. This value can be one of hidden, visible, prerender, or unloaded.
     */
-  //todo: stubs for https://www.w3.org/TR/page-visibility/#dom-document-visibilitystate
+  // todo: stubs for https://www.w3.org/TR/page-visibility/#dom-document-visibilitystate
   def visibilityState: String = js.native
 
   /** The focused read-only property of the WindowClient interface is a Boolean that indicates whether the current

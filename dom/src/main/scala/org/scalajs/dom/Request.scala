@@ -23,7 +23,7 @@ class Request(input: RequestInfo, init: RequestInit = null) extends Body {
   def `mediaType`: RequestType = js.native
 
   /** Contains the URL of the request. */
-  def url: String = js.native //should be USVString
+  def url: String = js.native // should be USVString
 
   /** Contains the associated Headers object of the request. */
   def headers: Headers = js.native
@@ -42,7 +42,7 @@ class Request(input: RequestInfo, init: RequestInit = null) extends Body {
 
   def redirect: RequestRedirect = js.native
 
-  def integrity: String = js.native //should be DOMString
+  def integrity: String = js.native // should be DOMString
 
   def keepalive: Boolean = js.native
 

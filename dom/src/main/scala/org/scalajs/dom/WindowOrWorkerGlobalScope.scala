@@ -28,7 +28,7 @@ trait WindowOrWorkerGlobalScope extends WindowBase64 with WindowTimers {
   def isSecureContext: Boolean = js.native
 
   /** Returns the origin of the global scope, serialized as a string. */
-  def origin: String = js.native //should be USVString
+  def origin: String = js.native // should be USVString
 
   /** Starts the process of fetching a resource from the network. */
   def fetch(info: RequestInfo, init: RequestInit = js.native): js.Promise[Response] = js.native

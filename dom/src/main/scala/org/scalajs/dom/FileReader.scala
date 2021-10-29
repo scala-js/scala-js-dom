@@ -76,7 +76,7 @@ class FileReader() extends EventTarget {
 @js.native
 @JSGlobal
 object FileReader extends js.Object {
-  //states
+  // states
   val EMPTY: Short = js.native
   val LOADING: Short = js.native
   val DONE: Short = js.native
