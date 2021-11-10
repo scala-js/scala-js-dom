@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** [[https://streams.spec.whatwg.org/#rs-controller-class ¶3.3 Class ReadableStreamController]] of whatwg spec
   *
@@ -14,8 +13,7 @@ import scala.scalajs.js.annotation._
   *   Type of the Chunks to be enqueued to the Stream
   */
 @js.native
-@JSGlobal
-class ReadableStreamController[-T](stream: ReadableStream[T] = null) extends js.Object {
+trait ReadableStreamController[-T] extends js.Object {
 
   /** The desiredSize getter returns the desired size to fill the controlled stream’s internal queue. It can be
     * negative, if the queue is over-full. An underlying source should use this information to determine when and how to
@@ -39,7 +37,7 @@ class ReadableStreamController[-T](stream: ReadableStream[T] = null) extends js.
     * @return
     *   seems like its an undefOr[Int] of the size
     */
-  def enqueue(chunk: Chunk[T]): js.UndefOr[Int] = js.native
+  def enqueue(chunk: T): js.UndefOr[Int] = js.native
 
   /** The error method will error the readable stream, making all future interactions with it fail with the given error
     * e.

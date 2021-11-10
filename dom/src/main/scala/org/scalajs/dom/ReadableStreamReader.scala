@@ -30,11 +30,8 @@ class ReadableStreamReader[+T](stream: ReadableStream[T]) extends js.Object {
     *
     * If the reader is active, the cancel method behaves the same as that for the associated stream. When done, it
     * automatically releases the lock.
-    *
-    * //todo determine type of reason
     */
-  // not actually sure what the return type is here
-  def cancel(reason: Any): js.Promise[Any] = js.native
+  def cancel[U](reason: js.UndefOr[U]): js.Promise[U] = js.native
 
   /** See [[https://streams.spec.whatwg.org/#reader-read 3.4.4.3. read()]] of whatwg Stream spec.
     *

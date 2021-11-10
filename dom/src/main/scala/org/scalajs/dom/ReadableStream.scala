@@ -1,6 +1,7 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSGlobal
 
 /** defined at [[https://streams.spec.whatwg.org/#readable-stream ¶2.1. Readable Streams]] of whatwg Streams spec.
   *
@@ -8,7 +9,11 @@ import scala.scalajs.js
   *   Type of the Chunks returned by the Stream. Can't make it coveriant, due to T
   */
 @js.native
-trait ReadableStream[+T] extends js.Object {
+@JSGlobal
+class ReadableStream[+T](
+    underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]],
+    queuingStrategy: js.UndefOr[ReadableStreamQueuingStrategy[T]] = js.undefined
+) extends js.Object {
 
   /** The locked getter returns whether or not the readable stream is locked to a reader.
     *

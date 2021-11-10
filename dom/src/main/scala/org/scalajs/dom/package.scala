@@ -2,7 +2,7 @@ package org.scalajs
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.typedarray.{ArrayBuffer, ArrayBufferView}
+import scala.scalajs.js.typedarray.{ArrayBuffer, ArrayBufferView, Uint8Array}
 import scala.scalajs.js.|
 
 package object dom {
@@ -32,7 +32,7 @@ package object dom {
 
   /** defined at [[https://fetch.spec.whatwg.org/#body-mixin ¶6.2 Body mixin]] in whatwg Fetch spec */
   type BodyInit =
-    Blob | BufferSource | FormData | String // todo: add URLSearchParams
+    Blob | BufferSource | FormData | String | ReadableStream[Uint8Array] // todo: add URLSearchParams
 
   /** WebIDL sequence<T> is js.Array[T] | JSIterable[T]. However @mseddon knows at least Blink's IDL compiler treats
     * these as simply js.Array[T] for now. We keep this type as a reminder to check in more detail
