@@ -12,6 +12,7 @@ import org.scalajs.dom.tests.shared.AsyncTesting.async
 import scala.concurrent.Future
 import scala.scalajs.js
 import scala.scalajs.js.Thenable.Implicits._
+import scala.scalajs.js.|
 
 trait BrowserTests {
 
@@ -26,11 +27,11 @@ trait BrowserTests {
 
     val stream = ReadableStream[Tuna](
         new ReadableStreamUnderlyingSource[Tuna] {
-          start = { (controller: ReadableStreamController[Tuna]) =>
+          start = js.defined({ (controller: ReadableStreamController[Tuna]) =>
             controller.enqueue(Tuna("blue"))
             controller.enqueue(Tuna("red"))
             controller.close()
-          }: js.Function1[ReadableStreamController[Tuna], Unit]
+          }): js.UndefOr[js.Function1[ReadableStreamController[Tuna], Unit | js.Promise[Unit]]]
         }
     )
 
