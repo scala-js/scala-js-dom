@@ -34,13 +34,11 @@ trait ReadableStreamUnderlyingSource[T] extends js.Object {
   var pull: js.UndefOr[js.Function1[ReadableStreamController[T], Unit | js.Promise[Unit]]] = js.undefined
 
   /** A function that is called whenever the consumer cancels the stream, via [[ReadableStream.cancel]] or
-    * [[ReadableStreamReader.cancel]]. It takes as its argument the same value as was passed to those methods by the
-    * consumer.
-    *
-    * If the shutdown process is asynchronous, it can return a promise to signal success or failure; the result will be
-    * communicated via the return value of the [[cancel]] method that was called. Additionally, a rejected promise will
-    * error the stream, instead of letting it close. Throwing an exception is treated the same as returning a rejected
-    * promise.
+    * [[ReadableStreamReader.cancel():scala\.scalajs\.js\.Promise[Unit]*]]. It takes as its argument the same value as
+    * was passed to those methods by the consumer. If the shutdown process is asynchronous, it can return a promise to
+    * signal success or failure; the result will be communicated via the return value of the [[cancel]] method that was
+    * called. Additionally, a rejected promise will error the stream, instead of letting it close. Throwing an exception
+    * is treated the same as returning a rejected promise.
     */
   var cancel: js.UndefOr[js.Function1[js.Any, Unit | js.Promise[Unit]]] = js.undefined
 
