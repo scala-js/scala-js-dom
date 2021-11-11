@@ -1,12 +1,7 @@
 package org.scalajs.dom.tests.shared
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
 import org.scalajs.dom.tests.shared.AsyncTesting._
-
-import scala.concurrent.Future
-import scala.scalajs.js
-import scala.scalajs.js.Thenable.Implicits._
+import org.junit.Test
 
 trait SharedTests {
 
@@ -41,42 +36,4 @@ trait SharedTests {
 
   @Test final def WindowIdbTest(): AsyncResult =
     IdbTest(window.indexedDB)
-
-  @Test
-  final def ReadableStreamTest: AsyncResult = async {
-    case class Tuna(color: String)
-
-    val expectedTunas = Seq(
-        Tuna("blue"),
-        Tuna("red")
-    )
-
-    val stream = ReadableStream[Tuna](
-        new ReadableStreamUnderlyingSource[Tuna] {
-          start = { (controller: ReadableStreamController[Tuna]) =>
-            controller.enqueue(Tuna("blue"))
-            controller.enqueue(Tuna("red"))
-            controller.close()
-          }: js.Function1[ReadableStreamController[Tuna], Unit]
-        }
-    )
-
-    val reader = stream.getReader()
-
-    def read(tunas: Seq[Tuna]): Future[Seq[Tuna]] = {
-      reader
-        .read()
-        .flatMap { chunk =>
-          if (chunk.done) {
-            Future.successful(tunas)
-          } else {
-            read(tunas :+ chunk.value)
-          }
-        }
-    }
-    read(Seq.empty)
-      .map { receivedTunas =>
-        assertEquals(receivedTunas, expectedTunas)
-      }
-  }
 }
