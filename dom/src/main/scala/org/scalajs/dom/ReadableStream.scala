@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSGlobal
 
 /** defined at [[https://streams.spec.whatwg.org/#readable-stream ¶2.1. Readable Streams]] of whatwg Streams spec.
   *
@@ -9,11 +8,7 @@ import scala.scalajs.js.annotation.JSGlobal
   *   Type of the Chunks returned by the Stream. Can't make it coveriant, due to T
   */
 @js.native
-@JSGlobal
-class ReadableStream[+T](
-    underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]],
-    queuingStrategy: js.UndefOr[ReadableStreamQueuingStrategy[T]] = js.undefined
-) extends js.Object {
+trait ReadableStream[+T] extends js.Object {
 
   /** The locked getter returns whether or not the readable stream is locked to a reader.
     *
@@ -96,4 +91,19 @@ class ReadableStream[+T](
     * structured clones of the chunks for each branch.)
     */
   def tee(): js.Array[_ <: ReadableStream[T]] = js.native // TODO js.Tuple2[ReadableStream[T], ReadableStream[T]]
+}
+
+object ReadableStream {
+
+  def apply[T](
+      underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]],
+      queuingStrategy: js.UndefOr[ReadableStreamQueuingStrategy[T]] = js.undefined
+  ): ReadableStream[T] = {
+    js.Dynamic
+      .newInstance(js.Dynamic.global.selectDynamic("ReadableStream"))(
+          underlyingSource.asInstanceOf[js.Any],
+          queuingStrategy.asInstanceOf[js.Any]
+      )
+      .asInstanceOf[ReadableStream[T]]
+  }
 }

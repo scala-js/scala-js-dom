@@ -7,7 +7,6 @@ import org.scalajs.dom.tests.shared.AsyncTesting._
 import scala.concurrent.Future
 import scala.scalajs.js
 import scala.scalajs.js.Thenable.Implicits._
-import scala.scalajs.js.|
 
 trait SharedTests {
 
@@ -52,13 +51,13 @@ trait SharedTests {
         Tuna("red")
     )
 
-    val stream = new ReadableStream[Tuna](
+    val stream = ReadableStream[Tuna](
         new ReadableStreamUnderlyingSource[Tuna] {
-          start = { controller: ReadableStreamController[Tuna] =>
+          start = { (controller: ReadableStreamController[Tuna]) =>
             controller.enqueue(Tuna("blue"))
             controller.enqueue(Tuna("red"))
             controller.close()
-          }.asInstanceOf[js.UndefOr[js.Function1[ReadableStreamController[Tuna], Unit | js.Promise[Unit]]]]
+          }: js.Function1[ReadableStreamController[Tuna], Unit]
         }
     )
 
