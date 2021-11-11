@@ -30,7 +30,7 @@ trait BrowserTests {
           start = js.defined({ (controller: ReadableStreamController[Tuna]) =>
             controller.enqueue(Tuna("blue"))
             controller.enqueue(Tuna("red"))
-            controller.close()
+            controller.close(): Unit | js.Promise[Unit]
           }): js.UndefOr[js.Function1[ReadableStreamController[Tuna], Unit | js.Promise[Unit]]]
         }
     )
