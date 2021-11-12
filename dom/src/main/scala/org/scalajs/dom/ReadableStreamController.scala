@@ -15,7 +15,7 @@ import scala.scalajs.js.annotation.JSGlobal
   */
 @js.native
 @JSGlobal
-class ReadableStreamController[-T] private[this] (stream: ReadableStream[T] = null) extends js.Object {
+class ReadableStreamController[-T] private[this] () extends js.Object {
 
   /** The desiredSize getter returns the desired size to fill the controlled stream’s internal queue. It can be
     * negative, if the queue is over-full. An underlying source should use this information to determine when and how to

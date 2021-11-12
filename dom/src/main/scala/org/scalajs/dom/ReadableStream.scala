@@ -96,8 +96,8 @@ trait ReadableStream[+T] extends js.Object {
 object ReadableStream {
 
   def apply[T](
-      underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]],
-      queuingStrategy: js.UndefOr[ReadableStreamQueuingStrategy[T]] = js.undefined
+      underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]] = js.undefined,
+      queuingStrategy: js.UndefOr[QueuingStrategy[T]] = js.undefined
   ): ReadableStream[T] = {
     js.Dynamic
       .newInstance(js.Dynamic.global.selectDynamic("ReadableStream"))(

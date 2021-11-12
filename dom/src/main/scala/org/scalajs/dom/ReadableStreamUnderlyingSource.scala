@@ -1,7 +1,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.|
 
 /** See [[https://streams.spec.whatwg.org/#underlying-source-api ¶4.2.3. The underlying source API]] of whatwg streams
   * spec.
@@ -16,7 +15,7 @@ trait ReadableStreamUnderlyingSource[T] extends js.Object {
     * If this setup process is asynchronous, it can return a promise to signal success or failure; a rejected promise
     * will error the stream. Any thrown exceptions will be re-thrown by the [[ReadableStream]] constructor.
     */
-  var start: js.UndefOr[js.Function1[ReadableStreamController[T], Unit | js.Promise[Unit]]] = js.undefined
+  var start: js.UndefOr[js.Function1[ReadableStreamController[T], js.UndefOr[js.Promise[Unit]]]] = js.undefined
 
   /** A function that is called whenever the stream’s internal queue of chunks becomes not full, i.e. whenever the
     * queue’s desired size becomes positive. Generally, it will be called repeatedly until the queue reaches its high
@@ -31,7 +30,7 @@ trait ReadableStreamUnderlyingSource[T] extends js.Object {
     * returned represents the process of acquiring a new chunk. Throwing an exception is treated the same as returning a
     * rejected promise.
     */
-  var pull: js.UndefOr[js.Function1[ReadableStreamController[T], Unit | js.Promise[Unit]]] = js.undefined
+  var pull: js.UndefOr[js.Function1[ReadableStreamController[T], js.UndefOr[js.Promise[Unit]]]] = js.undefined
 
   /** A function that is called whenever the consumer cancels the stream, via [[ReadableStream.cancel]] or
     * [[ReadableStreamReader.cancel():scala\.scalajs\.js\.Promise[Unit]*]]. It takes as its argument the same value as
@@ -40,7 +39,7 @@ trait ReadableStreamUnderlyingSource[T] extends js.Object {
     * called. Additionally, a rejected promise will error the stream, instead of letting it close. Throwing an exception
     * is treated the same as returning a rejected promise.
     */
-  var cancel: js.UndefOr[js.Function1[js.Any, Unit | js.Promise[Unit]]] = js.undefined
+  var cancel: js.UndefOr[js.Function1[js.Any, js.UndefOr[js.Promise[Unit]]]] = js.undefined
 
   /** Can be set to "bytes" to signal that the constructed [[ReadableStream]] is a readable byte stream.
     *

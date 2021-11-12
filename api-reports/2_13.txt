@@ -15625,6 +15625,8 @@ PushSubscriptionJSON[JT] val expirationTime: java.lang.Double
 PushSubscriptionJSON[JT] val keys: js.Dictionary[String]
 PushSubscriptionOptions[JT] var applicationServerKey: js.UndefOr[Uint8Array]
 PushSubscriptionOptions[JT] var userVisibleOnly: js.UndefOr[Boolean]
+QueuingStrategy[JT] var highWaterMark: Int
+QueuingStrategy[JT] var size: js.Function1[T, Int]
 RTCBundlePolicy[JT]
 RTCBundlePolicy[SO] val balanced: RTCBundlePolicy
 RTCBundlePolicy[SO] val `max-bundle` = "max-bundle".asInstanceOf[RTCBundlePolicy]
@@ -15851,13 +15853,11 @@ ReadableStream[JT] def locked: Boolean
 ReadableStream[JT] def pipeThrough[U](pair: Any, options: Any?): ReadableStream[U]
 ReadableStream[JT] def pipeTo(dest: WriteableStream[T], options: Any?): Unit
 ReadableStream[JT] def tee(): js.Array[_ <: ReadableStream[T]]
-ReadableStream[SO] def apply[T](underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]], queuingStrategy: js.UndefOr[ReadableStreamQueuingStrategy[T]]?): ReadableStream[T]
+ReadableStream[SO] def apply[T](underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]]?, queuingStrategy: js.UndefOr[QueuingStrategy[T]]?): ReadableStream[T]
 ReadableStreamController[JC] def close(): Unit
 ReadableStreamController[JC] def desiredSize: Int
 ReadableStreamController[JC] def enqueue(chunk: T): js.UndefOr[Int]
 ReadableStreamController[JC] def error(e: Any): Unit
-ReadableStreamQueuingStrategy[JT] var highWaterMark: Double
-ReadableStreamQueuingStrategy[JT] var size: js.Function1[Chunk[T], Unit]
 ReadableStreamReader[JC] def cancel(): js.Promise[Unit]
 ReadableStreamReader[JC] def cancel[U](reason: U): js.Promise[U]
 ReadableStreamReader[JC] def closed: js.Promise[ReadableStreamReader[T]]
@@ -15866,9 +15866,9 @@ ReadableStreamReader[JC] def releaseLock(): Unit
 ReadableStreamType[JT]
 ReadableStreamType[SO] val bytes: ReadableStreamType
 ReadableStreamUnderlyingSource[JT] var autoAllocateChunkSize: js.UndefOr[Double]
-ReadableStreamUnderlyingSource[JT] var cancel: js.UndefOr[js.Function1[js.Any, Unit | js.Promise[Unit]]]
-ReadableStreamUnderlyingSource[JT] var pull: js.UndefOr[js.Function1[ReadableStreamController[T], Unit | js.Promise[Unit]]]
-ReadableStreamUnderlyingSource[JT] var start: js.UndefOr[js.Function1[ReadableStreamController[T], Unit | js.Promise[Unit]]]
+ReadableStreamUnderlyingSource[JT] var cancel: js.UndefOr[js.Function1[js.Any, js.UndefOr[js.Promise[Unit]]]]
+ReadableStreamUnderlyingSource[JT] var pull: js.UndefOr[js.Function1[ReadableStreamController[T], js.UndefOr[js.Promise[Unit]]]]
+ReadableStreamUnderlyingSource[JT] var start: js.UndefOr[js.Function1[ReadableStreamController[T], js.UndefOr[js.Promise[Unit]]]]
 ReadableStreamUnderlyingSource[JT] var `type`: js.UndefOr[ReadableStreamType]
 ReferrerPolicy[JT]
 ReferrerPolicy[SO] val empty: ReferrerPolicy

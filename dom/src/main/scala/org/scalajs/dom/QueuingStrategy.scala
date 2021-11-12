@@ -7,10 +7,10 @@ import scala.scalajs.js
   * @tparam T
   *   Type of the Chunks returned by the Stream
   */
-trait ReadableStreamQueuingStrategy[T] extends js.Object {
+trait QueuingStrategy[T] extends js.Object {
 
   /** A non-negative number indicating the high water mark of the stream using this queuing strategy. */
-  var highWaterMark: Double
+  var highWaterMark: Int
 
   /** (non-byte streams only)
     *
@@ -19,5 +19,5 @@ trait ReadableStreamQueuingStrategy[T] extends js.Object {
     *
     * A function that computes and returns the finite non-negative size of the given chunk value.
     */
-  var size: js.Function1[Chunk[T], Unit]
+  var size: js.Function1[T, Int]
 }
