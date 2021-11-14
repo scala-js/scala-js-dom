@@ -15860,7 +15860,7 @@ ReadableStreamController[JC] def enqueue(): Unit
 ReadableStreamController[JC] def enqueue(chunk: T): Unit
 ReadableStreamController[JC] def error(e: Any): Unit
 ReadableStreamReader[JC] def cancel(): js.Promise[Unit]
-ReadableStreamReader[JC] def cancel[U](reason: U): js.Promise[Unit]
+ReadableStreamReader[JC] def cancel(reason: Any): js.Promise[Unit]
 ReadableStreamReader[JC] def closed: js.Promise[ReadableStreamReader[T]]
 ReadableStreamReader[JC] def read(): js.Promise[Chunk[T]]
 ReadableStreamReader[JC] def releaseLock(): Unit
