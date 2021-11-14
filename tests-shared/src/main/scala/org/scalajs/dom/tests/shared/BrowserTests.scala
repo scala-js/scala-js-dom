@@ -5,16 +5,31 @@ import org.junit.Test
 import org.scalajs.dom.QueuingStrategy
 import org.scalajs.dom.ReadableStream
 import org.scalajs.dom.ReadableStreamController
+import org.scalajs.dom.ReadableStreamReader
 import org.scalajs.dom.ReadableStreamUnderlyingSource
 import org.scalajs.dom.tests.shared.AsyncTesting.AsyncResult
 import org.scalajs.dom.tests.shared.AsyncTesting._
 import org.scalajs.dom.tests.shared.AsyncTesting.async
 
 import scala.concurrent.Future
+import scala.concurrent.Promise
 import scala.scalajs.js
 import scala.scalajs.js.Thenable.Implicits._
+import scala.util.Try
 
 trait BrowserTests {
+
+  def read[T](reader: ReadableStreamReader[T])(tunas: Seq[T]): Future[Seq[T]] = {
+    reader
+      .read()
+      .flatMap { chunk =>
+        if (chunk.done) {
+          Future.successful(tunas)
+        } else {
+          read(reader)(tunas :+ chunk.value)
+        }
+      }
+  }
 
   @Test
   final def ReadableStreamConstructionAndConsumptionTest: AsyncResult = async {
@@ -35,20 +50,7 @@ trait BrowserTests {
         }
     )
 
-    val reader = stream.getReader()
-
-    def read(tunas: Seq[Tuna]): Future[Seq[Tuna]] = {
-      reader
-        .read()
-        .flatMap { chunk =>
-          if (chunk.done) {
-            Future.successful(tunas)
-          } else {
-            read(tunas :+ chunk.value)
-          }
-        }
-    }
-    read(Seq.empty)
+    read(stream.getReader())(Seq.empty)
       .map { receivedTunas =>
         assertEquals(receivedTunas, expectedTunas)
       }
@@ -77,22 +79,53 @@ trait BrowserTests {
         }
     )
 
-    val reader = stream.getReader()
-
-    def read(strings: Seq[String]): Future[Seq[String]] = {
-      reader
-        .read()
-        .flatMap { chunk =>
-          if (chunk.done) {
-            Future.successful(strings)
-          } else {
-            read(strings :+ chunk.value)
-          }
-        }
-    }
-    read(Seq.empty)
+    read(stream.getReader())(Seq.empty)
       .map { receivedStrings =>
         assertEquals(receivedStrings, expectedStrings)
       }
+  }
+
+  @Test
+  final def ReadableStreamReaderCancelUnitTest: AsyncResult = async {
+    val reasonPromise = Promise[Unit]()
+    val stream = ReadableStream[Unit](
+        new ReadableStreamUnderlyingSource[Unit] {
+          cancel = js.defined({ (reason: Any) =>
+            reasonPromise.tryComplete(Try(reason.asInstanceOf[Unit]))
+            (): js.UndefOr[js.Promise[Unit]]
+          }): js.UndefOr[js.Function1[Any, js.UndefOr[js.Promise[Unit]]]]
+        }
+    )
+
+    for {
+      _ <- stream
+        .getReader()
+        .cancel()
+        .map(assertEquals((), _))
+      _ <- reasonPromise.future.map(assertEquals((), _))
+    } yield ()
+  }
+
+  @Test
+  final def ReadableStreamReaderCancelPromiseTest: AsyncResult = async {
+    val expectedReason = "probably a good one"
+
+    val reasonPromise = Promise[String]()
+    val stream = ReadableStream[Unit](
+        new ReadableStreamUnderlyingSource[Unit] {
+          cancel = js.defined({ (reason: Any) =>
+            reasonPromise.tryComplete(Try(reason.asInstanceOf[String]))
+            (): js.UndefOr[js.Promise[Unit]]
+          }): js.UndefOr[js.Function1[Any, js.UndefOr[js.Promise[Unit]]]]
+        }
+    )
+
+    for {
+      _ <- stream
+        .getReader()
+        .cancel(expectedReason)
+        .map(assertEquals((), _))
+      _ <- reasonPromise.future.map(assertEquals(expectedReason, _))
+    } yield ()
   }
 }

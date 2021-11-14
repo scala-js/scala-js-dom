@@ -53,5 +53,5 @@ trait ReadableStreamUnderlyingSource[T] extends js.Object {
     * Can be set to a positive integer to cause the implementation to automatically allocate buffers for the underlying
     * source code to write into.
     */
-  var autoAllocateChunkSize: js.UndefOr[Double] = js.undefined
+  var autoAllocateChunkSize: js.UndefOr[Int] = js.undefined
 }

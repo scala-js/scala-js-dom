@@ -39,7 +39,8 @@ class ReadableStreamController[-T] private[this] () extends js.Object {
     * @return
     *   seems like its an undefOr[Int] of the size
     */
-  def enqueue(chunk: T): js.UndefOr[Int] = js.native
+  def enqueue(chunk: T): Unit = js.native
+  def enqueue(): Unit = js.native
 
   /** The error method will error the readable stream, making all future interactions with it fail with the given error
     * e.

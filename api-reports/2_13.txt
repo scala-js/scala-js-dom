@@ -15856,16 +15856,17 @@ ReadableStream[JT] def tee(): js.Array[_ <: ReadableStream[T]]
 ReadableStream[SO] def apply[T](underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]]?, queuingStrategy: js.UndefOr[QueuingStrategy[T]]?): ReadableStream[T]
 ReadableStreamController[JC] def close(): Unit
 ReadableStreamController[JC] def desiredSize: Int
-ReadableStreamController[JC] def enqueue(chunk: T): js.UndefOr[Int]
+ReadableStreamController[JC] def enqueue(): Unit
+ReadableStreamController[JC] def enqueue(chunk: T): Unit
 ReadableStreamController[JC] def error(e: Any): Unit
 ReadableStreamReader[JC] def cancel(): js.Promise[Unit]
-ReadableStreamReader[JC] def cancel[U](reason: U): js.Promise[U]
+ReadableStreamReader[JC] def cancel[U](reason: U): js.Promise[Unit]
 ReadableStreamReader[JC] def closed: js.Promise[ReadableStreamReader[T]]
 ReadableStreamReader[JC] def read(): js.Promise[Chunk[T]]
 ReadableStreamReader[JC] def releaseLock(): Unit
 ReadableStreamType[JT]
 ReadableStreamType[SO] val bytes: ReadableStreamType
-ReadableStreamUnderlyingSource[JT] var autoAllocateChunkSize: js.UndefOr[Double]
+ReadableStreamUnderlyingSource[JT] var autoAllocateChunkSize: js.UndefOr[Int]
 ReadableStreamUnderlyingSource[JT] var cancel: js.UndefOr[js.Function1[js.Any, js.UndefOr[js.Promise[Unit]]]]
 ReadableStreamUnderlyingSource[JT] var pull: js.UndefOr[js.Function1[ReadableStreamController[T], js.UndefOr[js.Promise[Unit]]]]
 ReadableStreamUnderlyingSource[JT] var start: js.UndefOr[js.Function1[ReadableStreamController[T], js.UndefOr[js.Promise[Unit]]]]
