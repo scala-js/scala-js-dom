@@ -19,14 +19,14 @@ import scala.util.Try
 
 trait BrowserTests {
 
-  def read[T](reader: ReadableStreamReader[T])(tunas: Seq[T]): Future[Seq[T]] = {
+  def read[T](reader: ReadableStreamReader[T])(values: Seq[T]): Future[Seq[T]] = {
     reader
       .read()
       .flatMap { chunk =>
         if (chunk.done) {
-          Future.successful(tunas)
+          Future.successful(values)
         } else {
-          read(reader)(tunas :+ chunk.value)
+          read(reader)(values :+ chunk.value)
         }
       }
   }
