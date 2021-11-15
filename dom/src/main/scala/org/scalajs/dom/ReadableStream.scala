@@ -100,7 +100,7 @@ object ReadableStream {
       queuingStrategy: js.UndefOr[QueuingStrategy[T]] = js.undefined
   ): ReadableStream[T] = {
     js.Dynamic
-      .newInstance(js.Dynamic.global.selectDynamic("ReadableStream"))(
+      .newInstance(js.Dynamic.global.ReadableStream)(
           underlyingSource.asInstanceOf[js.Any],
           queuingStrategy.asInstanceOf[js.Any]
       )
