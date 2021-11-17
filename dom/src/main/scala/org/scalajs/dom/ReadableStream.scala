@@ -92,3 +92,18 @@ trait ReadableStream[+T] extends js.Object {
     */
   def tee(): js.Array[_ <: ReadableStream[T]] = js.native // TODO js.Tuple2[ReadableStream[T], ReadableStream[T]]
 }
+
+object ReadableStream {
+
+  def apply[T](
+      underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]] = js.undefined,
+      queuingStrategy: js.UndefOr[QueuingStrategy[T]] = js.undefined
+  ): ReadableStream[T] = {
+    js.Dynamic
+      .newInstance(js.Dynamic.global.ReadableStream)(
+          underlyingSource.asInstanceOf[js.Any],
+          queuingStrategy.asInstanceOf[js.Any]
+      )
+      .asInstanceOf[ReadableStream[T]]
+  }
+}
