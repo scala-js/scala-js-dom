@@ -75,7 +75,7 @@ trait ReadableStream[+T] extends js.Object {
     *
     * //todo: determine the type of options
     */
-  def pipeTo(dest: WriteableStream[T], options: Any = js.native): Unit = js.native
+  def pipeTo(dest: WriteableStream[T], options: Any = js.native): js.Promise[Unit] = js.native
 
   /** See [[https://streams.spec.whatwg.org/#rs-tee ¶3.2.4.6. tee()]] of whatwg streams spec.
     *
