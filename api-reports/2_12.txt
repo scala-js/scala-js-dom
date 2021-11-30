@@ -15851,7 +15851,7 @@ ReadableStream[JT] def cancel(reason: js.UndefOr[Any]?): js.Promise[Unit]
 ReadableStream[JT] def getReader(): ReadableStreamReader[T]
 ReadableStream[JT] def locked: Boolean
 ReadableStream[JT] def pipeThrough[U](pair: Any, options: Any?): ReadableStream[U]
-ReadableStream[JT] def pipeTo(dest: WriteableStream[T], options: Any?): Unit
+ReadableStream[JT] def pipeTo(dest: WriteableStream[T], options: Any?): js.Promise[Unit]
 ReadableStream[JT] def tee(): js.Array[_ <: ReadableStream[T]]
 ReadableStream[SO] def apply[T](underlyingSource: js.UndefOr[ReadableStreamUnderlyingSource[T]]?, queuingStrategy: js.UndefOr[QueuingStrategy[T]]?): ReadableStream[T]
 ReadableStreamController[JC] def close(): Unit
