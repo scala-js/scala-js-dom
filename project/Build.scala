@@ -145,7 +145,7 @@ object Build {
     ScalatexReadme(
       projectId     = "readme",
       wd            = file(""),
-      url           = "https://github.com/scala-js/scala-js-dom/tree/master",
+      url           = "https://github.com/scala-js/scala-js-dom/tree/main",
       source        = "Index",
       autoResources = Seq("example-opt.js"),
     )

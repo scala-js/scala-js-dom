@@ -16,7 +16,7 @@ How to Perform a Release
 
     # For v2.x onwards
     ver=2.0.0 # change this to new version
-    git checkout master
+    git checkout main
     git tag -s v$ver
     git push --tags
     ```
