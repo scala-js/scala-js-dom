@@ -19,7 +19,7 @@ jobs:
         run: sbt readme/run
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.7
+        uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
