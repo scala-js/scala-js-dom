@@ -344,6 +344,9 @@ object raw {
   @deprecated("use dom.HTMLFieldSetElement instead", "2.0.0")
   type HTMLFieldSetElement = dom.HTMLFieldSetElement
 
+    @deprecated("use dom.HTMLFooterElement instead", "2.0.0")
+  type HTMLFooterElement = dom.HTMLFooterElement
+
   @deprecated("use dom.HTMLFormElement instead", "2.0.0")
   type HTMLFormElement = dom.HTMLFormElement
 
@@ -380,6 +383,9 @@ object raw {
   @deprecated("use dom.HTMLLinkElement instead", "2.0.0")
   type HTMLLinkElement = dom.HTMLLinkElement
 
+    @deprecated("use dom.HTMLMainElement instead", "2.0.0")
+  type HTMLMainElement = dom.HTMLMainElement
+
   @deprecated("use dom.HTMLMapElement instead", "2.0.0")
   type HTMLMapElement = dom.HTMLMapElement
 
@@ -397,6 +403,9 @@ object raw {
 
   @deprecated("use dom.HTMLModElement instead", "2.0.0")
   type HTMLModElement = dom.HTMLModElement
+
+  @deprecated("use dom.HTMLNavElement instead", "2.0.0")
+  type HTMLNavElement = dom.HTMLNavElement
 
   @deprecated("use dom.HTMLObjectElement instead", "2.0.0")
   type HTMLObjectElement = dom.HTMLObjectElement
@@ -427,6 +436,9 @@ object raw {
 
   @deprecated("use dom.HTMLScriptElement instead", "2.0.0")
   type HTMLScriptElement = dom.HTMLScriptElement
+
+  @deprecated("use dom.HTMLSectionElement instead", "2.0.0")
+  type HTMLSectionElement = dom.HTMLSectionElement
 
   @deprecated("use dom.HTMLSelectElement instead", "2.0.0")
   type HTMLSelectElement = dom.HTMLSelectElement

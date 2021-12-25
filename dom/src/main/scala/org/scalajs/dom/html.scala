@@ -18,6 +18,7 @@ object html {
   type Element = HTMLElement
   type Embed = HTMLEmbedElement
   type FieldSet = HTMLFieldSetElement
+  type Footer = HTMLFooterElement
   type Form = HTMLFormElement
   type Head = HTMLHeadElement
   type Heading = HTMLHeadingElement
@@ -30,12 +31,14 @@ object html {
   type Legend = HTMLLegendElement
   type LI = HTMLLIElement
   type Link = HTMLLinkElement
+  type Main = HTMLMainElement
   type Map = HTMLMapElement
   type Media = HTMLMediaElement
   @inline def Media = HTMLMediaElement
   type Menu = HTMLMenuElement
   type Meta = HTMLMetaElement
   type Mod = HTMLModElement
+  type Nav = HTMLNavElement
   type Object = HTMLObjectElement
   type OList = HTMLOListElement
   type OptGroup = HTMLOptGroupElement
@@ -46,6 +49,7 @@ object html {
   type Progress = HTMLProgressElement
   type Quote = HTMLQuoteElement
   type Script = HTMLScriptElement
+  type Section = HTMLSectionElement
   type Select = HTMLSelectElement
   type Source = HTMLSourceElement
   type Span = HTMLSpanElement
