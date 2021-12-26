@@ -65,9 +65,9 @@ package object experimental {
     def apply(_status: Int = 200, _statusText: ByteString = "OK",
         _headers: HeadersInit = js.Dictionary[String]()): ResponseInit = {
       new ResponseInit {
-        var status = _status
-        var statusText = _statusText
-        var headers = _headers
+        status = _status
+        statusText = _statusText
+        headers = _headers
       }
     }
   }

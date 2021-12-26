@@ -9,6 +9,6 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 trait UIEventInit extends EventInit {
-  val detail: js.UndefOr[Int] = js.undefined
-  val view: js.UndefOr[Window] = js.undefined
+  var detail: js.UndefOr[Int] = js.undefined
+  var view: js.UndefOr[Window] = js.undefined
 }
