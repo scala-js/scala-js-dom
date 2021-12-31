@@ -9,5 +9,5 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 trait GamepadEventInit extends EventInit {
-  var gamepad: js.UndefOr[Gamepad]
+  var gamepad: js.UndefOr[Gamepad] = js.undefined
 }

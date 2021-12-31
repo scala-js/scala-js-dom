@@ -1099,10 +1099,10 @@ CompositionEventInit[JT] var bubbles: js.UndefOr[Boolean]
 CompositionEventInit[JT] var cancelable: js.UndefOr[Boolean]
 CompositionEventInit[JT] var composed: js.UndefOr[Boolean]
 CompositionEventInit[JT] var data: js.UndefOr[String]
-CompositionEventInit[JT] val detail: js.UndefOr[Int]
+CompositionEventInit[JT] var detail: js.UndefOr[Int]
 CompositionEventInit[JT] var locale: js.UndefOr[String]
 CompositionEventInit[JT] var scoped: js.UndefOr[Boolean]
-CompositionEventInit[JT] val view: js.UndefOr[Window]
+CompositionEventInit[JT] var view: js.UndefOr[Window]
 ConcatParams[JT] val algorithmId: BufferSource
 ConcatParams[JT] val hash: HashAlgorithmIdentifier
 ConcatParams[JT] val name: String
@@ -1356,13 +1356,13 @@ DeviceMotionEvent[JC] def stopPropagation(): Unit
 DeviceMotionEvent[JC] def target: EventTarget
 DeviceMotionEvent[JC] def timeStamp: Double
 DeviceMotionEvent[JC] def `type`: String
-DeviceMotionEventInit[JT] val acceleration: js.UndefOr[DeviceAcceleration]
-DeviceMotionEventInit[JT] val accelerationIncludingGravity: js.UndefOr[DeviceAcceleration]
+DeviceMotionEventInit[JT] var acceleration: js.UndefOr[DeviceAcceleration]
+DeviceMotionEventInit[JT] var accelerationIncludingGravity: js.UndefOr[DeviceAcceleration]
 DeviceMotionEventInit[JT] var bubbles: js.UndefOr[Boolean]
 DeviceMotionEventInit[JT] var cancelable: js.UndefOr[Boolean]
 DeviceMotionEventInit[JT] var composed: js.UndefOr[Boolean]
-DeviceMotionEventInit[JT] val interval: js.UndefOr[Double]
-DeviceMotionEventInit[JT] val rotationRate: js.UndefOr[DeviceRotationRate]
+DeviceMotionEventInit[JT] var interval: js.UndefOr[Double]
+DeviceMotionEventInit[JT] var rotationRate: js.UndefOr[DeviceRotationRate]
 DeviceMotionEventInit[JT] var scoped: js.UndefOr[Boolean]
 DeviceOrientationEvent[JC] val absolute: Boolean
 DeviceOrientationEvent[JC] val alpha: Double
@@ -1972,10 +1972,10 @@ FocusEvent[JC] def view: Window
 FocusEventInit[JT] var bubbles: js.UndefOr[Boolean]
 FocusEventInit[JT] var cancelable: js.UndefOr[Boolean]
 FocusEventInit[JT] var composed: js.UndefOr[Boolean]
-FocusEventInit[JT] val detail: js.UndefOr[Int]
-FocusEventInit[JT] val relatedTarget: js.UndefOr[EventTarget]
+FocusEventInit[JT] var detail: js.UndefOr[Int]
+FocusEventInit[JT] var relatedTarget: js.UndefOr[EventTarget]
 FocusEventInit[JT] var scoped: js.UndefOr[Boolean]
-FocusEventInit[JT] val view: js.UndefOr[Window]
+FocusEventInit[JT] var view: js.UndefOr[Window]
 FormData[JC] def append(name: js.Any, value: js.Any, blobName: String?): Unit
 FormData[JO]
 FrameType[JT]
@@ -14682,7 +14682,7 @@ KeyboardEventInit[JT] var cancelable: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var charCode: js.UndefOr[Int]
 KeyboardEventInit[JT] var composed: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var ctrlKey: js.UndefOr[Boolean]
-KeyboardEventInit[JT] val detail: js.UndefOr[Int]
+KeyboardEventInit[JT] var detail: js.UndefOr[Int]
 KeyboardEventInit[JT] var key: js.UndefOr[String]
 KeyboardEventInit[JT] var keyCode: js.UndefOr[Int]
 KeyboardEventInit[JT] var locale: js.UndefOr[String]
@@ -14691,7 +14691,7 @@ KeyboardEventInit[JT] var metaKey: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var repeat: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var scoped: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var shiftKey: js.UndefOr[Boolean]
-KeyboardEventInit[JT] val view: js.UndefOr[Window]
+KeyboardEventInit[JT] var view: js.UndefOr[Window]
 LinkStyle[JT] def sheet: StyleSheet
 Location[JT] def assign(url: String): Unit
 Location[JT] var hash: String
@@ -15017,7 +15017,7 @@ MouseEventInit[JT] var clientX: js.UndefOr[Double]
 MouseEventInit[JT] var clientY: js.UndefOr[Double]
 MouseEventInit[JT] var composed: js.UndefOr[Boolean]
 MouseEventInit[JT] var ctrlKey: js.UndefOr[Boolean]
-MouseEventInit[JT] val detail: js.UndefOr[Int]
+MouseEventInit[JT] var detail: js.UndefOr[Int]
 MouseEventInit[JT] var metaKey: js.UndefOr[Boolean]
 MouseEventInit[JT] var pageX: js.UndefOr[Double]
 MouseEventInit[JT] var pageY: js.UndefOr[Double]
@@ -15026,7 +15026,7 @@ MouseEventInit[JT] var scoped: js.UndefOr[Boolean]
 MouseEventInit[JT] var screenX: js.UndefOr[Double]
 MouseEventInit[JT] var screenY: js.UndefOr[Double]
 MouseEventInit[JT] var shiftKey: js.UndefOr[Boolean]
-MouseEventInit[JT] val view: js.UndefOr[Window]
+MouseEventInit[JT] var view: js.UndefOr[Window]
 MutationObserver[JC] def disconnect(): Unit
 MutationObserver[JC] def observe(target: Node, options: MutationObserverInit): Unit
 MutationObserver[JC] def takeRecords(): js.Array[MutationRecord]
@@ -15480,7 +15480,7 @@ PointerEventInit[JT] var clientX: js.UndefOr[Double]
 PointerEventInit[JT] var clientY: js.UndefOr[Double]
 PointerEventInit[JT] var composed: js.UndefOr[Boolean]
 PointerEventInit[JT] var ctrlKey: js.UndefOr[Boolean]
-PointerEventInit[JT] val detail: js.UndefOr[Int]
+PointerEventInit[JT] var detail: js.UndefOr[Int]
 PointerEventInit[JT] var height: js.UndefOr[Double]
 PointerEventInit[JT] var isPrimary: js.UndefOr[Boolean]
 PointerEventInit[JT] var metaKey: js.UndefOr[Boolean]
@@ -15498,7 +15498,7 @@ PointerEventInit[JT] var tangentialPressure: js.UndefOr[Double]
 PointerEventInit[JT] var tiltX: js.UndefOr[Double]
 PointerEventInit[JT] var tiltY: js.UndefOr[Double]
 PointerEventInit[JT] var twist: js.UndefOr[Double]
-PointerEventInit[JT] val view: js.UndefOr[Window]
+PointerEventInit[JT] var view: js.UndefOr[Window]
 PointerEventInit[JT] var width: js.UndefOr[Double]
 PopStateEvent[JT] def bubbles: Boolean
 PopStateEvent[JT] def cancelBubble: Boolean
@@ -15963,9 +15963,9 @@ Response[JC] def `type`: ResponseType
 Response[JC] def url: String
 Response[JO] def error(): Response
 Response[JO] def redirect(url: String, status: Int?): Response
-ResponseInit[JT] var headers: HeadersInit
-ResponseInit[JT] var status: Int
-ResponseInit[JT] var statusText: ByteString
+ResponseInit[JT] var headers: js.UndefOr[HeadersInit]
+ResponseInit[JT] var status: js.UndefOr[Int]
+ResponseInit[JT] var statusText: js.UndefOr[ByteString]
 ResponseType[JT]
 ResponseType[SO] val basic: ResponseType
 ResponseType[SO] val cors: ResponseType
@@ -23926,13 +23926,13 @@ SVGZoomAndPan[JT] var zoomAndPan: Int
 SVGZoomEventInit[JT] var bubbles: js.UndefOr[Boolean]
 SVGZoomEventInit[JT] var cancelable: js.UndefOr[Boolean]
 SVGZoomEventInit[JT] var composed: js.UndefOr[Boolean]
-SVGZoomEventInit[JT] val detail: js.UndefOr[Int]
+SVGZoomEventInit[JT] var detail: js.UndefOr[Int]
 SVGZoomEventInit[JT] var newScale: js.UndefOr[Double]
 SVGZoomEventInit[JT] var newTranslate: js.UndefOr[SVGPoint]
 SVGZoomEventInit[JT] var previousScale: js.UndefOr[Double]
 SVGZoomEventInit[JT] var previousTranslate: js.UndefOr[SVGPoint]
 SVGZoomEventInit[JT] var scoped: js.UndefOr[Boolean]
-SVGZoomEventInit[JT] val view: js.UndefOr[Window]
+SVGZoomEventInit[JT] var view: js.UndefOr[Window]
 SVGZoomEventInit[JT] var zoomRectScreen: js.UndefOr[SVGRect]
 Screen[JC] def availHeight: Double
 Screen[JC] def availWidth: Double
@@ -24283,11 +24283,11 @@ TextEventInit[JT] var bubbles: js.UndefOr[Boolean]
 TextEventInit[JT] var cancelable: js.UndefOr[Boolean]
 TextEventInit[JT] var composed: js.UndefOr[Boolean]
 TextEventInit[JT] var data: js.UndefOr[String]
-TextEventInit[JT] val detail: js.UndefOr[Int]
+TextEventInit[JT] var detail: js.UndefOr[Int]
 TextEventInit[JT] var inputMethod: js.UndefOr[Int]
 TextEventInit[JT] var locale: js.UndefOr[String]
 TextEventInit[JT] var scoped: js.UndefOr[Boolean]
-TextEventInit[JT] val view: js.UndefOr[Window]
+TextEventInit[JT] var view: js.UndefOr[Window]
 TextMetrics[JC] var width: Double
 TextTrack[JO] var DISABLED: Int
 TextTrack[JO] var ERROR: Int
@@ -24393,13 +24393,13 @@ TouchEventInit[JT] var cancelable: js.UndefOr[Boolean]
 TouchEventInit[JT] var changedTouches: js.UndefOr[TouchList]
 TouchEventInit[JT] var composed: js.UndefOr[Boolean]
 TouchEventInit[JT] var ctrlKey: js.UndefOr[Boolean]
-TouchEventInit[JT] val detail: js.UndefOr[Int]
+TouchEventInit[JT] var detail: js.UndefOr[Int]
 TouchEventInit[JT] var metaKey: js.UndefOr[Boolean]
 TouchEventInit[JT] var scoped: js.UndefOr[Boolean]
 TouchEventInit[JT] var shiftKey: js.UndefOr[Boolean]
 TouchEventInit[JT] var targetTouches: js.UndefOr[TouchList]
 TouchEventInit[JT] var touches: js.UndefOr[TouchList]
-TouchEventInit[JT] val view: js.UndefOr[Window]
+TouchEventInit[JT] var view: js.UndefOr[Window]
 TouchList[JT] @JSBracketAccess def apply(index: Int): T
 TouchList[JT] def item(index: Int): Touch
 TouchList[JT] def length: Int
@@ -24464,9 +24464,9 @@ UIEvent[JC] def view: Window
 UIEventInit[JT] var bubbles: js.UndefOr[Boolean]
 UIEventInit[JT] var cancelable: js.UndefOr[Boolean]
 UIEventInit[JT] var composed: js.UndefOr[Boolean]
-UIEventInit[JT] val detail: js.UndefOr[Int]
+UIEventInit[JT] var detail: js.UndefOr[Int]
 UIEventInit[JT] var scoped: js.UndefOr[Boolean]
-UIEventInit[JT] val view: js.UndefOr[Window]
+UIEventInit[JT] var view: js.UndefOr[Window]
 URL[JC] var hash: String
 URL[JC] var host: String
 URL[JC] var hostname: String
@@ -25095,7 +25095,7 @@ WheelEventInit[JT] var deltaMode: js.UndefOr[Int]
 WheelEventInit[JT] var deltaX: js.UndefOr[Double]
 WheelEventInit[JT] var deltaY: js.UndefOr[Double]
 WheelEventInit[JT] var deltaZ: js.UndefOr[Double]
-WheelEventInit[JT] val detail: js.UndefOr[Int]
+WheelEventInit[JT] var detail: js.UndefOr[Int]
 WheelEventInit[JT] var metaKey: js.UndefOr[Boolean]
 WheelEventInit[JT] var pageX: js.UndefOr[Double]
 WheelEventInit[JT] var pageY: js.UndefOr[Double]
@@ -25104,7 +25104,7 @@ WheelEventInit[JT] var scoped: js.UndefOr[Boolean]
 WheelEventInit[JT] var screenX: js.UndefOr[Double]
 WheelEventInit[JT] var screenY: js.UndefOr[Double]
 WheelEventInit[JT] var shiftKey: js.UndefOr[Boolean]
-WheelEventInit[JT] val view: js.UndefOr[Window]
+WheelEventInit[JT] var view: js.UndefOr[Window]
 Window[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Window[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Window[JC] def alert(): Unit
@@ -25648,14 +25648,8 @@ experimental/package[SO] lazy val ResponseType: dom.ResponseType.type  (@depreca
 experimental/package[SO] lazy val WriteableState: dom.WriteableState.type  (@deprecated in 2.0.0)
 experimental/package[SO] def apply(_status: Int = 200, _statusText: ByteString = "OK", _headers: HeadersInit = js.Dictionary[String]()): ResponseInit
 experimental/package[SO] @js.native @JSGlobal("fetch") def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]
-experimental/package[SO] var headers = _headers
-experimental/package[SO] var status = _status
-experimental/package[SO] var statusText = _statusText
 experimental/package.Fetch[SO] @js.native @JSGlobal("fetch") def fetch(info: RequestInfo, init: RequestInit = null): js.Promise[Response]  (@deprecated in 2.0.0)
 experimental/package.ResponseInit[SO] def apply(_status: Int = 200, _statusText: ByteString = "OK", _headers: HeadersInit = js.Dictionary[String]()): ResponseInit  (@deprecated in 2.0.0)
-experimental/package.ResponseInit[SO] var headers = _headers  (@deprecated in 2.0.0)
-experimental/package.ResponseInit[SO] var status = _status  (@deprecated in 2.0.0)
-experimental/package.ResponseInit[SO] var statusText = _statusText  (@deprecated in 2.0.0)
 experimental/permissions/package[SO] type PermissionDescriptor = dom.PermissionDescriptor  (@deprecated in 2.0.0)
 experimental/permissions/package[SO] type PermissionName = dom.PermissionName  (@deprecated in 2.0.0)
 experimental/permissions/package[SO] type PermissionState = dom.PermissionState  (@deprecated in 2.0.0)

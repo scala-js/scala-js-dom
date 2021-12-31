@@ -9,5 +9,5 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 trait FocusEventInit extends UIEventInit {
-  val relatedTarget: js.UndefOr[EventTarget] = js.undefined
+  var relatedTarget: js.UndefOr[EventTarget] = js.undefined
 }
