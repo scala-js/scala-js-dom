@@ -2,6 +2,7 @@ package org.scalajs.dom.tests.shared
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import org.scalajs.dom
 import org.scalajs.dom.QueuingStrategy
 import org.scalajs.dom.ReadableStream
 import org.scalajs.dom.ReadableStreamController
@@ -15,9 +16,14 @@ import scala.concurrent.Future
 import scala.concurrent.Promise
 import scala.scalajs.js
 import scala.scalajs.js.Thenable.Implicits._
+import scala.scalajs.js.typedarray._
 import scala.util.Try
 
 trait BrowserTests {
+
+  // https://github.com/scala-js/scala-js-dom/issues/668
+  @Test final def cryptoGetRandomValues(): Unit =
+    dom.crypto.getRandomValues(new Uint8Array(1))
 
   def read[T](reader: ReadableStreamReader[T])(values: Seq[T]): Future[Seq[T]] = {
     reader
