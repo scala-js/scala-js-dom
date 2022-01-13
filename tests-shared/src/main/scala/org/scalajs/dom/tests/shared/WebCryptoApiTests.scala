@@ -29,12 +29,14 @@ trait WebCryptoApiTests {
   }
 
   @Test final def aesKeyDerivationWorks: AsyncResult = async {
+    import scalajs.js.|._
+
     val derivationAlgorithm = "PBKDF2"
     val pbdkf2 = new dom.Pbkdf2Params {
       val name = derivationAlgorithm
-      val salt = "salt".getBytes.toTypedArray.buffer
+      val salt: dom.BufferSource = "salt".getBytes.toTypedArray.buffer
       val iterations = 100.toDouble
-      val hash = "SHA-512"
+      val hash: dom.HashAlgorithmIdentifier = dom.HashAlgorithm.`SHA-512`
     }
     val aesCtr = new dom.AesDerivedKeyParams {
       val name = "AES-GCM"
@@ -90,7 +92,7 @@ trait WebCryptoApiTests {
             val name = "AES-GCM"
             val iv = iv0
             val tagLength = 128
-            val additionalData = "".getBytes.toTypedArray.buffer
+            val additionalData: dom.BufferSource = "".getBytes.toTypedArray.buffer
           },
           key,
           data.getBytes().toTypedArray
@@ -106,7 +108,7 @@ trait WebCryptoApiTests {
             val name = "AES-GCM"
             val iv = iv0
             val tagLength = 128
-            val additionalData = "".getBytes.toTypedArray.buffer
+            val additionalData: dom.BufferSource = "".getBytes.toTypedArray.buffer
           },
           key,
           encrypted
