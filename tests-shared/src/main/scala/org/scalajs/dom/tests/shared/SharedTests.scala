@@ -3,7 +3,7 @@ package org.scalajs.dom.tests.shared
 import org.scalajs.dom.tests.shared.AsyncTesting._
 import org.junit.Test
 
-trait SharedTests {
+trait SharedTests extends WebCryptoApiTests {
 
   // ===================================================================================================================
   // Tests WITHOUT org.scalajs.dom._ in scope
