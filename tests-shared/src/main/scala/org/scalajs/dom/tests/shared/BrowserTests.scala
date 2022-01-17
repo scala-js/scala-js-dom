@@ -17,7 +17,7 @@ import scala.scalajs.js
 import scala.scalajs.js.Thenable.Implicits._
 import scala.util.Try
 
-trait BrowserTests {
+trait BrowserTests extends WebCryptoApiTests {
 
   def read[T](reader: ReadableStreamReader[T])(values: Seq[T]): Future[Seq[T]] = {
     reader
