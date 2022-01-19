@@ -14,8 +14,13 @@ package object crypto {
   @js.native
   val subtle: dom.SubtleCrypto = js.native
 
+  // for binary compat; unusable
+  @JSGlobal("crypto.getRandomValues")
+  @js.native
+  protected[crypto] def getRandomValues(array: ArrayBufferView): ArrayBufferView = js.native
+
   /** Fills the passed TypedArray with cryptographically sound random values. */
-  @inline def getRandomValues(array: ArrayBufferView): ArrayBufferView =
+  @inline def getRandomValues(array: ArrayBufferView)(implicit dummy: DummyImplicit): ArrayBufferView =
     webcrypto.getRandomValues(array)
 
   @deprecated("use dom.crypto instead", "2.0.0")

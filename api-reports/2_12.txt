@@ -25514,7 +25514,7 @@ crypto/package[SO] @deprecated("use dom.RsaKeyGenParams instead", "2.0.0") val R
 crypto/package[SO] @deprecated("use dom.RsaOaepParams instead", "2.0.0") val RsaOaepParams = dom.RsaOaepParams
 crypto/package[SO] @deprecated("use dom.RsaPssParams instead", "2.0.0") val RsaPssParams = dom.RsaPssParams
 crypto/package[SO] def crypto: Crypto  (@deprecated in 2.0.0)
-crypto/package[SO] def getRandomValues(array: ArrayBufferView): ArrayBufferView
+crypto/package[SO] def getRandomValues(array: ArrayBufferView)(implicit dummy: DummyImplicit): ArrayBufferView
 crypto/package[SO] @JSGlobal("crypto.subtle") @js.native val subtle: dom.SubtleCrypto
 experimental/Fullscreen[SO]  (@deprecated in 2.0.0)
 experimental/PointerLock[SO] type PointerLockDocument = dom.Document  (@deprecated in 2.0.0)
