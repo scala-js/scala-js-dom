@@ -2,7 +2,6 @@ package org.scalajs.dom.tests.shared
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import org.scalajs.dom
 import org.scalajs.dom.QueuingStrategy
 import org.scalajs.dom.ReadableStream
 import org.scalajs.dom.ReadableStreamController
