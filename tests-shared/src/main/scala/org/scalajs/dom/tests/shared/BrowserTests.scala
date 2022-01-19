@@ -19,7 +19,7 @@ import scala.scalajs.js.Thenable.Implicits._
 import scala.scalajs.js.typedarray._
 import scala.util.Try
 
-trait BrowserTests {
+trait BrowserTests extends WebCryptoApiTests {
 
   // https://github.com/scala-js/scala-js-dom/issues/668
   @Test final def cryptoGetRandomValues(): Unit =
