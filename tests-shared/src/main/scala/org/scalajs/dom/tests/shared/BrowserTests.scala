@@ -16,7 +16,6 @@ import scala.concurrent.Future
 import scala.concurrent.Promise
 import scala.scalajs.js
 import scala.scalajs.js.Thenable.Implicits._
-import scala.scalajs.js.typedarray._
 import scala.util.Try
 
 trait BrowserTests extends WebCryptoApiTests {
