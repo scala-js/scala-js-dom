@@ -10,6 +10,10 @@ import scala.scalajs.js.typedarray._
 
 trait WebCryptoApiTests {
 
+  // https://github.com/scala-js/scala-js-dom/issues/668
+  @Test final def cryptoGetRandomValues(): Unit =
+    dom.crypto.getRandomValues(new Uint8Array(1))
+
   @Test final def getRandomValuesWork: Unit = {
     dom.webcrypto.getRandomValues(Array.ofDim[Byte](8).toTypedArray)
   }
