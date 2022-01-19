@@ -21,10 +21,6 @@ import scala.util.Try
 
 trait BrowserTests extends WebCryptoApiTests {
 
-  // https://github.com/scala-js/scala-js-dom/issues/668
-  @Test final def cryptoGetRandomValues(): Unit =
-    dom.crypto.getRandomValues(new Uint8Array(1))
-
   def read[T](reader: ReadableStreamReader[T])(values: Seq[T]): Future[Seq[T]] = {
     reader
       .read()
