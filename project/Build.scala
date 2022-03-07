@@ -93,6 +93,10 @@ object Build {
     .settings(
       Test / jsEnv := {
         System.setProperty("webdriver.chrome.silentOutput", "true")
+        // Allow setting up the chrome driver's absolute path from an environment variable
+        sys.env.get("CHROME_DRIVER").foreach { chromeDriver =>
+          System.setProperty("webdriver.chrome.driver", chromeDriver)
+        }
         val o = new ChromeOptions()
         o.setHeadless(true)
         o.addArguments("--allow-file-access-from-files")
