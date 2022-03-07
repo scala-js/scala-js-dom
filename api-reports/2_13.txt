@@ -25130,7 +25130,7 @@ Window[JC] def decodeURIComponent(encodedURI: String): String
 Window[JC] def devicePixelRatio: Double
 Window[JC] def dispatchEvent(evt: Event): Boolean
 Window[JC] def document: HTMLDocument
-Window[JC] def encodeURIComponent(uriComponent: js.Any): String
+Window[JC] def encodeURIComponent(uriComponent: Any): String
 Window[JC] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
 Window[JC] def focus(): Unit
 Window[JC] def frameElement: Element
