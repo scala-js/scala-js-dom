@@ -457,7 +457,7 @@ class Window
     * @return
     *   A new string representing the provided uriComponent encoded as a URI component.
     */
-  def encodeURIComponent(uriComponent: String): String = js.native
+  def encodeURIComponent(uriComponent: js.Any): String = js.native
 
   /** Decodes a Uniform Resource Identifier (URI) component previously created by [[encodeURIComponent]] or by a similar
     * routine.
