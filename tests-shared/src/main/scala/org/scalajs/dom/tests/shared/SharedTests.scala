@@ -36,4 +36,11 @@ trait SharedTests {
 
   @Test final def WindowIdbTest(): AsyncResult =
     IdbTest(window.indexedDB)
+
+  @Test final def encodeDecodeUriTest(): Unit = {
+    val input = "?=/&:шеллы"
+    val encoded = window.encodeURIComponent(input)
+    val decoded = window.decodeURIComponent(encoded)
+    org.junit.Assert.assertEquals(input, decoded)
+  }
 }

@@ -445,4 +445,31 @@ class Window
     * number. You can get the number of pixels the document is scrolled horizontally from the scrollX property.
     */
   def scrollY: Double = js.native
+
+  /** Encodes a URI by replacing each instance of certain characters by one, two, three, or four escape sequences
+    * representing the UTF-8 encoding of the character (will only be four escape sequences for characters composed of
+    * two "surrogate" characters).
+    *
+    * @param uriComponent
+    *   A string, number, boolean, null, undefined, or any object. Before encoding, the uriComponent gets converted to
+    *   string.
+    *
+    * @return
+    *   A new string representing the provided uriComponent encoded as a URI component.
+    */
+  def encodeURIComponent(uriComponent: String): String = js.native
+
+  /** Decodes a Uniform Resource Identifier (URI) component previously created by [[encodeURIComponent]] or by a similar
+    * routine.
+    *
+    * Replaces each escape sequence in the encoded URI component with the character that it represents.
+    *
+    * Throws an URIError ("malformed URI sequence") exception when used wrongly.
+    *
+    * @param encodedURI
+    *   An encoded component of a Uniform Resource Identifier.
+    * @return
+    *   A new string representing the decoded version of the given encoded Uniform Resource Identifier (URI) component.
+    */
+  def decodeURIComponent(encodedURI: String): String = js.native
 }

@@ -25126,9 +25126,11 @@ Window[JC] def createImageBitmap(image: CreateImageBitmapInput, options: CreateI
 Window[JC] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double): js.Promise[ImageBitmap]
 Window[JC] def createImageBitmap(image: CreateImageBitmapInput, sx: Double, sy: Double, sw: Double, sh: Double, options: CreateImageBitmapOptions): js.Promise[ImageBitmap]
 Window[JC] def crossOriginIsolated: Boolean
+Window[JC] def decodeURIComponent(encodedURI: String): String
 Window[JC] def devicePixelRatio: Double
 Window[JC] def dispatchEvent(evt: Event): Boolean
 Window[JC] def document: HTMLDocument
+Window[JC] def encodeURIComponent(uriComponent: String): String
 Window[JC] def fetch(info: RequestInfo, init: RequestInit?): js.Promise[Response]
 Window[JC] def focus(): Unit
 Window[JC] def frameElement: Element
