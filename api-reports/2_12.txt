@@ -1822,6 +1822,7 @@ EventInit[JT] var scoped: js.UndefOr[Boolean]
 EventListenerOptions[JT] var capture: js.UndefOr[Boolean]
 EventListenerOptions[JT] var once: js.UndefOr[Boolean]
 EventListenerOptions[JT] var passive: js.UndefOr[Boolean]
+EventListenerOptions[JT] var signal: js.UndefOr[AbortSignal]
 EventSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 EventSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 EventSource[JC] def close(): Unit
