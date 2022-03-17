@@ -26,4 +26,9 @@ trait EventListenerOptions extends js.Object {
     * See Improving scrolling performance with passive listeners to learn more.
     */
   var passive: js.UndefOr[Boolean] = js.undefined
+
+  /** An AbortSignal. The listener will be removed when the given AbortSignal object's abort() method is called. If not
+    * specified, no AbortSignal is associated with the listener.
+    */
+  var signal: js.UndefOr[AbortSignal] = js.undefined
 }
