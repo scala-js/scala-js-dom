@@ -49,7 +49,7 @@ trait RTCDataChannel extends EventTarget {
   /** Is the event handler called when the message event is received. Such an event is sent when a message is available
     * on the data connection.
     */
-  var onmessage: js.Function1[MessageEvent, Any] = js.native
+  var onmessage: js.Function1[MessageEvent[String | Blob | ArrayBuffer], Any] = js.native
 
   /** Returns a DOMString indicating the type of binary data transmitted by the connection. This should be either "blob"
     * if Blob objects are being used or "arraybuffer" if ArrayBuffer objects are being used. Initially it is set to

@@ -19,7 +19,7 @@ class Worker(stringUrl: String) extends AbstractWorker {
     * occurs. These events are of type MessageEvent and will be called when the worker calls its own postMessage()
     * method: it is the way that a Worker has to give back information to the thread that created it.
     */
-  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent[Any], _] = js.native
 
   /** The postMessage() method of the Worker interface sends a message to the worker's inner scope. This accepts a
     * single parameter, which is the data to send to the worker. The data may be any value or JavaScript object handled

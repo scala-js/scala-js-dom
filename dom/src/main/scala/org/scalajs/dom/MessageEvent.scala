@@ -14,7 +14,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class MessageEvent(typeArg: String, init: js.UndefOr[MessageEventInit]) extends Event(typeArg, init) {
+class MessageEvent[+T](typeArg: String, init: js.UndefOr[MessageEventInit[T]]) extends Event(typeArg, init) {
   def source: Window = js.native
 
   def origin: String = js.native

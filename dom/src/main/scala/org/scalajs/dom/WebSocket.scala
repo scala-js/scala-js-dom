@@ -9,6 +9,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.ArrayBuffer
+import scala.scalajs.js.|
 
 /** The WebSocket object provides the API for creating and managing a WebSocket connection to a server, as well as for
   * sending and receiving data on the connection.
@@ -46,7 +47,7 @@ class WebSocket(var url: String = js.native, var protocol: String = js.native) e
   /** An event listener to be called when a message is received from the server. The listener receives a MessageEvent
     * named "message".
     */
-  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent[String | Blob | ArrayBuffer], _] = js.native
 
   /** An event listener to be called when the WebSocket connection's readyState changes to CLOSED. The listener receives
     * a CloseEvent named "close".

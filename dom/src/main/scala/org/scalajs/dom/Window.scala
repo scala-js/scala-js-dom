@@ -198,7 +198,7 @@ class Window
 
   /** An event handler property for focus events on the window. */
   var onfocus: js.Function1[FocusEvent, _] = js.native
-  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent[Any], _] = js.native
   var ontimeupdate: js.Function1[Event, _] = js.native
 
   /** An event handler for the resize event on the window. */

@@ -567,7 +567,7 @@ object raw {
   type MessageChannel = dom.MessageChannel
 
   @deprecated("use dom.MessageEvent instead", "2.0.0")
-  type MessageEvent = dom.MessageEvent
+  type MessageEvent = dom.MessageEvent[Any]
 
   @deprecated("use dom.MessagePort instead", "2.0.0")
   type MessagePort = dom.MessagePort

@@ -44,7 +44,7 @@ trait ServiceWorkerGlobalScope extends WorkerGlobalScope {
     * use the MessagePort.postMessage method to send messages to service workers. The service worker can optionally send
     * a response back via the MessagePort exposed in event.data.port, corresponding to the controlled page.
     */
-  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent[Any], _] = js.native
 
   /** Forces the waiting service worker to become the active service worker. This method can be used with
     * [[Clients.claim]] to ensure that updates to the underlying service worker take effect immediately for both the

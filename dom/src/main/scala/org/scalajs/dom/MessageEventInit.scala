@@ -8,8 +8,8 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-trait MessageEventInit extends EventInit {
+trait MessageEventInit[T] extends EventInit {
   var source: js.UndefOr[Window] = js.undefined
   var origin: js.UndefOr[String] = js.undefined
-  var data: js.UndefOr[Any] = js.undefined
+  var data: js.UndefOr[T] = js.undefined
 }

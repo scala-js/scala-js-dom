@@ -1297,7 +1297,7 @@ DedicatedWorkerGlobalScope[JT] def location: WorkerLocation
 DedicatedWorkerGlobalScope[JT] def navigator: WorkerNavigator
 DedicatedWorkerGlobalScope[JT] var onError: js.Function1[ErrorEvent, _]
 DedicatedWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
-DedicatedWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent, _]
+DedicatedWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent[Any], _]
 DedicatedWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
 DedicatedWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
 DedicatedWorkerGlobalScope[JT] def origin: String
@@ -1828,7 +1828,7 @@ EventSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 EventSource[JC] def close(): Unit
 EventSource[JC] def dispatchEvent(evt: Event): Boolean
 EventSource[JC] var onerror: js.Function1[ErrorEvent, _]
-EventSource[JC] var onmessage: js.Function1[MessageEvent, _]
+EventSource[JC] var onmessage: js.Function1[MessageEvent[String], _]
 EventSource[JC] var onopen: js.Function1[Event, _]
 EventSource[JC] def readyState: Int
 EventSource[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -3205,7 +3205,7 @@ HTMLBodyElement[JC] var onload: js.Function1[Event, _]
 HTMLBodyElement[JC] var onloadeddata: js.Function1[Event, _]
 HTMLBodyElement[JC] var onloadedmetadata: js.Function1[Event, _]
 HTMLBodyElement[JC] var onloadstart: js.Function1[Event, _]
-HTMLBodyElement[JC] var onmessage: js.Function1[MessageEvent, _]
+HTMLBodyElement[JC] var onmessage: js.Function1[MessageEvent[Any], _]
 HTMLBodyElement[JC] var onmousedown: js.Function1[MouseEvent, _]
 HTMLBodyElement[JC] var onmouseenter: js.Function1[MouseEvent, _]
 HTMLBodyElement[JC] var onmouseleave: js.Function1[MouseEvent, _]
@@ -14957,7 +14957,7 @@ MessageEvent[JC] def `type`: String
 MessageEventInit[JT] var bubbles: js.UndefOr[Boolean]
 MessageEventInit[JT] var cancelable: js.UndefOr[Boolean]
 MessageEventInit[JT] var composed: js.UndefOr[Boolean]
-MessageEventInit[JT] var data: js.UndefOr[Any]
+MessageEventInit[JT] var data: js.UndefOr[T]
 MessageEventInit[JT] var origin: js.UndefOr[String]
 MessageEventInit[JT] var scoped: js.UndefOr[Boolean]
 MessageEventInit[JT] var source: js.UndefOr[Window]
@@ -14965,7 +14965,7 @@ MessagePort[JT] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 MessagePort[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MessagePort[JT] def close(): Unit
 MessagePort[JT] def dispatchEvent(evt: Event): Boolean
-MessagePort[JT] var onmessage: js.Function1[MessageEvent, _]
+MessagePort[JT] var onmessage: js.Function1[MessageEvent[Any], _]
 MessagePort[JT] def postMessage(message: js.Any, transferList: js.UndefOr[js.Array[Transferable]]?): Unit
 MessagePort[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MessagePort[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -15657,7 +15657,7 @@ RTCDataChannel[JT] val maxRetransmits: Double
 RTCDataChannel[JT] val negotiated: Boolean
 RTCDataChannel[JT] var onclose: js.Function1[Event, Any]
 RTCDataChannel[JT] var onerror: js.Function1[Event, Any]
-RTCDataChannel[JT] var onmessage: js.Function1[MessageEvent, Any]
+RTCDataChannel[JT] var onmessage: js.Function1[MessageEvent[String | Blob | ArrayBuffer], Any]
 RTCDataChannel[JT] var onopen: js.Function1[Event, Any]
 RTCDataChannel[JT] val ordered: Boolean
 RTCDataChannel[JT] val protocol: String
@@ -23974,7 +23974,7 @@ ServiceWorkerContainer[JT] def dispatchEvent(evt: Event): Boolean
 ServiceWorkerContainer[JT] def getRegistration(scope: String?): js.Promise[js.UndefOr[ServiceWorkerRegistration]]
 ServiceWorkerContainer[JT] def getRegistrations(): js.Promise[js.Array[ServiceWorkerRegistration]]
 ServiceWorkerContainer[JT] var oncontrollerchange: js.Function1[Event, _]
-ServiceWorkerContainer[JT] var onmessage: js.Function1[MessageEvent, _]
+ServiceWorkerContainer[JT] var onmessage: js.Function1[MessageEvent[Any], _]
 ServiceWorkerContainer[JT] def ready: js.Promise[ServiceWorkerRegistration]
 ServiceWorkerContainer[JT] def register(scriptURL: String, options: js.Object?): js.Promise[ServiceWorkerRegistration]
 ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -24006,7 +24006,7 @@ ServiceWorkerGlobalScope[JT] var onactivate: js.Function1[ExtendableEvent, _]
 ServiceWorkerGlobalScope[JT] var onfetch: js.Function1[FetchEvent, _]
 ServiceWorkerGlobalScope[JT] var oninstall: js.Function1[ExtendableEvent, _]
 ServiceWorkerGlobalScope[JT] var onlanguagechange: js.Function1[Event, _]
-ServiceWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent, _]
+ServiceWorkerGlobalScope[JT] var onmessage: js.Function1[MessageEvent[Any], _]
 ServiceWorkerGlobalScope[JT] var onoffline: js.Function1[Event, _]
 ServiceWorkerGlobalScope[JT] var ononline: js.Function1[Event, _]
 ServiceWorkerGlobalScope[JT] var onpush: js.Function1[PushEvent, _]
@@ -25033,7 +25033,7 @@ WebSocket[JC] def dispatchEvent(evt: Event): Boolean
 WebSocket[JC] def extensions: String
 WebSocket[JC] var onclose: js.Function1[CloseEvent, _]
 WebSocket[JC] var onerror: js.Function1[ErrorEvent, _]
-WebSocket[JC] var onmessage: js.Function1[MessageEvent, _]
+WebSocket[JC] var onmessage: js.Function1[MessageEvent[String | Blob | ArrayBuffer], _]
 WebSocket[JC] var onopen: js.Function1[Event, _]
 WebSocket[JC] def readyState: Int
 WebSocket[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -25183,7 +25183,7 @@ Window[JC] var onload: js.Function1[Event, _]
 Window[JC] var onloadeddata: js.Function1[Event, _]
 Window[JC] var onloadedmetadata: js.Function1[Event, _]
 Window[JC] var onloadstart: js.Function1[Event, _]
-Window[JC] var onmessage: js.Function1[MessageEvent, _]
+Window[JC] var onmessage: js.Function1[MessageEvent[Any], _]
 Window[JC] var onmousedown: js.Function1[MouseEvent, _]
 Window[JC] var onmousemove: js.Function1[MouseEvent, _]
 Window[JC] var onmouseout: js.Function1[MouseEvent, _]
@@ -25298,7 +25298,7 @@ Worker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functio
 Worker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Worker[JC] def dispatchEvent(evt: Event): Boolean
 Worker[JC] var onerror: js.Function1[ErrorEvent, _]
-Worker[JC] var onmessage: js.Function1[MessageEvent, _]
+Worker[JC] var onmessage: js.Function1[MessageEvent[Any], _]
 Worker[JC] def postMessage(message: js.Any, transfer: js.UndefOr[js.Array[Transferable]]?): Unit
 Worker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Worker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -26157,7 +26157,7 @@ raw[SO] type MediaQueryListListener = dom.MediaQueryListListener  (@deprecated i
 raw[SO] type MediaStreamAudioDestinationNode = dom.MediaStreamAudioDestinationNode  (@deprecated in 2.0.0)
 raw[SO] type MediaStreamAudioSourceNode = dom.MediaStreamAudioSourceNode  (@deprecated in 2.0.0)
 raw[SO] type MessageChannel = dom.MessageChannel  (@deprecated in 2.0.0)
-raw[SO] type MessageEvent = dom.MessageEvent  (@deprecated in 2.0.0)
+raw[SO] type MessageEvent = dom.MessageEvent[Any]  (@deprecated in 2.0.0)
 raw[SO] type MessagePort = dom.MessagePort  (@deprecated in 2.0.0)
 raw[SO] type ModifierKeyEvent = dom.ModifierKeyEvent  (@deprecated in 2.0.0)
 raw[SO] type MouseEvent = dom.MouseEvent  (@deprecated in 2.0.0)

@@ -153,10 +153,10 @@ object Websocket {
   @JSExport
   def main(in: html.Input,
            pre: html.Pre) = {
-    val echo = "wss://echo.websocket.org"
+    val echo = "wss://ws.postman-echo.com/raw"
     val socket = new dom.WebSocket(echo)
     socket.onmessage = {
-      (e: dom.MessageEvent) =>
+      (e: dom.MessageEvent[_]) =>
         pre.textContent +=
           e.data.toString
     }

@@ -37,7 +37,7 @@ class EventSource(URL: String, settings: js.Dynamic = null) extends EventTarget 
 
   var onopen: js.Function1[Event, _] = js.native
 
-  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent[String], _] = js.native
 
   var onerror: js.Function1[ErrorEvent, _] = js.native
 

@@ -17,7 +17,7 @@ trait MessagePort extends EventTarget {
   /** An EventListener, called whenever an MessageEvent of type message is fired on the port — that is, when the port
     * receives a message.
     */
-  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent[Any], _] = js.native
 
   /** Disconnects the port,so it is no longer active. This stops the flow of messages to that port. */
   def close(): Unit = js.native

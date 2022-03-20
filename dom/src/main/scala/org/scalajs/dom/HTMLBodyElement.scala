@@ -21,7 +21,7 @@ abstract class HTMLBodyElement extends HTMLElement {
   var ononline: js.Function1[Event, _] = js.native
 
   /** Reflects the onmessage HTML attribute value for a function to call when the document receives a message. */
-  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent[Any], _] = js.native
 
   /** Exposes the window.onerror event handler to call when the document fails to load properly. Note: This handler is
     * triggered when the event reaches the window, not the body element. Use addEventListener() to attach an event

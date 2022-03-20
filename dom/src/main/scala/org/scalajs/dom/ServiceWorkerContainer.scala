@@ -49,5 +49,5 @@ trait ServiceWorkerContainer extends EventTarget {
     * occurs — when incoming messages are received to the ServiceWorkerContainer object (e.g., via a
     * MessagePort.postMessage() call).
     */
-  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent[Any], _] = js.native
 }

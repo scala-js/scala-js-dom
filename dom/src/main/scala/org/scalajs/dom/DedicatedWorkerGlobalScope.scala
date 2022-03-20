@@ -14,7 +14,7 @@ trait DedicatedWorkerGlobalScope extends WorkerGlobalScope {
     * the message event occurs and bubbles through the Worker — i.e. when a message is sent to the worker using the
     * Worker.postMessage method.
     */
-  var onmessage: js.Function1[MessageEvent, _] = js.native
+  var onmessage: js.Function1[MessageEvent[Any], _] = js.native
 
   /** The postMessage() method of the DedicatedWorkerGlobalScope interface sends a message to the main thread that
     * spawned it. This accepts a single parameter, which is the data to send to the worker. The data may be any value or

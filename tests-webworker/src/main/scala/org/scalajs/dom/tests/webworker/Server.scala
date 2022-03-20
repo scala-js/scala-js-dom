@@ -9,7 +9,7 @@ object Server extends ServerResponses {
   def main(args: Array[String]): Unit = {
     val ww = DedicatedWorkerGlobalScope.self
 
-    ww.onmessage = (e: MessageEvent) => {
+    ww.onmessage = (e: MessageEvent[Any]) => {
       val msgIn = e.data.asInstanceOf[Message]
       val id = msgIn._1
       val cmdId = msgIn._2
