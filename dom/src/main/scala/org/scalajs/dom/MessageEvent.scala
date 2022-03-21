@@ -23,7 +23,7 @@ class MessageEvent[+T](typeArg: String, init: js.UndefOr[MessageEventInit[T]]) e
     *
     * This can be of any data type, and will default to null if not specified.
     */
-  def data: Any = js.native
+  def data: T = js.native
 
   def ports: js.Any = js.native
 }

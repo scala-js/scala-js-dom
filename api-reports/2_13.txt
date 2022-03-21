@@ -14941,7 +14941,7 @@ MessageEvent[JC] def bubbles: Boolean
 MessageEvent[JC] def cancelBubble: Boolean
 MessageEvent[JC] def cancelable: Boolean
 MessageEvent[JC] def currentTarget: EventTarget
-MessageEvent[JC] def data: Any
+MessageEvent[JC] def data: T
 MessageEvent[JC] def defaultPrevented: Boolean
 MessageEvent[JC] def eventPhase: Int
 MessageEvent[JC] def isTrusted: Boolean
