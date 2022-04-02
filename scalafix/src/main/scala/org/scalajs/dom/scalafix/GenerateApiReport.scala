@@ -31,8 +31,8 @@ class GenerateApiReport extends SemanticRule("GenerateApiReport") {
     Patch.empty
   }
 
-  private def process(parentMods: List[Mod], sym: Symbol, body: Template, typ: ScopeType)(
-      implicit doc: SemanticDocument): Unit = {
+  private def process(parentMods: List[Mod], sym: Symbol, body: Template,
+      typ: ScopeType)(implicit doc: SemanticDocument): Unit = {
     // Skip non-public scopes
     val info = sym.info.get
     if (!info.isPublic && !info.isPackageObject)
