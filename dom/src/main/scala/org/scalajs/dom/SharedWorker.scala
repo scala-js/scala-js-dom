@@ -16,7 +16,7 @@ import scala.scalajs.js.|
   * thrown.
   * @example
   *   {{{var myWorker = new SharedWorker("aURL", name);}}}
-  * @param stringUrl
+  * @param scriptURL
   *   A DOMString representing the URL of the script the worker will execute. It must obey the same-origin policy.
   * @param options
   *   A DOMString specifying an identifying name for the SharedWorkerGlobalScope representing the scope of the worker,
