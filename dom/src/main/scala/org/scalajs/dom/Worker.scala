@@ -10,10 +10,15 @@ import scala.scalajs.js.annotation._
   * Of note is the fact that workers may in turn spawn new workers as long as those workers are hosted within the same
   * origin as the parent page. In addition, workers may use XMLHttpRequest for network I/O, with the exception that the
   * responseXML and channel attributes on XMLHttpRequest always return null.
+  *
+  * @param scriptURL
+  *   A USVString representing the URL of the script the worker will execute. It must obey the same-origin policy.
+  * @param options
+  *   An object containing option properties that can be set when creating the object instance.
   */
 @js.native
 @JSGlobal
-class Worker(stringUrl: String) extends AbstractWorker {
+class Worker(scriptURL: String, options: js.UndefOr[WorkerOptions] = js.native) extends AbstractWorker {
 
   /** The Worker.onmessage property represents an EventHandler, that is a function to be called when the message event
     * occurs. These events are of type MessageEvent and will be called when the worker calls its own postMessage()

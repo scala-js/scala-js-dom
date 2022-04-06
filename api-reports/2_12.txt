@@ -25351,6 +25351,12 @@ WorkerNavigator[JT] def onLine: Boolean
 WorkerNavigator[JT] def platform: String
 WorkerNavigator[JT] def sendBeacon(url: String, data: BodyInit?): Boolean  (@deprecated in 2.0.0)
 WorkerNavigator[JT] def userAgent: String
+WorkerOptions[JT] var credentials: js.UndefOr[RequestCredentials]
+WorkerOptions[JT] var name: js.UndefOr[String]
+WorkerOptions[JT] var `type`: js.UndefOr[WorkerType]
+WorkerType[JT]
+WorkerType[SO] val classic: WorkerType
+WorkerType[SO] val module: WorkerType
 WriteableState[JT]
 WriteableState[SO] val closed: WriteableState
 WriteableState[SO] val closing: WriteableState
