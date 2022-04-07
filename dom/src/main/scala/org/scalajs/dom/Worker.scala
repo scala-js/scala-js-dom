@@ -18,7 +18,9 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class Worker(scriptURL: String, options: js.UndefOr[WorkerOptions] = js.native) extends AbstractWorker {
+class Worker(scriptURL: String, options: WorkerOptions) extends AbstractWorker {
+
+  def this(scriptURL: String) = this(scriptURL, js.native)
 
   /** The Worker.onmessage property represents an EventHandler, that is a function to be called when the message event
     * occurs. These events are of type MessageEvent and will be called when the worker calls its own postMessage()
