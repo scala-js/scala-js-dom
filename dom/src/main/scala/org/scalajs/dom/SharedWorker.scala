@@ -2,7 +2,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The SharedWorker interface represents a specific kind of worker that can be accessed from several browsing contexts,
   * such as several windows, iframes or even workers. They implement an interface different than dedicated workers and
@@ -35,3 +34,5 @@ class SharedWorker(scriptURL: String) extends AbstractWorker {
     */
   def port: MessagePort = js.native
 }
+
+object SharedWorker

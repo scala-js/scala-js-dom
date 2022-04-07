@@ -24057,6 +24057,7 @@ SharedWorker[JC] var onerror: js.Function1[ErrorEvent, _]
 SharedWorker[JC] def port: MessagePort
 SharedWorker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SharedWorker[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+SharedWorker[SO]
 SharedWorkerGlobalScope[JO] def self: SharedWorkerGlobalScope
 SharedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SharedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
