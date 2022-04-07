@@ -25,14 +25,10 @@ import scala.scalajs.js.|
   */
 @js.native
 @JSGlobal
-class SharedWorker private[this] (scriptURL: String, options: js.UndefOr[String | WorkerOptions] = js.native)
-    extends AbstractWorker {
+class SharedWorker(scriptURL: String) extends AbstractWorker {
+  def this(scriptURL: String, name: String) = this(scriptURL)
 
-  def this(scriptURL: String) = this(scriptURL, js.undefined)
-
-  def this(scriptURL: String, name: String) = this(scriptURL, js.defined(name))
-
-  def this(scriptURL: String, options: WorkerOptions) = this(scriptURL, js.defined(options))
+  def this(scriptURL: String, options: WorkerOptions) = this(scriptURL)
 
   /** The port property of the SharedWorker interface returns a [[MessagePort]] object used to communicate and control
     * the shared worker.
