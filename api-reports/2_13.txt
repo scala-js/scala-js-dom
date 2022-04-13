@@ -1245,6 +1245,14 @@ DOMRect[JC] var top: Double
 DOMRect[JC] var width: Double
 DOMRectList[JC] @JSBracketAccess def apply(index: Int): T
 DOMRectList[JC] def length: Int
+DOMRectReadOnly[JT] def bottom: Double
+DOMRectReadOnly[JT] def height: Double
+DOMRectReadOnly[JT] def left: Double
+DOMRectReadOnly[JT] def right: Double
+DOMRectReadOnly[JT] def top: Double
+DOMRectReadOnly[JT] def width: Double
+DOMRectReadOnly[JT] def x: Double
+DOMRectReadOnly[JT] def y: Double
 DOMSettableTokenList[JT] def add(token: String): Unit
 DOMSettableTokenList[JT] @JSBracketAccess def apply(index: Int): T
 DOMSettableTokenList[JT] def contains(token: String): Boolean
@@ -15948,6 +15956,17 @@ RequestType[SO] val script: RequestType
 RequestType[SO] val style: RequestType
 RequestType[SO] val track: RequestType
 RequestType[SO] val video: RequestType
+ResizeObserver[JC] def disconnect(): Unit
+ResizeObserver[JC] def observe(target: Node, options: js.UndefOr[ResizeObserverOptions]?): Unit
+ResizeObserver[JC] def unobserve(target: Node): Unit
+ResizeObserverEntry[JT] def borderBoxSize: js.Array[ResizeObserverSize]
+ResizeObserverEntry[JT] def contentBoxSize: js.Array[ResizeObserverSize]
+ResizeObserverEntry[JT] def contentRect: DOMRectReadOnly
+ResizeObserverEntry[JT] def target: Node
+ResizeObserverOptions[JT] var box: js.UndefOr[String]
+ResizeObserverOptions[SO] def apply(box: Option[String] = None): ResizeObserverOptions
+ResizeObserverSize[JT] def blockSize: Double
+ResizeObserverSize[JT] def inlineSize: Double
 Response[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 Response[JC] def blob(): js.Promise[Blob]
 Response[JC] val body: ReadableStream[Uint8Array]
