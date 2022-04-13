@@ -15,18 +15,24 @@ import scala.scalajs.js.annotation._
   * thrown.
   * @example
   *   {{{var myWorker = new SharedWorker("aURL", name);}}}
-  * @param stringUrl
+  * @param scriptURL
   *   A DOMString representing the URL of the script the worker will execute. It must obey the same-origin policy.
-  * @param name
-  *   An optional argument that specifies an existing SharedWorkerGlobalScope.name — if this is specified then that
-  *   SharedWorkerGlobalScope will be used as the scope for this shared worker.
+  * @param options
+  *   A DOMString specifying an identifying name for the SharedWorkerGlobalScope representing the scope of the worker,
+  *   which is mainly useful for debugging purposes. Or, an object containing option properties that can set when
+  *   creating the object instance.
   */
 @js.native
 @JSGlobal
-class SharedWorker(stringUrl: String, name: js.UndefOr[String] = js.native) extends AbstractWorker {
+class SharedWorker(scriptURL: String) extends AbstractWorker {
+  def this(scriptURL: String, name: String) = this(scriptURL)
+
+  def this(scriptURL: String, options: WorkerOptions) = this(scriptURL)
 
   /** The port property of the SharedWorker interface returns a [[MessagePort]] object used to communicate and control
     * the shared worker.
     */
   def port: MessagePort = js.native
 }
+
+object SharedWorker
