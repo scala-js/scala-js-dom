@@ -15972,8 +15972,8 @@ ResizeObserverBoxOption[SO] val `device-pixel-content-box`: ResizeObserverBoxOpt
 ResizeObserverEntry[JT] def borderBoxSize: js.Array[ResizeObserverSize]
 ResizeObserverEntry[JT] def contentBoxSize: js.Array[ResizeObserverSize]
 ResizeObserverEntry[JT] def contentRect: DOMRectReadOnly
-ResizeObserverEntry[JT] def target: Node
-ResizeObserverOptions[JT] var box: js.UndefOr[ResizeObserverBoxOption]
+ResizeObserverEntry[JT] def target: Element
+ResizeObserverOptions[JT] var box: js.UndefOr[String]
 ResizeObserverSize[JT] def blockSize: Double
 ResizeObserverSize[JT] def inlineSize: Double
 Response[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
