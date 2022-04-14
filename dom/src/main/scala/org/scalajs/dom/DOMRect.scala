@@ -9,13 +9,15 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
+/** A DOMRect describes the size and position of a rectangle.
+  *
+  * MDN
+  */
 @js.native
 @JSGlobal
-class DOMRect extends js.Object {
-  var left: Double = js.native
-  var width: Double = js.native
-  var right: Double = js.native
-  var top: Double = js.native
-  var bottom: Double = js.native
-  var height: Double = js.native
+class DOMRect extends DOMRectReadOnly {
+  def width_=(width: Double): Unit = js.native
+  def height_=(height: Double): Unit = js.native
+  def x_=(x: Double): Unit = js.native
+  def y_=(y: Double): Unit = js.native
 }

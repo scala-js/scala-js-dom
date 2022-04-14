@@ -1237,12 +1237,18 @@ DOMList[SO] def iterator: Iterator[T]
 DOMList[SO] def length: Int
 DOMList[SO] def next(): T
 DOMParser[JC] def parseFromString(string: String, mimeType: MIMEType): Document
-DOMRect[JC] var bottom: Double
-DOMRect[JC] var height: Double
-DOMRect[JC] var left: Double
-DOMRect[JC] var right: Double
-DOMRect[JC] var top: Double
-DOMRect[JC] var width: Double
+DOMRect[JC] def bottom: Double
+DOMRect[JC] def height: Double
+DOMRect[JC] def height_ = (height: Double): Unit
+DOMRect[JC] def left: Double
+DOMRect[JC] def right: Double
+DOMRect[JC] def top: Double
+DOMRect[JC] def width: Double
+DOMRect[JC] def width_ = (width: Double): Unit
+DOMRect[JC] def x: Double
+DOMRect[JC] def x_ = (x: Double): Unit
+DOMRect[JC] def y: Double
+DOMRect[JC] def y_ = (y: Double): Unit
 DOMRectList[JC] @JSBracketAccess def apply(index: Int): T
 DOMRectList[JC] def length: Int
 DOMRectReadOnly[JT] def bottom: Double
