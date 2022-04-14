@@ -14,11 +14,11 @@ import scala.scalajs.js.annotation.JSGlobal
 class ResizeObserver(callback: js.Function2[js.Array[ResizeObserverEntry], ResizeObserver, _]) extends js.Object {
 
   /** Starts observing the specified Element or SVGElement. */
-  def observe(target: Node, options: js.UndefOr[ResizeObserverOptions] = js.native): Unit = js.native
+  def observe(target: Element, options: js.UndefOr[ResizeObserverOptions] = js.native): Unit = js.native
 
   /** Unobserves all observed Element or SVGElement targets. */
   def disconnect(): Unit = js.native
 
   /** Ends the observing of a specified Element or SVGElement. */
-  def unobserve(target: Node): Unit = js.native
+  def unobserve(target: Element): Unit = js.native
 }
