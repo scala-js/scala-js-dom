@@ -9,8 +9,8 @@ import scala.scalajs.js
 trait ResizeObserverEntry extends js.Object {
 
   /** A reference to the Element or SVGElement being observed */
-  def target: Node = js.native
-
+  def target: Element = js.native
+  
   /** An array containing objects with the new border box size of the observed element. The array is necessary to
     * support elements that have multiple fragments, which occur in multi-column scenarios.
     */
