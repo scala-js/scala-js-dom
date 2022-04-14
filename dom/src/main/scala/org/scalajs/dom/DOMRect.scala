@@ -9,10 +9,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/** A DOMRect describes the size and position of a rectangle.
-  *
-  * MDN
-  */
+/** A DOMRect describes the size and position of a rectangle. */
 @js.native
 @JSGlobal
 class DOMRect extends DOMRectReadOnly {
