@@ -4,5 +4,5 @@ import scala.scalajs.js
 
 @js.native
 trait ResizeObserverOptions extends js.Object {
-  var box: js.UndefOr[String] = js.native
+  var box: js.UndefOr[ResizeObserverBoxOption] = js.native
 }

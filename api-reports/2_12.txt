@@ -15965,12 +15965,15 @@ RequestType[SO] val video: RequestType
 ResizeObserver[JC] def disconnect(): Unit
 ResizeObserver[JC] def observe(target: Node, options: js.UndefOr[ResizeObserverOptions]?): Unit
 ResizeObserver[JC] def unobserve(target: Node): Unit
+ResizeObserverBoxOption[JT]
+ResizeObserverBoxOption[SO] val `border-box`: ResizeObserverBoxOption
+ResizeObserverBoxOption[SO] val `content-box`: ResizeObserverBoxOption
+ResizeObserverBoxOption[SO] val `device-pixel-content-box`: ResizeObserverBoxOption
 ResizeObserverEntry[JT] def borderBoxSize: js.Array[ResizeObserverSize]
 ResizeObserverEntry[JT] def contentBoxSize: js.Array[ResizeObserverSize]
 ResizeObserverEntry[JT] def contentRect: DOMRectReadOnly
 ResizeObserverEntry[JT] def target: Node
-ResizeObserverOptions[JT] var box: js.UndefOr[String]
-ResizeObserverOptions[SO] def apply(box: Option[String] = None): ResizeObserverOptions
+ResizeObserverOptions[JT] var box: js.UndefOr[ResizeObserverBoxOption]
 ResizeObserverSize[JT] def blockSize: Double
 ResizeObserverSize[JT] def inlineSize: Double
 Response[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
