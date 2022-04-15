@@ -15963,7 +15963,8 @@ RequestType[SO] val style: RequestType
 RequestType[SO] val track: RequestType
 RequestType[SO] val video: RequestType
 ResizeObserver[JC] def disconnect(): Unit
-ResizeObserver[JC] def observe(target: Element, options: js.UndefOr[ResizeObserverOptions]?): Unit
+ResizeObserver[JC] def observe(target: Element): Unit
+ResizeObserver[JC] def observe(target: Element, options: ResizeObserverOptions): Unit
 ResizeObserver[JC] def unobserve(target: Element): Unit
 ResizeObserverBoxOption[JT]
 ResizeObserverBoxOption[SO] val `border-box`: ResizeObserverBoxOption
