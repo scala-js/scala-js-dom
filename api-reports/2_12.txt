@@ -20,6 +20,11 @@ AbortSignal[JT] def dispatchEvent(evt: Event): Boolean
 AbortSignal[JT] var onabort: js.Function0[Any]
 AbortSignal[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AbortSignal[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AbstractRange[JT] def collapsed: Boolean
+AbstractRange[JT] def endContainer: Node
+AbstractRange[JT] def endOffset: Int
+AbstractRange[JT] def startContainer: Node
+AbstractRange[JT] def startOffset: Int
 AbstractWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AbstractWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AbstractWorker[JT] def dispatchEvent(evt: Event): Boolean
@@ -14184,6 +14189,84 @@ ImageCapture[JC] val track: MediaStreamTrack
 ImageData[JC] def data: js.Array[Int]
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
+InputEvent[JC] def bubbles: Boolean
+InputEvent[JC] def cancelBubble: Boolean
+InputEvent[JC] def cancelable: Boolean
+InputEvent[JC] def currentTarget: EventTarget
+InputEvent[JC] def data: String
+InputEvent[JC] def dataTransfer: DataTransfer
+InputEvent[JC] def defaultPrevented: Boolean
+InputEvent[JC] def detail: Int
+InputEvent[JC] def eventPhase: Int
+InputEvent[JC] def getTargetRanges(): js.Array[StaticRange]
+InputEvent[JC] def inputType: InputType
+InputEvent[JC] def isComposing: Boolean
+InputEvent[JC] def isTrusted: Boolean
+InputEvent[JC] def preventDefault(): Unit
+InputEvent[JC] def stopImmediatePropagation(): Unit
+InputEvent[JC] def stopPropagation(): Unit
+InputEvent[JC] def target: EventTarget
+InputEvent[JC] def timeStamp: Double
+InputEvent[JC] def `type`: String
+InputEvent[JC] def view: Window
+InputEventInit[JT] var bubbles: js.UndefOr[Boolean]
+InputEventInit[JT] var cancelable: js.UndefOr[Boolean]
+InputEventInit[JT] var composed: js.UndefOr[Boolean]
+InputEventInit[JT] var data: js.UndefOr[String]
+InputEventInit[JT] var dataTransfer: js.UndefOr[DataTransfer]
+InputEventInit[JT] var detail: js.UndefOr[Int]
+InputEventInit[JT] var inputType: js.UndefOr[InputType]
+InputEventInit[JT] var isComposing: js.UndefOr[Boolean]
+InputEventInit[JT] var ranges: js.UndefOr[js.Array[StaticRange]]
+InputEventInit[JT] var scoped: js.UndefOr[Boolean]
+InputEventInit[JT] var view: js.UndefOr[Window]
+InputType[JT]
+InputType[SO] val deleteByCut: InputType
+InputType[SO] val deleteByDrag: InputType
+InputType[SO] val deleteContent: InputType
+InputType[SO] val deleteContentBackward: InputType
+InputType[SO] val deleteContentForward: InputType
+InputType[SO] val deleteEntireSoftLine: InputType
+InputType[SO] val deleteHardLineBackward: InputType
+InputType[SO] val deleteHardLineForward: InputType
+InputType[SO] val deleteSoftLineBackward: InputType
+InputType[SO] val deleteSoftLineForward: InputType
+InputType[SO] val deleteWordBackward: InputType
+InputType[SO] val deleteWordForward: InputType
+InputType[SO] val formatBackColor: InputType
+InputType[SO] val formatBold: InputType
+InputType[SO] val formatFontColor: InputType
+InputType[SO] val formatFontName: InputType
+InputType[SO] val formatIndent: InputType
+InputType[SO] val formatItalic: InputType
+InputType[SO] val formatJustifyCenter: InputType
+InputType[SO] val formatJustifyFull: InputType
+InputType[SO] val formatJustifyLeft: InputType
+InputType[SO] val formatJustifyRight: InputType
+InputType[SO] val formatOutdent: InputType
+InputType[SO] val formatRemove: InputType
+InputType[SO] val formatSetBlockTextDirection: InputType
+InputType[SO] val formatSetInlineTextDirection: InputType
+InputType[SO] val formatStrikeThrough: InputType
+InputType[SO] val formatSubscript: InputType
+InputType[SO] val formatSuperscript: InputType
+InputType[SO] val formatUnderline: InputType
+InputType[SO] val historyRedo: InputType
+InputType[SO] val historyUndo: InputType
+InputType[SO] val insertCompositionText: InputType
+InputType[SO] val insertFromDrop: InputType
+InputType[SO] val insertFromPaste: InputType
+InputType[SO] val insertFromPasteAsQuotation: InputType
+InputType[SO] val insertFromYank: InputType
+InputType[SO] val insertHorizontalRule: InputType
+InputType[SO] val insertLineBreak: InputType
+InputType[SO] val insertLink: InputType
+InputType[SO] val insertOrderedList: InputType
+InputType[SO] val insertParagraph: InputType
+InputType[SO] val insertReplacementText: InputType
+InputType[SO] val insertText: InputType
+InputType[SO] val insertTranspose: InputType
+InputType[SO] val insertUnorderedList: InputType
 JsonWebKey[JT] var alg: js.Array[String]
 JsonWebKey[JT] var crv: String
 JsonWebKey[JT] var d: String
@@ -24124,6 +24207,15 @@ SourceBufferList[JT] var onaddsourcebuffer: js.Function1[Event, Any]
 SourceBufferList[JT] var onremovesourcebuffer: js.Function1[Event, Any]
 SourceBufferList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SourceBufferList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+StaticRange[JC] def collapsed: Boolean
+StaticRange[JC] def endContainer: Node
+StaticRange[JC] def endOffset: Int
+StaticRange[JC] def startContainer: Node
+StaticRange[JC] def startOffset: Int
+StaticRangeInit[JT] val endContainer: Node
+StaticRangeInit[JT] val endOffset: Int
+StaticRangeInit[JT] val startContainer: Node
+StaticRangeInit[JT] val startOffset: Int
 StereoPannerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 StereoPannerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 StereoPannerNode[JT] var channelCount: Int
