@@ -137,8 +137,6 @@ ApplicationCache[JT] def removeEventListener[T <: Event](`type`: String, listene
 ApplicationCache[JT] def status: Int
 ApplicationCache[JT] def swapCache(): Unit
 ApplicationCache[JT] def update(): Unit
-AttachShadowRootOptions[JT] var delegatesFocus: js.UndefOr[Boolean]
-AttachShadowRootOptions[JT] var mode: js.UndefOr[String]
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Attr[JC] def appendChild(newChild: Node): Node
@@ -1179,8 +1177,7 @@ CryptoKey[JC] val `type`: String
 CryptoKey[JC] val usages: js.Array[KeyUsage]
 CryptoKeyPair[JT] val privateKey: CryptoKey
 CryptoKeyPair[JT] val publicKey: CryptoKey
-CustomElementDefineOptions[JT] var `extends`: js.UndefOr[Boolean]
-CustomElementRegistry[JC] def define(name: String, constructor: js.Dynamic, options: CustomElementDefineOptions?): Unit
+CustomElementRegistry[JC] def define(name: String, constructor: js.Dynamic, options: ElementDefinitionOptions?): Unit
 CustomEvent[JC] def bubbles: Boolean
 CustomEvent[JC] def cancelBubble: Boolean
 CustomEvent[JC] def cancelable: Boolean
@@ -1702,7 +1699,7 @@ Element[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functi
 Element[JC] def after(nodes: Node | String*): Unit
 Element[JC] def append(nodes: Node | String*): Unit
 Element[JC] def appendChild(newChild: Node): Node
-Element[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+Element[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 Element[JC] def attributes: NamedNodeMap
 Element[JC] def baseURI: String
 Element[JC] def before(nodes: Node | String*): Unit
@@ -1794,6 +1791,10 @@ Element[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 Element[JC] def shadowRoot: ShadowRoot
 Element[JC] def tagName: String
 Element[JC] var textContent: String
+ElementDefinitionOptions[JT] var `extends`: js.UndefOr[String]
+EncapsulationMode[JT]
+EncapsulationMode[SO] val closed: EncapsulationMode
+EncapsulationMode[SO] val open: EncapsulationMode
 EndOfStreamError[JT]
 EndOfStreamError[SO] val decode: EndOfStreamError
 EndOfStreamError[SO] val network: EndOfStreamError
@@ -2063,7 +2064,7 @@ HTMLAnchorElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLAnchorElement[JC] def after(nodes: Node | String*): Unit
 HTMLAnchorElement[JC] def append(nodes: Node | String*): Unit
 HTMLAnchorElement[JC] def appendChild(newChild: Node): Node
-HTMLAnchorElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLAnchorElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLAnchorElement[JC] def attributes: NamedNodeMap
 HTMLAnchorElement[JC] def baseURI: String
 HTMLAnchorElement[JC] def before(nodes: Node | String*): Unit
@@ -2278,7 +2279,7 @@ HTMLAreaElement[JC] def after(nodes: Node | String*): Unit
 HTMLAreaElement[JC] var alt: String
 HTMLAreaElement[JC] def append(nodes: Node | String*): Unit
 HTMLAreaElement[JC] def appendChild(newChild: Node): Node
-HTMLAreaElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLAreaElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLAreaElement[JC] def attributes: NamedNodeMap
 HTMLAreaElement[JC] def baseURI: String
 HTMLAreaElement[JC] def before(nodes: Node | String*): Unit
@@ -2488,7 +2489,7 @@ HTMLAudioElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLAudioElement[JC] def after(nodes: Node | String*): Unit
 HTMLAudioElement[JC] def append(nodes: Node | String*): Unit
 HTMLAudioElement[JC] def appendChild(newChild: Node): Node
-HTMLAudioElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLAudioElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLAudioElement[JC] def attributes: NamedNodeMap
 HTMLAudioElement[JC] def audioTracks: AudioTrackList
 HTMLAudioElement[JC] var autoplay: Boolean
@@ -2715,7 +2716,7 @@ HTMLBRElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 HTMLBRElement[JC] def after(nodes: Node | String*): Unit
 HTMLBRElement[JC] def append(nodes: Node | String*): Unit
 HTMLBRElement[JC] def appendChild(newChild: Node): Node
-HTMLBRElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLBRElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLBRElement[JC] def attributes: NamedNodeMap
 HTMLBRElement[JC] def baseURI: String
 HTMLBRElement[JC] def before(nodes: Node | String*): Unit
@@ -2914,7 +2915,7 @@ HTMLBaseElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLBaseElement[JC] def after(nodes: Node | String*): Unit
 HTMLBaseElement[JC] def append(nodes: Node | String*): Unit
 HTMLBaseElement[JC] def appendChild(newChild: Node): Node
-HTMLBaseElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLBaseElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLBaseElement[JC] def attributes: NamedNodeMap
 HTMLBaseElement[JC] def baseURI: String
 HTMLBaseElement[JC] def before(nodes: Node | String*): Unit
@@ -3115,7 +3116,7 @@ HTMLBodyElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLBodyElement[JC] def after(nodes: Node | String*): Unit
 HTMLBodyElement[JC] def append(nodes: Node | String*): Unit
 HTMLBodyElement[JC] def appendChild(newChild: Node): Node
-HTMLBodyElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLBodyElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLBodyElement[JC] def attributes: NamedNodeMap
 HTMLBodyElement[JC] def baseURI: String
 HTMLBodyElement[JC] def before(nodes: Node | String*): Unit
@@ -3328,7 +3329,7 @@ HTMLButtonElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLButtonElement[JC] def after(nodes: Node | String*): Unit
 HTMLButtonElement[JC] def append(nodes: Node | String*): Unit
 HTMLButtonElement[JC] def appendChild(newChild: Node): Node
-HTMLButtonElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLButtonElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLButtonElement[JC] def attributes: NamedNodeMap
 HTMLButtonElement[JC] var autofocus: Boolean
 HTMLButtonElement[JC] def baseURI: String
@@ -3544,7 +3545,7 @@ HTMLCanvasElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLCanvasElement[JC] def after(nodes: Node | String*): Unit
 HTMLCanvasElement[JC] def append(nodes: Node | String*): Unit
 HTMLCanvasElement[JC] def appendChild(newChild: Node): Node
-HTMLCanvasElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLCanvasElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLCanvasElement[JC] def attributes: NamedNodeMap
 HTMLCanvasElement[JC] def baseURI: String
 HTMLCanvasElement[JC] def before(nodes: Node | String*): Unit
@@ -3751,7 +3752,7 @@ HTMLDListElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLDListElement[JC] def after(nodes: Node | String*): Unit
 HTMLDListElement[JC] def append(nodes: Node | String*): Unit
 HTMLDListElement[JC] def appendChild(newChild: Node): Node
-HTMLDListElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLDListElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLDListElement[JC] def attributes: NamedNodeMap
 HTMLDListElement[JC] def baseURI: String
 HTMLDListElement[JC] def before(nodes: Node | String*): Unit
@@ -3950,7 +3951,7 @@ HTMLDataListElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLDataListElement[JC] def after(nodes: Node | String*): Unit
 HTMLDataListElement[JC] def append(nodes: Node | String*): Unit
 HTMLDataListElement[JC] def appendChild(newChild: Node): Node
-HTMLDataListElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLDataListElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLDataListElement[JC] def attributes: NamedNodeMap
 HTMLDataListElement[JC] def baseURI: String
 HTMLDataListElement[JC] def before(nodes: Node | String*): Unit
@@ -4150,7 +4151,7 @@ HTMLDivElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 HTMLDivElement[JC] def after(nodes: Node | String*): Unit
 HTMLDivElement[JC] def append(nodes: Node | String*): Unit
 HTMLDivElement[JC] def appendChild(newChild: Node): Node
-HTMLDivElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLDivElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLDivElement[JC] def attributes: NamedNodeMap
 HTMLDivElement[JC] def baseURI: String
 HTMLDivElement[JC] def before(nodes: Node | String*): Unit
@@ -4549,7 +4550,7 @@ HTMLElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 HTMLElement[JC] def after(nodes: Node | String*): Unit
 HTMLElement[JC] def append(nodes: Node | String*): Unit
 HTMLElement[JC] def appendChild(newChild: Node): Node
-HTMLElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLElement[JC] def attributes: NamedNodeMap
 HTMLElement[JC] def baseURI: String
 HTMLElement[JC] def before(nodes: Node | String*): Unit
@@ -4748,7 +4749,7 @@ HTMLEmbedElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLEmbedElement[JC] def after(nodes: Node | String*): Unit
 HTMLEmbedElement[JC] def append(nodes: Node | String*): Unit
 HTMLEmbedElement[JC] def appendChild(newChild: Node): Node
-HTMLEmbedElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLEmbedElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLEmbedElement[JC] def attributes: NamedNodeMap
 HTMLEmbedElement[JC] def baseURI: String
 HTMLEmbedElement[JC] def before(nodes: Node | String*): Unit
@@ -4951,7 +4952,7 @@ HTMLFieldSetElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLFieldSetElement[JC] def after(nodes: Node | String*): Unit
 HTMLFieldSetElement[JC] def append(nodes: Node | String*): Unit
 HTMLFieldSetElement[JC] def appendChild(newChild: Node): Node
-HTMLFieldSetElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLFieldSetElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLFieldSetElement[JC] def attributes: NamedNodeMap
 HTMLFieldSetElement[JC] def baseURI: String
 HTMLFieldSetElement[JC] def before(nodes: Node | String*): Unit
@@ -5164,7 +5165,7 @@ HTMLFormElement[JC] def after(nodes: Node | String*): Unit
 HTMLFormElement[JC] def append(nodes: Node | String*): Unit
 HTMLFormElement[JC] def appendChild(newChild: Node): Node
 HTMLFormElement[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(name: String): js.Any
-HTMLFormElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLFormElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLFormElement[JC] def attributes: NamedNodeMap
 HTMLFormElement[JC] var autocomplete: String
 HTMLFormElement[JC] def baseURI: String
@@ -5378,7 +5379,7 @@ HTMLHRElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 HTMLHRElement[JC] def after(nodes: Node | String*): Unit
 HTMLHRElement[JC] def append(nodes: Node | String*): Unit
 HTMLHRElement[JC] def appendChild(newChild: Node): Node
-HTMLHRElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLHRElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLHRElement[JC] def attributes: NamedNodeMap
 HTMLHRElement[JC] def baseURI: String
 HTMLHRElement[JC] def before(nodes: Node | String*): Unit
@@ -5577,7 +5578,7 @@ HTMLHeadElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLHeadElement[JC] def after(nodes: Node | String*): Unit
 HTMLHeadElement[JC] def append(nodes: Node | String*): Unit
 HTMLHeadElement[JC] def appendChild(newChild: Node): Node
-HTMLHeadElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLHeadElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLHeadElement[JC] def attributes: NamedNodeMap
 HTMLHeadElement[JC] def baseURI: String
 HTMLHeadElement[JC] def before(nodes: Node | String*): Unit
@@ -5776,7 +5777,7 @@ HTMLHeadingElement[JC] def addEventListener[T <: Event](`type`: String, listener
 HTMLHeadingElement[JC] def after(nodes: Node | String*): Unit
 HTMLHeadingElement[JC] def append(nodes: Node | String*): Unit
 HTMLHeadingElement[JC] def appendChild(newChild: Node): Node
-HTMLHeadingElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLHeadingElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLHeadingElement[JC] def attributes: NamedNodeMap
 HTMLHeadingElement[JC] def baseURI: String
 HTMLHeadingElement[JC] def before(nodes: Node | String*): Unit
@@ -5975,7 +5976,7 @@ HTMLHtmlElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLHtmlElement[JC] def after(nodes: Node | String*): Unit
 HTMLHtmlElement[JC] def append(nodes: Node | String*): Unit
 HTMLHtmlElement[JC] def appendChild(newChild: Node): Node
-HTMLHtmlElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLHtmlElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLHtmlElement[JC] def attributes: NamedNodeMap
 HTMLHtmlElement[JC] def baseURI: String
 HTMLHtmlElement[JC] def before(nodes: Node | String*): Unit
@@ -6174,7 +6175,7 @@ HTMLIFrameElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLIFrameElement[JC] def after(nodes: Node | String*): Unit
 HTMLIFrameElement[JC] def append(nodes: Node | String*): Unit
 HTMLIFrameElement[JC] def appendChild(newChild: Node): Node
-HTMLIFrameElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLIFrameElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLIFrameElement[JC] def attributes: NamedNodeMap
 HTMLIFrameElement[JC] def baseURI: String
 HTMLIFrameElement[JC] def before(nodes: Node | String*): Unit
@@ -6385,7 +6386,7 @@ HTMLImageElement[JC] def after(nodes: Node | String*): Unit
 HTMLImageElement[JC] var alt: String
 HTMLImageElement[JC] def append(nodes: Node | String*): Unit
 HTMLImageElement[JC] def appendChild(newChild: Node): Node
-HTMLImageElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLImageElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLImageElement[JC] def attributes: NamedNodeMap
 HTMLImageElement[JC] def baseURI: String
 HTMLImageElement[JC] def before(nodes: Node | String*): Unit
@@ -6596,7 +6597,7 @@ HTMLInputElement[JC] def after(nodes: Node | String*): Unit
 HTMLInputElement[JC] var alt: String
 HTMLInputElement[JC] def append(nodes: Node | String*): Unit
 HTMLInputElement[JC] def appendChild(newChild: Node): Node
-HTMLInputElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLInputElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLInputElement[JC] def attributes: NamedNodeMap
 HTMLInputElement[JC] var autocomplete: String
 HTMLInputElement[JC] var autofocus: Boolean
@@ -6839,7 +6840,7 @@ HTMLLIElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 HTMLLIElement[JC] def after(nodes: Node | String*): Unit
 HTMLLIElement[JC] def append(nodes: Node | String*): Unit
 HTMLLIElement[JC] def appendChild(newChild: Node): Node
-HTMLLIElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLLIElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLLIElement[JC] def attributes: NamedNodeMap
 HTMLLIElement[JC] def baseURI: String
 HTMLLIElement[JC] def before(nodes: Node | String*): Unit
@@ -7039,7 +7040,7 @@ HTMLLabelElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLLabelElement[JC] def after(nodes: Node | String*): Unit
 HTMLLabelElement[JC] def append(nodes: Node | String*): Unit
 HTMLLabelElement[JC] def appendChild(newChild: Node): Node
-HTMLLabelElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLLabelElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLLabelElement[JC] def attributes: NamedNodeMap
 HTMLLabelElement[JC] def baseURI: String
 HTMLLabelElement[JC] def before(nodes: Node | String*): Unit
@@ -7241,7 +7242,7 @@ HTMLLegendElement[JC] def after(nodes: Node | String*): Unit
 HTMLLegendElement[JC] var align: String
 HTMLLegendElement[JC] def append(nodes: Node | String*): Unit
 HTMLLegendElement[JC] def appendChild(newChild: Node): Node
-HTMLLegendElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLLegendElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLLegendElement[JC] def attributes: NamedNodeMap
 HTMLLegendElement[JC] def baseURI: String
 HTMLLegendElement[JC] def before(nodes: Node | String*): Unit
@@ -7441,7 +7442,7 @@ HTMLLinkElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLLinkElement[JC] def after(nodes: Node | String*): Unit
 HTMLLinkElement[JC] def append(nodes: Node | String*): Unit
 HTMLLinkElement[JC] def appendChild(newChild: Node): Node
-HTMLLinkElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLLinkElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLLinkElement[JC] def attributes: NamedNodeMap
 HTMLLinkElement[JC] def baseURI: String
 HTMLLinkElement[JC] def before(nodes: Node | String*): Unit
@@ -7648,7 +7649,7 @@ HTMLMapElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 HTMLMapElement[JC] def after(nodes: Node | String*): Unit
 HTMLMapElement[JC] def append(nodes: Node | String*): Unit
 HTMLMapElement[JC] def appendChild(newChild: Node): Node
-HTMLMapElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLMapElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLMapElement[JC] def attributes: NamedNodeMap
 HTMLMapElement[JC] def baseURI: String
 HTMLMapElement[JC] def before(nodes: Node | String*): Unit
@@ -7848,7 +7849,7 @@ HTMLMediaElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLMediaElement[JC] def after(nodes: Node | String*): Unit
 HTMLMediaElement[JC] def append(nodes: Node | String*): Unit
 HTMLMediaElement[JC] def appendChild(newChild: Node): Node
-HTMLMediaElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLMediaElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLMediaElement[JC] def attributes: NamedNodeMap
 HTMLMediaElement[JC] def audioTracks: AudioTrackList
 HTMLMediaElement[JC] var autoplay: Boolean
@@ -8084,7 +8085,7 @@ HTMLMenuElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLMenuElement[JC] def after(nodes: Node | String*): Unit
 HTMLMenuElement[JC] def append(nodes: Node | String*): Unit
 HTMLMenuElement[JC] def appendChild(newChild: Node): Node
-HTMLMenuElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLMenuElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLMenuElement[JC] def attributes: NamedNodeMap
 HTMLMenuElement[JC] def baseURI: String
 HTMLMenuElement[JC] def before(nodes: Node | String*): Unit
@@ -8284,7 +8285,7 @@ HTMLMetaElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLMetaElement[JC] def after(nodes: Node | String*): Unit
 HTMLMetaElement[JC] def append(nodes: Node | String*): Unit
 HTMLMetaElement[JC] def appendChild(newChild: Node): Node
-HTMLMetaElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLMetaElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLMetaElement[JC] def attributes: NamedNodeMap
 HTMLMetaElement[JC] def baseURI: String
 HTMLMetaElement[JC] def before(nodes: Node | String*): Unit
@@ -8488,7 +8489,7 @@ HTMLModElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 HTMLModElement[JC] def after(nodes: Node | String*): Unit
 HTMLModElement[JC] def append(nodes: Node | String*): Unit
 HTMLModElement[JC] def appendChild(newChild: Node): Node
-HTMLModElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLModElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLModElement[JC] def attributes: NamedNodeMap
 HTMLModElement[JC] def baseURI: String
 HTMLModElement[JC] def before(nodes: Node | String*): Unit
@@ -8689,7 +8690,7 @@ HTMLOListElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLOListElement[JC] def after(nodes: Node | String*): Unit
 HTMLOListElement[JC] def append(nodes: Node | String*): Unit
 HTMLOListElement[JC] def appendChild(newChild: Node): Node
-HTMLOListElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLOListElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLOListElement[JC] def attributes: NamedNodeMap
 HTMLOListElement[JC] def baseURI: String
 HTMLOListElement[JC] def before(nodes: Node | String*): Unit
@@ -8892,7 +8893,7 @@ HTMLObjectElement[JC] var alt: String
 HTMLObjectElement[JC] var altHtml: String
 HTMLObjectElement[JC] def append(nodes: Node | String*): Unit
 HTMLObjectElement[JC] def appendChild(newChild: Node): Node
-HTMLObjectElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLObjectElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLObjectElement[JC] def attributes: NamedNodeMap
 HTMLObjectElement[JC] def baseURI: String
 HTMLObjectElement[JC] def before(nodes: Node | String*): Unit
@@ -9107,7 +9108,7 @@ HTMLOptGroupElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLOptGroupElement[JC] def after(nodes: Node | String*): Unit
 HTMLOptGroupElement[JC] def append(nodes: Node | String*): Unit
 HTMLOptGroupElement[JC] def appendChild(newChild: Node): Node
-HTMLOptGroupElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLOptGroupElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLOptGroupElement[JC] def attributes: NamedNodeMap
 HTMLOptGroupElement[JC] def baseURI: String
 HTMLOptGroupElement[JC] def before(nodes: Node | String*): Unit
@@ -9308,7 +9309,7 @@ HTMLOptionElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLOptionElement[JC] def after(nodes: Node | String*): Unit
 HTMLOptionElement[JC] def append(nodes: Node | String*): Unit
 HTMLOptionElement[JC] def appendChild(newChild: Node): Node
-HTMLOptionElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLOptionElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLOptionElement[JC] def attributes: NamedNodeMap
 HTMLOptionElement[JC] def baseURI: String
 HTMLOptionElement[JC] def before(nodes: Node | String*): Unit
@@ -9520,7 +9521,7 @@ HTMLParagraphElement[JC] def addEventListener[T <: Event](`type`: String, listen
 HTMLParagraphElement[JC] def after(nodes: Node | String*): Unit
 HTMLParagraphElement[JC] def append(nodes: Node | String*): Unit
 HTMLParagraphElement[JC] def appendChild(newChild: Node): Node
-HTMLParagraphElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLParagraphElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLParagraphElement[JC] def attributes: NamedNodeMap
 HTMLParagraphElement[JC] def baseURI: String
 HTMLParagraphElement[JC] def before(nodes: Node | String*): Unit
@@ -9719,7 +9720,7 @@ HTMLParamElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLParamElement[JC] def after(nodes: Node | String*): Unit
 HTMLParamElement[JC] def append(nodes: Node | String*): Unit
 HTMLParamElement[JC] def appendChild(newChild: Node): Node
-HTMLParamElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLParamElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLParamElement[JC] def attributes: NamedNodeMap
 HTMLParamElement[JC] def baseURI: String
 HTMLParamElement[JC] def before(nodes: Node | String*): Unit
@@ -9920,7 +9921,7 @@ HTMLPreElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 HTMLPreElement[JC] def after(nodes: Node | String*): Unit
 HTMLPreElement[JC] def append(nodes: Node | String*): Unit
 HTMLPreElement[JC] def appendChild(newChild: Node): Node
-HTMLPreElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLPreElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLPreElement[JC] def attributes: NamedNodeMap
 HTMLPreElement[JC] def baseURI: String
 HTMLPreElement[JC] def before(nodes: Node | String*): Unit
@@ -10119,7 +10120,7 @@ HTMLProgressElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLProgressElement[JC] def after(nodes: Node | String*): Unit
 HTMLProgressElement[JC] def append(nodes: Node | String*): Unit
 HTMLProgressElement[JC] def appendChild(newChild: Node): Node
-HTMLProgressElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLProgressElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLProgressElement[JC] def attributes: NamedNodeMap
 HTMLProgressElement[JC] def baseURI: String
 HTMLProgressElement[JC] def before(nodes: Node | String*): Unit
@@ -10322,7 +10323,7 @@ HTMLQuoteElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLQuoteElement[JC] def after(nodes: Node | String*): Unit
 HTMLQuoteElement[JC] def append(nodes: Node | String*): Unit
 HTMLQuoteElement[JC] def appendChild(newChild: Node): Node
-HTMLQuoteElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLQuoteElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLQuoteElement[JC] def attributes: NamedNodeMap
 HTMLQuoteElement[JC] def baseURI: String
 HTMLQuoteElement[JC] def before(nodes: Node | String*): Unit
@@ -10524,7 +10525,7 @@ HTMLScriptElement[JC] def after(nodes: Node | String*): Unit
 HTMLScriptElement[JC] def append(nodes: Node | String*): Unit
 HTMLScriptElement[JC] def appendChild(newChild: Node): Node
 HTMLScriptElement[JC] var async: Boolean
-HTMLScriptElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLScriptElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLScriptElement[JC] def attributes: NamedNodeMap
 HTMLScriptElement[JC] def baseURI: String
 HTMLScriptElement[JC] def before(nodes: Node | String*): Unit
@@ -10732,7 +10733,7 @@ HTMLSelectElement[JC] def after(nodes: Node | String*): Unit
 HTMLSelectElement[JC] def append(nodes: Node | String*): Unit
 HTMLSelectElement[JC] def appendChild(newChild: Node): Node
 HTMLSelectElement[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(name: String): js.Any
-HTMLSelectElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLSelectElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLSelectElement[JC] def attributes: NamedNodeMap
 HTMLSelectElement[JC] var autofocus: Boolean
 HTMLSelectElement[JC] def baseURI: String
@@ -10952,7 +10953,7 @@ HTMLSourceElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 HTMLSourceElement[JC] def after(nodes: Node | String*): Unit
 HTMLSourceElement[JC] def append(nodes: Node | String*): Unit
 HTMLSourceElement[JC] def appendChild(newChild: Node): Node
-HTMLSourceElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLSourceElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLSourceElement[JC] def attributes: NamedNodeMap
 HTMLSourceElement[JC] def baseURI: String
 HTMLSourceElement[JC] def before(nodes: Node | String*): Unit
@@ -11154,7 +11155,7 @@ HTMLSpanElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 HTMLSpanElement[JC] def after(nodes: Node | String*): Unit
 HTMLSpanElement[JC] def append(nodes: Node | String*): Unit
 HTMLSpanElement[JC] def appendChild(newChild: Node): Node
-HTMLSpanElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLSpanElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLSpanElement[JC] def attributes: NamedNodeMap
 HTMLSpanElement[JC] def baseURI: String
 HTMLSpanElement[JC] def before(nodes: Node | String*): Unit
@@ -11353,7 +11354,7 @@ HTMLStyleElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLStyleElement[JC] def after(nodes: Node | String*): Unit
 HTMLStyleElement[JC] def append(nodes: Node | String*): Unit
 HTMLStyleElement[JC] def appendChild(newChild: Node): Node
-HTMLStyleElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLStyleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLStyleElement[JC] def attributes: NamedNodeMap
 HTMLStyleElement[JC] def baseURI: String
 HTMLStyleElement[JC] def before(nodes: Node | String*): Unit
@@ -11556,7 +11557,7 @@ HTMLTableCaptionElement[JC] def addEventListener[T <: Event](`type`: String, lis
 HTMLTableCaptionElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableCaptionElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableCaptionElement[JC] def appendChild(newChild: Node): Node
-HTMLTableCaptionElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTableCaptionElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTableCaptionElement[JC] def attributes: NamedNodeMap
 HTMLTableCaptionElement[JC] def baseURI: String
 HTMLTableCaptionElement[JC] def before(nodes: Node | String*): Unit
@@ -11755,7 +11756,7 @@ HTMLTableCellElement[JC] def addEventListener[T <: Event](`type`: String, listen
 HTMLTableCellElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableCellElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableCellElement[JC] def appendChild(newChild: Node): Node
-HTMLTableCellElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTableCellElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTableCellElement[JC] def attributes: NamedNodeMap
 HTMLTableCellElement[JC] def baseURI: String
 HTMLTableCellElement[JC] def before(nodes: Node | String*): Unit
@@ -11958,7 +11959,7 @@ HTMLTableColElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLTableColElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableColElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableColElement[JC] def appendChild(newChild: Node): Node
-HTMLTableColElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTableColElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTableColElement[JC] def attributes: NamedNodeMap
 HTMLTableColElement[JC] def baseURI: String
 HTMLTableColElement[JC] def before(nodes: Node | String*): Unit
@@ -12158,7 +12159,7 @@ HTMLTableElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLTableElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableElement[JC] def appendChild(newChild: Node): Node
-HTMLTableElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTableElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTableElement[JC] def attributes: NamedNodeMap
 HTMLTableElement[JC] def baseURI: String
 HTMLTableElement[JC] def before(nodes: Node | String*): Unit
@@ -12372,7 +12373,7 @@ HTMLTableRowElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLTableRowElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableRowElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableRowElement[JC] def appendChild(newChild: Node): Node
-HTMLTableRowElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTableRowElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTableRowElement[JC] def attributes: NamedNodeMap
 HTMLTableRowElement[JC] def baseURI: String
 HTMLTableRowElement[JC] def before(nodes: Node | String*): Unit
@@ -12580,7 +12581,7 @@ HTMLTableSectionElement[JC] def addEventListener[T <: Event](`type`: String, lis
 HTMLTableSectionElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableSectionElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableSectionElement[JC] def appendChild(newChild: Node): Node
-HTMLTableSectionElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTableSectionElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTableSectionElement[JC] def attributes: NamedNodeMap
 HTMLTableSectionElement[JC] def baseURI: String
 HTMLTableSectionElement[JC] def before(nodes: Node | String*): Unit
@@ -12783,7 +12784,7 @@ HTMLTemplateElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLTemplateElement[JC] def after(nodes: Node | String*): Unit
 HTMLTemplateElement[JC] def append(nodes: Node | String*): Unit
 HTMLTemplateElement[JC] def appendChild(newChild: Node): Node
-HTMLTemplateElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTemplateElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTemplateElement[JC] def attributes: NamedNodeMap
 HTMLTemplateElement[JC] def baseURI: String
 HTMLTemplateElement[JC] def before(nodes: Node | String*): Unit
@@ -12983,7 +12984,7 @@ HTMLTextAreaElement[JC] def addEventListener[T <: Event](`type`: String, listene
 HTMLTextAreaElement[JC] def after(nodes: Node | String*): Unit
 HTMLTextAreaElement[JC] def append(nodes: Node | String*): Unit
 HTMLTextAreaElement[JC] def appendChild(newChild: Node): Node
-HTMLTextAreaElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTextAreaElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTextAreaElement[JC] def attributes: NamedNodeMap
 HTMLTextAreaElement[JC] var autofocus: Boolean
 HTMLTextAreaElement[JC] def baseURI: String
@@ -13206,7 +13207,7 @@ HTMLTitleElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLTitleElement[JC] def after(nodes: Node | String*): Unit
 HTMLTitleElement[JC] def append(nodes: Node | String*): Unit
 HTMLTitleElement[JC] def appendChild(newChild: Node): Node
-HTMLTitleElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTitleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTitleElement[JC] def attributes: NamedNodeMap
 HTMLTitleElement[JC] def baseURI: String
 HTMLTitleElement[JC] def before(nodes: Node | String*): Unit
@@ -13406,7 +13407,7 @@ HTMLTrackElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLTrackElement[JC] def after(nodes: Node | String*): Unit
 HTMLTrackElement[JC] def append(nodes: Node | String*): Unit
 HTMLTrackElement[JC] def appendChild(newChild: Node): Node
-HTMLTrackElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLTrackElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLTrackElement[JC] def attributes: NamedNodeMap
 HTMLTrackElement[JC] def baseURI: String
 HTMLTrackElement[JC] def before(nodes: Node | String*): Unit
@@ -13610,7 +13611,7 @@ HTMLUListElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLUListElement[JC] def after(nodes: Node | String*): Unit
 HTMLUListElement[JC] def append(nodes: Node | String*): Unit
 HTMLUListElement[JC] def appendChild(newChild: Node): Node
-HTMLUListElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLUListElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLUListElement[JC] def attributes: NamedNodeMap
 HTMLUListElement[JC] def baseURI: String
 HTMLUListElement[JC] def before(nodes: Node | String*): Unit
@@ -13809,7 +13810,7 @@ HTMLUnknownElement[JC] def addEventListener[T <: Event](`type`: String, listener
 HTMLUnknownElement[JC] def after(nodes: Node | String*): Unit
 HTMLUnknownElement[JC] def append(nodes: Node | String*): Unit
 HTMLUnknownElement[JC] def appendChild(newChild: Node): Node
-HTMLUnknownElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLUnknownElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLUnknownElement[JC] def attributes: NamedNodeMap
 HTMLUnknownElement[JC] def baseURI: String
 HTMLUnknownElement[JC] def before(nodes: Node | String*): Unit
@@ -14008,7 +14009,7 @@ HTMLVideoElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 HTMLVideoElement[JC] def after(nodes: Node | String*): Unit
 HTMLVideoElement[JC] def append(nodes: Node | String*): Unit
 HTMLVideoElement[JC] def appendChild(newChild: Node): Node
-HTMLVideoElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+HTMLVideoElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 HTMLVideoElement[JC] def attributes: NamedNodeMap
 HTMLVideoElement[JC] def audioTracks: AudioTrackList
 HTMLVideoElement[JC] var autoplay: Boolean
@@ -16382,7 +16383,7 @@ SVGAElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 SVGAElement[JC] def after(nodes: Node | String*): Unit
 SVGAElement[JC] def append(nodes: Node | String*): Unit
 SVGAElement[JC] def appendChild(newChild: Node): Node
-SVGAElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGAElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGAElement[JC] def attributes: NamedNodeMap
 SVGAElement[JC] def baseURI: String
 SVGAElement[JC] def before(nodes: Node | String*): Unit
@@ -16549,7 +16550,7 @@ SVGCircleElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGCircleElement[JC] def after(nodes: Node | String*): Unit
 SVGCircleElement[JC] def append(nodes: Node | String*): Unit
 SVGCircleElement[JC] def appendChild(newChild: Node): Node
-SVGCircleElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGCircleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGCircleElement[JC] def attributes: NamedNodeMap
 SVGCircleElement[JC] def baseURI: String
 SVGCircleElement[JC] def before(nodes: Node | String*): Unit
@@ -16682,7 +16683,7 @@ SVGClipPathElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGClipPathElement[JC] def after(nodes: Node | String*): Unit
 SVGClipPathElement[JC] def append(nodes: Node | String*): Unit
 SVGClipPathElement[JC] def appendChild(newChild: Node): Node
-SVGClipPathElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGClipPathElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGClipPathElement[JC] def attributes: NamedNodeMap
 SVGClipPathElement[JC] def baseURI: String
 SVGClipPathElement[JC] def before(nodes: Node | String*): Unit
@@ -16811,7 +16812,7 @@ SVGComponentTransferFunctionElement[JC] def after(nodes: Node | String*): Unit
 SVGComponentTransferFunctionElement[JC] def amplitude: SVGAnimatedNumber
 SVGComponentTransferFunctionElement[JC] def append(nodes: Node | String*): Unit
 SVGComponentTransferFunctionElement[JC] def appendChild(newChild: Node): Node
-SVGComponentTransferFunctionElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGComponentTransferFunctionElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGComponentTransferFunctionElement[JC] def attributes: NamedNodeMap
 SVGComponentTransferFunctionElement[JC] def baseURI: String
 SVGComponentTransferFunctionElement[JC] def before(nodes: Node | String*): Unit
@@ -16934,7 +16935,7 @@ SVGDefsElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGDefsElement[JC] def after(nodes: Node | String*): Unit
 SVGDefsElement[JC] def append(nodes: Node | String*): Unit
 SVGDefsElement[JC] def appendChild(newChild: Node): Node
-SVGDefsElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGDefsElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGDefsElement[JC] def attributes: NamedNodeMap
 SVGDefsElement[JC] def baseURI: String
 SVGDefsElement[JC] def before(nodes: Node | String*): Unit
@@ -17061,7 +17062,7 @@ SVGDescElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGDescElement[JC] def after(nodes: Node | String*): Unit
 SVGDescElement[JC] def append(nodes: Node | String*): Unit
 SVGDescElement[JC] def appendChild(newChild: Node): Node
-SVGDescElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGDescElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGDescElement[JC] def attributes: NamedNodeMap
 SVGDescElement[JC] def baseURI: String
 SVGDescElement[JC] def before(nodes: Node | String*): Unit
@@ -17176,7 +17177,7 @@ SVGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fun
 SVGElement[JC] def after(nodes: Node | String*): Unit
 SVGElement[JC] def append(nodes: Node | String*): Unit
 SVGElement[JC] def appendChild(newChild: Node): Node
-SVGElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGElement[JC] def attributes: NamedNodeMap
 SVGElement[JC] def baseURI: String
 SVGElement[JC] def before(nodes: Node | String*): Unit
@@ -17302,7 +17303,7 @@ SVGEllipseElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGEllipseElement[JC] def after(nodes: Node | String*): Unit
 SVGEllipseElement[JC] def append(nodes: Node | String*): Unit
 SVGEllipseElement[JC] def appendChild(newChild: Node): Node
-SVGEllipseElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGEllipseElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGEllipseElement[JC] def attributes: NamedNodeMap
 SVGEllipseElement[JC] def baseURI: String
 SVGEllipseElement[JC] def before(nodes: Node | String*): Unit
@@ -17440,7 +17441,7 @@ SVGFEBlendElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEBlendElement[JC] def after(nodes: Node | String*): Unit
 SVGFEBlendElement[JC] def append(nodes: Node | String*): Unit
 SVGFEBlendElement[JC] def appendChild(newChild: Node): Node
-SVGFEBlendElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEBlendElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEBlendElement[JC] def attributes: NamedNodeMap
 SVGFEBlendElement[JC] def baseURI: String
 SVGFEBlendElement[JC] def before(nodes: Node | String*): Unit
@@ -17567,7 +17568,7 @@ SVGFEColorMatrixElement[JC] def addEventListener[T <: Event](`type`: String, lis
 SVGFEColorMatrixElement[JC] def after(nodes: Node | String*): Unit
 SVGFEColorMatrixElement[JC] def append(nodes: Node | String*): Unit
 SVGFEColorMatrixElement[JC] def appendChild(newChild: Node): Node
-SVGFEColorMatrixElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEColorMatrixElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEColorMatrixElement[JC] def attributes: NamedNodeMap
 SVGFEColorMatrixElement[JC] def baseURI: String
 SVGFEColorMatrixElement[JC] def before(nodes: Node | String*): Unit
@@ -17693,7 +17694,7 @@ SVGFEComponentTransferElement[JC] def addEventListener[T <: Event](`type`: Strin
 SVGFEComponentTransferElement[JC] def after(nodes: Node | String*): Unit
 SVGFEComponentTransferElement[JC] def append(nodes: Node | String*): Unit
 SVGFEComponentTransferElement[JC] def appendChild(newChild: Node): Node
-SVGFEComponentTransferElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEComponentTransferElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEComponentTransferElement[JC] def attributes: NamedNodeMap
 SVGFEComponentTransferElement[JC] def baseURI: String
 SVGFEComponentTransferElement[JC] def before(nodes: Node | String*): Unit
@@ -17812,7 +17813,7 @@ SVGFECompositeElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGFECompositeElement[JC] def after(nodes: Node | String*): Unit
 SVGFECompositeElement[JC] def append(nodes: Node | String*): Unit
 SVGFECompositeElement[JC] def appendChild(newChild: Node): Node
-SVGFECompositeElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFECompositeElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFECompositeElement[JC] def attributes: NamedNodeMap
 SVGFECompositeElement[JC] def baseURI: String
 SVGFECompositeElement[JC] def before(nodes: Node | String*): Unit
@@ -17944,7 +17945,7 @@ SVGFEConvolveMatrixElement[JC] def addEventListener[T <: Event](`type`: String, 
 SVGFEConvolveMatrixElement[JC] def after(nodes: Node | String*): Unit
 SVGFEConvolveMatrixElement[JC] def append(nodes: Node | String*): Unit
 SVGFEConvolveMatrixElement[JC] def appendChild(newChild: Node): Node
-SVGFEConvolveMatrixElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEConvolveMatrixElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEConvolveMatrixElement[JC] def attributes: NamedNodeMap
 SVGFEConvolveMatrixElement[JC] def baseURI: String
 SVGFEConvolveMatrixElement[JC] def before(nodes: Node | String*): Unit
@@ -18078,7 +18079,7 @@ SVGFEDiffuseLightingElement[JC] def addEventListener[T <: Event](`type`: String,
 SVGFEDiffuseLightingElement[JC] def after(nodes: Node | String*): Unit
 SVGFEDiffuseLightingElement[JC] def append(nodes: Node | String*): Unit
 SVGFEDiffuseLightingElement[JC] def appendChild(newChild: Node): Node
-SVGFEDiffuseLightingElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEDiffuseLightingElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEDiffuseLightingElement[JC] def attributes: NamedNodeMap
 SVGFEDiffuseLightingElement[JC] def baseURI: String
 SVGFEDiffuseLightingElement[JC] def before(nodes: Node | String*): Unit
@@ -18201,7 +18202,7 @@ SVGFEDisplacementMapElement[JC] def addEventListener[T <: Event](`type`: String,
 SVGFEDisplacementMapElement[JC] def after(nodes: Node | String*): Unit
 SVGFEDisplacementMapElement[JC] def append(nodes: Node | String*): Unit
 SVGFEDisplacementMapElement[JC] def appendChild(newChild: Node): Node
-SVGFEDisplacementMapElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEDisplacementMapElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEDisplacementMapElement[JC] def attributes: NamedNodeMap
 SVGFEDisplacementMapElement[JC] def baseURI: String
 SVGFEDisplacementMapElement[JC] def before(nodes: Node | String*): Unit
@@ -18329,7 +18330,7 @@ SVGFEDistantLightElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGFEDistantLightElement[JC] def after(nodes: Node | String*): Unit
 SVGFEDistantLightElement[JC] def append(nodes: Node | String*): Unit
 SVGFEDistantLightElement[JC] def appendChild(newChild: Node): Node
-SVGFEDistantLightElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEDistantLightElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEDistantLightElement[JC] def attributes: NamedNodeMap
 SVGFEDistantLightElement[JC] def azimuth: SVGAnimatedNumber
 SVGFEDistantLightElement[JC] def baseURI: String
@@ -18442,7 +18443,7 @@ SVGFEFloodElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEFloodElement[JC] def after(nodes: Node | String*): Unit
 SVGFEFloodElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFloodElement[JC] def appendChild(newChild: Node): Node
-SVGFEFloodElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEFloodElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEFloodElement[JC] def attributes: NamedNodeMap
 SVGFEFloodElement[JC] def baseURI: String
 SVGFEFloodElement[JC] def before(nodes: Node | String*): Unit
@@ -18561,7 +18562,7 @@ SVGFEFuncAElement[JC] def after(nodes: Node | String*): Unit
 SVGFEFuncAElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncAElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFuncAElement[JC] def appendChild(newChild: Node): Node
-SVGFEFuncAElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEFuncAElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEFuncAElement[JC] def attributes: NamedNodeMap
 SVGFEFuncAElement[JC] def baseURI: String
 SVGFEFuncAElement[JC] def before(nodes: Node | String*): Unit
@@ -18679,7 +18680,7 @@ SVGFEFuncBElement[JC] def after(nodes: Node | String*): Unit
 SVGFEFuncBElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncBElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFuncBElement[JC] def appendChild(newChild: Node): Node
-SVGFEFuncBElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEFuncBElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEFuncBElement[JC] def attributes: NamedNodeMap
 SVGFEFuncBElement[JC] def baseURI: String
 SVGFEFuncBElement[JC] def before(nodes: Node | String*): Unit
@@ -18797,7 +18798,7 @@ SVGFEFuncGElement[JC] def after(nodes: Node | String*): Unit
 SVGFEFuncGElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncGElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFuncGElement[JC] def appendChild(newChild: Node): Node
-SVGFEFuncGElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEFuncGElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEFuncGElement[JC] def attributes: NamedNodeMap
 SVGFEFuncGElement[JC] def baseURI: String
 SVGFEFuncGElement[JC] def before(nodes: Node | String*): Unit
@@ -18915,7 +18916,7 @@ SVGFEFuncRElement[JC] def after(nodes: Node | String*): Unit
 SVGFEFuncRElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncRElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFuncRElement[JC] def appendChild(newChild: Node): Node
-SVGFEFuncRElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEFuncRElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEFuncRElement[JC] def attributes: NamedNodeMap
 SVGFEFuncRElement[JC] def baseURI: String
 SVGFEFuncRElement[JC] def before(nodes: Node | String*): Unit
@@ -19032,7 +19033,7 @@ SVGFEGaussianBlurElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGFEGaussianBlurElement[JC] def after(nodes: Node | String*): Unit
 SVGFEGaussianBlurElement[JC] def append(nodes: Node | String*): Unit
 SVGFEGaussianBlurElement[JC] def appendChild(newChild: Node): Node
-SVGFEGaussianBlurElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEGaussianBlurElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEGaussianBlurElement[JC] def attributes: NamedNodeMap
 SVGFEGaussianBlurElement[JC] def baseURI: String
 SVGFEGaussianBlurElement[JC] def before(nodes: Node | String*): Unit
@@ -19154,7 +19155,7 @@ SVGFEImageElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEImageElement[JC] def after(nodes: Node | String*): Unit
 SVGFEImageElement[JC] def append(nodes: Node | String*): Unit
 SVGFEImageElement[JC] def appendChild(newChild: Node): Node
-SVGFEImageElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEImageElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEImageElement[JC] def attributes: NamedNodeMap
 SVGFEImageElement[JC] def baseURI: String
 SVGFEImageElement[JC] def before(nodes: Node | String*): Unit
@@ -19277,7 +19278,7 @@ SVGFEMergeElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGFEMergeElement[JC] def after(nodes: Node | String*): Unit
 SVGFEMergeElement[JC] def append(nodes: Node | String*): Unit
 SVGFEMergeElement[JC] def appendChild(newChild: Node): Node
-SVGFEMergeElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEMergeElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEMergeElement[JC] def attributes: NamedNodeMap
 SVGFEMergeElement[JC] def baseURI: String
 SVGFEMergeElement[JC] def before(nodes: Node | String*): Unit
@@ -19395,7 +19396,7 @@ SVGFEMergeNodeElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGFEMergeNodeElement[JC] def after(nodes: Node | String*): Unit
 SVGFEMergeNodeElement[JC] def append(nodes: Node | String*): Unit
 SVGFEMergeNodeElement[JC] def appendChild(newChild: Node): Node
-SVGFEMergeNodeElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEMergeNodeElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEMergeNodeElement[JC] def attributes: NamedNodeMap
 SVGFEMergeNodeElement[JC] def baseURI: String
 SVGFEMergeNodeElement[JC] def before(nodes: Node | String*): Unit
@@ -19507,7 +19508,7 @@ SVGFEMorphologyElement[JC] def addEventListener[T <: Event](`type`: String, list
 SVGFEMorphologyElement[JC] def after(nodes: Node | String*): Unit
 SVGFEMorphologyElement[JC] def append(nodes: Node | String*): Unit
 SVGFEMorphologyElement[JC] def appendChild(newChild: Node): Node
-SVGFEMorphologyElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEMorphologyElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEMorphologyElement[JC] def attributes: NamedNodeMap
 SVGFEMorphologyElement[JC] def baseURI: String
 SVGFEMorphologyElement[JC] def before(nodes: Node | String*): Unit
@@ -19632,7 +19633,7 @@ SVGFEOffsetElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGFEOffsetElement[JC] def after(nodes: Node | String*): Unit
 SVGFEOffsetElement[JC] def append(nodes: Node | String*): Unit
 SVGFEOffsetElement[JC] def appendChild(newChild: Node): Node
-SVGFEOffsetElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEOffsetElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEOffsetElement[JC] def attributes: NamedNodeMap
 SVGFEOffsetElement[JC] def baseURI: String
 SVGFEOffsetElement[JC] def before(nodes: Node | String*): Unit
@@ -19753,7 +19754,7 @@ SVGFEPointLightElement[JC] def addEventListener[T <: Event](`type`: String, list
 SVGFEPointLightElement[JC] def after(nodes: Node | String*): Unit
 SVGFEPointLightElement[JC] def append(nodes: Node | String*): Unit
 SVGFEPointLightElement[JC] def appendChild(newChild: Node): Node
-SVGFEPointLightElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFEPointLightElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFEPointLightElement[JC] def attributes: NamedNodeMap
 SVGFEPointLightElement[JC] def baseURI: String
 SVGFEPointLightElement[JC] def before(nodes: Node | String*): Unit
@@ -19867,7 +19868,7 @@ SVGFESpecularLightingElement[JC] def addEventListener[T <: Event](`type`: String
 SVGFESpecularLightingElement[JC] def after(nodes: Node | String*): Unit
 SVGFESpecularLightingElement[JC] def append(nodes: Node | String*): Unit
 SVGFESpecularLightingElement[JC] def appendChild(newChild: Node): Node
-SVGFESpecularLightingElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFESpecularLightingElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFESpecularLightingElement[JC] def attributes: NamedNodeMap
 SVGFESpecularLightingElement[JC] def baseURI: String
 SVGFESpecularLightingElement[JC] def before(nodes: Node | String*): Unit
@@ -19991,7 +19992,7 @@ SVGFESpotLightElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGFESpotLightElement[JC] def after(nodes: Node | String*): Unit
 SVGFESpotLightElement[JC] def append(nodes: Node | String*): Unit
 SVGFESpotLightElement[JC] def appendChild(newChild: Node): Node
-SVGFESpotLightElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFESpotLightElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFESpotLightElement[JC] def attributes: NamedNodeMap
 SVGFESpotLightElement[JC] def baseURI: String
 SVGFESpotLightElement[JC] def before(nodes: Node | String*): Unit
@@ -20110,7 +20111,7 @@ SVGFETileElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGFETileElement[JC] def after(nodes: Node | String*): Unit
 SVGFETileElement[JC] def append(nodes: Node | String*): Unit
 SVGFETileElement[JC] def appendChild(newChild: Node): Node
-SVGFETileElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFETileElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFETileElement[JC] def attributes: NamedNodeMap
 SVGFETileElement[JC] def baseURI: String
 SVGFETileElement[JC] def before(nodes: Node | String*): Unit
@@ -20229,7 +20230,7 @@ SVGFETurbulenceElement[JC] def addEventListener[T <: Event](`type`: String, list
 SVGFETurbulenceElement[JC] def after(nodes: Node | String*): Unit
 SVGFETurbulenceElement[JC] def append(nodes: Node | String*): Unit
 SVGFETurbulenceElement[JC] def appendChild(newChild: Node): Node
-SVGFETurbulenceElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFETurbulenceElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFETurbulenceElement[JC] def attributes: NamedNodeMap
 SVGFETurbulenceElement[JC] def baseFrequencyX: SVGAnimatedNumber
 SVGFETurbulenceElement[JC] def baseFrequencyY: SVGAnimatedNumber
@@ -20362,7 +20363,7 @@ SVGFilterElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGFilterElement[JC] def after(nodes: Node | String*): Unit
 SVGFilterElement[JC] def append(nodes: Node | String*): Unit
 SVGFilterElement[JC] def appendChild(newChild: Node): Node
-SVGFilterElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGFilterElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGFilterElement[JC] def attributes: NamedNodeMap
 SVGFilterElement[JC] def baseURI: String
 SVGFilterElement[JC] def before(nodes: Node | String*): Unit
@@ -20497,7 +20498,7 @@ SVGGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 SVGGElement[JC] def after(nodes: Node | String*): Unit
 SVGGElement[JC] def append(nodes: Node | String*): Unit
 SVGGElement[JC] def appendChild(newChild: Node): Node
-SVGGElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGGElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGGElement[JC] def attributes: NamedNodeMap
 SVGGElement[JC] def baseURI: String
 SVGGElement[JC] def before(nodes: Node | String*): Unit
@@ -20627,7 +20628,7 @@ SVGGradientElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGGradientElement[JC] def after(nodes: Node | String*): Unit
 SVGGradientElement[JC] def append(nodes: Node | String*): Unit
 SVGGradientElement[JC] def appendChild(newChild: Node): Node
-SVGGradientElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGGradientElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGGradientElement[JC] def attributes: NamedNodeMap
 SVGGradientElement[JC] def baseURI: String
 SVGGradientElement[JC] def before(nodes: Node | String*): Unit
@@ -20749,7 +20750,7 @@ SVGImageElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGImageElement[JC] def after(nodes: Node | String*): Unit
 SVGImageElement[JC] def append(nodes: Node | String*): Unit
 SVGImageElement[JC] def appendChild(newChild: Node): Node
-SVGImageElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGImageElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGImageElement[JC] def attributes: NamedNodeMap
 SVGImageElement[JC] def baseURI: String
 SVGImageElement[JC] def before(nodes: Node | String*): Unit
@@ -20909,7 +20910,7 @@ SVGLineElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGLineElement[JC] def after(nodes: Node | String*): Unit
 SVGLineElement[JC] def append(nodes: Node | String*): Unit
 SVGLineElement[JC] def appendChild(newChild: Node): Node
-SVGLineElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGLineElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGLineElement[JC] def attributes: NamedNodeMap
 SVGLineElement[JC] def baseURI: String
 SVGLineElement[JC] def before(nodes: Node | String*): Unit
@@ -21043,7 +21044,7 @@ SVGLinearGradientElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGLinearGradientElement[JC] def after(nodes: Node | String*): Unit
 SVGLinearGradientElement[JC] def append(nodes: Node | String*): Unit
 SVGLinearGradientElement[JC] def appendChild(newChild: Node): Node
-SVGLinearGradientElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGLinearGradientElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGLinearGradientElement[JC] def attributes: NamedNodeMap
 SVGLinearGradientElement[JC] def baseURI: String
 SVGLinearGradientElement[JC] def before(nodes: Node | String*): Unit
@@ -21171,7 +21172,7 @@ SVGMarkerElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGMarkerElement[JC] def after(nodes: Node | String*): Unit
 SVGMarkerElement[JC] def append(nodes: Node | String*): Unit
 SVGMarkerElement[JC] def appendChild(newChild: Node): Node
-SVGMarkerElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGMarkerElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGMarkerElement[JC] def attributes: NamedNodeMap
 SVGMarkerElement[JC] def baseURI: String
 SVGMarkerElement[JC] def before(nodes: Node | String*): Unit
@@ -21307,7 +21308,7 @@ SVGMaskElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGMaskElement[JC] def after(nodes: Node | String*): Unit
 SVGMaskElement[JC] def append(nodes: Node | String*): Unit
 SVGMaskElement[JC] def appendChild(newChild: Node): Node
-SVGMaskElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGMaskElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGMaskElement[JC] def attributes: NamedNodeMap
 SVGMaskElement[JC] def baseURI: String
 SVGMaskElement[JC] def before(nodes: Node | String*): Unit
@@ -21450,7 +21451,7 @@ SVGMetadataElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGMetadataElement[JC] def after(nodes: Node | String*): Unit
 SVGMetadataElement[JC] def append(nodes: Node | String*): Unit
 SVGMetadataElement[JC] def appendChild(newChild: Node): Node
-SVGMetadataElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGMetadataElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGMetadataElement[JC] def attributes: NamedNodeMap
 SVGMetadataElement[JC] def baseURI: String
 SVGMetadataElement[JC] def before(nodes: Node | String*): Unit
@@ -21570,7 +21571,7 @@ SVGPathElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGPathElement[JC] def after(nodes: Node | String*): Unit
 SVGPathElement[JC] def append(nodes: Node | String*): Unit
 SVGPathElement[JC] def appendChild(newChild: Node): Node
-SVGPathElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGPathElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGPathElement[JC] def attributes: NamedNodeMap
 SVGPathElement[JC] def baseURI: String
 SVGPathElement[JC] def before(nodes: Node | String*): Unit
@@ -21849,7 +21850,7 @@ SVGPatternElement[JC] def addEventListener[T <: Event](`type`: String, listener:
 SVGPatternElement[JC] def after(nodes: Node | String*): Unit
 SVGPatternElement[JC] def append(nodes: Node | String*): Unit
 SVGPatternElement[JC] def appendChild(newChild: Node): Node
-SVGPatternElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGPatternElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGPatternElement[JC] def attributes: NamedNodeMap
 SVGPatternElement[JC] def baseURI: String
 SVGPatternElement[JC] def before(nodes: Node | String*): Unit
@@ -21991,7 +21992,7 @@ SVGPolygonElement[JC] def after(nodes: Node | String*): Unit
 SVGPolygonElement[JC] def animatedPoints: SVGPointList
 SVGPolygonElement[JC] def append(nodes: Node | String*): Unit
 SVGPolygonElement[JC] def appendChild(newChild: Node): Node
-SVGPolygonElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGPolygonElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGPolygonElement[JC] def attributes: NamedNodeMap
 SVGPolygonElement[JC] def baseURI: String
 SVGPolygonElement[JC] def before(nodes: Node | String*): Unit
@@ -22120,7 +22121,7 @@ SVGPolylineElement[JC] def after(nodes: Node | String*): Unit
 SVGPolylineElement[JC] def animatedPoints: SVGPointList
 SVGPolylineElement[JC] def append(nodes: Node | String*): Unit
 SVGPolylineElement[JC] def appendChild(newChild: Node): Node
-SVGPolylineElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGPolylineElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGPolylineElement[JC] def attributes: NamedNodeMap
 SVGPolylineElement[JC] def baseURI: String
 SVGPolylineElement[JC] def before(nodes: Node | String*): Unit
@@ -22267,7 +22268,7 @@ SVGRadialGradientElement[JC] def addEventListener[T <: Event](`type`: String, li
 SVGRadialGradientElement[JC] def after(nodes: Node | String*): Unit
 SVGRadialGradientElement[JC] def append(nodes: Node | String*): Unit
 SVGRadialGradientElement[JC] def appendChild(newChild: Node): Node
-SVGRadialGradientElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGRadialGradientElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGRadialGradientElement[JC] def attributes: NamedNodeMap
 SVGRadialGradientElement[JC] def baseURI: String
 SVGRadialGradientElement[JC] def before(nodes: Node | String*): Unit
@@ -22394,7 +22395,7 @@ SVGRectElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGRectElement[JC] def after(nodes: Node | String*): Unit
 SVGRectElement[JC] def append(nodes: Node | String*): Unit
 SVGRectElement[JC] def appendChild(newChild: Node): Node
-SVGRectElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGRectElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGRectElement[JC] def attributes: NamedNodeMap
 SVGRectElement[JC] def baseURI: String
 SVGRectElement[JC] def before(nodes: Node | String*): Unit
@@ -22527,7 +22528,7 @@ SVGSVGElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 SVGSVGElement[JC] def after(nodes: Node | String*): Unit
 SVGSVGElement[JC] def append(nodes: Node | String*): Unit
 SVGSVGElement[JC] def appendChild(newChild: Node): Node
-SVGSVGElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGSVGElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGSVGElement[JC] def attributes: NamedNodeMap
 SVGSVGElement[JC] def baseURI: String
 SVGSVGElement[JC] def before(nodes: Node | String*): Unit
@@ -22699,7 +22700,7 @@ SVGScriptElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGScriptElement[JC] def after(nodes: Node | String*): Unit
 SVGScriptElement[JC] def append(nodes: Node | String*): Unit
 SVGScriptElement[JC] def appendChild(newChild: Node): Node
-SVGScriptElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGScriptElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGScriptElement[JC] def attributes: NamedNodeMap
 SVGScriptElement[JC] def baseURI: String
 SVGScriptElement[JC] def before(nodes: Node | String*): Unit
@@ -22813,7 +22814,7 @@ SVGStopElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGStopElement[JC] def after(nodes: Node | String*): Unit
 SVGStopElement[JC] def append(nodes: Node | String*): Unit
 SVGStopElement[JC] def appendChild(newChild: Node): Node
-SVGStopElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGStopElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGStopElement[JC] def attributes: NamedNodeMap
 SVGStopElement[JC] def baseURI: String
 SVGStopElement[JC] def before(nodes: Node | String*): Unit
@@ -22937,7 +22938,7 @@ SVGStyleElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGStyleElement[JC] def after(nodes: Node | String*): Unit
 SVGStyleElement[JC] def append(nodes: Node | String*): Unit
 SVGStyleElement[JC] def appendChild(newChild: Node): Node
-SVGStyleElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGStyleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGStyleElement[JC] def attributes: NamedNodeMap
 SVGStyleElement[JC] def baseURI: String
 SVGStyleElement[JC] def before(nodes: Node | String*): Unit
@@ -23053,7 +23054,7 @@ SVGSwitchElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGSwitchElement[JC] def after(nodes: Node | String*): Unit
 SVGSwitchElement[JC] def append(nodes: Node | String*): Unit
 SVGSwitchElement[JC] def appendChild(newChild: Node): Node
-SVGSwitchElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGSwitchElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGSwitchElement[JC] def attributes: NamedNodeMap
 SVGSwitchElement[JC] def baseURI: String
 SVGSwitchElement[JC] def before(nodes: Node | String*): Unit
@@ -23180,7 +23181,7 @@ SVGSymbolElement[JC] def addEventListener[T <: Event](`type`: String, listener: 
 SVGSymbolElement[JC] def after(nodes: Node | String*): Unit
 SVGSymbolElement[JC] def append(nodes: Node | String*): Unit
 SVGSymbolElement[JC] def appendChild(newChild: Node): Node
-SVGSymbolElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGSymbolElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGSymbolElement[JC] def attributes: NamedNodeMap
 SVGSymbolElement[JC] def baseURI: String
 SVGSymbolElement[JC] def before(nodes: Node | String*): Unit
@@ -23298,7 +23299,7 @@ SVGTSpanElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGTSpanElement[JC] def after(nodes: Node | String*): Unit
 SVGTSpanElement[JC] def append(nodes: Node | String*): Unit
 SVGTSpanElement[JC] def appendChild(newChild: Node): Node
-SVGTSpanElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGTSpanElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGTSpanElement[JC] def attributes: NamedNodeMap
 SVGTSpanElement[JC] def baseURI: String
 SVGTSpanElement[JC] def before(nodes: Node | String*): Unit
@@ -23438,7 +23439,7 @@ SVGTextContentElement[JC] def addEventListener[T <: Event](`type`: String, liste
 SVGTextContentElement[JC] def after(nodes: Node | String*): Unit
 SVGTextContentElement[JC] def append(nodes: Node | String*): Unit
 SVGTextContentElement[JC] def appendChild(newChild: Node): Node
-SVGTextContentElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGTextContentElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGTextContentElement[JC] def attributes: NamedNodeMap
 SVGTextContentElement[JC] def baseURI: String
 SVGTextContentElement[JC] def before(nodes: Node | String*): Unit
@@ -23572,7 +23573,7 @@ SVGTextElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGTextElement[JC] def after(nodes: Node | String*): Unit
 SVGTextElement[JC] def append(nodes: Node | String*): Unit
 SVGTextElement[JC] def appendChild(newChild: Node): Node
-SVGTextElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGTextElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGTextElement[JC] def attributes: NamedNodeMap
 SVGTextElement[JC] def baseURI: String
 SVGTextElement[JC] def before(nodes: Node | String*): Unit
@@ -23715,7 +23716,7 @@ SVGTextPathElement[JC] def addEventListener[T <: Event](`type`: String, listener
 SVGTextPathElement[JC] def after(nodes: Node | String*): Unit
 SVGTextPathElement[JC] def append(nodes: Node | String*): Unit
 SVGTextPathElement[JC] def appendChild(newChild: Node): Node
-SVGTextPathElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGTextPathElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGTextPathElement[JC] def attributes: NamedNodeMap
 SVGTextPathElement[JC] def baseURI: String
 SVGTextPathElement[JC] def before(nodes: Node | String*): Unit
@@ -23856,7 +23857,7 @@ SVGTextPositioningElement[JC] def addEventListener[T <: Event](`type`: String, l
 SVGTextPositioningElement[JC] def after(nodes: Node | String*): Unit
 SVGTextPositioningElement[JC] def append(nodes: Node | String*): Unit
 SVGTextPositioningElement[JC] def appendChild(newChild: Node): Node
-SVGTextPositioningElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGTextPositioningElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGTextPositioningElement[JC] def attributes: NamedNodeMap
 SVGTextPositioningElement[JC] def baseURI: String
 SVGTextPositioningElement[JC] def before(nodes: Node | String*): Unit
@@ -23992,7 +23993,7 @@ SVGTitleElement[JC] def addEventListener[T <: Event](`type`: String, listener: j
 SVGTitleElement[JC] def after(nodes: Node | String*): Unit
 SVGTitleElement[JC] def append(nodes: Node | String*): Unit
 SVGTitleElement[JC] def appendChild(newChild: Node): Node
-SVGTitleElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGTitleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGTitleElement[JC] def attributes: NamedNodeMap
 SVGTitleElement[JC] def baseURI: String
 SVGTitleElement[JC] def before(nodes: Node | String*): Unit
@@ -24148,7 +24149,7 @@ SVGUseElement[JC] def after(nodes: Node | String*): Unit
 SVGUseElement[JC] def animatedInstanceRoot: SVGElementInstance
 SVGUseElement[JC] def append(nodes: Node | String*): Unit
 SVGUseElement[JC] def appendChild(newChild: Node): Node
-SVGUseElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGUseElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGUseElement[JC] def attributes: NamedNodeMap
 SVGUseElement[JC] def baseURI: String
 SVGUseElement[JC] def before(nodes: Node | String*): Unit
@@ -24281,7 +24282,7 @@ SVGViewElement[JC] def addEventListener[T <: Event](`type`: String, listener: js
 SVGViewElement[JC] def after(nodes: Node | String*): Unit
 SVGViewElement[JC] def append(nodes: Node | String*): Unit
 SVGViewElement[JC] def appendChild(newChild: Node): Node
-SVGViewElement[JC] def attachShadow(init: AttachShadowRootOptions): ShadowRoot
+SVGViewElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 SVGViewElement[JC] def attributes: NamedNodeMap
 SVGViewElement[JC] def baseURI: String
 SVGViewElement[JC] def before(nodes: Node | String*): Unit
@@ -24562,6 +24563,8 @@ ShadowRoot[JC] def removeEventListener[T <: Event](`type`: String, listener: js.
 ShadowRoot[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ShadowRoot[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 ShadowRoot[JC] var textContent: String
+ShadowRootInit[JT] var delegatesFocus: js.UndefOr[Boolean]
+ShadowRootInit[JT] var mode: EncapsulationMode
 SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SharedWorker[JC] def dispatchEvent(evt: Event): Boolean

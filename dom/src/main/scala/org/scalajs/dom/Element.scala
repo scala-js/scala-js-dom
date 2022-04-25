@@ -261,7 +261,7 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
   def requestPointerLock(): Unit = js.native
 
   /** Attaches a shadow DOM tree to the specified element and returns a reference to its ShadowRoot. */
-  def attachShadow(init: AttachShadowRootOptions): ShadowRoot = js.native
+  def attachShadow(init: ShadowRootInit): ShadowRoot = js.native
 
   /** Returns the open shadow root that is hosted by the element, or null if no open shadow root is present. */
   def shadowRoot: ShadowRoot = js.native

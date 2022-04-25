@@ -17,5 +17,5 @@ import scala.scalajs.js.annotation._
 abstract class CustomElementRegistry extends js.Object {
 
   /** Defines a new custom element. */
-  def define(name: String, constructor: js.Dynamic, options: CustomElementDefineOptions = js.native): Unit
+  def define(name: String, constructor: js.Dynamic, options: ElementDefinitionOptions = js.native): Unit
 }
