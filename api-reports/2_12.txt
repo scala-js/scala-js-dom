@@ -1792,9 +1792,6 @@ Element[JC] def shadowRoot: ShadowRoot
 Element[JC] def tagName: String
 Element[JC] var textContent: String
 ElementDefinitionOptions[JT] var `extends`: js.UndefOr[String]
-EncapsulationMode[JT]
-EncapsulationMode[SO] val closed: EncapsulationMode
-EncapsulationMode[SO] val open: EncapsulationMode
 EndOfStreamError[JT]
 EndOfStreamError[SO] val decode: EndOfStreamError
 EndOfStreamError[SO] val network: EndOfStreamError
@@ -24564,7 +24561,10 @@ ShadowRoot[JC] def removeEventListener[T <: Event](`type`: String, listener: js.
 ShadowRoot[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 ShadowRoot[JC] var textContent: String
 ShadowRootInit[JT] var delegatesFocus: js.UndefOr[Boolean]
-ShadowRootInit[JT] var mode: EncapsulationMode
+ShadowRootInit[JT] var mode: ShadowRootMode
+ShadowRootMode[JT]
+ShadowRootMode[SO] val closed: ShadowRootMode
+ShadowRootMode[SO] val open: ShadowRootMode
 SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 SharedWorker[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SharedWorker[JC] def dispatchEvent(evt: Event): Boolean

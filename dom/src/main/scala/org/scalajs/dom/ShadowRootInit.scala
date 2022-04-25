@@ -13,7 +13,7 @@ trait ShadowRootInit extends js.Object {
     * closed: Denies access to the node(s) of a closed shadow root from JavaScript outside it: element.shadowRoot; //
     * Returns null
     */
-  var mode: EncapsulationMode
+  var mode: ShadowRootMode
 
   /** A boolean that, when set to true, specifies behavior that mitigates custom element issues around focusability.
     * When a non-focusable part of the shadow DOM is clicked, the first focusable part is given focus, and the shadow
