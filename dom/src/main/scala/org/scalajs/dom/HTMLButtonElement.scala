@@ -76,4 +76,6 @@ abstract class HTMLButtonElement extends HTMLElement {
   def checkValidity(): Boolean = js.native
 
   def setCustomValidity(error: String): Unit = js.native
+
+  def reportValidity(): Boolean = js.native
 }

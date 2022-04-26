@@ -3492,6 +3492,7 @@ HTMLButtonElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLButtonElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLButtonElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLButtonElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLButtonElement[JC] def reportValidity(): Boolean
 HTMLButtonElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLButtonElement[JC] def requestPointerLock(): Unit
 HTMLButtonElement[JC] def scrollHeight: Int
@@ -5094,6 +5095,7 @@ HTMLFieldSetElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLFieldSetElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLFieldSetElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLFieldSetElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLFieldSetElement[JC] def reportValidity(): Boolean
 HTMLFieldSetElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLFieldSetElement[JC] def requestPointerLock(): Unit
 HTMLFieldSetElement[JC] def scrollHeight: Int
@@ -5313,6 +5315,7 @@ HTMLFormElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLFormElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLFormElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLFormElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLFormElement[JC] def reportValidity(): Boolean
 HTMLFormElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLFormElement[JC] def requestPointerLock(): Unit
 HTMLFormElement[JC] def reset(): Unit
@@ -6745,6 +6748,7 @@ HTMLInputElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLInputElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLInputElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLInputElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLInputElement[JC] def reportValidity(): Boolean
 HTMLInputElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLInputElement[JC] def requestPointerLock(): Unit
 HTMLInputElement[JC] var required: Boolean
@@ -9003,6 +9007,7 @@ HTMLObjectElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLObjectElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLObjectElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLObjectElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLObjectElement[JC] def reportValidity(): Boolean
 HTMLObjectElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLObjectElement[JC] def requestPointerLock(): Unit
 HTMLObjectElement[JC] def scrollHeight: Int
@@ -10827,6 +10832,7 @@ HTMLSelectElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLSelectElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLSelectElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLSelectElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLSelectElement[JC] def reportValidity(): Boolean
 HTMLSelectElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLSelectElement[JC] def requestPointerLock(): Unit
 HTMLSelectElement[JC] var required: Boolean
@@ -12857,6 +12863,7 @@ HTMLTextAreaElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLTextAreaElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTextAreaElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTextAreaElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTextAreaElement[JC] def reportValidity(): Boolean
 HTMLTextAreaElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTextAreaElement[JC] def requestPointerLock(): Unit
 HTMLTextAreaElement[JC] var required: Boolean
