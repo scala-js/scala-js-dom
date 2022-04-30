@@ -109,4 +109,6 @@ abstract class HTMLTextAreaElement extends HTMLElement {
     * suffering from a custom validity error, and does not validate.
     */
   def setCustomValidity(error: String): Unit = js.native
+
+  def reportValidity(): Boolean = js.native
 }

@@ -80,4 +80,10 @@ abstract class HTMLFormElement extends HTMLElement {
   var noValidate: Boolean = js.native
 
   def checkValidity(): Boolean = js.native
+
+  /** The reportValidity() method returns true if the element's child controls satisfy their validation constraints.
+    * When false is returned, cancelable invalid events are fired for each invalid child and validation problems are
+    * reported to the user.
+    */
+  def reportValidity(): Boolean = js.native
 }

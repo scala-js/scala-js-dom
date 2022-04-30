@@ -237,4 +237,10 @@ abstract class HTMLInputElement extends HTMLElement {
     * suffering from a custom validity error, and does not validate.
     */
   def setCustomValidity(error: String): Unit = js.native
+
+  /** The reportValidity() method performs the same validity checking steps as the checkValidity() method. If the value
+    * is invalid, this method also fires the invalid event on the element, and (if the event isn't canceled) reports the
+    * problem to the user.
+    */
+  def reportValidity(): Boolean = js.native
 }
