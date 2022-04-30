@@ -445,4 +445,9 @@ class Window
     * number. You can get the number of pixels the document is scrolled horizontally from the scrollX property.
     */
   def scrollY: Double = js.native
+
+  /** Returns a reference to the CustomElementRegistry object, which can be used to register new custom elements and get
+    * information about previously registered custom elements.
+    */
+  def customElements: CustomElementRegistry = js.native
 }
