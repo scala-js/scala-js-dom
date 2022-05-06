@@ -13,5 +13,5 @@ trait InputEventInit extends UIEventInit {
   var data: js.UndefOr[String] = js.undefined
   var dataTransfer: js.UndefOr[DataTransfer] = js.undefined
   var isComposing: js.UndefOr[Boolean] = js.undefined
-  var ranges: js.UndefOr[js.Array[StaticRange]]
+  var ranges: js.UndefOr[js.Array[StaticRange]] = js.undefined
 }
