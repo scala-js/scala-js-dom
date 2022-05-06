@@ -20,11 +20,11 @@ AbortSignal[JT] def dispatchEvent(evt: Event): Boolean
 AbortSignal[JT] var onabort: js.Function0[Any]
 AbortSignal[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AbortSignal[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-AbstractRange[JT] def collapsed: Boolean
-AbstractRange[JT] def endContainer: Node
-AbstractRange[JT] def endOffset: Int
-AbstractRange[JT] def startContainer: Node
-AbstractRange[JT] def startOffset: Int
+AbstractRange[JC] def collapsed: Boolean
+AbstractRange[JC] def endContainer: Node
+AbstractRange[JC] def endOffset: Int
+AbstractRange[JC] def startContainer: Node
+AbstractRange[JC] def startOffset: Int
 AbstractWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AbstractWorker[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AbstractWorker[JT] def dispatchEvent(evt: Event): Boolean

@@ -7,12 +7,14 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /** The AbstractRange abstract interface is the base class upon which all DOM range types are defined. A range is an
   * object that indicates the start and end points of a section of content within the document.
   */
 @js.native
-trait AbstractRange extends js.Object {
+@JSGlobal
+abstract class AbstractRange extends js.Object {
 
   /** The Range.startOffset read-only property returns a number representing where in the startContainer the Range
     * starts.
