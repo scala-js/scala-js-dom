@@ -14,7 +14,8 @@ trait ServiceWorkerContainer extends EventTarget {
     * method can't return a ServiceWorkerRegistration, it returns a Promise. You can call this method unconditionally
     * from the controlled page, i.e., you don't need to first check whether there's an active registration.
     */
-  def register(scriptURL: String, options: js.Object = js.native): js.Promise[ServiceWorkerRegistration] = js.native
+  def register(scriptURL: String,
+      options: ServiceWorkerRegistrationOptions = js.native): js.Promise[ServiceWorkerRegistration] = js.native
 
   /** The ServiceWorkerContainer.controller read-only property of the ServiceWorkerContainer interface returns the
     * ServiceWorker whose state is activated (the same object returned by ServiceWorkerRegistration.active). This
