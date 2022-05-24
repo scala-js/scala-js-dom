@@ -24452,7 +24452,7 @@ ServiceWorkerContainer[JT] def getRegistrations(): js.Promise[js.Array[ServiceWo
 ServiceWorkerContainer[JT] var oncontrollerchange: js.Function1[Event, _]
 ServiceWorkerContainer[JT] var onmessage: js.Function1[MessageEvent, _]
 ServiceWorkerContainer[JT] def ready: js.Promise[ServiceWorkerRegistration]
-ServiceWorkerContainer[JT] def register(scriptURL: String, options: js.Object?): js.Promise[ServiceWorkerRegistration]
+ServiceWorkerContainer[JT] def register(scriptURL: String, options: ServiceWorkerRegistrationOptions?): js.Promise[ServiceWorkerRegistration]
 ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ServiceWorkerContainer[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ServiceWorkerGlobalScope[JO] def self: ServiceWorkerGlobalScope
@@ -24520,12 +24520,19 @@ ServiceWorkerRegistration[JT] def showNotification(title: String, options: Notif
 ServiceWorkerRegistration[JT] def unregister(): js.Promise[Boolean]
 ServiceWorkerRegistration[JT] def update(): js.Promise[Unit]
 ServiceWorkerRegistration[JT] var waiting: ServiceWorker
+ServiceWorkerRegistrationOptions[JT] var scope: js.UndefOr[String]
+ServiceWorkerRegistrationOptions[JT] var `type`: js.UndefOr[WorkerType]
+ServiceWorkerRegistrationOptions[JT] var updateViaCache: js.UndefOr[ServiceWorkerUpdateViaCache]
 ServiceWorkerState[JT]
 ServiceWorkerState[SO] val activated: ServiceWorkerState
 ServiceWorkerState[SO] val activating: ServiceWorkerState
 ServiceWorkerState[SO] val installed: ServiceWorkerState
 ServiceWorkerState[SO] val installing: ServiceWorkerState
 ServiceWorkerState[SO] val redundant: ServiceWorkerState
+ServiceWorkerUpdateViaCache[JT]
+ServiceWorkerUpdateViaCache[SO] val all: ServiceWorkerUpdateViaCache
+ServiceWorkerUpdateViaCache[SO] val imports: ServiceWorkerUpdateViaCache
+ServiceWorkerUpdateViaCache[SO] val none: ServiceWorkerUpdateViaCache
 ShadowRoot[JC] def activeElement: Element
 ShadowRoot[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ShadowRoot[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
