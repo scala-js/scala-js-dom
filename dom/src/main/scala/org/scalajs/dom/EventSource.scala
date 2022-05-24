@@ -18,7 +18,9 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class EventSource(URL: String, settings: js.Dynamic = null) extends EventTarget {
+class EventSource private[this] extends EventTarget {
+
+  def this(url: String, configuration: EventSourceInit = js.native) = this()
 
   /** The url attribute must return the absolute URL that resulted from resolving the value that was passed to the
     * constructor. W3C 2012

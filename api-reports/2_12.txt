@@ -1856,6 +1856,7 @@ EventSource[JC] def withCredentials: Boolean
 EventSource[JO] val CLOSED: Int
 EventSource[JO] val CONNECTING: Int
 EventSource[JO] val OPEN: Int
+EventSourceInit[JT] var withCredentials: js.UndefOr[Boolean]
 EventTarget[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 EventTarget[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 EventTarget[JC] def dispatchEvent(evt: Event): Boolean
