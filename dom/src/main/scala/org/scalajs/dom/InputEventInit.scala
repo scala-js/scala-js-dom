@@ -11,7 +11,5 @@ import scala.scalajs.js
 trait InputEventInit extends UIEventInit {
   var inputType: js.UndefOr[InputType] = js.undefined
   var data: js.UndefOr[String] = js.undefined
-  var dataTransfer: js.UndefOr[DataTransfer] = js.undefined
   var isComposing: js.UndefOr[Boolean] = js.undefined
-  var ranges: js.UndefOr[js.Array[StaticRange]] = js.undefined
 }
