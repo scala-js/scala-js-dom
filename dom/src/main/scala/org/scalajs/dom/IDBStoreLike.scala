@@ -83,7 +83,7 @@ trait IDBStoreLike[S] extends js.Object {
     *   [[IDBRequest]] with the `target` value being a new cursor or `null`.
     */
   def openCursor(range: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
-      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest[S, IDBCursor[S]] = js.native
+      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest[S, IDBCursorWithValue[S]] = js.native
 
   /** The method sets the position of the cursor to the appropriate key, based on the specified direction.
     *
@@ -91,5 +91,5 @@ trait IDBStoreLike[S] extends js.Object {
     *   [[IDBRequest]] with the `target` value being a new cursor or `null`.
     */
   def openKeyCursor(range: js.UndefOr[IDBKeyRange | IDBKey] = js.native,
-      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest[S, IDBCursorReadOnly[S]] = js.native
+      direction: js.UndefOr[IDBCursorDirection] = js.native): IDBRequest[S, IDBCursor[S]] = js.native
 }
