@@ -17,33 +17,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class Range extends js.Object {
-
-  /** The Range.startOffset read-only property returns a number representing where in the startContainer the Range
-    * starts.
-    */
-  def startOffset: Int = js.native
-
-  /** The Range.collapsed read-only property returns a Boolean flag indicating whether the start and end points of the
-    * Range are at the same position. It returns true if the start and end boundary points of the Range are the same
-    * point in the DOM, false if not.
-    */
-  def collapsed: Boolean = js.native
-
-  /** The Range.endOffset read-only property returns a number representing where in the Range.endContainer the Range
-    * ends.
-    */
-  def endOffset: Int = js.native
-
-  /** The Range.startContainer read-only property returns the Node within which the Range starts. To change the start
-    * position of a node, use one of the Range.setStart() methods.
-    */
-  def startContainer: Node = js.native
-
-  /** The Range.endContainer read-only property returns the Node within which the Range ends. To change the end position
-    * of a node, use the Range.setEnd() method or a similar one.
-    */
-  def endContainer: Node = js.native
+class Range extends AbstractRange {
 
   /** The Range.commonAncestorContainer read-only property returns the deepest, or further down the document tree, Node
     * that contains both the Range.startContainer and Range.endContainer nodes.
