@@ -15,7 +15,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class Performance private[this]() extends js.Object {
+class Performance private[this] () extends js.Object {
 
   /** The Performance.navigation read-only property returns a PerformanceNavigation object representing the type of
     * navigation that occurs in the given browsing context, like the amount of redirections needed to fetch the

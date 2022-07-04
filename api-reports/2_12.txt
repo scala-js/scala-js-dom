@@ -15763,9 +15763,9 @@ Pbkdf2Params[SO] val salt = salt0
 Performance[JC] def clearMarks(markName: String?): Unit
 Performance[JC] def clearMeasures(measureName: String?): Unit
 Performance[JC] def clearResourceTimings(): Unit
-Performance[JC] def getEntries(): js.Dynamic
-Performance[JC] def getEntriesByName(name: String, entryType: String?): js.Dynamic
-Performance[JC] def getEntriesByType(entryType: String): js.Dynamic
+Performance[JC] def getEntries(): js.Array[PerformanceEntry]
+Performance[JC] def getEntriesByName(name: String, entryType: String?): js.Array[PerformanceEntry]
+Performance[JC] def getEntriesByType(entryType: String): js.Array[PerformanceEntry]
 Performance[JC] def getMarks(markName: String?): js.Dynamic
 Performance[JC] def getMeasures(measureName: String?): js.Dynamic
 Performance[JC] def mark(markName: String): Unit
@@ -15775,15 +15775,15 @@ Performance[JC] def now(): Double
 Performance[JC] def setResourceTimingBufferSize(maxSize: Int): Unit
 Performance[JC] def timing: PerformanceTiming
 Performance[JC] def toJSON(): js.Dynamic
-PerformanceEntry[JC] def duration: Int
+PerformanceEntry[JC] def duration: Double
 PerformanceEntry[JC] def entryType: String
 PerformanceEntry[JC] def name: String
 PerformanceEntry[JC] def startTime: Double
-PerformanceMark[JC] def duration: Int
+PerformanceMark[JC] def duration: Double
 PerformanceMark[JC] def entryType: String
 PerformanceMark[JC] def name: String
 PerformanceMark[JC] def startTime: Double
-PerformanceMeasure[JC] def duration: Int
+PerformanceMeasure[JC] def duration: Double
 PerformanceMeasure[JC] def entryType: String
 PerformanceMeasure[JC] def name: String
 PerformanceMeasure[JC] def startTime: Double
@@ -15798,7 +15798,7 @@ PerformanceResourceTiming[JC] def connectEnd: Int
 PerformanceResourceTiming[JC] def connectStart: Int
 PerformanceResourceTiming[JC] def domainLookupEnd: Int
 PerformanceResourceTiming[JC] def domainLookupStart: Int
-PerformanceResourceTiming[JC] def duration: Int
+PerformanceResourceTiming[JC] def duration: Double
 PerformanceResourceTiming[JC] def entryType: String
 PerformanceResourceTiming[JC] def fetchStart: Int
 PerformanceResourceTiming[JC] def initiatorType: String
