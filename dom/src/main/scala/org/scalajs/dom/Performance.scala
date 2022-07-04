@@ -15,7 +15,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class Performance extends js.Object {
+class Performance private[this]() extends js.Object {
 
   /** The Performance.navigation read-only property returns a PerformanceNavigation object representing the type of
     * navigation that occurs in the given browsing context, like the amount of redirections needed to fetch the
@@ -28,7 +28,7 @@ class Performance extends js.Object {
     */
   def timing: PerformanceTiming = js.native
 
-  def getEntriesByType(entryType: String): js.Dynamic = js.native
+  def getEntriesByType(entryType: String): js.Array[PerformanceEntry] = js.native
 
   /** Is a jsonizer returning a json object representing the Performance object. */
   def toJSON(): js.Dynamic = js.native
@@ -45,9 +45,9 @@ class Performance extends js.Object {
 
   def measure(measureName: String, startMarkName: String = js.native, endMarkName: String = js.native): Unit = js.native
 
-  def getEntriesByName(name: String, entryType: String = js.native): js.Dynamic = js.native
+  def getEntriesByName(name: String, entryType: String = js.native): js.Array[PerformanceEntry] = js.native
 
-  def getEntries(): js.Dynamic = js.native
+  def getEntries(): js.Array[PerformanceEntry] = js.native
 
   def clearMeasures(measureName: String = js.native): Unit = js.native
 
