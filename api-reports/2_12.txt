@@ -4149,6 +4149,210 @@ HTMLDataListElement[JC] var tabIndex: Int
 HTMLDataListElement[JC] def tagName: String
 HTMLDataListElement[JC] var textContent: String
 HTMLDataListElement[JC] var title: String
+HTMLDialogElement[JC] var accessKey: String
+HTMLDialogElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+HTMLDialogElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+HTMLDialogElement[JC] def after(nodes: Node | String*): Unit
+HTMLDialogElement[JC] def append(nodes: Node | String*): Unit
+HTMLDialogElement[JC] def appendChild(newChild: Node): Node
+HTMLDialogElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
+HTMLDialogElement[JC] def attributes: NamedNodeMap
+HTMLDialogElement[JC] def baseURI: String
+HTMLDialogElement[JC] def before(nodes: Node | String*): Unit
+HTMLDialogElement[JC] def blur(): Unit
+HTMLDialogElement[JC] def childElementCount: Int
+HTMLDialogElement[JC] def childNodes: NodeList[Node]
+HTMLDialogElement[JC] def children: HTMLCollection[Element]
+HTMLDialogElement[JC] var classList: DOMTokenList
+HTMLDialogElement[JC] var className: String
+HTMLDialogElement[JC] def click(): Unit
+HTMLDialogElement[JC] def clientHeight: Int
+HTMLDialogElement[JC] def clientLeft: Int
+HTMLDialogElement[JC] def clientTop: Int
+HTMLDialogElement[JC] def clientWidth: Int
+HTMLDialogElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLDialogElement[JC] def close(returnValue: String?): Unit
+HTMLDialogElement[JC] def compareDocumentPosition(other: Node): Int
+HTMLDialogElement[JC] def contains(child: HTMLElement): Boolean
+HTMLDialogElement[JC] def contains(otherNode: Node): Boolean
+HTMLDialogElement[JC] var contentEditable: String
+HTMLDialogElement[JC] def dataset: js.Dictionary[String]
+HTMLDialogElement[JC] var dir: String
+HTMLDialogElement[JC] def dispatchEvent(evt: Event): Boolean
+HTMLDialogElement[JC] var draggable: Boolean
+HTMLDialogElement[JC] var filters: Object
+HTMLDialogElement[JC] def firstChild: Node
+HTMLDialogElement[JC] def firstElementChild: Element
+HTMLDialogElement[JC] def focus(): Unit
+HTMLDialogElement[JC] def getAttribute(name: String): String
+HTMLDialogElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
+HTMLDialogElement[JC] def getAttributeNode(name: String): Attr
+HTMLDialogElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
+HTMLDialogElement[JC] def getBoundingClientRect(): DOMRect
+HTMLDialogElement[JC] def getClientRects(): DOMRectList
+HTMLDialogElement[JC] def getElementsByClassName(classNames: String): HTMLCollection[Element]
+HTMLDialogElement[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
+HTMLDialogElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
+HTMLDialogElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] def hasAttribute(name: String): Boolean
+HTMLDialogElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
+HTMLDialogElement[JC] def hasAttributes(): Boolean
+HTMLDialogElement[JC] def hasChildNodes(): Boolean
+HTMLDialogElement[JC] var id: String
+HTMLDialogElement[JC] var innerHTML: String
+HTMLDialogElement[JC] var innerText: String
+HTMLDialogElement[JC] def insertAdjacentElement(position: String, element: Element): Element
+HTMLDialogElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
+HTMLDialogElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+HTMLDialogElement[JC] def isConnected: Boolean
+HTMLDialogElement[JC] def isContentEditable: Boolean
+HTMLDialogElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
+HTMLDialogElement[JC] def isEqualNode(arg: Node): Boolean
+HTMLDialogElement[JC] def isSameNode(other: Node): Boolean
+HTMLDialogElement[JC] def isSupported(feature: String, version: String): Boolean
+HTMLDialogElement[JC] var lang: String
+HTMLDialogElement[JC] def lastChild: Node
+HTMLDialogElement[JC] def lastElementChild: Element
+HTMLDialogElement[JC] def localName: String
+HTMLDialogElement[JC] def lookupNamespaceURI(prefix: String): String
+HTMLDialogElement[JC] def lookupPrefix(namespaceURI: String): String
+HTMLDialogElement[JC] var lostpointercapture: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] def matches(selector: String): Boolean
+HTMLDialogElement[JC] def namespaceURI: String
+HTMLDialogElement[JC] def nextElementSibling: Element
+HTMLDialogElement[JC] def nextSibling: Node
+HTMLDialogElement[JC] def nodeName: String
+HTMLDialogElement[JC] def nodeType: Int
+HTMLDialogElement[JC] var nodeValue: String
+HTMLDialogElement[JC] def normalize(): Unit
+HTMLDialogElement[JC] def offsetHeight: Double
+HTMLDialogElement[JC] def offsetLeft: Double
+HTMLDialogElement[JC] def offsetParent: Element
+HTMLDialogElement[JC] def offsetTop: Double
+HTMLDialogElement[JC] def offsetWidth: Double
+HTMLDialogElement[JC] var onabort: js.Function1[UIEvent, _]
+HTMLDialogElement[JC] var onactivate: js.Function1[UIEvent, _]
+HTMLDialogElement[JC] var onbeforeactivate: js.Function1[UIEvent, _]
+HTMLDialogElement[JC] var onbeforecopy: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var onbeforecut: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var onbeforedeactivate: js.Function1[UIEvent, _]
+HTMLDialogElement[JC] var onbeforepaste: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var onblur: js.Function1[FocusEvent, _]
+HTMLDialogElement[JC] var oncanplay: js.Function1[Event, _]
+HTMLDialogElement[JC] var oncanplaythrough: js.Function1[Event, _]
+HTMLDialogElement[JC] var onchange: js.Function1[Event, _]
+HTMLDialogElement[JC] var onclick: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var oncontextmenu: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
+HTMLDialogElement[JC] var oncuechange: js.Function1[Event, _]
+HTMLDialogElement[JC] var oncut: js.Function1[ClipboardEvent, _]
+HTMLDialogElement[JC] var ondblclick: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var ondeactivate: js.Function1[UIEvent, _]
+HTMLDialogElement[JC] var ondrag: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var ondragend: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var ondragenter: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var ondragleave: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var ondragover: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var ondragstart: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var ondrop: js.Function1[DragEvent, _]
+HTMLDialogElement[JC] var ondurationchange: js.Function1[Event, _]
+HTMLDialogElement[JC] var onemptied: js.Function1[Event, _]
+HTMLDialogElement[JC] var onended: js.Function1[Event, _]
+HTMLDialogElement[JC] var onfocus: js.Function1[FocusEvent, _]
+HTMLDialogElement[JC] var onfocusin: js.Function1[FocusEvent, _]
+HTMLDialogElement[JC] var onfocusout: js.Function1[FocusEvent, _]
+HTMLDialogElement[JC] var onfullscreenchange: js.Function1[Event, _]
+HTMLDialogElement[JC] var onfullscreenerror: js.Function1[Event, _]
+HTMLDialogElement[JC] var onhelp: js.Function1[Event, _]
+HTMLDialogElement[JC] var oninput: js.Function1[Event, _]
+HTMLDialogElement[JC] var onkeydown: js.Function1[KeyboardEvent, _]
+HTMLDialogElement[JC] var onkeypress: js.Function1[KeyboardEvent, _]
+HTMLDialogElement[JC] var onkeyup: js.Function1[KeyboardEvent, _]
+HTMLDialogElement[JC] var onloadeddata: js.Function1[Event, _]
+HTMLDialogElement[JC] var onloadedmetadata: js.Function1[Event, _]
+HTMLDialogElement[JC] var onloadstart: js.Function1[Event, _]
+HTMLDialogElement[JC] var onmousedown: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var onmouseenter: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var onmouseleave: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var onmousemove: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var onmouseout: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var onmouseover: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var onmouseup: js.Function1[MouseEvent, _]
+HTMLDialogElement[JC] var onmousewheel: js.Function1[WheelEvent, _]
+HTMLDialogElement[JC] var onpaste: js.Function1[ClipboardEvent, _]
+HTMLDialogElement[JC] var onpause: js.Function1[Event, _]
+HTMLDialogElement[JC] var onplay: js.Function1[Event, _]
+HTMLDialogElement[JC] var onplaying: js.Function1[Event, _]
+HTMLDialogElement[JC] var onpointercancel: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] var onpointerdown: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] var onpointerenter: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] var onpointerleave: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] var onpointermove: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] var onpointerout: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] var onpointerover: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] var onpointerup: js.Function1[PointerEvent, _]
+HTMLDialogElement[JC] var onprogress: js.Function1[js.Any, _]
+HTMLDialogElement[JC] var onratechange: js.Function1[Event, _]
+HTMLDialogElement[JC] var onreadystatechange: js.Function1[Event, _]
+HTMLDialogElement[JC] var onreset: js.Function1[Event, _]
+HTMLDialogElement[JC] var onscroll: js.Function1[UIEvent, _]
+HTMLDialogElement[JC] var onseeked: js.Function1[Event, _]
+HTMLDialogElement[JC] var onseeking: js.Function1[Event, _]
+HTMLDialogElement[JC] var onselect: js.Function1[UIEvent, _]
+HTMLDialogElement[JC] var onselectstart: js.Function1[Event, _]
+HTMLDialogElement[JC] var onstalled: js.Function1[Event, _]
+HTMLDialogElement[JC] var onsubmit: js.Function1[Event, _]
+HTMLDialogElement[JC] var onsuspend: js.Function1[Event, _]
+HTMLDialogElement[JC] var ontimeupdate: js.Function1[Event, _]
+HTMLDialogElement[JC] var onvolumechange: js.Function1[Event, _]
+HTMLDialogElement[JC] var onwaiting: js.Function1[Event, _]
+HTMLDialogElement[JC] var onwheel: js.Function1[WheelEvent, _]
+HTMLDialogElement[JC] def open: Boolean
+HTMLDialogElement[JC] var outerHTML: String
+HTMLDialogElement[JC] def ownerDocument: Document
+HTMLDialogElement[JC] override def ownerDocument: HTMLDocument
+HTMLDialogElement[JC] var parentElement: HTMLElement
+HTMLDialogElement[JC] def parentNode: Node
+HTMLDialogElement[JC] def prefix: String
+HTMLDialogElement[JC] def prepend(nodes: Node | String*): Unit
+HTMLDialogElement[JC] def previousElementSibling: Element
+HTMLDialogElement[JC] def previousSibling: Node
+HTMLDialogElement[JC] def querySelector(selectors: String): Element
+HTMLDialogElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+HTMLDialogElement[JC] var readyState: js.Any
+HTMLDialogElement[JC] var recordNumber: js.Any
+HTMLDialogElement[JC] def remove(): Unit
+HTMLDialogElement[JC] def removeAttribute(name: String): Unit
+HTMLDialogElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
+HTMLDialogElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
+HTMLDialogElement[JC] def removeChild(oldChild: Node): Node
+HTMLDialogElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+HTMLDialogElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+HTMLDialogElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
+HTMLDialogElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLDialogElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
+HTMLDialogElement[JC] def requestPointerLock(): Unit
+HTMLDialogElement[JC] var returnValue: String
+HTMLDialogElement[JC] def scrollHeight: Int
+HTMLDialogElement[JC] def scrollIntoView(top: Boolean?): Unit
+HTMLDialogElement[JC] var scrollLeft: Double
+HTMLDialogElement[JC] var scrollTop: Double
+HTMLDialogElement[JC] def scrollWidth: Int
+HTMLDialogElement[JC] def setAttribute(name: String, value: String): Unit
+HTMLDialogElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
+HTMLDialogElement[JC] def setAttributeNode(newAttr: Attr): Attr
+HTMLDialogElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLDialogElement[JC] def shadowRoot: ShadowRoot
+HTMLDialogElement[JC] def show(): Unit
+HTMLDialogElement[JC] def showModal(): Unit
+HTMLDialogElement[JC] var spellcheck: Boolean
+HTMLDialogElement[JC] def style: CSSStyleDeclaration
+HTMLDialogElement[JC] def style_ = (value: CSSStyleDeclaration): Unit
+HTMLDialogElement[JC] def style_ = (value: String): Unit
+HTMLDialogElement[JC] var tabIndex: Int
+HTMLDialogElement[JC] def tagName: String
+HTMLDialogElement[JC] var textContent: String
+HTMLDialogElement[JC] var title: String
 HTMLDivElement[JC] var accessKey: String
 HTMLDivElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 HTMLDivElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
