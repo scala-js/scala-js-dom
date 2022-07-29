@@ -14484,8 +14484,10 @@ History[JC] def go(delta: Int): Unit
 History[JC] def length: Int
 History[JC] def pushState(statedata: js.Any, title: String): Unit
 History[JC] def pushState(statedata: js.Any, title: String, url: String): Unit
+History[JC] def pushState(statedata: js.Any, title: String, url: URL): Unit
 History[JC] def replaceState(statedata: js.Any, title: String): Unit
 History[JC] def replaceState(statedata: js.Any, title: String, url: String): Unit
+History[JC] def replaceState(statedata: js.Any, title: String, url: URL): Unit
 History[JC] def state: js.Any
 HkdfCtrParams[JT] val context: BufferSource
 HkdfCtrParams[JT] val hash: HashAlgorithmIdentifier

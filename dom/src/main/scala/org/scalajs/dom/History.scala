@@ -50,6 +50,8 @@ class History extends js.Object {
 
   def replaceState(statedata: js.Any, title: String, url: String): Unit = js.native
 
+  def replaceState(statedata: js.Any, title: String, url: URL): Unit = js.native
+
   /** Updates the most recent entry on the history stack to have the specified data, title, and, if provided, URL. The
     * data is treated as opaque by the DOM; you may specify any JavaScript object that can be serialized.  Note that
     * Firefox currently ignores the title parameter; for more information, see manipulating the browser history. Note:
@@ -61,6 +63,8 @@ class History extends js.Object {
   def replaceState(statedata: js.Any, title: String): Unit = js.native
 
   def pushState(statedata: js.Any, title: String, url: String): Unit = js.native
+
+  def pushState(statedata: js.Any, title: String, url: URL): Unit = js.native
 
   /** Pushes the given data onto the session history stack with the specified title and, if provided, URL. The data is
     * treated as opaque by the DOM; you may specify any JavaScript object that can be serialized.  Note that Firefox
