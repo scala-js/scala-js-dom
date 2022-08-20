@@ -47,4 +47,9 @@ class Request(input: RequestInfo, init: RequestInit = null) extends Body {
   def keepalive: Boolean = js.native
 
   def signal: AbortSignal = js.native
+
+  /** "half" is the only valid value and it is for initiating a half-duplex fetch (i.e., the user agent sends the entire
+    * request before processing the response).
+    */
+  def duplex: RequestDuplex = js.native
 }

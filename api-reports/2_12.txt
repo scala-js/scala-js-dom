@@ -16510,6 +16510,7 @@ Request[JC] def bodyUsed: Boolean
 Request[JC] def cache: RequestCache
 Request[JC] def credentials: RequestCredentials
 Request[JC] def destination: RequestDestination
+Request[JC] def duplex: RequestDuplex
 Request[JC] def formData(): js.Promise[FormData]
 Request[JC] def headers: Headers
 Request[JC] def integrity: String
@@ -16542,6 +16543,8 @@ RequestDestination[SO] val sharedworker: RequestDestination
 RequestDestination[SO] val subresource: RequestDestination
 RequestDestination[SO] val unknown: RequestDestination
 RequestDestination[SO] val worker: RequestDestination
+RequestDuplex[JT]
+RequestDuplex[SO] val half: RequestDuplex
 RequestInit[JT] var body: js.UndefOr[BodyInit]
 RequestInit[JT] var cache: js.UndefOr[RequestCache]
 RequestInit[JT] var credentials: js.UndefOr[RequestCredentials]
