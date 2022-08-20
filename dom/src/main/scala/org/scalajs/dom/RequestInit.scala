@@ -30,6 +30,11 @@ trait RequestInit extends js.Object {
 
   var signal: js.UndefOr[AbortSignal] = js.undefined
 
+  /** "half" is the only valid value and it is for initiating a half-duplex fetch (i.e., the user agent sends the entire
+    * request before processing the response).
+    */
+  var duplex: js.UndefOr[RequestDuplex] = js.undefined
+
   /** The whatwg spec section on [[https://fetch.spec.whatwg.org/#requestinit RequestInit dictionary]] has a comment
     * that states that this value "can only be set to null". In the detailed steps section for
     * [[https://fetch.spec.whatwg.org/#dom-request the Request(input,init) constructor]] it says even more clearly: "If
