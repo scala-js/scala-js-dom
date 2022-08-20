@@ -71,4 +71,15 @@ class History extends js.Object {
     * safely passed.
     */
   def pushState(statedata: js.Any, title: String): Unit = js.native
+
+  /** The scrollRestoration property of History interface allows web applications to explicitly set default scroll
+    * restoration behavior on history navigation.
+    *
+    * Can have onne of the followings values:
+    *
+    * auto: The location on the page to which the user has scrolled will be restored.
+    *
+    * manual: The location on the page is not restored. The user will have to scroll to the location manually.
+    */
+  var scrollRestoration: ScrollRestoration = js.native
 }

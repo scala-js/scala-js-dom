@@ -14486,6 +14486,7 @@ History[JC] def pushState(statedata: js.Any, title: String): Unit
 History[JC] def pushState(statedata: js.Any, title: String, url: String): Unit
 History[JC] def replaceState(statedata: js.Any, title: String): Unit
 History[JC] def replaceState(statedata: js.Any, title: String, url: String): Unit
+History[JC] var scrollRestoration: ScrollRestoration
 History[JC] def state: js.Any
 HkdfCtrParams[JT] val context: BufferSource
 HkdfCtrParams[JT] val hash: HashAlgorithmIdentifier
@@ -24703,6 +24704,9 @@ Screen[JC] def colorDepth: Int
 Screen[JC] def height: Double
 Screen[JC] def pixelDepth: Int
 Screen[JC] def width: Double
+ScrollRestoration[JT]
+ScrollRestoration[SO] val auto: ScrollRestoration
+ScrollRestoration[SO] val manual: ScrollRestoration
 Selection[JC] def addRange(range: Range): Unit
 Selection[JC] def anchorNode: Node
 Selection[JC] def anchorOffset: Int
