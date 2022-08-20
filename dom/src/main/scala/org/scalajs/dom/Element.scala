@@ -265,4 +265,9 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
 
   /** Returns the open shadow root that is hosted by the element, or null if no open shadow root is present. */
   def shadowRoot: ShadowRoot = js.native
+
+  /** The Element.replaceWith() method replaces this Element in the children list of its parent with a set of Node or
+    * string objects. String objects are inserted as equivalent Text nodes.
+    */
+  def replaceWith(nodes: (Node | String)*): Unit = js.native
 }

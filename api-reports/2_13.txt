@@ -1782,6 +1782,7 @@ Element[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Fun
 Element[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Element[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 Element[JC] def replaceChildren(nodes: Node | String*): Unit
+Element[JC] def replaceWith(nodes: Node | String*): Unit
 Element[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 Element[JC] def requestPointerLock(): Unit
 Element[JC] def scrollHeight: Int
@@ -2251,6 +2252,7 @@ HTMLAnchorElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLAnchorElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLAnchorElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLAnchorElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLAnchorElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLAnchorElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLAnchorElement[JC] def requestPointerLock(): Unit
 HTMLAnchorElement[JC] def scrollHeight: Int
@@ -2463,6 +2465,7 @@ HTMLAreaElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLAreaElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLAreaElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLAreaElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLAreaElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLAreaElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLAreaElement[JC] def requestPointerLock(): Unit
 HTMLAreaElement[JC] def scrollHeight: Int
@@ -2687,6 +2690,7 @@ HTMLAudioElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLAudioElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLAudioElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLAudioElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLAudioElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLAudioElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLAudioElement[JC] def requestPointerLock(): Unit
 HTMLAudioElement[JC] def scrollHeight: Int
@@ -2892,6 +2896,7 @@ HTMLBRElement[JC] def removeEventListener[T <: Event](`type`: String, listener: 
 HTMLBRElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLBRElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLBRElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLBRElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLBRElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLBRElement[JC] def requestPointerLock(): Unit
 HTMLBRElement[JC] def scrollHeight: Int
@@ -3092,6 +3097,7 @@ HTMLBaseElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLBaseElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLBaseElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLBaseElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLBaseElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLBaseElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLBaseElement[JC] def requestPointerLock(): Unit
 HTMLBaseElement[JC] def scrollHeight: Int
@@ -3305,6 +3311,7 @@ HTMLBodyElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLBodyElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLBodyElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLBodyElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLBodyElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLBodyElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLBodyElement[JC] def requestPointerLock(): Unit
 HTMLBodyElement[JC] var scroll: String
@@ -3515,6 +3522,7 @@ HTMLButtonElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLButtonElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLButtonElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLButtonElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLButtonElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLButtonElement[JC] def reportValidity(): Boolean
 HTMLButtonElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLButtonElement[JC] def requestPointerLock(): Unit
@@ -3724,6 +3732,7 @@ HTMLCanvasElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLCanvasElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLCanvasElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLCanvasElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLCanvasElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLCanvasElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLCanvasElement[JC] def requestPointerLock(): Unit
 HTMLCanvasElement[JC] def scrollHeight: Int
@@ -3929,6 +3938,7 @@ HTMLDListElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLDListElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLDListElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLDListElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLDListElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLDListElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLDListElement[JC] def requestPointerLock(): Unit
 HTMLDListElement[JC] def scrollHeight: Int
@@ -4129,6 +4139,7 @@ HTMLDataListElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLDataListElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLDataListElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLDataListElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLDataListElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLDataListElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLDataListElement[JC] def requestPointerLock(): Unit
 HTMLDataListElement[JC] def scrollHeight: Int
@@ -4330,6 +4341,7 @@ HTMLDialogElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLDialogElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLDialogElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLDialogElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLDialogElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLDialogElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLDialogElement[JC] def requestPointerLock(): Unit
 HTMLDialogElement[JC] var returnValue: String
@@ -4532,6 +4544,7 @@ HTMLDivElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 HTMLDivElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLDivElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLDivElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLDivElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLDivElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLDivElement[JC] def requestPointerLock(): Unit
 HTMLDivElement[JC] def scrollHeight: Int
@@ -4931,6 +4944,7 @@ HTMLElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js
 HTMLElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLElement[JC] def requestPointerLock(): Unit
 HTMLElement[JC] def scrollHeight: Int
@@ -5132,6 +5146,7 @@ HTMLEmbedElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLEmbedElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLEmbedElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLEmbedElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLEmbedElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLEmbedElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLEmbedElement[JC] def requestPointerLock(): Unit
 HTMLEmbedElement[JC] def scrollHeight: Int
@@ -5336,6 +5351,7 @@ HTMLFieldSetElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLFieldSetElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLFieldSetElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLFieldSetElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLFieldSetElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLFieldSetElement[JC] def reportValidity(): Boolean
 HTMLFieldSetElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLFieldSetElement[JC] def requestPointerLock(): Unit
@@ -5558,6 +5574,7 @@ HTMLFormElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLFormElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLFormElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLFormElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLFormElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLFormElement[JC] def reportValidity(): Boolean
 HTMLFormElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLFormElement[JC] def requestPointerLock(): Unit
@@ -5762,6 +5779,7 @@ HTMLHRElement[JC] def removeEventListener[T <: Event](`type`: String, listener: 
 HTMLHRElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLHRElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLHRElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLHRElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLHRElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLHRElement[JC] def requestPointerLock(): Unit
 HTMLHRElement[JC] def scrollHeight: Int
@@ -5961,6 +5979,7 @@ HTMLHeadElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLHeadElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLHeadElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLHeadElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLHeadElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLHeadElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLHeadElement[JC] def requestPointerLock(): Unit
 HTMLHeadElement[JC] def scrollHeight: Int
@@ -6160,6 +6179,7 @@ HTMLHeadingElement[JC] def removeEventListener[T <: Event](`type`: String, liste
 HTMLHeadingElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLHeadingElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLHeadingElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLHeadingElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLHeadingElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLHeadingElement[JC] def requestPointerLock(): Unit
 HTMLHeadingElement[JC] def scrollHeight: Int
@@ -6359,6 +6379,7 @@ HTMLHtmlElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLHtmlElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLHtmlElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLHtmlElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLHtmlElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLHtmlElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLHtmlElement[JC] def requestPointerLock(): Unit
 HTMLHtmlElement[JC] def scrollHeight: Int
@@ -6565,6 +6586,7 @@ HTMLIFrameElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLIFrameElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLIFrameElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLIFrameElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLIFrameElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLIFrameElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLIFrameElement[JC] def requestPointerLock(): Unit
 HTMLIFrameElement[JC] var sandbox: DOMSettableTokenList
@@ -6776,6 +6798,7 @@ HTMLImageElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLImageElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLImageElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLImageElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLImageElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLImageElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLImageElement[JC] def requestPointerLock(): Unit
 HTMLImageElement[JC] def scrollHeight: Int
@@ -7005,6 +7028,7 @@ HTMLInputElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLInputElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLInputElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLInputElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLInputElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLInputElement[JC] def reportValidity(): Boolean
 HTMLInputElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLInputElement[JC] def requestPointerLock(): Unit
@@ -7224,6 +7248,7 @@ HTMLLIElement[JC] def removeEventListener[T <: Event](`type`: String, listener: 
 HTMLLIElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLLIElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLLIElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLLIElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLLIElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLLIElement[JC] def requestPointerLock(): Unit
 HTMLLIElement[JC] def scrollHeight: Int
@@ -7426,6 +7451,7 @@ HTMLLabelElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLLabelElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLLabelElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLLabelElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLLabelElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLLabelElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLLabelElement[JC] def requestPointerLock(): Unit
 HTMLLabelElement[JC] def scrollHeight: Int
@@ -7627,6 +7653,7 @@ HTMLLegendElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLLegendElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLLegendElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLLegendElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLLegendElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLLegendElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLLegendElement[JC] def requestPointerLock(): Unit
 HTMLLegendElement[JC] def scrollHeight: Int
@@ -7830,6 +7857,7 @@ HTMLLinkElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLLinkElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLLinkElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLLinkElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLLinkElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLLinkElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLLinkElement[JC] def requestPointerLock(): Unit
 HTMLLinkElement[JC] var rev: String
@@ -8034,6 +8062,7 @@ HTMLMapElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 HTMLMapElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLMapElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLMapElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLMapElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLMapElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLMapElement[JC] def requestPointerLock(): Unit
 HTMLMapElement[JC] def scrollHeight: Int
@@ -8255,6 +8284,7 @@ HTMLMediaElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLMediaElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLMediaElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLMediaElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLMediaElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLMediaElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLMediaElement[JC] def requestPointerLock(): Unit
 HTMLMediaElement[JC] def scrollHeight: Int
@@ -8469,6 +8499,7 @@ HTMLMenuElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLMenuElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLMenuElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLMenuElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLMenuElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLMenuElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLMenuElement[JC] def requestPointerLock(): Unit
 HTMLMenuElement[JC] def scrollHeight: Int
@@ -8673,6 +8704,7 @@ HTMLMetaElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLMetaElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLMetaElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLMetaElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLMetaElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLMetaElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLMetaElement[JC] def requestPointerLock(): Unit
 HTMLMetaElement[JC] def scrollHeight: Int
@@ -8875,6 +8907,7 @@ HTMLModElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 HTMLModElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLModElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLModElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLModElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLModElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLModElement[JC] def requestPointerLock(): Unit
 HTMLModElement[JC] def scrollHeight: Int
@@ -9074,6 +9107,7 @@ HTMLOListElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLOListElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLOListElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLOListElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLOListElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLOListElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLOListElement[JC] def requestPointerLock(): Unit
 HTMLOListElement[JC] def scrollHeight: Int
@@ -9286,6 +9320,7 @@ HTMLObjectElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLObjectElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLObjectElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLObjectElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLObjectElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLObjectElement[JC] def reportValidity(): Boolean
 HTMLObjectElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLObjectElement[JC] def requestPointerLock(): Unit
@@ -9495,6 +9530,7 @@ HTMLOptGroupElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLOptGroupElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLOptGroupElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLOptGroupElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLOptGroupElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLOptGroupElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLOptGroupElement[JC] def requestPointerLock(): Unit
 HTMLOptGroupElement[JC] def scrollHeight: Int
@@ -9700,6 +9736,7 @@ HTMLOptionElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLOptionElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLOptionElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLOptionElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLOptionElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLOptionElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLOptionElement[JC] def requestPointerLock(): Unit
 HTMLOptionElement[JC] def scrollHeight: Int
@@ -9906,6 +9943,7 @@ HTMLParagraphElement[JC] def removeEventListener[T <: Event](`type`: String, lis
 HTMLParagraphElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLParagraphElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLParagraphElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLParagraphElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLParagraphElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLParagraphElement[JC] def requestPointerLock(): Unit
 HTMLParagraphElement[JC] def scrollHeight: Int
@@ -10106,6 +10144,7 @@ HTMLParamElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLParamElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLParamElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLParamElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLParamElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLParamElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLParamElement[JC] def requestPointerLock(): Unit
 HTMLParamElement[JC] def scrollHeight: Int
@@ -10306,6 +10345,7 @@ HTMLPreElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 HTMLPreElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLPreElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLPreElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLPreElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLPreElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLPreElement[JC] def requestPointerLock(): Unit
 HTMLPreElement[JC] def scrollHeight: Int
@@ -10508,6 +10548,7 @@ HTMLProgressElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLProgressElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLProgressElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLProgressElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLProgressElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLProgressElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLProgressElement[JC] def requestPointerLock(): Unit
 HTMLProgressElement[JC] def scrollHeight: Int
@@ -10710,6 +10751,7 @@ HTMLQuoteElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLQuoteElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLQuoteElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLQuoteElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLQuoteElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLQuoteElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLQuoteElement[JC] def requestPointerLock(): Unit
 HTMLQuoteElement[JC] def scrollHeight: Int
@@ -10914,6 +10956,7 @@ HTMLScriptElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLScriptElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLScriptElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLScriptElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLScriptElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLScriptElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLScriptElement[JC] def requestPointerLock(): Unit
 HTMLScriptElement[JC] def scrollHeight: Int
@@ -11129,6 +11172,7 @@ HTMLSelectElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLSelectElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLSelectElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLSelectElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLSelectElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLSelectElement[JC] def reportValidity(): Boolean
 HTMLSelectElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLSelectElement[JC] def requestPointerLock(): Unit
@@ -11340,6 +11384,7 @@ HTMLSourceElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 HTMLSourceElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLSourceElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLSourceElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLSourceElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLSourceElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLSourceElement[JC] def requestPointerLock(): Unit
 HTMLSourceElement[JC] def scrollHeight: Int
@@ -11541,6 +11586,7 @@ HTMLSpanElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 HTMLSpanElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLSpanElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLSpanElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLSpanElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLSpanElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLSpanElement[JC] def requestPointerLock(): Unit
 HTMLSpanElement[JC] def scrollHeight: Int
@@ -11741,6 +11787,7 @@ HTMLStyleElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLStyleElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLStyleElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLStyleElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLStyleElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLStyleElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLStyleElement[JC] def requestPointerLock(): Unit
 HTMLStyleElement[JC] def scrollHeight: Int
@@ -11943,6 +11990,7 @@ HTMLTableCaptionElement[JC] def removeEventListener[T <: Event](`type`: String, 
 HTMLTableCaptionElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableCaptionElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTableCaptionElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTableCaptionElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTableCaptionElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTableCaptionElement[JC] def requestPointerLock(): Unit
 HTMLTableCaptionElement[JC] def scrollHeight: Int
@@ -12145,6 +12193,7 @@ HTMLTableCellElement[JC] def removeEventListener[T <: Event](`type`: String, lis
 HTMLTableCellElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableCellElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTableCellElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTableCellElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTableCellElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTableCellElement[JC] def requestPointerLock(): Unit
 HTMLTableCellElement[JC] var rowSpan: Int
@@ -12345,6 +12394,7 @@ HTMLTableColElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLTableColElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableColElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTableColElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTableColElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTableColElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTableColElement[JC] def requestPointerLock(): Unit
 HTMLTableColElement[JC] def scrollHeight: Int
@@ -12556,6 +12606,7 @@ HTMLTableElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLTableElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTableElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTableElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTableElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTableElement[JC] def requestPointerLock(): Unit
 HTMLTableElement[JC] def rows: HTMLCollection[Element]
@@ -12766,6 +12817,7 @@ HTMLTableRowElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLTableRowElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableRowElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTableRowElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTableRowElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTableRowElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTableRowElement[JC] def requestPointerLock(): Unit
 HTMLTableRowElement[JC] def rowIndex: Int
@@ -12970,6 +13022,7 @@ HTMLTableSectionElement[JC] def removeEventListener[T <: Event](`type`: String, 
 HTMLTableSectionElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTableSectionElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTableSectionElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTableSectionElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTableSectionElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTableSectionElement[JC] def requestPointerLock(): Unit
 HTMLTableSectionElement[JC] def rows: HTMLCollection[Element]
@@ -13171,6 +13224,7 @@ HTMLTemplateElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLTemplateElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTemplateElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTemplateElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTemplateElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTemplateElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTemplateElement[JC] def requestPointerLock(): Unit
 HTMLTemplateElement[JC] def scrollHeight: Int
@@ -13380,6 +13434,7 @@ HTMLTextAreaElement[JC] def removeEventListener[T <: Event](`type`: String, list
 HTMLTextAreaElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTextAreaElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTextAreaElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTextAreaElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTextAreaElement[JC] def reportValidity(): Boolean
 HTMLTextAreaElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTextAreaElement[JC] def requestPointerLock(): Unit
@@ -13594,6 +13649,7 @@ HTMLTitleElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLTitleElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTitleElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTitleElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTitleElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTitleElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTitleElement[JC] def requestPointerLock(): Unit
 HTMLTitleElement[JC] def scrollHeight: Int
@@ -13796,6 +13852,7 @@ HTMLTrackElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLTrackElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLTrackElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLTrackElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLTrackElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLTrackElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLTrackElement[JC] def requestPointerLock(): Unit
 HTMLTrackElement[JC] def scrollHeight: Int
@@ -13998,6 +14055,7 @@ HTMLUListElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLUListElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLUListElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLUListElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLUListElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLUListElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLUListElement[JC] def requestPointerLock(): Unit
 HTMLUListElement[JC] def scrollHeight: Int
@@ -14197,6 +14255,7 @@ HTMLUnknownElement[JC] def removeEventListener[T <: Event](`type`: String, liste
 HTMLUnknownElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLUnknownElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLUnknownElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLUnknownElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLUnknownElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLUnknownElement[JC] def requestPointerLock(): Unit
 HTMLUnknownElement[JC] def scrollHeight: Int
@@ -14420,6 +14479,7 @@ HTMLVideoElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 HTMLVideoElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 HTMLVideoElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 HTMLVideoElement[JC] def replaceChildren(nodes: Node | String*): Unit
+HTMLVideoElement[JC] def replaceWith(nodes: Node | String*): Unit
 HTMLVideoElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 HTMLVideoElement[JC] def requestPointerLock(): Unit
 HTMLVideoElement[JC] def scrollHeight: Int
@@ -16772,6 +16832,7 @@ SVGAElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js
 SVGAElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGAElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGAElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGAElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGAElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGAElement[JC] def requestPointerLock(): Unit
 SVGAElement[JC] var requiredExtensions: SVGStringList
@@ -16941,6 +17002,7 @@ SVGCircleElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 SVGCircleElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGCircleElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGCircleElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGCircleElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGCircleElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGCircleElement[JC] def requestPointerLock(): Unit
 SVGCircleElement[JC] var requiredExtensions: SVGStringList
@@ -17072,6 +17134,7 @@ SVGClipPathElement[JC] def removeEventListener[T <: Event](`type`: String, liste
 SVGClipPathElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGClipPathElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGClipPathElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGClipPathElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGClipPathElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGClipPathElement[JC] def requestPointerLock(): Unit
 SVGClipPathElement[JC] var requiredExtensions: SVGStringList
@@ -17194,6 +17257,7 @@ SVGComponentTransferFunctionElement[JC] def removeEventListener[T <: Event](`typ
 SVGComponentTransferFunctionElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGComponentTransferFunctionElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGComponentTransferFunctionElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGComponentTransferFunctionElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGComponentTransferFunctionElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGComponentTransferFunctionElement[JC] def requestPointerLock(): Unit
 SVGComponentTransferFunctionElement[JC] def scrollHeight: Int
@@ -17323,6 +17387,7 @@ SVGDefsElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 SVGDefsElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGDefsElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGDefsElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGDefsElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGDefsElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGDefsElement[JC] def requestPointerLock(): Unit
 SVGDefsElement[JC] var requiredExtensions: SVGStringList
@@ -17442,6 +17507,7 @@ SVGDescElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 SVGDescElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGDescElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGDescElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGDescElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGDescElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGDescElement[JC] def requestPointerLock(): Unit
 SVGDescElement[JC] def scrollHeight: Int
@@ -17556,6 +17622,7 @@ SVGElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.
 SVGElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGElement[JC] def requestPointerLock(): Unit
 SVGElement[JC] def scrollHeight: Int
@@ -17693,6 +17760,7 @@ SVGEllipseElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGEllipseElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGEllipseElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGEllipseElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGEllipseElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGEllipseElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGEllipseElement[JC] def requestPointerLock(): Unit
 SVGEllipseElement[JC] var requiredExtensions: SVGStringList
@@ -17825,6 +17893,7 @@ SVGFEBlendElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGFEBlendElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEBlendElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEBlendElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEBlendElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEBlendElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEBlendElement[JC] def requestPointerLock(): Unit
 SVGFEBlendElement[JC] def result: SVGAnimatedString
@@ -17950,6 +18019,7 @@ SVGFEColorMatrixElement[JC] def removeEventListener[T <: Event](`type`: String, 
 SVGFEColorMatrixElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEColorMatrixElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEColorMatrixElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEColorMatrixElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEColorMatrixElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEColorMatrixElement[JC] def requestPointerLock(): Unit
 SVGFEColorMatrixElement[JC] def result: SVGAnimatedString
@@ -18076,6 +18146,7 @@ SVGFEComponentTransferElement[JC] def removeEventListener[T <: Event](`type`: St
 SVGFEComponentTransferElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEComponentTransferElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEComponentTransferElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEComponentTransferElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEComponentTransferElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEComponentTransferElement[JC] def requestPointerLock(): Unit
 SVGFEComponentTransferElement[JC] def result: SVGAnimatedString
@@ -18201,6 +18272,7 @@ SVGFECompositeElement[JC] def removeEventListener[T <: Event](`type`: String, li
 SVGFECompositeElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFECompositeElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFECompositeElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFECompositeElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFECompositeElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFECompositeElement[JC] def requestPointerLock(): Unit
 SVGFECompositeElement[JC] def result: SVGAnimatedString
@@ -18336,6 +18408,7 @@ SVGFEConvolveMatrixElement[JC] def removeEventListener[T <: Event](`type`: Strin
 SVGFEConvolveMatrixElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEConvolveMatrixElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEConvolveMatrixElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEConvolveMatrixElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEConvolveMatrixElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEConvolveMatrixElement[JC] def requestPointerLock(): Unit
 SVGFEConvolveMatrixElement[JC] def result: SVGAnimatedString
@@ -18464,6 +18537,7 @@ SVGFEDiffuseLightingElement[JC] def removeEventListener[T <: Event](`type`: Stri
 SVGFEDiffuseLightingElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEDiffuseLightingElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEDiffuseLightingElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEDiffuseLightingElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEDiffuseLightingElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEDiffuseLightingElement[JC] def requestPointerLock(): Unit
 SVGFEDiffuseLightingElement[JC] def result: SVGAnimatedString
@@ -18585,6 +18659,7 @@ SVGFEDisplacementMapElement[JC] def removeEventListener[T <: Event](`type`: Stri
 SVGFEDisplacementMapElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEDisplacementMapElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEDisplacementMapElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEDisplacementMapElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEDisplacementMapElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEDisplacementMapElement[JC] def requestPointerLock(): Unit
 SVGFEDisplacementMapElement[JC] def result: SVGAnimatedString
@@ -18711,6 +18786,7 @@ SVGFEDistantLightElement[JC] def removeEventListener[T <: Event](`type`: String,
 SVGFEDistantLightElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEDistantLightElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEDistantLightElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEDistantLightElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEDistantLightElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEDistantLightElement[JC] def requestPointerLock(): Unit
 SVGFEDistantLightElement[JC] def scrollHeight: Int
@@ -18824,6 +18900,7 @@ SVGFEFloodElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGFEFloodElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEFloodElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEFloodElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEFloodElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEFloodElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEFloodElement[JC] def requestPointerLock(): Unit
 SVGFEFloodElement[JC] def result: SVGAnimatedString
@@ -18944,6 +19021,7 @@ SVGFEFuncAElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGFEFuncAElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEFuncAElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEFuncAElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEFuncAElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEFuncAElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEFuncAElement[JC] def requestPointerLock(): Unit
 SVGFEFuncAElement[JC] def scrollHeight: Int
@@ -19062,6 +19140,7 @@ SVGFEFuncBElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGFEFuncBElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEFuncBElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEFuncBElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEFuncBElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEFuncBElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEFuncBElement[JC] def requestPointerLock(): Unit
 SVGFEFuncBElement[JC] def scrollHeight: Int
@@ -19180,6 +19259,7 @@ SVGFEFuncGElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGFEFuncGElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEFuncGElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEFuncGElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEFuncGElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEFuncGElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEFuncGElement[JC] def requestPointerLock(): Unit
 SVGFEFuncGElement[JC] def scrollHeight: Int
@@ -19298,6 +19378,7 @@ SVGFEFuncRElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGFEFuncRElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEFuncRElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEFuncRElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEFuncRElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEFuncRElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEFuncRElement[JC] def requestPointerLock(): Unit
 SVGFEFuncRElement[JC] def scrollHeight: Int
@@ -19415,6 +19496,7 @@ SVGFEGaussianBlurElement[JC] def removeEventListener[T <: Event](`type`: String,
 SVGFEGaussianBlurElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEGaussianBlurElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEGaussianBlurElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEGaussianBlurElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEGaussianBlurElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEGaussianBlurElement[JC] def requestPointerLock(): Unit
 SVGFEGaussianBlurElement[JC] def result: SVGAnimatedString
@@ -19539,6 +19621,7 @@ SVGFEImageElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGFEImageElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEImageElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEImageElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEImageElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEImageElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEImageElement[JC] def requestPointerLock(): Unit
 SVGFEImageElement[JC] def result: SVGAnimatedString
@@ -19659,6 +19742,7 @@ SVGFEMergeElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGFEMergeElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEMergeElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEMergeElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEMergeElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEMergeElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEMergeElement[JC] def requestPointerLock(): Unit
 SVGFEMergeElement[JC] def result: SVGAnimatedString
@@ -19776,6 +19860,7 @@ SVGFEMergeNodeElement[JC] def removeEventListener[T <: Event](`type`: String, li
 SVGFEMergeNodeElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEMergeNodeElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEMergeNodeElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEMergeNodeElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEMergeNodeElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEMergeNodeElement[JC] def requestPointerLock(): Unit
 SVGFEMergeNodeElement[JC] def scrollHeight: Int
@@ -19893,6 +19978,7 @@ SVGFEMorphologyElement[JC] def removeEventListener[T <: Event](`type`: String, l
 SVGFEMorphologyElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEMorphologyElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEMorphologyElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEMorphologyElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEMorphologyElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEMorphologyElement[JC] def requestPointerLock(): Unit
 SVGFEMorphologyElement[JC] def result: SVGAnimatedString
@@ -20017,6 +20103,7 @@ SVGFEOffsetElement[JC] def removeEventListener[T <: Event](`type`: String, liste
 SVGFEOffsetElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEOffsetElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEOffsetElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEOffsetElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEOffsetElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEOffsetElement[JC] def requestPointerLock(): Unit
 SVGFEOffsetElement[JC] def result: SVGAnimatedString
@@ -20133,6 +20220,7 @@ SVGFEPointLightElement[JC] def removeEventListener[T <: Event](`type`: String, l
 SVGFEPointLightElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFEPointLightElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFEPointLightElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFEPointLightElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFEPointLightElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFEPointLightElement[JC] def requestPointerLock(): Unit
 SVGFEPointLightElement[JC] def scrollHeight: Int
@@ -20252,6 +20340,7 @@ SVGFESpecularLightingElement[JC] def removeEventListener[T <: Event](`type`: Str
 SVGFESpecularLightingElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFESpecularLightingElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFESpecularLightingElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFESpecularLightingElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFESpecularLightingElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFESpecularLightingElement[JC] def requestPointerLock(): Unit
 SVGFESpecularLightingElement[JC] def result: SVGAnimatedString
@@ -20375,6 +20464,7 @@ SVGFESpotLightElement[JC] def removeEventListener[T <: Event](`type`: String, li
 SVGFESpotLightElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFESpotLightElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFESpotLightElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFESpotLightElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFESpotLightElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFESpotLightElement[JC] def requestPointerLock(): Unit
 SVGFESpotLightElement[JC] def scrollHeight: Int
@@ -20493,6 +20583,7 @@ SVGFETileElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 SVGFETileElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFETileElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFETileElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFETileElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFETileElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFETileElement[JC] def requestPointerLock(): Unit
 SVGFETileElement[JC] def result: SVGAnimatedString
@@ -20614,6 +20705,7 @@ SVGFETurbulenceElement[JC] def removeEventListener[T <: Event](`type`: String, l
 SVGFETurbulenceElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFETurbulenceElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFETurbulenceElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFETurbulenceElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFETurbulenceElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFETurbulenceElement[JC] def requestPointerLock(): Unit
 SVGFETurbulenceElement[JC] def result: SVGAnimatedString
@@ -20750,6 +20842,7 @@ SVGFilterElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 SVGFilterElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGFilterElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGFilterElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGFilterElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGFilterElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGFilterElement[JC] def requestPointerLock(): Unit
 SVGFilterElement[JC] def scrollHeight: Int
@@ -20886,6 +20979,7 @@ SVGGElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js
 SVGGElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGGElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGGElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGGElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGGElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGGElement[JC] def requestPointerLock(): Unit
 SVGGElement[JC] var requiredExtensions: SVGStringList
@@ -21012,6 +21106,7 @@ SVGGradientElement[JC] def removeEventListener[T <: Event](`type`: String, liste
 SVGGradientElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGGradientElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGGradientElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGGradientElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGGradientElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGGradientElement[JC] def requestPointerLock(): Unit
 SVGGradientElement[JC] def scrollHeight: Int
@@ -21141,6 +21236,7 @@ SVGImageElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 SVGImageElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGImageElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGImageElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGImageElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGImageElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGImageElement[JC] def requestPointerLock(): Unit
 SVGImageElement[JC] var requiredExtensions: SVGStringList
@@ -21298,6 +21394,7 @@ SVGLineElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 SVGLineElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGLineElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGLineElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGLineElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGLineElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGLineElement[JC] def requestPointerLock(): Unit
 SVGLineElement[JC] var requiredExtensions: SVGStringList
@@ -21428,6 +21525,7 @@ SVGLinearGradientElement[JC] def removeEventListener[T <: Event](`type`: String,
 SVGLinearGradientElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGLinearGradientElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGLinearGradientElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGLinearGradientElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGLinearGradientElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGLinearGradientElement[JC] def requestPointerLock(): Unit
 SVGLinearGradientElement[JC] def scrollHeight: Int
@@ -21561,6 +21659,7 @@ SVGMarkerElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 SVGMarkerElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGMarkerElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGMarkerElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGMarkerElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGMarkerElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGMarkerElement[JC] def requestPointerLock(): Unit
 SVGMarkerElement[JC] def scrollHeight: Int
@@ -21693,6 +21792,7 @@ SVGMaskElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 SVGMaskElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGMaskElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGMaskElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGMaskElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGMaskElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGMaskElement[JC] def requestPointerLock(): Unit
 SVGMaskElement[JC] var requiredExtensions: SVGStringList
@@ -21830,6 +21930,7 @@ SVGMetadataElement[JC] def removeEventListener[T <: Event](`type`: String, liste
 SVGMetadataElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGMetadataElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGMetadataElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGMetadataElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGMetadataElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGMetadataElement[JC] def requestPointerLock(): Unit
 SVGMetadataElement[JC] def scrollHeight: Int
@@ -21982,6 +22083,7 @@ SVGPathElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 SVGPathElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGPathElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGPathElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGPathElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGPathElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGPathElement[JC] def requestPointerLock(): Unit
 SVGPathElement[JC] var requiredExtensions: SVGStringList
@@ -22238,6 +22340,7 @@ SVGPatternElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGPatternElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGPatternElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGPatternElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGPatternElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGPatternElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGPatternElement[JC] def requestPointerLock(): Unit
 SVGPatternElement[JC] var requiredExtensions: SVGStringList
@@ -22381,6 +22484,7 @@ SVGPolygonElement[JC] def removeEventListener[T <: Event](`type`: String, listen
 SVGPolygonElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGPolygonElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGPolygonElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGPolygonElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGPolygonElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGPolygonElement[JC] def requestPointerLock(): Unit
 SVGPolygonElement[JC] var requiredExtensions: SVGStringList
@@ -22510,6 +22614,7 @@ SVGPolylineElement[JC] def removeEventListener[T <: Event](`type`: String, liste
 SVGPolylineElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGPolylineElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGPolylineElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGPolylineElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGPolylineElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGPolylineElement[JC] def requestPointerLock(): Unit
 SVGPolylineElement[JC] var requiredExtensions: SVGStringList
@@ -22657,6 +22762,7 @@ SVGRadialGradientElement[JC] def removeEventListener[T <: Event](`type`: String,
 SVGRadialGradientElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGRadialGradientElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGRadialGradientElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGRadialGradientElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGRadialGradientElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGRadialGradientElement[JC] def requestPointerLock(): Unit
 SVGRadialGradientElement[JC] def scrollHeight: Int
@@ -22784,6 +22890,7 @@ SVGRectElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 SVGRectElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGRectElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGRectElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGRectElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGRectElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGRectElement[JC] def requestPointerLock(): Unit
 SVGRectElement[JC] var requiredExtensions: SVGStringList
@@ -22949,6 +23056,7 @@ SVGSVGElement[JC] def removeEventListener[T <: Event](`type`: String, listener: 
 SVGSVGElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGSVGElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGSVGElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGSVGElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGSVGElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGSVGElement[JC] def requestPointerLock(): Unit
 SVGSVGElement[JC] var requiredExtensions: SVGStringList
@@ -23081,6 +23189,7 @@ SVGScriptElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 SVGScriptElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGScriptElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGScriptElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGScriptElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGScriptElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGScriptElement[JC] def requestPointerLock(): Unit
 SVGScriptElement[JC] def scrollHeight: Int
@@ -23195,6 +23304,7 @@ SVGStopElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 SVGStopElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGStopElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGStopElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGStopElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGStopElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGStopElement[JC] def requestPointerLock(): Unit
 SVGStopElement[JC] def scrollHeight: Int
@@ -23318,6 +23428,7 @@ SVGStyleElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 SVGStyleElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGStyleElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGStyleElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGStyleElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGStyleElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGStyleElement[JC] def requestPointerLock(): Unit
 SVGStyleElement[JC] def scrollHeight: Int
@@ -23442,6 +23553,7 @@ SVGSwitchElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 SVGSwitchElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGSwitchElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGSwitchElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGSwitchElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGSwitchElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGSwitchElement[JC] def requestPointerLock(): Unit
 SVGSwitchElement[JC] var requiredExtensions: SVGStringList
@@ -23563,6 +23675,7 @@ SVGSymbolElement[JC] def removeEventListener[T <: Event](`type`: String, listene
 SVGSymbolElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGSymbolElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGSymbolElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGSymbolElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGSymbolElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGSymbolElement[JC] def requestPointerLock(): Unit
 SVGSymbolElement[JC] def scrollHeight: Int
@@ -23692,6 +23805,7 @@ SVGTSpanElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 SVGTSpanElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTSpanElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGTSpanElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGTSpanElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGTSpanElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGTSpanElement[JC] def requestPointerLock(): Unit
 SVGTSpanElement[JC] var requiredExtensions: SVGStringList
@@ -23830,6 +23944,7 @@ SVGTextContentElement[JC] def removeEventListener[T <: Event](`type`: String, li
 SVGTextContentElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTextContentElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGTextContentElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGTextContentElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGTextContentElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGTextContentElement[JC] def requestPointerLock(): Unit
 SVGTextContentElement[JC] var requiredExtensions: SVGStringList
@@ -23972,6 +24087,7 @@ SVGTextElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 SVGTextElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTextElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGTextElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGTextElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGTextElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGTextElement[JC] def requestPointerLock(): Unit
 SVGTextElement[JC] var requiredExtensions: SVGStringList
@@ -24109,6 +24225,7 @@ SVGTextPathElement[JC] def removeEventListener[T <: Event](`type`: String, liste
 SVGTextPathElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTextPathElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGTextPathElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGTextPathElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGTextPathElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGTextPathElement[JC] def requestPointerLock(): Unit
 SVGTextPathElement[JC] var requiredExtensions: SVGStringList
@@ -24250,6 +24367,7 @@ SVGTextPositioningElement[JC] def removeEventListener[T <: Event](`type`: String
 SVGTextPositioningElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTextPositioningElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGTextPositioningElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGTextPositioningElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGTextPositioningElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGTextPositioningElement[JC] def requestPointerLock(): Unit
 SVGTextPositioningElement[JC] var requiredExtensions: SVGStringList
@@ -24373,6 +24491,7 @@ SVGTitleElement[JC] def removeEventListener[T <: Event](`type`: String, listener
 SVGTitleElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGTitleElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGTitleElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGTitleElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGTitleElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGTitleElement[JC] def requestPointerLock(): Unit
 SVGTitleElement[JC] def scrollHeight: Int
@@ -24540,6 +24659,7 @@ SVGUseElement[JC] def removeEventListener[T <: Event](`type`: String, listener: 
 SVGUseElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGUseElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGUseElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGUseElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGUseElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGUseElement[JC] def requestPointerLock(): Unit
 SVGUseElement[JC] var requiredExtensions: SVGStringList
@@ -24663,6 +24783,7 @@ SVGViewElement[JC] def removeEventListener[T <: Event](`type`: String, listener:
 SVGViewElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 SVGViewElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 SVGViewElement[JC] def replaceChildren(nodes: Node | String*): Unit
+SVGViewElement[JC] def replaceWith(nodes: Node | String*): Unit
 SVGViewElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 SVGViewElement[JC] def requestPointerLock(): Unit
 SVGViewElement[JC] def scrollHeight: Int
