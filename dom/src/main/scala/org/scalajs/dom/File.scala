@@ -19,10 +19,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-abstract class File[A](bits: js.Iterable[A], name: String, options: FileOptions) extends Blob {
-
-  /** Returns the name of the file. For security reasons, the path is excluded from this property. */
-  def name: String = js.native
+abstract class File(bits: js.Iterable[Any], name: String, options: FileOptions) extends Blob {
 
   /** The File.lastModified read-only property provides the last modified date of the file as the number of milliseconds
     * since the Unix epoch (January 1, 1970 at midnight). Files without a known last modified date return the current
