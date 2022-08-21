@@ -19,7 +19,8 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class File(bits: js.Iterable[Any], name: String, options: FilePropertyBag) extends Blob {
+class File(bits: js.Iterable[BlobPart], name: String, options: FilePropertyBag = js.native)
+    extends Blob(bits, options) {
 
   /** The File.lastModified read-only property provides the last modified date of the file as the number of milliseconds
     * since the Unix epoch (January 1, 1970 at midnight). Files without a known last modified date return the current

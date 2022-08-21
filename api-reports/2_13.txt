@@ -26930,6 +26930,7 @@ intl/NumberFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, style
 package[SO] type AlgorithmIdentifier = Algorithm | String
 package[SO] type BigInteger = js.typedarray.Uint8Array
 package[SO] type BodyInit = Blob | BufferSource | FormData | String | ReadableStream[Uint8Array] | URLSearchParams
+package[SO] type BlobPart = BufferSource | Blob | String
 package[SO] type BufferSource = ArrayBufferView | ArrayBuffer
 package[SO] type ByteString = String
 package[SO] type ClientRect = DOMRect  (@deprecated in 2.0.0)

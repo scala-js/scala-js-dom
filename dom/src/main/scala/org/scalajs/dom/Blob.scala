@@ -23,7 +23,7 @@ import scala.scalajs.js.typedarray.{ArrayBuffer, Uint8Array}
   */
 @js.native
 @JSGlobal
-class Blob(blobParts: js.Array[js.Any] = js.native, options: BlobPropertyBag = js.native) extends js.Object {
+class Blob(blobParts: js.Iterable[BlobPart], options: BlobPropertyBag = js.native) extends js.Object {
 
   @deprecated("This method seems to have been added in error and not actually exist.", "1.2.0")
   def close(): Unit = js.native
