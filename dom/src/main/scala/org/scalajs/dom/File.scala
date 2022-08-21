@@ -19,7 +19,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-abstract class File(bits: js.Iterable[Any], name: String, options: FileOptions) extends Blob {
+class File(bits: js.Iterable[Any], name: String, options: FilePropertyBag) extends Blob {
 
   /** The File.lastModified read-only property provides the last modified date of the file as the number of milliseconds
     * since the Unix epoch (January 1, 1970 at midnight). Files without a known last modified date return the current
@@ -34,10 +34,4 @@ abstract class File(bits: js.Iterable[Any], name: String, options: FileOptions) 
     *   A string containing the path of the file relative to the ancestor directory the user selected.
     */
   def webkitRelativePath: String = js.native
-}
-
-/** An options object containing optional attributes for the file. */
-trait FileOptions extends js.Object {
-  var `type`: js.UndefOr[String] = js.undefined
-  var lastModified: js.UndefOr[Int] = js.undefined
 }
