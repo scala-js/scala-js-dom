@@ -30,9 +30,9 @@ package object dom {
   /** This type should capture strings consisting only of ASCII chars todo: is there a way to capture this type? */
   type ByteString = String
 
-  /** defined at [[https://fetch.spec.whatwg.org/#body-mixin ¶6.2 Body mixin]] in whatwg Fetch spec */
+  /** defined at [[https://fetch.spec.whatwg.org/#bodyinit-unions]] in whatwg Fetch spec */
   type BodyInit =
-    Blob | BufferSource | FormData | String | ReadableStream[Uint8Array] // todo: add URLSearchParams
+    Blob | BufferSource | FormData | String | ReadableStream[Uint8Array] | URLSearchParams
 
   /** WebIDL sequence<T> is js.Array[T] | JSIterable[T]. However @mseddon knows at least Blink's IDL compiler treats
     * these as simply js.Array[T] for now. We keep this type as a reminder to check in more detail
