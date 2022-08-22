@@ -1947,6 +1947,7 @@ FetchEventInit[JT] var scoped: js.UndefOr[Boolean]
 File[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 File[JC] def close(): Unit  (@deprecated in 1.2.0)
 File[JC] def lastModified: Int
+File[JC] def name: String
 File[JC] def size: Double
 File[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
 File[JC] def stream(): ReadableStream[Uint8Array]
@@ -26929,8 +26930,8 @@ intl/NumberFormatOptions[JT] var useGrouping: js.UndefOr[Boolean]
 intl/NumberFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, style: js.UndefOr[String]?, currency: js.UndefOr[String]?, currencyDisplay: js.UndefOr[String]?, useGrouping: js.UndefOr[Boolean]?, minimumIntegerDigits: js.UndefOr[Double]?, minimumFractionDigits: js.UndefOr[Double]?, maximumFractionDigits: js.UndefOr[Double]?, minimumSignificantDigits: js.UndefOr[Double]?, maximumSignificantDigits: js.UndefOr[Double]?): NumberFormatOptions  (@deprecated in 2.0.0)
 package[SO] type AlgorithmIdentifier = Algorithm | String
 package[SO] type BigInteger = js.typedarray.Uint8Array
-package[SO] type BodyInit = Blob | BufferSource | FormData | String | ReadableStream[Uint8Array] | URLSearchParams
 package[SO] type BlobPart = BufferSource | Blob | String
+package[SO] type BodyInit = Blob | BufferSource | FormData | String | ReadableStream[Uint8Array] | URLSearchParams
 package[SO] type BufferSource = ArrayBufferView | ArrayBuffer
 package[SO] type ByteString = String
 package[SO] type ClientRect = DOMRect  (@deprecated in 2.0.0)
