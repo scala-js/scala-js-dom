@@ -373,7 +373,7 @@ Blob[JC] def stream(): ReadableStream[Uint8Array]
 Blob[JC] def text(): js.Promise[String]
 Blob[JC] def `type`: String
 Blob[JO]
-BlobPropertyBag[JT] var endings: js.UndefOr[String]
+BlobPropertyBag[JT] var endings: js.UndefOr[EndingType]
 BlobPropertyBag[JT] var `type`: js.UndefOr[String]
 BlobPropertyBag[SO] def apply(`type`: js.UndefOr[String]?): BlobPropertyBag  (@deprecated in 2.0.0)
 Body[JT] def arrayBuffer(): js.Promise[ArrayBuffer]
@@ -1801,6 +1801,9 @@ ElementDefinitionOptions[JT] var `extends`: js.UndefOr[String]
 EndOfStreamError[JT]
 EndOfStreamError[SO] val decode: EndOfStreamError
 EndOfStreamError[SO] val network: EndOfStreamError
+EndingType[JT]
+EndingType[SO] val native: EndingType
+EndingType[SO] val transparent: EndingType
 ErrorEvent[JT] def bubbles: Boolean
 ErrorEvent[JT] def cancelBubble: Boolean
 ErrorEvent[JT] def cancelable: Boolean
@@ -1957,7 +1960,7 @@ File[JC] def webkitRelativePath: String
 FileList[JC] @JSBracketAccess def apply(index: Int): T
 FileList[JC] def item(index: Int): File
 FileList[JC] def length: Int
-FilePropertyBag[JT] var endings: js.UndefOr[String]
+FilePropertyBag[JT] var endings: js.UndefOr[EndingType]
 FilePropertyBag[JT] var lastModified: js.UndefOr[Double]
 FilePropertyBag[JT] var `type`: js.UndefOr[String]
 FileReader[JC] def abort(): Unit

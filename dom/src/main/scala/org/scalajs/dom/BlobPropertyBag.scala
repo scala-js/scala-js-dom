@@ -11,7 +11,7 @@ import scala.scalajs.js
 trait BlobPropertyBag extends js.Object {
   var `type`: js.UndefOr[String] = js.undefined
 
-  var endings: js.UndefOr[String] = js.undefined
+  var endings: js.UndefOr[EndingType] = js.undefined
 }
 
 @deprecated("all members of BlobPropertyBag are deprecated", "2.0.0")
