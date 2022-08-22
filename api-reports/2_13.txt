@@ -16543,9 +16543,12 @@ RequestDestination[SO] val sharedworker: RequestDestination
 RequestDestination[SO] val subresource: RequestDestination
 RequestDestination[SO] val unknown: RequestDestination
 RequestDestination[SO] val worker: RequestDestination
+RequestDuplex[JT]
+RequestDuplex[SO] val half: RequestDuplex
 RequestInit[JT] var body: js.UndefOr[BodyInit]
 RequestInit[JT] var cache: js.UndefOr[RequestCache]
 RequestInit[JT] var credentials: js.UndefOr[RequestCredentials]
+RequestInit[JT] var duplex: js.UndefOr[RequestDuplex]
 RequestInit[JT] var headers: js.UndefOr[HeadersInit]
 RequestInit[JT] var integrity: js.UndefOr[String]
 RequestInit[JT] var keepalive: js.UndefOr[Boolean]
