@@ -29,7 +29,7 @@ class File(bits: js.Iterable[BlobPart], _name: String, options: FilePropertyBag 
     * since the Unix epoch (January 1, 1970 at midnight). Files without a known last modified date return the current
     * date.
     */
-  def lastModified: Int = js.native
+  def lastModified: Double = js.native
 
   /** The File.webkitRelativePath is a read-only property that contains a string which specifies the file's path
     * relative to the directory selected by the user in an <input> element with its webkitdirectory attribute set.

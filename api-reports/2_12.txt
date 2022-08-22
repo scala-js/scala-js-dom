@@ -1946,7 +1946,7 @@ FetchEventInit[JT] var request: js.UndefOr[Request]
 FetchEventInit[JT] var scoped: js.UndefOr[Boolean]
 File[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 File[JC] def close(): Unit  (@deprecated in 1.2.0)
-File[JC] def lastModified: Int
+File[JC] def lastModified: Double
 File[JC] def name: String
 File[JC] def size: Double
 File[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
@@ -1958,7 +1958,7 @@ FileList[JC] @JSBracketAccess def apply(index: Int): T
 FileList[JC] def item(index: Int): File
 FileList[JC] def length: Int
 FilePropertyBag[JT] var endings: js.UndefOr[String]
-FilePropertyBag[JT] var lastModified: js.UndefOr[Int]
+FilePropertyBag[JT] var lastModified: js.UndefOr[Double]
 FilePropertyBag[JT] var `type`: js.UndefOr[String]
 FileReader[JC] def abort(): Unit
 FileReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
