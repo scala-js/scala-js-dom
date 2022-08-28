@@ -112,4 +112,6 @@ package object dom {
   @js.native
   @JSGlobal("crypto")
   val webcrypto: Crypto = js.native
+
+  type BlobPart = BufferSource | Blob | String
 }

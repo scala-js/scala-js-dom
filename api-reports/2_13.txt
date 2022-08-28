@@ -373,7 +373,7 @@ Blob[JC] def stream(): ReadableStream[Uint8Array]
 Blob[JC] def text(): js.Promise[String]
 Blob[JC] def `type`: String
 Blob[JO]
-BlobPropertyBag[JT] var endings: js.UndefOr[String]
+BlobPropertyBag[JT] var endings: js.UndefOr[EndingType]
 BlobPropertyBag[JT] var `type`: js.UndefOr[String]
 BlobPropertyBag[SO] def apply(`type`: js.UndefOr[String]?): BlobPropertyBag  (@deprecated in 2.0.0)
 Body[JT] def arrayBuffer(): js.Promise[ArrayBuffer]
@@ -1801,6 +1801,9 @@ ElementDefinitionOptions[JT] var `extends`: js.UndefOr[String]
 EndOfStreamError[JT]
 EndOfStreamError[SO] val decode: EndOfStreamError
 EndOfStreamError[SO] val network: EndOfStreamError
+EndingType[JT]
+EndingType[SO] val native: EndingType
+EndingType[SO] val transparent: EndingType
 ErrorEvent[JT] def bubbles: Boolean
 ErrorEvent[JT] def cancelBubble: Boolean
 ErrorEvent[JT] def cancelable: Boolean
@@ -1946,15 +1949,20 @@ FetchEventInit[JT] var request: js.UndefOr[Request]
 FetchEventInit[JT] var scoped: js.UndefOr[Boolean]
 File[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 File[JC] def close(): Unit  (@deprecated in 1.2.0)
+File[JC] def lastModified: Double
 File[JC] def name: String
 File[JC] def size: Double
 File[JC] def slice(start: Double?, end: Double?, contentType: String?): Blob
 File[JC] def stream(): ReadableStream[Uint8Array]
 File[JC] def text(): js.Promise[String]
 File[JC] def `type`: String
+File[JC] def webkitRelativePath: String
 FileList[JC] @JSBracketAccess def apply(index: Int): T
 FileList[JC] def item(index: Int): File
 FileList[JC] def length: Int
+FilePropertyBag[JT] var endings: js.UndefOr[EndingType]
+FilePropertyBag[JT] var lastModified: js.UndefOr[Double]
+FilePropertyBag[JT] var `type`: js.UndefOr[String]
 FileReader[JC] def abort(): Unit
 FileReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 FileReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -26925,6 +26933,7 @@ intl/NumberFormatOptions[JT] var useGrouping: js.UndefOr[Boolean]
 intl/NumberFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, style: js.UndefOr[String]?, currency: js.UndefOr[String]?, currencyDisplay: js.UndefOr[String]?, useGrouping: js.UndefOr[Boolean]?, minimumIntegerDigits: js.UndefOr[Double]?, minimumFractionDigits: js.UndefOr[Double]?, maximumFractionDigits: js.UndefOr[Double]?, minimumSignificantDigits: js.UndefOr[Double]?, maximumSignificantDigits: js.UndefOr[Double]?): NumberFormatOptions  (@deprecated in 2.0.0)
 package[SO] type AlgorithmIdentifier = Algorithm | String
 package[SO] type BigInteger = js.typedarray.Uint8Array
+package[SO] type BlobPart = BufferSource | Blob | String
 package[SO] type BodyInit = Blob | BufferSource | FormData | String | ReadableStream[Uint8Array] | URLSearchParams
 package[SO] type BufferSource = ArrayBufferView | ArrayBuffer
 package[SO] type ByteString = String

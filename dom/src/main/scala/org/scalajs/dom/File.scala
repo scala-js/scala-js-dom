@@ -19,8 +19,23 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-abstract class File extends Blob {
+class File(bits: js.Iterable[BlobPart], _name: String, options: FilePropertyBag = js.native)
+    extends Blob(bits, options) {
 
   /** Returns the name of the file. For security reasons, the path is excluded from this property. */
   def name: String = js.native
+
+  /** The File.lastModified read-only property provides the last modified date of the file as the number of milliseconds
+    * since the Unix epoch (January 1, 1970 at midnight). Files without a known last modified date return the current
+    * date.
+    */
+  def lastModified: Double = js.native
+
+  /** The File.webkitRelativePath is a read-only property that contains a string which specifies the file's path
+    * relative to the directory selected by the user in an <input> element with its webkitdirectory attribute set.
+    *
+    * @return
+    *   A string containing the path of the file relative to the ancestor directory the user selected.
+    */
+  def webkitRelativePath: String = js.native
 }
