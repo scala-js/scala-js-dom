@@ -18,7 +18,7 @@ trait MediaQueryList extends EventTarget {
   def matches: Boolean = js.native
 
   /** A string representing a serialized media query. */
-  var media: String = js.native
+  def media: String = js.native
 
   /** Adds to the MediaQueryList a callback which is invoked whenever the media query status—whether or not the document
     * matches the media queries in the list—changes.
@@ -27,7 +27,7 @@ trait MediaQueryList extends EventTarget {
     * watch for the change event.
     * @deprecated
     */
-  @deprecated("Use addEventListener() instead", "2.3.0")
+  @deprecated("Use addEventListener() instead", "2.4.0")
   def addListener(listener: MediaQueryListListener): Unit = js.native
 
   /** Removes the specified listener callback from the callbacks to be invoked when the MediaQueryList changes media
@@ -38,6 +38,6 @@ trait MediaQueryList extends EventTarget {
     * to remove change notification callbacks (which should have previously been added using addEventListener()).
     * @deprecated
     */
-  @deprecated("Use removeEventListener() instead", "2.3.0")
+  @deprecated("Use removeEventListener() instead", "2.4.0")
   def removeListener(listener: MediaQueryListListener): Unit = js.native
 }
