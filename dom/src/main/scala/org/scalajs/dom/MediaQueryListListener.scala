@@ -8,10 +8,8 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-/** A MediaQueryList object maintains a list of media queries on a document, and handles sending notifications to
-  * listeners when the media queries on the document change.
-  */
 @js.native
+@deprecated("See MediaQueryList for more info", "2.4.0")
 trait MediaQueryListListener extends js.Object {
   def apply(mql: MediaQueryList): Unit = js.native
 }
