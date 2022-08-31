@@ -8,23 +8,37 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-/** A MediaQueryList object maintains a list of media queries on a document, and handles sending notifications to
-  * listeners when the media queries on the document change.
+/** A MediaQueryList object stores information on a media query applied to a document,
+  * with support for both immediate and event-driven matching against the state of the document.
   */
 @js.native
-trait MediaQueryList extends js.Object {
+trait MediaQueryList extends EventTarget {
 
-  /** true if the document currently matches the media query list; otherwise false. Read only. */
+  /** A boolean value that returns true if the document currently matches the media query list, or false if not. */
   def matches: Boolean = js.native
 
-  /** The serialized media query list */
+  /** A string representing a serialized media query. */
   var media: String = js.native
 
-  /** Adds a new listener to the media query list. If the specified listener is already in the list, this method has no
-    * effect.
+  /** Adds to the MediaQueryList a callback which is invoked whenever the media query status—whether or
+    * not the document matches the media queries in the list—changes.
+    *
+    * This method exists primarily for backward compatibility;
+    * if possible, you should instead use addEventListener() to watch for the change event.
+    * @deprecated
     */
+  @deprecated("Use addEventListener() instead")
   def addListener(listener: MediaQueryListListener): Unit = js.native
 
-  /** Removes a listener from the media query list. Does nothing if the specified listener isn't already in the list. */
+  /** Removes the specified listener callback from the callbacks to be invoked when the MediaQueryList
+    * changes media query status, which happens any time the document switches between matching and
+    * not matching the media queries listed in the MediaQueryList.
+    *
+    * This method has been kept for backward compatibility;
+    * if possible, you should generally use removeEventListener() to remove change notification callbacks
+    * (which should have previously been added using addEventListener()).
+    * @deprecated
+    */
+  @deprecated("Use removeEventListener() instead")
   def removeListener(listener: MediaQueryListListener): Unit = js.native
 }
