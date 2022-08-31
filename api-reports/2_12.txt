@@ -15401,7 +15401,7 @@ Location[JT] def reload(flag: Boolean?): Unit
 Location[JT] def replace(url: String): Unit
 Location[JT] var search: String
 MIMEType[JT]
-MIMEType[SO] val `application/xhtml+xml` = "application/xhtml+xml".asInstanceOf[MIMEType]
+MIMEType[SO] val `application/xhtml+xml` =  "application/xhtml+xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `application/xml` = "application/xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `image/svg+xml` = "image/svg+xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `text/html` = "text/html".asInstanceOf[MIMEType]
@@ -15450,10 +15450,15 @@ MediaList[JC] def item(index: Int): String
 MediaList[JC] def length: Int
 MediaList[JC] def mediaText: String
 MediaList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: String): Unit
-MediaQueryList[JT] def addListener(listener: MediaQueryListListener): Unit
+MediaQueryList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaQueryList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaQueryList[JT] def addListener(listener: MediaQueryListListener): Unit  (@deprecated in 2.3.0)
+MediaQueryList[JT] def dispatchEvent(evt: Event): Boolean
 MediaQueryList[JT] def matches: Boolean
 MediaQueryList[JT] var media: String
-MediaQueryList[JT] def removeListener(listener: MediaQueryListListener): Unit
+MediaQueryList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaQueryList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaQueryList[JT] def removeListener(listener: MediaQueryListListener): Unit  (@deprecated in 2.3.0)
 MediaQueryListListener[JT] def apply(mql: MediaQueryList): Unit
 MediaSource[JC] def activeSourceBuffers: SourceBufferList
 MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -16111,7 +16116,7 @@ PermissionName[JT]
 PermissionName[SO] val geolocation: PermissionName
 PermissionName[SO] val midi: PermissionName
 PermissionName[SO] val notifications: PermissionName
-PermissionName[SO] val `persistent-storage` = "persistent-storage".asInstanceOf[PermissionName]
+PermissionName[SO] val `persistent-storage` =  "persistent-storage".asInstanceOf[PermissionName]
 PermissionName[SO] val push: PermissionName
 PermissionState[JT]
 PermissionState[SO] val denied: PermissionState
@@ -16497,9 +16502,9 @@ RTCSessionDescriptionInit[SO] def apply(`type`: js.UndefOr[RTCSdpType]?, sdp: js
 RTCSignalingState[JT]
 RTCSignalingState[SO] val closed: RTCSignalingState
 RTCSignalingState[SO] val `have-local-offer` = "have-local-offer".asInstanceOf[RTCSignalingState]
-RTCSignalingState[SO] val `have-local-pranswer` = "have-local-pranswer".asInstanceOf[RTCSignalingState]
+RTCSignalingState[SO] val `have-local-pranswer` =  "have-local-pranswer".asInstanceOf[RTCSignalingState]
 RTCSignalingState[SO] val `have-remote-offer` = "have-remote-offer".asInstanceOf[RTCSignalingState]
-RTCSignalingState[SO] val `have-remote-pranswer` = "have-remote-pranswer".asInstanceOf[RTCSignalingState]
+RTCSignalingState[SO] val `have-remote-pranswer` =  "have-remote-pranswer".asInstanceOf[RTCSignalingState]
 RTCSignalingState[SO] val stable: RTCSignalingState
 RTCStats[JT] val id: String
 RTCStats[JT] val timestamp: Double
@@ -16569,9 +16574,9 @@ ReadableStreamUnderlyingSource[JT] var `type`: js.UndefOr[ReadableStreamType]
 ReferrerPolicy[JT]
 ReferrerPolicy[SO] val empty: ReferrerPolicy
 ReferrerPolicy[SO] val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
-ReferrerPolicy[SO] val `no-referrer-when-downgrade` = "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val `no-referrer-when-downgrade` =  "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
 ReferrerPolicy[SO] val `origin-only` = "origin-only".asInstanceOf[ReferrerPolicy]
-ReferrerPolicy[SO] val `origin-when-cross-origin` = "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val `origin-when-cross-origin` =  "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
 ReferrerPolicy[SO] val `unsafe-url` = "unsafe-url".asInstanceOf[ReferrerPolicy]
 Request[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 Request[JC] def blob(): js.Promise[Blob]
