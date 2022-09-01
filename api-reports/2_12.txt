@@ -6647,6 +6647,7 @@ HTMLImageElement[JC] def complete: Boolean
 HTMLImageElement[JC] def contains(child: HTMLElement): Boolean
 HTMLImageElement[JC] def contains(otherNode: Node): Boolean
 HTMLImageElement[JC] var contentEditable: String
+HTMLImageElement[JC] def currentSrc: String
 HTMLImageElement[JC] def dataset: js.Dictionary[String]
 HTMLImageElement[JC] var dir: String
 HTMLImageElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -6687,6 +6688,7 @@ HTMLImageElement[JC] def isSupported(feature: String, version: String): Boolean
 HTMLImageElement[JC] var lang: String
 HTMLImageElement[JC] def lastChild: Node
 HTMLImageElement[JC] def lastElementChild: Element
+HTMLImageElement[JC] var loading: String
 HTMLImageElement[JC] def localName: String
 HTMLImageElement[JC] def lookupNamespaceURI(prefix: String): String
 HTMLImageElement[JC] def lookupPrefix(namespaceURI: String): String
@@ -6819,8 +6821,10 @@ HTMLImageElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: Str
 HTMLImageElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLImageElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 HTMLImageElement[JC] def shadowRoot: ShadowRoot
+HTMLImageElement[JC] var sizes: String
 HTMLImageElement[JC] var spellcheck: Boolean
 HTMLImageElement[JC] var src: String
+HTMLImageElement[JC] var srcset: String
 HTMLImageElement[JC] def style: CSSStyleDeclaration
 HTMLImageElement[JC] def style_ = (value: CSSStyleDeclaration): Unit
 HTMLImageElement[JC] def style_ = (value: String): Unit
@@ -6830,6 +6834,8 @@ HTMLImageElement[JC] var textContent: String
 HTMLImageElement[JC] var title: String
 HTMLImageElement[JC] var useMap: String
 HTMLImageElement[JC] var width: Int
+HTMLImageElement[JC] def x: Long
+HTMLImageElement[JC] def y: Long
 HTMLInputElement[JC] var accept: String
 HTMLInputElement[JC] var accessKey: String
 HTMLInputElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -14793,6 +14799,223 @@ IDBVersionChangeEventInit[JT] var composed: js.UndefOr[Boolean]
 IDBVersionChangeEventInit[JT] var newVersion: js.UndefOr[java.lang.Double]
 IDBVersionChangeEventInit[JT] var oldVersion: js.UndefOr[Double]
 IDBVersionChangeEventInit[JT] var scoped: js.UndefOr[Boolean]
+Image[JC] var accessKey: String
+Image[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+Image[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+Image[JC] def after(nodes: Node | String*): Unit
+Image[JC] var alt: String
+Image[JC] def append(nodes: Node | String*): Unit
+Image[JC] def appendChild(newChild: Node): Node
+Image[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
+Image[JC] def attributes: NamedNodeMap
+Image[JC] def baseURI: String
+Image[JC] def before(nodes: Node | String*): Unit
+Image[JC] def blur(): Unit
+Image[JC] def childElementCount: Int
+Image[JC] def childNodes: NodeList[Node]
+Image[JC] def children: HTMLCollection[Element]
+Image[JC] var classList: DOMTokenList
+Image[JC] var className: String
+Image[JC] def click(): Unit
+Image[JC] def clientHeight: Int
+Image[JC] def clientLeft: Int
+Image[JC] def clientTop: Int
+Image[JC] def clientWidth: Int
+Image[JC] def cloneNode(deep: Boolean?): Node
+Image[JC] def compareDocumentPosition(other: Node): Int
+Image[JC] def complete: Boolean
+Image[JC] def contains(child: HTMLElement): Boolean
+Image[JC] def contains(otherNode: Node): Boolean
+Image[JC] var contentEditable: String
+Image[JC] def currentSrc: String
+Image[JC] def dataset: js.Dictionary[String]
+Image[JC] var dir: String
+Image[JC] def dispatchEvent(evt: Event): Boolean
+Image[JC] var draggable: Boolean
+Image[JC] var filters: Object
+Image[JC] def firstChild: Node
+Image[JC] def firstElementChild: Element
+Image[JC] def focus(): Unit
+Image[JC] def getAttribute(name: String): String
+Image[JC] def getAttributeNS(namespaceURI: String, localName: String): String
+Image[JC] def getAttributeNode(name: String): Attr
+Image[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
+Image[JC] def getBoundingClientRect(): DOMRect
+Image[JC] def getClientRects(): DOMRectList
+Image[JC] def getElementsByClassName(classNames: String): HTMLCollection[Element]
+Image[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
+Image[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
+Image[JC] var gotpointercapture: js.Function1[PointerEvent, _]
+Image[JC] def hasAttribute(name: String): Boolean
+Image[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
+Image[JC] def hasAttributes(): Boolean
+Image[JC] def hasChildNodes(): Boolean
+Image[JC] var height: Int
+Image[JC] var href: String
+Image[JC] var id: String
+Image[JC] var innerHTML: String
+Image[JC] var innerText: String
+Image[JC] def insertAdjacentElement(position: String, element: Element): Element
+Image[JC] def insertAdjacentHTML(where: String, html: String): Unit
+Image[JC] def insertBefore(newChild: Node, refChild: Node): Node
+Image[JC] def isConnected: Boolean
+Image[JC] def isContentEditable: Boolean
+Image[JC] def isDefaultNamespace(namespaceURI: String): Boolean
+Image[JC] def isEqualNode(arg: Node): Boolean
+Image[JC] var isMap: Boolean
+Image[JC] def isSameNode(other: Node): Boolean
+Image[JC] def isSupported(feature: String, version: String): Boolean
+Image[JC] var lang: String
+Image[JC] def lastChild: Node
+Image[JC] def lastElementChild: Element
+Image[JC] var loading: String
+Image[JC] def localName: String
+Image[JC] def lookupNamespaceURI(prefix: String): String
+Image[JC] def lookupPrefix(namespaceURI: String): String
+Image[JC] var lostpointercapture: js.Function1[PointerEvent, _]
+Image[JC] def matches(selector: String): Boolean
+Image[JC] def namespaceURI: String
+Image[JC] var naturalHeight: Int
+Image[JC] var naturalWidth: Int
+Image[JC] def nextElementSibling: Element
+Image[JC] def nextSibling: Node
+Image[JC] def nodeName: String
+Image[JC] def nodeType: Int
+Image[JC] var nodeValue: String
+Image[JC] def normalize(): Unit
+Image[JC] def offsetHeight: Double
+Image[JC] def offsetLeft: Double
+Image[JC] def offsetParent: Element
+Image[JC] def offsetTop: Double
+Image[JC] def offsetWidth: Double
+Image[JC] var onabort: js.Function1[UIEvent, _]
+Image[JC] var onactivate: js.Function1[UIEvent, _]
+Image[JC] var onbeforeactivate: js.Function1[UIEvent, _]
+Image[JC] var onbeforecopy: js.Function1[DragEvent, _]
+Image[JC] var onbeforecut: js.Function1[DragEvent, _]
+Image[JC] var onbeforedeactivate: js.Function1[UIEvent, _]
+Image[JC] var onbeforepaste: js.Function1[DragEvent, _]
+Image[JC] var onblur: js.Function1[FocusEvent, _]
+Image[JC] var oncanplay: js.Function1[Event, _]
+Image[JC] var oncanplaythrough: js.Function1[Event, _]
+Image[JC] var onchange: js.Function1[Event, _]
+Image[JC] var onclick: js.Function1[MouseEvent, _]
+Image[JC] var oncontextmenu: js.Function1[MouseEvent, _]
+Image[JC] var oncopy: js.Function1[ClipboardEvent, _]
+Image[JC] var oncuechange: js.Function1[Event, _]
+Image[JC] var oncut: js.Function1[ClipboardEvent, _]
+Image[JC] var ondblclick: js.Function1[MouseEvent, _]
+Image[JC] var ondeactivate: js.Function1[UIEvent, _]
+Image[JC] var ondrag: js.Function1[DragEvent, _]
+Image[JC] var ondragend: js.Function1[DragEvent, _]
+Image[JC] var ondragenter: js.Function1[DragEvent, _]
+Image[JC] var ondragleave: js.Function1[DragEvent, _]
+Image[JC] var ondragover: js.Function1[DragEvent, _]
+Image[JC] var ondragstart: js.Function1[DragEvent, _]
+Image[JC] var ondrop: js.Function1[DragEvent, _]
+Image[JC] var ondurationchange: js.Function1[Event, _]
+Image[JC] var onemptied: js.Function1[Event, _]
+Image[JC] var onended: js.Function1[Event, _]
+Image[JC] var onfocus: js.Function1[FocusEvent, _]
+Image[JC] var onfocusin: js.Function1[FocusEvent, _]
+Image[JC] var onfocusout: js.Function1[FocusEvent, _]
+Image[JC] var onfullscreenchange: js.Function1[Event, _]
+Image[JC] var onfullscreenerror: js.Function1[Event, _]
+Image[JC] var onhelp: js.Function1[Event, _]
+Image[JC] var oninput: js.Function1[Event, _]
+Image[JC] var onkeydown: js.Function1[KeyboardEvent, _]
+Image[JC] var onkeypress: js.Function1[KeyboardEvent, _]
+Image[JC] var onkeyup: js.Function1[KeyboardEvent, _]
+Image[JC] var onload: js.Function1[Event, _]
+Image[JC] var onloadeddata: js.Function1[Event, _]
+Image[JC] var onloadedmetadata: js.Function1[Event, _]
+Image[JC] var onloadstart: js.Function1[Event, _]
+Image[JC] var onmousedown: js.Function1[MouseEvent, _]
+Image[JC] var onmouseenter: js.Function1[MouseEvent, _]
+Image[JC] var onmouseleave: js.Function1[MouseEvent, _]
+Image[JC] var onmousemove: js.Function1[MouseEvent, _]
+Image[JC] var onmouseout: js.Function1[MouseEvent, _]
+Image[JC] var onmouseover: js.Function1[MouseEvent, _]
+Image[JC] var onmouseup: js.Function1[MouseEvent, _]
+Image[JC] var onmousewheel: js.Function1[WheelEvent, _]
+Image[JC] var onpaste: js.Function1[ClipboardEvent, _]
+Image[JC] var onpause: js.Function1[Event, _]
+Image[JC] var onplay: js.Function1[Event, _]
+Image[JC] var onplaying: js.Function1[Event, _]
+Image[JC] var onpointercancel: js.Function1[PointerEvent, _]
+Image[JC] var onpointerdown: js.Function1[PointerEvent, _]
+Image[JC] var onpointerenter: js.Function1[PointerEvent, _]
+Image[JC] var onpointerleave: js.Function1[PointerEvent, _]
+Image[JC] var onpointermove: js.Function1[PointerEvent, _]
+Image[JC] var onpointerout: js.Function1[PointerEvent, _]
+Image[JC] var onpointerover: js.Function1[PointerEvent, _]
+Image[JC] var onpointerup: js.Function1[PointerEvent, _]
+Image[JC] var onprogress: js.Function1[js.Any, _]
+Image[JC] var onratechange: js.Function1[Event, _]
+Image[JC] var onreadystatechange: js.Function1[Event, _]
+Image[JC] var onreset: js.Function1[Event, _]
+Image[JC] var onscroll: js.Function1[UIEvent, _]
+Image[JC] var onseeked: js.Function1[Event, _]
+Image[JC] var onseeking: js.Function1[Event, _]
+Image[JC] var onselect: js.Function1[UIEvent, _]
+Image[JC] var onselectstart: js.Function1[Event, _]
+Image[JC] var onstalled: js.Function1[Event, _]
+Image[JC] var onsubmit: js.Function1[Event, _]
+Image[JC] var onsuspend: js.Function1[Event, _]
+Image[JC] var ontimeupdate: js.Function1[Event, _]
+Image[JC] var onvolumechange: js.Function1[Event, _]
+Image[JC] var onwaiting: js.Function1[Event, _]
+Image[JC] var onwheel: js.Function1[WheelEvent, _]
+Image[JC] var outerHTML: String
+Image[JC] def ownerDocument: Document
+Image[JC] override def ownerDocument: HTMLDocument
+Image[JC] var parentElement: HTMLElement
+Image[JC] def parentNode: Node
+Image[JC] def prefix: String
+Image[JC] def prepend(nodes: Node | String*): Unit
+Image[JC] def previousElementSibling: Element
+Image[JC] def previousSibling: Node
+Image[JC] def querySelector(selectors: String): Element
+Image[JC] def querySelectorAll(selectors: String): NodeList[Element]
+Image[JC] var readyState: js.Any
+Image[JC] var recordNumber: js.Any
+Image[JC] def remove(): Unit
+Image[JC] def removeAttribute(name: String): Unit
+Image[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
+Image[JC] def removeAttributeNode(oldAttr: Attr): Attr
+Image[JC] def removeChild(oldChild: Node): Node
+Image[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+Image[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+Image[JC] def replaceChild(newChild: Node, oldChild: Node): Node
+Image[JC] def replaceChildren(nodes: Node | String*): Unit
+Image[JC] def replaceWith(nodes: Node | String*): Unit
+Image[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
+Image[JC] def requestPointerLock(): Unit
+Image[JC] def scrollHeight: Int
+Image[JC] def scrollIntoView(top: Boolean?): Unit
+Image[JC] var scrollLeft: Double
+Image[JC] var scrollTop: Double
+Image[JC] def scrollWidth: Int
+Image[JC] def setAttribute(name: String, value: String): Unit
+Image[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
+Image[JC] def setAttributeNode(newAttr: Attr): Attr
+Image[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+Image[JC] def shadowRoot: ShadowRoot
+Image[JC] var sizes: String
+Image[JC] var spellcheck: Boolean
+Image[JC] var src: String
+Image[JC] var srcset: String
+Image[JC] def style: CSSStyleDeclaration
+Image[JC] def style_ = (value: CSSStyleDeclaration): Unit
+Image[JC] def style_ = (value: String): Unit
+Image[JC] var tabIndex: Int
+Image[JC] def tagName: String
+Image[JC] var textContent: String
+Image[JC] var title: String
+Image[JC] var useMap: String
+Image[JC] var width: Int
+Image[JC] def x: Long
+Image[JC] def y: Long
 ImageBitmap[JT] def close(): Unit
 ImageBitmap[JT] def height: Double
 ImageBitmap[JT] def width: Double

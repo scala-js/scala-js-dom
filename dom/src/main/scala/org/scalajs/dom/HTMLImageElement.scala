@@ -28,11 +28,16 @@ abstract class HTMLImageElement extends HTMLElement {
   /** Allows you to specify the layout width of the image for each of a list of media conditions. */
   var sizes: String = js.native
 
+  /** A string whose value provides a hint to the user agent on how to handle the loading of the image which is
+    * currently outside the window's visual viewport.
+    */
+  var loading: String = js.native
+
   /** Reflects the src HTML attribute, containing the URL of the image. */
   var src: String = js.native
 
-  /** srcset is a string which identifies one or more image candidate strings, separated using commas (,) each
-    * specifying image resources to use under given circumstances.
+  /** Identifies one or more image candidate strings, separated using commas (,) each specifying image resources to use
+    * under given circumstances.
     *
     * Each image candidate string contains an image URL and an optional width or pixel density descriptor that indicates
     * the conditions under which that candidate should be used instead of the image specified by the src property.
@@ -60,4 +65,10 @@ abstract class HTMLImageElement extends HTMLElement {
   def complete: Boolean = js.native
 
   var onload: js.Function1[Event, _] = js.native
+
+  /** Indicates the x-coordinate of the <img> element's left border edge relative to the root element's origin. */
+  def x: Long = js.native
+
+  /** Indicates the y-coordinate of the <img> element's top border edge relative to the root element's origin. */
+  def y: Long = js.native
 }
