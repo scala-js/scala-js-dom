@@ -15450,11 +15450,16 @@ MediaList[JC] def item(index: Int): String
 MediaList[JC] def length: Int
 MediaList[JC] def mediaText: String
 MediaList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: String): Unit
-MediaQueryList[JT] def addListener(listener: MediaQueryListListener): Unit
+MediaQueryList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaQueryList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaQueryList[JT] def addListener(listener: MediaQueryListListener): Unit  (@deprecated in 2.4.0)
+MediaQueryList[JT] def dispatchEvent(evt: Event): Boolean
 MediaQueryList[JT] def matches: Boolean
-MediaQueryList[JT] var media: String
-MediaQueryList[JT] def removeListener(listener: MediaQueryListListener): Unit
-MediaQueryListListener[JT] def apply(mql: MediaQueryList): Unit
+MediaQueryList[JT] def media: String
+MediaQueryList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaQueryList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaQueryList[JT] def removeListener(listener: MediaQueryListListener): Unit  (@deprecated in 2.4.0)
+MediaQueryListListener[JT] def apply(mql: MediaQueryList): Unit  (@deprecated in 2.4.0)
 MediaSource[JC] def activeSourceBuffers: SourceBufferList
 MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
