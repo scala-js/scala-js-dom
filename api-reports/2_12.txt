@@ -15025,6 +15025,9 @@ ImageCapture[JC] val track: MediaStreamTrack
 ImageData[JC] def data: js.Array[Int]
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
+ImageLoadingMode[JT]
+ImageLoadingMode[SO] val eager: ImageLoadingMode
+ImageLoadingMode[SO] val `lazy`: ImageLoadingMode
 InputEvent[JC] def bubbles: Boolean
 InputEvent[JC] def cancelBubble: Boolean
 InputEvent[JC] def cancelable: Boolean
