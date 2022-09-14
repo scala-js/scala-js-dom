@@ -31,7 +31,7 @@ abstract class HTMLImageElement extends HTMLElement {
   /** A string whose value provides a hint to the user agent on how to handle the loading of the image which is
     * currently outside the window's visual viewport.
     */
-  var loading: String = js.native
+  var loading: ImageLoadingMode = js.native
 
   /** Reflects the src HTML attribute, containing the URL of the image. */
   var src: String = js.native
