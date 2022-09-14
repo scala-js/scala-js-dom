@@ -6688,7 +6688,7 @@ HTMLImageElement[JC] def isSupported(feature: String, version: String): Boolean
 HTMLImageElement[JC] var lang: String
 HTMLImageElement[JC] def lastChild: Node
 HTMLImageElement[JC] def lastElementChild: Element
-HTMLImageElement[JC] var loading: String
+HTMLImageElement[JC] var loading: ImageLoadingMode
 HTMLImageElement[JC] def localName: String
 HTMLImageElement[JC] def lookupNamespaceURI(prefix: String): String
 HTMLImageElement[JC] def lookupPrefix(namespaceURI: String): String
@@ -14868,7 +14868,7 @@ Image[JC] def isSupported(feature: String, version: String): Boolean
 Image[JC] var lang: String
 Image[JC] def lastChild: Node
 Image[JC] def lastElementChild: Element
-Image[JC] var loading: String
+Image[JC] var loading: ImageLoadingMode
 Image[JC] def localName: String
 Image[JC] def lookupNamespaceURI(prefix: String): String
 Image[JC] def lookupPrefix(namespaceURI: String): String

@@ -7,4 +7,7 @@ package org.scalajs.dom
   * @param height
   *   The height of the image (i.e., the value for the height attribute).
   */
-class Image(width: Int, height: Int) extends HTMLImageElement
+class Image(width: Int, height: Int) extends HTMLImageElement {
+  def this(width: Int) = this(width, 0)
+  def this() = this(0, 0)
+}
