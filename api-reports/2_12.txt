@@ -15347,6 +15347,7 @@ KeyboardEvent[JC] def bubbles: Boolean
 KeyboardEvent[JC] def cancelBubble: Boolean
 KeyboardEvent[JC] def cancelable: Boolean
 KeyboardEvent[JC] def charCode: Int
+KeyboardEvent[JC] def code: String
 KeyboardEvent[JC] def ctrlKey: Boolean
 KeyboardEvent[JC] def currentTarget: EventTarget
 KeyboardEvent[JC] def defaultPrevented: Boolean
@@ -15375,6 +15376,7 @@ KeyboardEventInit[JT] var altKey: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var bubbles: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var cancelable: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var charCode: js.UndefOr[Int]
+KeyboardEventInit[JT] var code: js.UndefOr[String]
 KeyboardEventInit[JT] var composed: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var ctrlKey: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var detail: js.UndefOr[Int]
