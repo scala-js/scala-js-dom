@@ -16,7 +16,7 @@ import scala.scalajs.js.annotation._
 @js.native
 @JSGlobal
 class Storage extends js.Object {
-  var length: Int = js.native
+  def length: Int = js.native
 
   def getItem(key: String): String = js.native
 

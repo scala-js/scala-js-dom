@@ -25109,7 +25109,7 @@ StereoPannerNode[JT] def removeEventListener[T <: Event](`type`: String, listene
 Storage[JC] def clear(): Unit
 Storage[JC] def getItem(key: String): String
 Storage[JC] def key(index: Int): String
-Storage[JC] var length: Int
+Storage[JC] def length: Int
 Storage[JC] def removeItem(key: String): Unit
 Storage[JC] def setItem(key: String, data: String): Unit
 StorageEstimate[JT] val quota: Double
