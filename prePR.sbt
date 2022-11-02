@@ -41,7 +41,7 @@ ThisBuild / prePR_nonCross := Def.sequential(
 
   Def.taskDyn {
     if (scalaVersion.value.startsWith("2.12."))
-      Def.task[Unit]((readme / Compile / compile).value)
+      Def.task[Unit]((docs / Compile / compile).value)
     else
       Def.task(())
   },

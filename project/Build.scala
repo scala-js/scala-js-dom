@@ -17,6 +17,7 @@ import scalafix.sbt.ScalafixPlugin.autoImport._
 import scalatex.ScalatexReadme
 import Dependencies._
 import Lib._
+import mdoc.MdocPlugin
 
 object Build {
 
@@ -141,18 +142,8 @@ object Build {
     .enablePlugins(ScalaJSPlugin)
     .configure(commonSettings, crossScala, preventPublication)
 
-  lazy val readme =
-    ScalatexReadme(
-      projectId     = "readme",
-      wd            = file(""),
-      url           = "https://github.com/scala-js/scala-js-dom/tree/main",
-      source        = "Index",
-      autoResources = Seq("example-opt.js"),
-    )
-    .configure(commonSettings, preventPublication)
-    .settings(
-      scalaVersion := Ver.scala212,
-      Compile / resources += (example / Compile / fullOptJS).value.data,
-    )
-
+  lazy val docs = project
+      .in(file("readme"))
+      .dependsOn(dom)
+      .enablePlugins(MdocPlugin)
 }
