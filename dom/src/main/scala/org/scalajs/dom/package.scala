@@ -114,4 +114,6 @@ package object dom {
   val webcrypto: Crypto = js.native
 
   type BlobPart = BufferSource | Blob | String
+
+  type ClipboardItemData = js.Promise[String | Blob]
 }

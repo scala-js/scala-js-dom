@@ -993,11 +993,11 @@ Clients[JT] def openWindow(url: String): js.Promise[WindowClient]
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Clipboard[JT] def dispatchEvent(evt: Event): Boolean
-Clipboard[JT] def read(): js.Promise[DataTransfer]
+Clipboard[JT] def read(): js.Promise[ClipboardItem]
 Clipboard[JT] def readText(): js.Promise[String]
 Clipboard[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Clipboard[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-Clipboard[JT] def write(data: DataTransfer): js.Promise[Unit]
+Clipboard[JT] def write(data: ClipboardItem): js.Promise[Unit]
 Clipboard[JT] def writeText(newClipText: String): js.Promise[Unit]
 ClipboardEvent[JC] def bubbles: Boolean
 ClipboardEvent[JC] def cancelBubble: Boolean
@@ -1019,6 +1019,10 @@ ClipboardEventInit[JT] var composed: js.UndefOr[Boolean]
 ClipboardEventInit[JT] var data: js.UndefOr[String]
 ClipboardEventInit[JT] var dataType: js.UndefOr[String]
 ClipboardEventInit[JT] var scoped: js.UndefOr[Boolean]
+ClipboardItem[JC] def getType(`type`: String): js.Promise[Blob]
+ClipboardItem[JC] def presentationStyle: PresentationStyle
+ClipboardItem[JC] def types: FrozenArray[String]
+ClipboardItemOptions[JT] def presentationStyle: js.UndefOr[PresentationStyle]
 CloseEvent[JT] def bubbles: Boolean
 CloseEvent[JT] def cancelBubble: Boolean
 CloseEvent[JT] def cancelable: Boolean
@@ -2017,6 +2021,8 @@ FrameType[SO] val auxiliary: FrameType
 FrameType[SO] val nested: FrameType
 FrameType[SO] val none: FrameType
 FrameType[SO] val `top-level` = "top-level".asInstanceOf[FrameType]
+FrozenArray[JT] @js.annotation.JSBracketAccess def apply(index: Int): T
+FrozenArray[JT] val length: Int
 FullscreenOptions[JT] var navigationUI: js.UndefOr[String]
 GainNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 GainNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -16226,6 +16232,10 @@ PositionError[JT] def message: String
 PositionOptions[JC] var enableHighAccuracy: Boolean
 PositionOptions[JC] var maximumAge: Int
 PositionOptions[JC] var timeout: Int
+PresentationStyle[JT]
+PresentationStyle[SO] val attachment: PresentationStyle
+PresentationStyle[SO] val inline: PresentationStyle
+PresentationStyle[SO] val unspecified: PresentationStyle
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ProcessingInstruction[JC] def appendChild(newChild: Node): Node
@@ -26946,6 +26956,7 @@ package[SO] type BufferSource = ArrayBufferView | ArrayBuffer
 package[SO] type ByteString = String
 package[SO] type ClientRect = DOMRect  (@deprecated in 2.0.0)
 package[SO] type ClientRectList = DOMRectList  (@deprecated in 2.0.0)
+package[SO] type ClipboardItemData = js.Promise[String | Blob]
 package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
 package[SO] type HeadersInit = Headers | Sequence[Sequence[ByteString]] | OpenEndedDictionary[ByteString]
 package[SO] type IDBKey = Any
