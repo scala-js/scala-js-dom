@@ -993,11 +993,11 @@ Clients[JT] def openWindow(url: String): js.Promise[WindowClient]
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Clipboard[JT] def dispatchEvent(evt: Event): Boolean
-Clipboard[JT] def read(): js.Promise[ClipboardItem]
+Clipboard[JT] def read(): js.Promise[js.Array[ClipboardItem]]
 Clipboard[JT] def readText(): js.Promise[String]
 Clipboard[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Clipboard[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-Clipboard[JT] def write(data: ClipboardItem): js.Promise[Unit]
+Clipboard[JT] def write(data: js.Array[ClipboardItem]): js.Promise[Unit]
 Clipboard[JT] def writeText(newClipText: String): js.Promise[Unit]
 ClipboardEvent[JC] def bubbles: Boolean
 ClipboardEvent[JC] def cancelBubble: Boolean
