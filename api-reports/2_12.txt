@@ -25158,7 +25158,7 @@ StyleSheetList[JC] def item(index: Int): StyleSheet
 StyleSheetList[JC] def length: Int
 StyleSheetList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: StyleSheet): Unit
 SubtleCrypto[JT] def decrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
-SubtleCrypto[JT] def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, length: Double): js.Promise[js.Any]
+SubtleCrypto[JT] def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, length: Double): js.Promise[ArrayBuffer]
 SubtleCrypto[JT] def deriveKey(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, derivedKeyType: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
 SubtleCrypto[JT] def digest(algorithm: HashAlgorithmIdentifier, data: BufferSource): js.Promise[js.Any]
 SubtleCrypto[JT] def encrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]

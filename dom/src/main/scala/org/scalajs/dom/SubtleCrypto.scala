@@ -1,6 +1,7 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.typedarray.ArrayBuffer
 
 /** [[http://www.w3.org/TR/WebCryptoAPI/#subtlecrypto-interface w3c ¶14 Subtle Crytpo interface]]
   *
@@ -72,7 +73,8 @@ trait SubtleCrypto extends js.Object {
     *
     * Defined at [[http://www.w3.org/TR/WebCryptoAPI/#SubtleCrypto-method-deriveBits ¶14.3.8 The deriveBits method]]
     */
-  def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, length: Double): js.Promise[js.Any] = js.native
+  def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey,
+      length: Double): js.Promise[ArrayBuffer] = js.native
 
   /** Returns a Promise of a CryptoKey corresponding to the format, the algorithm, the raw key data, the usages and the
     * extractability given as parameters.
