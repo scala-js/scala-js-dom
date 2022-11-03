@@ -10,6 +10,8 @@ import org.scalajs.jsenv.selenium.SeleniumJSEnv
 import org.scalajs.sbtplugin.ScalaJSJUnitPlugin
 import org.scalajs.sbtplugin.ScalaJSPlugin
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
+import mdoc.MdocPlugin
+import mdoc.MdocPlugin.autoImport._
 import sbtbuildinfo.BuildInfoPlugin
 import sbtbuildinfo.BuildInfoPlugin.autoImport._
 import scalafix.sbt.ScalafixPlugin
@@ -17,7 +19,6 @@ import scalafix.sbt.ScalafixPlugin.autoImport._
 import scalatex.ScalatexReadme
 import Dependencies._
 import Lib._
-import mdoc.MdocPlugin
 
 object Build {
 
@@ -142,8 +143,17 @@ object Build {
     .enablePlugins(ScalaJSPlugin)
     .configure(commonSettings, crossScala, preventPublication)
 
+  lazy val jsdocs = project
+    .in(file("mdocs-js"))
+    .dependsOn(dom)
+    .enablePlugins(ScalaJSPlugin)
+    .configure(commonSettings, crossScala, preventPublication)
+
   lazy val docs = project
-      .in(file("readme"))
-      .dependsOn(dom)
-      .enablePlugins(MdocPlugin)
+    .in(file("mdocs"))
+    .settings(
+      mdocJS := Some(jsdocs)
+    )
+    .enablePlugins(MdocPlugin)
+    .configure(commonSettings, crossScala, preventPublication)
 }
