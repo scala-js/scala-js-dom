@@ -17,6 +17,7 @@ import sbtbuildinfo.BuildInfoPlugin.autoImport._
 import scalafix.sbt.ScalafixPlugin
 import scalafix.sbt.ScalafixPlugin.autoImport._
 import scalatex.ScalatexReadme
+import sbtdynver.DynVerPlugin.autoImport.previousStableVersion
 import Dependencies._
 import Lib._
 
@@ -152,7 +153,10 @@ object Build {
   lazy val docs = project
     .in(file("mdocs"))
     .settings(
-      mdocJS := Some(jsdocs)
+      mdocJS := Some(jsdocs),
+      mdocVariables := Map(
+        "VERSION" -> previousStableVersion.value.getOrElse("2.3.0")
+      )
     )
     .enablePlugins(MdocPlugin)
     .configure(commonSettings, crossScala, preventPublication)
