@@ -25,7 +25,7 @@ trait Clipboard extends EventTarget {
     *
     * To read from the clipboard, you must first have the "clipboard-read" permission.
     */
-  def read(): js.Promise[DataTransfer] = js.native
+  def read(): js.Promise[js.Array[ClipboardItem]] = js.native
 
   /** The readText() method returns a Promise which resolves with a copy of the textual contents of the system
     * clipboard.
@@ -38,7 +38,7 @@ trait Clipboard extends EventTarget {
     * Before you can write to the clipboard, you need to use the Permissions API to get the "clipboard-write"
     * permission.
     */
-  def write(data: DataTransfer): js.Promise[Unit] = js.native
+  def write(data: js.Array[ClipboardItem]): js.Promise[Unit] = js.native
 
   /** The writeText() method writes the specified text string to the system clipboard. */
   def writeText(newClipText: String): js.Promise[Unit] = js.native
