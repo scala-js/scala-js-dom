@@ -111,6 +111,58 @@ def drawCuteSmiley(canvas: html.Canvas) = {
 }
 ```
 
+### Using `Fetch` to make API calls in the browser
+
+```scala mdoc:js
+def fetchBoredApi(element: html.Pre) = {
+  val url =
+    "https://www.boredapi.com/api/activity"
+
+  val responseText = for {
+    response <- dom.fetch(url)
+    text <- response.text()
+  } yield {
+    text
+  }
+
+  for (text <- responseText)
+    pre.textContent = text
+}
+```
+
+### Using Websockets
+
+```scala mdoc:js
+def echoWebSocket(input: html.Input, pre: html.Pre) = {
+  val echo = "wss://echo.websocket.org"
+  val socket = new dom.WebSocket(echo)
+
+  socket.onmessage = {
+    (e: dom.MessageEvent) =>
+      pre.textContent +=
+        e.data.toString
+  }
+
+  socket.onopen = { (e: dom.Event) =>
+    in.onkeyup = { (e: dom.Event) =>
+      socket.send(input.value)
+    }
+  }
+}
+```
+
+### Styling an HTML element
+
+```scala mdoc:js
+def changeColor(div: html.Div) = {
+  val colors = Seq("red", "green", "blue")
+
+  val index = util.Random.nextInt(colors.length)
+
+  div.style.color = colors(index)
+}
+```
+
 ## Contributing
 
 The DOM API is always evolving, and `scala-js-dom` tries to provide a thin-but-idiomatic Scala interface to modern browser APIs, without breaking the spec.
