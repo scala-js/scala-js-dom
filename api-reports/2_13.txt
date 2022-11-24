@@ -105,6 +105,7 @@ AnimationEvent[JT] def animationName: String
 AnimationEvent[JT] def bubbles: Boolean
 AnimationEvent[JT] def cancelBubble: Boolean
 AnimationEvent[JT] def cancelable: Boolean
+AnimationEvent[JT] def composed: Boolean
 AnimationEvent[JT] def currentTarget: EventTarget
 AnimationEvent[JT] def defaultPrevented: Boolean
 AnimationEvent[JT] def elapsedTime: Double
@@ -334,6 +335,7 @@ AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener:
 BeforeUnloadEvent[JC] def bubbles: Boolean
 BeforeUnloadEvent[JC] def cancelBubble: Boolean
 BeforeUnloadEvent[JC] def cancelable: Boolean
+BeforeUnloadEvent[JC] def composed: Boolean
 BeforeUnloadEvent[JC] def currentTarget: EventTarget
 BeforeUnloadEvent[JC] def defaultPrevented: Boolean
 BeforeUnloadEvent[JC] def eventPhase: Int
@@ -1003,6 +1005,7 @@ ClipboardEvent[JC] def bubbles: Boolean
 ClipboardEvent[JC] def cancelBubble: Boolean
 ClipboardEvent[JC] def cancelable: Boolean
 ClipboardEvent[JC] def clipboardData: DataTransfer
+ClipboardEvent[JC] def composed: Boolean
 ClipboardEvent[JC] def currentTarget: EventTarget
 ClipboardEvent[JC] def defaultPrevented: Boolean
 ClipboardEvent[JC] def eventPhase: Int
@@ -1027,6 +1030,7 @@ CloseEvent[JT] def bubbles: Boolean
 CloseEvent[JT] def cancelBubble: Boolean
 CloseEvent[JT] def cancelable: Boolean
 CloseEvent[JT] def code: Int
+CloseEvent[JT] def composed: Boolean
 CloseEvent[JT] def currentTarget: EventTarget
 CloseEvent[JT] def defaultPrevented: Boolean
 CloseEvent[JT] def eventPhase: Int
@@ -1090,6 +1094,7 @@ Comment[JC] var textContent: String
 CompositionEvent[JC] def bubbles: Boolean
 CompositionEvent[JC] def cancelBubble: Boolean
 CompositionEvent[JC] def cancelable: Boolean
+CompositionEvent[JC] def composed: Boolean
 CompositionEvent[JC] def currentTarget: EventTarget
 CompositionEvent[JC] def data: String
 CompositionEvent[JC] def defaultPrevented: Boolean
@@ -1190,6 +1195,7 @@ CustomElementRegistry[JC] def define(name: String, constructor: js.Dynamic, opti
 CustomEvent[JC] def bubbles: Boolean
 CustomEvent[JC] def cancelBubble: Boolean
 CustomEvent[JC] def cancelable: Boolean
+CustomEvent[JC] def composed: Boolean
 CustomEvent[JC] def currentTarget: EventTarget
 CustomEvent[JC] def defaultPrevented: Boolean
 CustomEvent[JC] def detail: Any
@@ -1368,6 +1374,7 @@ DeviceMotionEvent[JC] val accelerationIncludingGravity: DeviceAcceleration
 DeviceMotionEvent[JC] def bubbles: Boolean
 DeviceMotionEvent[JC] def cancelBubble: Boolean
 DeviceMotionEvent[JC] def cancelable: Boolean
+DeviceMotionEvent[JC] def composed: Boolean
 DeviceMotionEvent[JC] def currentTarget: EventTarget
 DeviceMotionEvent[JC] def defaultPrevented: Boolean
 DeviceMotionEvent[JC] def eventPhase: Int
@@ -1394,6 +1401,7 @@ DeviceOrientationEvent[JC] val beta: Double
 DeviceOrientationEvent[JC] def bubbles: Boolean
 DeviceOrientationEvent[JC] def cancelBubble: Boolean
 DeviceOrientationEvent[JC] def cancelable: Boolean
+DeviceOrientationEvent[JC] def composed: Boolean
 DeviceOrientationEvent[JC] def currentTarget: EventTarget
 DeviceOrientationEvent[JC] def defaultPrevented: Boolean
 DeviceOrientationEvent[JC] def eventPhase: Int
@@ -1633,6 +1641,7 @@ DragEvent[JT] def cancelBubble: Boolean
 DragEvent[JT] def cancelable: Boolean
 DragEvent[JT] def clientX: Double
 DragEvent[JT] def clientY: Double
+DragEvent[JT] def composed: Boolean
 DragEvent[JT] def ctrlKey: Boolean
 DragEvent[JT] def currentTarget: EventTarget
 DragEvent[JT] def dataTransfer: DataTransfer
@@ -1812,6 +1821,7 @@ ErrorEvent[JT] def bubbles: Boolean
 ErrorEvent[JT] def cancelBubble: Boolean
 ErrorEvent[JT] def cancelable: Boolean
 ErrorEvent[JT] def colno: Int
+ErrorEvent[JT] def composed: Boolean
 ErrorEvent[JT] def currentTarget: EventTarget
 ErrorEvent[JT] def defaultPrevented: Boolean
 ErrorEvent[JT] def eventPhase: Int
@@ -1828,6 +1838,7 @@ ErrorEvent[JT] def `type`: String
 Event[JC] def bubbles: Boolean
 Event[JC] def cancelBubble: Boolean
 Event[JC] def cancelable: Boolean
+Event[JC] def composed: Boolean
 Event[JC] def currentTarget: EventTarget
 Event[JC] def defaultPrevented: Boolean
 Event[JC] def eventPhase: Int
@@ -1878,6 +1889,7 @@ EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js
 ExtendableEvent[JC] def bubbles: Boolean
 ExtendableEvent[JC] def cancelBubble: Boolean
 ExtendableEvent[JC] def cancelable: Boolean
+ExtendableEvent[JC] def composed: Boolean
 ExtendableEvent[JC] def currentTarget: EventTarget
 ExtendableEvent[JC] def defaultPrevented: Boolean
 ExtendableEvent[JC] def eventPhase: Int
@@ -1896,6 +1908,7 @@ ExtendableEventInit[JT] var scoped: js.UndefOr[Boolean]
 ExtendableMessageEvent[JC] def bubbles: Boolean
 ExtendableMessageEvent[JC] def cancelBubble: Boolean
 ExtendableMessageEvent[JC] def cancelable: Boolean
+ExtendableMessageEvent[JC] def composed: Boolean
 ExtendableMessageEvent[JC] def currentTarget: EventTarget
 ExtendableMessageEvent[JC] val data: Any
 ExtendableMessageEvent[JC] def defaultPrevented: Boolean
@@ -1927,6 +1940,7 @@ FetchEvent[JC] def bubbles: Boolean
 FetchEvent[JC] def cancelBubble: Boolean
 FetchEvent[JC] def cancelable: Boolean
 FetchEvent[JC] def clientId: String
+FetchEvent[JC] def composed: Boolean
 FetchEvent[JC] def currentTarget: EventTarget
 FetchEvent[JC] def defaultPrevented: Boolean
 FetchEvent[JC] def eventPhase: Int
@@ -1994,6 +2008,7 @@ FileReaderSync[JC] def readAsText(blob: Blob, encoding: String?): String
 FocusEvent[JC] def bubbles: Boolean
 FocusEvent[JC] def cancelBubble: Boolean
 FocusEvent[JC] def cancelable: Boolean
+FocusEvent[JC] def composed: Boolean
 FocusEvent[JC] def currentTarget: EventTarget
 FocusEvent[JC] def defaultPrevented: Boolean
 FocusEvent[JC] def detail: Int
@@ -2051,6 +2066,7 @@ GamepadButton[JT] val value: Double
 GamepadEvent[JC] def bubbles: Boolean
 GamepadEvent[JC] def cancelBubble: Boolean
 GamepadEvent[JC] def cancelable: Boolean
+GamepadEvent[JC] def composed: Boolean
 GamepadEvent[JC] def currentTarget: EventTarget
 GamepadEvent[JC] def defaultPrevented: Boolean
 GamepadEvent[JC] def eventPhase: Int
@@ -14532,6 +14548,7 @@ HashAlgorithm[SO] val name = name0
 HashChangeEvent[JT] def bubbles: Boolean
 HashChangeEvent[JT] def cancelBubble: Boolean
 HashChangeEvent[JT] def cancelable: Boolean
+HashChangeEvent[JT] def composed: Boolean
 HashChangeEvent[JT] def currentTarget: EventTarget
 HashChangeEvent[JT] def defaultPrevented: Boolean
 HashChangeEvent[JT] def eventPhase: Int
@@ -14656,6 +14673,7 @@ IDBEnvironment[JT] def indexedDB: IDBFactory  (@deprecated in 1.2.0)
 IDBEvent[JC] def bubbles: Boolean
 IDBEvent[JC] def cancelBubble: Boolean
 IDBEvent[JC] def cancelable: Boolean
+IDBEvent[JC] def composed: Boolean
 IDBEvent[JC] def currentTarget: EventTarget
 IDBEvent[JC] def defaultPrevented: Boolean
 IDBEvent[JC] def eventPhase: Int
@@ -14778,6 +14796,7 @@ IDBTransactionOptions[JT] val durability: js.UndefOr[IDBTransactionDurability]
 IDBVersionChangeEvent[JC] def bubbles: Boolean
 IDBVersionChangeEvent[JC] def cancelBubble: Boolean
 IDBVersionChangeEvent[JC] def cancelable: Boolean
+IDBVersionChangeEvent[JC] def composed: Boolean
 IDBVersionChangeEvent[JC] def currentTarget: EventTarget
 IDBVersionChangeEvent[JC] def defaultPrevented: Boolean
 IDBVersionChangeEvent[JC] def eventPhase: Int
@@ -14811,6 +14830,7 @@ ImageData[JC] def width: Int
 InputEvent[JC] def bubbles: Boolean
 InputEvent[JC] def cancelBubble: Boolean
 InputEvent[JC] def cancelable: Boolean
+InputEvent[JC] def composed: Boolean
 InputEvent[JC] def currentTarget: EventTarget
 InputEvent[JC] def data: String
 InputEvent[JC] def dataTransfer: DataTransfer
@@ -15354,6 +15374,7 @@ KeyboardEvent[JC] def cancelBubble: Boolean
 KeyboardEvent[JC] def cancelable: Boolean
 KeyboardEvent[JC] def charCode: Int
 KeyboardEvent[JC] def code: String
+KeyboardEvent[JC] def composed: Boolean
 KeyboardEvent[JC] def ctrlKey: Boolean
 KeyboardEvent[JC] def currentTarget: EventTarget
 KeyboardEvent[JC] def defaultPrevented: Boolean
@@ -15572,6 +15593,7 @@ MediaStreamTrack[SO] def apply(enabled: js.UndefOr[Boolean]?, id: js.UndefOr[Str
 MediaStreamTrackEvent[JC] def bubbles: Boolean
 MediaStreamTrackEvent[JC] def cancelBubble: Boolean
 MediaStreamTrackEvent[JC] def cancelable: Boolean
+MediaStreamTrackEvent[JC] def composed: Boolean
 MediaStreamTrackEvent[JC] def currentTarget: EventTarget
 MediaStreamTrackEvent[JC] def defaultPrevented: Boolean
 MediaStreamTrackEvent[JC] def eventPhase: Int
@@ -15647,6 +15669,7 @@ MessageChannel[JC] def port2: MessagePort
 MessageEvent[JC] def bubbles: Boolean
 MessageEvent[JC] def cancelBubble: Boolean
 MessageEvent[JC] def cancelable: Boolean
+MessageEvent[JC] def composed: Boolean
 MessageEvent[JC] def currentTarget: EventTarget
 MessageEvent[JC] def data: Any
 MessageEvent[JC] def defaultPrevented: Boolean
@@ -15693,6 +15716,7 @@ MouseEvent[JC] def cancelBubble: Boolean
 MouseEvent[JC] def cancelable: Boolean
 MouseEvent[JC] def clientX: Double
 MouseEvent[JC] def clientY: Double
+MouseEvent[JC] def composed: Boolean
 MouseEvent[JC] def ctrlKey: Boolean
 MouseEvent[JC] def currentTarget: EventTarget
 MouseEvent[JC] def defaultPrevented: Boolean
@@ -15920,6 +15944,7 @@ NotificationOptions[SO] def apply(body: js.UndefOr[String]?, dir: js.UndefOr[Str
 OfflineAudioCompletionEvent[JT] def bubbles: Boolean
 OfflineAudioCompletionEvent[JT] def cancelBubble: Boolean
 OfflineAudioCompletionEvent[JT] def cancelable: Boolean
+OfflineAudioCompletionEvent[JT] def composed: Boolean
 OfflineAudioCompletionEvent[JT] def currentTarget: EventTarget
 OfflineAudioCompletionEvent[JT] def defaultPrevented: Boolean
 OfflineAudioCompletionEvent[JT] def eventPhase: Int
@@ -15993,6 +16018,7 @@ OscillatorNode[JT] var `type`: String
 PageTransitionEvent[JT] def bubbles: Boolean
 PageTransitionEvent[JT] def cancelBubble: Boolean
 PageTransitionEvent[JT] def cancelable: Boolean
+PageTransitionEvent[JT] def composed: Boolean
 PageTransitionEvent[JT] def currentTarget: EventTarget
 PageTransitionEvent[JT] def defaultPrevented: Boolean
 PageTransitionEvent[JT] def eventPhase: Int
@@ -16146,6 +16172,7 @@ PointerEvent[JC] def cancelBubble: Boolean
 PointerEvent[JC] def cancelable: Boolean
 PointerEvent[JC] def clientX: Double
 PointerEvent[JC] def clientY: Double
+PointerEvent[JC] def composed: Boolean
 PointerEvent[JC] def ctrlKey: Boolean
 PointerEvent[JC] def currentTarget: EventTarget
 PointerEvent[JC] def defaultPrevented: Boolean
@@ -16211,6 +16238,7 @@ PointerEventInit[JT] var width: js.UndefOr[Double]
 PopStateEvent[JT] def bubbles: Boolean
 PopStateEvent[JT] def cancelBubble: Boolean
 PopStateEvent[JT] def cancelable: Boolean
+PopStateEvent[JT] def composed: Boolean
 PopStateEvent[JT] def currentTarget: EventTarget
 PopStateEvent[JT] def defaultPrevented: Boolean
 PopStateEvent[JT] def eventPhase: Int
@@ -16279,6 +16307,7 @@ ProcessingInstruction[JC] var textContent: String
 ProgressEvent[JT] def bubbles: Boolean
 ProgressEvent[JT] def cancelBubble: Boolean
 ProgressEvent[JT] def cancelable: Boolean
+ProgressEvent[JT] def composed: Boolean
 ProgressEvent[JT] def currentTarget: EventTarget
 ProgressEvent[JT] def defaultPrevented: Boolean
 ProgressEvent[JT] def eventPhase: Int
@@ -16298,6 +16327,7 @@ PushEncryptionKeyName[SO] val p256dh: PushEncryptionKeyName
 PushEvent[JT] def bubbles: Boolean
 PushEvent[JT] def cancelBubble: Boolean
 PushEvent[JT] def cancelable: Boolean
+PushEvent[JT] def composed: Boolean
 PushEvent[JT] def currentTarget: EventTarget
 PushEvent[JT] val data: PushMessageData
 PushEvent[JT] def defaultPrevented: Boolean
@@ -16380,6 +16410,7 @@ RTCDataChannelEvent[JC] def bubbles: Boolean
 RTCDataChannelEvent[JC] def cancelBubble: Boolean
 RTCDataChannelEvent[JC] def cancelable: Boolean
 RTCDataChannelEvent[JC] val channel: RTCDataChannel
+RTCDataChannelEvent[JC] def composed: Boolean
 RTCDataChannelEvent[JC] def currentTarget: EventTarget
 RTCDataChannelEvent[JC] def defaultPrevented: Boolean
 RTCDataChannelEvent[JC] def eventPhase: Int
@@ -16487,6 +16518,7 @@ RTCPeerConnectionIceEvent[JC] def bubbles: Boolean
 RTCPeerConnectionIceEvent[JC] def cancelBubble: Boolean
 RTCPeerConnectionIceEvent[JC] def cancelable: Boolean
 RTCPeerConnectionIceEvent[JC] var candidate: RTCIceCandidate
+RTCPeerConnectionIceEvent[JC] def composed: Boolean
 RTCPeerConnectionIceEvent[JC] def currentTarget: EventTarget
 RTCPeerConnectionIceEvent[JC] def defaultPrevented: Boolean
 RTCPeerConnectionIceEvent[JC] def eventPhase: Int
@@ -25127,6 +25159,7 @@ StorageEstimate[JT] val usage: Double
 StorageEvent[JC] def bubbles: Boolean
 StorageEvent[JC] def cancelBubble: Boolean
 StorageEvent[JC] def cancelable: Boolean
+StorageEvent[JC] def composed: Boolean
 StorageEvent[JC] def currentTarget: EventTarget
 StorageEvent[JC] def defaultPrevented: Boolean
 StorageEvent[JC] def eventPhase: Int
@@ -25232,6 +25265,7 @@ Text[JC] def wholeText: String
 TextEvent[JC] def bubbles: Boolean
 TextEvent[JC] def cancelBubble: Boolean
 TextEvent[JC] def cancelable: Boolean
+TextEvent[JC] def composed: Boolean
 TextEvent[JC] def currentTarget: EventTarget
 TextEvent[JC] def data: String
 TextEvent[JC] def defaultPrevented: Boolean
@@ -25348,6 +25382,7 @@ TouchEvent[JC] def bubbles: Boolean
 TouchEvent[JC] def cancelBubble: Boolean
 TouchEvent[JC] def cancelable: Boolean
 TouchEvent[JC] def changedTouches: TouchList
+TouchEvent[JC] def composed: Boolean
 TouchEvent[JC] def ctrlKey: Boolean
 TouchEvent[JC] def currentTarget: EventTarget
 TouchEvent[JC] def defaultPrevented: Boolean
@@ -25385,6 +25420,7 @@ TouchList[JT] def length: Int
 TrackEvent[JT] def bubbles: Boolean
 TrackEvent[JT] def cancelBubble: Boolean
 TrackEvent[JT] def cancelable: Boolean
+TrackEvent[JT] def composed: Boolean
 TrackEvent[JT] def currentTarget: EventTarget
 TrackEvent[JT] def defaultPrevented: Boolean
 TrackEvent[JT] def eventPhase: Int
@@ -25399,6 +25435,7 @@ TrackEvent[JT] def `type`: String
 TransitionEvent[JT] def bubbles: Boolean
 TransitionEvent[JT] def cancelBubble: Boolean
 TransitionEvent[JT] def cancelable: Boolean
+TransitionEvent[JT] def composed: Boolean
 TransitionEvent[JT] def currentTarget: EventTarget
 TransitionEvent[JT] def defaultPrevented: Boolean
 TransitionEvent[JT] def elapsedTime: Double
@@ -25428,6 +25465,7 @@ TwoDContextAttributes[JT] var willReadFrequently: js.UndefOr[Boolean]
 UIEvent[JC] def bubbles: Boolean
 UIEvent[JC] def cancelBubble: Boolean
 UIEvent[JC] def cancelable: Boolean
+UIEvent[JC] def composed: Boolean
 UIEvent[JC] def currentTarget: EventTarget
 UIEvent[JC] def defaultPrevented: Boolean
 UIEvent[JC] def detail: Int
@@ -26031,6 +26069,7 @@ WheelEvent[JC] def cancelBubble: Boolean
 WheelEvent[JC] def cancelable: Boolean
 WheelEvent[JC] def clientX: Double
 WheelEvent[JC] def clientY: Double
+WheelEvent[JC] def composed: Boolean
 WheelEvent[JC] def ctrlKey: Boolean
 WheelEvent[JC] def currentTarget: EventTarget
 WheelEvent[JC] def defaultPrevented: Boolean
