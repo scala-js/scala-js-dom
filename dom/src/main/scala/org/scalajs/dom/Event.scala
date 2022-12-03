@@ -66,6 +66,9 @@ class Event(typeArg: String, init: js.UndefOr[EventInit] = js.undefined) extends
 
   /** Cancels the event if it is cancelable, without stopping further propagation of the event. */
   def preventDefault(): Unit = js.native
+
+  /** Indicates whether or not the event will propagate across the shadow DOM boundary into the standard DOM. */
+  def composed: Boolean = js.native
 }
 
 @js.native
