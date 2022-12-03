@@ -270,4 +270,9 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
     * inserted as equivalent Text nodes.
     */
   def replaceWith(nodes: (Node | String)*): Unit = js.native
+
+  /** Traverses the element and its parents (heading toward the document root) until it finds a node that matches the
+    * specified CSS selector.
+    */
+  def closest(selector: String): Element = js.native
 }
