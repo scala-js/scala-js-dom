@@ -13,6 +13,7 @@ object html {
   type Collection[+E] = HTMLCollection[E]
   type DataList = HTMLDataListElement
   type Div = HTMLDivElement
+  type Dialog = HTMLDialogElement
   type DList = HTMLDListElement
   type Document = HTMLDocument
   type Element = HTMLElement
