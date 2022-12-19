@@ -26993,6 +26993,7 @@ html[SO] type Canvas = HTMLCanvasElement
 html[SO] type Collection[+E] = HTMLCollection[E]
 html[SO] type DList = HTMLDListElement
 html[SO] type DataList = HTMLDataListElement
+html[SO] type Dialog = HTMLDialogElement
 html[SO] type Div = HTMLDivElement
 html[SO] type Document = HTMLDocument
 html[SO] type Element = HTMLElement
