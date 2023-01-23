@@ -6733,7 +6733,7 @@ HTMLImageElement[JC] def isSupported(feature: String, version: String): Boolean
 HTMLImageElement[JC] var lang: String
 HTMLImageElement[JC] def lastChild: Node
 HTMLImageElement[JC] def lastElementChild: Element
-HTMLImageElement[JC] var loading: ImageLoadingMode
+HTMLImageElement[JC] var loading: LazyLoadingState
 HTMLImageElement[JC] def localName: String
 HTMLImageElement[JC] def lookupNamespaceURI(prefix: String): String
 HTMLImageElement[JC] def lookupPrefix(namespaceURI: String): String
@@ -6879,8 +6879,8 @@ HTMLImageElement[JC] var textContent: String
 HTMLImageElement[JC] var title: String
 HTMLImageElement[JC] var useMap: String
 HTMLImageElement[JC] var width: Int
-HTMLImageElement[JC] def x: Long
-HTMLImageElement[JC] def y: Long
+HTMLImageElement[JC] def x: Double
+HTMLImageElement[JC] def y: Double
 HTMLInputElement[JC] var accept: String
 HTMLInputElement[JC] var accessKey: String
 HTMLInputElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -14907,6 +14907,7 @@ Image[JC] def clientLeft: Int
 Image[JC] def clientTop: Int
 Image[JC] def clientWidth: Int
 Image[JC] def cloneNode(deep: Boolean?): Node
+Image[JC] def closest(selector: String): Element
 Image[JC] def compareDocumentPosition(other: Node): Int
 Image[JC] def complete: Boolean
 Image[JC] def contains(child: HTMLElement): Boolean
@@ -14953,7 +14954,7 @@ Image[JC] def isSupported(feature: String, version: String): Boolean
 Image[JC] var lang: String
 Image[JC] def lastChild: Node
 Image[JC] def lastElementChild: Element
-Image[JC] var loading: ImageLoadingMode
+Image[JC] var loading: LazyLoadingState
 Image[JC] def localName: String
 Image[JC] def lookupNamespaceURI(prefix: String): String
 Image[JC] def lookupPrefix(namespaceURI: String): String
@@ -15099,8 +15100,8 @@ Image[JC] var textContent: String
 Image[JC] var title: String
 Image[JC] var useMap: String
 Image[JC] var width: Int
-Image[JC] def x: Long
-Image[JC] def y: Long
+Image[JC] def x: Double
+Image[JC] def y: Double
 ImageBitmap[JT] def close(): Unit
 ImageBitmap[JT] def height: Double
 ImageBitmap[JT] def width: Double
@@ -15110,9 +15111,6 @@ ImageCapture[JC] val track: MediaStreamTrack
 ImageData[JC] def data: js.Array[Int]
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
-ImageLoadingMode[JT]
-ImageLoadingMode[SO] val eager: ImageLoadingMode
-ImageLoadingMode[SO] val `lazy`: ImageLoadingMode
 InputEvent[JC] def bubbles: Boolean
 InputEvent[JC] def cancelBubble: Boolean
 InputEvent[JC] def cancelable: Boolean
@@ -15702,6 +15700,9 @@ KeyboardEventInit[JT] var repeat: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var scoped: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var shiftKey: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var view: js.UndefOr[Window]
+LazyLoadingState[JT]
+LazyLoadingState[SO] val eager: LazyLoadingState
+LazyLoadingState[SO] val `lazy`: LazyLoadingState
 LinkStyle[JT] def sheet: StyleSheet
 Location[JT] def assign(url: String): Unit
 Location[JT] var hash: String
