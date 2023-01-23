@@ -31,7 +31,7 @@ abstract class HTMLImageElement extends HTMLElement {
   /** A string whose value provides a hint to the user agent on how to handle the loading of the image which is
     * currently outside the window's visual viewport.
     */
-  var loading: ImageLoadingMode = js.native
+  var loading: LazyLoadingState = js.native
 
   /** Reflects the src HTML attribute, containing the URL of the image. */
   var src: String = js.native
@@ -67,8 +67,8 @@ abstract class HTMLImageElement extends HTMLElement {
   var onload: js.Function1[Event, _] = js.native
 
   /** Indicates the x-coordinate of the <img> element's left border edge relative to the root element's origin. */
-  def x: Long = js.native
+  def x: Double = js.native
 
   /** Indicates the y-coordinate of the <img> element's top border edge relative to the root element's origin. */
-  def y: Long = js.native
+  def y: Double = js.native
 }

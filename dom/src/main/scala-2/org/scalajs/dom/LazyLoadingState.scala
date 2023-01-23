@@ -7,9 +7,9 @@ import scala.scalajs.js
   *  [[https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-loading]]
   */
 @js.native
-sealed trait ImageLoadingMode extends js.Any
+sealed trait LazyLoadingState extends js.Any
 
-object ImageLoadingMode {
-  val eager: ImageLoadingMode = "eager".asInstanceOf[ImageLoadingMode]
-  val `lazy`: ImageLoadingMode = "lazy".asInstanceOf[ImageLoadingMode]
+object LazyLoadingState {
+  val eager: LazyLoadingState = "eager".asInstanceOf[LazyLoadingState]
+  val `lazy`: LazyLoadingState = "lazy".asInstanceOf[LazyLoadingState]
 }
