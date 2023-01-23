@@ -54,6 +54,9 @@ class KeyboardEvent(typeArg: String, init: js.UndefOr[KeyboardEventInit])
 
   /** Returns the current state of the specified modifier key. */
   def getModifierState(keyArg: String): Boolean = js.native
+
+  /** Returns a string with the code value of the physical key represented by the event. */
+  def code: String = js.native
 }
 
 @js.native

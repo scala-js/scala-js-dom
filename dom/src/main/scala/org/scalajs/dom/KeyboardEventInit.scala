@@ -27,4 +27,7 @@ trait KeyboardEventInit extends UIEventInit with ModifierKeyEventInit {
 
   /** Sets value of KeyboardEvent.repeat. Defaults to false. */
   var repeat: js.UndefOr[Boolean] = js.undefined
+
+  /** Sets value of KeyboardEvent.code. Defaults to empty string. */
+  var code: js.UndefOr[String] = js.undefined;
 }

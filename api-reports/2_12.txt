@@ -105,6 +105,7 @@ AnimationEvent[JT] def animationName: String
 AnimationEvent[JT] def bubbles: Boolean
 AnimationEvent[JT] def cancelBubble: Boolean
 AnimationEvent[JT] def cancelable: Boolean
+AnimationEvent[JT] def composed: Boolean
 AnimationEvent[JT] def currentTarget: EventTarget
 AnimationEvent[JT] def defaultPrevented: Boolean
 AnimationEvent[JT] def elapsedTime: Double
@@ -334,6 +335,7 @@ AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener:
 BeforeUnloadEvent[JC] def bubbles: Boolean
 BeforeUnloadEvent[JC] def cancelBubble: Boolean
 BeforeUnloadEvent[JC] def cancelable: Boolean
+BeforeUnloadEvent[JC] def composed: Boolean
 BeforeUnloadEvent[JC] def currentTarget: EventTarget
 BeforeUnloadEvent[JC] def defaultPrevented: Boolean
 BeforeUnloadEvent[JC] def eventPhase: Int
@@ -993,16 +995,17 @@ Clients[JT] def openWindow(url: String): js.Promise[WindowClient]
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Clipboard[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Clipboard[JT] def dispatchEvent(evt: Event): Boolean
-Clipboard[JT] def read(): js.Promise[DataTransfer]
+Clipboard[JT] def read(): js.Promise[js.Array[ClipboardItem]]
 Clipboard[JT] def readText(): js.Promise[String]
 Clipboard[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Clipboard[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-Clipboard[JT] def write(data: DataTransfer): js.Promise[Unit]
+Clipboard[JT] def write(data: js.Array[ClipboardItem]): js.Promise[Unit]
 Clipboard[JT] def writeText(newClipText: String): js.Promise[Unit]
 ClipboardEvent[JC] def bubbles: Boolean
 ClipboardEvent[JC] def cancelBubble: Boolean
 ClipboardEvent[JC] def cancelable: Boolean
 ClipboardEvent[JC] def clipboardData: DataTransfer
+ClipboardEvent[JC] def composed: Boolean
 ClipboardEvent[JC] def currentTarget: EventTarget
 ClipboardEvent[JC] def defaultPrevented: Boolean
 ClipboardEvent[JC] def eventPhase: Int
@@ -1019,10 +1022,15 @@ ClipboardEventInit[JT] var composed: js.UndefOr[Boolean]
 ClipboardEventInit[JT] var data: js.UndefOr[String]
 ClipboardEventInit[JT] var dataType: js.UndefOr[String]
 ClipboardEventInit[JT] var scoped: js.UndefOr[Boolean]
+ClipboardItem[JC] def getType(`type`: String): js.Promise[Blob]
+ClipboardItem[JC] def presentationStyle: PresentationStyle
+ClipboardItem[JC] def types: FrozenArray[String]
+ClipboardItemOptions[JT] def presentationStyle: js.UndefOr[PresentationStyle]
 CloseEvent[JT] def bubbles: Boolean
 CloseEvent[JT] def cancelBubble: Boolean
 CloseEvent[JT] def cancelable: Boolean
 CloseEvent[JT] def code: Int
+CloseEvent[JT] def composed: Boolean
 CloseEvent[JT] def currentTarget: EventTarget
 CloseEvent[JT] def defaultPrevented: Boolean
 CloseEvent[JT] def eventPhase: Int
@@ -1086,6 +1094,7 @@ Comment[JC] var textContent: String
 CompositionEvent[JC] def bubbles: Boolean
 CompositionEvent[JC] def cancelBubble: Boolean
 CompositionEvent[JC] def cancelable: Boolean
+CompositionEvent[JC] def composed: Boolean
 CompositionEvent[JC] def currentTarget: EventTarget
 CompositionEvent[JC] def data: String
 CompositionEvent[JC] def defaultPrevented: Boolean
@@ -1186,6 +1195,7 @@ CustomElementRegistry[JC] def define(name: String, constructor: js.Dynamic, opti
 CustomEvent[JC] def bubbles: Boolean
 CustomEvent[JC] def cancelBubble: Boolean
 CustomEvent[JC] def cancelable: Boolean
+CustomEvent[JC] def composed: Boolean
 CustomEvent[JC] def currentTarget: EventTarget
 CustomEvent[JC] def defaultPrevented: Boolean
 CustomEvent[JC] def detail: Any
@@ -1364,6 +1374,7 @@ DeviceMotionEvent[JC] val accelerationIncludingGravity: DeviceAcceleration
 DeviceMotionEvent[JC] def bubbles: Boolean
 DeviceMotionEvent[JC] def cancelBubble: Boolean
 DeviceMotionEvent[JC] def cancelable: Boolean
+DeviceMotionEvent[JC] def composed: Boolean
 DeviceMotionEvent[JC] def currentTarget: EventTarget
 DeviceMotionEvent[JC] def defaultPrevented: Boolean
 DeviceMotionEvent[JC] def eventPhase: Int
@@ -1390,6 +1401,7 @@ DeviceOrientationEvent[JC] val beta: Double
 DeviceOrientationEvent[JC] def bubbles: Boolean
 DeviceOrientationEvent[JC] def cancelBubble: Boolean
 DeviceOrientationEvent[JC] def cancelable: Boolean
+DeviceOrientationEvent[JC] def composed: Boolean
 DeviceOrientationEvent[JC] def currentTarget: EventTarget
 DeviceOrientationEvent[JC] def defaultPrevented: Boolean
 DeviceOrientationEvent[JC] def eventPhase: Int
@@ -1629,6 +1641,7 @@ DragEvent[JT] def cancelBubble: Boolean
 DragEvent[JT] def cancelable: Boolean
 DragEvent[JT] def clientX: Double
 DragEvent[JT] def clientY: Double
+DragEvent[JT] def composed: Boolean
 DragEvent[JT] def ctrlKey: Boolean
 DragEvent[JT] def currentTarget: EventTarget
 DragEvent[JT] def dataTransfer: DataTransfer
@@ -1717,6 +1730,7 @@ Element[JC] def clientLeft: Int
 Element[JC] def clientTop: Int
 Element[JC] def clientWidth: Int
 Element[JC] def cloneNode(deep: Boolean?): Node
+Element[JC] def closest(selector: String): Element
 Element[JC] def compareDocumentPosition(other: Node): Int
 Element[JC] def contains(otherNode: Node): Boolean
 Element[JC] def dispatchEvent(evt: Event): Boolean
@@ -1808,6 +1822,7 @@ ErrorEvent[JT] def bubbles: Boolean
 ErrorEvent[JT] def cancelBubble: Boolean
 ErrorEvent[JT] def cancelable: Boolean
 ErrorEvent[JT] def colno: Int
+ErrorEvent[JT] def composed: Boolean
 ErrorEvent[JT] def currentTarget: EventTarget
 ErrorEvent[JT] def defaultPrevented: Boolean
 ErrorEvent[JT] def eventPhase: Int
@@ -1824,6 +1839,7 @@ ErrorEvent[JT] def `type`: String
 Event[JC] def bubbles: Boolean
 Event[JC] def cancelBubble: Boolean
 Event[JC] def cancelable: Boolean
+Event[JC] def composed: Boolean
 Event[JC] def currentTarget: EventTarget
 Event[JC] def defaultPrevented: Boolean
 Event[JC] def eventPhase: Int
@@ -1874,6 +1890,7 @@ EventTarget[JC] def removeEventListener[T <: Event](`type`: String, listener: js
 ExtendableEvent[JC] def bubbles: Boolean
 ExtendableEvent[JC] def cancelBubble: Boolean
 ExtendableEvent[JC] def cancelable: Boolean
+ExtendableEvent[JC] def composed: Boolean
 ExtendableEvent[JC] def currentTarget: EventTarget
 ExtendableEvent[JC] def defaultPrevented: Boolean
 ExtendableEvent[JC] def eventPhase: Int
@@ -1892,6 +1909,7 @@ ExtendableEventInit[JT] var scoped: js.UndefOr[Boolean]
 ExtendableMessageEvent[JC] def bubbles: Boolean
 ExtendableMessageEvent[JC] def cancelBubble: Boolean
 ExtendableMessageEvent[JC] def cancelable: Boolean
+ExtendableMessageEvent[JC] def composed: Boolean
 ExtendableMessageEvent[JC] def currentTarget: EventTarget
 ExtendableMessageEvent[JC] val data: Any
 ExtendableMessageEvent[JC] def defaultPrevented: Boolean
@@ -1923,6 +1941,7 @@ FetchEvent[JC] def bubbles: Boolean
 FetchEvent[JC] def cancelBubble: Boolean
 FetchEvent[JC] def cancelable: Boolean
 FetchEvent[JC] def clientId: String
+FetchEvent[JC] def composed: Boolean
 FetchEvent[JC] def currentTarget: EventTarget
 FetchEvent[JC] def defaultPrevented: Boolean
 FetchEvent[JC] def eventPhase: Int
@@ -1990,6 +2009,7 @@ FileReaderSync[JC] def readAsText(blob: Blob, encoding: String?): String
 FocusEvent[JC] def bubbles: Boolean
 FocusEvent[JC] def cancelBubble: Boolean
 FocusEvent[JC] def cancelable: Boolean
+FocusEvent[JC] def composed: Boolean
 FocusEvent[JC] def currentTarget: EventTarget
 FocusEvent[JC] def defaultPrevented: Boolean
 FocusEvent[JC] def detail: Int
@@ -2017,6 +2037,8 @@ FrameType[SO] val auxiliary: FrameType
 FrameType[SO] val nested: FrameType
 FrameType[SO] val none: FrameType
 FrameType[SO] val `top-level` = "top-level".asInstanceOf[FrameType]
+FrozenArray[JT] @js.annotation.JSBracketAccess def apply(index: Int): T
+FrozenArray[JT] val length: Int
 FullscreenOptions[JT] var navigationUI: js.UndefOr[String]
 GainNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 GainNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -2045,6 +2067,7 @@ GamepadButton[JT] val value: Double
 GamepadEvent[JC] def bubbles: Boolean
 GamepadEvent[JC] def cancelBubble: Boolean
 GamepadEvent[JC] def cancelable: Boolean
+GamepadEvent[JC] def composed: Boolean
 GamepadEvent[JC] def currentTarget: EventTarget
 GamepadEvent[JC] def defaultPrevented: Boolean
 GamepadEvent[JC] def eventPhase: Int
@@ -2093,6 +2116,7 @@ HTMLAnchorElement[JC] def clientLeft: Int
 HTMLAnchorElement[JC] def clientTop: Int
 HTMLAnchorElement[JC] def clientWidth: Int
 HTMLAnchorElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLAnchorElement[JC] def closest(selector: String): Element
 HTMLAnchorElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLAnchorElement[JC] def contains(child: HTMLElement): Boolean
 HTMLAnchorElement[JC] def contains(otherNode: Node): Boolean
@@ -2308,6 +2332,7 @@ HTMLAreaElement[JC] def clientLeft: Int
 HTMLAreaElement[JC] def clientTop: Int
 HTMLAreaElement[JC] def clientWidth: Int
 HTMLAreaElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLAreaElement[JC] def closest(selector: String): Element
 HTMLAreaElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLAreaElement[JC] def contains(child: HTMLElement): Boolean
 HTMLAreaElement[JC] def contains(otherNode: Node): Boolean
@@ -2523,6 +2548,7 @@ HTMLAudioElement[JC] def clientLeft: Int
 HTMLAudioElement[JC] def clientTop: Int
 HTMLAudioElement[JC] def clientWidth: Int
 HTMLAudioElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLAudioElement[JC] def closest(selector: String): Element
 HTMLAudioElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLAudioElement[JC] def contains(child: HTMLElement): Boolean
 HTMLAudioElement[JC] def contains(otherNode: Node): Boolean
@@ -2747,6 +2773,7 @@ HTMLBRElement[JC] def clientLeft: Int
 HTMLBRElement[JC] def clientTop: Int
 HTMLBRElement[JC] def clientWidth: Int
 HTMLBRElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLBRElement[JC] def closest(selector: String): Element
 HTMLBRElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLBRElement[JC] def contains(child: HTMLElement): Boolean
 HTMLBRElement[JC] def contains(otherNode: Node): Boolean
@@ -2947,6 +2974,7 @@ HTMLBaseElement[JC] def clientLeft: Int
 HTMLBaseElement[JC] def clientTop: Int
 HTMLBaseElement[JC] def clientWidth: Int
 HTMLBaseElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLBaseElement[JC] def closest(selector: String): Element
 HTMLBaseElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLBaseElement[JC] def contains(child: HTMLElement): Boolean
 HTMLBaseElement[JC] def contains(otherNode: Node): Boolean
@@ -3149,6 +3177,7 @@ HTMLBodyElement[JC] def clientLeft: Int
 HTMLBodyElement[JC] def clientTop: Int
 HTMLBodyElement[JC] def clientWidth: Int
 HTMLBodyElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLBodyElement[JC] def closest(selector: String): Element
 HTMLBodyElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLBodyElement[JC] def contains(child: HTMLElement): Boolean
 HTMLBodyElement[JC] def contains(otherNode: Node): Boolean
@@ -3365,6 +3394,7 @@ HTMLButtonElement[JC] def clientLeft: Int
 HTMLButtonElement[JC] def clientTop: Int
 HTMLButtonElement[JC] def clientWidth: Int
 HTMLButtonElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLButtonElement[JC] def closest(selector: String): Element
 HTMLButtonElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLButtonElement[JC] def contains(child: HTMLElement): Boolean
 HTMLButtonElement[JC] def contains(otherNode: Node): Boolean
@@ -3581,6 +3611,7 @@ HTMLCanvasElement[JC] def clientLeft: Int
 HTMLCanvasElement[JC] def clientTop: Int
 HTMLCanvasElement[JC] def clientWidth: Int
 HTMLCanvasElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLCanvasElement[JC] def closest(selector: String): Element
 HTMLCanvasElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLCanvasElement[JC] def contains(child: HTMLElement): Boolean
 HTMLCanvasElement[JC] def contains(otherNode: Node): Boolean
@@ -3789,6 +3820,7 @@ HTMLDListElement[JC] def clientLeft: Int
 HTMLDListElement[JC] def clientTop: Int
 HTMLDListElement[JC] def clientWidth: Int
 HTMLDListElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLDListElement[JC] def closest(selector: String): Element
 HTMLDListElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLDListElement[JC] def contains(child: HTMLElement): Boolean
 HTMLDListElement[JC] def contains(otherNode: Node): Boolean
@@ -3989,6 +4021,7 @@ HTMLDataListElement[JC] def clientLeft: Int
 HTMLDataListElement[JC] def clientTop: Int
 HTMLDataListElement[JC] def clientWidth: Int
 HTMLDataListElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLDataListElement[JC] def closest(selector: String): Element
 HTMLDataListElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLDataListElement[JC] def contains(child: HTMLElement): Boolean
 HTMLDataListElement[JC] def contains(otherNode: Node): Boolean
@@ -4191,6 +4224,7 @@ HTMLDialogElement[JC] def clientTop: Int
 HTMLDialogElement[JC] def clientWidth: Int
 HTMLDialogElement[JC] def cloneNode(deep: Boolean?): Node
 HTMLDialogElement[JC] def close(returnValue: String?): Unit
+HTMLDialogElement[JC] def closest(selector: String): Element
 HTMLDialogElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLDialogElement[JC] def contains(child: HTMLElement): Boolean
 HTMLDialogElement[JC] def contains(otherNode: Node): Boolean
@@ -4395,6 +4429,7 @@ HTMLDivElement[JC] def clientLeft: Int
 HTMLDivElement[JC] def clientTop: Int
 HTMLDivElement[JC] def clientWidth: Int
 HTMLDivElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLDivElement[JC] def closest(selector: String): Element
 HTMLDivElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLDivElement[JC] def contains(child: HTMLElement): Boolean
 HTMLDivElement[JC] def contains(otherNode: Node): Boolean
@@ -4795,6 +4830,7 @@ HTMLElement[JC] def clientLeft: Int
 HTMLElement[JC] def clientTop: Int
 HTMLElement[JC] def clientWidth: Int
 HTMLElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLElement[JC] def closest(selector: String): Element
 HTMLElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLElement[JC] def contains(child: HTMLElement): Boolean
 HTMLElement[JC] def contains(otherNode: Node): Boolean
@@ -4995,6 +5031,7 @@ HTMLEmbedElement[JC] def clientLeft: Int
 HTMLEmbedElement[JC] def clientTop: Int
 HTMLEmbedElement[JC] def clientWidth: Int
 HTMLEmbedElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLEmbedElement[JC] def closest(selector: String): Element
 HTMLEmbedElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLEmbedElement[JC] def contains(child: HTMLElement): Boolean
 HTMLEmbedElement[JC] def contains(otherNode: Node): Boolean
@@ -5200,6 +5237,7 @@ HTMLFieldSetElement[JC] def clientLeft: Int
 HTMLFieldSetElement[JC] def clientTop: Int
 HTMLFieldSetElement[JC] def clientWidth: Int
 HTMLFieldSetElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLFieldSetElement[JC] def closest(selector: String): Element
 HTMLFieldSetElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLFieldSetElement[JC] def contains(child: HTMLElement): Boolean
 HTMLFieldSetElement[JC] def contains(otherNode: Node): Boolean
@@ -5416,6 +5454,7 @@ HTMLFormElement[JC] def clientLeft: Int
 HTMLFormElement[JC] def clientTop: Int
 HTMLFormElement[JC] def clientWidth: Int
 HTMLFormElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLFormElement[JC] def closest(selector: String): Element
 HTMLFormElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLFormElement[JC] def contains(child: HTMLElement): Boolean
 HTMLFormElement[JC] def contains(otherNode: Node): Boolean
@@ -5630,6 +5669,7 @@ HTMLHRElement[JC] def clientLeft: Int
 HTMLHRElement[JC] def clientTop: Int
 HTMLHRElement[JC] def clientWidth: Int
 HTMLHRElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLHRElement[JC] def closest(selector: String): Element
 HTMLHRElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLHRElement[JC] def contains(child: HTMLElement): Boolean
 HTMLHRElement[JC] def contains(otherNode: Node): Boolean
@@ -5830,6 +5870,7 @@ HTMLHeadElement[JC] def clientLeft: Int
 HTMLHeadElement[JC] def clientTop: Int
 HTMLHeadElement[JC] def clientWidth: Int
 HTMLHeadElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLHeadElement[JC] def closest(selector: String): Element
 HTMLHeadElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLHeadElement[JC] def contains(child: HTMLElement): Boolean
 HTMLHeadElement[JC] def contains(otherNode: Node): Boolean
@@ -6030,6 +6071,7 @@ HTMLHeadingElement[JC] def clientLeft: Int
 HTMLHeadingElement[JC] def clientTop: Int
 HTMLHeadingElement[JC] def clientWidth: Int
 HTMLHeadingElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLHeadingElement[JC] def closest(selector: String): Element
 HTMLHeadingElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLHeadingElement[JC] def contains(child: HTMLElement): Boolean
 HTMLHeadingElement[JC] def contains(otherNode: Node): Boolean
@@ -6230,6 +6272,7 @@ HTMLHtmlElement[JC] def clientLeft: Int
 HTMLHtmlElement[JC] def clientTop: Int
 HTMLHtmlElement[JC] def clientWidth: Int
 HTMLHtmlElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLHtmlElement[JC] def closest(selector: String): Element
 HTMLHtmlElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLHtmlElement[JC] def contains(child: HTMLElement): Boolean
 HTMLHtmlElement[JC] def contains(otherNode: Node): Boolean
@@ -6431,6 +6474,7 @@ HTMLIFrameElement[JC] def clientLeft: Int
 HTMLIFrameElement[JC] def clientTop: Int
 HTMLIFrameElement[JC] def clientWidth: Int
 HTMLIFrameElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLIFrameElement[JC] def closest(selector: String): Element
 HTMLIFrameElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLIFrameElement[JC] def contains(child: HTMLElement): Boolean
 HTMLIFrameElement[JC] def contains(otherNode: Node): Boolean
@@ -6642,6 +6686,7 @@ HTMLImageElement[JC] def clientLeft: Int
 HTMLImageElement[JC] def clientTop: Int
 HTMLImageElement[JC] def clientWidth: Int
 HTMLImageElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLImageElement[JC] def closest(selector: String): Element
 HTMLImageElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLImageElement[JC] def complete: Boolean
 HTMLImageElement[JC] def contains(child: HTMLElement): Boolean
@@ -6864,6 +6909,7 @@ HTMLInputElement[JC] def clientLeft: Int
 HTMLInputElement[JC] def clientTop: Int
 HTMLInputElement[JC] def clientWidth: Int
 HTMLInputElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLInputElement[JC] def closest(selector: String): Element
 HTMLInputElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLInputElement[JC] def contains(child: HTMLElement): Boolean
 HTMLInputElement[JC] def contains(otherNode: Node): Boolean
@@ -7105,6 +7151,7 @@ HTMLLIElement[JC] def clientLeft: Int
 HTMLLIElement[JC] def clientTop: Int
 HTMLLIElement[JC] def clientWidth: Int
 HTMLLIElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLLIElement[JC] def closest(selector: String): Element
 HTMLLIElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLLIElement[JC] def contains(child: HTMLElement): Boolean
 HTMLLIElement[JC] def contains(otherNode: Node): Boolean
@@ -7306,6 +7353,7 @@ HTMLLabelElement[JC] def clientLeft: Int
 HTMLLabelElement[JC] def clientTop: Int
 HTMLLabelElement[JC] def clientWidth: Int
 HTMLLabelElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLLabelElement[JC] def closest(selector: String): Element
 HTMLLabelElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLLabelElement[JC] def contains(child: HTMLElement): Boolean
 HTMLLabelElement[JC] def contains(otherNode: Node): Boolean
@@ -7509,6 +7557,7 @@ HTMLLegendElement[JC] def clientLeft: Int
 HTMLLegendElement[JC] def clientTop: Int
 HTMLLegendElement[JC] def clientWidth: Int
 HTMLLegendElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLLegendElement[JC] def closest(selector: String): Element
 HTMLLegendElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLLegendElement[JC] def contains(child: HTMLElement): Boolean
 HTMLLegendElement[JC] def contains(otherNode: Node): Boolean
@@ -7710,6 +7759,7 @@ HTMLLinkElement[JC] def clientLeft: Int
 HTMLLinkElement[JC] def clientTop: Int
 HTMLLinkElement[JC] def clientWidth: Int
 HTMLLinkElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLLinkElement[JC] def closest(selector: String): Element
 HTMLLinkElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLLinkElement[JC] def contains(child: HTMLElement): Boolean
 HTMLLinkElement[JC] def contains(otherNode: Node): Boolean
@@ -7918,6 +7968,7 @@ HTMLMapElement[JC] def clientLeft: Int
 HTMLMapElement[JC] def clientTop: Int
 HTMLMapElement[JC] def clientWidth: Int
 HTMLMapElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLMapElement[JC] def closest(selector: String): Element
 HTMLMapElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLMapElement[JC] def contains(child: HTMLElement): Boolean
 HTMLMapElement[JC] def contains(otherNode: Node): Boolean
@@ -8123,6 +8174,7 @@ HTMLMediaElement[JC] def clientLeft: Int
 HTMLMediaElement[JC] def clientTop: Int
 HTMLMediaElement[JC] def clientWidth: Int
 HTMLMediaElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLMediaElement[JC] def closest(selector: String): Element
 HTMLMediaElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLMediaElement[JC] def contains(child: HTMLElement): Boolean
 HTMLMediaElement[JC] def contains(otherNode: Node): Boolean
@@ -8356,6 +8408,7 @@ HTMLMenuElement[JC] def clientLeft: Int
 HTMLMenuElement[JC] def clientTop: Int
 HTMLMenuElement[JC] def clientWidth: Int
 HTMLMenuElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLMenuElement[JC] def closest(selector: String): Element
 HTMLMenuElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLMenuElement[JC] def contains(child: HTMLElement): Boolean
 HTMLMenuElement[JC] def contains(otherNode: Node): Boolean
@@ -8558,6 +8611,7 @@ HTMLMetaElement[JC] def clientLeft: Int
 HTMLMetaElement[JC] def clientTop: Int
 HTMLMetaElement[JC] def clientWidth: Int
 HTMLMetaElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLMetaElement[JC] def closest(selector: String): Element
 HTMLMetaElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLMetaElement[JC] def contains(child: HTMLElement): Boolean
 HTMLMetaElement[JC] def contains(otherNode: Node): Boolean
@@ -8763,6 +8817,7 @@ HTMLModElement[JC] def clientLeft: Int
 HTMLModElement[JC] def clientTop: Int
 HTMLModElement[JC] def clientWidth: Int
 HTMLModElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLModElement[JC] def closest(selector: String): Element
 HTMLModElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLModElement[JC] def contains(child: HTMLElement): Boolean
 HTMLModElement[JC] def contains(otherNode: Node): Boolean
@@ -8964,6 +9019,7 @@ HTMLOListElement[JC] def clientLeft: Int
 HTMLOListElement[JC] def clientTop: Int
 HTMLOListElement[JC] def clientWidth: Int
 HTMLOListElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLOListElement[JC] def closest(selector: String): Element
 HTMLOListElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLOListElement[JC] def contains(child: HTMLElement): Boolean
 HTMLOListElement[JC] def contains(otherNode: Node): Boolean
@@ -9170,6 +9226,7 @@ HTMLObjectElement[JC] def clientLeft: Int
 HTMLObjectElement[JC] def clientTop: Int
 HTMLObjectElement[JC] def clientWidth: Int
 HTMLObjectElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLObjectElement[JC] def closest(selector: String): Element
 HTMLObjectElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLObjectElement[JC] def contains(child: HTMLElement): Boolean
 HTMLObjectElement[JC] def contains(otherNode: Node): Boolean
@@ -9385,6 +9442,7 @@ HTMLOptGroupElement[JC] def clientLeft: Int
 HTMLOptGroupElement[JC] def clientTop: Int
 HTMLOptGroupElement[JC] def clientWidth: Int
 HTMLOptGroupElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLOptGroupElement[JC] def closest(selector: String): Element
 HTMLOptGroupElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLOptGroupElement[JC] def contains(child: HTMLElement): Boolean
 HTMLOptGroupElement[JC] def contains(otherNode: Node): Boolean
@@ -9587,6 +9645,7 @@ HTMLOptionElement[JC] def clientLeft: Int
 HTMLOptionElement[JC] def clientTop: Int
 HTMLOptionElement[JC] def clientWidth: Int
 HTMLOptionElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLOptionElement[JC] def closest(selector: String): Element
 HTMLOptionElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLOptionElement[JC] def contains(child: HTMLElement): Boolean
 HTMLOptionElement[JC] def contains(otherNode: Node): Boolean
@@ -9800,6 +9859,7 @@ HTMLParagraphElement[JC] def clientLeft: Int
 HTMLParagraphElement[JC] def clientTop: Int
 HTMLParagraphElement[JC] def clientWidth: Int
 HTMLParagraphElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLParagraphElement[JC] def closest(selector: String): Element
 HTMLParagraphElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLParagraphElement[JC] def contains(child: HTMLElement): Boolean
 HTMLParagraphElement[JC] def contains(otherNode: Node): Boolean
@@ -10000,6 +10060,7 @@ HTMLParamElement[JC] def clientLeft: Int
 HTMLParamElement[JC] def clientTop: Int
 HTMLParamElement[JC] def clientWidth: Int
 HTMLParamElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLParamElement[JC] def closest(selector: String): Element
 HTMLParamElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLParamElement[JC] def contains(child: HTMLElement): Boolean
 HTMLParamElement[JC] def contains(otherNode: Node): Boolean
@@ -10202,6 +10263,7 @@ HTMLPreElement[JC] def clientLeft: Int
 HTMLPreElement[JC] def clientTop: Int
 HTMLPreElement[JC] def clientWidth: Int
 HTMLPreElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLPreElement[JC] def closest(selector: String): Element
 HTMLPreElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLPreElement[JC] def contains(child: HTMLElement): Boolean
 HTMLPreElement[JC] def contains(otherNode: Node): Boolean
@@ -10402,6 +10464,7 @@ HTMLProgressElement[JC] def clientLeft: Int
 HTMLProgressElement[JC] def clientTop: Int
 HTMLProgressElement[JC] def clientWidth: Int
 HTMLProgressElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLProgressElement[JC] def closest(selector: String): Element
 HTMLProgressElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLProgressElement[JC] def contains(child: HTMLElement): Boolean
 HTMLProgressElement[JC] def contains(otherNode: Node): Boolean
@@ -10607,6 +10670,7 @@ HTMLQuoteElement[JC] def clientLeft: Int
 HTMLQuoteElement[JC] def clientTop: Int
 HTMLQuoteElement[JC] def clientWidth: Int
 HTMLQuoteElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLQuoteElement[JC] def closest(selector: String): Element
 HTMLQuoteElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLQuoteElement[JC] def contains(child: HTMLElement): Boolean
 HTMLQuoteElement[JC] def contains(otherNode: Node): Boolean
@@ -10810,6 +10874,7 @@ HTMLScriptElement[JC] def clientLeft: Int
 HTMLScriptElement[JC] def clientTop: Int
 HTMLScriptElement[JC] def clientWidth: Int
 HTMLScriptElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLScriptElement[JC] def closest(selector: String): Element
 HTMLScriptElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLScriptElement[JC] def contains(child: HTMLElement): Boolean
 HTMLScriptElement[JC] def contains(otherNode: Node): Boolean
@@ -11020,6 +11085,7 @@ HTMLSelectElement[JC] def clientLeft: Int
 HTMLSelectElement[JC] def clientTop: Int
 HTMLSelectElement[JC] def clientWidth: Int
 HTMLSelectElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLSelectElement[JC] def closest(selector: String): Element
 HTMLSelectElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLSelectElement[JC] def contains(child: HTMLElement): Boolean
 HTMLSelectElement[JC] def contains(otherNode: Node): Boolean
@@ -11240,6 +11306,7 @@ HTMLSourceElement[JC] def clientLeft: Int
 HTMLSourceElement[JC] def clientTop: Int
 HTMLSourceElement[JC] def clientWidth: Int
 HTMLSourceElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLSourceElement[JC] def closest(selector: String): Element
 HTMLSourceElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLSourceElement[JC] def contains(child: HTMLElement): Boolean
 HTMLSourceElement[JC] def contains(otherNode: Node): Boolean
@@ -11443,6 +11510,7 @@ HTMLSpanElement[JC] def clientLeft: Int
 HTMLSpanElement[JC] def clientTop: Int
 HTMLSpanElement[JC] def clientWidth: Int
 HTMLSpanElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLSpanElement[JC] def closest(selector: String): Element
 HTMLSpanElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLSpanElement[JC] def contains(child: HTMLElement): Boolean
 HTMLSpanElement[JC] def contains(otherNode: Node): Boolean
@@ -11643,6 +11711,7 @@ HTMLStyleElement[JC] def clientLeft: Int
 HTMLStyleElement[JC] def clientTop: Int
 HTMLStyleElement[JC] def clientWidth: Int
 HTMLStyleElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLStyleElement[JC] def closest(selector: String): Element
 HTMLStyleElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLStyleElement[JC] def contains(child: HTMLElement): Boolean
 HTMLStyleElement[JC] def contains(otherNode: Node): Boolean
@@ -11847,6 +11916,7 @@ HTMLTableCaptionElement[JC] def clientLeft: Int
 HTMLTableCaptionElement[JC] def clientTop: Int
 HTMLTableCaptionElement[JC] def clientWidth: Int
 HTMLTableCaptionElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTableCaptionElement[JC] def closest(selector: String): Element
 HTMLTableCaptionElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTableCaptionElement[JC] def contains(child: HTMLElement): Boolean
 HTMLTableCaptionElement[JC] def contains(otherNode: Node): Boolean
@@ -12048,6 +12118,7 @@ HTMLTableCellElement[JC] def clientLeft: Int
 HTMLTableCellElement[JC] def clientTop: Int
 HTMLTableCellElement[JC] def clientWidth: Int
 HTMLTableCellElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTableCellElement[JC] def closest(selector: String): Element
 HTMLTableCellElement[JC] var colSpan: Int
 HTMLTableCellElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTableCellElement[JC] def contains(child: HTMLElement): Boolean
@@ -12251,6 +12322,7 @@ HTMLTableColElement[JC] def clientLeft: Int
 HTMLTableColElement[JC] def clientTop: Int
 HTMLTableColElement[JC] def clientWidth: Int
 HTMLTableColElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTableColElement[JC] def closest(selector: String): Element
 HTMLTableColElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTableColElement[JC] def contains(child: HTMLElement): Boolean
 HTMLTableColElement[JC] def contains(otherNode: Node): Boolean
@@ -12453,6 +12525,7 @@ HTMLTableElement[JC] def clientLeft: Int
 HTMLTableElement[JC] def clientTop: Int
 HTMLTableElement[JC] def clientWidth: Int
 HTMLTableElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTableElement[JC] def closest(selector: String): Element
 HTMLTableElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTableElement[JC] def contains(child: HTMLElement): Boolean
 HTMLTableElement[JC] def contains(otherNode: Node): Boolean
@@ -12671,6 +12744,7 @@ HTMLTableRowElement[JC] def clientLeft: Int
 HTMLTableRowElement[JC] def clientTop: Int
 HTMLTableRowElement[JC] def clientWidth: Int
 HTMLTableRowElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTableRowElement[JC] def closest(selector: String): Element
 HTMLTableRowElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTableRowElement[JC] def contains(child: HTMLElement): Boolean
 HTMLTableRowElement[JC] def contains(otherNode: Node): Boolean
@@ -12876,6 +12950,7 @@ HTMLTableSectionElement[JC] def clientLeft: Int
 HTMLTableSectionElement[JC] def clientTop: Int
 HTMLTableSectionElement[JC] def clientWidth: Int
 HTMLTableSectionElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTableSectionElement[JC] def closest(selector: String): Element
 HTMLTableSectionElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTableSectionElement[JC] def contains(child: HTMLElement): Boolean
 HTMLTableSectionElement[JC] def contains(otherNode: Node): Boolean
@@ -13080,6 +13155,7 @@ HTMLTemplateElement[JC] def clientLeft: Int
 HTMLTemplateElement[JC] def clientTop: Int
 HTMLTemplateElement[JC] def clientWidth: Int
 HTMLTemplateElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTemplateElement[JC] def closest(selector: String): Element
 HTMLTemplateElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTemplateElement[JC] def contains(child: HTMLElement): Boolean
 HTMLTemplateElement[JC] def contains(otherNode: Node): Boolean
@@ -13283,6 +13359,7 @@ HTMLTextAreaElement[JC] def clientLeft: Int
 HTMLTextAreaElement[JC] def clientTop: Int
 HTMLTextAreaElement[JC] def clientWidth: Int
 HTMLTextAreaElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTextAreaElement[JC] def closest(selector: String): Element
 HTMLTextAreaElement[JC] var cols: Int
 HTMLTextAreaElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTextAreaElement[JC] def contains(child: HTMLElement): Boolean
@@ -13506,6 +13583,7 @@ HTMLTitleElement[JC] def clientLeft: Int
 HTMLTitleElement[JC] def clientTop: Int
 HTMLTitleElement[JC] def clientWidth: Int
 HTMLTitleElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTitleElement[JC] def closest(selector: String): Element
 HTMLTitleElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTitleElement[JC] def contains(child: HTMLElement): Boolean
 HTMLTitleElement[JC] def contains(otherNode: Node): Boolean
@@ -13707,6 +13785,7 @@ HTMLTrackElement[JC] def clientLeft: Int
 HTMLTrackElement[JC] def clientTop: Int
 HTMLTrackElement[JC] def clientWidth: Int
 HTMLTrackElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLTrackElement[JC] def closest(selector: String): Element
 HTMLTrackElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLTrackElement[JC] def contains(child: HTMLElement): Boolean
 HTMLTrackElement[JC] def contains(otherNode: Node): Boolean
@@ -13912,6 +13991,7 @@ HTMLUListElement[JC] def clientLeft: Int
 HTMLUListElement[JC] def clientTop: Int
 HTMLUListElement[JC] def clientWidth: Int
 HTMLUListElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLUListElement[JC] def closest(selector: String): Element
 HTMLUListElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLUListElement[JC] def contains(child: HTMLElement): Boolean
 HTMLUListElement[JC] def contains(otherNode: Node): Boolean
@@ -14112,6 +14192,7 @@ HTMLUnknownElement[JC] def clientLeft: Int
 HTMLUnknownElement[JC] def clientTop: Int
 HTMLUnknownElement[JC] def clientWidth: Int
 HTMLUnknownElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLUnknownElement[JC] def closest(selector: String): Element
 HTMLUnknownElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLUnknownElement[JC] def contains(child: HTMLElement): Boolean
 HTMLUnknownElement[JC] def contains(otherNode: Node): Boolean
@@ -14316,6 +14397,7 @@ HTMLVideoElement[JC] def clientLeft: Int
 HTMLVideoElement[JC] def clientTop: Int
 HTMLVideoElement[JC] def clientWidth: Int
 HTMLVideoElement[JC] def cloneNode(deep: Boolean?): Node
+HTMLVideoElement[JC] def closest(selector: String): Element
 HTMLVideoElement[JC] def compareDocumentPosition(other: Node): Int
 HTMLVideoElement[JC] def contains(child: HTMLElement): Boolean
 HTMLVideoElement[JC] def contains(otherNode: Node): Boolean
@@ -14532,6 +14614,7 @@ HashAlgorithm[SO] val name = name0
 HashChangeEvent[JT] def bubbles: Boolean
 HashChangeEvent[JT] def cancelBubble: Boolean
 HashChangeEvent[JT] def cancelable: Boolean
+HashChangeEvent[JT] def composed: Boolean
 HashChangeEvent[JT] def currentTarget: EventTarget
 HashChangeEvent[JT] def defaultPrevented: Boolean
 HashChangeEvent[JT] def eventPhase: Int
@@ -14656,6 +14739,7 @@ IDBEnvironment[JT] def indexedDB: IDBFactory  (@deprecated in 1.2.0)
 IDBEvent[JC] def bubbles: Boolean
 IDBEvent[JC] def cancelBubble: Boolean
 IDBEvent[JC] def cancelable: Boolean
+IDBEvent[JC] def composed: Boolean
 IDBEvent[JC] def currentTarget: EventTarget
 IDBEvent[JC] def defaultPrevented: Boolean
 IDBEvent[JC] def eventPhase: Int
@@ -14778,6 +14862,7 @@ IDBTransactionOptions[JT] val durability: js.UndefOr[IDBTransactionDurability]
 IDBVersionChangeEvent[JC] def bubbles: Boolean
 IDBVersionChangeEvent[JC] def cancelBubble: Boolean
 IDBVersionChangeEvent[JC] def cancelable: Boolean
+IDBVersionChangeEvent[JC] def composed: Boolean
 IDBVersionChangeEvent[JC] def currentTarget: EventTarget
 IDBVersionChangeEvent[JC] def defaultPrevented: Boolean
 IDBVersionChangeEvent[JC] def eventPhase: Int
@@ -15031,6 +15116,7 @@ ImageLoadingMode[SO] val `lazy`: ImageLoadingMode
 InputEvent[JC] def bubbles: Boolean
 InputEvent[JC] def cancelBubble: Boolean
 InputEvent[JC] def cancelable: Boolean
+InputEvent[JC] def composed: Boolean
 InputEvent[JC] def currentTarget: EventTarget
 InputEvent[JC] def data: String
 InputEvent[JC] def dataTransfer: DataTransfer
@@ -15573,6 +15659,8 @@ KeyboardEvent[JC] def bubbles: Boolean
 KeyboardEvent[JC] def cancelBubble: Boolean
 KeyboardEvent[JC] def cancelable: Boolean
 KeyboardEvent[JC] def charCode: Int
+KeyboardEvent[JC] def code: String
+KeyboardEvent[JC] def composed: Boolean
 KeyboardEvent[JC] def ctrlKey: Boolean
 KeyboardEvent[JC] def currentTarget: EventTarget
 KeyboardEvent[JC] def defaultPrevented: Boolean
@@ -15601,6 +15689,7 @@ KeyboardEventInit[JT] var altKey: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var bubbles: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var cancelable: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var charCode: js.UndefOr[Int]
+KeyboardEventInit[JT] var code: js.UndefOr[String]
 KeyboardEventInit[JT] var composed: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var ctrlKey: js.UndefOr[Boolean]
 KeyboardEventInit[JT] var detail: js.UndefOr[Int]
@@ -15676,11 +15765,16 @@ MediaList[JC] def item(index: Int): String
 MediaList[JC] def length: Int
 MediaList[JC] def mediaText: String
 MediaList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: String): Unit
-MediaQueryList[JT] def addListener(listener: MediaQueryListListener): Unit
+MediaQueryList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaQueryList[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaQueryList[JT] def addListener(listener: MediaQueryListListener): Unit  (@deprecated in 2.4.0)
+MediaQueryList[JT] def dispatchEvent(evt: Event): Boolean
 MediaQueryList[JT] def matches: Boolean
-MediaQueryList[JT] var media: String
-MediaQueryList[JT] def removeListener(listener: MediaQueryListListener): Unit
-MediaQueryListListener[JT] def apply(mql: MediaQueryList): Unit
+MediaQueryList[JT] def media: String
+MediaQueryList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaQueryList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaQueryList[JT] def removeListener(listener: MediaQueryListListener): Unit  (@deprecated in 2.4.0)
+MediaQueryListListener[JT] def apply(mql: MediaQueryList): Unit  (@deprecated in 2.4.0)
 MediaSource[JC] def activeSourceBuffers: SourceBufferList
 MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -15785,6 +15879,7 @@ MediaStreamTrack[SO] def apply(enabled: js.UndefOr[Boolean]?, id: js.UndefOr[Str
 MediaStreamTrackEvent[JC] def bubbles: Boolean
 MediaStreamTrackEvent[JC] def cancelBubble: Boolean
 MediaStreamTrackEvent[JC] def cancelable: Boolean
+MediaStreamTrackEvent[JC] def composed: Boolean
 MediaStreamTrackEvent[JC] def currentTarget: EventTarget
 MediaStreamTrackEvent[JC] def defaultPrevented: Boolean
 MediaStreamTrackEvent[JC] def eventPhase: Int
@@ -15860,6 +15955,7 @@ MessageChannel[JC] def port2: MessagePort
 MessageEvent[JC] def bubbles: Boolean
 MessageEvent[JC] def cancelBubble: Boolean
 MessageEvent[JC] def cancelable: Boolean
+MessageEvent[JC] def composed: Boolean
 MessageEvent[JC] def currentTarget: EventTarget
 MessageEvent[JC] def data: Any
 MessageEvent[JC] def defaultPrevented: Boolean
@@ -15906,6 +16002,7 @@ MouseEvent[JC] def cancelBubble: Boolean
 MouseEvent[JC] def cancelable: Boolean
 MouseEvent[JC] def clientX: Double
 MouseEvent[JC] def clientY: Double
+MouseEvent[JC] def composed: Boolean
 MouseEvent[JC] def ctrlKey: Boolean
 MouseEvent[JC] def currentTarget: EventTarget
 MouseEvent[JC] def defaultPrevented: Boolean
@@ -16133,6 +16230,7 @@ NotificationOptions[SO] def apply(body: js.UndefOr[String]?, dir: js.UndefOr[Str
 OfflineAudioCompletionEvent[JT] def bubbles: Boolean
 OfflineAudioCompletionEvent[JT] def cancelBubble: Boolean
 OfflineAudioCompletionEvent[JT] def cancelable: Boolean
+OfflineAudioCompletionEvent[JT] def composed: Boolean
 OfflineAudioCompletionEvent[JT] def currentTarget: EventTarget
 OfflineAudioCompletionEvent[JT] def defaultPrevented: Boolean
 OfflineAudioCompletionEvent[JT] def eventPhase: Int
@@ -16206,6 +16304,7 @@ OscillatorNode[JT] var `type`: String
 PageTransitionEvent[JT] def bubbles: Boolean
 PageTransitionEvent[JT] def cancelBubble: Boolean
 PageTransitionEvent[JT] def cancelable: Boolean
+PageTransitionEvent[JT] def composed: Boolean
 PageTransitionEvent[JT] def currentTarget: EventTarget
 PageTransitionEvent[JT] def defaultPrevented: Boolean
 PageTransitionEvent[JT] def eventPhase: Int
@@ -16359,6 +16458,7 @@ PointerEvent[JC] def cancelBubble: Boolean
 PointerEvent[JC] def cancelable: Boolean
 PointerEvent[JC] def clientX: Double
 PointerEvent[JC] def clientY: Double
+PointerEvent[JC] def composed: Boolean
 PointerEvent[JC] def ctrlKey: Boolean
 PointerEvent[JC] def currentTarget: EventTarget
 PointerEvent[JC] def defaultPrevented: Boolean
@@ -16424,6 +16524,7 @@ PointerEventInit[JT] var width: js.UndefOr[Double]
 PopStateEvent[JT] def bubbles: Boolean
 PopStateEvent[JT] def cancelBubble: Boolean
 PopStateEvent[JT] def cancelable: Boolean
+PopStateEvent[JT] def composed: Boolean
 PopStateEvent[JT] def currentTarget: EventTarget
 PopStateEvent[JT] def defaultPrevented: Boolean
 PopStateEvent[JT] def eventPhase: Int
@@ -16445,6 +16546,10 @@ PositionError[JT] def message: String
 PositionOptions[JC] var enableHighAccuracy: Boolean
 PositionOptions[JC] var maximumAge: Int
 PositionOptions[JC] var timeout: Int
+PresentationStyle[JT]
+PresentationStyle[SO] val attachment: PresentationStyle
+PresentationStyle[SO] val inline: PresentationStyle
+PresentationStyle[SO] val unspecified: PresentationStyle
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ProcessingInstruction[JC] def appendChild(newChild: Node): Node
@@ -16488,6 +16593,7 @@ ProcessingInstruction[JC] var textContent: String
 ProgressEvent[JT] def bubbles: Boolean
 ProgressEvent[JT] def cancelBubble: Boolean
 ProgressEvent[JT] def cancelable: Boolean
+ProgressEvent[JT] def composed: Boolean
 ProgressEvent[JT] def currentTarget: EventTarget
 ProgressEvent[JT] def defaultPrevented: Boolean
 ProgressEvent[JT] def eventPhase: Int
@@ -16507,6 +16613,7 @@ PushEncryptionKeyName[SO] val p256dh: PushEncryptionKeyName
 PushEvent[JT] def bubbles: Boolean
 PushEvent[JT] def cancelBubble: Boolean
 PushEvent[JT] def cancelable: Boolean
+PushEvent[JT] def composed: Boolean
 PushEvent[JT] def currentTarget: EventTarget
 PushEvent[JT] val data: PushMessageData
 PushEvent[JT] def defaultPrevented: Boolean
@@ -16589,6 +16696,7 @@ RTCDataChannelEvent[JC] def bubbles: Boolean
 RTCDataChannelEvent[JC] def cancelBubble: Boolean
 RTCDataChannelEvent[JC] def cancelable: Boolean
 RTCDataChannelEvent[JC] val channel: RTCDataChannel
+RTCDataChannelEvent[JC] def composed: Boolean
 RTCDataChannelEvent[JC] def currentTarget: EventTarget
 RTCDataChannelEvent[JC] def defaultPrevented: Boolean
 RTCDataChannelEvent[JC] def eventPhase: Int
@@ -16696,6 +16804,7 @@ RTCPeerConnectionIceEvent[JC] def bubbles: Boolean
 RTCPeerConnectionIceEvent[JC] def cancelBubble: Boolean
 RTCPeerConnectionIceEvent[JC] def cancelable: Boolean
 RTCPeerConnectionIceEvent[JC] var candidate: RTCIceCandidate
+RTCPeerConnectionIceEvent[JC] def composed: Boolean
 RTCPeerConnectionIceEvent[JC] def currentTarget: EventTarget
 RTCPeerConnectionIceEvent[JC] def defaultPrevented: Boolean
 RTCPeerConnectionIceEvent[JC] def eventPhase: Int
@@ -16985,6 +17094,7 @@ SVGAElement[JC] def clientLeft: Int
 SVGAElement[JC] def clientTop: Int
 SVGAElement[JC] def clientWidth: Int
 SVGAElement[JC] def cloneNode(deep: Boolean?): Node
+SVGAElement[JC] def closest(selector: String): Element
 SVGAElement[JC] def compareDocumentPosition(other: Node): Int
 SVGAElement[JC] def contains(otherNode: Node): Boolean
 SVGAElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -17153,6 +17263,7 @@ SVGCircleElement[JC] def clientLeft: Int
 SVGCircleElement[JC] def clientTop: Int
 SVGCircleElement[JC] def clientWidth: Int
 SVGCircleElement[JC] def cloneNode(deep: Boolean?): Node
+SVGCircleElement[JC] def closest(selector: String): Element
 SVGCircleElement[JC] def compareDocumentPosition(other: Node): Int
 SVGCircleElement[JC] def contains(otherNode: Node): Boolean
 SVGCircleElement[JC] def cx: SVGAnimatedLength
@@ -17288,6 +17399,7 @@ SVGClipPathElement[JC] def clientTop: Int
 SVGClipPathElement[JC] def clientWidth: Int
 SVGClipPathElement[JC] def clipPathUnits: SVGAnimatedEnumeration
 SVGClipPathElement[JC] def cloneNode(deep: Boolean?): Node
+SVGClipPathElement[JC] def closest(selector: String): Element
 SVGClipPathElement[JC] def compareDocumentPosition(other: Node): Int
 SVGClipPathElement[JC] def contains(otherNode: Node): Boolean
 SVGClipPathElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -17416,6 +17528,7 @@ SVGComponentTransferFunctionElement[JC] def clientLeft: Int
 SVGComponentTransferFunctionElement[JC] def clientTop: Int
 SVGComponentTransferFunctionElement[JC] def clientWidth: Int
 SVGComponentTransferFunctionElement[JC] def cloneNode(deep: Boolean?): Node
+SVGComponentTransferFunctionElement[JC] def closest(selector: String): Element
 SVGComponentTransferFunctionElement[JC] def compareDocumentPosition(other: Node): Int
 SVGComponentTransferFunctionElement[JC] def contains(otherNode: Node): Boolean
 SVGComponentTransferFunctionElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -17541,6 +17654,7 @@ SVGDefsElement[JC] def clientLeft: Int
 SVGDefsElement[JC] def clientTop: Int
 SVGDefsElement[JC] def clientWidth: Int
 SVGDefsElement[JC] def cloneNode(deep: Boolean?): Node
+SVGDefsElement[JC] def closest(selector: String): Element
 SVGDefsElement[JC] def compareDocumentPosition(other: Node): Int
 SVGDefsElement[JC] def contains(otherNode: Node): Boolean
 SVGDefsElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -17669,6 +17783,7 @@ SVGDescElement[JC] def clientLeft: Int
 SVGDescElement[JC] def clientTop: Int
 SVGDescElement[JC] def clientWidth: Int
 SVGDescElement[JC] def cloneNode(deep: Boolean?): Node
+SVGDescElement[JC] def closest(selector: String): Element
 SVGDescElement[JC] def compareDocumentPosition(other: Node): Int
 SVGDescElement[JC] def contains(otherNode: Node): Boolean
 SVGDescElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -17784,6 +17899,7 @@ SVGElement[JC] def clientLeft: Int
 SVGElement[JC] def clientTop: Int
 SVGElement[JC] def clientWidth: Int
 SVGElement[JC] def cloneNode(deep: Boolean?): Node
+SVGElement[JC] def closest(selector: String): Element
 SVGElement[JC] def compareDocumentPosition(other: Node): Int
 SVGElement[JC] def contains(otherNode: Node): Boolean
 SVGElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -17912,6 +18028,7 @@ SVGEllipseElement[JC] def clientLeft: Int
 SVGEllipseElement[JC] def clientTop: Int
 SVGEllipseElement[JC] def clientWidth: Int
 SVGEllipseElement[JC] def cloneNode(deep: Boolean?): Node
+SVGEllipseElement[JC] def closest(selector: String): Element
 SVGEllipseElement[JC] def compareDocumentPosition(other: Node): Int
 SVGEllipseElement[JC] def contains(otherNode: Node): Boolean
 SVGEllipseElement[JC] def cx: SVGAnimatedLength
@@ -18051,6 +18168,7 @@ SVGFEBlendElement[JC] def clientLeft: Int
 SVGFEBlendElement[JC] def clientTop: Int
 SVGFEBlendElement[JC] def clientWidth: Int
 SVGFEBlendElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEBlendElement[JC] def closest(selector: String): Element
 SVGFEBlendElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEBlendElement[JC] def contains(otherNode: Node): Boolean
 SVGFEBlendElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -18179,6 +18297,7 @@ SVGFEColorMatrixElement[JC] def clientLeft: Int
 SVGFEColorMatrixElement[JC] def clientTop: Int
 SVGFEColorMatrixElement[JC] def clientWidth: Int
 SVGFEColorMatrixElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEColorMatrixElement[JC] def closest(selector: String): Element
 SVGFEColorMatrixElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEColorMatrixElement[JC] def contains(otherNode: Node): Boolean
 SVGFEColorMatrixElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -18306,6 +18425,7 @@ SVGFEComponentTransferElement[JC] def clientLeft: Int
 SVGFEComponentTransferElement[JC] def clientTop: Int
 SVGFEComponentTransferElement[JC] def clientWidth: Int
 SVGFEComponentTransferElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEComponentTransferElement[JC] def closest(selector: String): Element
 SVGFEComponentTransferElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEComponentTransferElement[JC] def contains(otherNode: Node): Boolean
 SVGFEComponentTransferElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -18426,6 +18546,7 @@ SVGFECompositeElement[JC] def clientLeft: Int
 SVGFECompositeElement[JC] def clientTop: Int
 SVGFECompositeElement[JC] def clientWidth: Int
 SVGFECompositeElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFECompositeElement[JC] def closest(selector: String): Element
 SVGFECompositeElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFECompositeElement[JC] def contains(otherNode: Node): Boolean
 SVGFECompositeElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -18560,6 +18681,7 @@ SVGFEConvolveMatrixElement[JC] def clientLeft: Int
 SVGFEConvolveMatrixElement[JC] def clientTop: Int
 SVGFEConvolveMatrixElement[JC] def clientWidth: Int
 SVGFEConvolveMatrixElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEConvolveMatrixElement[JC] def closest(selector: String): Element
 SVGFEConvolveMatrixElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEConvolveMatrixElement[JC] def contains(otherNode: Node): Boolean
 SVGFEConvolveMatrixElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -18694,6 +18816,7 @@ SVGFEDiffuseLightingElement[JC] def clientLeft: Int
 SVGFEDiffuseLightingElement[JC] def clientTop: Int
 SVGFEDiffuseLightingElement[JC] def clientWidth: Int
 SVGFEDiffuseLightingElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEDiffuseLightingElement[JC] def closest(selector: String): Element
 SVGFEDiffuseLightingElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEDiffuseLightingElement[JC] def contains(otherNode: Node): Boolean
 SVGFEDiffuseLightingElement[JC] def diffuseConstant: SVGAnimatedNumber
@@ -18818,6 +18941,7 @@ SVGFEDisplacementMapElement[JC] def clientLeft: Int
 SVGFEDisplacementMapElement[JC] def clientTop: Int
 SVGFEDisplacementMapElement[JC] def clientWidth: Int
 SVGFEDisplacementMapElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEDisplacementMapElement[JC] def closest(selector: String): Element
 SVGFEDisplacementMapElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEDisplacementMapElement[JC] def contains(otherNode: Node): Boolean
 SVGFEDisplacementMapElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -18947,6 +19071,7 @@ SVGFEDistantLightElement[JC] def clientLeft: Int
 SVGFEDistantLightElement[JC] def clientTop: Int
 SVGFEDistantLightElement[JC] def clientWidth: Int
 SVGFEDistantLightElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEDistantLightElement[JC] def closest(selector: String): Element
 SVGFEDistantLightElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEDistantLightElement[JC] def contains(otherNode: Node): Boolean
 SVGFEDistantLightElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -19061,6 +19186,7 @@ SVGFEFloodElement[JC] def clientLeft: Int
 SVGFEFloodElement[JC] def clientTop: Int
 SVGFEFloodElement[JC] def clientWidth: Int
 SVGFEFloodElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEFloodElement[JC] def closest(selector: String): Element
 SVGFEFloodElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEFloodElement[JC] def contains(otherNode: Node): Boolean
 SVGFEFloodElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -19180,6 +19306,7 @@ SVGFEFuncAElement[JC] def clientLeft: Int
 SVGFEFuncAElement[JC] def clientTop: Int
 SVGFEFuncAElement[JC] def clientWidth: Int
 SVGFEFuncAElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEFuncAElement[JC] def closest(selector: String): Element
 SVGFEFuncAElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEFuncAElement[JC] def contains(otherNode: Node): Boolean
 SVGFEFuncAElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -19299,6 +19426,7 @@ SVGFEFuncBElement[JC] def clientLeft: Int
 SVGFEFuncBElement[JC] def clientTop: Int
 SVGFEFuncBElement[JC] def clientWidth: Int
 SVGFEFuncBElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEFuncBElement[JC] def closest(selector: String): Element
 SVGFEFuncBElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEFuncBElement[JC] def contains(otherNode: Node): Boolean
 SVGFEFuncBElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -19418,6 +19546,7 @@ SVGFEFuncGElement[JC] def clientLeft: Int
 SVGFEFuncGElement[JC] def clientTop: Int
 SVGFEFuncGElement[JC] def clientWidth: Int
 SVGFEFuncGElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEFuncGElement[JC] def closest(selector: String): Element
 SVGFEFuncGElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEFuncGElement[JC] def contains(otherNode: Node): Boolean
 SVGFEFuncGElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -19537,6 +19666,7 @@ SVGFEFuncRElement[JC] def clientLeft: Int
 SVGFEFuncRElement[JC] def clientTop: Int
 SVGFEFuncRElement[JC] def clientWidth: Int
 SVGFEFuncRElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEFuncRElement[JC] def closest(selector: String): Element
 SVGFEFuncRElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEFuncRElement[JC] def contains(otherNode: Node): Boolean
 SVGFEFuncRElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -19656,6 +19786,7 @@ SVGFEGaussianBlurElement[JC] def clientLeft: Int
 SVGFEGaussianBlurElement[JC] def clientTop: Int
 SVGFEGaussianBlurElement[JC] def clientWidth: Int
 SVGFEGaussianBlurElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEGaussianBlurElement[JC] def closest(selector: String): Element
 SVGFEGaussianBlurElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEGaussianBlurElement[JC] def contains(otherNode: Node): Boolean
 SVGFEGaussianBlurElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -19779,6 +19910,7 @@ SVGFEImageElement[JC] def clientLeft: Int
 SVGFEImageElement[JC] def clientTop: Int
 SVGFEImageElement[JC] def clientWidth: Int
 SVGFEImageElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEImageElement[JC] def closest(selector: String): Element
 SVGFEImageElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEImageElement[JC] def contains(otherNode: Node): Boolean
 SVGFEImageElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -19903,6 +20035,7 @@ SVGFEMergeElement[JC] def clientLeft: Int
 SVGFEMergeElement[JC] def clientTop: Int
 SVGFEMergeElement[JC] def clientWidth: Int
 SVGFEMergeElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEMergeElement[JC] def closest(selector: String): Element
 SVGFEMergeElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEMergeElement[JC] def contains(otherNode: Node): Boolean
 SVGFEMergeElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -20021,6 +20154,7 @@ SVGFEMergeNodeElement[JC] def clientLeft: Int
 SVGFEMergeNodeElement[JC] def clientTop: Int
 SVGFEMergeNodeElement[JC] def clientWidth: Int
 SVGFEMergeNodeElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEMergeNodeElement[JC] def closest(selector: String): Element
 SVGFEMergeNodeElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEMergeNodeElement[JC] def contains(otherNode: Node): Boolean
 SVGFEMergeNodeElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -20135,6 +20269,7 @@ SVGFEMorphologyElement[JC] def clientLeft: Int
 SVGFEMorphologyElement[JC] def clientTop: Int
 SVGFEMorphologyElement[JC] def clientWidth: Int
 SVGFEMorphologyElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEMorphologyElement[JC] def closest(selector: String): Element
 SVGFEMorphologyElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEMorphologyElement[JC] def contains(otherNode: Node): Boolean
 SVGFEMorphologyElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -20261,6 +20396,7 @@ SVGFEOffsetElement[JC] def clientLeft: Int
 SVGFEOffsetElement[JC] def clientTop: Int
 SVGFEOffsetElement[JC] def clientWidth: Int
 SVGFEOffsetElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEOffsetElement[JC] def closest(selector: String): Element
 SVGFEOffsetElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEOffsetElement[JC] def contains(otherNode: Node): Boolean
 SVGFEOffsetElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -20382,6 +20518,7 @@ SVGFEPointLightElement[JC] def clientLeft: Int
 SVGFEPointLightElement[JC] def clientTop: Int
 SVGFEPointLightElement[JC] def clientWidth: Int
 SVGFEPointLightElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFEPointLightElement[JC] def closest(selector: String): Element
 SVGFEPointLightElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFEPointLightElement[JC] def contains(otherNode: Node): Boolean
 SVGFEPointLightElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -20498,6 +20635,7 @@ SVGFESpecularLightingElement[JC] def clientLeft: Int
 SVGFESpecularLightingElement[JC] def clientTop: Int
 SVGFESpecularLightingElement[JC] def clientWidth: Int
 SVGFESpecularLightingElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFESpecularLightingElement[JC] def closest(selector: String): Element
 SVGFESpecularLightingElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFESpecularLightingElement[JC] def contains(otherNode: Node): Boolean
 SVGFESpecularLightingElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -20622,6 +20760,7 @@ SVGFESpotLightElement[JC] def clientLeft: Int
 SVGFESpotLightElement[JC] def clientTop: Int
 SVGFESpotLightElement[JC] def clientWidth: Int
 SVGFESpotLightElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFESpotLightElement[JC] def closest(selector: String): Element
 SVGFESpotLightElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFESpotLightElement[JC] def contains(otherNode: Node): Boolean
 SVGFESpotLightElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -20743,6 +20882,7 @@ SVGFETileElement[JC] def clientLeft: Int
 SVGFETileElement[JC] def clientTop: Int
 SVGFETileElement[JC] def clientWidth: Int
 SVGFETileElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFETileElement[JC] def closest(selector: String): Element
 SVGFETileElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFETileElement[JC] def contains(otherNode: Node): Boolean
 SVGFETileElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -20865,6 +21005,7 @@ SVGFETurbulenceElement[JC] def clientLeft: Int
 SVGFETurbulenceElement[JC] def clientTop: Int
 SVGFETurbulenceElement[JC] def clientWidth: Int
 SVGFETurbulenceElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFETurbulenceElement[JC] def closest(selector: String): Element
 SVGFETurbulenceElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFETurbulenceElement[JC] def contains(otherNode: Node): Boolean
 SVGFETurbulenceElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -20997,6 +21138,7 @@ SVGFilterElement[JC] def clientLeft: Int
 SVGFilterElement[JC] def clientTop: Int
 SVGFilterElement[JC] def clientWidth: Int
 SVGFilterElement[JC] def cloneNode(deep: Boolean?): Node
+SVGFilterElement[JC] def closest(selector: String): Element
 SVGFilterElement[JC] def compareDocumentPosition(other: Node): Int
 SVGFilterElement[JC] def contains(otherNode: Node): Boolean
 SVGFilterElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -21133,6 +21275,7 @@ SVGGElement[JC] def clientLeft: Int
 SVGGElement[JC] def clientTop: Int
 SVGGElement[JC] def clientWidth: Int
 SVGGElement[JC] def cloneNode(deep: Boolean?): Node
+SVGGElement[JC] def closest(selector: String): Element
 SVGGElement[JC] def compareDocumentPosition(other: Node): Int
 SVGGElement[JC] def contains(otherNode: Node): Boolean
 SVGGElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -21264,6 +21407,7 @@ SVGGradientElement[JC] def clientLeft: Int
 SVGGradientElement[JC] def clientTop: Int
 SVGGradientElement[JC] def clientWidth: Int
 SVGGradientElement[JC] def cloneNode(deep: Boolean?): Node
+SVGGradientElement[JC] def closest(selector: String): Element
 SVGGradientElement[JC] def compareDocumentPosition(other: Node): Int
 SVGGradientElement[JC] def contains(otherNode: Node): Boolean
 SVGGradientElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -21387,6 +21531,7 @@ SVGImageElement[JC] def clientLeft: Int
 SVGImageElement[JC] def clientTop: Int
 SVGImageElement[JC] def clientWidth: Int
 SVGImageElement[JC] def cloneNode(deep: Boolean?): Node
+SVGImageElement[JC] def closest(selector: String): Element
 SVGImageElement[JC] def compareDocumentPosition(other: Node): Int
 SVGImageElement[JC] def contains(otherNode: Node): Boolean
 SVGImageElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -21548,6 +21693,7 @@ SVGLineElement[JC] def clientLeft: Int
 SVGLineElement[JC] def clientTop: Int
 SVGLineElement[JC] def clientWidth: Int
 SVGLineElement[JC] def cloneNode(deep: Boolean?): Node
+SVGLineElement[JC] def closest(selector: String): Element
 SVGLineElement[JC] def compareDocumentPosition(other: Node): Int
 SVGLineElement[JC] def contains(otherNode: Node): Boolean
 SVGLineElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -21683,6 +21829,7 @@ SVGLinearGradientElement[JC] def clientLeft: Int
 SVGLinearGradientElement[JC] def clientTop: Int
 SVGLinearGradientElement[JC] def clientWidth: Int
 SVGLinearGradientElement[JC] def cloneNode(deep: Boolean?): Node
+SVGLinearGradientElement[JC] def closest(selector: String): Element
 SVGLinearGradientElement[JC] def compareDocumentPosition(other: Node): Int
 SVGLinearGradientElement[JC] def contains(otherNode: Node): Boolean
 SVGLinearGradientElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -21812,6 +21959,7 @@ SVGMarkerElement[JC] def clientLeft: Int
 SVGMarkerElement[JC] def clientTop: Int
 SVGMarkerElement[JC] def clientWidth: Int
 SVGMarkerElement[JC] def cloneNode(deep: Boolean?): Node
+SVGMarkerElement[JC] def closest(selector: String): Element
 SVGMarkerElement[JC] def compareDocumentPosition(other: Node): Int
 SVGMarkerElement[JC] def contains(otherNode: Node): Boolean
 SVGMarkerElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -21949,6 +22097,7 @@ SVGMaskElement[JC] def clientLeft: Int
 SVGMaskElement[JC] def clientTop: Int
 SVGMaskElement[JC] def clientWidth: Int
 SVGMaskElement[JC] def cloneNode(deep: Boolean?): Node
+SVGMaskElement[JC] def closest(selector: String): Element
 SVGMaskElement[JC] def compareDocumentPosition(other: Node): Int
 SVGMaskElement[JC] def contains(otherNode: Node): Boolean
 SVGMaskElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -22092,6 +22241,7 @@ SVGMetadataElement[JC] def clientLeft: Int
 SVGMetadataElement[JC] def clientTop: Int
 SVGMetadataElement[JC] def clientWidth: Int
 SVGMetadataElement[JC] def cloneNode(deep: Boolean?): Node
+SVGMetadataElement[JC] def closest(selector: String): Element
 SVGMetadataElement[JC] def compareDocumentPosition(other: Node): Int
 SVGMetadataElement[JC] def contains(otherNode: Node): Boolean
 SVGMetadataElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -22214,6 +22364,7 @@ SVGPathElement[JC] def clientLeft: Int
 SVGPathElement[JC] def clientTop: Int
 SVGPathElement[JC] def clientWidth: Int
 SVGPathElement[JC] def cloneNode(deep: Boolean?): Node
+SVGPathElement[JC] def closest(selector: String): Element
 SVGPathElement[JC] def compareDocumentPosition(other: Node): Int
 SVGPathElement[JC] def contains(otherNode: Node): Boolean
 SVGPathElement[JC] def createSVGPathSegArcAbs(x: Double, y: Double, r1: Double, r2: Double, angle: Double, largeArcFlag: Boolean, sweepFlag: Boolean): SVGPathSegArcAbs
@@ -22494,6 +22645,7 @@ SVGPatternElement[JC] def clientLeft: Int
 SVGPatternElement[JC] def clientTop: Int
 SVGPatternElement[JC] def clientWidth: Int
 SVGPatternElement[JC] def cloneNode(deep: Boolean?): Node
+SVGPatternElement[JC] def closest(selector: String): Element
 SVGPatternElement[JC] def compareDocumentPosition(other: Node): Int
 SVGPatternElement[JC] def contains(otherNode: Node): Boolean
 SVGPatternElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -22637,6 +22789,7 @@ SVGPolygonElement[JC] def clientLeft: Int
 SVGPolygonElement[JC] def clientTop: Int
 SVGPolygonElement[JC] def clientWidth: Int
 SVGPolygonElement[JC] def cloneNode(deep: Boolean?): Node
+SVGPolygonElement[JC] def closest(selector: String): Element
 SVGPolygonElement[JC] def compareDocumentPosition(other: Node): Int
 SVGPolygonElement[JC] def contains(otherNode: Node): Boolean
 SVGPolygonElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -22767,6 +22920,7 @@ SVGPolylineElement[JC] def clientLeft: Int
 SVGPolylineElement[JC] def clientTop: Int
 SVGPolylineElement[JC] def clientWidth: Int
 SVGPolylineElement[JC] def cloneNode(deep: Boolean?): Node
+SVGPolylineElement[JC] def closest(selector: String): Element
 SVGPolylineElement[JC] def compareDocumentPosition(other: Node): Int
 SVGPolylineElement[JC] def contains(otherNode: Node): Boolean
 SVGPolylineElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -22915,6 +23069,7 @@ SVGRadialGradientElement[JC] def clientLeft: Int
 SVGRadialGradientElement[JC] def clientTop: Int
 SVGRadialGradientElement[JC] def clientWidth: Int
 SVGRadialGradientElement[JC] def cloneNode(deep: Boolean?): Node
+SVGRadialGradientElement[JC] def closest(selector: String): Element
 SVGRadialGradientElement[JC] def compareDocumentPosition(other: Node): Int
 SVGRadialGradientElement[JC] def contains(otherNode: Node): Boolean
 SVGRadialGradientElement[JC] def cx: SVGAnimatedLength
@@ -23043,6 +23198,7 @@ SVGRectElement[JC] def clientLeft: Int
 SVGRectElement[JC] def clientTop: Int
 SVGRectElement[JC] def clientWidth: Int
 SVGRectElement[JC] def cloneNode(deep: Boolean?): Node
+SVGRectElement[JC] def closest(selector: String): Element
 SVGRectElement[JC] def compareDocumentPosition(other: Node): Int
 SVGRectElement[JC] def contains(otherNode: Node): Boolean
 SVGRectElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -23179,6 +23335,7 @@ SVGSVGElement[JC] def clientLeft: Int
 SVGSVGElement[JC] def clientTop: Int
 SVGSVGElement[JC] def clientWidth: Int
 SVGSVGElement[JC] def cloneNode(deep: Boolean?): Node
+SVGSVGElement[JC] def closest(selector: String): Element
 SVGSVGElement[JC] def compareDocumentPosition(other: Node): Int
 SVGSVGElement[JC] def contains(otherNode: Node): Boolean
 SVGSVGElement[JC] var contentScriptType: String
@@ -23349,6 +23506,7 @@ SVGScriptElement[JC] def clientLeft: Int
 SVGScriptElement[JC] def clientTop: Int
 SVGScriptElement[JC] def clientWidth: Int
 SVGScriptElement[JC] def cloneNode(deep: Boolean?): Node
+SVGScriptElement[JC] def closest(selector: String): Element
 SVGScriptElement[JC] def compareDocumentPosition(other: Node): Int
 SVGScriptElement[JC] def contains(otherNode: Node): Boolean
 SVGScriptElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -23465,6 +23623,7 @@ SVGStopElement[JC] def clientLeft: Int
 SVGStopElement[JC] def clientTop: Int
 SVGStopElement[JC] def clientWidth: Int
 SVGStopElement[JC] def cloneNode(deep: Boolean?): Node
+SVGStopElement[JC] def closest(selector: String): Element
 SVGStopElement[JC] def compareDocumentPosition(other: Node): Int
 SVGStopElement[JC] def contains(otherNode: Node): Boolean
 SVGStopElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -23589,6 +23748,7 @@ SVGStyleElement[JC] def clientLeft: Int
 SVGStyleElement[JC] def clientTop: Int
 SVGStyleElement[JC] def clientWidth: Int
 SVGStyleElement[JC] def cloneNode(deep: Boolean?): Node
+SVGStyleElement[JC] def closest(selector: String): Element
 SVGStyleElement[JC] def compareDocumentPosition(other: Node): Int
 SVGStyleElement[JC] def contains(otherNode: Node): Boolean
 SVGStyleElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -23707,6 +23867,7 @@ SVGSwitchElement[JC] def clientLeft: Int
 SVGSwitchElement[JC] def clientTop: Int
 SVGSwitchElement[JC] def clientWidth: Int
 SVGSwitchElement[JC] def cloneNode(deep: Boolean?): Node
+SVGSwitchElement[JC] def closest(selector: String): Element
 SVGSwitchElement[JC] def compareDocumentPosition(other: Node): Int
 SVGSwitchElement[JC] def contains(otherNode: Node): Boolean
 SVGSwitchElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -23835,6 +23996,7 @@ SVGSymbolElement[JC] def clientLeft: Int
 SVGSymbolElement[JC] def clientTop: Int
 SVGSymbolElement[JC] def clientWidth: Int
 SVGSymbolElement[JC] def cloneNode(deep: Boolean?): Node
+SVGSymbolElement[JC] def closest(selector: String): Element
 SVGSymbolElement[JC] def compareDocumentPosition(other: Node): Int
 SVGSymbolElement[JC] def contains(otherNode: Node): Boolean
 SVGSymbolElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -23954,6 +24116,7 @@ SVGTSpanElement[JC] def clientLeft: Int
 SVGTSpanElement[JC] def clientTop: Int
 SVGTSpanElement[JC] def clientWidth: Int
 SVGTSpanElement[JC] def cloneNode(deep: Boolean?): Node
+SVGTSpanElement[JC] def closest(selector: String): Element
 SVGTSpanElement[JC] def compareDocumentPosition(other: Node): Int
 SVGTSpanElement[JC] def contains(otherNode: Node): Boolean
 SVGTSpanElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -24095,6 +24258,7 @@ SVGTextContentElement[JC] def clientLeft: Int
 SVGTextContentElement[JC] def clientTop: Int
 SVGTextContentElement[JC] def clientWidth: Int
 SVGTextContentElement[JC] def cloneNode(deep: Boolean?): Node
+SVGTextContentElement[JC] def closest(selector: String): Element
 SVGTextContentElement[JC] def compareDocumentPosition(other: Node): Int
 SVGTextContentElement[JC] def contains(otherNode: Node): Boolean
 SVGTextContentElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -24230,6 +24394,7 @@ SVGTextElement[JC] def clientLeft: Int
 SVGTextElement[JC] def clientTop: Int
 SVGTextElement[JC] def clientWidth: Int
 SVGTextElement[JC] def cloneNode(deep: Boolean?): Node
+SVGTextElement[JC] def closest(selector: String): Element
 SVGTextElement[JC] def compareDocumentPosition(other: Node): Int
 SVGTextElement[JC] def contains(otherNode: Node): Boolean
 SVGTextElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -24374,6 +24539,7 @@ SVGTextPathElement[JC] def clientLeft: Int
 SVGTextPathElement[JC] def clientTop: Int
 SVGTextPathElement[JC] def clientWidth: Int
 SVGTextPathElement[JC] def cloneNode(deep: Boolean?): Node
+SVGTextPathElement[JC] def closest(selector: String): Element
 SVGTextPathElement[JC] def compareDocumentPosition(other: Node): Int
 SVGTextPathElement[JC] def contains(otherNode: Node): Boolean
 SVGTextPathElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -24516,6 +24682,7 @@ SVGTextPositioningElement[JC] def clientLeft: Int
 SVGTextPositioningElement[JC] def clientTop: Int
 SVGTextPositioningElement[JC] def clientWidth: Int
 SVGTextPositioningElement[JC] def cloneNode(deep: Boolean?): Node
+SVGTextPositioningElement[JC] def closest(selector: String): Element
 SVGTextPositioningElement[JC] def compareDocumentPosition(other: Node): Int
 SVGTextPositioningElement[JC] def contains(otherNode: Node): Boolean
 SVGTextPositioningElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -24653,6 +24820,7 @@ SVGTitleElement[JC] def clientLeft: Int
 SVGTitleElement[JC] def clientTop: Int
 SVGTitleElement[JC] def clientWidth: Int
 SVGTitleElement[JC] def cloneNode(deep: Boolean?): Node
+SVGTitleElement[JC] def closest(selector: String): Element
 SVGTitleElement[JC] def compareDocumentPosition(other: Node): Int
 SVGTitleElement[JC] def contains(otherNode: Node): Boolean
 SVGTitleElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -24810,6 +24978,7 @@ SVGUseElement[JC] def clientLeft: Int
 SVGUseElement[JC] def clientTop: Int
 SVGUseElement[JC] def clientWidth: Int
 SVGUseElement[JC] def cloneNode(deep: Boolean?): Node
+SVGUseElement[JC] def closest(selector: String): Element
 SVGUseElement[JC] def compareDocumentPosition(other: Node): Int
 SVGUseElement[JC] def contains(otherNode: Node): Boolean
 SVGUseElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -24943,6 +25112,7 @@ SVGViewElement[JC] def clientLeft: Int
 SVGViewElement[JC] def clientTop: Int
 SVGViewElement[JC] def clientWidth: Int
 SVGViewElement[JC] def cloneNode(deep: Boolean?): Node
+SVGViewElement[JC] def closest(selector: String): Element
 SVGViewElement[JC] def compareDocumentPosition(other: Node): Int
 SVGViewElement[JC] def contains(otherNode: Node): Boolean
 SVGViewElement[JC] def dispatchEvent(evt: Event): Boolean
@@ -25328,7 +25498,7 @@ StereoPannerNode[JT] def removeEventListener[T <: Event](`type`: String, listene
 Storage[JC] def clear(): Unit
 Storage[JC] def getItem(key: String): String
 Storage[JC] def key(index: Int): String
-Storage[JC] var length: Int
+Storage[JC] def length: Int
 Storage[JC] def removeItem(key: String): Unit
 Storage[JC] def setItem(key: String, data: String): Unit
 StorageEstimate[JT] val quota: Double
@@ -25336,6 +25506,7 @@ StorageEstimate[JT] val usage: Double
 StorageEvent[JC] def bubbles: Boolean
 StorageEvent[JC] def cancelBubble: Boolean
 StorageEvent[JC] def cancelable: Boolean
+StorageEvent[JC] def composed: Boolean
 StorageEvent[JC] def currentTarget: EventTarget
 StorageEvent[JC] def defaultPrevented: Boolean
 StorageEvent[JC] def eventPhase: Int
@@ -25377,7 +25548,7 @@ StyleSheetList[JC] def item(index: Int): StyleSheet
 StyleSheetList[JC] def length: Int
 StyleSheetList[JC] @scala.scalajs.js.annotation.JSBracketAccess def update(index: Int, v: StyleSheet): Unit
 SubtleCrypto[JT] def decrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
-SubtleCrypto[JT] def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, length: Double): js.Promise[js.Any]
+SubtleCrypto[JT] def deriveBits(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, length: Double): js.Promise[ArrayBuffer]
 SubtleCrypto[JT] def deriveKey(algorithm: AlgorithmIdentifier, baseKey: CryptoKey, derivedKeyType: KeyAlgorithmIdentifier, extractable: Boolean, keyUsages: js.Array[KeyUsage]): js.Promise[js.Any]
 SubtleCrypto[JT] def digest(algorithm: HashAlgorithmIdentifier, data: BufferSource): js.Promise[js.Any]
 SubtleCrypto[JT] def encrypt(algorithm: AlgorithmIdentifier, key: CryptoKey, data: BufferSource): js.Promise[js.Any]
@@ -25441,6 +25612,7 @@ Text[JC] def wholeText: String
 TextEvent[JC] def bubbles: Boolean
 TextEvent[JC] def cancelBubble: Boolean
 TextEvent[JC] def cancelable: Boolean
+TextEvent[JC] def composed: Boolean
 TextEvent[JC] def currentTarget: EventTarget
 TextEvent[JC] def data: String
 TextEvent[JC] def defaultPrevented: Boolean
@@ -25557,6 +25729,7 @@ TouchEvent[JC] def bubbles: Boolean
 TouchEvent[JC] def cancelBubble: Boolean
 TouchEvent[JC] def cancelable: Boolean
 TouchEvent[JC] def changedTouches: TouchList
+TouchEvent[JC] def composed: Boolean
 TouchEvent[JC] def ctrlKey: Boolean
 TouchEvent[JC] def currentTarget: EventTarget
 TouchEvent[JC] def defaultPrevented: Boolean
@@ -25594,6 +25767,7 @@ TouchList[JT] def length: Int
 TrackEvent[JT] def bubbles: Boolean
 TrackEvent[JT] def cancelBubble: Boolean
 TrackEvent[JT] def cancelable: Boolean
+TrackEvent[JT] def composed: Boolean
 TrackEvent[JT] def currentTarget: EventTarget
 TrackEvent[JT] def defaultPrevented: Boolean
 TrackEvent[JT] def eventPhase: Int
@@ -25608,6 +25782,7 @@ TrackEvent[JT] def `type`: String
 TransitionEvent[JT] def bubbles: Boolean
 TransitionEvent[JT] def cancelBubble: Boolean
 TransitionEvent[JT] def cancelable: Boolean
+TransitionEvent[JT] def composed: Boolean
 TransitionEvent[JT] def currentTarget: EventTarget
 TransitionEvent[JT] def defaultPrevented: Boolean
 TransitionEvent[JT] def elapsedTime: Double
@@ -25637,6 +25812,7 @@ TwoDContextAttributes[JT] var willReadFrequently: js.UndefOr[Boolean]
 UIEvent[JC] def bubbles: Boolean
 UIEvent[JC] def cancelBubble: Boolean
 UIEvent[JC] def cancelable: Boolean
+UIEvent[JC] def composed: Boolean
 UIEvent[JC] def currentTarget: EventTarget
 UIEvent[JC] def defaultPrevented: Boolean
 UIEvent[JC] def detail: Int
@@ -26240,6 +26416,7 @@ WheelEvent[JC] def cancelBubble: Boolean
 WheelEvent[JC] def cancelable: Boolean
 WheelEvent[JC] def clientX: Double
 WheelEvent[JC] def clientY: Double
+WheelEvent[JC] def composed: Boolean
 WheelEvent[JC] def ctrlKey: Boolean
 WheelEvent[JC] def currentTarget: EventTarget
 WheelEvent[JC] def defaultPrevented: Boolean
@@ -27042,6 +27219,7 @@ html[SO] type Canvas = HTMLCanvasElement
 html[SO] type Collection[+E] = HTMLCollection[E]
 html[SO] type DList = HTMLDListElement
 html[SO] type DataList = HTMLDataListElement
+html[SO] type Dialog = HTMLDialogElement
 html[SO] type Div = HTMLDivElement
 html[SO] type Document = HTMLDocument
 html[SO] type Element = HTMLElement
@@ -27165,6 +27343,7 @@ package[SO] type BufferSource = ArrayBufferView | ArrayBuffer
 package[SO] type ByteString = String
 package[SO] type ClientRect = DOMRect  (@deprecated in 2.0.0)
 package[SO] type ClientRectList = DOMRectList  (@deprecated in 2.0.0)
+package[SO] type ClipboardItemData = js.Promise[String | Blob]
 package[SO] type HashAlgorithmIdentifier = HashAlgorithm | String
 package[SO] type HeadersInit = Headers | Sequence[Sequence[ByteString]] | OpenEndedDictionary[ByteString]
 package[SO] type IDBKey = Any

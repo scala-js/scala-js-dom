@@ -22,9 +22,7 @@ trait Body extends js.Object {
   /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a FormData object. */
   def formData(): js.Promise[FormData] = js.native
 
-  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a JSON object. //todo:
-    * define the JSON type, and return a Promise[JSON] as per spec
-    */
+  /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a JSON object. */
   def json(): js.Promise[js.Any] = js.native
 
   /** Takes a Response stream and reads it to completion. It returns a promise that resolves with a USVString (text). */

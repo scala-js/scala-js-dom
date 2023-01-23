@@ -8,8 +8,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-@js.native
-@deprecated("See MediaQueryList for more info", "2.4.0")
-trait MediaQueryListListener extends js.Object {
-  def apply(mql: MediaQueryList): Unit = js.native
+trait ClipboardItemOptions extends js.Object {
+  def presentationStyle: js.UndefOr[PresentationStyle] = js.undefined
 }
