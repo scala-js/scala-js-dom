@@ -67,8 +67,8 @@ abstract class HTMLImageElement extends HTMLElement {
   var onload: js.Function1[Event, _] = js.native
 
   /** Indicates the x-coordinate of the <img> element's left border edge relative to the root element's origin. */
-  def x: Double = js.native
+  def x: Int = js.native
 
   /** Indicates the y-coordinate of the <img> element's top border edge relative to the root element's origin. */
-  def y: Double = js.native
+  def y: Int = js.native
 }

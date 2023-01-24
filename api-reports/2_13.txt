@@ -6879,8 +6879,8 @@ HTMLImageElement[JC] var textContent: String
 HTMLImageElement[JC] var title: String
 HTMLImageElement[JC] var useMap: String
 HTMLImageElement[JC] var width: Int
-HTMLImageElement[JC] def x: Double
-HTMLImageElement[JC] def y: Double
+HTMLImageElement[JC] def x: Int
+HTMLImageElement[JC] def y: Int
 HTMLInputElement[JC] var accept: String
 HTMLInputElement[JC] var accessKey: String
 HTMLInputElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -15100,8 +15100,8 @@ Image[JC] var textContent: String
 Image[JC] var title: String
 Image[JC] var useMap: String
 Image[JC] var width: Int
-Image[JC] def x: Double
-Image[JC] def y: Double
+Image[JC] def x: Int
+Image[JC] def y: Int
 ImageBitmap[JT] def close(): Unit
 ImageBitmap[JT] def height: Double
 ImageBitmap[JT] def width: Double
