@@ -46,13 +46,13 @@ trait Location extends js.Object {
     *
     * This property also does not exist consistently on IE, even as new as IE11, hence it must be UndefOr.
     */
-  def origin: js.UndefOr[String] = js.native
+  def origin: String = js.native
 
   /** The Location.reload()method Reloads the resource from the current URL. Its optional unique parameter is a Boolean,
     * which, when it is true, causes the page to always be reloaded from the server. If it is false or not specified,
     * the browser may reload the page from its cache.
     */
-  def reload(flag: Boolean = js.native): Unit = js.native
+  def reload: Unit = js.native
 
   /** The Location.replace()method replaces the current resource with the one at the provided URL. The difference from
     * the assign() method is that after using replace() the current page will not be saved in session History, meaning

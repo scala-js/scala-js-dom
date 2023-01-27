@@ -15482,11 +15482,11 @@ Location[JT] var hash: String
 Location[JT] var host: String
 Location[JT] var hostname: String
 Location[JT] var href: String
-Location[JT] def origin: js.UndefOr[String]
+Location[JT] def origin: String
 Location[JT] var pathname: String
 Location[JT] var port: String
 Location[JT] var protocol: String
-Location[JT] def reload(flag: Boolean?): Unit
+Location[JT] def reload: Unit
 Location[JT] def replace(url: String): Unit
 Location[JT] var search: String
 MIMEType[JT]
