@@ -50,7 +50,7 @@ trait Location extends js.Object {
     * DOMException thrown. This happens if the origin of the script calling location.reload() differs from the origin of
     * the page that owns the Location object.
     */
-  def reload: Unit = js.native
+  def reload(): Unit = js.native
 
   /** The Location.replace()method replaces the current resource with the one at the provided URL. The difference from
     * the assign() method is that after using replace() the current page will not be saved in session History, meaning
