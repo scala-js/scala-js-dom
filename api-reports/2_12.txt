@@ -15486,7 +15486,7 @@ Location[JT] def origin: String
 Location[JT] var pathname: String
 Location[JT] var port: String
 Location[JT] var protocol: String
-Location[JT] def reload: Unit
+Location[JT] def reload(): Unit
 Location[JT] def replace(url: String): Unit
 Location[JT] var search: String
 MIMEType[JT]
