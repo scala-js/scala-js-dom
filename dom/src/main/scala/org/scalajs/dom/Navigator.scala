@@ -18,7 +18,7 @@ import scala.scalajs.js.annotation._
 @JSGlobal
 class Navigator
     extends NavigatorID with NavigatorOnLine with NavigatorContentUtils with NavigatorGeolocation
-    with NavigatorStorageUtils with NavigatorLanguage with NavigatorVibration {
+    with NavigatorStorageUtils with NavigatorLanguage with NavigatorLocks with NavigatorVibration {
 
   /** The Clipboard API adds to the Navigator interface the read-only clipboard property, which returns the Clipboard
     * object used to read and write the clipboard's contents. The Clipboard API can be used to implement cut, copy, and

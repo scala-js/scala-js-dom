@@ -15716,6 +15716,23 @@ Location[JT] var protocol: String
 Location[JT] def reload(): Unit
 Location[JT] def replace(url: String): Unit
 Location[JT] var search: String
+Lock[JC] def mode: LockMode
+Lock[JC] def name: String
+LockInfo[JT] def clientId: String
+LockInfo[JT] def mode: LockMode
+LockInfo[JT] def name: String
+LockManager[JC] def query(): js.Promise[LockManagerSnapshot]
+LockManager[JC] def request(name: String, callback: js.Function1[Lock, js.Promise[Unit]]): js.Promise[Unit]
+LockManager[JC] def request(name: String, options: LockOptions, callback: js.Function1[Lock, js.Promise[Unit]]): js.Promise[Unit]
+LockManagerSnapshot[JT] def held: js.Array[LockInfo]
+LockManagerSnapshot[JT] def pending: js.Array[LockInfo]
+LockMode[JT]
+LockMode[SO] val exclusive: LockMode
+LockMode[SO] val shared: LockMode
+LockOptions[JT] var ifAvailable: js.UndefOr[Boolean]
+LockOptions[JT] var mode: js.UndefOr[LockMode]
+LockOptions[JT] var signal: js.UndefOr[AbortSignal]
+LockOptions[JT] var steal: js.UndefOr[Boolean]
 MIMEType[JT]
 MIMEType[SO] val `application/xhtml+xml` = "application/xhtml+xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `application/xml` = "application/xml".asInstanceOf[MIMEType]
@@ -16084,6 +16101,7 @@ Navigator[JC] def geolocation: Geolocation
 Navigator[JC] def getGamepads(): js.Array[Gamepad]
 Navigator[JC] def language: String
 Navigator[JC] def languages: js.Array[String]
+Navigator[JC] def locks: LockManager
 Navigator[JC] def mediaDevices: MediaDevices
 Navigator[JC] def onLine: Boolean
 Navigator[JC] val permissions: Permissions
@@ -16102,6 +16120,7 @@ NavigatorID[JT] def platform: String
 NavigatorID[JT] def userAgent: String
 NavigatorLanguage[JT] def language: String
 NavigatorLanguage[JT] def languages: js.Array[String]
+NavigatorLocks[JT] def locks: LockManager
 NavigatorOnLine[JT] def onLine: Boolean
 NavigatorStorageUtils[JT]
 NavigatorVibration[JT] def vibrate(duration: Double): Boolean
