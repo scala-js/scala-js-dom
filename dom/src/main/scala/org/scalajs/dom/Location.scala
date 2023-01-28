@@ -43,16 +43,14 @@ trait Location extends js.Object {
     * URL, that is, for http and https, the scheme followed by '://', followed by the domain, followed by ':', followed
     * by the port (the default port, 80 and 443 respectively, if explicitly specified). For URL using file: scheme, the
     * value is browser dependant.
-    *
-    * This property also does not exist consistently on IE, even as new as IE11, hence it must be UndefOr.
     */
-  def origin: js.UndefOr[String] = js.native
+  def origin: String = js.native
 
-  /** The Location.reload()method Reloads the resource from the current URL. Its optional unique parameter is a Boolean,
-    * which, when it is true, causes the page to always be reloaded from the server. If it is false or not specified,
-    * the browser may reload the page from its cache.
+  /** Reloads the resource from the current URL, like the Refresh button. The reload may be blocked and a SECURITY_ERROR
+    * DOMException thrown. This happens if the origin of the script calling location.reload() differs from the origin of
+    * the page that owns the Location object.
     */
-  def reload(flag: Boolean = js.native): Unit = js.native
+  def reload(): Unit = js.native
 
   /** The Location.replace()method replaces the current resource with the one at the provided URL. The difference from
     * the assign() method is that after using replace() the current page will not be saved in session History, meaning
