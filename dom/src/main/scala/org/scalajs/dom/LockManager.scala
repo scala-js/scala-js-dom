@@ -14,7 +14,7 @@ class LockManager private[this] extends js.Object {
   def query(): js.Promise[LockManagerSnapshot] = js.native
 
   /** Requests a [[Lock]] object with parameters specifying its name and characteristics. The requested [[Lock]] is
-    * passed to a callback, while the function itself returns a [[js.Promise]] that resolves with `undefined`.
+    * passed to a callback, while the function itself returns a `Promise` that resolves with `undefined`.
     */
   def request(name: String, callback: js.Function1[Lock, js.Promise[Unit]]): js.Promise[Unit] = js.native
 
