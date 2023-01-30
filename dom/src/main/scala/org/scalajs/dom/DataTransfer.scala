@@ -22,7 +22,7 @@ trait DataTransfer extends js.Object {
     */
   var effectAllowed: EffectAllowedValue = js.native
 
-  /** The actual effect that will be used, and should always be one of the possible values of effectAllowed. */
+  /** The actual effect that will be used. */
   var dropEffect: DropEffectValue = js.native
 
   /** Remove the data associated with a given type. The type argument is optional. If the type is empty or not

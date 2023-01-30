@@ -7,9 +7,14 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSGlobal
 
+/** A list of [[DataTransferItem]] objects representing items being dragged. During a drag operation, each DragEvent has
+  * a dataTransfer property and that property is a DataTransferItemList.
+  */
 @js.native
-trait DataTransferItemList extends js.Object {
+@JSGlobal
+class DataTransferItemList extends js.Object {
 
   /** Returns the number of items in the drag data store. */
   def length: Int = js.native
@@ -30,10 +35,7 @@ trait DataTransferItemList extends js.Object {
   /** Removes all the entries in the drag data store. */
   def clear(): Unit = js.native
 
-}
-
-@js.native
-object DataTransferItemList extends DataTransferItemList {
+  @js.annotation.JSBracketAccess
   /** Returns the DataTransferItem object representing the indexth entry in the drag data store. */
   def apply(index: Int): DataTransferItem = js.native
 }

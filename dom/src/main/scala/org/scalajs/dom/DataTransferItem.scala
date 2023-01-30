@@ -19,7 +19,7 @@ trait DataTransferItem extends js.Object {
   def `type`: String = js.native
 
   /** Invokes the callback with the string data as the argument, if the drag data item kind is text. */
-  def getAsString(callback: () => String) = js.native
+  def getAsString(callback: Function1[String, Unit]): Unit = js.native
 
   /** Returns a File object, if the drag data item kind is File. */
   def getAsFile(): js.UndefOr[File] = js.native
