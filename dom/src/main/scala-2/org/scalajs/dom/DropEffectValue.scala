@@ -1,3 +1,5 @@
+package org.scalajs.dom
+
 import scala.scalajs.js
 
 @js.native

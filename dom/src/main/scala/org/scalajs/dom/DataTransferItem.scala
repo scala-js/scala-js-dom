@@ -10,7 +10,7 @@ import scala.scalajs.js
 
 /** Each DataTransferItem object is associated with a [[DataTransfer]] object. */
 @js.native
-trait DataTransferItem {
+trait DataTransferItem extends js.Object {
 
   /** Returns the drag data item kind, one of: "string", "file". */
   def kind: DragDataItemKind = js.native

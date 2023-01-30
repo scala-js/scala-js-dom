@@ -9,7 +9,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 @js.native
-trait DataTransferItemList {
+trait DataTransferItemList extends js.Object {
 
   /** Returns the number of items in the drag data store. */
   def length: Int = js.native
@@ -29,10 +29,11 @@ trait DataTransferItemList {
 
   /** Removes all the entries in the drag data store. */
   def clear(): Unit = js.native
+
 }
 
-object DataTransferItemList {
-
+@js.native
+object DataTransferItemList extends DataTransferItemList {
   /** Returns the DataTransferItem object representing the indexth entry in the drag data store. */
   def apply(index: Int): DataTransferItem = js.native
 }
