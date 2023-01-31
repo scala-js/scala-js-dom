@@ -1305,10 +1305,10 @@ DataTransfer[JT] def items: DataTransferItemList
 DataTransfer[JT] def setData(format: String, data: String): Unit
 DataTransfer[JT] def setDragImage(image: Element, x: Double, y: Double): Unit
 DataTransfer[JT] def types: FrozenArray[String]
-DataTransferItem[JT] def getAsFile(): js.UndefOr[File]
-DataTransferItem[JT] def getAsString(callback: Function1[String, Unit]): Unit
-DataTransferItem[JT] def kind: DragDataItemKind
-DataTransferItem[JT] def `type`: String
+DataTransferItem[JC] def getAsFile(): File
+DataTransferItem[JC] def getAsString(callback: Function1[String, Unit]): Unit
+DataTransferItem[JC] def kind: DragDataItemKind
+DataTransferItem[JC] def `type`: String
 DataTransferItemList[JC] def add(data: File): Unit
 DataTransferItemList[JC] def add(data: String, `type`: String): Unit
 DataTransferItemList[JC] @js.annotation.JSBracketAccess def apply(index: Int): DataTransferItem

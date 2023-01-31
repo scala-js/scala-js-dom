@@ -7,9 +7,11 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSGlobal
 
 /** Each DataTransferItem object is associated with a [[DataTransfer]] object. */
 @js.native
+@JSGlobal
 class DataTransferItem private[this] extends js.Object {
 
   /** Returns the drag data item kind, one of: "string", "file". */
@@ -22,5 +24,5 @@ class DataTransferItem private[this] extends js.Object {
   def getAsString(callback: Function1[String, Unit]): Unit = js.native
 
   /** Returns a File object, if the drag data item kind is File. */
-  def getAsFile(): js.UndefOr[File] = js.native
+  def getAsFile(): File = js.native
 }
