@@ -14,7 +14,7 @@ import scala.scalajs.js.annotation.JSGlobal
   */
 @js.native
 @JSGlobal
-class DataTransferItemList extends js.Object {
+class DataTransferItemList private[this] extends js.Object {
 
   /** Returns the number of items in the drag data store. */
   def length: Int = js.native
