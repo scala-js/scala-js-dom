@@ -1306,11 +1306,11 @@ DataTransfer[JT] def setData(format: String, data: String): Unit
 DataTransfer[JT] def setDragImage(image: Element, x: Double, y: Double): Unit
 DataTransfer[JT] def types: FrozenArray[String]
 DataTransferItem[JC] def getAsFile(): File
-DataTransferItem[JC] def getAsString(callback: Function1[String, Unit]): Unit
+DataTransferItem[JC] def getAsString(callback: js.Function1[String, Unit]): Unit
 DataTransferItem[JC] def kind: DragDataItemKind
 DataTransferItem[JC] def `type`: String
-DataTransferItemList[JC] def add(data: File): Unit
-DataTransferItemList[JC] def add(data: String, `type`: String): Unit
+DataTransferItemList[JC] def add(data: File): DataTransferItem
+DataTransferItemList[JC] def add(data: String, `type`: String): DataTransferItem
 DataTransferItemList[JC] @js.annotation.JSBracketAccess def apply(index: Int): DataTransferItem
 DataTransferItemList[JC] def clear(): Unit
 DataTransferItemList[JC] def length: Int

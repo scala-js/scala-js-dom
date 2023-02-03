@@ -22,12 +22,12 @@ class DataTransferItemList private[this] extends js.Object {
   /** Adds a new entry for the given data to the drag data store. If the data is plain text then a type string has to be
     * provided also.
     */
-  def add(data: String, `type`: String): Unit = js.native
+  def add(data: String, `type`: String): DataTransferItem = js.native
 
   /** Adds a new entry for the given data to the drag data store. If the data is plain text then a type string has to be
     * provided also.
     */
-  def add(data: File): Unit = js.native
+  def add(data: File): DataTransferItem = js.native
 
   /** Removes the indexth entry in the drag data store. */
   def remove(index: Int): Unit = js.native

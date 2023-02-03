@@ -21,7 +21,7 @@ class DataTransferItem private[this] extends js.Object {
   def `type`: String = js.native
 
   /** Invokes the callback with the string data as the argument, if the drag data item kind is text. */
-  def getAsString(callback: Function1[String, Unit]): Unit = js.native
+  def getAsString(callback: js.Function1[String, Unit]): Unit = js.native
 
   /** Returns a File object, if the drag data item kind is File. */
   def getAsFile(): File = js.native
