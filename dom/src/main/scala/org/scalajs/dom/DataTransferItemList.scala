@@ -35,7 +35,7 @@ class DataTransferItemList private[this] extends js.Object {
   /** Removes all the entries in the drag data store. */
   def clear(): Unit = js.native
 
-  @js.annotation.JSBracketAccess
   /** Returns the DataTransferItem object representing the indexth entry in the drag data store. */
+  @js.annotation.JSBracketAccess
   def apply(index: Int): DataTransferItem = js.native
 }
