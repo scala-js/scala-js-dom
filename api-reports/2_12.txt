@@ -1297,14 +1297,29 @@ DOMTokenList[JC] def remove(token: String): Unit
 DOMTokenList[JC] def toggle(token: String): Boolean
 DOMTokenList[JC] def toggle(token: String, force: Boolean): Boolean
 DataTransfer[JT] def clearData(format: String?): Unit
-DataTransfer[JT] var dropEffect: DropEffectValue
-DataTransfer[JT] var effectAllowed: EffectAllowedValue
+DataTransfer[JT] var dropEffect: DataTransferDropEffectKind
+DataTransfer[JT] var effectAllowed: DataTransferEffectAllowedKind
 DataTransfer[JT] def files: FileList
 DataTransfer[JT] def getData(format: String): String
 DataTransfer[JT] def items: DataTransferItemList
 DataTransfer[JT] def setData(format: String, data: String): Unit
 DataTransfer[JT] def setDragImage(image: Element, x: Double, y: Double): Unit
 DataTransfer[JT] def types: FrozenArray[String]
+DataTransferDropEffectKind[JT]
+DataTransferDropEffectKind[SO] val copy: DataTransferDropEffectKind
+DataTransferDropEffectKind[SO] val link: DataTransferDropEffectKind
+DataTransferDropEffectKind[SO] val move: DataTransferDropEffectKind
+DataTransferDropEffectKind[SO] val none: DataTransferDropEffectKind
+DataTransferEffectAllowedKind[JT]
+DataTransferEffectAllowedKind[SO] val all: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val copy: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val copyLink: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val copyMove: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val link: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val linkMove: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val move: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val none: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val uninitialized: DataTransferEffectAllowedKind
 DataTransferItem[JC] def getAsFile(): File
 DataTransferItem[JC] def getAsString(callback: js.Function1[String, Unit]): Unit
 DataTransferItem[JC] def kind: DragDataItemKind
@@ -1680,11 +1695,6 @@ DragEvent[JT] def target: EventTarget
 DragEvent[JT] def timeStamp: Double
 DragEvent[JT] def `type`: String
 DragEvent[JT] def view: Window
-DropEffectValue[JT]
-DropEffectValue[SO] val copy: DropEffectValue
-DropEffectValue[SO] val link: DropEffectValue
-DropEffectValue[SO] val move: DropEffectValue
-DropEffectValue[SO] val none: DropEffectValue
 DynamicsCompressorNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DynamicsCompressorNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DynamicsCompressorNode[JT] val attack: AudioParam
@@ -1730,16 +1740,6 @@ EcdsaParams[JT] val name: String
 EcdsaParams[SO] def apply(name: String, hash: HashAlgorithmIdentifier): EcdsaParams  (@deprecated in 2.0.0)
 EcdsaParams[SO] val hash = hash0
 EcdsaParams[SO] val name = name0
-EffectAllowedValue[JT]
-EffectAllowedValue[SO] val all: EffectAllowedValue
-EffectAllowedValue[SO] val copy: EffectAllowedValue
-EffectAllowedValue[SO] val copyLink: EffectAllowedValue
-EffectAllowedValue[SO] val copyMove: EffectAllowedValue
-EffectAllowedValue[SO] val link: EffectAllowedValue
-EffectAllowedValue[SO] val linkMove: EffectAllowedValue
-EffectAllowedValue[SO] val move: EffectAllowedValue
-EffectAllowedValue[SO] val none: EffectAllowedValue
-EffectAllowedValue[SO] val uninitialized: EffectAllowedValue
 Element[JC] var accessKey: String
 Element[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Element[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit

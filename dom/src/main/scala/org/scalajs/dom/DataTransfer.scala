@@ -20,10 +20,10 @@ trait DataTransfer extends js.Object {
     * effects for the source, and within the dragenter and dragover events to set the desired effects for the target.
     * The value is not used for other events.
     */
-  var effectAllowed: EffectAllowedValue = js.native
+  var effectAllowed: DataTransferEffectAllowedKind = js.native
 
   /** The actual effect that will be used. */
-  var dropEffect: DropEffectValue = js.native
+  var dropEffect: DataTransferDropEffectKind = js.native
 
   /** Remove the data associated with a given type. The type argument is optional. If the type is empty or not
     * specified, the data associated with all types is removed. If data for the specified type does not exist, or the
