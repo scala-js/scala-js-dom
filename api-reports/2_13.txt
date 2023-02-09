@@ -15764,17 +15764,17 @@ Performance[JC] def clearMarks(markName: String?): Unit
 Performance[JC] def clearMeasures(measureName: String?): Unit
 Performance[JC] def clearResourceTimings(): Unit
 Performance[JC] def getEntries(): js.Array[PerformanceEntry]
-Performance[JC] def getEntriesByName(name: String, entryType: String?): js.Array[PerformanceEntry]
+Performance[JC] def getEntriesByName(name: String, `type`: String?): js.Array[PerformanceEntry]
 Performance[JC] def getEntriesByType(entryType: String): js.Array[PerformanceEntry]
-Performance[JC] def getMarks(markName: String?): js.Dynamic
-Performance[JC] def getMeasures(measureName: String?): js.Dynamic
-Performance[JC] def mark(markName: String): Unit
-Performance[JC] def measure(measureName: String, startMarkName: String?, endMarkName: String?): Unit
+Performance[JC] def getMarks(markName: String?): js.Dynamic  (@deprecated in 2.4.0)
+Performance[JC] def getMeasures(measureName: String?): js.Dynamic  (@deprecated in 2.4.0)
+Performance[JC] def mark(markName: String): PerformanceMark
+Performance[JC] def measure(measureName: String, startMarkName: String?, endMarkName: String?): PerformanceMeasure
 Performance[JC] def navigation: PerformanceNavigation
 Performance[JC] def now(): Double
 Performance[JC] def setResourceTimingBufferSize(maxSize: Int): Unit
 Performance[JC] def timing: PerformanceTiming
-Performance[JC] def toJSON(): js.Dynamic
+Performance[JC] def toJSON(): js.Object
 PerformanceEntry[JC] def duration: Int
 PerformanceEntry[JC] def entryType: String
 PerformanceEntry[JC] def name: String
