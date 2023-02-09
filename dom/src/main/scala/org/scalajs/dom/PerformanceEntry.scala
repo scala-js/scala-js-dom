@@ -16,7 +16,7 @@ class PerformanceEntry extends js.Object {
 
   def startTime: Double = js.native
 
-  def duration: Double = js.native
+  def duration: Int = js.native
 
   def entryType: String = js.native
 }
