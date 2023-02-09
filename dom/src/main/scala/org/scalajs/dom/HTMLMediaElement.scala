@@ -127,7 +127,7 @@ abstract class HTMLMediaElement extends HTMLElement {
   def audioTracks: AudioTrackList = js.native
 
   /** Sets or returns the object which serves as the source of the media associated with the HTMLMediaElement. */
-  var srcObject: js.UndefOr[MediaStream | MediaSource | Blob]
+  var srcObject: js.UndefOr[MediaStream | MediaSource | Blob] = js.native
 }
 
 @js.native

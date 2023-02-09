@@ -186,6 +186,235 @@ Attr[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 Attr[JC] def specified: Boolean
 Attr[JC] var textContent: String
 Attr[JC] var value: String
+Audio[JC] var accessKey: String
+Audio[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+Audio[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+Audio[JC] def after(nodes: Node | String*): Unit
+Audio[JC] def append(nodes: Node | String*): Unit
+Audio[JC] def appendChild(newChild: Node): Node
+Audio[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
+Audio[JC] def attributes: NamedNodeMap
+Audio[JC] def audioTracks: AudioTrackList
+Audio[JC] var autoplay: Boolean
+Audio[JC] def baseURI: String
+Audio[JC] def before(nodes: Node | String*): Unit
+Audio[JC] def blur(): Unit
+Audio[JC] def buffered: TimeRanges
+Audio[JC] def canPlayType(`type`: String): String
+Audio[JC] def childElementCount: Int
+Audio[JC] def childNodes: NodeList[Node]
+Audio[JC] def children: HTMLCollection[Element]
+Audio[JC] var classList: DOMTokenList
+Audio[JC] var className: String
+Audio[JC] def click(): Unit
+Audio[JC] def clientHeight: Int
+Audio[JC] def clientLeft: Int
+Audio[JC] def clientTop: Int
+Audio[JC] def clientWidth: Int
+Audio[JC] def cloneNode(deep: Boolean?): Node
+Audio[JC] def closest(selector: String): Element
+Audio[JC] def compareDocumentPosition(other: Node): Int
+Audio[JC] def contains(child: HTMLElement): Boolean
+Audio[JC] def contains(otherNode: Node): Boolean
+Audio[JC] var contentEditable: String
+Audio[JC] var controls: Boolean
+Audio[JC] def currentSrc: String
+Audio[JC] var currentTime: Double
+Audio[JC] def dataset: js.Dictionary[String]
+Audio[JC] var defaultPlaybackRate: Double
+Audio[JC] var dir: String
+Audio[JC] def dispatchEvent(evt: Event): Boolean
+Audio[JC] var draggable: Boolean
+Audio[JC] def duration: Double
+Audio[JC] def ended: Boolean
+Audio[JC] def error: MediaError
+Audio[JC] var filters: Object
+Audio[JC] def firstChild: Node
+Audio[JC] def firstElementChild: Element
+Audio[JC] def focus(): Unit
+Audio[JC] def getAttribute(name: String): String
+Audio[JC] def getAttributeNS(namespaceURI: String, localName: String): String
+Audio[JC] def getAttributeNode(name: String): Attr
+Audio[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
+Audio[JC] def getBoundingClientRect(): DOMRect
+Audio[JC] def getClientRects(): DOMRectList
+Audio[JC] def getElementsByClassName(classNames: String): HTMLCollection[Element]
+Audio[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
+Audio[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
+Audio[JC] var gotpointercapture: js.Function1[PointerEvent, _]
+Audio[JC] def hasAttribute(name: String): Boolean
+Audio[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
+Audio[JC] def hasAttributes(): Boolean
+Audio[JC] def hasChildNodes(): Boolean
+Audio[JC] var id: String
+Audio[JC] def initialTime: Double
+Audio[JC] var innerHTML: String
+Audio[JC] var innerText: String
+Audio[JC] def insertAdjacentElement(position: String, element: Element): Element
+Audio[JC] def insertAdjacentHTML(where: String, html: String): Unit
+Audio[JC] def insertBefore(newChild: Node, refChild: Node): Node
+Audio[JC] def isConnected: Boolean
+Audio[JC] def isContentEditable: Boolean
+Audio[JC] def isDefaultNamespace(namespaceURI: String): Boolean
+Audio[JC] def isEqualNode(arg: Node): Boolean
+Audio[JC] def isSameNode(other: Node): Boolean
+Audio[JC] def isSupported(feature: String, version: String): Boolean
+Audio[JC] var lang: String
+Audio[JC] def lastChild: Node
+Audio[JC] def lastElementChild: Element
+Audio[JC] def load(): Unit
+Audio[JC] def localName: String
+Audio[JC] def lookupNamespaceURI(prefix: String): String
+Audio[JC] def lookupPrefix(namespaceURI: String): String
+Audio[JC] var loop: Boolean
+Audio[JC] var lostpointercapture: js.Function1[PointerEvent, _]
+Audio[JC] def matches(selector: String): Boolean
+Audio[JC] var muted: Boolean
+Audio[JC] def namespaceURI: String
+Audio[JC] def networkState: Int
+Audio[JC] def nextElementSibling: Element
+Audio[JC] def nextSibling: Node
+Audio[JC] def nodeName: String
+Audio[JC] def nodeType: Int
+Audio[JC] var nodeValue: String
+Audio[JC] def normalize(): Unit
+Audio[JC] def offsetHeight: Double
+Audio[JC] def offsetLeft: Double
+Audio[JC] def offsetParent: Element
+Audio[JC] def offsetTop: Double
+Audio[JC] def offsetWidth: Double
+Audio[JC] var onabort: js.Function1[UIEvent, _]
+Audio[JC] var onactivate: js.Function1[UIEvent, _]
+Audio[JC] var onbeforeactivate: js.Function1[UIEvent, _]
+Audio[JC] var onbeforecopy: js.Function1[DragEvent, _]
+Audio[JC] var onbeforecut: js.Function1[DragEvent, _]
+Audio[JC] var onbeforedeactivate: js.Function1[UIEvent, _]
+Audio[JC] var onbeforepaste: js.Function1[DragEvent, _]
+Audio[JC] var onblur: js.Function1[FocusEvent, _]
+Audio[JC] var oncanplay: js.Function1[Event, _]
+Audio[JC] var oncanplaythrough: js.Function1[Event, _]
+Audio[JC] var onchange: js.Function1[Event, _]
+Audio[JC] var onclick: js.Function1[MouseEvent, _]
+Audio[JC] var oncontextmenu: js.Function1[MouseEvent, _]
+Audio[JC] var oncopy: js.Function1[ClipboardEvent, _]
+Audio[JC] var oncuechange: js.Function1[Event, _]
+Audio[JC] var oncut: js.Function1[ClipboardEvent, _]
+Audio[JC] var ondblclick: js.Function1[MouseEvent, _]
+Audio[JC] var ondeactivate: js.Function1[UIEvent, _]
+Audio[JC] var ondrag: js.Function1[DragEvent, _]
+Audio[JC] var ondragend: js.Function1[DragEvent, _]
+Audio[JC] var ondragenter: js.Function1[DragEvent, _]
+Audio[JC] var ondragleave: js.Function1[DragEvent, _]
+Audio[JC] var ondragover: js.Function1[DragEvent, _]
+Audio[JC] var ondragstart: js.Function1[DragEvent, _]
+Audio[JC] var ondrop: js.Function1[DragEvent, _]
+Audio[JC] var ondurationchange: js.Function1[Event, _]
+Audio[JC] var onemptied: js.Function1[Event, _]
+Audio[JC] var onended: js.Function1[Event, _]
+Audio[JC] var onfocus: js.Function1[FocusEvent, _]
+Audio[JC] var onfocusin: js.Function1[FocusEvent, _]
+Audio[JC] var onfocusout: js.Function1[FocusEvent, _]
+Audio[JC] var onfullscreenchange: js.Function1[Event, _]
+Audio[JC] var onfullscreenerror: js.Function1[Event, _]
+Audio[JC] var onhelp: js.Function1[Event, _]
+Audio[JC] var oninput: js.Function1[Event, _]
+Audio[JC] var onkeydown: js.Function1[KeyboardEvent, _]
+Audio[JC] var onkeypress: js.Function1[KeyboardEvent, _]
+Audio[JC] var onkeyup: js.Function1[KeyboardEvent, _]
+Audio[JC] var onloadeddata: js.Function1[Event, _]
+Audio[JC] var onloadedmetadata: js.Function1[Event, _]
+Audio[JC] var onloadstart: js.Function1[Event, _]
+Audio[JC] var onmousedown: js.Function1[MouseEvent, _]
+Audio[JC] var onmouseenter: js.Function1[MouseEvent, _]
+Audio[JC] var onmouseleave: js.Function1[MouseEvent, _]
+Audio[JC] var onmousemove: js.Function1[MouseEvent, _]
+Audio[JC] var onmouseout: js.Function1[MouseEvent, _]
+Audio[JC] var onmouseover: js.Function1[MouseEvent, _]
+Audio[JC] var onmouseup: js.Function1[MouseEvent, _]
+Audio[JC] var onmousewheel: js.Function1[WheelEvent, _]
+Audio[JC] var onpaste: js.Function1[ClipboardEvent, _]
+Audio[JC] var onpause: js.Function1[Event, _]
+Audio[JC] var onplay: js.Function1[Event, _]
+Audio[JC] var onplaying: js.Function1[Event, _]
+Audio[JC] var onpointercancel: js.Function1[PointerEvent, _]
+Audio[JC] var onpointerdown: js.Function1[PointerEvent, _]
+Audio[JC] var onpointerenter: js.Function1[PointerEvent, _]
+Audio[JC] var onpointerleave: js.Function1[PointerEvent, _]
+Audio[JC] var onpointermove: js.Function1[PointerEvent, _]
+Audio[JC] var onpointerout: js.Function1[PointerEvent, _]
+Audio[JC] var onpointerover: js.Function1[PointerEvent, _]
+Audio[JC] var onpointerup: js.Function1[PointerEvent, _]
+Audio[JC] var onprogress: js.Function1[js.Any, _]
+Audio[JC] var onratechange: js.Function1[Event, _]
+Audio[JC] var onreadystatechange: js.Function1[Event, _]
+Audio[JC] var onreset: js.Function1[Event, _]
+Audio[JC] var onscroll: js.Function1[UIEvent, _]
+Audio[JC] var onseeked: js.Function1[Event, _]
+Audio[JC] var onseeking: js.Function1[Event, _]
+Audio[JC] var onselect: js.Function1[UIEvent, _]
+Audio[JC] var onselectstart: js.Function1[Event, _]
+Audio[JC] var onstalled: js.Function1[Event, _]
+Audio[JC] var onsubmit: js.Function1[Event, _]
+Audio[JC] var onsuspend: js.Function1[Event, _]
+Audio[JC] var ontimeupdate: js.Function1[Event, _]
+Audio[JC] var onvolumechange: js.Function1[Event, _]
+Audio[JC] var onwaiting: js.Function1[Event, _]
+Audio[JC] var onwheel: js.Function1[WheelEvent, _]
+Audio[JC] var outerHTML: String
+Audio[JC] def ownerDocument: Document
+Audio[JC] override def ownerDocument: HTMLDocument
+Audio[JC] var parentElement: HTMLElement
+Audio[JC] def parentNode: Node
+Audio[JC] def pause(): Unit
+Audio[JC] def paused: Boolean
+Audio[JC] def play(): js.UndefOr[js.Promise[Unit]]
+Audio[JC] var playbackRate: Double
+Audio[JC] def played: TimeRanges
+Audio[JC] def prefix: String
+Audio[JC] var preload: String
+Audio[JC] def prepend(nodes: Node | String*): Unit
+Audio[JC] def previousElementSibling: Element
+Audio[JC] def previousSibling: Node
+Audio[JC] def querySelector(selectors: String): Element
+Audio[JC] def querySelectorAll(selectors: String): NodeList[Element]
+Audio[JC] var readyState: js.Any
+Audio[JC] var recordNumber: js.Any
+Audio[JC] def remove(): Unit
+Audio[JC] def removeAttribute(name: String): Unit
+Audio[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
+Audio[JC] def removeAttributeNode(oldAttr: Attr): Attr
+Audio[JC] def removeChild(oldChild: Node): Node
+Audio[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+Audio[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+Audio[JC] def replaceChild(newChild: Node, oldChild: Node): Node
+Audio[JC] def replaceChildren(nodes: Node | String*): Unit
+Audio[JC] def replaceWith(nodes: Node | String*): Unit
+Audio[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
+Audio[JC] def requestPointerLock(): Unit
+Audio[JC] def scrollHeight: Int
+Audio[JC] def scrollIntoView(top: Boolean?): Unit
+Audio[JC] var scrollLeft: Double
+Audio[JC] var scrollTop: Double
+Audio[JC] def scrollWidth: Int
+Audio[JC] def seekable: TimeRanges
+Audio[JC] def seeking: Boolean
+Audio[JC] def setAttribute(name: String, value: String): Unit
+Audio[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
+Audio[JC] def setAttributeNode(newAttr: Attr): Attr
+Audio[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+Audio[JC] def shadowRoot: ShadowRoot
+Audio[JC] var spellcheck: Boolean
+Audio[JC] var src: String
+Audio[JC] var srcObject: js.UndefOr[MediaStream | MediaSource | Blob]
+Audio[JC] def style: CSSStyleDeclaration
+Audio[JC] def style_ = (value: CSSStyleDeclaration): Unit
+Audio[JC] def style_ = (value: String): Unit
+Audio[JC] var tabIndex: Int
+Audio[JC] def tagName: String
+Audio[JC] var textContent: String
+Audio[JC] def textTracks: TextTrackList
+Audio[JC] var title: String
+Audio[JC] var volume: Double
 AudioBuffer[JT] def copyFromChannel(destination: js.typedarray.Float32Array, channelNumber: Int, startInChannel: Int): Unit
 AudioBuffer[JT] def copyToChannel(source: js.typedarray.Float32Array, channelNumber: Int, startInChannel: Int): Unit
 AudioBuffer[JT] val duration: Double
