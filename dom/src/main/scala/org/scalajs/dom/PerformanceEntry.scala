@@ -31,4 +31,7 @@ class PerformanceEntry extends js.Object {
 
   /** The type of performance metric that this entry represents. */
   def entryType: String = js.native
+
+  /** Returns a JSON representation of the [[PerformanceEntry]] object. */
+  def toJSON(): js.Object = js.native
 }

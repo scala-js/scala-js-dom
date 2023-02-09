@@ -15779,14 +15779,17 @@ PerformanceEntry[JC] def duration: Int
 PerformanceEntry[JC] def entryType: String
 PerformanceEntry[JC] def name: String
 PerformanceEntry[JC] def startTime: Double
+PerformanceEntry[JC] def toJSON(): js.Object
 PerformanceMark[JC] def duration: Int
 PerformanceMark[JC] def entryType: String
 PerformanceMark[JC] def name: String
 PerformanceMark[JC] def startTime: Double
+PerformanceMark[JC] def toJSON(): js.Object
 PerformanceMeasure[JC] def duration: Int
 PerformanceMeasure[JC] def entryType: String
 PerformanceMeasure[JC] def name: String
 PerformanceMeasure[JC] def startTime: Double
+PerformanceMeasure[JC] def toJSON(): js.Object
 PerformanceNavigation[JC] def redirectCount: Int
 PerformanceNavigation[JC] def toJSON(): js.Dynamic
 PerformanceNavigation[JC] def `type`: Int
@@ -15809,6 +15812,7 @@ PerformanceResourceTiming[JC] def requestStart: Int
 PerformanceResourceTiming[JC] var responseEnd: Int
 PerformanceResourceTiming[JC] def responseStart: Int
 PerformanceResourceTiming[JC] def startTime: Double
+PerformanceResourceTiming[JC] def toJSON(): js.Object
 PerformanceTiming[JC] def connectEnd: Double
 PerformanceTiming[JC] def connectStart: Double
 PerformanceTiming[JC] def domComplete: Double
