@@ -19,16 +19,11 @@ trait DataTransfer extends js.Object {
   /** Specifies the effects that are allowed for this drag. You may set this in the dragstart event to set the desired
     * effects for the source, and within the dragenter and dragover events to set the desired effects for the target.
     * The value is not used for other events.
-    *
-    * See [[DragEffect]] for possible values.
     */
-  var effectAllowed: String = js.native
+  var effectAllowed: DataTransferEffectAllowedKind = js.native
 
-  /** The actual effect that will be used, and should always be one of the possible values of effectAllowed.
-    *
-    * See [[DragEffect]] for possible values.
-    */
-  var dropEffect: String = js.native
+  /** The actual effect that will be used. */
+  var dropEffect: DataTransferDropEffectKind = js.native
 
   /** Remove the data associated with a given type. The type argument is optional. If the type is empty or not
     * specified, the data associated with all types is removed. If data for the specified type does not exist, or the
@@ -41,6 +36,9 @@ trait DataTransfer extends js.Object {
     * in the same position. That is, the order of the types list is not changed when replacing data of the same type.
     */
   def setData(format: String, data: String): Unit = js.native
+
+  /** Gives a DataTransferItemList object which is a list of all of the drag data. */
+  def items: DataTransferItemList = js.native
 
   /** Set the image to be used for dragging if a custom one is desired. Most of the time, this would not be set, as a
     * default image is created from the node that was dragged.
@@ -77,7 +75,7 @@ trait DataTransfer extends js.Object {
     * The formats are Unicode strings giving the type or format of the data, generally given by a MIME type. Some values
     * that are not MIME types are special-cased for legacy reasons (for example "text").
     */
-  def types: js.Array[String] = js.native
+  def types: FrozenArray[String] = js.native
 
   def files: FileList = js.native
 }

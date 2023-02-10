@@ -1526,13 +1526,39 @@ DOMTokenList[JC] def remove(token: String): Unit
 DOMTokenList[JC] def toggle(token: String): Boolean
 DOMTokenList[JC] def toggle(token: String, force: Boolean): Boolean
 DataTransfer[JT] def clearData(format: String?): Unit
-DataTransfer[JT] var dropEffect: String
-DataTransfer[JT] var effectAllowed: String
+DataTransfer[JT] var dropEffect: DataTransferDropEffectKind
+DataTransfer[JT] var effectAllowed: DataTransferEffectAllowedKind
 DataTransfer[JT] def files: FileList
 DataTransfer[JT] def getData(format: String): String
+DataTransfer[JT] def items: DataTransferItemList
 DataTransfer[JT] def setData(format: String, data: String): Unit
 DataTransfer[JT] def setDragImage(image: Element, x: Double, y: Double): Unit
-DataTransfer[JT] def types: js.Array[String]
+DataTransfer[JT] def types: FrozenArray[String]
+DataTransferDropEffectKind[JT]
+DataTransferDropEffectKind[SO] val copy: DataTransferDropEffectKind
+DataTransferDropEffectKind[SO] val link: DataTransferDropEffectKind
+DataTransferDropEffectKind[SO] val move: DataTransferDropEffectKind
+DataTransferDropEffectKind[SO] val none: DataTransferDropEffectKind
+DataTransferEffectAllowedKind[JT]
+DataTransferEffectAllowedKind[SO] val all: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val copy: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val copyLink: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val copyMove: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val link: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val linkMove: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val move: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val none: DataTransferEffectAllowedKind
+DataTransferEffectAllowedKind[SO] val uninitialized: DataTransferEffectAllowedKind
+DataTransferItem[JC] def getAsFile(): File
+DataTransferItem[JC] def getAsString(callback: js.Function1[String, Unit]): Unit
+DataTransferItem[JC] def kind: DragDataItemKind
+DataTransferItem[JC] def `type`: String
+DataTransferItemList[JC] def add(data: File): DataTransferItem
+DataTransferItemList[JC] def add(data: String, `type`: String): DataTransferItem
+DataTransferItemList[JC] @js.annotation.JSBracketAccess def apply(index: Int): DataTransferItem
+DataTransferItemList[JC] def clear(): Unit
+DataTransferItemList[JC] def length: Int
+DataTransferItemList[JC] def remove(index: Int): Unit
 DedicatedWorkerGlobalScope[JO] def self: DedicatedWorkerGlobalScope
 DedicatedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DedicatedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -1854,6 +1880,9 @@ DocumentType[JC] def removeEventListener[T <: Event](`type`: String, listener: j
 DocumentType[JC] def replaceChild(newChild: Node, oldChild: Node): Node
 DocumentType[JC] def systemId: String
 DocumentType[JC] var textContent: String
+DragDataItemKind[JT]
+DragDataItemKind[SO] val file: DragDataItemKind
+DragDataItemKind[SO] val string: DragDataItemKind
 DragEffect[SO] final val All = "all"
 DragEffect[SO] final val Copy = "copy"
 DragEffect[SO] final val CopyLink = "copyLink"
