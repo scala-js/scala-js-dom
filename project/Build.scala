@@ -20,6 +20,7 @@ import scalatex.ScalatexReadme
 import sbtdynver.DynVerPlugin.autoImport.previousStableVersion
 import Dependencies._
 import Lib._
+import mdoc.MdocPlugin
 
 object Build {
 
