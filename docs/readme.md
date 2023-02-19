@@ -39,11 +39,17 @@ Most names have been shortened from names of the raw browser APIs, since the nam
 
 ## Examples
 
+You can start using the bindings using the following import:
+
+```scala mdoc:js:shared
+import org.scalajs.dom._
+```
+
+
 ### Appending a child to a `Node`
 
-```scala mdoc:js
-import org.scalajs.dom._
 
+```scala mdoc:js:shared
 def appendElement(div: html.Div): Unit = {
   val child = document.createElement("div")
   child.textContent = "I can add elements to DOM elements!"
@@ -51,11 +57,14 @@ def appendElement(div: html.Div): Unit = {
 }
 ```
 
+```scala mdoc:js:invisible
+<button class="button-run">Run</button
+---
+```
+
 ### Add an EventListener for `onmousemove`
 
 ```scala mdoc:js
-import org.scalajs.dom._
-
 def showOnMouseCoordinates(pre: html.Pre): Unit = {
   pre.onmousemove = (ev: MouseEvent) =>
     pre.textContent = s"""
@@ -73,14 +82,14 @@ def showOnMouseCoordinates(pre: html.Pre): Unit = {
 ```scala mdoc:js
 def storeInputInLocalStorage(input: html.Input, box: html.Div) = {
   val key = "myKey"
-  input.value = dom.window.localStorage.getItem(key)
+  input.value = window.localStorage.getItem(key)
 
-  input.onkeyup = { (e: dom.Event) =>
-    dom.window.localStorage.setItem(
+  input.onkeyup = { (e: Event) =>
+    window.localStorage.setItem(
       key, input.value
     )
 
-    output.textContent = s"Saved: ${input.value} to local storage!"
+    box.textContent = s"Saved: ${input.value} to local storage!"
   }
 }
 ```
@@ -88,8 +97,7 @@ def storeInputInLocalStorage(input: html.Input, box: html.Div) = {
 ### Using `Canvas` to draw
 
 ```scala mdoc:js
-
-type Context2D = dom.CanvasRenderingContext2D
+type Context2D = CanvasRenderingContext2D
 
 def drawCuteSmiley(canvas: html.Canvas) = {
   val context = canvas.getContext("2d").asInstanceOf[Context2D]
@@ -115,41 +123,47 @@ def drawCuteSmiley(canvas: html.Canvas) = {
 ### Using `Fetch` to make API calls in the browser
 
 ```scala mdoc:js
+import scala.concurrent.ExecutionContext.Implicits.global
+
 def fetchBoredApi(element: html.Pre) = {
   val url =
     "https://www.boredapi.com/api/activity"
 
   val responseText = for {
-    response <- dom.fetch(url)
-    text <- response.text()
+    response <- fetch(url).toFuture
+    text <- response.text().toFuture
   } yield {
     text
   }
 
   for (text <- responseText)
-    pre.textContent = text
+    element.textContent = text
 }
 ```
 
+
+
 ### Using Websockets
 
+
 ```scala mdoc:js
-def echoWebSocket(input: html.Input, pre: html.Pre) = {
-  val echo = "wss://echo.websocket.org"
-  val socket = new dom.WebSocket(echo)
+// TODO: currently crashes with an error
+// def echoWebSocket(input: html.Input, pre: html.Pre) = {
+//   val echo = "wss://echo.websocket.org"
+//   val socket = new WebSocket(echo)
 
-  socket.onmessage = {
-    (e: dom.MessageEvent) =>
-      pre.textContent +=
-        e.data.toString
-  }
+//   socket.onmessage = {
+//     (e: MessageEvent) =>
+//       pre.textContent +=
+//         e.data.toString
+//   }
 
-  socket.onopen = { (e: dom.Event) =>
-    in.onkeyup = { (e: dom.Event) =>
-      socket.send(input.value)
-    }
-  }
-}
+//   socket.onopen = { (e: Event) =>
+//     input.onkeyup = { (e: Event) =>
+//       socket.send(input.value)
+//     }
+//   }
+// }
 ```
 
 ### Styling an HTML element
