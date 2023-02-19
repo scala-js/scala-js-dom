@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## scala-js-dom
 
 ---
@@ -45,9 +44,7 @@ You can start using the bindings using the following import:
 import org.scalajs.dom._
 ```
 
-
 ### Appending a child to a `Node`
-
 
 ```scala mdoc:js:shared
 def appendElement(div: html.Div): Unit = {
@@ -58,8 +55,12 @@ def appendElement(div: html.Div): Unit = {
 ```
 
 ```scala mdoc:js:invisible
-<button class="button-run">Run</button
+<div id="outer-container"></div>
+<button id="demo1" class="button-run">Run</button>
 ---
+document.getElementById("demo1").addEventListener("click", (ev: Event) => {
+  appendElement(document.getElementById("outer-container").asInstanceOf[html.Div])
+})
 ```
 
 ### Add an EventListener for `onmousemove`
@@ -141,10 +142,7 @@ def fetchBoredApi(element: html.Pre) = {
 }
 ```
 
-
-
 ### Using Websockets
-
 
 ```scala mdoc:js
 // TODO: currently crashes with an error
@@ -183,19 +181,3 @@ def changeColor(div: html.Div) = {
 The DOM API is always evolving, and `scala-js-dom` tries to provide a thin-but-idiomatic Scala interface to modern browser APIs, without breaking the spec.
 
 If you see something that you think can be improved, feel free to send a pull request. See our [Contributing Guide](https://github.com/scala-js/scala-js-dom/blob/main/CONTRIBUTING.md) for a detailed overview for starting hacking on `scala-js-dom` and making a PR!
-=======
-# My Project
-
-To install my project
-
-```scala
-libraryDependencies += "com" % "lib" % "1.0.0"
-```
-
-```scala
-val x = 1
-// x: Int = 1
-List(x, x)
-// res0: List[Int] = List(1, 1)
-```
->>>>>>> 78916a1 (Update plugins.sbt)
