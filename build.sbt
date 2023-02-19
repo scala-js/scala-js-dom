@@ -13,4 +13,4 @@ val testsChrome    = Build.testsChrome
 val testsFirefox   = Build.testsFirefox
 val testsNodeJsdom = Build.testsNodeJsdom
 val example        = Build.example
-val readme         = Build.readme
+val docs           = Build.docs
