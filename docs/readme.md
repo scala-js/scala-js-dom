@@ -100,9 +100,7 @@ def storeInputInLocalStorage(input: html.Input, box: html.Div) = {
   input.value = window.localStorage.getItem(key)
 
   input.onkeyup = { (e: Event) =>
-    window.localStorage.setItem(
-      key, input.value
-    )
+    window.localStorage.setItem(key, input.value)
 
     box.textContent = s"Saved: ${input.value} to local storage!"
   }
@@ -166,8 +164,7 @@ document.getElementById("demo4-btn").addEventListener("click", (ev: Event) => {
 import scala.concurrent.ExecutionContext.Implicits.global
 
 def fetchBoredApi(element: html.Pre) = {
-  val url =
-    "https://www.boredapi.com/api/activity"
+  val url = "https://www.boredapi.com/api/activity"
 
   val responseText = for {
     response <- fetch(url).toFuture
@@ -218,7 +215,6 @@ document.getElementById("demo5-btn").addEventListener("click", (ev: Event) => {
 ```scala mdoc:js:shared
 def changeColor(div: html.Div) = {
   val colors = Seq("red", "green", "blue")
-
   val index = util.Random.nextInt(colors.length)
 
   div.style.color = colors(index)
@@ -231,6 +227,30 @@ def changeColor(div: html.Div) = {
 ---
 document.getElementById("demo7-btn").addEventListener("click", (ev: Event) => {
   changeColor(document.getElementById("demo7-text").asInstanceOf[html.Div])
+})
+```
+
+### Encode in base64
+
+```scala mdoc:js:shared
+def encodeBase64(in: html.Input, out: html.Div) = {
+  in.onkeyup = { (e: Event) =>
+    out.textContent = window.btoa(in.value)
+  }
+}
+```
+
+```scala mdoc:js:invisible
+<input id="demo8-input" style="display: none;" />
+<div id="demo8-output" style="display: none"></div>
+<button id="demo8-btn">Run</button>
+---
+val input = document.getElementById("demo8-input").asInstanceOf[html.Input]
+val output = document.getElementById("demo8-output").asInstanceOf[html.Div]
+document.getElementById("demo8-btn").addEventListener("click", (ev: Event) => {
+  input.style.display = "block"
+  output.style.display = "block"
+  encodeBase64(input, output)
 })
 ```
 
