@@ -150,8 +150,9 @@ def drawCuteSmiley(canvas: html.Canvas) = {
 ```scala mdoc:js:invisible
 <canvas id="demo4-canvas">
 </canvas>
-<button id="demo4-btn">Run</button>
+<button id="demo4-btn" class="button-run">Run</button>
 ---
+
 val canvas = document.getElementById("demo4-canvas").asInstanceOf[html.Canvas]
 document.getElementById("demo4-btn").addEventListener("click", (ev: Event) => {
   drawCuteSmiley(canvas)
@@ -180,34 +181,12 @@ def fetchBoredApi(element: html.Pre) = {
 
 ```scala mdoc:js:invisible
 <pre id="demo5-output"></pre>
-<button id="demo5-btn">Run</button>
+<button id="demo5-btn" class="button-run">Run</button>
 ---
 val output = document.getElementById("demo5-output").asInstanceOf[html.Pre]
 document.getElementById("demo5-btn").addEventListener("click", (ev: Event) => {
   fetchBoredApi(output)
 })
-```
-
-### Using Websockets
-
-```scala mdoc:js
-// TODO: currently crashes with an error
-// def echoWebSocket(input: html.Input, pre: html.Pre) = {
-//   val echo = "wss://echo.websocket.org"
-//   val socket = new WebSocket(echo)
-
-//   socket.onmessage = {
-//     (e: MessageEvent) =>
-//       pre.textContent +=
-//         e.data.toString
-//   }
-
-//   socket.onopen = { (e: Event) =>
-//     input.onkeyup = { (e: Event) =>
-//       socket.send(input.value)
-//     }
-//   }
-// }
 ```
 
 ### Styling an HTML element
@@ -222,11 +201,11 @@ def changeColor(div: html.Div) = {
 ```
 
 ```scala mdoc:js:invisible
-<div id="demo7-text">Color me!</div>
-<button id="demo7-btn">Run</button>
+<div id="demo6-text">Color me!</div>
+<button id="demo6-btn" class="button-run">Run</button>
 ---
-document.getElementById("demo7-btn").addEventListener("click", (ev: Event) => {
-  changeColor(document.getElementById("demo7-text").asInstanceOf[html.Div])
+document.getElementById("demo6-btn").addEventListener("click", (ev: Event) => {
+  changeColor(document.getElementById("demo6-text").asInstanceOf[html.Div])
 })
 ```
 
@@ -241,13 +220,13 @@ def encodeBase64(in: html.Input, out: html.Div) = {
 ```
 
 ```scala mdoc:js:invisible
-<input id="demo8-input" style="display: none;" />
-<div id="demo8-output" style="display: none"></div>
-<button id="demo8-btn">Run</button>
+<input id="demo7-input" style="display: none;" />
+<div id="demo7-output" style="display: none"></div>
+<button id="demo7-btn" class="button-run">Run</button>
 ---
-val input = document.getElementById("demo8-input").asInstanceOf[html.Input]
-val output = document.getElementById("demo8-output").asInstanceOf[html.Div]
-document.getElementById("demo8-btn").addEventListener("click", (ev: Event) => {
+val input = document.getElementById("demo7-input").asInstanceOf[html.Input]
+val output = document.getElementById("demo7-output").asInstanceOf[html.Div]
+document.getElementById("demo7-btn").addEventListener("click", (ev: Event) => {
   input.style.display = "block"
   output.style.display = "block"
   encodeBase64(input, output)
