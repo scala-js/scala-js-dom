@@ -24,7 +24,7 @@ Add the following to your sbt build definition:
 libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "@VERSION@"
 ```
 
-then enjoy the types available in org.scalajs.dom. scalajs-dom @VERSION@ is built and published for Scala.js 1.5+ with Scala 2.11, 2.12, 2.13, and 3.0+.
+then enjoy the types available in org.scalajs.dom. scalajs-dom @VERSION@ is built and published for Scala.js 1.7+ with Scala 2.11, 2.12, 2.13, and 3.1+.
 
 To begin with, scala-js-dom organizes the full-list of DOM APIs into a number of buckets:
 
