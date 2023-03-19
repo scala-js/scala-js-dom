@@ -83,13 +83,10 @@ def showOnMouseCoordinates(mouseArea: html.Div, info: html.Pre): Unit = {
   <div id="mouse-container" style="width:300px;height:300px;border: 5px solid black;"></div>
   <pre id="demo2-output"></pre>
 </div>
-<button id="demo2-btn" class="button-run">Run</button>
 ---
 val mouseArea = document.getElementById("mouse-container").asInstanceOf[html.Div]
 val info = document.getElementById("demo2-output").asInstanceOf[html.Pre]
-document.getElementById("demo2-btn").addEventListener("click", (ev: Event) => {
-  showOnMouseCoordinates(mouseArea, info)
-})
+showOnMouseCoordinates(mouseArea, info)
 ```
 
 ### Storing an item in `localStorage`
@@ -108,17 +105,13 @@ def storeInputInLocalStorage(input: html.Input, box: html.Div) = {
 ```
 
 ```scala mdoc:js:invisible
-<input id="demo3-input" type="text" style="display:none;" />
-<div id="demo3-output" style="display:none;" ></div>
+<input id="demo3-input" type="text" />
+<div id="demo3-output"></div>
 <button id="demo3-btn" class="button-run">Run</button>
 ---
 val input = document.getElementById("demo3-input").asInstanceOf[html.Input]
 val output = document.getElementById("demo3-output").asInstanceOf[html.Div]
-document.getElementById("demo3-btn").addEventListener("click", (ev: Event) => {
-  input.style.display = "block"
-  output.style.display = "block"
-  storeInputInLocalStorage(input, output)
-})
+storeInputInLocalStorage(input, output)
 ```
 
 ### Using `Canvas` to draw
@@ -148,15 +141,11 @@ def drawCuteSmiley(canvas: html.Canvas) = {
 ```
 
 ```scala mdoc:js:invisible
-<canvas id="demo4-canvas">
-</canvas>
-<button id="demo4-btn" class="button-run">Run</button>
+<canvas id="demo4-canvas"></canvas>
 ---
 
 val canvas = document.getElementById("demo4-canvas").asInstanceOf[html.Canvas]
-document.getElementById("demo4-btn").addEventListener("click", (ev: Event) => {
-  drawCuteSmiley(canvas)
-})
+drawCuteSmiley(canvas)
 ```
 
 ### Using `Fetch` to make API calls in the browser
@@ -220,17 +209,12 @@ def encodeBase64(in: html.Input, out: html.Div) = {
 ```
 
 ```scala mdoc:js:invisible
-<input id="demo7-input" style="display: none;" />
-<div id="demo7-output" style="display: none"></div>
-<button id="demo7-btn" class="button-run">Run</button>
+<input id="demo7-input"/>
+<div id="demo7-output"></div>
 ---
 val input = document.getElementById("demo7-input").asInstanceOf[html.Input]
 val output = document.getElementById("demo7-output").asInstanceOf[html.Div]
-document.getElementById("demo7-btn").addEventListener("click", (ev: Event) => {
-  input.style.display = "block"
-  output.style.display = "block"
-  encodeBase64(input, output)
-})
+encodeBase64(input, output)
 ```
 
 ## Contributing
