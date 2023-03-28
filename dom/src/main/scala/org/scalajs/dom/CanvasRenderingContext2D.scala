@@ -77,12 +77,18 @@ class CanvasRenderingContext2D extends js.Object {
   /** Restores the drawing style state to the last element on the 'state stack' saved by save(). */
   def restore(): Unit = js.native
 
+  /** Resets the current transform to the identity matrix, and then invokes the transform() method with the same
+    * arguments.
+    */
   def setTransform(m11: Double, m12: Double, m21: Double, m22: Double, dx: Double, dy: Double): Unit = js.native
 
   /** Saves the current drawing style state using a stack so you can revert any change you make to it using restore().
     */
   def save(): Unit = js.native
 
+  /** Adds an arc to the path which is centered at (x, y) position with radius r starting at startAngle and ending at
+    * endAngle going in the given direction by anticlockwise (defaulting to clockwise).
+    */
   def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double,
       anticlockwise: Boolean): Unit = js.native
 
@@ -91,27 +97,39 @@ class CanvasRenderingContext2D extends js.Object {
     */
   def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit = js.native
 
+  /** Returns a TextMetrics object. */
   def measureText(text: String): TextMetrics = js.native
 
+  /** Reports whether or not the specified point is contained in the current path. */
   def isPointInPath(x: Double, y: Double, fillRule: String): Boolean = js.native
 
   /** Reports whether or not the specified point is contained in the current path. */
   def isPointInPath(x: Double, y: Double): Boolean = js.native
 
+  /** Adds a quadratic Bézier curve to the current path. */
   def quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double): Unit = js.native
 
+  /** Paints data from the given ImageData object onto the bitmap. If a dirty rectangle is provided, only the pixels
+    * from that rectangle are painted.
+    */
   def putImageData(imagedata: ImageData, dx: Double, dy: Double, dirtyX: Double = js.native, dirtyY: Double = js.native,
       dirtyWidth: Double = js.native, dirtyHeight: Double = js.native): Unit = js.native
 
+  /** Adds a rotation to the transformation matrix. The angle argument represents a clockwise rotation angle and is
+    * expressed in radians.
+    */
   def rotate(angle: Double): Unit = js.native
 
+  /** Draws (fills) a given text at the given (x, y) position. */
   def fillText(text: String, x: Double, y: Double, maxWidth: Double = js.native): Unit = js.native
 
   /** Moves the origin point of the context to (x, y). */
   def translate(x: Double, y: Double): Unit = js.native
 
+  /** Adds a scaling transformation to the canvas units by x horizontally and by y vertically. */
   def scale(x: Double, y: Double): Unit = js.native
 
+  /** Creates a radial gradient given by the coordinates of the two circles represented by the parameters. */
   def createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double,
       r1: Double): CanvasGradient = js.native
 
@@ -135,6 +153,9 @@ class CanvasRenderingContext2D extends js.Object {
     */
   def createImageData(imageDataOrSw: js.Any, sh: Double = js.native): ImageData = js.native
 
+  /** Creates a pattern using the specified image. It repeats the source in the directions specified by the repetition
+    * argument. This method returns a CanvasPattern.
+    */
   def createPattern(image: HTMLElement, repetition: String): CanvasPattern = js.native
 
   /** Tries to draw a straight line from the current point to the start. If the shape has already been closed or has
@@ -142,6 +163,7 @@ class CanvasRenderingContext2D extends js.Object {
     */
   def closePath(): Unit = js.native
 
+  /** Creates a path for a rectangle at position (x, y) with a size that is determined by width and height. */
   def rect(x: Double, y: Double, w: Double, h: Double): Unit = js.native
 
   /** Creates a clipping path from the current sub-paths. Everything drawn after clip() is called appears inside the
@@ -164,6 +186,7 @@ class CanvasRenderingContext2D extends js.Object {
   /** Draws a filled rectangle at (x, y) position whose size is determined by width and height. */
   def fillRect(x: Double, y: Double, w: Double, h: Double): Unit = js.native
 
+  /** Adds a cubic Bézier curve to the current path. */
   def bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): Unit = js.native
 
   /** Draws the specified image. This method is available in multiple formats, providing a great deal of flexibility in
@@ -173,6 +196,7 @@ class CanvasRenderingContext2D extends js.Object {
       height: Double = js.native, canvasOffsetX: Double = js.native, canvasOffsetY: Double = js.native,
       canvasImageWidth: Double = js.native, canvasImageHeight: Double = js.native): Unit = js.native
 
+  /** Multiplies the current transformation matrix with the matrix described by its arguments. */
   def transform(m11: Double, m12: Double, m21: Double, m22: Double, dx: Double, dy: Double): Unit = js.native
 
   /** Strokes the subpaths with the current stroke style. */
@@ -185,8 +209,10 @@ class CanvasRenderingContext2D extends js.Object {
     */
   def strokeRect(x: Double, y: Double, w: Double, h: Double): Unit = js.native
 
+  /** Sets the current line dash pattern. */
   def setLineDash(segments: js.Array[Double]): Unit = js.native
 
+  /** Draws (strokes) a given text at the given (x, y) position. */
   def strokeText(text: String, x: Double, y: Double, maxWidth: Double = js.native): Unit = js.native
 
   /** Starts a new path by resetting the list of sub-paths. Call this method when you want to create a new path. */
@@ -195,6 +221,7 @@ class CanvasRenderingContext2D extends js.Object {
   /** Adds an arc with the given control points and radius, connected to the previous point by a straight line. */
   def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit = js.native
 
+  /** Creates a linear gradient along the line given by the coordinates represented by the parameters. */
   def createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient = js.native
 
   /** The ellipse() method creates an elliptical arc centered at (x, y) with the radii radiusX and radiusY. The path
