@@ -1089,6 +1089,9 @@ CanvasRenderingContext2D[JC] def createRadialGradient(x0: Double, y0: Double, r0
 CanvasRenderingContext2D[JC] def drawImage(image: HTMLElement, offsetX: Double, offsetY: Double, width: Double?, height: Double?, canvasOffsetX: Double?, canvasOffsetY: Double?, canvasImageWidth: Double?, canvasImageHeight: Double?): Unit
 CanvasRenderingContext2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean?): Unit
 CanvasRenderingContext2D[JC] def fill(): Unit
+CanvasRenderingContext2D[JC] def fill(fillRule: String): Unit
+CanvasRenderingContext2D[JC] def fill(path: Path2D): Unit
+CanvasRenderingContext2D[JC] def fill(path: Path2D, fillRule: String): Unit
 CanvasRenderingContext2D[JC] def fillRect(x: Double, y: Double, w: Double, h: Double): Unit
 CanvasRenderingContext2D[JC] var fillStyle: js.Any
 CanvasRenderingContext2D[JC] def fillText(text: String, x: Double, y: Double, maxWidth: Double?): Unit
@@ -1122,6 +1125,7 @@ CanvasRenderingContext2D[JC] var shadowColor: String
 CanvasRenderingContext2D[JC] var shadowOffsetX: Double
 CanvasRenderingContext2D[JC] var shadowOffsetY: Double
 CanvasRenderingContext2D[JC] def stroke(): Unit
+CanvasRenderingContext2D[JC] def stroke(path: Path2D): Unit
 CanvasRenderingContext2D[JC] def strokeRect(x: Double, y: Double, w: Double, h: Double): Unit
 CanvasRenderingContext2D[JC] var strokeStyle: js.Any
 CanvasRenderingContext2D[JC] def strokeText(text: String, x: Double, y: Double, maxWidth: Double?): Unit
@@ -16627,6 +16631,17 @@ ParentNode[JT] def children: HTMLCollection[Element]
 ParentNode[JT] def firstElementChild: Element
 ParentNode[JT] def lastElementChild: Element
 ParentNode[JT] def replaceChildren(nodes: Node | String*): Unit
+Path2D[JC] def addPath(path: Path2D): Unit
+Path2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit
+Path2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Unit
+Path2D[JC] def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit
+Path2D[JC] def bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): Unit
+Path2D[JC] def closePath(): Unit
+Path2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean?): Unit
+Path2D[JC] def lineTo(x: Double, y: Double): Unit
+Path2D[JC] def moveTo(x: Double, y: Double): Unit
+Path2D[JC] def quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double): Unit
+Path2D[JC] def rect(x: Double, y: Double, w: Double, h: Double): Unit
 Pbkdf2Params[JT] val hash: HashAlgorithmIdentifier
 Pbkdf2Params[JT] val iterations: Double
 Pbkdf2Params[JT] val name: String

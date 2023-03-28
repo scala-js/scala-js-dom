@@ -124,6 +124,12 @@ class CanvasRenderingContext2D extends js.Object {
   /** Fills the subpaths with the current fill style. */
   def fill(): Unit = js.native
 
+  def fill(path: Path2D): Unit = js.native
+
+  def fill(fillRule: String): Unit = js.native
+
+  def fill(path: Path2D, fillRule: String): Unit = js.native
+
   /** Creates a new, blank ImageData object with the specified dimensions. All of the pixels in the new object are
     * transparent black.
     */
@@ -171,6 +177,8 @@ class CanvasRenderingContext2D extends js.Object {
 
   /** Strokes the subpaths with the current stroke style. */
   def stroke(): Unit = js.native
+
+  def stroke(path: Path2D): Unit = js.native
 
   /** Paints a rectangle which has a starting point at (x, y) and has a w width and an h height onto the canvas, using
     * the current stroke style.
