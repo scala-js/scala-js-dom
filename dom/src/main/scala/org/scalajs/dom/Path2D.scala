@@ -3,6 +3,10 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 
+/** The [[Path2D]] interface of the Canvas 2D API is used to declare a path that can then be used on a
+  * [[CanvasRenderingContext2D]] object. The path methods of the [[CanvasRenderingContext2D]] interface are also present
+  * on this interface, which gives you the convenience of being able to retain and replay your path whenever desired.
+  */
 @js.native
 @JSGlobal
 class Path2D extends js.Object {
@@ -36,20 +40,23 @@ class Path2D extends js.Object {
     */
   def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit = js.native
 
-  /** Adds an arc to the path which is centered at (x, y) position with radius r starting at startAngle and ending at
-    * endAngle going in the given direction by counterclockwise (defaulting to clockwise).
+  /** The arc() method creates a circular arc centered at (x, y) with a radius of radius. The path starts at startAngle,
+    * ends at endAngle, and travels in the direction given by counterclockwise (defaulting to clockwise).
     */
   def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double,
-      anticlockwise: Boolean): Unit = js.native
+      counterclockwise: Boolean): Unit = js.native
 
+  /** The arc() method creates a circular arc centered at (x, y) with a radius of radius. The path starts at startAngle,
+    * ends at endAngle, and travels in the direction given by counterclockwise (defaulting to clockwise).
+    */
   def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit = js.native
 
-  /** Adds an elliptical arc to the path which is centered at (x, y) position with the radii radiusX and radiusY
-    * starting at startAngle and ending at endAngle going in the given direction by counterclockwise (defaulting to
+  /** The ellipse() method creates an elliptical arc centered at (x, y) with the radii radiusX and radiusY. The path
+    * starts at startAngle and ends at endAngle, and travels in the direction given by counterclockwise (defaulting to
     * clockwise).
     */
   def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double,
-      endAngle: Double, anticlockwise: Boolean = js.native): Unit = js.native
+      endAngle: Double, counterclockwise: Boolean = js.native): Unit = js.native
 
   /** Creates a path for a rectangle at position (x, y) with a size that is determined by width and height. */
   def rect(x: Double, y: Double, w: Double, h: Double): Unit = js.native

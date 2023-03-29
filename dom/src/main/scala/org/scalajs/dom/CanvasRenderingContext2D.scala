@@ -86,14 +86,14 @@ class CanvasRenderingContext2D extends js.Object {
     */
   def save(): Unit = js.native
 
-  /** Adds an arc to the path which is centered at (x, y) position with radius r starting at startAngle and ending at
-    * endAngle going in the given direction by anticlockwise (defaulting to clockwise).
+  /** The arc() method creates a circular arc centered at (x, y) with a radius of radius. The path starts at startAngle,
+    * ends at endAngle, and travels in the direction given by counterclockwise (defaulting to clockwise).
     */
   def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double,
-      anticlockwise: Boolean): Unit = js.native
+      counterclockwise: Boolean): Unit = js.native
 
-  /** Adds an arc to the path which is centered at (x, y) position with radius r starting at startAngle and ending at
-    * endAngle going in the given direction by anticlockwise (defaulting to clockwise).
+  /** The arc() method creates a circular arc centered at (x, y) with a radius of radius. The path starts at startAngle,
+    * ends at endAngle, and travels in the direction given by counterclockwise (defaulting to clockwise).
     */
   def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit = js.native
 
@@ -101,10 +101,13 @@ class CanvasRenderingContext2D extends js.Object {
   def measureText(text: String): TextMetrics = js.native
 
   /** Reports whether or not the specified point is contained in the current path. */
-  def isPointInPath(x: Double, y: Double, fillRule: String): Boolean = js.native
+  def isPointInPath(x: Double, y: Double, fillRule: CanvasFillRule = js.native): Boolean = js.native
 
   /** Reports whether or not the specified point is contained in the current path. */
-  def isPointInPath(x: Double, y: Double): Boolean = js.native
+  def isPointInPath(path: Path2D, x: Double, y: Double): Boolean = js.native
+
+  /** Reports whether or not the specified point is contained in the current path. */
+  def isPointInPath(path: Path2D, x: Double, y: Double, fillRule: CanvasFillRule): Boolean = js.native
 
   /** Adds a quadratic Bézier curve to the current path. */
   def quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double): Unit = js.native
@@ -140,13 +143,13 @@ class CanvasRenderingContext2D extends js.Object {
   def getLineDash(): js.Array[Double] = js.native
 
   /** Fills the subpaths with the current fill style. */
-  def fill(): Unit = js.native
+  def fill(fillRule: CanvasFillRule = js.native): Unit = js.native
 
+  /** Fills the subpaths with the current fill style. */
   def fill(path: Path2D): Unit = js.native
 
-  def fill(fillRule: String): Unit = js.native
-
-  def fill(path: Path2D, fillRule: String): Unit = js.native
+  /** Fills the subpaths with the current fill style. */
+  def fill(path: Path2D, fillRule: CanvasFillRule): Unit = js.native
 
   /** Creates a new, blank ImageData object with the specified dimensions. All of the pixels in the new object are
     * transparent black.
@@ -169,7 +172,17 @@ class CanvasRenderingContext2D extends js.Object {
   /** Creates a clipping path from the current sub-paths. Everything drawn after clip() is called appears inside the
     * clipping path only. For an example, see Clipping paths in the Canvas tutorial.
     */
-  def clip(fillRule: String = js.native): Unit = js.native
+  def clip(fillRule: CanvasFillRule = js.native): Unit = js.native
+
+  /** Creates a clipping path from the current sub-paths. Everything drawn after clip() is called appears inside the
+    * clipping path only. For an example, see Clipping paths in the Canvas tutorial.
+    */
+  def clip(path: Path2D): Unit = js.native
+
+  /** Creates a clipping path from the current sub-paths. Everything drawn after clip() is called appears inside the
+    * clipping path only. For an example, see Clipping paths in the Canvas tutorial.
+    */
+  def clip(path: Path2D, fillRule: CanvasFillRule): Unit = js.native
 
   /** Sets all pixels in the rectangle defined by starting point (x, y) and size (width, height) to transparent black.
     */
@@ -225,9 +238,9 @@ class CanvasRenderingContext2D extends js.Object {
   def createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient = js.native
 
   /** The ellipse() method creates an elliptical arc centered at (x, y) with the radii radiusX and radiusY. The path
-    * starts at startAngle and ends at endAngle, and travels in the direction given by anticlockwise (defaulting to
+    * starts at startAngle and ends at endAngle, and travels in the direction given by counterclockwise (defaulting to
     * clockwise).
     */
   def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double,
-      endAngle: Double, anticlockwise: Boolean = js.native): Unit = js.native
+      endAngle: Double, counterclockwise: Boolean = js.native): Unit = js.native
 }
