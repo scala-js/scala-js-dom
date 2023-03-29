@@ -1070,28 +1070,32 @@ CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]
 CacheStorage[JT] def keys(): js.Promise[js.Array[String]]
 CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]
 CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]
+CanvasFillRule[JT]
+CanvasFillRule[SO] val evenodd: CanvasFillRule
+CanvasFillRule[SO] val nonzero: CanvasFillRule
 CanvasGradient[JC] def addColorStop(offset: Double, color: String): Unit
 CanvasPattern[JC]
 CanvasProxy[JT] def setContext(context: RenderingContext): Unit
 CanvasRenderingContext2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit
-CanvasRenderingContext2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Unit
+CanvasRenderingContext2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean): Unit
 CanvasRenderingContext2D[JC] def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit
 CanvasRenderingContext2D[JC] def beginPath(): Unit
 CanvasRenderingContext2D[JC] def bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): Unit
 CanvasRenderingContext2D[JC] var canvas: HTMLCanvasElement
 CanvasRenderingContext2D[JC] def clearRect(x: Double, y: Double, w: Double, h: Double): Unit
-CanvasRenderingContext2D[JC] def clip(fillRule: String?): Unit
+CanvasRenderingContext2D[JC] def clip(fillRule: CanvasFillRule?): Unit
+CanvasRenderingContext2D[JC] def clip(path: Path2D): Unit
+CanvasRenderingContext2D[JC] def clip(path: Path2D, fillRule: CanvasFillRule): Unit
 CanvasRenderingContext2D[JC] def closePath(): Unit
 CanvasRenderingContext2D[JC] def createImageData(imageDataOrSw: js.Any, sh: Double?): ImageData
 CanvasRenderingContext2D[JC] def createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient
 CanvasRenderingContext2D[JC] def createPattern(image: HTMLElement, repetition: String): CanvasPattern
 CanvasRenderingContext2D[JC] def createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): CanvasGradient
 CanvasRenderingContext2D[JC] def drawImage(image: HTMLElement, offsetX: Double, offsetY: Double, width: Double?, height: Double?, canvasOffsetX: Double?, canvasOffsetY: Double?, canvasImageWidth: Double?, canvasImageHeight: Double?): Unit
-CanvasRenderingContext2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean?): Unit
-CanvasRenderingContext2D[JC] def fill(): Unit
-CanvasRenderingContext2D[JC] def fill(fillRule: String): Unit
+CanvasRenderingContext2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean?): Unit
+CanvasRenderingContext2D[JC] def fill(fillRule: CanvasFillRule?): Unit
 CanvasRenderingContext2D[JC] def fill(path: Path2D): Unit
-CanvasRenderingContext2D[JC] def fill(path: Path2D, fillRule: String): Unit
+CanvasRenderingContext2D[JC] def fill(path: Path2D, fillRule: CanvasFillRule): Unit
 CanvasRenderingContext2D[JC] def fillRect(x: Double, y: Double, w: Double, h: Double): Unit
 CanvasRenderingContext2D[JC] var fillStyle: js.Any
 CanvasRenderingContext2D[JC] def fillText(text: String, x: Double, y: Double, maxWidth: Double?): Unit
@@ -1101,8 +1105,9 @@ CanvasRenderingContext2D[JC] def getLineDash(): js.Array[Double]
 CanvasRenderingContext2D[JC] var globalAlpha: Double
 CanvasRenderingContext2D[JC] var globalCompositeOperation: String
 CanvasRenderingContext2D[JC] var imageSmoothingEnabled: Boolean
-CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double): Boolean
-CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double, fillRule: String): Boolean
+CanvasRenderingContext2D[JC] def isPointInPath(path: Path2D, x: Double, y: Double): Boolean
+CanvasRenderingContext2D[JC] def isPointInPath(path: Path2D, x: Double, y: Double, fillRule: CanvasFillRule): Boolean
+CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double, fillRule: CanvasFillRule?): Boolean
 CanvasRenderingContext2D[JC] var lineCap: String
 CanvasRenderingContext2D[JC] var lineDashOffset: Double
 CanvasRenderingContext2D[JC] var lineJoin: String
@@ -16633,11 +16638,11 @@ ParentNode[JT] def lastElementChild: Element
 ParentNode[JT] def replaceChildren(nodes: Node | String*): Unit
 Path2D[JC] def addPath(path: Path2D): Unit
 Path2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit
-Path2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Unit
+Path2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean): Unit
 Path2D[JC] def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit
 Path2D[JC] def bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): Unit
 Path2D[JC] def closePath(): Unit
-Path2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean?): Unit
+Path2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean?): Unit
 Path2D[JC] def lineTo(x: Double, y: Double): Unit
 Path2D[JC] def moveTo(x: Double, y: Double): Unit
 Path2D[JC] def quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double): Unit
