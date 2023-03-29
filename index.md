@@ -1,5 +1,6 @@
-## scala-js-dom
-
+---
+layout: doc
+title: scala-js-dom
 ---
 
 #### Statically typed DOM API for Scala.js
@@ -179,6 +180,6 @@ def encodeBase64(in: html.Input, out: html.Div) = {
 The DOM API is always evolving, and `scala-js-dom` tries to provide a thin-but-idiomatic Scala interface to modern browser APIs, without breaking the spec.
 
 If you see something that you think can be improved, feel free to send a pull request. See our [Contributing Guide](https://github.com/scala-js/scala-js-dom/blob/main/CONTRIBUTING.md) for a detailed overview for starting hacking on `scala-js-dom` and making a PR!
-<script type="text/javascript" src="readme.md.js" defer></script>
+<script type="text/javascript" src="index.md.js" defer></script>
 <script type="text/javascript" src="mdoc.js" defer></script>
 
