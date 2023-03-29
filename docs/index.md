@@ -1,5 +1,6 @@
-## scala-js-dom
-
+---
+layout: doc
+title: scala-js-dom
 ---
 
 #### Statically typed DOM API for Scala.js
