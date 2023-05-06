@@ -146,7 +146,6 @@ ApplicationCache[JT] def update(): Unit
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Attr[JC] def appendChild(newChild: Node): Node
-Attr[JC] def attributes: NamedNodeMap
 Attr[JC] def baseURI: String
 Attr[JC] def childNodes: NodeList[Node]
 Attr[JC] def cloneNode(deep: Boolean?): Node
@@ -154,7 +153,6 @@ Attr[JC] def compareDocumentPosition(other: Node): Int
 Attr[JC] def contains(otherNode: Node): Boolean
 Attr[JC] def dispatchEvent(evt: Event): Boolean
 Attr[JC] def firstChild: Node
-Attr[JC] def hasAttributes(): Boolean
 Attr[JC] def hasChildNodes(): Boolean
 Attr[JC] var innerText: String
 Attr[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -193,7 +191,6 @@ Audio[JC] def after(nodes: Node | String*): Unit
 Audio[JC] def append(nodes: Node | String*): Unit
 Audio[JC] def appendChild(newChild: Node): Node
 Audio[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-Audio[JC] def attributes: NamedNodeMap
 Audio[JC] def audioTracks: AudioTrackList
 Audio[JC] var autoplay: Boolean
 Audio[JC] def baseURI: String
@@ -244,7 +241,6 @@ Audio[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): H
 Audio[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 Audio[JC] def hasAttribute(name: String): Boolean
 Audio[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-Audio[JC] def hasAttributes(): Boolean
 Audio[JC] def hasChildNodes(): Boolean
 Audio[JC] var id: String
 Audio[JC] def initialTime: Double
@@ -617,7 +613,6 @@ CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 CDATASection[JC] def appendChild(newChild: Node): Node
 CDATASection[JC] def appendData(arg: String): Unit
-CDATASection[JC] def attributes: NamedNodeMap
 CDATASection[JC] def baseURI: String
 CDATASection[JC] def childNodes: NodeList[Node]
 CDATASection[JC] def cloneNode(deep: Boolean?): Node
@@ -627,7 +622,6 @@ CDATASection[JC] var data: String
 CDATASection[JC] def deleteData(offset: Int, count: Int): Unit
 CDATASection[JC] def dispatchEvent(evt: Event): Boolean
 CDATASection[JC] def firstChild: Node
-CDATASection[JC] def hasAttributes(): Boolean
 CDATASection[JC] def hasChildNodes(): Boolean
 CDATASection[JC] var innerText: String
 CDATASection[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1170,7 +1164,6 @@ CharacterData[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 CharacterData[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 CharacterData[JC] def appendChild(newChild: Node): Node
 CharacterData[JC] def appendData(arg: String): Unit
-CharacterData[JC] def attributes: NamedNodeMap
 CharacterData[JC] def baseURI: String
 CharacterData[JC] def childNodes: NodeList[Node]
 CharacterData[JC] def cloneNode(deep: Boolean?): Node
@@ -1180,7 +1173,6 @@ CharacterData[JC] var data: String
 CharacterData[JC] def deleteData(offset: Int, count: Int): Unit
 CharacterData[JC] def dispatchEvent(evt: Event): Boolean
 CharacterData[JC] def firstChild: Node
-CharacterData[JC] def hasAttributes(): Boolean
 CharacterData[JC] def hasChildNodes(): Boolean
 CharacterData[JC] var innerText: String
 CharacterData[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1285,7 +1277,6 @@ Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functi
 Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Comment[JC] def appendChild(newChild: Node): Node
 Comment[JC] def appendData(arg: String): Unit
-Comment[JC] def attributes: NamedNodeMap
 Comment[JC] def baseURI: String
 Comment[JC] def childNodes: NodeList[Node]
 Comment[JC] def cloneNode(deep: Boolean?): Node
@@ -1295,7 +1286,6 @@ Comment[JC] var data: String
 Comment[JC] def deleteData(offset: Int, count: Int): Unit
 Comment[JC] def dispatchEvent(evt: Event): Boolean
 Comment[JC] def firstChild: Node
-Comment[JC] def hasAttributes(): Boolean
 Comment[JC] def hasChildNodes(): Boolean
 Comment[JC] var innerText: String
 Comment[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1718,7 +1708,6 @@ Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Funct
 Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Document[JC] def adoptNode(source: Node): Node
 Document[JC] def appendChild(newChild: Node): Node
-Document[JC] def attributes: NamedNodeMap
 Document[JC] def baseURI: String
 Document[JC] def characterSet: String
 Document[JC] def childElementCount: Int
@@ -1760,7 +1749,6 @@ Document[JC] def getElementsByClassName(classNames: String): HTMLCollection[Elem
 Document[JC] def getElementsByName(elementName: String): NodeList[Node]
 Document[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
 Document[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
-Document[JC] def hasAttributes(): Boolean
 Document[JC] def hasChildNodes(): Boolean
 Document[JC] def hidden: Boolean
 Document[JC] def implementation: DOMImplementation
@@ -1807,7 +1795,6 @@ DocumentEvent[JT] def createEvent(eventInterface: String): Event
 DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentFragment[JC] def appendChild(newChild: Node): Node
-DocumentFragment[JC] def attributes: NamedNodeMap
 DocumentFragment[JC] def baseURI: String
 DocumentFragment[JC] def childNodes: NodeList[Node]
 DocumentFragment[JC] def cloneNode(deep: Boolean?): Node
@@ -1815,7 +1802,6 @@ DocumentFragment[JC] def compareDocumentPosition(other: Node): Int
 DocumentFragment[JC] def contains(otherNode: Node): Boolean
 DocumentFragment[JC] def dispatchEvent(evt: Event): Boolean
 DocumentFragment[JC] def firstChild: Node
-DocumentFragment[JC] def hasAttributes(): Boolean
 DocumentFragment[JC] def hasChildNodes(): Boolean
 DocumentFragment[JC] var innerText: String
 DocumentFragment[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1851,7 +1837,6 @@ DocumentReadyState[SO] val loading: DocumentReadyState
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentType[JC] def appendChild(newChild: Node): Node
-DocumentType[JC] def attributes: NamedNodeMap
 DocumentType[JC] def baseURI: String
 DocumentType[JC] def childNodes: NodeList[Node]
 DocumentType[JC] def cloneNode(deep: Boolean?): Node
@@ -1859,7 +1844,6 @@ DocumentType[JC] def compareDocumentPosition(other: Node): Int
 DocumentType[JC] def contains(otherNode: Node): Boolean
 DocumentType[JC] def dispatchEvent(evt: Event): Boolean
 DocumentType[JC] def firstChild: Node
-DocumentType[JC] def hasAttributes(): Boolean
 DocumentType[JC] def hasChildNodes(): Boolean
 DocumentType[JC] var innerText: String
 DocumentType[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1985,7 +1969,6 @@ Element[JC] def after(nodes: Node | String*): Unit
 Element[JC] def append(nodes: Node | String*): Unit
 Element[JC] def appendChild(newChild: Node): Node
 Element[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-Element[JC] def attributes: NamedNodeMap
 Element[JC] def baseURI: String
 Element[JC] def before(nodes: Node | String*): Unit
 Element[JC] def childElementCount: Int
@@ -2014,7 +1997,6 @@ Element[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
 Element[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 Element[JC] def hasAttribute(name: String): Boolean
 Element[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-Element[JC] def hasAttributes(): Boolean
 Element[JC] def hasChildNodes(): Boolean
 Element[JC] var id: String
 Element[JC] var innerHTML: String
@@ -2367,7 +2349,6 @@ HTMLAnchorElement[JC] def after(nodes: Node | String*): Unit
 HTMLAnchorElement[JC] def append(nodes: Node | String*): Unit
 HTMLAnchorElement[JC] def appendChild(newChild: Node): Node
 HTMLAnchorElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLAnchorElement[JC] def attributes: NamedNodeMap
 HTMLAnchorElement[JC] def baseURI: String
 HTMLAnchorElement[JC] def before(nodes: Node | String*): Unit
 HTMLAnchorElement[JC] def blur(): Unit
@@ -2408,7 +2389,6 @@ HTMLAnchorElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName
 HTMLAnchorElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLAnchorElement[JC] def hasAttribute(name: String): Boolean
 HTMLAnchorElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLAnchorElement[JC] def hasAttributes(): Boolean
 HTMLAnchorElement[JC] def hasChildNodes(): Boolean
 HTMLAnchorElement[JC] var hash: String
 HTMLAnchorElement[JC] var host: String
@@ -2584,7 +2564,6 @@ HTMLAreaElement[JC] var alt: String
 HTMLAreaElement[JC] def append(nodes: Node | String*): Unit
 HTMLAreaElement[JC] def appendChild(newChild: Node): Node
 HTMLAreaElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLAreaElement[JC] def attributes: NamedNodeMap
 HTMLAreaElement[JC] def baseURI: String
 HTMLAreaElement[JC] def before(nodes: Node | String*): Unit
 HTMLAreaElement[JC] def blur(): Unit
@@ -2625,7 +2604,6 @@ HTMLAreaElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLAreaElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLAreaElement[JC] def hasAttribute(name: String): Boolean
 HTMLAreaElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLAreaElement[JC] def hasAttributes(): Boolean
 HTMLAreaElement[JC] def hasChildNodes(): Boolean
 HTMLAreaElement[JC] var hash: String
 HTMLAreaElement[JC] var host: String
@@ -2796,7 +2774,6 @@ HTMLAudioElement[JC] def after(nodes: Node | String*): Unit
 HTMLAudioElement[JC] def append(nodes: Node | String*): Unit
 HTMLAudioElement[JC] def appendChild(newChild: Node): Node
 HTMLAudioElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLAudioElement[JC] def attributes: NamedNodeMap
 HTMLAudioElement[JC] def audioTracks: AudioTrackList
 HTMLAudioElement[JC] var autoplay: Boolean
 HTMLAudioElement[JC] def baseURI: String
@@ -2847,7 +2824,6 @@ HTMLAudioElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLAudioElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLAudioElement[JC] def hasAttribute(name: String): Boolean
 HTMLAudioElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLAudioElement[JC] def hasAttributes(): Boolean
 HTMLAudioElement[JC] def hasChildNodes(): Boolean
 HTMLAudioElement[JC] var id: String
 HTMLAudioElement[JC] def initialTime: Double
@@ -3025,7 +3001,6 @@ HTMLBRElement[JC] def after(nodes: Node | String*): Unit
 HTMLBRElement[JC] def append(nodes: Node | String*): Unit
 HTMLBRElement[JC] def appendChild(newChild: Node): Node
 HTMLBRElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLBRElement[JC] def attributes: NamedNodeMap
 HTMLBRElement[JC] def baseURI: String
 HTMLBRElement[JC] def before(nodes: Node | String*): Unit
 HTMLBRElement[JC] def blur(): Unit
@@ -3065,7 +3040,6 @@ HTMLBRElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: St
 HTMLBRElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLBRElement[JC] def hasAttribute(name: String): Boolean
 HTMLBRElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLBRElement[JC] def hasAttributes(): Boolean
 HTMLBRElement[JC] def hasChildNodes(): Boolean
 HTMLBRElement[JC] var id: String
 HTMLBRElement[JC] var innerHTML: String
@@ -3226,7 +3200,6 @@ HTMLBaseElement[JC] def after(nodes: Node | String*): Unit
 HTMLBaseElement[JC] def append(nodes: Node | String*): Unit
 HTMLBaseElement[JC] def appendChild(newChild: Node): Node
 HTMLBaseElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLBaseElement[JC] def attributes: NamedNodeMap
 HTMLBaseElement[JC] def baseURI: String
 HTMLBaseElement[JC] def before(nodes: Node | String*): Unit
 HTMLBaseElement[JC] def blur(): Unit
@@ -3266,7 +3239,6 @@ HTMLBaseElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLBaseElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLBaseElement[JC] def hasAttribute(name: String): Boolean
 HTMLBaseElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLBaseElement[JC] def hasAttributes(): Boolean
 HTMLBaseElement[JC] def hasChildNodes(): Boolean
 HTMLBaseElement[JC] var href: String
 HTMLBaseElement[JC] var id: String
@@ -3429,7 +3401,6 @@ HTMLBodyElement[JC] def after(nodes: Node | String*): Unit
 HTMLBodyElement[JC] def append(nodes: Node | String*): Unit
 HTMLBodyElement[JC] def appendChild(newChild: Node): Node
 HTMLBodyElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLBodyElement[JC] def attributes: NamedNodeMap
 HTMLBodyElement[JC] def baseURI: String
 HTMLBodyElement[JC] def before(nodes: Node | String*): Unit
 HTMLBodyElement[JC] def blur(): Unit
@@ -3469,7 +3440,6 @@ HTMLBodyElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLBodyElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLBodyElement[JC] def hasAttribute(name: String): Boolean
 HTMLBodyElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLBodyElement[JC] def hasAttributes(): Boolean
 HTMLBodyElement[JC] def hasChildNodes(): Boolean
 HTMLBodyElement[JC] var id: String
 HTMLBodyElement[JC] var innerHTML: String
@@ -3644,7 +3614,6 @@ HTMLButtonElement[JC] def after(nodes: Node | String*): Unit
 HTMLButtonElement[JC] def append(nodes: Node | String*): Unit
 HTMLButtonElement[JC] def appendChild(newChild: Node): Node
 HTMLButtonElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLButtonElement[JC] def attributes: NamedNodeMap
 HTMLButtonElement[JC] var autofocus: Boolean
 HTMLButtonElement[JC] def baseURI: String
 HTMLButtonElement[JC] def before(nodes: Node | String*): Unit
@@ -3693,7 +3662,6 @@ HTMLButtonElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName
 HTMLButtonElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLButtonElement[JC] def hasAttribute(name: String): Boolean
 HTMLButtonElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLButtonElement[JC] def hasAttributes(): Boolean
 HTMLButtonElement[JC] def hasChildNodes(): Boolean
 HTMLButtonElement[JC] var id: String
 HTMLButtonElement[JC] var innerHTML: String
@@ -3863,7 +3831,6 @@ HTMLCanvasElement[JC] def after(nodes: Node | String*): Unit
 HTMLCanvasElement[JC] def append(nodes: Node | String*): Unit
 HTMLCanvasElement[JC] def appendChild(newChild: Node): Node
 HTMLCanvasElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLCanvasElement[JC] def attributes: NamedNodeMap
 HTMLCanvasElement[JC] def baseURI: String
 HTMLCanvasElement[JC] def before(nodes: Node | String*): Unit
 HTMLCanvasElement[JC] def blur(): Unit
@@ -3904,7 +3871,6 @@ HTMLCanvasElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName
 HTMLCanvasElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLCanvasElement[JC] def hasAttribute(name: String): Boolean
 HTMLCanvasElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLCanvasElement[JC] def hasAttributes(): Boolean
 HTMLCanvasElement[JC] def hasChildNodes(): Boolean
 HTMLCanvasElement[JC] var height: Int
 HTMLCanvasElement[JC] var id: String
@@ -4072,7 +4038,6 @@ HTMLDListElement[JC] def after(nodes: Node | String*): Unit
 HTMLDListElement[JC] def append(nodes: Node | String*): Unit
 HTMLDListElement[JC] def appendChild(newChild: Node): Node
 HTMLDListElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLDListElement[JC] def attributes: NamedNodeMap
 HTMLDListElement[JC] def baseURI: String
 HTMLDListElement[JC] def before(nodes: Node | String*): Unit
 HTMLDListElement[JC] def blur(): Unit
@@ -4112,7 +4077,6 @@ HTMLDListElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLDListElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLDListElement[JC] def hasAttribute(name: String): Boolean
 HTMLDListElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLDListElement[JC] def hasAttributes(): Boolean
 HTMLDListElement[JC] def hasChildNodes(): Boolean
 HTMLDListElement[JC] var id: String
 HTMLDListElement[JC] var innerHTML: String
@@ -4273,7 +4237,6 @@ HTMLDataListElement[JC] def after(nodes: Node | String*): Unit
 HTMLDataListElement[JC] def append(nodes: Node | String*): Unit
 HTMLDataListElement[JC] def appendChild(newChild: Node): Node
 HTMLDataListElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLDataListElement[JC] def attributes: NamedNodeMap
 HTMLDataListElement[JC] def baseURI: String
 HTMLDataListElement[JC] def before(nodes: Node | String*): Unit
 HTMLDataListElement[JC] def blur(): Unit
@@ -4313,7 +4276,6 @@ HTMLDataListElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNa
 HTMLDataListElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLDataListElement[JC] def hasAttribute(name: String): Boolean
 HTMLDataListElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLDataListElement[JC] def hasAttributes(): Boolean
 HTMLDataListElement[JC] def hasChildNodes(): Boolean
 HTMLDataListElement[JC] var id: String
 HTMLDataListElement[JC] var innerHTML: String
@@ -4475,7 +4437,6 @@ HTMLDialogElement[JC] def after(nodes: Node | String*): Unit
 HTMLDialogElement[JC] def append(nodes: Node | String*): Unit
 HTMLDialogElement[JC] def appendChild(newChild: Node): Node
 HTMLDialogElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLDialogElement[JC] def attributes: NamedNodeMap
 HTMLDialogElement[JC] def baseURI: String
 HTMLDialogElement[JC] def before(nodes: Node | String*): Unit
 HTMLDialogElement[JC] def blur(): Unit
@@ -4516,7 +4477,6 @@ HTMLDialogElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName
 HTMLDialogElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLDialogElement[JC] def hasAttribute(name: String): Boolean
 HTMLDialogElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLDialogElement[JC] def hasAttributes(): Boolean
 HTMLDialogElement[JC] def hasChildNodes(): Boolean
 HTMLDialogElement[JC] var id: String
 HTMLDialogElement[JC] var innerHTML: String
@@ -4681,7 +4641,6 @@ HTMLDivElement[JC] def after(nodes: Node | String*): Unit
 HTMLDivElement[JC] def append(nodes: Node | String*): Unit
 HTMLDivElement[JC] def appendChild(newChild: Node): Node
 HTMLDivElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLDivElement[JC] def attributes: NamedNodeMap
 HTMLDivElement[JC] def baseURI: String
 HTMLDivElement[JC] def before(nodes: Node | String*): Unit
 HTMLDivElement[JC] def blur(): Unit
@@ -4721,7 +4680,6 @@ HTMLDivElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: S
 HTMLDivElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLDivElement[JC] def hasAttribute(name: String): Boolean
 HTMLDivElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLDivElement[JC] def hasAttributes(): Boolean
 HTMLDivElement[JC] def hasChildNodes(): Boolean
 HTMLDivElement[JC] var id: String
 HTMLDivElement[JC] var innerHTML: String
@@ -4882,7 +4840,6 @@ HTMLDocument[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 HTMLDocument[JC] def adoptNode(source: Node): Node
 HTMLDocument[JC] def anchors: HTMLCollection[Element]
 HTMLDocument[JC] def appendChild(newChild: Node): Node
-HTMLDocument[JC] def attributes: NamedNodeMap
 HTMLDocument[JC] def baseURI: String
 HTMLDocument[JC] var body: HTMLElement
 HTMLDocument[JC] def characterSet: String
@@ -4940,7 +4897,6 @@ HTMLDocument[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
 HTMLDocument[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 HTMLDocument[JC] def getSelection(): Selection
 HTMLDocument[JC] var gotpointercapture: js.Function1[PointerEvent, _]
-HTMLDocument[JC] def hasAttributes(): Boolean
 HTMLDocument[JC] def hasChildNodes(): Boolean
 HTMLDocument[JC] def hasFocus(): Boolean
 HTMLDocument[JC] def head: HTMLHeadElement
@@ -5082,7 +5038,6 @@ HTMLElement[JC] def after(nodes: Node | String*): Unit
 HTMLElement[JC] def append(nodes: Node | String*): Unit
 HTMLElement[JC] def appendChild(newChild: Node): Node
 HTMLElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLElement[JC] def attributes: NamedNodeMap
 HTMLElement[JC] def baseURI: String
 HTMLElement[JC] def before(nodes: Node | String*): Unit
 HTMLElement[JC] def blur(): Unit
@@ -5122,7 +5077,6 @@ HTMLElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: Stri
 HTMLElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLElement[JC] def hasAttribute(name: String): Boolean
 HTMLElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLElement[JC] def hasAttributes(): Boolean
 HTMLElement[JC] def hasChildNodes(): Boolean
 HTMLElement[JC] var id: String
 HTMLElement[JC] var innerHTML: String
@@ -5283,7 +5237,6 @@ HTMLEmbedElement[JC] def after(nodes: Node | String*): Unit
 HTMLEmbedElement[JC] def append(nodes: Node | String*): Unit
 HTMLEmbedElement[JC] def appendChild(newChild: Node): Node
 HTMLEmbedElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLEmbedElement[JC] def attributes: NamedNodeMap
 HTMLEmbedElement[JC] def baseURI: String
 HTMLEmbedElement[JC] def before(nodes: Node | String*): Unit
 HTMLEmbedElement[JC] def blur(): Unit
@@ -5324,7 +5277,6 @@ HTMLEmbedElement[JC] def getSVGDocument(): Document
 HTMLEmbedElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLEmbedElement[JC] def hasAttribute(name: String): Boolean
 HTMLEmbedElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLEmbedElement[JC] def hasAttributes(): Boolean
 HTMLEmbedElement[JC] def hasChildNodes(): Boolean
 HTMLEmbedElement[JC] var height: String
 HTMLEmbedElement[JC] var id: String
@@ -5488,7 +5440,6 @@ HTMLFieldSetElement[JC] def after(nodes: Node | String*): Unit
 HTMLFieldSetElement[JC] def append(nodes: Node | String*): Unit
 HTMLFieldSetElement[JC] def appendChild(newChild: Node): Node
 HTMLFieldSetElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLFieldSetElement[JC] def attributes: NamedNodeMap
 HTMLFieldSetElement[JC] def baseURI: String
 HTMLFieldSetElement[JC] def before(nodes: Node | String*): Unit
 HTMLFieldSetElement[JC] def blur(): Unit
@@ -5531,7 +5482,6 @@ HTMLFieldSetElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNa
 HTMLFieldSetElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLFieldSetElement[JC] def hasAttribute(name: String): Boolean
 HTMLFieldSetElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLFieldSetElement[JC] def hasAttributes(): Boolean
 HTMLFieldSetElement[JC] def hasChildNodes(): Boolean
 HTMLFieldSetElement[JC] var id: String
 HTMLFieldSetElement[JC] var innerHTML: String
@@ -5704,7 +5654,6 @@ HTMLFormElement[JC] def append(nodes: Node | String*): Unit
 HTMLFormElement[JC] def appendChild(newChild: Node): Node
 HTMLFormElement[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(name: String): js.Any
 HTMLFormElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLFormElement[JC] def attributes: NamedNodeMap
 HTMLFormElement[JC] var autocomplete: String
 HTMLFormElement[JC] def baseURI: String
 HTMLFormElement[JC] def before(nodes: Node | String*): Unit
@@ -5749,7 +5698,6 @@ HTMLFormElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLFormElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLFormElement[JC] def hasAttribute(name: String): Boolean
 HTMLFormElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLFormElement[JC] def hasAttributes(): Boolean
 HTMLFormElement[JC] def hasChildNodes(): Boolean
 HTMLFormElement[JC] var id: String
 HTMLFormElement[JC] var innerHTML: String
@@ -5921,7 +5869,6 @@ HTMLHRElement[JC] def after(nodes: Node | String*): Unit
 HTMLHRElement[JC] def append(nodes: Node | String*): Unit
 HTMLHRElement[JC] def appendChild(newChild: Node): Node
 HTMLHRElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLHRElement[JC] def attributes: NamedNodeMap
 HTMLHRElement[JC] def baseURI: String
 HTMLHRElement[JC] def before(nodes: Node | String*): Unit
 HTMLHRElement[JC] def blur(): Unit
@@ -5961,7 +5908,6 @@ HTMLHRElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: St
 HTMLHRElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLHRElement[JC] def hasAttribute(name: String): Boolean
 HTMLHRElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLHRElement[JC] def hasAttributes(): Boolean
 HTMLHRElement[JC] def hasChildNodes(): Boolean
 HTMLHRElement[JC] var id: String
 HTMLHRElement[JC] var innerHTML: String
@@ -6122,7 +6068,6 @@ HTMLHeadElement[JC] def after(nodes: Node | String*): Unit
 HTMLHeadElement[JC] def append(nodes: Node | String*): Unit
 HTMLHeadElement[JC] def appendChild(newChild: Node): Node
 HTMLHeadElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLHeadElement[JC] def attributes: NamedNodeMap
 HTMLHeadElement[JC] def baseURI: String
 HTMLHeadElement[JC] def before(nodes: Node | String*): Unit
 HTMLHeadElement[JC] def blur(): Unit
@@ -6162,7 +6107,6 @@ HTMLHeadElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLHeadElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLHeadElement[JC] def hasAttribute(name: String): Boolean
 HTMLHeadElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLHeadElement[JC] def hasAttributes(): Boolean
 HTMLHeadElement[JC] def hasChildNodes(): Boolean
 HTMLHeadElement[JC] var id: String
 HTMLHeadElement[JC] var innerHTML: String
@@ -6323,7 +6267,6 @@ HTMLHeadingElement[JC] def after(nodes: Node | String*): Unit
 HTMLHeadingElement[JC] def append(nodes: Node | String*): Unit
 HTMLHeadingElement[JC] def appendChild(newChild: Node): Node
 HTMLHeadingElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLHeadingElement[JC] def attributes: NamedNodeMap
 HTMLHeadingElement[JC] def baseURI: String
 HTMLHeadingElement[JC] def before(nodes: Node | String*): Unit
 HTMLHeadingElement[JC] def blur(): Unit
@@ -6363,7 +6306,6 @@ HTMLHeadingElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNam
 HTMLHeadingElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLHeadingElement[JC] def hasAttribute(name: String): Boolean
 HTMLHeadingElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLHeadingElement[JC] def hasAttributes(): Boolean
 HTMLHeadingElement[JC] def hasChildNodes(): Boolean
 HTMLHeadingElement[JC] var id: String
 HTMLHeadingElement[JC] var innerHTML: String
@@ -6524,7 +6466,6 @@ HTMLHtmlElement[JC] def after(nodes: Node | String*): Unit
 HTMLHtmlElement[JC] def append(nodes: Node | String*): Unit
 HTMLHtmlElement[JC] def appendChild(newChild: Node): Node
 HTMLHtmlElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLHtmlElement[JC] def attributes: NamedNodeMap
 HTMLHtmlElement[JC] def baseURI: String
 HTMLHtmlElement[JC] def before(nodes: Node | String*): Unit
 HTMLHtmlElement[JC] def blur(): Unit
@@ -6564,7 +6505,6 @@ HTMLHtmlElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLHtmlElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLHtmlElement[JC] def hasAttribute(name: String): Boolean
 HTMLHtmlElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLHtmlElement[JC] def hasAttributes(): Boolean
 HTMLHtmlElement[JC] def hasChildNodes(): Boolean
 HTMLHtmlElement[JC] var id: String
 HTMLHtmlElement[JC] var innerHTML: String
@@ -6725,7 +6665,6 @@ HTMLIFrameElement[JC] def after(nodes: Node | String*): Unit
 HTMLIFrameElement[JC] def append(nodes: Node | String*): Unit
 HTMLIFrameElement[JC] def appendChild(newChild: Node): Node
 HTMLIFrameElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLIFrameElement[JC] def attributes: NamedNodeMap
 HTMLIFrameElement[JC] def baseURI: String
 HTMLIFrameElement[JC] def before(nodes: Node | String*): Unit
 HTMLIFrameElement[JC] def blur(): Unit
@@ -6769,7 +6708,6 @@ HTMLIFrameElement[JC] def getSVGDocument(): Document
 HTMLIFrameElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLIFrameElement[JC] def hasAttribute(name: String): Boolean
 HTMLIFrameElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLIFrameElement[JC] def hasAttributes(): Boolean
 HTMLIFrameElement[JC] def hasChildNodes(): Boolean
 HTMLIFrameElement[JC] var height: String
 HTMLIFrameElement[JC] var id: String
@@ -6938,7 +6876,6 @@ HTMLImageElement[JC] var alt: String
 HTMLImageElement[JC] def append(nodes: Node | String*): Unit
 HTMLImageElement[JC] def appendChild(newChild: Node): Node
 HTMLImageElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLImageElement[JC] def attributes: NamedNodeMap
 HTMLImageElement[JC] def baseURI: String
 HTMLImageElement[JC] def before(nodes: Node | String*): Unit
 HTMLImageElement[JC] def blur(): Unit
@@ -6980,7 +6917,6 @@ HTMLImageElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLImageElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLImageElement[JC] def hasAttribute(name: String): Boolean
 HTMLImageElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLImageElement[JC] def hasAttributes(): Boolean
 HTMLImageElement[JC] def hasChildNodes(): Boolean
 HTMLImageElement[JC] var height: Int
 HTMLImageElement[JC] var href: String
@@ -7157,7 +7093,6 @@ HTMLInputElement[JC] var alt: String
 HTMLInputElement[JC] def append(nodes: Node | String*): Unit
 HTMLInputElement[JC] def appendChild(newChild: Node): Node
 HTMLInputElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLInputElement[JC] def attributes: NamedNodeMap
 HTMLInputElement[JC] var autocomplete: String
 HTMLInputElement[JC] var autofocus: Boolean
 HTMLInputElement[JC] def baseURI: String
@@ -7211,7 +7146,6 @@ HTMLInputElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLInputElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLInputElement[JC] def hasAttribute(name: String): Boolean
 HTMLInputElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLInputElement[JC] def hasAttributes(): Boolean
 HTMLInputElement[JC] def hasChildNodes(): Boolean
 HTMLInputElement[JC] var height: String
 HTMLInputElement[JC] var id: String
@@ -7403,7 +7337,6 @@ HTMLLIElement[JC] def after(nodes: Node | String*): Unit
 HTMLLIElement[JC] def append(nodes: Node | String*): Unit
 HTMLLIElement[JC] def appendChild(newChild: Node): Node
 HTMLLIElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLLIElement[JC] def attributes: NamedNodeMap
 HTMLLIElement[JC] def baseURI: String
 HTMLLIElement[JC] def before(nodes: Node | String*): Unit
 HTMLLIElement[JC] def blur(): Unit
@@ -7443,7 +7376,6 @@ HTMLLIElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: St
 HTMLLIElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLLIElement[JC] def hasAttribute(name: String): Boolean
 HTMLLIElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLLIElement[JC] def hasAttributes(): Boolean
 HTMLLIElement[JC] def hasChildNodes(): Boolean
 HTMLLIElement[JC] var id: String
 HTMLLIElement[JC] var innerHTML: String
@@ -7605,7 +7537,6 @@ HTMLLabelElement[JC] def after(nodes: Node | String*): Unit
 HTMLLabelElement[JC] def append(nodes: Node | String*): Unit
 HTMLLabelElement[JC] def appendChild(newChild: Node): Node
 HTMLLabelElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLLabelElement[JC] def attributes: NamedNodeMap
 HTMLLabelElement[JC] def baseURI: String
 HTMLLabelElement[JC] def before(nodes: Node | String*): Unit
 HTMLLabelElement[JC] def blur(): Unit
@@ -7646,7 +7577,6 @@ HTMLLabelElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLLabelElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLLabelElement[JC] def hasAttribute(name: String): Boolean
 HTMLLabelElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLLabelElement[JC] def hasAttributes(): Boolean
 HTMLLabelElement[JC] def hasChildNodes(): Boolean
 HTMLLabelElement[JC] var htmlFor: String
 HTMLLabelElement[JC] var id: String
@@ -7809,7 +7739,6 @@ HTMLLegendElement[JC] var align: String
 HTMLLegendElement[JC] def append(nodes: Node | String*): Unit
 HTMLLegendElement[JC] def appendChild(newChild: Node): Node
 HTMLLegendElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLLegendElement[JC] def attributes: NamedNodeMap
 HTMLLegendElement[JC] def baseURI: String
 HTMLLegendElement[JC] def before(nodes: Node | String*): Unit
 HTMLLegendElement[JC] def blur(): Unit
@@ -7850,7 +7779,6 @@ HTMLLegendElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName
 HTMLLegendElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLLegendElement[JC] def hasAttribute(name: String): Boolean
 HTMLLegendElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLLegendElement[JC] def hasAttributes(): Boolean
 HTMLLegendElement[JC] def hasChildNodes(): Boolean
 HTMLLegendElement[JC] var id: String
 HTMLLegendElement[JC] var innerHTML: String
@@ -8011,7 +7939,6 @@ HTMLLinkElement[JC] def after(nodes: Node | String*): Unit
 HTMLLinkElement[JC] def append(nodes: Node | String*): Unit
 HTMLLinkElement[JC] def appendChild(newChild: Node): Node
 HTMLLinkElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLLinkElement[JC] def attributes: NamedNodeMap
 HTMLLinkElement[JC] def baseURI: String
 HTMLLinkElement[JC] def before(nodes: Node | String*): Unit
 HTMLLinkElement[JC] def blur(): Unit
@@ -8051,7 +7978,6 @@ HTMLLinkElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLLinkElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLLinkElement[JC] def hasAttribute(name: String): Boolean
 HTMLLinkElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLLinkElement[JC] def hasAttributes(): Boolean
 HTMLLinkElement[JC] def hasChildNodes(): Boolean
 HTMLLinkElement[JC] var href: String
 HTMLLinkElement[JC] var hreflang: String
@@ -8220,7 +8146,6 @@ HTMLMapElement[JC] def after(nodes: Node | String*): Unit
 HTMLMapElement[JC] def append(nodes: Node | String*): Unit
 HTMLMapElement[JC] def appendChild(newChild: Node): Node
 HTMLMapElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLMapElement[JC] def attributes: NamedNodeMap
 HTMLMapElement[JC] def baseURI: String
 HTMLMapElement[JC] def before(nodes: Node | String*): Unit
 HTMLMapElement[JC] def blur(): Unit
@@ -8260,7 +8185,6 @@ HTMLMapElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: S
 HTMLMapElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLMapElement[JC] def hasAttribute(name: String): Boolean
 HTMLMapElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLMapElement[JC] def hasAttributes(): Boolean
 HTMLMapElement[JC] def hasChildNodes(): Boolean
 HTMLMapElement[JC] var id: String
 HTMLMapElement[JC] var innerHTML: String
@@ -8422,7 +8346,6 @@ HTMLMediaElement[JC] def after(nodes: Node | String*): Unit
 HTMLMediaElement[JC] def append(nodes: Node | String*): Unit
 HTMLMediaElement[JC] def appendChild(newChild: Node): Node
 HTMLMediaElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLMediaElement[JC] def attributes: NamedNodeMap
 HTMLMediaElement[JC] def audioTracks: AudioTrackList
 HTMLMediaElement[JC] var autoplay: Boolean
 HTMLMediaElement[JC] def baseURI: String
@@ -8473,7 +8396,6 @@ HTMLMediaElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLMediaElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLMediaElement[JC] def hasAttribute(name: String): Boolean
 HTMLMediaElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLMediaElement[JC] def hasAttributes(): Boolean
 HTMLMediaElement[JC] def hasChildNodes(): Boolean
 HTMLMediaElement[JC] var id: String
 HTMLMediaElement[JC] def initialTime: Double
@@ -8660,7 +8582,6 @@ HTMLMenuElement[JC] def after(nodes: Node | String*): Unit
 HTMLMenuElement[JC] def append(nodes: Node | String*): Unit
 HTMLMenuElement[JC] def appendChild(newChild: Node): Node
 HTMLMenuElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLMenuElement[JC] def attributes: NamedNodeMap
 HTMLMenuElement[JC] def baseURI: String
 HTMLMenuElement[JC] def before(nodes: Node | String*): Unit
 HTMLMenuElement[JC] def blur(): Unit
@@ -8700,7 +8621,6 @@ HTMLMenuElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLMenuElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLMenuElement[JC] def hasAttribute(name: String): Boolean
 HTMLMenuElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLMenuElement[JC] def hasAttributes(): Boolean
 HTMLMenuElement[JC] def hasChildNodes(): Boolean
 HTMLMenuElement[JC] var id: String
 HTMLMenuElement[JC] var innerHTML: String
@@ -8862,7 +8782,6 @@ HTMLMetaElement[JC] def after(nodes: Node | String*): Unit
 HTMLMetaElement[JC] def append(nodes: Node | String*): Unit
 HTMLMetaElement[JC] def appendChild(newChild: Node): Node
 HTMLMetaElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLMetaElement[JC] def attributes: NamedNodeMap
 HTMLMetaElement[JC] def baseURI: String
 HTMLMetaElement[JC] def before(nodes: Node | String*): Unit
 HTMLMetaElement[JC] def blur(): Unit
@@ -8904,7 +8823,6 @@ HTMLMetaElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLMetaElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLMetaElement[JC] def hasAttribute(name: String): Boolean
 HTMLMetaElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLMetaElement[JC] def hasAttributes(): Boolean
 HTMLMetaElement[JC] def hasChildNodes(): Boolean
 HTMLMetaElement[JC] var httpEquiv: String
 HTMLMetaElement[JC] var id: String
@@ -9068,7 +8986,6 @@ HTMLModElement[JC] def after(nodes: Node | String*): Unit
 HTMLModElement[JC] def append(nodes: Node | String*): Unit
 HTMLModElement[JC] def appendChild(newChild: Node): Node
 HTMLModElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLModElement[JC] def attributes: NamedNodeMap
 HTMLModElement[JC] def baseURI: String
 HTMLModElement[JC] def before(nodes: Node | String*): Unit
 HTMLModElement[JC] def blur(): Unit
@@ -9110,7 +9027,6 @@ HTMLModElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: S
 HTMLModElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLModElement[JC] def hasAttribute(name: String): Boolean
 HTMLModElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLModElement[JC] def hasAttributes(): Boolean
 HTMLModElement[JC] def hasChildNodes(): Boolean
 HTMLModElement[JC] var id: String
 HTMLModElement[JC] var innerHTML: String
@@ -9271,7 +9187,6 @@ HTMLOListElement[JC] def after(nodes: Node | String*): Unit
 HTMLOListElement[JC] def append(nodes: Node | String*): Unit
 HTMLOListElement[JC] def appendChild(newChild: Node): Node
 HTMLOListElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLOListElement[JC] def attributes: NamedNodeMap
 HTMLOListElement[JC] def baseURI: String
 HTMLOListElement[JC] def before(nodes: Node | String*): Unit
 HTMLOListElement[JC] def blur(): Unit
@@ -9311,7 +9226,6 @@ HTMLOListElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLOListElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLOListElement[JC] def hasAttribute(name: String): Boolean
 HTMLOListElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLOListElement[JC] def hasAttributes(): Boolean
 HTMLOListElement[JC] def hasChildNodes(): Boolean
 HTMLOListElement[JC] var id: String
 HTMLOListElement[JC] var innerHTML: String
@@ -9476,7 +9390,6 @@ HTMLObjectElement[JC] var altHtml: String
 HTMLObjectElement[JC] def append(nodes: Node | String*): Unit
 HTMLObjectElement[JC] def appendChild(newChild: Node): Node
 HTMLObjectElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLObjectElement[JC] def attributes: NamedNodeMap
 HTMLObjectElement[JC] def baseURI: String
 HTMLObjectElement[JC] def before(nodes: Node | String*): Unit
 HTMLObjectElement[JC] def blur(): Unit
@@ -9522,7 +9435,6 @@ HTMLObjectElement[JC] def getSVGDocument(): Document
 HTMLObjectElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLObjectElement[JC] def hasAttribute(name: String): Boolean
 HTMLObjectElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLObjectElement[JC] def hasAttributes(): Boolean
 HTMLObjectElement[JC] def hasChildNodes(): Boolean
 HTMLObjectElement[JC] var height: String
 HTMLObjectElement[JC] var id: String
@@ -9694,7 +9606,6 @@ HTMLOptGroupElement[JC] def after(nodes: Node | String*): Unit
 HTMLOptGroupElement[JC] def append(nodes: Node | String*): Unit
 HTMLOptGroupElement[JC] def appendChild(newChild: Node): Node
 HTMLOptGroupElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLOptGroupElement[JC] def attributes: NamedNodeMap
 HTMLOptGroupElement[JC] def baseURI: String
 HTMLOptGroupElement[JC] def before(nodes: Node | String*): Unit
 HTMLOptGroupElement[JC] def blur(): Unit
@@ -9735,7 +9646,6 @@ HTMLOptGroupElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNa
 HTMLOptGroupElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLOptGroupElement[JC] def hasAttribute(name: String): Boolean
 HTMLOptGroupElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLOptGroupElement[JC] def hasAttributes(): Boolean
 HTMLOptGroupElement[JC] def hasChildNodes(): Boolean
 HTMLOptGroupElement[JC] var id: String
 HTMLOptGroupElement[JC] var innerHTML: String
@@ -9897,7 +9807,6 @@ HTMLOptionElement[JC] def after(nodes: Node | String*): Unit
 HTMLOptionElement[JC] def append(nodes: Node | String*): Unit
 HTMLOptionElement[JC] def appendChild(newChild: Node): Node
 HTMLOptionElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLOptionElement[JC] def attributes: NamedNodeMap
 HTMLOptionElement[JC] def baseURI: String
 HTMLOptionElement[JC] def before(nodes: Node | String*): Unit
 HTMLOptionElement[JC] def blur(): Unit
@@ -9941,7 +9850,6 @@ HTMLOptionElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName
 HTMLOptionElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLOptionElement[JC] def hasAttribute(name: String): Boolean
 HTMLOptionElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLOptionElement[JC] def hasAttributes(): Boolean
 HTMLOptionElement[JC] def hasChildNodes(): Boolean
 HTMLOptionElement[JC] var id: String
 HTMLOptionElement[JC] def index: Int
@@ -10111,7 +10019,6 @@ HTMLParagraphElement[JC] def after(nodes: Node | String*): Unit
 HTMLParagraphElement[JC] def append(nodes: Node | String*): Unit
 HTMLParagraphElement[JC] def appendChild(newChild: Node): Node
 HTMLParagraphElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLParagraphElement[JC] def attributes: NamedNodeMap
 HTMLParagraphElement[JC] def baseURI: String
 HTMLParagraphElement[JC] def before(nodes: Node | String*): Unit
 HTMLParagraphElement[JC] def blur(): Unit
@@ -10151,7 +10058,6 @@ HTMLParagraphElement[JC] def getElementsByTagNameNS(namespaceURI: String, localN
 HTMLParagraphElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLParagraphElement[JC] def hasAttribute(name: String): Boolean
 HTMLParagraphElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLParagraphElement[JC] def hasAttributes(): Boolean
 HTMLParagraphElement[JC] def hasChildNodes(): Boolean
 HTMLParagraphElement[JC] var id: String
 HTMLParagraphElement[JC] var innerHTML: String
@@ -10312,7 +10218,6 @@ HTMLParamElement[JC] def after(nodes: Node | String*): Unit
 HTMLParamElement[JC] def append(nodes: Node | String*): Unit
 HTMLParamElement[JC] def appendChild(newChild: Node): Node
 HTMLParamElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLParamElement[JC] def attributes: NamedNodeMap
 HTMLParamElement[JC] def baseURI: String
 HTMLParamElement[JC] def before(nodes: Node | String*): Unit
 HTMLParamElement[JC] def blur(): Unit
@@ -10352,7 +10257,6 @@ HTMLParamElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLParamElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLParamElement[JC] def hasAttribute(name: String): Boolean
 HTMLParamElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLParamElement[JC] def hasAttributes(): Boolean
 HTMLParamElement[JC] def hasChildNodes(): Boolean
 HTMLParamElement[JC] var id: String
 HTMLParamElement[JC] var innerHTML: String
@@ -10515,7 +10419,6 @@ HTMLPreElement[JC] def after(nodes: Node | String*): Unit
 HTMLPreElement[JC] def append(nodes: Node | String*): Unit
 HTMLPreElement[JC] def appendChild(newChild: Node): Node
 HTMLPreElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLPreElement[JC] def attributes: NamedNodeMap
 HTMLPreElement[JC] def baseURI: String
 HTMLPreElement[JC] def before(nodes: Node | String*): Unit
 HTMLPreElement[JC] def blur(): Unit
@@ -10555,7 +10458,6 @@ HTMLPreElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: S
 HTMLPreElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLPreElement[JC] def hasAttribute(name: String): Boolean
 HTMLPreElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLPreElement[JC] def hasAttributes(): Boolean
 HTMLPreElement[JC] def hasChildNodes(): Boolean
 HTMLPreElement[JC] var id: String
 HTMLPreElement[JC] var innerHTML: String
@@ -10716,7 +10618,6 @@ HTMLProgressElement[JC] def after(nodes: Node | String*): Unit
 HTMLProgressElement[JC] def append(nodes: Node | String*): Unit
 HTMLProgressElement[JC] def appendChild(newChild: Node): Node
 HTMLProgressElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLProgressElement[JC] def attributes: NamedNodeMap
 HTMLProgressElement[JC] def baseURI: String
 HTMLProgressElement[JC] def before(nodes: Node | String*): Unit
 HTMLProgressElement[JC] def blur(): Unit
@@ -10757,7 +10658,6 @@ HTMLProgressElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNa
 HTMLProgressElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLProgressElement[JC] def hasAttribute(name: String): Boolean
 HTMLProgressElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLProgressElement[JC] def hasAttributes(): Boolean
 HTMLProgressElement[JC] def hasChildNodes(): Boolean
 HTMLProgressElement[JC] var id: String
 HTMLProgressElement[JC] var innerHTML: String
@@ -10921,7 +10821,6 @@ HTMLQuoteElement[JC] def after(nodes: Node | String*): Unit
 HTMLQuoteElement[JC] def append(nodes: Node | String*): Unit
 HTMLQuoteElement[JC] def appendChild(newChild: Node): Node
 HTMLQuoteElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLQuoteElement[JC] def attributes: NamedNodeMap
 HTMLQuoteElement[JC] def baseURI: String
 HTMLQuoteElement[JC] def before(nodes: Node | String*): Unit
 HTMLQuoteElement[JC] def blur(): Unit
@@ -10963,7 +10862,6 @@ HTMLQuoteElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLQuoteElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLQuoteElement[JC] def hasAttribute(name: String): Boolean
 HTMLQuoteElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLQuoteElement[JC] def hasAttributes(): Boolean
 HTMLQuoteElement[JC] def hasChildNodes(): Boolean
 HTMLQuoteElement[JC] var id: String
 HTMLQuoteElement[JC] var innerHTML: String
@@ -11125,7 +11023,6 @@ HTMLScriptElement[JC] def append(nodes: Node | String*): Unit
 HTMLScriptElement[JC] def appendChild(newChild: Node): Node
 HTMLScriptElement[JC] var async: Boolean
 HTMLScriptElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLScriptElement[JC] def attributes: NamedNodeMap
 HTMLScriptElement[JC] def baseURI: String
 HTMLScriptElement[JC] def before(nodes: Node | String*): Unit
 HTMLScriptElement[JC] def blur(): Unit
@@ -11168,7 +11065,6 @@ HTMLScriptElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName
 HTMLScriptElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLScriptElement[JC] def hasAttribute(name: String): Boolean
 HTMLScriptElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLScriptElement[JC] def hasAttributes(): Boolean
 HTMLScriptElement[JC] def hasChildNodes(): Boolean
 HTMLScriptElement[JC] var id: String
 HTMLScriptElement[JC] var innerHTML: String
@@ -11335,7 +11231,6 @@ HTMLSelectElement[JC] def append(nodes: Node | String*): Unit
 HTMLSelectElement[JC] def appendChild(newChild: Node): Node
 HTMLSelectElement[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(name: String): js.Any
 HTMLSelectElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLSelectElement[JC] def attributes: NamedNodeMap
 HTMLSelectElement[JC] var autofocus: Boolean
 HTMLSelectElement[JC] def baseURI: String
 HTMLSelectElement[JC] def before(nodes: Node | String*): Unit
@@ -11379,7 +11274,6 @@ HTMLSelectElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName
 HTMLSelectElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLSelectElement[JC] def hasAttribute(name: String): Boolean
 HTMLSelectElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLSelectElement[JC] def hasAttributes(): Boolean
 HTMLSelectElement[JC] def hasChildNodes(): Boolean
 HTMLSelectElement[JC] var id: String
 HTMLSelectElement[JC] var innerHTML: String
@@ -11558,7 +11452,6 @@ HTMLSourceElement[JC] def after(nodes: Node | String*): Unit
 HTMLSourceElement[JC] def append(nodes: Node | String*): Unit
 HTMLSourceElement[JC] def appendChild(newChild: Node): Node
 HTMLSourceElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLSourceElement[JC] def attributes: NamedNodeMap
 HTMLSourceElement[JC] def baseURI: String
 HTMLSourceElement[JC] def before(nodes: Node | String*): Unit
 HTMLSourceElement[JC] def blur(): Unit
@@ -11598,7 +11491,6 @@ HTMLSourceElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName
 HTMLSourceElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLSourceElement[JC] def hasAttribute(name: String): Boolean
 HTMLSourceElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLSourceElement[JC] def hasAttributes(): Boolean
 HTMLSourceElement[JC] def hasChildNodes(): Boolean
 HTMLSourceElement[JC] var id: String
 HTMLSourceElement[JC] var innerHTML: String
@@ -11762,7 +11654,6 @@ HTMLSpanElement[JC] def after(nodes: Node | String*): Unit
 HTMLSpanElement[JC] def append(nodes: Node | String*): Unit
 HTMLSpanElement[JC] def appendChild(newChild: Node): Node
 HTMLSpanElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLSpanElement[JC] def attributes: NamedNodeMap
 HTMLSpanElement[JC] def baseURI: String
 HTMLSpanElement[JC] def before(nodes: Node | String*): Unit
 HTMLSpanElement[JC] def blur(): Unit
@@ -11802,7 +11693,6 @@ HTMLSpanElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: 
 HTMLSpanElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLSpanElement[JC] def hasAttribute(name: String): Boolean
 HTMLSpanElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLSpanElement[JC] def hasAttributes(): Boolean
 HTMLSpanElement[JC] def hasChildNodes(): Boolean
 HTMLSpanElement[JC] var id: String
 HTMLSpanElement[JC] var innerHTML: String
@@ -11963,7 +11853,6 @@ HTMLStyleElement[JC] def after(nodes: Node | String*): Unit
 HTMLStyleElement[JC] def append(nodes: Node | String*): Unit
 HTMLStyleElement[JC] def appendChild(newChild: Node): Node
 HTMLStyleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLStyleElement[JC] def attributes: NamedNodeMap
 HTMLStyleElement[JC] def baseURI: String
 HTMLStyleElement[JC] def before(nodes: Node | String*): Unit
 HTMLStyleElement[JC] def blur(): Unit
@@ -12003,7 +11892,6 @@ HTMLStyleElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLStyleElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLStyleElement[JC] def hasAttribute(name: String): Boolean
 HTMLStyleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLStyleElement[JC] def hasAttributes(): Boolean
 HTMLStyleElement[JC] def hasChildNodes(): Boolean
 HTMLStyleElement[JC] var id: String
 HTMLStyleElement[JC] var innerHTML: String
@@ -12168,7 +12056,6 @@ HTMLTableCaptionElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableCaptionElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableCaptionElement[JC] def appendChild(newChild: Node): Node
 HTMLTableCaptionElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTableCaptionElement[JC] def attributes: NamedNodeMap
 HTMLTableCaptionElement[JC] def baseURI: String
 HTMLTableCaptionElement[JC] def before(nodes: Node | String*): Unit
 HTMLTableCaptionElement[JC] def blur(): Unit
@@ -12208,7 +12095,6 @@ HTMLTableCaptionElement[JC] def getElementsByTagNameNS(namespaceURI: String, loc
 HTMLTableCaptionElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTableCaptionElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableCaptionElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTableCaptionElement[JC] def hasAttributes(): Boolean
 HTMLTableCaptionElement[JC] def hasChildNodes(): Boolean
 HTMLTableCaptionElement[JC] var id: String
 HTMLTableCaptionElement[JC] var innerHTML: String
@@ -12369,7 +12255,6 @@ HTMLTableCellElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableCellElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableCellElement[JC] def appendChild(newChild: Node): Node
 HTMLTableCellElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTableCellElement[JC] def attributes: NamedNodeMap
 HTMLTableCellElement[JC] def baseURI: String
 HTMLTableCellElement[JC] def before(nodes: Node | String*): Unit
 HTMLTableCellElement[JC] def blur(): Unit
@@ -12411,7 +12296,6 @@ HTMLTableCellElement[JC] def getElementsByTagNameNS(namespaceURI: String, localN
 HTMLTableCellElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTableCellElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableCellElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTableCellElement[JC] def hasAttributes(): Boolean
 HTMLTableCellElement[JC] def hasChildNodes(): Boolean
 HTMLTableCellElement[JC] def headers: String
 HTMLTableCellElement[JC] var id: String
@@ -12574,7 +12458,6 @@ HTMLTableColElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableColElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableColElement[JC] def appendChild(newChild: Node): Node
 HTMLTableColElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTableColElement[JC] def attributes: NamedNodeMap
 HTMLTableColElement[JC] def baseURI: String
 HTMLTableColElement[JC] def before(nodes: Node | String*): Unit
 HTMLTableColElement[JC] def blur(): Unit
@@ -12614,7 +12497,6 @@ HTMLTableColElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNa
 HTMLTableColElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTableColElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableColElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTableColElement[JC] def hasAttributes(): Boolean
 HTMLTableColElement[JC] def hasChildNodes(): Boolean
 HTMLTableColElement[JC] var id: String
 HTMLTableColElement[JC] var innerHTML: String
@@ -12776,7 +12658,6 @@ HTMLTableElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableElement[JC] def appendChild(newChild: Node): Node
 HTMLTableElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTableElement[JC] def attributes: NamedNodeMap
 HTMLTableElement[JC] def baseURI: String
 HTMLTableElement[JC] def before(nodes: Node | String*): Unit
 HTMLTableElement[JC] def blur(): Unit
@@ -12825,7 +12706,6 @@ HTMLTableElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLTableElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTableElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTableElement[JC] def hasAttributes(): Boolean
 HTMLTableElement[JC] def hasChildNodes(): Boolean
 HTMLTableElement[JC] var id: String
 HTMLTableElement[JC] var innerHTML: String
@@ -12992,7 +12872,6 @@ HTMLTableRowElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableRowElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableRowElement[JC] def appendChild(newChild: Node): Node
 HTMLTableRowElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTableRowElement[JC] def attributes: NamedNodeMap
 HTMLTableRowElement[JC] def baseURI: String
 HTMLTableRowElement[JC] def before(nodes: Node | String*): Unit
 HTMLTableRowElement[JC] def blur(): Unit
@@ -13037,7 +12916,6 @@ HTMLTableRowElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNa
 HTMLTableRowElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTableRowElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableRowElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTableRowElement[JC] def hasAttributes(): Boolean
 HTMLTableRowElement[JC] def hasChildNodes(): Boolean
 HTMLTableRowElement[JC] var height: js.Any
 HTMLTableRowElement[JC] var id: String
@@ -13202,7 +13080,6 @@ HTMLTableSectionElement[JC] def after(nodes: Node | String*): Unit
 HTMLTableSectionElement[JC] def append(nodes: Node | String*): Unit
 HTMLTableSectionElement[JC] def appendChild(newChild: Node): Node
 HTMLTableSectionElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTableSectionElement[JC] def attributes: NamedNodeMap
 HTMLTableSectionElement[JC] def baseURI: String
 HTMLTableSectionElement[JC] def before(nodes: Node | String*): Unit
 HTMLTableSectionElement[JC] def blur(): Unit
@@ -13243,7 +13120,6 @@ HTMLTableSectionElement[JC] def getElementsByTagNameNS(namespaceURI: String, loc
 HTMLTableSectionElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTableSectionElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableSectionElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTableSectionElement[JC] def hasAttributes(): Boolean
 HTMLTableSectionElement[JC] def hasChildNodes(): Boolean
 HTMLTableSectionElement[JC] var id: String
 HTMLTableSectionElement[JC] var innerHTML: String
@@ -13407,7 +13283,6 @@ HTMLTemplateElement[JC] def after(nodes: Node | String*): Unit
 HTMLTemplateElement[JC] def append(nodes: Node | String*): Unit
 HTMLTemplateElement[JC] def appendChild(newChild: Node): Node
 HTMLTemplateElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTemplateElement[JC] def attributes: NamedNodeMap
 HTMLTemplateElement[JC] def baseURI: String
 HTMLTemplateElement[JC] def before(nodes: Node | String*): Unit
 HTMLTemplateElement[JC] def blur(): Unit
@@ -13448,7 +13323,6 @@ HTMLTemplateElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNa
 HTMLTemplateElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTemplateElement[JC] def hasAttribute(name: String): Boolean
 HTMLTemplateElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTemplateElement[JC] def hasAttributes(): Boolean
 HTMLTemplateElement[JC] def hasChildNodes(): Boolean
 HTMLTemplateElement[JC] var id: String
 HTMLTemplateElement[JC] var innerHTML: String
@@ -13609,7 +13483,6 @@ HTMLTextAreaElement[JC] def after(nodes: Node | String*): Unit
 HTMLTextAreaElement[JC] def append(nodes: Node | String*): Unit
 HTMLTextAreaElement[JC] def appendChild(newChild: Node): Node
 HTMLTextAreaElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTextAreaElement[JC] def attributes: NamedNodeMap
 HTMLTextAreaElement[JC] var autofocus: Boolean
 HTMLTextAreaElement[JC] def baseURI: String
 HTMLTextAreaElement[JC] def before(nodes: Node | String*): Unit
@@ -13655,7 +13528,6 @@ HTMLTextAreaElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNa
 HTMLTextAreaElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTextAreaElement[JC] def hasAttribute(name: String): Boolean
 HTMLTextAreaElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTextAreaElement[JC] def hasAttributes(): Boolean
 HTMLTextAreaElement[JC] def hasChildNodes(): Boolean
 HTMLTextAreaElement[JC] var id: String
 HTMLTextAreaElement[JC] var innerHTML: String
@@ -13835,7 +13707,6 @@ HTMLTitleElement[JC] def after(nodes: Node | String*): Unit
 HTMLTitleElement[JC] def append(nodes: Node | String*): Unit
 HTMLTitleElement[JC] def appendChild(newChild: Node): Node
 HTMLTitleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTitleElement[JC] def attributes: NamedNodeMap
 HTMLTitleElement[JC] def baseURI: String
 HTMLTitleElement[JC] def before(nodes: Node | String*): Unit
 HTMLTitleElement[JC] def blur(): Unit
@@ -13875,7 +13746,6 @@ HTMLTitleElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLTitleElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTitleElement[JC] def hasAttribute(name: String): Boolean
 HTMLTitleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTitleElement[JC] def hasAttributes(): Boolean
 HTMLTitleElement[JC] def hasChildNodes(): Boolean
 HTMLTitleElement[JC] var id: String
 HTMLTitleElement[JC] var innerHTML: String
@@ -14037,7 +13907,6 @@ HTMLTrackElement[JC] def after(nodes: Node | String*): Unit
 HTMLTrackElement[JC] def append(nodes: Node | String*): Unit
 HTMLTrackElement[JC] def appendChild(newChild: Node): Node
 HTMLTrackElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLTrackElement[JC] def attributes: NamedNodeMap
 HTMLTrackElement[JC] def baseURI: String
 HTMLTrackElement[JC] def before(nodes: Node | String*): Unit
 HTMLTrackElement[JC] def blur(): Unit
@@ -14077,7 +13946,6 @@ HTMLTrackElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLTrackElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLTrackElement[JC] def hasAttribute(name: String): Boolean
 HTMLTrackElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLTrackElement[JC] def hasAttributes(): Boolean
 HTMLTrackElement[JC] def hasChildNodes(): Boolean
 HTMLTrackElement[JC] var id: String
 HTMLTrackElement[JC] var innerHTML: String
@@ -14243,7 +14111,6 @@ HTMLUListElement[JC] def after(nodes: Node | String*): Unit
 HTMLUListElement[JC] def append(nodes: Node | String*): Unit
 HTMLUListElement[JC] def appendChild(newChild: Node): Node
 HTMLUListElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLUListElement[JC] def attributes: NamedNodeMap
 HTMLUListElement[JC] def baseURI: String
 HTMLUListElement[JC] def before(nodes: Node | String*): Unit
 HTMLUListElement[JC] def blur(): Unit
@@ -14283,7 +14150,6 @@ HTMLUListElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLUListElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLUListElement[JC] def hasAttribute(name: String): Boolean
 HTMLUListElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLUListElement[JC] def hasAttributes(): Boolean
 HTMLUListElement[JC] def hasChildNodes(): Boolean
 HTMLUListElement[JC] var id: String
 HTMLUListElement[JC] var innerHTML: String
@@ -14444,7 +14310,6 @@ HTMLUnknownElement[JC] def after(nodes: Node | String*): Unit
 HTMLUnknownElement[JC] def append(nodes: Node | String*): Unit
 HTMLUnknownElement[JC] def appendChild(newChild: Node): Node
 HTMLUnknownElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLUnknownElement[JC] def attributes: NamedNodeMap
 HTMLUnknownElement[JC] def baseURI: String
 HTMLUnknownElement[JC] def before(nodes: Node | String*): Unit
 HTMLUnknownElement[JC] def blur(): Unit
@@ -14484,7 +14349,6 @@ HTMLUnknownElement[JC] def getElementsByTagNameNS(namespaceURI: String, localNam
 HTMLUnknownElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLUnknownElement[JC] def hasAttribute(name: String): Boolean
 HTMLUnknownElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLUnknownElement[JC] def hasAttributes(): Boolean
 HTMLUnknownElement[JC] def hasChildNodes(): Boolean
 HTMLUnknownElement[JC] var id: String
 HTMLUnknownElement[JC] var innerHTML: String
@@ -14645,7 +14509,6 @@ HTMLVideoElement[JC] def after(nodes: Node | String*): Unit
 HTMLVideoElement[JC] def append(nodes: Node | String*): Unit
 HTMLVideoElement[JC] def appendChild(newChild: Node): Node
 HTMLVideoElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-HTMLVideoElement[JC] def attributes: NamedNodeMap
 HTMLVideoElement[JC] def audioTracks: AudioTrackList
 HTMLVideoElement[JC] var autoplay: Boolean
 HTMLVideoElement[JC] def baseURI: String
@@ -14696,7 +14559,6 @@ HTMLVideoElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName:
 HTMLVideoElement[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 HTMLVideoElement[JC] def hasAttribute(name: String): Boolean
 HTMLVideoElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-HTMLVideoElement[JC] def hasAttributes(): Boolean
 HTMLVideoElement[JC] def hasChildNodes(): Boolean
 HTMLVideoElement[JC] var height: Int
 HTMLVideoElement[JC] var id: String
@@ -15159,7 +15021,6 @@ Image[JC] var alt: String
 Image[JC] def append(nodes: Node | String*): Unit
 Image[JC] def appendChild(newChild: Node): Node
 Image[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-Image[JC] def attributes: NamedNodeMap
 Image[JC] def baseURI: String
 Image[JC] def before(nodes: Node | String*): Unit
 Image[JC] def blur(): Unit
@@ -15201,7 +15062,6 @@ Image[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): H
 Image[JC] var gotpointercapture: js.Function1[PointerEvent, _]
 Image[JC] def hasAttribute(name: String): Boolean
 Image[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-Image[JC] def hasAttributes(): Boolean
 Image[JC] def hasChildNodes(): Boolean
 Image[JC] var height: Int
 Image[JC] var href: String
@@ -16395,7 +16255,6 @@ NavigatorVibration[JT] def vibrate(pattern: js.Array[Double]): Boolean
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Node[JC] def appendChild(newChild: Node): Node
-Node[JC] def attributes: NamedNodeMap
 Node[JC] def baseURI: String
 Node[JC] def childNodes: NodeList[Node]
 Node[JC] def cloneNode(deep: Boolean?): Node
@@ -16403,7 +16262,6 @@ Node[JC] def compareDocumentPosition(other: Node): Int
 Node[JC] def contains(otherNode: Node): Boolean
 Node[JC] def dispatchEvent(evt: Event): Boolean
 Node[JC] def firstChild: Node
-Node[JC] def hasAttributes(): Boolean
 Node[JC] def hasChildNodes(): Boolean
 Node[JC] var innerText: String
 Node[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -16851,7 +16709,6 @@ PresentationStyle[SO] val unspecified: PresentationStyle
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ProcessingInstruction[JC] def appendChild(newChild: Node): Node
-ProcessingInstruction[JC] def attributes: NamedNodeMap
 ProcessingInstruction[JC] def baseURI: String
 ProcessingInstruction[JC] def childNodes: NodeList[Node]
 ProcessingInstruction[JC] def cloneNode(deep: Boolean?): Node
@@ -16860,7 +16717,6 @@ ProcessingInstruction[JC] def contains(otherNode: Node): Boolean
 ProcessingInstruction[JC] def data: String
 ProcessingInstruction[JC] def dispatchEvent(evt: Event): Boolean
 ProcessingInstruction[JC] def firstChild: Node
-ProcessingInstruction[JC] def hasAttributes(): Boolean
 ProcessingInstruction[JC] def hasChildNodes(): Boolean
 ProcessingInstruction[JC] var innerText: String
 ProcessingInstruction[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -17379,7 +17235,6 @@ SVGAElement[JC] def after(nodes: Node | String*): Unit
 SVGAElement[JC] def append(nodes: Node | String*): Unit
 SVGAElement[JC] def appendChild(newChild: Node): Node
 SVGAElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGAElement[JC] def attributes: NamedNodeMap
 SVGAElement[JC] def baseURI: String
 SVGAElement[JC] def before(nodes: Node | String*): Unit
 SVGAElement[JC] def childElementCount: Int
@@ -17415,7 +17270,6 @@ SVGAElement[JC] def getScreenCTM(): SVGMatrix
 SVGAElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGAElement[JC] def hasAttribute(name: String): Boolean
 SVGAElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGAElement[JC] def hasAttributes(): Boolean
 SVGAElement[JC] def hasChildNodes(): Boolean
 SVGAElement[JC] def hasExtension(extension: String): Boolean
 SVGAElement[JC] var href: SVGAnimatedString
@@ -17548,7 +17402,6 @@ SVGCircleElement[JC] def after(nodes: Node | String*): Unit
 SVGCircleElement[JC] def append(nodes: Node | String*): Unit
 SVGCircleElement[JC] def appendChild(newChild: Node): Node
 SVGCircleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGCircleElement[JC] def attributes: NamedNodeMap
 SVGCircleElement[JC] def baseURI: String
 SVGCircleElement[JC] def before(nodes: Node | String*): Unit
 SVGCircleElement[JC] def childElementCount: Int
@@ -17586,7 +17439,6 @@ SVGCircleElement[JC] def getScreenCTM(): SVGMatrix
 SVGCircleElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGCircleElement[JC] def hasAttribute(name: String): Boolean
 SVGCircleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGCircleElement[JC] def hasAttributes(): Boolean
 SVGCircleElement[JC] def hasChildNodes(): Boolean
 SVGCircleElement[JC] def hasExtension(extension: String): Boolean
 SVGCircleElement[JC] var id: String
@@ -17683,7 +17535,6 @@ SVGClipPathElement[JC] def after(nodes: Node | String*): Unit
 SVGClipPathElement[JC] def append(nodes: Node | String*): Unit
 SVGClipPathElement[JC] def appendChild(newChild: Node): Node
 SVGClipPathElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGClipPathElement[JC] def attributes: NamedNodeMap
 SVGClipPathElement[JC] def baseURI: String
 SVGClipPathElement[JC] def before(nodes: Node | String*): Unit
 SVGClipPathElement[JC] def childElementCount: Int
@@ -17720,7 +17571,6 @@ SVGClipPathElement[JC] def getScreenCTM(): SVGMatrix
 SVGClipPathElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGClipPathElement[JC] def hasAttribute(name: String): Boolean
 SVGClipPathElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGClipPathElement[JC] def hasAttributes(): Boolean
 SVGClipPathElement[JC] def hasChildNodes(): Boolean
 SVGClipPathElement[JC] def hasExtension(extension: String): Boolean
 SVGClipPathElement[JC] var id: String
@@ -17814,7 +17664,6 @@ SVGComponentTransferFunctionElement[JC] def amplitude: SVGAnimatedNumber
 SVGComponentTransferFunctionElement[JC] def append(nodes: Node | String*): Unit
 SVGComponentTransferFunctionElement[JC] def appendChild(newChild: Node): Node
 SVGComponentTransferFunctionElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGComponentTransferFunctionElement[JC] def attributes: NamedNodeMap
 SVGComponentTransferFunctionElement[JC] def baseURI: String
 SVGComponentTransferFunctionElement[JC] def before(nodes: Node | String*): Unit
 SVGComponentTransferFunctionElement[JC] def childElementCount: Int
@@ -17844,7 +17693,6 @@ SVGComponentTransferFunctionElement[JC] def getElementsByTagName(name: String): 
 SVGComponentTransferFunctionElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGComponentTransferFunctionElement[JC] def hasAttribute(name: String): Boolean
 SVGComponentTransferFunctionElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGComponentTransferFunctionElement[JC] def hasAttributes(): Boolean
 SVGComponentTransferFunctionElement[JC] def hasChildNodes(): Boolean
 SVGComponentTransferFunctionElement[JC] var id: String
 SVGComponentTransferFunctionElement[JC] var innerHTML: String
@@ -17939,7 +17787,6 @@ SVGDefsElement[JC] def after(nodes: Node | String*): Unit
 SVGDefsElement[JC] def append(nodes: Node | String*): Unit
 SVGDefsElement[JC] def appendChild(newChild: Node): Node
 SVGDefsElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGDefsElement[JC] def attributes: NamedNodeMap
 SVGDefsElement[JC] def baseURI: String
 SVGDefsElement[JC] def before(nodes: Node | String*): Unit
 SVGDefsElement[JC] def childElementCount: Int
@@ -17975,7 +17822,6 @@ SVGDefsElement[JC] def getScreenCTM(): SVGMatrix
 SVGDefsElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGDefsElement[JC] def hasAttribute(name: String): Boolean
 SVGDefsElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGDefsElement[JC] def hasAttributes(): Boolean
 SVGDefsElement[JC] def hasChildNodes(): Boolean
 SVGDefsElement[JC] def hasExtension(extension: String): Boolean
 SVGDefsElement[JC] var id: String
@@ -18068,7 +17914,6 @@ SVGDescElement[JC] def after(nodes: Node | String*): Unit
 SVGDescElement[JC] def append(nodes: Node | String*): Unit
 SVGDescElement[JC] def appendChild(newChild: Node): Node
 SVGDescElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGDescElement[JC] def attributes: NamedNodeMap
 SVGDescElement[JC] def baseURI: String
 SVGDescElement[JC] def before(nodes: Node | String*): Unit
 SVGDescElement[JC] def childElementCount: Int
@@ -18098,7 +17943,6 @@ SVGDescElement[JC] def getElementsByTagName(name: String): HTMLCollection[Elemen
 SVGDescElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGDescElement[JC] def hasAttribute(name: String): Boolean
 SVGDescElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGDescElement[JC] def hasAttributes(): Boolean
 SVGDescElement[JC] def hasChildNodes(): Boolean
 SVGDescElement[JC] var id: String
 SVGDescElement[JC] var innerHTML: String
@@ -18185,7 +18029,6 @@ SVGElement[JC] def after(nodes: Node | String*): Unit
 SVGElement[JC] def append(nodes: Node | String*): Unit
 SVGElement[JC] def appendChild(newChild: Node): Node
 SVGElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGElement[JC] def attributes: NamedNodeMap
 SVGElement[JC] def baseURI: String
 SVGElement[JC] def before(nodes: Node | String*): Unit
 SVGElement[JC] def childElementCount: Int
@@ -18214,7 +18057,6 @@ SVGElement[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
 SVGElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGElement[JC] def hasAttribute(name: String): Boolean
 SVGElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGElement[JC] def hasAttributes(): Boolean
 SVGElement[JC] def hasChildNodes(): Boolean
 SVGElement[JC] var id: String
 SVGElement[JC] var innerHTML: String
@@ -18313,7 +18155,6 @@ SVGEllipseElement[JC] def after(nodes: Node | String*): Unit
 SVGEllipseElement[JC] def append(nodes: Node | String*): Unit
 SVGEllipseElement[JC] def appendChild(newChild: Node): Node
 SVGEllipseElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGEllipseElement[JC] def attributes: NamedNodeMap
 SVGEllipseElement[JC] def baseURI: String
 SVGEllipseElement[JC] def before(nodes: Node | String*): Unit
 SVGEllipseElement[JC] def childElementCount: Int
@@ -18351,7 +18192,6 @@ SVGEllipseElement[JC] def getScreenCTM(): SVGMatrix
 SVGEllipseElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGEllipseElement[JC] def hasAttribute(name: String): Boolean
 SVGEllipseElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGEllipseElement[JC] def hasAttributes(): Boolean
 SVGEllipseElement[JC] def hasChildNodes(): Boolean
 SVGEllipseElement[JC] def hasExtension(extension: String): Boolean
 SVGEllipseElement[JC] var id: String
@@ -18453,7 +18293,6 @@ SVGFEBlendElement[JC] def after(nodes: Node | String*): Unit
 SVGFEBlendElement[JC] def append(nodes: Node | String*): Unit
 SVGFEBlendElement[JC] def appendChild(newChild: Node): Node
 SVGFEBlendElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEBlendElement[JC] def attributes: NamedNodeMap
 SVGFEBlendElement[JC] def baseURI: String
 SVGFEBlendElement[JC] def before(nodes: Node | String*): Unit
 SVGFEBlendElement[JC] def childElementCount: Int
@@ -18483,7 +18322,6 @@ SVGFEBlendElement[JC] def getElementsByTagName(name: String): HTMLCollection[Ele
 SVGFEBlendElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEBlendElement[JC] def hasAttribute(name: String): Boolean
 SVGFEBlendElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEBlendElement[JC] def hasAttributes(): Boolean
 SVGFEBlendElement[JC] def hasChildNodes(): Boolean
 SVGFEBlendElement[JC] def height: SVGAnimatedLength
 SVGFEBlendElement[JC] var id: String
@@ -18582,7 +18420,6 @@ SVGFEColorMatrixElement[JC] def after(nodes: Node | String*): Unit
 SVGFEColorMatrixElement[JC] def append(nodes: Node | String*): Unit
 SVGFEColorMatrixElement[JC] def appendChild(newChild: Node): Node
 SVGFEColorMatrixElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEColorMatrixElement[JC] def attributes: NamedNodeMap
 SVGFEColorMatrixElement[JC] def baseURI: String
 SVGFEColorMatrixElement[JC] def before(nodes: Node | String*): Unit
 SVGFEColorMatrixElement[JC] def childElementCount: Int
@@ -18612,7 +18449,6 @@ SVGFEColorMatrixElement[JC] def getElementsByTagName(name: String): HTMLCollecti
 SVGFEColorMatrixElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEColorMatrixElement[JC] def hasAttribute(name: String): Boolean
 SVGFEColorMatrixElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEColorMatrixElement[JC] def hasAttributes(): Boolean
 SVGFEColorMatrixElement[JC] def hasChildNodes(): Boolean
 SVGFEColorMatrixElement[JC] def height: SVGAnimatedLength
 SVGFEColorMatrixElement[JC] var id: String
@@ -18710,7 +18546,6 @@ SVGFEComponentTransferElement[JC] def after(nodes: Node | String*): Unit
 SVGFEComponentTransferElement[JC] def append(nodes: Node | String*): Unit
 SVGFEComponentTransferElement[JC] def appendChild(newChild: Node): Node
 SVGFEComponentTransferElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEComponentTransferElement[JC] def attributes: NamedNodeMap
 SVGFEComponentTransferElement[JC] def baseURI: String
 SVGFEComponentTransferElement[JC] def before(nodes: Node | String*): Unit
 SVGFEComponentTransferElement[JC] def childElementCount: Int
@@ -18740,7 +18575,6 @@ SVGFEComponentTransferElement[JC] def getElementsByTagName(name: String): HTMLCo
 SVGFEComponentTransferElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEComponentTransferElement[JC] def hasAttribute(name: String): Boolean
 SVGFEComponentTransferElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEComponentTransferElement[JC] def hasAttributes(): Boolean
 SVGFEComponentTransferElement[JC] def hasChildNodes(): Boolean
 SVGFEComponentTransferElement[JC] def height: SVGAnimatedLength
 SVGFEComponentTransferElement[JC] var id: String
@@ -18831,7 +18665,6 @@ SVGFECompositeElement[JC] def after(nodes: Node | String*): Unit
 SVGFECompositeElement[JC] def append(nodes: Node | String*): Unit
 SVGFECompositeElement[JC] def appendChild(newChild: Node): Node
 SVGFECompositeElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFECompositeElement[JC] def attributes: NamedNodeMap
 SVGFECompositeElement[JC] def baseURI: String
 SVGFECompositeElement[JC] def before(nodes: Node | String*): Unit
 SVGFECompositeElement[JC] def childElementCount: Int
@@ -18861,7 +18694,6 @@ SVGFECompositeElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFECompositeElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFECompositeElement[JC] def hasAttribute(name: String): Boolean
 SVGFECompositeElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFECompositeElement[JC] def hasAttributes(): Boolean
 SVGFECompositeElement[JC] def hasChildNodes(): Boolean
 SVGFECompositeElement[JC] def height: SVGAnimatedLength
 SVGFECompositeElement[JC] var id: String
@@ -18965,7 +18797,6 @@ SVGFEConvolveMatrixElement[JC] def after(nodes: Node | String*): Unit
 SVGFEConvolveMatrixElement[JC] def append(nodes: Node | String*): Unit
 SVGFEConvolveMatrixElement[JC] def appendChild(newChild: Node): Node
 SVGFEConvolveMatrixElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEConvolveMatrixElement[JC] def attributes: NamedNodeMap
 SVGFEConvolveMatrixElement[JC] def baseURI: String
 SVGFEConvolveMatrixElement[JC] def before(nodes: Node | String*): Unit
 SVGFEConvolveMatrixElement[JC] def bias: SVGAnimatedNumber
@@ -18998,7 +18829,6 @@ SVGFEConvolveMatrixElement[JC] def getElementsByTagName(name: String): HTMLColle
 SVGFEConvolveMatrixElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEConvolveMatrixElement[JC] def hasAttribute(name: String): Boolean
 SVGFEConvolveMatrixElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEConvolveMatrixElement[JC] def hasAttributes(): Boolean
 SVGFEConvolveMatrixElement[JC] def hasChildNodes(): Boolean
 SVGFEConvolveMatrixElement[JC] def height: SVGAnimatedLength
 SVGFEConvolveMatrixElement[JC] var id: String
@@ -19101,7 +18931,6 @@ SVGFEDiffuseLightingElement[JC] def after(nodes: Node | String*): Unit
 SVGFEDiffuseLightingElement[JC] def append(nodes: Node | String*): Unit
 SVGFEDiffuseLightingElement[JC] def appendChild(newChild: Node): Node
 SVGFEDiffuseLightingElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEDiffuseLightingElement[JC] def attributes: NamedNodeMap
 SVGFEDiffuseLightingElement[JC] def baseURI: String
 SVGFEDiffuseLightingElement[JC] def before(nodes: Node | String*): Unit
 SVGFEDiffuseLightingElement[JC] def childElementCount: Int
@@ -19132,7 +18961,6 @@ SVGFEDiffuseLightingElement[JC] def getElementsByTagName(name: String): HTMLColl
 SVGFEDiffuseLightingElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEDiffuseLightingElement[JC] def hasAttribute(name: String): Boolean
 SVGFEDiffuseLightingElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEDiffuseLightingElement[JC] def hasAttributes(): Boolean
 SVGFEDiffuseLightingElement[JC] def hasChildNodes(): Boolean
 SVGFEDiffuseLightingElement[JC] def height: SVGAnimatedLength
 SVGFEDiffuseLightingElement[JC] var id: String
@@ -19226,7 +19054,6 @@ SVGFEDisplacementMapElement[JC] def after(nodes: Node | String*): Unit
 SVGFEDisplacementMapElement[JC] def append(nodes: Node | String*): Unit
 SVGFEDisplacementMapElement[JC] def appendChild(newChild: Node): Node
 SVGFEDisplacementMapElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEDisplacementMapElement[JC] def attributes: NamedNodeMap
 SVGFEDisplacementMapElement[JC] def baseURI: String
 SVGFEDisplacementMapElement[JC] def before(nodes: Node | String*): Unit
 SVGFEDisplacementMapElement[JC] def childElementCount: Int
@@ -19256,7 +19083,6 @@ SVGFEDisplacementMapElement[JC] def getElementsByTagName(name: String): HTMLColl
 SVGFEDisplacementMapElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEDisplacementMapElement[JC] def hasAttribute(name: String): Boolean
 SVGFEDisplacementMapElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEDisplacementMapElement[JC] def hasAttributes(): Boolean
 SVGFEDisplacementMapElement[JC] def hasChildNodes(): Boolean
 SVGFEDisplacementMapElement[JC] def height: SVGAnimatedLength
 SVGFEDisplacementMapElement[JC] var id: String
@@ -19356,7 +19182,6 @@ SVGFEDistantLightElement[JC] def after(nodes: Node | String*): Unit
 SVGFEDistantLightElement[JC] def append(nodes: Node | String*): Unit
 SVGFEDistantLightElement[JC] def appendChild(newChild: Node): Node
 SVGFEDistantLightElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEDistantLightElement[JC] def attributes: NamedNodeMap
 SVGFEDistantLightElement[JC] def azimuth: SVGAnimatedNumber
 SVGFEDistantLightElement[JC] def baseURI: String
 SVGFEDistantLightElement[JC] def before(nodes: Node | String*): Unit
@@ -19387,7 +19212,6 @@ SVGFEDistantLightElement[JC] def getElementsByTagName(name: String): HTMLCollect
 SVGFEDistantLightElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEDistantLightElement[JC] def hasAttribute(name: String): Boolean
 SVGFEDistantLightElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEDistantLightElement[JC] def hasAttributes(): Boolean
 SVGFEDistantLightElement[JC] def hasChildNodes(): Boolean
 SVGFEDistantLightElement[JC] var id: String
 SVGFEDistantLightElement[JC] var innerHTML: String
@@ -19471,7 +19295,6 @@ SVGFEFloodElement[JC] def after(nodes: Node | String*): Unit
 SVGFEFloodElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFloodElement[JC] def appendChild(newChild: Node): Node
 SVGFEFloodElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEFloodElement[JC] def attributes: NamedNodeMap
 SVGFEFloodElement[JC] def baseURI: String
 SVGFEFloodElement[JC] def before(nodes: Node | String*): Unit
 SVGFEFloodElement[JC] def childElementCount: Int
@@ -19501,7 +19324,6 @@ SVGFEFloodElement[JC] def getElementsByTagName(name: String): HTMLCollection[Ele
 SVGFEFloodElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEFloodElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFloodElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEFloodElement[JC] def hasAttributes(): Boolean
 SVGFEFloodElement[JC] def hasChildNodes(): Boolean
 SVGFEFloodElement[JC] def height: SVGAnimatedLength
 SVGFEFloodElement[JC] var id: String
@@ -19592,7 +19414,6 @@ SVGFEFuncAElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncAElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFuncAElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncAElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEFuncAElement[JC] def attributes: NamedNodeMap
 SVGFEFuncAElement[JC] def baseURI: String
 SVGFEFuncAElement[JC] def before(nodes: Node | String*): Unit
 SVGFEFuncAElement[JC] def childElementCount: Int
@@ -19622,7 +19443,6 @@ SVGFEFuncAElement[JC] def getElementsByTagName(name: String): HTMLCollection[Ele
 SVGFEFuncAElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEFuncAElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFuncAElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEFuncAElement[JC] def hasAttributes(): Boolean
 SVGFEFuncAElement[JC] def hasChildNodes(): Boolean
 SVGFEFuncAElement[JC] var id: String
 SVGFEFuncAElement[JC] var innerHTML: String
@@ -19712,7 +19532,6 @@ SVGFEFuncBElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncBElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFuncBElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncBElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEFuncBElement[JC] def attributes: NamedNodeMap
 SVGFEFuncBElement[JC] def baseURI: String
 SVGFEFuncBElement[JC] def before(nodes: Node | String*): Unit
 SVGFEFuncBElement[JC] def childElementCount: Int
@@ -19742,7 +19561,6 @@ SVGFEFuncBElement[JC] def getElementsByTagName(name: String): HTMLCollection[Ele
 SVGFEFuncBElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEFuncBElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFuncBElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEFuncBElement[JC] def hasAttributes(): Boolean
 SVGFEFuncBElement[JC] def hasChildNodes(): Boolean
 SVGFEFuncBElement[JC] var id: String
 SVGFEFuncBElement[JC] var innerHTML: String
@@ -19832,7 +19650,6 @@ SVGFEFuncGElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncGElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFuncGElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncGElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEFuncGElement[JC] def attributes: NamedNodeMap
 SVGFEFuncGElement[JC] def baseURI: String
 SVGFEFuncGElement[JC] def before(nodes: Node | String*): Unit
 SVGFEFuncGElement[JC] def childElementCount: Int
@@ -19862,7 +19679,6 @@ SVGFEFuncGElement[JC] def getElementsByTagName(name: String): HTMLCollection[Ele
 SVGFEFuncGElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEFuncGElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFuncGElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEFuncGElement[JC] def hasAttributes(): Boolean
 SVGFEFuncGElement[JC] def hasChildNodes(): Boolean
 SVGFEFuncGElement[JC] var id: String
 SVGFEFuncGElement[JC] var innerHTML: String
@@ -19952,7 +19768,6 @@ SVGFEFuncRElement[JC] def amplitude: SVGAnimatedNumber
 SVGFEFuncRElement[JC] def append(nodes: Node | String*): Unit
 SVGFEFuncRElement[JC] def appendChild(newChild: Node): Node
 SVGFEFuncRElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEFuncRElement[JC] def attributes: NamedNodeMap
 SVGFEFuncRElement[JC] def baseURI: String
 SVGFEFuncRElement[JC] def before(nodes: Node | String*): Unit
 SVGFEFuncRElement[JC] def childElementCount: Int
@@ -19982,7 +19797,6 @@ SVGFEFuncRElement[JC] def getElementsByTagName(name: String): HTMLCollection[Ele
 SVGFEFuncRElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEFuncRElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFuncRElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEFuncRElement[JC] def hasAttributes(): Boolean
 SVGFEFuncRElement[JC] def hasChildNodes(): Boolean
 SVGFEFuncRElement[JC] var id: String
 SVGFEFuncRElement[JC] var innerHTML: String
@@ -20071,7 +19885,6 @@ SVGFEGaussianBlurElement[JC] def after(nodes: Node | String*): Unit
 SVGFEGaussianBlurElement[JC] def append(nodes: Node | String*): Unit
 SVGFEGaussianBlurElement[JC] def appendChild(newChild: Node): Node
 SVGFEGaussianBlurElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEGaussianBlurElement[JC] def attributes: NamedNodeMap
 SVGFEGaussianBlurElement[JC] def baseURI: String
 SVGFEGaussianBlurElement[JC] def before(nodes: Node | String*): Unit
 SVGFEGaussianBlurElement[JC] def childElementCount: Int
@@ -20101,7 +19914,6 @@ SVGFEGaussianBlurElement[JC] def getElementsByTagName(name: String): HTMLCollect
 SVGFEGaussianBlurElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEGaussianBlurElement[JC] def hasAttribute(name: String): Boolean
 SVGFEGaussianBlurElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEGaussianBlurElement[JC] def hasAttributes(): Boolean
 SVGFEGaussianBlurElement[JC] def hasChildNodes(): Boolean
 SVGFEGaussianBlurElement[JC] def height: SVGAnimatedLength
 SVGFEGaussianBlurElement[JC] var id: String
@@ -20195,7 +20007,6 @@ SVGFEImageElement[JC] def after(nodes: Node | String*): Unit
 SVGFEImageElement[JC] def append(nodes: Node | String*): Unit
 SVGFEImageElement[JC] def appendChild(newChild: Node): Node
 SVGFEImageElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEImageElement[JC] def attributes: NamedNodeMap
 SVGFEImageElement[JC] def baseURI: String
 SVGFEImageElement[JC] def before(nodes: Node | String*): Unit
 SVGFEImageElement[JC] def childElementCount: Int
@@ -20226,7 +20037,6 @@ SVGFEImageElement[JC] def getElementsByTagName(name: String): HTMLCollection[Ele
 SVGFEImageElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEImageElement[JC] def hasAttribute(name: String): Boolean
 SVGFEImageElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEImageElement[JC] def hasAttributes(): Boolean
 SVGFEImageElement[JC] def hasChildNodes(): Boolean
 SVGFEImageElement[JC] def height: SVGAnimatedLength
 SVGFEImageElement[JC] var href: SVGAnimatedString
@@ -20320,7 +20130,6 @@ SVGFEMergeElement[JC] def after(nodes: Node | String*): Unit
 SVGFEMergeElement[JC] def append(nodes: Node | String*): Unit
 SVGFEMergeElement[JC] def appendChild(newChild: Node): Node
 SVGFEMergeElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEMergeElement[JC] def attributes: NamedNodeMap
 SVGFEMergeElement[JC] def baseURI: String
 SVGFEMergeElement[JC] def before(nodes: Node | String*): Unit
 SVGFEMergeElement[JC] def childElementCount: Int
@@ -20350,7 +20159,6 @@ SVGFEMergeElement[JC] def getElementsByTagName(name: String): HTMLCollection[Ele
 SVGFEMergeElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEMergeElement[JC] def hasAttribute(name: String): Boolean
 SVGFEMergeElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEMergeElement[JC] def hasAttributes(): Boolean
 SVGFEMergeElement[JC] def hasChildNodes(): Boolean
 SVGFEMergeElement[JC] def height: SVGAnimatedLength
 SVGFEMergeElement[JC] var id: String
@@ -20440,7 +20248,6 @@ SVGFEMergeNodeElement[JC] def after(nodes: Node | String*): Unit
 SVGFEMergeNodeElement[JC] def append(nodes: Node | String*): Unit
 SVGFEMergeNodeElement[JC] def appendChild(newChild: Node): Node
 SVGFEMergeNodeElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEMergeNodeElement[JC] def attributes: NamedNodeMap
 SVGFEMergeNodeElement[JC] def baseURI: String
 SVGFEMergeNodeElement[JC] def before(nodes: Node | String*): Unit
 SVGFEMergeNodeElement[JC] def childElementCount: Int
@@ -20469,7 +20276,6 @@ SVGFEMergeNodeElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFEMergeNodeElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEMergeNodeElement[JC] def hasAttribute(name: String): Boolean
 SVGFEMergeNodeElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEMergeNodeElement[JC] def hasAttributes(): Boolean
 SVGFEMergeNodeElement[JC] def hasChildNodes(): Boolean
 SVGFEMergeNodeElement[JC] var id: String
 SVGFEMergeNodeElement[JC] def in1: SVGAnimatedString
@@ -20554,7 +20360,6 @@ SVGFEMorphologyElement[JC] def after(nodes: Node | String*): Unit
 SVGFEMorphologyElement[JC] def append(nodes: Node | String*): Unit
 SVGFEMorphologyElement[JC] def appendChild(newChild: Node): Node
 SVGFEMorphologyElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEMorphologyElement[JC] def attributes: NamedNodeMap
 SVGFEMorphologyElement[JC] def baseURI: String
 SVGFEMorphologyElement[JC] def before(nodes: Node | String*): Unit
 SVGFEMorphologyElement[JC] def childElementCount: Int
@@ -20584,7 +20389,6 @@ SVGFEMorphologyElement[JC] def getElementsByTagName(name: String): HTMLCollectio
 SVGFEMorphologyElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEMorphologyElement[JC] def hasAttribute(name: String): Boolean
 SVGFEMorphologyElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEMorphologyElement[JC] def hasAttributes(): Boolean
 SVGFEMorphologyElement[JC] def hasChildNodes(): Boolean
 SVGFEMorphologyElement[JC] def height: SVGAnimatedLength
 SVGFEMorphologyElement[JC] var id: String
@@ -20681,7 +20485,6 @@ SVGFEOffsetElement[JC] def after(nodes: Node | String*): Unit
 SVGFEOffsetElement[JC] def append(nodes: Node | String*): Unit
 SVGFEOffsetElement[JC] def appendChild(newChild: Node): Node
 SVGFEOffsetElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEOffsetElement[JC] def attributes: NamedNodeMap
 SVGFEOffsetElement[JC] def baseURI: String
 SVGFEOffsetElement[JC] def before(nodes: Node | String*): Unit
 SVGFEOffsetElement[JC] def childElementCount: Int
@@ -20713,7 +20516,6 @@ SVGFEOffsetElement[JC] def getElementsByTagName(name: String): HTMLCollection[El
 SVGFEOffsetElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEOffsetElement[JC] def hasAttribute(name: String): Boolean
 SVGFEOffsetElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEOffsetElement[JC] def hasAttributes(): Boolean
 SVGFEOffsetElement[JC] def hasChildNodes(): Boolean
 SVGFEOffsetElement[JC] def height: SVGAnimatedLength
 SVGFEOffsetElement[JC] var id: String
@@ -20804,7 +20606,6 @@ SVGFEPointLightElement[JC] def after(nodes: Node | String*): Unit
 SVGFEPointLightElement[JC] def append(nodes: Node | String*): Unit
 SVGFEPointLightElement[JC] def appendChild(newChild: Node): Node
 SVGFEPointLightElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFEPointLightElement[JC] def attributes: NamedNodeMap
 SVGFEPointLightElement[JC] def baseURI: String
 SVGFEPointLightElement[JC] def before(nodes: Node | String*): Unit
 SVGFEPointLightElement[JC] def childElementCount: Int
@@ -20833,7 +20634,6 @@ SVGFEPointLightElement[JC] def getElementsByTagName(name: String): HTMLCollectio
 SVGFEPointLightElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFEPointLightElement[JC] def hasAttribute(name: String): Boolean
 SVGFEPointLightElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFEPointLightElement[JC] def hasAttributes(): Boolean
 SVGFEPointLightElement[JC] def hasChildNodes(): Boolean
 SVGFEPointLightElement[JC] var id: String
 SVGFEPointLightElement[JC] var innerHTML: String
@@ -20920,7 +20720,6 @@ SVGFESpecularLightingElement[JC] def after(nodes: Node | String*): Unit
 SVGFESpecularLightingElement[JC] def append(nodes: Node | String*): Unit
 SVGFESpecularLightingElement[JC] def appendChild(newChild: Node): Node
 SVGFESpecularLightingElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFESpecularLightingElement[JC] def attributes: NamedNodeMap
 SVGFESpecularLightingElement[JC] def baseURI: String
 SVGFESpecularLightingElement[JC] def before(nodes: Node | String*): Unit
 SVGFESpecularLightingElement[JC] def childElementCount: Int
@@ -20950,7 +20749,6 @@ SVGFESpecularLightingElement[JC] def getElementsByTagName(name: String): HTMLCol
 SVGFESpecularLightingElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFESpecularLightingElement[JC] def hasAttribute(name: String): Boolean
 SVGFESpecularLightingElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFESpecularLightingElement[JC] def hasAttributes(): Boolean
 SVGFESpecularLightingElement[JC] def hasChildNodes(): Boolean
 SVGFESpecularLightingElement[JC] def height: SVGAnimatedLength
 SVGFESpecularLightingElement[JC] var id: String
@@ -21046,7 +20844,6 @@ SVGFESpotLightElement[JC] def after(nodes: Node | String*): Unit
 SVGFESpotLightElement[JC] def append(nodes: Node | String*): Unit
 SVGFESpotLightElement[JC] def appendChild(newChild: Node): Node
 SVGFESpotLightElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFESpotLightElement[JC] def attributes: NamedNodeMap
 SVGFESpotLightElement[JC] def baseURI: String
 SVGFESpotLightElement[JC] def before(nodes: Node | String*): Unit
 SVGFESpotLightElement[JC] def childElementCount: Int
@@ -21075,7 +20872,6 @@ SVGFESpotLightElement[JC] def getElementsByTagName(name: String): HTMLCollection
 SVGFESpotLightElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFESpotLightElement[JC] def hasAttribute(name: String): Boolean
 SVGFESpotLightElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFESpotLightElement[JC] def hasAttributes(): Boolean
 SVGFESpotLightElement[JC] def hasChildNodes(): Boolean
 SVGFESpotLightElement[JC] var id: String
 SVGFESpotLightElement[JC] var innerHTML: String
@@ -21167,7 +20963,6 @@ SVGFETileElement[JC] def after(nodes: Node | String*): Unit
 SVGFETileElement[JC] def append(nodes: Node | String*): Unit
 SVGFETileElement[JC] def appendChild(newChild: Node): Node
 SVGFETileElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFETileElement[JC] def attributes: NamedNodeMap
 SVGFETileElement[JC] def baseURI: String
 SVGFETileElement[JC] def before(nodes: Node | String*): Unit
 SVGFETileElement[JC] def childElementCount: Int
@@ -21197,7 +20992,6 @@ SVGFETileElement[JC] def getElementsByTagName(name: String): HTMLCollection[Elem
 SVGFETileElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFETileElement[JC] def hasAttribute(name: String): Boolean
 SVGFETileElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFETileElement[JC] def hasAttributes(): Boolean
 SVGFETileElement[JC] def hasChildNodes(): Boolean
 SVGFETileElement[JC] def height: SVGAnimatedLength
 SVGFETileElement[JC] var id: String
@@ -21288,7 +21082,6 @@ SVGFETurbulenceElement[JC] def after(nodes: Node | String*): Unit
 SVGFETurbulenceElement[JC] def append(nodes: Node | String*): Unit
 SVGFETurbulenceElement[JC] def appendChild(newChild: Node): Node
 SVGFETurbulenceElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFETurbulenceElement[JC] def attributes: NamedNodeMap
 SVGFETurbulenceElement[JC] def baseFrequencyX: SVGAnimatedNumber
 SVGFETurbulenceElement[JC] def baseFrequencyY: SVGAnimatedNumber
 SVGFETurbulenceElement[JC] def baseURI: String
@@ -21320,7 +21113,6 @@ SVGFETurbulenceElement[JC] def getElementsByTagName(name: String): HTMLCollectio
 SVGFETurbulenceElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFETurbulenceElement[JC] def hasAttribute(name: String): Boolean
 SVGFETurbulenceElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFETurbulenceElement[JC] def hasAttributes(): Boolean
 SVGFETurbulenceElement[JC] def hasChildNodes(): Boolean
 SVGFETurbulenceElement[JC] def height: SVGAnimatedLength
 SVGFETurbulenceElement[JC] var id: String
@@ -21423,7 +21215,6 @@ SVGFilterElement[JC] def after(nodes: Node | String*): Unit
 SVGFilterElement[JC] def append(nodes: Node | String*): Unit
 SVGFilterElement[JC] def appendChild(newChild: Node): Node
 SVGFilterElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGFilterElement[JC] def attributes: NamedNodeMap
 SVGFilterElement[JC] def baseURI: String
 SVGFilterElement[JC] def before(nodes: Node | String*): Unit
 SVGFilterElement[JC] def childElementCount: Int
@@ -21457,7 +21248,6 @@ SVGFilterElement[JC] def getElementsByTagName(name: String): HTMLCollection[Elem
 SVGFilterElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGFilterElement[JC] def hasAttribute(name: String): Boolean
 SVGFilterElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGFilterElement[JC] def hasAttributes(): Boolean
 SVGFilterElement[JC] def hasChildNodes(): Boolean
 SVGFilterElement[JC] def height: SVGAnimatedLength
 SVGFilterElement[JC] var href: SVGAnimatedString
@@ -21560,7 +21350,6 @@ SVGGElement[JC] def after(nodes: Node | String*): Unit
 SVGGElement[JC] def append(nodes: Node | String*): Unit
 SVGGElement[JC] def appendChild(newChild: Node): Node
 SVGGElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGGElement[JC] def attributes: NamedNodeMap
 SVGGElement[JC] def baseURI: String
 SVGGElement[JC] def before(nodes: Node | String*): Unit
 SVGGElement[JC] def childElementCount: Int
@@ -21596,7 +21385,6 @@ SVGGElement[JC] def getScreenCTM(): SVGMatrix
 SVGGElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGGElement[JC] def hasAttribute(name: String): Boolean
 SVGGElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGGElement[JC] def hasAttributes(): Boolean
 SVGGElement[JC] def hasChildNodes(): Boolean
 SVGGElement[JC] def hasExtension(extension: String): Boolean
 SVGGElement[JC] var id: String
@@ -21692,7 +21480,6 @@ SVGGradientElement[JC] def after(nodes: Node | String*): Unit
 SVGGradientElement[JC] def append(nodes: Node | String*): Unit
 SVGGradientElement[JC] def appendChild(newChild: Node): Node
 SVGGradientElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGGradientElement[JC] def attributes: NamedNodeMap
 SVGGradientElement[JC] def baseURI: String
 SVGGradientElement[JC] def before(nodes: Node | String*): Unit
 SVGGradientElement[JC] def childElementCount: Int
@@ -21725,7 +21512,6 @@ SVGGradientElement[JC] def gradientTransform: SVGAnimatedTransformList
 SVGGradientElement[JC] def gradientUnits: SVGAnimatedEnumeration
 SVGGradientElement[JC] def hasAttribute(name: String): Boolean
 SVGGradientElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGGradientElement[JC] def hasAttributes(): Boolean
 SVGGradientElement[JC] def hasChildNodes(): Boolean
 SVGGradientElement[JC] var href: SVGAnimatedString
 SVGGradientElement[JC] var id: String
@@ -21816,7 +21602,6 @@ SVGImageElement[JC] def after(nodes: Node | String*): Unit
 SVGImageElement[JC] def append(nodes: Node | String*): Unit
 SVGImageElement[JC] def appendChild(newChild: Node): Node
 SVGImageElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGImageElement[JC] def attributes: NamedNodeMap
 SVGImageElement[JC] def baseURI: String
 SVGImageElement[JC] def before(nodes: Node | String*): Unit
 SVGImageElement[JC] def childElementCount: Int
@@ -21852,7 +21637,6 @@ SVGImageElement[JC] def getScreenCTM(): SVGMatrix
 SVGImageElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGImageElement[JC] def hasAttribute(name: String): Boolean
 SVGImageElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGImageElement[JC] def hasAttributes(): Boolean
 SVGImageElement[JC] def hasChildNodes(): Boolean
 SVGImageElement[JC] def hasExtension(extension: String): Boolean
 SVGImageElement[JC] def height: SVGAnimatedLength
@@ -21978,7 +21762,6 @@ SVGLineElement[JC] def after(nodes: Node | String*): Unit
 SVGLineElement[JC] def append(nodes: Node | String*): Unit
 SVGLineElement[JC] def appendChild(newChild: Node): Node
 SVGLineElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGLineElement[JC] def attributes: NamedNodeMap
 SVGLineElement[JC] def baseURI: String
 SVGLineElement[JC] def before(nodes: Node | String*): Unit
 SVGLineElement[JC] def childElementCount: Int
@@ -22014,7 +21797,6 @@ SVGLineElement[JC] def getScreenCTM(): SVGMatrix
 SVGLineElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGLineElement[JC] def hasAttribute(name: String): Boolean
 SVGLineElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGLineElement[JC] def hasAttributes(): Boolean
 SVGLineElement[JC] def hasChildNodes(): Boolean
 SVGLineElement[JC] def hasExtension(extension: String): Boolean
 SVGLineElement[JC] var id: String
@@ -22114,7 +21896,6 @@ SVGLinearGradientElement[JC] def after(nodes: Node | String*): Unit
 SVGLinearGradientElement[JC] def append(nodes: Node | String*): Unit
 SVGLinearGradientElement[JC] def appendChild(newChild: Node): Node
 SVGLinearGradientElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGLinearGradientElement[JC] def attributes: NamedNodeMap
 SVGLinearGradientElement[JC] def baseURI: String
 SVGLinearGradientElement[JC] def before(nodes: Node | String*): Unit
 SVGLinearGradientElement[JC] def childElementCount: Int
@@ -22147,7 +21928,6 @@ SVGLinearGradientElement[JC] def gradientTransform: SVGAnimatedTransformList
 SVGLinearGradientElement[JC] def gradientUnits: SVGAnimatedEnumeration
 SVGLinearGradientElement[JC] def hasAttribute(name: String): Boolean
 SVGLinearGradientElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGLinearGradientElement[JC] def hasAttributes(): Boolean
 SVGLinearGradientElement[JC] def hasChildNodes(): Boolean
 SVGLinearGradientElement[JC] var href: SVGAnimatedString
 SVGLinearGradientElement[JC] var id: String
@@ -22244,7 +22024,6 @@ SVGMarkerElement[JC] def after(nodes: Node | String*): Unit
 SVGMarkerElement[JC] def append(nodes: Node | String*): Unit
 SVGMarkerElement[JC] def appendChild(newChild: Node): Node
 SVGMarkerElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGMarkerElement[JC] def attributes: NamedNodeMap
 SVGMarkerElement[JC] def baseURI: String
 SVGMarkerElement[JC] def before(nodes: Node | String*): Unit
 SVGMarkerElement[JC] def childElementCount: Int
@@ -22275,7 +22054,6 @@ SVGMarkerElement[JC] def getElementsByTagName(name: String): HTMLCollection[Elem
 SVGMarkerElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGMarkerElement[JC] def hasAttribute(name: String): Boolean
 SVGMarkerElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGMarkerElement[JC] def hasAttributes(): Boolean
 SVGMarkerElement[JC] def hasChildNodes(): Boolean
 SVGMarkerElement[JC] var id: String
 SVGMarkerElement[JC] var innerHTML: String
@@ -22382,7 +22160,6 @@ SVGMaskElement[JC] def after(nodes: Node | String*): Unit
 SVGMaskElement[JC] def append(nodes: Node | String*): Unit
 SVGMaskElement[JC] def appendChild(newChild: Node): Node
 SVGMaskElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGMaskElement[JC] def attributes: NamedNodeMap
 SVGMaskElement[JC] def baseURI: String
 SVGMaskElement[JC] def before(nodes: Node | String*): Unit
 SVGMaskElement[JC] def childElementCount: Int
@@ -22413,7 +22190,6 @@ SVGMaskElement[JC] def getElementsByTagName(name: String): HTMLCollection[Elemen
 SVGMaskElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGMaskElement[JC] def hasAttribute(name: String): Boolean
 SVGMaskElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGMaskElement[JC] def hasAttributes(): Boolean
 SVGMaskElement[JC] def hasChildNodes(): Boolean
 SVGMaskElement[JC] def hasExtension(extension: String): Boolean
 SVGMaskElement[JC] def height: SVGAnimatedLength
@@ -22527,7 +22303,6 @@ SVGMetadataElement[JC] def after(nodes: Node | String*): Unit
 SVGMetadataElement[JC] def append(nodes: Node | String*): Unit
 SVGMetadataElement[JC] def appendChild(newChild: Node): Node
 SVGMetadataElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGMetadataElement[JC] def attributes: NamedNodeMap
 SVGMetadataElement[JC] def baseURI: String
 SVGMetadataElement[JC] def before(nodes: Node | String*): Unit
 SVGMetadataElement[JC] def childElementCount: Int
@@ -22556,7 +22331,6 @@ SVGMetadataElement[JC] def getElementsByTagName(name: String): HTMLCollection[El
 SVGMetadataElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGMetadataElement[JC] def hasAttribute(name: String): Boolean
 SVGMetadataElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGMetadataElement[JC] def hasAttributes(): Boolean
 SVGMetadataElement[JC] def hasChildNodes(): Boolean
 SVGMetadataElement[JC] var id: String
 SVGMetadataElement[JC] var innerHTML: String
@@ -22649,7 +22423,6 @@ SVGPathElement[JC] def after(nodes: Node | String*): Unit
 SVGPathElement[JC] def append(nodes: Node | String*): Unit
 SVGPathElement[JC] def appendChild(newChild: Node): Node
 SVGPathElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGPathElement[JC] def attributes: NamedNodeMap
 SVGPathElement[JC] def baseURI: String
 SVGPathElement[JC] def before(nodes: Node | String*): Unit
 SVGPathElement[JC] def childElementCount: Int
@@ -22707,7 +22480,6 @@ SVGPathElement[JC] def getTotalLength(): Double
 SVGPathElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGPathElement[JC] def hasAttribute(name: String): Boolean
 SVGPathElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGPathElement[JC] def hasAttributes(): Boolean
 SVGPathElement[JC] def hasChildNodes(): Boolean
 SVGPathElement[JC] def hasExtension(extension: String): Boolean
 SVGPathElement[JC] var id: String
@@ -22930,7 +22702,6 @@ SVGPatternElement[JC] def after(nodes: Node | String*): Unit
 SVGPatternElement[JC] def append(nodes: Node | String*): Unit
 SVGPatternElement[JC] def appendChild(newChild: Node): Node
 SVGPatternElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGPatternElement[JC] def attributes: NamedNodeMap
 SVGPatternElement[JC] def baseURI: String
 SVGPatternElement[JC] def before(nodes: Node | String*): Unit
 SVGPatternElement[JC] def childElementCount: Int
@@ -22961,7 +22732,6 @@ SVGPatternElement[JC] def getElementsByTagName(name: String): HTMLCollection[Ele
 SVGPatternElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGPatternElement[JC] def hasAttribute(name: String): Boolean
 SVGPatternElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGPatternElement[JC] def hasAttributes(): Boolean
 SVGPatternElement[JC] def hasChildNodes(): Boolean
 SVGPatternElement[JC] def hasExtension(extension: String): Boolean
 SVGPatternElement[JC] def height: SVGAnimatedLength
@@ -23074,7 +22844,6 @@ SVGPolygonElement[JC] def animatedPoints: SVGPointList
 SVGPolygonElement[JC] def append(nodes: Node | String*): Unit
 SVGPolygonElement[JC] def appendChild(newChild: Node): Node
 SVGPolygonElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGPolygonElement[JC] def attributes: NamedNodeMap
 SVGPolygonElement[JC] def baseURI: String
 SVGPolygonElement[JC] def before(nodes: Node | String*): Unit
 SVGPolygonElement[JC] def childElementCount: Int
@@ -23110,7 +22879,6 @@ SVGPolygonElement[JC] def getScreenCTM(): SVGMatrix
 SVGPolygonElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGPolygonElement[JC] def hasAttribute(name: String): Boolean
 SVGPolygonElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGPolygonElement[JC] def hasAttributes(): Boolean
 SVGPolygonElement[JC] def hasChildNodes(): Boolean
 SVGPolygonElement[JC] def hasExtension(extension: String): Boolean
 SVGPolygonElement[JC] var id: String
@@ -23205,7 +22973,6 @@ SVGPolylineElement[JC] def animatedPoints: SVGPointList
 SVGPolylineElement[JC] def append(nodes: Node | String*): Unit
 SVGPolylineElement[JC] def appendChild(newChild: Node): Node
 SVGPolylineElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGPolylineElement[JC] def attributes: NamedNodeMap
 SVGPolylineElement[JC] def baseURI: String
 SVGPolylineElement[JC] def before(nodes: Node | String*): Unit
 SVGPolylineElement[JC] def childElementCount: Int
@@ -23241,7 +23008,6 @@ SVGPolylineElement[JC] def getScreenCTM(): SVGMatrix
 SVGPolylineElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGPolylineElement[JC] def hasAttribute(name: String): Boolean
 SVGPolylineElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGPolylineElement[JC] def hasAttributes(): Boolean
 SVGPolylineElement[JC] def hasChildNodes(): Boolean
 SVGPolylineElement[JC] def hasExtension(extension: String): Boolean
 SVGPolylineElement[JC] var id: String
@@ -23354,7 +23120,6 @@ SVGRadialGradientElement[JC] def after(nodes: Node | String*): Unit
 SVGRadialGradientElement[JC] def append(nodes: Node | String*): Unit
 SVGRadialGradientElement[JC] def appendChild(newChild: Node): Node
 SVGRadialGradientElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGRadialGradientElement[JC] def attributes: NamedNodeMap
 SVGRadialGradientElement[JC] def baseURI: String
 SVGRadialGradientElement[JC] def before(nodes: Node | String*): Unit
 SVGRadialGradientElement[JC] def childElementCount: Int
@@ -23391,7 +23156,6 @@ SVGRadialGradientElement[JC] def gradientTransform: SVGAnimatedTransformList
 SVGRadialGradientElement[JC] def gradientUnits: SVGAnimatedEnumeration
 SVGRadialGradientElement[JC] def hasAttribute(name: String): Boolean
 SVGRadialGradientElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGRadialGradientElement[JC] def hasAttributes(): Boolean
 SVGRadialGradientElement[JC] def hasChildNodes(): Boolean
 SVGRadialGradientElement[JC] var href: SVGAnimatedString
 SVGRadialGradientElement[JC] var id: String
@@ -23483,7 +23247,6 @@ SVGRectElement[JC] def after(nodes: Node | String*): Unit
 SVGRectElement[JC] def append(nodes: Node | String*): Unit
 SVGRectElement[JC] def appendChild(newChild: Node): Node
 SVGRectElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGRectElement[JC] def attributes: NamedNodeMap
 SVGRectElement[JC] def baseURI: String
 SVGRectElement[JC] def before(nodes: Node | String*): Unit
 SVGRectElement[JC] def childElementCount: Int
@@ -23519,7 +23282,6 @@ SVGRectElement[JC] def getScreenCTM(): SVGMatrix
 SVGRectElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGRectElement[JC] def hasAttribute(name: String): Boolean
 SVGRectElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGRectElement[JC] def hasAttributes(): Boolean
 SVGRectElement[JC] def hasChildNodes(): Boolean
 SVGRectElement[JC] def hasExtension(extension: String): Boolean
 SVGRectElement[JC] def height: SVGAnimatedLength
@@ -23618,7 +23380,6 @@ SVGSVGElement[JC] def after(nodes: Node | String*): Unit
 SVGSVGElement[JC] def append(nodes: Node | String*): Unit
 SVGSVGElement[JC] def appendChild(newChild: Node): Node
 SVGSVGElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGSVGElement[JC] def attributes: NamedNodeMap
 SVGSVGElement[JC] def baseURI: String
 SVGSVGElement[JC] def before(nodes: Node | String*): Unit
 SVGSVGElement[JC] def checkEnclosure(element: SVGElement, rect: SVGRect): Boolean
@@ -23676,7 +23437,6 @@ SVGSVGElement[JC] def getScreenCTM(): SVGMatrix
 SVGSVGElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGSVGElement[JC] def hasAttribute(name: String): Boolean
 SVGSVGElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGSVGElement[JC] def hasAttributes(): Boolean
 SVGSVGElement[JC] def hasChildNodes(): Boolean
 SVGSVGElement[JC] def hasExtension(extension: String): Boolean
 SVGSVGElement[JC] def height: SVGAnimatedLength
@@ -23792,7 +23552,6 @@ SVGScriptElement[JC] def after(nodes: Node | String*): Unit
 SVGScriptElement[JC] def append(nodes: Node | String*): Unit
 SVGScriptElement[JC] def appendChild(newChild: Node): Node
 SVGScriptElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGScriptElement[JC] def attributes: NamedNodeMap
 SVGScriptElement[JC] def baseURI: String
 SVGScriptElement[JC] def before(nodes: Node | String*): Unit
 SVGScriptElement[JC] def childElementCount: Int
@@ -23822,7 +23581,6 @@ SVGScriptElement[JC] def getElementsByTagName(name: String): HTMLCollection[Elem
 SVGScriptElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGScriptElement[JC] def hasAttribute(name: String): Boolean
 SVGScriptElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGScriptElement[JC] def hasAttributes(): Boolean
 SVGScriptElement[JC] def hasChildNodes(): Boolean
 SVGScriptElement[JC] var href: SVGAnimatedString
 SVGScriptElement[JC] var id: String
@@ -23908,7 +23666,6 @@ SVGStopElement[JC] def after(nodes: Node | String*): Unit
 SVGStopElement[JC] def append(nodes: Node | String*): Unit
 SVGStopElement[JC] def appendChild(newChild: Node): Node
 SVGStopElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGStopElement[JC] def attributes: NamedNodeMap
 SVGStopElement[JC] def baseURI: String
 SVGStopElement[JC] def before(nodes: Node | String*): Unit
 SVGStopElement[JC] def childElementCount: Int
@@ -23938,7 +23695,6 @@ SVGStopElement[JC] def getElementsByTagName(name: String): HTMLCollection[Elemen
 SVGStopElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGStopElement[JC] def hasAttribute(name: String): Boolean
 SVGStopElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGStopElement[JC] def hasAttributes(): Boolean
 SVGStopElement[JC] def hasChildNodes(): Boolean
 SVGStopElement[JC] var id: String
 SVGStopElement[JC] var innerHTML: String
@@ -24034,7 +23790,6 @@ SVGStyleElement[JC] def after(nodes: Node | String*): Unit
 SVGStyleElement[JC] def append(nodes: Node | String*): Unit
 SVGStyleElement[JC] def appendChild(newChild: Node): Node
 SVGStyleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGStyleElement[JC] def attributes: NamedNodeMap
 SVGStyleElement[JC] def baseURI: String
 SVGStyleElement[JC] def before(nodes: Node | String*): Unit
 SVGStyleElement[JC] def childElementCount: Int
@@ -24063,7 +23818,6 @@ SVGStyleElement[JC] def getElementsByTagName(name: String): HTMLCollection[Eleme
 SVGStyleElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGStyleElement[JC] def hasAttribute(name: String): Boolean
 SVGStyleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGStyleElement[JC] def hasAttributes(): Boolean
 SVGStyleElement[JC] def hasChildNodes(): Boolean
 SVGStyleElement[JC] var id: String
 SVGStyleElement[JC] var innerHTML: String
@@ -24152,7 +23906,6 @@ SVGSwitchElement[JC] def after(nodes: Node | String*): Unit
 SVGSwitchElement[JC] def append(nodes: Node | String*): Unit
 SVGSwitchElement[JC] def appendChild(newChild: Node): Node
 SVGSwitchElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGSwitchElement[JC] def attributes: NamedNodeMap
 SVGSwitchElement[JC] def baseURI: String
 SVGSwitchElement[JC] def before(nodes: Node | String*): Unit
 SVGSwitchElement[JC] def childElementCount: Int
@@ -24188,7 +23941,6 @@ SVGSwitchElement[JC] def getScreenCTM(): SVGMatrix
 SVGSwitchElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGSwitchElement[JC] def hasAttribute(name: String): Boolean
 SVGSwitchElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGSwitchElement[JC] def hasAttributes(): Boolean
 SVGSwitchElement[JC] def hasChildNodes(): Boolean
 SVGSwitchElement[JC] def hasExtension(extension: String): Boolean
 SVGSwitchElement[JC] var id: String
@@ -24281,7 +24033,6 @@ SVGSymbolElement[JC] def after(nodes: Node | String*): Unit
 SVGSymbolElement[JC] def append(nodes: Node | String*): Unit
 SVGSymbolElement[JC] def appendChild(newChild: Node): Node
 SVGSymbolElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGSymbolElement[JC] def attributes: NamedNodeMap
 SVGSymbolElement[JC] def baseURI: String
 SVGSymbolElement[JC] def before(nodes: Node | String*): Unit
 SVGSymbolElement[JC] def childElementCount: Int
@@ -24312,7 +24063,6 @@ SVGSymbolElement[JC] def getElementsByTagName(name: String): HTMLCollection[Elem
 SVGSymbolElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGSymbolElement[JC] def hasAttribute(name: String): Boolean
 SVGSymbolElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGSymbolElement[JC] def hasAttributes(): Boolean
 SVGSymbolElement[JC] def hasChildNodes(): Boolean
 SVGSymbolElement[JC] var id: String
 SVGSymbolElement[JC] var innerHTML: String
@@ -24401,7 +24151,6 @@ SVGTSpanElement[JC] def after(nodes: Node | String*): Unit
 SVGTSpanElement[JC] def append(nodes: Node | String*): Unit
 SVGTSpanElement[JC] def appendChild(newChild: Node): Node
 SVGTSpanElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGTSpanElement[JC] def attributes: NamedNodeMap
 SVGTSpanElement[JC] def baseURI: String
 SVGTSpanElement[JC] def before(nodes: Node | String*): Unit
 SVGTSpanElement[JC] def childElementCount: Int
@@ -24442,7 +24191,6 @@ SVGTSpanElement[JC] def getStartPositionOfChar(charnum: Int): SVGPoint
 SVGTSpanElement[JC] def getSubStringLength(charnum: Int, nchars: Int): Double
 SVGTSpanElement[JC] def hasAttribute(name: String): Boolean
 SVGTSpanElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGTSpanElement[JC] def hasAttributes(): Boolean
 SVGTSpanElement[JC] def hasChildNodes(): Boolean
 SVGTSpanElement[JC] def hasExtension(extension: String): Boolean
 SVGTSpanElement[JC] var id: String
@@ -24543,7 +24291,6 @@ SVGTextContentElement[JC] def after(nodes: Node | String*): Unit
 SVGTextContentElement[JC] def append(nodes: Node | String*): Unit
 SVGTextContentElement[JC] def appendChild(newChild: Node): Node
 SVGTextContentElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGTextContentElement[JC] def attributes: NamedNodeMap
 SVGTextContentElement[JC] def baseURI: String
 SVGTextContentElement[JC] def before(nodes: Node | String*): Unit
 SVGTextContentElement[JC] def childElementCount: Int
@@ -24582,7 +24329,6 @@ SVGTextContentElement[JC] def getStartPositionOfChar(charnum: Int): SVGPoint
 SVGTextContentElement[JC] def getSubStringLength(charnum: Int, nchars: Int): Double
 SVGTextContentElement[JC] def hasAttribute(name: String): Boolean
 SVGTextContentElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGTextContentElement[JC] def hasAttributes(): Boolean
 SVGTextContentElement[JC] def hasChildNodes(): Boolean
 SVGTextContentElement[JC] def hasExtension(extension: String): Boolean
 SVGTextContentElement[JC] var id: String
@@ -24679,7 +24425,6 @@ SVGTextElement[JC] def after(nodes: Node | String*): Unit
 SVGTextElement[JC] def append(nodes: Node | String*): Unit
 SVGTextElement[JC] def appendChild(newChild: Node): Node
 SVGTextElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGTextElement[JC] def attributes: NamedNodeMap
 SVGTextElement[JC] def baseURI: String
 SVGTextElement[JC] def before(nodes: Node | String*): Unit
 SVGTextElement[JC] def childElementCount: Int
@@ -24725,7 +24470,6 @@ SVGTextElement[JC] def getSubStringLength(charnum: Int, nchars: Int): Double
 SVGTextElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGTextElement[JC] def hasAttribute(name: String): Boolean
 SVGTextElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGTextElement[JC] def hasAttributes(): Boolean
 SVGTextElement[JC] def hasChildNodes(): Boolean
 SVGTextElement[JC] def hasExtension(extension: String): Boolean
 SVGTextElement[JC] var id: String
@@ -24824,7 +24568,6 @@ SVGTextPathElement[JC] def after(nodes: Node | String*): Unit
 SVGTextPathElement[JC] def append(nodes: Node | String*): Unit
 SVGTextPathElement[JC] def appendChild(newChild: Node): Node
 SVGTextPathElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGTextPathElement[JC] def attributes: NamedNodeMap
 SVGTextPathElement[JC] def baseURI: String
 SVGTextPathElement[JC] def before(nodes: Node | String*): Unit
 SVGTextPathElement[JC] def childElementCount: Int
@@ -24863,7 +24606,6 @@ SVGTextPathElement[JC] def getStartPositionOfChar(charnum: Int): SVGPoint
 SVGTextPathElement[JC] def getSubStringLength(charnum: Int, nchars: Int): Double
 SVGTextPathElement[JC] def hasAttribute(name: String): Boolean
 SVGTextPathElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGTextPathElement[JC] def hasAttributes(): Boolean
 SVGTextPathElement[JC] def hasChildNodes(): Boolean
 SVGTextPathElement[JC] def hasExtension(extension: String): Boolean
 SVGTextPathElement[JC] var href: SVGAnimatedString
@@ -24967,7 +24709,6 @@ SVGTextPositioningElement[JC] def after(nodes: Node | String*): Unit
 SVGTextPositioningElement[JC] def append(nodes: Node | String*): Unit
 SVGTextPositioningElement[JC] def appendChild(newChild: Node): Node
 SVGTextPositioningElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGTextPositioningElement[JC] def attributes: NamedNodeMap
 SVGTextPositioningElement[JC] def baseURI: String
 SVGTextPositioningElement[JC] def before(nodes: Node | String*): Unit
 SVGTextPositioningElement[JC] def childElementCount: Int
@@ -25008,7 +24749,6 @@ SVGTextPositioningElement[JC] def getStartPositionOfChar(charnum: Int): SVGPoint
 SVGTextPositioningElement[JC] def getSubStringLength(charnum: Int, nchars: Int): Double
 SVGTextPositioningElement[JC] def hasAttribute(name: String): Boolean
 SVGTextPositioningElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGTextPositioningElement[JC] def hasAttributes(): Boolean
 SVGTextPositioningElement[JC] def hasChildNodes(): Boolean
 SVGTextPositioningElement[JC] def hasExtension(extension: String): Boolean
 SVGTextPositioningElement[JC] var id: String
@@ -25105,7 +24845,6 @@ SVGTitleElement[JC] def after(nodes: Node | String*): Unit
 SVGTitleElement[JC] def append(nodes: Node | String*): Unit
 SVGTitleElement[JC] def appendChild(newChild: Node): Node
 SVGTitleElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGTitleElement[JC] def attributes: NamedNodeMap
 SVGTitleElement[JC] def baseURI: String
 SVGTitleElement[JC] def before(nodes: Node | String*): Unit
 SVGTitleElement[JC] def childElementCount: Int
@@ -25135,7 +24874,6 @@ SVGTitleElement[JC] def getElementsByTagName(name: String): HTMLCollection[Eleme
 SVGTitleElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGTitleElement[JC] def hasAttribute(name: String): Boolean
 SVGTitleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGTitleElement[JC] def hasAttributes(): Boolean
 SVGTitleElement[JC] def hasChildNodes(): Boolean
 SVGTitleElement[JC] var id: String
 SVGTitleElement[JC] var innerHTML: String
@@ -25263,7 +25001,6 @@ SVGUseElement[JC] def animatedInstanceRoot: SVGElementInstance
 SVGUseElement[JC] def append(nodes: Node | String*): Unit
 SVGUseElement[JC] def appendChild(newChild: Node): Node
 SVGUseElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGUseElement[JC] def attributes: NamedNodeMap
 SVGUseElement[JC] def baseURI: String
 SVGUseElement[JC] def before(nodes: Node | String*): Unit
 SVGUseElement[JC] def childElementCount: Int
@@ -25299,7 +25036,6 @@ SVGUseElement[JC] def getScreenCTM(): SVGMatrix
 SVGUseElement[JC] def getTransformToElement(element: SVGElement): SVGMatrix
 SVGUseElement[JC] def hasAttribute(name: String): Boolean
 SVGUseElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGUseElement[JC] def hasAttributes(): Boolean
 SVGUseElement[JC] def hasChildNodes(): Boolean
 SVGUseElement[JC] def hasExtension(extension: String): Boolean
 SVGUseElement[JC] def height: SVGAnimatedLength
@@ -25398,7 +25134,6 @@ SVGViewElement[JC] def after(nodes: Node | String*): Unit
 SVGViewElement[JC] def append(nodes: Node | String*): Unit
 SVGViewElement[JC] def appendChild(newChild: Node): Node
 SVGViewElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
-SVGViewElement[JC] def attributes: NamedNodeMap
 SVGViewElement[JC] def baseURI: String
 SVGViewElement[JC] def before(nodes: Node | String*): Unit
 SVGViewElement[JC] def childElementCount: Int
@@ -25428,7 +25163,6 @@ SVGViewElement[JC] def getElementsByTagName(name: String): HTMLCollection[Elemen
 SVGViewElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 SVGViewElement[JC] def hasAttribute(name: String): Boolean
 SVGViewElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
-SVGViewElement[JC] def hasAttributes(): Boolean
 SVGViewElement[JC] def hasChildNodes(): Boolean
 SVGViewElement[JC] var id: String
 SVGViewElement[JC] var innerHTML: String
@@ -25653,7 +25387,6 @@ ShadowRoot[JC] def activeElement: Element
 ShadowRoot[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ShadowRoot[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ShadowRoot[JC] def appendChild(newChild: Node): Node
-ShadowRoot[JC] def attributes: NamedNodeMap
 ShadowRoot[JC] def baseURI: String
 ShadowRoot[JC] def childNodes: NodeList[Node]
 ShadowRoot[JC] def cloneNode(deep: Boolean?): Node
@@ -25661,7 +25394,6 @@ ShadowRoot[JC] def compareDocumentPosition(other: Node): Int
 ShadowRoot[JC] def contains(otherNode: Node): Boolean
 ShadowRoot[JC] def dispatchEvent(evt: Event): Boolean
 ShadowRoot[JC] def firstChild: Node
-ShadowRoot[JC] def hasAttributes(): Boolean
 ShadowRoot[JC] def hasChildNodes(): Boolean
 ShadowRoot[JC] var innerText: String
 ShadowRoot[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -25862,7 +25594,6 @@ Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1
 Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Text[JC] def appendChild(newChild: Node): Node
 Text[JC] def appendData(arg: String): Unit
-Text[JC] def attributes: NamedNodeMap
 Text[JC] def baseURI: String
 Text[JC] def childNodes: NodeList[Node]
 Text[JC] def cloneNode(deep: Boolean?): Node
@@ -25872,7 +25603,6 @@ Text[JC] var data: String
 Text[JC] def deleteData(offset: Int, count: Int): Unit
 Text[JC] def dispatchEvent(evt: Event): Boolean
 Text[JC] def firstChild: Node
-Text[JC] def hasAttributes(): Boolean
 Text[JC] def hasChildNodes(): Boolean
 Text[JC] var innerText: String
 Text[JC] def insertBefore(newChild: Node, refChild: Node): Node

@@ -82,15 +82,6 @@ abstract class Node extends EventTarget {
   /** Returns the Document that this node belongs to. If no document is associated with it, returns null. */
   def ownerDocument: Document = js.native
 
-  /** .attributes is a collection of all attribute nodes registered to the specified node. It is a NamedNodeMap,not an
-    * Array, so it has no Array methods and the Attr nodes' indexes may differ among browsers. To be more specific,
-    * attribute is a key value pair of strings that represents any information regarding that node; it cannot hold
-    * Object. Attribute can hold additional data/information that is required while processing custom JavaScript. There
-    * are many predefined attributes for different nodes used for binding events, validations, and specifying layout
-    * informations that are handled by browser (may vary from browser to browser).
-    */
-  def attributes: NamedNodeMap = js.native
-
   /** Returns the node's first child in the tree, or null if the node is childless. If the node is a Document, it
     * returns the first node in the list of its direct children.
     */
@@ -137,11 +128,6 @@ abstract class Node extends EventTarget {
     * its direct children (childNodes), one of the children's direct children, and so on.
     */
   def contains(otherNode: Node): Boolean = js.native
-
-  /** hasAttributes returns a boolean value of true or false, indicating if the current element has any attributes or
-    * not.
-    */
-  def hasAttributes(): Boolean = js.native
 
   /** Takes a prefix and returns the namespaceURI associated with it on the given node if found (and null if not).
     * Supplying null for the prefix will return the default namespace.
