@@ -146,7 +146,6 @@ ApplicationCache[JT] def update(): Unit
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Attr[JC] def appendChild(newChild: Node): Node
-Attr[JC] def attributes: NamedNodeMap
 Attr[JC] def baseURI: String
 Attr[JC] def childNodes: NodeList[Node]
 Attr[JC] def cloneNode(deep: Boolean?): Node
@@ -154,7 +153,6 @@ Attr[JC] def compareDocumentPosition(other: Node): Int
 Attr[JC] def contains(otherNode: Node): Boolean
 Attr[JC] def dispatchEvent(evt: Event): Boolean
 Attr[JC] def firstChild: Node
-Attr[JC] def hasAttributes(): Boolean
 Attr[JC] def hasChildNodes(): Boolean
 Attr[JC] var innerText: String
 Attr[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -617,7 +615,6 @@ CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 CDATASection[JC] def appendChild(newChild: Node): Node
 CDATASection[JC] def appendData(arg: String): Unit
-CDATASection[JC] def attributes: NamedNodeMap
 CDATASection[JC] def baseURI: String
 CDATASection[JC] def childNodes: NodeList[Node]
 CDATASection[JC] def cloneNode(deep: Boolean?): Node
@@ -627,7 +624,6 @@ CDATASection[JC] var data: String
 CDATASection[JC] def deleteData(offset: Int, count: Int): Unit
 CDATASection[JC] def dispatchEvent(evt: Event): Boolean
 CDATASection[JC] def firstChild: Node
-CDATASection[JC] def hasAttributes(): Boolean
 CDATASection[JC] def hasChildNodes(): Boolean
 CDATASection[JC] var innerText: String
 CDATASection[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1170,7 +1166,6 @@ CharacterData[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 CharacterData[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 CharacterData[JC] def appendChild(newChild: Node): Node
 CharacterData[JC] def appendData(arg: String): Unit
-CharacterData[JC] def attributes: NamedNodeMap
 CharacterData[JC] def baseURI: String
 CharacterData[JC] def childNodes: NodeList[Node]
 CharacterData[JC] def cloneNode(deep: Boolean?): Node
@@ -1180,7 +1175,6 @@ CharacterData[JC] var data: String
 CharacterData[JC] def deleteData(offset: Int, count: Int): Unit
 CharacterData[JC] def dispatchEvent(evt: Event): Boolean
 CharacterData[JC] def firstChild: Node
-CharacterData[JC] def hasAttributes(): Boolean
 CharacterData[JC] def hasChildNodes(): Boolean
 CharacterData[JC] var innerText: String
 CharacterData[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1285,7 +1279,6 @@ Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functi
 Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Comment[JC] def appendChild(newChild: Node): Node
 Comment[JC] def appendData(arg: String): Unit
-Comment[JC] def attributes: NamedNodeMap
 Comment[JC] def baseURI: String
 Comment[JC] def childNodes: NodeList[Node]
 Comment[JC] def cloneNode(deep: Boolean?): Node
@@ -1295,7 +1288,6 @@ Comment[JC] var data: String
 Comment[JC] def deleteData(offset: Int, count: Int): Unit
 Comment[JC] def dispatchEvent(evt: Event): Boolean
 Comment[JC] def firstChild: Node
-Comment[JC] def hasAttributes(): Boolean
 Comment[JC] def hasChildNodes(): Boolean
 Comment[JC] var innerText: String
 Comment[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1718,7 +1710,6 @@ Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Funct
 Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Document[JC] def adoptNode(source: Node): Node
 Document[JC] def appendChild(newChild: Node): Node
-Document[JC] def attributes: NamedNodeMap
 Document[JC] def baseURI: String
 Document[JC] def characterSet: String
 Document[JC] def childElementCount: Int
@@ -1760,7 +1751,6 @@ Document[JC] def getElementsByClassName(classNames: String): HTMLCollection[Elem
 Document[JC] def getElementsByName(elementName: String): NodeList[Node]
 Document[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
 Document[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
-Document[JC] def hasAttributes(): Boolean
 Document[JC] def hasChildNodes(): Boolean
 Document[JC] def hidden: Boolean
 Document[JC] def implementation: DOMImplementation
@@ -1807,7 +1797,6 @@ DocumentEvent[JT] def createEvent(eventInterface: String): Event
 DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentFragment[JC] def appendChild(newChild: Node): Node
-DocumentFragment[JC] def attributes: NamedNodeMap
 DocumentFragment[JC] def baseURI: String
 DocumentFragment[JC] def childNodes: NodeList[Node]
 DocumentFragment[JC] def cloneNode(deep: Boolean?): Node
@@ -1815,7 +1804,6 @@ DocumentFragment[JC] def compareDocumentPosition(other: Node): Int
 DocumentFragment[JC] def contains(otherNode: Node): Boolean
 DocumentFragment[JC] def dispatchEvent(evt: Event): Boolean
 DocumentFragment[JC] def firstChild: Node
-DocumentFragment[JC] def hasAttributes(): Boolean
 DocumentFragment[JC] def hasChildNodes(): Boolean
 DocumentFragment[JC] var innerText: String
 DocumentFragment[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1851,7 +1839,6 @@ DocumentReadyState[SO] val loading: DocumentReadyState
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentType[JC] def appendChild(newChild: Node): Node
-DocumentType[JC] def attributes: NamedNodeMap
 DocumentType[JC] def baseURI: String
 DocumentType[JC] def childNodes: NodeList[Node]
 DocumentType[JC] def cloneNode(deep: Boolean?): Node
@@ -1859,7 +1846,6 @@ DocumentType[JC] def compareDocumentPosition(other: Node): Int
 DocumentType[JC] def contains(otherNode: Node): Boolean
 DocumentType[JC] def dispatchEvent(evt: Event): Boolean
 DocumentType[JC] def firstChild: Node
-DocumentType[JC] def hasAttributes(): Boolean
 DocumentType[JC] def hasChildNodes(): Boolean
 DocumentType[JC] var innerText: String
 DocumentType[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -4882,7 +4868,6 @@ HTMLDocument[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 HTMLDocument[JC] def adoptNode(source: Node): Node
 HTMLDocument[JC] def anchors: HTMLCollection[Element]
 HTMLDocument[JC] def appendChild(newChild: Node): Node
-HTMLDocument[JC] def attributes: NamedNodeMap
 HTMLDocument[JC] def baseURI: String
 HTMLDocument[JC] var body: HTMLElement
 HTMLDocument[JC] def characterSet: String
@@ -4940,7 +4925,6 @@ HTMLDocument[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
 HTMLDocument[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 HTMLDocument[JC] def getSelection(): Selection
 HTMLDocument[JC] var gotpointercapture: js.Function1[PointerEvent, _]
-HTMLDocument[JC] def hasAttributes(): Boolean
 HTMLDocument[JC] def hasChildNodes(): Boolean
 HTMLDocument[JC] def hasFocus(): Boolean
 HTMLDocument[JC] def head: HTMLHeadElement
@@ -16395,7 +16379,6 @@ NavigatorVibration[JT] def vibrate(pattern: js.Array[Double]): Boolean
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Node[JC] def appendChild(newChild: Node): Node
-Node[JC] def attributes: NamedNodeMap
 Node[JC] def baseURI: String
 Node[JC] def childNodes: NodeList[Node]
 Node[JC] def cloneNode(deep: Boolean?): Node
@@ -16403,7 +16386,6 @@ Node[JC] def compareDocumentPosition(other: Node): Int
 Node[JC] def contains(otherNode: Node): Boolean
 Node[JC] def dispatchEvent(evt: Event): Boolean
 Node[JC] def firstChild: Node
-Node[JC] def hasAttributes(): Boolean
 Node[JC] def hasChildNodes(): Boolean
 Node[JC] var innerText: String
 Node[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -16851,7 +16833,6 @@ PresentationStyle[SO] val unspecified: PresentationStyle
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ProcessingInstruction[JC] def appendChild(newChild: Node): Node
-ProcessingInstruction[JC] def attributes: NamedNodeMap
 ProcessingInstruction[JC] def baseURI: String
 ProcessingInstruction[JC] def childNodes: NodeList[Node]
 ProcessingInstruction[JC] def cloneNode(deep: Boolean?): Node
@@ -16860,7 +16841,6 @@ ProcessingInstruction[JC] def contains(otherNode: Node): Boolean
 ProcessingInstruction[JC] def data: String
 ProcessingInstruction[JC] def dispatchEvent(evt: Event): Boolean
 ProcessingInstruction[JC] def firstChild: Node
-ProcessingInstruction[JC] def hasAttributes(): Boolean
 ProcessingInstruction[JC] def hasChildNodes(): Boolean
 ProcessingInstruction[JC] var innerText: String
 ProcessingInstruction[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -25653,7 +25633,6 @@ ShadowRoot[JC] def activeElement: Element
 ShadowRoot[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ShadowRoot[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ShadowRoot[JC] def appendChild(newChild: Node): Node
-ShadowRoot[JC] def attributes: NamedNodeMap
 ShadowRoot[JC] def baseURI: String
 ShadowRoot[JC] def childNodes: NodeList[Node]
 ShadowRoot[JC] def cloneNode(deep: Boolean?): Node
@@ -25661,7 +25640,6 @@ ShadowRoot[JC] def compareDocumentPosition(other: Node): Int
 ShadowRoot[JC] def contains(otherNode: Node): Boolean
 ShadowRoot[JC] def dispatchEvent(evt: Event): Boolean
 ShadowRoot[JC] def firstChild: Node
-ShadowRoot[JC] def hasAttributes(): Boolean
 ShadowRoot[JC] def hasChildNodes(): Boolean
 ShadowRoot[JC] var innerText: String
 ShadowRoot[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -25862,7 +25840,6 @@ Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1
 Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Text[JC] def appendChild(newChild: Node): Node
 Text[JC] def appendData(arg: String): Unit
-Text[JC] def attributes: NamedNodeMap
 Text[JC] def baseURI: String
 Text[JC] def childNodes: NodeList[Node]
 Text[JC] def cloneNode(deep: Boolean?): Node
@@ -25872,7 +25849,6 @@ Text[JC] var data: String
 Text[JC] def deleteData(offset: Int, count: Int): Unit
 Text[JC] def dispatchEvent(evt: Event): Boolean
 Text[JC] def firstChild: Node
-Text[JC] def hasAttributes(): Boolean
 Text[JC] def hasChildNodes(): Boolean
 Text[JC] var innerText: String
 Text[JC] def insertBefore(newChild: Node, refChild: Node): Node
