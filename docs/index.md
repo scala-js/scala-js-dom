@@ -222,4 +222,5 @@ encodeBase64(input, output)
 
 The DOM API is always evolving, and `scala-js-dom` tries to provide a thin-but-idiomatic Scala interface to modern browser APIs, without breaking the spec.
 
-If you see something that you think can be improved, feel free to send a pull request. See our [Contributing Guide](https://github.com/scala-js/scala-js-dom/blob/main/CONTRIBUTING.md) for a detailed overview for starting hacking on `scala-js-dom` and making a PR!
+If you see something that you think can be improved, feel free to send a pull request.
+See our [Contributing Guide](https://github.com/scala-js/scala-js-dom/blob/main/CONTRIBUTING.md) for a detailed overview for starting hacking on `scala-js-dom` and making a PR!
