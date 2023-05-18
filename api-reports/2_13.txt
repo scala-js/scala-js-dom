@@ -26732,7 +26732,7 @@ WebSocket[JC] def close(code: Int?, reason: String?): Unit
 WebSocket[JC] def dispatchEvent(evt: Event): Boolean
 WebSocket[JC] def extensions: String
 WebSocket[JC] var onclose: js.Function1[CloseEvent, _]
-WebSocket[JC] var onerror: js.Function1[Error, _]
+WebSocket[JC] var onerror: js.Function1[Event, _]
 WebSocket[JC] var onmessage: js.Function1[MessageEvent, _]
 WebSocket[JC] var onopen: js.Function1[Event, _]
 WebSocket[JC] def readyState: Int
