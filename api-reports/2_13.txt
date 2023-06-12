@@ -2380,6 +2380,7 @@ HTMLAnchorElement[JC] var contentEditable: String
 HTMLAnchorElement[JC] def dataset: js.Dictionary[String]
 HTMLAnchorElement[JC] var dir: String
 HTMLAnchorElement[JC] def dispatchEvent(evt: Event): Boolean
+HTMLAnchorElement[JC] var download: String
 HTMLAnchorElement[JC] var draggable: Boolean
 HTMLAnchorElement[JC] var filters: Object
 HTMLAnchorElement[JC] def firstChild: Node
