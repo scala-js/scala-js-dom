@@ -17,12 +17,11 @@ import scala.scalajs.js.annotation._
 @JSGlobal
 abstract class HTMLAnchorElement extends HTMLElement {
  
-  /**
-    * A string indicating that the linked resource is intended to be downloaded rather than displayed in the 
-    * browser. The value represent the proposed name of the file. If the name is not a valid filename of the 
-    * underlying OS, browser will adapt it.
+  /** A string indicating that the linked resource is intended to be downloaded rather than displayed in the browser.
+    * The value represent the proposed name of the file. If the name is not a valid filename of the underlying OS,
+    * browser will adapt it.
     */
-  var download: String = js.native 
+  var download: String = js.native
 
   /** Is a DOMString that reflects the rel HTML attribute, specifying the relationship of the target object to the link
     * object.
