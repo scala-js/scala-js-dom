@@ -25,7 +25,7 @@ abstract class HTMLAnchorElement extends HTMLElement {
   /** Is a DOMString representing the protocol component, including trailing colon (':'), of the referenced URL. */
   var protocol: String = js.native
 
-  /** Is a DOMString representing tThe search element, including leading question mark ('?'), if any, of the referenced
+  /** Is a DOMString representing the search element, including leading question mark ('?'), if any, of the referenced
     * URL.
     */
   var search: String = js.native
