@@ -57,6 +57,11 @@ trait DateTimeFormatOptions extends js.Object {
 
   /** The representation of the time zone name. Possible values are "short", "long". */
   var timeZoneName: js.UndefOr[String] = js.undefined
+
+  /** The number of digits used to represent fractions of a second (any additional digits are truncated). Possible
+    * values are 1, 2, 3.
+    */
+  var fractionalSecondDigits: js.UndefOr[Int] = js.undefined
 }
 
 @deprecated("all members of DateTimeFormatOptions are deprecated", "2.0.0")
@@ -70,7 +75,7 @@ object DateTimeFormatOptions {
       year: js.UndefOr[String] = js.undefined, month: js.UndefOr[String] = js.undefined,
       day: js.UndefOr[String] = js.undefined, hour: js.UndefOr[String] = js.undefined,
       minute: js.UndefOr[String] = js.undefined, second: js.UndefOr[String] = js.undefined,
-      timeZoneName: js.UndefOr[String] = js.undefined
+      timeZoneName: js.UndefOr[String] = js.undefined, fractionalSecondDigits: js.UndefOr[Int] = js.undefined
   ): DateTimeFormatOptions = {
     val localeMatcher0 = localeMatcher
     val timeZone0 = timeZone
@@ -85,6 +90,7 @@ object DateTimeFormatOptions {
     val minute0 = minute
     val second0 = second
     val timeZoneName0 = timeZoneName
+    val fractionalSecondDigits0 = fractionalSecondDigits
     new DateTimeFormatOptions {
       this.localeMatcher = localeMatcher0
       this.timeZone = timeZone0
@@ -99,6 +105,7 @@ object DateTimeFormatOptions {
       this.minute = minute0
       this.second = second0
       this.timeZoneName = timeZoneName0
+      this.fractionalSecondDigits = fractionalSecondDigits0
     }
   }
 }

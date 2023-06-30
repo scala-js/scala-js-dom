@@ -27648,6 +27648,7 @@ intl/DateTimeFormat[JC] def supportedLocalesOf(locales: String | js.Array[String
 intl/DateTimeFormatOptions[JT] var day: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var era: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var formatMatcher: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var fractionalSecondDigits: js.UndefOr[Int]
 intl/DateTimeFormatOptions[JT] var hour: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var hour12: js.UndefOr[Boolean]
 intl/DateTimeFormatOptions[JT] var localeMatcher: js.UndefOr[String]
@@ -27658,7 +27659,7 @@ intl/DateTimeFormatOptions[JT] var timeZone: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var timeZoneName: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var weekday: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var year: js.UndefOr[String]
-intl/DateTimeFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, timeZone: js.UndefOr[String]?, hour12: js.UndefOr[Boolean]?, formatMatcher: js.UndefOr[String]?, weekday: js.UndefOr[String]?, era: js.UndefOr[String]?, year: js.UndefOr[String]?, month: js.UndefOr[String]?, day: js.UndefOr[String]?, hour: js.UndefOr[String]?, minute: js.UndefOr[String]?, second: js.UndefOr[String]?, timeZoneName: js.UndefOr[String]?): DateTimeFormatOptions  (@deprecated in 2.0.0)
+intl/DateTimeFormatOptions[SO] def apply(localeMatcher: js.UndefOr[String]?, timeZone: js.UndefOr[String]?, hour12: js.UndefOr[Boolean]?, formatMatcher: js.UndefOr[String]?, weekday: js.UndefOr[String]?, era: js.UndefOr[String]?, year: js.UndefOr[String]?, month: js.UndefOr[String]?, day: js.UndefOr[String]?, hour: js.UndefOr[String]?, minute: js.UndefOr[String]?, second: js.UndefOr[String]?, timeZoneName: js.UndefOr[String]?, fractionalSecondDigits: js.UndefOr[Int]?): DateTimeFormatOptions  (@deprecated in 2.0.0)
 intl/NumberFormat[JC] def format(number: Double): String
 intl/NumberFormat[JC] def resolvedOptions(): NumberFormatOptions
 intl/NumberFormat[JC] def supportedLocalesOf(locales: String | js.Array[String], options: js.Any): js.Array[String]
