@@ -75,7 +75,7 @@ object DateTimeFormatOptions {
       year: js.UndefOr[String] = js.undefined, month: js.UndefOr[String] = js.undefined,
       day: js.UndefOr[String] = js.undefined, hour: js.UndefOr[String] = js.undefined,
       minute: js.UndefOr[String] = js.undefined, second: js.UndefOr[String] = js.undefined,
-      timeZoneName: js.UndefOr[String] = js.undefined, fractionalSecondDigits: js.UndefOr[Int] = js.undefined
+      timeZoneName: js.UndefOr[String] = js.undefined
   ): DateTimeFormatOptions = {
     val localeMatcher0 = localeMatcher
     val timeZone0 = timeZone
@@ -90,7 +90,6 @@ object DateTimeFormatOptions {
     val minute0 = minute
     val second0 = second
     val timeZoneName0 = timeZoneName
-    val fractionalSecondDigits0 = fractionalSecondDigits
     new DateTimeFormatOptions {
       this.localeMatcher = localeMatcher0
       this.timeZone = timeZone0
@@ -105,7 +104,6 @@ object DateTimeFormatOptions {
       this.minute = minute0
       this.second = second0
       this.timeZoneName = timeZoneName0
-      this.fractionalSecondDigits = fractionalSecondDigits0
     }
   }
 }
