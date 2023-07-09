@@ -1724,8 +1724,8 @@ Document[JC] def createAttributeNS(namespaceURI: String, qualifiedName: String):
 Document[JC] def createCDATASection(data: String): CDATASection
 Document[JC] def createComment(data: String): Comment
 Document[JC] def createDocumentFragment(): DocumentFragment
-Document[JC] def createElement(tagName: String): Element
-Document[JC] def createElementNS(namespaceURI: String, qualifiedName: String): Element
+Document[JC] def createElement(tagName: String, options: String | ElementCreationOptions?): Element
+Document[JC] def createElementNS(namespaceURI: String, qualifiedName: String, options: String | ElementCreationOptions?): Element
 Document[JC] def createEvent(eventInterface: String): Event
 Document[JC] def createNSResolver(node: Node): XPathNSResolver
 Document[JC] def createNodeIterator(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): NodeIterator
@@ -2065,6 +2065,7 @@ Element[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 Element[JC] def shadowRoot: ShadowRoot
 Element[JC] def tagName: String
 Element[JC] var textContent: String
+ElementCreationOptions[JT] var is: js.UndefOr[String]
 ElementDefinitionOptions[JT] var `extends`: js.UndefOr[String]
 EndOfStreamError[JT]
 EndOfStreamError[SO] val decode: EndOfStreamError
@@ -4901,8 +4902,8 @@ HTMLDocument[JC] def createAttributeNS(namespaceURI: String, qualifiedName: Stri
 HTMLDocument[JC] def createCDATASection(data: String): CDATASection
 HTMLDocument[JC] def createComment(data: String): Comment
 HTMLDocument[JC] def createDocumentFragment(): DocumentFragment
-HTMLDocument[JC] def createElement(tagName: String): Element
-HTMLDocument[JC] def createElementNS(namespaceURI: String, qualifiedName: String): Element
+HTMLDocument[JC] def createElement(tagName: String, options: String | ElementCreationOptions?): Element
+HTMLDocument[JC] def createElementNS(namespaceURI: String, qualifiedName: String, options: String | ElementCreationOptions?): Element
 HTMLDocument[JC] def createEvent(eventInterface: String): Event
 HTMLDocument[JC] def createNSResolver(node: Node): XPathNSResolver
 HTMLDocument[JC] def createNodeIterator(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): NodeIterator
