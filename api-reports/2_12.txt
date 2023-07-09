@@ -27648,6 +27648,7 @@ intl/DateTimeFormat[JC] def supportedLocalesOf(locales: String | js.Array[String
 intl/DateTimeFormatOptions[JT] var day: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var era: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var formatMatcher: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var fractionalSecondDigits: js.UndefOr[Int]
 intl/DateTimeFormatOptions[JT] var hour: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var hour12: js.UndefOr[Boolean]
 intl/DateTimeFormatOptions[JT] var localeMatcher: js.UndefOr[String]

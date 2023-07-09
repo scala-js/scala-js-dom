@@ -57,6 +57,11 @@ trait DateTimeFormatOptions extends js.Object {
 
   /** The representation of the time zone name. Possible values are "short", "long". */
   var timeZoneName: js.UndefOr[String] = js.undefined
+
+  /** The number of digits used to represent fractions of a second (any additional digits are truncated). Possible
+    * values are 1, 2, 3.
+    */
+  var fractionalSecondDigits: js.UndefOr[Int] = js.undefined
 }
 
 @deprecated("all members of DateTimeFormatOptions are deprecated", "2.0.0")
