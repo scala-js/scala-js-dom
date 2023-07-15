@@ -146,7 +146,6 @@ ApplicationCache[JT] def update(): Unit
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Attr[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Attr[JC] def appendChild(newChild: Node): Node
-Attr[JC] def attributes: NamedNodeMap
 Attr[JC] def baseURI: String
 Attr[JC] def childNodes: NodeList[Node]
 Attr[JC] def cloneNode(deep: Boolean?): Node
@@ -154,7 +153,6 @@ Attr[JC] def compareDocumentPosition(other: Node): Int
 Attr[JC] def contains(otherNode: Node): Boolean
 Attr[JC] def dispatchEvent(evt: Event): Boolean
 Attr[JC] def firstChild: Node
-Attr[JC] def hasAttributes(): Boolean
 Attr[JC] def hasChildNodes(): Boolean
 Attr[JC] var innerText: String
 Attr[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -232,6 +230,7 @@ Audio[JC] var filters: Object
 Audio[JC] def firstChild: Node
 Audio[JC] def firstElementChild: Element
 Audio[JC] def focus(): Unit
+Audio[JC] def focus(options: FocusOptions): Unit
 Audio[JC] def getAttribute(name: String): String
 Audio[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 Audio[JC] def getAttributeNode(name: String): Attr
@@ -617,7 +616,6 @@ CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 CDATASection[JC] def appendChild(newChild: Node): Node
 CDATASection[JC] def appendData(arg: String): Unit
-CDATASection[JC] def attributes: NamedNodeMap
 CDATASection[JC] def baseURI: String
 CDATASection[JC] def childNodes: NodeList[Node]
 CDATASection[JC] def cloneNode(deep: Boolean?): Node
@@ -627,7 +625,6 @@ CDATASection[JC] var data: String
 CDATASection[JC] def deleteData(offset: Int, count: Int): Unit
 CDATASection[JC] def dispatchEvent(evt: Event): Boolean
 CDATASection[JC] def firstChild: Node
-CDATASection[JC] def hasAttributes(): Boolean
 CDATASection[JC] def hasChildNodes(): Boolean
 CDATASection[JC] var innerText: String
 CDATASection[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1070,25 +1067,32 @@ CacheStorage[JT] def has(cacheName: String): js.Promise[Boolean]
 CacheStorage[JT] def keys(): js.Promise[js.Array[String]]
 CacheStorage[JT] def `match`(request: RequestInfo, options: CacheQueryOptions?): js.Promise[js.Any]
 CacheStorage[JT] def open(cacheName: String): js.Promise[Cache]
+CanvasFillRule[JT]
+CanvasFillRule[SO] val evenodd: CanvasFillRule
+CanvasFillRule[SO] val nonzero: CanvasFillRule
 CanvasGradient[JC] def addColorStop(offset: Double, color: String): Unit
 CanvasPattern[JC]
 CanvasProxy[JT] def setContext(context: RenderingContext): Unit
 CanvasRenderingContext2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit
-CanvasRenderingContext2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean): Unit
+CanvasRenderingContext2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean): Unit
 CanvasRenderingContext2D[JC] def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit
 CanvasRenderingContext2D[JC] def beginPath(): Unit
 CanvasRenderingContext2D[JC] def bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): Unit
 CanvasRenderingContext2D[JC] var canvas: HTMLCanvasElement
 CanvasRenderingContext2D[JC] def clearRect(x: Double, y: Double, w: Double, h: Double): Unit
-CanvasRenderingContext2D[JC] def clip(fillRule: String?): Unit
+CanvasRenderingContext2D[JC] def clip(fillRule: CanvasFillRule?): Unit
+CanvasRenderingContext2D[JC] def clip(path: Path2D): Unit
+CanvasRenderingContext2D[JC] def clip(path: Path2D, fillRule: CanvasFillRule): Unit
 CanvasRenderingContext2D[JC] def closePath(): Unit
 CanvasRenderingContext2D[JC] def createImageData(imageDataOrSw: js.Any, sh: Double?): ImageData
 CanvasRenderingContext2D[JC] def createLinearGradient(x0: Double, y0: Double, x1: Double, y1: Double): CanvasGradient
 CanvasRenderingContext2D[JC] def createPattern(image: HTMLElement, repetition: String): CanvasPattern
 CanvasRenderingContext2D[JC] def createRadialGradient(x0: Double, y0: Double, r0: Double, x1: Double, y1: Double, r1: Double): CanvasGradient
 CanvasRenderingContext2D[JC] def drawImage(image: HTMLElement, offsetX: Double, offsetY: Double, width: Double?, height: Double?, canvasOffsetX: Double?, canvasOffsetY: Double?, canvasImageWidth: Double?, canvasImageHeight: Double?): Unit
-CanvasRenderingContext2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, anticlockwise: Boolean?): Unit
-CanvasRenderingContext2D[JC] def fill(): Unit
+CanvasRenderingContext2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean?): Unit
+CanvasRenderingContext2D[JC] def fill(fillRule: CanvasFillRule?): Unit
+CanvasRenderingContext2D[JC] def fill(path: Path2D): Unit
+CanvasRenderingContext2D[JC] def fill(path: Path2D, fillRule: CanvasFillRule): Unit
 CanvasRenderingContext2D[JC] def fillRect(x: Double, y: Double, w: Double, h: Double): Unit
 CanvasRenderingContext2D[JC] var fillStyle: js.Any
 CanvasRenderingContext2D[JC] def fillText(text: String, x: Double, y: Double, maxWidth: Double?): Unit
@@ -1098,8 +1102,9 @@ CanvasRenderingContext2D[JC] def getLineDash(): js.Array[Double]
 CanvasRenderingContext2D[JC] var globalAlpha: Double
 CanvasRenderingContext2D[JC] var globalCompositeOperation: String
 CanvasRenderingContext2D[JC] var imageSmoothingEnabled: Boolean
-CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double): Boolean
-CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double, fillRule: String): Boolean
+CanvasRenderingContext2D[JC] def isPointInPath(path: Path2D, x: Double, y: Double): Boolean
+CanvasRenderingContext2D[JC] def isPointInPath(path: Path2D, x: Double, y: Double, fillRule: CanvasFillRule): Boolean
+CanvasRenderingContext2D[JC] def isPointInPath(x: Double, y: Double, fillRule: CanvasFillRule?): Boolean
 CanvasRenderingContext2D[JC] var lineCap: String
 CanvasRenderingContext2D[JC] var lineDashOffset: Double
 CanvasRenderingContext2D[JC] var lineJoin: String
@@ -1122,6 +1127,7 @@ CanvasRenderingContext2D[JC] var shadowColor: String
 CanvasRenderingContext2D[JC] var shadowOffsetX: Double
 CanvasRenderingContext2D[JC] var shadowOffsetY: Double
 CanvasRenderingContext2D[JC] def stroke(): Unit
+CanvasRenderingContext2D[JC] def stroke(path: Path2D): Unit
 CanvasRenderingContext2D[JC] def strokeRect(x: Double, y: Double, w: Double, h: Double): Unit
 CanvasRenderingContext2D[JC] var strokeStyle: js.Any
 CanvasRenderingContext2D[JC] def strokeText(text: String, x: Double, y: Double, maxWidth: Double?): Unit
@@ -1161,7 +1167,6 @@ CharacterData[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 CharacterData[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 CharacterData[JC] def appendChild(newChild: Node): Node
 CharacterData[JC] def appendData(arg: String): Unit
-CharacterData[JC] def attributes: NamedNodeMap
 CharacterData[JC] def baseURI: String
 CharacterData[JC] def childNodes: NodeList[Node]
 CharacterData[JC] def cloneNode(deep: Boolean?): Node
@@ -1171,7 +1176,6 @@ CharacterData[JC] var data: String
 CharacterData[JC] def deleteData(offset: Int, count: Int): Unit
 CharacterData[JC] def dispatchEvent(evt: Event): Boolean
 CharacterData[JC] def firstChild: Node
-CharacterData[JC] def hasAttributes(): Boolean
 CharacterData[JC] def hasChildNodes(): Boolean
 CharacterData[JC] var innerText: String
 CharacterData[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1276,7 +1280,6 @@ Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Functi
 Comment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Comment[JC] def appendChild(newChild: Node): Node
 Comment[JC] def appendData(arg: String): Unit
-Comment[JC] def attributes: NamedNodeMap
 Comment[JC] def baseURI: String
 Comment[JC] def childNodes: NodeList[Node]
 Comment[JC] def cloneNode(deep: Boolean?): Node
@@ -1286,7 +1289,6 @@ Comment[JC] var data: String
 Comment[JC] def deleteData(offset: Int, count: Int): Unit
 Comment[JC] def dispatchEvent(evt: Event): Boolean
 Comment[JC] def firstChild: Node
-Comment[JC] def hasAttributes(): Boolean
 Comment[JC] def hasChildNodes(): Boolean
 Comment[JC] var innerText: String
 Comment[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1709,7 +1711,6 @@ Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Funct
 Document[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Document[JC] def adoptNode(source: Node): Node
 Document[JC] def appendChild(newChild: Node): Node
-Document[JC] def attributes: NamedNodeMap
 Document[JC] def baseURI: String
 Document[JC] def characterSet: String
 Document[JC] def childElementCount: Int
@@ -1751,7 +1752,6 @@ Document[JC] def getElementsByClassName(classNames: String): HTMLCollection[Elem
 Document[JC] def getElementsByName(elementName: String): NodeList[Node]
 Document[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
 Document[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
-Document[JC] def hasAttributes(): Boolean
 Document[JC] def hasChildNodes(): Boolean
 Document[JC] def hidden: Boolean
 Document[JC] def implementation: DOMImplementation
@@ -1798,7 +1798,6 @@ DocumentEvent[JT] def createEvent(eventInterface: String): Event
 DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DocumentFragment[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentFragment[JC] def appendChild(newChild: Node): Node
-DocumentFragment[JC] def attributes: NamedNodeMap
 DocumentFragment[JC] def baseURI: String
 DocumentFragment[JC] def childNodes: NodeList[Node]
 DocumentFragment[JC] def cloneNode(deep: Boolean?): Node
@@ -1806,7 +1805,6 @@ DocumentFragment[JC] def compareDocumentPosition(other: Node): Int
 DocumentFragment[JC] def contains(otherNode: Node): Boolean
 DocumentFragment[JC] def dispatchEvent(evt: Event): Boolean
 DocumentFragment[JC] def firstChild: Node
-DocumentFragment[JC] def hasAttributes(): Boolean
 DocumentFragment[JC] def hasChildNodes(): Boolean
 DocumentFragment[JC] var innerText: String
 DocumentFragment[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -1842,7 +1840,6 @@ DocumentReadyState[SO] val loading: DocumentReadyState
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DocumentType[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DocumentType[JC] def appendChild(newChild: Node): Node
-DocumentType[JC] def attributes: NamedNodeMap
 DocumentType[JC] def baseURI: String
 DocumentType[JC] def childNodes: NodeList[Node]
 DocumentType[JC] def cloneNode(deep: Boolean?): Node
@@ -1850,7 +1847,6 @@ DocumentType[JC] def compareDocumentPosition(other: Node): Int
 DocumentType[JC] def contains(otherNode: Node): Boolean
 DocumentType[JC] def dispatchEvent(evt: Event): Boolean
 DocumentType[JC] def firstChild: Node
-DocumentType[JC] def hasAttributes(): Boolean
 DocumentType[JC] def hasChildNodes(): Boolean
 DocumentType[JC] var innerText: String
 DocumentType[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -2288,6 +2284,8 @@ FocusEventInit[JT] var detail: js.UndefOr[Int]
 FocusEventInit[JT] var relatedTarget: js.UndefOr[EventTarget]
 FocusEventInit[JT] var scoped: js.UndefOr[Boolean]
 FocusEventInit[JT] var view: js.UndefOr[Window]
+FocusOptions[JT] var focusVisible: js.UndefOr[Boolean]
+FocusOptions[JT] var preventScroll: js.UndefOr[Boolean]
 FormData[JC] def append(name: js.Any, value: js.Any, blobName: String?): Unit
 FormData[JO]
 FrameType[JT]
@@ -2382,11 +2380,13 @@ HTMLAnchorElement[JC] var contentEditable: String
 HTMLAnchorElement[JC] def dataset: js.Dictionary[String]
 HTMLAnchorElement[JC] var dir: String
 HTMLAnchorElement[JC] def dispatchEvent(evt: Event): Boolean
+HTMLAnchorElement[JC] var download: String
 HTMLAnchorElement[JC] var draggable: Boolean
 HTMLAnchorElement[JC] var filters: Object
 HTMLAnchorElement[JC] def firstChild: Node
 HTMLAnchorElement[JC] def firstElementChild: Element
 HTMLAnchorElement[JC] def focus(): Unit
+HTMLAnchorElement[JC] def focus(options: FocusOptions): Unit
 HTMLAnchorElement[JC] def getAttribute(name: String): String
 HTMLAnchorElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLAnchorElement[JC] def getAttributeNode(name: String): Attr
@@ -2604,6 +2604,7 @@ HTMLAreaElement[JC] var filters: Object
 HTMLAreaElement[JC] def firstChild: Node
 HTMLAreaElement[JC] def firstElementChild: Element
 HTMLAreaElement[JC] def focus(): Unit
+HTMLAreaElement[JC] def focus(options: FocusOptions): Unit
 HTMLAreaElement[JC] def getAttribute(name: String): String
 HTMLAreaElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLAreaElement[JC] def getAttributeNode(name: String): Attr
@@ -2826,6 +2827,7 @@ HTMLAudioElement[JC] var filters: Object
 HTMLAudioElement[JC] def firstChild: Node
 HTMLAudioElement[JC] def firstElementChild: Element
 HTMLAudioElement[JC] def focus(): Unit
+HTMLAudioElement[JC] def focus(options: FocusOptions): Unit
 HTMLAudioElement[JC] def getAttribute(name: String): String
 HTMLAudioElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLAudioElement[JC] def getAttributeNode(name: String): Attr
@@ -3044,6 +3046,7 @@ HTMLBRElement[JC] var filters: Object
 HTMLBRElement[JC] def firstChild: Node
 HTMLBRElement[JC] def firstElementChild: Element
 HTMLBRElement[JC] def focus(): Unit
+HTMLBRElement[JC] def focus(options: FocusOptions): Unit
 HTMLBRElement[JC] def getAttribute(name: String): String
 HTMLBRElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLBRElement[JC] def getAttributeNode(name: String): Attr
@@ -3245,6 +3248,7 @@ HTMLBaseElement[JC] var filters: Object
 HTMLBaseElement[JC] def firstChild: Node
 HTMLBaseElement[JC] def firstElementChild: Element
 HTMLBaseElement[JC] def focus(): Unit
+HTMLBaseElement[JC] def focus(options: FocusOptions): Unit
 HTMLBaseElement[JC] def getAttribute(name: String): String
 HTMLBaseElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLBaseElement[JC] def getAttributeNode(name: String): Attr
@@ -3448,6 +3452,7 @@ HTMLBodyElement[JC] var filters: Object
 HTMLBodyElement[JC] def firstChild: Node
 HTMLBodyElement[JC] def firstElementChild: Element
 HTMLBodyElement[JC] def focus(): Unit
+HTMLBodyElement[JC] def focus(options: FocusOptions): Unit
 HTMLBodyElement[JC] def getAttribute(name: String): String
 HTMLBodyElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLBodyElement[JC] def getAttributeNode(name: String): Attr
@@ -3666,6 +3671,7 @@ HTMLButtonElement[JC] var filters: Object
 HTMLButtonElement[JC] def firstChild: Node
 HTMLButtonElement[JC] def firstElementChild: Element
 HTMLButtonElement[JC] def focus(): Unit
+HTMLButtonElement[JC] def focus(options: FocusOptions): Unit
 HTMLButtonElement[JC] def form: HTMLFormElement
 HTMLButtonElement[JC] var formAction: String
 HTMLButtonElement[JC] var formEnctype: String
@@ -3882,6 +3888,7 @@ HTMLCanvasElement[JC] var filters: Object
 HTMLCanvasElement[JC] def firstChild: Node
 HTMLCanvasElement[JC] def firstElementChild: Element
 HTMLCanvasElement[JC] def focus(): Unit
+HTMLCanvasElement[JC] def focus(options: FocusOptions): Unit
 HTMLCanvasElement[JC] def getAttribute(name: String): String
 HTMLCanvasElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLCanvasElement[JC] def getAttributeNode(name: String): Attr
@@ -4091,6 +4098,7 @@ HTMLDListElement[JC] var filters: Object
 HTMLDListElement[JC] def firstChild: Node
 HTMLDListElement[JC] def firstElementChild: Element
 HTMLDListElement[JC] def focus(): Unit
+HTMLDListElement[JC] def focus(options: FocusOptions): Unit
 HTMLDListElement[JC] def getAttribute(name: String): String
 HTMLDListElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLDListElement[JC] def getAttributeNode(name: String): Attr
@@ -4292,6 +4300,7 @@ HTMLDataListElement[JC] var filters: Object
 HTMLDataListElement[JC] def firstChild: Node
 HTMLDataListElement[JC] def firstElementChild: Element
 HTMLDataListElement[JC] def focus(): Unit
+HTMLDataListElement[JC] def focus(options: FocusOptions): Unit
 HTMLDataListElement[JC] def getAttribute(name: String): String
 HTMLDataListElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLDataListElement[JC] def getAttributeNode(name: String): Attr
@@ -4495,6 +4504,7 @@ HTMLDialogElement[JC] var filters: Object
 HTMLDialogElement[JC] def firstChild: Node
 HTMLDialogElement[JC] def firstElementChild: Element
 HTMLDialogElement[JC] def focus(): Unit
+HTMLDialogElement[JC] def focus(options: FocusOptions): Unit
 HTMLDialogElement[JC] def getAttribute(name: String): String
 HTMLDialogElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLDialogElement[JC] def getAttributeNode(name: String): Attr
@@ -4700,6 +4710,7 @@ HTMLDivElement[JC] var filters: Object
 HTMLDivElement[JC] def firstChild: Node
 HTMLDivElement[JC] def firstElementChild: Element
 HTMLDivElement[JC] def focus(): Unit
+HTMLDivElement[JC] def focus(options: FocusOptions): Unit
 HTMLDivElement[JC] def getAttribute(name: String): String
 HTMLDivElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLDivElement[JC] def getAttributeNode(name: String): Attr
@@ -4873,7 +4884,6 @@ HTMLDocument[JC] def addEventListener[T <: Event](`type`: String, listener: js.F
 HTMLDocument[JC] def adoptNode(source: Node): Node
 HTMLDocument[JC] def anchors: HTMLCollection[Element]
 HTMLDocument[JC] def appendChild(newChild: Node): Node
-HTMLDocument[JC] def attributes: NamedNodeMap
 HTMLDocument[JC] def baseURI: String
 HTMLDocument[JC] var body: HTMLElement
 HTMLDocument[JC] def characterSet: String
@@ -4931,7 +4941,6 @@ HTMLDocument[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
 HTMLDocument[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
 HTMLDocument[JC] def getSelection(): Selection
 HTMLDocument[JC] var gotpointercapture: js.Function1[PointerEvent, _]
-HTMLDocument[JC] def hasAttributes(): Boolean
 HTMLDocument[JC] def hasChildNodes(): Boolean
 HTMLDocument[JC] def hasFocus(): Boolean
 HTMLDocument[JC] def head: HTMLHeadElement
@@ -5101,6 +5110,7 @@ HTMLElement[JC] var filters: Object
 HTMLElement[JC] def firstChild: Node
 HTMLElement[JC] def firstElementChild: Element
 HTMLElement[JC] def focus(): Unit
+HTMLElement[JC] def focus(options: FocusOptions): Unit
 HTMLElement[JC] def getAttribute(name: String): String
 HTMLElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLElement[JC] def getAttributeNode(name: String): Attr
@@ -5302,6 +5312,7 @@ HTMLEmbedElement[JC] var filters: Object
 HTMLEmbedElement[JC] def firstChild: Node
 HTMLEmbedElement[JC] def firstElementChild: Element
 HTMLEmbedElement[JC] def focus(): Unit
+HTMLEmbedElement[JC] def focus(options: FocusOptions): Unit
 HTMLEmbedElement[JC] def getAttribute(name: String): String
 HTMLEmbedElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLEmbedElement[JC] def getAttributeNode(name: String): Attr
@@ -5509,6 +5520,7 @@ HTMLFieldSetElement[JC] var filters: Object
 HTMLFieldSetElement[JC] def firstChild: Node
 HTMLFieldSetElement[JC] def firstElementChild: Element
 HTMLFieldSetElement[JC] def focus(): Unit
+HTMLFieldSetElement[JC] def focus(options: FocusOptions): Unit
 HTMLFieldSetElement[JC] def form: HTMLFormElement
 HTMLFieldSetElement[JC] def getAttribute(name: String): String
 HTMLFieldSetElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
@@ -5728,6 +5740,7 @@ HTMLFormElement[JC] var filters: Object
 HTMLFormElement[JC] def firstChild: Node
 HTMLFormElement[JC] def firstElementChild: Element
 HTMLFormElement[JC] def focus(): Unit
+HTMLFormElement[JC] def focus(options: FocusOptions): Unit
 HTMLFormElement[JC] def getAttribute(name: String): String
 HTMLFormElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLFormElement[JC] def getAttributeNode(name: String): Attr
@@ -5940,6 +5953,7 @@ HTMLHRElement[JC] var filters: Object
 HTMLHRElement[JC] def firstChild: Node
 HTMLHRElement[JC] def firstElementChild: Element
 HTMLHRElement[JC] def focus(): Unit
+HTMLHRElement[JC] def focus(options: FocusOptions): Unit
 HTMLHRElement[JC] def getAttribute(name: String): String
 HTMLHRElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLHRElement[JC] def getAttributeNode(name: String): Attr
@@ -6141,6 +6155,7 @@ HTMLHeadElement[JC] var filters: Object
 HTMLHeadElement[JC] def firstChild: Node
 HTMLHeadElement[JC] def firstElementChild: Element
 HTMLHeadElement[JC] def focus(): Unit
+HTMLHeadElement[JC] def focus(options: FocusOptions): Unit
 HTMLHeadElement[JC] def getAttribute(name: String): String
 HTMLHeadElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLHeadElement[JC] def getAttributeNode(name: String): Attr
@@ -6342,6 +6357,7 @@ HTMLHeadingElement[JC] var filters: Object
 HTMLHeadingElement[JC] def firstChild: Node
 HTMLHeadingElement[JC] def firstElementChild: Element
 HTMLHeadingElement[JC] def focus(): Unit
+HTMLHeadingElement[JC] def focus(options: FocusOptions): Unit
 HTMLHeadingElement[JC] def getAttribute(name: String): String
 HTMLHeadingElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLHeadingElement[JC] def getAttributeNode(name: String): Attr
@@ -6543,6 +6559,7 @@ HTMLHtmlElement[JC] var filters: Object
 HTMLHtmlElement[JC] def firstChild: Node
 HTMLHtmlElement[JC] def firstElementChild: Element
 HTMLHtmlElement[JC] def focus(): Unit
+HTMLHtmlElement[JC] def focus(options: FocusOptions): Unit
 HTMLHtmlElement[JC] def getAttribute(name: String): String
 HTMLHtmlElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLHtmlElement[JC] def getAttributeNode(name: String): Attr
@@ -6747,6 +6764,7 @@ HTMLIFrameElement[JC] var filters: Object
 HTMLIFrameElement[JC] def firstChild: Node
 HTMLIFrameElement[JC] def firstElementChild: Element
 HTMLIFrameElement[JC] def focus(): Unit
+HTMLIFrameElement[JC] def focus(options: FocusOptions): Unit
 HTMLIFrameElement[JC] def getAttribute(name: String): String
 HTMLIFrameElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLIFrameElement[JC] def getAttributeNode(name: String): Attr
@@ -6959,6 +6977,7 @@ HTMLImageElement[JC] var filters: Object
 HTMLImageElement[JC] def firstChild: Node
 HTMLImageElement[JC] def firstElementChild: Element
 HTMLImageElement[JC] def focus(): Unit
+HTMLImageElement[JC] def focus(options: FocusOptions): Unit
 HTMLImageElement[JC] def getAttribute(name: String): String
 HTMLImageElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLImageElement[JC] def getAttributeNode(name: String): Attr
@@ -7184,6 +7203,7 @@ HTMLInputElement[JC] var filters: Object
 HTMLInputElement[JC] def firstChild: Node
 HTMLInputElement[JC] def firstElementChild: Element
 HTMLInputElement[JC] def focus(): Unit
+HTMLInputElement[JC] def focus(options: FocusOptions): Unit
 HTMLInputElement[JC] def form: HTMLFormElement
 HTMLInputElement[JC] var formAction: String
 HTMLInputElement[JC] var formEnctype: String
@@ -7422,6 +7442,7 @@ HTMLLIElement[JC] var filters: Object
 HTMLLIElement[JC] def firstChild: Node
 HTMLLIElement[JC] def firstElementChild: Element
 HTMLLIElement[JC] def focus(): Unit
+HTMLLIElement[JC] def focus(options: FocusOptions): Unit
 HTMLLIElement[JC] def getAttribute(name: String): String
 HTMLLIElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLLIElement[JC] def getAttributeNode(name: String): Attr
@@ -7624,6 +7645,7 @@ HTMLLabelElement[JC] var filters: Object
 HTMLLabelElement[JC] def firstChild: Node
 HTMLLabelElement[JC] def firstElementChild: Element
 HTMLLabelElement[JC] def focus(): Unit
+HTMLLabelElement[JC] def focus(options: FocusOptions): Unit
 HTMLLabelElement[JC] def form: HTMLFormElement
 HTMLLabelElement[JC] def getAttribute(name: String): String
 HTMLLabelElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
@@ -7828,6 +7850,7 @@ HTMLLegendElement[JC] var filters: Object
 HTMLLegendElement[JC] def firstChild: Node
 HTMLLegendElement[JC] def firstElementChild: Element
 HTMLLegendElement[JC] def focus(): Unit
+HTMLLegendElement[JC] def focus(options: FocusOptions): Unit
 HTMLLegendElement[JC] def form: HTMLFormElement
 HTMLLegendElement[JC] def getAttribute(name: String): String
 HTMLLegendElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
@@ -8030,6 +8053,7 @@ HTMLLinkElement[JC] var filters: Object
 HTMLLinkElement[JC] def firstChild: Node
 HTMLLinkElement[JC] def firstElementChild: Element
 HTMLLinkElement[JC] def focus(): Unit
+HTMLLinkElement[JC] def focus(options: FocusOptions): Unit
 HTMLLinkElement[JC] def getAttribute(name: String): String
 HTMLLinkElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLLinkElement[JC] def getAttributeNode(name: String): Attr
@@ -8239,6 +8263,7 @@ HTMLMapElement[JC] var filters: Object
 HTMLMapElement[JC] def firstChild: Node
 HTMLMapElement[JC] def firstElementChild: Element
 HTMLMapElement[JC] def focus(): Unit
+HTMLMapElement[JC] def focus(options: FocusOptions): Unit
 HTMLMapElement[JC] def getAttribute(name: String): String
 HTMLMapElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLMapElement[JC] def getAttributeNode(name: String): Attr
@@ -8452,6 +8477,7 @@ HTMLMediaElement[JC] var filters: Object
 HTMLMediaElement[JC] def firstChild: Node
 HTMLMediaElement[JC] def firstElementChild: Element
 HTMLMediaElement[JC] def focus(): Unit
+HTMLMediaElement[JC] def focus(options: FocusOptions): Unit
 HTMLMediaElement[JC] def getAttribute(name: String): String
 HTMLMediaElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLMediaElement[JC] def getAttributeNode(name: String): Attr
@@ -8679,6 +8705,7 @@ HTMLMenuElement[JC] var filters: Object
 HTMLMenuElement[JC] def firstChild: Node
 HTMLMenuElement[JC] def firstElementChild: Element
 HTMLMenuElement[JC] def focus(): Unit
+HTMLMenuElement[JC] def focus(options: FocusOptions): Unit
 HTMLMenuElement[JC] def getAttribute(name: String): String
 HTMLMenuElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLMenuElement[JC] def getAttributeNode(name: String): Attr
@@ -8883,6 +8910,7 @@ HTMLMetaElement[JC] var filters: Object
 HTMLMetaElement[JC] def firstChild: Node
 HTMLMetaElement[JC] def firstElementChild: Element
 HTMLMetaElement[JC] def focus(): Unit
+HTMLMetaElement[JC] def focus(options: FocusOptions): Unit
 HTMLMetaElement[JC] def getAttribute(name: String): String
 HTMLMetaElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLMetaElement[JC] def getAttributeNode(name: String): Attr
@@ -9089,6 +9117,7 @@ HTMLModElement[JC] var filters: Object
 HTMLModElement[JC] def firstChild: Node
 HTMLModElement[JC] def firstElementChild: Element
 HTMLModElement[JC] def focus(): Unit
+HTMLModElement[JC] def focus(options: FocusOptions): Unit
 HTMLModElement[JC] def getAttribute(name: String): String
 HTMLModElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLModElement[JC] def getAttributeNode(name: String): Attr
@@ -9290,6 +9319,7 @@ HTMLOListElement[JC] var filters: Object
 HTMLOListElement[JC] def firstChild: Node
 HTMLOListElement[JC] def firstElementChild: Element
 HTMLOListElement[JC] def focus(): Unit
+HTMLOListElement[JC] def focus(options: FocusOptions): Unit
 HTMLOListElement[JC] def getAttribute(name: String): String
 HTMLOListElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLOListElement[JC] def getAttributeNode(name: String): Attr
@@ -9499,6 +9529,7 @@ HTMLObjectElement[JC] var filters: Object
 HTMLObjectElement[JC] def firstChild: Node
 HTMLObjectElement[JC] def firstElementChild: Element
 HTMLObjectElement[JC] def focus(): Unit
+HTMLObjectElement[JC] def focus(options: FocusOptions): Unit
 HTMLObjectElement[JC] def form: HTMLFormElement
 HTMLObjectElement[JC] def getAttribute(name: String): String
 HTMLObjectElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
@@ -9714,6 +9745,7 @@ HTMLOptGroupElement[JC] var filters: Object
 HTMLOptGroupElement[JC] def firstChild: Node
 HTMLOptGroupElement[JC] def firstElementChild: Element
 HTMLOptGroupElement[JC] def focus(): Unit
+HTMLOptGroupElement[JC] def focus(options: FocusOptions): Unit
 HTMLOptGroupElement[JC] def getAttribute(name: String): String
 HTMLOptGroupElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLOptGroupElement[JC] def getAttributeNode(name: String): Attr
@@ -9919,6 +9951,7 @@ HTMLOptionElement[JC] var filters: Object
 HTMLOptionElement[JC] def firstChild: Node
 HTMLOptionElement[JC] def firstElementChild: Element
 HTMLOptionElement[JC] def focus(): Unit
+HTMLOptionElement[JC] def focus(options: FocusOptions): Unit
 HTMLOptionElement[JC] def form: HTMLFormElement
 HTMLOptionElement[JC] def getAttribute(name: String): String
 HTMLOptionElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
@@ -10130,6 +10163,7 @@ HTMLParagraphElement[JC] var filters: Object
 HTMLParagraphElement[JC] def firstChild: Node
 HTMLParagraphElement[JC] def firstElementChild: Element
 HTMLParagraphElement[JC] def focus(): Unit
+HTMLParagraphElement[JC] def focus(options: FocusOptions): Unit
 HTMLParagraphElement[JC] def getAttribute(name: String): String
 HTMLParagraphElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLParagraphElement[JC] def getAttributeNode(name: String): Attr
@@ -10331,6 +10365,7 @@ HTMLParamElement[JC] var filters: Object
 HTMLParamElement[JC] def firstChild: Node
 HTMLParamElement[JC] def firstElementChild: Element
 HTMLParamElement[JC] def focus(): Unit
+HTMLParamElement[JC] def focus(options: FocusOptions): Unit
 HTMLParamElement[JC] def getAttribute(name: String): String
 HTMLParamElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLParamElement[JC] def getAttributeNode(name: String): Attr
@@ -10534,6 +10569,7 @@ HTMLPreElement[JC] var filters: Object
 HTMLPreElement[JC] def firstChild: Node
 HTMLPreElement[JC] def firstElementChild: Element
 HTMLPreElement[JC] def focus(): Unit
+HTMLPreElement[JC] def focus(options: FocusOptions): Unit
 HTMLPreElement[JC] def getAttribute(name: String): String
 HTMLPreElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLPreElement[JC] def getAttributeNode(name: String): Attr
@@ -10735,6 +10771,7 @@ HTMLProgressElement[JC] var filters: Object
 HTMLProgressElement[JC] def firstChild: Node
 HTMLProgressElement[JC] def firstElementChild: Element
 HTMLProgressElement[JC] def focus(): Unit
+HTMLProgressElement[JC] def focus(options: FocusOptions): Unit
 HTMLProgressElement[JC] var form: HTMLFormElement
 HTMLProgressElement[JC] def getAttribute(name: String): String
 HTMLProgressElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
@@ -10942,6 +10979,7 @@ HTMLQuoteElement[JC] var filters: Object
 HTMLQuoteElement[JC] def firstChild: Node
 HTMLQuoteElement[JC] def firstElementChild: Element
 HTMLQuoteElement[JC] def focus(): Unit
+HTMLQuoteElement[JC] def focus(options: FocusOptions): Unit
 HTMLQuoteElement[JC] def getAttribute(name: String): String
 HTMLQuoteElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLQuoteElement[JC] def getAttributeNode(name: String): Attr
@@ -11147,6 +11185,7 @@ HTMLScriptElement[JC] var filters: Object
 HTMLScriptElement[JC] def firstChild: Node
 HTMLScriptElement[JC] def firstElementChild: Element
 HTMLScriptElement[JC] def focus(): Unit
+HTMLScriptElement[JC] def focus(options: FocusOptions): Unit
 HTMLScriptElement[JC] def getAttribute(name: String): String
 HTMLScriptElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLScriptElement[JC] def getAttributeNode(name: String): Attr
@@ -11357,6 +11396,7 @@ HTMLSelectElement[JC] var filters: Object
 HTMLSelectElement[JC] def firstChild: Node
 HTMLSelectElement[JC] def firstElementChild: Element
 HTMLSelectElement[JC] def focus(): Unit
+HTMLSelectElement[JC] def focus(options: FocusOptions): Unit
 HTMLSelectElement[JC] def form: HTMLFormElement
 HTMLSelectElement[JC] def getAttribute(name: String): String
 HTMLSelectElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
@@ -11577,6 +11617,7 @@ HTMLSourceElement[JC] var filters: Object
 HTMLSourceElement[JC] def firstChild: Node
 HTMLSourceElement[JC] def firstElementChild: Element
 HTMLSourceElement[JC] def focus(): Unit
+HTMLSourceElement[JC] def focus(options: FocusOptions): Unit
 HTMLSourceElement[JC] def getAttribute(name: String): String
 HTMLSourceElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLSourceElement[JC] def getAttributeNode(name: String): Attr
@@ -11781,6 +11822,7 @@ HTMLSpanElement[JC] var filters: Object
 HTMLSpanElement[JC] def firstChild: Node
 HTMLSpanElement[JC] def firstElementChild: Element
 HTMLSpanElement[JC] def focus(): Unit
+HTMLSpanElement[JC] def focus(options: FocusOptions): Unit
 HTMLSpanElement[JC] def getAttribute(name: String): String
 HTMLSpanElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLSpanElement[JC] def getAttributeNode(name: String): Attr
@@ -11982,6 +12024,7 @@ HTMLStyleElement[JC] var filters: Object
 HTMLStyleElement[JC] def firstChild: Node
 HTMLStyleElement[JC] def firstElementChild: Element
 HTMLStyleElement[JC] def focus(): Unit
+HTMLStyleElement[JC] def focus(options: FocusOptions): Unit
 HTMLStyleElement[JC] def getAttribute(name: String): String
 HTMLStyleElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLStyleElement[JC] def getAttributeNode(name: String): Attr
@@ -12187,6 +12230,7 @@ HTMLTableCaptionElement[JC] var filters: Object
 HTMLTableCaptionElement[JC] def firstChild: Node
 HTMLTableCaptionElement[JC] def firstElementChild: Element
 HTMLTableCaptionElement[JC] def focus(): Unit
+HTMLTableCaptionElement[JC] def focus(options: FocusOptions): Unit
 HTMLTableCaptionElement[JC] def getAttribute(name: String): String
 HTMLTableCaptionElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableCaptionElement[JC] def getAttributeNode(name: String): Attr
@@ -12390,6 +12434,7 @@ HTMLTableCellElement[JC] var filters: Object
 HTMLTableCellElement[JC] def firstChild: Node
 HTMLTableCellElement[JC] def firstElementChild: Element
 HTMLTableCellElement[JC] def focus(): Unit
+HTMLTableCellElement[JC] def focus(options: FocusOptions): Unit
 HTMLTableCellElement[JC] def getAttribute(name: String): String
 HTMLTableCellElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableCellElement[JC] def getAttributeNode(name: String): Attr
@@ -12593,6 +12638,7 @@ HTMLTableColElement[JC] var filters: Object
 HTMLTableColElement[JC] def firstChild: Node
 HTMLTableColElement[JC] def firstElementChild: Element
 HTMLTableColElement[JC] def focus(): Unit
+HTMLTableColElement[JC] def focus(options: FocusOptions): Unit
 HTMLTableColElement[JC] def getAttribute(name: String): String
 HTMLTableColElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableColElement[JC] def getAttributeNode(name: String): Attr
@@ -12804,6 +12850,7 @@ HTMLTableElement[JC] var filters: Object
 HTMLTableElement[JC] def firstChild: Node
 HTMLTableElement[JC] def firstElementChild: Element
 HTMLTableElement[JC] def focus(): Unit
+HTMLTableElement[JC] def focus(options: FocusOptions): Unit
 HTMLTableElement[JC] def getAttribute(name: String): String
 HTMLTableElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableElement[JC] def getAttributeNode(name: String): Attr
@@ -13016,6 +13063,7 @@ HTMLTableRowElement[JC] var filters: Object
 HTMLTableRowElement[JC] def firstChild: Node
 HTMLTableRowElement[JC] def firstElementChild: Element
 HTMLTableRowElement[JC] def focus(): Unit
+HTMLTableRowElement[JC] def focus(options: FocusOptions): Unit
 HTMLTableRowElement[JC] def getAttribute(name: String): String
 HTMLTableRowElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableRowElement[JC] def getAttributeNode(name: String): Attr
@@ -13222,6 +13270,7 @@ HTMLTableSectionElement[JC] var filters: Object
 HTMLTableSectionElement[JC] def firstChild: Node
 HTMLTableSectionElement[JC] def firstElementChild: Element
 HTMLTableSectionElement[JC] def focus(): Unit
+HTMLTableSectionElement[JC] def focus(options: FocusOptions): Unit
 HTMLTableSectionElement[JC] def getAttribute(name: String): String
 HTMLTableSectionElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTableSectionElement[JC] def getAttributeNode(name: String): Attr
@@ -13427,6 +13476,7 @@ HTMLTemplateElement[JC] var filters: Object
 HTMLTemplateElement[JC] def firstChild: Node
 HTMLTemplateElement[JC] def firstElementChild: Element
 HTMLTemplateElement[JC] def focus(): Unit
+HTMLTemplateElement[JC] def focus(options: FocusOptions): Unit
 HTMLTemplateElement[JC] def getAttribute(name: String): String
 HTMLTemplateElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTemplateElement[JC] def getAttributeNode(name: String): Attr
@@ -13633,6 +13683,7 @@ HTMLTextAreaElement[JC] var filters: Object
 HTMLTextAreaElement[JC] def firstChild: Node
 HTMLTextAreaElement[JC] def firstElementChild: Element
 HTMLTextAreaElement[JC] def focus(): Unit
+HTMLTextAreaElement[JC] def focus(options: FocusOptions): Unit
 HTMLTextAreaElement[JC] def form: HTMLFormElement
 HTMLTextAreaElement[JC] def getAttribute(name: String): String
 HTMLTextAreaElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
@@ -13854,6 +13905,7 @@ HTMLTitleElement[JC] var filters: Object
 HTMLTitleElement[JC] def firstChild: Node
 HTMLTitleElement[JC] def firstElementChild: Element
 HTMLTitleElement[JC] def focus(): Unit
+HTMLTitleElement[JC] def focus(options: FocusOptions): Unit
 HTMLTitleElement[JC] def getAttribute(name: String): String
 HTMLTitleElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTitleElement[JC] def getAttributeNode(name: String): Attr
@@ -14056,6 +14108,7 @@ HTMLTrackElement[JC] var filters: Object
 HTMLTrackElement[JC] def firstChild: Node
 HTMLTrackElement[JC] def firstElementChild: Element
 HTMLTrackElement[JC] def focus(): Unit
+HTMLTrackElement[JC] def focus(options: FocusOptions): Unit
 HTMLTrackElement[JC] def getAttribute(name: String): String
 HTMLTrackElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLTrackElement[JC] def getAttributeNode(name: String): Attr
@@ -14262,6 +14315,7 @@ HTMLUListElement[JC] var filters: Object
 HTMLUListElement[JC] def firstChild: Node
 HTMLUListElement[JC] def firstElementChild: Element
 HTMLUListElement[JC] def focus(): Unit
+HTMLUListElement[JC] def focus(options: FocusOptions): Unit
 HTMLUListElement[JC] def getAttribute(name: String): String
 HTMLUListElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLUListElement[JC] def getAttributeNode(name: String): Attr
@@ -14463,6 +14517,7 @@ HTMLUnknownElement[JC] var filters: Object
 HTMLUnknownElement[JC] def firstChild: Node
 HTMLUnknownElement[JC] def firstElementChild: Element
 HTMLUnknownElement[JC] def focus(): Unit
+HTMLUnknownElement[JC] def focus(options: FocusOptions): Unit
 HTMLUnknownElement[JC] def getAttribute(name: String): String
 HTMLUnknownElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLUnknownElement[JC] def getAttributeNode(name: String): Attr
@@ -14675,6 +14730,7 @@ HTMLVideoElement[JC] var filters: Object
 HTMLVideoElement[JC] def firstChild: Node
 HTMLVideoElement[JC] def firstElementChild: Element
 HTMLVideoElement[JC] def focus(): Unit
+HTMLVideoElement[JC] def focus(options: FocusOptions): Unit
 HTMLVideoElement[JC] def getAttribute(name: String): String
 HTMLVideoElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 HTMLVideoElement[JC] def getAttributeNode(name: String): Attr
@@ -15180,6 +15236,7 @@ Image[JC] var filters: Object
 Image[JC] def firstChild: Node
 Image[JC] def firstElementChild: Element
 Image[JC] def focus(): Unit
+Image[JC] def focus(options: FocusOptions): Unit
 Image[JC] def getAttribute(name: String): String
 Image[JC] def getAttributeNS(namespaceURI: String, localName: String): String
 Image[JC] def getAttributeNode(name: String): Attr
@@ -16386,7 +16443,6 @@ NavigatorVibration[JT] def vibrate(pattern: js.Array[Double]): Boolean
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 Node[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Node[JC] def appendChild(newChild: Node): Node
-Node[JC] def attributes: NamedNodeMap
 Node[JC] def baseURI: String
 Node[JC] def childNodes: NodeList[Node]
 Node[JC] def cloneNode(deep: Boolean?): Node
@@ -16394,7 +16450,6 @@ Node[JC] def compareDocumentPosition(other: Node): Int
 Node[JC] def contains(otherNode: Node): Boolean
 Node[JC] def dispatchEvent(evt: Event): Boolean
 Node[JC] def firstChild: Node
-Node[JC] def hasAttributes(): Boolean
 Node[JC] def hasChildNodes(): Boolean
 Node[JC] var innerText: String
 Node[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -16627,6 +16682,17 @@ ParentNode[JT] def children: HTMLCollection[Element]
 ParentNode[JT] def firstElementChild: Element
 ParentNode[JT] def lastElementChild: Element
 ParentNode[JT] def replaceChildren(nodes: Node | String*): Unit
+Path2D[JC] def addPath(path: Path2D): Unit
+Path2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): Unit
+Path2D[JC] def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean): Unit
+Path2D[JC] def arcTo(x1: Double, y1: Double, x2: Double, y2: Double, radius: Double): Unit
+Path2D[JC] def bezierCurveTo(cp1x: Double, cp1y: Double, cp2x: Double, cp2y: Double, x: Double, y: Double): Unit
+Path2D[JC] def closePath(): Unit
+Path2D[JC] def ellipse(x: Double, y: Double, radiusX: Double, radiusY: Double, rotation: Double, startAngle: Double, endAngle: Double, counterclockwise: Boolean?): Unit
+Path2D[JC] def lineTo(x: Double, y: Double): Unit
+Path2D[JC] def moveTo(x: Double, y: Double): Unit
+Path2D[JC] def quadraticCurveTo(cpx: Double, cpy: Double, x: Double, y: Double): Unit
+Path2D[JC] def rect(x: Double, y: Double, w: Double, h: Double): Unit
 Pbkdf2Params[JT] val hash: HashAlgorithmIdentifier
 Pbkdf2Params[JT] val iterations: Double
 Pbkdf2Params[JT] val name: String
@@ -16831,7 +16897,6 @@ PresentationStyle[SO] val unspecified: PresentationStyle
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ProcessingInstruction[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ProcessingInstruction[JC] def appendChild(newChild: Node): Node
-ProcessingInstruction[JC] def attributes: NamedNodeMap
 ProcessingInstruction[JC] def baseURI: String
 ProcessingInstruction[JC] def childNodes: NodeList[Node]
 ProcessingInstruction[JC] def cloneNode(deep: Boolean?): Node
@@ -16840,7 +16905,6 @@ ProcessingInstruction[JC] def contains(otherNode: Node): Boolean
 ProcessingInstruction[JC] def data: String
 ProcessingInstruction[JC] def dispatchEvent(evt: Event): Boolean
 ProcessingInstruction[JC] def firstChild: Node
-ProcessingInstruction[JC] def hasAttributes(): Boolean
 ProcessingInstruction[JC] def hasChildNodes(): Boolean
 ProcessingInstruction[JC] var innerText: String
 ProcessingInstruction[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -25633,7 +25697,6 @@ ShadowRoot[JC] def activeElement: Element
 ShadowRoot[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ShadowRoot[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ShadowRoot[JC] def appendChild(newChild: Node): Node
-ShadowRoot[JC] def attributes: NamedNodeMap
 ShadowRoot[JC] def baseURI: String
 ShadowRoot[JC] def childNodes: NodeList[Node]
 ShadowRoot[JC] def cloneNode(deep: Boolean?): Node
@@ -25641,7 +25704,6 @@ ShadowRoot[JC] def compareDocumentPosition(other: Node): Int
 ShadowRoot[JC] def contains(otherNode: Node): Boolean
 ShadowRoot[JC] def dispatchEvent(evt: Event): Boolean
 ShadowRoot[JC] def firstChild: Node
-ShadowRoot[JC] def hasAttributes(): Boolean
 ShadowRoot[JC] def hasChildNodes(): Boolean
 ShadowRoot[JC] var innerText: String
 ShadowRoot[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -25842,7 +25904,6 @@ Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1
 Text[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 Text[JC] def appendChild(newChild: Node): Node
 Text[JC] def appendData(arg: String): Unit
-Text[JC] def attributes: NamedNodeMap
 Text[JC] def baseURI: String
 Text[JC] def childNodes: NodeList[Node]
 Text[JC] def cloneNode(deep: Boolean?): Node
@@ -25852,7 +25913,6 @@ Text[JC] var data: String
 Text[JC] def deleteData(offset: Int, count: Int): Unit
 Text[JC] def dispatchEvent(evt: Event): Boolean
 Text[JC] def firstChild: Node
-Text[JC] def hasAttributes(): Boolean
 Text[JC] def hasChildNodes(): Boolean
 Text[JC] var innerText: String
 Text[JC] def insertBefore(newChild: Node, refChild: Node): Node
@@ -26673,7 +26733,7 @@ WebSocket[JC] def close(code: Int?, reason: String?): Unit
 WebSocket[JC] def dispatchEvent(evt: Event): Boolean
 WebSocket[JC] def extensions: String
 WebSocket[JC] var onclose: js.Function1[CloseEvent, _]
-WebSocket[JC] var onerror: js.Function1[ErrorEvent, _]
+WebSocket[JC] var onerror: js.Function1[Event, _]
 WebSocket[JC] var onmessage: js.Function1[MessageEvent, _]
 WebSocket[JC] var onopen: js.Function1[Event, _]
 WebSocket[JC] def readyState: Int
@@ -27588,6 +27648,7 @@ intl/DateTimeFormat[JC] def supportedLocalesOf(locales: String | js.Array[String
 intl/DateTimeFormatOptions[JT] var day: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var era: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var formatMatcher: js.UndefOr[String]
+intl/DateTimeFormatOptions[JT] var fractionalSecondDigits: js.UndefOr[Int]
 intl/DateTimeFormatOptions[JT] var hour: js.UndefOr[String]
 intl/DateTimeFormatOptions[JT] var hour12: js.UndefOr[Boolean]
 intl/DateTimeFormatOptions[JT] var localeMatcher: js.UndefOr[String]

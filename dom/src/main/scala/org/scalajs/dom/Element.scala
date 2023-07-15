@@ -157,8 +157,18 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
     */
   def matches(selector: String): Boolean = js.native
 
+  /** The Element.attributes property returns a live collection of all attribute nodes registered to the specified node.
+    * It is a NamedNodeMap, not an Array, so it has no Array methods and the Attr nodes' indexes may differ among
+    * browsers. To be more specific, attributes is a key/value pair of strings that represents any information regarding
+    * that attribute.
+    */
+  def attributes: NamedNodeMap = js.native
+
+  /** Returns a boolean value of true or false, indicating if the current element has any attributes or not. */
+  def hasAttributes(): Boolean = js.native
+
   /** getAttribute() returns the value of the named attribute on the specified element. If the named attribute does not
-    * exist, the value returned will either be null or "" (the empty string); see Notes for details.
+    * exist, the value returned will either be null or "" (the empty string).
     */
   def getAttribute(name: String): String = js.native
 

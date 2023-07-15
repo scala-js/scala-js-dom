@@ -35,8 +35,7 @@ class Blob(blobParts: js.Iterable[BlobPart], options: BlobPropertyBag = js.nativ
     */
   def `type`: String = js.native
 
-  /** A string indicating the MIME type of the data contained in the Blob. If the type is unknown, this string is empty.
-    */
+  /** Creates and returns a new Blob object which contains data from a subset of the blob on which it's called. */
   def slice(start: Double = js.native, end: Double = js.native, contentType: String = js.native): Blob = js.native
 
   /** Returns a ReadableStream that can be used to read the contents of the blob. */

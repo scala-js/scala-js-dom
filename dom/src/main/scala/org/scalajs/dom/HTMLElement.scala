@@ -169,6 +169,7 @@ abstract class HTMLElement extends Element {
 
   /** Sets focus on the specified element, if it can be focused. */
   def focus(): Unit = js.native
+  def focus(options: FocusOptions): Unit = js.native
 
   /** The blur method removes keyboard focus from the current element. */
   def blur(): Unit = js.native

@@ -54,7 +54,7 @@ class WebSocket(var url: String = js.native, var protocol: String = js.native) e
   var onclose: js.Function1[CloseEvent, _] = js.native
 
   /** An event listener to be called when an error occurs. This is a simple event named "error". */
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
 
   /** A string indicating the type of binary data being transmitted by the connection. This should be either "blob" if
     * DOM Blob objects are being used or "arraybuffer" if ArrayBuffer objects are being used.
