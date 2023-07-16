@@ -52,9 +52,9 @@ abstract class HTMLTableElement extends HTMLElement {
     */
   var tHead: HTMLTableSectionElement = js.native
 
-  /** Removes the row corresponding to the index given in parameter. If the index value is
-    * -1 the last row is removed; if it smaller than -1 or greater than the amount of rows in the collection, a
-    * DOMException with the value IndexSizeError is raised.
+  /** Removes the row corresponding to the index given in parameter. If the index value is -1 the last row is removed;
+    * if it smaller than -1 or greater than the amount of rows in the collection, a DOMException with the value
+    * IndexSizeError is raised.
     */
   def deleteRow(index: Int): Unit = js.native
 
