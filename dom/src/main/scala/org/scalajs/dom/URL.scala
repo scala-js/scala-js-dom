@@ -2,7 +2,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** The URL object provides static methods used for creating object URLs. */
 @js.native
@@ -19,7 +18,10 @@ object URL extends js.Object {
     * parameter. The URL lifetime is tied to the document in the window on which it was created. The new object URL
     * represents the specified File, Blob or MediaSource object.
     */
-  def createObjectURL(obj: Blob | File | MediaSource): String = js.native
+  def createObjectURL(obj: Blob): String = js.native
+
+  def createObjectURL(src: MediaSource): String = js.native
+
 }
 
 /** The URL() constructor returns a newly created URL object representing the URL defined by the parameters. */
