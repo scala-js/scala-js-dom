@@ -18,7 +18,7 @@ object URL extends js.Object {
     * parameter. The URL lifetime is tied to the document in the window on which it was created. The new object URL
     * represents the specified File, Blob or MediaSource object.
     */
-  def createObjectURL(obj: Blob): String = js.native
+  def createObjectURL(blob: Blob): String = js.native
 
   def createObjectURL(src: MediaSource): String = js.native
 
