@@ -26181,7 +26181,7 @@ URL[JC] var protocol: String
 URL[JC] var search: String
 URL[JC] var searchParams: URLSearchParams
 URL[JC] var username: String
-URL[JO] def createObjectURL(blob: Blob): String
+URL[JO] def createObjectURL(obj: Blob | File | MediaSource): String
 URL[JO] def revokeObjectURL(url: String): Unit
 URLSearchParams[JC] def append(name: String, value: String): Unit
 URLSearchParams[JC] def delete(name: String): Unit
