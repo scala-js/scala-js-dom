@@ -125,7 +125,9 @@ abstract class Document extends Node with NodeSelector with DocumentEvent with P
   /** In an HTML document creates the specified HTML element or HTMLUnknownElement if the element is not known. In a XUL
     * document creates the specified XUL element. In other documents creates an element with a null namespaceURI.
     */
-  def createElement(tagName: String, options: String | ElementCreationOptions = js.native): Element = js.native
+  def createElement(tagName: String): Element = js.native
+  def createElement(tagName: String, options: String): Element = js.native
+  def createElement(tagName: String, options: ElementCreationOptions): Element = js.native
 
   /** Creates an element with the specified namespace URI and qualified name. */
   def createElementNS(namespaceURI: String, qualifiedName: String,
