@@ -8,7 +8,6 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
 
 /** Each web page loaded in the browser has its own document object. The Document interface serves as an entry point to
   * the web page's content (the DOM tree, including elements such as &lt;body&gt; and &lt;table&gt;) and provides
@@ -126,12 +125,17 @@ abstract class Document extends Node with NodeSelector with DocumentEvent with P
     * document creates the specified XUL element. In other documents creates an element with a null namespaceURI.
     */
   def createElement(tagName: String): Element = js.native
+
   def createElement(tagName: String, options: String): Element = js.native
+
   def createElement(tagName: String, options: ElementCreationOptions): Element = js.native
 
   /** Creates an element with the specified namespace URI and qualified name. */
-  def createElementNS(namespaceURI: String, qualifiedName: String,
-      options: String | ElementCreationOptions = js.native): Element = js.native
+  def createElementNS(namespaceURI: String, qualifiedName: String): Element = js.native
+
+  def createElementNS(namespaceURI: String, qualifiedName: String, options: String): Element = js.native
+
+  def createElementNS(namespaceURI: String, qualifiedName: String, options: ElementCreationOptions): Element = js.native
 
   /** createAttribute creates a new attribute node, and returns it. */
   def createAttribute(name: String): Attr = js.native
