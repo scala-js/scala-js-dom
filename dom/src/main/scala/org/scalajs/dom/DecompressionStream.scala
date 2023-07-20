@@ -10,8 +10,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.typedarray.Uint8Array
 
-/** An API for decompressing a stream of data.
-  */
+/** An API for decompressing a stream of data. */
 @js.native
 @JSGlobal
 class DecompressionStream(format: CompressionFormat) extends js.Object {
