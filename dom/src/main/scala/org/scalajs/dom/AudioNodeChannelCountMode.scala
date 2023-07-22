@@ -14,5 +14,4 @@ object AudioNodeChannelCountMode {
   val max: AudioNodeChannelCountMode = "max".asInstanceOf[AudioNodeChannelCountMode]
   val `clamped-max`: AudioNodeChannelCountMode = "clamped-max".asInstanceOf[AudioNodeChannelCountMode]
   val explicit: AudioNodeChannelCountMode = "explicit".asInstanceOf[AudioNodeChannelCountMode]
-
 }

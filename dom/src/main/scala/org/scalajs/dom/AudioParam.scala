@@ -36,6 +36,10 @@ trait AudioParam extends AudioNode {
   /** Represents the initial value of the attributes as defined by the specific AudioNode creating the AudioParam. */
   val defaultValue: Double = js.native
 
+  val maxValue: Double = js.native
+
+  val minValue: Double = js.native
+
   /** Schedules an instant change to the value of the AudioParam at a precise time, as measured against
     * AudioContext.currentTime. The new value is given in the value parameter.
     *

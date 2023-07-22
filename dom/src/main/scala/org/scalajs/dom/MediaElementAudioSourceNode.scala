@@ -23,7 +23,7 @@ import scala.scalajs.js.annotation._
   */
 @JSGlobal
 @js.native
-class MediaElementAudioSourceNode(ctx: BaseAudioContext, options: MediaElementAudioSourceNodeOptions)
+class MediaElementAudioSourceNode(context: BaseAudioContext, options: MediaElementAudioSourceNodeOptions)
     extends AudioNode {
   val mediaElement: HTMLMediaElement = js.native
 }

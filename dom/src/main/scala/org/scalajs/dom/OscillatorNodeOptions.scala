@@ -7,13 +7,11 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-trait AudioBufferSourceNodeOptions extends js.Object {
-  var buffer: js.UndefOr[AudioBuffer] = js.undefined
-  var loop: js.UndefOr[Boolean] = js.undefined
-  var loopStart: js.UndefOr[Double] = js.undefined
-  var loopEnd: js.UndefOr[Double] = js.undefined
+trait OscillatorNodeOptions extends js.Object {
+  var `type`: js.UndefOr[OscillatorNodeType] = js.undefined
   var detune: js.UndefOr[Double] = js.undefined
-  var playbackRate: js.UndefOr[Double] = js.undefined
+  var frequency: js.UndefOr[Double] = js.undefined
+  var periodicWave: js.UndefOr[PeriodicWave] = js.undefined
   var channelCount: js.UndefOr[Int] = js.undefined
   var channelCountMode: js.UndefOr[AudioNodeChannelCountMode] = js.undefined
   var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation] = js.undefined
