@@ -7,9 +7,10 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-trait MediaElementAudioSourceNodeOptions extends js.Object {
-  var mediaElement: HTMLMediaElement
-  var channelCount: js.UndefOr[Int] = js.undefined
-  var channelCountMode: js.UndefOr[AudioNodeChannelCountMode] = js.undefined
-  var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation] = js.undefined
+@js.native
+sealed trait AudioNodeChannelInterpretation extends js.Any
+
+object AudioNodeChannelInterpretation {
+  val speakers: AudioNodeChannelInterpretation = "speakers".asInstanceOf[AudioNodeChannelInterpretation]
+  val discrete: AudioNodeChannelInterpretation = "discrete".asInstanceOf[AudioNodeChannelInterpretation]
 }

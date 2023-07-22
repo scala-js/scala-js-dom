@@ -42,7 +42,6 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) exte
     */
   def startRendering(): js.Promise[AudioBuffer] = js.native
 
-
   // Schedules a suspension of the time progression in the audio context at the specified time and returns a promise.
   def suspend(suspendTime: Double): js.Promise[Unit] = js.native
 

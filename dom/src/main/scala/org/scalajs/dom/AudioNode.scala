@@ -47,14 +47,14 @@ trait AudioNode extends EventTarget {
 
   /** Represents an enumerated value describing the way channels must be matched between the node's inputs and outputs.
     */
-  var channelCountMode: ChannelCountMode = js.native
+  var channelCountMode: AudioNodeChannelCountMode = js.native
 
   /** Represents an enumerated value describing the meaning of the channels. This interpretation will define how audio
     * up-mixing and down-mixing will happen.
     *
     * The possible values are "speakers" or "discrete".
     */
-  var channelInterpretation: ChannelInterpretation = js.native
+  var channelInterpretation: AudioNodeChannelInterpretation = js.native
 
   /** Allows us to connect one output of this node to one input of another node. */
   def connect(audioNode: AudioNode): Unit = js.native

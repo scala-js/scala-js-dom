@@ -7,10 +7,12 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-@js.native
-sealed trait ChannelInterpretation extends js.Any
-
-object ChannelInterpretation {
-  val speakers: ChannelInterpretation = "speakers".asInstanceOf[ChannelInterpretation]
-  val discrete: ChannelInterpretation = "discrete".asInstanceOf[ChannelInterpretation]
+trait AudioBufferSourceNodeOptions extends js.Object {
+  var buffer: js.UndefOr[AudioBuffer] = js.undefined
+  var loop: js.UndefOr[Boolean] = js.undefined
+  var loopStart: js.UndefOr[Double] = js.undefined
+  var loopEnd: js.UndefOr[Double] = js.undefined
+  var detune: js.UndefOr[Double] = js.undefined
+  var playbackRate: js.UndefOr[Double] = js.undefined
 }
+

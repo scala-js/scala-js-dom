@@ -57,7 +57,6 @@ class AudioContext extends BaseAudioContext {
   /** Closes the audio context, releasing any system audio resources that it uses. */
   def close(): js.Promise[Unit] = js.native
 
-
   // TODO docs
   def getOutputTimestamp: AudioTimestamp = js.native
 }

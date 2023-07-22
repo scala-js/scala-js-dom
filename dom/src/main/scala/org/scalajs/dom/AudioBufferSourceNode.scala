@@ -6,6 +6,7 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 /** AudioBufferSourceNode has no input and exactly one output. The number of channels in the output corresponds to the
   * number of channels of the AudioBuffer that is set to the AudioBufferSourceNode.buffer property. If there is no
@@ -23,8 +24,10 @@ import scala.scalajs.js
   *   - Number of outputs: 1
   *   - Channel count: defined by the associated AudioBuffer
   */
+@JSGlobal
 @js.native
-trait AudioBufferSourceNode extends AudioScheduledSourceNode {
+class AudioBufferSourceNode(context: BaseAudioContext, options: AudioBufferSourceNodeOptions = js.native)
+    extends AudioScheduledSourceNode {
 
   /** Is an AudioBuffer that defines the audio asset to be played, or when set to the value null, defines a single
     * channel of silence.

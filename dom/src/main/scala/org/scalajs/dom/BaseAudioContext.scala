@@ -7,9 +7,12 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-/** The BaseAudioContext interface of the Web Audio API acts as a base definition for online and offline audio-processing graphs, as represented by AudioContext and OfflineAudioContext respectively. You wouldn't use BaseAudioContext directly — you'd use its features via one of these two inheriting interfaces.
-
-A BaseAudioContext can be a target of events, therefore it implements the EventTarget interface. */
+/** The BaseAudioContext interface of the Web Audio API acts as a base definition for online and offline
+  * audio-processing graphs, as represented by AudioContext and OfflineAudioContext respectively. You wouldn't use
+  * BaseAudioContext directly — you'd use its features via one of these two inheriting interfaces.
+  *
+  * A BaseAudioContext can be a target of events, therefore it implements the EventTarget interface.
+  */
 @js.native
 trait BaseAudioContext extends EventTarget {
 

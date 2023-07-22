@@ -8,9 +8,11 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 @js.native
-trait ConstantSourceNode extends AudioScheduledSourceNode {
+sealed trait AudioNodeChannelCountMode extends js.Any
 
-  // TODO
-  val offset: AudioParam = js.native
+object AudioNodeChannelCountMode {
+  val max: AudioNodeChannelCountMode = "max".asInstanceOf[AudioNodeChannelCountMode]
+  val `clamped-max`: AudioNodeChannelCountMode = "clamped-max".asInstanceOf[AudioNodeChannelCountMode]
+  val explicit: AudioNodeChannelCountMode = "explicit".asInstanceOf[AudioNodeChannelCountMode]
 
 }

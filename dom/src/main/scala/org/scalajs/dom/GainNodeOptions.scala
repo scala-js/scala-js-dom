@@ -7,12 +7,9 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-@js.native
-sealed trait ChannelCountMode extends js.Any
-
-object ChannelCountMode {
-  val max: ChannelCountMode = "max".asInstanceOf[ChannelCountMode]
-  val `clamped-max`: ChannelCountMode = "clamped-max".asInstanceOf[ChannelCountMode]
-  val explicit: ChannelCountMode = "explicit".asInstanceOf[ChannelCountMode]
-
+trait GainNodeOptions extends js.Object {
+  var gain: js.UndefOr[Double] = js.undefined
+  var channelCount: js.UndefOr[Int] = js.undefined
+  var channelCountMode: js.UndefOr[AudioNodeChannelCountMode] = js.undefined
+  var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation] = js.undefined
 }
