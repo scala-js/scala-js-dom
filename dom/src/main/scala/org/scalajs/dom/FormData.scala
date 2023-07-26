@@ -19,7 +19,9 @@ import scala.scalajs.js.|
 class FormData(form: HTMLFormElement = js.native) extends js.Iterable[js.Tuple2[String, String]] {
 
   /** Appends a key/value pair to the FormData object. */
-  def append(name: js.Any, value: js.Any, blobName: String = js.native): Unit = js.native
+  def append(name: js.Any, value: String): Unit = js.native
+
+  def append(name: js.Any, value: Blob, blobName: String): Unit = js.native
 
   /** Deletes a key/value pair from the FormData object. */
   def delete(name: String): Unit = js.native
@@ -33,7 +35,11 @@ class FormData(form: HTMLFormElement = js.native) extends js.Iterable[js.Tuple2[
   /** Sets a new value for an existing key inside a FormData object, or adds the key/value if it does not already exist.
     */
   def set(
-      name: String, value: String | Blob, blobName: String = js.native
+      name: String, value: String
+  ): Unit = js.native
+
+  def set(
+      name: String, value: Blob, blobName: String
   ): Unit = js.native
 
   @JSName(js.Symbol.iterator)
