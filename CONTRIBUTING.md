@@ -54,6 +54,13 @@ Please:
 * Use `def` for read-only properties unless there is a compelling reason it should be a `val`
   (i.e., the spec definitively states it is constant)
 * Use `Double` for integer-values that can fall outside the range of `Int`
+* Prefer adding overloads instead of using union `|` types for method and constructor parameters. For example:
+```diff
+-  def createElement(tagName: String, options: String | ElementCreationOptions = js.native): Element = js.native
++  def createElement(tagName: String): Element = js.native
++  def createElement(tagName: String, options: String): Element = js.native
++  def createElement(tagName: String, options: ElementCreationOptions): Element = js.native
+```
 * Add scaladocs via copy-paste from MDN
 
 
