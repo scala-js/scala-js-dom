@@ -60,6 +60,7 @@ Please:
 +  def createElement(tagName: String): Element = js.native
 +  def createElement(tagName: String, options: String): Element = js.native
 +  def createElement(tagName: String, options: ElementCreationOptions): Element = js.native
+```
 * Add scaladocs via copy-paste from MDN
 
 
