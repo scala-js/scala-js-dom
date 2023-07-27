@@ -27,7 +27,7 @@ class FormData(form: HTMLFormElement = js.native) extends js.Iterable[js.Tuple2[
     *   The field's value. This can be a string or `Blob` (including subclasses such as File). If none of these are
     *   specified the value is converted to a string.
     */
-  def append(name: js.Any, value: String): Unit = js.native
+  def append(name: String, value: String): Unit = js.native
 
   /** The `append()` method of the `FormData` interface appends a new value onto an existing key inside a `FormData`
     * object, or adds the key if it does not already exist.
@@ -41,7 +41,7 @@ class FormData(form: HTMLFormElement = js.native) extends js.Iterable[js.Tuple2[
     *   The filename reported to the server (a string), when a `Blob` or `File` is passed as the second parameter. The
     *   default filename for `Blob` objects is "blob". The default filename for `File` objects is the file's filename.
     */
-  def append(name: js.Any, value: Blob, blobName: String): Unit = js.native
+  def append(name: String, value: Blob, blobName: String): Unit = js.native
 
   /** The `delete()` method of the `FormData` interface deletes a key and its value(s) from a `FormData` object.
     * @param name
