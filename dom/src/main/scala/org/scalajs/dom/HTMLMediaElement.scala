@@ -81,9 +81,8 @@ abstract class HTMLMediaElement extends HTMLElement {
   /** true if the audio is muted, and false otherwise. */
   var muted: Boolean = js.native
 
-  /** The default playback rate for the media. 1.0 is "normal speed," values lower than
-    * 1.0 make the media play slower than normal, higher values make it play faster. The value 0.0 is invalid and throws
-    * a NOT_SUPPORTED_ERR exception.
+  /** The default playback rate for the media. 1.0 is "normal speed," values lower than 1.0 make the media play slower
+    * than normal, higher values make it play faster. The value 0.0 is invalid and throws a NOT_SUPPORTED_ERR exception.
     */
   var defaultPlaybackRate: Double = js.native
 
