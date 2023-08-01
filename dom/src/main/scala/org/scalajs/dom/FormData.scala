@@ -16,7 +16,7 @@ import scala.scalajs.js.|
   */
 @js.native
 @JSGlobal
-class FormData(form: HTMLFormElement = js.native) extends js.Iterable[js.Tuple2[String, String]] {
+class FormData(form: HTMLFormElement = js.native) extends js.Iterable[js.Tuple2[String, String | Blob]] {
 
   /** The `append()` method of the `FormData` interface appends a new value onto an existing key inside a `FormData`
     * object, or adds the key if it does not already exist.
@@ -41,7 +41,7 @@ class FormData(form: HTMLFormElement = js.native) extends js.Iterable[js.Tuple2[
     *   The filename reported to the server (a string), when a `Blob` or `File` is passed as the second parameter. The
     *   default filename for `Blob` objects is "blob". The default filename for `File` objects is the file's filename.
     */
-  def append(name: String, value: Blob, blobName: String): Unit = js.native
+  def append(name: String, value: Blob, blobName: String = js.native): Unit = js.native
 
   /** The `delete()` method of the `FormData` interface deletes a key and its value(s) from a `FormData` object.
     * @param name
@@ -89,11 +89,11 @@ class FormData(form: HTMLFormElement = js.native) extends js.Iterable[js.Tuple2[
     *   The field's value.
     */
   def set(
-      name: String, value: Blob, blobName: String
+      name: String, value: Blob, blobName: String = js.native
   ): Unit = js.native
 
   @JSName(js.Symbol.iterator)
-  override def jsIterator(): js.Iterator[js.Tuple2[String, String]] = js.native
+  override def jsIterator(): js.Iterator[js.Tuple2[String, String | Blob]] = js.native
 
   /** The `FormData.entries()` method returns an iterator which iterates through all key/value pairs contained in the
     * `FormData`. The key of each pair is a string object, and the value is either a string or a `Blob`.
