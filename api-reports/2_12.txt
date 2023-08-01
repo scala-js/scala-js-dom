@@ -2291,7 +2291,18 @@ FocusEventInit[JT] var scoped: js.UndefOr[Boolean]
 FocusEventInit[JT] var view: js.UndefOr[Window]
 FocusOptions[JT] var focusVisible: js.UndefOr[Boolean]
 FocusOptions[JT] var preventScroll: js.UndefOr[Boolean]
-FormData[JC] def append(name: js.Any, value: js.Any, blobName: String?): Unit
+FormData[JC] def append(name: String, value: Blob, blobName: String?): Unit
+FormData[JC] def append(name: String, value: String): Unit
+FormData[JC] def delete(name: String): Unit
+FormData[JC] def entries(): js.Iterator[js.Tuple2[String, String | Blob]]
+FormData[JC] def get(name: String): String | Blob
+FormData[JC] def getAll(name: String): js.Array[String | Blob]
+FormData[JC] def has(name: String): Boolean
+FormData[JC] @JSName(js.Symbol.iterator) override def jsIterator(): js.Iterator[js.Tuple2[String, String | Blob]]
+FormData[JC] def keys(): js.Iterator[String]
+FormData[JC] def set(name: String, value: Blob, blobName: String?): Unit
+FormData[JC] def set(name: String, value: String): Unit
+FormData[JC] def values(): js.Iterator[String | Blob]
 FormData[JO]
 FrameType[JT]
 FrameType[SO] val auxiliary: FrameType
