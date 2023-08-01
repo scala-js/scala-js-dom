@@ -16,7 +16,11 @@ import scala.scalajs.js.|
   */
 @js.native
 @JSGlobal
-class FormData(form: HTMLFormElement = js.native) extends js.Iterable[js.Tuple2[String, String | Blob]] {
+class FormData extends js.Iterable[js.Tuple2[String, String | Blob]] {
+
+  def this(form: HTMLFormElement) = this()
+
+  def this(form: HTMLFormElement, submitter: HTMLElement) = this()
 
   /** The `append()` method of the `FormData` interface appends a new value onto an existing key inside a `FormData`
     * object, or adds the key if it does not already exist.
