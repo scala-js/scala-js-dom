@@ -1348,6 +1348,12 @@ CompositionEventInit[JT] var detail: js.UndefOr[Int]
 CompositionEventInit[JT] var locale: js.UndefOr[String]
 CompositionEventInit[JT] var scoped: js.UndefOr[Boolean]
 CompositionEventInit[JT] var view: js.UndefOr[Window]
+CompressionFormat[JT]
+CompressionFormat[SO] val deflate: CompressionFormat
+CompressionFormat[SO] val `deflate-raw`: CompressionFormat
+CompressionFormat[SO] val gzip: CompressionFormat
+CompressionStream[JC] def readable: ReadableStream[Uint8Array]
+CompressionStream[JC] def writable: WriteableStream[Uint8Array]
 ConcatParams[JT] val algorithmId: BufferSource
 ConcatParams[JT] val hash: HashAlgorithmIdentifier
 ConcatParams[JT] val name: String
@@ -1561,6 +1567,8 @@ DataTransferItemList[JC] @js.annotation.JSBracketAccess def apply(index: Int): D
 DataTransferItemList[JC] def clear(): Unit
 DataTransferItemList[JC] def length: Int
 DataTransferItemList[JC] def remove(index: Int): Unit
+DecompressionStream[JC] def readable: ReadableStream[Uint8Array]
+DecompressionStream[JC] def writable: WriteableStream[Uint8Array]
 DedicatedWorkerGlobalScope[JO] def self: DedicatedWorkerGlobalScope
 DedicatedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DedicatedWorkerGlobalScope[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
