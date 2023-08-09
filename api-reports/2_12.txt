@@ -27101,6 +27101,97 @@ WriteableStream[JT] val closed: js.Promise[WriteableStream[T]]
 WriteableStream[JT] val ready: js.Promise[WriteableStream[T]]
 WriteableStream[JT] def state: WriteableState
 WriteableStream[JT] def write(chunk: Chunk[T]): js.Promise[Any]
+XMLDocument[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+XMLDocument[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+XMLDocument[JC] def adoptNode(source: Node): Node
+XMLDocument[JC] def appendChild(newChild: Node): Node
+XMLDocument[JC] def baseURI: String
+XMLDocument[JC] def characterSet: String
+XMLDocument[JC] def childElementCount: Int
+XMLDocument[JC] def childNodes: NodeList[Node]
+XMLDocument[JC] def children: HTMLCollection[Element]
+XMLDocument[JC] def cloneNode(deep: Boolean?): Node
+XMLDocument[JC] def compareDocumentPosition(other: Node): Int
+XMLDocument[JC] def contains(otherNode: Node): Boolean
+XMLDocument[JC] def createAttribute(name: String): Attr
+XMLDocument[JC] def createAttributeNS(namespaceURI: String, qualifiedName: String): Attr
+XMLDocument[JC] def createCDATASection(data: String): CDATASection
+XMLDocument[JC] def createComment(data: String): Comment
+XMLDocument[JC] def createDocumentFragment(): DocumentFragment
+XMLDocument[JC] def createElement(tagName: String): Element
+XMLDocument[JC] def createElement(tagName: String, options: ElementCreationOptions): Element
+XMLDocument[JC] def createElement(tagName: String, options: String): Element
+XMLDocument[JC] def createElementNS(namespaceURI: String, qualifiedName: String): Element
+XMLDocument[JC] def createElementNS(namespaceURI: String, qualifiedName: String, options: ElementCreationOptions): Element
+XMLDocument[JC] def createElementNS(namespaceURI: String, qualifiedName: String, options: String): Element
+XMLDocument[JC] def createEvent(eventInterface: String): Event
+XMLDocument[JC] def createNSResolver(node: Node): XPathNSResolver
+XMLDocument[JC] def createNodeIterator(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): NodeIterator
+XMLDocument[JC] def createProcessingInstruction(target: String, data: String): ProcessingInstruction
+XMLDocument[JC] def createRange(): Range
+XMLDocument[JC] def createStyleSheet(href: String?, index: Int?): CSSStyleSheet
+XMLDocument[JC] def createTextNode(data: String): Text
+XMLDocument[JC] def createTreeWalker(root: Node, whatToShow: Int, filter: NodeFilter, entityReferenceExpansion: Boolean): TreeWalker
+XMLDocument[JC] def dispatchEvent(evt: Event): Boolean
+XMLDocument[JC] def doctype: DocumentType
+XMLDocument[JC] def documentElement: Element
+XMLDocument[JC] def documentURI: String
+XMLDocument[JC] def elementFromPoint(x: Double, y: Double): Element
+XMLDocument[JC] def evaluate(xpathExpression: String, contextNode: Node, namespaceResolver: XPathNSResolver, resultType: Int, result: XPathResult): XPathResult
+XMLDocument[JC] def evaluate(xpathExpression: String, contextNode: Node, namespaceResolver: js.Function1[String, String], resultType: Int, result: XPathResult): XPathResult
+XMLDocument[JC] def exitFullscreen(): js.Promise[Unit]
+XMLDocument[JC] def exitPointerLock(): Unit
+XMLDocument[JC] def firstChild: Node
+XMLDocument[JC] def firstElementChild: Element
+XMLDocument[JC] def fullscreenElement: Element
+XMLDocument[JC] def fullscreenEnabled: Boolean
+XMLDocument[JC] def getElementById(elementId: String): Element
+XMLDocument[JC] def getElementsByClassName(classNames: String): HTMLCollection[Element]
+XMLDocument[JC] def getElementsByName(elementName: String): NodeList[Node]
+XMLDocument[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
+XMLDocument[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
+XMLDocument[JC] def hasChildNodes(): Boolean
+XMLDocument[JC] def hidden: Boolean
+XMLDocument[JC] def implementation: DOMImplementation
+XMLDocument[JC] def importNode(importedNode: Node, deep: Boolean): Node
+XMLDocument[JC] var innerText: String
+XMLDocument[JC] def insertBefore(newChild: Node, refChild: Node): Node
+XMLDocument[JC] def isConnected: Boolean
+XMLDocument[JC] def isDefaultNamespace(namespaceURI: String): Boolean
+XMLDocument[JC] def isEqualNode(arg: Node): Boolean
+XMLDocument[JC] def isSameNode(other: Node): Boolean
+XMLDocument[JC] def isSupported(feature: String, version: String): Boolean
+XMLDocument[JC] def lastChild: Node
+XMLDocument[JC] def lastElementChild: Element
+XMLDocument[JC] def lastModified: String
+XMLDocument[JC] def localName: String
+XMLDocument[JC] def lookupNamespaceURI(prefix: String): String
+XMLDocument[JC] def lookupPrefix(namespaceURI: String): String
+XMLDocument[JC] def namespaceURI: String
+XMLDocument[JC] def nextSibling: Node
+XMLDocument[JC] def nodeName: String
+XMLDocument[JC] def nodeType: Int
+XMLDocument[JC] var nodeValue: String
+XMLDocument[JC] def normalize(): Unit
+XMLDocument[JC] var onfullscreenchange: js.Function1[Event, _]
+XMLDocument[JC] var onfullscreenerror: js.Function1[Event, _]
+XMLDocument[JC] var onpointerlockchange: js.Function1[Event, _]
+XMLDocument[JC] var onpointerlockerror: js.Function1[Event, _]
+XMLDocument[JC] def ownerDocument: Document
+XMLDocument[JC] def parentNode: Node
+XMLDocument[JC] def pointerLockElement: Element
+XMLDocument[JC] def previousSibling: Node
+XMLDocument[JC] def querySelector(selectors: String): Element
+XMLDocument[JC] def querySelectorAll(selectors: String): NodeList[Element]
+XMLDocument[JC] def removeChild(oldChild: Node): Node
+XMLDocument[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+XMLDocument[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+XMLDocument[JC] def replaceChild(newChild: Node, oldChild: Node): Node
+XMLDocument[JC] def replaceChildren(nodes: Node | String*): Unit
+XMLDocument[JC] def styleSheets: StyleSheetList
+XMLDocument[JC] var textContent: String
+XMLDocument[JC] def visibilityState: VisibilityState | String
+XMLDocument[JC] var visibilitychange: js.Function1[Event, _]
 XMLHttpRequest[JC] def abort(): Unit
 XMLHttpRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 XMLHttpRequest[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
