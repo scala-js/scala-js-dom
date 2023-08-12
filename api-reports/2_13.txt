@@ -16464,6 +16464,56 @@ MutationRecord[JT] def previousSibling: Node
 MutationRecord[JT] def removedNodes: NodeList[Node]
 MutationRecord[JT] def target: Node
 MutationRecord[JT] def `type`: String
+NDEFMessage[JC] var records: FrozenArray[NDEFRecord]
+NDEFReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+NDEFReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+NDEFReader[JC] def dispatchEvent(evt: Event): Boolean
+NDEFReader[JC] var onreading: js.Function1[NDEFReadingEvent, Any]
+NDEFReader[JC] var onreadingerror: js.Function1[Event, Any]
+NDEFReader[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+NDEFReader[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+NDEFReader[JC] def scan(options: NDEFScanOptions?): js.Promise[Unit]
+NDEFReader[JC] def write(message: String): js.Promise[Unit]
+NDEFReader[JC] def write(message: String, options: NDEFWriteOptions): js.Promise[Unit]
+NDEFReader[JC] def write(message: js.Array[NDEFRecord]): js.Promise[Unit]
+NDEFReader[JC] def write(message: js.Array[NDEFRecord], options: NDEFWriteOptions): js.Promise[Unit]
+NDEFReader[JC] def write(message: js.typedarray.ArrayBuffer): js.Promise[Unit]
+NDEFReader[JC] def write(message: js.typedarray.ArrayBuffer, options: NDEFWriteOptions): js.Promise[Unit]
+NDEFReader[JC] def write(message: js.typedarray.DataView): js.Promise[Unit]
+NDEFReader[JC] def write(message: js.typedarray.DataView, options: NDEFWriteOptions): js.Promise[Unit]
+NDEFReader[JC] def write(message: js.typedarray.TypedArray[_, _], options: NDEFWriteOptions?): js.Promise[Unit]
+NDEFReadingEvent[JT] def bubbles: Boolean
+NDEFReadingEvent[JT] def cancelBubble: Boolean
+NDEFReadingEvent[JT] def cancelable: Boolean
+NDEFReadingEvent[JT] def composed: Boolean
+NDEFReadingEvent[JT] def currentTarget: EventTarget
+NDEFReadingEvent[JT] def defaultPrevented: Boolean
+NDEFReadingEvent[JT] def eventPhase: Int
+NDEFReadingEvent[JT] def isTrusted: Boolean
+NDEFReadingEvent[JT] var message: NDEFMessage
+NDEFReadingEvent[JT] def preventDefault(): Unit
+NDEFReadingEvent[JT] var serialNumber: String
+NDEFReadingEvent[JT] def stopImmediatePropagation(): Unit
+NDEFReadingEvent[JT] def stopPropagation(): Unit
+NDEFReadingEvent[JT] def target: EventTarget
+NDEFReadingEvent[JT] def timeStamp: Double
+NDEFReadingEvent[JT] def `type`: String
+NDEFRecord[JC] var data: js.typedarray.DataView
+NDEFRecord[JC] var encoding: js.UndefOr[String]
+NDEFRecord[JC] var id: js.UndefOr[String]
+NDEFRecord[JC] var lang: js.UndefOr[String]
+NDEFRecord[JC] var mediaType: js.UndefOr[String]
+NDEFRecord[JC] var recordType: String
+NDEFRecord[JC] def toRecords(): js.Array[NDEFRecord]
+NDEFRecordInit[JT] var data: js.UndefOr[String | js.typedarray.DataView | js.typedarray.ArrayBuffer | js.typedarray.TypedArray[_, _] | js.typedarray.DataView | js.Array[NDEFRecord]]
+NDEFRecordInit[JT] var encoding: js.UndefOr[String]
+NDEFRecordInit[JT] var id: js.UndefOr[String]
+NDEFRecordInit[JT] var lang: js.UndefOr[String]
+NDEFRecordInit[JT] var mediaType: js.UndefOr[String]
+NDEFRecordInit[JT] var recordType: js.UndefOr[String]
+NDEFScanOptions[JT] var signal: js.UndefOr[AbortSignal]
+NDEFWriteOptions[JT] var overwrite: js.UndefOr[Boolean]
+NDEFWriteOptions[JT] var signal: js.UndefOr[AbortSignal]
 NamedNodeMap[JC] @scala.scalajs.js.annotation.JSBracketAccess def apply(index: Int): Attr
 NamedNodeMap[JC] def getNamedItem(name: String): Attr
 NamedNodeMap[JC] def getNamedItemNS(namespaceURI: String, localName: String): Attr
