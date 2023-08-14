@@ -4,15 +4,15 @@ import scala.scalajs.js
 
 trait IntersectionObserverEntryInit extends js.Object {
 
-  var boundingClientRect: DOMRect
+  var boundingClientRect: DOMRectInit
 
   var intersectionRatio: Double
 
-  var intersectionRect: DOMRect
+  var intersectionRect: DOMRectInit
 
   var isIntersecting: Boolean
 
-  var rootBounds: DOMRect
+  var rootBounds: DOMRectInit
 
   var target: Element
 
