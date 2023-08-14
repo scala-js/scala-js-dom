@@ -1502,6 +1502,10 @@ DOMRect[JC] def x: Double
 DOMRect[JC] def x_ = (x: Double): Unit
 DOMRect[JC] def y: Double
 DOMRect[JC] def y_ = (y: Double): Unit
+DOMRectInit[JT] var height: js.UndefOr[Double]
+DOMRectInit[JT] var width: js.UndefOr[Double]
+DOMRectInit[JT] var x: js.UndefOr[Double]
+DOMRectInit[JT] var y: js.UndefOr[Double]
 DOMRectList[JC] @JSBracketAccess def apply(index: Int): T
 DOMRectList[JC] def length: Int
 DOMRectReadOnly[JT] def bottom: Double
@@ -15536,7 +15540,7 @@ IntersectionObserver[JC] def observe(target: Element): Unit
 IntersectionObserver[JC] def root: Document | Element
 IntersectionObserver[JC] def rootMargin: String
 IntersectionObserver[JC] def takeRecords(): js.Array[IntersectionObserverEntry]
-IntersectionObserver[JC] def thresholds: js.Array[Double]
+IntersectionObserver[JC] def thresholds: FrozenArray[Double]
 IntersectionObserver[JC] def unobserve(target: Element): Unit
 IntersectionObserverEntry[JC] def boundingClientRect: DOMRectReadOnly
 IntersectionObserverEntry[JC] def intersectionRatio: Double
@@ -15545,11 +15549,11 @@ IntersectionObserverEntry[JC] def isIntersecting: Boolean
 IntersectionObserverEntry[JC] def rootBounds: DOMRectReadOnly
 IntersectionObserverEntry[JC] def target: Element
 IntersectionObserverEntry[JC] def time: Double
-IntersectionObserverEntryInit[JT] var boundingClientRect: DOMRect
+IntersectionObserverEntryInit[JT] var boundingClientRect: DOMRectInit
 IntersectionObserverEntryInit[JT] var intersectionRatio: Double
-IntersectionObserverEntryInit[JT] var intersectionRect: DOMRect
+IntersectionObserverEntryInit[JT] var intersectionRect: DOMRectInit
 IntersectionObserverEntryInit[JT] var isIntersecting: Boolean
-IntersectionObserverEntryInit[JT] var rootBounds: DOMRect
+IntersectionObserverEntryInit[JT] var rootBounds: DOMRectInit
 IntersectionObserverEntryInit[JT] var target: Element
 IntersectionObserverEntryInit[JT] var time: Double
 IntersectionObserverInit[JT] var root: js.UndefOr[Document | Element]
