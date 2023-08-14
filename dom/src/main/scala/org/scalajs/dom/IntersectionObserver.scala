@@ -30,7 +30,7 @@ class IntersectionObserver(
     * bounding box area of an observed target. Notifications for a target are generated when any of the thresholds are
     * crossed for that target. If no value was passed to the constructor, 0 is used.
     */
-  def thresholds: js.Array[Double] = js.native
+  def thresholds: FrozenArray[Double] = js.native
 
   /** Stops the IntersectionObserver object from observing any target. */
   def disconnect(): Unit = js.native
