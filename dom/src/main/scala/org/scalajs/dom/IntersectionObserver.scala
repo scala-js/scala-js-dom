@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 @JSGlobal
 class IntersectionObserver(
     callback: js.Function2[js.Array[IntersectionObserverEntry], IntersectionObserver, Unit],
-    init: IntersectionObserverInit
+    options: IntersectionObserverInit = js.native
 ) extends js.Object {
 
   /** The Element or Document whose bounds are used as the bounding box when testing for intersection. If no root value
