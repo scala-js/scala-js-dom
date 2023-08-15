@@ -1502,6 +1502,10 @@ DOMRect[JC] def x: Double
 DOMRect[JC] def x_ = (x: Double): Unit
 DOMRect[JC] def y: Double
 DOMRect[JC] def y_ = (y: Double): Unit
+DOMRectInit[JT] var height: js.UndefOr[Double]
+DOMRectInit[JT] var width: js.UndefOr[Double]
+DOMRectInit[JT] var x: js.UndefOr[Double]
+DOMRectInit[JT] var y: js.UndefOr[Double]
 DOMRectList[JC] @JSBracketAccess def apply(index: Int): T
 DOMRectList[JC] def length: Int
 DOMRectReadOnly[JT] def bottom: Double
@@ -15531,6 +15535,30 @@ InputType[SO] val insertReplacementText: InputType
 InputType[SO] val insertText: InputType
 InputType[SO] val insertTranspose: InputType
 InputType[SO] val insertUnorderedList: InputType
+IntersectionObserver[JC] def disconnect(): Unit
+IntersectionObserver[JC] def observe(target: Element): Unit
+IntersectionObserver[JC] def root: Document | Element
+IntersectionObserver[JC] def rootMargin: String
+IntersectionObserver[JC] def takeRecords(): js.Array[IntersectionObserverEntry]
+IntersectionObserver[JC] def thresholds: FrozenArray[Double]
+IntersectionObserver[JC] def unobserve(target: Element): Unit
+IntersectionObserverEntry[JC] def boundingClientRect: DOMRectReadOnly
+IntersectionObserverEntry[JC] def intersectionRatio: Double
+IntersectionObserverEntry[JC] def intersectionRect: DOMRectReadOnly
+IntersectionObserverEntry[JC] def isIntersecting: Boolean
+IntersectionObserverEntry[JC] def rootBounds: DOMRectReadOnly
+IntersectionObserverEntry[JC] def target: Element
+IntersectionObserverEntry[JC] def time: Double
+IntersectionObserverEntryInit[JT] var boundingClientRect: DOMRectInit
+IntersectionObserverEntryInit[JT] var intersectionRatio: Double
+IntersectionObserverEntryInit[JT] var intersectionRect: DOMRectInit
+IntersectionObserverEntryInit[JT] var isIntersecting: Boolean
+IntersectionObserverEntryInit[JT] var rootBounds: DOMRectInit
+IntersectionObserverEntryInit[JT] var target: Element
+IntersectionObserverEntryInit[JT] var time: Double
+IntersectionObserverInit[JT] var root: js.UndefOr[Document | Element]
+IntersectionObserverInit[JT] var rootMargin: js.UndefOr[String]
+IntersectionObserverInit[JT] var threshold: js.UndefOr[Double | js.Array[Double]]
 JsonWebKey[JT] var alg: js.Array[String]
 JsonWebKey[JT] var crv: String
 JsonWebKey[JT] var d: String
