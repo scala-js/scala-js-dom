@@ -16477,13 +16477,20 @@ Navigator[JC] def mediaDevices: MediaDevices
 Navigator[JC] def onLine: Boolean
 Navigator[JC] val permissions: Permissions
 Navigator[JC] def platform: String
+Navigator[JC] def registerProtocolHandler(scheme: String, url: String): Unit
+Navigator[JC] def registerProtocolHandler(scheme: String, url: URL): Unit
 Navigator[JC] def sendBeacon(url: String, data: BodyInit?): Boolean
 Navigator[JC] val serviceWorker: ServiceWorkerContainer
 Navigator[JC] def storage: StorageManager
+Navigator[JC] def unregisterProtocolHandler(scheme: String, url: String): Unit
+Navigator[JC] def unregisterProtocolHandler(scheme: String, url: URL): Unit
 Navigator[JC] def userAgent: String
 Navigator[JC] def vibrate(duration: Double): Boolean
 Navigator[JC] def vibrate(pattern: js.Array[Double]): Boolean
-NavigatorContentUtils[JT]
+NavigatorContentUtils[JT] def registerProtocolHandler(scheme: String, url: String): Unit
+NavigatorContentUtils[JT] def registerProtocolHandler(scheme: String, url: URL): Unit
+NavigatorContentUtils[JT] def unregisterProtocolHandler(scheme: String, url: String): Unit
+NavigatorContentUtils[JT] def unregisterProtocolHandler(scheme: String, url: URL): Unit
 NavigatorGeolocation[JT] def geolocation: Geolocation
 NavigatorID[JT] def appName: String
 NavigatorID[JT] def appVersion: String
