@@ -14,9 +14,11 @@ import sbtbuildinfo.BuildInfoPlugin
 import sbtbuildinfo.BuildInfoPlugin.autoImport._
 import scalafix.sbt.ScalafixPlugin
 import scalafix.sbt.ScalafixPlugin.autoImport._
-import scalatex.ScalatexReadme
 import Dependencies._
 import Lib._
+import mdoc.MdocPlugin
+import sbtdynver.DynVerPlugin.autoImport.previousStableVersion
+import mdoc.MdocPlugin.autoImport._
 
 object Build {
 
@@ -37,7 +39,6 @@ object Build {
       testsFirefox,
       testsNodeJsdom,
       example,
-      // readme, // This is a Scala 2.12 only module
     )
 
   lazy val dom = project
@@ -141,18 +142,20 @@ object Build {
     .enablePlugins(ScalaJSPlugin)
     .configure(commonSettings, crossScala, preventPublication)
 
-  lazy val readme =
-    ScalatexReadme(
-      projectId     = "readme",
-      wd            = file(""),
-      url           = "https://github.com/scala-js/scala-js-dom/tree/main",
-      source        = "Index",
-      autoResources = Seq("example-opt.js"),
-    )
-    .configure(commonSettings, preventPublication)
-    .settings(
-      scalaVersion := Ver.scala212,
-      Compile / resources += (example / Compile / fullOptJS).value.data,
-    )
+  lazy val jsdocs = project
+    .in(file("mdocs-js"))
+    .dependsOn(dom)
+    .enablePlugins(ScalaJSPlugin)
+    .configure(commonSettings, crossScala, preventPublication)
 
+  lazy val docs = project
+    .in(file("mdocs"))
+    .settings(
+      mdocJS := Some(jsdocs),
+      mdocVariables := Map(
+        "VERSION" -> previousStableVersion.value.getOrElse("2.3.0")
+      )
+    )
+    .enablePlugins(MdocPlugin)
+    .configure(commonSettings, crossScala, preventPublication)
 }
