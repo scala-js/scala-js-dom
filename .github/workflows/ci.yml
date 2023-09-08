@@ -16,7 +16,7 @@ jobs:
         scalaversion: ["2.11.12", "2.12.15", "2.13.6", "3.1.3"]
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Scala
         uses: japgolly/setup-everything-scala@v3.1
@@ -34,7 +34,7 @@ jobs:
   readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: japgolly/setup-everything-scala@v3.1
       - name: Readme generation
         run: sbt readme/run
