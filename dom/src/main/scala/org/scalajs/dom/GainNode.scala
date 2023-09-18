@@ -6,7 +6,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The GainNode interface represents a change in volume. It is an AudioNode audio-processing module that causes a given
   * gain to be applied to the input data before its propagation to the output. A GainNode always has exactly one input
@@ -24,10 +23,15 @@ import scala.scalajs.js.annotation._
   *   - Channel count: 2 (not used in the default count mode)
   *   - Channel interpretation: "speakers"
   */
-@JSGlobal
 @js.native
-class GainNode(context: BaseAudioContext, options: GainNodeOptions = js.native) extends AudioNode {
+trait GainNode extends AudioNode {
 
   /** Is an a-rate AudioParam representing the amount of gain to apply. */
   val gain: AudioParam = js.native
+}
+
+object GainNode {
+
+  def apply(context: BaseAudioContext, options: js.UndefOr[GainNodeOptions] = js.undefined): GainNode =
+    js.Dynamic.newInstance(js.Dynamic.global.GainNode)(context, options).asInstanceOf[GainNode]
 }

@@ -6,7 +6,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The OscillatorNode interface represents a periodic waveform, like a sine wave. It is an AudioNode audio-processing
   * module that causes a given frequency of sine wave to be created — in effect, a constant tone.
@@ -20,9 +19,8 @@ import scala.scalajs.js.annotation._
   *   - Channel count: 2 (not used in the default count mode)
   *   - Channel interpretation: speakers
   */
-@JSGlobal
 @js.native
-class OscillatorNode(context: BaseAudioContext, options: OscillatorNodeOptions = js.native)
+trait OscillatorNode
     extends AudioScheduledSourceNode {
 
   /** An a-rate AudioParam representing the frequency of oscillation in hertz (though the AudioParam returned is
@@ -44,4 +42,9 @@ class OscillatorNode(context: BaseAudioContext, options: OscillatorNodeOptions =
     * This replaces the now-obsolete OscillatorNode.setWaveTable.
     */
   def setPeriodicWave(wave: PeriodicWave): Unit = js.native
+}
+
+object OscillatorNode {
+  def apply(context: BaseAudioContext, options: js.UndefOr[OscillatorNodeOptions] = js.undefined): GainNode =
+    js.Dynamic.newInstance(js.Dynamic.global.GainNode)(context, options).asInstanceOf[GainNode]
 }
