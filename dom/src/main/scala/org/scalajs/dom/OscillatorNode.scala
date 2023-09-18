@@ -45,6 +45,6 @@ trait OscillatorNode
 }
 
 object OscillatorNode {
-  def apply(context: BaseAudioContext, options: js.UndefOr[OscillatorNodeOptions] = js.undefined): GainNode =
-    js.Dynamic.newInstance(js.Dynamic.global.GainNode)(context, options).asInstanceOf[GainNode]
+  def apply(context: BaseAudioContext, options: js.UndefOr[OscillatorNodeOptions] = js.undefined): OscillatorNode =
+    js.Dynamic.newInstance(js.Dynamic.global.OscillatorNode)(context, options).asInstanceOf[OscillatorNode]
 }
