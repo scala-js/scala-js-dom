@@ -612,6 +612,16 @@ Body[JT] def bodyUsed: Boolean
 Body[JT] def formData(): js.Promise[FormData]
 Body[JT] def json(): js.Promise[js.Any]
 Body[JT] def text(): js.Promise[String]
+BroadcastChannel[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+BroadcastChannel[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+BroadcastChannel[JC] def close(): Unit
+BroadcastChannel[JC] def dispatchEvent(evt: Event): Boolean
+BroadcastChannel[JC] def name: String
+BroadcastChannel[JC] var onmessage: js.Function1[MessageEvent, _]
+BroadcastChannel[JC] var onmessageerror: js.Function1[MessageEvent, _]
+BroadcastChannel[JC] def postMessage(message: Any): Unit
+BroadcastChannel[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+BroadcastChannel[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 CDATASection[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 CDATASection[JC] def appendChild(newChild: Node): Node
