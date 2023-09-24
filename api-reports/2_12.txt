@@ -81,8 +81,8 @@ Algorithm[JT] val name: String
 AnalyserNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AnalyserNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AnalyserNode[JT] var channelCount: Int
-AnalyserNode[JT] var channelCountMode: Int
-AnalyserNode[JT] var channelInterpretation: String
+AnalyserNode[JT] var channelCountMode: AudioNodeChannelCountMode
+AnalyserNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 AnalyserNode[JT] def connect(audioNode: AudioNode): Unit
 AnalyserNode[JT] def connect(audioParam: AudioParam): Unit
 AnalyserNode[JT] val context: AudioContext
@@ -425,8 +425,8 @@ AudioBufferSourceNode[JT] def addEventListener[T <: Event](`type`: String, liste
 AudioBufferSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioBufferSourceNode[JT] var buffer: AudioBuffer
 AudioBufferSourceNode[JT] var channelCount: Int
-AudioBufferSourceNode[JT] var channelCountMode: Int
-AudioBufferSourceNode[JT] var channelInterpretation: String
+AudioBufferSourceNode[JT] var channelCountMode: AudioNodeChannelCountMode
+AudioBufferSourceNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 AudioBufferSourceNode[JT] def connect(audioNode: AudioNode): Unit
 AudioBufferSourceNode[JT] def connect(audioParam: AudioParam): Unit
 AudioBufferSourceNode[JT] val context: AudioContext
@@ -441,10 +441,25 @@ AudioBufferSourceNode[JT] var onended: js.Function1[Event, _]
 AudioBufferSourceNode[JT] val playbackRate: AudioParam
 AudioBufferSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioBufferSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-AudioBufferSourceNode[JT] def start(when: Double?, offset: Double?, duration: Double?): Unit
-AudioBufferSourceNode[JT] def stop(when: Double?): Unit
+AudioBufferSourceNode[JT] def start(): Unit
+AudioBufferSourceNode[JT] def start(when: Double): Unit
+AudioBufferSourceNode[JT] def start(when: Double, offset: Double): Unit
+AudioBufferSourceNode[JT] def start(when: Double, offset: Double, duration: Double): Unit
+AudioBufferSourceNode[JT] def stop(): Unit
+AudioBufferSourceNode[JT] def stop(when: Double): Unit
+AudioBufferSourceNode[SO] def apply(context: BaseAudioContext, options: js.UndefOr[AudioBufferSourceNodeOptions]?): AudioBufferSourceNode
+AudioBufferSourceNodeOptions[JT] var buffer: js.UndefOr[AudioBuffer]
+AudioBufferSourceNodeOptions[JT] var channelCount: js.UndefOr[Int]
+AudioBufferSourceNodeOptions[JT] var channelCountMode: js.UndefOr[AudioNodeChannelCountMode]
+AudioBufferSourceNodeOptions[JT] var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation]
+AudioBufferSourceNodeOptions[JT] var detune: js.UndefOr[Double]
+AudioBufferSourceNodeOptions[JT] var loop: js.UndefOr[Boolean]
+AudioBufferSourceNodeOptions[JT] var loopEnd: js.UndefOr[Double]
+AudioBufferSourceNodeOptions[JT] var loopStart: js.UndefOr[Double]
+AudioBufferSourceNodeOptions[JT] var playbackRate: js.UndefOr[Double]
 AudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioContext[JC] def baseLatency: Double
 AudioContext[JC] def close(): js.Promise[Unit]
 AudioContext[JC] def createAnalyser(): AnalyserNode
 AudioContext[JC] def createBiquadFilter(): BiquadFilterNode
@@ -468,7 +483,9 @@ AudioContext[JC] def currentTime: Double
 AudioContext[JC] def decodeAudioData(audioData: js.typedarray.ArrayBuffer, successCallback: js.Function1[AudioBuffer, _]?, errorCallback: js.Function0[_]?): js.Promise[AudioBuffer]
 AudioContext[JC] val destination: AudioDestinationNode
 AudioContext[JC] def dispatchEvent(evt: Event): Boolean
+AudioContext[JC] def getOutputTimestamp: AudioTimestamp
 AudioContext[JC] val listener: AudioListener
+AudioContext[JC] def outputLatency: Double
 AudioContext[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioContext[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioContext[JC] def resume(): js.Promise[Unit]
@@ -478,8 +495,8 @@ AudioContext[JC] def suspend(): js.Promise[Unit]
 AudioDestinationNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioDestinationNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioDestinationNode[JT] var channelCount: Int
-AudioDestinationNode[JT] var channelCountMode: Int
-AudioDestinationNode[JT] var channelInterpretation: String
+AudioDestinationNode[JT] var channelCountMode: AudioNodeChannelCountMode
+AudioDestinationNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 AudioDestinationNode[JT] def connect(audioNode: AudioNode): Unit
 AudioDestinationNode[JT] def connect(audioParam: AudioParam): Unit
 AudioDestinationNode[JT] val context: AudioContext
@@ -493,8 +510,8 @@ AudioDestinationNode[JT] def removeEventListener[T <: Event](`type`: String, lis
 AudioListener[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioListener[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioListener[JT] var channelCount: Int
-AudioListener[JT] var channelCountMode: Int
-AudioListener[JT] var channelInterpretation: String
+AudioListener[JT] var channelCountMode: AudioNodeChannelCountMode
+AudioListener[JT] var channelInterpretation: AudioNodeChannelInterpretation
 AudioListener[JT] def connect(audioNode: AudioNode): Unit
 AudioListener[JT] def connect(audioParam: AudioParam): Unit
 AudioListener[JT] val context: AudioContext
@@ -511,8 +528,8 @@ AudioListener[JT] var speedOfSound: Double
 AudioNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioNode[JT] var channelCount: Int
-AudioNode[JT] var channelCountMode: Int
-AudioNode[JT] var channelInterpretation: String
+AudioNode[JT] var channelCountMode: AudioNodeChannelCountMode
+AudioNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 AudioNode[JT] def connect(audioNode: AudioNode): Unit
 AudioNode[JT] def connect(audioParam: AudioParam): Unit
 AudioNode[JT] val context: AudioContext
@@ -522,12 +539,19 @@ AudioNode[JT] val numberOfInputs: Int
 AudioNode[JT] val numberOfOutputs: Int
 AudioNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioNodeChannelCountMode[JT]
+AudioNodeChannelCountMode[SO] val `clamped-max`: AudioNodeChannelCountMode
+AudioNodeChannelCountMode[SO] val explicit: AudioNodeChannelCountMode
+AudioNodeChannelCountMode[SO] val max: AudioNodeChannelCountMode
+AudioNodeChannelInterpretation[JT]
+AudioNodeChannelInterpretation[SO] val discrete: AudioNodeChannelInterpretation
+AudioNodeChannelInterpretation[SO] val speakers: AudioNodeChannelInterpretation
 AudioParam[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioParam[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioParam[JT] def cancelScheduledValues(startTime: Double): Unit
 AudioParam[JT] var channelCount: Int
-AudioParam[JT] var channelCountMode: Int
-AudioParam[JT] var channelInterpretation: String
+AudioParam[JT] var channelCountMode: AudioNodeChannelCountMode
+AudioParam[JT] var channelInterpretation: AudioNodeChannelInterpretation
 AudioParam[JT] def connect(audioNode: AudioNode): Unit
 AudioParam[JT] def connect(audioParam: AudioParam): Unit
 AudioParam[JT] val context: AudioContext
@@ -536,6 +560,8 @@ AudioParam[JT] def disconnect(output: AudioNode?): Unit
 AudioParam[JT] def dispatchEvent(evt: Event): Boolean
 AudioParam[JT] def exponentialRampToValueAtTime(value: Double, endTime: Double): Unit
 AudioParam[JT] def linearRampToValueAtTime(value: Double, endTime: Double): Unit
+AudioParam[JT] val maxValue: Double
+AudioParam[JT] val minValue: Double
 AudioParam[JT] val numberOfInputs: Int
 AudioParam[JT] val numberOfOutputs: Int
 AudioParam[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
@@ -544,6 +570,27 @@ AudioParam[JT] def setTargetAtTime(target: Double, startTime: Double, timeConsta
 AudioParam[JT] def setValueAtTime(value: Double, startTime: Double): Unit
 AudioParam[JT] def setValueCurveAtTime(values: js.typedarray.Float32Array, startTime: Double, duration: Double): Unit
 AudioParam[JT] var value: Double
+AudioScheduledSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+AudioScheduledSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioScheduledSourceNode[JT] var channelCount: Int
+AudioScheduledSourceNode[JT] var channelCountMode: AudioNodeChannelCountMode
+AudioScheduledSourceNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
+AudioScheduledSourceNode[JT] def connect(audioNode: AudioNode): Unit
+AudioScheduledSourceNode[JT] def connect(audioParam: AudioParam): Unit
+AudioScheduledSourceNode[JT] val context: AudioContext
+AudioScheduledSourceNode[JT] def disconnect(output: AudioNode?): Unit
+AudioScheduledSourceNode[JT] def dispatchEvent(evt: Event): Boolean
+AudioScheduledSourceNode[JT] val numberOfInputs: Int
+AudioScheduledSourceNode[JT] val numberOfOutputs: Int
+AudioScheduledSourceNode[JT] var onended: js.Function1[Event, _]
+AudioScheduledSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+AudioScheduledSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioScheduledSourceNode[JT] def start(): Unit
+AudioScheduledSourceNode[JT] def start(when: Double): Unit
+AudioScheduledSourceNode[JT] def stop(): Unit
+AudioScheduledSourceNode[JT] def stop(when: Double): Unit
+AudioTimestamp[JT] var contextTime: Double
+AudioTimestamp[JT] var performanceTime: Double
 AudioTrack[JT] var enabled: Boolean
 AudioTrack[JT] val id: String
 AudioTrack[JT] val kind: String
@@ -560,6 +607,32 @@ AudioTrackList[JT] var onchange: js.Function1[Event, Any]
 AudioTrackList[JT] var onremovetrack: js.Function1[TrackEvent, Any]
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+BaseAudioContext[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+BaseAudioContext[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+BaseAudioContext[JT] def createAnalyser(): AnalyserNode
+BaseAudioContext[JT] def createBiquadFilter(): BiquadFilterNode
+BaseAudioContext[JT] def createBuffer(numOfChannels: Int, length: Int, sampleRate: Int): AudioBuffer
+BaseAudioContext[JT] def createBufferSource(): AudioBufferSourceNode
+BaseAudioContext[JT] def createChannelMerger(numberOfInputs: Int?): ChannelMergerNode
+BaseAudioContext[JT] def createChannelSplitter(numberOfOutputs: Int?): ChannelSplitterNode
+BaseAudioContext[JT] def createConvolver(): ConvolverNode
+BaseAudioContext[JT] def createDelay(maxDelayTime: Int): DelayNode
+BaseAudioContext[JT] def createDynamicsCompressor(): DynamicsCompressorNode
+BaseAudioContext[JT] def createGain(): GainNode
+BaseAudioContext[JT] def createOscillator(): OscillatorNode
+BaseAudioContext[JT] def createPanner(): PannerNode
+BaseAudioContext[JT] def createPeriodicWave(real: js.typedarray.Float32Array, imag: js.typedarray.Float32Array): PeriodicWave
+BaseAudioContext[JT] def createStereoPanner(): StereoPannerNode
+BaseAudioContext[JT] def createWaveShaper(): WaveShaperNode
+BaseAudioContext[JT] def currentTime: Double
+BaseAudioContext[JT] def decodeAudioData(audioData: js.typedarray.ArrayBuffer, successCallback: js.Function1[AudioBuffer, _]?, errorCallback: js.Function0[_]?): js.Promise[AudioBuffer]
+BaseAudioContext[JT] val destination: AudioDestinationNode
+BaseAudioContext[JT] def dispatchEvent(evt: Event): Boolean
+BaseAudioContext[JT] val listener: AudioListener
+BaseAudioContext[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+BaseAudioContext[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+BaseAudioContext[JT] val sampleRate: Double
+BaseAudioContext[JT] def state: String
 BeforeUnloadEvent[JC] def bubbles: Boolean
 BeforeUnloadEvent[JC] def cancelBubble: Boolean
 BeforeUnloadEvent[JC] def cancelable: Boolean
@@ -579,8 +652,8 @@ BiquadFilterNode[JT] val Q: AudioParam
 BiquadFilterNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 BiquadFilterNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 BiquadFilterNode[JT] var channelCount: Int
-BiquadFilterNode[JT] var channelCountMode: Int
-BiquadFilterNode[JT] var channelInterpretation: String
+BiquadFilterNode[JT] var channelCountMode: AudioNodeChannelCountMode
+BiquadFilterNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 BiquadFilterNode[JT] def connect(audioNode: AudioNode): Unit
 BiquadFilterNode[JT] def connect(audioParam: AudioParam): Unit
 BiquadFilterNode[JT] val context: AudioContext
@@ -1138,8 +1211,8 @@ CanvasRenderingContext2D[JC] def translate(x: Double, y: Double): Unit
 ChannelMergerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ChannelMergerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ChannelMergerNode[JT] var channelCount: Int
-ChannelMergerNode[JT] var channelCountMode: Int
-ChannelMergerNode[JT] var channelInterpretation: String
+ChannelMergerNode[JT] var channelCountMode: AudioNodeChannelCountMode
+ChannelMergerNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 ChannelMergerNode[JT] def connect(audioNode: AudioNode): Unit
 ChannelMergerNode[JT] def connect(audioParam: AudioParam): Unit
 ChannelMergerNode[JT] val context: AudioContext
@@ -1152,8 +1225,8 @@ ChannelMergerNode[JT] def removeEventListener[T <: Event](`type`: String, listen
 ChannelSplitterNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ChannelSplitterNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ChannelSplitterNode[JT] var channelCount: Int
-ChannelSplitterNode[JT] var channelCountMode: Int
-ChannelSplitterNode[JT] var channelInterpretation: String
+ChannelSplitterNode[JT] var channelCountMode: AudioNodeChannelCountMode
+ChannelSplitterNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 ChannelSplitterNode[JT] def connect(audioNode: AudioNode): Unit
 ChannelSplitterNode[JT] def connect(audioParam: AudioParam): Unit
 ChannelSplitterNode[JT] val context: AudioContext
@@ -1383,14 +1456,35 @@ Console[JT] def time(label: String): Unit
 Console[JT] def timeEnd(label: String): Unit
 Console[JT] def trace(): Unit
 Console[JT] def warn(message: Any, optionalParams: Any*): Unit
+ConstantSourceNode[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ConstantSourceNode[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ConstantSourceNode[JC] var channelCount: Int
+ConstantSourceNode[JC] var channelCountMode: AudioNodeChannelCountMode
+ConstantSourceNode[JC] var channelInterpretation: AudioNodeChannelInterpretation
+ConstantSourceNode[JC] def connect(audioNode: AudioNode): Unit
+ConstantSourceNode[JC] def connect(audioParam: AudioParam): Unit
+ConstantSourceNode[JC] val context: AudioContext
+ConstantSourceNode[JC] def disconnect(output: AudioNode?): Unit
+ConstantSourceNode[JC] def dispatchEvent(evt: Event): Boolean
+ConstantSourceNode[JC] val numberOfInputs: Int
+ConstantSourceNode[JC] val numberOfOutputs: Int
+ConstantSourceNode[JC] val offset: AudioParam
+ConstantSourceNode[JC] var onended: js.Function1[Event, _]
+ConstantSourceNode[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+ConstantSourceNode[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+ConstantSourceNode[JC] def start(): Unit
+ConstantSourceNode[JC] def start(when: Double): Unit
+ConstantSourceNode[JC] def stop(): Unit
+ConstantSourceNode[JC] def stop(when: Double): Unit
+ConstantSourceNodeOptions[JT] var offset: js.UndefOr[Double]
 ConvertToBlobOptions[JT] var quality: js.UndefOr[Double]
 ConvertToBlobOptions[JT] var `type`: js.UndefOr[String]
 ConvolverNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 ConvolverNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 ConvolverNode[JT] var buffer: AudioBuffer
 ConvolverNode[JT] var channelCount: Int
-ConvolverNode[JT] var channelCountMode: Int
-ConvolverNode[JT] var channelInterpretation: String
+ConvolverNode[JT] var channelCountMode: AudioNodeChannelCountMode
+ConvolverNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 ConvolverNode[JT] def connect(audioNode: AudioNode): Unit
 ConvolverNode[JT] def connect(audioParam: AudioParam): Unit
 ConvolverNode[JT] val context: AudioContext
@@ -1598,8 +1692,8 @@ DedicatedWorkerGlobalScope[JT] def setTimeout(handler: js.Function0[Any], timeou
 DelayNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 DelayNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DelayNode[JT] var channelCount: Int
-DelayNode[JT] var channelCountMode: Int
-DelayNode[JT] var channelInterpretation: String
+DelayNode[JT] var channelCountMode: AudioNodeChannelCountMode
+DelayNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 DelayNode[JT] def connect(audioNode: AudioNode): Unit
 DelayNode[JT] def connect(audioParam: AudioParam): Unit
 DelayNode[JT] val context: AudioContext
@@ -1924,8 +2018,8 @@ DynamicsCompressorNode[JT] def addEventListener[T <: Event](`type`: String, list
 DynamicsCompressorNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 DynamicsCompressorNode[JT] val attack: AudioParam
 DynamicsCompressorNode[JT] var channelCount: Int
-DynamicsCompressorNode[JT] var channelCountMode: Int
-DynamicsCompressorNode[JT] var channelInterpretation: String
+DynamicsCompressorNode[JT] var channelCountMode: AudioNodeChannelCountMode
+DynamicsCompressorNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 DynamicsCompressorNode[JT] def connect(audioNode: AudioNode): Unit
 DynamicsCompressorNode[JT] def connect(audioParam: AudioParam): Unit
 DynamicsCompressorNode[JT] val context: AudioContext
@@ -2299,8 +2393,8 @@ FullscreenOptions[JT] var navigationUI: js.UndefOr[String]
 GainNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 GainNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 GainNode[JT] var channelCount: Int
-GainNode[JT] var channelCountMode: Int
-GainNode[JT] var channelInterpretation: String
+GainNode[JT] var channelCountMode: AudioNodeChannelCountMode
+GainNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 GainNode[JT] def connect(audioNode: AudioNode): Unit
 GainNode[JT] def connect(audioParam: AudioParam): Unit
 GainNode[JT] val context: AudioContext
@@ -2311,6 +2405,11 @@ GainNode[JT] val numberOfInputs: Int
 GainNode[JT] val numberOfOutputs: Int
 GainNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 GainNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+GainNode[SO] def apply(context: BaseAudioContext, options: js.UndefOr[GainNodeOptions]?): GainNode
+GainNodeOptions[JT] var channelCount: js.UndefOr[Int]
+GainNodeOptions[JT] var channelCountMode: js.UndefOr[AudioNodeChannelCountMode]
+GainNodeOptions[JT] var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation]
+GainNodeOptions[JT] var gain: js.UndefOr[Double]
 Gamepad[JT] val axes: js.Array[Double]
 Gamepad[JT] val buttons: js.Array[GamepadButton]
 Gamepad[JT] val connected: Boolean
@@ -16075,17 +16174,23 @@ MediaDevices[JT] def removeEventListener[T <: Event](`type`: String, listener: j
 MediaElementAudioSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaElementAudioSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaElementAudioSourceNode[JT] var channelCount: Int
-MediaElementAudioSourceNode[JT] var channelCountMode: Int
-MediaElementAudioSourceNode[JT] var channelInterpretation: String
+MediaElementAudioSourceNode[JT] var channelCountMode: AudioNodeChannelCountMode
+MediaElementAudioSourceNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 MediaElementAudioSourceNode[JT] def connect(audioNode: AudioNode): Unit
 MediaElementAudioSourceNode[JT] def connect(audioParam: AudioParam): Unit
 MediaElementAudioSourceNode[JT] val context: AudioContext
 MediaElementAudioSourceNode[JT] def disconnect(output: AudioNode?): Unit
 MediaElementAudioSourceNode[JT] def dispatchEvent(evt: Event): Boolean
+MediaElementAudioSourceNode[JT] val mediaElement: HTMLMediaElement
 MediaElementAudioSourceNode[JT] val numberOfInputs: Int
 MediaElementAudioSourceNode[JT] val numberOfOutputs: Int
 MediaElementAudioSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaElementAudioSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaElementAudioSourceNode[SO] def apply(context: BaseAudioContext, options: js.UndefOr[MediaElementAudioSourceNodeOptions]?): MediaElementAudioSourceNode
+MediaElementAudioSourceNodeOptions[JT] var channelCount: js.UndefOr[Int]
+MediaElementAudioSourceNodeOptions[JT] var channelCountMode: js.UndefOr[AudioNodeChannelCountMode]
+MediaElementAudioSourceNodeOptions[JT] var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation]
+MediaElementAudioSourceNodeOptions[JT] var mediaElement: HTMLMediaElement
 MediaError[JC] def code: Int
 MediaError[JO] val MEDIA_ERR_ABORTED: Int
 MediaError[JO] val MEDIA_ERR_DECODE: Int
@@ -16149,8 +16254,8 @@ MediaStream[JC] def removeTrack(track: MediaStreamTrack): Unit
 MediaStreamAudioDestinationNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaStreamAudioDestinationNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaStreamAudioDestinationNode[JT] var channelCount: Int
-MediaStreamAudioDestinationNode[JT] var channelCountMode: Int
-MediaStreamAudioDestinationNode[JT] var channelInterpretation: String
+MediaStreamAudioDestinationNode[JT] var channelCountMode: AudioNodeChannelCountMode
+MediaStreamAudioDestinationNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 MediaStreamAudioDestinationNode[JT] def connect(audioNode: AudioNode): Unit
 MediaStreamAudioDestinationNode[JT] def connect(audioParam: AudioParam): Unit
 MediaStreamAudioDestinationNode[JT] val context: AudioContext
@@ -16164,8 +16269,8 @@ MediaStreamAudioDestinationNode[JT] var stream: MediaStream
 MediaStreamAudioSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaStreamAudioSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaStreamAudioSourceNode[JT] var channelCount: Int
-MediaStreamAudioSourceNode[JT] var channelCountMode: Int
-MediaStreamAudioSourceNode[JT] var channelInterpretation: String
+MediaStreamAudioSourceNode[JT] var channelCountMode: AudioNodeChannelCountMode
+MediaStreamAudioSourceNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 MediaStreamAudioSourceNode[JT] def connect(audioNode: AudioNode): Unit
 MediaStreamAudioSourceNode[JT] def connect(audioParam: AudioParam): Unit
 MediaStreamAudioSourceNode[JT] val context: AudioContext
@@ -16577,7 +16682,6 @@ OfflineAudioCompletionEvent[JT] def timeStamp: Double
 OfflineAudioCompletionEvent[JT] def `type`: String
 OfflineAudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 OfflineAudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-OfflineAudioContext[JC] def close(): js.Promise[Unit]
 OfflineAudioContext[JC] def createAnalyser(): AnalyserNode
 OfflineAudioContext[JC] def createBiquadFilter(): BiquadFilterNode
 OfflineAudioContext[JC] def createBuffer(numOfChannels: Int, length: Int, sampleRate: Int): AudioBuffer
@@ -16588,9 +16692,6 @@ OfflineAudioContext[JC] def createConvolver(): ConvolverNode
 OfflineAudioContext[JC] def createDelay(maxDelayTime: Int): DelayNode
 OfflineAudioContext[JC] def createDynamicsCompressor(): DynamicsCompressorNode
 OfflineAudioContext[JC] def createGain(): GainNode
-OfflineAudioContext[JC] def createMediaElementSource(myMediaElement: HTMLMediaElement): MediaElementAudioSourceNode
-OfflineAudioContext[JC] def createMediaStreamDestination(): MediaStreamAudioDestinationNode
-OfflineAudioContext[JC] def createMediaStreamSource(stream: MediaStream): MediaStreamAudioSourceNode
 OfflineAudioContext[JC] def createOscillator(): OscillatorNode
 OfflineAudioContext[JC] def createPanner(): PannerNode
 OfflineAudioContext[JC] def createPeriodicWave(real: js.typedarray.Float32Array, imag: js.typedarray.Float32Array): PeriodicWave
@@ -16603,11 +16704,10 @@ OfflineAudioContext[JC] def dispatchEvent(evt: Event): Boolean
 OfflineAudioContext[JC] val listener: AudioListener
 OfflineAudioContext[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 OfflineAudioContext[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-OfflineAudioContext[JC] def resume(): js.Promise[Unit]
 OfflineAudioContext[JC] val sampleRate: Double
 OfflineAudioContext[JC] def startRendering(): js.Promise[AudioBuffer]
 OfflineAudioContext[JC] def state: String
-OfflineAudioContext[JC] def suspend(): js.Promise[Unit]
+OfflineAudioContext[JC] def suspend(suspendTime: Double): js.Promise[Unit]
 OffscreenCanvas[JC] def convertToBlob(options: ConvertToBlobOptions?): js.Promise[Blob]
 OffscreenCanvas[JC] def getContext(contextType: String): js.Dynamic
 OffscreenCanvas[JC] def getContext(contextType: String, contextAttributes: TwoDContextAttributes): js.Dynamic
@@ -16616,8 +16716,8 @@ OffscreenCanvas[JC] def transferToImageBitmap(): ImageBitmap
 OscillatorNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 OscillatorNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 OscillatorNode[JT] var channelCount: Int
-OscillatorNode[JT] var channelCountMode: Int
-OscillatorNode[JT] var channelInterpretation: String
+OscillatorNode[JT] var channelCountMode: AudioNodeChannelCountMode
+OscillatorNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 OscillatorNode[JT] def connect(audioNode: AudioNode): Unit
 OscillatorNode[JT] def connect(audioParam: AudioParam): Unit
 OscillatorNode[JT] val context: AudioContext
@@ -16631,9 +16731,25 @@ OscillatorNode[JT] var onended: js.Function1[Event, _]
 OscillatorNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 OscillatorNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 OscillatorNode[JT] def setPeriodicWave(wave: PeriodicWave): Unit
-OscillatorNode[JT] def start(when: Double?): Unit
-OscillatorNode[JT] def stop(when: Double?): Unit
-OscillatorNode[JT] var `type`: String
+OscillatorNode[JT] def start(): Unit
+OscillatorNode[JT] def start(when: Double): Unit
+OscillatorNode[JT] def stop(): Unit
+OscillatorNode[JT] def stop(when: Double): Unit
+OscillatorNode[JT] var `type`: OscillatorNodeType
+OscillatorNode[SO] def apply(context: BaseAudioContext, options: js.UndefOr[OscillatorNodeOptions]?): OscillatorNode
+OscillatorNodeOptions[JT] var channelCount: js.UndefOr[Int]
+OscillatorNodeOptions[JT] var channelCountMode: js.UndefOr[AudioNodeChannelCountMode]
+OscillatorNodeOptions[JT] var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation]
+OscillatorNodeOptions[JT] var detune: js.UndefOr[Double]
+OscillatorNodeOptions[JT] var frequency: js.UndefOr[Double]
+OscillatorNodeOptions[JT] var periodicWave: js.UndefOr[PeriodicWave]
+OscillatorNodeOptions[JT] var `type`: js.UndefOr[OscillatorNodeType]
+OscillatorNodeType[JT]
+OscillatorNodeType[SO] val custom: OscillatorNodeType
+OscillatorNodeType[SO] val sawtooth: OscillatorNodeType
+OscillatorNodeType[SO] val sine: OscillatorNodeType
+OscillatorNodeType[SO] val square: OscillatorNodeType
+OscillatorNodeType[SO] val triangle: OscillatorNodeType
 PageTransitionEvent[JT] def bubbles: Boolean
 PageTransitionEvent[JT] def cancelBubble: Boolean
 PageTransitionEvent[JT] def cancelable: Boolean
@@ -16655,8 +16771,8 @@ PageVisibility[JT] var visibilitychange: js.Function1[Event, _]
 PannerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 PannerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 PannerNode[JT] var channelCount: Int
-PannerNode[JT] var channelCountMode: Int
-PannerNode[JT] var channelInterpretation: String
+PannerNode[JT] var channelCountMode: AudioNodeChannelCountMode
+PannerNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 PannerNode[JT] var coneInnerAngle: Double
 PannerNode[JT] var coneOuterAngle: Double
 PannerNode[JT] var coneOuterGain: Double
@@ -25823,8 +25939,8 @@ StaticRangeInit[JT] val startOffset: Int
 StereoPannerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 StereoPannerNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 StereoPannerNode[JT] var channelCount: Int
-StereoPannerNode[JT] var channelCountMode: Int
-StereoPannerNode[JT] var channelInterpretation: String
+StereoPannerNode[JT] var channelCountMode: AudioNodeChannelCountMode
+StereoPannerNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 StereoPannerNode[JT] def connect(audioNode: AudioNode): Unit
 StereoPannerNode[JT] def connect(audioParam: AudioParam): Unit
 StereoPannerNode[JT] val context: AudioContext
@@ -26230,8 +26346,8 @@ VisibilityState[SO] val visible: VisibilityState
 WaveShaperNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 WaveShaperNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 WaveShaperNode[JT] var channelCount: Int
-WaveShaperNode[JT] var channelCountMode: Int
-WaveShaperNode[JT] var channelInterpretation: String
+WaveShaperNode[JT] var channelCountMode: AudioNodeChannelCountMode
+WaveShaperNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
 WaveShaperNode[JT] def connect(audioNode: AudioNode): Unit
 WaveShaperNode[JT] def connect(audioParam: AudioParam): Unit
 WaveShaperNode[JT] val context: AudioContext
