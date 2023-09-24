@@ -32,6 +32,9 @@ trait GainNode extends AudioNode {
 
 object GainNode {
 
-  def apply(context: BaseAudioContext, options: js.UndefOr[GainNodeOptions] = js.undefined): GainNode =
+  import js.`|`.undefOr2jsAny
+
+  def apply(context: BaseAudioContext, options: js.UndefOr[GainNodeOptions] = js.undefined): GainNode = {
     js.Dynamic.newInstance(js.Dynamic.global.GainNode)(context, options).asInstanceOf[GainNode]
+  }
 }

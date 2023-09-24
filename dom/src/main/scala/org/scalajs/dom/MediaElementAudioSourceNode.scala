@@ -6,7 +6,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** The MediaElementAudioSourceNode interface represents an audio source consisting of an HTML5 &lt;audio&gt; or
   * &lt;video&gt; element. It is an AudioNode that acts as an audio source.
@@ -21,9 +20,19 @@ import scala.scalajs.js.annotation._
   *   - Channel count: defined by the media in the HTMLMediaElement passed to the AudioContext.createMediaElementSource
   *     method that created it.
   */
-@JSGlobal
 @js.native
-class MediaElementAudioSourceNode(context: BaseAudioContext, options: MediaElementAudioSourceNodeOptions)
-    extends AudioNode {
+trait MediaElementAudioSourceNode extends AudioNode {
   val mediaElement: HTMLMediaElement = js.native
+}
+
+object MediaElementAudioSourceNode {
+
+  import js.`|`.undefOr2jsAny
+
+  def apply(context: BaseAudioContext,
+      options: js.UndefOr[MediaElementAudioSourceNodeOptions] = js.undefined): MediaElementAudioSourceNode = {
+    js.Dynamic
+      .newInstance(js.Dynamic.global.MediaElementAudioSourceNode)(context, options)
+      .asInstanceOf[MediaElementAudioSourceNode]
+  }
 }

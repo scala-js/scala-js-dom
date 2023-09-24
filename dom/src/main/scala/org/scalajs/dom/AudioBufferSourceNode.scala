@@ -6,7 +6,6 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
 /** AudioBufferSourceNode has no input and exactly one output. The number of channels in the output corresponds to the
   * number of channels of the AudioBuffer that is set to the AudioBufferSourceNode.buffer property. If there is no
@@ -24,10 +23,8 @@ import scala.scalajs.js.annotation._
   *   - Number of outputs: 1
   *   - Channel count: defined by the associated AudioBuffer
   */
-@JSGlobal
 @js.native
-class AudioBufferSourceNode(context: BaseAudioContext, options: AudioBufferSourceNodeOptions = js.native)
-    extends AudioScheduledSourceNode {
+trait AudioBufferSourceNode extends AudioScheduledSourceNode {
 
   /** Is an AudioBuffer that defines the audio asset to be played, or when set to the value null, defines a single
     * channel of silence.
@@ -70,4 +67,16 @@ class AudioBufferSourceNode(context: BaseAudioContext, options: AudioBufferSourc
 
   def start(when: Double, offset: Double): Unit = js.native
 
+}
+
+object AudioBufferSourceNode {
+
+  import js.`|`.undefOr2jsAny
+
+  def apply(context: BaseAudioContext,
+      options: js.UndefOr[AudioBufferSourceNodeOptions] = js.undefined): AudioBufferSourceNode = {
+    js.Dynamic
+      .newInstance(js.Dynamic.global.AudioBufferSourceNode)(context, options)
+      .asInstanceOf[AudioBufferSourceNode]
+  }
 }

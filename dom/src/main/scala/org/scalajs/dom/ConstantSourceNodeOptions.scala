@@ -6,14 +6,7 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
-@JSGlobal
-@js.native
-class ConstantSourceNode(context: BaseAudioContext, options: ConstantSourceNodeOptions = js.native)
-    extends AudioScheduledSourceNode {
-
-  // TODO
-  val offset: AudioParam = js.native
-
+trait ConstantSourceNodeOptions extends js.Object {
+  var offset: js.UndefOr[Double] = js.undefined
 }

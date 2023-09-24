@@ -20,8 +20,7 @@ import scala.scalajs.js
   *   - Channel interpretation: speakers
   */
 @js.native
-trait OscillatorNode
-    extends AudioScheduledSourceNode {
+trait OscillatorNode extends AudioScheduledSourceNode {
 
   /** An a-rate AudioParam representing the frequency of oscillation in hertz (though the AudioParam returned is
     * read-only, the value it represents is not.)
@@ -45,6 +44,9 @@ trait OscillatorNode
 }
 
 object OscillatorNode {
+
+  import js.`|`.undefOr2jsAny
+
   def apply(context: BaseAudioContext, options: js.UndefOr[OscillatorNodeOptions] = js.undefined): OscillatorNode =
     js.Dynamic.newInstance(js.Dynamic.global.OscillatorNode)(context, options).asInstanceOf[OscillatorNode]
 }
