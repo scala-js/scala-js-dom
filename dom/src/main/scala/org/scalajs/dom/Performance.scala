@@ -31,7 +31,7 @@ class Performance private[this] () extends js.Object {
   /** Returns an array of [[PerformanceEntry]] objects currently present in the performance timeline for a given type */
   def getEntriesByType(entryType: String): js.Array[PerformanceEntry] = js.native
 
-  /** Is a jsonizer returning a json object representing the Performance object. */
+  /** Returns a JSON representation of the [[Performance]] object. */
   def toJSON(): js.Object = js.native
 
   @deprecated("No such API in the spec", "2.4.0")
@@ -70,7 +70,7 @@ class Performance private[this] () extends js.Object {
   /** Removes all or specific [[PerformanceMeasure]] objects from the browser's performance timeline. */
   def clearMeasures(measureName: String = js.native): Unit = js.native
 
-  /** sets the desired size of the browser's resource timing buffer which stores the "resource" performance entries. */
+  /** Sets the desired size of the browser's resource timing buffer which stores the "resource" performance entries. */
   def setResourceTimingBufferSize(maxSize: Int): Unit = js.native
 
   /** Returns a DOMHighResTimeStamp representing the amount of milliseconds elapsed since the start of the navigation,
