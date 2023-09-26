@@ -34,13 +34,13 @@ class Performance private[this] () extends js.Object {
   /** Returns a JSON representation of the [[Performance]] object. */
   def toJSON(): js.Object = js.native
 
-  @deprecated("No such API in the spec", "2.4.0")
+  @deprecated("No such API in the spec", "2.8.0")
   def getMeasures(measureName: String = js.native): js.Dynamic = js.native
 
   /** Removes all or specific [[PerformanceMark]] objects from the browser's performance timeline. */
   def clearMarks(markName: String = js.native): Unit = js.native
 
-  @deprecated("No such API in the spec", "2.4.0")
+  @deprecated("No such API in the spec", "2.8.0")
   def getMarks(markName: String = js.native): js.Dynamic = js.native
 
   /** Removes all performance entries with an `entryType` of "resource" from the browser's performance timeline and sets
