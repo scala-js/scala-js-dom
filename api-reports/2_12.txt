@@ -15465,7 +15465,7 @@ ImageBitmap[JT] def width: Double
 ImageCapture[JC] def grabFrame(): js.Promise[ImageBitmap]
 ImageCapture[JC] def takePhoto(): js.Promise[Blob]
 ImageCapture[JC] val track: MediaStreamTrack
-ImageData[JC] def data: js.Array[Int]
+ImageData[JC] def data: js.typedarray.Uint8ClampedArray
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
 InputEvent[JC] def bubbles: Boolean

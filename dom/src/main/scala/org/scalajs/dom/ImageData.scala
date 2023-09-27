@@ -23,7 +23,7 @@ class ImageData extends js.Object {
   /** Is a Uint8ClampedArray representing a one-dimensional array containing the data in the RGBA order, with integer
     * values between 0 and 255 (included).
     */
-  def data: js.Array[Int] = js.native
+  def data: js.typedarray.Uint8ClampedArray = js.native
 
   /** Is an unsigned long representing the actual height, in pixels, of the ImageData. */
   def height: Int = js.native
