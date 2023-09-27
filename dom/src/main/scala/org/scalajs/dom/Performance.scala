@@ -15,7 +15,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class Performance extends js.Object {
+class Performance private[this] () extends js.Object {
 
   /** The Performance.navigation read-only property returns a PerformanceNavigation object representing the type of
     * navigation that occurs in the given browsing context, like the amount of redirections needed to fetch the
@@ -28,29 +28,49 @@ class Performance extends js.Object {
     */
   def timing: PerformanceTiming = js.native
 
-  def getEntriesByType(entryType: String): js.Dynamic = js.native
+  /** Returns an array of [[PerformanceEntry]] objects currently present in the performance timeline for a given type */
+  def getEntriesByType(entryType: String): js.Array[PerformanceEntry] = js.native
 
-  /** Is a jsonizer returning a json object representing the Performance object. */
-  def toJSON(): js.Dynamic = js.native
+  /** Returns a JSON representation of the [[Performance]] object. */
+  def toJSON(): js.Object = js.native
 
+  @deprecated("No such API in the spec", "2.8.0")
   def getMeasures(measureName: String = js.native): js.Dynamic = js.native
 
+  /** Removes all or specific [[PerformanceMark]] objects from the browser's performance timeline. */
   def clearMarks(markName: String = js.native): Unit = js.native
 
+  @deprecated("No such API in the spec", "2.8.0")
   def getMarks(markName: String = js.native): js.Dynamic = js.native
 
+  /** Removes all performance entries with an `entryType` of "resource" from the browser's performance timeline and sets
+    * the size of the performance resource data buffer to zero.
+    */
   def clearResourceTimings(): Unit = js.native
 
-  def mark(markName: String): Unit = js.native
+  /** Creates a named [[PerformanceMark]] object representing a high resolution timestamp marker in the browser's
+    * performance timeline.
+    */
+  def mark(markName: String): PerformanceMark = js.native
 
-  def measure(measureName: String, startMarkName: String = js.native, endMarkName: String = js.native): Unit = js.native
+  /** Creates a named [[PerformanceMeasure]] object representing a time measurement between two marks in the browser's
+    * performance timeline.
+    */
+  def measure(measureName: String, startMarkName: String = js.native,
+      endMarkName: String = js.native): PerformanceMeasure = js.native
 
-  def getEntriesByName(name: String, entryType: String = js.native): js.Dynamic = js.native
+  /** Returns an array of [[PerformanceEntry]] objects currently present in the performance timeline with the given name
+    * and type.
+    */
+  def getEntriesByName(name: String, `type`: String = js.native): js.Array[PerformanceEntry] = js.native
 
-  def getEntries(): js.Dynamic = js.native
+  /** All [[PerformanceEntry]] objects currently present in the performance timeline. */
+  def getEntries(): js.Array[PerformanceEntry] = js.native
 
+  /** Removes all or specific [[PerformanceMeasure]] objects from the browser's performance timeline. */
   def clearMeasures(measureName: String = js.native): Unit = js.native
 
+  /** Sets the desired size of the browser's resource timing buffer which stores the "resource" performance entries. */
   def setResourceTimingBufferSize(maxSize: Int): Unit = js.native
 
   /** Returns a DOMHighResTimeStamp representing the amount of milliseconds elapsed since the start of the navigation,
