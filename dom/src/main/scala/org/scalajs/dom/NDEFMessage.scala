@@ -15,5 +15,5 @@ import scala.scalajs.js.annotation.JSGlobal
 class NDEFMessage(recordsAgr: js.Array[NDEFRecordInit]) extends js.Object {
 
   /** Returns the list of NDEF records contained in the message. */
-  var records: FrozenArray[NDEFRecord] = js.native
+  def records: FrozenArray[NDEFRecord] = js.native
 }

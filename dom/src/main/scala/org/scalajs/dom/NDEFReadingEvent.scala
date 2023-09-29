@@ -12,11 +12,11 @@ import scala.scalajs.js
 trait NDEFReadingEvent extends Event {
 
   /** Returns an NDEFMessage object containing the received message. */
-  var message: NDEFMessage = js.native
+  def message: NDEFMessage = js.native
 
   /** Returns the serial number of the device, which is used for anti-collision and identification, or an empty string
     * if no serial number is available.
     */
-  var serialNumber: String = js.native
+  def serialNumber: String = js.native
 
 }
