@@ -16464,7 +16464,7 @@ MutationRecord[JT] def previousSibling: Node
 MutationRecord[JT] def removedNodes: NodeList[Node]
 MutationRecord[JT] def target: Node
 MutationRecord[JT] def `type`: String
-NDEFMessage[JC] var records: FrozenArray[NDEFRecord]
+NDEFMessage[JC] def records: FrozenArray[NDEFRecord]
 NDEFReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 NDEFReader[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 NDEFReader[JC] def dispatchEvent(evt: Event): Boolean
@@ -16482,35 +16482,41 @@ NDEFReader[JC] def write(message: js.typedarray.ArrayBuffer, options: NDEFWriteO
 NDEFReader[JC] def write(message: js.typedarray.DataView): js.Promise[Unit]
 NDEFReader[JC] def write(message: js.typedarray.DataView, options: NDEFWriteOptions): js.Promise[Unit]
 NDEFReader[JC] def write(message: js.typedarray.TypedArray[_, _], options: NDEFWriteOptions?): js.Promise[Unit]
-NDEFReadingEvent[JT] def bubbles: Boolean
-NDEFReadingEvent[JT] def cancelBubble: Boolean
-NDEFReadingEvent[JT] def cancelable: Boolean
-NDEFReadingEvent[JT] def composed: Boolean
-NDEFReadingEvent[JT] def currentTarget: EventTarget
-NDEFReadingEvent[JT] def defaultPrevented: Boolean
-NDEFReadingEvent[JT] def eventPhase: Int
-NDEFReadingEvent[JT] def isTrusted: Boolean
-NDEFReadingEvent[JT] var message: NDEFMessage
-NDEFReadingEvent[JT] def preventDefault(): Unit
-NDEFReadingEvent[JT] var serialNumber: String
-NDEFReadingEvent[JT] def stopImmediatePropagation(): Unit
-NDEFReadingEvent[JT] def stopPropagation(): Unit
-NDEFReadingEvent[JT] def target: EventTarget
-NDEFReadingEvent[JT] def timeStamp: Double
-NDEFReadingEvent[JT] def `type`: String
-NDEFRecord[JC] var data: js.typedarray.DataView
-NDEFRecord[JC] var encoding: js.UndefOr[String]
-NDEFRecord[JC] var id: js.UndefOr[String]
-NDEFRecord[JC] var lang: js.UndefOr[String]
-NDEFRecord[JC] var mediaType: js.UndefOr[String]
-NDEFRecord[JC] var recordType: String
-NDEFRecord[JC] def toRecords(): js.Array[NDEFRecord]
+NDEFReadingEvent[JC] def bubbles: Boolean
+NDEFReadingEvent[JC] def cancelBubble: Boolean
+NDEFReadingEvent[JC] def cancelable: Boolean
+NDEFReadingEvent[JC] def composed: Boolean
+NDEFReadingEvent[JC] def currentTarget: EventTarget
+NDEFReadingEvent[JC] def defaultPrevented: Boolean
+NDEFReadingEvent[JC] def eventPhase: Int
+NDEFReadingEvent[JC] def isTrusted: Boolean
+NDEFReadingEvent[JC] def message: NDEFMessage
+NDEFReadingEvent[JC] def preventDefault(): Unit
+NDEFReadingEvent[JC] def serialNumber: String
+NDEFReadingEvent[JC] def stopImmediatePropagation(): Unit
+NDEFReadingEvent[JC] def stopPropagation(): Unit
+NDEFReadingEvent[JC] def target: EventTarget
+NDEFReadingEvent[JC] def timeStamp: Double
+NDEFReadingEvent[JC] def `type`: String
+NDEFReadingEventInit[JT] var bubbles: js.UndefOr[Boolean]
+NDEFReadingEventInit[JT] var cancelable: js.UndefOr[Boolean]
+NDEFReadingEventInit[JT] var composed: js.UndefOr[Boolean]
+NDEFReadingEventInit[JT] var message: NDEFRecordInit
+NDEFReadingEventInit[JT] var scoped: js.UndefOr[Boolean]
+NDEFReadingEventInit[JT] var serialNumber: js.UndefOr[AbortSignal]
+NDEFRecord[JC] def data: js.typedarray.DataView
+NDEFRecord[JC] def encoding: js.UndefOr[String]
+NDEFRecord[JC] def id: js.UndefOr[String]
+NDEFRecord[JC] def lang: js.UndefOr[String]
+NDEFRecord[JC] def mediaType: js.UndefOr[String]
+NDEFRecord[JC] def recordType: String
+NDEFRecord[JC] def toRecords(): js.UndefOr[js.Array[NDEFRecord]]
 NDEFRecordInit[JT] var data: js.UndefOr[String | js.typedarray.DataView | js.typedarray.ArrayBuffer | js.typedarray.TypedArray[_, _] | js.typedarray.DataView | js.Array[NDEFRecord]]
 NDEFRecordInit[JT] var encoding: js.UndefOr[String]
 NDEFRecordInit[JT] var id: js.UndefOr[String]
 NDEFRecordInit[JT] var lang: js.UndefOr[String]
 NDEFRecordInit[JT] var mediaType: js.UndefOr[String]
-NDEFRecordInit[JT] var recordType: js.UndefOr[String]
+NDEFRecordInit[JT] var recordType: String
 NDEFScanOptions[JT] var signal: js.UndefOr[AbortSignal]
 NDEFWriteOptions[JT] var overwrite: js.UndefOr[Boolean]
 NDEFWriteOptions[JT] var signal: js.UndefOr[AbortSignal]

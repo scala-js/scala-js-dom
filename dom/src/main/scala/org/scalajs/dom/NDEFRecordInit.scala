@@ -3,10 +3,14 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.|
 
-/** @see
+/** The NDEFRecordInit dictionary is used to initialize an NDEF record with its record type recordType, and optional
+  * record identifier id and payload data data.
+  * @see
   *   https://developer.mozilla.org/en-US/docs/Web/API/NDEFMessage/NDEFMessage
   * @see
   *   https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/NDEFRecord
+  * @see
+  *   https://w3c.github.io/web-nfc/#the-ndefrecord-interface
   */
 trait NDEFRecordInit extends js.Object {
 
@@ -47,5 +51,5 @@ trait NDEFRecordInit extends js.Object {
     *   - "unknown" - The record type is not known.
     *   - "URL" - A URL as defined by the NDEF-URI specification.
     */
-  var recordType: js.UndefOr[String] = js.undefined
+  var recordType: String
 }

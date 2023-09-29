@@ -5,10 +5,13 @@ import scala.scalajs.js.annotation.JSGlobal
 
 /** The [[NDEFRecord]] interface of the Web NFC API provides data that can be read from, or written to, compatible NFC
   * devices, e.g. NFC tags supporting NDEF.
+  *
+  * @see
+  *   https://w3c.github.io/web-nfc/#the-ndefrecord-interface
   */
 @js.native
 @JSGlobal
-class NDEFRecord(options: NDEFRecordInit) extends js.Object {
+class NDEFRecord(init: NDEFRecordInit) extends js.Object {
 
   /** Returns the record type of the record. Records must have either a standardized well-known type name such as
     * "empty", "text", "url", "smart-poster", "absolute-url", "mime", or "unknown" or else an external type name, which
@@ -37,5 +40,5 @@ class NDEFRecord(options: NDEFRecordInit) extends js.Object {
   /** Converts [[NDEFRecord.data]] to a sequence of records. This allows parsing the payloads of record types which may
     * contain nested records, such as smart poster and external type records.
     */
-  def toRecords(): js.Array[NDEFRecord] = js.native
+  def toRecords(): js.UndefOr[js.Array[NDEFRecord]] = js.native
 }
