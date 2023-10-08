@@ -4,5 +4,5 @@ import scala.scalajs.js
 
 @js.native
 trait BlobEventInit extends EventInit {
-  var data: js.UndefOr[Blob]
+  var data: Blob
 }

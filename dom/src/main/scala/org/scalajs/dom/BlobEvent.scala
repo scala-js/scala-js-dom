@@ -6,15 +6,11 @@ import scala.scalajs.js.annotation._
 /** The AnimationEvent interface represents events providing information related to animations. */
 @JSGlobal
 @js.native
-class BlobEvent(typeArg: String, init: js.UndefOr[BlobEventInit]) extends Event(typeArg, init) {
+class BlobEvent(typeArg: String, init: BlobEventInit) extends Event(typeArg, init) {
 
-  def this(typeArg: String) = {
-    this(typeArg, js.undefined)
+  def this(init: BlobEventInit) = {
+    this("dataavailable", init)
   }
 
-  def this() = {
-    this("dataavailable", js.undefined)
-  }
-
-  val data: Blob = js.native
+  def data: Blob = js.native
 }
