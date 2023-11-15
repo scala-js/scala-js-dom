@@ -34,7 +34,7 @@ trait BaseAudioContext extends EventTarget {
     */
   val sampleRate: Double = js.native
 
-  /** Returns an instance of [[AudioWorklet]] that can be used for adding [[AudioWorketProcessor]]-derived classes which
+  /** Returns an instance of [[AudioWorklet]] that can be used for adding [[AudioWorkletProcessor]]-derived classes which
     * implement custom audio processing.
     */
   val audioWorklet: AudioWorklet = js.native

@@ -18,6 +18,7 @@ abstract class AudioWorkletProcessor(options: AudioWorkletProcessorOptions) exte
     */
   val port: MessagePort = js.native
 
-  def process(inputs: js.typedarray.Float32Array, outputs: js.typedarray.Float32Array, parameters: js.Object): Boolean
+  def process(inputs: js.Array[js.typedarray.Float32Array], outputs: js.Array[js.typedarray.Float32Array],
+      parameters: js.Object): Boolean
 
 }
