@@ -17,5 +17,6 @@ trait AudioParamDescriptor extends js.Any {
   var name: String
   var minValue: js.UndefOr[Double] = js.undefined
   var maxValue: js.UndefOr[Double] = js.undefined
+  var defaultValue: js.UndefOr[Double] = js.undefined
   var automationRate: js.UndefOr[AudioParamAutomationRate] = js.undefined
 }
