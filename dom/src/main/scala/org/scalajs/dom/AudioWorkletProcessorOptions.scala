@@ -8,7 +8,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-trait AudioWorkletProcessorOptions extends js.Any {
+trait AudioWorkletProcessorOptions extends js.Object {
 
   /** The value to initialize the [[AudioNode#numberOfInputs]] property. Defaults to 1. */
   var numberOfInputs: Int

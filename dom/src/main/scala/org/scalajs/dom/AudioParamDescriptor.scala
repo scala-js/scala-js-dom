@@ -8,7 +8,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-trait AudioParamDescriptor extends js.Any {
+trait AudioParamDescriptor extends js.Object {
 
   /** The string which represents the name of the [[AudioParam]]. Under this name the [[AudioParam]] will be available
     * in the parameters property of the node, and under this name the [[AudioWorkletProcessor#process]] method will
