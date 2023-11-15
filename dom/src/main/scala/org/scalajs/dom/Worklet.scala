@@ -11,8 +11,6 @@ import scala.scalajs.js.annotation._
 
 @JSGlobal
 @js.native
-abstract class AudioWorkletNode(context: BaseAudioContext, name: String, options: AudioWorkletNodeOptions = js.native)
-    extends AudioNode {
-
-  val port: MessagePort = js.native
+abstract class Worklet extends js.Object {
+  def addModule(moduleURL: String, options: WorkletOptions = js.native): js.Promise[Unit] = js.native
 }

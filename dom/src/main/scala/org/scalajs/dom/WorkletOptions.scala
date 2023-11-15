@@ -7,12 +7,7 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 
-@JSGlobal
-@js.native
-abstract class AudioWorkletNode(context: BaseAudioContext, name: String, options: AudioWorkletNodeOptions = js.native)
-    extends AudioNode {
-
-  val port: MessagePort = js.native
+trait WorkletOptions extends js.Any {
+  var credentials: js.UndefOr[RequestCredentials] = js.undefined
 }

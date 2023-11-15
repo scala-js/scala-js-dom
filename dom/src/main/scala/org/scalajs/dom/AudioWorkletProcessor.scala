@@ -16,7 +16,7 @@ abstract class AudioWorkletProcessor(options: AudioWorkletProcessorOptions) exte
   /** The [[MessagePort]] object that is connecting the [[AudioWorkletProcessor]] and the associated
     * [[AudioWorkletNode]].
     */
-  def port: MessagePort = js.native
+  val port: MessagePort = js.native
 
   def process(inputs: js.typedarray.Float32Array, outputs: js.typedarray.Float32Array, parameters: js.Object): Boolean
 

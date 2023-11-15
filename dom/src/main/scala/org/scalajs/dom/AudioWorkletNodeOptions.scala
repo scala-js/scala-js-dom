@@ -12,6 +12,7 @@ trait AudioWorkletNodeOptions extends js.Any {
 
   /** The value to initialize the [[AudioNode#numberOfInputs]] property. Defaults to 1. */
   var numberOfInputs: js.UndefOr[Int] = js.undefined
+
   /** The value to initialize the [[AudioNode#numberOfOutputs]] property. Defaults to 1. */
   var numberOfOutputs: js.UndefOr[Int] = js.undefined
   var outputChannelCount: js.UndefOr[js.Array[Int]] = js.undefined
