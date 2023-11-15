@@ -245,6 +245,7 @@ Audio[JC] def hasAttribute(name: String): Boolean
 Audio[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 Audio[JC] def hasAttributes(): Boolean
 Audio[JC] def hasChildNodes(): Boolean
+Audio[JC] def hasPointerCapture(pointerId: Double): Boolean
 Audio[JC] var id: String
 Audio[JC] def initialTime: Double
 Audio[JC] var innerHTML: String
@@ -378,6 +379,7 @@ Audio[JC] def querySelector(selectors: String): Element
 Audio[JC] def querySelectorAll(selectors: String): NodeList[Element]
 Audio[JC] var readyState: js.Any
 Audio[JC] var recordNumber: js.Any
+Audio[JC] def releasePointerCapture(pointerId: Double): Unit
 Audio[JC] def remove(): Unit
 Audio[JC] def removeAttribute(name: String): Unit
 Audio[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -401,6 +403,7 @@ Audio[JC] def setAttribute(name: String, value: String): Unit
 Audio[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 Audio[JC] def setAttributeNode(newAttr: Attr): Attr
 Audio[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+Audio[JC] def setPointerCapture(pointerId: Double): Unit
 Audio[JC] def shadowRoot: ShadowRoot
 Audio[JC] var spellcheck: Boolean
 Audio[JC] var src: String
@@ -2029,6 +2032,7 @@ Element[JC] def hasAttribute(name: String): Boolean
 Element[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 Element[JC] def hasAttributes(): Boolean
 Element[JC] def hasChildNodes(): Boolean
+Element[JC] def hasPointerCapture(pointerId: Double): Boolean
 Element[JC] var id: String
 Element[JC] var innerHTML: String
 Element[JC] var innerText: String
@@ -2067,6 +2071,7 @@ Element[JC] def previousElementSibling: Element
 Element[JC] def previousSibling: Node
 Element[JC] def querySelector(selectors: String): Element
 Element[JC] def querySelectorAll(selectors: String): NodeList[Element]
+Element[JC] def releasePointerCapture(pointerId: Double): Unit
 Element[JC] def remove(): Unit
 Element[JC] def removeAttribute(name: String): Unit
 Element[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -2088,6 +2093,7 @@ Element[JC] def setAttribute(name: String, value: String): Unit
 Element[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 Element[JC] def setAttributeNode(newAttr: Attr): Attr
 Element[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+Element[JC] def setPointerCapture(pointerId: Double): Unit
 Element[JC] def shadowRoot: ShadowRoot
 Element[JC] def tagName: String
 Element[JC] var textContent: String
@@ -2439,6 +2445,7 @@ HTMLAnchorElement[JC] def hasAttribute(name: String): Boolean
 HTMLAnchorElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLAnchorElement[JC] def hasAttributes(): Boolean
 HTMLAnchorElement[JC] def hasChildNodes(): Boolean
+HTMLAnchorElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLAnchorElement[JC] var hash: String
 HTMLAnchorElement[JC] var host: String
 HTMLAnchorElement[JC] var hostname: String
@@ -2571,6 +2578,7 @@ HTMLAnchorElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLAnchorElement[JC] var readyState: js.Any
 HTMLAnchorElement[JC] var recordNumber: js.Any
 HTMLAnchorElement[JC] var rel: String
+HTMLAnchorElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLAnchorElement[JC] def remove(): Unit
 HTMLAnchorElement[JC] def removeAttribute(name: String): Unit
 HTMLAnchorElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -2593,6 +2601,7 @@ HTMLAnchorElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLAnchorElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLAnchorElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLAnchorElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLAnchorElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLAnchorElement[JC] def shadowRoot: ShadowRoot
 HTMLAnchorElement[JC] var spellcheck: Boolean
 HTMLAnchorElement[JC] def style: CSSStyleDeclaration
@@ -2657,6 +2666,7 @@ HTMLAreaElement[JC] def hasAttribute(name: String): Boolean
 HTMLAreaElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLAreaElement[JC] def hasAttributes(): Boolean
 HTMLAreaElement[JC] def hasChildNodes(): Boolean
+HTMLAreaElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLAreaElement[JC] var hash: String
 HTMLAreaElement[JC] var host: String
 HTMLAreaElement[JC] var hostname: String
@@ -2786,6 +2796,7 @@ HTMLAreaElement[JC] def querySelector(selectors: String): Element
 HTMLAreaElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLAreaElement[JC] var readyState: js.Any
 HTMLAreaElement[JC] var recordNumber: js.Any
+HTMLAreaElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLAreaElement[JC] def remove(): Unit
 HTMLAreaElement[JC] def removeAttribute(name: String): Unit
 HTMLAreaElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -2808,6 +2819,7 @@ HTMLAreaElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLAreaElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLAreaElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLAreaElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLAreaElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLAreaElement[JC] def shadowRoot: ShadowRoot
 HTMLAreaElement[JC] var shape: String
 HTMLAreaElement[JC] var spellcheck: Boolean
@@ -2880,6 +2892,7 @@ HTMLAudioElement[JC] def hasAttribute(name: String): Boolean
 HTMLAudioElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLAudioElement[JC] def hasAttributes(): Boolean
 HTMLAudioElement[JC] def hasChildNodes(): Boolean
+HTMLAudioElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLAudioElement[JC] var id: String
 HTMLAudioElement[JC] def initialTime: Double
 HTMLAudioElement[JC] var innerHTML: String
@@ -3013,6 +3026,7 @@ HTMLAudioElement[JC] def querySelector(selectors: String): Element
 HTMLAudioElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLAudioElement[JC] var readyState: js.Any
 HTMLAudioElement[JC] var recordNumber: js.Any
+HTMLAudioElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLAudioElement[JC] def remove(): Unit
 HTMLAudioElement[JC] def removeAttribute(name: String): Unit
 HTMLAudioElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -3036,6 +3050,7 @@ HTMLAudioElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLAudioElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLAudioElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLAudioElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLAudioElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLAudioElement[JC] def shadowRoot: ShadowRoot
 HTMLAudioElement[JC] var spellcheck: Boolean
 HTMLAudioElement[JC] var src: String
@@ -3099,6 +3114,7 @@ HTMLBRElement[JC] def hasAttribute(name: String): Boolean
 HTMLBRElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLBRElement[JC] def hasAttributes(): Boolean
 HTMLBRElement[JC] def hasChildNodes(): Boolean
+HTMLBRElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLBRElement[JC] var id: String
 HTMLBRElement[JC] var innerHTML: String
 HTMLBRElement[JC] var innerText: String
@@ -3221,6 +3237,7 @@ HTMLBRElement[JC] def querySelector(selectors: String): Element
 HTMLBRElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLBRElement[JC] var readyState: js.Any
 HTMLBRElement[JC] var recordNumber: js.Any
+HTMLBRElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLBRElement[JC] def remove(): Unit
 HTMLBRElement[JC] def removeAttribute(name: String): Unit
 HTMLBRElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -3242,6 +3259,7 @@ HTMLBRElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLBRElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLBRElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLBRElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLBRElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLBRElement[JC] def shadowRoot: ShadowRoot
 HTMLBRElement[JC] var spellcheck: Boolean
 HTMLBRElement[JC] def style: CSSStyleDeclaration
@@ -3301,6 +3319,7 @@ HTMLBaseElement[JC] def hasAttribute(name: String): Boolean
 HTMLBaseElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLBaseElement[JC] def hasAttributes(): Boolean
 HTMLBaseElement[JC] def hasChildNodes(): Boolean
+HTMLBaseElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLBaseElement[JC] var href: String
 HTMLBaseElement[JC] var id: String
 HTMLBaseElement[JC] var innerHTML: String
@@ -3424,6 +3443,7 @@ HTMLBaseElement[JC] def querySelector(selectors: String): Element
 HTMLBaseElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLBaseElement[JC] var readyState: js.Any
 HTMLBaseElement[JC] var recordNumber: js.Any
+HTMLBaseElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLBaseElement[JC] def remove(): Unit
 HTMLBaseElement[JC] def removeAttribute(name: String): Unit
 HTMLBaseElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -3445,6 +3465,7 @@ HTMLBaseElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLBaseElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLBaseElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLBaseElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLBaseElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLBaseElement[JC] def shadowRoot: ShadowRoot
 HTMLBaseElement[JC] var spellcheck: Boolean
 HTMLBaseElement[JC] def style: CSSStyleDeclaration
@@ -3505,6 +3526,7 @@ HTMLBodyElement[JC] def hasAttribute(name: String): Boolean
 HTMLBodyElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLBodyElement[JC] def hasAttributes(): Boolean
 HTMLBodyElement[JC] def hasChildNodes(): Boolean
+HTMLBodyElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLBodyElement[JC] var id: String
 HTMLBodyElement[JC] var innerHTML: String
 HTMLBodyElement[JC] var innerText: String
@@ -3640,6 +3662,7 @@ HTMLBodyElement[JC] def querySelector(selectors: String): Element
 HTMLBodyElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLBodyElement[JC] var readyState: js.Any
 HTMLBodyElement[JC] var recordNumber: js.Any
+HTMLBodyElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLBodyElement[JC] def remove(): Unit
 HTMLBodyElement[JC] def removeAttribute(name: String): Unit
 HTMLBodyElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -3662,6 +3685,7 @@ HTMLBodyElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLBodyElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLBodyElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLBodyElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLBodyElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLBodyElement[JC] def shadowRoot: ShadowRoot
 HTMLBodyElement[JC] var spellcheck: Boolean
 HTMLBodyElement[JC] def style: CSSStyleDeclaration
@@ -3730,6 +3754,7 @@ HTMLButtonElement[JC] def hasAttribute(name: String): Boolean
 HTMLButtonElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLButtonElement[JC] def hasAttributes(): Boolean
 HTMLButtonElement[JC] def hasChildNodes(): Boolean
+HTMLButtonElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLButtonElement[JC] var id: String
 HTMLButtonElement[JC] var innerHTML: String
 HTMLButtonElement[JC] var innerText: String
@@ -3853,6 +3878,7 @@ HTMLButtonElement[JC] def querySelector(selectors: String): Element
 HTMLButtonElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLButtonElement[JC] var readyState: js.Any
 HTMLButtonElement[JC] var recordNumber: js.Any
+HTMLButtonElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLButtonElement[JC] def remove(): Unit
 HTMLButtonElement[JC] def removeAttribute(name: String): Unit
 HTMLButtonElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -3876,6 +3902,7 @@ HTMLButtonElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: St
 HTMLButtonElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLButtonElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 HTMLButtonElement[JC] def setCustomValidity(error: String): Unit
+HTMLButtonElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLButtonElement[JC] def shadowRoot: ShadowRoot
 HTMLButtonElement[JC] var spellcheck: Boolean
 HTMLButtonElement[JC] var status: js.Any
@@ -3942,6 +3969,7 @@ HTMLCanvasElement[JC] def hasAttribute(name: String): Boolean
 HTMLCanvasElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLCanvasElement[JC] def hasAttributes(): Boolean
 HTMLCanvasElement[JC] def hasChildNodes(): Boolean
+HTMLCanvasElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLCanvasElement[JC] var height: Int
 HTMLCanvasElement[JC] var id: String
 HTMLCanvasElement[JC] var innerHTML: String
@@ -4065,6 +4093,7 @@ HTMLCanvasElement[JC] def querySelector(selectors: String): Element
 HTMLCanvasElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLCanvasElement[JC] var readyState: js.Any
 HTMLCanvasElement[JC] var recordNumber: js.Any
+HTMLCanvasElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLCanvasElement[JC] def remove(): Unit
 HTMLCanvasElement[JC] def removeAttribute(name: String): Unit
 HTMLCanvasElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -4086,6 +4115,7 @@ HTMLCanvasElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLCanvasElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLCanvasElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLCanvasElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLCanvasElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLCanvasElement[JC] def shadowRoot: ShadowRoot
 HTMLCanvasElement[JC] var spellcheck: Boolean
 HTMLCanvasElement[JC] def style: CSSStyleDeclaration
@@ -4151,6 +4181,7 @@ HTMLDListElement[JC] def hasAttribute(name: String): Boolean
 HTMLDListElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLDListElement[JC] def hasAttributes(): Boolean
 HTMLDListElement[JC] def hasChildNodes(): Boolean
+HTMLDListElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLDListElement[JC] var id: String
 HTMLDListElement[JC] var innerHTML: String
 HTMLDListElement[JC] var innerText: String
@@ -4273,6 +4304,7 @@ HTMLDListElement[JC] def querySelector(selectors: String): Element
 HTMLDListElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLDListElement[JC] var readyState: js.Any
 HTMLDListElement[JC] var recordNumber: js.Any
+HTMLDListElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLDListElement[JC] def remove(): Unit
 HTMLDListElement[JC] def removeAttribute(name: String): Unit
 HTMLDListElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -4294,6 +4326,7 @@ HTMLDListElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLDListElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLDListElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLDListElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLDListElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLDListElement[JC] def shadowRoot: ShadowRoot
 HTMLDListElement[JC] var spellcheck: Boolean
 HTMLDListElement[JC] def style: CSSStyleDeclaration
@@ -4353,6 +4386,7 @@ HTMLDataListElement[JC] def hasAttribute(name: String): Boolean
 HTMLDataListElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLDataListElement[JC] def hasAttributes(): Boolean
 HTMLDataListElement[JC] def hasChildNodes(): Boolean
+HTMLDataListElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLDataListElement[JC] var id: String
 HTMLDataListElement[JC] var innerHTML: String
 HTMLDataListElement[JC] var innerText: String
@@ -4476,6 +4510,7 @@ HTMLDataListElement[JC] def querySelector(selectors: String): Element
 HTMLDataListElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLDataListElement[JC] var readyState: js.Any
 HTMLDataListElement[JC] var recordNumber: js.Any
+HTMLDataListElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLDataListElement[JC] def remove(): Unit
 HTMLDataListElement[JC] def removeAttribute(name: String): Unit
 HTMLDataListElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -4497,6 +4532,7 @@ HTMLDataListElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLDataListElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLDataListElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLDataListElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLDataListElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLDataListElement[JC] def shadowRoot: ShadowRoot
 HTMLDataListElement[JC] var spellcheck: Boolean
 HTMLDataListElement[JC] def style: CSSStyleDeclaration
@@ -4557,6 +4593,7 @@ HTMLDialogElement[JC] def hasAttribute(name: String): Boolean
 HTMLDialogElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLDialogElement[JC] def hasAttributes(): Boolean
 HTMLDialogElement[JC] def hasChildNodes(): Boolean
+HTMLDialogElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLDialogElement[JC] var id: String
 HTMLDialogElement[JC] var innerHTML: String
 HTMLDialogElement[JC] var innerText: String
@@ -4680,6 +4717,7 @@ HTMLDialogElement[JC] def querySelector(selectors: String): Element
 HTMLDialogElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLDialogElement[JC] var readyState: js.Any
 HTMLDialogElement[JC] var recordNumber: js.Any
+HTMLDialogElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLDialogElement[JC] def remove(): Unit
 HTMLDialogElement[JC] def removeAttribute(name: String): Unit
 HTMLDialogElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -4702,6 +4740,7 @@ HTMLDialogElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLDialogElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLDialogElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLDialogElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLDialogElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLDialogElement[JC] def shadowRoot: ShadowRoot
 HTMLDialogElement[JC] def show(): Unit
 HTMLDialogElement[JC] def showModal(): Unit
@@ -4763,6 +4802,7 @@ HTMLDivElement[JC] def hasAttribute(name: String): Boolean
 HTMLDivElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLDivElement[JC] def hasAttributes(): Boolean
 HTMLDivElement[JC] def hasChildNodes(): Boolean
+HTMLDivElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLDivElement[JC] var id: String
 HTMLDivElement[JC] var innerHTML: String
 HTMLDivElement[JC] var innerText: String
@@ -4885,6 +4925,7 @@ HTMLDivElement[JC] def querySelector(selectors: String): Element
 HTMLDivElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLDivElement[JC] var readyState: js.Any
 HTMLDivElement[JC] var recordNumber: js.Any
+HTMLDivElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLDivElement[JC] def remove(): Unit
 HTMLDivElement[JC] def removeAttribute(name: String): Unit
 HTMLDivElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -4906,6 +4947,7 @@ HTMLDivElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLDivElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLDivElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLDivElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLDivElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLDivElement[JC] def shadowRoot: ShadowRoot
 HTMLDivElement[JC] var spellcheck: Boolean
 HTMLDivElement[JC] def style: CSSStyleDeclaration
@@ -5167,6 +5209,7 @@ HTMLElement[JC] def hasAttribute(name: String): Boolean
 HTMLElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLElement[JC] def hasAttributes(): Boolean
 HTMLElement[JC] def hasChildNodes(): Boolean
+HTMLElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLElement[JC] var id: String
 HTMLElement[JC] var innerHTML: String
 HTMLElement[JC] var innerText: String
@@ -5289,6 +5332,7 @@ HTMLElement[JC] def querySelector(selectors: String): Element
 HTMLElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLElement[JC] var readyState: js.Any
 HTMLElement[JC] var recordNumber: js.Any
+HTMLElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLElement[JC] def remove(): Unit
 HTMLElement[JC] def removeAttribute(name: String): Unit
 HTMLElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -5310,6 +5354,7 @@ HTMLElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLElement[JC] def shadowRoot: ShadowRoot
 HTMLElement[JC] var spellcheck: Boolean
 HTMLElement[JC] def style: CSSStyleDeclaration
@@ -5370,6 +5415,7 @@ HTMLEmbedElement[JC] def hasAttribute(name: String): Boolean
 HTMLEmbedElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLEmbedElement[JC] def hasAttributes(): Boolean
 HTMLEmbedElement[JC] def hasChildNodes(): Boolean
+HTMLEmbedElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLEmbedElement[JC] var height: String
 HTMLEmbedElement[JC] var id: String
 HTMLEmbedElement[JC] var innerHTML: String
@@ -5493,6 +5539,7 @@ HTMLEmbedElement[JC] def querySelector(selectors: String): Element
 HTMLEmbedElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLEmbedElement[JC] var readyState: js.Any
 HTMLEmbedElement[JC] var recordNumber: js.Any
+HTMLEmbedElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLEmbedElement[JC] def remove(): Unit
 HTMLEmbedElement[JC] def removeAttribute(name: String): Unit
 HTMLEmbedElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -5514,6 +5561,7 @@ HTMLEmbedElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLEmbedElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLEmbedElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLEmbedElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLEmbedElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLEmbedElement[JC] def shadowRoot: ShadowRoot
 HTMLEmbedElement[JC] var spellcheck: Boolean
 HTMLEmbedElement[JC] var src: String
@@ -5578,6 +5626,7 @@ HTMLFieldSetElement[JC] def hasAttribute(name: String): Boolean
 HTMLFieldSetElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLFieldSetElement[JC] def hasAttributes(): Boolean
 HTMLFieldSetElement[JC] def hasChildNodes(): Boolean
+HTMLFieldSetElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLFieldSetElement[JC] var id: String
 HTMLFieldSetElement[JC] var innerHTML: String
 HTMLFieldSetElement[JC] var innerText: String
@@ -5700,6 +5749,7 @@ HTMLFieldSetElement[JC] def querySelector(selectors: String): Element
 HTMLFieldSetElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLFieldSetElement[JC] var readyState: js.Any
 HTMLFieldSetElement[JC] var recordNumber: js.Any
+HTMLFieldSetElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLFieldSetElement[JC] def remove(): Unit
 HTMLFieldSetElement[JC] def removeAttribute(name: String): Unit
 HTMLFieldSetElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -5723,6 +5773,7 @@ HTMLFieldSetElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: 
 HTMLFieldSetElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLFieldSetElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 HTMLFieldSetElement[JC] def setCustomValidity(error: String): Unit
+HTMLFieldSetElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLFieldSetElement[JC] def shadowRoot: ShadowRoot
 HTMLFieldSetElement[JC] var spellcheck: Boolean
 HTMLFieldSetElement[JC] def style: CSSStyleDeclaration
@@ -5797,6 +5848,7 @@ HTMLFormElement[JC] def hasAttribute(name: String): Boolean
 HTMLFormElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLFormElement[JC] def hasAttributes(): Boolean
 HTMLFormElement[JC] def hasChildNodes(): Boolean
+HTMLFormElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLFormElement[JC] var id: String
 HTMLFormElement[JC] var innerHTML: String
 HTMLFormElement[JC] var innerText: String
@@ -5925,6 +5977,7 @@ HTMLFormElement[JC] def querySelector(selectors: String): Element
 HTMLFormElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLFormElement[JC] var readyState: js.Any
 HTMLFormElement[JC] var recordNumber: js.Any
+HTMLFormElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLFormElement[JC] def remove(): Unit
 HTMLFormElement[JC] def removeAttribute(name: String): Unit
 HTMLFormElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -5948,6 +6001,7 @@ HTMLFormElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLFormElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLFormElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLFormElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLFormElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLFormElement[JC] def shadowRoot: ShadowRoot
 HTMLFormElement[JC] var spellcheck: Boolean
 HTMLFormElement[JC] def style: CSSStyleDeclaration
@@ -6010,6 +6064,7 @@ HTMLHRElement[JC] def hasAttribute(name: String): Boolean
 HTMLHRElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLHRElement[JC] def hasAttributes(): Boolean
 HTMLHRElement[JC] def hasChildNodes(): Boolean
+HTMLHRElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLHRElement[JC] var id: String
 HTMLHRElement[JC] var innerHTML: String
 HTMLHRElement[JC] var innerText: String
@@ -6132,6 +6187,7 @@ HTMLHRElement[JC] def querySelector(selectors: String): Element
 HTMLHRElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLHRElement[JC] var readyState: js.Any
 HTMLHRElement[JC] var recordNumber: js.Any
+HTMLHRElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLHRElement[JC] def remove(): Unit
 HTMLHRElement[JC] def removeAttribute(name: String): Unit
 HTMLHRElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -6153,6 +6209,7 @@ HTMLHRElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLHRElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLHRElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLHRElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLHRElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLHRElement[JC] def shadowRoot: ShadowRoot
 HTMLHRElement[JC] var spellcheck: Boolean
 HTMLHRElement[JC] def style: CSSStyleDeclaration
@@ -6212,6 +6269,7 @@ HTMLHeadElement[JC] def hasAttribute(name: String): Boolean
 HTMLHeadElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLHeadElement[JC] def hasAttributes(): Boolean
 HTMLHeadElement[JC] def hasChildNodes(): Boolean
+HTMLHeadElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLHeadElement[JC] var id: String
 HTMLHeadElement[JC] var innerHTML: String
 HTMLHeadElement[JC] var innerText: String
@@ -6334,6 +6392,7 @@ HTMLHeadElement[JC] def querySelector(selectors: String): Element
 HTMLHeadElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLHeadElement[JC] var readyState: js.Any
 HTMLHeadElement[JC] var recordNumber: js.Any
+HTMLHeadElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLHeadElement[JC] def remove(): Unit
 HTMLHeadElement[JC] def removeAttribute(name: String): Unit
 HTMLHeadElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -6355,6 +6414,7 @@ HTMLHeadElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLHeadElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLHeadElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLHeadElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLHeadElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLHeadElement[JC] def shadowRoot: ShadowRoot
 HTMLHeadElement[JC] var spellcheck: Boolean
 HTMLHeadElement[JC] def style: CSSStyleDeclaration
@@ -6414,6 +6474,7 @@ HTMLHeadingElement[JC] def hasAttribute(name: String): Boolean
 HTMLHeadingElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLHeadingElement[JC] def hasAttributes(): Boolean
 HTMLHeadingElement[JC] def hasChildNodes(): Boolean
+HTMLHeadingElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLHeadingElement[JC] var id: String
 HTMLHeadingElement[JC] var innerHTML: String
 HTMLHeadingElement[JC] var innerText: String
@@ -6536,6 +6597,7 @@ HTMLHeadingElement[JC] def querySelector(selectors: String): Element
 HTMLHeadingElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLHeadingElement[JC] var readyState: js.Any
 HTMLHeadingElement[JC] var recordNumber: js.Any
+HTMLHeadingElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLHeadingElement[JC] def remove(): Unit
 HTMLHeadingElement[JC] def removeAttribute(name: String): Unit
 HTMLHeadingElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -6557,6 +6619,7 @@ HTMLHeadingElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLHeadingElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLHeadingElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLHeadingElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLHeadingElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLHeadingElement[JC] def shadowRoot: ShadowRoot
 HTMLHeadingElement[JC] var spellcheck: Boolean
 HTMLHeadingElement[JC] def style: CSSStyleDeclaration
@@ -6616,6 +6679,7 @@ HTMLHtmlElement[JC] def hasAttribute(name: String): Boolean
 HTMLHtmlElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLHtmlElement[JC] def hasAttributes(): Boolean
 HTMLHtmlElement[JC] def hasChildNodes(): Boolean
+HTMLHtmlElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLHtmlElement[JC] var id: String
 HTMLHtmlElement[JC] var innerHTML: String
 HTMLHtmlElement[JC] var innerText: String
@@ -6738,6 +6802,7 @@ HTMLHtmlElement[JC] def querySelector(selectors: String): Element
 HTMLHtmlElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLHtmlElement[JC] var readyState: js.Any
 HTMLHtmlElement[JC] var recordNumber: js.Any
+HTMLHtmlElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLHtmlElement[JC] def remove(): Unit
 HTMLHtmlElement[JC] def removeAttribute(name: String): Unit
 HTMLHtmlElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -6759,6 +6824,7 @@ HTMLHtmlElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLHtmlElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLHtmlElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLHtmlElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLHtmlElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLHtmlElement[JC] def shadowRoot: ShadowRoot
 HTMLHtmlElement[JC] var spellcheck: Boolean
 HTMLHtmlElement[JC] def style: CSSStyleDeclaration
@@ -6822,6 +6888,7 @@ HTMLIFrameElement[JC] def hasAttribute(name: String): Boolean
 HTMLIFrameElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLIFrameElement[JC] def hasAttributes(): Boolean
 HTMLIFrameElement[JC] def hasChildNodes(): Boolean
+HTMLIFrameElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLIFrameElement[JC] var height: String
 HTMLIFrameElement[JC] var id: String
 HTMLIFrameElement[JC] var innerHTML: String
@@ -6947,6 +7014,7 @@ HTMLIFrameElement[JC] def querySelector(selectors: String): Element
 HTMLIFrameElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLIFrameElement[JC] var readyState: js.Any
 HTMLIFrameElement[JC] var recordNumber: js.Any
+HTMLIFrameElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLIFrameElement[JC] def remove(): Unit
 HTMLIFrameElement[JC] def removeAttribute(name: String): Unit
 HTMLIFrameElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -6970,6 +7038,7 @@ HTMLIFrameElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLIFrameElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLIFrameElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLIFrameElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLIFrameElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLIFrameElement[JC] def shadowRoot: ShadowRoot
 HTMLIFrameElement[JC] var spellcheck: Boolean
 HTMLIFrameElement[JC] var src: String
@@ -7034,6 +7103,7 @@ HTMLImageElement[JC] def hasAttribute(name: String): Boolean
 HTMLImageElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLImageElement[JC] def hasAttributes(): Boolean
 HTMLImageElement[JC] def hasChildNodes(): Boolean
+HTMLImageElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLImageElement[JC] var height: Int
 HTMLImageElement[JC] var href: String
 HTMLImageElement[JC] var id: String
@@ -7163,6 +7233,7 @@ HTMLImageElement[JC] def querySelector(selectors: String): Element
 HTMLImageElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLImageElement[JC] var readyState: js.Any
 HTMLImageElement[JC] var recordNumber: js.Any
+HTMLImageElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLImageElement[JC] def remove(): Unit
 HTMLImageElement[JC] def removeAttribute(name: String): Unit
 HTMLImageElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -7184,6 +7255,7 @@ HTMLImageElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLImageElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLImageElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLImageElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLImageElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLImageElement[JC] def shadowRoot: ShadowRoot
 HTMLImageElement[JC] var sizes: String
 HTMLImageElement[JC] var spellcheck: Boolean
@@ -7266,6 +7338,7 @@ HTMLInputElement[JC] def hasAttribute(name: String): Boolean
 HTMLInputElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLInputElement[JC] def hasAttributes(): Boolean
 HTMLInputElement[JC] def hasChildNodes(): Boolean
+HTMLInputElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLInputElement[JC] var height: String
 HTMLInputElement[JC] var id: String
 HTMLInputElement[JC] var indeterminate: Boolean
@@ -7399,6 +7472,7 @@ HTMLInputElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLInputElement[JC] var readOnly: Boolean
 HTMLInputElement[JC] var readyState: js.Any
 HTMLInputElement[JC] var recordNumber: js.Any
+HTMLInputElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLInputElement[JC] def remove(): Unit
 HTMLInputElement[JC] def removeAttribute(name: String): Unit
 HTMLInputElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -7426,6 +7500,7 @@ HTMLInputElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: Str
 HTMLInputElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLInputElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 HTMLInputElement[JC] def setCustomValidity(error: String): Unit
+HTMLInputElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLInputElement[JC] def setSelectionRange(start: Int, end: Int): Unit
 HTMLInputElement[JC] def shadowRoot: ShadowRoot
 HTMLInputElement[JC] var size: Int
@@ -7499,6 +7574,7 @@ HTMLLIElement[JC] def hasAttribute(name: String): Boolean
 HTMLLIElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLLIElement[JC] def hasAttributes(): Boolean
 HTMLLIElement[JC] def hasChildNodes(): Boolean
+HTMLLIElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLLIElement[JC] var id: String
 HTMLLIElement[JC] var innerHTML: String
 HTMLLIElement[JC] var innerText: String
@@ -7621,6 +7697,7 @@ HTMLLIElement[JC] def querySelector(selectors: String): Element
 HTMLLIElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLLIElement[JC] var readyState: js.Any
 HTMLLIElement[JC] var recordNumber: js.Any
+HTMLLIElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLLIElement[JC] def remove(): Unit
 HTMLLIElement[JC] def removeAttribute(name: String): Unit
 HTMLLIElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -7642,6 +7719,7 @@ HTMLLIElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLLIElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLLIElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLLIElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLLIElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLLIElement[JC] def shadowRoot: ShadowRoot
 HTMLLIElement[JC] var spellcheck: Boolean
 HTMLLIElement[JC] def style: CSSStyleDeclaration
@@ -7703,6 +7781,7 @@ HTMLLabelElement[JC] def hasAttribute(name: String): Boolean
 HTMLLabelElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLLabelElement[JC] def hasAttributes(): Boolean
 HTMLLabelElement[JC] def hasChildNodes(): Boolean
+HTMLLabelElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLLabelElement[JC] var htmlFor: String
 HTMLLabelElement[JC] var id: String
 HTMLLabelElement[JC] var innerHTML: String
@@ -7826,6 +7905,7 @@ HTMLLabelElement[JC] def querySelector(selectors: String): Element
 HTMLLabelElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLLabelElement[JC] var readyState: js.Any
 HTMLLabelElement[JC] var recordNumber: js.Any
+HTMLLabelElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLLabelElement[JC] def remove(): Unit
 HTMLLabelElement[JC] def removeAttribute(name: String): Unit
 HTMLLabelElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -7847,6 +7927,7 @@ HTMLLabelElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLLabelElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLLabelElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLLabelElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLLabelElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLLabelElement[JC] def shadowRoot: ShadowRoot
 HTMLLabelElement[JC] var spellcheck: Boolean
 HTMLLabelElement[JC] def style: CSSStyleDeclaration
@@ -7908,6 +7989,7 @@ HTMLLegendElement[JC] def hasAttribute(name: String): Boolean
 HTMLLegendElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLLegendElement[JC] def hasAttributes(): Boolean
 HTMLLegendElement[JC] def hasChildNodes(): Boolean
+HTMLLegendElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLLegendElement[JC] var id: String
 HTMLLegendElement[JC] var innerHTML: String
 HTMLLegendElement[JC] var innerText: String
@@ -8030,6 +8112,7 @@ HTMLLegendElement[JC] def querySelector(selectors: String): Element
 HTMLLegendElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLLegendElement[JC] var readyState: js.Any
 HTMLLegendElement[JC] var recordNumber: js.Any
+HTMLLegendElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLLegendElement[JC] def remove(): Unit
 HTMLLegendElement[JC] def removeAttribute(name: String): Unit
 HTMLLegendElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -8051,6 +8134,7 @@ HTMLLegendElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLLegendElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLLegendElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLLegendElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLLegendElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLLegendElement[JC] def shadowRoot: ShadowRoot
 HTMLLegendElement[JC] var spellcheck: Boolean
 HTMLLegendElement[JC] def style: CSSStyleDeclaration
@@ -8110,6 +8194,7 @@ HTMLLinkElement[JC] def hasAttribute(name: String): Boolean
 HTMLLinkElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLLinkElement[JC] def hasAttributes(): Boolean
 HTMLLinkElement[JC] def hasChildNodes(): Boolean
+HTMLLinkElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLLinkElement[JC] var href: String
 HTMLLinkElement[JC] var hreflang: String
 HTMLLinkElement[JC] var id: String
@@ -8236,6 +8321,7 @@ HTMLLinkElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLLinkElement[JC] var readyState: js.Any
 HTMLLinkElement[JC] var recordNumber: js.Any
 HTMLLinkElement[JC] var rel: String
+HTMLLinkElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLLinkElement[JC] def remove(): Unit
 HTMLLinkElement[JC] def removeAttribute(name: String): Unit
 HTMLLinkElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -8258,6 +8344,7 @@ HTMLLinkElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLLinkElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLLinkElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLLinkElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLLinkElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLLinkElement[JC] def shadowRoot: ShadowRoot
 HTMLLinkElement[JC] def sheet: StyleSheet
 HTMLLinkElement[JC] var spellcheck: Boolean
@@ -8320,6 +8407,7 @@ HTMLMapElement[JC] def hasAttribute(name: String): Boolean
 HTMLMapElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLMapElement[JC] def hasAttributes(): Boolean
 HTMLMapElement[JC] def hasChildNodes(): Boolean
+HTMLMapElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLMapElement[JC] var id: String
 HTMLMapElement[JC] var innerHTML: String
 HTMLMapElement[JC] var innerText: String
@@ -8443,6 +8531,7 @@ HTMLMapElement[JC] def querySelector(selectors: String): Element
 HTMLMapElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLMapElement[JC] var readyState: js.Any
 HTMLMapElement[JC] var recordNumber: js.Any
+HTMLMapElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLMapElement[JC] def remove(): Unit
 HTMLMapElement[JC] def removeAttribute(name: String): Unit
 HTMLMapElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -8464,6 +8553,7 @@ HTMLMapElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLMapElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLMapElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLMapElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLMapElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLMapElement[JC] def shadowRoot: ShadowRoot
 HTMLMapElement[JC] var spellcheck: Boolean
 HTMLMapElement[JC] def style: CSSStyleDeclaration
@@ -8534,6 +8624,7 @@ HTMLMediaElement[JC] def hasAttribute(name: String): Boolean
 HTMLMediaElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLMediaElement[JC] def hasAttributes(): Boolean
 HTMLMediaElement[JC] def hasChildNodes(): Boolean
+HTMLMediaElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLMediaElement[JC] var id: String
 HTMLMediaElement[JC] def initialTime: Double
 HTMLMediaElement[JC] var innerHTML: String
@@ -8667,6 +8758,7 @@ HTMLMediaElement[JC] def querySelector(selectors: String): Element
 HTMLMediaElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLMediaElement[JC] var readyState: js.Any
 HTMLMediaElement[JC] var recordNumber: js.Any
+HTMLMediaElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLMediaElement[JC] def remove(): Unit
 HTMLMediaElement[JC] def removeAttribute(name: String): Unit
 HTMLMediaElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -8690,6 +8782,7 @@ HTMLMediaElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLMediaElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLMediaElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLMediaElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLMediaElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLMediaElement[JC] def shadowRoot: ShadowRoot
 HTMLMediaElement[JC] var spellcheck: Boolean
 HTMLMediaElement[JC] var src: String
@@ -8762,6 +8855,7 @@ HTMLMenuElement[JC] def hasAttribute(name: String): Boolean
 HTMLMenuElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLMenuElement[JC] def hasAttributes(): Boolean
 HTMLMenuElement[JC] def hasChildNodes(): Boolean
+HTMLMenuElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLMenuElement[JC] var id: String
 HTMLMenuElement[JC] var innerHTML: String
 HTMLMenuElement[JC] var innerText: String
@@ -8884,6 +8978,7 @@ HTMLMenuElement[JC] def querySelector(selectors: String): Element
 HTMLMenuElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLMenuElement[JC] var readyState: js.Any
 HTMLMenuElement[JC] var recordNumber: js.Any
+HTMLMenuElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLMenuElement[JC] def remove(): Unit
 HTMLMenuElement[JC] def removeAttribute(name: String): Unit
 HTMLMenuElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -8905,6 +9000,7 @@ HTMLMenuElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLMenuElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLMenuElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLMenuElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLMenuElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLMenuElement[JC] def shadowRoot: ShadowRoot
 HTMLMenuElement[JC] var spellcheck: Boolean
 HTMLMenuElement[JC] def style: CSSStyleDeclaration
@@ -8967,6 +9063,7 @@ HTMLMetaElement[JC] def hasAttribute(name: String): Boolean
 HTMLMetaElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLMetaElement[JC] def hasAttributes(): Boolean
 HTMLMetaElement[JC] def hasChildNodes(): Boolean
+HTMLMetaElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLMetaElement[JC] var httpEquiv: String
 HTMLMetaElement[JC] var id: String
 HTMLMetaElement[JC] var innerHTML: String
@@ -9091,6 +9188,7 @@ HTMLMetaElement[JC] def querySelector(selectors: String): Element
 HTMLMetaElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLMetaElement[JC] var readyState: js.Any
 HTMLMetaElement[JC] var recordNumber: js.Any
+HTMLMetaElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLMetaElement[JC] def remove(): Unit
 HTMLMetaElement[JC] def removeAttribute(name: String): Unit
 HTMLMetaElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -9112,6 +9210,7 @@ HTMLMetaElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLMetaElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLMetaElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLMetaElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLMetaElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLMetaElement[JC] def shadowRoot: ShadowRoot
 HTMLMetaElement[JC] var spellcheck: Boolean
 HTMLMetaElement[JC] def style: CSSStyleDeclaration
@@ -9174,6 +9273,7 @@ HTMLModElement[JC] def hasAttribute(name: String): Boolean
 HTMLModElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLModElement[JC] def hasAttributes(): Boolean
 HTMLModElement[JC] def hasChildNodes(): Boolean
+HTMLModElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLModElement[JC] var id: String
 HTMLModElement[JC] var innerHTML: String
 HTMLModElement[JC] var innerText: String
@@ -9296,6 +9396,7 @@ HTMLModElement[JC] def querySelector(selectors: String): Element
 HTMLModElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLModElement[JC] var readyState: js.Any
 HTMLModElement[JC] var recordNumber: js.Any
+HTMLModElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLModElement[JC] def remove(): Unit
 HTMLModElement[JC] def removeAttribute(name: String): Unit
 HTMLModElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -9317,6 +9418,7 @@ HTMLModElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLModElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLModElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLModElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLModElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLModElement[JC] def shadowRoot: ShadowRoot
 HTMLModElement[JC] var spellcheck: Boolean
 HTMLModElement[JC] def style: CSSStyleDeclaration
@@ -9376,6 +9478,7 @@ HTMLOListElement[JC] def hasAttribute(name: String): Boolean
 HTMLOListElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLOListElement[JC] def hasAttributes(): Boolean
 HTMLOListElement[JC] def hasChildNodes(): Boolean
+HTMLOListElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLOListElement[JC] var id: String
 HTMLOListElement[JC] var innerHTML: String
 HTMLOListElement[JC] var innerText: String
@@ -9498,6 +9601,7 @@ HTMLOListElement[JC] def querySelector(selectors: String): Element
 HTMLOListElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLOListElement[JC] var readyState: js.Any
 HTMLOListElement[JC] var recordNumber: js.Any
+HTMLOListElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLOListElement[JC] def remove(): Unit
 HTMLOListElement[JC] def removeAttribute(name: String): Unit
 HTMLOListElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -9519,6 +9623,7 @@ HTMLOListElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLOListElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLOListElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLOListElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLOListElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLOListElement[JC] def shadowRoot: ShadowRoot
 HTMLOListElement[JC] var spellcheck: Boolean
 HTMLOListElement[JC] var start: Int
@@ -9588,6 +9693,7 @@ HTMLObjectElement[JC] def hasAttribute(name: String): Boolean
 HTMLObjectElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLObjectElement[JC] def hasAttributes(): Boolean
 HTMLObjectElement[JC] def hasChildNodes(): Boolean
+HTMLObjectElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLObjectElement[JC] var height: String
 HTMLObjectElement[JC] var id: String
 HTMLObjectElement[JC] var innerHTML: String
@@ -9713,6 +9819,7 @@ HTMLObjectElement[JC] def querySelector(selectors: String): Element
 HTMLObjectElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLObjectElement[JC] var readyState: js.Any
 HTMLObjectElement[JC] var recordNumber: js.Any
+HTMLObjectElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLObjectElement[JC] def remove(): Unit
 HTMLObjectElement[JC] def removeAttribute(name: String): Unit
 HTMLObjectElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -9736,6 +9843,7 @@ HTMLObjectElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: St
 HTMLObjectElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLObjectElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 HTMLObjectElement[JC] def setCustomValidity(error: String): Unit
+HTMLObjectElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLObjectElement[JC] def shadowRoot: ShadowRoot
 HTMLObjectElement[JC] var spellcheck: Boolean
 HTMLObjectElement[JC] def style: CSSStyleDeclaration
@@ -9802,6 +9910,7 @@ HTMLOptGroupElement[JC] def hasAttribute(name: String): Boolean
 HTMLOptGroupElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLOptGroupElement[JC] def hasAttributes(): Boolean
 HTMLOptGroupElement[JC] def hasChildNodes(): Boolean
+HTMLOptGroupElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLOptGroupElement[JC] var id: String
 HTMLOptGroupElement[JC] var innerHTML: String
 HTMLOptGroupElement[JC] var innerText: String
@@ -9925,6 +10034,7 @@ HTMLOptGroupElement[JC] def querySelector(selectors: String): Element
 HTMLOptGroupElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLOptGroupElement[JC] var readyState: js.Any
 HTMLOptGroupElement[JC] var recordNumber: js.Any
+HTMLOptGroupElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLOptGroupElement[JC] def remove(): Unit
 HTMLOptGroupElement[JC] def removeAttribute(name: String): Unit
 HTMLOptGroupElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -9946,6 +10056,7 @@ HTMLOptGroupElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLOptGroupElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLOptGroupElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLOptGroupElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLOptGroupElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLOptGroupElement[JC] def shadowRoot: ShadowRoot
 HTMLOptGroupElement[JC] var spellcheck: Boolean
 HTMLOptGroupElement[JC] def style: CSSStyleDeclaration
@@ -10009,6 +10120,7 @@ HTMLOptionElement[JC] def hasAttribute(name: String): Boolean
 HTMLOptionElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLOptionElement[JC] def hasAttributes(): Boolean
 HTMLOptionElement[JC] def hasChildNodes(): Boolean
+HTMLOptionElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLOptionElement[JC] var id: String
 HTMLOptionElement[JC] def index: Int
 HTMLOptionElement[JC] var innerHTML: String
@@ -10133,6 +10245,7 @@ HTMLOptionElement[JC] def querySelector(selectors: String): Element
 HTMLOptionElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLOptionElement[JC] var readyState: js.Any
 HTMLOptionElement[JC] var recordNumber: js.Any
+HTMLOptionElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLOptionElement[JC] def remove(): Unit
 HTMLOptionElement[JC] def removeAttribute(name: String): Unit
 HTMLOptionElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -10155,6 +10268,7 @@ HTMLOptionElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLOptionElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLOptionElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLOptionElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLOptionElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLOptionElement[JC] def shadowRoot: ShadowRoot
 HTMLOptionElement[JC] var spellcheck: Boolean
 HTMLOptionElement[JC] def style: CSSStyleDeclaration
@@ -10220,6 +10334,7 @@ HTMLParagraphElement[JC] def hasAttribute(name: String): Boolean
 HTMLParagraphElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLParagraphElement[JC] def hasAttributes(): Boolean
 HTMLParagraphElement[JC] def hasChildNodes(): Boolean
+HTMLParagraphElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLParagraphElement[JC] var id: String
 HTMLParagraphElement[JC] var innerHTML: String
 HTMLParagraphElement[JC] var innerText: String
@@ -10342,6 +10457,7 @@ HTMLParagraphElement[JC] def querySelector(selectors: String): Element
 HTMLParagraphElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLParagraphElement[JC] var readyState: js.Any
 HTMLParagraphElement[JC] var recordNumber: js.Any
+HTMLParagraphElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLParagraphElement[JC] def remove(): Unit
 HTMLParagraphElement[JC] def removeAttribute(name: String): Unit
 HTMLParagraphElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -10363,6 +10479,7 @@ HTMLParagraphElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLParagraphElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLParagraphElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLParagraphElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLParagraphElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLParagraphElement[JC] def shadowRoot: ShadowRoot
 HTMLParagraphElement[JC] var spellcheck: Boolean
 HTMLParagraphElement[JC] def style: CSSStyleDeclaration
@@ -10422,6 +10539,7 @@ HTMLParamElement[JC] def hasAttribute(name: String): Boolean
 HTMLParamElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLParamElement[JC] def hasAttributes(): Boolean
 HTMLParamElement[JC] def hasChildNodes(): Boolean
+HTMLParamElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLParamElement[JC] var id: String
 HTMLParamElement[JC] var innerHTML: String
 HTMLParamElement[JC] var innerText: String
@@ -10545,6 +10663,7 @@ HTMLParamElement[JC] def querySelector(selectors: String): Element
 HTMLParamElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLParamElement[JC] var readyState: js.Any
 HTMLParamElement[JC] var recordNumber: js.Any
+HTMLParamElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLParamElement[JC] def remove(): Unit
 HTMLParamElement[JC] def removeAttribute(name: String): Unit
 HTMLParamElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -10566,6 +10685,7 @@ HTMLParamElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLParamElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLParamElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLParamElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLParamElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLParamElement[JC] def shadowRoot: ShadowRoot
 HTMLParamElement[JC] var spellcheck: Boolean
 HTMLParamElement[JC] def style: CSSStyleDeclaration
@@ -10626,6 +10746,7 @@ HTMLPreElement[JC] def hasAttribute(name: String): Boolean
 HTMLPreElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLPreElement[JC] def hasAttributes(): Boolean
 HTMLPreElement[JC] def hasChildNodes(): Boolean
+HTMLPreElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLPreElement[JC] var id: String
 HTMLPreElement[JC] var innerHTML: String
 HTMLPreElement[JC] var innerText: String
@@ -10748,6 +10869,7 @@ HTMLPreElement[JC] def querySelector(selectors: String): Element
 HTMLPreElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLPreElement[JC] var readyState: js.Any
 HTMLPreElement[JC] var recordNumber: js.Any
+HTMLPreElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLPreElement[JC] def remove(): Unit
 HTMLPreElement[JC] def removeAttribute(name: String): Unit
 HTMLPreElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -10769,6 +10891,7 @@ HTMLPreElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLPreElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLPreElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLPreElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLPreElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLPreElement[JC] def shadowRoot: ShadowRoot
 HTMLPreElement[JC] var spellcheck: Boolean
 HTMLPreElement[JC] def style: CSSStyleDeclaration
@@ -10829,6 +10952,7 @@ HTMLProgressElement[JC] def hasAttribute(name: String): Boolean
 HTMLProgressElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLProgressElement[JC] def hasAttributes(): Boolean
 HTMLProgressElement[JC] def hasChildNodes(): Boolean
+HTMLProgressElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLProgressElement[JC] var id: String
 HTMLProgressElement[JC] var innerHTML: String
 HTMLProgressElement[JC] var innerText: String
@@ -10953,6 +11077,7 @@ HTMLProgressElement[JC] def querySelector(selectors: String): Element
 HTMLProgressElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLProgressElement[JC] var readyState: js.Any
 HTMLProgressElement[JC] var recordNumber: js.Any
+HTMLProgressElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLProgressElement[JC] def remove(): Unit
 HTMLProgressElement[JC] def removeAttribute(name: String): Unit
 HTMLProgressElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -10974,6 +11099,7 @@ HTMLProgressElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLProgressElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLProgressElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLProgressElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLProgressElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLProgressElement[JC] def shadowRoot: ShadowRoot
 HTMLProgressElement[JC] var spellcheck: Boolean
 HTMLProgressElement[JC] def style: CSSStyleDeclaration
@@ -11036,6 +11162,7 @@ HTMLQuoteElement[JC] def hasAttribute(name: String): Boolean
 HTMLQuoteElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLQuoteElement[JC] def hasAttributes(): Boolean
 HTMLQuoteElement[JC] def hasChildNodes(): Boolean
+HTMLQuoteElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLQuoteElement[JC] var id: String
 HTMLQuoteElement[JC] var innerHTML: String
 HTMLQuoteElement[JC] var innerText: String
@@ -11158,6 +11285,7 @@ HTMLQuoteElement[JC] def querySelector(selectors: String): Element
 HTMLQuoteElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLQuoteElement[JC] var readyState: js.Any
 HTMLQuoteElement[JC] var recordNumber: js.Any
+HTMLQuoteElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLQuoteElement[JC] def remove(): Unit
 HTMLQuoteElement[JC] def removeAttribute(name: String): Unit
 HTMLQuoteElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -11179,6 +11307,7 @@ HTMLQuoteElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLQuoteElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLQuoteElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLQuoteElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLQuoteElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLQuoteElement[JC] def shadowRoot: ShadowRoot
 HTMLQuoteElement[JC] var spellcheck: Boolean
 HTMLQuoteElement[JC] def style: CSSStyleDeclaration
@@ -11242,6 +11371,7 @@ HTMLScriptElement[JC] def hasAttribute(name: String): Boolean
 HTMLScriptElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLScriptElement[JC] def hasAttributes(): Boolean
 HTMLScriptElement[JC] def hasChildNodes(): Boolean
+HTMLScriptElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLScriptElement[JC] var id: String
 HTMLScriptElement[JC] var innerHTML: String
 HTMLScriptElement[JC] var innerText: String
@@ -11365,6 +11495,7 @@ HTMLScriptElement[JC] def querySelector(selectors: String): Element
 HTMLScriptElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLScriptElement[JC] var readyState: js.Any
 HTMLScriptElement[JC] var recordNumber: js.Any
+HTMLScriptElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLScriptElement[JC] def remove(): Unit
 HTMLScriptElement[JC] def removeAttribute(name: String): Unit
 HTMLScriptElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -11386,6 +11517,7 @@ HTMLScriptElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLScriptElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLScriptElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLScriptElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLScriptElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLScriptElement[JC] def shadowRoot: ShadowRoot
 HTMLScriptElement[JC] var spellcheck: Boolean
 HTMLScriptElement[JC] var src: String
@@ -11454,6 +11586,7 @@ HTMLSelectElement[JC] def hasAttribute(name: String): Boolean
 HTMLSelectElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLSelectElement[JC] def hasAttributes(): Boolean
 HTMLSelectElement[JC] def hasChildNodes(): Boolean
+HTMLSelectElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLSelectElement[JC] var id: String
 HTMLSelectElement[JC] var innerHTML: String
 HTMLSelectElement[JC] var innerText: String
@@ -11582,6 +11715,7 @@ HTMLSelectElement[JC] def querySelector(selectors: String): Element
 HTMLSelectElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLSelectElement[JC] var readyState: js.Any
 HTMLSelectElement[JC] var recordNumber: js.Any
+HTMLSelectElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLSelectElement[JC] def remove(): Unit
 HTMLSelectElement[JC] def remove(index: Int?): Unit
 HTMLSelectElement[JC] def removeAttribute(name: String): Unit
@@ -11608,6 +11742,7 @@ HTMLSelectElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: St
 HTMLSelectElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLSelectElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 HTMLSelectElement[JC] def setCustomValidity(error: String): Unit
+HTMLSelectElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLSelectElement[JC] def shadowRoot: ShadowRoot
 HTMLSelectElement[JC] var size: Int
 HTMLSelectElement[JC] var spellcheck: Boolean
@@ -11674,6 +11809,7 @@ HTMLSourceElement[JC] def hasAttribute(name: String): Boolean
 HTMLSourceElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLSourceElement[JC] def hasAttributes(): Boolean
 HTMLSourceElement[JC] def hasChildNodes(): Boolean
+HTMLSourceElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLSourceElement[JC] var id: String
 HTMLSourceElement[JC] var innerHTML: String
 HTMLSourceElement[JC] var innerText: String
@@ -11797,6 +11933,7 @@ HTMLSourceElement[JC] def querySelector(selectors: String): Element
 HTMLSourceElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLSourceElement[JC] var readyState: js.Any
 HTMLSourceElement[JC] var recordNumber: js.Any
+HTMLSourceElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLSourceElement[JC] def remove(): Unit
 HTMLSourceElement[JC] def removeAttribute(name: String): Unit
 HTMLSourceElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -11818,6 +11955,7 @@ HTMLSourceElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLSourceElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLSourceElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLSourceElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLSourceElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLSourceElement[JC] def shadowRoot: ShadowRoot
 HTMLSourceElement[JC] var spellcheck: Boolean
 HTMLSourceElement[JC] var src: String
@@ -11879,6 +12017,7 @@ HTMLSpanElement[JC] def hasAttribute(name: String): Boolean
 HTMLSpanElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLSpanElement[JC] def hasAttributes(): Boolean
 HTMLSpanElement[JC] def hasChildNodes(): Boolean
+HTMLSpanElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLSpanElement[JC] var id: String
 HTMLSpanElement[JC] var innerHTML: String
 HTMLSpanElement[JC] var innerText: String
@@ -12001,6 +12140,7 @@ HTMLSpanElement[JC] def querySelector(selectors: String): Element
 HTMLSpanElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLSpanElement[JC] var readyState: js.Any
 HTMLSpanElement[JC] var recordNumber: js.Any
+HTMLSpanElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLSpanElement[JC] def remove(): Unit
 HTMLSpanElement[JC] def removeAttribute(name: String): Unit
 HTMLSpanElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -12022,6 +12162,7 @@ HTMLSpanElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLSpanElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLSpanElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLSpanElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLSpanElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLSpanElement[JC] def shadowRoot: ShadowRoot
 HTMLSpanElement[JC] var spellcheck: Boolean
 HTMLSpanElement[JC] def style: CSSStyleDeclaration
@@ -12081,6 +12222,7 @@ HTMLStyleElement[JC] def hasAttribute(name: String): Boolean
 HTMLStyleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLStyleElement[JC] def hasAttributes(): Boolean
 HTMLStyleElement[JC] def hasChildNodes(): Boolean
+HTMLStyleElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLStyleElement[JC] var id: String
 HTMLStyleElement[JC] var innerHTML: String
 HTMLStyleElement[JC] var innerText: String
@@ -12204,6 +12346,7 @@ HTMLStyleElement[JC] def querySelector(selectors: String): Element
 HTMLStyleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLStyleElement[JC] var readyState: js.Any
 HTMLStyleElement[JC] var recordNumber: js.Any
+HTMLStyleElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLStyleElement[JC] def remove(): Unit
 HTMLStyleElement[JC] def removeAttribute(name: String): Unit
 HTMLStyleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -12225,6 +12368,7 @@ HTMLStyleElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLStyleElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLStyleElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLStyleElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLStyleElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLStyleElement[JC] def shadowRoot: ShadowRoot
 HTMLStyleElement[JC] def sheet: StyleSheet
 HTMLStyleElement[JC] var spellcheck: Boolean
@@ -12287,6 +12431,7 @@ HTMLTableCaptionElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableCaptionElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTableCaptionElement[JC] def hasAttributes(): Boolean
 HTMLTableCaptionElement[JC] def hasChildNodes(): Boolean
+HTMLTableCaptionElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTableCaptionElement[JC] var id: String
 HTMLTableCaptionElement[JC] var innerHTML: String
 HTMLTableCaptionElement[JC] var innerText: String
@@ -12409,6 +12554,7 @@ HTMLTableCaptionElement[JC] def querySelector(selectors: String): Element
 HTMLTableCaptionElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableCaptionElement[JC] var readyState: js.Any
 HTMLTableCaptionElement[JC] var recordNumber: js.Any
+HTMLTableCaptionElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTableCaptionElement[JC] def remove(): Unit
 HTMLTableCaptionElement[JC] def removeAttribute(name: String): Unit
 HTMLTableCaptionElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -12430,6 +12576,7 @@ HTMLTableCaptionElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLTableCaptionElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLTableCaptionElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTableCaptionElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLTableCaptionElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTableCaptionElement[JC] def shadowRoot: ShadowRoot
 HTMLTableCaptionElement[JC] var spellcheck: Boolean
 HTMLTableCaptionElement[JC] def style: CSSStyleDeclaration
@@ -12491,6 +12638,7 @@ HTMLTableCellElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableCellElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTableCellElement[JC] def hasAttributes(): Boolean
 HTMLTableCellElement[JC] def hasChildNodes(): Boolean
+HTMLTableCellElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTableCellElement[JC] def headers: String
 HTMLTableCellElement[JC] var id: String
 HTMLTableCellElement[JC] var innerHTML: String
@@ -12614,6 +12762,7 @@ HTMLTableCellElement[JC] def querySelector(selectors: String): Element
 HTMLTableCellElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableCellElement[JC] var readyState: js.Any
 HTMLTableCellElement[JC] var recordNumber: js.Any
+HTMLTableCellElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTableCellElement[JC] def remove(): Unit
 HTMLTableCellElement[JC] def removeAttribute(name: String): Unit
 HTMLTableCellElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -12636,6 +12785,7 @@ HTMLTableCellElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLTableCellElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLTableCellElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTableCellElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLTableCellElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTableCellElement[JC] def shadowRoot: ShadowRoot
 HTMLTableCellElement[JC] var spellcheck: Boolean
 HTMLTableCellElement[JC] def style: CSSStyleDeclaration
@@ -12695,6 +12845,7 @@ HTMLTableColElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableColElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTableColElement[JC] def hasAttributes(): Boolean
 HTMLTableColElement[JC] def hasChildNodes(): Boolean
+HTMLTableColElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTableColElement[JC] var id: String
 HTMLTableColElement[JC] var innerHTML: String
 HTMLTableColElement[JC] var innerText: String
@@ -12817,6 +12968,7 @@ HTMLTableColElement[JC] def querySelector(selectors: String): Element
 HTMLTableColElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableColElement[JC] var readyState: js.Any
 HTMLTableColElement[JC] var recordNumber: js.Any
+HTMLTableColElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTableColElement[JC] def remove(): Unit
 HTMLTableColElement[JC] def removeAttribute(name: String): Unit
 HTMLTableColElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -12838,6 +12990,7 @@ HTMLTableColElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLTableColElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLTableColElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTableColElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLTableColElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTableColElement[JC] def shadowRoot: ShadowRoot
 HTMLTableColElement[JC] var span: Int
 HTMLTableColElement[JC] var spellcheck: Boolean
@@ -12907,6 +13060,7 @@ HTMLTableElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTableElement[JC] def hasAttributes(): Boolean
 HTMLTableElement[JC] def hasChildNodes(): Boolean
+HTMLTableElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTableElement[JC] var id: String
 HTMLTableElement[JC] var innerHTML: String
 HTMLTableElement[JC] var innerText: String
@@ -13031,6 +13185,7 @@ HTMLTableElement[JC] def querySelector(selectors: String): Element
 HTMLTableElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableElement[JC] var readyState: js.Any
 HTMLTableElement[JC] var recordNumber: js.Any
+HTMLTableElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTableElement[JC] def remove(): Unit
 HTMLTableElement[JC] def removeAttribute(name: String): Unit
 HTMLTableElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -13053,6 +13208,7 @@ HTMLTableElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLTableElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLTableElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTableElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLTableElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTableElement[JC] def shadowRoot: ShadowRoot
 HTMLTableElement[JC] var spellcheck: Boolean
 HTMLTableElement[JC] def style: CSSStyleDeclaration
@@ -13120,6 +13276,7 @@ HTMLTableRowElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableRowElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTableRowElement[JC] def hasAttributes(): Boolean
 HTMLTableRowElement[JC] def hasChildNodes(): Boolean
+HTMLTableRowElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTableRowElement[JC] var height: js.Any
 HTMLTableRowElement[JC] var id: String
 HTMLTableRowElement[JC] var innerHTML: String
@@ -13244,6 +13401,7 @@ HTMLTableRowElement[JC] def querySelector(selectors: String): Element
 HTMLTableRowElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableRowElement[JC] var readyState: js.Any
 HTMLTableRowElement[JC] var recordNumber: js.Any
+HTMLTableRowElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTableRowElement[JC] def remove(): Unit
 HTMLTableRowElement[JC] def removeAttribute(name: String): Unit
 HTMLTableRowElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -13267,6 +13425,7 @@ HTMLTableRowElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLTableRowElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLTableRowElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTableRowElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLTableRowElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTableRowElement[JC] def shadowRoot: ShadowRoot
 HTMLTableRowElement[JC] var spellcheck: Boolean
 HTMLTableRowElement[JC] def style: CSSStyleDeclaration
@@ -13327,6 +13486,7 @@ HTMLTableSectionElement[JC] def hasAttribute(name: String): Boolean
 HTMLTableSectionElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTableSectionElement[JC] def hasAttributes(): Boolean
 HTMLTableSectionElement[JC] def hasChildNodes(): Boolean
+HTMLTableSectionElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTableSectionElement[JC] var id: String
 HTMLTableSectionElement[JC] var innerHTML: String
 HTMLTableSectionElement[JC] var innerText: String
@@ -13451,6 +13611,7 @@ HTMLTableSectionElement[JC] def querySelector(selectors: String): Element
 HTMLTableSectionElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTableSectionElement[JC] var readyState: js.Any
 HTMLTableSectionElement[JC] var recordNumber: js.Any
+HTMLTableSectionElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTableSectionElement[JC] def remove(): Unit
 HTMLTableSectionElement[JC] def removeAttribute(name: String): Unit
 HTMLTableSectionElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -13473,6 +13634,7 @@ HTMLTableSectionElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLTableSectionElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLTableSectionElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTableSectionElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLTableSectionElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTableSectionElement[JC] def shadowRoot: ShadowRoot
 HTMLTableSectionElement[JC] var spellcheck: Boolean
 HTMLTableSectionElement[JC] def style: CSSStyleDeclaration
@@ -13533,6 +13695,7 @@ HTMLTemplateElement[JC] def hasAttribute(name: String): Boolean
 HTMLTemplateElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTemplateElement[JC] def hasAttributes(): Boolean
 HTMLTemplateElement[JC] def hasChildNodes(): Boolean
+HTMLTemplateElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTemplateElement[JC] var id: String
 HTMLTemplateElement[JC] var innerHTML: String
 HTMLTemplateElement[JC] var innerText: String
@@ -13655,6 +13818,7 @@ HTMLTemplateElement[JC] def querySelector(selectors: String): Element
 HTMLTemplateElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTemplateElement[JC] var readyState: js.Any
 HTMLTemplateElement[JC] var recordNumber: js.Any
+HTMLTemplateElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTemplateElement[JC] def remove(): Unit
 HTMLTemplateElement[JC] def removeAttribute(name: String): Unit
 HTMLTemplateElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -13676,6 +13840,7 @@ HTMLTemplateElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLTemplateElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLTemplateElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTemplateElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLTemplateElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTemplateElement[JC] def shadowRoot: ShadowRoot
 HTMLTemplateElement[JC] var spellcheck: Boolean
 HTMLTemplateElement[JC] def style: CSSStyleDeclaration
@@ -13741,6 +13906,7 @@ HTMLTextAreaElement[JC] def hasAttribute(name: String): Boolean
 HTMLTextAreaElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTextAreaElement[JC] def hasAttributes(): Boolean
 HTMLTextAreaElement[JC] def hasChildNodes(): Boolean
+HTMLTextAreaElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTextAreaElement[JC] var id: String
 HTMLTextAreaElement[JC] var innerHTML: String
 HTMLTextAreaElement[JC] var innerText: String
@@ -13867,6 +14033,7 @@ HTMLTextAreaElement[JC] def querySelectorAll(selectors: String): NodeList[Elemen
 HTMLTextAreaElement[JC] var readOnly: Boolean
 HTMLTextAreaElement[JC] var readyState: js.Any
 HTMLTextAreaElement[JC] var recordNumber: js.Any
+HTMLTextAreaElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTextAreaElement[JC] def remove(): Unit
 HTMLTextAreaElement[JC] def removeAttribute(name: String): Unit
 HTMLTextAreaElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -13895,6 +14062,7 @@ HTMLTextAreaElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: 
 HTMLTextAreaElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTextAreaElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 HTMLTextAreaElement[JC] def setCustomValidity(error: String): Unit
+HTMLTextAreaElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTextAreaElement[JC] def setSelectionRange(start: Int, end: Int): Unit
 HTMLTextAreaElement[JC] def shadowRoot: ShadowRoot
 HTMLTextAreaElement[JC] var spellcheck: Boolean
@@ -13962,6 +14130,7 @@ HTMLTitleElement[JC] def hasAttribute(name: String): Boolean
 HTMLTitleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTitleElement[JC] def hasAttributes(): Boolean
 HTMLTitleElement[JC] def hasChildNodes(): Boolean
+HTMLTitleElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTitleElement[JC] var id: String
 HTMLTitleElement[JC] var innerHTML: String
 HTMLTitleElement[JC] var innerText: String
@@ -14084,6 +14253,7 @@ HTMLTitleElement[JC] def querySelector(selectors: String): Element
 HTMLTitleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTitleElement[JC] var readyState: js.Any
 HTMLTitleElement[JC] var recordNumber: js.Any
+HTMLTitleElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTitleElement[JC] def remove(): Unit
 HTMLTitleElement[JC] def removeAttribute(name: String): Unit
 HTMLTitleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -14105,6 +14275,7 @@ HTMLTitleElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLTitleElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLTitleElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTitleElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLTitleElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTitleElement[JC] def shadowRoot: ShadowRoot
 HTMLTitleElement[JC] var spellcheck: Boolean
 HTMLTitleElement[JC] def style: CSSStyleDeclaration
@@ -14165,6 +14336,7 @@ HTMLTrackElement[JC] def hasAttribute(name: String): Boolean
 HTMLTrackElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLTrackElement[JC] def hasAttributes(): Boolean
 HTMLTrackElement[JC] def hasChildNodes(): Boolean
+HTMLTrackElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLTrackElement[JC] var id: String
 HTMLTrackElement[JC] var innerHTML: String
 HTMLTrackElement[JC] var innerText: String
@@ -14289,6 +14461,7 @@ HTMLTrackElement[JC] def querySelector(selectors: String): Element
 HTMLTrackElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLTrackElement[JC] var readyState: js.Any
 HTMLTrackElement[JC] var recordNumber: js.Any
+HTMLTrackElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLTrackElement[JC] def remove(): Unit
 HTMLTrackElement[JC] def removeAttribute(name: String): Unit
 HTMLTrackElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -14310,6 +14483,7 @@ HTMLTrackElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLTrackElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLTrackElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLTrackElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLTrackElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLTrackElement[JC] def shadowRoot: ShadowRoot
 HTMLTrackElement[JC] var spellcheck: Boolean
 HTMLTrackElement[JC] var src: String
@@ -14372,6 +14546,7 @@ HTMLUListElement[JC] def hasAttribute(name: String): Boolean
 HTMLUListElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLUListElement[JC] def hasAttributes(): Boolean
 HTMLUListElement[JC] def hasChildNodes(): Boolean
+HTMLUListElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLUListElement[JC] var id: String
 HTMLUListElement[JC] var innerHTML: String
 HTMLUListElement[JC] var innerText: String
@@ -14494,6 +14669,7 @@ HTMLUListElement[JC] def querySelector(selectors: String): Element
 HTMLUListElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLUListElement[JC] var readyState: js.Any
 HTMLUListElement[JC] var recordNumber: js.Any
+HTMLUListElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLUListElement[JC] def remove(): Unit
 HTMLUListElement[JC] def removeAttribute(name: String): Unit
 HTMLUListElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -14515,6 +14691,7 @@ HTMLUListElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLUListElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLUListElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLUListElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLUListElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLUListElement[JC] def shadowRoot: ShadowRoot
 HTMLUListElement[JC] var spellcheck: Boolean
 HTMLUListElement[JC] def style: CSSStyleDeclaration
@@ -14574,6 +14751,7 @@ HTMLUnknownElement[JC] def hasAttribute(name: String): Boolean
 HTMLUnknownElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLUnknownElement[JC] def hasAttributes(): Boolean
 HTMLUnknownElement[JC] def hasChildNodes(): Boolean
+HTMLUnknownElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLUnknownElement[JC] var id: String
 HTMLUnknownElement[JC] var innerHTML: String
 HTMLUnknownElement[JC] var innerText: String
@@ -14696,6 +14874,7 @@ HTMLUnknownElement[JC] def querySelector(selectors: String): Element
 HTMLUnknownElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLUnknownElement[JC] var readyState: js.Any
 HTMLUnknownElement[JC] var recordNumber: js.Any
+HTMLUnknownElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLUnknownElement[JC] def remove(): Unit
 HTMLUnknownElement[JC] def removeAttribute(name: String): Unit
 HTMLUnknownElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -14717,6 +14896,7 @@ HTMLUnknownElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLUnknownElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLUnknownElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLUnknownElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLUnknownElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLUnknownElement[JC] def shadowRoot: ShadowRoot
 HTMLUnknownElement[JC] var spellcheck: Boolean
 HTMLUnknownElement[JC] def style: CSSStyleDeclaration
@@ -14787,6 +14967,7 @@ HTMLVideoElement[JC] def hasAttribute(name: String): Boolean
 HTMLVideoElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 HTMLVideoElement[JC] def hasAttributes(): Boolean
 HTMLVideoElement[JC] def hasChildNodes(): Boolean
+HTMLVideoElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 HTMLVideoElement[JC] var height: Int
 HTMLVideoElement[JC] var id: String
 HTMLVideoElement[JC] def initialTime: Double
@@ -14922,6 +15103,7 @@ HTMLVideoElement[JC] def querySelector(selectors: String): Element
 HTMLVideoElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 HTMLVideoElement[JC] var readyState: js.Any
 HTMLVideoElement[JC] var recordNumber: js.Any
+HTMLVideoElement[JC] def releasePointerCapture(pointerId: Double): Unit
 HTMLVideoElement[JC] def remove(): Unit
 HTMLVideoElement[JC] def removeAttribute(name: String): Unit
 HTMLVideoElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -14945,6 +15127,7 @@ HTMLVideoElement[JC] def setAttribute(name: String, value: String): Unit
 HTMLVideoElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 HTMLVideoElement[JC] def setAttributeNode(newAttr: Attr): Attr
 HTMLVideoElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+HTMLVideoElement[JC] def setPointerCapture(pointerId: Double): Unit
 HTMLVideoElement[JC] def shadowRoot: ShadowRoot
 HTMLVideoElement[JC] var spellcheck: Boolean
 HTMLVideoElement[JC] var src: String
@@ -15293,6 +15476,7 @@ Image[JC] def hasAttribute(name: String): Boolean
 Image[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 Image[JC] def hasAttributes(): Boolean
 Image[JC] def hasChildNodes(): Boolean
+Image[JC] def hasPointerCapture(pointerId: Double): Boolean
 Image[JC] var height: Int
 Image[JC] var href: String
 Image[JC] var id: String
@@ -15422,6 +15606,7 @@ Image[JC] def querySelector(selectors: String): Element
 Image[JC] def querySelectorAll(selectors: String): NodeList[Element]
 Image[JC] var readyState: js.Any
 Image[JC] var recordNumber: js.Any
+Image[JC] def releasePointerCapture(pointerId: Double): Unit
 Image[JC] def remove(): Unit
 Image[JC] def removeAttribute(name: String): Unit
 Image[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -15443,6 +15628,7 @@ Image[JC] def setAttribute(name: String, value: String): Unit
 Image[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 Image[JC] def setAttributeNode(newAttr: Attr): Attr
 Image[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+Image[JC] def setPointerCapture(pointerId: Double): Unit
 Image[JC] def shadowRoot: ShadowRoot
 Image[JC] var sizes: String
 Image[JC] var spellcheck: Boolean
@@ -17539,6 +17725,7 @@ SVGAElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boo
 SVGAElement[JC] def hasAttributes(): Boolean
 SVGAElement[JC] def hasChildNodes(): Boolean
 SVGAElement[JC] def hasExtension(extension: String): Boolean
+SVGAElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGAElement[JC] var href: SVGAnimatedString
 SVGAElement[JC] var id: String
 SVGAElement[JC] var innerHTML: String
@@ -17590,6 +17777,7 @@ SVGAElement[JC] def previousElementSibling: Element
 SVGAElement[JC] def previousSibling: Node
 SVGAElement[JC] def querySelector(selectors: String): Element
 SVGAElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGAElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGAElement[JC] def remove(): Unit
 SVGAElement[JC] def removeAttribute(name: String): Unit
 SVGAElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17613,6 +17801,7 @@ SVGAElement[JC] def setAttribute(name: String, value: String): Unit
 SVGAElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGAElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGAElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGAElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGAElement[JC] def shadowRoot: ShadowRoot
 SVGAElement[JC] var style: CSSStyleDeclaration
 SVGAElement[JC] var systemLanguage: SVGStringList
@@ -17710,6 +17899,7 @@ SVGCircleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String)
 SVGCircleElement[JC] def hasAttributes(): Boolean
 SVGCircleElement[JC] def hasChildNodes(): Boolean
 SVGCircleElement[JC] def hasExtension(extension: String): Boolean
+SVGCircleElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGCircleElement[JC] var id: String
 SVGCircleElement[JC] var innerHTML: String
 SVGCircleElement[JC] var innerText: String
@@ -17761,6 +17951,7 @@ SVGCircleElement[JC] def previousSibling: Node
 SVGCircleElement[JC] def querySelector(selectors: String): Element
 SVGCircleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGCircleElement[JC] def r: SVGAnimatedLength
+SVGCircleElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGCircleElement[JC] def remove(): Unit
 SVGCircleElement[JC] def removeAttribute(name: String): Unit
 SVGCircleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17784,6 +17975,7 @@ SVGCircleElement[JC] def setAttribute(name: String, value: String): Unit
 SVGCircleElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGCircleElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGCircleElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGCircleElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGCircleElement[JC] def shadowRoot: ShadowRoot
 SVGCircleElement[JC] var style: CSSStyleDeclaration
 SVGCircleElement[JC] var systemLanguage: SVGStringList
@@ -17844,6 +18036,7 @@ SVGClipPathElement[JC] def hasAttributeNS(namespaceURI: String, localName: Strin
 SVGClipPathElement[JC] def hasAttributes(): Boolean
 SVGClipPathElement[JC] def hasChildNodes(): Boolean
 SVGClipPathElement[JC] def hasExtension(extension: String): Boolean
+SVGClipPathElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGClipPathElement[JC] var id: String
 SVGClipPathElement[JC] var innerHTML: String
 SVGClipPathElement[JC] var innerText: String
@@ -17894,6 +18087,7 @@ SVGClipPathElement[JC] def previousElementSibling: Element
 SVGClipPathElement[JC] def previousSibling: Node
 SVGClipPathElement[JC] def querySelector(selectors: String): Element
 SVGClipPathElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGClipPathElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGClipPathElement[JC] def remove(): Unit
 SVGClipPathElement[JC] def removeAttribute(name: String): Unit
 SVGClipPathElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -17917,6 +18111,7 @@ SVGClipPathElement[JC] def setAttribute(name: String, value: String): Unit
 SVGClipPathElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGClipPathElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGClipPathElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGClipPathElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGClipPathElement[JC] def shadowRoot: ShadowRoot
 SVGClipPathElement[JC] var style: CSSStyleDeclaration
 SVGClipPathElement[JC] var systemLanguage: SVGStringList
@@ -17967,6 +18162,7 @@ SVGComponentTransferFunctionElement[JC] def hasAttribute(name: String): Boolean
 SVGComponentTransferFunctionElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGComponentTransferFunctionElement[JC] def hasAttributes(): Boolean
 SVGComponentTransferFunctionElement[JC] def hasChildNodes(): Boolean
+SVGComponentTransferFunctionElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGComponentTransferFunctionElement[JC] var id: String
 SVGComponentTransferFunctionElement[JC] var innerHTML: String
 SVGComponentTransferFunctionElement[JC] var innerText: String
@@ -18018,6 +18214,7 @@ SVGComponentTransferFunctionElement[JC] def previousElementSibling: Element
 SVGComponentTransferFunctionElement[JC] def previousSibling: Node
 SVGComponentTransferFunctionElement[JC] def querySelector(selectors: String): Element
 SVGComponentTransferFunctionElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGComponentTransferFunctionElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGComponentTransferFunctionElement[JC] def remove(): Unit
 SVGComponentTransferFunctionElement[JC] def removeAttribute(name: String): Unit
 SVGComponentTransferFunctionElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18039,6 +18236,7 @@ SVGComponentTransferFunctionElement[JC] def setAttribute(name: String, value: St
 SVGComponentTransferFunctionElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGComponentTransferFunctionElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGComponentTransferFunctionElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGComponentTransferFunctionElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGComponentTransferFunctionElement[JC] def shadowRoot: ShadowRoot
 SVGComponentTransferFunctionElement[JC] def slope: SVGAnimatedNumber
 SVGComponentTransferFunctionElement[JC] def tableValues: SVGAnimatedNumberList
@@ -18099,6 +18297,7 @@ SVGDefsElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): 
 SVGDefsElement[JC] def hasAttributes(): Boolean
 SVGDefsElement[JC] def hasChildNodes(): Boolean
 SVGDefsElement[JC] def hasExtension(extension: String): Boolean
+SVGDefsElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGDefsElement[JC] var id: String
 SVGDefsElement[JC] var innerHTML: String
 SVGDefsElement[JC] var innerText: String
@@ -18149,6 +18348,7 @@ SVGDefsElement[JC] def previousElementSibling: Element
 SVGDefsElement[JC] def previousSibling: Node
 SVGDefsElement[JC] def querySelector(selectors: String): Element
 SVGDefsElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGDefsElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGDefsElement[JC] def remove(): Unit
 SVGDefsElement[JC] def removeAttribute(name: String): Unit
 SVGDefsElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18172,6 +18372,7 @@ SVGDefsElement[JC] def setAttribute(name: String, value: String): Unit
 SVGDefsElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGDefsElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGDefsElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGDefsElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGDefsElement[JC] def shadowRoot: ShadowRoot
 SVGDefsElement[JC] var style: CSSStyleDeclaration
 SVGDefsElement[JC] var systemLanguage: SVGStringList
@@ -18221,6 +18422,7 @@ SVGDescElement[JC] def hasAttribute(name: String): Boolean
 SVGDescElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGDescElement[JC] def hasAttributes(): Boolean
 SVGDescElement[JC] def hasChildNodes(): Boolean
+SVGDescElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGDescElement[JC] var id: String
 SVGDescElement[JC] var innerHTML: String
 SVGDescElement[JC] var innerText: String
@@ -18270,6 +18472,7 @@ SVGDescElement[JC] def previousElementSibling: Element
 SVGDescElement[JC] def previousSibling: Node
 SVGDescElement[JC] def querySelector(selectors: String): Element
 SVGDescElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGDescElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGDescElement[JC] def remove(): Unit
 SVGDescElement[JC] def removeAttribute(name: String): Unit
 SVGDescElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18291,6 +18494,7 @@ SVGDescElement[JC] def setAttribute(name: String, value: String): Unit
 SVGDescElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGDescElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGDescElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGDescElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGDescElement[JC] def shadowRoot: ShadowRoot
 SVGDescElement[JC] var style: CSSStyleDeclaration
 SVGDescElement[JC] def tagName: String
@@ -18337,6 +18541,7 @@ SVGElement[JC] def hasAttribute(name: String): Boolean
 SVGElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGElement[JC] def hasAttributes(): Boolean
 SVGElement[JC] def hasChildNodes(): Boolean
+SVGElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGElement[JC] var id: String
 SVGElement[JC] var innerHTML: String
 SVGElement[JC] var innerText: String
@@ -18386,6 +18591,7 @@ SVGElement[JC] def previousElementSibling: Element
 SVGElement[JC] def previousSibling: Node
 SVGElement[JC] def querySelector(selectors: String): Element
 SVGElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGElement[JC] def remove(): Unit
 SVGElement[JC] def removeAttribute(name: String): Unit
 SVGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18407,6 +18613,7 @@ SVGElement[JC] def setAttribute(name: String, value: String): Unit
 SVGElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGElement[JC] def shadowRoot: ShadowRoot
 SVGElement[JC] def tagName: String
 SVGElement[JC] var textContent: String
@@ -18475,6 +18682,7 @@ SVGEllipseElement[JC] def hasAttributeNS(namespaceURI: String, localName: String
 SVGEllipseElement[JC] def hasAttributes(): Boolean
 SVGEllipseElement[JC] def hasChildNodes(): Boolean
 SVGEllipseElement[JC] def hasExtension(extension: String): Boolean
+SVGEllipseElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGEllipseElement[JC] var id: String
 SVGEllipseElement[JC] var innerHTML: String
 SVGEllipseElement[JC] var innerText: String
@@ -18525,6 +18733,7 @@ SVGEllipseElement[JC] def previousElementSibling: Element
 SVGEllipseElement[JC] def previousSibling: Node
 SVGEllipseElement[JC] def querySelector(selectors: String): Element
 SVGEllipseElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGEllipseElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGEllipseElement[JC] def remove(): Unit
 SVGEllipseElement[JC] def removeAttribute(name: String): Unit
 SVGEllipseElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18550,6 +18759,7 @@ SVGEllipseElement[JC] def setAttribute(name: String, value: String): Unit
 SVGEllipseElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGEllipseElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGEllipseElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGEllipseElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGEllipseElement[JC] def shadowRoot: ShadowRoot
 SVGEllipseElement[JC] var style: CSSStyleDeclaration
 SVGEllipseElement[JC] var systemLanguage: SVGStringList
@@ -18606,6 +18816,7 @@ SVGFEBlendElement[JC] def hasAttribute(name: String): Boolean
 SVGFEBlendElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEBlendElement[JC] def hasAttributes(): Boolean
 SVGFEBlendElement[JC] def hasChildNodes(): Boolean
+SVGFEBlendElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEBlendElement[JC] def height: SVGAnimatedLength
 SVGFEBlendElement[JC] var id: String
 SVGFEBlendElement[JC] def in1: SVGAnimatedString
@@ -18659,6 +18870,7 @@ SVGFEBlendElement[JC] def previousElementSibling: Element
 SVGFEBlendElement[JC] def previousSibling: Node
 SVGFEBlendElement[JC] def querySelector(selectors: String): Element
 SVGFEBlendElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEBlendElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEBlendElement[JC] def remove(): Unit
 SVGFEBlendElement[JC] def removeAttribute(name: String): Unit
 SVGFEBlendElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18681,6 +18893,7 @@ SVGFEBlendElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEBlendElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEBlendElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEBlendElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEBlendElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEBlendElement[JC] def shadowRoot: ShadowRoot
 SVGFEBlendElement[JC] var style: CSSStyleDeclaration
 SVGFEBlendElement[JC] def tagName: String
@@ -18735,6 +18948,7 @@ SVGFEColorMatrixElement[JC] def hasAttribute(name: String): Boolean
 SVGFEColorMatrixElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEColorMatrixElement[JC] def hasAttributes(): Boolean
 SVGFEColorMatrixElement[JC] def hasChildNodes(): Boolean
+SVGFEColorMatrixElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEColorMatrixElement[JC] def height: SVGAnimatedLength
 SVGFEColorMatrixElement[JC] var id: String
 SVGFEColorMatrixElement[JC] def in1: SVGAnimatedString
@@ -18786,6 +19000,7 @@ SVGFEColorMatrixElement[JC] def previousElementSibling: Element
 SVGFEColorMatrixElement[JC] def previousSibling: Node
 SVGFEColorMatrixElement[JC] def querySelector(selectors: String): Element
 SVGFEColorMatrixElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEColorMatrixElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEColorMatrixElement[JC] def remove(): Unit
 SVGFEColorMatrixElement[JC] def removeAttribute(name: String): Unit
 SVGFEColorMatrixElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18808,6 +19023,7 @@ SVGFEColorMatrixElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEColorMatrixElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEColorMatrixElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEColorMatrixElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEColorMatrixElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEColorMatrixElement[JC] def shadowRoot: ShadowRoot
 SVGFEColorMatrixElement[JC] var style: CSSStyleDeclaration
 SVGFEColorMatrixElement[JC] def tagName: String
@@ -18863,6 +19079,7 @@ SVGFEComponentTransferElement[JC] def hasAttribute(name: String): Boolean
 SVGFEComponentTransferElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEComponentTransferElement[JC] def hasAttributes(): Boolean
 SVGFEComponentTransferElement[JC] def hasChildNodes(): Boolean
+SVGFEComponentTransferElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEComponentTransferElement[JC] def height: SVGAnimatedLength
 SVGFEComponentTransferElement[JC] var id: String
 SVGFEComponentTransferElement[JC] def in1: SVGAnimatedString
@@ -18914,6 +19131,7 @@ SVGFEComponentTransferElement[JC] def previousElementSibling: Element
 SVGFEComponentTransferElement[JC] def previousSibling: Node
 SVGFEComponentTransferElement[JC] def querySelector(selectors: String): Element
 SVGFEComponentTransferElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEComponentTransferElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEComponentTransferElement[JC] def remove(): Unit
 SVGFEComponentTransferElement[JC] def removeAttribute(name: String): Unit
 SVGFEComponentTransferElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -18936,6 +19154,7 @@ SVGFEComponentTransferElement[JC] def setAttribute(name: String, value: String):
 SVGFEComponentTransferElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEComponentTransferElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEComponentTransferElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEComponentTransferElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEComponentTransferElement[JC] def shadowRoot: ShadowRoot
 SVGFEComponentTransferElement[JC] var style: CSSStyleDeclaration
 SVGFEComponentTransferElement[JC] def tagName: String
@@ -18984,6 +19203,7 @@ SVGFECompositeElement[JC] def hasAttribute(name: String): Boolean
 SVGFECompositeElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFECompositeElement[JC] def hasAttributes(): Boolean
 SVGFECompositeElement[JC] def hasChildNodes(): Boolean
+SVGFECompositeElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFECompositeElement[JC] def height: SVGAnimatedLength
 SVGFECompositeElement[JC] var id: String
 SVGFECompositeElement[JC] def in1: SVGAnimatedString
@@ -19041,6 +19261,7 @@ SVGFECompositeElement[JC] def previousElementSibling: Element
 SVGFECompositeElement[JC] def previousSibling: Node
 SVGFECompositeElement[JC] def querySelector(selectors: String): Element
 SVGFECompositeElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFECompositeElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFECompositeElement[JC] def remove(): Unit
 SVGFECompositeElement[JC] def removeAttribute(name: String): Unit
 SVGFECompositeElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19063,6 +19284,7 @@ SVGFECompositeElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFECompositeElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFECompositeElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFECompositeElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFECompositeElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFECompositeElement[JC] def shadowRoot: ShadowRoot
 SVGFECompositeElement[JC] var style: CSSStyleDeclaration
 SVGFECompositeElement[JC] def tagName: String
@@ -19121,6 +19343,7 @@ SVGFEConvolveMatrixElement[JC] def hasAttribute(name: String): Boolean
 SVGFEConvolveMatrixElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEConvolveMatrixElement[JC] def hasAttributes(): Boolean
 SVGFEConvolveMatrixElement[JC] def hasChildNodes(): Boolean
+SVGFEConvolveMatrixElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEConvolveMatrixElement[JC] def height: SVGAnimatedLength
 SVGFEConvolveMatrixElement[JC] var id: String
 SVGFEConvolveMatrixElement[JC] def in1: SVGAnimatedString
@@ -19178,6 +19401,7 @@ SVGFEConvolveMatrixElement[JC] def previousElementSibling: Element
 SVGFEConvolveMatrixElement[JC] def previousSibling: Node
 SVGFEConvolveMatrixElement[JC] def querySelector(selectors: String): Element
 SVGFEConvolveMatrixElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEConvolveMatrixElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEConvolveMatrixElement[JC] def remove(): Unit
 SVGFEConvolveMatrixElement[JC] def removeAttribute(name: String): Unit
 SVGFEConvolveMatrixElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19200,6 +19424,7 @@ SVGFEConvolveMatrixElement[JC] def setAttribute(name: String, value: String): Un
 SVGFEConvolveMatrixElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEConvolveMatrixElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEConvolveMatrixElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEConvolveMatrixElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEConvolveMatrixElement[JC] def shadowRoot: ShadowRoot
 SVGFEConvolveMatrixElement[JC] var style: CSSStyleDeclaration
 SVGFEConvolveMatrixElement[JC] def tagName: String
@@ -19255,6 +19480,7 @@ SVGFEDiffuseLightingElement[JC] def hasAttribute(name: String): Boolean
 SVGFEDiffuseLightingElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEDiffuseLightingElement[JC] def hasAttributes(): Boolean
 SVGFEDiffuseLightingElement[JC] def hasChildNodes(): Boolean
+SVGFEDiffuseLightingElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEDiffuseLightingElement[JC] def height: SVGAnimatedLength
 SVGFEDiffuseLightingElement[JC] var id: String
 SVGFEDiffuseLightingElement[JC] def in1: SVGAnimatedString
@@ -19308,6 +19534,7 @@ SVGFEDiffuseLightingElement[JC] def previousElementSibling: Element
 SVGFEDiffuseLightingElement[JC] def previousSibling: Node
 SVGFEDiffuseLightingElement[JC] def querySelector(selectors: String): Element
 SVGFEDiffuseLightingElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEDiffuseLightingElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEDiffuseLightingElement[JC] def remove(): Unit
 SVGFEDiffuseLightingElement[JC] def removeAttribute(name: String): Unit
 SVGFEDiffuseLightingElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19330,6 +19557,7 @@ SVGFEDiffuseLightingElement[JC] def setAttribute(name: String, value: String): U
 SVGFEDiffuseLightingElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEDiffuseLightingElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEDiffuseLightingElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEDiffuseLightingElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEDiffuseLightingElement[JC] def shadowRoot: ShadowRoot
 SVGFEDiffuseLightingElement[JC] var style: CSSStyleDeclaration
 SVGFEDiffuseLightingElement[JC] def surfaceScale: SVGAnimatedNumber
@@ -19379,6 +19607,7 @@ SVGFEDisplacementMapElement[JC] def hasAttribute(name: String): Boolean
 SVGFEDisplacementMapElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEDisplacementMapElement[JC] def hasAttributes(): Boolean
 SVGFEDisplacementMapElement[JC] def hasChildNodes(): Boolean
+SVGFEDisplacementMapElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEDisplacementMapElement[JC] def height: SVGAnimatedLength
 SVGFEDisplacementMapElement[JC] var id: String
 SVGFEDisplacementMapElement[JC] def in1: SVGAnimatedString
@@ -19431,6 +19660,7 @@ SVGFEDisplacementMapElement[JC] def previousElementSibling: Element
 SVGFEDisplacementMapElement[JC] def previousSibling: Node
 SVGFEDisplacementMapElement[JC] def querySelector(selectors: String): Element
 SVGFEDisplacementMapElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEDisplacementMapElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEDisplacementMapElement[JC] def remove(): Unit
 SVGFEDisplacementMapElement[JC] def removeAttribute(name: String): Unit
 SVGFEDisplacementMapElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19454,6 +19684,7 @@ SVGFEDisplacementMapElement[JC] def setAttribute(name: String, value: String): U
 SVGFEDisplacementMapElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEDisplacementMapElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEDisplacementMapElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEDisplacementMapElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEDisplacementMapElement[JC] def shadowRoot: ShadowRoot
 SVGFEDisplacementMapElement[JC] var style: CSSStyleDeclaration
 SVGFEDisplacementMapElement[JC] def tagName: String
@@ -19510,6 +19741,7 @@ SVGFEDistantLightElement[JC] def hasAttribute(name: String): Boolean
 SVGFEDistantLightElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEDistantLightElement[JC] def hasAttributes(): Boolean
 SVGFEDistantLightElement[JC] def hasChildNodes(): Boolean
+SVGFEDistantLightElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEDistantLightElement[JC] var id: String
 SVGFEDistantLightElement[JC] var innerHTML: String
 SVGFEDistantLightElement[JC] var innerText: String
@@ -19559,6 +19791,7 @@ SVGFEDistantLightElement[JC] def previousElementSibling: Element
 SVGFEDistantLightElement[JC] def previousSibling: Node
 SVGFEDistantLightElement[JC] def querySelector(selectors: String): Element
 SVGFEDistantLightElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEDistantLightElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEDistantLightElement[JC] def remove(): Unit
 SVGFEDistantLightElement[JC] def removeAttribute(name: String): Unit
 SVGFEDistantLightElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19580,6 +19813,7 @@ SVGFEDistantLightElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEDistantLightElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEDistantLightElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEDistantLightElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEDistantLightElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEDistantLightElement[JC] def shadowRoot: ShadowRoot
 SVGFEDistantLightElement[JC] def tagName: String
 SVGFEDistantLightElement[JC] var textContent: String
@@ -19624,6 +19858,7 @@ SVGFEFloodElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFloodElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEFloodElement[JC] def hasAttributes(): Boolean
 SVGFEFloodElement[JC] def hasChildNodes(): Boolean
+SVGFEFloodElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEFloodElement[JC] def height: SVGAnimatedLength
 SVGFEFloodElement[JC] var id: String
 SVGFEFloodElement[JC] var innerHTML: String
@@ -19674,6 +19909,7 @@ SVGFEFloodElement[JC] def previousElementSibling: Element
 SVGFEFloodElement[JC] def previousSibling: Node
 SVGFEFloodElement[JC] def querySelector(selectors: String): Element
 SVGFEFloodElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEFloodElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEFloodElement[JC] def remove(): Unit
 SVGFEFloodElement[JC] def removeAttribute(name: String): Unit
 SVGFEFloodElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19696,6 +19932,7 @@ SVGFEFloodElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEFloodElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEFloodElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEFloodElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEFloodElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEFloodElement[JC] def shadowRoot: ShadowRoot
 SVGFEFloodElement[JC] var style: CSSStyleDeclaration
 SVGFEFloodElement[JC] def tagName: String
@@ -19745,6 +19982,7 @@ SVGFEFuncAElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFuncAElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEFuncAElement[JC] def hasAttributes(): Boolean
 SVGFEFuncAElement[JC] def hasChildNodes(): Boolean
+SVGFEFuncAElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEFuncAElement[JC] var id: String
 SVGFEFuncAElement[JC] var innerHTML: String
 SVGFEFuncAElement[JC] var innerText: String
@@ -19796,6 +20034,7 @@ SVGFEFuncAElement[JC] def previousElementSibling: Element
 SVGFEFuncAElement[JC] def previousSibling: Node
 SVGFEFuncAElement[JC] def querySelector(selectors: String): Element
 SVGFEFuncAElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEFuncAElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEFuncAElement[JC] def remove(): Unit
 SVGFEFuncAElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncAElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19817,6 +20056,7 @@ SVGFEFuncAElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEFuncAElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEFuncAElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEFuncAElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEFuncAElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEFuncAElement[JC] def shadowRoot: ShadowRoot
 SVGFEFuncAElement[JC] def slope: SVGAnimatedNumber
 SVGFEFuncAElement[JC] def tableValues: SVGAnimatedNumberList
@@ -19865,6 +20105,7 @@ SVGFEFuncBElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFuncBElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEFuncBElement[JC] def hasAttributes(): Boolean
 SVGFEFuncBElement[JC] def hasChildNodes(): Boolean
+SVGFEFuncBElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEFuncBElement[JC] var id: String
 SVGFEFuncBElement[JC] var innerHTML: String
 SVGFEFuncBElement[JC] var innerText: String
@@ -19916,6 +20157,7 @@ SVGFEFuncBElement[JC] def previousElementSibling: Element
 SVGFEFuncBElement[JC] def previousSibling: Node
 SVGFEFuncBElement[JC] def querySelector(selectors: String): Element
 SVGFEFuncBElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEFuncBElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEFuncBElement[JC] def remove(): Unit
 SVGFEFuncBElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncBElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -19937,6 +20179,7 @@ SVGFEFuncBElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEFuncBElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEFuncBElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEFuncBElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEFuncBElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEFuncBElement[JC] def shadowRoot: ShadowRoot
 SVGFEFuncBElement[JC] def slope: SVGAnimatedNumber
 SVGFEFuncBElement[JC] def tableValues: SVGAnimatedNumberList
@@ -19985,6 +20228,7 @@ SVGFEFuncGElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFuncGElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEFuncGElement[JC] def hasAttributes(): Boolean
 SVGFEFuncGElement[JC] def hasChildNodes(): Boolean
+SVGFEFuncGElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEFuncGElement[JC] var id: String
 SVGFEFuncGElement[JC] var innerHTML: String
 SVGFEFuncGElement[JC] var innerText: String
@@ -20036,6 +20280,7 @@ SVGFEFuncGElement[JC] def previousElementSibling: Element
 SVGFEFuncGElement[JC] def previousSibling: Node
 SVGFEFuncGElement[JC] def querySelector(selectors: String): Element
 SVGFEFuncGElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEFuncGElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEFuncGElement[JC] def remove(): Unit
 SVGFEFuncGElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20057,6 +20302,7 @@ SVGFEFuncGElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEFuncGElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEFuncGElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEFuncGElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEFuncGElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEFuncGElement[JC] def shadowRoot: ShadowRoot
 SVGFEFuncGElement[JC] def slope: SVGAnimatedNumber
 SVGFEFuncGElement[JC] def tableValues: SVGAnimatedNumberList
@@ -20105,6 +20351,7 @@ SVGFEFuncRElement[JC] def hasAttribute(name: String): Boolean
 SVGFEFuncRElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEFuncRElement[JC] def hasAttributes(): Boolean
 SVGFEFuncRElement[JC] def hasChildNodes(): Boolean
+SVGFEFuncRElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEFuncRElement[JC] var id: String
 SVGFEFuncRElement[JC] var innerHTML: String
 SVGFEFuncRElement[JC] var innerText: String
@@ -20156,6 +20403,7 @@ SVGFEFuncRElement[JC] def previousElementSibling: Element
 SVGFEFuncRElement[JC] def previousSibling: Node
 SVGFEFuncRElement[JC] def querySelector(selectors: String): Element
 SVGFEFuncRElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEFuncRElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEFuncRElement[JC] def remove(): Unit
 SVGFEFuncRElement[JC] def removeAttribute(name: String): Unit
 SVGFEFuncRElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20177,6 +20425,7 @@ SVGFEFuncRElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEFuncRElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEFuncRElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEFuncRElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEFuncRElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEFuncRElement[JC] def shadowRoot: ShadowRoot
 SVGFEFuncRElement[JC] def slope: SVGAnimatedNumber
 SVGFEFuncRElement[JC] def tableValues: SVGAnimatedNumberList
@@ -20224,6 +20473,7 @@ SVGFEGaussianBlurElement[JC] def hasAttribute(name: String): Boolean
 SVGFEGaussianBlurElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEGaussianBlurElement[JC] def hasAttributes(): Boolean
 SVGFEGaussianBlurElement[JC] def hasChildNodes(): Boolean
+SVGFEGaussianBlurElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEGaussianBlurElement[JC] def height: SVGAnimatedLength
 SVGFEGaussianBlurElement[JC] var id: String
 SVGFEGaussianBlurElement[JC] def in1: SVGAnimatedString
@@ -20275,6 +20525,7 @@ SVGFEGaussianBlurElement[JC] def previousElementSibling: Element
 SVGFEGaussianBlurElement[JC] def previousSibling: Node
 SVGFEGaussianBlurElement[JC] def querySelector(selectors: String): Element
 SVGFEGaussianBlurElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEGaussianBlurElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEGaussianBlurElement[JC] def remove(): Unit
 SVGFEGaussianBlurElement[JC] def removeAttribute(name: String): Unit
 SVGFEGaussianBlurElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20297,6 +20548,7 @@ SVGFEGaussianBlurElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEGaussianBlurElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEGaussianBlurElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEGaussianBlurElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEGaussianBlurElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEGaussianBlurElement[JC] def setStdDeviation(stdDeviationX: Double, stdDeviationY: Double): Unit
 SVGFEGaussianBlurElement[JC] def shadowRoot: ShadowRoot
 SVGFEGaussianBlurElement[JC] def stdDeviationX: SVGAnimatedNumber
@@ -20349,6 +20601,7 @@ SVGFEImageElement[JC] def hasAttribute(name: String): Boolean
 SVGFEImageElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEImageElement[JC] def hasAttributes(): Boolean
 SVGFEImageElement[JC] def hasChildNodes(): Boolean
+SVGFEImageElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEImageElement[JC] def height: SVGAnimatedLength
 SVGFEImageElement[JC] var href: SVGAnimatedString
 SVGFEImageElement[JC] var id: String
@@ -20401,6 +20654,7 @@ SVGFEImageElement[JC] def previousElementSibling: Element
 SVGFEImageElement[JC] def previousSibling: Node
 SVGFEImageElement[JC] def querySelector(selectors: String): Element
 SVGFEImageElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEImageElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEImageElement[JC] def remove(): Unit
 SVGFEImageElement[JC] def removeAttribute(name: String): Unit
 SVGFEImageElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20423,6 +20677,7 @@ SVGFEImageElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEImageElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEImageElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEImageElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEImageElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEImageElement[JC] def shadowRoot: ShadowRoot
 SVGFEImageElement[JC] var style: CSSStyleDeclaration
 SVGFEImageElement[JC] def tagName: String
@@ -20473,6 +20728,7 @@ SVGFEMergeElement[JC] def hasAttribute(name: String): Boolean
 SVGFEMergeElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEMergeElement[JC] def hasAttributes(): Boolean
 SVGFEMergeElement[JC] def hasChildNodes(): Boolean
+SVGFEMergeElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEMergeElement[JC] def height: SVGAnimatedLength
 SVGFEMergeElement[JC] var id: String
 SVGFEMergeElement[JC] var innerHTML: String
@@ -20523,6 +20779,7 @@ SVGFEMergeElement[JC] def previousElementSibling: Element
 SVGFEMergeElement[JC] def previousSibling: Node
 SVGFEMergeElement[JC] def querySelector(selectors: String): Element
 SVGFEMergeElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEMergeElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEMergeElement[JC] def remove(): Unit
 SVGFEMergeElement[JC] def removeAttribute(name: String): Unit
 SVGFEMergeElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20545,6 +20802,7 @@ SVGFEMergeElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEMergeElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEMergeElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEMergeElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEMergeElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEMergeElement[JC] def shadowRoot: ShadowRoot
 SVGFEMergeElement[JC] var style: CSSStyleDeclaration
 SVGFEMergeElement[JC] def tagName: String
@@ -20592,6 +20850,7 @@ SVGFEMergeNodeElement[JC] def hasAttribute(name: String): Boolean
 SVGFEMergeNodeElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEMergeNodeElement[JC] def hasAttributes(): Boolean
 SVGFEMergeNodeElement[JC] def hasChildNodes(): Boolean
+SVGFEMergeNodeElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEMergeNodeElement[JC] var id: String
 SVGFEMergeNodeElement[JC] def in1: SVGAnimatedString
 SVGFEMergeNodeElement[JC] var innerHTML: String
@@ -20642,6 +20901,7 @@ SVGFEMergeNodeElement[JC] def previousElementSibling: Element
 SVGFEMergeNodeElement[JC] def previousSibling: Node
 SVGFEMergeNodeElement[JC] def querySelector(selectors: String): Element
 SVGFEMergeNodeElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEMergeNodeElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEMergeNodeElement[JC] def remove(): Unit
 SVGFEMergeNodeElement[JC] def removeAttribute(name: String): Unit
 SVGFEMergeNodeElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20663,6 +20923,7 @@ SVGFEMergeNodeElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEMergeNodeElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEMergeNodeElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEMergeNodeElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEMergeNodeElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEMergeNodeElement[JC] def shadowRoot: ShadowRoot
 SVGFEMergeNodeElement[JC] def tagName: String
 SVGFEMergeNodeElement[JC] var textContent: String
@@ -20707,6 +20968,7 @@ SVGFEMorphologyElement[JC] def hasAttribute(name: String): Boolean
 SVGFEMorphologyElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEMorphologyElement[JC] def hasAttributes(): Boolean
 SVGFEMorphologyElement[JC] def hasChildNodes(): Boolean
+SVGFEMorphologyElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEMorphologyElement[JC] def height: SVGAnimatedLength
 SVGFEMorphologyElement[JC] var id: String
 SVGFEMorphologyElement[JC] def in1: SVGAnimatedString
@@ -20761,6 +21023,7 @@ SVGFEMorphologyElement[JC] def querySelector(selectors: String): Element
 SVGFEMorphologyElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGFEMorphologyElement[JC] def radiusX: SVGAnimatedNumber
 SVGFEMorphologyElement[JC] def radiusY: SVGAnimatedNumber
+SVGFEMorphologyElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEMorphologyElement[JC] def remove(): Unit
 SVGFEMorphologyElement[JC] def removeAttribute(name: String): Unit
 SVGFEMorphologyElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20783,6 +21046,7 @@ SVGFEMorphologyElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEMorphologyElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEMorphologyElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEMorphologyElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEMorphologyElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEMorphologyElement[JC] def shadowRoot: ShadowRoot
 SVGFEMorphologyElement[JC] var style: CSSStyleDeclaration
 SVGFEMorphologyElement[JC] def tagName: String
@@ -20836,6 +21100,7 @@ SVGFEOffsetElement[JC] def hasAttribute(name: String): Boolean
 SVGFEOffsetElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEOffsetElement[JC] def hasAttributes(): Boolean
 SVGFEOffsetElement[JC] def hasChildNodes(): Boolean
+SVGFEOffsetElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEOffsetElement[JC] def height: SVGAnimatedLength
 SVGFEOffsetElement[JC] var id: String
 SVGFEOffsetElement[JC] def in1: SVGAnimatedString
@@ -20887,6 +21152,7 @@ SVGFEOffsetElement[JC] def previousElementSibling: Element
 SVGFEOffsetElement[JC] def previousSibling: Node
 SVGFEOffsetElement[JC] def querySelector(selectors: String): Element
 SVGFEOffsetElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEOffsetElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEOffsetElement[JC] def remove(): Unit
 SVGFEOffsetElement[JC] def removeAttribute(name: String): Unit
 SVGFEOffsetElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -20909,6 +21175,7 @@ SVGFEOffsetElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEOffsetElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEOffsetElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEOffsetElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEOffsetElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEOffsetElement[JC] def shadowRoot: ShadowRoot
 SVGFEOffsetElement[JC] var style: CSSStyleDeclaration
 SVGFEOffsetElement[JC] def tagName: String
@@ -20956,6 +21223,7 @@ SVGFEPointLightElement[JC] def hasAttribute(name: String): Boolean
 SVGFEPointLightElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFEPointLightElement[JC] def hasAttributes(): Boolean
 SVGFEPointLightElement[JC] def hasChildNodes(): Boolean
+SVGFEPointLightElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFEPointLightElement[JC] var id: String
 SVGFEPointLightElement[JC] var innerHTML: String
 SVGFEPointLightElement[JC] var innerText: String
@@ -21005,6 +21273,7 @@ SVGFEPointLightElement[JC] def previousElementSibling: Element
 SVGFEPointLightElement[JC] def previousSibling: Node
 SVGFEPointLightElement[JC] def querySelector(selectors: String): Element
 SVGFEPointLightElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFEPointLightElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFEPointLightElement[JC] def remove(): Unit
 SVGFEPointLightElement[JC] def removeAttribute(name: String): Unit
 SVGFEPointLightElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21026,6 +21295,7 @@ SVGFEPointLightElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFEPointLightElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFEPointLightElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFEPointLightElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFEPointLightElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFEPointLightElement[JC] def shadowRoot: ShadowRoot
 SVGFEPointLightElement[JC] def tagName: String
 SVGFEPointLightElement[JC] var textContent: String
@@ -21073,6 +21343,7 @@ SVGFESpecularLightingElement[JC] def hasAttribute(name: String): Boolean
 SVGFESpecularLightingElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFESpecularLightingElement[JC] def hasAttributes(): Boolean
 SVGFESpecularLightingElement[JC] def hasChildNodes(): Boolean
+SVGFESpecularLightingElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFESpecularLightingElement[JC] def height: SVGAnimatedLength
 SVGFESpecularLightingElement[JC] var id: String
 SVGFESpecularLightingElement[JC] def in1: SVGAnimatedString
@@ -21126,6 +21397,7 @@ SVGFESpecularLightingElement[JC] def previousElementSibling: Element
 SVGFESpecularLightingElement[JC] def previousSibling: Node
 SVGFESpecularLightingElement[JC] def querySelector(selectors: String): Element
 SVGFESpecularLightingElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFESpecularLightingElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFESpecularLightingElement[JC] def remove(): Unit
 SVGFESpecularLightingElement[JC] def removeAttribute(name: String): Unit
 SVGFESpecularLightingElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21148,6 +21420,7 @@ SVGFESpecularLightingElement[JC] def setAttribute(name: String, value: String): 
 SVGFESpecularLightingElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFESpecularLightingElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFESpecularLightingElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFESpecularLightingElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFESpecularLightingElement[JC] def shadowRoot: ShadowRoot
 SVGFESpecularLightingElement[JC] def specularConstant: SVGAnimatedNumber
 SVGFESpecularLightingElement[JC] def specularExponent: SVGAnimatedNumber
@@ -21198,6 +21471,7 @@ SVGFESpotLightElement[JC] def hasAttribute(name: String): Boolean
 SVGFESpotLightElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFESpotLightElement[JC] def hasAttributes(): Boolean
 SVGFESpotLightElement[JC] def hasChildNodes(): Boolean
+SVGFESpotLightElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFESpotLightElement[JC] var id: String
 SVGFESpotLightElement[JC] var innerHTML: String
 SVGFESpotLightElement[JC] var innerText: String
@@ -21251,6 +21525,7 @@ SVGFESpotLightElement[JC] def previousElementSibling: Element
 SVGFESpotLightElement[JC] def previousSibling: Node
 SVGFESpotLightElement[JC] def querySelector(selectors: String): Element
 SVGFESpotLightElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFESpotLightElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFESpotLightElement[JC] def remove(): Unit
 SVGFESpotLightElement[JC] def removeAttribute(name: String): Unit
 SVGFESpotLightElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21272,6 +21547,7 @@ SVGFESpotLightElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFESpotLightElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFESpotLightElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFESpotLightElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFESpotLightElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFESpotLightElement[JC] def shadowRoot: ShadowRoot
 SVGFESpotLightElement[JC] def specularExponent: SVGAnimatedNumber
 SVGFESpotLightElement[JC] def tagName: String
@@ -21320,6 +21596,7 @@ SVGFETileElement[JC] def hasAttribute(name: String): Boolean
 SVGFETileElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFETileElement[JC] def hasAttributes(): Boolean
 SVGFETileElement[JC] def hasChildNodes(): Boolean
+SVGFETileElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFETileElement[JC] def height: SVGAnimatedLength
 SVGFETileElement[JC] var id: String
 SVGFETileElement[JC] def in1: SVGAnimatedString
@@ -21371,6 +21648,7 @@ SVGFETileElement[JC] def previousElementSibling: Element
 SVGFETileElement[JC] def previousSibling: Node
 SVGFETileElement[JC] def querySelector(selectors: String): Element
 SVGFETileElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFETileElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFETileElement[JC] def remove(): Unit
 SVGFETileElement[JC] def removeAttribute(name: String): Unit
 SVGFETileElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21393,6 +21671,7 @@ SVGFETileElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFETileElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFETileElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFETileElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFETileElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFETileElement[JC] def shadowRoot: ShadowRoot
 SVGFETileElement[JC] var style: CSSStyleDeclaration
 SVGFETileElement[JC] def tagName: String
@@ -21443,6 +21722,7 @@ SVGFETurbulenceElement[JC] def hasAttribute(name: String): Boolean
 SVGFETurbulenceElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFETurbulenceElement[JC] def hasAttributes(): Boolean
 SVGFETurbulenceElement[JC] def hasChildNodes(): Boolean
+SVGFETurbulenceElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFETurbulenceElement[JC] def height: SVGAnimatedLength
 SVGFETurbulenceElement[JC] var id: String
 SVGFETurbulenceElement[JC] var innerHTML: String
@@ -21494,6 +21774,7 @@ SVGFETurbulenceElement[JC] def previousElementSibling: Element
 SVGFETurbulenceElement[JC] def previousSibling: Node
 SVGFETurbulenceElement[JC] def querySelector(selectors: String): Element
 SVGFETurbulenceElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFETurbulenceElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFETurbulenceElement[JC] def remove(): Unit
 SVGFETurbulenceElement[JC] def removeAttribute(name: String): Unit
 SVGFETurbulenceElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21517,6 +21798,7 @@ SVGFETurbulenceElement[JC] def setAttribute(name: String, value: String): Unit
 SVGFETurbulenceElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGFETurbulenceElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFETurbulenceElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGFETurbulenceElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFETurbulenceElement[JC] def shadowRoot: ShadowRoot
 SVGFETurbulenceElement[JC] def stitchTiles: SVGAnimatedEnumeration
 SVGFETurbulenceElement[JC] var style: CSSStyleDeclaration
@@ -21580,6 +21862,7 @@ SVGFilterElement[JC] def hasAttribute(name: String): Boolean
 SVGFilterElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGFilterElement[JC] def hasAttributes(): Boolean
 SVGFilterElement[JC] def hasChildNodes(): Boolean
+SVGFilterElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGFilterElement[JC] def height: SVGAnimatedLength
 SVGFilterElement[JC] var href: SVGAnimatedString
 SVGFilterElement[JC] var id: String
@@ -21632,6 +21915,7 @@ SVGFilterElement[JC] def previousSibling: Node
 SVGFilterElement[JC] def primitiveUnits: SVGAnimatedEnumeration
 SVGFilterElement[JC] def querySelector(selectors: String): Element
 SVGFilterElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGFilterElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGFilterElement[JC] def remove(): Unit
 SVGFilterElement[JC] def removeAttribute(name: String): Unit
 SVGFilterElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21654,6 +21938,7 @@ SVGFilterElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: Str
 SVGFilterElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGFilterElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 SVGFilterElement[JC] def setFilterRes(filterResX: Double, filterResY: Double): Unit
+SVGFilterElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGFilterElement[JC] def shadowRoot: ShadowRoot
 SVGFilterElement[JC] var style: CSSStyleDeclaration
 SVGFilterElement[JC] def tagName: String
@@ -21720,6 +22005,7 @@ SVGGElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boo
 SVGGElement[JC] def hasAttributes(): Boolean
 SVGGElement[JC] def hasChildNodes(): Boolean
 SVGGElement[JC] def hasExtension(extension: String): Boolean
+SVGGElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGGElement[JC] var id: String
 SVGGElement[JC] var innerHTML: String
 SVGGElement[JC] var innerText: String
@@ -21770,6 +22056,7 @@ SVGGElement[JC] def previousElementSibling: Element
 SVGGElement[JC] def previousSibling: Node
 SVGGElement[JC] def querySelector(selectors: String): Element
 SVGGElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGGElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGGElement[JC] def remove(): Unit
 SVGGElement[JC] def removeAttribute(name: String): Unit
 SVGGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21793,6 +22080,7 @@ SVGGElement[JC] def setAttribute(name: String, value: String): Unit
 SVGGElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGGElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGGElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGGElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGGElement[JC] def shadowRoot: ShadowRoot
 SVGGElement[JC] var style: CSSStyleDeclaration
 SVGGElement[JC] var systemLanguage: SVGStringList
@@ -21848,6 +22136,7 @@ SVGGradientElement[JC] def hasAttribute(name: String): Boolean
 SVGGradientElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGGradientElement[JC] def hasAttributes(): Boolean
 SVGGradientElement[JC] def hasChildNodes(): Boolean
+SVGGradientElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGGradientElement[JC] var href: SVGAnimatedString
 SVGGradientElement[JC] var id: String
 SVGGradientElement[JC] var innerHTML: String
@@ -21898,6 +22187,7 @@ SVGGradientElement[JC] def previousElementSibling: Element
 SVGGradientElement[JC] def previousSibling: Node
 SVGGradientElement[JC] def querySelector(selectors: String): Element
 SVGGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGGradientElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGGradientElement[JC] def remove(): Unit
 SVGGradientElement[JC] def removeAttribute(name: String): Unit
 SVGGradientElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -21919,6 +22209,7 @@ SVGGradientElement[JC] def setAttribute(name: String, value: String): Unit
 SVGGradientElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGGradientElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGGradientElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGGradientElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGGradientElement[JC] def shadowRoot: ShadowRoot
 SVGGradientElement[JC] def spreadMethod: SVGAnimatedEnumeration
 SVGGradientElement[JC] var style: CSSStyleDeclaration
@@ -21976,6 +22267,7 @@ SVGImageElement[JC] def hasAttributeNS(namespaceURI: String, localName: String):
 SVGImageElement[JC] def hasAttributes(): Boolean
 SVGImageElement[JC] def hasChildNodes(): Boolean
 SVGImageElement[JC] def hasExtension(extension: String): Boolean
+SVGImageElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGImageElement[JC] def height: SVGAnimatedLength
 SVGImageElement[JC] var href: SVGAnimatedString
 SVGImageElement[JC] var id: String
@@ -22029,6 +22321,7 @@ SVGImageElement[JC] def previousElementSibling: Element
 SVGImageElement[JC] def previousSibling: Node
 SVGImageElement[JC] def querySelector(selectors: String): Element
 SVGImageElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGImageElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGImageElement[JC] def remove(): Unit
 SVGImageElement[JC] def removeAttribute(name: String): Unit
 SVGImageElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22052,6 +22345,7 @@ SVGImageElement[JC] def setAttribute(name: String, value: String): Unit
 SVGImageElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGImageElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGImageElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGImageElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGImageElement[JC] def shadowRoot: ShadowRoot
 SVGImageElement[JC] var style: CSSStyleDeclaration
 SVGImageElement[JC] var systemLanguage: SVGStringList
@@ -22138,6 +22432,7 @@ SVGLineElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): 
 SVGLineElement[JC] def hasAttributes(): Boolean
 SVGLineElement[JC] def hasChildNodes(): Boolean
 SVGLineElement[JC] def hasExtension(extension: String): Boolean
+SVGLineElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGLineElement[JC] var id: String
 SVGLineElement[JC] var innerHTML: String
 SVGLineElement[JC] var innerText: String
@@ -22188,6 +22483,7 @@ SVGLineElement[JC] def previousElementSibling: Element
 SVGLineElement[JC] def previousSibling: Node
 SVGLineElement[JC] def querySelector(selectors: String): Element
 SVGLineElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGLineElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGLineElement[JC] def remove(): Unit
 SVGLineElement[JC] def removeAttribute(name: String): Unit
 SVGLineElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22211,6 +22507,7 @@ SVGLineElement[JC] def setAttribute(name: String, value: String): Unit
 SVGLineElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGLineElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGLineElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGLineElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGLineElement[JC] def shadowRoot: ShadowRoot
 SVGLineElement[JC] var style: CSSStyleDeclaration
 SVGLineElement[JC] var systemLanguage: SVGStringList
@@ -22270,6 +22567,7 @@ SVGLinearGradientElement[JC] def hasAttribute(name: String): Boolean
 SVGLinearGradientElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGLinearGradientElement[JC] def hasAttributes(): Boolean
 SVGLinearGradientElement[JC] def hasChildNodes(): Boolean
+SVGLinearGradientElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGLinearGradientElement[JC] var href: SVGAnimatedString
 SVGLinearGradientElement[JC] var id: String
 SVGLinearGradientElement[JC] var innerHTML: String
@@ -22320,6 +22618,7 @@ SVGLinearGradientElement[JC] def previousElementSibling: Element
 SVGLinearGradientElement[JC] def previousSibling: Node
 SVGLinearGradientElement[JC] def querySelector(selectors: String): Element
 SVGLinearGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGLinearGradientElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGLinearGradientElement[JC] def remove(): Unit
 SVGLinearGradientElement[JC] def removeAttribute(name: String): Unit
 SVGLinearGradientElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22341,6 +22640,7 @@ SVGLinearGradientElement[JC] def setAttribute(name: String, value: String): Unit
 SVGLinearGradientElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGLinearGradientElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGLinearGradientElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGLinearGradientElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGLinearGradientElement[JC] def shadowRoot: ShadowRoot
 SVGLinearGradientElement[JC] def spreadMethod: SVGAnimatedEnumeration
 SVGLinearGradientElement[JC] var style: CSSStyleDeclaration
@@ -22398,6 +22698,7 @@ SVGMarkerElement[JC] def hasAttribute(name: String): Boolean
 SVGMarkerElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGMarkerElement[JC] def hasAttributes(): Boolean
 SVGMarkerElement[JC] def hasChildNodes(): Boolean
+SVGMarkerElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGMarkerElement[JC] var id: String
 SVGMarkerElement[JC] var innerHTML: String
 SVGMarkerElement[JC] var innerText: String
@@ -22455,6 +22756,7 @@ SVGMarkerElement[JC] def querySelector(selectors: String): Element
 SVGMarkerElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGMarkerElement[JC] def refX: SVGAnimatedLength
 SVGMarkerElement[JC] def refY: SVGAnimatedLength
+SVGMarkerElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGMarkerElement[JC] def remove(): Unit
 SVGMarkerElement[JC] def removeAttribute(name: String): Unit
 SVGMarkerElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22478,6 +22780,7 @@ SVGMarkerElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGMarkerElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 SVGMarkerElement[JC] def setOrientToAngle(angle: SVGAngle): Unit
 SVGMarkerElement[JC] def setOrientToAuto(): Unit
+SVGMarkerElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGMarkerElement[JC] def shadowRoot: ShadowRoot
 SVGMarkerElement[JC] var style: CSSStyleDeclaration
 SVGMarkerElement[JC] def tagName: String
@@ -22537,6 +22840,7 @@ SVGMaskElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): 
 SVGMaskElement[JC] def hasAttributes(): Boolean
 SVGMaskElement[JC] def hasChildNodes(): Boolean
 SVGMaskElement[JC] def hasExtension(extension: String): Boolean
+SVGMaskElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGMaskElement[JC] def height: SVGAnimatedLength
 SVGMaskElement[JC] var id: String
 SVGMaskElement[JC] var innerHTML: String
@@ -22589,6 +22893,7 @@ SVGMaskElement[JC] def previousElementSibling: Element
 SVGMaskElement[JC] def previousSibling: Node
 SVGMaskElement[JC] def querySelector(selectors: String): Element
 SVGMaskElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGMaskElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGMaskElement[JC] def remove(): Unit
 SVGMaskElement[JC] def removeAttribute(name: String): Unit
 SVGMaskElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22612,6 +22917,7 @@ SVGMaskElement[JC] def setAttribute(name: String, value: String): Unit
 SVGMaskElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGMaskElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGMaskElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGMaskElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGMaskElement[JC] def shadowRoot: ShadowRoot
 SVGMaskElement[JC] var style: CSSStyleDeclaration
 SVGMaskElement[JC] var systemLanguage: SVGStringList
@@ -22679,6 +22985,7 @@ SVGMetadataElement[JC] def hasAttribute(name: String): Boolean
 SVGMetadataElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGMetadataElement[JC] def hasAttributes(): Boolean
 SVGMetadataElement[JC] def hasChildNodes(): Boolean
+SVGMetadataElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGMetadataElement[JC] var id: String
 SVGMetadataElement[JC] var innerHTML: String
 SVGMetadataElement[JC] var innerText: String
@@ -22728,6 +23035,7 @@ SVGMetadataElement[JC] def previousElementSibling: Element
 SVGMetadataElement[JC] def previousSibling: Node
 SVGMetadataElement[JC] def querySelector(selectors: String): Element
 SVGMetadataElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGMetadataElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGMetadataElement[JC] def remove(): Unit
 SVGMetadataElement[JC] def removeAttribute(name: String): Unit
 SVGMetadataElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22749,6 +23057,7 @@ SVGMetadataElement[JC] def setAttribute(name: String, value: String): Unit
 SVGMetadataElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGMetadataElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGMetadataElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGMetadataElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGMetadataElement[JC] def shadowRoot: ShadowRoot
 SVGMetadataElement[JC] def tagName: String
 SVGMetadataElement[JC] var textContent: String
@@ -22831,6 +23140,7 @@ SVGPathElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): 
 SVGPathElement[JC] def hasAttributes(): Boolean
 SVGPathElement[JC] def hasChildNodes(): Boolean
 SVGPathElement[JC] def hasExtension(extension: String): Boolean
+SVGPathElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGPathElement[JC] var id: String
 SVGPathElement[JC] var innerHTML: String
 SVGPathElement[JC] var innerText: String
@@ -22882,6 +23192,7 @@ SVGPathElement[JC] def previousElementSibling: Element
 SVGPathElement[JC] def previousSibling: Node
 SVGPathElement[JC] def querySelector(selectors: String): Element
 SVGPathElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGPathElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGPathElement[JC] def remove(): Unit
 SVGPathElement[JC] def removeAttribute(name: String): Unit
 SVGPathElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -22905,6 +23216,7 @@ SVGPathElement[JC] def setAttribute(name: String, value: String): Unit
 SVGPathElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGPathElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGPathElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGPathElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGPathElement[JC] def shadowRoot: ShadowRoot
 SVGPathElement[JC] var style: CSSStyleDeclaration
 SVGPathElement[JC] var systemLanguage: SVGStringList
@@ -23085,6 +23397,7 @@ SVGPatternElement[JC] def hasAttributeNS(namespaceURI: String, localName: String
 SVGPatternElement[JC] def hasAttributes(): Boolean
 SVGPatternElement[JC] def hasChildNodes(): Boolean
 SVGPatternElement[JC] def hasExtension(extension: String): Boolean
+SVGPatternElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGPatternElement[JC] def height: SVGAnimatedLength
 SVGPatternElement[JC] var href: SVGAnimatedString
 SVGPatternElement[JC] var id: String
@@ -23140,6 +23453,7 @@ SVGPatternElement[JC] def previousElementSibling: Element
 SVGPatternElement[JC] def previousSibling: Node
 SVGPatternElement[JC] def querySelector(selectors: String): Element
 SVGPatternElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGPatternElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGPatternElement[JC] def remove(): Unit
 SVGPatternElement[JC] def removeAttribute(name: String): Unit
 SVGPatternElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -23163,6 +23477,7 @@ SVGPatternElement[JC] def setAttribute(name: String, value: String): Unit
 SVGPatternElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGPatternElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGPatternElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGPatternElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGPatternElement[JC] def shadowRoot: ShadowRoot
 SVGPatternElement[JC] var style: CSSStyleDeclaration
 SVGPatternElement[JC] var systemLanguage: SVGStringList
@@ -23234,6 +23549,7 @@ SVGPolygonElement[JC] def hasAttributeNS(namespaceURI: String, localName: String
 SVGPolygonElement[JC] def hasAttributes(): Boolean
 SVGPolygonElement[JC] def hasChildNodes(): Boolean
 SVGPolygonElement[JC] def hasExtension(extension: String): Boolean
+SVGPolygonElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGPolygonElement[JC] var id: String
 SVGPolygonElement[JC] var innerHTML: String
 SVGPolygonElement[JC] var innerText: String
@@ -23285,6 +23601,7 @@ SVGPolygonElement[JC] def previousElementSibling: Element
 SVGPolygonElement[JC] def previousSibling: Node
 SVGPolygonElement[JC] def querySelector(selectors: String): Element
 SVGPolygonElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGPolygonElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGPolygonElement[JC] def remove(): Unit
 SVGPolygonElement[JC] def removeAttribute(name: String): Unit
 SVGPolygonElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -23308,6 +23625,7 @@ SVGPolygonElement[JC] def setAttribute(name: String, value: String): Unit
 SVGPolygonElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGPolygonElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGPolygonElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGPolygonElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGPolygonElement[JC] def shadowRoot: ShadowRoot
 SVGPolygonElement[JC] var style: CSSStyleDeclaration
 SVGPolygonElement[JC] var systemLanguage: SVGStringList
@@ -23365,6 +23683,7 @@ SVGPolylineElement[JC] def hasAttributeNS(namespaceURI: String, localName: Strin
 SVGPolylineElement[JC] def hasAttributes(): Boolean
 SVGPolylineElement[JC] def hasChildNodes(): Boolean
 SVGPolylineElement[JC] def hasExtension(extension: String): Boolean
+SVGPolylineElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGPolylineElement[JC] var id: String
 SVGPolylineElement[JC] var innerHTML: String
 SVGPolylineElement[JC] var innerText: String
@@ -23416,6 +23735,7 @@ SVGPolylineElement[JC] def previousElementSibling: Element
 SVGPolylineElement[JC] def previousSibling: Node
 SVGPolylineElement[JC] def querySelector(selectors: String): Element
 SVGPolylineElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGPolylineElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGPolylineElement[JC] def remove(): Unit
 SVGPolylineElement[JC] def removeAttribute(name: String): Unit
 SVGPolylineElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -23439,6 +23759,7 @@ SVGPolylineElement[JC] def setAttribute(name: String, value: String): Unit
 SVGPolylineElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGPolylineElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGPolylineElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGPolylineElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGPolylineElement[JC] def shadowRoot: ShadowRoot
 SVGPolylineElement[JC] var style: CSSStyleDeclaration
 SVGPolylineElement[JC] var systemLanguage: SVGStringList
@@ -23514,6 +23835,7 @@ SVGRadialGradientElement[JC] def hasAttribute(name: String): Boolean
 SVGRadialGradientElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGRadialGradientElement[JC] def hasAttributes(): Boolean
 SVGRadialGradientElement[JC] def hasChildNodes(): Boolean
+SVGRadialGradientElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGRadialGradientElement[JC] var href: SVGAnimatedString
 SVGRadialGradientElement[JC] var id: String
 SVGRadialGradientElement[JC] var innerHTML: String
@@ -23565,6 +23887,7 @@ SVGRadialGradientElement[JC] def previousSibling: Node
 SVGRadialGradientElement[JC] def querySelector(selectors: String): Element
 SVGRadialGradientElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
 SVGRadialGradientElement[JC] def r: SVGAnimatedLength
+SVGRadialGradientElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGRadialGradientElement[JC] def remove(): Unit
 SVGRadialGradientElement[JC] def removeAttribute(name: String): Unit
 SVGRadialGradientElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -23586,6 +23909,7 @@ SVGRadialGradientElement[JC] def setAttribute(name: String, value: String): Unit
 SVGRadialGradientElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGRadialGradientElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGRadialGradientElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGRadialGradientElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGRadialGradientElement[JC] def shadowRoot: ShadowRoot
 SVGRadialGradientElement[JC] def spreadMethod: SVGAnimatedEnumeration
 SVGRadialGradientElement[JC] var style: CSSStyleDeclaration
@@ -23643,6 +23967,7 @@ SVGRectElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): 
 SVGRectElement[JC] def hasAttributes(): Boolean
 SVGRectElement[JC] def hasChildNodes(): Boolean
 SVGRectElement[JC] def hasExtension(extension: String): Boolean
+SVGRectElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGRectElement[JC] def height: SVGAnimatedLength
 SVGRectElement[JC] var id: String
 SVGRectElement[JC] var innerHTML: String
@@ -23694,6 +24019,7 @@ SVGRectElement[JC] def previousElementSibling: Element
 SVGRectElement[JC] def previousSibling: Node
 SVGRectElement[JC] def querySelector(selectors: String): Element
 SVGRectElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGRectElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGRectElement[JC] def remove(): Unit
 SVGRectElement[JC] def removeAttribute(name: String): Unit
 SVGRectElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -23719,6 +24045,7 @@ SVGRectElement[JC] def setAttribute(name: String, value: String): Unit
 SVGRectElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGRectElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGRectElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGRectElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGRectElement[JC] def shadowRoot: ShadowRoot
 SVGRectElement[JC] var style: CSSStyleDeclaration
 SVGRectElement[JC] var systemLanguage: SVGStringList
@@ -23800,6 +24127,7 @@ SVGSVGElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): B
 SVGSVGElement[JC] def hasAttributes(): Boolean
 SVGSVGElement[JC] def hasChildNodes(): Boolean
 SVGSVGElement[JC] def hasExtension(extension: String): Boolean
+SVGSVGElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGSVGElement[JC] def height: SVGAnimatedLength
 SVGSVGElement[JC] var id: String
 SVGSVGElement[JC] var innerHTML: String
@@ -23861,6 +24189,7 @@ SVGSVGElement[JC] def previousElementSibling: Element
 SVGSVGElement[JC] def previousSibling: Node
 SVGSVGElement[JC] def querySelector(selectors: String): Element
 SVGSVGElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGSVGElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGSVGElement[JC] def remove(): Unit
 SVGSVGElement[JC] def removeAttribute(name: String): Unit
 SVGSVGElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -23887,6 +24216,7 @@ SVGSVGElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String
 SVGSVGElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGSVGElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 SVGSVGElement[JC] def setCurrentTime(seconds: Double): Unit
+SVGSVGElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGSVGElement[JC] def shadowRoot: ShadowRoot
 SVGSVGElement[JC] var style: CSSStyleDeclaration
 SVGSVGElement[JC] def suspendRedraw(maxWaitMilliseconds: Int): Int
@@ -23945,6 +24275,7 @@ SVGScriptElement[JC] def hasAttribute(name: String): Boolean
 SVGScriptElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGScriptElement[JC] def hasAttributes(): Boolean
 SVGScriptElement[JC] def hasChildNodes(): Boolean
+SVGScriptElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGScriptElement[JC] var href: SVGAnimatedString
 SVGScriptElement[JC] var id: String
 SVGScriptElement[JC] var innerHTML: String
@@ -23995,6 +24326,7 @@ SVGScriptElement[JC] def previousElementSibling: Element
 SVGScriptElement[JC] def previousSibling: Node
 SVGScriptElement[JC] def querySelector(selectors: String): Element
 SVGScriptElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGScriptElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGScriptElement[JC] def remove(): Unit
 SVGScriptElement[JC] def removeAttribute(name: String): Unit
 SVGScriptElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -24016,6 +24348,7 @@ SVGScriptElement[JC] def setAttribute(name: String, value: String): Unit
 SVGScriptElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGScriptElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGScriptElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGScriptElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGScriptElement[JC] def shadowRoot: ShadowRoot
 SVGScriptElement[JC] def tagName: String
 SVGScriptElement[JC] var textContent: String
@@ -24061,6 +24394,7 @@ SVGStopElement[JC] def hasAttribute(name: String): Boolean
 SVGStopElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGStopElement[JC] def hasAttributes(): Boolean
 SVGStopElement[JC] def hasChildNodes(): Boolean
+SVGStopElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGStopElement[JC] var id: String
 SVGStopElement[JC] var innerHTML: String
 SVGStopElement[JC] var innerText: String
@@ -24111,6 +24445,7 @@ SVGStopElement[JC] def previousElementSibling: Element
 SVGStopElement[JC] def previousSibling: Node
 SVGStopElement[JC] def querySelector(selectors: String): Element
 SVGStopElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGStopElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGStopElement[JC] def remove(): Unit
 SVGStopElement[JC] def removeAttribute(name: String): Unit
 SVGStopElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -24132,6 +24467,7 @@ SVGStopElement[JC] def setAttribute(name: String, value: String): Unit
 SVGStopElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGStopElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGStopElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGStopElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGStopElement[JC] def shadowRoot: ShadowRoot
 SVGStopElement[JC] var style: CSSStyleDeclaration
 SVGStopElement[JC] def tagName: String
@@ -24186,6 +24522,7 @@ SVGStyleElement[JC] def hasAttribute(name: String): Boolean
 SVGStyleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGStyleElement[JC] def hasAttributes(): Boolean
 SVGStyleElement[JC] def hasChildNodes(): Boolean
+SVGStyleElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGStyleElement[JC] var id: String
 SVGStyleElement[JC] var innerHTML: String
 SVGStyleElement[JC] var innerText: String
@@ -24236,6 +24573,7 @@ SVGStyleElement[JC] def previousElementSibling: Element
 SVGStyleElement[JC] def previousSibling: Node
 SVGStyleElement[JC] def querySelector(selectors: String): Element
 SVGStyleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGStyleElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGStyleElement[JC] def remove(): Unit
 SVGStyleElement[JC] def removeAttribute(name: String): Unit
 SVGStyleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -24257,6 +24595,7 @@ SVGStyleElement[JC] def setAttribute(name: String, value: String): Unit
 SVGStyleElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGStyleElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGStyleElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGStyleElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGStyleElement[JC] def shadowRoot: ShadowRoot
 SVGStyleElement[JC] def tagName: String
 SVGStyleElement[JC] var textContent: String
@@ -24312,6 +24651,7 @@ SVGSwitchElement[JC] def hasAttributeNS(namespaceURI: String, localName: String)
 SVGSwitchElement[JC] def hasAttributes(): Boolean
 SVGSwitchElement[JC] def hasChildNodes(): Boolean
 SVGSwitchElement[JC] def hasExtension(extension: String): Boolean
+SVGSwitchElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGSwitchElement[JC] var id: String
 SVGSwitchElement[JC] var innerHTML: String
 SVGSwitchElement[JC] var innerText: String
@@ -24362,6 +24702,7 @@ SVGSwitchElement[JC] def previousElementSibling: Element
 SVGSwitchElement[JC] def previousSibling: Node
 SVGSwitchElement[JC] def querySelector(selectors: String): Element
 SVGSwitchElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGSwitchElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGSwitchElement[JC] def remove(): Unit
 SVGSwitchElement[JC] def removeAttribute(name: String): Unit
 SVGSwitchElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -24385,6 +24726,7 @@ SVGSwitchElement[JC] def setAttribute(name: String, value: String): Unit
 SVGSwitchElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGSwitchElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGSwitchElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGSwitchElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGSwitchElement[JC] def shadowRoot: ShadowRoot
 SVGSwitchElement[JC] var style: CSSStyleDeclaration
 SVGSwitchElement[JC] var systemLanguage: SVGStringList
@@ -24435,6 +24777,7 @@ SVGSymbolElement[JC] def hasAttribute(name: String): Boolean
 SVGSymbolElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGSymbolElement[JC] def hasAttributes(): Boolean
 SVGSymbolElement[JC] def hasChildNodes(): Boolean
+SVGSymbolElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGSymbolElement[JC] var id: String
 SVGSymbolElement[JC] var innerHTML: String
 SVGSymbolElement[JC] var innerText: String
@@ -24485,6 +24828,7 @@ SVGSymbolElement[JC] def previousElementSibling: Element
 SVGSymbolElement[JC] def previousSibling: Node
 SVGSymbolElement[JC] def querySelector(selectors: String): Element
 SVGSymbolElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGSymbolElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGSymbolElement[JC] def remove(): Unit
 SVGSymbolElement[JC] def removeAttribute(name: String): Unit
 SVGSymbolElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -24506,6 +24850,7 @@ SVGSymbolElement[JC] def setAttribute(name: String, value: String): Unit
 SVGSymbolElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGSymbolElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGSymbolElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGSymbolElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGSymbolElement[JC] def shadowRoot: ShadowRoot
 SVGSymbolElement[JC] var style: CSSStyleDeclaration
 SVGSymbolElement[JC] def tagName: String
@@ -24566,6 +24911,7 @@ SVGTSpanElement[JC] def hasAttributeNS(namespaceURI: String, localName: String):
 SVGTSpanElement[JC] def hasAttributes(): Boolean
 SVGTSpanElement[JC] def hasChildNodes(): Boolean
 SVGTSpanElement[JC] def hasExtension(extension: String): Boolean
+SVGTSpanElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGTSpanElement[JC] var id: String
 SVGTSpanElement[JC] var innerHTML: String
 SVGTSpanElement[JC] var innerText: String
@@ -24616,6 +24962,7 @@ SVGTSpanElement[JC] def previousElementSibling: Element
 SVGTSpanElement[JC] def previousSibling: Node
 SVGTSpanElement[JC] def querySelector(selectors: String): Element
 SVGTSpanElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGTSpanElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGTSpanElement[JC] def remove(): Unit
 SVGTSpanElement[JC] def removeAttribute(name: String): Unit
 SVGTSpanElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -24641,6 +24988,7 @@ SVGTSpanElement[JC] def setAttribute(name: String, value: String): Unit
 SVGTSpanElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGTSpanElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGTSpanElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGTSpanElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGTSpanElement[JC] def shadowRoot: ShadowRoot
 SVGTSpanElement[JC] var style: CSSStyleDeclaration
 SVGTSpanElement[JC] var systemLanguage: SVGStringList
@@ -24706,6 +25054,7 @@ SVGTextContentElement[JC] def hasAttributeNS(namespaceURI: String, localName: St
 SVGTextContentElement[JC] def hasAttributes(): Boolean
 SVGTextContentElement[JC] def hasChildNodes(): Boolean
 SVGTextContentElement[JC] def hasExtension(extension: String): Boolean
+SVGTextContentElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGTextContentElement[JC] var id: String
 SVGTextContentElement[JC] var innerHTML: String
 SVGTextContentElement[JC] var innerText: String
@@ -24756,6 +25105,7 @@ SVGTextContentElement[JC] def previousElementSibling: Element
 SVGTextContentElement[JC] def previousSibling: Node
 SVGTextContentElement[JC] def querySelector(selectors: String): Element
 SVGTextContentElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGTextContentElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGTextContentElement[JC] def remove(): Unit
 SVGTextContentElement[JC] def removeAttribute(name: String): Unit
 SVGTextContentElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -24780,6 +25130,7 @@ SVGTextContentElement[JC] def setAttribute(name: String, value: String): Unit
 SVGTextContentElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGTextContentElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGTextContentElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGTextContentElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGTextContentElement[JC] def shadowRoot: ShadowRoot
 SVGTextContentElement[JC] var style: CSSStyleDeclaration
 SVGTextContentElement[JC] var systemLanguage: SVGStringList
@@ -24849,6 +25200,7 @@ SVGTextElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): 
 SVGTextElement[JC] def hasAttributes(): Boolean
 SVGTextElement[JC] def hasChildNodes(): Boolean
 SVGTextElement[JC] def hasExtension(extension: String): Boolean
+SVGTextElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGTextElement[JC] var id: String
 SVGTextElement[JC] var innerHTML: String
 SVGTextElement[JC] var innerText: String
@@ -24900,6 +25252,7 @@ SVGTextElement[JC] def previousElementSibling: Element
 SVGTextElement[JC] def previousSibling: Node
 SVGTextElement[JC] def querySelector(selectors: String): Element
 SVGTextElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGTextElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGTextElement[JC] def remove(): Unit
 SVGTextElement[JC] def removeAttribute(name: String): Unit
 SVGTextElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -24925,6 +25278,7 @@ SVGTextElement[JC] def setAttribute(name: String, value: String): Unit
 SVGTextElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGTextElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGTextElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGTextElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGTextElement[JC] def shadowRoot: ShadowRoot
 SVGTextElement[JC] var style: CSSStyleDeclaration
 SVGTextElement[JC] var systemLanguage: SVGStringList
@@ -24987,6 +25341,7 @@ SVGTextPathElement[JC] def hasAttributeNS(namespaceURI: String, localName: Strin
 SVGTextPathElement[JC] def hasAttributes(): Boolean
 SVGTextPathElement[JC] def hasChildNodes(): Boolean
 SVGTextPathElement[JC] def hasExtension(extension: String): Boolean
+SVGTextPathElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGTextPathElement[JC] var href: SVGAnimatedString
 SVGTextPathElement[JC] var id: String
 SVGTextPathElement[JC] var innerHTML: String
@@ -25039,6 +25394,7 @@ SVGTextPathElement[JC] def previousElementSibling: Element
 SVGTextPathElement[JC] def previousSibling: Node
 SVGTextPathElement[JC] def querySelector(selectors: String): Element
 SVGTextPathElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGTextPathElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGTextPathElement[JC] def remove(): Unit
 SVGTextPathElement[JC] def removeAttribute(name: String): Unit
 SVGTextPathElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -25063,6 +25419,7 @@ SVGTextPathElement[JC] def setAttribute(name: String, value: String): Unit
 SVGTextPathElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGTextPathElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGTextPathElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGTextPathElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGTextPathElement[JC] def shadowRoot: ShadowRoot
 SVGTextPathElement[JC] def spacing: SVGAnimatedEnumeration
 SVGTextPathElement[JC] def startOffset: SVGAnimatedLength
@@ -25132,6 +25489,7 @@ SVGTextPositioningElement[JC] def hasAttributeNS(namespaceURI: String, localName
 SVGTextPositioningElement[JC] def hasAttributes(): Boolean
 SVGTextPositioningElement[JC] def hasChildNodes(): Boolean
 SVGTextPositioningElement[JC] def hasExtension(extension: String): Boolean
+SVGTextPositioningElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGTextPositioningElement[JC] var id: String
 SVGTextPositioningElement[JC] var innerHTML: String
 SVGTextPositioningElement[JC] var innerText: String
@@ -25182,6 +25540,7 @@ SVGTextPositioningElement[JC] def previousElementSibling: Element
 SVGTextPositioningElement[JC] def previousSibling: Node
 SVGTextPositioningElement[JC] def querySelector(selectors: String): Element
 SVGTextPositioningElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGTextPositioningElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGTextPositioningElement[JC] def remove(): Unit
 SVGTextPositioningElement[JC] def removeAttribute(name: String): Unit
 SVGTextPositioningElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -25207,6 +25566,7 @@ SVGTextPositioningElement[JC] def setAttribute(name: String, value: String): Uni
 SVGTextPositioningElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGTextPositioningElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGTextPositioningElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGTextPositioningElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGTextPositioningElement[JC] def shadowRoot: ShadowRoot
 SVGTextPositioningElement[JC] var style: CSSStyleDeclaration
 SVGTextPositioningElement[JC] var systemLanguage: SVGStringList
@@ -25258,6 +25618,7 @@ SVGTitleElement[JC] def hasAttribute(name: String): Boolean
 SVGTitleElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGTitleElement[JC] def hasAttributes(): Boolean
 SVGTitleElement[JC] def hasChildNodes(): Boolean
+SVGTitleElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGTitleElement[JC] var id: String
 SVGTitleElement[JC] var innerHTML: String
 SVGTitleElement[JC] var innerText: String
@@ -25307,6 +25668,7 @@ SVGTitleElement[JC] def previousElementSibling: Element
 SVGTitleElement[JC] def previousSibling: Node
 SVGTitleElement[JC] def querySelector(selectors: String): Element
 SVGTitleElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGTitleElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGTitleElement[JC] def remove(): Unit
 SVGTitleElement[JC] def removeAttribute(name: String): Unit
 SVGTitleElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -25328,6 +25690,7 @@ SVGTitleElement[JC] def setAttribute(name: String, value: String): Unit
 SVGTitleElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGTitleElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGTitleElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGTitleElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGTitleElement[JC] def shadowRoot: ShadowRoot
 SVGTitleElement[JC] var style: CSSStyleDeclaration
 SVGTitleElement[JC] def tagName: String
@@ -25423,6 +25786,7 @@ SVGUseElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): B
 SVGUseElement[JC] def hasAttributes(): Boolean
 SVGUseElement[JC] def hasChildNodes(): Boolean
 SVGUseElement[JC] def hasExtension(extension: String): Boolean
+SVGUseElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGUseElement[JC] def height: SVGAnimatedLength
 SVGUseElement[JC] var href: SVGAnimatedString
 SVGUseElement[JC] var id: String
@@ -25476,6 +25840,7 @@ SVGUseElement[JC] def previousElementSibling: Element
 SVGUseElement[JC] def previousSibling: Node
 SVGUseElement[JC] def querySelector(selectors: String): Element
 SVGUseElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGUseElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGUseElement[JC] def remove(): Unit
 SVGUseElement[JC] def removeAttribute(name: String): Unit
 SVGUseElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -25499,6 +25864,7 @@ SVGUseElement[JC] def setAttribute(name: String, value: String): Unit
 SVGUseElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGUseElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGUseElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGUseElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGUseElement[JC] def shadowRoot: ShadowRoot
 SVGUseElement[JC] var style: CSSStyleDeclaration
 SVGUseElement[JC] var systemLanguage: SVGStringList
@@ -25551,6 +25917,7 @@ SVGViewElement[JC] def hasAttribute(name: String): Boolean
 SVGViewElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
 SVGViewElement[JC] def hasAttributes(): Boolean
 SVGViewElement[JC] def hasChildNodes(): Boolean
+SVGViewElement[JC] def hasPointerCapture(pointerId: Double): Boolean
 SVGViewElement[JC] var id: String
 SVGViewElement[JC] var innerHTML: String
 SVGViewElement[JC] var innerText: String
@@ -25601,6 +25968,7 @@ SVGViewElement[JC] def previousElementSibling: Element
 SVGViewElement[JC] def previousSibling: Node
 SVGViewElement[JC] def querySelector(selectors: String): Element
 SVGViewElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+SVGViewElement[JC] def releasePointerCapture(pointerId: Double): Unit
 SVGViewElement[JC] def remove(): Unit
 SVGViewElement[JC] def removeAttribute(name: String): Unit
 SVGViewElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
@@ -25622,6 +25990,7 @@ SVGViewElement[JC] def setAttribute(name: String, value: String): Unit
 SVGViewElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
 SVGViewElement[JC] def setAttributeNode(newAttr: Attr): Attr
 SVGViewElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+SVGViewElement[JC] def setPointerCapture(pointerId: Double): Unit
 SVGViewElement[JC] def shadowRoot: ShadowRoot
 SVGViewElement[JC] def tagName: String
 SVGViewElement[JC] var textContent: String
