@@ -10,7 +10,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 @js.native
-trait ReadOnlyMapLike[K, V] extends js.Object {
+trait ReadOnlyMapLike[K, V] extends js.Iterable[js.Tuple2[K, V]] {
 
   @JSBracketAccess
   def apply(index: K): V = js.native
@@ -23,5 +23,12 @@ trait ReadOnlyMapLike[K, V] extends js.Object {
   def size: Int = js.native
 
   def keys(): js.Iterator[K] = js.native
+
+  def entries(): js.Iterator[js.Tuple2[K, V]] = js.native
+
+  def values(): js.Iterator[V] = js.native
+
+  @JSName(js.Symbol.iterator)
+  override def jsIterator(): js.Iterator[js.Tuple2[K, V]] = js.native
 
 }
