@@ -24,6 +24,7 @@ trait AudioWorkletGlobalScope extends WorkletGlobalScope {
 @js.native
 @JSGlobalScope
 object AudioWorkletGlobalScope extends js.Object {
+
   /** See issue https://github.com/whatwg/html/issues/6059 */
   def globalThis: AudioWorkletGlobalScope = js.native
 }

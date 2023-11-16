@@ -11,4 +11,4 @@ import scala.scalajs.js.annotation._
 
 @JSGlobal
 @js.native
-class AudioParamMap extends ReadOnlyMapLike[String, AudioParam] { }
+class AudioParamMap extends ReadOnlyMapLike[String, AudioParam] {}

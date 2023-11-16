@@ -14,5 +14,17 @@ import scala.scalajs.js.annotation._
 class AudioWorkletNode(context: BaseAudioContext, name: String, options: AudioWorkletNodeOptions = js.native)
     extends AudioNode {
 
+  /** The [[MessagePort]] object that is connecting the [[AudioWorkletNode]] and its associated
+    * [[AudioWorkletProcessor]].
+    */
   val port: MessagePort = js.native
+
+  /** The [[AudioParamMap]] object containing [[AudioParam]] instances. They can be automated in the same way as with
+    * default [[AudioNode]], and their calculated values can be used in the [[AudioWorkletProcessor#process]] method of
+    * your [[AudioWorkletProcessor]].
+    */
+  val parameters: AudioParamMap = js.native
+
+  var onprocessorerror: js.Function1[Event, _] = js.native
+
 }

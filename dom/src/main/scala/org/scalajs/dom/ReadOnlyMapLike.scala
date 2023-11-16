@@ -18,7 +18,7 @@ trait ReadOnlyMapLike[K, V] extends js.Iterable[js.Tuple2[K, V]] {
   /** Returns a boolean indicating whether a value has been associated with the passed key in the Map object or not. */
   def has(key: K): Boolean = js.native
 
-  def forEach(callbackFn: js.Function2[K, V, Unit]): Unit = js.native
+  def forEach(callbackFn: js.Function2[V, K, Unit]): Unit = js.native
 
   def size: Int = js.native
 

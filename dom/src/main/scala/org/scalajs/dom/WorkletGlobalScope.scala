@@ -9,5 +9,4 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 @js.native
-trait WorkletGlobalScope extends js.Object {
-}
+trait WorkletGlobalScope extends js.Object {}
