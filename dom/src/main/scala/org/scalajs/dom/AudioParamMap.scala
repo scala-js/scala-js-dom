@@ -11,8 +11,4 @@ import scala.scalajs.js.annotation._
 
 @JSGlobal
 @js.native
-class AudioWorkletNode(context: BaseAudioContext, name: String, options: AudioWorkletNodeOptions = js.native)
-    extends AudioNode {
-
-  val port: MessagePort = js.native
-}
+class AudioParamMap extends ReadOnlyMapLike[String, AudioParam] { }

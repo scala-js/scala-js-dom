@@ -9,10 +9,19 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-@JSGlobal
 @js.native
-class AudioWorkletNode(context: BaseAudioContext, name: String, options: AudioWorkletNodeOptions = js.native)
-    extends AudioNode {
+trait ReadOnlyMapLike[K, V] extends js.Object {
 
-  val port: MessagePort = js.native
+  @JSBracketAccess
+  def apply(index: K): V = js.native
+
+  /** Returns a boolean indicating whether a value has been associated with the passed key in the Map object or not. */
+  def has(key: K): Boolean = js.native
+
+  def forEach(callbackFn: js.Function2[K, V, Unit]): Unit = js.native
+
+  def size: Int = js.native
+
+  def keys(): js.Iterator[K] = js.native
+
 }
