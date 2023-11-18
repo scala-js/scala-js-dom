@@ -23,8 +23,7 @@ trait Gamepad extends js.Any {
   /** Last time the data for this gamepad was updated. */
   val timestamp: Double
 
-  /** An array containing the state of all of the gamepad's axes, from
-    * -1 .. 1.
+  /** An array containing the state of all of the gamepad's axes, from -1 .. 1.
     */
   val axes: js.Array[Double]
 
