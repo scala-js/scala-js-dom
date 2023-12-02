@@ -19,7 +19,9 @@ import scala.scalajs.js.annotation._
 @JSGlobal
 class AudioContext extends BaseAudioContext {
 
-  // Returns the number of seconds of processing latency incurred by the AudioContext passing the audio from the AudioDestinationNode to the aud  io subsystem.
+  /** Returns the number of seconds of processing latency incurred by the AudioContext passing the audio from the
+    * AudioDestinationNode to the audio subsystem.
+    */
   def baseLatency: Double = js.native
 
   /** Returns an estimation of the output latency of the current audio context. */
@@ -57,6 +59,7 @@ class AudioContext extends BaseAudioContext {
   /** Closes the audio context, releasing any system audio resources that it uses. */
   def close(): js.Promise[Unit] = js.native
 
-  // TODO docs
+  /** Returns a new AudioTimestamp object containing two audio timestamp values relating to the current audio context.
+    */
   def getOutputTimestamp: AudioTimestamp = js.native
 }

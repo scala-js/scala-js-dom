@@ -51,8 +51,6 @@ trait AudioNode extends EventTarget {
 
   /** Represents an enumerated value describing the meaning of the channels. This interpretation will define how audio
     * up-mixing and down-mixing will happen.
-    *
-    * The possible values are "speakers" or "discrete".
     */
   var channelInterpretation: AudioNodeChannelInterpretation = js.native
 
