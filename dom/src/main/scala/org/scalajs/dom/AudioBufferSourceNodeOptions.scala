@@ -12,8 +12,8 @@ trait AudioBufferSourceNodeOptions extends js.Object {
   /** An instance of [[AudioBuffer]] to be played. */
   var buffer: js.UndefOr[AudioBuffer] = js.undefined
 
-  /** Indicates whether the audio should play in a loop. The default is false. If the loop is dynamically
-    * modified during playback, the new value will take effect on the next processing block of audio.
+  /** Indicates whether the audio should play in a loop. The default is false. If the loop is dynamically modified
+    * during playback, the new value will take effect on the next processing block of audio.
     */
   var loop: js.UndefOr[Boolean] = js.undefined
 

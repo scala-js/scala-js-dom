@@ -8,13 +8,10 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 @js.native
-/** A parent interface for several types of audio source node
-  * interfaces which share the ability to be started and stopped,
-  * optionally at specified times. Unless stated otherwise, nodes
-  * based upon AudioScheduledSourceNode output silence when not
-  * playing (that is, before start() is called and after stop() is
-  * called). Silence is represented, as always, by a stream of samples
-  * with the value zero (0).
+/** A parent interface for several types of audio source node interfaces which share the ability to be started and
+  * stopped, optionally at specified times. Unless stated otherwise, nodes based upon AudioScheduledSourceNode output
+  * silence when not playing (that is, before start() is called and after stop() is called). Silence is represented, as
+  * always, by a stream of samples with the value zero (0).
   */
 trait AudioScheduledSourceNode extends AudioNode {
 

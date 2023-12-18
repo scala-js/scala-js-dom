@@ -9,6 +9,14 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
+/** Used to supply custom audio processing scripts that execute in a separate thread to provide very low latency audio
+  * processing.
+  *
+  * The worklet's code is run in the AudioWorkletGlobalScope global execution context, using a separate Web Audio thread
+  * which is shared by the worklet and other audio nodes.
+  *
+  * Access the audio context's instance of AudioWorklet through the BaseAudioContext.audioWorklet property.
+  */
 @JSGlobal
 @js.native
 abstract class AudioWorklet extends Worklet {}
