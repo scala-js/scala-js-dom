@@ -9,4 +9,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 
 @js.native
+/** An abstract class that specific worklet scope classes inherit from. Each WorkletGlobalScope defines a new global
+  * environment.
+  */
 trait WorkletGlobalScope extends js.Object {}

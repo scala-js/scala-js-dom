@@ -25,6 +25,9 @@ class AudioWorkletNode(context: BaseAudioContext, name: String, options: AudioWo
     */
   val parameters: AudioParamMap = js.native
 
+  /** Fires when the underlying [[AudioWorkletProcessor]] behind the node throws an exception in its constructor, the
+    * process method, or any user-defined class method.
+    */
   var onprocessorerror: js.Function1[Event, _] = js.native
 
 }

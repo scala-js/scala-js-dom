@@ -11,9 +11,21 @@ import scala.scalajs.js
 sealed trait OscillatorNodeType extends js.Any
 
 object OscillatorNodeType {
+
+  /** A sine wave. This is the default value. */
   val sine: OscillatorNodeType = "sine".asInstanceOf[OscillatorNodeType]
+
+  /** A square wave with a duty cycle of 0.5; that is, the signal is "high" for half of each period. */
   val square: OscillatorNodeType = "square".asInstanceOf[OscillatorNodeType]
+
+  /** A sawtooth wave. */
   val sawtooth: OscillatorNodeType = "sawtooth".asInstanceOf[OscillatorNodeType]
+
+  /** A triangle wave. */
   val triangle: OscillatorNodeType = "triangle".asInstanceOf[OscillatorNodeType]
+
+  /** A custom waveform. You never set type to custom manually; instead, use the setPeriodicWave() method to provide the
+    * data representing the waveform. Doing so automatically sets the type to custom.
+    */
   val custom: OscillatorNodeType = "custom".asInstanceOf[OscillatorNodeType]
 }
