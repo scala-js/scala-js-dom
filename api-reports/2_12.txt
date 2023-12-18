@@ -459,6 +459,7 @@ AudioBufferSourceNodeOptions[JT] var loopStart: js.UndefOr[Double]
 AudioBufferSourceNodeOptions[JT] var playbackRate: js.UndefOr[Double]
 AudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioContext[JC] val audioWorklet: AudioWorklet
 AudioContext[JC] def baseLatency: Double
 AudioContext[JC] def close(): js.Promise[Unit]
 AudioContext[JC] def createAnalyser(): AnalyserNode
@@ -570,6 +571,22 @@ AudioParam[JT] def setTargetAtTime(target: Double, startTime: Double, timeConsta
 AudioParam[JT] def setValueAtTime(value: Double, startTime: Double): Unit
 AudioParam[JT] def setValueCurveAtTime(values: js.typedarray.Float32Array, startTime: Double, duration: Double): Unit
 AudioParam[JT] var value: Double
+AudioParamAutomationRate[JT]
+AudioParamAutomationRate[SO] val `a-rate`: AudioParamAutomationRate
+AudioParamAutomationRate[SO] val `k-rate`: AudioParamAutomationRate
+AudioParamDescriptor[JT] var automationRate: js.UndefOr[AudioParamAutomationRate]
+AudioParamDescriptor[JT] var defaultValue: js.UndefOr[Double]
+AudioParamDescriptor[JT] var maxValue: js.UndefOr[Double]
+AudioParamDescriptor[JT] var minValue: js.UndefOr[Double]
+AudioParamDescriptor[JT] var name: String
+AudioParamMap[JC] @JSBracketAccess def apply(index: K): V
+AudioParamMap[JC] def entries(): js.Iterator[js.Tuple2[K, V]]
+AudioParamMap[JC] def forEach(callbackFn: js.Function2[V, K, Unit]): Unit
+AudioParamMap[JC] def has(key: K): Boolean
+AudioParamMap[JC] @JSName(js.Symbol.iterator) override def jsIterator(): js.Iterator[js.Tuple2[K, V]]
+AudioParamMap[JC] def keys(): js.Iterator[K]
+AudioParamMap[JC] def size: Int
+AudioParamMap[JC] def values(): js.Iterator[V]
 AudioScheduledSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioScheduledSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioScheduledSourceNode[JT] var channelCount: Int
@@ -607,8 +624,44 @@ AudioTrackList[JT] var onchange: js.Function1[Event, Any]
 AudioTrackList[JT] var onremovetrack: js.Function1[TrackEvent, Any]
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioWorklet[JC] def addModule(moduleURL: String, options: WorkletOptions?): js.Promise[Unit]
+AudioWorkletGlobalScope[JO] def globalThis: AudioWorkletGlobalScope
+AudioWorkletGlobalScope[JT] def currentFrame: Int
+AudioWorkletGlobalScope[JT] def currentTime: Double
+AudioWorkletGlobalScope[JT] def registerProcessor(name: String, processorCtor: js.Dynamic): Unit
+AudioWorkletGlobalScope[JT] def sampleRate: Float
+AudioWorkletNode[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+AudioWorkletNode[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioWorkletNode[JC] var channelCount: Int
+AudioWorkletNode[JC] var channelCountMode: AudioNodeChannelCountMode
+AudioWorkletNode[JC] var channelInterpretation: AudioNodeChannelInterpretation
+AudioWorkletNode[JC] def connect(audioNode: AudioNode): Unit
+AudioWorkletNode[JC] def connect(audioParam: AudioParam): Unit
+AudioWorkletNode[JC] val context: AudioContext
+AudioWorkletNode[JC] def disconnect(output: AudioNode?): Unit
+AudioWorkletNode[JC] def dispatchEvent(evt: Event): Boolean
+AudioWorkletNode[JC] val numberOfInputs: Int
+AudioWorkletNode[JC] val numberOfOutputs: Int
+AudioWorkletNode[JC] var onprocessorerror: js.Function1[Event, _]
+AudioWorkletNode[JC] val parameters: AudioParamMap
+AudioWorkletNode[JC] val port: MessagePort
+AudioWorkletNode[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+AudioWorkletNode[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioWorkletNodeOptions[JT] var numberOfInputs: js.UndefOr[Int]
+AudioWorkletNodeOptions[JT] var numberOfOutputs: js.UndefOr[Int]
+AudioWorkletNodeOptions[JT] var outputChannelCount: js.UndefOr[js.Array[Int]]
+AudioWorkletNodeOptions[JT] var parameterData: js.UndefOr[js.Object]
+AudioWorkletNodeOptions[JT] var processorOptions: js.UndefOr[js.Any]
+AudioWorkletProcessor[JC] val port: MessagePort
+AudioWorkletProcessor[JC] def process(inputs: js.Array[js.Array[js.typedarray.Float32Array]], outputs: js.Array[js.Array[js.typedarray.Float32Array]], parameters: js.Object): Boolean
+AudioWorkletProcessorOptions[JT] var numberOfInputs: Int
+AudioWorkletProcessorOptions[JT] var numberOfOutputs: Int
+AudioWorkletProcessorOptions[JT] var outputChannelCount: js.Array[Int]
+AudioWorkletProcessorOptions[JT] var parameterData: js.UndefOr[js.Object]
+AudioWorkletProcessorOptions[JT] var processorOptions: js.UndefOr[js.Any]
 BaseAudioContext[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 BaseAudioContext[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+BaseAudioContext[JT] val audioWorklet: AudioWorklet
 BaseAudioContext[JT] def createAnalyser(): AnalyserNode
 BaseAudioContext[JT] def createBiquadFilter(): BiquadFilterNode
 BaseAudioContext[JT] def createBuffer(numOfChannels: Int, length: Int, sampleRate: Int): AudioBuffer
@@ -676,6 +729,26 @@ Blob[JC] def stream(): ReadableStream[Uint8Array]
 Blob[JC] def text(): js.Promise[String]
 Blob[JC] def `type`: String
 Blob[JO]
+BlobEvent[JC] def bubbles: Boolean
+BlobEvent[JC] def cancelBubble: Boolean
+BlobEvent[JC] def cancelable: Boolean
+BlobEvent[JC] def composed: Boolean
+BlobEvent[JC] def currentTarget: EventTarget
+BlobEvent[JC] def data: Blob
+BlobEvent[JC] def defaultPrevented: Boolean
+BlobEvent[JC] def eventPhase: Int
+BlobEvent[JC] def isTrusted: Boolean
+BlobEvent[JC] def preventDefault(): Unit
+BlobEvent[JC] def stopImmediatePropagation(): Unit
+BlobEvent[JC] def stopPropagation(): Unit
+BlobEvent[JC] def target: EventTarget
+BlobEvent[JC] def timeStamp: Double
+BlobEvent[JC] def `type`: String
+BlobEventInit[JT] var bubbles: js.UndefOr[Boolean]
+BlobEventInit[JT] var cancelable: js.UndefOr[Boolean]
+BlobEventInit[JT] var composed: js.UndefOr[Boolean]
+BlobEventInit[JT] var data: Blob
+BlobEventInit[JT] var scoped: js.UndefOr[Boolean]
 BlobPropertyBag[JT] var endings: js.UndefOr[EndingType]
 BlobPropertyBag[JT] var `type`: js.UndefOr[String]
 BlobPropertyBag[SO] def apply(`type`: js.UndefOr[String]?): BlobPropertyBag  (@deprecated in 2.0.0)
@@ -16213,6 +16286,20 @@ MediaQueryList[JT] def removeEventListener[T <: Event](`type`: String, listener:
 MediaQueryList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaQueryList[JT] def removeListener(listener: MediaQueryListListener): Unit  (@deprecated in 2.4.0)
 MediaQueryListListener[JT] def apply(mql: MediaQueryList): Unit  (@deprecated in 2.4.0)
+MediaRecorder[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaRecorder[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaRecorder[JC] def dispatchEvent(evt: Event): Boolean
+MediaRecorder[JC] var ondataavailable: js.Function1[BlobEvent, Any]
+MediaRecorder[JC] var onerror: js.Function1[Event, Any]
+MediaRecorder[JC] var onstop: js.Function1[Event, Any]
+MediaRecorder[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MediaRecorder[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MediaRecorder[JC] def resume(): Unit
+MediaRecorder[JC] def start(): Unit
+MediaRecorder[JC] def stop(): Unit
+MediaRecorderOptions[JT] var audioBitsPerSecond: js.UndefOr[Long]
+MediaRecorderOptions[JT] var bitsPerSecond: js.UndefOr[Long]
+MediaRecorderOptions[JT] var videoBitsPerSecond: js.UndefOr[Long]
 MediaSource[JC] def activeSourceBuffers: SourceBufferList
 MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
@@ -16682,6 +16769,7 @@ OfflineAudioCompletionEvent[JT] def timeStamp: Double
 OfflineAudioCompletionEvent[JT] def `type`: String
 OfflineAudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 OfflineAudioContext[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+OfflineAudioContext[JC] val audioWorklet: AudioWorklet
 OfflineAudioContext[JC] def createAnalyser(): AnalyserNode
 OfflineAudioContext[JC] def createBiquadFilter(): BiquadFilterNode
 OfflineAudioContext[JC] def createBuffer(numOfChannels: Int, length: Int, sampleRate: Int): AudioBuffer
@@ -17297,7 +17385,14 @@ RTCSignalingState[SO] val stable: RTCSignalingState
 RTCStats[JT] val id: String
 RTCStats[JT] val timestamp: Double
 RTCStats[JT] val `type`: RTCStatsType
-RTCStatsReport[JT] def apply(id: String): RTCStats
+RTCStatsReport[JT] @JSBracketAccess def apply(index: K): V
+RTCStatsReport[JT] def entries(): js.Iterator[js.Tuple2[K, V]]
+RTCStatsReport[JT] def forEach(callbackFn: js.Function2[V, K, Unit]): Unit
+RTCStatsReport[JT] def has(key: K): Boolean
+RTCStatsReport[JT] @JSName(js.Symbol.iterator) override def jsIterator(): js.Iterator[js.Tuple2[K, V]]
+RTCStatsReport[JT] def keys(): js.Iterator[K]
+RTCStatsReport[JT] def size: Int
+RTCStatsReport[JT] def values(): js.Iterator[V]
 RTCStatsType[JT]
 RTCStatsType[SO] val `inbound-rtp` = "inbound-rtp".asInstanceOf[RTCStatsType]
 RTCStatsType[SO] val `outbound-rtp` = "outbound-rtp".asInstanceOf[RTCStatsType]
@@ -17335,6 +17430,14 @@ Range[JO] val END_TO_END: Int
 Range[JO] val END_TO_START: Int
 Range[JO] val START_TO_END: Int
 Range[JO] val START_TO_START: Int
+ReadOnlyMapLike[JT] @JSBracketAccess def apply(index: K): V
+ReadOnlyMapLike[JT] def entries(): js.Iterator[js.Tuple2[K, V]]
+ReadOnlyMapLike[JT] def forEach(callbackFn: js.Function2[V, K, Unit]): Unit
+ReadOnlyMapLike[JT] def has(key: K): Boolean
+ReadOnlyMapLike[JT] @JSName(js.Symbol.iterator) override def jsIterator(): js.Iterator[js.Tuple2[K, V]]
+ReadOnlyMapLike[JT] def keys(): js.Iterator[K]
+ReadOnlyMapLike[JT] def size: Int
+ReadOnlyMapLike[JT] def values(): js.Iterator[V]
 ReadableStream[JT] def cancel(reason: js.UndefOr[Any]?): js.Promise[Unit]
 ReadableStream[JT] def getReader(): ReadableStreamReader[T]
 ReadableStream[JT] def locked: Boolean
@@ -27177,6 +27280,9 @@ WorkerOptions[JT] var `type`: js.UndefOr[WorkerType]
 WorkerType[JT]
 WorkerType[SO] val classic: WorkerType
 WorkerType[SO] val module: WorkerType
+Worklet[JC] def addModule(moduleURL: String, options: WorkletOptions?): js.Promise[Unit]
+WorkletGlobalScope[JT]
+WorkletOptions[JT] var credentials: js.UndefOr[RequestCredentials]
 WriteableState[JT]
 WriteableState[SO] val closed: WriteableState
 WriteableState[SO] val closing: WriteableState
