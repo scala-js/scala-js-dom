@@ -8,6 +8,10 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
-trait WorkletOptions extends js.Any {
+trait WorkletOptions extends js.Object {
+
+  /** Indicates whether to send credentials (e.g. cookies and HTTP authentication) when loading the module. Can be one
+    * of "omit", "same-origin", or "include". Defaults to "same-origin". See also Request.credentials.
+    */
   var credentials: js.UndefOr[RequestCredentials] = js.undefined
 }
