@@ -44,7 +44,7 @@ abstract class AudioWorkletProcessor(options: AudioWorkletProcessorOptions) exte
     *   the array may contain a single value that is constant for the entire block, instead of 128 identical values. If
     *   the automation rate is "k-rate", the array will contain a single value, which is to be used for each of 128
     *   frames.
-    * @returns
+    * @return
     *   A Boolean value indicating whether or not to force the AudioWorkletNode to remain active even if the user
     *   agent's internal logic would otherwise decide that it's safe to shut down the node.
     */
