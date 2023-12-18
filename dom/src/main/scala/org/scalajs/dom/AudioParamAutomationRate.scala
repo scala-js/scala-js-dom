@@ -7,6 +7,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
+@js.native
 sealed trait AudioParamAutomationRate extends js.Any
 
 object AudioParamAutomationRate {
