@@ -7,6 +7,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 
+@js.native
 trait AudioTimestamp extends js.Object {
 
   /** The time of the sample frame currently being rendered by the audio output device (i.e., output audio stream
