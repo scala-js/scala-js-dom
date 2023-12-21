@@ -270,6 +270,22 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
     */
   def requestPointerLock(): Unit = js.native
 
+  /** The hasPointerCapture() method of the Element interface checks whether the element on which it is invoked has
+    * pointer capture for the pointer identified by the given pointer ID.
+    */
+  def hasPointerCapture(pointerId: Double): Boolean = js.native
+
+  /** The releasePointerCapture() method of the Element interface releases (stops) pointer capture that was previously
+    * set for a specific (PointerEvent) pointer.
+    */
+  def releasePointerCapture(pointerId: Double): Unit = js.native
+
+  /** The setPointerCapture() method of the Element interface is used to designate a specific element as the capture
+    * target of future pointer events. Subsequent events for the pointer will be targeted at the capture element until
+    * capture is released (via Element.releasePointerCapture() or the pointerup event is fired).
+    */
+  def setPointerCapture(pointerId: Double): Unit = js.native
+
   /** Attaches a shadow DOM tree to the specified element and returns a reference to its ShadowRoot. */
   def attachShadow(init: ShadowRootInit): ShadowRoot = js.native
 
