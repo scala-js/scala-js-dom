@@ -16689,7 +16689,7 @@ NDEFReadingEventInit[JT] var cancelable: js.UndefOr[Boolean]
 NDEFReadingEventInit[JT] var composed: js.UndefOr[Boolean]
 NDEFReadingEventInit[JT] var message: NDEFRecordInit
 NDEFReadingEventInit[JT] var scoped: js.UndefOr[Boolean]
-NDEFReadingEventInit[JT] var serialNumber: js.UndefOr[AbortSignal]
+NDEFReadingEventInit[JT] var serialNumber: js.UndefOr[String]
 NDEFRecord[JC] def data: js.typedarray.DataView
 NDEFRecord[JC] def encoding: js.UndefOr[String]
 NDEFRecord[JC] def id: js.UndefOr[String]
