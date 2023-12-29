@@ -587,25 +587,25 @@ AudioParamMap[JC] @JSName(js.Symbol.iterator) override def jsIterator(): js.Iter
 AudioParamMap[JC] def keys(): js.Iterator[K]
 AudioParamMap[JC] def size: Int
 AudioParamMap[JC] def values(): js.Iterator[V]
-AudioScheduledSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-AudioScheduledSourceNode[JT] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-AudioScheduledSourceNode[JT] var channelCount: Int
-AudioScheduledSourceNode[JT] var channelCountMode: AudioNodeChannelCountMode
-AudioScheduledSourceNode[JT] var channelInterpretation: AudioNodeChannelInterpretation
-AudioScheduledSourceNode[JT] def connect(audioNode: AudioNode): Unit
-AudioScheduledSourceNode[JT] def connect(audioParam: AudioParam): Unit
-AudioScheduledSourceNode[JT] val context: AudioContext
-AudioScheduledSourceNode[JT] def disconnect(output: AudioNode?): Unit
-AudioScheduledSourceNode[JT] def dispatchEvent(evt: Event): Boolean
-AudioScheduledSourceNode[JT] val numberOfInputs: Int
-AudioScheduledSourceNode[JT] val numberOfOutputs: Int
-AudioScheduledSourceNode[JT] var onended: js.Function1[Event, _]
-AudioScheduledSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
-AudioScheduledSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
-AudioScheduledSourceNode[JT] def start(): Unit
-AudioScheduledSourceNode[JT] def start(when: Double): Unit
-AudioScheduledSourceNode[JT] def stop(): Unit
-AudioScheduledSourceNode[JT] def stop(when: Double): Unit
+AudioScheduledSourceNode[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+AudioScheduledSourceNode[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioScheduledSourceNode[JC] var channelCount: Int
+AudioScheduledSourceNode[JC] var channelCountMode: AudioNodeChannelCountMode
+AudioScheduledSourceNode[JC] var channelInterpretation: AudioNodeChannelInterpretation
+AudioScheduledSourceNode[JC] def connect(audioNode: AudioNode): Unit
+AudioScheduledSourceNode[JC] def connect(audioParam: AudioParam): Unit
+AudioScheduledSourceNode[JC] val context: AudioContext
+AudioScheduledSourceNode[JC] def disconnect(output: AudioNode?): Unit
+AudioScheduledSourceNode[JC] def dispatchEvent(evt: Event): Boolean
+AudioScheduledSourceNode[JC] val numberOfInputs: Int
+AudioScheduledSourceNode[JC] val numberOfOutputs: Int
+AudioScheduledSourceNode[JC] var onended: js.Function1[Event, _]
+AudioScheduledSourceNode[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+AudioScheduledSourceNode[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+AudioScheduledSourceNode[JC] def start(): Unit
+AudioScheduledSourceNode[JC] def start(when: Double): Unit
+AudioScheduledSourceNode[JC] def stop(): Unit
+AudioScheduledSourceNode[JC] def stop(when: Double): Unit
 AudioTimestamp[JT] var contextTime: Double
 AudioTimestamp[JT] var performanceTime: Double
 AudioTrack[JT] var enabled: Boolean
@@ -625,11 +625,11 @@ AudioTrackList[JT] var onremovetrack: js.Function1[TrackEvent, Any]
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioTrackList[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioWorklet[JC] def addModule(moduleURL: String, options: WorkletOptions?): js.Promise[Unit]
+AudioWorkletGlobalScope[JC] def currentFrame: Int
+AudioWorkletGlobalScope[JC] def currentTime: Double
+AudioWorkletGlobalScope[JC] def registerProcessor(name: String, processorCtor: js.Dynamic): Unit
+AudioWorkletGlobalScope[JC] def sampleRate: Float
 AudioWorkletGlobalScope[JO] def globalThis: AudioWorkletGlobalScope
-AudioWorkletGlobalScope[JT] def currentFrame: Int
-AudioWorkletGlobalScope[JT] def currentTime: Double
-AudioWorkletGlobalScope[JT] def registerProcessor(name: String, processorCtor: js.Dynamic): Unit
-AudioWorkletGlobalScope[JT] def sampleRate: Float
 AudioWorkletNode[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 AudioWorkletNode[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 AudioWorkletNode[JC] var channelCount: Int
