@@ -9,6 +9,12 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
+/** Browser Map-like objects (or "maplike objects") are Web API interfaces that behave in many ways like a Map.
+  *
+  * Just like Map, entries can be iterated in the same order that they were added to the object. Map-like objects and
+  * Map also have properties and methods that share the same name and behavior. However unlike Map they only allow
+  * specific predefined types for the keys and values of each entry.
+  */
 @js.native
 trait ReadOnlyMapLike[K, V] extends js.Iterable[js.Tuple2[K, V]] {
 
