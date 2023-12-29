@@ -22,7 +22,7 @@ import scala.scalajs.js
   */
 @js.native
 trait MediaElementAudioSourceNode extends AudioNode {
-  val mediaElement: HTMLMediaElement = js.native
+  def mediaElement: HTMLMediaElement = js.native
 }
 
 object MediaElementAudioSourceNode {

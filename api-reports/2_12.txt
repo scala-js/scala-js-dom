@@ -16254,7 +16254,7 @@ MediaElementAudioSourceNode[JT] def connect(audioParam: AudioParam): Unit
 MediaElementAudioSourceNode[JT] val context: AudioContext
 MediaElementAudioSourceNode[JT] def disconnect(output: AudioNode?): Unit
 MediaElementAudioSourceNode[JT] def dispatchEvent(evt: Event): Boolean
-MediaElementAudioSourceNode[JT] val mediaElement: HTMLMediaElement
+MediaElementAudioSourceNode[JT] def mediaElement: HTMLMediaElement
 MediaElementAudioSourceNode[JT] val numberOfInputs: Int
 MediaElementAudioSourceNode[JT] val numberOfOutputs: Int
 MediaElementAudioSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
