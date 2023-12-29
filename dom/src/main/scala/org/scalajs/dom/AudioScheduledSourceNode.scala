@@ -6,6 +6,7 @@
 package org.scalajs.dom
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 @js.native
 /** A parent interface for several types of audio source node interfaces which share the ability to be started and
@@ -13,7 +14,8 @@ import scala.scalajs.js
   * silence when not playing (that is, before start() is called and after stop() is called). Silence is represented, as
   * always, by a stream of samples with the value zero (0).
   */
-trait AudioScheduledSourceNode extends AudioNode {
+@JSGlobal
+abstract class AudioScheduledSourceNode extends AudioNode {
 
   /** This method specifies the exact time to start playing the tone. */
   def start(): Unit = js.native
