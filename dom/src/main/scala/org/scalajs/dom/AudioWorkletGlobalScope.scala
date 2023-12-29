@@ -19,7 +19,8 @@ import scala.scalajs.js.annotation._
   * variables and perform any actions allowed in worklets — apart from defining AudioWorkletProcessor derived classes.
   */
 @js.native
-trait AudioWorkletGlobalScope extends WorkletGlobalScope {
+@JSGlobal
+abstract class AudioWorkletGlobalScope extends WorkletGlobalScope {
 
   /** Returns an integer that represents the ever-increasing current sample-frame of the audio block being processed. It
     * is incremented by 128 (the size of a render quantum) after the processing of each audio block.
