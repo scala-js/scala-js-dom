@@ -26488,6 +26488,17 @@ TextEventInit[JT] var inputMethod: js.UndefOr[Int]
 TextEventInit[JT] var locale: js.UndefOr[String]
 TextEventInit[JT] var scoped: js.UndefOr[Boolean]
 TextEventInit[JT] var view: js.UndefOr[Window]
+TextMetrics[JC] val actualBoundingBoxAscent: Double
+TextMetrics[JC] val actualBoundingBoxDescent: Double
+TextMetrics[JC] val actualBoundingBoxLeft: Double
+TextMetrics[JC] val actualBoundingBoxRight: Double
+TextMetrics[JC] val alphabeticBaseline: Double
+TextMetrics[JC] val emHeightAscent: Double
+TextMetrics[JC] val emHeightDescent: Double
+TextMetrics[JC] val fontBoundingBoxAscent: Double
+TextMetrics[JC] val fontBoundingBoxDescent: Double
+TextMetrics[JC] val hangingBaseline: Double
+TextMetrics[JC] val ideographicBaseline: Double
 TextMetrics[JC] var width: Double
 TextTrack[JO] var DISABLED: Int
 TextTrack[JO] var ERROR: Int
