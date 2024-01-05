@@ -169,6 +169,9 @@ class CanvasRenderingContext2D extends js.Object {
   /** Creates a path for a rectangle at position (x, y) with a size that is determined by width and height. */
   def rect(x: Double, y: Double, w: Double, h: Double): Unit = js.native
 
+  /** Creates a path for a rounded rectangle with a specified position, width, height, and corner radii. */
+  def roundRect(x: Double, y: Double, w: Double, h: Double, radii: js.Any): Unit = js.native
+
   /** Creates a clipping path from the current sub-paths. Everything drawn after clip() is called appears inside the
     * clipping path only. For an example, see Clipping paths in the Canvas tutorial.
     */
