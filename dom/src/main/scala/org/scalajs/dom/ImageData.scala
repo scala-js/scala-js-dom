@@ -17,17 +17,6 @@ import scala.scalajs.js.annotation._
 @JSGlobal
 class ImageData extends js.Object {
 
-  /** Is an unsigned long representing the actual width, in pixels, of the ImageData. */
-  def width: Int = js.native
-
-  /** Is a Uint8ClampedArray representing a one-dimensional array containing the data in the RGBA order, with integer
-    * values between 0 and 255 (included).
-    */
-  def data: js.typedarray.Uint8ClampedArray = js.native
-
-  /** Is an unsigned long representing the actual height, in pixels, of the ImageData. */
-  def height: Int = js.native
- 
   /**
    * Create an ImageData instance from an array of pixel data and a width.
    * @param data pixel data
@@ -69,5 +58,16 @@ class ImageData extends js.Object {
    * @param settings image settings
    */
   def this(data: js.typedarray.Uint8ClampedArray, width: Int, height: Int, setings: js.Object) = this()
+
+  /** Is an unsigned long representing the actual width, in pixels, of the ImageData. */
+  def width: Int = js.native
+
+  /** Is a Uint8ClampedArray representing a one-dimensional array containing the data in the RGBA order, with integer
+    * values between 0 and 255 (included).
+    */
+  def data: js.typedarray.Uint8ClampedArray = js.native
+
+  /** Is an unsigned long representing the actual height, in pixels, of the ImageData. */
+  def height: Int = js.native
 
 }
