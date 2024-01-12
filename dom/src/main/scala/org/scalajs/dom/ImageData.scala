@@ -27,6 +27,7 @@ class ImageData extends js.Object {
 
   /** Is an unsigned long representing the actual height, in pixels, of the ImageData. */
   def height: Int = js.native
+ 
   /**
    * Create an ImageData instance from an array of pixel data and a width.
    * @param data pixel data
