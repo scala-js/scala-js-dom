@@ -15651,9 +15651,10 @@ ImageBitmap[JT] def width: Double
 ImageCapture[JC] def grabFrame(): js.Promise[ImageBitmap]
 ImageCapture[JC] def takePhoto(): js.Promise[Blob]
 ImageCapture[JC] val track: MediaStreamTrack
-ImageData[JC] def data: js.typedarray.Uint8ClampedArray
+ImageData[JC] def data: Uint8ClampedArray
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
+ImageSettings[JT] var colorSpace: js.UndefOr[String]
 InputEvent[JC] def bubbles: Boolean
 InputEvent[JC] def cancelBubble: Boolean
 InputEvent[JC] def cancelable: Boolean

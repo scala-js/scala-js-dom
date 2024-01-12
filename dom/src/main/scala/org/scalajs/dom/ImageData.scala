@@ -8,7 +8,7 @@ package org.scalajs.dom
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import js.typedarray.Uint8ClampedArray
+import scala.scalajs.js.typedarray.Uint8ClampedArray
 
 /** The ImageData interface represents the underlying pixel data of an area of a &lt;canvas&gt; element. It is created
   * using creators on the CanvasRenderingContext2D object associated with the canvas createImageData() and
