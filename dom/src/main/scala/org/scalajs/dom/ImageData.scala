@@ -27,4 +27,46 @@ class ImageData extends js.Object {
 
   /** Is an unsigned long representing the actual height, in pixels, of the ImageData. */
   def height: Int = js.native
+  /**
+   * Create an ImageData instance from an array of pixel data and a width.
+   * @param data pixel data
+   * @param width width in pixels
+   */
+  def this(data: js.typedarray.Uint8ClampedArray, width: Int) = this()
+
+  /**
+   * Create an ImageData instance from an array of pixel data, width, and height.
+   * @param data pixel data
+   * @param width width in pixels
+   * @param height height in pixels
+   */
+  def this(data: js.typedarray.Uint8ClampedArray, width: Int, height: Int) = this()
+
+  /**
+   * Create a blank ImageData instance from specified width and height.
+   *
+   * @param width  width in pixels
+   * @param height height in pixels
+   */
+  def this(width: Int, height: Int) = this()
+
+  /**
+   * Create a blank ImageData instance from specified width, height, and settings object.
+   *
+   * @param width  width in pixels
+   * @param height height in pixels
+   * @param settings image settings
+   */
+  def this(width: Int, height: Int, setings: js.Object) = this()
+
+  /**
+   * Create a blank ImageData instance from specified pixel data, width, height, and settings object.
+   *
+   * @param data pixel data
+   * @param width width in pixels
+   * @param height height in pixels
+   * @param settings image settings
+   */
+  def this(data: js.typedarray.Uint8ClampedArray, width: Int, height: Int, setings: js.Object) = this()
+
 }
