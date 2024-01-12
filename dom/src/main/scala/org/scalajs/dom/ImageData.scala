@@ -18,44 +18,53 @@ import js.typedarray.Uint8ClampedArray
 @JSGlobal
 class ImageData extends js.Object {
 
-  /**
-    * Create an ImageData instance from an array of pixel data and a width.
-    * @param data pixel data
-    * @param width width in pixels
+  /** Create an ImageData instance from an array of pixel data and a width.
+    * @param data
+    *   pixel data
+    * @param width
+    *   width in pixels
     */
   def this(data: Uint8ClampedArray, width: Int) = this()
 
-  /**
-    * Create an ImageData instance from an array of pixel data, width, and height.
-    * @param data pixel data
-    * @param width width in pixels
-    * @param height height in pixels
+  /** Create an ImageData instance from an array of pixel data, width, and height.
+    * @param data
+    *   pixel data
+    * @param width
+    *   width in pixels
+    * @param height
+    *   height in pixels
     */
   def this(data: Uint8ClampedArray, width: Int, height: Int) = this()
 
-  /**
-    * Create a blank ImageData instance from specified width and height.
-    * @param width  width in pixels
-    * @param height height in pixels
+  /** Create a blank ImageData instance from specified width and height.
+    * @param width
+    *   width in pixels
+    * @param height
+    *   height in pixels
     */
   def this(width: Int, height: Int) = this()
 
-  /**
-    * Create a blank ImageData instance from specified width, height, and settings object.
-    * @param width  width in pixels
-    * @param height height in pixels
-    * @param settings image settings
+  /** Create a blank ImageData instance from specified width, height, and settings object.
+    * @param width
+    *   width in pixels
+    * @param height
+    *   height in pixels
+    * @param settings
+    *   image settings
     */
-  def this(width: Int, height: Int, setings: js.Object) = this()
+  def this(width: Int, height: Int, settings: ImageSettings) = this()
 
-  /**
-    * Create a blank ImageData instance from specified pixel data, width, height, and settings object.
-    * @param data pixel data
-    * @param width width in pixels
-    * @param height height in pixels
-    * @param settings image settings
+  /** Create a blank ImageData instance from specified pixel data, width, height, and settings object.
+    * @param data
+    *   pixel data
+    * @param width
+    *   width in pixels
+    * @param height
+    *   height in pixels
+    * @param settings
+    *   image settings
     */
-  def this(data: Uint8ClampedArray, width: Int, height: Int, setings: js.Object) = this()
+  def this(data: Uint8ClampedArray, width: Int, height: Int, settings: ImageSettings) = this()
 
   /** Is an unsigned long representing the actual width, in pixels, of the ImageData. */
   def width: Int = js.native
