@@ -18,4 +18,8 @@ abstract class CustomElementRegistry extends js.Object {
 
   /** Defines a new custom element. */
   def define(name: String, constructor: js.Dynamic, options: ElementDefinitionOptions = js.native): Unit
+
+  def upgrade(root: Node): Unit
+
+  def whenDefined(name: String): js.Promise[Any]
 }
