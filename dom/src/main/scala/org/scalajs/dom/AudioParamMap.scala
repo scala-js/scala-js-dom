@@ -3,7 +3,6 @@
   *
   * Everything else is under the MIT License http://opensource.org/licenses/MIT
   */
-
 package org.scalajs.dom
 
 import scala.scalajs.js
