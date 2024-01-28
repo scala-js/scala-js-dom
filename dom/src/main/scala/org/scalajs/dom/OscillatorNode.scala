@@ -33,7 +33,7 @@ trait OscillatorNode extends AudioScheduledSourceNode {
   var detune: AudioParam = js.native
 
   /** Represents the shape of the oscillator wave generated. Different waves will produce different tones. */
-  var `type`: OscillatorNodeType = js.native // Not sure if this is correct ...
+  var `type`: OscillatorNodeType = js.native
 
   /** Used to point to a PeriodicWave defining a periodic waveform that can be used to shape the oscillator's output,
     * when type = "custom" is used.
