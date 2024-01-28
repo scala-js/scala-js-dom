@@ -449,9 +449,6 @@ AudioBufferSourceNode[JT] def stop(): Unit
 AudioBufferSourceNode[JT] def stop(when: Double): Unit
 AudioBufferSourceNode[SO] def apply(context: BaseAudioContext, options: js.UndefOr[AudioBufferSourceNodeOptions]?): AudioBufferSourceNode
 AudioBufferSourceNodeOptions[JT] var buffer: js.UndefOr[AudioBuffer]
-AudioBufferSourceNodeOptions[JT] var channelCount: js.UndefOr[Int]
-AudioBufferSourceNodeOptions[JT] var channelCountMode: js.UndefOr[AudioNodeChannelCountMode]
-AudioBufferSourceNodeOptions[JT] var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation]
 AudioBufferSourceNodeOptions[JT] var detune: js.UndefOr[Double]
 AudioBufferSourceNodeOptions[JT] var loop: js.UndefOr[Boolean]
 AudioBufferSourceNodeOptions[JT] var loopEnd: js.UndefOr[Double]
@@ -2479,9 +2476,6 @@ GainNode[JT] val numberOfOutputs: Int
 GainNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 GainNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 GainNode[SO] def apply(context: BaseAudioContext, options: js.UndefOr[GainNodeOptions]?): GainNode
-GainNodeOptions[JT] var channelCount: js.UndefOr[Int]
-GainNodeOptions[JT] var channelCountMode: js.UndefOr[AudioNodeChannelCountMode]
-GainNodeOptions[JT] var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation]
 GainNodeOptions[JT] var gain: js.UndefOr[Double]
 Gamepad[JT] val axes: js.Array[Double]
 Gamepad[JT] val buttons: js.Array[GamepadButton]
@@ -16260,9 +16254,6 @@ MediaElementAudioSourceNode[JT] val numberOfOutputs: Int
 MediaElementAudioSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 MediaElementAudioSourceNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 MediaElementAudioSourceNode[SO] def apply(context: BaseAudioContext, options: js.UndefOr[MediaElementAudioSourceNodeOptions]?): MediaElementAudioSourceNode
-MediaElementAudioSourceNodeOptions[JT] var channelCount: js.UndefOr[Int]
-MediaElementAudioSourceNodeOptions[JT] var channelCountMode: js.UndefOr[AudioNodeChannelCountMode]
-MediaElementAudioSourceNodeOptions[JT] var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation]
 MediaElementAudioSourceNodeOptions[JT] var mediaElement: HTMLMediaElement
 MediaError[JC] def code: Int
 MediaError[JO] val MEDIA_ERR_ABORTED: Int
@@ -16825,9 +16816,6 @@ OscillatorNode[JT] def stop(): Unit
 OscillatorNode[JT] def stop(when: Double): Unit
 OscillatorNode[JT] var `type`: OscillatorNodeType
 OscillatorNode[SO] def apply(context: BaseAudioContext, options: js.UndefOr[OscillatorNodeOptions]?): OscillatorNode
-OscillatorNodeOptions[JT] var channelCount: js.UndefOr[Int]
-OscillatorNodeOptions[JT] var channelCountMode: js.UndefOr[AudioNodeChannelCountMode]
-OscillatorNodeOptions[JT] var channelInterpretation: js.UndefOr[AudioNodeChannelInterpretation]
 OscillatorNodeOptions[JT] var detune: js.UndefOr[Double]
 OscillatorNodeOptions[JT] var frequency: js.UndefOr[Double]
 OscillatorNodeOptions[JT] var periodicWave: js.UndefOr[PeriodicWave]
