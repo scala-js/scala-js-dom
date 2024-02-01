@@ -2157,7 +2157,7 @@ EventSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Fu
 EventSource[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 EventSource[JC] def close(): Unit
 EventSource[JC] def dispatchEvent(evt: Event): Boolean
-EventSource[JC] var onerror: js.Function1[ErrorEvent, _]
+EventSource[JC] var onerror: js.Function1[Event, _]
 EventSource[JC] var onmessage: js.Function1[MessageEvent, _]
 EventSource[JC] var onopen: js.Function1[Event, _]
 EventSource[JC] def readyState: Int
