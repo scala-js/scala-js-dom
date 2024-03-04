@@ -10,7 +10,7 @@ class URLSearchParams extends js.Iterable[js.Tuple2[String, String]] {
 
   /** Leading '?' characters are ignored. */
   def this(init: String) = this()
-  def this(init: Sequence[String]) = this()
+  def this(init: Sequence[js.Tuple2[String, String]]) = this()
   def this(init: js.Dictionary[String]) = this()
 
   def append(name: String, value: String): Unit = js.native
