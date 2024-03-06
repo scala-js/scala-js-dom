@@ -17,6 +17,7 @@ import scala.scalajs.js.annotation._
 @JSGlobal
 abstract class CustomElementRegistry extends js.Object {
 
+  /** Returns the constructor for a previously-defined custom element.  */
   def get(name: String): js.Dynamic
 
    /** Returns the name for a previously-defined custom element.
