@@ -19,7 +19,11 @@ abstract class CustomElementRegistry extends js.Object {
 
   def get(name: String): js.Dynamic
 
-  def getName(constructor: js.Dynamic): String
+   /** Returns the name for a previously-defined custom element.
+     * @param constructor
+     *   Constructor for the custom element.
+     */
+   def getName(constructor: js.Dynamic): String
 
   /** Defines a new custom element. */
   def define(name: String, constructor: js.Dynamic, options: ElementDefinitionOptions = js.native): Unit
