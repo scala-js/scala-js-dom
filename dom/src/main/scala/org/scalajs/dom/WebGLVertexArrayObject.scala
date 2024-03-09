@@ -12,4 +12,4 @@ import scala.scalajs.js.annotation._
 /** An opaque type representing a WebGL Vertex Array Object (VAO). */
 @js.native
 @JSGlobal
-class WebGLVertexArrayObject private[this]() extends js.Object
+class WebGLVertexArrayObject private[this] () extends js.Object
