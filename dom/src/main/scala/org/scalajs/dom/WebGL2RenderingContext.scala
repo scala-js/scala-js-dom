@@ -1362,12 +1362,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group State_information
     * @param target
     *   The target for which to return information. Possible values:
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER_BINDING]]: Returns a [[WebGLBuffer]].
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER_SIZE]]: Returns a Long.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER_START]]: Returns a Long.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER_BINDING]]: Returns a [[WebGLBuffer]].
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER_SIZE]]: Returns a Long.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER_START]]: Returns a Long.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER_BINDING]]: Returns a [[WebGLBuffer]].
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER_SIZE]]: Returns a Long.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER_START]]: Returns a Long.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER_BINDING]]: Returns a [[WebGLBuffer]].
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER_SIZE]]: Returns a Long.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER_START]]: Returns a Long.
     *
     * When using the OES_draw_buffers_indexed WebGL 2 extension, the following values are available additionally:
     *   - [[WebGLRenderingContext.BLEND_EQUATION_RGB]]: Returns the RGB blend equation for the draw buffer at index.
@@ -1397,12 +1397,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
     *   An [[ArrayBuffer]] or SharedArrayBuffer that will be copied into the data store. If null, a data store is still
@@ -1418,17 +1418,17 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *     used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.STATIC_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.STREAM_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried at most a few times by the application
-    *   - [[WebGL2RenderingContext.STATIC_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.STREAM_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * @param srcOffset
@@ -1453,12 +1453,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
     *   A [[TypedArray]] that will be copied into the data store. If null, a data store is still created, but the
@@ -1474,17 +1474,17 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *     used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.STATIC_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.STREAM_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried at most a few times by the application
-    *   - [[WebGL2RenderingContext.STATIC_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.STREAM_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * @param srcOffset
@@ -1509,12 +1509,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
     *   A [[DataView]] that will be copied into the data store. If null, a data store is still created, but the content
@@ -1530,17 +1530,17 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *     used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.STATIC_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.STREAM_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried at most a few times by the application
-    *   - [[WebGL2RenderingContext.STATIC_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.STREAM_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * @param srcOffset
@@ -1565,12 +1565,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
     *   An [[ArrayBuffer]] or SharedArrayBuffer that will be copied into the data store. If null, a data store is still
@@ -1586,17 +1586,17 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *     used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.STATIC_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.STREAM_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried at most a few times by the application
-    *   - [[WebGL2RenderingContext.STATIC_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.STREAM_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * @param srcOffset
@@ -1624,12 +1624,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
     *   A [[TypedArray]] that will be copied into the data store. If null, a data store is still created, but the
@@ -1645,17 +1645,17 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *     used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.STATIC_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.STREAM_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried at most a few times by the application
-    *   - [[WebGL2RenderingContext.STATIC_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.STREAM_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * @param srcOffset
@@ -1685,12 +1685,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
     *   A [[DataView]] that will be copied into the data store. If null, a data store is still created, but the content
@@ -1706,17 +1706,17 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *     used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.STATIC_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_READ]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and queried many times by the application.
-    *   - [[WebGL2RenderingContext.STREAM_READ]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_READ]]: The contents are intended to be specified once by reading data from
     *     WebGL, and queried at most a few times by the application
-    *   - [[WebGL2RenderingContext.STATIC_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STATIC_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
+    *   - [[WebGL2RenderingContext$.DYNAMIC_COPY]]: The contents are intended to be respecified repeatedly by reading
     *     data from WebGL, and used many times as the source for WebGL drawing and image specification commands.
-    *   - [[WebGL2RenderingContext.STREAM_COPY]]: The contents are intended to be specified once by reading data from
+    *   - [[WebGL2RenderingContext$.STREAM_COPY]]: The contents are intended to be specified once by reading data from
     *     WebGL, and used at most a few times as the source for WebGL drawing and image specification commands.
     *
     * @param srcOffset
@@ -1744,12 +1744,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
@@ -1774,12 +1774,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
@@ -1807,12 +1807,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
@@ -1840,12 +1840,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
@@ -1875,12 +1875,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
     * @param srcData
@@ -1909,12 +1909,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
     * @param srcData
@@ -1943,12 +1943,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
     * @param srcData
@@ -1977,14 +1977,14 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another (provided
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another (provided
     *     specifically for copy operations).
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another (provided
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another (provided
     *     specifically for copy operations).
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param writeTarget
     *   A constant specifying the binding point (target) from whose data store should be written. Possible values:
     *   - [[WebGLRenderingContext.ARRAY_BUFFER]]: Buffer containing vertex attributes, such as vertex coordinates,
@@ -1992,14 +1992,14 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
     *
     * When using a WebGL 2 context, the following values are available additionally:
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another (provided
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another (provided
     *     specifically for copy operations).
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another (provided
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another (provided
     *     specifically for copy operations).
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param readOffset
     *   An Int specifying the byte offset from which to start reading from the buffer.
     * @param writeOffset
@@ -2016,12 +2016,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *
     * gl.bindBuffer(WebGLRenderingContext.ARRAY_BUFFER, srcBuffer)
     * gl.bufferData(WebGLRenderingContext.ARRAY_BUFFER, data, WebGLRenderingContext.STATIC_DRAW)
-    * gl.bindBuffer(WebGL2RenderingContext.COPY_READ_BUFFER, srcBuffer)
+    * gl.bindBuffer(WebGL2RenderingContext$.COPY_READ_BUFFER, srcBuffer)
     *
     * gl.bindBuffer(WebGLRenderingContext.ARRAY_BUFFER, dstBuffer)
     * gl.bufferData(WebGLRenderingContext.ARRAY_BUFFER, Float32Array(length), WebGLRenderingContext.STATIC_DRAW)
     *
-    * gl.copyBufferSubData(WebGL2RenderingContext.COPY_READ_BUFFER, WebGLRenderingContext.ARRAY_BUFFER, 0, 0, length)
+    * gl.copyBufferSubData(WebGL2RenderingContext$.COPY_READ_BUFFER, WebGLRenderingContext.ARRAY_BUFFER, 0, 0, length)
     *   }}}
     */
   def copyBufferSubData(
@@ -2036,12 +2036,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ARRAY_BUFFER]]: Buffer containing vertex attributes, such as vertex coordinates,
     *     texture coordinate data, or vertex color data.
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
@@ -2079,12 +2079,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ARRAY_BUFFER]]: Buffer containing vertex attributes, such as vertex coordinates,
     *     texture coordinate data, or vertex color data.
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
@@ -2122,12 +2122,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ARRAY_BUFFER]]: Buffer containing vertex attributes, such as vertex coordinates,
     *     texture coordinate data, or vertex color data.
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
@@ -2158,12 +2158,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ARRAY_BUFFER]]: Buffer containing vertex attributes, such as vertex coordinates,
     *     texture coordinate data, or vertex color data.
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
@@ -2192,12 +2192,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ARRAY_BUFFER]]: Buffer containing vertex attributes, such as vertex coordinates,
     *     texture coordinate data, or vertex color data.
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
@@ -2231,12 +2231,12 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.ARRAY_BUFFER]]: Buffer containing vertex attributes, such as vertex coordinates,
     *     texture coordinate data, or vertex color data.
     *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
-    *   - [[WebGL2RenderingContext.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
-    *   - [[WebGL2RenderingContext.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
-    *   - [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
@@ -2321,26 +2321,32 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the binding point (target). Possible values:
     *   - [[WebGLRenderingContext.FRAMEBUFFER]]: Collection buffer data storage of color, alpha, depth and stencil
     *     buffers used to render an image.
-    *   - [[WebGL2RenderingContext.DRAW_FRAMEBUFFER]]: Equivalent to [[WebGLRenderingContext.FRAMEBUFFER]].
-    *   - [[WebGL2RenderingContext.READ_FRAMEBUFFER]]: Used as a source for reading operations.
+    *   - [[WebGL2RenderingContext$.DRAW_FRAMEBUFFER]]: Equivalent to [[WebGLRenderingContext.FRAMEBUFFER]].
+    *   - [[WebGL2RenderingContext$.READ_FRAMEBUFFER]]: Used as a source for reading operations.
     * @param attachment
     *   An Int specifying the attachment point for the texture. Possible values:
     *   - [[WebGLRenderingContext.COLOR_ATTACHMENT0]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT1]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT2]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT3]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT4]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT5]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT6]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT7]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT8]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT9]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT10]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT11]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT12]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT13]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT14]]: Attaches the texture to one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT15]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT1]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT2]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT3]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT4]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT5]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT6]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT7]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT8]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT9]]: Attaches the texture to one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT10]]: Attaches the texture to one of the framebuffer's color
+    *     buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT11]]: Attaches the texture to one of the framebuffer's color
+    *     buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT12]]: Attaches the texture to one of the framebuffer's color
+    *     buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT13]]: Attaches the texture to one of the framebuffer's color
+    *     buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT14]]: Attaches the texture to one of the framebuffer's color
+    *     buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT15]]: Attaches the texture to one of the framebuffer's color
+    *     buffers.
     *   - [[WebGLRenderingContext.DEPTH_ATTACHMENT]]: Attaches the texture to the framebuffer's depth buffer.
     *   - [[WebGLRenderingContext.STENCIL_ATTACHMENT]]: Attaches the texture to the framebuffer's stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL_ATTACHMENT]]: depth and stencil buffer.
@@ -2366,26 +2372,26 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the binding point (target). Possible values:
     *   - [[WebGLRenderingContext.FRAMEBUFFER]]: Collection buffer data storage of color, alpha, depth and stencil
     *     buffers used to render an image.
-    *   - [[WebGL2RenderingContext.DRAW_FRAMEBUFFER]]: Equivalent to [[WebGLRenderingContext.FRAMEBUFFER]].
-    *   - [[WebGL2RenderingContext.READ_FRAMEBUFFER]]: Used as a source for reading operations.
+    *   - [[WebGL2RenderingContext$.DRAW_FRAMEBUFFER]]: Equivalent to [[WebGLRenderingContext.FRAMEBUFFER]].
+    *   - [[WebGL2RenderingContext$.READ_FRAMEBUFFER]]: Used as a source for reading operations.
     * @param attachments
     *   An Array of Int specifying the attachment points to invalidate. Possible values:
     *   - [[WebGLRenderingContext.COLOR_ATTACHMENT0]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT1]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT2]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT3]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT4]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT5]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT6]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT7]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT8]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT9]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT10]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT11]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT12]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT13]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT14]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT15]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT1]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT2]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT3]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT4]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT5]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT6]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT7]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT8]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT9]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT10]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT11]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT12]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT13]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT14]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT15]]: Invalidates one of the framebuffer's color buffers.
     *   - [[WebGLRenderingContext.DEPTH_ATTACHMENT]]: Invalidates the framebuffer's depth buffer.
     *   - [[WebGLRenderingContext.STENCIL_ATTACHMENT]]: Invalidates the framebuffer's stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL_ATTACHMENT]]: Invalidates both the framebuffer's depth and stencil
@@ -2408,26 +2414,26 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the binding point (target). Possible values:
     *   - [[WebGLRenderingContext.FRAMEBUFFER]]: Collection buffer data storage of color, alpha, depth and stencil
     *     buffers used to render an image.
-    *   - [[WebGL2RenderingContext.DRAW_FRAMEBUFFER]]: Equivalent to [[WebGLRenderingContext.FRAMEBUFFER]].
-    *   - [[WebGL2RenderingContext.READ_FRAMEBUFFER]]: Used as a source for reading operations.
+    *   - [[WebGL2RenderingContext$.DRAW_FRAMEBUFFER]]: Equivalent to [[WebGLRenderingContext.FRAMEBUFFER]].
+    *   - [[WebGL2RenderingContext$.READ_FRAMEBUFFER]]: Used as a source for reading operations.
     * @param attachments
     *   An Array of Int specifying the attachment points to invalidate. Possible values:
     *   - [[WebGLRenderingContext.COLOR_ATTACHMENT0]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT1]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT2]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT3]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT4]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT5]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT6]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT7]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT8]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT9]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT10]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT11]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT12]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT13]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT14]]: Invalidates one of the framebuffer's color buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT15]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT1]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT2]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT3]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT4]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT5]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT6]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT7]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT8]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT9]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT10]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT11]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT12]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT13]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT14]]: Invalidates one of the framebuffer's color buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT15]]: Invalidates one of the framebuffer's color buffers.
     *   - [[WebGLRenderingContext.DEPTH_ATTACHMENT]]: Invalidates the framebuffer's depth buffer.
     *   - [[WebGLRenderingContext.STENCIL_ATTACHMENT]]: Invalidates the framebuffer's stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL_ATTACHMENT]]: Invalidates both the framebuffer's depth and stencil
@@ -2465,21 +2471,21 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.BACK]]: Reads from the back color buffer.
     *   - [[WebGLRenderingContext.NONE]]: Reads from no color buffer.
     *   - [[WebGLRenderingContext.COLOR_ATTACHMENT0]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT1]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT2]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT3]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT4]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT5]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT6]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT7]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT8]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT9]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT10]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT11]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT12]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT13]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT14]]: Reads from one of the 16 color attachment buffers.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT15]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT1]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT2]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT3]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT4]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT5]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT6]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT7]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT8]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT9]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT10]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT11]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT12]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT13]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT14]]: Reads from one of the 16 color attachment buffers.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT15]]: Reads from one of the 16 color attachment buffers.
     * @example
     *   {{{
     * gl.readBuffer(WebGLRenderingContext.COLOR_ATTACHMENT0)
@@ -2526,40 +2532,40 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param internalFormat
     *   An Int specifying the internal format of the renderbuffer. Possible values
     *   ([[WebGLRenderingContext.DEPTH_STENCIL]] is not supported):
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.R8I]]
-    *   - [[WebGL2RenderingContext.R16UI]]
-    *   - [[WebGL2RenderingContext.R16I]]
-    *   - [[WebGL2RenderingContext.R32UI]]
-    *   - [[WebGL2RenderingContext.R32I]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG8I]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG16I]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RG32I]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.R8I]]
+    *   - [[WebGL2RenderingContext$.R16UI]]
+    *   - [[WebGL2RenderingContext$.R16I]]
+    *   - [[WebGL2RenderingContext$.R32UI]]
+    *   - [[WebGL2RenderingContext$.R32I]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG8I]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG16I]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RG32I]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGBA4]]
     *   - [[WebGLRenderingContext.RGB565]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGL2RenderingContext.RGB10_A2]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8I]]
-    *   - [[WebGL2RenderingContext.RGB10_A2UI]]
-    *   - [[WebGL2RenderingContext.RGBA16UI]]
-    *   - [[WebGL2RenderingContext.RGBA16I]]
-    *   - [[WebGL2RenderingContext.RGBA32I]]
-    *   - [[WebGL2RenderingContext.RGBA32UI]]
+    *   - [[WebGL2RenderingContext$.RGB10_A2]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8I]]
+    *   - [[WebGL2RenderingContext$.RGB10_A2UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16I]]
+    *   - [[WebGL2RenderingContext$.RGBA32I]]
+    *   - [[WebGL2RenderingContext$.RGBA32UI]]
     *   - [[WebGLRenderingContext.DEPTH_COMPONENT16]]
-    *   - [[WebGL2RenderingContext.DEPTH_COMPONENT24]]
-    *   - [[WebGL2RenderingContext.DEPTH_COMPONENT32F]]
+    *   - [[WebGL2RenderingContext$.DEPTH_COMPONENT24]]
+    *   - [[WebGL2RenderingContext$.DEPTH_COMPONENT32F]]
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]
-    *   - [[WebGL2RenderingContext.DEPTH24_STENCIL8]]
-    *   - [[WebGL2RenderingContext.DEPTH32F_STENCIL8]]
+    *   - [[WebGL2RenderingContext$.DEPTH24_STENCIL8]]
+    *   - [[WebGL2RenderingContext$.DEPTH32F_STENCIL8]]
     *   - [[WebGLRenderingContext.STENCIL_INDEX8]]
     * @param width
     *   An Int specifying the width of the renderbuffer in pixels.
@@ -2586,29 +2592,29 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the number of texture levels.
     * @param internalformat
     *   An Int specifying the texture store format. Possible values:
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]] Unlike OpenGL 3.0, WebGL 2 doesn't support the following ETC2 and EAC
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]] Unlike OpenGL 3.0, WebGL 2 doesn't support the following ETC2 and EAC
     *     compressed texture formats (see section 5.37 in the WebGL 2 spec). You might be able to enable them via the
     *     WEBGL_compressed_texture_etc extension, though.
     *   - COMPRESSED_R11_EAC
@@ -2639,38 +2645,38 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param levels
     *   An Int specifying the number of texture levels.
     * @param internalformat
     *   An Int specifying the texture store format. Possible values:
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]] In addition if the WEBGL_compressed_texture_etc extension is supported, the
-    *     following values are also possible:
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]] In addition if the WEBGL_compressed_texture_etc extension is supported,
+    *     the following values are also possible:
     *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
     *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
     *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
@@ -2701,8 +2707,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -2713,31 +2719,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -2761,16 +2767,16 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param offset
     *   An Int byte offset into the [[WebGLBuffer]]'s data store. Used to upload data to the currently bound
-    *   [[WebGLTexture]] from the [[WebGLBuffer]] bound to the [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]] target.
+    *   [[WebGLTexture]] from the [[WebGLBuffer]] bound to the [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]] target.
     */
   def texImage3D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int,
@@ -2782,8 +2788,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -2794,31 +2800,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -2842,13 +2848,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param source
     *   One of the following objects can be used as a pixel source for the texture:
     *   - [[ImageBitmap]]
@@ -2867,8 +2873,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -2879,31 +2885,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -2927,13 +2933,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param source
     *   One of the following objects can be used as a pixel source for the texture:
     *   - [[ImageBitmap]]
@@ -2952,8 +2958,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -2964,31 +2970,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -3012,13 +3018,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param source
     *   One of the following objects can be used as a pixel source for the texture:
     *   - [[ImageBitmap]]
@@ -3037,8 +3043,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3049,31 +3055,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -3097,13 +3103,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param source
     *   One of the following objects can be used as a pixel source for the texture:
     *   - [[ImageBitmap]]
@@ -3122,8 +3128,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3134,31 +3140,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -3182,13 +3188,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param source
     *   One of the following objects can be used as a pixel source for the texture:
     *   - [[ImageBitmap]]
@@ -3207,8 +3213,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3219,31 +3225,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -3267,13 +3273,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param srcData
     *   A [[TypedArray]] object.
     * @example
@@ -3302,8 +3308,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3314,31 +3320,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -3362,13 +3368,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param srcData
     *   A [[DataView]] object.
     */
@@ -3382,8 +3388,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3394,31 +3400,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -3442,13 +3448,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param srcData
     *   A [[TypedArray]] object.
     * @param srcOffset
@@ -3464,8 +3470,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3476,31 +3482,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -3524,13 +3530,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param srcData
     *   A [[DataView]] object.
     * @param srcOffset
@@ -3546,8 +3552,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3570,31 +3576,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param typ
     *   An Int specifying the data type of the texel data. Possible values:
     *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
@@ -3606,13 +3612,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param pixels
     *   One of the following objects can be used as a pixel source for the texture:
     *   - [[Uint8Array]] (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
@@ -3652,8 +3658,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3676,31 +3682,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param typ
     *   An Int specifying the data type of the texel data. Possible values:
     *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
@@ -3712,13 +3718,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param offset
     *   An Int byte offset into the WebGLBuffer's data store. Used to upload data to the currently bound WebGLTexture
     *   from the WebGLBuffer bound to the PIXEL_UNPACK_BUFFER target.
@@ -3733,8 +3739,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3757,31 +3763,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param typ
     *   An Int specifying the data type of the texel data. Possible values:
     *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
@@ -3793,13 +3799,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param srcData
     *   A [[TypedArray]] object.
     */
@@ -3813,8 +3819,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3837,31 +3843,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param typ
     *   An Int specifying the data type of the texel data. Possible values:
     *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
@@ -3873,13 +3879,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param srcData
     *   A [[DataView]] object.
     */
@@ -3893,8 +3899,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3917,31 +3923,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param typ
     *   An Int specifying the data type of the texel data. Possible values:
     *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
@@ -3953,13 +3959,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param srcData
     *   A [[TypedArray]] object.
     * @param srcOffset
@@ -3975,8 +3981,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -3999,31 +4005,31 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
     *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
     *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
-    *   - [[WebGL2RenderingContext.R8]]
-    *   - [[WebGL2RenderingContext.R16F]]
-    *   - [[WebGL2RenderingContext.R32F]]
-    *   - [[WebGL2RenderingContext.R8UI]]
-    *   - [[WebGL2RenderingContext.RG8]]
-    *   - [[WebGL2RenderingContext.RG16F]]
-    *   - [[WebGL2RenderingContext.RG32F]]
-    *   - [[WebGL2RenderingContext.RG8UI]]
-    *   - [[WebGL2RenderingContext.RG16UI]]
-    *   - [[WebGL2RenderingContext.RG32UI]]
-    *   - [[WebGL2RenderingContext.RGB8]]
-    *   - [[WebGL2RenderingContext.SRGB8]]
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
     *   - [[WebGLRenderingContext.RGB565]]
-    *   - [[WebGL2RenderingContext.R11F_G11F_B10F]]
-    *   - [[WebGL2RenderingContext.RGB9_E5]]
-    *   - [[WebGL2RenderingContext.RGB16F]]
-    *   - [[WebGL2RenderingContext.RGB32F]]
-    *   - [[WebGL2RenderingContext.RGB8UI]]
-    *   - [[WebGL2RenderingContext.RGBA8]]
-    *   - [[WebGL2RenderingContext.SRGB8_ALPHA8]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
     *   - [[WebGLRenderingContext.RGBA4444]]
-    *   - [[WebGL2RenderingContext.RGBA16F]]
-    *   - [[WebGL2RenderingContext.RGBA32F]]
-    *   - [[WebGL2RenderingContext.RGBA8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
     * @param typ
     *   An Int specifying the data type of the texel data. Possible values:
     *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
@@ -4035,13 +4041,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.SHORT]]
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     *   - [[WebGLRenderingContext.INT]]
-    *   - [[WebGL2RenderingContext.HALF_FLOAT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
     *   - [[WebGLRenderingContext.FLOAT]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_2_10_10_10_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_10F_11F_11F_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_5_9_9_9_REV]]
-    *   - [[WebGL2RenderingContext.UNSIGNED_INT_24_8]]
-    *   - [[WebGL2RenderingContext.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param srcData
     *   A [[DataView]] object.
     * @param srcOffset
@@ -4057,8 +4063,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -4192,11 +4198,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *
     * @param imageSize
     *   An Int specifying the number of bytes to read from the buffer bound to
-    *   [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]].
+    *   [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]].
     *
     * @param offset
     *   An Int specifying the offset in bytes from which to read from the buffer bound to
-    *   [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]].
+    *   [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]].
     */
   def compressedTexImage2D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, imageSize: Int, offset: Int
@@ -4958,11 +4964,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *
     * @param imageSize
     *   An Int specifying the number of bytes to read from the buffer bound to
-    *   [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]].
+    *   [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]].
     *
     * @param offset
     *   An Int specifying the offset in bytes from which to read from the buffer bound to
-    *   [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]].
+    *   [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]].
     */
   def compressedTexImage3D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, imageSize: Int,
@@ -5631,8 +5637,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -5662,10 +5668,10 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     * @param imageSize
     *   An Int specifying the number of bytes to read from the buffer bound to
-    *   [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]].
+    *   [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]].
     * @param offset
     *   An Int specifying the offset in bytes from which to read from the buffer bound to
-    *   [[WebGL2RenderingContext.PIXEL_UNPACK_BUFFER]].
+    *   [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]].
     */
   def compressedTexSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -5677,8 +5683,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -5719,8 +5725,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -5761,8 +5767,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -5803,8 +5809,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -5845,8 +5851,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -5888,8 +5894,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Textures
     * @param target
     *   An Int specifying the binding point (target) of the active texture. Possible values:
-    *   - [[WebGL2RenderingContext.TEXTURE_3D]]: A three-dimensional texture.
-    *   - [[WebGL2RenderingContext.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
     * @param level
     *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
     *   level.
@@ -6795,7 +6801,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * gl.bindAttribLocation(shaderProgram, 2, "boneIndices")
     *
     * //Compile shader
-    * val shader = gl.createShader([[WebGLRenderingContext.VERTEX_SHADER]])
+    * val shader = gl.createShader(WebGLRenderingContext.VERTEX_SHADER)
     * gl.shaderSource(shader,
     * """#version 300 es
     *
@@ -6954,35 +6960,35 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.BACK]]: Fragment shader output is written into the back color buffer.
     *   - [[WebGLRenderingContext.COLOR_ATTACHMENT0]]: Fragment shader output is written in the nth color attachment of
     *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT1]]: Fragment shader output is written in the nth color attachment of
-    *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT2]]: Fragment shader output is written in the nth color attachment of
-    *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT3]]: Fragment shader output is written in the nth color attachment of
-    *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT4]]: Fragment shader output is written in the nth color attachment of
-    *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT5]]: Fragment shader output is written in the nth color attachment of
-    *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT6]]: Fragment shader output is written in the nth color attachment of
-    *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT7]]: Fragment shader output is written in the nth color attachment of
-    *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT8]]: Fragment shader output is written in the nth color attachment of
-    *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT9]]: Fragment shader output is written in the nth color attachment of
-    *     the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT10]]: Fragment shader output is written in the nth color attachment
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT1]]: Fragment shader output is written in the nth color attachment
     *     of the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT11]]: Fragment shader output is written in the nth color attachment
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT2]]: Fragment shader output is written in the nth color attachment
     *     of the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT12]]: Fragment shader output is written in the nth color attachment
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT3]]: Fragment shader output is written in the nth color attachment
     *     of the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT13]]: Fragment shader output is written in the nth color attachment
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT4]]: Fragment shader output is written in the nth color attachment
     *     of the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT14]]: Fragment shader output is written in the nth color attachment
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT5]]: Fragment shader output is written in the nth color attachment
     *     of the current framebuffer.
-    *   - [[WebGL2RenderingContext.COLOR_ATTACHMENT15]]: Fragment shader output is written in the nth color attachment
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT6]]: Fragment shader output is written in the nth color attachment
+    *     of the current framebuffer.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT7]]: Fragment shader output is written in the nth color attachment
+    *     of the current framebuffer.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT8]]: Fragment shader output is written in the nth color attachment
+    *     of the current framebuffer.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT9]]: Fragment shader output is written in the nth color attachment
+    *     of the current framebuffer.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT10]]: Fragment shader output is written in the nth color attachment
+    *     of the current framebuffer.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT11]]: Fragment shader output is written in the nth color attachment
+    *     of the current framebuffer.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT12]]: Fragment shader output is written in the nth color attachment
+    *     of the current framebuffer.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT13]]: Fragment shader output is written in the nth color attachment
+    *     of the current framebuffer.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT14]]: Fragment shader output is written in the nth color attachment
+    *     of the current framebuffer.
+    *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT15]]: Fragment shader output is written in the nth color attachment
     *     of the current framebuffer.
     * @throws INVALID_ENUM
     *   If buffers contains not one of the accepted values.
@@ -6999,9 +7005,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7021,9 +7027,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7043,9 +7049,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7065,9 +7071,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7087,9 +7093,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7112,9 +7118,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7137,9 +7143,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7162,9 +7168,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7187,9 +7193,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7208,9 +7214,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7229,9 +7235,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7250,9 +7256,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7271,9 +7277,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7292,9 +7298,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7313,9 +7319,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7334,9 +7340,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7355,9 +7361,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7376,9 +7382,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7397,9 +7403,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7418,9 +7424,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7439,9 +7445,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7460,9 +7466,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7481,9 +7487,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7502,9 +7508,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7523,9 +7529,9 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Drawing_buffers
     * @param buffer
     *   An Int specifying the buffer to clear. Possible values are:
-    *   - [[WebGL2RenderingContext.COLOR]]: Color buffer.
-    *   - [[WebGL2RenderingContext.DEPTH]]: Depth buffer.
-    *   - [[WebGL2RenderingContext.STENCIL]]: Stencil buffer.
+    *   - [[WebGL2RenderingContext$.COLOR]]: Color buffer.
+    *   - [[WebGL2RenderingContext$.DEPTH]]: Depth buffer.
+    *   - [[WebGL2RenderingContext$.STENCIL]]: Stencil buffer.
     *   - [[WebGLRenderingContext.DEPTH_STENCIL]]: clears depth and stencil buffers (used with clearBufferfi).
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
@@ -7541,71 +7547,597 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
   def clearBufferfi(buffer: Int, drawBuffer: Int, depth: Double, stencil: Int): Unit = js.native
 
   /** @groupname Query_objects Query objects */
-  /** @groupdesc Query_objects Methods for working with WebGLQuery objects. */
-  /** Creates and initializes [[WebGLQuery]] objects, which provide ways to asynchronously query for information. */
-//  def createQuery(): WebGLQuery = js.native
-  /** Deletes a given WebGLQuery object. */
-//  def deleteQuery(): Unit = js.native
-  /** Returns true if a given object is a valid WebGLQuery object. */
-//  def isQuery(): Unit = js.native
-  /** Begins an asynchronous query. */
-//  def beginQuery(): Unit = js.native
-  /** Marks the end of an asynchronous query. */
-//  def endQuery(): Unit = js.native
-  /** Returns a WebGLQuery object for a given target. */
-//  def getQuery(): Unit = js.native
-  /** Returns information about a query. */
-//  def getQueryParameter(): Unit = js.native
+  /** @groupdesc Query_objects Methods for working with [[WebGLQuery]] objects. */
+  /** Creates and initializes [[WebGLQuery]] objects, which provide ways to asynchronously query for information.
+    *
+    * @group Query_objects
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLQuery]] objects are not available in WebGL 1.
+    *   {{{
+    * val query = gl.createQuery()
+    *   }}}
+    */
+  def createQuery(): WebGLQuery = js.native
+
+  /** Deletes a given [[WebGLQuery]] object.
+    *
+    * @group Query_objects
+    * @param query
+    *   A [[WebGLQuery]] object to delete.
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLQuery]] objects are not available in WebGL 1.
+    *   {{{
+    * val query = gl.createQuery()
+    *
+    * // …
+    *
+    * gl.deleteQuery(query)
+    *   }}}
+    */
+  def deleteQuery(query: WebGLQuery): Unit = js.native
+
+  /** Returns true if a given object is a valid [[WebGLQuery]] object.
+    *
+    * @group Query_objects
+    * @param query
+    *   A [[WebGLQuery]] object to test.
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLQuery]] objects are not available in WebGL 1.
+    *   {{{
+    * val query = gl.createQuery()
+    *
+    * // …
+    *
+    * gl.isQuery(query)
+    *   }}}
+    */
+  def isQuery(query: WebGLQuery): Boolean = js.native
+
+  /** Begins an asynchronous query.
+    *
+    * @group Query_objects
+    * @param target
+    *   An Int specifying the target of the query. Possible values:
+    *   - [[WebGL2RenderingContext$.ANY_SAMPLES_PASSED]]: Specifies an occlusion query: these queries detect whether an
+    *     object is visible (whether the scoped drawing commands pass the depth test and if so, how many samples pass).
+    *   - [[WebGL2RenderingContext$.ANY_SAMPLES_PASSED_CONSERVATIVE]]: Same as above, but less accurate and faster
+    *     version.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN]]: Number of primitives that are written to
+    *     transform feedback buffers.
+    * @param query
+    *   A [[WebGLQuery]] object for which to start the querying.
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLQuery]] objects are not available in WebGL 1.
+    *   {{{
+    * val query = gl.createQuery()
+    * gl.beginQuery(WebGL2RenderingContext.ANY_SAMPLES_PASSED, query)
+    *
+    * // …
+    *   }}}
+    */
+  def beginQuery(target: Int, query: WebGLQuery): Unit = js.native
+
+  /** Marks the end of an asynchronous query.
+    *
+    * @group Query_objects
+    * @param target
+    *   An Int specifying the target of the query. Possible values:
+    *   - [[WebGL2RenderingContext$.ANY_SAMPLES_PASSED]]: Specifies an occlusion query: these queries detect whether an
+    *     object is visible (whether the scoped drawing commands pass the depth test and if so, how many samples pass).
+    *   - [[WebGL2RenderingContext$.ANY_SAMPLES_PASSED_CONSERVATIVE]]: Same as above, but less accurate and faster
+    *     version.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN]]: Number of primitives that are written to
+    *     transform feedback buffers.
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLQuery]] objects are not available in WebGL 1.
+    *   {{{
+    * val query = gl.createQuery()
+    * gl.beginQuery(WebGL2RenderingContext.ANY_SAMPLES_PASSED, query)
+    *
+    * // …
+    *
+    * gl.endQuery(WebGL2RenderingContext.ANY_SAMPLES_PASSED)
+    *   }}}
+    */
+  def endQuery(target: Int): Unit = js.native
+
+  /** Returns a [[WebGLQuery]] object for a given target.
+    *
+    * @group Query_objects
+    * @param target
+    *   An Int specifying the target of the query. Possible values:
+    *   - [[WebGL2RenderingContext$.ANY_SAMPLES_PASSED]]: Specifies an occlusion query: these queries detect whether an
+    *     object is visible (whether the scoped drawing commands pass the depth test and if so, how many samples pass).
+    *   - [[WebGL2RenderingContext$.ANY_SAMPLES_PASSED_CONSERVATIVE]]: Same as above, but less accurate and faster
+    *     version.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN]]: Number of primitives that are written to
+    *     transform feedback buffers.
+    * @param pname
+    *   An Int specifying the query object target. Must be WebGL2RenderingContext.CURRENT_QUERY.
+    * @example
+    *   {{{
+    * val currentQuery = gl.getQuery(WebGL2RenderingContext.ANY_SAMPLES_PASSED, WebGL2RenderingContext.CURRENT_QUERY);
+    *   }}}
+    */
+  def getQuery(target: Int, pname: Int): WebGLQuery = js.native
+
+  /** Returns information about a query.
+    *
+    * @group Query_objects
+    * @param query
+    *   A [[WebGLQuery]] object.
+    * @param pname
+    *   An Int specifying which information to return. Possible values:
+    *   - [[WebGL2RenderingContext$.QUERY_RESULT]]: Returns an Int containing the query result.
+    *   - [[WebGL2RenderingContext$.QUERY_RESULT_AVAILABLE]]: Returns a Boolean indicating whether or not a query result
+    *     is available.
+    * @return
+    *   Depends on the pname parameter, either an Int or a Boolean.
+    * @example
+    *   {{{
+    * val query = gl.createQuery()
+    * gl.beginQuery(WebGL2RenderingContext.ANY_SAMPLES_PASSED, query)
+    *
+    * val result = gl.getQueryParameter(query, WebGL2RenderingContext.QUERY_RESULT)
+    *   }}}
+    */
+  def getQueryParameter(query: WebGLQuery, pname: Int): js.Any = js.native
 
   /** @groupname Sampler_objects Sampler objects */
-  /** Creates a new [[WebGLSampler]] object. */
-//  def createSampler(): WebGLSampler = js.native
-  /** Deletes a given WebGLSampler object. */
-//  def deleteSampler(): Unit = js.native
-  /** Binds a given WebGLSampler to a texture unit. */
-//  def bindSampler(): Unit = js.native
-  /** Returns true if a given object is a valid WebGLSampler object. */
-//  def isSampler(): Unit = js.native
-  /** Sets sampler parameters. */
-//  def samplerParameter[if](): Unit = js.native
-  /** Returns sampler parameter information. */
-//  def getSamplerParameter(): Unit = js.native
+  /** Creates a new [[WebGLSampler]] object.
+    *
+    * @group Sampler_objects
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSampler]] objects are not available in WebGL 1.
+    *   {{{
+    * val sampler = gl.createSampler()
+    *   }}}
+    */
+  def createSampler(): WebGLSampler = js.native
+
+  /** Deletes a given WebGLSampler object.
+    *
+    * @group Sampler_objects
+    * @param sampler
+    *   A WebGLSampler object to delete.
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSampler]] objects are not available in WebGL 1.
+    *   {{{
+    * val sampler = gl.createSampler()
+    *
+    * // …
+    *
+    * gl.deleteSampler(sampler)
+    *   }}}
+    */
+  def deleteSampler(sampler: WebGLSampler): Unit = js.native
+
+  /** Binds a given WebGLSampler to a texture unit.
+    *
+    * @group Sampler_objects
+    * @param unit
+    *   An Int specifying the index of the texture unit to which to bind the sampler to.
+    * @param sampler
+    *   A WebGLSampler object to bind.
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSampler]] objects are not available in WebGL 1.
+    *   {{{
+    * val sampler = gl.createSampler()
+    * gl.bindSampler(0, sampler)
+    *   }}}
+    */
+  def bindSampler(unit: Int, sampler: WebGLSampler): Unit = js.native
+
+  /** Returns true if a given object is a valid WebGLSampler object.
+    *
+    * @group Sampler_objects
+    * @param sampler
+    *   A WebGLSampler object to test.
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSampler]] objects are not available in WebGL 1.
+    *   {{{
+    * val sampler = gl.createSampler()
+    *
+    * // …
+    *
+    * gl.isSampler(sampler)
+    *   }}}
+    */
+  def isSampler(sampler: WebGLSampler): Boolean = js.native
+
+  /** Sets sampler parameters.
+    *
+    * @group Sampler_objects
+    * @param sampler
+    *   A WebGLSampler object.
+    * @param pname
+    *   An Int specifying which parameter to set. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_COMPARE_FUNC]]: next parameter is an Int specifying the texture comparison
+    *     function.
+    *   - [[WebGL2RenderingContext$.TEXTURE_COMPARE_MODE]]: next parameter is an Int specifying the texture comparison
+    *     mode.
+    *   - [[WebGLRenderingContext.TEXTURE_MAG_FILTER]]: next parameter is an Int specifying the texture magnification
+    *     filter.
+    *   - [[WebGL2RenderingContext$.TEXTURE_MAX_LOD]]: next parameter is a Float specifying the maximum level-of-detail
+    *     value.
+    *   - [[WebGLRenderingContext.TEXTURE_MIN_FILTER]]: next parameter is an Int specifying the texture minification
+    *     filter
+    *   - [[WebGL2RenderingContext$.TEXTURE_MIN_LOD]]: next parameter is a Float specifying the minimum level-of-detail
+    *     value.
+    *   - [[WebGL2RenderingContext$.TEXTURE_WRAP_R]]: next parameter is an Int specifying the texture wrapping function
+    *     for the texture coordinate r.
+    *   - [[WebGLRenderingContext.TEXTURE_WRAP_S]]: next parameter is an Int specifying the texture wrapping function
+    *     for the texture coordinate s.
+    *   - [[WebGLRenderingContext.TEXTURE_WRAP_T]]: next parameter is an Int specifying the texture wrapping function
+    *     for the texture coordinate t.
+    * @param param
+    *   An Int (samplerParameteri) or a Float (samplerParameterf) specifying a value for pname.
+    * @example
+    *   {{{
+    * val sampler = gl.createSampler()
+    * gl.samplerParameteri(sampler, WebGL2RenderingContext.TEXTURE_MAG_FILTER, WebGL2RenderingContext.NEAREST)
+    *   }}}
+    */
+  def samplerParameteri(sampler: WebGLSampler, pname: Int, param: Int): Unit = js.native
+
+  /** Sets sampler parameters.
+    *
+    * @group Sampler_objects
+    * @param sampler
+    *   A WebGLSampler object.
+    * @param pname
+    *   An Int specifying which parameter to set. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_COMPARE_FUNC]]: next parameter is an Int specifying the texture comparison
+    *     function.
+    *   - [[WebGL2RenderingContext$.TEXTURE_COMPARE_MODE]]: next parameter is an Int specifying the texture comparison
+    *     mode.
+    *   - [[WebGLRenderingContext.TEXTURE_MAG_FILTER]]: next parameter is an Int specifying the texture magnification
+    *     filter.
+    *   - [[WebGL2RenderingContext$.TEXTURE_MAX_LOD]]: next parameter is a Float specifying the maximum level-of-detail
+    *     value.
+    *   - [[WebGLRenderingContext.TEXTURE_MIN_FILTER]]: next parameter is an Int specifying the texture minification
+    *     filter
+    *   - [[WebGL2RenderingContext$.TEXTURE_MIN_LOD]]: next parameter is a Float specifying the minimum level-of-detail
+    *     value.
+    *   - [[WebGL2RenderingContext$.TEXTURE_WRAP_R]]: next parameter is an Int specifying the texture wrapping function
+    *     for the texture coordinate r.
+    *   - [[WebGLRenderingContext.TEXTURE_WRAP_S]]: next parameter is an Int specifying the texture wrapping function
+    *     for the texture coordinate s.
+    *   - [[WebGLRenderingContext.TEXTURE_WRAP_T]]: next parameter is an Int specifying the texture wrapping function
+    *     for the texture coordinate t.
+    * @param param
+    *   An Int (samplerParameteri) or a Float (samplerParameterf) specifying a value for pname.
+    * @example
+    *   {{{
+    * val sampler = gl.createSampler()
+    * gl.samplerParameteri(sampler, WebGL2RenderingContext.TEXTURE_MAG_FILTER, WebGL2RenderingContext.NEAREST)
+    *   }}}
+    */
+  def samplerParameterf(sampler: WebGLSampler, pname: Int, param: Float): Unit = js.native
+
+  /** Returns sampler parameter information.
+    *
+    * @group Sampler_objects
+    * @param sampler
+    *   A WebGLSampler object.
+    * @param pname
+    *   An Int specifying which information to return. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_COMPARE_FUNC]]: Returns an Int indicating the texture comparison function.
+    *   - [[WebGL2RenderingContext$.TEXTURE_COMPARE_MODE]]: Returns an Int indicating the texture comparison mode.
+    *   - [[WebGLRenderingContext.TEXTURE_MAG_FILTER]]: Returns an Int indicating the texture magnification filter.
+    *   - [[WebGL2RenderingContext$.TEXTURE_MAX_LOD]]: Returns a Float indicating the maximum level-of-detail value.
+    *   - [[WebGLRenderingContext.TEXTURE_MIN_FILTER]]: Returns an Int indicating the texture minification filter
+    *   - [[WebGL2RenderingContext$.TEXTURE_MIN_LOD]]: Returns a Float indicating the minimum level-of-detail value.
+    *   - [[WebGL2RenderingContext$.TEXTURE_WRAP_R]]: Returns an Int indicating the texture wrapping function for the
+    *     texture coordinate r.
+    *   - [[WebGLRenderingContext.TEXTURE_WRAP_S]]: Returns an Int indicating the texture wrapping function for the
+    *     texture coordinate s.
+    *   - [[WebGLRenderingContext.TEXTURE_WRAP_T]]: Returns an Int indicating the texture wrapping function for the
+    *     texture coordinate t.
+    * @return
+    *   Depends on the pname parameter, either an Int or a Float.
+    * @example
+    *   {{{
+    * val sampler = gl.createSampler()
+    * gl.getSamplerParameter(sampler, WebGL2RenderingContext.TEXTURE_COMPARE_FUNC)
+    *   }}}
+    */
+  def getSamplerParameter(sampler: WebGLSampler, pname: Int): js.Any = js.native
 
   /** @groupname Sync_objects Sync objects */
-  /** Creates a new [[WebGLSync]] object and inserts it into the GL command stream. */
-//  def fenceSync(): WebGLSync = js.native
-  /** Returns true if the passed object is a valid WebGLSync object. */
-//  def isSync(): Unit = js.native
-  /** Deletes a given WebGLSync object. */
-//  def deleteSync(): Unit = js.native
-  /** Blocks and waits for a WebGLSync object to become signaled or a given timeout to be passed. */
-//  def clientWaitSync(): Unit = js.native
-  /** Returns immediately, but waits on the GL server until the given WebGLSync object is signaled. */
-//  def waitSync(): Unit = js.native
-  /** Returns parameter information of a WebGLSync object. */
-//  def getSyncParameter(): Unit = js.native
+  /** Creates a new [[WebGLSync]] object and inserts it into the GL command stream.
+    *
+    * @group Sync_objects
+    * @param condition
+    *   An Int specifying the condition that must be met to set the sync object's state to signaled. Must be
+    *   [[WebGL2RenderingContext$.SYNC_GPU_COMMANDS_COMPLETE]].
+    * @param flags
+    *   An Int specifying a bitwise combination of flags controlling the behavior of the sync object. Must be 0 (exists
+    *   for extensions only).
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSync]] objects are not available in WebGL 1.
+    *   {{{
+    * val sync = gl.fenceSync(WebGL2RenderingContext.SYNC_GPU_COMMANDS_COMPLETE, 0)
+    *   }}}
+    */
+  def fenceSync(condition: Int, flags: Int): WebGLSync = js.native
+
+  /** Returns true if the passed object is a valid [[WebGLSync]] object.
+    *
+    * @group Sync_objects
+    * @param sync
+    *   A [[WebGLSync]] object to test.
+    * @return
+    *   A Boolean indicating whether the given object is a valid [[WebGLSync]] object (true) or not (false).
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSync]] objects are not available in WebGL 1.
+    *   {{{
+    * val sync = gl.fenceSync(WebGL2RenderingContext.SYNC_GPU_COMMANDS_COMPLETE, 0)
+    *
+    * // …
+    *
+    * gl.isSync(sync)
+    *   }}}
+    */
+  def isSync(sync: WebGLSync): Boolean = js.native
+
+  /** Deletes a given [[WebGLSync]] object.
+    *
+    * @group Sync_objects
+    * @param sync
+    *   A [[WebGLSync]] object to delete.
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSync]] objects are not available in WebGL 1.
+    *   {{{
+    * val sync = gl.fenceSync(WebGL2RenderingContext.SYNC_GPU_COMMANDS_COMPLETE, 0)
+    *
+    * // …
+    *
+    * gl.deleteSync(sync)
+    *   }}}
+    */
+  def deleteSync(sync: WebGLSync): Unit = js.native
+
+  /** Blocks and waits for a [[WebGLSync]] object to become signaled or a given timeout to be passed.
+    *
+    * @group Sync_objects
+    * @param sync
+    *   A [[WebGLSync]] object on which to wait on.
+    * @param flags
+    *   An Int specifying a bitwise combination of flags controlling the flushing behavior. May be
+    *   gl.SYNC_FLUSH_COMMANDS_BIT.
+    * @param timeout
+    *   A Long specifying a timeout (in nanoseconds) for which to wait for the sync object to become signaled. Must not
+    *   be larger than gl.MAX_CLIENT_WAIT_TIMEOUT_WEBGL.
+    * @return
+    *   An Int indicating the sync object's status:
+    *   - [[WebGL2RenderingContext$.ALREADY_SIGNALED]]: Indicates that the sync object was signaled when this method was
+    *     called.
+    *   - [[WebGL2RenderingContext$.TIMEOUT_EXPIRED]]: Indicates that the timeout time passed and that the sync object
+    *     did not become signaled.
+    *   - [[WebGL2RenderingContext$.CONDITION_SATISFIED]]: Indicates that the sync object was signaled before the
+    *     timeout expired.
+    *   - [[WebGL2RenderingContext$.WAIT_FAILED]]: Indicates that an error occurred during the execution.
+    * @example
+    *   {{{
+    * val sync = gl.fenceSync(WebGL2RenderingContext.SYNC_GPU_COMMANDS_COMPLETE, 0)
+    * val status = gl.clientWaitSync(sync, 0, 0)
+    *   }}}
+    */
+  def clientWaitSync(sync: WebGLSync, flags: Int, timeout: Long): Int = js.native
+
+  /** Returns immediately, but waits on the GL server until the given [[WebGLSync]] object is signaled.
+    *
+    * @group Sync_objects
+    * @param sync
+    *   A [[WebGLSync]] object on which to wait on.
+    * @param flags
+    *   An Int specifying a bitwise combination of flags controlling the flushing behavior. Must be 0 (exists for
+    *   extensions only).
+    * @param timeout
+    *   A Long specifying a timeout the server should wait before continuing. Must be
+    *   [[WebGL2RenderingContext$.TIMEOUT_IGNORED]].
+    * @example
+    *   {{{
+    * val sync = gl.fenceSync(WebGL2RenderingContext.SYNC_GPU_COMMANDS_COMPLETE, 0)
+    * gl.waitSync(sync, 0, WebGL2RenderingContext.TIMEOUT_IGNORED)
+    *   }}}
+    */
+  def waitSync(sync: WebGLSync, flags: Int, timeout: Long): Unit = js.native
+
+  /** Returns parameter information of a [[WebGLSync]] object.
+    *
+    * @group Sync_objects
+    * @param sync
+    *   A [[WebGLSync]] object.
+    * @param pname
+    *   An Int specifying which information to return. Possible values:
+    *   - [[WebGL2RenderingContext$.OBJECT_TYPE]]: Returns an Int indicating the type of the sync object (always
+    *     gl.SYNC_FENCE).
+    *   - [[WebGL2RenderingContext$.SYNC_STATUS]]: Returns an Int indicating the status of the sync object (gl.SIGNALED
+    *     or gl.UNSIGNALED).
+    *   - [[WebGL2RenderingContext$.SYNC_CONDITION]]: Returns an Int indicating the sync objects' condition (always
+    *     gl.SYNC_GPU_COMMANDS_COMPLETE).
+    *   - [[WebGL2RenderingContext$.SYNC_FLAGS]]: Returns an Int indicating the flags with which the sync object was
+    *     created (always 0 as no flags are supported).
+    * @example
+    *   {{{
+    * val sync = gl.fenceSync(WebGL2RenderingContext.SYNC_GPU_COMMANDS_COMPLETE, 0)
+    * gl.getSyncParameter(sync, WebGL2RenderingContext.SYNC_STATUS)
+    *   }}}
+    */
+  def getSyncParameter(sync: WebGLSync, pname: Int): Int = js.native
 
   /** @groupname Transform_feedback Transform feedback */
-  /** Creates and initializes [[WebGLTransformFeedback]] objects. */
-//  def createTransformFeedback(): WebGLTransformFeedback = js.native
-  /** Deletes a given WebGLTransformFeedback object. */
-//  def deleteTransformFeedback(): Unit = js.native
-  /** Returns true if the passed object is a valid WebGLTransformFeedback object. */
-//  def isTransformFeedback(): Unit = js.native
-  /** Binds a passed WebGLTransformFeedback object to the current GL state. */
-//  def bindTransformFeedback(): Unit = js.native
-  /** Starts a transform feedback operation. */
-//  def beginTransformFeedback(): Unit = js.native
-  /** Ends a transform feedback operation. */
-//  def endTransformFeedback(): Unit = js.native
-  /** Specifies values to record in WebGLTransformFeedback buffers. */
-//  def transformFeedbackVaryings(): Unit = js.native
-  /** Returns information about varying variables from WebGLTransformFeedback buffers. */
-//  def getTransformFeedbackVarying(): Unit = js.native
-  /** Pauses a transform feedback operation. */
-//  def pauseTransformFeedback(): Unit = js.native
-  /** Resumes a transform feedback operation. */
-//  def resumeTransformFeedback(): Unit = js.native
+  /** Creates and initializes [[WebGLTransformFeedback]] objects.
+    *
+    * @group Transform_feedback
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLTransformFeedback]] objects are not available in WebGL 1.
+    *   {{{
+    * val transformFeedback = gl.createTransformFeedback()
+    *   }}}
+    */
+  def createTransformFeedback(): WebGLTransformFeedback = js.native
+
+  /** Deletes a given WebGLTransformFeedback object.
+    *
+    * @group Transform_feedback
+    * @param transformFeedback
+    *   A [[WebGLTransformFeedback]] object to delete.
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLTransformFeedback]] objects are not available in WebGL 1.
+    *   {{{
+    * val transformFeedback = gl.createTransformFeedback()
+    *
+    * // …
+    *
+    * gl.deleteTransformFeedback(transformFeedback)
+    *   }}}
+    */
+  def deleteTransformFeedback(transformFeedback: WebGLTransformFeedback): Unit = js.native
+
+  /** Returns true if the passed object is a valid [[WebGLTransformFeedback]] object.
+    *
+    * @group Transform_feedback
+    * @param transformFeedback
+    *   A [[WebGLTransformFeedback]] object to test.
+    * @return
+    *   A Boolean indicating whether the given object is a valid [[WebGLTransformFeedback]] object (true) or not
+    *   (false).
+    * @example
+    *   gl must be a [[WebGL2RenderingContext]]. [[WebGLTransformFeedback]] objects are not available in WebGL 1.
+    *   {{{
+    * val transformFeedback = gl.createTransformFeedback()
+    *
+    * // …
+    *
+    * gl.isTransformFeedback(transformFeedback)
+    *   }}}
+    */
+  def isTransformFeedback(transformFeedback: WebGLTransformFeedback): Boolean = js.native
+
+  /** Binds a passed [[WebGLTransformFeedback]] object to the current GL state.
+    *
+    * @group Transform_feedback
+    * @param target
+    *   An Int specifying the target (binding point). Must be [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK]].
+    * @param transformFeedback
+    *   A [[WebGLTransformFeedback]] object to bind.
+    * @example
+    *   {{{
+    * val transformFeedback = gl.createTransformFeedback()
+    * gl.bindTransformFeedback(WebGL2RenderingContext.TRANSFORM_FEEDBACK, transformFeedback)
+    *   }}}
+    */
+  def bindTransformFeedback(target: Int, transformFeedback: WebGLTransformFeedback): Unit = js.native
+
+  /** Starts a transform feedback operation.
+    *
+    * @group Transform_feedback
+    * @param primitiveMode
+    *   An Int specifying the output type of the primitives that will be recorded into the buffer objects that are bound
+    *   for transform feedback. Possible values:
+    *   - [[WebGLRenderingContext$.POINTS]]
+    *   - [[WebGLRenderingContext$.LINES]]
+    *   - [[WebGLRenderingContext$.TRIANGLES]]
+    * @example
+    *   {{{
+    * vak transformFeedback = gl.createTransformFeedback()
+    * gl.bindTransformFeedback(WebGL2RenderingContext.TRANSFORM_FEEDBACK, transformFeedback)
+    * gl.beginTransformFeedback(WebGLRenderingContext.TRIANGLES)
+    * gl.drawArrays(WebGLRenderingContext.TRIANGLES, 0, 3)
+    *   }}}
+    */
+  def beginTransformFeedback(primitiveMode: Int): Unit = js.native
+
+  /** Ends a transform feedback operation.
+    *
+    * @group Transform_feedback
+    * @example
+    *   {{{
+    * val transformFeedback = gl.createTransformFeedback();
+    * gl.bindTransformFeedback(WebGL2RenderingContext.TRANSFORM_FEEDBACK, transformFeedback);
+    * gl.beginTransformFeedback(WebGLRenderingContext.TRIANGLES);
+    * gl.drawArrays(WebGLRenderingContext.TRIANGLES, 0, 3);
+    * gl.endTransformFeedback()
+    *   }}}
+    */
+  def endTransformFeedback(): Unit = js.native
+
+  /** Specifies values to record in WebGLTransformFeedback buffers.
+    *
+    * @group Transform_feedback
+    * @param program
+    *   A [[WebGLProgram]].
+    * @param varyings
+    *   A [[js.Array]] of string specifying the names of the varying variables to use.
+    * @param bufferMode
+    *   An Int specifying the mode to use when capturing the varying variables. Either gl.INTERLEAVED_ATTRIBS or
+    *   gl.SEPARATE_ATTRIBS.
+    * @example
+    *   {{{
+    * val transformFeedback = gl.createTransformFeedback()
+    * gl.bindTransformFeedback(WebGL2RenderingContext.TRANSFORM_FEEDBACK, transformFeedback)
+    * val transformFeedbackOutputs = js.Array("gl_Position", "anotherOutput")
+    *
+    * gl.transformFeedbackVaryings(
+    *   shaderProg,
+    *   transformFeedbackOutputs,
+    *   WebGL2RenderingContext.INTERLEAVED_ATTRIBS
+    * )
+    * gl.linkProgram(shaderProg)
+    *   }}}
+    */
+  def transformFeedbackVaryings(program: WebGLProgram, varyings: js.Array[String], bufferMode: Int): Unit = js.native
+
+  /** Returns information about varying variables from WebGLTransformFeedback buffers.
+    *
+    * @group Transform_feedback
+    * @param program
+    *   A [[WebGLProgram]].
+    * @param index
+    *   An Int specifying the index of the varying variable whose information to retrieve.
+    * @example
+    *   {{{
+    * activeInfo = gl.getTransformFeedbackVarying(program, 0)
+    *   }}}
+    */
+  def getTransformFeedbackVarying(program: WebGLProgram, index: Int): WebGLActiveInfo = js.native
+
+  /** Pauses a transform feedback operation.
+    *
+    * @group Transform_feedback
+    * @example
+    *   {{{
+    * val transformFeedback = gl.createTransformFeedback()
+    * gl.bindTransformFeedback(WebGL2RenderingContext.TRANSFORM_FEEDBACK, transformFeedback)
+    * gl.beginTransformFeedback(WebGLRenderingContext.TRIANGLES)
+    * gl.pauseTransformFeedback()
+    * // …
+    * gl.resumeTransformFeedback()
+    * gl.drawArrays(WebGLRenderingContext.TRIANGLES, 0, 3)
+    * gl.endTransformFeedback()
+    *   }}}
+    */
+  def pauseTransformFeedback(): Unit = js.native
+
+  /** Resumes a transform feedback operation.
+    *
+    * @group Transform_feedback
+    * @example
+    *   {{{
+    * val transformFeedback = gl.createTransformFeedback()
+    * gl.bindTransformFeedback(WebGL2RenderingContext.TRANSFORM_FEEDBACK, transformFeedback)
+    * gl.beginTransformFeedback(WebGLRenderingContext.TRIANGLES)
+    * gl.pauseTransformFeedback()
+    * //…
+    * gl.resumeTransformFeedback()
+    * gl.drawArrays(WebGLRenderingContext.TRIANGLES, 0, 3)
+    * gl.endTransformFeedback()
+    *   }}}
+    */
+  def resumeTransformFeedback(): Unit = js.native
 
   /** @groupname Uniform_buffer_objects Uniform buffer objects */
   /** Binds a given [[WebGLBuffer]] to a given binding point (target) at a given index.
@@ -7613,15 +8145,15 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Uniform_buffer_objects
     * @param target
     *   An Int specifying the target for the bind operation. Possible values:
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]
     * @param index
     *   An Int specifying the index of the target.
     * @param buffer
     *   A [[WebGLBuffer]] which to bind to the binding point (target).
     * @example
     *   {{{
-    * gl.bindBufferBase(WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER, 0, buffer)
+    * gl.bindBufferBase(WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER, 0, buffer)
     *   }}}
     */
   def bindBufferBase(target: Int, index: Int, buffer: WebGLBuffer): Unit = js.native
@@ -7631,8 +8163,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @group Uniform_buffer_objects
     * @param target
     *   An Int specifying the target for the bind operation. Possible values:
-    *   - [[WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER]]
-    *   - [[WebGL2RenderingContext.UNIFORM_BUFFER]]
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]
     * @param index
     *   An Int specifying the index of the target.
     * @param buffer
@@ -7643,7 +8175,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the amount of data that can be read from the buffer.
     * @example
     *   {{{
-    * gl.bindBufferRange(WebGL2RenderingContext.TRANSFORM_FEEDBACK_BUFFER, 1, buffer, 0, 4)
+    * gl.bindBufferRange(WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER, 1, buffer, 0, 4)
     *   }}}
     */
   def bindBufferRange(
@@ -7679,17 +8211,17 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[js.Array]] of Int specifying the indices of the active uniforms to query.
     * @param pname
     *   An Int specifying which information to query. Possible values:
-    *   - [[WebGL2RenderingContext.UNIFORM_TYPE]]: Returns a [[js.Array]] of Int indicating the types of the uniforms.
-    *   - [[WebGL2RenderingContext.UNIFORM_SIZE]]: Returns a [[js.Array]] of Int indicating the sizes of the uniforms.
-    *   - [[WebGL2RenderingContext.UNIFORM_BLOCK_INDEX]]: Returns a [[js.Array]] of Int indicating the block indices of
+    *   - [[WebGL2RenderingContext$.UNIFORM_TYPE]]: Returns a [[js.Array]] of Int indicating the types of the uniforms.
+    *   - [[WebGL2RenderingContext$.UNIFORM_SIZE]]: Returns a [[js.Array]] of Int indicating the sizes of the uniforms.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_INDEX]]: Returns a [[js.Array]] of Int indicating the block indices of
     *     the uniforms.
-    *   - [[WebGL2RenderingContext.UNIFORM_OFFSET]]: Returns a [[js.Array]] of Int indicating the uniform buffer
+    *   - [[WebGL2RenderingContext$.UNIFORM_OFFSET]]: Returns a [[js.Array]] of Int indicating the uniform buffer
     *     offsets.
-    *   - [[WebGL2RenderingContext.UNIFORM_ARRAY_STRIDE]]: Returns a [[js.Array]] of Int indicating the strides between
+    *   - [[WebGL2RenderingContext$.UNIFORM_ARRAY_STRIDE]]: Returns a [[js.Array]] of Int indicating the strides between
     *     the elements.
-    *   - [[WebGL2RenderingContext.UNIFORM_MATRIX_STRIDE]]: Returns a [[js.Array]] of Int indicating the strides between
-    *     columns of a column-major matrix or a row-major matrix.
-    *   - [[WebGL2RenderingContext.UNIFORM_IS_ROW_MAJOR]]: Returns a [[js.Array]] of Boolean indicating whether each of
+    *   - [[WebGL2RenderingContext$.UNIFORM_MATRIX_STRIDE]]: Returns a [[js.Array]] of Int indicating the strides
+    *     between columns of a column-major matrix or a row-major matrix.
+    *   - [[WebGL2RenderingContext$.UNIFORM_IS_ROW_MAJOR]]: Returns a [[js.Array]] of Boolean indicating whether each of
     *     the uniforms is a row-major matrix or not.
     * @example
     *   {{{
@@ -7738,16 +8270,16 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Double specifying the index of the active uniform block within the program.
     * @param pname
     *   An Int specifying which information to query. Possible values:
-    *   - [[WebGL2RenderingContext.UNIFORM_BLOCK_BINDING]]: Returns an Int indicating the uniform buffer binding point.
-    *   - [[WebGL2RenderingContext.UNIFORM_BLOCK_DATA_SIZE]]: Returns an Int indicating the minimum total buffer object
+    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_BINDING]]: Returns an Int indicating the uniform buffer binding point.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_DATA_SIZE]]: Returns an Int indicating the minimum total buffer object
     *     size.
-    *   - [[WebGL2RenderingContext.UNIFORM_BLOCK_ACTIVE_UNIFORMS]]: Returns an Int indicating the number of active
+    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_ACTIVE_UNIFORMS]]: Returns an Int indicating the number of active
     *     uniforms in the uniform block.
-    *   - [[WebGL2RenderingContext.UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES]]: Returns a [[Uint32Array]] indicating the list
-    *     of active uniforms in the uniform block.
-    *   - [[WebGL2RenderingContext.UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER]]: Returns a Boolean indicating whether the
-    *     uniform block is referenced by the vertex shader.
-    *   - [[WebGL2RenderingContext.UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER]]: Returns a Boolean indicating whether
+    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES]]: Returns a [[Uint32Array]] indicating the
+    *     list of active uniforms in the uniform block.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER]]: Returns a Boolean indicating whether
+    *     the uniform block is referenced by the vertex shader.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER]]: Returns a Boolean indicating whether
     *     the uniform block is referenced by the fragment shader.
     * @return
     *   Depends on which information is requested using the pname parameter. If an error occurs, null is returned.
