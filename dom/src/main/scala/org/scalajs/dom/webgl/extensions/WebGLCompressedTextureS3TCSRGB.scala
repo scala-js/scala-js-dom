@@ -1,9 +1,6 @@
 package org.scalajs.dom.webgl.extensions
 
-import org.scalajs.dom.{WebGL2RenderingContext, WebGLRenderingContext}
-
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSGlobal
 
 /** The WEBGL_compressed_texture_s3tc_srgb extension is part of the WebGL API and exposes four S3TC compressed texture
   * formats.
@@ -11,8 +8,8 @@ import scala.scalajs.js.annotation.JSGlobal
   * Compressed textures reduce the amount of memory needed to store a texture on the GPU, allowing for higher resolution
   * textures or more of the same resolution textures.
   *
-  * WebGL extensions are available using the [[WebGLRenderingContext.getExtension]] and
-  * [[WebGL2RenderingContext.getExtension]] methods.
+  * WebGL extensions are available using the [[org.scalajs.dom.WebGLRenderingContext.getExtension]] and
+  * [[org.scalajs.dom.WebGL2RenderingContext.getExtension]] methods.
   *
   * Note: This extension is available to both WebGL1 and WebGL2 contexts.
   *

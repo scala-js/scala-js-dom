@@ -12,4 +12,4 @@ import scala.scalajs.js.annotation._
 /** An opaque type that stores sampling parameters for WebGLTexture access inside of a shader. */
 @js.native
 @JSGlobal
-class WebGLSampler private[this]() extends js.Object
+class WebGLSampler private[this] () extends js.Object

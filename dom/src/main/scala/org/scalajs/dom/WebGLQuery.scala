@@ -9,7 +9,9 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/** An opaque type that provides ways to asynchronously query for information. By default, occlusion queries and primitive queries are available. */
+/** An opaque type that provides ways to asynchronously query for information. By default, occlusion queries and
+  * primitive queries are available.
+  */
 @js.native
 @JSGlobal
-class WebGLQuery private[this]() extends js.Object
+class WebGLQuery private[this] () extends js.Object

@@ -1,14 +1,12 @@
 package org.scalajs.dom.webgl.extensions
 
-import org.scalajs.dom.{WebGLRenderingContext, WebGL2RenderingContext}
-
 import scala.scalajs.js
 
 /** The EXT_texture_compression_bptc extension is part of the WebGL API and exposes 4 BPTC compressed texture formats.
   * These compression formats are called BC7 and BC6H in Microsoft's DirectX API.
   *
-  * WebGL extensions are available using the [[WebGLRenderingContext.getExtension]] and
-  * [[WebGL2RenderingContext.getExtension]] methods.
+  * WebGL extensions are available using the [[org.scalajs.dom.WebGLRenderingContext.getExtension]] and
+  * [[org.scalajs.dom.WebGL2RenderingContext.getExtension]] methods.
   *
   * Note: Support depends on the system's graphics driver. There is no support on Windows.
   *

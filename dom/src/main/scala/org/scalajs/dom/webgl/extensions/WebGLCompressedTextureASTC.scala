@@ -1,7 +1,5 @@
 package org.scalajs.dom.webgl.extensions
 
-import org.scalajs.dom.{WebGLRenderingContext, WebGL2RenderingContext}
-
 import scala.scalajs.js
 
 /** The WEBGL_compressed_texture_astc extension is part of the WebGL API and exposes Adaptive Scalable Texture
@@ -9,8 +7,8 @@ import scala.scalajs.js
   *
   * For more information, see the article ''Using ASTC Texture Compression for Game Assets'' by NVIDIA.
   *
-  * WebGL extensions are available using the [[WebGLRenderingContext.getExtension]] and
-  * [[WebGL2RenderingContext.getExtension]] methods.
+  * WebGL extensions are available using the [[org.scalajs.dom.WebGLRenderingContext.getExtension]] and
+  * [[org.scalajs.dom.WebGL2RenderingContext.getExtension]] methods.
   *
   * Note: ASTC compression is typically available on Mali ARM GPUs, Intel GPUs, and NVIDIA Tegra chips.
   *

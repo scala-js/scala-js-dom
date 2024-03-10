@@ -1,7 +1,5 @@
 package org.scalajs.dom
 
-import org.scalajs.dom.webgl.extensions._
-
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal
 import scala.scalajs.js.typedarray._
@@ -1672,7 +1670,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   if target or usage are not one of the allowed enums.
     */
   def bufferData(
-      target: Int, srcData: TypedArray[js.Any, js.Any], usage: Int, srcOffset: Double, length: Int = 0
+      target: Int, srcData: TypedArray[js.Any, js.Any], usage: Int, srcOffset: Double, length: Int
   ): Unit = js.native
 
   /** Initializes and creates the buffer object's data store.
@@ -1754,15 +1752,75 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
     *
-    * @param srcOffset
-    *   A Double specifying the element index offset where to start reading the buffer.
+    * @param srcData
+    *   An [[ArrayBuffer]] or SharedArrayBuffer that will be copied into the data store.
     *
     * @throws INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
     * @throws INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
-  def bufferSubData(target: Int, dstByteOffset: Double, srcOffset: Double): Unit = js.native
+  def bufferSubData(target: Int, dstByteOffset: Double, srcData: ArrayBuffer): Unit = js.native
+
+  /** Updates a subset of a buffer object's data store.
+    *
+    * @group Buffers
+    * @param target
+    *   A constant specifying the binding point (target). Possible values:
+    *   - [[WebGLRenderingContext.ARRAY_BUFFER]]: Buffer containing vertex attributes, such as vertex coordinates,
+    *     texture coordinate data, or vertex color data.
+    *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
+    *
+    * When using a WebGL 2 context, the following values are available additionally:
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *
+    * @param dstByteOffset
+    *   A Double specifying an offset in bytes where the data replacement will start.
+    *
+    * @param srcData
+    *   An [[DataView]] that will be copied into the data store.
+    *
+    * @throws INVALID_VALUE
+    *   if the data would be written past the end of the buffer or if data is null.
+    * @throws INVALID_ENUM
+    *   if target is not one of the allowed enums.
+    */
+  def bufferSubData(target: Int, dstByteOffset: Double, srcData: DataView): Unit = js.native
+
+  /** Updates a subset of a buffer object's data store.
+    *
+    * @group Buffers
+    * @param target
+    *   A constant specifying the binding point (target). Possible values:
+    *   - [[WebGLRenderingContext.ARRAY_BUFFER]]: Buffer containing vertex attributes, such as vertex coordinates,
+    *     texture coordinate data, or vertex color data.
+    *   - [[WebGLRenderingContext.ELEMENT_ARRAY_BUFFER]]: Buffer used for element indices.
+    *
+    * When using a WebGL 2 context, the following values are available additionally:
+    *   - [[WebGL2RenderingContext$.COPY_READ_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.COPY_WRITE_BUFFER]]: Buffer for copying from one buffer object to another.
+    *   - [[WebGL2RenderingContext$.TRANSFORM_FEEDBACK_BUFFER]]: Buffer for transform feedback operations.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BUFFER]]: Buffer used for storing uniform blocks.
+    *   - [[WebGL2RenderingContext$.PIXEL_PACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
+    *
+    * @param dstByteOffset
+    *   A Double specifying an offset in bytes where the data replacement will start.
+    *
+    * @param srcData
+    *   An [[TypedArray]] that will be copied into the data store.
+    *
+    * @throws INVALID_VALUE
+    *   if the data would be written past the end of the buffer or if data is null.
+    * @throws INVALID_ENUM
+    *   if target is not one of the allowed enums.
+    */
+  def bufferSubData(target: Int, dstByteOffset: Double, srcData: TypedArray[js.Any, js.Any]): Unit = js.native
 
   /** Updates a subset of a buffer object's data store.
     *
