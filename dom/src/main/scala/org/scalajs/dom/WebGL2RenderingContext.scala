@@ -10,7 +10,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
 
   /** @groupname Getting_GL_parameter_information Getting GL parameter information */
   /** @groupdesc Getting_GL_parameter_information
-    *   Constants passed to WebGLRenderingContext.getParameter() to specify what information to return.
+    *   Constants passed to [[WebGLRenderingContext.getParameter]] to specify what information to return.
     */
   /** 0x0C02
     * @group Getting_GL_parameter_information
@@ -149,8 +149,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
 
   /** @groupname Textures Textures */
   /** @groupdesc Textures
-    *   Constants passed to WebGLRenderingContext.texParameteri(), WebGLRenderingContext.texParameterf(),
-    *   WebGLRenderingContext.bindTexture(), WebGLRenderingContext.texImage2D(), and others.
+    *   Constants passed to [[WebGLRenderingContext.texParameteri]], [[WebGLRenderingContext.texParameterf]],
+    *   [[WebGLRenderingContext.bindTexture]], [[WebGLRenderingContext.texImage2D]], and others.
     */
   /** 0x1903
     * @group Textures
@@ -1403,7 +1403,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
-    *   An [[ArrayBuffer]] or SharedArrayBuffer that will be copied into the data store. If null, a data store is still
+    *   An ArrayBuffer or SharedArrayBuffer that will be copied into the data store. If null, a data store is still
     *   created, but the content is uninitialized and undefined.
     *
     * @param usage
@@ -1432,11 +1432,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param srcOffset
     *   A Double specifying the element index offset where to start reading the buffer.
     *
-    * @throws OUT_OF_MEMORY
+    * @throws WebGLRenderingContext.OUT_OF_MEMORY
     *   if the context is unable to create a data store with the given size.
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if size is negative.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target or usage are not one of the allowed enums.
     */
   def bufferData(target: Int, srcData: ArrayBuffer, usage: Int, srcOffset: Double): Unit = js.native
@@ -1459,8 +1459,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
-    *   A [[TypedArray]] that will be copied into the data store. If null, a data store is still created, but the
-    *   content is uninitialized and undefined.
+    *   A TypedArray that will be copied into the data store. If null, a data store is still created, but the content is
+    *   uninitialized and undefined.
     *
     * @param usage
     *   An Int specifying the intended usage pattern of the data store for optimization purposes. Possible values:
@@ -1488,11 +1488,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param srcOffset
     *   A Double specifying the element index offset where to start reading the buffer.
     *
-    * @throws OUT_OF_MEMORY
+    * @throws WebGLRenderingContext.OUT_OF_MEMORY
     *   if the context is unable to create a data store with the given size.
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if size is negative.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target or usage are not one of the allowed enums.
     */
   def bufferData(target: Int, srcData: TypedArray[js.Any, js.Any], usage: Int, srcOffset: Double): Unit = js.native
@@ -1515,8 +1515,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
-    *   A [[DataView]] that will be copied into the data store. If null, a data store is still created, but the content
-    *   is uninitialized and undefined.
+    *   A DataView that will be copied into the data store. If null, a data store is still created, but the content is
+    *   uninitialized and undefined.
     *
     * @param usage
     *   An Int specifying the intended usage pattern of the data store for optimization purposes. Possible values:
@@ -1544,11 +1544,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param srcOffset
     *   A Double specifying the element index offset where to start reading the buffer.
     *
-    * @throws OUT_OF_MEMORY
+    * @throws WebGLRenderingContext.OUT_OF_MEMORY
     *   if the context is unable to create a data store with the given size.
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if size is negative.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target or usage are not one of the allowed enums.
     */
   def bufferData(target: Int, srcData: DataView, usage: Int, srcOffset: Double): Unit = js.native
@@ -1571,7 +1571,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
-    *   An [[ArrayBuffer]] or SharedArrayBuffer that will be copied into the data store. If null, a data store is still
+    *   An ArrayBuffer or SharedArrayBuffer that will be copied into the data store. If null, a data store is still
     *   created, but the content is uninitialized and undefined.
     *
     * @param usage
@@ -1603,11 +1603,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param length
     *   An Int defaulting to 0.
     *
-    * @throws OUT_OF_MEMORY
+    * @throws WebGLRenderingContext.OUT_OF_MEMORY
     *   if the context is unable to create a data store with the given size.
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if size is negative.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target or usage are not one of the allowed enums.
     */
   def bufferData(target: Int, srcData: ArrayBuffer, usage: Int, srcOffset: Double, length: Int): Unit = js.native
@@ -1630,8 +1630,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
-    *   A [[TypedArray]] that will be copied into the data store. If null, a data store is still created, but the
-    *   content is uninitialized and undefined.
+    *   A TypedArray that will be copied into the data store. If null, a data store is still created, but the content is
+    *   uninitialized and undefined.
     *
     * @param usage
     *   A constant specifying the intended usage pattern of the data store for optimization purposes. Possible values:
@@ -1662,11 +1662,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param length
     *   An Int defaulting to 0.
     *
-    * @throws OUT_OF_MEMORY
+    * @throws WebGLRenderingContext.OUT_OF_MEMORY
     *   if the context is unable to create a data store with the given size.
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if size is negative.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target or usage are not one of the allowed enums.
     */
   def bufferData(
@@ -1691,8 +1691,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]]: Buffer used for pixel transfer operations.
     *
     * @param srcData
-    *   A [[DataView]] that will be copied into the data store. If null, a data store is still created, but the content
-    *   is uninitialized and undefined.
+    *   A DataView that will be copied into the data store. If null, a data store is still created, but the content is
+    *   uninitialized and undefined.
     *
     * @param usage
     *   A constant specifying the intended usage pattern of the data store for optimization purposes. Possible values:
@@ -1723,11 +1723,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param length
     *   An Int defaulting to 0.
     *
-    * @throws OUT_OF_MEMORY
+    * @throws WebGLRenderingContext.OUT_OF_MEMORY
     *   if the context is unable to create a data store with the given size.
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if size is negative.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target or usage are not one of the allowed enums.
     */
   def bufferData(target: Int, srcData: DataView, usage: Int, srcOffset: Double, length: Int): Unit = js.native
@@ -1753,11 +1753,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Double specifying an offset in bytes where the data replacement will start.
     *
     * @param srcData
-    *   An [[ArrayBuffer]] or SharedArrayBuffer that will be copied into the data store.
+    *   An ArrayBuffer or SharedArrayBuffer that will be copied into the data store.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
   def bufferSubData(target: Int, dstByteOffset: Double, srcData: ArrayBuffer): Unit = js.native
@@ -1783,11 +1783,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Double specifying an offset in bytes where the data replacement will start.
     *
     * @param srcData
-    *   An [[DataView]] that will be copied into the data store.
+    *   An DataView that will be copied into the data store.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
   def bufferSubData(target: Int, dstByteOffset: Double, srcData: DataView): Unit = js.native
@@ -1813,11 +1813,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Double specifying an offset in bytes where the data replacement will start.
     *
     * @param srcData
-    *   An [[TypedArray]] that will be copied into the data store.
+    *   An TypedArray that will be copied into the data store.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
   def bufferSubData(target: Int, dstByteOffset: Double, srcData: TypedArray[js.Any, js.Any]): Unit = js.native
@@ -1843,14 +1843,14 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Double specifying an offset in bytes where the data replacement will start.
     *
     * @param srcData
-    *   An [[ArrayBuffer]] or SharedArrayBuffer that will be copied into the data store.
+    *   An ArrayBuffer or SharedArrayBuffer that will be copied into the data store.
     *
     * @param srcOffset
     *   A Double specifying the element index offset where to start reading the buffer.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
   def bufferSubData(target: Int, dstByteOffset: Double, srcData: ArrayBuffer, srcOffset: Double): Unit = js.native
@@ -1876,14 +1876,14 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Double specifying an offset in bytes where the data replacement will start.
     *
     * @param srcData
-    *   A [[DataView]] that will be copied into the data store.
+    *   A DataView that will be copied into the data store.
     *
     * @param srcOffset
     *   A Double specifying the element index offset where to start reading the buffer.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
   def bufferSubData(target: Int, dstByteOffset: Double, srcData: DataView, srcOffset: Double): Unit = js.native
@@ -1909,14 +1909,14 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Double specifying an offset in bytes where the data replacement will start.
     *
     * @param srcData
-    *   A [[TypedArray]] that will be copied into the data store.
+    *   A TypedArray that will be copied into the data store.
     *
     * @param srcOffset
     *   A Double specifying the element index offset where to start reading the buffer.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
   def bufferSubData(
@@ -1942,15 +1942,15 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
     * @param srcData
-    *   An [[ArrayBuffer]] or SharedArrayBuffer that will be copied into the data store.
+    *   An ArrayBuffer or SharedArrayBuffer that will be copied into the data store.
     * @param srcOffset
     *   A Double specifying the element index offset where to start reading the buffer.
     * @param length
     *   An Int defaulting to 0.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
   def bufferSubData(
@@ -1976,15 +1976,15 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
     * @param srcData
-    *   A [[DataView]] that will be copied into the data store.
+    *   A DataView that will be copied into the data store.
     * @param srcOffset
     *   A Double specifying the element index offset where to start reading the buffer.
     * @param length
     *   An Int defaulting to 0.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
   def bufferSubData(
@@ -2010,15 +2010,15 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param dstByteOffset
     *   A Double specifying an offset in bytes where the data replacement will start.
     * @param srcData
-    *   A [[TypedArray]] that will be copied into the data store.
+    *   A TypedArray that will be copied into the data store.
     * @param srcOffset
     *   A Double specifying the element index offset where to start reading the buffer.
     * @param length
     *   An Int defaulting to 0.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if the data would be written past the end of the buffer or if data is null.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   if target is not one of the allowed enums.
     */
   def bufferSubData(
@@ -2086,7 +2086,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
       readTarget: Int, writeTarget: Int, readOffset: Double, writeOffset: Double, size: Double
   ): Unit = js.native
 
-  /** Reads data from a buffer and writes them to an [[ArrayBuffer]] or SharedArrayBuffer.
+  /** Reads data from a buffer and writes them to an ArrayBuffer or SharedArrayBuffer.
     *
     * @group Buffers
     * @param target
@@ -2103,15 +2103,15 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
-    *   A [[TypedArray]] or a [[DataView]] object to copy the data to. If dstData is a [[DataView]] then dstOffset and
-    *   length are interpreted in bytes, otherwise dstData's element type is used.
+    *   A TypedArray or a DataView object to copy the data to. If dstData is a DataView then dstOffset and length are
+    *   interpreted in bytes, otherwise dstData's element type is used.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if
     *   - offset + returnedData.byteLength would extend beyond the end of the buffer
     *   - returnedData is null
     *   - offset is less than zero
-    * @throws INVALID_OPERATION
+    * @throws WebGLRenderingContext.INVALID_OPERATION
     *   if
     *   - zero is bound to target
     *   - target is TRANSFORM_FEEDBACK_BUFFER, and any transform feedback object is currently active
@@ -2129,7 +2129,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     */
   def getBufferSubData(target: Int, srcByteOffset: Double, dstData: TypedArray[js.Any, js.Any]): Unit = js.native
 
-  /** Reads data from a buffer and writes them to an [[ArrayBuffer]] or SharedArrayBuffer.
+  /** Reads data from a buffer and writes them to an ArrayBuffer or SharedArrayBuffer.
     *
     * @group Buffers
     * @param target
@@ -2146,15 +2146,15 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
-    *   A [[TypedArray]] or a [[DataView]] object to copy the data to. If dstData is a [[DataView]] then dstOffset and
-    *   length are interpreted in bytes, otherwise dstData's element type is used.
+    *   A TypedArray or a DataView object to copy the data to. If dstData is a DataView then dstOffset and length are
+    *   interpreted in bytes, otherwise dstData's element type is used.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if
     *   - offset + returnedData.byteLength would extend beyond the end of the buffer
     *   - returnedData is null
     *   - offset is less than zero
-    * @throws INVALID_OPERATION
+    * @throws WebGLRenderingContext.INVALID_OPERATION
     *   if
     *   - zero is bound to target
     *   - target is TRANSFORM_FEEDBACK_BUFFER, and any transform feedback object is currently active
@@ -2172,7 +2172,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     */
   def getBufferSubData(target: Int, srcByteOffset: Double, dstData: DataView): Unit = js.native
 
-  /** Reads data from a buffer and writes them to an [[ArrayBuffer]] or SharedArrayBuffer.
+  /** Reads data from a buffer and writes them to an ArrayBuffer or SharedArrayBuffer.
     *
     * @group Buffers
     * @param target
@@ -2189,17 +2189,17 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
-    *   A [[TypedArray]] or a [[DataView]] object to copy the data to. If dstData is a [[DataView]] then dstOffset and
-    *   length are interpreted in bytes, otherwise dstData's element type is used.
+    *   A TypedArray or a DataView object to copy the data to. If dstData is a DataView then dstOffset and length are
+    *   interpreted in bytes, otherwise dstData's element type is used.
     * @param dstOffset
     *   A Double specifying the element index offset to start writing in dstData.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if
     *   - offset + returnedData.byteLength would extend beyond the end of the buffer
     *   - returnedData is null
     *   - offset is less than zero
-    * @throws INVALID_OPERATION
+    * @throws WebGLRenderingContext.INVALID_OPERATION
     *   if
     *   - zero is bound to target
     *   - target is TRANSFORM_FEEDBACK_BUFFER, and any transform feedback object is currently active
@@ -2208,7 +2208,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
       target: Int, srcByteOffset: Double, dstData: TypedArray[js.Any, js.Any], dstOffset: Double
   ): Unit = js.native
 
-  /** Reads data from a buffer and writes them to an [[ArrayBuffer]] or SharedArrayBuffer.
+  /** Reads data from a buffer and writes them to an ArrayBuffer or SharedArrayBuffer.
     *
     * @group Buffers
     * @param target
@@ -2225,24 +2225,24 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
-    *   A [[TypedArray]] or a [[DataView]] object to copy the data to. If dstData is a [[DataView]] then dstOffset and
-    *   length are interpreted in bytes, otherwise dstData's element type is used.
+    *   A TypedArray or a DataView object to copy the data to. If dstData is a DataView then dstOffset and length are
+    *   interpreted in bytes, otherwise dstData's element type is used.
     * @param dstOffset
     *   A Double specifying the element index offset to start writing in dstData.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if
     *   - offset + returnedData.byteLength would extend beyond the end of the buffer
     *   - returnedData is null
     *   - offset is less than zero
-    * @throws INVALID_OPERATION
+    * @throws WebGLRenderingContext.INVALID_OPERATION
     *   if
     *   - zero is bound to target
     *   - target is TRANSFORM_FEEDBACK_BUFFER, and any transform feedback object is currently active
     */
   def getBufferSubData(target: Int, srcByteOffset: Double, dstData: DataView, dstOffset: Double): Unit = js.native
 
-  /** Reads data from a buffer and writes them to an [[ArrayBuffer]] or SharedArrayBuffer.
+  /** Reads data from a buffer and writes them to an ArrayBuffer or SharedArrayBuffer.
     *
     * @group Buffers
     * @param target
@@ -2259,20 +2259,20 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
-    *   A [[TypedArray]] or a [[DataView]] object to copy the data to. If dstData is a [[DataView]] then dstOffset and
-    *   length are interpreted in bytes, otherwise dstData's element type is used.
+    *   A TypedArray or a DataView object to copy the data to. If dstData is a DataView then dstOffset and length are
+    *   interpreted in bytes, otherwise dstData's element type is used.
     * @param dstOffset
     *   A Double specifying the element index offset to start writing in dstData.
     * @param length
     *   An Int specifying the number of elements to copy. If this is 0 or not specified, getBufferSubData will copy
     *   until the end of dstData.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if
     *   - offset + returnedData.byteLength would extend beyond the end of the buffer
     *   - returnedData is null
     *   - offset is less than zero
-    * @throws INVALID_OPERATION
+    * @throws WebGLRenderingContext.INVALID_OPERATION
     *   if
     *   - zero is bound to target
     *   - target is TRANSFORM_FEEDBACK_BUFFER, and any transform feedback object is currently active
@@ -2281,7 +2281,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
       target: Int, srcByteOffset: Double, dstData: TypedArray[js.Any, js.Any], dstOffset: Double, length: Int
   ): Unit = js.native
 
-  /** Reads data from a buffer and writes them to an [[ArrayBuffer]] or SharedArrayBuffer.
+  /** Reads data from a buffer and writes them to an ArrayBuffer or SharedArrayBuffer.
     *
     * @group Buffers
     * @param target
@@ -2298,23 +2298,23 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param srcByteOffset
     *   A Double specifying the byte offset from which to start reading from the buffer.
     * @param dstData
-    *   A [[TypedArray]] or a [[DataView]] object to copy the data to. If dstData is a [[DataView]] then dstOffset and
-    *   length are interpreted in bytes, otherwise dstData's element type is used.
+    *   A TypedArray or a DataView object to copy the data to. If dstData is a DataView then dstOffset and length are
+    *   interpreted in bytes, otherwise dstData's element type is used.
     * @param dstOffset
     *   A Double specifying the element index offset to start writing in dstData.
     * @param length
     *   An Int specifying the number of elements to copy. If this is 0 or not specified, getBufferSubData will copy
     *   until the end of dstData.
     *
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   if
     *   - offset + returnedData.byteLength would extend beyond the end of the buffer
     *   - returnedData is null
     *   - offset is less than zero
-    * @throws INVALID_OPERATION
+    * @throws WebGLRenderingContext.INVALID_OPERATION
     *   if
     *   - zero is bound to target
-    *   - target is TRANSFORM_FEEDBACK_BUFFER, and any transform feedback object is currently active
+    *   - target is [[TRANSFORM_FEEDBACK_BUFFER]], and any transform feedback object is currently active
     */
   def getBufferSubData(
       target: Int, srcByteOffset: Double, dstData: DataView, dstOffset: Double, length: Int
@@ -2563,11 +2563,10 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   depth-renderable or stencil-renderable format).
     * @param pname
     *   An Int specifying the type of information to query. Possible values:
-    *   - [[WebGLRenderingContext.SAMPLES]]: Returns a [[Int32Array]] containing sample counts supported for
-    *     internalformat in descending order.
+    *   - Int32Array containing sample counts supported for internalformat in descending order.
     * @return
-    *   Depends on the requested information (as specified with pname). It is an [[Int32Array]] if pname is
-    *   WebGLRenderingContext.SAMPLES.
+    *   Depends on the requested information (as specified with pname). It is an Int32Array if pname is
+    *   [[WebGLRenderingContext.SAMPLES]].
     * @example
     *   {{{
     * val samples = gl.getInternalformatParameter(
@@ -2730,21 +2729,21 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]] In addition if the WEBGL_compressed_texture_etc extension is supported,
     *     the following values are also possible:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -2798,7 +2797,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -2879,7 +2878,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -2964,7 +2963,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3049,7 +3048,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3134,7 +3133,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3219,7 +3218,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3304,7 +3303,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3339,7 +3338,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     * @example
     *   {{{
     * gl.texImage3D(
@@ -3399,7 +3398,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3434,7 +3433,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param srcData
-    *   A [[DataView]] object.
+    *   A DataView object.
     */
   def texImage3D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int,
@@ -3479,7 +3478,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3514,7 +3513,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     * @param srcOffset
     *   A Double byte offset into the srcData.
     */
@@ -3561,7 +3560,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3596,7 +3595,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV (pixels must be null)]]
     * @param srcData
-    *   A [[DataView]] object.
+    *   A DataView object.
     * @param srcOffset
     *   A Double byte offset into the srcData.
     */
@@ -3655,7 +3654,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3679,11 +3678,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param pixels
     *   One of the following objects can be used as a pixel source for the texture:
-    *   - [[Uint8Array]] (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
-    *   - [[Uint16Array]] (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
+    *   - Uint8Array (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
+    *   - Uint16Array (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
     *     [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]], or
     *     ext.HALF_FLOAT_OES)
-    *   - [[Float32Array]] (must be used if type is [[WebGLRenderingContext.FLOAT]])
+    *   - Float32Array (must be used if type is [[WebGLRenderingContext.FLOAT]])
     *   - [[ImageBitmap]]
     *   - [[ImageData]]
     *   - [[HTMLImageElement]]
@@ -3761,7 +3760,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3784,8 +3783,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param offset
-    *   An Int byte offset into the WebGLBuffer's data store. Used to upload data to the currently bound WebGLTexture
-    *   from the WebGLBuffer bound to the PIXEL_UNPACK_BUFFER target.
+    *   An Int byte offset into the [[WebGLBuffer]]'s data store. Used to upload data to the currently bound
+    *   [[WebGLTexture]] from the [[WebGLBuffer]] bound to the [[PIXEL_UNPACK_BUFFER]] target.
     */
   def texSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -3842,7 +3841,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3865,7 +3864,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     */
   def texSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -3922,7 +3921,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -3945,7 +3944,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param srcData
-    *   A [[DataView]] object.
+    *   A DataView object.
     */
   def texSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -4002,7 +4001,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -4025,7 +4024,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     * @param srcOffset
     *   A Double byte offset into the srcData.
     */
@@ -4084,7 +4083,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.RGBA8]]
     *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
     *   - [[WebGLRenderingContext.RGB5_A1]]
-    *   - [[WebGLRenderingContext.RGBA4444]]
+    *   - RGBA4444
     *   - [[WebGL2RenderingContext$.RGBA16F]]
     *   - [[WebGL2RenderingContext$.RGBA32F]]
     *   - [[WebGL2RenderingContext$.RGBA8UI]]
@@ -4107,7 +4106,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
     *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
     * @param srcData
-    *   A [[DataView]] object.
+    *   A DataView object.
     * @param srcOffset
     *   A Double byte offset into the srcData.
     */
@@ -4173,77 +4172,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     *
     * @param width
     *   An Int specifying the width of the texture.
@@ -4288,77 +4287,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -4366,7 +4365,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[DataView]] object.
+    *   A DataView object.
     */
   def compressedTexImage2D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int,
@@ -4395,77 +4394,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -4473,7 +4472,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     */
   def compressedTexImage2D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: DataView
@@ -4503,77 +4502,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -4581,7 +4580,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     */
   def compressedTexImage2D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int,
@@ -4612,77 +4611,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -4690,7 +4689,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[DataView]] object.
+    *   A DataView object.
     */
   def compressedTexImage2D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: DataView,
@@ -4721,77 +4720,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -4799,7 +4798,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     */
   def compressedTexImage2D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int,
@@ -4830,77 +4829,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -4908,7 +4907,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[DataView]] object.
+    *   A DataView object.
     */
   def compressedTexImage2D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: DataView,
@@ -4939,77 +4938,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     *
     * @param width
     *   An Int specifying the width of the texture.
@@ -5057,77 +5056,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -5135,7 +5134,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     */
   def compressedTexImage3D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int,
@@ -5166,77 +5165,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -5244,7 +5243,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[DataView]] object.
+    *   A DataView object.
     */
   def compressedTexImage3D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: DataView
@@ -5274,77 +5273,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     *
     * @param width
     *   An Int specifying the width of the texture.
@@ -5354,7 +5353,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     */
   def compressedTexImage3D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int,
@@ -5385,77 +5384,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     *
     * @param width
     *   An Int specifying the width of the texture.
@@ -5465,7 +5464,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[DataView]] object.
+    *   A DataView object.
     */
   def compressedTexImage3D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: DataView,
@@ -5496,77 +5495,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -5574,7 +5573,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     */
   def compressedTexImage3D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int,
@@ -5605,77 +5604,77 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   which are valid for compressedTexImage3D. Possible values:
     *
     * When using the WEBGL_compressed_texture_s3tc extension:
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TC.COMPRESSED_RGBA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_s3tc_srgb extension:
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
-    *   - [[WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT]]
+    *   - [[webgl.extensions.WebGLCompressedTextureS3TCSRGB.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT]]
     *
     * When using the WEBGL_compressed_texture_etc extension:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * When using the WEBGL_compressed_texture_pVRTC extension:
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
-    *   - [[WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGB_PVRTC_2BPPV1_IMG]]
+    *   - [[webgl.extensions.WebGLCompressedTexturePVRTC.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG]]
     *
     * When using the WEBGL_compressed_texture_etc1 extension:
-    *   - [[WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
+    *   - [[webgl.extensions.WEBGLCompressedTextureETC1.COMPRESSED_RGB_ETC1_WEBGL]]
     *
     * When using the WEBGL_compressed_texture_astc extension:
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
-    *   - [[WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR]]
+    *   - [[webgl.extensions.WebGLCompressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR]]
     *
     * When using the EXT_texture_compression_bptc extension:
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
-    *   - [[EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGBA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionBPTC.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT]]
     *
     * When using the EXT_texture_compression_rgtc extension:
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
-    *   - [[EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_RGTC1_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_RED_GREEN_RGTC2_EXT]]
+    *   - [[webgl.extensions.EXTTextureCompressionRGTC.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT]]
     * @param width
     *   An Int specifying the width of the texture.
     * @param height
@@ -5683,7 +5682,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param border
     *   An Int specifying the width of the border. Must be 0.
     * @param srcData
-    *   A [[TypedArray]] object.
+    *   A TypedArray object.
     */
   def compressedTexImage3D(
       target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: DataView,
@@ -5714,16 +5713,16 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the depth of the texture.
     * @param format
     *   An Int specifying the compressed image format. Possible values:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     * @param imageSize
     *   An Int specifying the number of bytes to read from the buffer bound to
     *   [[WebGL2RenderingContext$.PIXEL_UNPACK_BUFFER]].
@@ -5760,18 +5759,18 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the depth of the texture.
     * @param format
     *   An Int specifying the compressed image format. Possible values:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     * @param srcData
-    *   A [[TypedArray]] object that will be used as a data store for the compressed image data in memory.
+    *   A TypedArray object that will be used as a data store for the compressed image data in memory.
     */
   def compressedTexSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -5802,18 +5801,18 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the depth of the texture.
     * @param format
     *   An Int specifying the compressed image format. Possible values:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     * @param srcData
-    *   A [[DataView]] object that will be used as a data store for the compressed image data in memory.
+    *   A DataView object that will be used as a data store for the compressed image data in memory.
     */
   def compressedTexSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -5844,18 +5843,18 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the depth of the texture.
     * @param format
     *   An Int specifying the compressed image format. Possible values:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     * @param srcData
-    *   A [[TypedArray]] object that will be used as a data store for the compressed image data in memory.
+    *   A TypedArray object that will be used as a data store for the compressed image data in memory.
     */
   def compressedTexSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -5886,18 +5885,18 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the depth of the texture.
     * @param format
     *   An Int specifying the compressed image format. Possible values:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     * @param srcData
-    *   A [[DataView]] object that will be used as a data store for the compressed image data in memory.
+    *   A DataView object that will be used as a data store for the compressed image data in memory.
     */
   def compressedTexSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -5928,19 +5927,19 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the depth of the texture.
     * @param format
     *   An Int specifying the compressed image format. Possible values:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * @param srcData
-    *   A [[TypedArray]] object that will be used as a data store for the compressed image data in memory.
+    *   A TypedArray object that will be used as a data store for the compressed image data in memory.
     */
   def compressedTexSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -5971,19 +5970,19 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the depth of the texture.
     * @param format
     *   An Int specifying the compressed image format. Possible values:
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
-    *   - [[WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_R11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SIGNED_RG11_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
+    *   - [[webgl.extensions.WebGLCompressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2]]
     *
     * @param srcData
-    *   A [[DataView]] object that will be used as a data store for the compressed image data in memory.
+    *   A DataView object that will be used as a data store for the compressed image data in memory.
     */
   def compressedTexSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
@@ -6168,7 +6167,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   An [[Int32Array]] to be used for the uniform variable.
+    *   An Int32Array to be used for the uniform variable.
     */
   def uniform1iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double): Unit = js.native
 
@@ -6179,7 +6178,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   An [[Int32Array]] to be used for the uniform variable.
+    *   An Int32Array to be used for the uniform variable.
     */
   def uniform1iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double, srcLength: Int): Unit = js.native
 
@@ -6190,7 +6189,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   An [[Int32Array]] to be used for the uniform variable.
+    *   An Int32Array to be used for the uniform variable.
     */
   def uniform2iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double): Unit = js.native
 
@@ -6201,7 +6200,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   An [[Int32Array]] to be used for the uniform variable.
+    *   An Int32Array to be used for the uniform variable.
     */
   def uniform2iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double, srcLength: Int): Unit = js.native
 
@@ -6212,7 +6211,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   An [[Int32Array]] to be used for the uniform variable.
+    *   An Int32Array to be used for the uniform variable.
     */
   def uniform3iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double): Unit = js.native
 
@@ -6223,7 +6222,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   An [[Int32Array]] to be used for the uniform variable.
+    *   An Int32Array to be used for the uniform variable.
     */
   def uniform3iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double, srcLength: Int): Unit = js.native
 
@@ -6234,7 +6233,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   An [[Int32Array]] to be used for the uniform variable.
+    *   An Int32Array to be used for the uniform variable.
     */
   def uniform4iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double): Unit = js.native
 
@@ -6245,7 +6244,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   An [[Int32Array]] to be used for the uniform variable.
+    *   An Int32Array to be used for the uniform variable.
     */
   def uniform4iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double, srcLength: Int): Unit = js.native
 
@@ -6256,7 +6255,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform1uiv(location: WebGLUniformLocation, data: Uint32Array): Unit = js.native
 
@@ -6267,7 +6266,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform1uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double): Unit = js.native
 
@@ -6278,7 +6277,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform1uiv(
       location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double, srcLength: Int
@@ -6291,7 +6290,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform2uiv(location: WebGLUniformLocation, data: Uint32Array): Unit = js.native
 
@@ -6302,7 +6301,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform2uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double): Unit = js.native
 
@@ -6313,7 +6312,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform2uiv(
       location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double, srcLength: Int
@@ -6326,7 +6325,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform3uiv(location: WebGLUniformLocation, data: Uint32Array): Unit = js.native
 
@@ -6337,7 +6336,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform3uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double): Unit = js.native
 
@@ -6348,7 +6347,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform3uiv(
       location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double, srcLength: Int
@@ -6361,7 +6360,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform4uiv(location: WebGLUniformLocation, data: Uint32Array): Unit = js.native
 
@@ -6372,7 +6371,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform4uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double): Unit = js.native
 
@@ -6383,7 +6382,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLUniformLocation]] object containing the location of the uniform attribute to modify.
     *
     * @param data
-    *   A [[Uint32Array]] to be used for the uniform variable.
+    *   A Uint32Array to be used for the uniform variable.
     */
   def uniform4uiv(
       location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double, srcLength: Int
@@ -6399,7 +6398,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix2fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double
@@ -6415,7 +6414,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix2fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int
@@ -6431,7 +6430,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix3x2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit = js.native
 
@@ -6445,7 +6444,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix3x2fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double
@@ -6461,7 +6460,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix3x2fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int
@@ -6477,7 +6476,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix4x2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit = js.native
 
@@ -6491,7 +6490,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix4x2fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double
@@ -6507,7 +6506,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix4x2fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int
@@ -6523,7 +6522,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix2x3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit = js.native
 
@@ -6537,7 +6536,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix2x3fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double
@@ -6553,7 +6552,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix2x3fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int
@@ -6569,7 +6568,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix3fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double
@@ -6585,7 +6584,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix3fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int
@@ -6601,7 +6600,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix4x3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit = js.native
 
@@ -6615,7 +6614,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix4x3fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double
@@ -6631,7 +6630,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix4x3fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int
@@ -6647,7 +6646,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix2x4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit = js.native
 
@@ -6661,7 +6660,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix2x4fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double
@@ -6677,7 +6676,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix2x4fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int
@@ -6693,7 +6692,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix3x4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit = js.native
 
@@ -6707,7 +6706,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix3x4fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double
@@ -6723,7 +6722,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix3x4fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int
@@ -6739,7 +6738,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix4fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double
@@ -6755,7 +6754,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A Boolean specifying whether to transpose the matrix. Must be false.
     *
     * @param data
-    *   A [[Float32Array]] of float values.
+    *   A Float32Array of float values.
     */
   def uniformMatrix4fv(
       location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int
@@ -6813,7 +6812,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying the position of the vertex attribute to be modified.
     *
     * @param value
-    *   A [[Uint32Array]] or sequences of Int for integer vector vertex attribute values.
+    *   A Uint32Array or sequences of Int for integer vector vertex attribute values.
     */
   def vertexAttribI4uiv(index: Int, value: Uint32Array): Unit = js.native
 
@@ -6956,11 +6955,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   An Int specifying an offset in the element array buffer. Must be a valid multiple of the size of the given type.
     * @param instanceCount
     *   An Int specifying the number of instances of the set of elements to execute.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   If mode is not one of the accepted values
-    * @throws INVALID_OPERATION
+    * @throws WebGLRenderingContext.INVALID_OPERATION
     *   If offset is not a valid multiple of the size of the given type
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   If count or instanceCount are negative
     * @example
     *   {{{
@@ -6995,11 +6994,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - [[WebGLRenderingContext.UNSIGNED_INT]]
     * @param offset
     *   An Int specifying an offset in the element array buffer. Must be a valid multiple of the size of the given type.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   If mode is not one of the accepted values
-    * @throws INVALID_OPERATION
+    * @throws WebGLRenderingContext.INVALID_OPERATION
     *   If offset is not a valid multiple of the size of the given type
-    * @throws INVALID_VALUE
+    * @throws WebGLRenderingContext.INVALID_VALUE
     *   If count or instanceCount are negative
     * @example
     *   {{{
@@ -7048,7 +7047,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *     of the current framebuffer.
     *   - [[WebGL2RenderingContext$.COLOR_ATTACHMENT15]]: Fragment shader output is written in the nth color attachment
     *     of the current framebuffer.
-    * @throws INVALID_ENUM
+    * @throws WebGLRenderingContext.INVALID_ENUM
     *   If buffers contains not one of the accepted values.
     *
     * @example
@@ -7070,8 +7069,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferfv(WebGLRenderingContext.COLOR, 0, Float32Array(js.Array(r, g, b, a)))
@@ -7092,8 +7090,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferfv(WebGLRenderingContext.COLOR, 0, Float32Array(js.Array(r, g, b, a)))
@@ -7114,8 +7111,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferfv(WebGLRenderingContext.COLOR, 0, Float32Array(js.Array(r, g, b, a)))
@@ -7136,8 +7132,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferfv(WebGLRenderingContext.COLOR, 0, Float32Array(js.Array(r, g, b, a)))
@@ -7158,8 +7153,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7183,8 +7177,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7208,8 +7201,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7233,8 +7225,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7258,8 +7249,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7279,8 +7269,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7300,8 +7289,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7321,8 +7309,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7342,8 +7329,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7363,8 +7349,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7384,8 +7369,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7405,8 +7389,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferiv(WebGLRenderingContext.COLOR, 0, Int32Array(js.Array(r, g, b, a)))
@@ -7426,8 +7409,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferuiv(WebGLRenderingContext.COLOR, 0, Uint32Array(js.Array(r, g, b, a)))
@@ -7447,8 +7429,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferuiv(WebGLRenderingContext.COLOR, 0, Uint32Array(js.Array(r, g, b, a)))
@@ -7468,8 +7449,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferuiv(WebGLRenderingContext.COLOR, 0, Uint32Array(js.Array(r, g, b, a)))
@@ -7489,8 +7469,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferuiv(WebGLRenderingContext.COLOR, 0, Uint32Array(js.Array(r, g, b, a)))
@@ -7510,8 +7489,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferuiv(WebGLRenderingContext.COLOR, 0, Uint32Array(js.Array(r, g, b, a)))
@@ -7531,8 +7509,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferuiv(WebGLRenderingContext.COLOR, 0, Uint32Array(js.Array(r, g, b, a)))
@@ -7552,8 +7529,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferuiv(WebGLRenderingContext.COLOR, 0, Uint32Array(js.Array(r, g, b, a)))
@@ -7573,8 +7549,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param drawBuffer
     *   An Int specifying the draw buffer to clear.
     * @param values
-    *   An Array of Int or Float values or an [[Int32Array]], [[Uint32Array]] or [[Float32Array]] specifying the values
-    *   to clear to.
+    *   An Array of Int or Float values or an Int32Array, Uint32Array or Float32Array specifying the values to clear to.
     * @example
     *   {{{
     * gl.clearBufferuiv(WebGLRenderingContext.COLOR, 0, Uint32Array(js.Array(r, g, b, a)))
@@ -7753,11 +7728,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     */
   def createSampler(): WebGLSampler = js.native
 
-  /** Deletes a given WebGLSampler object.
+  /** Deletes a given [[WebGLSampler]] object.
     *
     * @group Sampler_objects
     * @param sampler
-    *   A WebGLSampler object to delete.
+    *   A [[WebGLSampler]] object to delete.
     * @example
     *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSampler]] objects are not available in WebGL 1.
     *   {{{
@@ -7770,13 +7745,13 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     */
   def deleteSampler(sampler: WebGLSampler): Unit = js.native
 
-  /** Binds a given WebGLSampler to a texture unit.
+  /** Binds a given [[WebGLSampler]] to a texture unit.
     *
     * @group Sampler_objects
     * @param unit
     *   An Int specifying the index of the texture unit to which to bind the sampler to.
     * @param sampler
-    *   A WebGLSampler object to bind.
+    *   A [[WebGLSampler]] object to bind.
     * @example
     *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSampler]] objects are not available in WebGL 1.
     *   {{{
@@ -7786,11 +7761,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     */
   def bindSampler(unit: Int, sampler: WebGLSampler): Unit = js.native
 
-  /** Returns true if a given object is a valid WebGLSampler object.
+  /** Returns true if a given object is a valid [[WebGLSampler]] object.
     *
     * @group Sampler_objects
     * @param sampler
-    *   A WebGLSampler object to test.
+    *   A [[WebGLSampler]] object to test.
     * @example
     *   gl must be a [[WebGL2RenderingContext]]. [[WebGLSampler]] objects are not available in WebGL 1.
     *   {{{
@@ -7807,7 +7782,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *
     * @group Sampler_objects
     * @param sampler
-    *   A WebGLSampler object.
+    *   A [[WebGLSampler]] object.
     * @param pname
     *   An Int specifying which parameter to set. Possible values:
     *   - [[WebGL2RenderingContext$.TEXTURE_COMPARE_FUNC]]: next parameter is an Int specifying the texture comparison
@@ -7842,7 +7817,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *
     * @group Sampler_objects
     * @param sampler
-    *   A WebGLSampler object.
+    *   A [[WebGLSampler]] object.
     * @param pname
     *   An Int specifying which parameter to set. Possible values:
     *   - [[WebGL2RenderingContext$.TEXTURE_COMPARE_FUNC]]: next parameter is an Int specifying the texture comparison
@@ -7877,7 +7852,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *
     * @group Sampler_objects
     * @param sampler
-    *   A WebGLSampler object.
+    *   A [[WebGLSampler]] object.
     * @param pname
     *   An Int specifying which information to return. Possible values:
     *   - [[WebGL2RenderingContext$.TEXTURE_COMPARE_FUNC]]: Returns an Int indicating the texture comparison function.
@@ -7963,10 +7938,10 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   A [[WebGLSync]] object on which to wait on.
     * @param flags
     *   An Int specifying a bitwise combination of flags controlling the flushing behavior. May be
-    *   gl.SYNC_FLUSH_COMMANDS_BIT.
+    *   [[WebGL2RenderingContext$.SYNC_FLUSH_COMMANDS_BIT]].
     * @param timeout
     *   A Long specifying a timeout (in nanoseconds) for which to wait for the sync object to become signaled. Must not
-    *   be larger than gl.MAX_CLIENT_WAIT_TIMEOUT_WEBGL.
+    *   be larger than [[WebGL2RenderingContext$.MAX_CLIENT_WAIT_TIMEOUT_WEBGL]].
     * @return
     *   An Int indicating the sync object's status:
     *   - [[WebGL2RenderingContext$.ALREADY_SIGNALED]]: Indicates that the sync object was signaled when this method was
@@ -8011,11 +7986,11 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param pname
     *   An Int specifying which information to return. Possible values:
     *   - [[WebGL2RenderingContext$.OBJECT_TYPE]]: Returns an Int indicating the type of the sync object (always
-    *     gl.SYNC_FENCE).
-    *   - [[WebGL2RenderingContext$.SYNC_STATUS]]: Returns an Int indicating the status of the sync object (gl.SIGNALED
-    *     or gl.UNSIGNALED).
+    *     [[WebGL2RenderingContext$.SYNC_FENCE]]).
+    *   - [[WebGL2RenderingContext$.SYNC_STATUS]]: Returns an Int indicating the status of the sync object
+    *     ([[WebGL2RenderingContext$.SIGNALED]] or [[WebGL2RenderingContext$.UNSIGNALED]]).
     *   - [[WebGL2RenderingContext$.SYNC_CONDITION]]: Returns an Int indicating the sync objects' condition (always
-    *     gl.SYNC_GPU_COMMANDS_COMPLETE).
+    *     [[WebGL2RenderingContext$.SYNC_GPU_COMMANDS_COMPLETE]]).
     *   - [[WebGL2RenderingContext$.SYNC_FLAGS]]: Returns an Int indicating the flags with which the sync object was
     *     created (always 0 as no flags are supported).
     * @example
@@ -8129,10 +8104,10 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param program
     *   A [[WebGLProgram]].
     * @param varyings
-    *   A [[js.Array]] of string specifying the names of the varying variables to use.
+    *   A JavaScript Array of string specifying the names of the varying variables to use.
     * @param bufferMode
-    *   An Int specifying the mode to use when capturing the varying variables. Either gl.INTERLEAVED_ATTRIBS or
-    *   gl.SEPARATE_ATTRIBS.
+    *   An Int specifying the mode to use when capturing the varying variables. Either
+    *   [[WebGL2RenderingContext$.INTERLEAVED_ATTRIBS]] or [[WebGL2RenderingContext$.SEPARATE_ATTRIBS]].
     * @example
     *   {{{
     * val transformFeedback = gl.createTransformFeedback()
@@ -8248,7 +8223,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param uniformNames
     *   An Array of string specifying the names of the uniforms to query.
     * @return
-    *   A [[js.Array]] of Int containing the uniform indices.
+    *   A JavaScript Array of Int containing the uniform indices.
     * @example
     *   {{{
     * val uniformIndices = gl.getUniformIndices(program, js.Array(
@@ -8266,21 +8241,23 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     * @param program
     *   A [[WebGLProgram]] containing the active uniforms.
     * @param uniformIndices
-    *   A [[js.Array]] of Int specifying the indices of the active uniforms to query.
+    *   A JavaScript Array of Int specifying the indices of the active uniforms to query.
     * @param pname
     *   An Int specifying which information to query. Possible values:
-    *   - [[WebGL2RenderingContext$.UNIFORM_TYPE]]: Returns a [[js.Array]] of Int indicating the types of the uniforms.
-    *   - [[WebGL2RenderingContext$.UNIFORM_SIZE]]: Returns a [[js.Array]] of Int indicating the sizes of the uniforms.
-    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_INDEX]]: Returns a [[js.Array]] of Int indicating the block indices of
-    *     the uniforms.
-    *   - [[WebGL2RenderingContext$.UNIFORM_OFFSET]]: Returns a [[js.Array]] of Int indicating the uniform buffer
+    *   - [[WebGL2RenderingContext$.UNIFORM_TYPE]]: Returns a JavaScript Array of Int indicating the types of the
+    *     uniforms.
+    *   - [[WebGL2RenderingContext$.UNIFORM_SIZE]]: Returns a JavaScript Array of Int indicating the sizes of the
+    *     uniforms.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_INDEX]]: Returns a JavaScript Array of Int indicating the block
+    *     indices of the uniforms.
+    *   - [[WebGL2RenderingContext$.UNIFORM_OFFSET]]: Returns a JavaScript Array of Int indicating the uniform buffer
     *     offsets.
-    *   - [[WebGL2RenderingContext$.UNIFORM_ARRAY_STRIDE]]: Returns a [[js.Array]] of Int indicating the strides between
-    *     the elements.
-    *   - [[WebGL2RenderingContext$.UNIFORM_MATRIX_STRIDE]]: Returns a [[js.Array]] of Int indicating the strides
+    *   - [[WebGL2RenderingContext$.UNIFORM_ARRAY_STRIDE]]: Returns a JavaScript Array of Int indicating the strides
+    *     between the elements.
+    *   - [[WebGL2RenderingContext$.UNIFORM_MATRIX_STRIDE]]: Returns a JavaScript Array of Int indicating the strides
     *     between columns of a column-major matrix or a row-major matrix.
-    *   - [[WebGL2RenderingContext$.UNIFORM_IS_ROW_MAJOR]]: Returns a [[js.Array]] of Boolean indicating whether each of
-    *     the uniforms is a row-major matrix or not.
+    *   - [[WebGL2RenderingContext$.UNIFORM_IS_ROW_MAJOR]]: Returns a JavaScript Array of Boolean indicating whether
+    *     each of the uniforms is a row-major matrix or not.
     * @example
     *   {{{
     * val uniformIndices = gl.getUniformIndices(program, js.Array(
@@ -8333,8 +8310,8 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *     size.
     *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_ACTIVE_UNIFORMS]]: Returns an Int indicating the number of active
     *     uniforms in the uniform block.
-    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES]]: Returns a [[Uint32Array]] indicating the
-    *     list of active uniforms in the uniform block.
+    *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES]]: Returns a Uint32Array indicating the list of
+    *     active uniforms in the uniform block.
     *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER]]: Returns a Boolean indicating whether
     *     the uniform block is referenced by the vertex shader.
     *   - [[WebGL2RenderingContext$.UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER]]: Returns a Boolean indicating whether
