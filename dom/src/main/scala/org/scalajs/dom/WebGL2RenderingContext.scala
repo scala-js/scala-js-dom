@@ -3707,7 +3707,749 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     */
   def texSubImage3D(
       target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
-      format: Int, typ: Int, pixels: Int
+      format: Int, typ: Int, pixels: Uint8Array
+  ): Unit = js.native
+
+  /** Specifies a sub-rectangle of the current 3D texture.
+    *
+    * @group Textures
+    * @param target
+    *   An Int specifying the binding point (target) of the active texture. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    * @param level
+    *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
+    *   level.
+    * @param xoffset
+    *   An Int specifying the x offset within the texture image.
+    * @param yoffset
+    *   An Int specifying the y offset within the texture image.
+    * @param zoffset
+    *   An Int specifying the z offset within the texture image.
+    * @param width
+    *   An Int specifying the width of the texture.
+    * @param height
+    *   An Int specifying the height of the texture.
+    * @param depth
+    *   An Int specifying the depth of the texture.
+    * @param format
+    *   An Int specifying the format of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.ALPHA]]: Discards the red, green and blue components and reads the alpha component.
+    *   - [[WebGLRenderingContext.RGB]]: Discards the alpha components and reads the red, green and blue components.
+    *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
+    *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
+    *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
+    *   - [[WebGLRenderingContext.RGB565]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
+    *   - [[WebGLRenderingContext.RGB5_A1]]
+    *   - RGBA4444
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
+    * @param typ
+    *   An Int specifying the data type of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]]: 5 red bits, 6 green bits, 5 blue bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]]: 4 red bits, 4 green bits, 4 blue bits, 4 alpha bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]]: 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit.
+    *   - [[WebGLRenderingContext.BYTE]]
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT]]
+    *   - [[WebGLRenderingContext.SHORT]]
+    *   - [[WebGLRenderingContext.UNSIGNED_INT]]
+    *   - [[WebGLRenderingContext.INT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
+    *   - [[WebGLRenderingContext.FLOAT]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    * @param pixels
+    *   One of the following objects can be used as a pixel source for the texture:
+    *   - Uint8Array (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
+    *   - Uint16Array (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
+    *     [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]], or
+    *     [[WebGL2RenderingContext$.HALF_FLOAT]])
+    *   - Float32Array (must be used if type is [[WebGLRenderingContext.FLOAT]])
+    *   - [[ImageBitmap]]
+    *   - [[ImageData]]
+    *   - [[HTMLImageElement]]
+    *   - [[HTMLCanvasElement]]
+    *   - [[HTMLVideoElement]]
+    * @example
+    *   {{{
+    * gl.texSubImage3D(
+    *   WebGL2RenderingContext.TEXTURE_3D,
+    *   0,
+    *   0,
+    *   0,
+    *   0,
+    *   image.width,
+    *   image.height,
+    *   1,
+    *   WebGLRenderingContext.RGBA,
+    *   WebGLRenderingContext.UNSIGNED_BYTE,
+    *   image,
+    * )
+    *   }}}
+    */
+  def texSubImage3D(
+      target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
+      format: Int, typ: Int, pixels: Uint16Array
+  ): Unit = js.native
+
+  /** Specifies a sub-rectangle of the current 3D texture.
+    *
+    * @group Textures
+    * @param target
+    *   An Int specifying the binding point (target) of the active texture. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    * @param level
+    *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
+    *   level.
+    * @param xoffset
+    *   An Int specifying the x offset within the texture image.
+    * @param yoffset
+    *   An Int specifying the y offset within the texture image.
+    * @param zoffset
+    *   An Int specifying the z offset within the texture image.
+    * @param width
+    *   An Int specifying the width of the texture.
+    * @param height
+    *   An Int specifying the height of the texture.
+    * @param depth
+    *   An Int specifying the depth of the texture.
+    * @param format
+    *   An Int specifying the format of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.ALPHA]]: Discards the red, green and blue components and reads the alpha component.
+    *   - [[WebGLRenderingContext.RGB]]: Discards the alpha components and reads the red, green and blue components.
+    *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
+    *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
+    *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
+    *   - [[WebGLRenderingContext.RGB565]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
+    *   - [[WebGLRenderingContext.RGB5_A1]]
+    *   - RGBA4444
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
+    * @param typ
+    *   An Int specifying the data type of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]]: 5 red bits, 6 green bits, 5 blue bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]]: 4 red bits, 4 green bits, 4 blue bits, 4 alpha bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]]: 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit.
+    *   - [[WebGLRenderingContext.BYTE]]
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT]]
+    *   - [[WebGLRenderingContext.SHORT]]
+    *   - [[WebGLRenderingContext.UNSIGNED_INT]]
+    *   - [[WebGLRenderingContext.INT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
+    *   - [[WebGLRenderingContext.FLOAT]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    * @param pixels
+    *   One of the following objects can be used as a pixel source for the texture:
+    *   - Uint8Array (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
+    *   - Uint16Array (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
+    *     [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]], or
+    *     [[WebGL2RenderingContext$.HALF_FLOAT]])
+    *   - Float32Array (must be used if type is [[WebGLRenderingContext.FLOAT]])
+    *   - [[ImageBitmap]]
+    *   - [[ImageData]]
+    *   - [[HTMLImageElement]]
+    *   - [[HTMLCanvasElement]]
+    *   - [[HTMLVideoElement]]
+    * @example
+    *   {{{
+    * gl.texSubImage3D(
+    *   WebGL2RenderingContext.TEXTURE_3D,
+    *   0,
+    *   0,
+    *   0,
+    *   0,
+    *   image.width,
+    *   image.height,
+    *   1,
+    *   WebGLRenderingContext.RGBA,
+    *   WebGLRenderingContext.UNSIGNED_BYTE,
+    *   image,
+    * )
+    *   }}}
+    */
+  def texSubImage3D(
+      target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
+      format: Int, typ: Int, pixels: Float32Array
+  ): Unit = js.native
+
+  /** Specifies a sub-rectangle of the current 3D texture.
+    *
+    * @group Textures
+    * @param target
+    *   An Int specifying the binding point (target) of the active texture. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    * @param level
+    *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
+    *   level.
+    * @param xoffset
+    *   An Int specifying the x offset within the texture image.
+    * @param yoffset
+    *   An Int specifying the y offset within the texture image.
+    * @param zoffset
+    *   An Int specifying the z offset within the texture image.
+    * @param width
+    *   An Int specifying the width of the texture.
+    * @param height
+    *   An Int specifying the height of the texture.
+    * @param depth
+    *   An Int specifying the depth of the texture.
+    * @param format
+    *   An Int specifying the format of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.ALPHA]]: Discards the red, green and blue components and reads the alpha component.
+    *   - [[WebGLRenderingContext.RGB]]: Discards the alpha components and reads the red, green and blue components.
+    *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
+    *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
+    *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
+    *   - [[WebGLRenderingContext.RGB565]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
+    *   - [[WebGLRenderingContext.RGB5_A1]]
+    *   - RGBA4444
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
+    * @param typ
+    *   An Int specifying the data type of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]]: 5 red bits, 6 green bits, 5 blue bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]]: 4 red bits, 4 green bits, 4 blue bits, 4 alpha bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]]: 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit.
+    *   - [[WebGLRenderingContext.BYTE]]
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT]]
+    *   - [[WebGLRenderingContext.SHORT]]
+    *   - [[WebGLRenderingContext.UNSIGNED_INT]]
+    *   - [[WebGLRenderingContext.INT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
+    *   - [[WebGLRenderingContext.FLOAT]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    * @param pixels
+    *   One of the following objects can be used as a pixel source for the texture:
+    *   - Uint8Array (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
+    *   - Uint16Array (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
+    *     [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]], or
+    *     [[WebGL2RenderingContext$.HALF_FLOAT]])
+    *   - Float32Array (must be used if type is [[WebGLRenderingContext.FLOAT]])
+    *   - [[ImageBitmap]]
+    *   - [[ImageData]]
+    *   - [[HTMLImageElement]]
+    *   - [[HTMLCanvasElement]]
+    *   - [[HTMLVideoElement]]
+    * @example
+    *   {{{
+    * gl.texSubImage3D(
+    *   WebGL2RenderingContext.TEXTURE_3D,
+    *   0,
+    *   0,
+    *   0,
+    *   0,
+    *   image.width,
+    *   image.height,
+    *   1,
+    *   WebGLRenderingContext.RGBA,
+    *   WebGLRenderingContext.UNSIGNED_BYTE,
+    *   image,
+    * )
+    *   }}}
+    */
+  def texSubImage3D(
+      target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
+      format: Int, typ: Int, pixels: ImageBitmap
+  ): Unit = js.native
+
+  /** Specifies a sub-rectangle of the current 3D texture.
+    *
+    * @group Textures
+    * @param target
+    *   An Int specifying the binding point (target) of the active texture. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    * @param level
+    *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
+    *   level.
+    * @param xoffset
+    *   An Int specifying the x offset within the texture image.
+    * @param yoffset
+    *   An Int specifying the y offset within the texture image.
+    * @param zoffset
+    *   An Int specifying the z offset within the texture image.
+    * @param width
+    *   An Int specifying the width of the texture.
+    * @param height
+    *   An Int specifying the height of the texture.
+    * @param depth
+    *   An Int specifying the depth of the texture.
+    * @param format
+    *   An Int specifying the format of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.ALPHA]]: Discards the red, green and blue components and reads the alpha component.
+    *   - [[WebGLRenderingContext.RGB]]: Discards the alpha components and reads the red, green and blue components.
+    *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
+    *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
+    *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
+    *   - [[WebGLRenderingContext.RGB565]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
+    *   - [[WebGLRenderingContext.RGB5_A1]]
+    *   - RGBA4444
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
+    * @param typ
+    *   An Int specifying the data type of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]]: 5 red bits, 6 green bits, 5 blue bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]]: 4 red bits, 4 green bits, 4 blue bits, 4 alpha bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]]: 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit.
+    *   - [[WebGLRenderingContext.BYTE]]
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT]]
+    *   - [[WebGLRenderingContext.SHORT]]
+    *   - [[WebGLRenderingContext.UNSIGNED_INT]]
+    *   - [[WebGLRenderingContext.INT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
+    *   - [[WebGLRenderingContext.FLOAT]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    * @param pixels
+    *   One of the following objects can be used as a pixel source for the texture:
+    *   - Uint8Array (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
+    *   - Uint16Array (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
+    *     [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]], or
+    *     [[WebGL2RenderingContext$.HALF_FLOAT]])
+    *   - Float32Array (must be used if type is [[WebGLRenderingContext.FLOAT]])
+    *   - [[ImageBitmap]]
+    *   - [[ImageData]]
+    *   - [[HTMLImageElement]]
+    *   - [[HTMLCanvasElement]]
+    *   - [[HTMLVideoElement]]
+    * @example
+    *   {{{
+    * gl.texSubImage3D(
+    *   WebGL2RenderingContext.TEXTURE_3D,
+    *   0,
+    *   0,
+    *   0,
+    *   0,
+    *   image.width,
+    *   image.height,
+    *   1,
+    *   WebGLRenderingContext.RGBA,
+    *   WebGLRenderingContext.UNSIGNED_BYTE,
+    *   image,
+    * )
+    *   }}}
+    */
+  def texSubImage3D(
+      target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
+      format: Int, typ: Int, pixels: ImageData
+  ): Unit = js.native
+
+  /** Specifies a sub-rectangle of the current 3D texture.
+    *
+    * @group Textures
+    * @param target
+    *   An Int specifying the binding point (target) of the active texture. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    * @param level
+    *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
+    *   level.
+    * @param xoffset
+    *   An Int specifying the x offset within the texture image.
+    * @param yoffset
+    *   An Int specifying the y offset within the texture image.
+    * @param zoffset
+    *   An Int specifying the z offset within the texture image.
+    * @param width
+    *   An Int specifying the width of the texture.
+    * @param height
+    *   An Int specifying the height of the texture.
+    * @param depth
+    *   An Int specifying the depth of the texture.
+    * @param format
+    *   An Int specifying the format of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.ALPHA]]: Discards the red, green and blue components and reads the alpha component.
+    *   - [[WebGLRenderingContext.RGB]]: Discards the alpha components and reads the red, green and blue components.
+    *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
+    *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
+    *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
+    *   - [[WebGLRenderingContext.RGB565]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
+    *   - [[WebGLRenderingContext.RGB5_A1]]
+    *   - RGBA4444
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
+    * @param typ
+    *   An Int specifying the data type of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]]: 5 red bits, 6 green bits, 5 blue bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]]: 4 red bits, 4 green bits, 4 blue bits, 4 alpha bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]]: 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit.
+    *   - [[WebGLRenderingContext.BYTE]]
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT]]
+    *   - [[WebGLRenderingContext.SHORT]]
+    *   - [[WebGLRenderingContext.UNSIGNED_INT]]
+    *   - [[WebGLRenderingContext.INT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
+    *   - [[WebGLRenderingContext.FLOAT]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    * @param pixels
+    *   One of the following objects can be used as a pixel source for the texture:
+    *   - Uint8Array (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
+    *   - Uint16Array (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
+    *     [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]], or
+    *     [[WebGL2RenderingContext$.HALF_FLOAT]])
+    *   - Float32Array (must be used if type is [[WebGLRenderingContext.FLOAT]])
+    *   - [[ImageBitmap]]
+    *   - [[ImageData]]
+    *   - [[HTMLImageElement]]
+    *   - [[HTMLCanvasElement]]
+    *   - [[HTMLVideoElement]]
+    * @example
+    *   {{{
+    * gl.texSubImage3D(
+    *   WebGL2RenderingContext.TEXTURE_3D,
+    *   0,
+    *   0,
+    *   0,
+    *   0,
+    *   image.width,
+    *   image.height,
+    *   1,
+    *   WebGLRenderingContext.RGBA,
+    *   WebGLRenderingContext.UNSIGNED_BYTE,
+    *   image,
+    * )
+    *   }}}
+    */
+  def texSubImage3D(
+      target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
+      format: Int, typ: Int, pixels: HTMLImageElement
+  ): Unit = js.native
+
+  /** Specifies a sub-rectangle of the current 3D texture.
+    *
+    * @group Textures
+    * @param target
+    *   An Int specifying the binding point (target) of the active texture. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    * @param level
+    *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
+    *   level.
+    * @param xoffset
+    *   An Int specifying the x offset within the texture image.
+    * @param yoffset
+    *   An Int specifying the y offset within the texture image.
+    * @param zoffset
+    *   An Int specifying the z offset within the texture image.
+    * @param width
+    *   An Int specifying the width of the texture.
+    * @param height
+    *   An Int specifying the height of the texture.
+    * @param depth
+    *   An Int specifying the depth of the texture.
+    * @param format
+    *   An Int specifying the format of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.ALPHA]]: Discards the red, green and blue components and reads the alpha component.
+    *   - [[WebGLRenderingContext.RGB]]: Discards the alpha components and reads the red, green and blue components.
+    *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
+    *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
+    *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
+    *   - [[WebGLRenderingContext.RGB565]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
+    *   - [[WebGLRenderingContext.RGB5_A1]]
+    *   - RGBA4444
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
+    * @param typ
+    *   An Int specifying the data type of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]]: 5 red bits, 6 green bits, 5 blue bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]]: 4 red bits, 4 green bits, 4 blue bits, 4 alpha bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]]: 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit.
+    *   - [[WebGLRenderingContext.BYTE]]
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT]]
+    *   - [[WebGLRenderingContext.SHORT]]
+    *   - [[WebGLRenderingContext.UNSIGNED_INT]]
+    *   - [[WebGLRenderingContext.INT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
+    *   - [[WebGLRenderingContext.FLOAT]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    * @param pixels
+    *   One of the following objects can be used as a pixel source for the texture:
+    *   - Uint8Array (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
+    *   - Uint16Array (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
+    *     [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]], or
+    *     [[WebGL2RenderingContext$.HALF_FLOAT]])
+    *   - Float32Array (must be used if type is [[WebGLRenderingContext.FLOAT]])
+    *   - [[ImageBitmap]]
+    *   - [[ImageData]]
+    *   - [[HTMLImageElement]]
+    *   - [[HTMLCanvasElement]]
+    *   - [[HTMLVideoElement]]
+    * @example
+    *   {{{
+    * gl.texSubImage3D(
+    *   WebGL2RenderingContext.TEXTURE_3D,
+    *   0,
+    *   0,
+    *   0,
+    *   0,
+    *   image.width,
+    *   image.height,
+    *   1,
+    *   WebGLRenderingContext.RGBA,
+    *   WebGLRenderingContext.UNSIGNED_BYTE,
+    *   image,
+    * )
+    *   }}}
+    */
+  def texSubImage3D(
+      target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
+      format: Int, typ: Int, pixels: HTMLCanvasElement
+  ): Unit = js.native
+
+  /** Specifies a sub-rectangle of the current 3D texture.
+    *
+    * @group Textures
+    * @param target
+    *   An Int specifying the binding point (target) of the active texture. Possible values:
+    *   - [[WebGL2RenderingContext$.TEXTURE_3D]]: A three-dimensional texture.
+    *   - [[WebGL2RenderingContext$.TEXTURE_2D_ARRAY]]: A two-dimensional array texture.
+    * @param level
+    *   An Int specifying the level of detail. Level 0 is the base image level and level n is the n-th mipmap reduction
+    *   level.
+    * @param xoffset
+    *   An Int specifying the x offset within the texture image.
+    * @param yoffset
+    *   An Int specifying the y offset within the texture image.
+    * @param zoffset
+    *   An Int specifying the z offset within the texture image.
+    * @param width
+    *   An Int specifying the width of the texture.
+    * @param height
+    *   An Int specifying the height of the texture.
+    * @param depth
+    *   An Int specifying the depth of the texture.
+    * @param format
+    *   An Int specifying the format of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.ALPHA]]: Discards the red, green and blue components and reads the alpha component.
+    *   - [[WebGLRenderingContext.RGB]]: Discards the alpha components and reads the red, green and blue components.
+    *   - [[WebGLRenderingContext.RGBA]]: Red, green, blue and alpha components are read from the color buffer.
+    *   - [[WebGLRenderingContext.LUMINANCE]]: Each color component is a luminance component, alpha is 1.0.
+    *   - [[WebGLRenderingContext.LUMINANCE_ALPHA]]: Each component is a luminance/alpha component.
+    *   - [[WebGL2RenderingContext$.R8]]
+    *   - [[WebGL2RenderingContext$.R16F]]
+    *   - [[WebGL2RenderingContext$.R32F]]
+    *   - [[WebGL2RenderingContext$.R8UI]]
+    *   - [[WebGL2RenderingContext$.RG8]]
+    *   - [[WebGL2RenderingContext$.RG16F]]
+    *   - [[WebGL2RenderingContext$.RG32F]]
+    *   - [[WebGL2RenderingContext$.RG8UI]]
+    *   - [[WebGL2RenderingContext$.RG16UI]]
+    *   - [[WebGL2RenderingContext$.RG32UI]]
+    *   - [[WebGL2RenderingContext$.RGB8]]
+    *   - [[WebGL2RenderingContext$.SRGB8]]
+    *   - [[WebGLRenderingContext.RGB565]]
+    *   - [[WebGL2RenderingContext$.R11F_G11F_B10F]]
+    *   - [[WebGL2RenderingContext$.RGB9_E5]]
+    *   - [[WebGL2RenderingContext$.RGB16F]]
+    *   - [[WebGL2RenderingContext$.RGB32F]]
+    *   - [[WebGL2RenderingContext$.RGB8UI]]
+    *   - [[WebGL2RenderingContext$.RGBA8]]
+    *   - [[WebGL2RenderingContext$.SRGB8_ALPHA8]]
+    *   - [[WebGLRenderingContext.RGB5_A1]]
+    *   - RGBA4444
+    *   - [[WebGL2RenderingContext$.RGBA16F]]
+    *   - [[WebGL2RenderingContext$.RGBA32F]]
+    *   - [[WebGL2RenderingContext$.RGBA8UI]]
+    * @param typ
+    *   An Int specifying the data type of the texel data. Possible values:
+    *   - [[WebGLRenderingContext.UNSIGNED_BYTE]]: 8 bits per channel for [[WebGLRenderingContext.RGBA]].
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]]: 5 red bits, 6 green bits, 5 blue bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]]: 4 red bits, 4 green bits, 4 blue bits, 4 alpha bits.
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]]: 5 red bits, 5 green bits, 5 blue bits, 1 alpha bit.
+    *   - [[WebGLRenderingContext.BYTE]]
+    *   - [[WebGLRenderingContext.UNSIGNED_SHORT]]
+    *   - [[WebGLRenderingContext.SHORT]]
+    *   - [[WebGLRenderingContext.UNSIGNED_INT]]
+    *   - [[WebGLRenderingContext.INT]]
+    *   - [[WebGL2RenderingContext$.HALF_FLOAT]]
+    *   - [[WebGLRenderingContext.FLOAT]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_2_10_10_10_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_10F_11F_11F_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_5_9_9_9_REV]]
+    *   - [[WebGL2RenderingContext$.UNSIGNED_INT_24_8]]
+    *   - [[WebGL2RenderingContext$.FLOAT_32_UNSIGNED_INT_24_8_REV]] (pixels must be null)
+    * @param pixels
+    *   One of the following objects can be used as a pixel source for the texture:
+    *   - Uint8Array (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
+    *   - Uint16Array (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
+    *     [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]], or
+    *     [[WebGL2RenderingContext$.HALF_FLOAT]])
+    *   - Float32Array (must be used if type is [[WebGLRenderingContext.FLOAT]])
+    *   - [[ImageBitmap]]
+    *   - [[ImageData]]
+    *   - [[HTMLImageElement]]
+    *   - [[HTMLCanvasElement]]
+    *   - [[HTMLVideoElement]]
+    * @example
+    *   {{{
+    * gl.texSubImage3D(
+    *   WebGL2RenderingContext.TEXTURE_3D,
+    *   0,
+    *   0,
+    *   0,
+    *   0,
+    *   image.width,
+    *   image.height,
+    *   1,
+    *   WebGLRenderingContext.RGBA,
+    *   WebGLRenderingContext.UNSIGNED_BYTE,
+    *   image,
+    * )
+    *   }}}
+    */
+  def texSubImage3D(
+      target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int,
+      format: Int, typ: Int, pixels: HTMLVideoElement
   ): Unit = js.native
 
   /** Specifies a sub-rectangle of the current 3D texture.
