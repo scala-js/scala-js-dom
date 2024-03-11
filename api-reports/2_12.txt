@@ -27274,7 +27274,14 @@ WebGL2RenderingContext[JC] def texSubImage2D(target: Int, level: Int, xoffset: I
 WebGL2RenderingContext[JC] def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: ImageData): Unit
 WebGL2RenderingContext[JC] def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, `type`: Int, pixels: ArrayBufferView): Unit
 WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, offset: Double): Unit
-WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: Int): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: Float32Array): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: HTMLCanvasElement): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: HTMLImageElement): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: HTMLVideoElement): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: ImageBitmap): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: ImageData): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: Uint16Array): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: Uint8Array): Unit
 WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, srcData: DataView): Unit
 WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, srcData: DataView, srcOffset: Double): Unit
 WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, srcData: TypedArray[js.Any, js.Any]): Unit
