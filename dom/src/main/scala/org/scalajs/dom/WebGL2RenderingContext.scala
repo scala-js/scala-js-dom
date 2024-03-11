@@ -3681,7 +3681,7 @@ class WebGL2RenderingContext extends WebGLRenderingContext {
     *   - Uint8Array (must be used if type is [[WebGLRenderingContext.UNSIGNED_BYTE]])
     *   - Uint16Array (must be used if type is either [[WebGLRenderingContext.UNSIGNED_SHORT_5_6_5]],
     *     [[WebGLRenderingContext.UNSIGNED_SHORT_4_4_4_4]], [[WebGLRenderingContext.UNSIGNED_SHORT_5_5_5_1]], or
-    *     ext.HALF_FLOAT_OES)
+    *     [[WebGL2RenderingContext$.HALF_FLOAT]])
     *   - Float32Array (must be used if type is [[WebGLRenderingContext.FLOAT]])
     *   - [[ImageBitmap]]
     *   - [[ImageData]]
