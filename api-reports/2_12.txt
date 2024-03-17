@@ -2293,6 +2293,39 @@ FileReader[JO] val LOADING: Short
 FileReaderSync[JC] def readAsArrayBuffer(blob: Blob): ArrayBuffer
 FileReaderSync[JC] def readAsDataURL(blob: Blob): URL
 FileReaderSync[JC] def readAsText(blob: Blob, encoding: String?): String
+FileSystemCreateWritableOptions[JT] var keepExistingData: js.UndefOr[Boolean]
+FileSystemDirectoryHandle[JT] def getDirectoryHandle(name: String, options: js.UndefOr[FileSystemGetDirectoryOptions]?): js.Promise[FileSystemDirectoryHandle]
+FileSystemDirectoryHandle[JT] def getFileHandle(name: String, options: js.UndefOr[FileSystemGetFileOptions]?): js.Promise[FileSystemFileHandle]
+FileSystemDirectoryHandle[JT] def isSameEntry(fileSystemHandle: FileSystemHandle): js.Promise[Boolean]
+FileSystemDirectoryHandle[JT] val kind: FileSystemHandleKind
+FileSystemDirectoryHandle[JT] def name: String
+FileSystemDirectoryHandle[JT] def removeEntry(name: String, options: js.UndefOr[FileSystemRemoveOptions]?): js.Promise[Unit]
+FileSystemDirectoryHandle[JT] def resolve(possibleDescendant: FileSystemHandle): js.Promise[js.Array[String]]
+FileSystemFileHandle[JT] def createSyncAccessHandle(): js.Promise[FileSystemSyncAccessHandle]
+FileSystemFileHandle[JT] def createWritable(options: js.UndefOr[FileSystemCreateWritableOptions]?): js.Promise[FileSystemWritableFileStream]
+FileSystemFileHandle[JT] def getFile(): js.Promise[File]
+FileSystemGetDirectoryOptions[JT] var create: js.UndefOr[Boolean]
+FileSystemGetFileOptions[JT] var create: js.UndefOr[Boolean]
+FileSystemHandle[JT] def isSameEntry(fileSystemHandle: FileSystemHandle): js.Promise[Boolean]
+FileSystemHandle[JT] val kind: FileSystemHandleKind
+FileSystemHandle[JT] def name: String
+FileSystemHandleKind[JT]
+FileSystemHandleKind[SO] val directory: FileSystemHandleKind
+FileSystemHandleKind[SO] val file: FileSystemHandleKind
+FileSystemReadWriteOptions[JT] var at: Double
+FileSystemRemoveOptions[JT] var recursive: js.UndefOr[Boolean]
+FileSystemSyncAccessHandle[JT] def close(): Unit
+FileSystemSyncAccessHandle[JT] def flush(): Unit
+FileSystemSyncAccessHandle[JT] def getSize(): Double
+FileSystemSyncAccessHandle[JT] def read(buffer: BufferSource, options: js.UndefOr[FileSystemReadWriteOptions]?): Double
+FileSystemSyncAccessHandle[JT] def truncate(newSize: Double): Unit
+FileSystemSyncAccessHandle[JT] def write(buffer: BufferSource, options: js.UndefOr[FileSystemReadWriteOptions]?): Double
+FileSystemWritableFileStream[JT] def seek(position: Double): js.Promise[Unit]
+FileSystemWritableFileStream[JT] def truncate(size: Double): js.Promise[Unit]
+FileSystemWritableFileStream[JT] def write(data: Blob): js.Promise[Unit]
+FileSystemWritableFileStream[JT] def write(data: BufferSource): js.Promise[Unit]
+FileSystemWritableFileStream[JT] def write(data: String): js.Promise[Unit]
+FileSystemWritableFileStream[JT] def write(data: WriteParams): js.Promise[Unit]
 FocusEvent[JC] def bubbles: Boolean
 FocusEvent[JC] def cancelBubble: Boolean
 FocusEvent[JC] def cancelable: Boolean
@@ -26374,6 +26407,7 @@ StorageEventInit[JT] var scoped: js.UndefOr[Boolean]
 StorageEventInit[JT] var storageArea: js.UndefOr[Storage]
 StorageEventInit[JT] var url: js.UndefOr[String]
 StorageManager[JT] def estimate(): js.Promise[StorageEstimate]
+StorageManager[JT] def getDirectory(): js.Promise[FileSystemDirectoryHandle]
 StorageManager[JT] def persist(): js.Promise[Boolean]
 StorageManager[JT] def persisted(): js.Promise[Boolean]
 StyleMedia[JT] def matchMedium(mediaquery: String): Boolean
@@ -27574,6 +27608,14 @@ WorkerOptions[JT] var `type`: js.UndefOr[WorkerType]
 WorkerType[JT]
 WorkerType[SO] val classic: WorkerType
 WorkerType[SO] val module: WorkerType
+WriteCommandType[JT]
+WriteCommandType[SO] val seek: WriteCommandType
+WriteCommandType[SO] val truncate: WriteCommandType
+WriteCommandType[SO] val write: WriteCommandType
+WriteParams[JT] var data: js.UndefOr[BufferSource | Blob | String]
+WriteParams[JT] var position: js.UndefOr[Double]
+WriteParams[JT] var size: js.UndefOr[Double]
+WriteParams[JT] var `type`: WriteCommandType
 WriteableState[JT]
 WriteableState[SO] val closed: WriteableState
 WriteableState[SO] val closing: WriteableState
