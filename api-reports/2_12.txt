@@ -15655,6 +15655,8 @@ ImageData[JC] def data: Uint8ClampedArray
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
 ImageSettings[JT] var colorSpace: js.UndefOr[String]
+ImageSettings[SO] lazy val displayP3: ImageSettings
+ImageSettings[SO] lazy val sRGB: ImageSettings
 InputEvent[JC] def bubbles: Boolean
 InputEvent[JC] def cancelBubble: Boolean
 InputEvent[JC] def cancelable: Boolean
