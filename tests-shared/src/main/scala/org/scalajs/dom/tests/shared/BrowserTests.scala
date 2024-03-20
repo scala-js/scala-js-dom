@@ -128,4 +128,14 @@ trait BrowserTests extends WebCryptoApiTests {
       _ <- reasonPromise.future.map(assertEquals(expectedReason, _))
     } yield ()
   }
+
+  @Test
+  final def ImageDataTest(): Unit = {
+    import org.scalajs.dom.{ImageData, ImageDataSettings, PredefinedColorSpace}
+    import PredefinedColorSpace._
+
+    val defaultImageData: ImageData = new ImageData(200, 100, new ImageDataSettings { colorSpace = `display-p3` })
+    assertEquals(defaultImageData.width, 200)
+    assertEquals(defaultImageData.height, 100)
+  }
 }
