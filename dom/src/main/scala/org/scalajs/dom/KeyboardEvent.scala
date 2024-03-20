@@ -57,6 +57,11 @@ class KeyboardEvent(typeArg: String, init: js.UndefOr[KeyboardEventInit])
 
   /** Returns a string with the code value of the physical key represented by the event. */
   def code: String = js.native
+
+  /** Returns a boolean value that is true if the event is fired between after compositionstart and before
+    * compositionend.
+    */
+  def isComposing: Boolean = js.native
 }
 
 @js.native
