@@ -1112,6 +1112,7 @@ CanvasRenderingContext2D[JC] def fill(path: Path2D, fillRule: CanvasFillRule): U
 CanvasRenderingContext2D[JC] def fillRect(x: Double, y: Double, w: Double, h: Double): Unit
 CanvasRenderingContext2D[JC] var fillStyle: js.Any
 CanvasRenderingContext2D[JC] def fillText(text: String, x: Double, y: Double, maxWidth: Double?): Unit
+CanvasRenderingContext2D[JC] var filter: String
 CanvasRenderingContext2D[JC] var font: String
 CanvasRenderingContext2D[JC] def getImageData(sx: Double, sy: Double, sw: Double, sh: Double): ImageData
 CanvasRenderingContext2D[JC] def getLineDash(): js.Array[Double]
