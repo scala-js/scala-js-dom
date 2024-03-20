@@ -241,15 +241,4 @@ abstract class HTMLElement extends Element {
 
   /** Fired after pointer capture is released for a pointer. */
   var lostpointercapture: js.Function1[PointerEvent, _] = js.native
-
-  /** Fired when a text composition system such as an input method editor starts a new composition session. */
-  var oncompositionstart: js.Function1[CompositionEvent, _] = js.native
-
-  /** Fired when a new character is received in the context of a text composition session. */
-  var oncompositionupdate: js.Function1[CompositionEvent, _] = js.native
-
-  /** Fired when a text composition system such as an input method editor completes or cancels the current composition
-    * session.
-    */
-  var oncompositionend: js.Function1[CompositionEvent, _] = js.native
 }
