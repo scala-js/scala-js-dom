@@ -62,6 +62,9 @@ class CanvasRenderingContext2D extends js.Object {
   /** A CSS color, a CanvasGradient or CanvasPattern, to use as a fill. */
   var fillStyle: js.Any = js.native
 
+  /** A CSS filter, which will be applied on the entire canvas. */
+  var filter: String = js.native
+
   /** Specifies the blurring effect. Default 0 */
   var shadowBlur: Double = js.native
 

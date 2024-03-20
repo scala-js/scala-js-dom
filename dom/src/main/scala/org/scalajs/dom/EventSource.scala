@@ -41,7 +41,7 @@ class EventSource private[this] extends EventTarget {
 
   var onmessage: js.Function1[MessageEvent, _] = js.native
 
-  var onerror: js.Function1[ErrorEvent, _] = js.native
+  var onerror: js.Function1[Event, _] = js.native
 
   /** The close() method must abort any instances of the fetch algorithm started for this EventSource object, and must
     * set the readyState attribute to CLOSED. W3C 2012
