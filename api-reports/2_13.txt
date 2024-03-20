@@ -2061,6 +2061,9 @@ Element[JC] def nodeName: String
 Element[JC] def nodeType: Int
 Element[JC] var nodeValue: String
 Element[JC] def normalize(): Unit
+Element[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+Element[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+Element[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 Element[JC] var oncopy: js.Function1[ClipboardEvent, _]
 Element[JC] var oncut: js.Function1[ClipboardEvent, _]
 Element[JC] var onfullscreenchange: js.Function1[Event, _]
@@ -17994,6 +17997,9 @@ SVGAElement[JC] def nodeType: Int
 SVGAElement[JC] var nodeValue: String
 SVGAElement[JC] def normalize(): Unit
 SVGAElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGAElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGAElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGAElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGAElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGAElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGAElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -18167,6 +18173,9 @@ SVGCircleElement[JC] def nodeType: Int
 SVGCircleElement[JC] var nodeValue: String
 SVGCircleElement[JC] def normalize(): Unit
 SVGCircleElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGCircleElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGCircleElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGCircleElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGCircleElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGCircleElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGCircleElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -18304,6 +18313,9 @@ SVGClipPathElement[JC] def nodeType: Int
 SVGClipPathElement[JC] var nodeValue: String
 SVGClipPathElement[JC] def normalize(): Unit
 SVGClipPathElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGClipPathElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGClipPathElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGClipPathElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGClipPathElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGClipPathElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGClipPathElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -18431,6 +18443,9 @@ SVGComponentTransferFunctionElement[JC] var nodeValue: String
 SVGComponentTransferFunctionElement[JC] def normalize(): Unit
 SVGComponentTransferFunctionElement[JC] def offset: SVGAnimatedNumber
 SVGComponentTransferFunctionElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGComponentTransferFunctionElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGComponentTransferFunctionElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGComponentTransferFunctionElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGComponentTransferFunctionElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGComponentTransferFunctionElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGComponentTransferFunctionElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -18565,6 +18580,9 @@ SVGDefsElement[JC] def nodeType: Int
 SVGDefsElement[JC] var nodeValue: String
 SVGDefsElement[JC] def normalize(): Unit
 SVGDefsElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGDefsElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGDefsElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGDefsElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGDefsElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGDefsElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGDefsElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -18689,6 +18707,9 @@ SVGDescElement[JC] def nodeType: Int
 SVGDescElement[JC] var nodeValue: String
 SVGDescElement[JC] def normalize(): Unit
 SVGDescElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGDescElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGDescElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGDescElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGDescElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGDescElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGDescElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -18808,6 +18829,9 @@ SVGElement[JC] def nodeType: Int
 SVGElement[JC] var nodeValue: String
 SVGElement[JC] def normalize(): Unit
 SVGElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -18950,6 +18974,9 @@ SVGEllipseElement[JC] def nodeType: Int
 SVGEllipseElement[JC] var nodeValue: String
 SVGEllipseElement[JC] def normalize(): Unit
 SVGEllipseElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGEllipseElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGEllipseElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGEllipseElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGEllipseElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGEllipseElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGEllipseElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -19087,6 +19114,9 @@ SVGFEBlendElement[JC] def nodeType: Int
 SVGFEBlendElement[JC] var nodeValue: String
 SVGFEBlendElement[JC] def normalize(): Unit
 SVGFEBlendElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEBlendElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEBlendElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEBlendElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEBlendElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEBlendElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEBlendElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -19217,6 +19247,9 @@ SVGFEColorMatrixElement[JC] def nodeType: Int
 SVGFEColorMatrixElement[JC] var nodeValue: String
 SVGFEColorMatrixElement[JC] def normalize(): Unit
 SVGFEColorMatrixElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEColorMatrixElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEColorMatrixElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEColorMatrixElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEColorMatrixElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEColorMatrixElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEColorMatrixElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -19348,6 +19381,9 @@ SVGFEComponentTransferElement[JC] def nodeType: Int
 SVGFEComponentTransferElement[JC] var nodeValue: String
 SVGFEComponentTransferElement[JC] def normalize(): Unit
 SVGFEComponentTransferElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEComponentTransferElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEComponentTransferElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEComponentTransferElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEComponentTransferElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEComponentTransferElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEComponentTransferElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -19477,6 +19513,9 @@ SVGFECompositeElement[JC] def nodeType: Int
 SVGFECompositeElement[JC] var nodeValue: String
 SVGFECompositeElement[JC] def normalize(): Unit
 SVGFECompositeElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFECompositeElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFECompositeElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFECompositeElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFECompositeElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFECompositeElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFECompositeElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -19615,6 +19654,9 @@ SVGFEConvolveMatrixElement[JC] def nodeType: Int
 SVGFEConvolveMatrixElement[JC] var nodeValue: String
 SVGFEConvolveMatrixElement[JC] def normalize(): Unit
 SVGFEConvolveMatrixElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEConvolveMatrixElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEConvolveMatrixElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEConvolveMatrixElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEConvolveMatrixElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEConvolveMatrixElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEConvolveMatrixElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -19751,6 +19793,9 @@ SVGFEDiffuseLightingElement[JC] def nodeType: Int
 SVGFEDiffuseLightingElement[JC] var nodeValue: String
 SVGFEDiffuseLightingElement[JC] def normalize(): Unit
 SVGFEDiffuseLightingElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEDiffuseLightingElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEDiffuseLightingElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEDiffuseLightingElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEDiffuseLightingElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEDiffuseLightingElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEDiffuseLightingElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -19877,6 +19922,9 @@ SVGFEDisplacementMapElement[JC] def nodeType: Int
 SVGFEDisplacementMapElement[JC] var nodeValue: String
 SVGFEDisplacementMapElement[JC] def normalize(): Unit
 SVGFEDisplacementMapElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEDisplacementMapElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEDisplacementMapElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEDisplacementMapElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEDisplacementMapElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEDisplacementMapElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEDisplacementMapElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -20008,6 +20056,9 @@ SVGFEDistantLightElement[JC] def nodeType: Int
 SVGFEDistantLightElement[JC] var nodeValue: String
 SVGFEDistantLightElement[JC] def normalize(): Unit
 SVGFEDistantLightElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEDistantLightElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEDistantLightElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEDistantLightElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEDistantLightElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEDistantLightElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEDistantLightElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -20126,6 +20177,9 @@ SVGFEFloodElement[JC] def nodeType: Int
 SVGFEFloodElement[JC] var nodeValue: String
 SVGFEFloodElement[JC] def normalize(): Unit
 SVGFEFloodElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEFloodElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEFloodElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEFloodElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEFloodElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEFloodElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEFloodElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -20251,6 +20305,9 @@ SVGFEFuncAElement[JC] var nodeValue: String
 SVGFEFuncAElement[JC] def normalize(): Unit
 SVGFEFuncAElement[JC] def offset: SVGAnimatedNumber
 SVGFEFuncAElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEFuncAElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEFuncAElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEFuncAElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEFuncAElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEFuncAElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEFuncAElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -20374,6 +20431,9 @@ SVGFEFuncBElement[JC] var nodeValue: String
 SVGFEFuncBElement[JC] def normalize(): Unit
 SVGFEFuncBElement[JC] def offset: SVGAnimatedNumber
 SVGFEFuncBElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEFuncBElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEFuncBElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEFuncBElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEFuncBElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEFuncBElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEFuncBElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -20497,6 +20557,9 @@ SVGFEFuncGElement[JC] var nodeValue: String
 SVGFEFuncGElement[JC] def normalize(): Unit
 SVGFEFuncGElement[JC] def offset: SVGAnimatedNumber
 SVGFEFuncGElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEFuncGElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEFuncGElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEFuncGElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEFuncGElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEFuncGElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEFuncGElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -20620,6 +20683,9 @@ SVGFEFuncRElement[JC] var nodeValue: String
 SVGFEFuncRElement[JC] def normalize(): Unit
 SVGFEFuncRElement[JC] def offset: SVGAnimatedNumber
 SVGFEFuncRElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEFuncRElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEFuncRElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEFuncRElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEFuncRElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEFuncRElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEFuncRElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -20742,6 +20808,9 @@ SVGFEGaussianBlurElement[JC] def nodeType: Int
 SVGFEGaussianBlurElement[JC] var nodeValue: String
 SVGFEGaussianBlurElement[JC] def normalize(): Unit
 SVGFEGaussianBlurElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEGaussianBlurElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEGaussianBlurElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEGaussianBlurElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEGaussianBlurElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEGaussianBlurElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEGaussianBlurElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -20870,6 +20939,9 @@ SVGFEImageElement[JC] def nodeType: Int
 SVGFEImageElement[JC] var nodeValue: String
 SVGFEImageElement[JC] def normalize(): Unit
 SVGFEImageElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEImageElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEImageElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEImageElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEImageElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEImageElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEImageElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -20996,6 +21068,9 @@ SVGFEMergeElement[JC] def nodeType: Int
 SVGFEMergeElement[JC] var nodeValue: String
 SVGFEMergeElement[JC] def normalize(): Unit
 SVGFEMergeElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEMergeElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEMergeElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEMergeElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEMergeElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEMergeElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEMergeElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -21118,6 +21193,9 @@ SVGFEMergeNodeElement[JC] def nodeType: Int
 SVGFEMergeNodeElement[JC] var nodeValue: String
 SVGFEMergeNodeElement[JC] def normalize(): Unit
 SVGFEMergeNodeElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEMergeNodeElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEMergeNodeElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEMergeNodeElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEMergeNodeElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEMergeNodeElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEMergeNodeElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -21237,6 +21315,9 @@ SVGFEMorphologyElement[JC] def nodeType: Int
 SVGFEMorphologyElement[JC] var nodeValue: String
 SVGFEMorphologyElement[JC] def normalize(): Unit
 SVGFEMorphologyElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEMorphologyElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEMorphologyElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEMorphologyElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEMorphologyElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEMorphologyElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEMorphologyElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -21369,6 +21450,9 @@ SVGFEOffsetElement[JC] def nodeType: Int
 SVGFEOffsetElement[JC] var nodeValue: String
 SVGFEOffsetElement[JC] def normalize(): Unit
 SVGFEOffsetElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEOffsetElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEOffsetElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEOffsetElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEOffsetElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEOffsetElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEOffsetElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -21490,6 +21574,9 @@ SVGFEPointLightElement[JC] def nodeType: Int
 SVGFEPointLightElement[JC] var nodeValue: String
 SVGFEPointLightElement[JC] def normalize(): Unit
 SVGFEPointLightElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFEPointLightElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFEPointLightElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFEPointLightElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFEPointLightElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFEPointLightElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFEPointLightElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -21614,6 +21701,9 @@ SVGFESpecularLightingElement[JC] def nodeType: Int
 SVGFESpecularLightingElement[JC] var nodeValue: String
 SVGFESpecularLightingElement[JC] def normalize(): Unit
 SVGFESpecularLightingElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFESpecularLightingElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFESpecularLightingElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFESpecularLightingElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFESpecularLightingElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFESpecularLightingElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFESpecularLightingElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -21739,6 +21829,9 @@ SVGFESpotLightElement[JC] def nodeType: Int
 SVGFESpotLightElement[JC] var nodeValue: String
 SVGFESpotLightElement[JC] def normalize(): Unit
 SVGFESpotLightElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFESpotLightElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFESpotLightElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFESpotLightElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFESpotLightElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFESpotLightElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFESpotLightElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -21865,6 +21958,9 @@ SVGFETileElement[JC] def nodeType: Int
 SVGFETileElement[JC] var nodeValue: String
 SVGFETileElement[JC] def normalize(): Unit
 SVGFETileElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFETileElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFETileElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFETileElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFETileElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFETileElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFETileElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -21991,6 +22087,9 @@ SVGFETurbulenceElement[JC] var nodeValue: String
 SVGFETurbulenceElement[JC] def normalize(): Unit
 SVGFETurbulenceElement[JC] def numOctaves: SVGAnimatedInteger
 SVGFETurbulenceElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFETurbulenceElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFETurbulenceElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFETurbulenceElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFETurbulenceElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFETurbulenceElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFETurbulenceElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -22131,6 +22230,9 @@ SVGFilterElement[JC] def nodeType: Int
 SVGFilterElement[JC] var nodeValue: String
 SVGFilterElement[JC] def normalize(): Unit
 SVGFilterElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGFilterElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGFilterElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGFilterElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGFilterElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGFilterElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGFilterElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -22273,6 +22375,9 @@ SVGGElement[JC] def nodeType: Int
 SVGGElement[JC] var nodeValue: String
 SVGGElement[JC] def normalize(): Unit
 SVGGElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGGElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGGElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGGElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGGElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGGElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGGElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -22404,6 +22509,9 @@ SVGGradientElement[JC] def nodeType: Int
 SVGGradientElement[JC] var nodeValue: String
 SVGGradientElement[JC] def normalize(): Unit
 SVGGradientElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGGradientElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGGradientElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGGradientElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGGradientElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGGradientElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGGradientElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -22537,6 +22645,9 @@ SVGImageElement[JC] def nodeType: Int
 SVGImageElement[JC] var nodeValue: String
 SVGImageElement[JC] def normalize(): Unit
 SVGImageElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGImageElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGImageElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGImageElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGImageElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGImageElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGImageElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -22700,6 +22811,9 @@ SVGLineElement[JC] def nodeType: Int
 SVGLineElement[JC] var nodeValue: String
 SVGLineElement[JC] def normalize(): Unit
 SVGLineElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGLineElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGLineElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGLineElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGLineElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGLineElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGLineElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -22835,6 +22949,9 @@ SVGLinearGradientElement[JC] def nodeType: Int
 SVGLinearGradientElement[JC] var nodeValue: String
 SVGLinearGradientElement[JC] def normalize(): Unit
 SVGLinearGradientElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGLinearGradientElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGLinearGradientElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGLinearGradientElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGLinearGradientElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGLinearGradientElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGLinearGradientElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -22968,6 +23085,9 @@ SVGMarkerElement[JC] def nodeType: Int
 SVGMarkerElement[JC] var nodeValue: String
 SVGMarkerElement[JC] def normalize(): Unit
 SVGMarkerElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGMarkerElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGMarkerElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGMarkerElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGMarkerElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGMarkerElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGMarkerElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -23110,6 +23230,9 @@ SVGMaskElement[JC] def nodeType: Int
 SVGMaskElement[JC] var nodeValue: String
 SVGMaskElement[JC] def normalize(): Unit
 SVGMaskElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGMaskElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGMaskElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGMaskElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGMaskElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGMaskElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGMaskElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -23252,6 +23375,9 @@ SVGMetadataElement[JC] def nodeType: Int
 SVGMetadataElement[JC] var nodeValue: String
 SVGMetadataElement[JC] def normalize(): Unit
 SVGMetadataElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGMetadataElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGMetadataElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGMetadataElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGMetadataElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGMetadataElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGMetadataElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -23408,6 +23534,9 @@ SVGPathElement[JC] def nodeType: Int
 SVGPathElement[JC] var nodeValue: String
 SVGPathElement[JC] def normalize(): Unit
 SVGPathElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGPathElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGPathElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGPathElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGPathElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGPathElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGPathElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -23666,6 +23795,9 @@ SVGPatternElement[JC] def nodeType: Int
 SVGPatternElement[JC] var nodeValue: String
 SVGPatternElement[JC] def normalize(): Unit
 SVGPatternElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGPatternElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGPatternElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGPatternElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGPatternElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGPatternElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGPatternElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -23817,6 +23949,9 @@ SVGPolygonElement[JC] def nodeType: Int
 SVGPolygonElement[JC] var nodeValue: String
 SVGPolygonElement[JC] def normalize(): Unit
 SVGPolygonElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGPolygonElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGPolygonElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGPolygonElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGPolygonElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGPolygonElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGPolygonElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -23951,6 +24086,9 @@ SVGPolylineElement[JC] def nodeType: Int
 SVGPolylineElement[JC] var nodeValue: String
 SVGPolylineElement[JC] def normalize(): Unit
 SVGPolylineElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGPolylineElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGPolylineElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGPolylineElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGPolylineElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGPolylineElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGPolylineElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -24103,6 +24241,9 @@ SVGRadialGradientElement[JC] def nodeType: Int
 SVGRadialGradientElement[JC] var nodeValue: String
 SVGRadialGradientElement[JC] def normalize(): Unit
 SVGRadialGradientElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGRadialGradientElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGRadialGradientElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGRadialGradientElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGRadialGradientElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGRadialGradientElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGRadialGradientElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -24236,6 +24377,9 @@ SVGRectElement[JC] def nodeType: Int
 SVGRectElement[JC] var nodeValue: String
 SVGRectElement[JC] def normalize(): Unit
 SVGRectElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGRectElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGRectElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGRectElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGRectElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGRectElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGRectElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -24397,6 +24541,9 @@ SVGSVGElement[JC] var nodeValue: String
 SVGSVGElement[JC] def normalize(): Unit
 SVGSVGElement[JC] var onabort: js.Function1[UIEvent, _]
 SVGSVGElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGSVGElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGSVGElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGSVGElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGSVGElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGSVGElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGSVGElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -24543,6 +24690,9 @@ SVGScriptElement[JC] def nodeType: Int
 SVGScriptElement[JC] var nodeValue: String
 SVGScriptElement[JC] def normalize(): Unit
 SVGScriptElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGScriptElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGScriptElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGScriptElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGScriptElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGScriptElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGScriptElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -24662,6 +24812,9 @@ SVGStopElement[JC] var nodeValue: String
 SVGStopElement[JC] def normalize(): Unit
 SVGStopElement[JC] var offset: SVGAnimatedNumber
 SVGStopElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGStopElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGStopElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGStopElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGStopElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGStopElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGStopElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -24790,6 +24943,9 @@ SVGStyleElement[JC] def nodeType: Int
 SVGStyleElement[JC] var nodeValue: String
 SVGStyleElement[JC] def normalize(): Unit
 SVGStyleElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGStyleElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGStyleElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGStyleElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGStyleElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGStyleElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGStyleElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -24919,6 +25075,9 @@ SVGSwitchElement[JC] def nodeType: Int
 SVGSwitchElement[JC] var nodeValue: String
 SVGSwitchElement[JC] def normalize(): Unit
 SVGSwitchElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGSwitchElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGSwitchElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGSwitchElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGSwitchElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGSwitchElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGSwitchElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -25044,6 +25203,9 @@ SVGSymbolElement[JC] def nodeType: Int
 SVGSymbolElement[JC] var nodeValue: String
 SVGSymbolElement[JC] def normalize(): Unit
 SVGSymbolElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGSymbolElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGSymbolElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGSymbolElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGSymbolElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGSymbolElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGSymbolElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -25179,6 +25341,9 @@ SVGTSpanElement[JC] def nodeType: Int
 SVGTSpanElement[JC] var nodeValue: String
 SVGTSpanElement[JC] def normalize(): Unit
 SVGTSpanElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGTSpanElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGTSpanElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGTSpanElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGTSpanElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGTSpanElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGTSpanElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -25322,6 +25487,9 @@ SVGTextContentElement[JC] def nodeType: Int
 SVGTextContentElement[JC] var nodeValue: String
 SVGTextContentElement[JC] def normalize(): Unit
 SVGTextContentElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGTextContentElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGTextContentElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGTextContentElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGTextContentElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGTextContentElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGTextContentElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -25469,6 +25637,9 @@ SVGTextElement[JC] def nodeType: Int
 SVGTextElement[JC] var nodeValue: String
 SVGTextElement[JC] def normalize(): Unit
 SVGTextElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGTextElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGTextElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGTextElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGTextElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGTextElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGTextElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -25611,6 +25782,9 @@ SVGTextPathElement[JC] def nodeType: Int
 SVGTextPathElement[JC] var nodeValue: String
 SVGTextPathElement[JC] def normalize(): Unit
 SVGTextPathElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGTextPathElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGTextPathElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGTextPathElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGTextPathElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGTextPathElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGTextPathElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -25757,6 +25931,9 @@ SVGTextPositioningElement[JC] def nodeType: Int
 SVGTextPositioningElement[JC] var nodeValue: String
 SVGTextPositioningElement[JC] def normalize(): Unit
 SVGTextPositioningElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGTextPositioningElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGTextPositioningElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGTextPositioningElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGTextPositioningElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGTextPositioningElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGTextPositioningElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -25885,6 +26062,9 @@ SVGTitleElement[JC] def nodeType: Int
 SVGTitleElement[JC] var nodeValue: String
 SVGTitleElement[JC] def normalize(): Unit
 SVGTitleElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGTitleElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGTitleElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGTitleElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGTitleElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGTitleElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGTitleElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -26057,6 +26237,9 @@ SVGUseElement[JC] def nodeType: Int
 SVGUseElement[JC] var nodeValue: String
 SVGUseElement[JC] def normalize(): Unit
 SVGUseElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGUseElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGUseElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGUseElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGUseElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGUseElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGUseElement[JC] var ondblclick: js.Function1[MouseEvent, _]
@@ -26184,6 +26367,9 @@ SVGViewElement[JC] def nodeType: Int
 SVGViewElement[JC] var nodeValue: String
 SVGViewElement[JC] def normalize(): Unit
 SVGViewElement[JC] var onclick: js.Function1[MouseEvent, _]
+SVGViewElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+SVGViewElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+SVGViewElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
 SVGViewElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
 SVGViewElement[JC] var oncut: js.Function1[ClipboardEvent, _]
 SVGViewElement[JC] var ondblclick: js.Function1[MouseEvent, _]
