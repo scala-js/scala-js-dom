@@ -52,7 +52,7 @@ class ImageData extends js.Object {
     * @param settings
     *   image settings
     */
-  def this(width: Int, height: Int, settings: ImageSettings) = this()
+  def this(width: Int, height: Int, settings: ImageDataSettings) = this()
 
   /** Create a blank ImageData instance from specified pixel data, width, height, and settings object.
     * @param data
@@ -64,7 +64,7 @@ class ImageData extends js.Object {
     * @param settings
     *   image settings
     */
-  def this(data: Uint8ClampedArray, width: Int, height: Int, settings: ImageSettings) = this()
+  def this(data: Uint8ClampedArray, width: Int, height: Int, settings: ImageDataSettings) = this()
 
   /** Is an unsigned long representing the actual width, in pixels, of the ImageData. */
   def width: Int = js.native

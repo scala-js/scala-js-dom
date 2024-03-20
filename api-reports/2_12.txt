@@ -15654,9 +15654,7 @@ ImageCapture[JC] val track: MediaStreamTrack
 ImageData[JC] def data: Uint8ClampedArray
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
-ImageSettings[JT] var colorSpace: js.UndefOr[String]
-ImageSettings[SO] lazy val displayP3: ImageSettings
-ImageSettings[SO] lazy val sRGB: ImageSettings
+ImageDataSettings[JT] var colorSpace: js.UndefOr[PredefinedColorSpace]
 InputEvent[JC] def bubbles: Boolean
 InputEvent[JC] def cancelBubble: Boolean
 InputEvent[JC] def cancelable: Boolean
@@ -17212,6 +17210,9 @@ PositionError[JT] def message: String
 PositionOptions[JC] var enableHighAccuracy: Boolean
 PositionOptions[JC] var maximumAge: Int
 PositionOptions[JC] var timeout: Int
+PredefinedColorSpace[JT]
+PredefinedColorSpace[SO] val `display-p3`: PredefinedColorSpace
+PredefinedColorSpace[SO] val srgb: PredefinedColorSpace
 PresentationStyle[JT]
 PresentationStyle[SO] val attachment: PresentationStyle
 PresentationStyle[SO] val inline: PresentationStyle
