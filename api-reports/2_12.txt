@@ -15838,9 +15838,10 @@ ImageBitmap[JT] def width: Double
 ImageCapture[JC] def grabFrame(): js.Promise[ImageBitmap]
 ImageCapture[JC] def takePhoto(): js.Promise[Blob]
 ImageCapture[JC] val track: MediaStreamTrack
-ImageData[JC] def data: js.typedarray.Uint8ClampedArray
+ImageData[JC] def data: Uint8ClampedArray
 ImageData[JC] def height: Int
 ImageData[JC] def width: Int
+ImageDataSettings[JT] var colorSpace: js.UndefOr[PredefinedColorSpace]
 InputEvent[JC] def bubbles: Boolean
 InputEvent[JC] def cancelBubble: Boolean
 InputEvent[JC] def cancelable: Boolean
@@ -17397,6 +17398,9 @@ PositionError[JT] def message: String
 PositionOptions[JC] var enableHighAccuracy: Boolean
 PositionOptions[JC] var maximumAge: Int
 PositionOptions[JC] var timeout: Int
+PredefinedColorSpace[JT]
+PredefinedColorSpace[SO] val `display-p3`: PredefinedColorSpace
+PredefinedColorSpace[SO] val srgb: PredefinedColorSpace
 PresentationStyle[JT]
 PresentationStyle[SO] val attachment: PresentationStyle
 PresentationStyle[SO] val inline: PresentationStyle
