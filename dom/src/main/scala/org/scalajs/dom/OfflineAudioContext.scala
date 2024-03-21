@@ -32,7 +32,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) extends AudioContext {
+class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) extends BaseAudioContext {
 
   /** The promise-based startRendering() method of the OfflineAudioContext Interface starts rendering the audio graph,
     * taking into account the current connections and the current scheduled changes.
@@ -41,4 +41,9 @@ class OfflineAudioContext(numOfChannels: Int, length: Int, sampleRate: Int) exte
     * promise resolves with an AudioBuffer containing the rendered audio.
     */
   def startRendering(): js.Promise[AudioBuffer] = js.native
+
+  /** Schedules a suspension of the time progression in the audio context at the specified time and returns a promise.
+    */
+  def suspend(suspendTime: Double): js.Promise[Unit] = js.native
+
 }
