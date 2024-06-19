@@ -17206,9 +17206,9 @@ PositionError[JO] val POSITION_UNAVAILABLE: Int
 PositionError[JO] val TIMEOUT: Int
 PositionError[JT] def code: Int
 PositionError[JT] def message: String
-PositionOptions[JC] var enableHighAccuracy: Boolean
-PositionOptions[JC] var maximumAge: Int
-PositionOptions[JC] var timeout: Int
+PositionOptions[JT] var enableHighAccuracy: js.UndefOr[Boolean]
+PositionOptions[JT] var maximumAge: js.UndefOr[Int]
+PositionOptions[JT] var timeout: js.UndefOr[Int]
 PresentationStyle[JT]
 PresentationStyle[SO] val attachment: PresentationStyle
 PresentationStyle[SO] val inline: PresentationStyle
