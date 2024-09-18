@@ -16490,7 +16490,7 @@ LockOptions[JT] var mode: js.UndefOr[LockMode]
 LockOptions[JT] var signal: js.UndefOr[AbortSignal]
 LockOptions[JT] var steal: js.UndefOr[Boolean]
 MIMEType[JT]
-MIMEType[SO] val `application/xhtml+xml` = "application/xhtml+xml".asInstanceOf[MIMEType]
+MIMEType[SO] val `application/xhtml+xml` =  "application/xhtml+xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `application/xml` = "application/xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `image/svg+xml` = "image/svg+xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `text/html` = "text/html".asInstanceOf[MIMEType]
@@ -17288,7 +17288,7 @@ PermissionName[JT]
 PermissionName[SO] val geolocation: PermissionName
 PermissionName[SO] val midi: PermissionName
 PermissionName[SO] val notifications: PermissionName
-PermissionName[SO] val `persistent-storage` = "persistent-storage".asInstanceOf[PermissionName]
+PermissionName[SO] val `persistent-storage` =  "persistent-storage".asInstanceOf[PermissionName]
 PermissionName[SO] val push: PermissionName
 PermissionState[JT]
 PermissionState[SO] val denied: PermissionState
@@ -17685,9 +17685,9 @@ RTCSessionDescriptionInit[SO] def apply(`type`: js.UndefOr[RTCSdpType]?, sdp: js
 RTCSignalingState[JT]
 RTCSignalingState[SO] val closed: RTCSignalingState
 RTCSignalingState[SO] val `have-local-offer` = "have-local-offer".asInstanceOf[RTCSignalingState]
-RTCSignalingState[SO] val `have-local-pranswer` = "have-local-pranswer".asInstanceOf[RTCSignalingState]
+RTCSignalingState[SO] val `have-local-pranswer` =  "have-local-pranswer".asInstanceOf[RTCSignalingState]
 RTCSignalingState[SO] val `have-remote-offer` = "have-remote-offer".asInstanceOf[RTCSignalingState]
-RTCSignalingState[SO] val `have-remote-pranswer` = "have-remote-pranswer".asInstanceOf[RTCSignalingState]
+RTCSignalingState[SO] val `have-remote-pranswer` =  "have-remote-pranswer".asInstanceOf[RTCSignalingState]
 RTCSignalingState[SO] val stable: RTCSignalingState
 RTCStats[JT] val id: String
 RTCStats[JT] val timestamp: Double
@@ -17757,9 +17757,9 @@ ReadableStreamUnderlyingSource[JT] var `type`: js.UndefOr[ReadableStreamType]
 ReferrerPolicy[JT]
 ReferrerPolicy[SO] val empty: ReferrerPolicy
 ReferrerPolicy[SO] val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicy]
-ReferrerPolicy[SO] val `no-referrer-when-downgrade` = "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val `no-referrer-when-downgrade` =  "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicy]
 ReferrerPolicy[SO] val `origin-only` = "origin-only".asInstanceOf[ReferrerPolicy]
-ReferrerPolicy[SO] val `origin-when-cross-origin` = "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
+ReferrerPolicy[SO] val `origin-when-cross-origin` =  "origin-when-cross-origin".asInstanceOf[ReferrerPolicy]
 ReferrerPolicy[SO] val `unsafe-url` = "unsafe-url".asInstanceOf[ReferrerPolicy]
 Request[JC] def arrayBuffer(): js.Promise[ArrayBuffer]
 Request[JC] def blob(): js.Promise[Blob]

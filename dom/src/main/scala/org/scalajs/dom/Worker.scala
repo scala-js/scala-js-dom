@@ -19,7 +19,7 @@ import scala.scalajs.js.annotation._
 @js.native
 @JSGlobal
 class Worker extends AbstractWorker {
-  
+
   def this(scriptURL: String, options: WorkerOptions) = this()
   def this(scriptURL: String) = this()
   def this(scriptURL: URL, options: WorkerOptions) = this()
