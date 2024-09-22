@@ -10,7 +10,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-abstract class MathMLElement extends Element {
+abstract class MathMLElement extends org.scalajs.dom.Element {
   var onclick: js.Function1[MouseEvent, _] = js.native
   var onmouseover: js.Function1[MouseEvent, _] = js.native
   var onmouseout: js.Function1[MouseEvent, _] = js.native

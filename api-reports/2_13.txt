@@ -16495,6 +16495,122 @@ MIMEType[SO] val `application/xml` = "application/xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `image/svg+xml` = "image/svg+xml".asInstanceOf[MIMEType]
 MIMEType[SO] val `text/html` = "text/html".asInstanceOf[MIMEType]
 MIMEType[SO] val `text/xml` = "text/xml".asInstanceOf[MIMEType]
+MathMLElement[JC] var accessKey: String
+MathMLElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MathMLElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MathMLElement[JC] def after(nodes: Node | String*): Unit
+MathMLElement[JC] def append(nodes: Node | String*): Unit
+MathMLElement[JC] def appendChild(newChild: Node): Node
+MathMLElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
+MathMLElement[JC] def attributes: NamedNodeMap
+MathMLElement[JC] def baseURI: String
+MathMLElement[JC] def before(nodes: Node | String*): Unit
+MathMLElement[JC] def childElementCount: Int
+MathMLElement[JC] def childNodes: NodeList[Node]
+MathMLElement[JC] def children: HTMLCollection[Element]
+MathMLElement[JC] var classList: DOMTokenList
+MathMLElement[JC] def clientHeight: Int
+MathMLElement[JC] def clientLeft: Int
+MathMLElement[JC] def clientTop: Int
+MathMLElement[JC] def clientWidth: Int
+MathMLElement[JC] def cloneNode(deep: Boolean?): Node
+MathMLElement[JC] def closest(selector: String): Element
+MathMLElement[JC] def compareDocumentPosition(other: Node): Int
+MathMLElement[JC] def contains(otherNode: Node): Boolean
+MathMLElement[JC] def dispatchEvent(evt: Event): Boolean
+MathMLElement[JC] def firstChild: Node
+MathMLElement[JC] def firstElementChild: Element
+MathMLElement[JC] def getAttribute(name: String): String
+MathMLElement[JC] def getAttributeNS(namespaceURI: String, localName: String): String
+MathMLElement[JC] def getAttributeNode(name: String): Attr
+MathMLElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
+MathMLElement[JC] def getBoundingClientRect(): DOMRect
+MathMLElement[JC] def getClientRects(): DOMRectList
+MathMLElement[JC] def getElementsByClassName(classNames: String): HTMLCollection[Element]
+MathMLElement[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
+MathMLElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
+MathMLElement[JC] def hasAttribute(name: String): Boolean
+MathMLElement[JC] def hasAttributeNS(namespaceURI: String, localName: String): Boolean
+MathMLElement[JC] def hasAttributes(): Boolean
+MathMLElement[JC] def hasChildNodes(): Boolean
+MathMLElement[JC] def hasPointerCapture(pointerId: Double): Boolean
+MathMLElement[JC] var id: String
+MathMLElement[JC] var innerHTML: String
+MathMLElement[JC] var innerText: String
+MathMLElement[JC] def insertAdjacentElement(position: String, element: Element): Element
+MathMLElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
+MathMLElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
+MathMLElement[JC] def isConnected: Boolean
+MathMLElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
+MathMLElement[JC] def isEqualNode(arg: Node): Boolean
+MathMLElement[JC] def isSameNode(other: Node): Boolean
+MathMLElement[JC] def isSupported(feature: String, version: String): Boolean
+MathMLElement[JC] def lastChild: Node
+MathMLElement[JC] def lastElementChild: Element
+MathMLElement[JC] def localName: String
+MathMLElement[JC] def lookupNamespaceURI(prefix: String): String
+MathMLElement[JC] def lookupPrefix(namespaceURI: String): String
+MathMLElement[JC] def matches(selector: String): Boolean
+MathMLElement[JC] def namespaceURI: String
+MathMLElement[JC] def nextElementSibling: Element
+MathMLElement[JC] def nextSibling: Node
+MathMLElement[JC] def nodeName: String
+MathMLElement[JC] def nodeType: Int
+MathMLElement[JC] var nodeValue: String
+MathMLElement[JC] def normalize(): Unit
+MathMLElement[JC] var onclick: js.Function1[MouseEvent, _]
+MathMLElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
+MathMLElement[JC] var oncompositionstart: js.Function1[CompositionEvent, _]
+MathMLElement[JC] var oncompositionupdate: js.Function1[CompositionEvent, _]
+MathMLElement[JC] var oncopy: js.Function1[ClipboardEvent, _]
+MathMLElement[JC] var oncut: js.Function1[ClipboardEvent, _]
+MathMLElement[JC] var onfocusin: js.Function1[FocusEvent, _]
+MathMLElement[JC] var onfocusout: js.Function1[FocusEvent, _]
+MathMLElement[JC] var onfullscreenchange: js.Function1[Event, _]
+MathMLElement[JC] var onfullscreenerror: js.Function1[Event, _]
+MathMLElement[JC] var onload: js.Function1[Event, _]
+MathMLElement[JC] var onmousedown: js.Function1[MouseEvent, _]
+MathMLElement[JC] var onmousemove: js.Function1[MouseEvent, _]
+MathMLElement[JC] var onmouseout: js.Function1[MouseEvent, _]
+MathMLElement[JC] var onmouseover: js.Function1[MouseEvent, _]
+MathMLElement[JC] var onmouseup: js.Function1[MouseEvent, _]
+MathMLElement[JC] var onpaste: js.Function1[ClipboardEvent, _]
+MathMLElement[JC] var outerHTML: String
+MathMLElement[JC] def ownerDocument: Document
+MathMLElement[JC] def parentNode: Node
+MathMLElement[JC] def prefix: String
+MathMLElement[JC] def prepend(nodes: Node | String*): Unit
+MathMLElement[JC] def previousElementSibling: Element
+MathMLElement[JC] def previousSibling: Node
+MathMLElement[JC] def querySelector(selectors: String): Element
+MathMLElement[JC] def querySelectorAll(selectors: String): NodeList[Element]
+MathMLElement[JC] def releasePointerCapture(pointerId: Double): Unit
+MathMLElement[JC] def remove(): Unit
+MathMLElement[JC] def removeAttribute(name: String): Unit
+MathMLElement[JC] def removeAttributeNS(namespaceURI: String, localName: String): Unit
+MathMLElement[JC] def removeAttributeNode(oldAttr: Attr): Attr
+MathMLElement[JC] def removeChild(oldChild: Node): Node
+MathMLElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
+MathMLElement[JC] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+MathMLElement[JC] def replaceChild(newChild: Node, oldChild: Node): Node
+MathMLElement[JC] def replaceChildren(nodes: Node | String*): Unit
+MathMLElement[JC] def replaceWith(nodes: Node | String*): Unit
+MathMLElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
+MathMLElement[JC] def requestPointerLock(): Unit
+MathMLElement[JC] def scrollHeight: Int
+MathMLElement[JC] def scrollIntoView(top: Boolean?): Unit
+MathMLElement[JC] var scrollLeft: Double
+MathMLElement[JC] var scrollTop: Double
+MathMLElement[JC] def scrollWidth: Int
+MathMLElement[JC] def setAttribute(name: String, value: String): Unit
+MathMLElement[JC] def setAttributeNS(namespaceURI: String, qualifiedName: String, value: String): Unit
+MathMLElement[JC] def setAttributeNode(newAttr: Attr): Attr
+MathMLElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
+MathMLElement[JC] def setPointerCapture(pointerId: Double): Unit
+MathMLElement[JC] def shadowRoot: ShadowRoot
+MathMLElement[JC] def tagName: String
+MathMLElement[JC] var textContent: String
+MathMLElement[JC] var xmlbase: String
 MediaDeviceInfo[JT] val deviceId: String
 MediaDeviceInfo[JT] val groupId: String
 MediaDeviceInfo[JT] val kind: MediaDeviceKind
