@@ -10,7 +10,7 @@ import scala.scalajs.js.annotation._
   */
 @js.native
 @JSGlobal
-abstract class MathMLElement extends org.scalajs.dom.Element {
+abstract class MathMLElement extends Element {
   var onclick: js.Function1[MouseEvent, _] = js.native
   var onmouseover: js.Function1[MouseEvent, _] = js.native
   var onmouseout: js.Function1[MouseEvent, _] = js.native
@@ -22,5 +22,5 @@ abstract class MathMLElement extends org.scalajs.dom.Element {
   var onfocusout: js.Function1[FocusEvent, _] = js.native
 
   /** Corresponds to attribute xml:base on the given element. */
-  var `xmlbase`: String = js.native
+  var xmlbase: String = js.native
 }
