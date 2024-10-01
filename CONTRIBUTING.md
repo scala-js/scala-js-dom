@@ -22,6 +22,15 @@ Contents:
 * Binary Compatibility
 * Submitting a PR
 
+Getting started
+=======
+Scala js dom currently targets java 17 for maximum compatibility. 
+
+```sh
+cs launch sbt --jvm 17
+```
+Would start sbt on a jvm that is known to work with the project
+
 
 Packages
 ========
