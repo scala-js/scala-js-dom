@@ -1,7 +1,12 @@
 package org.scalajs.dom
 
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
+
 /** Short aliases of all the dom.HTMLThing classes */
-object HTMLLiterals {
+@js.native
+@JSGlobal
+object literals extends js.Any:        
     def createElement(tagName: "a"): HTMLAnchorElement = js.native
     def createElement(tagName: "audio"): HTMLAudioElement = js.native
     def createElement(tagName: "area"): HTMLAreaElement = js.native
@@ -58,4 +63,3 @@ object HTMLLiterals {
     def createElement(tagName: "ul"): HTMLUListElement = js.native
     def createElement(tagName: "unknown"): HTMLUnknownElement = js.native
     def createElement(tagName: "video"): HTMLVideoElement = js.native
-}
