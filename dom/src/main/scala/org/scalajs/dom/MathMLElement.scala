@@ -23,4 +23,24 @@ abstract class MathMLElement extends Element {
 
   /** Corresponds to attribute xml:base on the given element. */
   var xmlbase: String = js.native
+
+  /** https://w3c.github.io/mathml-core/#global-attributes */
+
+  var autofocus: Boolean = js.native
+  var `class`: String = js.native
+  var dir: String = js.native
+  var displaystyle: Boolean = js.native
+  var mathbackground: String = js.native
+  var mathcolor: String = js.native
+  var mathsize: String = js.native
+  var nonce: String = js.native
+  var scriptlevel: Int = js.native
+  var style: String = js.native
+  var tabindex: Int = js.native
+
+  /** https://w3c.github.io/mathml-core/#other-valid-attributes */
+
+  var intent: String = js.native
+  var arg: String = js.native
+
 }
