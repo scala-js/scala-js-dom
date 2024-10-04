@@ -3,10 +3,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/** Represents a Scala.js facade for the MathML element. Documentation for MathML elements can be found at:
-  * https://developer.mozilla.org/en-US/docs/Web/MathML/Element
-  *
-  * All MathMl elements implement this interface.
+/** The MathMLElement interface represents any MathML element.
   */
 @js.native
 @JSGlobal
