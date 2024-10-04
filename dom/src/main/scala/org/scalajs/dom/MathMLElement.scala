@@ -38,7 +38,6 @@ abstract class MathMLElement extends Element {
   var style: String = js.native
   var tabindex: Int = js.native
 
-  /** https://w3c.github.io/mathml-core/#other-valid-attributes */
 
   var intent: String = js.native
   var arg: String = js.native
