@@ -3,8 +3,7 @@ package org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
-/** The MathMLElement interface represents any MathML element.
-  */
+/** The MathMLElement interface represents any MathML element. */
 @js.native
 @JSGlobal
 abstract class MathMLElement extends Element {
@@ -21,7 +20,6 @@ abstract class MathMLElement extends Element {
   /** Corresponds to attribute xml:base on the given element. */
   var xmlbase: String = js.native
 
-
   var autofocus: Boolean = js.native
   var `class`: String = js.native
   var dir: String = js.native
@@ -33,7 +31,6 @@ abstract class MathMLElement extends Element {
   var scriptlevel: Int = js.native
   var style: String = js.native
   var tabindex: Int = js.native
-
 
   var intent: String = js.native
   var arg: String = js.native
