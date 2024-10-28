@@ -22,6 +22,16 @@ Contents:
 * Binary Compatibility
 * Submitting a PR
 
+Getting started
+=======
+Scala js dom currently targets java 17 for maximum compatibility. If your shell is targeting a JVM higher than 17, you may experience confusing error messages when starting SBT.
+
+[Coursier](https://get-coursier.io/) is the de facto standard for artefact fetching in scala. Using coursier it is possible to launch SBT with a specific JVM version. The default [installation](https://get-coursier.io/docs/cli-installation) of coursier will put `cs` on your path, after which the following command (run in the root of the project)
+
+```sh
+cs launch sbt --jvm 17
+```
+will (if necessary download and) start sbt with temurin 17 - i.e. a jvm known to be compatible with the project.
 
 Packages
 ========
