@@ -137,8 +137,8 @@ trait BrowserTests extends WebCryptoApiTests {
     import org.scalajs.dom.{ImageData, ImageDataSettings, PredefinedColorSpace}
     import PredefinedColorSpace._
 
-    val width:Int = 200
-    val height:Int = 100
+    val width: Int = 200
+    val height: Int = 100
 
     // new ImageData(width, height)
     val imgDat1: ImageData = new ImageData(width, height)
@@ -164,7 +164,8 @@ trait BrowserTests extends WebCryptoApiTests {
     assertEquals(imgDat3.data.length, width * height * 4)
 
     // new ImageData(dataArray, width, height, settings)
-    val defaultImageData: ImageData = new ImageData(imgDat3.data, width, height, new ImageDataSettings { colorSpace = `display-p3` })
+    val defaultImageData: ImageData =
+      new ImageData(imgDat3.data, width, height, new ImageDataSettings { colorSpace = `display-p3` })
     assertEquals(defaultImageData.width, width)
     assertEquals(defaultImageData.height, height)
   }
