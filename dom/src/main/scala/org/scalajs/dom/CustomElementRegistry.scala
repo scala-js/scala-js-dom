@@ -11,11 +11,29 @@ import scala.scalajs.js.annotation._
 
 /** The CustomElementRegistry interface provides methods for registering custom elements and querying registered
   * elements. To get an instance of it, use the window.customElements property.
+  * https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry
   */
 @js.native
 @JSGlobal
 abstract class CustomElementRegistry extends js.Object {
 
+  /** Returns the constructor for a previously-defined custom element. */
+  def get(name: String): js.Dynamic
+
+  /** Returns the name for a previously-defined custom element.
+    * @param constructor
+    *   Constructor for the custom element.
+    */
+  def getName(constructor: js.Dynamic): String
+
   /** Defines a new custom element. */
   def define(name: String, constructor: js.Dynamic, options: ElementDefinitionOptions = js.native): Unit
+
+  /** Upgrades a custom element directly, even before it is connected to its shadow root. */
+  def upgrade(root: Node): Unit
+
+  /** Returns an empty Promise that resolves when a custom element becomes defined with the given name. If such a custom
+    * element is already defined, the returned promise is immediately fulfilled.
+    */
+  def whenDefined(name: String): js.Promise[Any]
 }
