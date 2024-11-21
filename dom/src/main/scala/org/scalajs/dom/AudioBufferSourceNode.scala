@@ -24,7 +24,7 @@ import scala.scalajs.js
   *   - Channel count: defined by the associated AudioBuffer
   */
 @js.native
-trait AudioBufferSourceNode extends AudioNode {
+trait AudioBufferSourceNode extends AudioScheduledSourceNode {
 
   /** Is an AudioBuffer that defines the audio asset to be played, or when set to the value null, defines a single
     * channel of silence.
@@ -63,16 +63,20 @@ trait AudioBufferSourceNode extends AudioNode {
     *   The duration parameter, which defaults to the length of the asset minus the value of offset, defines the length
     *   of the portion of the asset to be played.
     */
-  def start(when: Double = js.native, offset: Double = js.native, duration: Double = js.native): Unit = js.native
+  def start(when: Double, offset: Double, duration: Double): Unit = js.native
 
-  /** Schedules the end of the playback of an audio asset.
-    *
-    * @param when
-    *   The when parameter defines when the playback will stop. If it represents a time in the past, the playback will
-    *   end immediately. If this method is called twice or more, an exception is raised.
-    */
-  def stop(when: Double = js.native): Unit = js.native
+  def start(when: Double, offset: Double): Unit = js.native
 
-  /** Is an EventHandler containing the callback associated with the ended event. */
-  var onended: js.Function1[Event, _] = js.native
+}
+
+object AudioBufferSourceNode {
+
+  import js.`|`.undefOr2jsAny
+
+  def apply(context: BaseAudioContext,
+      options: js.UndefOr[AudioBufferSourceNodeOptions] = js.undefined): AudioBufferSourceNode = {
+    js.Dynamic
+      .newInstance(js.Dynamic.global.AudioBufferSourceNode)(context, options)
+      .asInstanceOf[AudioBufferSourceNode]
+  }
 }

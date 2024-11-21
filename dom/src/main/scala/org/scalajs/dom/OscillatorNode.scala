@@ -20,7 +20,7 @@ import scala.scalajs.js
   *   - Channel interpretation: speakers
   */
 @js.native
-trait OscillatorNode extends AudioNode {
+trait OscillatorNode extends AudioScheduledSourceNode {
 
   /** An a-rate AudioParam representing the frequency of oscillation in hertz (though the AudioParam returned is
     * read-only, the value it represents is not.)
@@ -33,13 +33,7 @@ trait OscillatorNode extends AudioNode {
   var detune: AudioParam = js.native
 
   /** Represents the shape of the oscillator wave generated. Different waves will produce different tones. */
-  var `type`: String = js.native // Not sure if this is correct ...
-
-  /** This method specifies the exact time to start playing the tone. */
-  def start(when: Double = js.native): Unit = js.native
-
-  /** This method specifies the exact time to stop playing the tone. */
-  def stop(when: Double = js.native): Unit = js.native
+  var `type`: OscillatorNodeType = js.native
 
   /** Used to point to a PeriodicWave defining a periodic waveform that can be used to shape the oscillator's output,
     * when type = "custom" is used.
@@ -47,7 +41,12 @@ trait OscillatorNode extends AudioNode {
     * This replaces the now-obsolete OscillatorNode.setWaveTable.
     */
   def setPeriodicWave(wave: PeriodicWave): Unit = js.native
+}
 
-  /** Used to set the event handler for the ended event, which fires when the tone has stopped playing. */
-  var onended: js.Function1[Event, _] = js.native
+object OscillatorNode {
+
+  import js.`|`.undefOr2jsAny
+
+  def apply(context: BaseAudioContext, options: js.UndefOr[OscillatorNodeOptions] = js.undefined): OscillatorNode =
+    js.Dynamic.newInstance(js.Dynamic.global.OscillatorNode)(context, options).asInstanceOf[OscillatorNode]
 }
