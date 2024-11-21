@@ -19,8 +19,6 @@ abstract class MathMLElement extends Element {
 
   var autofocus: Boolean = js.native
   var className: String = js.native
-  var nonce: String = js.native
-  var scriptlevel: Int = js.native
   var style: CSSStyleDeclaration = js.native
   var tabIndex: Int = js.native
 

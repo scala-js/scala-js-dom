@@ -16559,7 +16559,6 @@ MathMLElement[JC] def nextSibling: Node
 MathMLElement[JC] def nodeName: String
 MathMLElement[JC] def nodeType: Int
 MathMLElement[JC] var nodeValue: String
-MathMLElement[JC] var nonce: String
 MathMLElement[JC] def normalize(): Unit
 MathMLElement[JC] var onclick: js.Function1[MouseEvent, _]
 MathMLElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
@@ -16600,7 +16599,6 @@ MathMLElement[JC] def replaceChildren(nodes: Node | String*): Unit
 MathMLElement[JC] def replaceWith(nodes: Node | String*): Unit
 MathMLElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 MathMLElement[JC] def requestPointerLock(): Unit
-MathMLElement[JC] var scriptlevel: Int
 MathMLElement[JC] def scrollHeight: Int
 MathMLElement[JC] def scrollIntoView(top: Boolean?): Unit
 MathMLElement[JC] var scrollLeft: Double
