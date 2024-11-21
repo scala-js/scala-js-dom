@@ -1135,6 +1135,7 @@ CanvasRenderingContext2D[JC] def quadraticCurveTo(cpx: Double, cpy: Double, x: D
 CanvasRenderingContext2D[JC] def rect(x: Double, y: Double, w: Double, h: Double): Unit
 CanvasRenderingContext2D[JC] def restore(): Unit
 CanvasRenderingContext2D[JC] def rotate(angle: Double): Unit
+CanvasRenderingContext2D[JC] def roundRect(x: Double, y: Double, w: Double, h: Double, radii: js.Any): Unit
 CanvasRenderingContext2D[JC] def save(): Unit
 CanvasRenderingContext2D[JC] def scale(x: Double, y: Double): Unit
 CanvasRenderingContext2D[JC] def setLineDash(segments: js.Array[Double]): Unit
