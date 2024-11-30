@@ -16501,7 +16501,6 @@ MathMLElement[JC] def addEventListener[T <: Event](`type`: String, listener: js.
 MathMLElement[JC] def after(nodes: Node | String*): Unit
 MathMLElement[JC] def append(nodes: Node | String*): Unit
 MathMLElement[JC] def appendChild(newChild: Node): Node
-MathMLElement[JC] var arg: String
 MathMLElement[JC] def attachShadow(init: ShadowRootInit): ShadowRoot
 MathMLElement[JC] def attributes: NamedNodeMap
 MathMLElement[JC] var autofocus: Boolean
@@ -16510,8 +16509,8 @@ MathMLElement[JC] def before(nodes: Node | String*): Unit
 MathMLElement[JC] def childElementCount: Int
 MathMLElement[JC] def childNodes: NodeList[Node]
 MathMLElement[JC] def children: HTMLCollection[Element]
-MathMLElement[JC] var `class`: String
 MathMLElement[JC] var classList: DOMTokenList
+MathMLElement[JC] var className: String
 MathMLElement[JC] def clientHeight: Int
 MathMLElement[JC] def clientLeft: Int
 MathMLElement[JC] def clientTop: Int
@@ -16520,9 +16519,7 @@ MathMLElement[JC] def cloneNode(deep: Boolean?): Node
 MathMLElement[JC] def closest(selector: String): Element
 MathMLElement[JC] def compareDocumentPosition(other: Node): Int
 MathMLElement[JC] def contains(otherNode: Node): Boolean
-MathMLElement[JC] var dir: String
 MathMLElement[JC] def dispatchEvent(evt: Event): Boolean
-MathMLElement[JC] var displaystyle: Boolean
 MathMLElement[JC] def firstChild: Node
 MathMLElement[JC] def firstElementChild: Element
 MathMLElement[JC] def getAttribute(name: String): String
@@ -16545,7 +16542,6 @@ MathMLElement[JC] var innerText: String
 MathMLElement[JC] def insertAdjacentElement(position: String, element: Element): Element
 MathMLElement[JC] def insertAdjacentHTML(where: String, html: String): Unit
 MathMLElement[JC] def insertBefore(newChild: Node, refChild: Node): Node
-MathMLElement[JC] var intent: String
 MathMLElement[JC] def isConnected: Boolean
 MathMLElement[JC] def isDefaultNamespace(namespaceURI: String): Boolean
 MathMLElement[JC] def isEqualNode(arg: Node): Boolean
@@ -16557,16 +16553,12 @@ MathMLElement[JC] def localName: String
 MathMLElement[JC] def lookupNamespaceURI(prefix: String): String
 MathMLElement[JC] def lookupPrefix(namespaceURI: String): String
 MathMLElement[JC] def matches(selector: String): Boolean
-MathMLElement[JC] var mathbackground: String
-MathMLElement[JC] var mathcolor: String
-MathMLElement[JC] var mathsize: String
 MathMLElement[JC] def namespaceURI: String
 MathMLElement[JC] def nextElementSibling: Element
 MathMLElement[JC] def nextSibling: Node
 MathMLElement[JC] def nodeName: String
 MathMLElement[JC] def nodeType: Int
 MathMLElement[JC] var nodeValue: String
-MathMLElement[JC] var nonce: String
 MathMLElement[JC] def normalize(): Unit
 MathMLElement[JC] var onclick: js.Function1[MouseEvent, _]
 MathMLElement[JC] var oncompositionend: js.Function1[CompositionEvent, _]
@@ -16607,7 +16599,6 @@ MathMLElement[JC] def replaceChildren(nodes: Node | String*): Unit
 MathMLElement[JC] def replaceWith(nodes: Node | String*): Unit
 MathMLElement[JC] def requestFullscreen(options: FullscreenOptions?): js.Promise[Unit]
 MathMLElement[JC] def requestPointerLock(): Unit
-MathMLElement[JC] var scriptlevel: Int
 MathMLElement[JC] def scrollHeight: Int
 MathMLElement[JC] def scrollIntoView(top: Boolean?): Unit
 MathMLElement[JC] var scrollLeft: Double
@@ -16619,11 +16610,10 @@ MathMLElement[JC] def setAttributeNode(newAttr: Attr): Attr
 MathMLElement[JC] def setAttributeNodeNS(newAttr: Attr): Attr
 MathMLElement[JC] def setPointerCapture(pointerId: Double): Unit
 MathMLElement[JC] def shadowRoot: ShadowRoot
-MathMLElement[JC] var style: String
-MathMLElement[JC] var tabindex: Int
+MathMLElement[JC] var style: CSSStyleDeclaration
+MathMLElement[JC] var tabIndex: Int
 MathMLElement[JC] def tagName: String
 MathMLElement[JC] var textContent: String
-MathMLElement[JC] var xmlbase: String
 MediaDeviceInfo[JT] val deviceId: String
 MediaDeviceInfo[JT] val groupId: String
 MediaDeviceInfo[JT] val kind: MediaDeviceKind
