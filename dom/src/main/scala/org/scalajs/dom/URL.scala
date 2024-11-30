@@ -62,5 +62,5 @@ class URL(url: String, base: String = js.native) extends js.Object {
   /** Is a DOMString containing a '#' followed by the fragment identifier of the URL. */
   var hash: String = js.native
 
-  var searchParams: URLSearchParams = js.native
+  val searchParams: URLSearchParams = js.native
 }

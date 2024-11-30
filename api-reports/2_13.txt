@@ -27186,7 +27186,7 @@ URL[JC] var pathname: String
 URL[JC] var port: String
 URL[JC] var protocol: String
 URL[JC] var search: String
-URL[JC] var searchParams: URLSearchParams
+URL[JC] val searchParams: URLSearchParams
 URL[JC] var username: String
 URL[JO] def createObjectURL(blob: Blob): String
 URL[JO] def createObjectURL(src: MediaSource): String
