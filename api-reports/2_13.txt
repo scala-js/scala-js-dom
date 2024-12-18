@@ -27250,6 +27250,912 @@ WaveShaperNode[JT] val numberOfOutputs: Int
 WaveShaperNode[JT] var oversample: String
 WaveShaperNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 WaveShaperNode[JT] def removeEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
+WebGL2RenderingContext[JC] val ACTIVE_UNIFORM_BLOCKS: Int
+WebGL2RenderingContext[JC] val ALREADY_SIGNALED: Int
+WebGL2RenderingContext[JC] val ANY_SAMPLES_PASSED: Int
+WebGL2RenderingContext[JC] val ANY_SAMPLES_PASSED_CONSERVATIVE: Int
+WebGL2RenderingContext[JC] val COLOR: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT1: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT10: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT11: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT12: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT13: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT14: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT15: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT2: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT3: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT4: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT5: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT6: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT7: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT8: Int
+WebGL2RenderingContext[JC] val COLOR_ATTACHMENT9: Int
+WebGL2RenderingContext[JC] val COMPARE_REF_TO_TEXTURE: Int
+WebGL2RenderingContext[JC] val CONDITION_SATISFIED: Int
+WebGL2RenderingContext[JC] val COPY_READ_BUFFER: Int
+WebGL2RenderingContext[JC] val COPY_READ_BUFFER_BINDING: Int
+WebGL2RenderingContext[JC] val COPY_WRITE_BUFFER: Int
+WebGL2RenderingContext[JC] val COPY_WRITE_BUFFER_BINDING: Int
+WebGL2RenderingContext[JC] val CURRENT_QUERY: Int
+WebGL2RenderingContext[JC] val DEPTH: Int
+WebGL2RenderingContext[JC] val DEPTH24_STENCIL8: Int
+WebGL2RenderingContext[JC] val DEPTH32F_STENCIL8: Int
+WebGL2RenderingContext[JC] val DEPTH_COMPONENT24: Int
+WebGL2RenderingContext[JC] val DEPTH_COMPONENT32F: Int
+WebGL2RenderingContext[JC] val DEPTH_STENCIL: Int
+WebGL2RenderingContext[JC] val DEPTH_STENCIL_ATTACHMENT: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER0: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER1: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER10: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER11: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER12: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER13: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER14: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER15: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER2: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER3: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER4: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER5: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER6: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER7: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER8: Int
+WebGL2RenderingContext[JC] val DRAW_BUFFER9: Int
+WebGL2RenderingContext[JC] val DRAW_FRAMEBUFFER: Int
+WebGL2RenderingContext[JC] val DRAW_FRAMEBUFFER_BINDING: Int
+WebGL2RenderingContext[JC] val DYNAMIC_COPY: Int
+WebGL2RenderingContext[JC] val DYNAMIC_READ: Int
+WebGL2RenderingContext[JC] val FLOAT_32_UNSIGNED_INT_24_8_REV: Int
+WebGL2RenderingContext[JC] val FLOAT_MAT2x3: Int
+WebGL2RenderingContext[JC] val FLOAT_MAT2x4: Int
+WebGL2RenderingContext[JC] val FLOAT_MAT3x2: Int
+WebGL2RenderingContext[JC] val FLOAT_MAT3x4: Int
+WebGL2RenderingContext[JC] val FLOAT_MAT4x2: Int
+WebGL2RenderingContext[JC] val FLOAT_MAT4x3: Int
+WebGL2RenderingContext[JC] val FRAGMENT_SHADER_DERIVATIVE_HINT: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_ATTACHMENT_BLUE_SIZE: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_ATTACHMENT_GREEN_SIZE: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_ATTACHMENT_RED_SIZE: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_DEFAULT: Int
+WebGL2RenderingContext[JC] val FRAMEBUFFER_INCOMPLETE_MULTISAMPLE: Int
+WebGL2RenderingContext[JC] val HALF_FLOAT: Int
+WebGL2RenderingContext[JC] val INTERLEAVED_ATTRIBS: Int
+WebGL2RenderingContext[JC] val INT_2_10_10_10_REV: Int
+WebGL2RenderingContext[JC] val INT_SAMPLER_2D: Int
+WebGL2RenderingContext[JC] val INT_SAMPLER_2D_ARRAY: Int
+WebGL2RenderingContext[JC] val INT_SAMPLER_3D: Int
+WebGL2RenderingContext[JC] val INT_SAMPLER_CUBE: Int
+WebGL2RenderingContext[JC] val INVALID_INDEX: Int
+WebGL2RenderingContext[JC] val MAX: Int
+WebGL2RenderingContext[JC] val MAX_3D_TEXTURE_SIZE: Int
+WebGL2RenderingContext[JC] val MAX_ARRAY_TEXTURE_LAYERS: Int
+WebGL2RenderingContext[JC] val MAX_CLIENT_WAIT_TIMEOUT_WEBGL: Int
+WebGL2RenderingContext[JC] val MAX_COLOR_ATTACHMENTS: Int
+WebGL2RenderingContext[JC] val MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS: Int
+WebGL2RenderingContext[JC] val MAX_COMBINED_UNIFORM_BLOCKS: Int
+WebGL2RenderingContext[JC] val MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS: Int
+WebGL2RenderingContext[JC] val MAX_DRAW_BUFFERS: Int
+WebGL2RenderingContext[JC] val MAX_ELEMENTS_INDICES: Int
+WebGL2RenderingContext[JC] val MAX_ELEMENTS_VERTICES: Int
+WebGL2RenderingContext[JC] val MAX_ELEMENT_INDEX: Int
+WebGL2RenderingContext[JC] val MAX_FRAGMENT_INPUT_COMPONENTS: Int
+WebGL2RenderingContext[JC] val MAX_FRAGMENT_UNIFORM_BLOCKS: Int
+WebGL2RenderingContext[JC] val MAX_FRAGMENT_UNIFORM_COMPONENTS: Int
+WebGL2RenderingContext[JC] val MAX_PROGRAM_TEXEL_OFFSET: Int
+WebGL2RenderingContext[JC] val MAX_SAMPLES: Int
+WebGL2RenderingContext[JC] val MAX_SERVER_WAIT_TIMEOUT: Int
+WebGL2RenderingContext[JC] val MAX_TEXTURE_LOD_BIAS: Int
+WebGL2RenderingContext[JC] val MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS: Int
+WebGL2RenderingContext[JC] val MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS: Int
+WebGL2RenderingContext[JC] val MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS: Int
+WebGL2RenderingContext[JC] val MAX_UNIFORM_BLOCK_SIZE: Int
+WebGL2RenderingContext[JC] val MAX_UNIFORM_BUFFER_BINDINGS: Int
+WebGL2RenderingContext[JC] val MAX_VARYING_COMPONENTS: Int
+WebGL2RenderingContext[JC] val MAX_VERTEX_OUTPUT_COMPONENTS: Int
+WebGL2RenderingContext[JC] val MAX_VERTEX_UNIFORM_BLOCKS: Int
+WebGL2RenderingContext[JC] val MAX_VERTEX_UNIFORM_COMPONENTS: Int
+WebGL2RenderingContext[JC] val MIN: Int
+WebGL2RenderingContext[JC] val MIN_PROGRAM_TEXEL_OFFSET: Int
+WebGL2RenderingContext[JC] val OBJECT_TYPE: Int
+WebGL2RenderingContext[JC] val PACK_ROW_LENGTH: Int
+WebGL2RenderingContext[JC] val PACK_SKIP_PIXELS: Int
+WebGL2RenderingContext[JC] val PACK_SKIP_ROWS: Int
+WebGL2RenderingContext[JC] val PIXEL_PACK_BUFFER: Int
+WebGL2RenderingContext[JC] val PIXEL_PACK_BUFFER_BINDING: Int
+WebGL2RenderingContext[JC] val PIXEL_UNPACK_BUFFER: Int
+WebGL2RenderingContext[JC] val PIXEL_UNPACK_BUFFER_BINDING: Int
+WebGL2RenderingContext[JC] val QUERY_RESULT: Int
+WebGL2RenderingContext[JC] val QUERY_RESULT_AVAILABLE: Int
+WebGL2RenderingContext[JC] val R11F_G11F_B10F: Int
+WebGL2RenderingContext[JC] val R16F: Int
+WebGL2RenderingContext[JC] val R16I: Int
+WebGL2RenderingContext[JC] val R16UI: Int
+WebGL2RenderingContext[JC] val R32F: Int
+WebGL2RenderingContext[JC] val R32I: Int
+WebGL2RenderingContext[JC] val R32UI: Int
+WebGL2RenderingContext[JC] val R8: Int
+WebGL2RenderingContext[JC] val R8I: Int
+WebGL2RenderingContext[JC] val R8UI: Int
+WebGL2RenderingContext[JC] val R8_SNORM: Int
+WebGL2RenderingContext[JC] val RASTERIZER_DISCARD: Int
+WebGL2RenderingContext[JC] val READ_BUFFER: Int
+WebGL2RenderingContext[JC] val READ_FRAMEBUFFER: Int
+WebGL2RenderingContext[JC] val READ_FRAMEBUFFER_BINDING: Int
+WebGL2RenderingContext[JC] val RED: Int
+WebGL2RenderingContext[JC] val RED_INTEGER: Int
+WebGL2RenderingContext[JC] val RENDERBUFFER_SAMPLES: Int
+WebGL2RenderingContext[JC] val RG: Int
+WebGL2RenderingContext[JC] val RG16F: Int
+WebGL2RenderingContext[JC] val RG16I: Int
+WebGL2RenderingContext[JC] val RG16UI: Int
+WebGL2RenderingContext[JC] val RG32F: Int
+WebGL2RenderingContext[JC] val RG32I: Int
+WebGL2RenderingContext[JC] val RG32UI: Int
+WebGL2RenderingContext[JC] val RG8: Int
+WebGL2RenderingContext[JC] val RG8I: Int
+WebGL2RenderingContext[JC] val RG8UI: Int
+WebGL2RenderingContext[JC] val RG8_SNORM: Int
+WebGL2RenderingContext[JC] val RGB10_A2: Int
+WebGL2RenderingContext[JC] val RGB10_A2UI: Int
+WebGL2RenderingContext[JC] val RGB16F: Int
+WebGL2RenderingContext[JC] val RGB16I: Int
+WebGL2RenderingContext[JC] val RGB16UI: Int
+WebGL2RenderingContext[JC] val RGB32F: Int
+WebGL2RenderingContext[JC] val RGB32I: Int
+WebGL2RenderingContext[JC] val RGB32UI: Int
+WebGL2RenderingContext[JC] val RGB8: Int
+WebGL2RenderingContext[JC] val RGB8I: Int
+WebGL2RenderingContext[JC] val RGB8UI: Int
+WebGL2RenderingContext[JC] val RGB8_SNORM: Int
+WebGL2RenderingContext[JC] val RGB9_E5: Int
+WebGL2RenderingContext[JC] val RGBA16F: Int
+WebGL2RenderingContext[JC] val RGBA16I: Int
+WebGL2RenderingContext[JC] val RGBA16UI: Int
+WebGL2RenderingContext[JC] val RGBA32F: Int
+WebGL2RenderingContext[JC] val RGBA32I: Int
+WebGL2RenderingContext[JC] val RGBA32UI: Int
+WebGL2RenderingContext[JC] val RGBA8: Int
+WebGL2RenderingContext[JC] val RGBA8I: Int
+WebGL2RenderingContext[JC] val RGBA8UI: Int
+WebGL2RenderingContext[JC] val RGBA8_SNORM: Int
+WebGL2RenderingContext[JC] val RGBA_INTEGER: Int
+WebGL2RenderingContext[JC] val RGB_INTEGER: Int
+WebGL2RenderingContext[JC] val RG_INTEGER: Int
+WebGL2RenderingContext[JC] val SAMPLER_2D_ARRAY: Int
+WebGL2RenderingContext[JC] val SAMPLER_2D_ARRAY_SHADOW: Int
+WebGL2RenderingContext[JC] val SAMPLER_2D_SHADOW: Int
+WebGL2RenderingContext[JC] val SAMPLER_3D: Int
+WebGL2RenderingContext[JC] val SAMPLER_BINDING: Int
+WebGL2RenderingContext[JC] val SAMPLER_CUBE_SHADOW: Int
+WebGL2RenderingContext[JC] val SEPARATE_ATTRIBS: Int
+WebGL2RenderingContext[JC] val SIGNALED: Int
+WebGL2RenderingContext[JC] val SIGNED_NORMALIZED: Int
+WebGL2RenderingContext[JC] val SRGB: Int
+WebGL2RenderingContext[JC] val SRGB8: Int
+WebGL2RenderingContext[JC] val SRGB8_ALPHA8: Int
+WebGL2RenderingContext[JC] val STATIC_COPY: Int
+WebGL2RenderingContext[JC] val STATIC_READ: Int
+WebGL2RenderingContext[JC] val STENCIL: Int
+WebGL2RenderingContext[JC] val STREAM_COPY: Int
+WebGL2RenderingContext[JC] val STREAM_READ: Int
+WebGL2RenderingContext[JC] val SYNC_CONDITION: Int
+WebGL2RenderingContext[JC] val SYNC_FENCE: Int
+WebGL2RenderingContext[JC] val SYNC_FLAGS: Int
+WebGL2RenderingContext[JC] val SYNC_FLUSH_COMMANDS_BIT: Int
+WebGL2RenderingContext[JC] val SYNC_GPU_COMMANDS_COMPLETE: Int
+WebGL2RenderingContext[JC] val SYNC_STATUS: Int
+WebGL2RenderingContext[JC] val TEXTURE_2D_ARRAY: Int
+WebGL2RenderingContext[JC] val TEXTURE_3D: Int
+WebGL2RenderingContext[JC] val TEXTURE_BASE_LEVEL: Int
+WebGL2RenderingContext[JC] val TEXTURE_BINDING_2D_ARRAY: Int
+WebGL2RenderingContext[JC] val TEXTURE_BINDING_3D: Int
+WebGL2RenderingContext[JC] val TEXTURE_COMPARE_FUNC: Int
+WebGL2RenderingContext[JC] val TEXTURE_COMPARE_MODE: Int
+WebGL2RenderingContext[JC] val TEXTURE_IMMUTABLE_FORMAT: Int
+WebGL2RenderingContext[JC] val TEXTURE_IMMUTABLE_LEVELS: Int
+WebGL2RenderingContext[JC] val TEXTURE_MAX_LEVEL: Int
+WebGL2RenderingContext[JC] val TEXTURE_MAX_LOD: Int
+WebGL2RenderingContext[JC] val TEXTURE_MIN_LOD: Int
+WebGL2RenderingContext[JC] val TEXTURE_WRAP_R: Int
+WebGL2RenderingContext[JC] val TIMEOUT_EXPIRED: Int
+WebGL2RenderingContext[JC] val TIMEOUT_IGNORED: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_ACTIVE: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_BINDING: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_BUFFER: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_BUFFER_BINDING: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_BUFFER_MODE: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_BUFFER_SIZE: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_BUFFER_START: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_PAUSED: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN: Int
+WebGL2RenderingContext[JC] val TRANSFORM_FEEDBACK_VARYINGS: Int
+WebGL2RenderingContext[JC] val UNIFORM_ARRAY_STRIDE: Int
+WebGL2RenderingContext[JC] val UNIFORM_BLOCK_ACTIVE_UNIFORMS: Int
+WebGL2RenderingContext[JC] val UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES: Int
+WebGL2RenderingContext[JC] val UNIFORM_BLOCK_BINDING: Int
+WebGL2RenderingContext[JC] val UNIFORM_BLOCK_DATA_SIZE: Int
+WebGL2RenderingContext[JC] val UNIFORM_BLOCK_INDEX: Int
+WebGL2RenderingContext[JC] val UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER: Int
+WebGL2RenderingContext[JC] val UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER: Int
+WebGL2RenderingContext[JC] val UNIFORM_BUFFER: Int
+WebGL2RenderingContext[JC] val UNIFORM_BUFFER_BINDING: Int
+WebGL2RenderingContext[JC] val UNIFORM_BUFFER_OFFSET_ALIGNMENT: Int
+WebGL2RenderingContext[JC] val UNIFORM_BUFFER_SIZE: Int
+WebGL2RenderingContext[JC] val UNIFORM_BUFFER_START: Int
+WebGL2RenderingContext[JC] val UNIFORM_IS_ROW_MAJOR: Int
+WebGL2RenderingContext[JC] val UNIFORM_MATRIX_STRIDE: Int
+WebGL2RenderingContext[JC] val UNIFORM_OFFSET: Int
+WebGL2RenderingContext[JC] val UNIFORM_SIZE: Int
+WebGL2RenderingContext[JC] val UNIFORM_TYPE: Int
+WebGL2RenderingContext[JC] val UNPACK_IMAGE_HEIGHT: Int
+WebGL2RenderingContext[JC] val UNPACK_ROW_LENGTH: Int
+WebGL2RenderingContext[JC] val UNPACK_SKIP_IMAGES: Int
+WebGL2RenderingContext[JC] val UNPACK_SKIP_PIXELS: Int
+WebGL2RenderingContext[JC] val UNPACK_SKIP_ROWS: Int
+WebGL2RenderingContext[JC] val UNSIGNALED: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_10F_11F_11F_REV: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_24_8: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_2_10_10_10_REV: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_5_9_9_9_REV: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_SAMPLER_2D: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_SAMPLER_2D_ARRAY: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_SAMPLER_3D: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_SAMPLER_CUBE: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_VEC2: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_VEC3: Int
+WebGL2RenderingContext[JC] val UNSIGNED_INT_VEC4: Int
+WebGL2RenderingContext[JC] val UNSIGNED_NORMALIZED: Int
+WebGL2RenderingContext[JC] val VERTEX_ARRAY_BINDING: Int
+WebGL2RenderingContext[JC] val VERTEX_ATTRIB_ARRAY_DIVISOR: Int
+WebGL2RenderingContext[JC] val VERTEX_ATTRIB_ARRAY_INTEGER: Int
+WebGL2RenderingContext[JC] val WAIT_FAILED: Int
+WebGL2RenderingContext[JC] def activeTexture(texture: Int): Unit
+WebGL2RenderingContext[JC] def attachShader(program: WebGLProgram, shader: WebGLShader): Unit
+WebGL2RenderingContext[JC] def beginQuery(target: Int, query: WebGLQuery): Unit
+WebGL2RenderingContext[JC] def beginTransformFeedback(primitiveMode: Int): Unit
+WebGL2RenderingContext[JC] def bindAttribLocation(program: WebGLProgram, index: Int, name: String): Unit
+WebGL2RenderingContext[JC] def bindBuffer(target: Int, buffer: WebGLBuffer): Unit
+WebGL2RenderingContext[JC] def bindBufferBase(target: Int, index: Int, buffer: WebGLBuffer): Unit
+WebGL2RenderingContext[JC] def bindBufferRange(target: Int, index: Int, buffer: WebGLBuffer, offset: Int, size: Int): Unit
+WebGL2RenderingContext[JC] def bindFramebuffer(target: Int, framebuffer: WebGLFramebuffer): Unit
+WebGL2RenderingContext[JC] def bindRenderbuffer(target: Int, renderbuffer: WebGLRenderbuffer): Unit
+WebGL2RenderingContext[JC] def bindSampler(unit: Int, sampler: WebGLSampler): Unit
+WebGL2RenderingContext[JC] def bindTexture(target: Int, texture: WebGLTexture): Unit
+WebGL2RenderingContext[JC] def bindTransformFeedback(target: Int, transformFeedback: WebGLTransformFeedback): Unit
+WebGL2RenderingContext[JC] def bindVertexArray(vertexArray: WebGLVertexArrayObject): Unit
+WebGL2RenderingContext[JC] def blendColor(red: Double, green: Double, blue: Double, alpha: Double): Unit
+WebGL2RenderingContext[JC] def blendEquation(mode: Int): Unit
+WebGL2RenderingContext[JC] def blendEquationSeparate(modeRGB: Int, modeAlpha: Int): Unit
+WebGL2RenderingContext[JC] def blendFunc(sfactor: Int, dfactor: Int): Unit
+WebGL2RenderingContext[JC] def blendFuncSeparate(srcRGB: Int, dstRGB: Int, srcAlpha: Int, dstAlpha: Int): Unit
+WebGL2RenderingContext[JC] def blitFramebuffer(srcX0: Int, srcY0: Int, srcX1: Int, srcY1: Int, dstX0: Int, dstY0: Int, dstX1: Int, dstY1: Int, mask: Int, filter: Int): Unit
+WebGL2RenderingContext[JC] def bufferData(target: Int, data: ArrayBuffer, usage: Int): Unit
+WebGL2RenderingContext[JC] def bufferData(target: Int, data: ArrayBufferView, usage: Int): Unit
+WebGL2RenderingContext[JC] def bufferData(target: Int, size: Int, usage: Int): Unit
+WebGL2RenderingContext[JC] def bufferData(target: Int, srcData: ArrayBuffer, usage: Int, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def bufferData(target: Int, srcData: ArrayBuffer, usage: Int, srcOffset: Double, length: Int): Unit
+WebGL2RenderingContext[JC] def bufferData(target: Int, srcData: DataView, usage: Int, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def bufferData(target: Int, srcData: DataView, usage: Int, srcOffset: Double, length: Int): Unit
+WebGL2RenderingContext[JC] def bufferData(target: Int, srcData: TypedArray[js.Any, js.Any], usage: Int, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def bufferData(target: Int, srcData: TypedArray[js.Any, js.Any], usage: Int, srcOffset: Double, length: Int): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, dstByteOffset: Double, srcData: ArrayBuffer): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, dstByteOffset: Double, srcData: ArrayBuffer, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, dstByteOffset: Double, srcData: ArrayBuffer, srcOffset: Double, length: Int): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, dstByteOffset: Double, srcData: DataView): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, dstByteOffset: Double, srcData: DataView, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, dstByteOffset: Double, srcData: DataView, srcOffset: Double, length: Int): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, dstByteOffset: Double, srcData: TypedArray[js.Any, js.Any]): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, dstByteOffset: Double, srcData: TypedArray[js.Any, js.Any], srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, dstByteOffset: Double, srcData: TypedArray[js.Any, js.Any], srcOffset: Double, length: Int): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, offset: Int, data: ArrayBuffer): Unit
+WebGL2RenderingContext[JC] def bufferSubData(target: Int, offset: Int, data: ArrayBufferView): Unit
+WebGL2RenderingContext[JC] val canvas: HTMLCanvasElement
+WebGL2RenderingContext[JC] def checkFramebufferStatus(target: Int): Int
+WebGL2RenderingContext[JC] def clear(mask: Int): Unit
+WebGL2RenderingContext[JC] def clearBufferfi(buffer: Int, drawBuffer: Int, depth: Double, stencil: Int): Unit
+WebGL2RenderingContext[JC] def clearBufferfv(buffer: Int, drawBuffer: Int, values: Float32Array): Unit
+WebGL2RenderingContext[JC] def clearBufferfv(buffer: Int, drawBuffer: Int, values: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferfv(buffer: Int, drawBuffer: Int, values: Int32Array): Unit
+WebGL2RenderingContext[JC] def clearBufferfv(buffer: Int, drawBuffer: Int, values: Int32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferfv(buffer: Int, drawBuffer: Int, values: Uint32Array): Unit
+WebGL2RenderingContext[JC] def clearBufferfv(buffer: Int, drawBuffer: Int, values: Uint32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferfv(buffer: Int, drawBuffer: Int, values: js.Array[Int]): Unit
+WebGL2RenderingContext[JC] def clearBufferfv(buffer: Int, drawBuffer: Int, values: js.Array[Int], srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferiv(buffer: Int, drawBuffer: Int, values: Float32Array): Unit
+WebGL2RenderingContext[JC] def clearBufferiv(buffer: Int, drawBuffer: Int, values: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferiv(buffer: Int, drawBuffer: Int, values: Int32Array): Unit
+WebGL2RenderingContext[JC] def clearBufferiv(buffer: Int, drawBuffer: Int, values: Int32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferiv(buffer: Int, drawBuffer: Int, values: Uint32Array): Unit
+WebGL2RenderingContext[JC] def clearBufferiv(buffer: Int, drawBuffer: Int, values: Uint32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferiv(buffer: Int, drawBuffer: Int, values: js.Array[Int]): Unit
+WebGL2RenderingContext[JC] def clearBufferiv(buffer: Int, drawBuffer: Int, values: js.Array[Int], srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferuiv(buffer: Int, drawBuffer: Int, values: Float32Array): Unit
+WebGL2RenderingContext[JC] def clearBufferuiv(buffer: Int, drawBuffer: Int, values: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferuiv(buffer: Int, drawBuffer: Int, values: Int32Array): Unit
+WebGL2RenderingContext[JC] def clearBufferuiv(buffer: Int, drawBuffer: Int, values: Int32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferuiv(buffer: Int, drawBuffer: Int, values: Uint32Array): Unit
+WebGL2RenderingContext[JC] def clearBufferuiv(buffer: Int, drawBuffer: Int, values: Uint32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearBufferuiv(buffer: Int, drawBuffer: Int, values: js.Array[Int]): Unit
+WebGL2RenderingContext[JC] def clearBufferuiv(buffer: Int, drawBuffer: Int, values: js.Array[Int], srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def clearColor(red: Double, green: Double, blue: Double, alpha: Double): Unit
+WebGL2RenderingContext[JC] def clearDepth(depth: Double): Unit
+WebGL2RenderingContext[JC] def clearStencil(s: Int): Unit
+WebGL2RenderingContext[JC] def clientWaitSync(sync: WebGLSync, flags: Int, timeout: Long): Int
+WebGL2RenderingContext[JC] def colorMask(red: Boolean, green: Boolean, blue: Boolean, alpha: Boolean): Unit
+WebGL2RenderingContext[JC] def compileShader(shader: WebGLShader): Unit
+WebGL2RenderingContext[JC] def compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, data: ArrayBufferView): Unit
+WebGL2RenderingContext[JC] def compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, imageSize: Int, offset: Int): Unit
+WebGL2RenderingContext[JC] def compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: DataView): Unit
+WebGL2RenderingContext[JC] def compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: DataView, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: DataView, srcOffset: Double, srcLengthOverride: Int): Unit
+WebGL2RenderingContext[JC] def compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: TypedArray[js.Any, js.Any]): Unit
+WebGL2RenderingContext[JC] def compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: TypedArray[js.Any, js.Any], srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def compressedTexImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, srcData: TypedArray[js.Any, js.Any], srcOffset: Double, srcLengthOverride: Int): Unit
+WebGL2RenderingContext[JC] def compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, imageSize: Int, offset: Int): Unit
+WebGL2RenderingContext[JC] def compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: DataView): Unit
+WebGL2RenderingContext[JC] def compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: DataView, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: DataView, srcOffset: Double, srcLengthOverride: Int): Unit
+WebGL2RenderingContext[JC] def compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: TypedArray[js.Any, js.Any]): Unit
+WebGL2RenderingContext[JC] def compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: TypedArray[js.Any, js.Any], srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def compressedTexImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, srcData: TypedArray[js.Any, js.Any], srcOffset: Double, srcLengthOverride: Int): Unit
+WebGL2RenderingContext[JC] def compressedTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, data: ArrayBufferView): Unit
+WebGL2RenderingContext[JC] def compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, imageSize: Int, offset: Int): Unit
+WebGL2RenderingContext[JC] def compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, srcData: DataView): Unit
+WebGL2RenderingContext[JC] def compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, srcData: DataView, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, srcData: DataView, srcOffset: Double, srcLengthOverride: Int): Unit
+WebGL2RenderingContext[JC] def compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, srcData: TypedArray[js.Any, js.Any]): Unit
+WebGL2RenderingContext[JC] def compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, srcData: TypedArray[js.Any, js.Any], srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def compressedTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, srcData: TypedArray[js.Any, js.Any], srcOffset: Double, srcLengthOverride: Int): Unit
+WebGL2RenderingContext[JC] def copyBufferSubData(readTarget: Int, writeTarget: Int, readOffset: Double, writeOffset: Double, size: Double): Unit
+WebGL2RenderingContext[JC] def copyTexImage2D(target: Int, level: Int, internalformat: Int, x: Int, y: Int, width: Int, height: Int, border: Int): Unit
+WebGL2RenderingContext[JC] def copyTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, x: Int, y: Int, width: Int, height: Int): Unit
+WebGL2RenderingContext[JC] def copyTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, x: Int, y: Int, width: Int, height: Int): Unit
+WebGL2RenderingContext[JC] def createBuffer(): WebGLBuffer
+WebGL2RenderingContext[JC] def createFramebuffer(): WebGLFramebuffer
+WebGL2RenderingContext[JC] def createProgram(): WebGLProgram
+WebGL2RenderingContext[JC] def createQuery(): WebGLQuery
+WebGL2RenderingContext[JC] def createRenderbuffer(): WebGLRenderbuffer
+WebGL2RenderingContext[JC] def createSampler(): WebGLSampler
+WebGL2RenderingContext[JC] def createShader(`type`: Int): WebGLShader
+WebGL2RenderingContext[JC] def createTexture(): WebGLTexture
+WebGL2RenderingContext[JC] def createTransformFeedback(): WebGLTransformFeedback
+WebGL2RenderingContext[JC] def createVertexArray(): WebGLVertexArrayObject
+WebGL2RenderingContext[JC] def cullFace(mode: Int): Unit
+WebGL2RenderingContext[JC] def deleteBuffer(buffer: WebGLBuffer): Unit
+WebGL2RenderingContext[JC] def deleteFramebuffer(framebuffer: WebGLFramebuffer): Unit
+WebGL2RenderingContext[JC] def deleteProgram(program: WebGLProgram): Unit
+WebGL2RenderingContext[JC] def deleteQuery(query: WebGLQuery): Unit
+WebGL2RenderingContext[JC] def deleteRenderbuffer(renderbuffer: WebGLRenderbuffer): Unit
+WebGL2RenderingContext[JC] def deleteSampler(sampler: WebGLSampler): Unit
+WebGL2RenderingContext[JC] def deleteShader(shader: WebGLShader): Unit
+WebGL2RenderingContext[JC] def deleteSync(sync: WebGLSync): Unit
+WebGL2RenderingContext[JC] def deleteTexture(texture: WebGLTexture): Unit
+WebGL2RenderingContext[JC] def deleteTransformFeedback(transformFeedback: WebGLTransformFeedback): Unit
+WebGL2RenderingContext[JC] def deleteVertexArray(vertexArray: WebGLVertexArrayObject): Unit
+WebGL2RenderingContext[JC] def depthFunc(func: Int): Unit
+WebGL2RenderingContext[JC] def depthMask(flag: Boolean): Unit
+WebGL2RenderingContext[JC] def depthRange(zNear: Double, zFar: Double): Unit
+WebGL2RenderingContext[JC] def detachShader(program: WebGLProgram, shader: WebGLShader): Unit
+WebGL2RenderingContext[JC] def disable(cap: Int): Unit
+WebGL2RenderingContext[JC] def disableVertexAttribArray(index: Int): Unit
+WebGL2RenderingContext[JC] def drawArrays(mode: Int, first: Int, count: Int): Unit
+WebGL2RenderingContext[JC] def drawArraysInstanced(mode: Int, first: Int, count: Int, instanceCount: Int): Unit
+WebGL2RenderingContext[JC] def drawBuffers(buffers: js.Array[Int]): Unit
+WebGL2RenderingContext[JC] def drawElements(mode: Int, count: Int, `type`: Int, offset: Int): Unit
+WebGL2RenderingContext[JC] def drawElementsInstanced(mode: Int, count: Int, typ: Int, offset: Int, instanceCount: Int): Unit
+WebGL2RenderingContext[JC] def drawRangeElements(mode: Int, start: Int, end: Int, count: Int, typ: Int, offset: Int): Unit
+WebGL2RenderingContext[JC] val drawingBufferHeight: Int
+WebGL2RenderingContext[JC] val drawingBufferWidth: Int
+WebGL2RenderingContext[JC] def enable(cap: Int): Unit
+WebGL2RenderingContext[JC] def enableVertexAttribArray(index: Int): Unit
+WebGL2RenderingContext[JC] def endQuery(target: Int): Unit
+WebGL2RenderingContext[JC] def endTransformFeedback(): Unit
+WebGL2RenderingContext[JC] def fenceSync(condition: Int, flags: Int): WebGLSync
+WebGL2RenderingContext[JC] def finish(): Unit
+WebGL2RenderingContext[JC] def flush(): Unit
+WebGL2RenderingContext[JC] def framebufferRenderbuffer(target: Int, attachment: Int, renderbuffertarget: Int, renderbuffer: WebGLRenderbuffer): Unit
+WebGL2RenderingContext[JC] def framebufferTexture2D(target: Int, attachment: Int, textarget: Int, texture: WebGLTexture, level: Int): Unit
+WebGL2RenderingContext[JC] def framebufferTextureLayer(target: Int, attachment: Int, texture: WebGLTexture, level: Int, layer: Int): Unit
+WebGL2RenderingContext[JC] def frontFace(mode: Int): Unit
+WebGL2RenderingContext[JC] def generateMipmap(target: Int): Unit
+WebGL2RenderingContext[JC] def getActiveAttrib(program: WebGLProgram, index: Int): WebGLActiveInfo
+WebGL2RenderingContext[JC] def getActiveUniform(program: WebGLProgram, index: Int): WebGLActiveInfo
+WebGL2RenderingContext[JC] def getActiveUniformBlockName(program: WebGLProgram, uniformBlockIndex: Double): String
+WebGL2RenderingContext[JC] def getActiveUniformBlockParameter(program: WebGLProgram, uniformBlockIndex: Double, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getActiveUniforms(program: WebGLProgram, uniformIndices: js.Array[Int], pname: Int): js.Array[js.Any]
+WebGL2RenderingContext[JC] def getAttachedShaders(program: WebGLProgram): js.Array[WebGLShader]
+WebGL2RenderingContext[JC] def getAttribLocation(program: WebGLProgram, name: String): Int
+WebGL2RenderingContext[JC] def getBufferParameter(target: Int, pname: Int): Int
+WebGL2RenderingContext[JC] def getBufferSubData(target: Int, srcByteOffset: Double, dstData: DataView): Unit
+WebGL2RenderingContext[JC] def getBufferSubData(target: Int, srcByteOffset: Double, dstData: DataView, dstOffset: Double): Unit
+WebGL2RenderingContext[JC] def getBufferSubData(target: Int, srcByteOffset: Double, dstData: DataView, dstOffset: Double, length: Int): Unit
+WebGL2RenderingContext[JC] def getBufferSubData(target: Int, srcByteOffset: Double, dstData: TypedArray[js.Any, js.Any]): Unit
+WebGL2RenderingContext[JC] def getBufferSubData(target: Int, srcByteOffset: Double, dstData: TypedArray[js.Any, js.Any], dstOffset: Double): Unit
+WebGL2RenderingContext[JC] def getBufferSubData(target: Int, srcByteOffset: Double, dstData: TypedArray[js.Any, js.Any], dstOffset: Double, length: Int): Unit
+WebGL2RenderingContext[JC] def getContextAttributes(): WebGLContextAttributes
+WebGL2RenderingContext[JC] def getError(): Int
+WebGL2RenderingContext[JC] def getExtension(name: String): js.Any
+WebGL2RenderingContext[JC] def getFragDataLocation(program: WebGLProgram, name: String): Int
+WebGL2RenderingContext[JC] def getFramebufferAttachmentParameter(target: Int, attachment: Int, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getIndexedParameter(target: Int, index: Int): js.Any
+WebGL2RenderingContext[JC] def getInternalformatParameter(target: Int, internalformat: Int, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getParameter(pname: Int): js.Any
+WebGL2RenderingContext[JC] def getProgramInfoLog(program: WebGLProgram): String
+WebGL2RenderingContext[JC] def getProgramParameter(program: WebGLProgram, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getQuery(target: Int, pname: Int): WebGLQuery
+WebGL2RenderingContext[JC] def getQueryParameter(query: WebGLQuery, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getRenderbufferParameter(target: Int, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getSamplerParameter(sampler: WebGLSampler, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getShaderInfoLog(shader: WebGLShader): String
+WebGL2RenderingContext[JC] def getShaderParameter(shader: WebGLShader, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getShaderPrecisionFormat(shadertype: Int, precisiontype: Int): WebGLShaderPrecisionFormat
+WebGL2RenderingContext[JC] def getShaderSource(shader: WebGLShader): String
+WebGL2RenderingContext[JC] def getSupportedExtensions(): js.Array[String]
+WebGL2RenderingContext[JC] def getSyncParameter(sync: WebGLSync, pname: Int): Int
+WebGL2RenderingContext[JC] def getTexParameter(target: Int, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getTransformFeedbackVarying(program: WebGLProgram, index: Int): WebGLActiveInfo
+WebGL2RenderingContext[JC] def getUniform(program: WebGLProgram, location: WebGLUniformLocation): js.Any
+WebGL2RenderingContext[JC] def getUniformBlockIndex(program: WebGLProgram, uniformBlockName: String): Int
+WebGL2RenderingContext[JC] def getUniformIndices(program: WebGLProgram, uniformNames: js.Array[String]): js.Array[Int]
+WebGL2RenderingContext[JC] def getUniformLocation(program: WebGLProgram, name: String): WebGLUniformLocation
+WebGL2RenderingContext[JC] def getVertexAttrib(index: Int, pname: Int): js.Any
+WebGL2RenderingContext[JC] def getVertexAttribOffset(index: Int, pname: Int): Int
+WebGL2RenderingContext[JC] def hint(target: Int, mode: Int): Unit
+WebGL2RenderingContext[JC] def invalidateFramebuffer(target: Int, attachments: js.Array[Int]): Unit
+WebGL2RenderingContext[JC] def invalidateSubFramebuffer(target: Int, attachments: js.Array[Int], x: Int, y: Int, width: Int, height: Int): Unit
+WebGL2RenderingContext[JC] def isBuffer(buffer: js.Any): Boolean
+WebGL2RenderingContext[JC] def isContextLost(): Boolean
+WebGL2RenderingContext[JC] def isEnabled(cap: Int): Boolean
+WebGL2RenderingContext[JC] def isFramebuffer(framebuffer: js.Any): Boolean
+WebGL2RenderingContext[JC] def isProgram(program: js.Any): Boolean
+WebGL2RenderingContext[JC] def isQuery(query: WebGLQuery): Boolean
+WebGL2RenderingContext[JC] def isRenderbuffer(renderbuffer: js.Any): Boolean
+WebGL2RenderingContext[JC] def isSampler(sampler: WebGLSampler): Boolean
+WebGL2RenderingContext[JC] def isShader(shader: js.Any): Boolean
+WebGL2RenderingContext[JC] def isSync(sync: WebGLSync): Boolean
+WebGL2RenderingContext[JC] def isTexture(texture: js.Any): Boolean
+WebGL2RenderingContext[JC] def isTransformFeedback(transformFeedback: WebGLTransformFeedback): Boolean
+WebGL2RenderingContext[JC] def isVertexArray(vertexArray: WebGLVertexArrayObject): Boolean
+WebGL2RenderingContext[JC] def lineWidth(width: Double): Unit
+WebGL2RenderingContext[JC] def linkProgram(program: WebGLProgram): Unit
+WebGL2RenderingContext[JC] def pauseTransformFeedback(): Unit
+WebGL2RenderingContext[JC] def pixelStorei(pname: Int, param: Int): Unit
+WebGL2RenderingContext[JC] def polygonOffset(factor: Double, units: Double): Unit
+WebGL2RenderingContext[JC] def readBuffer(source: Int): Unit
+WebGL2RenderingContext[JC] def readPixels(x: Int, y: Int, width: Int, height: Int, format: Int, `type`: Int, pixels: ArrayBufferView): Unit
+WebGL2RenderingContext[JC] def renderbufferStorage(target: Int, internalformat: Int, width: Int, height: Int): Unit
+WebGL2RenderingContext[JC] def renderbufferStorageMultisample(target: Int, samples: Int, internalFormat: Int, width: Int, height: Int): Unit
+WebGL2RenderingContext[JC] def resumeTransformFeedback(): Unit
+WebGL2RenderingContext[JC] def sampleCoverage(value: Int, invert: Boolean): Unit
+WebGL2RenderingContext[JC] def samplerParameterf(sampler: WebGLSampler, pname: Int, param: Float): Unit
+WebGL2RenderingContext[JC] def samplerParameteri(sampler: WebGLSampler, pname: Int, param: Int): Unit
+WebGL2RenderingContext[JC] def scissor(x: Int, y: Int, width: Int, height: Int): Unit
+WebGL2RenderingContext[JC] def shaderSource(shader: WebGLShader, source: String): Unit
+WebGL2RenderingContext[JC] def stencilFunc(func: Int, ref: Int, mask: Int): Unit
+WebGL2RenderingContext[JC] def stencilFuncSeparate(face: Int, func: Int, ref: Int, mask: Int): Unit
+WebGL2RenderingContext[JC] def stencilMask(mask: Int): Unit
+WebGL2RenderingContext[JC] def stencilMaskSeparate(face: Int, mask: Int): Unit
+WebGL2RenderingContext[JC] def stencilOp(fail: Int, zfail: Int, zpass: Int): Unit
+WebGL2RenderingContext[JC] def stencilOpSeparate(face: Int, fail: Int, zfail: Int, zpass: Int): Unit
+WebGL2RenderingContext[JC] def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: HTMLCanvasElement): Unit
+WebGL2RenderingContext[JC] def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: HTMLImageElement): Unit
+WebGL2RenderingContext[JC] def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: HTMLVideoElement): Unit
+WebGL2RenderingContext[JC] def texImage2D(target: Int, level: Int, internalformat: Int, format: Int, `type`: Int, pixels: ImageData): Unit
+WebGL2RenderingContext[JC] def texImage2D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, border: Int, format: Int, `type`: Int, pixels: ArrayBufferView): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, offset: Double): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, source: HTMLCanvasElement): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, source: HTMLImageElement): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, source: HTMLVideoElement): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, source: ImageBitmap): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, source: ImageData): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, srcData: DataView): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, srcData: DataView, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, srcData: TypedArray[js.Any, js.Any]): Unit
+WebGL2RenderingContext[JC] def texImage3D(target: Int, level: Int, internalformat: Int, width: Int, height: Int, depth: Int, border: Int, format: Int, typ: Int, srcData: TypedArray[js.Any, js.Any], srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def texParameterf(target: Int, pname: Int, param: Double): Unit
+WebGL2RenderingContext[JC] def texParameteri(target: Int, pname: Int, param: Int): Unit
+WebGL2RenderingContext[JC] def texStorage2D(target: Int, levels: Int, internalformat: Int, width: Int, height: Int): Unit
+WebGL2RenderingContext[JC] def texStorage3D(target: Int, levels: Int, internalformat: Int, width: Int, height: Int, depth: Int): Unit
+WebGL2RenderingContext[JC] def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: HTMLCanvasElement): Unit
+WebGL2RenderingContext[JC] def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: HTMLImageElement): Unit
+WebGL2RenderingContext[JC] def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: HTMLVideoElement): Unit
+WebGL2RenderingContext[JC] def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, format: Int, `type`: Int, pixels: ImageData): Unit
+WebGL2RenderingContext[JC] def texSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: Int, height: Int, format: Int, `type`: Int, pixels: ArrayBufferView): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, offset: Double): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: Float32Array): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: HTMLCanvasElement): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: HTMLImageElement): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: HTMLVideoElement): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: ImageBitmap): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: ImageData): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: Uint16Array): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, pixels: Uint8Array): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, srcData: DataView): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, srcData: DataView, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, srcData: TypedArray[js.Any, js.Any]): Unit
+WebGL2RenderingContext[JC] def texSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: Int, height: Int, depth: Int, format: Int, typ: Int, srcData: TypedArray[js.Any, js.Any], srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def transformFeedbackVaryings(program: WebGLProgram, varyings: js.Array[String], bufferMode: Int): Unit
+WebGL2RenderingContext[JC] def uniform1f(location: WebGLUniformLocation, x: Double): Unit
+WebGL2RenderingContext[JC] def uniform1fv(location: WebGLUniformLocation, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform1fv(location: WebGLUniformLocation, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform1fv(location: WebGLUniformLocation, v: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniform1fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def uniform1i(location: WebGLUniformLocation, x: Int): Unit
+WebGL2RenderingContext[JC] def uniform1iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform1iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform1iv(location: WebGLUniformLocation, v: Int32Array): Unit
+WebGL2RenderingContext[JC] def uniform1iv(location: WebGLUniformLocation, v: js.Array[Int]): Unit
+WebGL2RenderingContext[JC] def uniform1ui(location: WebGLUniformLocation, v0: Int): Unit
+WebGL2RenderingContext[JC] def uniform1uiv(location: WebGLUniformLocation, data: Uint32Array): Unit
+WebGL2RenderingContext[JC] def uniform1uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform1uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform2f(location: WebGLUniformLocation, x: Double, y: Double): Unit
+WebGL2RenderingContext[JC] def uniform2fv(location: WebGLUniformLocation, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform2fv(location: WebGLUniformLocation, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform2fv(location: WebGLUniformLocation, v: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniform2fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def uniform2i(location: WebGLUniformLocation, x: Int, y: Int): Unit
+WebGL2RenderingContext[JC] def uniform2iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform2iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform2iv(location: WebGLUniformLocation, v: Int32Array): Unit
+WebGL2RenderingContext[JC] def uniform2iv(location: WebGLUniformLocation, v: js.Array[Int]): Unit
+WebGL2RenderingContext[JC] def uniform2ui(location: WebGLUniformLocation, v0: Int, v1: Int): Unit
+WebGL2RenderingContext[JC] def uniform2uiv(location: WebGLUniformLocation, data: Uint32Array): Unit
+WebGL2RenderingContext[JC] def uniform2uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform2uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform3f(location: WebGLUniformLocation, x: Double, y: Double, z: Double): Unit
+WebGL2RenderingContext[JC] def uniform3fv(location: WebGLUniformLocation, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform3fv(location: WebGLUniformLocation, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform3fv(location: WebGLUniformLocation, v: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniform3fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def uniform3i(location: WebGLUniformLocation, x: Int, y: Int, z: Int): Unit
+WebGL2RenderingContext[JC] def uniform3iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform3iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform3iv(location: WebGLUniformLocation, v: Int32Array): Unit
+WebGL2RenderingContext[JC] def uniform3iv(location: WebGLUniformLocation, v: js.Array[Int]): Unit
+WebGL2RenderingContext[JC] def uniform3ui(location: WebGLUniformLocation, v0: Int, v1: Int, v2: Int): Unit
+WebGL2RenderingContext[JC] def uniform3uiv(location: WebGLUniformLocation, data: Uint32Array): Unit
+WebGL2RenderingContext[JC] def uniform3uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform3uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform4f(location: WebGLUniformLocation, x: Double, y: Double, z: Double, w: Double): Unit
+WebGL2RenderingContext[JC] def uniform4fv(location: WebGLUniformLocation, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform4fv(location: WebGLUniformLocation, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform4fv(location: WebGLUniformLocation, v: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniform4fv(location: WebGLUniformLocation, v: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def uniform4i(location: WebGLUniformLocation, x: Int, y: Int, z: Int, w: Int): Unit
+WebGL2RenderingContext[JC] def uniform4iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform4iv(location: WebGLUniformLocation, data: Int32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniform4iv(location: WebGLUniformLocation, v: Int32Array): Unit
+WebGL2RenderingContext[JC] def uniform4iv(location: WebGLUniformLocation, v: js.Array[Int]): Unit
+WebGL2RenderingContext[JC] def uniform4ui(location: WebGLUniformLocation, v0: Int, v1: Int, v2: Int, v3: Int): Unit
+WebGL2RenderingContext[JC] def uniform4uiv(location: WebGLUniformLocation, data: Uint32Array): Unit
+WebGL2RenderingContext[JC] def uniform4uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniform4uiv(location: WebGLUniformLocation, data: Uint32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniformBlockBinding(program: WebGLProgram, uniformBlockIndex: Double, uniformBlockBinding: Int): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2x3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2x3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2x3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2x4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2x4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniformMatrix2x4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3x2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3x2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3x2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3x4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3x4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniformMatrix3x4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, value: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4fv(location: WebGLUniformLocation, transpose: Boolean, value: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4x2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4x2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4x2fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4x3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4x3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double): Unit
+WebGL2RenderingContext[JC] def uniformMatrix4x3fv(location: WebGLUniformLocation, transpose: Boolean, data: Float32Array, srcOffset: Double, srcLength: Int): Unit
+WebGL2RenderingContext[JC] def useProgram(program: WebGLProgram): Unit
+WebGL2RenderingContext[JC] def validateProgram(program: WebGLProgram): Unit
+WebGL2RenderingContext[JC] def vertexAttrib1f(indx: Int, x: Double): Unit
+WebGL2RenderingContext[JC] def vertexAttrib1fv(indx: Int, values: Float32Array): Unit
+WebGL2RenderingContext[JC] def vertexAttrib1fv(indx: Int, values: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def vertexAttrib2f(indx: Int, x: Double, y: Double): Unit
+WebGL2RenderingContext[JC] def vertexAttrib2fv(indx: Int, values: Float32Array): Unit
+WebGL2RenderingContext[JC] def vertexAttrib2fv(indx: Int, values: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def vertexAttrib3f(indx: Int, x: Double, y: Double, z: Double): Unit
+WebGL2RenderingContext[JC] def vertexAttrib3fv(indx: Int, values: Float32Array): Unit
+WebGL2RenderingContext[JC] def vertexAttrib3fv(indx: Int, values: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def vertexAttrib4f(indx: Int, x: Double, y: Double, z: Double, w: Double): Unit
+WebGL2RenderingContext[JC] def vertexAttrib4fv(indx: Int, values: Float32Array): Unit
+WebGL2RenderingContext[JC] def vertexAttrib4fv(indx: Int, values: js.Array[Double]): Unit
+WebGL2RenderingContext[JC] def vertexAttribDivisor(index: Int, divisor: Int): Unit
+WebGL2RenderingContext[JC] def vertexAttribI4i(index: Int, v0: Int, v1: Int, v2: Int, v3: Int): Unit
+WebGL2RenderingContext[JC] def vertexAttribI4iv(index: Int, value: Int32Array): Unit
+WebGL2RenderingContext[JC] def vertexAttribI4ui(index: Int, v0: Int, v1: Int, v2: Int, v3: Int): Unit
+WebGL2RenderingContext[JC] def vertexAttribI4uiv(index: Int, value: Uint32Array): Unit
+WebGL2RenderingContext[JC] def vertexAttribIPointer(index: Int, size: Int, typ: Int, stride: Int, offset: Int): Unit
+WebGL2RenderingContext[JC] def vertexAttribPointer(indx: Int, size: Int, `type`: Int, normalized: Boolean, stride: Int, offset: Int): Unit
+WebGL2RenderingContext[JC] def viewport(x: Double, y: Double, width: Double, height: Double): Unit
+WebGL2RenderingContext[JC] def waitSync(sync: WebGLSync, flags: Int, timeout: Long): Unit
+WebGL2RenderingContext[SO] val ACTIVE_UNIFORM_BLOCKS: Int
+WebGL2RenderingContext[SO] val ALREADY_SIGNALED: Int
+WebGL2RenderingContext[SO] val ANY_SAMPLES_PASSED: Int
+WebGL2RenderingContext[SO] val ANY_SAMPLES_PASSED_CONSERVATIVE: Int
+WebGL2RenderingContext[SO] val COLOR: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT1: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT10: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT11: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT12: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT13: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT14: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT15: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT2: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT3: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT4: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT5: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT6: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT7: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT8: Int
+WebGL2RenderingContext[SO] val COLOR_ATTACHMENT9: Int
+WebGL2RenderingContext[SO] val COMPARE_REF_TO_TEXTURE: Int
+WebGL2RenderingContext[SO] val CONDITION_SATISFIED: Int
+WebGL2RenderingContext[SO] val COPY_READ_BUFFER: Int
+WebGL2RenderingContext[SO] val COPY_READ_BUFFER_BINDING: Int
+WebGL2RenderingContext[SO] val COPY_WRITE_BUFFER: Int
+WebGL2RenderingContext[SO] val COPY_WRITE_BUFFER_BINDING: Int
+WebGL2RenderingContext[SO] val CURRENT_QUERY: Int
+WebGL2RenderingContext[SO] val DEPTH: Int
+WebGL2RenderingContext[SO] val DEPTH24_STENCIL8: Int
+WebGL2RenderingContext[SO] val DEPTH32F_STENCIL8: Int
+WebGL2RenderingContext[SO] val DEPTH_COMPONENT24: Int
+WebGL2RenderingContext[SO] val DEPTH_COMPONENT32F: Int
+WebGL2RenderingContext[SO] val DEPTH_STENCIL: Int
+WebGL2RenderingContext[SO] val DEPTH_STENCIL_ATTACHMENT: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER0: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER1: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER10: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER11: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER12: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER13: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER14: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER15: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER2: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER3: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER4: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER5: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER6: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER7: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER8: Int
+WebGL2RenderingContext[SO] val DRAW_BUFFER9: Int
+WebGL2RenderingContext[SO] val DRAW_FRAMEBUFFER: Int
+WebGL2RenderingContext[SO] val DRAW_FRAMEBUFFER_BINDING: Int
+WebGL2RenderingContext[SO] val DYNAMIC_COPY: Int
+WebGL2RenderingContext[SO] val DYNAMIC_READ: Int
+WebGL2RenderingContext[SO] val FLOAT_32_UNSIGNED_INT_24_8_REV: Int
+WebGL2RenderingContext[SO] val FLOAT_MAT2x3: Int
+WebGL2RenderingContext[SO] val FLOAT_MAT2x4: Int
+WebGL2RenderingContext[SO] val FLOAT_MAT3x2: Int
+WebGL2RenderingContext[SO] val FLOAT_MAT3x4: Int
+WebGL2RenderingContext[SO] val FLOAT_MAT4x2: Int
+WebGL2RenderingContext[SO] val FLOAT_MAT4x3: Int
+WebGL2RenderingContext[SO] val FRAGMENT_SHADER_DERIVATIVE_HINT: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_ATTACHMENT_BLUE_SIZE: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_ATTACHMENT_GREEN_SIZE: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_ATTACHMENT_RED_SIZE: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_DEFAULT: Int
+WebGL2RenderingContext[SO] val FRAMEBUFFER_INCOMPLETE_MULTISAMPLE: Int
+WebGL2RenderingContext[SO] val HALF_FLOAT: Int
+WebGL2RenderingContext[SO] val INTERLEAVED_ATTRIBS: Int
+WebGL2RenderingContext[SO] val INT_2_10_10_10_REV: Int
+WebGL2RenderingContext[SO] val INT_SAMPLER_2D: Int
+WebGL2RenderingContext[SO] val INT_SAMPLER_2D_ARRAY: Int
+WebGL2RenderingContext[SO] val INT_SAMPLER_3D: Int
+WebGL2RenderingContext[SO] val INT_SAMPLER_CUBE: Int
+WebGL2RenderingContext[SO] val INVALID_INDEX: Int
+WebGL2RenderingContext[SO] val MAX: Int
+WebGL2RenderingContext[SO] val MAX_3D_TEXTURE_SIZE: Int
+WebGL2RenderingContext[SO] val MAX_ARRAY_TEXTURE_LAYERS: Int
+WebGL2RenderingContext[SO] val MAX_CLIENT_WAIT_TIMEOUT_WEBGL: Int
+WebGL2RenderingContext[SO] val MAX_COLOR_ATTACHMENTS: Int
+WebGL2RenderingContext[SO] val MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS: Int
+WebGL2RenderingContext[SO] val MAX_COMBINED_UNIFORM_BLOCKS: Int
+WebGL2RenderingContext[SO] val MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS: Int
+WebGL2RenderingContext[SO] val MAX_DRAW_BUFFERS: Int
+WebGL2RenderingContext[SO] val MAX_ELEMENTS_INDICES: Int
+WebGL2RenderingContext[SO] val MAX_ELEMENTS_VERTICES: Int
+WebGL2RenderingContext[SO] val MAX_ELEMENT_INDEX: Int
+WebGL2RenderingContext[SO] val MAX_FRAGMENT_INPUT_COMPONENTS: Int
+WebGL2RenderingContext[SO] val MAX_FRAGMENT_UNIFORM_BLOCKS: Int
+WebGL2RenderingContext[SO] val MAX_FRAGMENT_UNIFORM_COMPONENTS: Int
+WebGL2RenderingContext[SO] val MAX_PROGRAM_TEXEL_OFFSET: Int
+WebGL2RenderingContext[SO] val MAX_SAMPLES: Int
+WebGL2RenderingContext[SO] val MAX_SERVER_WAIT_TIMEOUT: Int
+WebGL2RenderingContext[SO] val MAX_TEXTURE_LOD_BIAS: Int
+WebGL2RenderingContext[SO] val MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS: Int
+WebGL2RenderingContext[SO] val MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS: Int
+WebGL2RenderingContext[SO] val MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS: Int
+WebGL2RenderingContext[SO] val MAX_UNIFORM_BLOCK_SIZE: Int
+WebGL2RenderingContext[SO] val MAX_UNIFORM_BUFFER_BINDINGS: Int
+WebGL2RenderingContext[SO] val MAX_VARYING_COMPONENTS: Int
+WebGL2RenderingContext[SO] val MAX_VERTEX_OUTPUT_COMPONENTS: Int
+WebGL2RenderingContext[SO] val MAX_VERTEX_UNIFORM_BLOCKS: Int
+WebGL2RenderingContext[SO] val MAX_VERTEX_UNIFORM_COMPONENTS: Int
+WebGL2RenderingContext[SO] val MIN: Int
+WebGL2RenderingContext[SO] val MIN_PROGRAM_TEXEL_OFFSET: Int
+WebGL2RenderingContext[SO] val OBJECT_TYPE: Int
+WebGL2RenderingContext[SO] val PACK_ROW_LENGTH: Int
+WebGL2RenderingContext[SO] val PACK_SKIP_PIXELS: Int
+WebGL2RenderingContext[SO] val PACK_SKIP_ROWS: Int
+WebGL2RenderingContext[SO] val PIXEL_PACK_BUFFER: Int
+WebGL2RenderingContext[SO] val PIXEL_PACK_BUFFER_BINDING: Int
+WebGL2RenderingContext[SO] val PIXEL_UNPACK_BUFFER: Int
+WebGL2RenderingContext[SO] val PIXEL_UNPACK_BUFFER_BINDING: Int
+WebGL2RenderingContext[SO] val QUERY_RESULT: Int
+WebGL2RenderingContext[SO] val QUERY_RESULT_AVAILABLE: Int
+WebGL2RenderingContext[SO] val R11F_G11F_B10F: Int
+WebGL2RenderingContext[SO] val R16F: Int
+WebGL2RenderingContext[SO] val R16I: Int
+WebGL2RenderingContext[SO] val R16UI: Int
+WebGL2RenderingContext[SO] val R32F: Int
+WebGL2RenderingContext[SO] val R32I: Int
+WebGL2RenderingContext[SO] val R32UI: Int
+WebGL2RenderingContext[SO] val R8: Int
+WebGL2RenderingContext[SO] val R8I: Int
+WebGL2RenderingContext[SO] val R8UI: Int
+WebGL2RenderingContext[SO] val R8_SNORM: Int
+WebGL2RenderingContext[SO] val RASTERIZER_DISCARD: Int
+WebGL2RenderingContext[SO] val READ_BUFFER: Int
+WebGL2RenderingContext[SO] val READ_FRAMEBUFFER: Int
+WebGL2RenderingContext[SO] val READ_FRAMEBUFFER_BINDING: Int
+WebGL2RenderingContext[SO] val RED: Int
+WebGL2RenderingContext[SO] val RED_INTEGER: Int
+WebGL2RenderingContext[SO] val RENDERBUFFER_SAMPLES: Int
+WebGL2RenderingContext[SO] val RG: Int
+WebGL2RenderingContext[SO] val RG16F: Int
+WebGL2RenderingContext[SO] val RG16I: Int
+WebGL2RenderingContext[SO] val RG16UI: Int
+WebGL2RenderingContext[SO] val RG32F: Int
+WebGL2RenderingContext[SO] val RG32I: Int
+WebGL2RenderingContext[SO] val RG32UI: Int
+WebGL2RenderingContext[SO] val RG8: Int
+WebGL2RenderingContext[SO] val RG8I: Int
+WebGL2RenderingContext[SO] val RG8UI: Int
+WebGL2RenderingContext[SO] val RG8_SNORM: Int
+WebGL2RenderingContext[SO] val RGB10_A2: Int
+WebGL2RenderingContext[SO] val RGB10_A2UI: Int
+WebGL2RenderingContext[SO] val RGB16F: Int
+WebGL2RenderingContext[SO] val RGB16I: Int
+WebGL2RenderingContext[SO] val RGB16UI: Int
+WebGL2RenderingContext[SO] val RGB32F: Int
+WebGL2RenderingContext[SO] val RGB32I: Int
+WebGL2RenderingContext[SO] val RGB32UI: Int
+WebGL2RenderingContext[SO] val RGB8: Int
+WebGL2RenderingContext[SO] val RGB8I: Int
+WebGL2RenderingContext[SO] val RGB8UI: Int
+WebGL2RenderingContext[SO] val RGB8_SNORM: Int
+WebGL2RenderingContext[SO] val RGB9_E5: Int
+WebGL2RenderingContext[SO] val RGBA16F: Int
+WebGL2RenderingContext[SO] val RGBA16I: Int
+WebGL2RenderingContext[SO] val RGBA16UI: Int
+WebGL2RenderingContext[SO] val RGBA32F: Int
+WebGL2RenderingContext[SO] val RGBA32I: Int
+WebGL2RenderingContext[SO] val RGBA32UI: Int
+WebGL2RenderingContext[SO] val RGBA8: Int
+WebGL2RenderingContext[SO] val RGBA8I: Int
+WebGL2RenderingContext[SO] val RGBA8UI: Int
+WebGL2RenderingContext[SO] val RGBA8_SNORM: Int
+WebGL2RenderingContext[SO] val RGBA_INTEGER: Int
+WebGL2RenderingContext[SO] val RGB_INTEGER: Int
+WebGL2RenderingContext[SO] val RG_INTEGER: Int
+WebGL2RenderingContext[SO] val SAMPLER_2D_ARRAY: Int
+WebGL2RenderingContext[SO] val SAMPLER_2D_ARRAY_SHADOW: Int
+WebGL2RenderingContext[SO] val SAMPLER_2D_SHADOW: Int
+WebGL2RenderingContext[SO] val SAMPLER_3D: Int
+WebGL2RenderingContext[SO] val SAMPLER_BINDING: Int
+WebGL2RenderingContext[SO] val SAMPLER_CUBE_SHADOW: Int
+WebGL2RenderingContext[SO] val SEPARATE_ATTRIBS: Int
+WebGL2RenderingContext[SO] val SIGNALED: Int
+WebGL2RenderingContext[SO] val SIGNED_NORMALIZED: Int
+WebGL2RenderingContext[SO] val SRGB: Int
+WebGL2RenderingContext[SO] val SRGB8: Int
+WebGL2RenderingContext[SO] val SRGB8_ALPHA8: Int
+WebGL2RenderingContext[SO] val STATIC_COPY: Int
+WebGL2RenderingContext[SO] val STATIC_READ: Int
+WebGL2RenderingContext[SO] val STENCIL: Int
+WebGL2RenderingContext[SO] val STREAM_COPY: Int
+WebGL2RenderingContext[SO] val STREAM_READ: Int
+WebGL2RenderingContext[SO] val SYNC_CONDITION: Int
+WebGL2RenderingContext[SO] val SYNC_FENCE: Int
+WebGL2RenderingContext[SO] val SYNC_FLAGS: Int
+WebGL2RenderingContext[SO] val SYNC_FLUSH_COMMANDS_BIT: Int
+WebGL2RenderingContext[SO] val SYNC_GPU_COMMANDS_COMPLETE: Int
+WebGL2RenderingContext[SO] val SYNC_STATUS: Int
+WebGL2RenderingContext[SO] val TEXTURE_2D_ARRAY: Int
+WebGL2RenderingContext[SO] val TEXTURE_3D: Int
+WebGL2RenderingContext[SO] val TEXTURE_BASE_LEVEL: Int
+WebGL2RenderingContext[SO] val TEXTURE_BINDING_2D_ARRAY: Int
+WebGL2RenderingContext[SO] val TEXTURE_BINDING_3D: Int
+WebGL2RenderingContext[SO] val TEXTURE_COMPARE_FUNC: Int
+WebGL2RenderingContext[SO] val TEXTURE_COMPARE_MODE: Int
+WebGL2RenderingContext[SO] val TEXTURE_IMMUTABLE_FORMAT: Int
+WebGL2RenderingContext[SO] val TEXTURE_IMMUTABLE_LEVELS: Int
+WebGL2RenderingContext[SO] val TEXTURE_MAX_LEVEL: Int
+WebGL2RenderingContext[SO] val TEXTURE_MAX_LOD: Int
+WebGL2RenderingContext[SO] val TEXTURE_MIN_LOD: Int
+WebGL2RenderingContext[SO] val TEXTURE_WRAP_R: Int
+WebGL2RenderingContext[SO] val TIMEOUT_EXPIRED: Int
+WebGL2RenderingContext[SO] val TIMEOUT_IGNORED: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_ACTIVE: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_BINDING: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_BUFFER: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_BUFFER_BINDING: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_BUFFER_MODE: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_BUFFER_SIZE: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_BUFFER_START: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_PAUSED: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN: Int
+WebGL2RenderingContext[SO] val TRANSFORM_FEEDBACK_VARYINGS: Int
+WebGL2RenderingContext[SO] val UNIFORM_ARRAY_STRIDE: Int
+WebGL2RenderingContext[SO] val UNIFORM_BLOCK_ACTIVE_UNIFORMS: Int
+WebGL2RenderingContext[SO] val UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES: Int
+WebGL2RenderingContext[SO] val UNIFORM_BLOCK_BINDING: Int
+WebGL2RenderingContext[SO] val UNIFORM_BLOCK_DATA_SIZE: Int
+WebGL2RenderingContext[SO] val UNIFORM_BLOCK_INDEX: Int
+WebGL2RenderingContext[SO] val UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER: Int
+WebGL2RenderingContext[SO] val UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER: Int
+WebGL2RenderingContext[SO] val UNIFORM_BUFFER: Int
+WebGL2RenderingContext[SO] val UNIFORM_BUFFER_BINDING: Int
+WebGL2RenderingContext[SO] val UNIFORM_BUFFER_OFFSET_ALIGNMENT: Int
+WebGL2RenderingContext[SO] val UNIFORM_BUFFER_SIZE: Int
+WebGL2RenderingContext[SO] val UNIFORM_BUFFER_START: Int
+WebGL2RenderingContext[SO] val UNIFORM_IS_ROW_MAJOR: Int
+WebGL2RenderingContext[SO] val UNIFORM_MATRIX_STRIDE: Int
+WebGL2RenderingContext[SO] val UNIFORM_OFFSET: Int
+WebGL2RenderingContext[SO] val UNIFORM_SIZE: Int
+WebGL2RenderingContext[SO] val UNIFORM_TYPE: Int
+WebGL2RenderingContext[SO] val UNPACK_IMAGE_HEIGHT: Int
+WebGL2RenderingContext[SO] val UNPACK_ROW_LENGTH: Int
+WebGL2RenderingContext[SO] val UNPACK_SKIP_IMAGES: Int
+WebGL2RenderingContext[SO] val UNPACK_SKIP_PIXELS: Int
+WebGL2RenderingContext[SO] val UNPACK_SKIP_ROWS: Int
+WebGL2RenderingContext[SO] val UNSIGNALED: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_10F_11F_11F_REV: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_24_8: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_2_10_10_10_REV: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_5_9_9_9_REV: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_SAMPLER_2D: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_SAMPLER_2D_ARRAY: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_SAMPLER_3D: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_SAMPLER_CUBE: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_VEC2: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_VEC3: Int
+WebGL2RenderingContext[SO] val UNSIGNED_INT_VEC4: Int
+WebGL2RenderingContext[SO] val UNSIGNED_NORMALIZED: Int
+WebGL2RenderingContext[SO] val VERTEX_ARRAY_BINDING: Int
+WebGL2RenderingContext[SO] val VERTEX_ATTRIB_ARRAY_DIVISOR: Int
+WebGL2RenderingContext[SO] val VERTEX_ATTRIB_ARRAY_INTEGER: Int
+WebGL2RenderingContext[SO] val WAIT_FAILED: Int
 WebGLActiveInfo[JC] val name: String
 WebGLActiveInfo[JC] val size: Int
 WebGLActiveInfo[JC] val `type`: Int
@@ -27262,6 +28168,7 @@ WebGLContextAttributes[JC] var preserveDrawingBuffer: Boolean
 WebGLContextAttributes[JC] var stencil: Boolean
 WebGLFramebuffer[JC]
 WebGLProgram[JC]
+WebGLQuery[JC]
 WebGLRenderbuffer[JC]
 WebGLRenderingContext[JC] def activeTexture(texture: Int): Unit
 WebGLRenderingContext[JC] def attachShader(program: WebGLProgram, shader: WebGLShader): Unit
@@ -27727,12 +28634,16 @@ WebGLRenderingContext[SO] final val VIEWPORT = 0x0BA2
 WebGLRenderingContext[SO] final val ZERO = 0
 WebGLRenderingContext[SO] def getExtension[T](id: webgl.WebGLExtensionIdentifier[T]): js.UndefOr[T]
 WebGLRenderingContext.WebGLRenderingContextOps[SC] def getExtension[T](id: webgl.WebGLExtensionIdentifier[T]): js.UndefOr[T]
+WebGLSampler[JC]
 WebGLShader[JC]
 WebGLShaderPrecisionFormat[JC] val precision: Int
 WebGLShaderPrecisionFormat[JC] val rangeMax: Int
 WebGLShaderPrecisionFormat[JC] val rangeMin: Int
+WebGLSync[JC]
 WebGLTexture[JC]
+WebGLTransformFeedback[JC]
 WebGLUniformLocation[JC]
+WebGLVertexArrayObject[JC]
 WebSocket[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], options: EventListenerOptions): Unit
 WebSocket[JC] def addEventListener[T <: Event](`type`: String, listener: js.Function1[T, _], useCapture: Boolean?): Unit
 WebSocket[JC] var binaryType: String
@@ -29299,6 +30210,14 @@ webgl/extensions/EXTDisjointTimerQuery[JT] def isQueryEXT(query: WebGLTimerQuery
 webgl/extensions/EXTDisjointTimerQuery[JT] def queryCounterEXT(query: WebGLTimerQueryEXT, target: Int): Unit
 webgl/extensions/EXTFragDepth[JT]
 webgl/extensions/EXTShaderTextureLOD[JT]
+webgl/extensions/EXTTextureCompressionBPTC[JT] val COMPRESSED_RGBA_BPTC_UNORM_EXT: Int
+webgl/extensions/EXTTextureCompressionBPTC[JT] val COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT: Int
+webgl/extensions/EXTTextureCompressionBPTC[JT] val COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT: Int
+webgl/extensions/EXTTextureCompressionBPTC[JT] val COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT: Int
+webgl/extensions/EXTTextureCompressionRGTC[JT] val COMPRESSED_RED_GREEN_RGTC2_EXT: Int
+webgl/extensions/EXTTextureCompressionRGTC[JT] val COMPRESSED_RED_RGTC1_EXT: Int
+webgl/extensions/EXTTextureCompressionRGTC[JT] val COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT: Int
+webgl/extensions/EXTTextureCompressionRGTC[JT] val COMPRESSED_SIGNED_RED_RGTC1_EXT: Int
 webgl/extensions/EXTTextureFilterAnisotropic[JT] val MAX_TEXTURE_MAX_ANISOTROPY_EXT: Int
 webgl/extensions/EXTTextureFilterAnisotropic[JT] val TEXTURE_MAX_ANISOTROPY_EXT: Int
 webgl/extensions/EXTsRGB[JT] val FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT: Int
@@ -29355,9 +30274,48 @@ webgl/extensions/WEBGLDrawBuffers[JT] val DRAW_BUFFER9_WEBGL: Int
 webgl/extensions/WEBGLDrawBuffers[JT] val MAX_COLOR_ATTACHMENTS_WEBGL: Int
 webgl/extensions/WEBGLDrawBuffers[JT] val MAX_DRAW_BUFFERS_WEBGL: Int
 webgl/extensions/WEBGLDrawBuffers[JT] def drawBuffersWEBGL(buffers: js.Array[Int]): Unit
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_10x10_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_10x5_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_10x6_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_10x8_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_12x10_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_12x12_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_4x4_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_5x4_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_5x5_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_6x5_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_6x6_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_8x5_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_8x6_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_RGBA_ASTC_8x8_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] val COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR: Int
+webgl/extensions/WebGLCompressedTextureASTC[JT] def getSupportedProfiles: js.Array[String]
 webgl/extensions/WebGLCompressedTextureATC[JT] val COMPRESSED_RGBA_ATC_EXPLICIT_ALPHA_WEBGL: Int
 webgl/extensions/WebGLCompressedTextureATC[JT] val COMPRESSED_RGBA_ATC_INTERPOLATED_ALPHA_WEBGL: Int
 webgl/extensions/WebGLCompressedTextureATC[JT] val COMPRESSED_RGB_ATC_WEBGL: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_R11_EAC: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_RG11_EAC: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_RGB8_ETC2: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_RGBA8_ETC2_EAC: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_SIGNED_R11_EAC: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_SIGNED_RG11_EAC: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_SRGB8_ALPHA8_ETC2_EAC: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_SRGB8_ETC2: Int
+webgl/extensions/WebGLCompressedTextureETC[JT] val COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2: Int
 webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGBA_PVRTC_2BPPV1_IMG: Int
 webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGBA_PVRTC_4BPPV1_IMG: Int
 webgl/extensions/WebGLCompressedTexturePVRTC[JT] val COMPRESSED_RGB_PVRTC_2BPPV1_IMG: Int
@@ -29366,6 +30324,10 @@ webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGBA_S3TC_DXT1_EX
 webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGBA_S3TC_DXT3_EXT: Int
 webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGBA_S3TC_DXT5_EXT: Int
 webgl/extensions/WebGLCompressedTextureS3TC[JT] val COMPRESSED_RGB_S3TC_DXT1_EXT: Int
+webgl/extensions/WebGLCompressedTextureS3TCSRGB[JT] val COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT: Int
+webgl/extensions/WebGLCompressedTextureS3TCSRGB[JT] val COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT: Int
+webgl/extensions/WebGLCompressedTextureS3TCSRGB[JT] val COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT: Int
+webgl/extensions/WebGLCompressedTextureS3TCSRGB[JT] val COMPRESSED_SRGB_S3TC_DXT1_EXT: Int
 webgl/extensions/WebGLDebugRendererInfo[JT] val UNMASKED_RENDERER_WEBGL: Int
 webgl/extensions/WebGLDebugRendererInfo[JT] val UNMASKED_VENDOR_WEBGL: Int
 webgl/extensions/WebGLDebugShaders[JT] def getTranslatedShaderSource(shader: WebGLShader): String
