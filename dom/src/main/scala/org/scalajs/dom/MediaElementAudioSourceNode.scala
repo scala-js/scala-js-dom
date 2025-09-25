@@ -21,4 +21,18 @@ import scala.scalajs.js
   *     method that created it.
   */
 @js.native
-trait MediaElementAudioSourceNode extends AudioNode
+trait MediaElementAudioSourceNode extends AudioNode {
+  def mediaElement: HTMLMediaElement = js.native
+}
+
+object MediaElementAudioSourceNode {
+
+  import js.`|`.undefOr2jsAny
+
+  def apply(context: BaseAudioContext,
+      options: js.UndefOr[MediaElementAudioSourceNodeOptions] = js.undefined): MediaElementAudioSourceNode = {
+    js.Dynamic
+      .newInstance(js.Dynamic.global.MediaElementAudioSourceNode)(context, options)
+      .asInstanceOf[MediaElementAudioSourceNode]
+  }
+}
