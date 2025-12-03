@@ -27,7 +27,7 @@ class PerformanceEntry extends js.Object {
   /** The duration of the performance entry. The meaning of this property depends on the value of this entry's
     * [[entryType]].
     */
-  def duration: Int = js.native
+  def duration: Double = js.native
 
   /** The type of performance metric that this entry represents. */
   def entryType: String = js.native
