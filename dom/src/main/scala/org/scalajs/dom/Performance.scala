@@ -77,4 +77,7 @@ class Performance private[this] () extends js.Object {
     * as give by PerformanceTiming.navigationStart to the call of the method.
     */
   def now(): Double = js.native
+
+  /** Returns a high resolution timestamp, representing the start time of the performance measurement. */
+  def timeOrigin: Double = js.native
 }
