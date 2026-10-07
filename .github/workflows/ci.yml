@@ -19,7 +19,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Setup Scala
-        uses: japgolly/setup-everything-scala@v3.1
+        uses: japgolly/setup-everything-scala@v4.1
+        with:
+          node-version: 26
 
       - name: Build and test
         run: sbt -DCI=1 "++${{ matrix.scalaversion }}" test package doc
@@ -35,6 +37,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: japgolly/setup-everything-scala@v3.1
+      - uses: japgolly/setup-everything-scala@v4.1
       - name: Readme generation
         run: sbt readme/run
