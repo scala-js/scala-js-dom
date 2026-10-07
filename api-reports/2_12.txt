@@ -17338,6 +17338,7 @@ Performance[JC] def measure(measureName: String, startMarkName: String?, endMark
 Performance[JC] def navigation: PerformanceNavigation
 Performance[JC] def now(): Double
 Performance[JC] def setResourceTimingBufferSize(maxSize: Int): Unit
+Performance[JC] def timeOrigin: Double
 Performance[JC] def timing: PerformanceTiming
 Performance[JC] def toJSON(): js.Object
 PerformanceEntry[JC] def duration: Int
