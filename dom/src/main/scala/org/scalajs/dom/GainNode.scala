@@ -29,3 +29,12 @@ trait GainNode extends AudioNode {
   /** Is an a-rate AudioParam representing the amount of gain to apply. */
   val gain: AudioParam = js.native
 }
+
+object GainNode {
+
+  import js.`|`.undefOr2jsAny
+
+  def apply(context: BaseAudioContext, options: js.UndefOr[GainNodeOptions] = js.undefined): GainNode = {
+    js.Dynamic.newInstance(js.Dynamic.global.GainNode)(context, options).asInstanceOf[GainNode]
+  }
+}
