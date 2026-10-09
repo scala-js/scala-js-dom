@@ -1446,6 +1446,10 @@ CryptoKey[JC] val usages: js.Array[KeyUsage]
 CryptoKeyPair[JT] val privateKey: CryptoKey
 CryptoKeyPair[JT] val publicKey: CryptoKey
 CustomElementRegistry[JC] def define(name: String, constructor: js.Dynamic, options: ElementDefinitionOptions?): Unit
+CustomElementRegistry[JC] def get(name: String): js.Dynamic
+CustomElementRegistry[JC] def getName(constructor: js.Dynamic): String
+CustomElementRegistry[JC] def upgrade(root: Node): Unit
+CustomElementRegistry[JC] def whenDefined(name: String): js.Promise[Any]
 CustomEvent[JC] def bubbles: Boolean
 CustomEvent[JC] def cancelBubble: Boolean
 CustomEvent[JC] def cancelable: Boolean
